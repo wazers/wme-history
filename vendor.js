@@ -45,7 +45,7 @@
             a.src = t.p + "" + e + ".js/" + ({
                 1: "app"
             }[e] || e) + "-" + {
-                1: "212fe0ebdc5cb23658d2"
+                1: "a01b3de15be1f30b6e80"
             }[e] + ".js",
             s.appendChild(a)
         }
@@ -56,43 +56,47 @@
     t.p = "/assets-editor",
     t(0)
 }([function(e, t, n) {
-    n(933),
-    n(1020),
-    n(1021),
-    n(1082),
-    n(712),
-    n(1016),
-    n(938),
-    n(1171),
-    n(484),
-    n(482),
-    n(479),
-    n(483),
-    n(1170),
-    n(1081),
-    n(476),
-    n(480),
-    n(478),
-    n(481),
-    n(477),
-    n(762),
+    "use strict";
+    n(1037),
+    n(1126),
+    n(1127),
+    n(777),
+    n(776),
+    n(1120),
+    n(1042),
+    n(779),
+    n(805),
+    n(803),
+    n(800),
+    n(804),
+    n(778),
+    n(773),
+    n(797),
+    n(801),
+    n(799),
+    n(802),
+    n(798),
+    n(866),
     n(1),
-    n(448),
-    n(475),
-    n(485),
-    n(934),
-    n(1172),
-    n(937),
-    n(30),
-    n(935),
-    n(473),
-    n(471),
-    n(715),
-    n(1019),
-    n(713),
-    n(714),
-    n(718),
-    n(1169)
+    n(499),
+    n(796),
+    n(806),
+    n(1038),
+    n(780),
+    n(1041),
+    n(56),
+    n(1039),
+    n(794),
+    n(791),
+    n(795),
+    n(809),
+    n(1125),
+    n(807),
+    n(808),
+    n(810),
+    n(1122),
+    n(1123),
+    n(1223)
 }
 , function(e, t, n) {
     (function(e) {
@@ -803,7 +807,7 @@
                 if (!Hr[t] && "undefined" != typeof e && e && e.exports)
                     try {
                         s = Cr._abbr,
-                        n(1024)("./" + t),
+                        n(1130)("./" + t),
                         et(s)
                     } catch (e) {}
                 return Hr[t]
@@ -1499,7 +1503,7 @@
                 var a;
                 return null == e ? De(this, s, r).year : (a = Ae(e, s, r),
                 t > a && (t = a),
-                On.call(this, e, t, n, s, r));
+                On.call(this, e, t, n, s, r))
             }
             function On(e, t, n, s, r) {
                 var a = ve(e, t, n, s, r)
@@ -2353,14 +2357,150 @@
             t
         })
     }
-    ).call(t, n(290)(e))
+    ).call(t, n(353)(e))
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+, , , , , , , , , , function(e, t) {
+    var n = e.exports = {
+        version: "2.4.0"
+    };
+    "number" == typeof __e && (__e = n)
+}
+, , , , , function(e, t, n) {
+    var s = n(138)("wks")
+      , r = n(93)
+      , a = n(22).Symbol
+      , i = "function" == typeof a
+      , o = e.exports = function(e) {
+        return s[e] || (s[e] = i && a[e] || (i ? a : r)("Symbol." + e))
+    }
+    ;
+    o.store = s
+}
+, , , , , , function(e, t) {
+    var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
+    "number" == typeof __g && (__g = n)
+}
+, , , , , , , function(e, t, n) {
+    var s = n(48);
+    e.exports = function(e) {
+        if (!s(e))
+            throw TypeError(e + " is not an object!");
+        return e
+    }
+}
+, function(e, t, n) {
+    var s = n(22)
+      , r = n(11)
+      , a = n(73)
+      , i = n(47)
+      , o = "prototype"
+      , d = function(e, t, n) {
+        var u, l, y, h = e & d.F, m = e & d.G, T = e & d.S, c = e & d.P, p = e & d.B, M = e & d.W, f = m ? r : r[t] || (r[t] = {}), S = f[o], g = m ? s : T ? s[t] : (s[t] || {})[o];
+        m && (n = t);
+        for (u in n)
+            l = !h && g && void 0 !== g[u],
+            l && u in f || (y = l ? g[u] : n[u],
+            f[u] = m && "function" != typeof g[u] ? n[u] : p && l ? a(y, s) : M && g[u] == y ? function(e) {
+                var t = function(t, n, s) {
+                    if (this instanceof e) {
+                        switch (arguments.length) {
+                        case 0:
+                            return new e;
+                        case 1:
+                            return new e(t);
+                        case 2:
+                            return new e(t,n)
+                        }
+                        return new e(t,n,s)
+                    }
+                    return e.apply(this, arguments)
+                };
+                return t[o] = e[o],
+                t
+            }(y) : c && "function" == typeof y ? a(Function.call, y) : y,
+            c && ((f.virtual || (f.virtual = {}))[u] = y,
+            e & d.R && S && !S[u] && i(S, u, y)))
+    };
+    d.F = 1,
+    d.G = 2,
+    d.S = 4,
+    d.P = 8,
+    d.B = 16,
+    d.W = 32,
+    d.U = 64,
+    d.R = 128,
+    e.exports = d
+}
+, function(e, t, n) {
+    var s = n(232)
+      , r = n(131);
+    e.exports = function(e) {
+        return s(r(e))
+    }
+}
+, , , , , , , function(e, t, n) {
+    e.exports = !n(57)(function() {
+        return 7 != Object.defineProperty({}, "a", {
+            get: function() {
+                return 7
+            }
+        }).a
+    })
+}
+, function(e, t, n) {
+    var s = n(29)
+      , r = n(231)
+      , a = n(140)
+      , i = Object.defineProperty;
+    t.f = n(38) ? Object.defineProperty : function(e, t, n) {
+        if (s(e),
+        t = a(t, !0),
+        s(n),
+        r)
+            try {
+                return i(e, t, n)
+            } catch (e) {}
+        if ("get"in n || "set"in n)
+            throw TypeError("Accessors not supported!");
+        return "value"in n && (e[t] = n.value),
+        e
+    }
+}
+, , , , , , , function(e, t) {
+    var n = {}.hasOwnProperty;
+    e.exports = function(e, t) {
+        return n.call(e, t)
+    }
+}
+, function(e, t, n) {
+    var s = n(39)
+      , r = n(90);
+    e.exports = n(38) ? function(e, t, n) {
+        return s.f(e, t, r(1, n))
+    }
+    : function(e, t, n) {
+        return e[t] = n,
+        e
+    }
+}
+, function(e, t) {
+    e.exports = function(e) {
+        return "object" == typeof e ? null !== e : "function" == typeof e
+    }
+}
+, function(e, t, n) {
+    var s = n(237)
+      , r = n(133);
+    e.exports = Object.keys || function(e) {
+        return s(e, r)
+    }
+}
+, , , , , , , function(e, t, n) {
     var s, r;
     (function(a) {
         !function(i) {
             var o = "object" == typeof self && self.self === self && self || "object" == typeof a && a.global === a && a;
-            s = [n(37), n(46), t],
+            s = [n(59), n(75), t],
             r = function(e, t, n) {
                 o.Backbone = i(o, n, e, t)
             }
@@ -3548,7 +3688,19 @@
         return this
     }())
 }
-, , , , , , , function(e, t, n) {
+, function(e, t) {
+    e.exports = function(e) {
+        try {
+            return !!e()
+        } catch (e) {
+            return !0
+        }
+    }
+}
+, function(e, t) {
+    e.exports = {}
+}
+, function(e, t, n) {
     var s, r;
     (function() {
         function n(e) {
@@ -4585,7 +4737,69 @@
     }
     ).call(this)
 }
-, , , , , , , , , function(e, t, n) {
+, , , , , , , , , , , , function(e, t, n) {
+    "use strict";
+    function s(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var r = n(788)
+      , a = s(r)
+      , i = n(787)
+      , o = s(i)
+      , d = "function" == typeof o.default && "symbol" == typeof a.default ? function(e) {
+        return typeof e
+    }
+    : function(e) {
+        return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : typeof e
+    }
+    ;
+    t.default = "function" == typeof o.default && "symbol" === d(a.default) ? function(e) {
+        return "undefined" == typeof e ? "undefined" : d(e)
+    }
+    : function(e) {
+        return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : "undefined" == typeof e ? "undefined" : d(e)
+    }
+}
+, function(e, t) {
+    var n = {}.toString;
+    e.exports = function(e) {
+        return n.call(e).slice(8, -1)
+    }
+}
+, function(e, t, n) {
+    var s = n(129);
+    e.exports = function(e, t, n) {
+        if (s(e),
+        void 0 === t)
+            return e;
+        switch (n) {
+        case 1:
+            return function(n) {
+                return e.call(t, n)
+            }
+            ;
+        case 2:
+            return function(n, s) {
+                return e.call(t, n, s)
+            }
+            ;
+        case 3:
+            return function(n, s, r) {
+                return e.call(t, n, s, r)
+            }
+        }
+        return function() {
+            return e.apply(t, arguments)
+        }
+    }
+}
+, function(e, t) {
+    t.f = {}.propertyIsEnumerable
+}
+, function(e, t, n) {
     var s, r;
     /*!
 	 * jQuery JavaScript Library v2.2.4
@@ -8678,7 +8892,380 @@
         ue
     })
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+, , , , , , , , , , , , , function(e, t) {
+    e.exports = !0
+}
+, , function(e, t) {
+    e.exports = function(e, t) {
+        return {
+            enumerable: !(1 & e),
+            configurable: !(2 & e),
+            writable: !(4 & e),
+            value: t
+        }
+    }
+}
+, function(e, t, n) {
+    var s = n(39).f
+      , r = n(46)
+      , a = n(16)("toStringTag");
+    e.exports = function(e, t, n) {
+        e && !r(e = n ? e : e.prototype, a) && s(e, a, {
+            configurable: !0,
+            value: t
+        })
+    }
+}
+, function(e, t, n) {
+    var s = n(131);
+    e.exports = function(e) {
+        return Object(s(e))
+    }
+}
+, function(e, t) {
+    var n = 0
+      , s = Math.random();
+    e.exports = function(e) {
+        return "Symbol(".concat(void 0 === e ? "" : e, ")_", (++n + s).toString(36))
+    }
+}
+, function(e, t, n) {
+    "use strict";
+    var s = n(848)(!0);
+    n(233)(String, "String", function(e) {
+        this._t = String(e),
+        this._i = 0
+    }, function() {
+        var e, t = this._t, n = this._i;
+        return n >= t.length ? {
+            value: void 0,
+            done: !0
+        } : (e = s(t, n),
+        this._i += e.length,
+        {
+            value: e,
+            done: !1
+        })
+    })
+}
+, function(e, t, n) {
+    n(852);
+    for (var s = n(22), r = n(47), a = n(58), i = n(16)("toStringTag"), o = ["NodeList", "DOMTokenList", "MediaList", "StyleSheetList", "CSSRuleList"], d = 0; d < 5; d++) {
+        var u = o[d]
+          , l = s[u]
+          , y = l && l.prototype;
+        y && !y[i] && r(y, i, u),
+        a[u] = a.Array
+    }
+}
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+    e.exports = function(e) {
+        if ("function" != typeof e)
+            throw TypeError(e + " is not a function!");
+        return e
+    }
+}
+, , function(e, t) {
+    e.exports = function(e) {
+        if (void 0 == e)
+            throw TypeError("Can't call method on  " + e);
+        return e
+    }
+}
+, function(e, t, n) {
+    var s = n(48)
+      , r = n(22).document
+      , a = s(r) && s(r.createElement);
+    e.exports = function(e) {
+        return a ? r.createElement(e) : {}
+    }
+}
+, function(e, t) {
+    e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")
+}
+, function(e, t, n) {
+    var s = n(29)
+      , r = n(841)
+      , a = n(133)
+      , i = n(137)("IE_PROTO")
+      , o = function() {}
+      , d = "prototype"
+      , u = function() {
+        var e, t = n(132)("iframe"), s = a.length, r = "<", i = ">";
+        for (t.style.display = "none",
+        n(230).appendChild(t),
+        t.src = "javascript:",
+        e = t.contentWindow.document,
+        e.open(),
+        e.write(r + "script" + i + "document.F=Object" + r + "/script" + i),
+        e.close(),
+        u = e.F; s--; )
+            delete u[d][a[s]];
+        return u()
+    };
+    e.exports = Object.create || function(e, t) {
+        var n;
+        return null !== e ? (o[d] = s(e),
+        n = new o,
+        o[d] = null ,
+        n[i] = e) : n = u(),
+        void 0 === t ? n : r(n, t)
+    }
+}
+, function(e, t, n) {
+    var s = n(74)
+      , r = n(90)
+      , a = n(31)
+      , i = n(140)
+      , o = n(46)
+      , d = n(231)
+      , u = Object.getOwnPropertyDescriptor;
+    t.f = n(38) ? u : function(e, t) {
+        if (e = a(e),
+        t = i(t, !0),
+        d)
+            try {
+                return u(e, t)
+            } catch (e) {}
+        if (o(e, t))
+            return r(!s.f.call(e, t), e[t])
+    }
+}
+, function(e, t) {
+    t.f = Object.getOwnPropertySymbols
+}
+, function(e, t, n) {
+    var s = n(138)("keys")
+      , r = n(93);
+    e.exports = function(e) {
+        return s[e] || (s[e] = r(e))
+    }
+}
+, function(e, t, n) {
+    var s = n(22)
+      , r = "__core-js_shared__"
+      , a = s[r] || (s[r] = {});
+    e.exports = function(e) {
+        return a[e] || (a[e] = {})
+    }
+}
+, function(e, t) {
+    var n = Math.ceil
+      , s = Math.floor;
+    e.exports = function(e) {
+        return isNaN(e = +e) ? 0 : (e > 0 ? s : n)(e)
+    }
+}
+, function(e, t, n) {
+    var s = n(48);
+    e.exports = function(e, t) {
+        if (!s(e))
+            return e;
+        var n, r;
+        if (t && "function" == typeof (n = e.toString) && !s(r = n.call(e)))
+            return r;
+        if ("function" == typeof (n = e.valueOf) && !s(r = n.call(e)))
+            return r;
+        if (!t && "function" == typeof (n = e.toString) && !s(r = n.call(e)))
+            return r;
+        throw TypeError("Can't convert object to primitive value")
+    }
+}
+, function(e, t, n) {
+    var s = n(22)
+      , r = n(11)
+      , a = n(88)
+      , i = n(142)
+      , o = n(39).f;
+    e.exports = function(e) {
+        var t = r.Symbol || (r.Symbol = a ? {} : s.Symbol || {});
+        "_" == e.charAt(0) || e in t || o(t, e, {
+            value: i.f(e)
+        })
+    }
+}
+, function(e, t, n) {
+    t.f = n(16)
+}
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+    e.exports = n(22).document && document.documentElement
+}
+, function(e, t, n) {
+    e.exports = !n(38) && !n(57)(function() {
+        return 7 != Object.defineProperty(n(132)("div"), "a", {
+            get: function() {
+                return 7
+            }
+        }).a
+    })
+}
+, function(e, t, n) {
+    var s = n(72);
+    e.exports = Object("z").propertyIsEnumerable(0) ? Object : function(e) {
+        return "String" == s(e) ? e.split("") : Object(e)
+    }
+}
+, function(e, t, n) {
+    "use strict";
+    var s = n(88)
+      , r = n(30)
+      , a = n(238)
+      , i = n(47)
+      , o = n(46)
+      , d = n(58)
+      , u = n(835)
+      , l = n(91)
+      , y = n(236)
+      , h = n(16)("iterator")
+      , m = !([].keys && "next"in [].keys())
+      , T = "@@iterator"
+      , c = "keys"
+      , p = "values"
+      , M = function() {
+        return this
+    };
+    e.exports = function(e, t, n, f, S, g, _) {
+        u(n, t, f);
+        var b, v, D, A = function(e) {
+            if (!m && e in w)
+                return w[e];
+            switch (e) {
+            case c:
+                return function() {
+                    return new n(this,e)
+                }
+                ;
+            case p:
+                return function() {
+                    return new n(this,e)
+                }
+            }
+            return function() {
+                return new n(this,e)
+            }
+        }, C = t + " Iterator", E = S == p, L = !1, w = e.prototype, H = w[h] || w[T] || S && w[S], I = H || A(S), k = S ? E ? A("entries") : I : void 0, N = "Array" == t ? w.entries || H : H;
+        if (N && (D = y(N.call(new e)),
+        D !== Object.prototype && (l(D, C, !0),
+        s || o(D, h) || i(D, h, M))),
+        E && H && H.name !== p && (L = !0,
+        I = function() {
+            return H.call(this)
+        }
+        ),
+        s && !_ || !m && !L && w[h] || i(w, h, I),
+        d[t] = I,
+        d[C] = M,
+        S)
+            if (b = {
+                values: E ? I : A(p),
+                keys: g ? I : A(c),
+                entries: k
+            },
+            _)
+                for (v in b)
+                    v in w || a(w, v, b[v]);
+            else
+                r(r.P + r.F * (m || L), t, b);
+        return b
+    }
+}
+, function(e, t, n) {
+    var s = n(93)("meta")
+      , r = n(48)
+      , a = n(46)
+      , i = n(39).f
+      , o = 0
+      , d = Object.isExtensible || function() {
+        return !0
+    }
+      , u = !n(57)(function() {
+        return d(Object.preventExtensions({}))
+    })
+      , l = function(e) {
+        i(e, s, {
+            value: {
+                i: "O" + ++o,
+                w: {}
+            }
+        })
+    }
+      , y = function(e, t) {
+        if (!r(e))
+            return "symbol" == typeof e ? e : ("string" == typeof e ? "S" : "P") + e;
+        if (!a(e, s)) {
+            if (!d(e))
+                return "F";
+            if (!t)
+                return "E";
+            l(e)
+        }
+        return e[s].i
+    }
+      , h = function(e, t) {
+        if (!a(e, s)) {
+            if (!d(e))
+                return !0;
+            if (!t)
+                return !1;
+            l(e)
+        }
+        return e[s].w
+    }
+      , m = function(e) {
+        return u && T.NEED && d(e) && !a(e, s) && l(e),
+        e
+    }
+      , T = e.exports = {
+        KEY: s,
+        NEED: !1,
+        fastKey: y,
+        getWeak: h,
+        onFreeze: m
+    }
+}
+, function(e, t, n) {
+    var s = n(237)
+      , r = n(133).concat("length", "prototype");
+    t.f = Object.getOwnPropertyNames || function(e) {
+        return s(e, r)
+    }
+}
+, function(e, t, n) {
+    var s = n(46)
+      , r = n(92)
+      , a = n(137)("IE_PROTO")
+      , i = Object.prototype;
+    e.exports = Object.getPrototypeOf || function(e) {
+        return e = r(e),
+        s(e, a) ? e[a] : "function" == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? i : null
+    }
+}
+, function(e, t, n) {
+    var s = n(46)
+      , r = n(31)
+      , a = n(828)(!1)
+      , i = n(137)("IE_PROTO");
+    e.exports = function(e, t) {
+        var n, o = r(e), d = 0, u = [];
+        for (n in o)
+            n != i && s(o, n) && u.push(n);
+        for (; t.length > d; )
+            s(o, n = t[d++]) && (~a(u, n) || u.push(n));
+        return u
+    }
+}
+, function(e, t, n) {
+    e.exports = n(47)
+}
+, , function(e, t, n) {
+    var s = n(139)
+      , r = Math.min;
+    e.exports = function(e) {
+        return e > 0 ? r(s(e), 9007199254740991) : 0
+    }
+}
+, , function(e, t) {}
+, , , function(e, t, n) {
     !function(e, t) {
         t(n(1))
     }(this, function(e) {
@@ -16487,7 +17074,7 @@
         e
     }
 }
-, , , , , , , , , , , , , , function(e, t) {
+, function(e, t) {
     OpenLayers.Bounds = OpenLayers.Class({
         left: null ,
         bottom: null ,
@@ -16540,7 +17127,7 @@
             return new OpenLayers.Size(this.getWidth(),this.getHeight())
         },
         getCenterPixel: function() {
-            return new OpenLayers.Pixel((this.left + this.right) / 2,(this.bottom + this.top) / 2);
+            return new OpenLayers.Pixel((this.left + this.right) / 2,(this.bottom + this.top) / 2)
         },
         getCenterLonLat: function() {
             return this.centerLonLat || (this.centerLonLat = new OpenLayers.LonLat((this.left + this.right) / 2,(this.bottom + this.top) / 2)),
@@ -16899,7 +17486,7 @@
         CLASS_NAME: "OpenLayers.Size"
     })
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     !function(e) {
         "undefined" == typeof e.fn.each2 && e.extend(e.fn, {
             each2: function(t) {
@@ -19838,98 +20425,591 @@
         }
     }(jQuery)
 }
-, , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    var s, r;
-    !function(a, i) {
-        s = [n(30), n(37)],
-        r = function(e, t) {
-            return i(e, t)
-        }
-        .apply(t, s),
-        !(void 0 !== r && (e.exports = r))
-    }(this, function(e, t) {
-        "use strict";
-        var n = e.ChildViewContainer;
-        return e.ChildViewContainer = function(e, t) {
-            var n = function(e) {
-                this._views = {},
-                this._indexByModel = {},
-                this._indexByCustom = {},
-                this._updateLength(),
-                t.each(e, this.add, this)
-            };
-            t.extend(n.prototype, {
-                add: function(e, t) {
-                    var n = e.cid;
-                    return this._views[n] = e,
-                    e.model && (this._indexByModel[e.model.cid] = n),
-                    t && (this._indexByCustom[t] = n),
-                    this._updateLength(),
-                    this
-                },
-                findByModel: function(e) {
-                    return this.findByModelCid(e.cid)
-                },
-                findByModelCid: function(e) {
-                    var t = this._indexByModel[e];
-                    return this.findByCid(t)
-                },
-                findByCustom: function(e) {
-                    var t = this._indexByCustom[e];
-                    return this.findByCid(t)
-                },
-                findByIndex: function(e) {
-                    return t.values(this._views)[e]
-                },
-                findByCid: function(e) {
-                    return this._views[e]
-                },
-                remove: function(e) {
-                    var n = e.cid;
-                    return e.model && delete this._indexByModel[e.model.cid],
-                    t.any(this._indexByCustom, function(e, t) {
-                        if (e === n)
-                            return delete this._indexByCustom[t],
-                            !0
-                    }, this),
-                    delete this._views[n],
-                    this._updateLength(),
-                    this
-                },
-                call: function(e) {
-                    this.apply(e, t.tail(arguments))
-                },
-                apply: function(e, n) {
-                    t.each(this._views, function(s) {
-                        t.isFunction(s[e]) && s[e].apply(s, n || [])
-                    })
-                },
-                _updateLength: function() {
-                    this.length = t.size(this._views)
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+    "use strict";
+    $.fn.typeahead.defaults.highlighter = function(e) {
+        var t, n, s = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"), r = new RegExp(s,"ig"), a = 0;
+        for (t = $("<span />"); null !== (n = r.exec(e)); )
+            n.index > a && t.append($("<span />").text(e.substring(a, n.index))),
+            t.append($("<strong />").text(n[0])),
+            a = r.lastIndex;
+        return a < e.length && t.append($("<span />").text(e.substring(a))),
+        t.html()
+    }
+}
+, , , function(e, t) {
+    "use strict";
+    var n = "א".charCodeAt(0)
+      , s = "ת".charCodeAt(0)
+      , r = function(e) {
+        var t = void 0;
+        return n <= (t = e.charCodeAt(0)) && t <= s
+    };
+    $.fn.autoRTL = function() {
+        return arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+        this.each(function() {
+            var e = $(this)
+              , t = e.is(":input") ? e.val() : e.text();
+            if (t = $.trim(t),
+            0 !== t.length) {
+                var n = r(t.charAt(0));
+                return n ? e.css({
+                    direction: "rtl",
+                    textAlign: "right"
+                }) : e.css({
+                    direction: "ltr",
+                    textAlign: "left"
+                })
+            }
+        })
+    }
+    ,
+    $("body").on("keypress", "[data-auto-rtl]", function() {
+        return $(this).autoRTL()
+    })
+}
+, function(e, t) {
+    "use strict";
+    !function(e) {
+        var t = function(t, n) {
+            var s, r, a, i, o = e(t), d = !1, u = null , l = {}, y = this;
+            e.extend(l, n),
+            s = e("<ul />").addClass("map-search-results hidden").css({
+                position: "absolute",
+                display: "block"
+            }).appendTo(o),
+            r = e("input[type=submit]", o),
+            a = e("input[type=text]", o),
+            this.textInput = a,
+            s.css("top", a.top),
+            s.css("left", a.left),
+            s.css("width", a.innerWidth() + "px"),
+            o.bind("submit.searchbox", function() {
+                if ("" !== a.val()) {
+                    var t = y.lonlatRegex.exec(a.val());
+                    null !== t ? l.onselect({
+                        location: {
+                            lon: t[1],
+                            lat: t[2]
+                        }
+                    }, 1, 1, !0) : (T(e(this)),
+                    h())
                 }
+                return !1
             });
-            var s = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck", "reduce"];
-            return t.each(s, function(e) {
-                n.prototype[e] = function() {
-                    var n = t.values(this._views)
-                      , s = [n].concat(t.toArray(arguments));
-                    return t[e].apply(t, s)
+            var h = function() {
+                a.addClass("loading"),
+                r.prop("disabled", !0)
+            }
+              , m = function() {
+                a.removeClass("loading"),
+                r.prop("disabled", !1),
+                a.prop("disabled", !1)
+            }
+              , T = function(t) {
+                var n = l.map.getCenter().transform(l.map.getProjectionObject(), l.remoteProjection)
+                  , s = t.serialize() + "&lon=" + n.lon + "&lat=" + n.lat;
+                l.maxDistance && (s += "&max_distance_kms=" + l.maxDistance),
+                l.options && Object.forEach(l.options, function(e, t) {
+                    s += "&" + e + "=" + t
+                }),
+                e.ajax({
+                    url: l.url,
+                    data: s
+                }).success(function(e) {
+                    c(e, !1)
+                }).error(function() {
+                    c([], !0)
+                })
+            }
+              , c = function(t, n) {
+                if (s.empty(),
+                n === !0)
+                    p("Error retrieving search results.");
+                else if ("" === t || t.isEmpty())
+                    p("No results found"),
+                    l.onsearch(0);
+                else {
+                    if (l.onsearch(t.length),
+                    1 === t.length)
+                        return m(),
+                        b(),
+                        void l.onselect(t.first(), 1, 1);
+                    t.forEach(function(t, n) {
+                        var r = e("<li />").addClass("search-item").append(e("<a />").attr("href", "#").text(t.name).data("searchbox", t).data("searchbox-index", n));
+                        s.append(r)
+                    })
                 }
+                _(),
+                m()
+            }
+              , p = function(t) {
+                s.append(e("<li />").append(e("<div/>").text(t).addClass("message search-item")))
+            };
+            a.bind("keydown.searchbox", function(e) {
+                var t = !1;
+                switch (e.which) {
+                case 38:
+                    S(),
+                    t = !0;
+                    break;
+                case 40:
+                    f(),
+                    t = !0;
+                    break;
+                case 27:
+                    b();
+                    break;
+                case 13:
+                    M(i) && e.preventDefault()
+                }
+                d && t && e.preventDefault()
             }),
-            n
-        }(e, t),
-        e.ChildViewContainer.VERSION = "0.1.11",
-        e.ChildViewContainer.noConflict = function() {
-            return e.ChildViewContainer = n,
+            a.bind("keyup.searchbox", function() {
+                e(this).val() !== u && (u = e(this).val(),
+                g(null ))
+            }),
+            s.delegate("li.search-item", "mousedown", function() {
+                M(e(this))
+            }),
+            a.bind("blur.searchbox", function() {
+                b()
+            });
+            var M = function(t) {
+                if (!d || !t)
+                    return !1;
+                var n = e("a", t);
+                a.val(n.text()),
+                b();
+                var r = n.data("searchbox")
+                  , i = n.data("searchbox-index")
+                  , o = s.children(".search-item").length;
+                return l.onselect(r, i + 1, o),
+                !0
+            }
+              , f = function() {
+                if (!i)
+                    return void g(e("li.search-item:first", s));
+                var t = i.next("li.search-item");
+                g(0 === t.length ? e("li.search-item:first", s) : t)
+            }
+              , S = function() {
+                if (!i)
+                    return void g(e("li.search-item:last", s));
+                var t = i.prev("li.search-item");
+                g(0 === t.length ? e("li.search-item:last", s) : t)
+            }
+              , g = function(e) {
+                i && i.removeClass("item-selected"),
+                i = e,
+                i && i.addClass("item-selected")
+            }
+              , _ = function() {
+                s.width(a.innerWidth() + "px"),
+                s.removeClass("hidden"),
+                d = !0,
+                a.focus()
+            }
+              , b = function() {
+                s.addClass("hidden"),
+                i && i.removeClass("item-selected"),
+                g(null ),
+                d = !1
+            }
+        };
+        t.prototype.lonlatRegex = new RegExp(/^\s?(-?\d+(?:\.\d+)?)\s*[,\s]{1}\s*(-?\d+(?:\.\d+)?)\s*$/),
+        t.prototype.focus = function() {
+            this.textInput.focus()
+        }
+        ,
+        e.fn.searchbox = function(n) {
+            return this.each(function() {
+                var s = e(this);
+                s.data("searchbox") || s.data("searchbox", new t(this,n))
+            })
+        }
+    }(jQuery)
+}
+, function(e, t, n) {
+    "use strict";
+    function s(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var r = n(71)
+      , a = s(r);
+    !function(e) {
+        var t = function(t, n) {
+            this.$element = e(t),
+            this.options = e.extend({}, e.fn.typeahead.defaults, n),
+            this.matcher = this.options.matcher || this.matcher,
+            this.sorter = this.options.sorter || this.sorter,
+            this.highlighter = this.options.highlighter || this.highlighter,
+            this.updater = this.options.updater || this.updater,
+            this.source = this.options.source,
+            this.$menu = e(this.options.menu),
+            this.shown = !1,
+            this.listen()
+        };
+        t.prototype = {
+            constructor: t,
+            select: function() {
+                var e = this.$menu.find(".active").attr("data-value");
+                return this.$element.val(this.updater(e)).change(),
+                this.hide()
+            },
+            updater: function(e) {
+                return e
+            },
+            show: function() {
+                var t = e.extend({}, this.$element.position(), {
+                    height: this.$element[0].offsetHeight
+                });
+                return this.$menu.insertAfter(this.$element).css({
+                    top: t.top + t.height,
+                    left: t.left
+                }).show(),
+                this.shown = !0,
+                this
+            },
+            hide: function() {
+                return this.$menu.hide(),
+                this.shown = !1,
+                this
+            },
+            lookup: function(t) {
+                var n;
+                return this.query = this.$element.val(),
+                !this.query || this.query.length < this.options.minLength ? this.shown ? this.hide() : this : (n = e.isFunction(this.source) ? this.source(this.query, e.proxy(this.process, this)) : this.source,
+                n ? this.process(n) : this)
+            },
+            process: function(t) {
+                var n = this;
+                return t = e.grep(t, function(e) {
+                    return n.matcher(e)
+                }),
+                t = this.sorter(t),
+                t.length ? this.render(t.slice(0, this.options.items)).show() : this.shown ? this.hide() : this
+            },
+            matcher: function(e) {
+                return ~e.toLowerCase().indexOf(this.query.toLowerCase())
+            },
+            sorter: function(e) {
+                for (var t, n = [], s = [], r = []; t = e.shift(); )
+                    t.toLowerCase().indexOf(this.query.toLowerCase()) ? ~t.indexOf(this.query) ? s.push(t) : r.push(t) : n.push(t);
+                return n.concat(s, r)
+            },
+            highlighter: function(e) {
+                var t = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");
+                return e.replace(new RegExp("(" + t + ")","ig"), function(e, t) {
+                    return "<strong>" + t + "</strong>"
+                })
+            },
+            render: function(t) {
+                var n = this;
+                return t = e(t).map(function(t, s) {
+                    return t = e(n.options.item).attr("data-value", s),
+                    t.find("a").html(n.highlighter(s)),
+                    t[0]
+                }),
+                t.first().addClass("active"),
+                this.$menu.html(t),
+                this
+            },
+            next: function t(n) {
+                var s = this.$menu.find(".active").removeClass("active")
+                  , t = s.next();
+                t.length || (t = e(this.$menu.find("li")[0])),
+                t.addClass("active")
+            },
+            prev: function e(t) {
+                var n = this.$menu.find(".active").removeClass("active")
+                  , e = n.prev();
+                e.length || (e = this.$menu.find("li").last()),
+                e.addClass("active")
+            },
+            listen: function() {
+                this.$element.on("focus", e.proxy(this.focus, this)).on("blur", e.proxy(this.blur, this)).on("keypress", e.proxy(this.keypress, this)).on("keyup", e.proxy(this.keyup, this)),
+                this.eventSupported("keydown") && this.$element.on("keydown", e.proxy(this.keydown, this)),
+                this.$menu.on("click", e.proxy(this.click, this)).on("mouseenter", "li", e.proxy(this.mouseenter, this)).on("mouseleave", "li", e.proxy(this.mouseleave, this))
+            },
+            eventSupported: function(e) {
+                var t = e in this.$element;
+                return t || (this.$element.setAttribute(e, "return;"),
+                t = "function" == typeof this.$element[e]),
+                t
+            },
+            move: function(e) {
+                if (this.shown) {
+                    switch (e.keyCode) {
+                    case 9:
+                    case 13:
+                    case 27:
+                        e.preventDefault();
+                        break;
+                    case 38:
+                        e.preventDefault(),
+                        this.prev();
+                        break;
+                    case 40:
+                        e.preventDefault(),
+                        this.next()
+                    }
+                    e.stopPropagation()
+                }
+            },
+            keydown: function(t) {
+                this.suppressKeyPressRepeat = ~e.inArray(t.keyCode, [40, 38, 9, 13, 27]),
+                this.move(t)
+            },
+            keypress: function(e) {
+                this.suppressKeyPressRepeat || this.move(e)
+            },
+            keyup: function(e) {
+                switch (e.keyCode) {
+                case 40:
+                case 38:
+                case 16:
+                case 17:
+                case 18:
+                    break;
+                case 9:
+                case 13:
+                    if (!this.shown)
+                        return;
+                    this.select();
+                    break;
+                case 27:
+                    if (!this.shown)
+                        return;
+                    this.hide();
+                    break;
+                default:
+                    this.lookup()
+                }
+                e.stopPropagation(),
+                e.preventDefault()
+            },
+            focus: function(e) {
+                this.focused = !0
+            },
+            blur: function(e) {
+                this.focused = !1,
+                !this.mousedover && this.shown && this.hide()
+            },
+            click: function(e) {
+                e.stopPropagation(),
+                e.preventDefault(),
+                this.select(),
+                this.$element.focus()
+            },
+            mouseenter: function(t) {
+                this.mousedover = !0,
+                this.$menu.find(".active").removeClass("active"),
+                e(t.currentTarget).addClass("active")
+            },
+            mouseleave: function(e) {
+                this.mousedover = !1,
+                !this.focused && this.shown && this.hide()
+            }
+        };
+        var n = e.fn.typeahead;
+        e.fn.typeahead = function(n) {
+            return this.each(function() {
+                var s = e(this)
+                  , r = s.data("typeahead")
+                  , i = "object" == ("undefined" == typeof n ? "undefined" : (0,
+                a.default)(n)) && n;
+                r || s.data("typeahead", r = new t(this,i)),
+                "string" == typeof n && r[n]()
+            })
+        }
+        ,
+        e.fn.typeahead.defaults = {
+            source: [],
+            items: 8,
+            menu: '<ul class="typeahead dropdown-menu"></ul>',
+            item: '<li><a href="#"></a></li>',
+            minLength: 1
+        },
+        e.fn.typeahead.Constructor = t,
+        e.fn.typeahead.noConflict = function() {
+            return e.fn.typeahead = n,
             this
         }
         ,
-        e.ChildViewContainer
-    })
+        e(document).on("focus.typeahead.data-api", '[data-provide="typeahead"]', function(t) {
+            var n = e(this);
+            n.data("typeahead") || n.typeahead(n.data())
+        })
+    }(window.jQuery)
+}
+, function(e, t) {
+    "use strict";
+    jQuery.fn.pagination = function(e, t) {
+        return t = jQuery.extend({
+            items_per_page: 10,
+            num_display_entries: 10,
+            current_page: 0,
+            num_edge_entries: 0,
+            link_to: "#",
+            prev_text: "Prev",
+            next_text: "Next",
+            ellipse_text: "...",
+            prev_show_always: !0,
+            next_show_always: !0,
+            callback: function() {
+                return !1
+            }
+        }, t || {}),
+        this.each(function() {
+            function n() {
+                return Math.ceil(e / t.items_per_page)
+            }
+            function s() {
+                var e = Math.ceil(t.num_display_entries / 2)
+                  , s = n()
+                  , r = s - t.num_display_entries
+                  , a = i > e ? Math.max(Math.min(i - e, r), 0) : 0
+                  , o = i > e ? Math.min(i + e, s) : Math.min(t.num_display_entries, s);
+                return [a, o]
+            }
+            function r(e, n) {
+                i = e,
+                a();
+                var s = t.callback(e, o);
+                return s || (n.stopPropagation ? n.stopPropagation() : n.cancelBubble = !0),
+                s
+            }
+            function a() {
+                o.empty();
+                var e = s()
+                  , a = n()
+                  , d = function(e) {
+                    return function(t) {
+                        return r(e, t)
+                    }
+                }
+                  , u = function(e, n) {
+                    if (e = e < 0 ? 0 : e < a ? e : a - 1,
+                    n = jQuery.extend({
+                        text: e + 1,
+                        classes: ""
+                    }, n || {}),
+                    e == i)
+                        var s = jQuery("<span class='current'>" + n.text + "</span>");
+                    else
+                        var s = jQuery("<a>" + n.text + "</a>").bind("click", d(e)).attr("href", t.link_to.replace(/__id__/, e));
+                    n.classes && s.addClass(n.classes),
+                    o.append(s)
+                };
+                if (t.prev_text && (i > 0 || t.prev_show_always) && u(i - 1, {
+                    text: t.prev_text,
+                    classes: "prev"
+                }),
+                e[0] > 0 && t.num_edge_entries > 0) {
+                    for (var l = Math.min(t.num_edge_entries, e[0]), y = 0; y < l; y++)
+                        u(y);
+                    t.num_edge_entries < e[0] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o)
+                }
+                for (var y = e[0]; y < e[1]; y++)
+                    u(y);
+                if (e[1] < a && t.num_edge_entries > 0) {
+                    a - t.num_edge_entries > e[1] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o);
+                    for (var h = Math.max(a - t.num_edge_entries, e[1]), y = h; y < a; y++)
+                        u(y)
+                }
+                t.next_text && (i < a - 1 || t.next_show_always) && u(i + 1, {
+                    text: t.next_text,
+                    classes: "next"
+                })
+            }
+            var i = t.current_page;
+            e = !e || e < 0 ? 1 : e,
+            t.items_per_page = !t.items_per_page || t.items_per_page < 0 ? 1 : t.items_per_page;
+            var o = jQuery(this);
+            this.selectPage = function(e) {
+                r(e)
+            }
+            ,
+            this.prevPage = function() {
+                return i > 0 && (r(i - 1),
+                !0)
+            }
+            ,
+            this.nextPage = function() {
+                return i < n() - 1 && (r(i + 1),
+                !0)
+            }
+            ,
+            a()
+        })
+    }
+}
+, function(e, t) {
+    "use strict";
+    !function() {
+        Element.prototype.scrollIntoViewIfNeeded || (Element.prototype.scrollIntoViewIfNeeded = function(e) {
+            function t(t, n, s, r) {
+                return !1 === e || s <= t + r && t <= n + r ? Math.min(s, Math.max(n, t)) : (n + s) / 2
+            }
+            function n(e, t, s, r) {
+                return {
+                    left: e,
+                    top: t,
+                    width: s,
+                    height: r,
+                    right: e + s,
+                    bottom: t + r,
+                    translate: function(a, i) {
+                        return n(a + e, i + t, s, r)
+                    },
+                    relativeFromTo: function(i, o) {
+                        var d = e
+                          , u = t;
+                        if (i = i.offsetParent,
+                        o = o.offsetParent,
+                        i === o)
+                            return a;
+                        for (; i; i = i.offsetParent)
+                            d += i.offsetLeft + i.clientLeft,
+                            u += i.offsetTop + i.clientTop;
+                        for (; o; o = o.offsetParent)
+                            d -= o.offsetLeft + o.clientLeft,
+                            u -= o.offsetTop + o.clientTop;
+                        return n(d, u, s, r)
+                    }
+                }
+            }
+            for (var s, r = this, a = n(this.offsetLeft, this.offsetTop, this.offsetWidth, this.offsetHeight); (s = r.parentNode)instanceof HTMLElement; ) {
+                var i = s.offsetLeft + s.clientLeft
+                  , o = s.offsetTop + s.clientTop;
+                a = a.relativeFromTo(r, s).translate(-i, -o),
+                s.scrollLeft = t(s.scrollLeft, a.right - s.clientWidth, a.left, s.clientWidth),
+                s.scrollTop = t(s.scrollTop, a.bottom - s.clientHeight, a.top, s.clientHeight),
+                a = a.translate(i - s.scrollLeft, o - s.scrollTop),
+                r = s
+            }
+        }
+        )
+    }()
+}
+, , , , , , , function(e, t, n) {
+    e.exports = {
+        default: n(824),
+        __esModule: !0
+    }
 }
 , function(e, t, n) {
+    e.exports = {
+        default: n(825),
+        __esModule: !0
+    }
+}
+, , , function(e, t, n) {
     !function(t, s) {
-        e.exports = s(n(30))
+        e.exports = s(n(56))
     }(this, function(e) {
         function t() {
             return (65536 * (1 + Math.random()) | 0).toString(16).substring(1)
@@ -20068,551 +21148,375 @@
     })
 }
 , function(e, t, n) {
-    var s, r;
-    !function(a, i) {
-        s = [n(30), n(37), n(474), n(470)],
-        r = function(e, t) {
-            return a.Marionette = a.Mn = i(a, e, t)
-        }
-        .apply(t, s),
-        !(void 0 !== r && (e.exports = r))
+    !function(t, s) {
+        e.exports = s(n(56), n(59), n(793))
     }(this, function(e, t, n) {
         "use strict";
-        var s = e.Marionette
-          , r = e.Mn
-          , a = t.Marionette = {};
-        a.VERSION = "2.4.7",
-        a.noConflict = function() {
-            return e.Marionette = s,
-            e.Mn = r,
-            this
+        function s(e, t, n) {
+            return n.toUpperCase()
         }
-        ,
-        a.Deferred = t.$.Deferred,
-        a.FEATURES = {},
-        a.isEnabled = function(e) {
-            return !!a.FEATURES[e]
+        function r(e) {
+            for (var n = arguments.length, s = Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++)
+                s[r - 1] = arguments[r];
+            var a = z(e)
+              , i = J.call(this, a)
+              , o = void 0;
+            return t.isFunction(i) && (o = i.apply(this, s)),
+            this.trigger.apply(this, arguments),
+            o
         }
-        ,
-        a.extend = t.Model.extend,
-        a.isNodeAttached = function(e) {
-            return t.$.contains(document.documentElement, e)
+        function a(e) {
+            for (var n = arguments.length, s = Array(n > 1 ? n - 1 : 0), a = 1; a < n; a++)
+                s[a - 1] = arguments[a];
+            return t.isFunction(e.triggerMethod) ? e.triggerMethod.apply(e, s) : r.apply(e, s)
         }
-        ,
-        a.mergeOptions = function(e, t) {
-            e && n.extend(this, n.pick(e, t))
-        }
-        ,
-        a.getOption = function(e, t) {
-            if (e && t)
-                return e.options && void 0 !== e.options[t] ? e.options[t] : e[t]
-        }
-        ,
-        a.proxyGetOption = function(e) {
-            return a.getOption(this, e)
-        }
-        ,
-        a._getValue = function(e, t, s) {
-            return n.isFunction(e) && (e = s ? e.apply(t, s) : e.call(t)),
-            e
-        }
-        ,
-        a.normalizeMethods = function(e) {
-            return n.reduce(e, function(e, t, s) {
-                return n.isFunction(t) || (t = this[t]),
-                t && (e[s] = t),
-                e
-            }, {}, this)
-        }
-        ,
-        a.normalizeUIString = function(e, t) {
-            return e.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(e) {
-                return t[e.slice(4)]
+        function i(e, n, s) {
+            e._getImmediateChildren && t.each(e._getImmediateChildren(), function(e) {
+                s(e) && a(e, n, e)
             })
         }
+        function o(e) {
+            return !e._isAttached
+        }
+        function d(e) {
+            return !!o(e) && (e._isAttached = !0,
+            !0)
+        }
+        function u(e) {
+            return e._isAttached
+        }
+        function l(e) {
+            return !!u(e) && (e._isAttached = !1,
+            !0)
+        }
+        function y(e) {
+            e._isAttached && e._isRendered && a(e, "dom:refresh", e)
+        }
+        function h() {
+            i(this, "before:attach", o)
+        }
+        function m() {
+            i(this, "attach", d),
+            y(this)
+        }
+        function T() {
+            i(this, "before:detach", u)
+        }
+        function c() {
+            i(this, "detach", l)
+        }
+        function p() {
+            y(this)
+        }
+        function M(e) {
+            e._areViewEventsMonitored || (e._areViewEventsMonitored = !0,
+            e.on({
+                "before:attach": h,
+                attach: m,
+                "before:detach": T,
+                detach: c,
+                render: p
+            }))
+        }
+        function f(e, n, s, r, a) {
+            var i = r.split(/\s+/);
+            t.each(i, function(t) {
+                var r = e[t];
+                if (!r)
+                    throw new G('Method "' + t + '" was configured as an event handler, but does not exist.');
+                e[a](n, s, r)
+            })
+        }
+        function S(e, n, s, r) {
+            if (n && s) {
+                if (!t.isObject(s))
+                    throw new G({
+                        message: "Bindings must be an object.",
+                        url: "marionette.functions.html#marionettebindevents"
+                    });
+                t.each(s, function(s, a) {
+                    return t.isString(s) ? void f(e, n, a, s, r) : void e[r](n, a, s)
+                })
+            }
+        }
+        function g(e, t) {
+            return S(this, e, t, "listenTo"),
+            this
+        }
+        function _(e, t) {
+            return S(this, e, t, "stopListening"),
+            this
+        }
+        function b(e, n, s, r) {
+            if (n && s) {
+                if (!t.isObject(s))
+                    throw new G({
+                        message: "Bindings must be an object.",
+                        url: "marionette.functions.html#marionettebindrequests"
+                    });
+                var a = Z.call(e, s);
+                n[r](a, e)
+            }
+        }
+        function v(e, t) {
+            return b(this, e, t, "reply"),
+            this
+        }
+        function D(e, t) {
+            return b(this, e, t, "stopReplying"),
+            this
+        }
+        function A(e) {
+            if (Array.isArray(e)) {
+                for (var t = 0, n = Array(e.length); t < e.length; t++)
+                    n[t] = e[t];
+                return n
+            }
+            return Array.from(e)
+        }
+        function C(e, n) {
+            return e.behaviorClass ? e.behaviorClass : t.isFunction(e) ? e : t.isFunction(Oe.Behaviors.behaviorsLookup) ? Oe.Behaviors.behaviorsLookup(e, n)[n] : Oe.Behaviors.behaviorsLookup[n]
+        }
+        function E(e, n) {
+            return t.chain(n).map(function(n, s) {
+                var r = C(n, s)
+                  , a = n === r ? {} : n
+                  , i = new r(a,e)
+                  , o = E(e, t.result(i, "behaviors"));
+                return [i].concat(o)
+            }).flatten().value()
+        }
+        function L(e, n) {
+            return [e + t.uniqueId(".evt"), n].join(" ")
+        }
+        function w(e, n) {
+            t.isString(n) && (n = {
+                event: n
+            });
+            var s = n.event
+              , r = n.preventDefault !== !1
+              , a = n.stopPropagation !== !1;
+            return function(t) {
+                r && t.preventDefault(),
+                a && t.stopPropagation(),
+                e.triggerMethod(s, e)
+            }
+        }
+        function H(e) {
+            e.supportsDestroyLifecycle || a(e, "before:destroy", e);
+            var t = !!e._isAttached;
+            t && a(e, "before:detach", e),
+            e.remove(),
+            t && (e._isAttached = !1,
+            a(e, "detach", e)),
+            e._isDestroyed = !0,
+            e.supportsDestroyLifecycle || a(e, "destroy", e)
+        }
+        function I(e, t) {
+            return e instanceof me ? e : k(e, t)
+        }
+        function k(e, n) {
+            var s = t.extend({}, n);
+            if (t.isString(e))
+                return t.extend(s, {
+                    el: e
+                }),
+                N(s);
+            if (t.isFunction(e))
+                return t.extend(s, {
+                    regionClass: e
+                }),
+                N(s);
+            if (t.isObject(e))
+                return e.selector && B("The selector option on a Region definition object is deprecated. Use el to pass a selector string"),
+                t.extend(s, {
+                    el: e.selector
+                }, e),
+                N(s);
+            throw new G({
+                message: "Improper region configuration type.",
+                url: "marionette.region.html#region-configuration-types"
+            })
+        }
+        function N(e) {
+            var n = e.regionClass
+              , s = t.omit(e, "regionClass");
+            return new n(s)
+        }
+        function O() {
+            throw new G({
+                message: "You must define where your behaviors are stored.",
+                url: "marionette.behaviors.md#behaviorslookup"
+            })
+        }
+        function x(e) {
+            return !!ke[e]
+        }
+        function P(e, t) {
+            return ke[e] = t
+        }
+        e = "default"in e ? e.default : e,
+        t = "default"in t ? t.default : t,
+        n = "default"in n ? n.default : n;
+        var F = "3.1.0"
+          , j = function(e) {
+            return function(t) {
+                for (var n = arguments.length, s = Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++)
+                    s[r - 1] = arguments[r];
+                return e.apply(t, s)
+            }
+        }
+          , Y = e.Model.extend
+          , B = function e(n, s) {
+            t.isObject(n) && (n = n.prev + " is going to be removed in the future. Please use " + n.next + " instead." + (n.url ? " See: " + n.url : "")),
+            Oe.DEV_MODE && (void 0 !== s && s || e._cache[n] || (e._warn("Deprecation warning: " + n),
+            e._cache[n] = !0))
+        };
+        B._console = "undefined" != typeof console ? console : {},
+        B._warn = function() {
+            var e = B._console.warn || B._console.log || t.noop;
+            return e.apply(B._console, arguments)
+        }
         ,
-        a.normalizeUIKeys = function(e, t) {
-            return n.reduce(e, function(e, n, s) {
-                var r = a.normalizeUIString(s, t);
-                return e[r] = n,
+        B._cache = {};
+        var R = function(t) {
+            return e.$.contains(document.documentElement, t)
+        }
+          , W = function(e, n) {
+            var s = this;
+            e && t.each(n, function(t) {
+                var n = e[t];
+                void 0 !== n && (s[t] = n)
+            })
+        }
+          , J = function(e) {
+            if (e)
+                return this.options && void 0 !== this.options[e] ? this.options[e] : this[e]
+        }
+          , Z = function(e) {
+            var n = this;
+            return t.reduce(e, function(e, s, r) {
+                return t.isFunction(s) || (s = n[s]),
+                s && (e[r] = s),
                 e
             }, {})
         }
-        ,
-        a.normalizeUIValues = function(e, t, s) {
-            return n.each(e, function(r, i) {
-                n.isString(r) ? e[i] = a.normalizeUIString(r, t) : n.isObject(r) && n.isArray(s) && (n.extend(r, a.normalizeUIValues(n.pick(r, s), t)),
-                n.each(s, function(e) {
-                    var s = r[e];
-                    n.isString(s) && (r[e] = a.normalizeUIString(s, t))
-                }))
-            }),
-            e
-        }
-        ,
-        a.actAsCollection = function(e, t) {
-            var s = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck"];
-            n.each(s, function(s) {
-                e[s] = function() {
-                    var e = n.values(n.result(this, t))
-                      , r = [e].concat(n.toArray(arguments));
-                    return n[s].apply(n, r)
-                }
-            })
-        }
-        ;
-        var i = a.deprecate = function(e, t) {
-            n.isObject(e) && (e = e.prev + " is going to be removed in the future. Please use " + e.next + " instead." + (e.url ? " See: " + e.url : "")),
-            void 0 !== t && t || i._cache[e] || (i._warn("Deprecation warning: " + e),
-            i._cache[e] = !0)
-        }
-        ;
-        i._console = "undefined" != typeof console ? console : {},
-        i._warn = function() {
-            var e = i._console.warn || i._console.log || function() {}
-            ;
-            return e.apply(i._console, arguments)
-        }
-        ,
-        i._cache = {},
-        a._triggerMethod = function() {
-            function e(e, t, n) {
-                return n.toUpperCase()
-            }
-            var t = /(^|:)(\w)/gi;
-            return function(s, r, a) {
-                var i = arguments.length < 3;
-                i && (a = r,
-                r = a[0]);
-                var o, d = "on" + r.replace(t, e), u = s[d];
-                return n.isFunction(u) && (o = u.apply(s, i ? n.rest(a) : a)),
-                n.isFunction(s.trigger) && (i + a.length > 1 ? s.trigger.apply(s, i ? a : [r].concat(n.drop(a, 0))) : s.trigger(r)),
-                o
-            }
-        }(),
-        a.triggerMethod = function(e) {
-            return a._triggerMethod(this, arguments)
-        }
-        ,
-        a.triggerMethodOn = function(e) {
-            var t = n.isFunction(e.triggerMethod) ? e.triggerMethod : a.triggerMethod;
-            return t.apply(e, n.rest(arguments))
-        }
-        ,
-        a.MonitorDOMRefresh = function(e) {
-            function t() {
-                e._isShown = !0,
-                s()
-            }
-            function n() {
-                e._isRendered = !0,
-                s()
-            }
-            function s() {
-                e._isShown && e._isRendered && a.isNodeAttached(e.el) && a.triggerMethodOn(e, "dom:refresh", e)
-            }
-            e._isDomRefreshMonitored || (e._isDomRefreshMonitored = !0,
-            e.on({
-                show: t,
-                render: n
-            }))
-        }
-        ,
-        function(e) {
-            function t(t, s, r, a) {
-                var i = a.split(/\s+/);
-                n.each(i, function(n) {
-                    var a = t[n];
-                    if (!a)
-                        throw new e.Error('Method "' + n + '" was configured as an event handler, but does not exist.');
-                    t.listenTo(s, r, a)
-                })
-            }
-            function s(e, t, n, s) {
-                e.listenTo(t, n, s)
-            }
-            function r(e, t, s, r) {
-                var a = r.split(/\s+/);
-                n.each(a, function(n) {
-                    var r = e[n];
-                    e.stopListening(t, s, r)
-                })
-            }
-            function a(e, t, n, s) {
-                e.stopListening(t, n, s)
-            }
-            function i(t, s, r, a, i) {
-                if (s && r) {
-                    if (!n.isObject(r))
-                        throw new e.Error({
-                            message: "Bindings must be an object or function.",
-                            url: "marionette.functions.html#marionettebindentityevents"
-                        });
-                    r = e._getValue(r, t),
-                    n.each(r, function(e, r) {
-                        n.isFunction(e) ? a(t, s, r, e) : i(t, s, r, e)
-                    })
-                }
-            }
-            e.bindEntityEvents = function(e, n, r) {
-                i(e, n, r, s, t)
-            }
-            ,
-            e.unbindEntityEvents = function(e, t, n) {
-                i(e, t, n, a, r)
-            }
-            ,
-            e.proxyBindEntityEvents = function(t, n) {
-                return e.bindEntityEvents(this, t, n)
-            }
-            ,
-            e.proxyUnbindEntityEvents = function(t, n) {
-                return e.unbindEntityEvents(this, t, n)
-            }
-        }(a);
-        var o = ["description", "fileName", "lineNumber", "name", "message", "number"];
-        return a.Error = a.extend.call(Error, {
-            urlRoot: "http://marionettejs.com/docs/v" + a.VERSION + "/",
-            constructor: function(e, t) {
-                n.isObject(e) ? (t = e,
-                e = t.message) : t || (t = {});
+          , K = /(^|:)(\w)/gi
+          , z = t.memoize(function(e) {
+            return "on" + e.replace(K, s)
+        })
+          , U = ["description", "fileName", "lineNumber", "name", "message", "number"]
+          , G = Y.call(Error, {
+            urlRoot: "http://marionettejs.com/docs/v" + F + "/",
+            constructor: function(e, n) {
+                t.isObject(e) ? (n = e,
+                e = n.message) : n || (n = {});
                 var s = Error.call(this, e);
-                n.extend(this, n.pick(s, o), n.pick(t, o)),
+                t.extend(this, t.pick(s, U), t.pick(n, U)),
                 this.captureStackTrace(),
-                t.url && (this.url = this.urlRoot + t.url)
+                n.url && (this.url = this.urlRoot + n.url)
             },
             captureStackTrace: function() {
-                Error.captureStackTrace && Error.captureStackTrace(this, a.Error)
+                Error.captureStackTrace && Error.captureStackTrace(this, G)
             },
             toString: function() {
                 return this.name + ": " + this.message + (this.url ? " See: " + this.url : "")
             }
-        }),
-        a.Error.extend = a.extend,
-        a.Callbacks = function() {
-            this._deferred = a.Deferred(),
-            this._callbacks = []
+        });
+        G.extend = Y;
+        var V = function() {
+            for (var e = arguments.length, n = Array(e), s = 0; s < e; s++)
+                n[s] = arguments[s];
+            this.options = t.extend.apply(t, [{}, t.result(this, "options")].concat(n))
         }
-        ,
-        n.extend(a.Callbacks.prototype, {
-            add: function(e, t) {
-                var s = n.result(this._deferred, "promise");
-                this._callbacks.push({
-                    cb: e,
-                    ctx: t
-                }),
-                s.then(function(n) {
-                    t && (n.context = t),
-                    e.call(n.context, n.options)
-                })
-            },
-            run: function(e, t) {
-                this._deferred.resolve({
-                    options: e,
-                    context: t
-                })
-            },
-            reset: function() {
-                var e = this._callbacks;
-                this._deferred = a.Deferred(),
-                this._callbacks = [],
-                n.each(e, function(e) {
-                    this.add(e.cb, e.ctx)
-                }, this)
-            }
-        }),
-        a.Controller = function(e) {
-            this.options = e || {},
-            n.isFunction(this.initialize) && this.initialize(this.options)
+          , $ = {
+            normalizeMethods: Z,
+            _setOptions: V,
+            mergeOptions: W,
+            getOption: J,
+            bindEvents: g,
+            unbindEvents: _
         }
-        ,
-        a.Controller.extend = a.extend,
-        n.extend(a.Controller.prototype, t.Events, {
-            destroy: function() {
-                return a._triggerMethod(this, "before:destroy", arguments),
-                a._triggerMethod(this, "destroy", arguments),
-                this.stopListening(),
-                this.off(),
-                this
+          , q = {
+            _initRadio: function() {
+                var e = t.result(this, "channelName");
+                if (e) {
+                    if (!n)
+                        throw new G({
+                            name: "BackboneRadioMissing",
+                            message: 'The dependency "backbone.radio" is missing.'
+                        });
+                    var s = this._channel = n.channel(e)
+                      , r = t.result(this, "radioEvents");
+                    this.bindEvents(s, r);
+                    var a = t.result(this, "radioRequests");
+                    this.bindRequests(s, a),
+                    this.on("destroy", this._destroyRadio)
+                }
             },
-            triggerMethod: a.triggerMethod,
-            mergeOptions: a.mergeOptions,
-            getOption: a.proxyGetOption
-        }),
-        a.Object = function(e) {
-            this.options = n.extend({}, n.result(this, "options"), e),
+            _destroyRadio: function() {
+                this._channel.stopReplying(null , null , this)
+            },
+            getChannel: function() {
+                return this._channel
+            },
+            bindEvents: g,
+            unbindEvents: _,
+            bindRequests: v,
+            unbindRequests: D
+        }
+          , X = ["channelName", "radioEvents", "radioRequests"]
+          , Q = function(e) {
+            this._setOptions(e),
+            this.mergeOptions(e, X),
+            this.cid = t.uniqueId(this.cidPrefix),
+            this._initRadio(),
             this.initialize.apply(this, arguments)
-        }
-        ,
-        a.Object.extend = a.extend,
-        n.extend(a.Object.prototype, t.Events, {
+        };
+        Q.extend = Y,
+        t.extend(Q.prototype, e.Events, $, q, {
+            cidPrefix: "mno",
+            _isDestroyed: !1,
+            isDestroyed: function() {
+                return this._isDestroyed
+            },
             initialize: function() {},
-            destroy: function(e) {
-                return e = e || {},
-                this.triggerMethod("before:destroy", e),
-                this.triggerMethod("destroy", e),
+            destroy: function() {
+                if (this._isDestroyed)
+                    return this;
+                for (var e = arguments.length, t = Array(e), n = 0; n < e; n++)
+                    t[n] = arguments[n];
+                return this.triggerMethod.apply(this, ["before:destroy", this].concat(t)),
+                this._isDestroyed = !0,
+                this.triggerMethod.apply(this, ["destroy", this].concat(t)),
                 this.stopListening(),
                 this
             },
-            triggerMethod: a.triggerMethod,
-            mergeOptions: a.mergeOptions,
-            getOption: a.proxyGetOption,
-            bindEntityEvents: a.proxyBindEntityEvents,
-            unbindEntityEvents: a.proxyUnbindEntityEvents
-        }),
-        a.Region = a.Object.extend({
-            constructor: function(e) {
-                if (this.options = e || {},
-                this.el = this.getOption("el"),
-                this.el = this.el instanceof t.$ ? this.el[0] : this.el,
-                !this.el)
-                    throw new a.Error({
-                        name: "NoElError",
-                        message: 'An "el" must be specified for a region.'
-                    });
-                this.$el = this.getEl(this.el),
-                a.Object.call(this, e)
-            },
-            show: function(e, t) {
-                if (this._ensureElement()) {
-                    this._ensureViewIsIntact(e),
-                    a.MonitorDOMRefresh(e);
-                    var s = t || {}
-                      , r = e !== this.currentView
-                      , i = !!s.preventDestroy
-                      , o = !!s.forceShow
-                      , d = !!this.currentView
-                      , u = r && !i
-                      , l = r || o;
-                    if (d && this.triggerMethod("before:swapOut", this.currentView, this, t),
-                    this.currentView && r && delete this.currentView._parent,
-                    u ? this.empty() : d && l && this.currentView.off("destroy", this.empty, this),
-                    l) {
-                        e.once("destroy", this.empty, this),
-                        e._parent = this,
-                        this._renderView(e),
-                        d && this.triggerMethod("before:swap", e, this, t),
-                        this.triggerMethod("before:show", e, this, t),
-                        a.triggerMethodOn(e, "before:show", e, this, t),
-                        d && this.triggerMethod("swapOut", this.currentView, this, t);
-                        var y = a.isNodeAttached(this.el)
-                          , h = []
-                          , m = n.extend({
-                            triggerBeforeAttach: this.triggerBeforeAttach,
-                            triggerAttach: this.triggerAttach
-                        }, s);
-                        return y && m.triggerBeforeAttach && (h = this._displayedViews(e),
-                        this._triggerAttach(h, "before:")),
-                        this.attachHtml(e),
-                        this.currentView = e,
-                        y && m.triggerAttach && (h = this._displayedViews(e),
-                        this._triggerAttach(h)),
-                        d && this.triggerMethod("swap", e, this, t),
-                        this.triggerMethod("show", e, this, t),
-                        a.triggerMethodOn(e, "show", e, this, t),
-                        this
-                    }
-                    return this
-                }
-            },
-            triggerBeforeAttach: !0,
-            triggerAttach: !0,
-            _triggerAttach: function(e, t) {
-                var s = (t || "") + "attach";
-                n.each(e, function(e) {
-                    a.triggerMethodOn(e, s, e, this)
-                }, this)
-            },
-            _displayedViews: function(e) {
-                return n.union([e], n.result(e, "_getNestedViews") || [])
-            },
-            _renderView: function(e) {
-                e.supportsRenderLifecycle || a.triggerMethodOn(e, "before:render", e),
-                e.render(),
-                e.supportsRenderLifecycle || a.triggerMethodOn(e, "render", e)
-            },
-            _ensureElement: function() {
-                if (n.isObject(this.el) || (this.$el = this.getEl(this.el),
-                this.el = this.$el[0]),
-                !this.$el || 0 === this.$el.length) {
-                    if (this.getOption("allowMissingEl"))
-                        return !1;
-                    throw new a.Error('An "el" ' + this.$el.selector + " must exist in DOM")
-                }
-                return !0
-            },
-            _ensureViewIsIntact: function(e) {
-                if (!e)
-                    throw new a.Error({
-                        name: "ViewNotValid",
-                        message: "The view passed is undefined and therefore invalid. You must pass a view instance to show."
-                    });
-                if (e.isDestroyed)
-                    throw new a.Error({
-                        name: "ViewDestroyedError",
-                        message: 'View (cid: "' + e.cid + '") has already been destroyed and cannot be used.'
-                    })
-            },
-            getEl: function(e) {
-                return t.$(e, a._getValue(this.options.parentEl, this))
-            },
-            attachHtml: function(e) {
-                this.$el.contents().detach(),
-                this.el.appendChild(e.el)
-            },
-            empty: function(e) {
-                var t = this.currentView
-                  , n = e || {}
-                  , s = !!n.preventDestroy;
-                return t ? (t.off("destroy", this.empty, this),
-                this.triggerMethod("before:empty", t),
-                s || this._destroyView(),
-                this.triggerMethod("empty", t),
-                delete this.currentView,
-                s && this.$el.contents().detach(),
-                this) : this
-            },
-            _destroyView: function() {
-                var e = this.currentView;
-                e.isDestroyed || (e.supportsDestroyLifecycle || a.triggerMethodOn(e, "before:destroy", e),
-                e.destroy ? e.destroy() : (e.remove(),
-                e.isDestroyed = !0),
-                e.supportsDestroyLifecycle || a.triggerMethodOn(e, "destroy", e))
-            },
-            attachView: function(e) {
-                return this.currentView && delete this.currentView._parent,
-                e._parent = this,
-                this.currentView = e,
-                this
-            },
-            hasView: function() {
-                return !!this.currentView
-            },
-            reset: function() {
-                return this.empty(),
-                this.$el && (this.el = this.$el.selector),
-                delete this.$el,
-                this
-            }
-        }, {
-            buildRegion: function(e, t) {
-                if (n.isString(e))
-                    return this._buildRegionFromSelector(e, t);
-                if (e.selector || e.el || e.regionClass)
-                    return this._buildRegionFromObject(e, t);
-                if (n.isFunction(e))
-                    return this._buildRegionFromRegionClass(e);
-                throw new a.Error({
-                    message: "Improper region configuration type.",
-                    url: "marionette.region.html#region-configuration-types"
-                })
-            },
-            _buildRegionFromSelector: function(e, t) {
-                return new t({
-                    el: e
-                })
-            },
-            _buildRegionFromObject: function(e, t) {
-                var s = e.regionClass || t
-                  , r = n.omit(e, "selector", "regionClass");
-                return e.selector && !r.el && (r.el = e.selector),
-                new s(r)
-            },
-            _buildRegionFromRegionClass: function(e) {
-                return new e
-            }
-        }),
-        a.RegionManager = a.Controller.extend({
-            constructor: function(e) {
-                this._regions = {},
-                this.length = 0,
-                a.Controller.call(this, e),
-                this.addRegions(this.getOption("regions"))
-            },
-            addRegions: function(e, t) {
-                return e = a._getValue(e, this, arguments),
-                n.reduce(e, function(e, s, r) {
-                    return n.isString(s) && (s = {
-                        selector: s
-                    }),
-                    s.selector && (s = n.defaults({}, s, t)),
-                    e[r] = this.addRegion(r, s),
-                    e
-                }, {}, this)
-            },
-            addRegion: function(e, t) {
-                var n;
-                return n = t instanceof a.Region ? t : a.Region.buildRegion(t, a.Region),
-                this.triggerMethod("before:add:region", e, n),
-                n._parent = this,
-                this._store(e, n),
-                this.triggerMethod("add:region", e, n),
-                n
-            },
-            get: function(e) {
-                return this._regions[e]
-            },
-            getRegions: function() {
-                return n.clone(this._regions)
-            },
-            removeRegion: function(e) {
-                var t = this._regions[e];
-                return this._remove(e, t),
-                t
-            },
-            removeRegions: function() {
-                var e = this.getRegions();
-                return n.each(this._regions, function(e, t) {
-                    this._remove(t, e)
-                }, this),
-                e
-            },
-            emptyRegions: function() {
-                var e = this.getRegions();
-                return n.invoke(e, "empty"),
-                e
-            },
-            destroy: function() {
-                return this.removeRegions(),
-                a.Controller.prototype.destroy.apply(this, arguments)
-            },
-            _store: function(e, t) {
-                this._regions[e] || this.length++,
-                this._regions[e] = t
-            },
-            _remove: function(e, t) {
-                this.triggerMethod("before:remove:region", e, t),
-                t.empty(),
-                t.stopListening(),
-                delete t._parent,
-                delete this._regions[e],
-                this.length--,
-                this.triggerMethod("remove:region", e, t)
-            }
-        }),
-        a.actAsCollection(a.RegionManager.prototype, "_regions"),
-        a.TemplateCache = function(e) {
+            triggerMethod: r
+        });
+        var ee = function(e) {
             this.templateId = e
-        }
-        ,
-        n.extend(a.TemplateCache, {
+        };
+        t.extend(ee, {
             templateCaches: {},
             get: function(e, t) {
                 var n = this.templateCaches[e];
-                return n || (n = new a.TemplateCache(e),
+                return n || (n = new ee(e),
                 this.templateCaches[e] = n),
                 n.load(t)
             },
             clear: function() {
-                var e, t = n.toArray(arguments), s = t.length;
-                if (s > 0)
-                    for (e = 0; e < s; e++)
-                        delete this.templateCaches[t[e]];
+                for (var e = void 0, t = arguments.length, n = Array(t), s = 0; s < t; s++)
+                    n[s] = arguments[s];
+                var r = n.length;
+                if (r > 0)
+                    for (e = 0; e < r; e++)
+                        delete this.templateCaches[n[e]];
                 else
                     this.templateCaches = {}
             }
         }),
-        n.extend(a.TemplateCache.prototype, {
+        t.extend(ee.prototype, {
             load: function(e) {
                 if (this.compiledTemplate)
                     return this.compiledTemplate;
@@ -20620,549 +21524,1003 @@
                 return this.compiledTemplate = this.compileTemplate(t, e),
                 this.compiledTemplate
             },
-            loadTemplate: function(e, n) {
-                var s = t.$(e);
+            loadTemplate: function(t, n) {
+                var s = e.$(t);
                 if (!s.length)
-                    throw new a.Error({
+                    throw new G({
                         name: "NoTemplateError",
-                        message: 'Could not find template: "' + e + '"'
+                        message: 'Could not find template: "' + t + '"'
                     });
                 return s.html()
             },
-            compileTemplate: function(e, t) {
-                return n.template(e, t)
+            compileTemplate: function(e, n) {
+                return t.template(e, n)
             }
-        }),
-        a.Renderer = {
-            render: function(e, t) {
-                if (!e)
-                    throw new a.Error({
-                        name: "TemplateNotFoundError",
-                        message: "Cannot render the template since its false, null or undefined."
-                    });
-                var s = n.isFunction(e) ? e : a.TemplateCache.get(e);
-                return s(t)
+        });
+        var te = t.invokeMap || t.invoke
+          , ne = {
+            _initBehaviors: function() {
+                var e = t.result(this, "behaviors");
+                this._behaviors = t.isObject(e) ? E(this, e) : {}
+            },
+            _getBehaviorTriggers: function() {
+                var e = te(this._behaviors, "getTriggers");
+                return t.extend.apply(t, [{}].concat(A(e)))
+            },
+            _getBehaviorEvents: function() {
+                var e = te(this._behaviors, "getEvents");
+                return t.extend.apply(t, [{}].concat(A(e)))
+            },
+            _proxyBehaviorViewProperties: function() {
+                te(this._behaviors, "proxyViewProperties")
+            },
+            _delegateBehaviorEntityEvents: function() {
+                te(this._behaviors, "delegateEntityEvents")
+            },
+            _undelegateBehaviorEntityEvents: function() {
+                te(this._behaviors, "undelegateEntityEvents")
+            },
+            _destroyBehaviors: function(e) {
+                te.apply(void 0, [this._behaviors, "destroy"].concat(A(e)))
+            },
+            _bindBehaviorUIElements: function() {
+                te(this._behaviors, "bindUIElements")
+            },
+            _unbindBehaviorUIElements: function() {
+                te(this._behaviors, "unbindUIElements")
+            },
+            _triggerEventOnBehaviors: function() {
+                for (var e = this._behaviors, t = 0, n = e && e.length; t < n; t++)
+                    r.apply(e[t], arguments)
             }
-        },
-        a.View = t.View.extend({
-            isDestroyed: !1,
-            supportsRenderLifecycle: !0,
-            supportsDestroyLifecycle: !0,
-            constructor: function(e) {
-                this.render = n.bind(this.render, this),
-                e = a._getValue(e, this),
-                this.options = n.extend({}, n.result(this, "options"), e),
-                this._behaviors = a.Behaviors(this),
-                t.View.call(this, this.options),
-                a.MonitorDOMRefresh(this)
+        }
+          , se = {
+            _delegateEntityEvents: function(e, n) {
+                this._undelegateEntityEvents(e, n);
+                var s = t.result(this, "modelEvents");
+                g.call(this, e, s);
+                var r = t.result(this, "collectionEvents");
+                g.call(this, n, r)
             },
-            getTemplate: function() {
-                return this.getOption("template")
-            },
-            serializeModel: function(e) {
-                return e.toJSON.apply(e, n.rest(arguments))
-            },
-            mixinTemplateHelpers: function(e) {
-                e = e || {};
-                var t = this.getOption("templateHelpers");
-                return t = a._getValue(t, this),
-                n.extend(e, t)
-            },
+            _undelegateEntityEvents: function(e, n) {
+                var s = t.result(this, "modelEvents");
+                _.call(this, e, s);
+                var r = t.result(this, "collectionEvents");
+                _.call(this, n, r)
+            }
+        }
+          , re = /^(\S+)\s*(.*)$/
+          , ae = function(e) {
+            var t = e.match(re);
+            return L(t[1], t[2])
+        }
+          , ie = {
+            _getViewTriggers: function(e, n) {
+                return t.reduce(n, function(t, n, s) {
+                    return s = ae(s),
+                    t[s] = w(e, n),
+                    t
+                }, {})
+            }
+        }
+          , oe = function(e, n) {
+            return t.reduce(e, function(e, t, s) {
+                var r = de(s, n);
+                return e[r] = t,
+                e
+            }, {})
+        }
+          , de = function(e, t) {
+            return e.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(e) {
+                return t[e.slice(4)]
+            })
+        }
+          , ue = function e(n, s, r) {
+            return t.each(n, function(a, i) {
+                t.isString(a) ? n[i] = de(a, s) : t.isObject(a) && t.isArray(r) && (t.extend(a, e(t.pick(a, r), s)),
+                t.each(r, function(e) {
+                    var n = a[e];
+                    t.isString(n) && (a[e] = de(n, s))
+                }))
+            }),
+            n
+        }
+          , le = {
             normalizeUIKeys: function(e) {
-                var t = n.result(this, "_uiBindings");
-                return a.normalizeUIKeys(e, t || n.result(this, "ui"))
+                var t = this._getUIBindings();
+                return oe(e, t)
+            },
+            normalizeUIString: function(e) {
+                var t = this._getUIBindings();
+                return de(e, t)
             },
             normalizeUIValues: function(e, t) {
-                var s = n.result(this, "ui")
-                  , r = n.result(this, "_uiBindings");
-                return a.normalizeUIValues(e, r || s, t)
+                var n = this._getUIBindings();
+                return ue(e, n, t)
             },
-            configureTriggers: function() {
-                if (this.triggers) {
-                    var e = this.normalizeUIKeys(n.result(this, "triggers"));
-                    return n.reduce(e, function(e, t, n) {
-                        return e[n] = this._buildViewTrigger(t),
-                        e
-                    }, {}, this)
+            _getUIBindings: function() {
+                var e = t.result(this, "_uiBindings")
+                  , n = t.result(this, "ui");
+                return e || n
+            },
+            _bindUIElements: function() {
+                var e = this;
+                if (this.ui) {
+                    this._uiBindings || (this._uiBindings = this.ui);
+                    var n = t.result(this, "_uiBindings");
+                    this._ui = {},
+                    t.each(n, function(t, n) {
+                        e._ui[n] = e.$(t)
+                    }),
+                    this.ui = this._ui
                 }
             },
-            delegateEvents: function(e) {
-                return this._delegateDOMEvents(e),
-                this.bindEntityEvents(this.model, this.getOption("modelEvents")),
-                this.bindEntityEvents(this.collection, this.getOption("collectionEvents")),
-                n.each(this._behaviors, function(e) {
-                    e.bindEntityEvents(this.model, e.getOption("modelEvents")),
-                    e.bindEntityEvents(this.collection, e.getOption("collectionEvents"))
-                }, this),
+            _unbindUIElements: function() {
+                var e = this;
+                this.ui && this._uiBindings && (t.each(this.ui, function(t, n) {
+                    delete e.ui[n]
+                }),
+                this.ui = this._uiBindings,
+                delete this._uiBindings,
+                delete this._ui)
+            },
+            _getUI: function(e) {
+                return this._ui[e]
+            }
+        }
+          , ye = {
+            supportsRenderLifecycle: !0,
+            supportsDestroyLifecycle: !0,
+            _isDestroyed: !1,
+            isDestroyed: function() {
+                return !!this._isDestroyed
+            },
+            _isRendered: !1,
+            isRendered: function() {
+                return !!this._isRendered
+            },
+            _isAttached: !1,
+            isAttached: function() {
+                return !!this._isAttached
+            },
+            delegateEvents: function(n) {
+                this._proxyBehaviorViewProperties(),
+                this._buildEventProxies();
+                var s = this._getEvents(n);
+                "undefined" == typeof n && (this.events = s);
+                var r = t.extend({}, this._getBehaviorEvents(), s, this._getBehaviorTriggers(), this.getTriggers());
+                return e.View.prototype.delegateEvents.call(this, r),
                 this
             },
-            _delegateDOMEvents: function(e) {
-                var s = a._getValue(e || this.events, this);
-                s = this.normalizeUIKeys(s),
-                n.isUndefined(e) && (this.events = s);
-                var r = {}
-                  , i = n.result(this, "behaviorEvents") || {}
-                  , o = this.configureTriggers()
-                  , d = n.result(this, "behaviorTriggers") || {};
-                n.extend(r, i, s, o, d),
-                t.View.prototype.delegateEvents.call(this, r)
+            _getEvents: function(e) {
+                var n = e || this.events;
+                return t.isFunction(n) ? this.normalizeUIKeys(n.call(this)) : this.normalizeUIKeys(n)
             },
-            undelegateEvents: function() {
-                return t.View.prototype.undelegateEvents.apply(this, arguments),
-                this.unbindEntityEvents(this.model, this.getOption("modelEvents")),
-                this.unbindEntityEvents(this.collection, this.getOption("collectionEvents")),
-                n.each(this._behaviors, function(e) {
-                    e.unbindEntityEvents(this.model, e.getOption("modelEvents")),
-                    e.unbindEntityEvents(this.collection, e.getOption("collectionEvents"))
-                }, this),
+            getTriggers: function() {
+                if (this.triggers) {
+                    var e = this.normalizeUIKeys(t.result(this, "triggers"));
+                    return this._getViewTriggers(this, e)
+                }
+            },
+            delegateEntityEvents: function() {
+                return this._delegateEntityEvents(this.model, this.collection),
+                this._delegateBehaviorEntityEvents(),
+                this
+            },
+            undelegateEntityEvents: function() {
+                return this._undelegateEntityEvents(this.model, this.collection),
+                this._undelegateBehaviorEntityEvents(),
                 this
             },
             _ensureViewIsIntact: function() {
-                if (this.isDestroyed)
-                    throw new a.Error({
+                if (this._isDestroyed)
+                    throw new G({
                         name: "ViewDestroyedError",
                         message: 'View (cid: "' + this.cid + '") has already been destroyed and cannot be used.'
                     })
             },
             destroy: function() {
-                if (this.isDestroyed)
+                if (this._isDestroyed)
                     return this;
-                var e = n.toArray(arguments);
-                return this.triggerMethod.apply(this, ["before:destroy"].concat(e)),
-                this.isDestroyed = !0,
-                this.triggerMethod.apply(this, ["destroy"].concat(e)),
+                for (var e = !!this._isAttached, t = arguments.length, n = Array(t), s = 0; s < t; s++)
+                    n[s] = arguments[s];
+                return this.triggerMethod.apply(this, ["before:destroy", this].concat(n)),
+                e && this.triggerMethod("before:detach", this),
                 this.unbindUIElements(),
-                this.isRendered = !1,
-                this.remove(),
-                n.invoke(this._behaviors, "destroy", e),
+                this._removeElement(),
+                e && (this._isAttached = !1,
+                this.triggerMethod("detach", this)),
+                this._removeChildren(),
+                this._destroyBehaviors(n),
+                this._isDestroyed = !0,
+                this._isRendered = !1,
+                this.triggerMethod.apply(this, ["destroy", this].concat(n)),
+                this.stopListening(),
                 this
             },
             bindUIElements: function() {
-                this._bindUIElements(),
-                n.invoke(this._behaviors, this._bindUIElements)
-            },
-            _bindUIElements: function() {
-                if (this.ui) {
-                    this._uiBindings || (this._uiBindings = this.ui);
-                    var e = n.result(this, "_uiBindings");
-                    this.ui = {},
-                    n.each(e, function(e, t) {
-                        this.ui[t] = this.$(e)
-                    }, this)
-                }
+                return this._bindUIElements(),
+                this._bindBehaviorUIElements(),
+                this
             },
             unbindUIElements: function() {
-                this._unbindUIElements(),
-                n.invoke(this._behaviors, this._unbindUIElements)
+                return this._unbindUIElements(),
+                this._unbindBehaviorUIElements(),
+                this
             },
-            _unbindUIElements: function() {
-                this.ui && this._uiBindings && (n.each(this.ui, function(e, t) {
-                    delete this.ui[t]
-                }, this),
-                this.ui = this._uiBindings,
-                delete this._uiBindings)
+            getUI: function(e) {
+                return this._ensureViewIsIntact(),
+                this._getUI(e)
             },
-            _buildViewTrigger: function(e) {
-                var t = n.defaults({}, e, {
-                    preventDefault: !0,
-                    stopPropagation: !0
-                })
-                  , s = n.isObject(e) ? t.event : e;
-                return function(e) {
-                    e && (e.preventDefault && t.preventDefault && e.preventDefault(),
-                    e.stopPropagation && t.stopPropagation && e.stopPropagation());
-                    var n = {
-                        view: this,
-                        model: this.model,
-                        collection: this.collection
-                    };
-                    this.triggerMethod(s, n)
-                }
-            },
-            setElement: function() {
-                var e = t.View.prototype.setElement.apply(this, arguments);
-                return n.invoke(this._behaviors, "proxyViewProperties", this),
-                e
-            },
+            childViewEventPrefix: "childview",
             triggerMethod: function() {
-                var e = a._triggerMethod(this, arguments);
-                return this._triggerEventOnBehaviors(arguments),
-                this._triggerEventOnParentLayout(arguments[0], n.rest(arguments)),
+                var e = r.apply(this, arguments);
+                return this._triggerEventOnBehaviors.apply(this, arguments),
+                this._triggerEventOnParentLayout.apply(this, arguments),
                 e
             },
-            _triggerEventOnBehaviors: function(e) {
-                for (var t = a._triggerMethod, n = this._behaviors, s = 0, r = n && n.length; s < r; s++)
-                    t(n[s], e)
+            _buildEventProxies: function() {
+                this._childViewEvents = t.result(this, "childViewEvents"),
+                this._childViewTriggers = t.result(this, "childViewTriggers")
             },
-            _triggerEventOnParentLayout: function(e, t) {
-                var s = this._parentLayoutView();
-                if (s) {
-                    var r = a.getOption(s, "childViewEventPrefix")
-                      , i = r + ":" + e
-                      , o = [this].concat(t);
-                    a._triggerMethod(s, i, o);
-                    var d = a.getOption(s, "childEvents");
-                    d = a._getValue(d, s);
-                    var u = s.normalizeMethods(d);
-                    u && n.isFunction(u[e]) && u[e].apply(s, o)
-                }
+            _triggerEventOnParentLayout: function() {
+                var e = this._parentView();
+                e && e._childViewEventHandler.apply(e, arguments)
             },
-            _getImmediateChildren: function() {
-                return []
-            },
-            _getNestedViews: function() {
-                var e = this._getImmediateChildren();
-                return e.length ? n.reduce(e, function(e, t) {
-                    return t._getNestedViews ? e.concat(t._getNestedViews()) : e
-                }, e) : e
-            },
-            _parentLayoutView: function() {
+            _parentView: function() {
                 for (var e = this._parent; e; ) {
-                    if (e instanceof a.LayoutView)
+                    if (e instanceof Me)
                         return e;
                     e = e._parent
                 }
             },
-            normalizeMethods: a.normalizeMethods,
-            mergeOptions: a.mergeOptions,
-            getOption: a.proxyGetOption,
-            bindEntityEvents: a.proxyBindEntityEvents,
-            unbindEntityEvents: a.proxyUnbindEntityEvents
-        }),
-        a.ItemView = a.View.extend({
-            constructor: function() {
-                a.View.apply(this, arguments)
+            _childViewEventHandler: function(e) {
+                for (var n = this.normalizeMethods(this._childViewEvents), s = arguments.length, r = Array(s > 1 ? s - 1 : 0), a = 1; a < s; a++)
+                    r[a - 1] = arguments[a];
+                "undefined" != typeof n && t.isFunction(n[e]) && n[e].apply(this, r);
+                var i = this._childViewTriggers;
+                i && t.isString(i[e]) && this.triggerMethod.apply(this, [i[e]].concat(r));
+                var o = t.result(this, "childViewEventPrefix");
+                if (o !== !1) {
+                    var d = o + ":" + e;
+                    this.triggerMethod.apply(this, [d].concat(r))
+                }
+            }
+        };
+        t.extend(ye, ne, $, se, ie, le);
+        var he = ["allowMissingEl", "parentEl", "replaceElement"]
+          , me = Q.extend({
+            cidPrefix: "mnr",
+            replaceElement: !1,
+            _isReplaced: !1,
+            constructor: function(t) {
+                if (this._setOptions(t),
+                this.mergeOptions(t, he),
+                this._initEl = this.el = this.getOption("el"),
+                this.el = this.el instanceof e.$ ? this.el[0] : this.el,
+                !this.el)
+                    throw new G({
+                        name: "NoElError",
+                        message: 'An "el" must be specified for a region.'
+                    });
+                this.$el = this.getEl(this.el),
+                Q.call(this, t)
             },
-            serializeData: function() {
-                if (!this.model && !this.collection)
-                    return {};
-                var e = [this.model || this.collection];
-                return arguments.length && e.push.apply(e, arguments),
-                this.model ? this.serializeModel.apply(this, e) : {
-                    items: this.serializeCollection.apply(this, e)
+            show: function(e, t) {
+                if (this._ensureElement(t))
+                    return this._ensureView(e),
+                    e === this.currentView ? this : (this.triggerMethod("before:show", this, e, t),
+                    M(e),
+                    this.empty(t),
+                    e.on("destroy", this._empty, this),
+                    e._parent = this,
+                    this._renderView(e),
+                    this._attachView(e, t),
+                    this.triggerMethod("show", this, e, t),
+                    this)
+            },
+            _renderView: function(e) {
+                e._isRendered || (e.supportsRenderLifecycle || a(e, "before:render", e),
+                e.render(),
+                e.supportsRenderLifecycle || (e._isRendered = !0,
+                a(e, "render", e)))
+            },
+            _attachView: function(e) {
+                var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}
+                  , s = !e._isAttached && R(this.el)
+                  , r = "undefined" == typeof n.replaceElement ? !!t.result(this, "replaceElement") : !!n.replaceElement;
+                s && a(e, "before:attach", e),
+                r ? this._replaceEl(e) : this.attachHtml(e),
+                s && (e._isAttached = !0,
+                a(e, "attach", e)),
+                this.currentView = e
+            },
+            _ensureElement: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                if (t.isObject(this.el) || (this.$el = this.getEl(this.el),
+                this.el = this.$el[0]),
+                !this.$el || 0 === this.$el.length) {
+                    var n = "undefined" == typeof e.allowMissingEl ? !!t.result(this, "allowMissingEl") : !!e.allowMissingEl;
+                    if (n)
+                        return !1;
+                    throw new G('An "el" must exist in DOM for this region ' + this.cid)
+                }
+                return !0
+            },
+            _ensureView: function(e) {
+                if (!e)
+                    throw new G({
+                        name: "ViewNotValid",
+                        message: "The view passed is undefined and therefore invalid. You must pass a view instance to show."
+                    });
+                if (e._isDestroyed)
+                    throw new G({
+                        name: "ViewDestroyedError",
+                        message: 'View (cid: "' + e.cid + '") has already been destroyed and cannot be used.'
+                    })
+            },
+            getEl: function(n) {
+                return e.$(n, t.result(this, "parentEl"))
+            },
+            _replaceEl: function(e) {
+                this._restoreEl();
+                var t = this.el.parentNode;
+                t.replaceChild(e.el, this.el),
+                this._isReplaced = !0
+            },
+            _restoreEl: function() {
+                if (this._isReplaced) {
+                    var e = this.currentView;
+                    if (e) {
+                        var t = e.el.parentNode;
+                        t && (t.replaceChild(this.el, e.el),
+                        this._isReplaced = !1)
+                    }
                 }
             },
-            serializeCollection: function(e) {
-                return e.toJSON.apply(e, n.rest(arguments))
+            isReplaced: function() {
+                return !!this._isReplaced
+            },
+            attachHtml: function(e) {
+                this.el.appendChild(e.el)
+            },
+            empty: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
+                    allowMissingEl: !0
+                }
+                  , t = this.currentView;
+                if (!t)
+                    return this._ensureElement(e) && this.detachHtml(),
+                    this;
+                var n = !e.preventDestroy;
+                return n || B("The preventDestroy option is deprecated. Use Region#detachView"),
+                this._empty(t, n),
+                this
+            },
+            _empty: function(e, t) {
+                e.off("destroy", this._empty, this),
+                this.triggerMethod("before:empty", this, e),
+                this._restoreEl(),
+                delete this.currentView,
+                e._isDestroyed || (this._removeView(e, t),
+                delete e._parent),
+                this.triggerMethod("empty", this, e)
+            },
+            _removeView: function(e, t) {
+                return t ? void (e.destroy ? e.destroy() : H(e)) : void this._detachView(e)
+            },
+            detachView: function() {
+                var e = this.currentView;
+                if (e)
+                    return this._empty(e),
+                    e
+            },
+            _detachView: function(e) {
+                var t = !!e._isAttached;
+                t && a(e, "before:detach", e),
+                this.detachHtml(),
+                t && (e._isAttached = !1,
+                a(e, "detach", e))
+            },
+            detachHtml: function() {
+                this.$el.contents().detach()
+            },
+            hasView: function() {
+                return !!this.currentView
+            },
+            reset: function(e) {
+                return this.empty(e),
+                this.$el && (this.el = this._initEl),
+                delete this.$el,
+                this
+            },
+            destroy: function(e) {
+                return this.reset(e),
+                Q.prototype.destroy.apply(this, arguments)
+            }
+        })
+          , Te = {
+            regionClass: me,
+            _initRegions: function() {
+                this.regions = this.regions || {},
+                this._regions = {},
+                this.addRegions(t.result(this, "regions"))
+            },
+            _reInitRegions: function() {
+                te(this._regions, "reset")
+            },
+            addRegion: function(e, t) {
+                var n = {};
+                return n[e] = t,
+                this.addRegions(n)[e]
+            },
+            addRegions: function(e) {
+                if (!t.isEmpty(e))
+                    return e = this.normalizeUIValues(e, ["selector", "el"]),
+                    this.regions = t.extend({}, this.regions, e),
+                    this._addRegions(e)
+            },
+            _addRegions: function(e) {
+                var n = this
+                  , s = {
+                    regionClass: this.regionClass,
+                    parentEl: t.partial(t.result, this, "el")
+                };
+                return t.reduce(e, function(e, t, r) {
+                    return e[r] = I(t, s),
+                    n._addRegion(e[r], r),
+                    e
+                }, {})
+            },
+            _addRegion: function(e, t) {
+                this.triggerMethod("before:add:region", this, t, e),
+                e._parent = this,
+                this._regions[t] = e,
+                this.triggerMethod("add:region", this, t, e)
+            },
+            removeRegion: function(e) {
+                var t = this._regions[e];
+                return this._removeRegion(t, e),
+                t
+            },
+            removeRegions: function() {
+                var e = this.getRegions();
+                return t.each(this._regions, t.bind(this._removeRegion, this)),
+                e
+            },
+            _removeRegion: function(e, t) {
+                this.triggerMethod("before:remove:region", this, t, e),
+                e.destroy(),
+                delete this.regions[t],
+                delete this._regions[t],
+                this.triggerMethod("remove:region", this, t, e)
+            },
+            emptyRegions: function() {
+                var e = this.getRegions();
+                return te(e, "empty"),
+                e
+            },
+            hasRegion: function(e) {
+                return !!this.getRegion(e)
+            },
+            getRegion: function(e) {
+                return this._regions[e]
+            },
+            getRegions: function() {
+                return t.clone(this._regions)
+            },
+            showChildView: function(e, t) {
+                for (var n = this.getRegion(e), s = arguments.length, r = Array(s > 2 ? s - 2 : 0), a = 2; a < s; a++)
+                    r[a - 2] = arguments[a];
+                return n.show.apply(n, [t].concat(r))
+            },
+            detachChildView: function(e) {
+                return this.getRegion(e).detachView()
+            },
+            getChildView: function(e) {
+                return this.getRegion(e).currentView
+            }
+        }
+          , ce = {
+            render: function(e, n) {
+                if (!e)
+                    throw new G({
+                        name: "TemplateNotFoundError",
+                        message: "Cannot render the template since its false, null or undefined."
+                    });
+                var s = t.isFunction(e) ? e : ee.get(e);
+                return s(n)
+            }
+        }
+          , pe = ["behaviors", "childViewEventPrefix", "childViewEvents", "childViewTriggers", "collectionEvents", "events", "modelEvents", "regionClass", "regions", "template", "templateContext", "triggers", "ui"]
+          , Me = e.View.extend({
+            constructor: function(n) {
+                this.render = t.bind(this.render, this),
+                this._setOptions(n),
+                this.mergeOptions(n, pe),
+                M(this),
+                this._initBehaviors(),
+                this._initRegions();
+                var s = Array.prototype.slice.call(arguments);
+                s[0] = this.options,
+                e.View.prototype.constructor.apply(this, s),
+                this.delegateEntityEvents()
+            },
+            serializeData: function() {
+                return this.model || this.collection ? this.model ? this.serializeModel() : {
+                    items: this.serializeCollection()
+                } : {}
+            },
+            serializeModel: function() {
+                return this.model ? t.clone(this.model.attributes) : {}
+            },
+            serializeCollection: function() {
+                return this.collection ? this.collection.map(function(e) {
+                    return t.clone(e.attributes)
+                }) : {}
+            },
+            setElement: function() {
+                var t = !!this.el;
+                return e.View.prototype.setElement.apply(this, arguments),
+                t && (this._isRendered = !!this.$el.length,
+                this._isAttached = R(this.el)),
+                this._isRendered && this.bindUIElements(),
+                this
             },
             render: function() {
                 return this._ensureViewIsIntact(),
                 this.triggerMethod("before:render", this),
+                this._isRendered && this._reInitRegions(),
                 this._renderTemplate(),
-                this.isRendered = !0,
                 this.bindUIElements(),
+                this._isRendered = !0,
                 this.triggerMethod("render", this),
                 this
             },
             _renderTemplate: function() {
                 var e = this.getTemplate();
                 if (e !== !1) {
-                    if (!e)
-                        throw new a.Error({
-                            name: "UndefinedTemplateError",
-                            message: "Cannot render the template since it is null or undefined."
-                        });
-                    var t = this.mixinTemplateHelpers(this.serializeData())
-                      , n = a.Renderer.render(e, t, this);
-                    return this.attachElContent(n),
-                    this
+                    var t = this.mixinTemplateContext(this.serializeData())
+                      , n = ce.render(e, t, this);
+                    this.attachElContent(n)
                 }
+            },
+            getTemplate: function() {
+                return this.template
+            },
+            mixinTemplateContext: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}
+                  , n = t.result(this, "templateContext");
+                return t.extend(e, n)
             },
             attachElContent: function(e) {
                 return this.$el.html(e),
                 this
+            },
+            _removeChildren: function() {
+                this.removeRegions()
+            },
+            _getImmediateChildren: function() {
+                return t.chain(this.getRegions()).map("currentView").compact().value()
             }
-        }),
-        a.CollectionView = a.View.extend({
-            childViewEventPrefix: "childview",
+        });
+        t.extend(Me.prototype, ye, Te);
+        var fe = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck", "reduce"]
+          , Se = function(e, n) {
+            t.each(fe, function(s) {
+                e[s] = function() {
+                    var e = t.values(t.result(this, n))
+                      , r = [e].concat(t.toArray(arguments));
+                    return t[s].apply(t, r)
+                }
+            })
+        }
+          , ge = function(e) {
+            this._views = {},
+            this._indexByModel = {},
+            this._indexByCustom = {},
+            this._updateLength(),
+            t.each(e, t.bind(this.add, this))
+        };
+        Se(ge.prototype, "_views"),
+        t.extend(ge.prototype, {
+            add: function(e, t) {
+                return this._add(e, t)._updateLength()
+            },
+            _add: function(e, t) {
+                var n = e.cid;
+                return this._views[n] = e,
+                e.model && (this._indexByModel[e.model.cid] = n),
+                t && (this._indexByCustom[t] = n),
+                this
+            },
+            findByModel: function(e) {
+                return this.findByModelCid(e.cid)
+            },
+            findByModelCid: function(e) {
+                var t = this._indexByModel[e];
+                return this.findByCid(t)
+            },
+            findByCustom: function(e) {
+                var t = this._indexByCustom[e];
+                return this.findByCid(t)
+            },
+            findByIndex: function(e) {
+                return t.values(this._views)[e]
+            },
+            findByCid: function(e) {
+                return this._views[e]
+            },
+            remove: function(e) {
+                return this._remove(e)._updateLength()
+            },
+            _remove: function(e) {
+                var n = e.cid;
+                return e.model && delete this._indexByModel[e.model.cid],
+                t.some(this._indexByCustom, t.bind(function(e, t) {
+                    if (e === n)
+                        return delete this._indexByCustom[t],
+                        !0
+                }, this)),
+                delete this._views[n],
+                this
+            },
+            _updateLength: function() {
+                return this.length = t.size(this._views),
+                this
+            }
+        });
+        var _e = ["behaviors", "childView", "childViewEventPrefix", "childViewEvents", "childViewOptions", "childViewTriggers", "collectionEvents", "events", "filter", "emptyView", "emptyViewOptions", "modelEvents", "reorderOnSort", "sort", "triggers", "ui", "viewComparator"]
+          , be = e.View.extend({
             sort: !0,
-            constructor: function(e) {
+            constructor: function(n) {
+                this.render = t.bind(this.render, this),
+                this._setOptions(n),
+                this.mergeOptions(n, _e),
+                M(this),
+                this._initBehaviors(),
                 this.once("render", this._initialEvents),
                 this._initChildViewStorage(),
-                a.View.apply(this, arguments),
-                this.on({
-                    "before:show": this._onBeforeShowCalled,
-                    show: this._onShowCalled,
-                    "before:attach": this._onBeforeAttachCalled,
-                    attach: this._onAttachCalled
-                }),
-                this.initRenderBuffer()
+                this._bufferedChildren = [];
+                var s = Array.prototype.slice.call(arguments);
+                s[0] = this.options,
+                e.View.prototype.constructor.apply(this, s),
+                this.delegateEntityEvents()
             },
-            initRenderBuffer: function() {
+            _startBuffering: function() {
+                this._isBuffering = !0
+            },
+            _endBuffering: function() {
+                var e = !!this._isAttached
+                  , n = e ? this._getImmediateChildren() : [];
+                this._isBuffering = !1,
+                t.each(n, function(e) {
+                    a(e, "before:attach", e)
+                }),
+                this.attachBuffer(this, this._createBuffer()),
+                t.each(n, function(e) {
+                    e._isAttached = !0,
+                    a(e, "attach", e)
+                }),
                 this._bufferedChildren = []
             },
-            startBuffering: function() {
-                this.initRenderBuffer(),
-                this.isBuffering = !0
-            },
-            endBuffering: function() {
-                var e, t = this._isShown && a.isNodeAttached(this.el);
-                this.isBuffering = !1,
-                this._isShown && this._triggerMethodMany(this._bufferedChildren, this, "before:show"),
-                t && this._triggerBeforeAttach && (e = this._getNestedViews(),
-                this._triggerMethodMany(e, this, "before:attach")),
-                this.attachBuffer(this, this._createBuffer()),
-                t && this._triggerAttach && (e = this._getNestedViews(),
-                this._triggerMethodMany(e, this, "attach")),
-                this._isShown && this._triggerMethodMany(this._bufferedChildren, this, "show"),
-                this.initRenderBuffer()
-            },
-            _triggerMethodMany: function(e, t, s) {
-                var r = n.drop(arguments, 3);
-                n.each(e, function(e) {
-                    a.triggerMethodOn.apply(e, [e, s, e, t].concat(r))
-                })
+            _getImmediateChildren: function() {
+                return t.values(this.children._views)
             },
             _initialEvents: function() {
                 this.collection && (this.listenTo(this.collection, "add", this._onCollectionAdd),
-                this.listenTo(this.collection, "remove", this._onCollectionRemove),
+                this.listenTo(this.collection, "update", this._onCollectionUpdate),
                 this.listenTo(this.collection, "reset", this.render),
-                this.getOption("sort") && this.listenTo(this.collection, "sort", this._sortViews))
+                this.sort && this.listenTo(this.collection, "sort", this._sortViews))
             },
-            _onCollectionAdd: function(e, t, s) {
-                var r = void 0 !== s.at && (s.index || t.indexOf(e));
-                if ((this.getOption("filter") || r === !1) && (r = n.indexOf(this._filteredSortedModels(r), e)),
-                this._shouldAddChild(e, r)) {
-                    this.destroyEmptyView();
-                    var a = this.getChildView(e);
-                    this.addChild(e, a, r)
-                }
+            _onCollectionAdd: function(e, n, s) {
+                var r = void 0 !== s.at && (s.index || n.indexOf(e));
+                (this.filter || r === !1) && (r = t.indexOf(this._filteredSortedModels(r), e)),
+                this._shouldAddChild(e, r) && (this._destroyEmptyView(),
+                this._addChild(e, r))
             },
-            _onCollectionRemove: function(e) {
-                var t = this.children.findByModel(e);
-                this.removeChildView(t),
-                this.checkEmpty()
+            _onCollectionUpdate: function(e, t) {
+                var n = t.changes;
+                this._removeChildModels(n.removed)
             },
-            _onBeforeShowCalled: function() {
-                this._triggerBeforeAttach = this._triggerAttach = !1,
-                this.children.each(function(e) {
-                    a.triggerMethodOn(e, "before:show", e)
-                })
+            _removeChildModels: function(e) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}
+                  , n = t.checkEmpty
+                  , s = n !== !1
+                  , r = this._getRemovedViews(e);
+                r.length && (this.children._updateLength(),
+                this._updateIndices(r, !1),
+                s && this._checkEmpty())
             },
-            _onShowCalled: function() {
-                this.children.each(function(e) {
-                    a.triggerMethodOn(e, "show", e)
-                })
+            _getRemovedViews: function(e) {
+                var n = this;
+                return t.reduce(e, function(e, t) {
+                    var s = n.children.findByModel(t);
+                    return !s || s._isDestroyed ? e : (n._removeChildView(s),
+                    e.push(s),
+                    e)
+                }, [])
             },
-            _onBeforeAttachCalled: function() {
-                this._triggerBeforeAttach = !0
+            _findGreatestIndexedView: function(e) {
+                return t.reduce(e, function(e, t) {
+                    return !e || e._index < t._index ? t : e
+                }, void 0)
             },
-            _onAttachCalled: function() {
-                this._triggerAttach = !0
+            _removeChildView: function(e) {
+                this.triggerMethod("before:remove:child", this, e),
+                this.children._remove(e),
+                e.destroy ? e.destroy() : H(e),
+                delete e._parent,
+                this.stopListening(e),
+                this.triggerMethod("remove:child", this, e)
+            },
+            setElement: function() {
+                var t = !!this.el;
+                return e.View.prototype.setElement.apply(this, arguments),
+                t && (this._isAttached = R(this.el)),
+                this
             },
             render: function() {
                 return this._ensureViewIsIntact(),
                 this.triggerMethod("before:render", this),
                 this._renderChildren(),
-                this.isRendered = !0,
+                this._isRendered = !0,
                 this.triggerMethod("render", this),
                 this
             },
-            reorder: function() {
-                var e = this.children
-                  , t = this._filteredSortedModels();
-                if (!t.length && this._showingEmptyView)
-                    return this;
-                var s = n.some(t, function(t) {
-                    return !e.findByModel(t)
+            setFilter: function(e) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}
+                  , n = t.preventRender
+                  , s = this._isRendered && !this._isDestroyed
+                  , r = this.filter !== e
+                  , a = s && r && !n;
+                if (a) {
+                    var i = this._filteredSortedModels();
+                    this.filter = e;
+                    var o = this._filteredSortedModels();
+                    this._applyModelDeltas(o, i)
+                } else
+                    this.filter = e;
+                return this
+            },
+            removeFilter: function(e) {
+                return this.setFilter(null , e)
+            },
+            _applyModelDeltas: function(e, n) {
+                var s = this
+                  , r = {};
+                t.each(e, function(e, t) {
+                    var n = !s.children.findByModel(e);
+                    n && s._onCollectionAdd(e, s.collection, {
+                        at: t
+                    }),
+                    r[e.cid] = !0
                 });
-                if (s)
-                    this.render();
-                else {
-                    var r = n.map(t, function(t, n) {
-                        var s = e.findByModel(t);
-                        return s._index = n,
-                        s.el
-                    })
-                      , a = e.filter(function(e) {
-                        return !n.contains(r, e.el)
-                    });
-                    this.triggerMethod("before:reorder"),
-                    this._appendReorderedChildren(r),
-                    n.each(a, this.removeChildView, this),
-                    this.checkEmpty(),
-                    this.triggerMethod("reorder")
-                }
+                var a = t.filter(n, function(e) {
+                    return !r[e.cid] && s.children.findByModel(e)
+                });
+                this._removeChildModels(a)
+            },
+            reorder: function() {
+                var e = this
+                  , n = this.children
+                  , s = this._filteredSortedModels();
+                if (!s.length && this._showingEmptyView)
+                    return this;
+                var r = t.some(s, function(e) {
+                    return !n.findByModel(e)
+                });
+                return r ? this.render() : !function() {
+                    var r = []
+                      , a = n.reduce(function(e, n) {
+                        var a = t.indexOf(s, n.model);
+                        return a === -1 ? (r.push(n.model),
+                        e) : (n._index = a,
+                        e[a] = n.el,
+                        e)
+                    }, new Array(s.length));
+                    e.triggerMethod("before:reorder", e),
+                    e._appendReorderedChildren(a),
+                    e._removeChildModels(r),
+                    e.triggerMethod("reorder", e)
+                }(),
+                this
             },
             resortView: function() {
-                a.getOption(this, "reorderOnSort") ? this.reorder() : this.render()
+                return this.reorderOnSort ? this.reorder() : this._renderChildren(),
+                this
             },
             _sortViews: function() {
-                var e = this._filteredSortedModels()
-                  , t = n.find(e, function(e, t) {
-                    var n = this.children.findByModel(e);
-                    return !n || n._index !== t
-                }, this);
-                t && this.resortView()
+                var e = this
+                  , n = this._filteredSortedModels()
+                  , s = t.find(n, function(t, n) {
+                    var s = e.children.findByModel(t);
+                    return !s || s._index !== n
+                });
+                s && this.resortView()
             },
             _emptyViewIndex: -1,
             _appendReorderedChildren: function(e) {
                 this.$el.append(e)
             },
             _renderChildren: function() {
-                this.destroyEmptyView(),
-                this.destroyChildren({
+                this._isRendered && (this._destroyEmptyView(),
+                this._destroyChildren({
                     checkEmpty: !1
-                }),
-                this.isEmpty(this.collection) ? this.showEmptyView() : (this.triggerMethod("before:render:collection", this),
-                this.startBuffering(),
-                this.showCollection(),
-                this.endBuffering(),
-                this.triggerMethod("render:collection", this),
-                this.children.isEmpty() && this.getOption("filter") && this.showEmptyView())
+                }));
+                var e = this._filteredSortedModels();
+                this.isEmpty({
+                    processedModels: e
+                }) ? this._showEmptyView() : (this.triggerMethod("before:render:children", this),
+                this._startBuffering(),
+                this._showCollection(e),
+                this._endBuffering(),
+                this.triggerMethod("render:children", this))
             },
-            showCollection: function() {
-                var e, t = this._filteredSortedModels();
-                n.each(t, function(t, n) {
-                    e = this.getChildView(t),
-                    this.addChild(t, e, n)
-                }, this)
+            _createView: function(e, t) {
+                var n = this._getChildView(e)
+                  , s = this._getChildViewOptions(e, t)
+                  , r = this.buildChildView(e, n, s);
+                return r
+            },
+            _setupChildView: function(e, t) {
+                e._parent = this,
+                M(e),
+                this._proxyChildEvents(e),
+                this.sort && (e._index = t)
+            },
+            _showCollection: function(e) {
+                t.each(e, t.bind(this._addChild, this)),
+                this.children._updateLength()
             },
             _filteredSortedModels: function(e) {
+                if (!this.collection || !this.collection.length)
+                    return [];
                 var t = this.getViewComparator()
-                  , s = this.collection.models;
-                if (e = Math.min(Math.max(e, 0), s.length - 1),
+                  , n = this.collection.models;
+                if (e = Math.min(Math.max(e, 0), n.length - 1),
                 t) {
-                    var r;
-                    e && (r = s[e],
-                    s = s.slice(0, e).concat(s.slice(e + 1))),
-                    s = this._sortModelsBy(s, t),
-                    r && s.splice(e, 0, r)
+                    var s = void 0;
+                    e && (s = n[e],
+                    n = n.slice(0, e).concat(n.slice(e + 1))),
+                    n = this._sortModelsBy(n, t),
+                    s && n.splice(e, 0, s)
                 }
-                return this.getOption("filter") && (s = n.filter(s, function(e, t) {
-                    return this._shouldAddChild(e, t)
-                }, this)),
-                s
+                return n = this._filterModels(n)
             },
-            _sortModelsBy: function(e, t) {
-                return "string" == typeof t ? n.sortBy(e, function(e) {
-                    return e.get(t)
-                }, this) : 1 === t.length ? n.sortBy(e, t, this) : e.sort(n.bind(t, this))
+            getViewComparator: function() {
+                return this.viewComparator
             },
-            showEmptyView: function() {
-                var e = this.getEmptyView();
-                if (e && !this._showingEmptyView) {
-                    this.triggerMethod("before:render:empty"),
+            _filterModels: function(e) {
+                var n = this;
+                return this.filter && (e = t.filter(e, function(e, t) {
+                    return n._shouldAddChild(e, t)
+                })),
+                e
+            },
+            _sortModelsBy: function(e, n) {
+                return "string" == typeof n ? t.sortBy(e, function(e) {
+                    return e.get(n)
+                }) : 1 === n.length ? t.sortBy(e, t.bind(n, this)) : e.sort(t.bind(n, this))
+            },
+            _showEmptyView: function() {
+                var n = this._getEmptyView();
+                if (n && !this._showingEmptyView) {
                     this._showingEmptyView = !0;
-                    var n = new t.Model;
-                    this.addEmptyView(n, e),
-                    this.triggerMethod("render:empty")
+                    var s = new e.Model
+                      , r = this.emptyViewOptions || this.childViewOptions;
+                    t.isFunction(r) && (r = r.call(this, s, this._emptyViewIndex));
+                    var a = this.buildChildView(s, n, r);
+                    this.triggerMethod("before:render:empty", this, a),
+                    this.addChildView(a, 0),
+                    this.triggerMethod("render:empty", this, a)
                 }
             },
-            destroyEmptyView: function() {
-                this._showingEmptyView && (this.triggerMethod("before:remove:empty"),
-                this.destroyChildren(),
+            _destroyEmptyView: function() {
+                this._showingEmptyView && (this.triggerMethod("before:remove:empty", this),
+                this._destroyChildren(),
                 delete this._showingEmptyView,
-                this.triggerMethod("remove:empty"))
+                this.triggerMethod("remove:empty", this))
             },
-            getEmptyView: function() {
-                return this.getOption("emptyView")
+            _getEmptyView: function() {
+                var e = this.emptyView;
+                if (e)
+                    return this._getView(e)
             },
-            addEmptyView: function(e, t) {
-                var s, r = this._isShown && !this.isBuffering && a.isNodeAttached(this.el), i = this.getOption("emptyViewOptions") || this.getOption("childViewOptions");
-                n.isFunction(i) && (i = i.call(this, e, this._emptyViewIndex));
-                var o = this.buildChildView(e, t, i);
-                o._parent = this,
-                this.proxyChildEvents(o),
-                o.once("render", function() {
-                    this._isShown && a.triggerMethodOn(o, "before:show", o),
-                    r && this._triggerBeforeAttach && (s = this._getViewAndNested(o),
-                    this._triggerMethodMany(s, this, "before:attach"))
-                }, this),
-                this.children.add(o),
-                this.renderChildView(o, this._emptyViewIndex),
-                r && this._triggerAttach && (s = this._getViewAndNested(o),
-                this._triggerMethodMany(s, this, "attach")),
-                this._isShown && a.triggerMethodOn(o, "show", o)
-            },
-            getChildView: function(e) {
-                var t = this.getOption("childView");
+            _getChildView: function(e) {
+                var t = this.childView;
                 if (!t)
-                    throw new a.Error({
+                    throw new G({
                         name: "NoChildViewError",
                         message: 'A "childView" must be specified'
                     });
+                if (t = this._getView(t, e),
+                !t)
+                    throw new G({
+                        name: "InvalidChildViewError",
+                        message: '"childView" must be a view class or a function that returns a view class'
+                    });
                 return t
             },
-            addChild: function(e, t, n) {
-                var s = this.getOption("childViewOptions");
-                s = a._getValue(s, this, [e, n]);
-                var r = this.buildChildView(e, t, s);
-                return this._updateIndices(r, !0, n),
-                this.triggerMethod("before:add:child", r),
-                this._addChildView(r, n),
-                this.triggerMethod("add:child", r),
-                r._parent = this,
-                r
+            _getView: function(n, s) {
+                return n.prototype instanceof e.View || n === e.View ? n : t.isFunction(n) ? n.call(this, s) : void 0
             },
-            _updateIndices: function(e, t, n) {
-                this.getOption("sort") && (t && (e._index = n),
-                this.children.each(function(n) {
-                    n._index >= e._index && (n._index += t ? 1 : -1)
-                }))
+            _addChild: function(e, t) {
+                var n = this._createView(e, t);
+                return this.addChildView(n, t),
+                n
             },
-            _addChildView: function(e, t) {
-                var n, s = this._isShown && !this.isBuffering && a.isNodeAttached(this.el);
-                this.proxyChildEvents(e),
-                e.once("render", function() {
-                    this._isShown && !this.isBuffering && a.triggerMethodOn(e, "before:show", e),
-                    s && this._triggerBeforeAttach && (n = this._getViewAndNested(e),
-                    this._triggerMethodMany(n, this, "before:attach"))
-                }, this),
-                this.children.add(e),
-                this.renderChildView(e, t),
-                s && this._triggerAttach && (n = this._getViewAndNested(e),
-                this._triggerMethodMany(n, this, "attach")),
-                this._isShown && !this.isBuffering && a.triggerMethodOn(e, "show", e)
+            _getChildViewOptions: function(e, n) {
+                return t.isFunction(this.childViewOptions) ? this.childViewOptions(e, n) : this.childViewOptions
             },
-            renderChildView: function(e, t) {
-                return e.supportsRenderLifecycle || a.triggerMethodOn(e, "before:render", e),
-                e.render(),
-                e.supportsRenderLifecycle || a.triggerMethodOn(e, "render", e),
-                this.attachHtml(this, e, t),
+            addChildView: function(e, t) {
+                return this.triggerMethod("before:add:child", this, e),
+                this._setupChildView(e, t),
+                this._isBuffering ? this.children._add(e) : (this._updateIndices(e, !0),
+                this.children.add(e)),
+                this._renderView(e),
+                this._attachView(e, t),
+                this.triggerMethod("add:child", this, e),
                 e
             },
-            buildChildView: function(e, t, s) {
-                var r = n.extend({
+            _updateIndices: function(e, n) {
+                if (this.sort) {
+                    var s = t.isArray(e) ? this._findGreatestIndexedView(e) : e;
+                    this.children.each(function(e) {
+                        e._index >= s._index && (e._index += n ? 1 : -1)
+                    })
+                }
+            },
+            _renderView: function(e) {
+                e._isRendered || (e.supportsRenderLifecycle || a(e, "before:render", e),
+                e.render(),
+                e.supportsRenderLifecycle || (e._isRendered = !0,
+                a(e, "render", e)))
+            },
+            _attachView: function(e, t) {
+                var n = !e._isAttached && !this._isBuffering && this._isAttached;
+                n && a(e, "before:attach", e),
+                this.attachHtml(this, e, t),
+                n && (e._isAttached = !0,
+                a(e, "attach", e))
+            },
+            buildChildView: function(e, n, s) {
+                var r = t.extend({
                     model: e
-                }, s)
-                  , i = new t(r);
-                return a.MonitorDOMRefresh(i),
-                i
+                }, s);
+                return new n(r)
             },
             removeChildView: function(e) {
-                return e ? (this.triggerMethod("before:remove:child", e),
-                e.supportsDestroyLifecycle || a.triggerMethodOn(e, "before:destroy", e),
-                e.destroy ? e.destroy() : e.remove(),
-                e.supportsDestroyLifecycle || a.triggerMethodOn(e, "destroy", e),
-                delete e._parent,
-                this.stopListening(e),
-                this.children.remove(e),
-                this.triggerMethod("remove:child", e),
+                return !e || e._isDestroyed ? e : (this._removeChildView(e),
+                this.children._updateLength(),
                 this._updateIndices(e, !1),
-                e) : e
+                e)
             },
-            isEmpty: function() {
-                return !this.collection || 0 === this.collection.length
+            isEmpty: function(e) {
+                var n = void 0;
+                return t.result(e, "processedModels") ? n = e.processedModels : (n = this.collection ? this.collection.models : [],
+                n = this._filterModels(n)),
+                0 === n.length
             },
-            checkEmpty: function() {
-                this.isEmpty(this.collection) && this.showEmptyView()
+            _checkEmpty: function() {
+                this.isEmpty() && this._showEmptyView()
             },
             attachBuffer: function(e, t) {
                 e.$el.append(t)
             },
             _createBuffer: function() {
                 var e = document.createDocumentFragment();
-                return n.each(this._bufferedChildren, function(t) {
+                return t.each(this._bufferedChildren, function(t) {
                     e.appendChild(t.el)
                 }),
                 e
             },
             attachHtml: function(e, t, n) {
-                e.isBuffering ? e._bufferedChildren.splice(n, 0, t) : e._insertBefore(t, n) || e._insertAfter(t)
+                e._isBuffering ? e._bufferedChildren.splice(n, 0, t) : e._insertBefore(t, n) || e._insertAfter(t)
             },
             _insertBefore: function(e, t) {
-                var n, s = this.getOption("sort") && t < this.children.length - 1;
+                var n = void 0
+                  , s = this.sort && t < this.children.length - 1;
                 return s && (n = this.children.find(function(e) {
                     return e._index === t + 1
                 })),
@@ -21173,69 +22531,57 @@
                 this.$el.append(e.el)
             },
             _initChildViewStorage: function() {
-                this.children = new t.ChildViewContainer
+                this.children = new ge
             },
-            destroy: function() {
-                return this.isDestroyed ? this : (this.triggerMethod("before:destroy:collection"),
-                this.destroyChildren({
+            _removeChildren: function() {
+                this._destroyChildren({
                     checkEmpty: !1
-                }),
-                this.triggerMethod("destroy:collection"),
-                a.View.prototype.destroy.apply(this, arguments))
-            },
-            destroyChildren: function(e) {
-                var t = e || {}
-                  , s = !0
-                  , r = this.children.map(n.identity);
-                return n.isUndefined(t.checkEmpty) || (s = t.checkEmpty),
-                this.children.each(this.removeChildView, this),
-                s && this.checkEmpty(),
-                r
-            },
-            _shouldAddChild: function(e, t) {
-                var s = this.getOption("filter");
-                return !n.isFunction(s) || s.call(this, e, t, this.collection)
-            },
-            proxyChildEvents: function(e) {
-                var t = this.getOption("childViewEventPrefix");
-                this.listenTo(e, "all", function() {
-                    var s = n.toArray(arguments)
-                      , r = s[0]
-                      , a = this.normalizeMethods(n.result(this, "childEvents"));
-                    s[0] = t + ":" + r,
-                    s.splice(1, 0, e),
-                    "undefined" != typeof a && n.isFunction(a[r]) && a[r].apply(this, s.slice(1)),
-                    this.triggerMethod.apply(this, s)
                 })
             },
-            _getImmediateChildren: function() {
-                return n.values(this.children._views)
+            _destroyChildren: function(e) {
+                if (this.children.length) {
+                    this.triggerMethod("before:destroy:children", this);
+                    var t = this.children.map("model");
+                    this._removeChildModels(t, e),
+                    this.triggerMethod("destroy:children", this)
+                }
             },
-            _getViewAndNested: function(e) {
-                return [e].concat(n.result(e, "_getNestedViews") || [])
+            _shouldAddChild: function(e, n) {
+                var s = this.filter;
+                return !t.isFunction(s) || s.call(this, e, n, this.collection)
             },
-            getViewComparator: function() {
-                return this.getOption("viewComparator")
+            _proxyChildEvents: function(e) {
+                this.listenTo(e, "all", this._childViewEventHandler)
             }
-        }),
-        a.CompositeView = a.CollectionView.extend({
-            constructor: function() {
-                a.CollectionView.apply(this, arguments)
+        });
+        t.extend(be.prototype, ye);
+        var ve = ["childViewContainer", "template", "templateContext"]
+          , De = be.extend({
+            constructor: function(e) {
+                B("CompositeView is deprecated. Convert to View at your earliest convenience"),
+                this.mergeOptions(e, ve),
+                be.prototype.constructor.apply(this, arguments)
             },
             _initialEvents: function() {
                 this.collection && (this.listenTo(this.collection, "add", this._onCollectionAdd),
-                this.listenTo(this.collection, "remove", this._onCollectionRemove),
-                this.listenTo(this.collection, "reset", this._renderChildren),
-                this.getOption("sort") && this.listenTo(this.collection, "sort", this._sortViews))
+                this.listenTo(this.collection, "update", this._onCollectionUpdate),
+                this.listenTo(this.collection, "reset", this.renderChildren),
+                this.sort && this.listenTo(this.collection, "sort", this._sortViews))
             },
-            getChildView: function(e) {
-                var t = this.getOption("childView") || this.constructor;
+            _getChildView: function(e) {
+                var t = this.childView;
+                if (!t)
+                    return this.constructor;
+                if (t = this._getView(t, e),
+                !t)
+                    throw new G({
+                        name: "InvalidChildViewError",
+                        message: '"childView" must be a view class or a function that returns a view class'
+                    });
                 return t
             },
             serializeData: function() {
-                var e = {};
-                return this.model && (e = n.partial(this.serializeModel, this.model).apply(this, arguments)),
-                e
+                return this.serializeModel()
             },
             render: function() {
                 return this._ensureViewIsIntact(),
@@ -21243,29 +22589,15 @@
                 this.resetChildViewContainer(),
                 this.triggerMethod("before:render", this),
                 this._renderTemplate(),
-                this._renderChildren(),
+                this.bindUIElements(),
+                this.renderChildren(),
                 this._isRendering = !1,
-                this.isRendered = !0,
+                this._isRendered = !0,
                 this.triggerMethod("render", this),
                 this
             },
-            _renderChildren: function() {
-                (this.isRendered || this._isRendering) && a.CollectionView.prototype._renderChildren.call(this)
-            },
-            _renderTemplate: function() {
-                var e = {};
-                e = this.serializeData(),
-                e = this.mixinTemplateHelpers(e),
-                this.triggerMethod("before:render:template");
-                var t = this.getTemplate()
-                  , n = a.Renderer.render(t, e, this);
-                this.attachElContent(n),
-                this.bindUIElements(),
-                this.triggerMethod("render:template")
-            },
-            attachElContent: function(e) {
-                return this.$el.html(e),
-                this
+            renderChildren: function() {
+                (this._isRendered || this._isRendering) && be.prototype._renderChildren.call(this)
             },
             attachBuffer: function(e, t) {
                 var n = this.getChildViewContainer(e);
@@ -21279,127 +22611,40 @@
                 var t = this.getChildViewContainer(this);
                 t.append(e)
             },
-            getChildViewContainer: function(e, t) {
+            getChildViewContainer: function(e, n) {
                 if (e.$childViewContainer)
                     return e.$childViewContainer;
-                var n, s = a.getOption(e, "childViewContainer");
-                if (s) {
-                    var r = a._getValue(s, e);
-                    if (n = "@" === r.charAt(0) && e.ui ? e.ui[r.substr(4)] : e.$(r),
-                    n.length <= 0)
-                        throw new a.Error({
+                var s = void 0
+                  , r = e.childViewContainer;
+                if (r) {
+                    var a = t.result(e, "childViewContainer");
+                    if (s = "@" === a.charAt(0) && e.ui ? e.ui[a.substr(4)] : e.$(a),
+                    s.length <= 0)
+                        throw new G({
                             name: "ChildViewContainerMissingError",
                             message: 'The specified "childViewContainer" was not found: ' + e.childViewContainer
                         })
                 } else
-                    n = e.$el;
-                return e.$childViewContainer = n,
-                n
+                    s = e.$el;
+                return e.$childViewContainer = s,
+                s
             },
             resetChildViewContainer: function() {
                 this.$childViewContainer && (this.$childViewContainer = void 0)
             }
-        }),
-        a.LayoutView = a.ItemView.extend({
-            regionClass: a.Region,
-            options: {
-                destroyImmediate: !1
-            },
-            childViewEventPrefix: "childview",
-            constructor: function(e) {
-                e = e || {},
-                this._firstRender = !0,
-                this._initializeRegions(e),
-                a.ItemView.call(this, e)
-            },
-            render: function() {
-                return this._ensureViewIsIntact(),
-                this._firstRender ? this._firstRender = !1 : this._reInitializeRegions(),
-                a.ItemView.prototype.render.apply(this, arguments)
-            },
-            destroy: function() {
-                return this.isDestroyed ? this : (this.getOption("destroyImmediate") === !0 && this.$el.remove(),
-                this.regionManager.destroy(),
-                a.ItemView.prototype.destroy.apply(this, arguments))
-            },
-            showChildView: function(e, t, s) {
-                var r = this.getRegion(e);
-                return r.show.apply(r, n.rest(arguments))
-            },
-            getChildView: function(e) {
-                return this.getRegion(e).currentView
-            },
-            addRegion: function(e, t) {
-                var n = {};
-                return n[e] = t,
-                this._buildRegions(n)[e]
-            },
-            addRegions: function(e) {
-                return this.regions = n.extend({}, this.regions, e),
-                this._buildRegions(e)
-            },
-            removeRegion: function(e) {
-                return delete this.regions[e],
-                this.regionManager.removeRegion(e)
-            },
-            getRegion: function(e) {
-                return this.regionManager.get(e)
-            },
-            getRegions: function() {
-                return this.regionManager.getRegions()
-            },
-            _buildRegions: function(e) {
-                var t = {
-                    regionClass: this.getOption("regionClass"),
-                    parentEl: n.partial(n.result, this, "el")
-                };
-                return this.regionManager.addRegions(e, t)
-            },
-            _initializeRegions: function(e) {
-                var t;
-                this._initRegionManager(),
-                t = a._getValue(this.regions, this, [e]) || {};
-                var s = this.getOption.call(e, "regions");
-                s = a._getValue(s, this, [e]),
-                n.extend(t, s),
-                t = this.normalizeUIValues(t, ["selector", "el"]),
-                this.addRegions(t)
-            },
-            _reInitializeRegions: function() {
-                this.regionManager.invoke("reset")
-            },
-            getRegionManager: function() {
-                return new a.RegionManager
-            },
-            _initRegionManager: function() {
-                this.regionManager = this.getRegionManager(),
-                this.regionManager._parent = this,
-                this.listenTo(this.regionManager, "before:add:region", function(e) {
-                    this.triggerMethod("before:add:region", e)
-                }),
-                this.listenTo(this.regionManager, "add:region", function(e, t) {
-                    this[e] = t,
-                    this.triggerMethod("add:region", e, t)
-                }),
-                this.listenTo(this.regionManager, "before:remove:region", function(e) {
-                    this.triggerMethod("before:remove:region", e)
-                }),
-                this.listenTo(this.regionManager, "remove:region", function(e, t) {
-                    delete this[e],
-                    this.triggerMethod("remove:region", e, t)
-                })
-            },
-            _getImmediateChildren: function() {
-                return n.chain(this.regionManager.getRegions()).pluck("currentView").compact().value()
-            }
-        }),
-        a.Behavior = a.Object.extend({
-            constructor: function(e, t) {
-                this.view = t,
-                this.defaults = n.result(this, "defaults") || {},
-                this.options = n.extend({}, this.defaults, e),
-                this.ui = n.extend({}, n.result(t, "ui"), n.result(this, "ui")),
-                a.Object.apply(this, arguments)
+        })
+          , Ae = t.pick(Me.prototype, "serializeModel", "getTemplate", "_renderTemplate", "mixinTemplateContext", "attachElContent");
+        t.extend(De.prototype, Ae);
+        var Ce = ["collectionEvents", "events", "modelEvents", "triggers", "ui"]
+          , Ee = Q.extend({
+            cidPrefix: "mnb",
+            constructor: function(e, n) {
+                this.view = n,
+                this.defaults = t.clone(t.result(this, "defaults", {})),
+                this._setOptions(this.defaults, e),
+                this.mergeOptions(this.options, Ce),
+                this.ui = t.extend({}, t.result(this, "ui"), t.result(n, "ui")),
+                Q.apply(this, arguments)
             },
             $: function() {
                 return this.view.$.apply(this.view, arguments)
@@ -21408,329 +22653,363 @@
                 return this.stopListening(),
                 this
             },
-            proxyViewProperties: function(e) {
-                this.$el = e.$el,
-                this.el = e.el
-            }
-        }),
-        a.Behaviors = function(e, t) {
-            function n(e, s) {
-                return t.isObject(e.behaviors) ? (s = n.parseBehaviors(e, s || t.result(e, "behaviors")),
-                n.wrap(e, s, t.keys(i)),
-                s) : {}
-            }
-            function s(e, t) {
-                this._view = e,
-                this._behaviors = t,
-                this._triggers = {}
-            }
-            function r(e) {
-                return e._uiBindings || e.ui
-            }
-            var a = /^(\S+)\s*(.*)$/
-              , i = {
-                behaviorTriggers: function(e, t) {
-                    var n = new s(this,t);
-                    return n.buildBehaviorTriggers()
-                },
-                behaviorEvents: function(n, s) {
-                    var i = {};
-                    return t.each(s, function(n, s) {
-                        var o = {}
-                          , d = t.clone(t.result(n, "events")) || {};
-                        d = e.normalizeUIKeys(d, r(n));
-                        var u = 0;
-                        t.each(d, function(e, r) {
-                            var i = r.match(a)
-                              , d = i[1] + "." + [this.cid, s, u++, " "].join("")
-                              , l = i[2]
-                              , y = d + l
-                              , h = t.isFunction(e) ? e : n[e];
-                            h && (o[y] = t.bind(h, n))
-                        }, this),
-                        i = t.extend(i, o)
-                    }, this),
-                    i
+            proxyViewProperties: function() {
+                return this.$el = this.view.$el,
+                this.el = this.view.el,
+                this
+            },
+            bindUIElements: function() {
+                return this._bindUIElements(),
+                this
+            },
+            unbindUIElements: function() {
+                return this._unbindUIElements(),
+                this
+            },
+            getUI: function(e) {
+                return this.view._ensureViewIsIntact(),
+                this._getUI(e)
+            },
+            delegateEntityEvents: function() {
+                return this._delegateEntityEvents(this.view.model, this.view.collection),
+                this
+            },
+            undelegateEntityEvents: function() {
+                return this._undelegateEntityEvents(this.view.model, this.view.collection),
+                this
+            },
+            getEvents: function() {
+                var e = this
+                  , n = this.normalizeUIKeys(t.result(this, "events"));
+                return t.reduce(n, function(n, s, r) {
+                    if (t.isFunction(s) || (s = e[s]),
+                    s)
+                        return r = ae(r),
+                        n[r] = t.bind(s, e),
+                        n
+                }, {})
+            },
+            getTriggers: function() {
+                if (this.triggers) {
+                    var e = this.normalizeUIKeys(t.result(this, "triggers"));
+                    return this._getViewTriggers(this.view, e)
                 }
-            };
-            return t.extend(n, {
-                behaviorsLookup: function() {
-                    throw new e.Error({
-                        message: "You must define where your behaviors are stored.",
-                        url: "marionette.behaviors.html#behaviorslookup"
-                    })
-                },
-                getBehaviorClass: function(t, s) {
-                    return t.behaviorClass ? t.behaviorClass : e._getValue(n.behaviorsLookup, this, [t, s])[s]
-                },
-                parseBehaviors: function(e, s) {
-                    return t.chain(s).map(function(s, r) {
-                        var a = n.getBehaviorClass(s, r)
-                          , i = new a(s,e)
-                          , o = n.parseBehaviors(e, t.result(i, "behaviors"));
-                        return [i].concat(o)
-                    }).flatten().value()
-                },
-                wrap: function(e, n, s) {
-                    t.each(s, function(s) {
-                        e[s] = t.partial(i[s], e[s], n)
-                    })
-                }
-            }),
-            t.extend(s.prototype, {
-                buildBehaviorTriggers: function() {
-                    return t.each(this._behaviors, this._buildTriggerHandlersForBehavior, this),
-                    this._triggers
-                },
-                _buildTriggerHandlersForBehavior: function(n, s) {
-                    var a = t.clone(t.result(n, "triggers")) || {};
-                    a = e.normalizeUIKeys(a, r(n)),
-                    t.each(a, t.bind(this._setHandlerForBehavior, this, n, s))
-                },
-                _setHandlerForBehavior: function(e, t, n, s) {
-                    var r = s.replace(/^\S+/, function(e) {
-                        return e + ".behaviortriggers" + t
-                    });
-                    this._triggers[r] = this._view._buildViewTrigger(n)
-                }
-            }),
-            n
-        }(a, n),
-        a.AppRouter = t.Router.extend({
+            }
+        });
+        t.extend(Ee.prototype, se, ie, le);
+        var Le = ["region", "regionClass"]
+          , we = Q.extend({
+            cidPrefix: "mna",
             constructor: function(e) {
-                this.options = e || {},
-                t.Router.apply(this, arguments);
-                var n = this.getOption("appRoutes")
+                this._setOptions(e),
+                this.mergeOptions(e, Le),
+                this._initRegion(),
+                Q.prototype.constructor.apply(this, arguments)
+            },
+            regionClass: me,
+            _initRegion: function() {
+                var e = this.region;
+                if (e) {
+                    var t = {
+                        regionClass: this.regionClass
+                    };
+                    this._region = I(e, t)
+                }
+            },
+            getRegion: function() {
+                return this._region
+            },
+            showView: function(e) {
+                for (var t = this.getRegion(), n = arguments.length, s = Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++)
+                    s[r - 1] = arguments[r];
+                return t.show.apply(t, [e].concat(s))
+            },
+            getView: function() {
+                return this.getRegion().currentView
+            },
+            start: function(e) {
+                return this.triggerMethod("before:start", this, e),
+                this.triggerMethod("start", this, e),
+                this
+            }
+        })
+          , He = ["appRoutes", "controller"]
+          , Ie = e.Router.extend({
+            constructor: function(t) {
+                this._setOptions(t),
+                this.mergeOptions(t, He),
+                e.Router.apply(this, arguments);
+                var n = this.appRoutes
                   , s = this._getController();
                 this.processAppRoutes(s, n),
                 this.on("route", this._processOnRoute, this)
             },
             appRoute: function(e, t) {
                 var n = this._getController();
-                this._addAppRoute(n, e, t)
-            },
-            _processOnRoute: function(e, t) {
-                if (n.isFunction(this.onRoute)) {
-                    var s = n.invert(this.getOption("appRoutes"))[e];
-                    this.onRoute(e, s, t)
-                }
-            },
-            processAppRoutes: function(e, t) {
-                if (t) {
-                    var s = n.keys(t).reverse();
-                    n.each(s, function(n) {
-                        this._addAppRoute(e, n, t[n])
-                    }, this)
-                }
-            },
-            _getController: function() {
-                return this.getOption("controller")
-            },
-            _addAppRoute: function(e, t, s) {
-                var r = e[s];
-                if (!r)
-                    throw new a.Error('Method "' + s + '" was not found on the controller');
-                this.route(t, s, n.bind(r, e))
-            },
-            mergeOptions: a.mergeOptions,
-            getOption: a.proxyGetOption,
-            triggerMethod: a.triggerMethod,
-            bindEntityEvents: a.proxyBindEntityEvents,
-            unbindEntityEvents: a.proxyUnbindEntityEvents
-        }),
-        a.Application = a.Object.extend({
-            constructor: function(e) {
-                this._initializeRegions(e),
-                this._initCallbacks = new a.Callbacks,
-                this.submodules = {},
-                n.extend(this, e),
-                this._initChannel(),
-                a.Object.apply(this, arguments)
-            },
-            execute: function() {
-                this.commands.execute.apply(this.commands, arguments)
-            },
-            request: function() {
-                return this.reqres.request.apply(this.reqres, arguments)
-            },
-            addInitializer: function(e) {
-                this._initCallbacks.add(e)
-            },
-            start: function(e) {
-                this.triggerMethod("before:start", e),
-                this._initCallbacks.run(e, this),
-                this.triggerMethod("start", e)
-            },
-            addRegions: function(e) {
-                return this._regionManager.addRegions(e)
-            },
-            emptyRegions: function() {
-                return this._regionManager.emptyRegions()
-            },
-            removeRegion: function(e) {
-                return this._regionManager.removeRegion(e)
-            },
-            getRegion: function(e) {
-                return this._regionManager.get(e)
-            },
-            getRegions: function() {
-                return this._regionManager.getRegions()
-            },
-            module: function(e, t) {
-                var s = a.Module.getClass(t)
-                  , r = n.toArray(arguments);
-                return r.unshift(this),
-                s.create.apply(s, r)
-            },
-            getRegionManager: function() {
-                return new a.RegionManager
-            },
-            _initializeRegions: function(e) {
-                var t = n.isFunction(this.regions) ? this.regions(e) : this.regions || {};
-                this._initRegionManager();
-                var s = a.getOption(e, "regions");
-                return n.isFunction(s) && (s = s.call(this, e)),
-                n.extend(t, s),
-                this.addRegions(t),
+                return this._addAppRoute(n, e, t),
                 this
             },
-            _initRegionManager: function() {
-                this._regionManager = this.getRegionManager(),
-                this._regionManager._parent = this,
-                this.listenTo(this._regionManager, "before:add:region", function() {
-                    a._triggerMethod(this, "before:add:region", arguments)
-                }),
-                this.listenTo(this._regionManager, "add:region", function(e, t) {
-                    this[e] = t,
-                    a._triggerMethod(this, "add:region", arguments)
-                }),
-                this.listenTo(this._regionManager, "before:remove:region", function() {
-                    a._triggerMethod(this, "before:remove:region", arguments)
-                }),
-                this.listenTo(this._regionManager, "remove:region", function(e) {
-                    delete this[e],
-                    a._triggerMethod(this, "remove:region", arguments)
-                })
-            },
-            _initChannel: function() {
-                this.channelName = n.result(this, "channelName") || "global",
-                this.channel = n.result(this, "channel") || t.Wreqr.radio.channel(this.channelName),
-                this.vent = n.result(this, "vent") || this.channel.vent,
-                this.commands = n.result(this, "commands") || this.channel.commands,
-                this.reqres = n.result(this, "reqres") || this.channel.reqres
-            }
-        }),
-        a.Module = function(e, t, s) {
-            this.moduleName = e,
-            this.options = n.extend({}, this.options, s),
-            this.initialize = s.initialize || this.initialize,
-            this.submodules = {},
-            this._setupInitializersAndFinalizers(),
-            this.app = t,
-            n.isFunction(this.initialize) && this.initialize(e, t, this.options)
-        }
-        ,
-        a.Module.extend = a.extend,
-        n.extend(a.Module.prototype, t.Events, {
-            startWithParent: !0,
-            initialize: function() {},
-            addInitializer: function(e) {
-                this._initializerCallbacks.add(e)
-            },
-            addFinalizer: function(e) {
-                this._finalizerCallbacks.add(e)
-            },
-            start: function(e) {
-                this._isInitialized || (n.each(this.submodules, function(t) {
-                    t.startWithParent && t.start(e)
-                }),
-                this.triggerMethod("before:start", e),
-                this._initializerCallbacks.run(e, this),
-                this._isInitialized = !0,
-                this.triggerMethod("start", e))
-            },
-            stop: function() {
-                this._isInitialized && (this._isInitialized = !1,
-                this.triggerMethod("before:stop"),
-                n.invoke(this.submodules, "stop"),
-                this._finalizerCallbacks.run(void 0, this),
-                this._initializerCallbacks.reset(),
-                this._finalizerCallbacks.reset(),
-                this.triggerMethod("stop"))
-            },
-            addDefinition: function(e, t) {
-                this._runModuleDefinition(e, t)
-            },
-            _runModuleDefinition: function(e, s) {
-                if (e) {
-                    var r = n.flatten([this, this.app, t, a, t.$, n, s]);
-                    e.apply(this, r)
+            _processOnRoute: function(e, n) {
+                if (t.isFunction(this.onRoute)) {
+                    var s = t.invert(this.appRoutes)[e];
+                    this.onRoute(e, s, n)
                 }
             },
-            _setupInitializersAndFinalizers: function() {
-                this._initializerCallbacks = new a.Callbacks,
-                this._finalizerCallbacks = new a.Callbacks
+            processAppRoutes: function(e, n) {
+                var s = this;
+                if (!n)
+                    return this;
+                var r = t.keys(n).reverse();
+                return t.each(r, function(t) {
+                    s._addAppRoute(e, t, n[t])
+                }),
+                this
             },
-            triggerMethod: a.triggerMethod
-        }),
-        n.extend(a.Module, {
-            create: function(e, t, s) {
-                var r = e
-                  , a = n.drop(arguments, 3);
-                t = t.split(".");
-                var i = t.length
-                  , o = [];
-                return o[i - 1] = s,
-                n.each(t, function(t, n) {
-                    var i = r;
-                    r = this._getModule(i, t, e, s),
-                    this._addModuleDefinition(i, r, o[n], a)
-                }, this),
-                r
+            _getController: function() {
+                return this.controller
             },
-            _getModule: function(e, t, s, r, a) {
-                var i = n.extend({}, r)
-                  , o = this.getClass(r)
-                  , d = e[t];
-                return d || (d = new o(t,s,i),
-                e[t] = d,
-                e.submodules[t] = d),
-                d
+            _addAppRoute: function(e, n, s) {
+                var r = e[s];
+                if (!r)
+                    throw new G('Method "' + s + '" was not found on the controller');
+                this.route(n, s, t.bind(r, e))
             },
-            getClass: function(e) {
-                var t = a.Module;
-                return e ? e.prototype instanceof t ? e : e.moduleClass || t : t
+            triggerMethod: r
+        });
+        t.extend(Ie.prototype, $);
+        var ke = {}
+          , Ne = e.Marionette
+          , Oe = e.Marionette = {};
+        return Oe.noConflict = function() {
+            return e.Marionette = Ne,
+            this
+        }
+        ,
+        Oe.bindEvents = j(g),
+        Oe.unbindEvents = j(_),
+        Oe.bindRequests = j(v),
+        Oe.unbindRequests = j(D),
+        Oe.mergeOptions = j(W),
+        Oe.getOption = j(J),
+        Oe.normalizeMethods = j(Z),
+        Oe.extend = Y,
+        Oe.isNodeAttached = R,
+        Oe.deprecate = B,
+        Oe.triggerMethod = j(r),
+        Oe.triggerMethodOn = a,
+        Oe.isEnabled = x,
+        Oe.setEnabled = P,
+        Oe.monitorViewEvents = M,
+        Oe.Behaviors = {},
+        Oe.Behaviors.behaviorsLookup = O,
+        Oe.Application = we,
+        Oe.AppRouter = Ie,
+        Oe.Renderer = ce,
+        Oe.TemplateCache = ee,
+        Oe.View = Me,
+        Oe.CollectionView = be,
+        Oe.CompositeView = De,
+        Oe.Behavior = Ee,
+        Oe.Region = me,
+        Oe.Error = G,
+        Oe.Object = Q,
+        Oe.DEV_MODE = !1,
+        Oe.FEATURES = ke,
+        Oe.VERSION = F,
+        Oe
+    })
+}
+, function(e, t, n) {
+    !function(t, s) {
+        e.exports = s(n(59), n(56))
+    }(this, function(e, t) {
+        "use strict";
+        function n(e, t, n, s) {
+            var r = e[t];
+            if (!(n && n !== r.callback && n !== r.callback._callback || s && s !== r.context))
+                return delete e[t],
+                !0
+        }
+        function s(t, s, r, a) {
+            t || (t = {});
+            for (var i = s ? [s] : e.keys(t), o = !1, d = 0, u = i.length; d < u; d++)
+                s = i[d],
+                t[s] && n(t, s, r, a) && (o = !0);
+            return o
+        }
+        function r(t) {
+            return l[t] || (l[t] = e.bind(d.log, d, t))
+        }
+        function a(t) {
+            return e.isFunction(t) ? t : function() {
+                return t
+            }
+        }
+        e = "default"in e ? e.default : e,
+        t = "default"in t ? t.default : t;
+        var i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+            return typeof e
+        }
+        : function(e) {
+            return e && "function" == typeof Symbol && e.constructor === Symbol ? "symbol" : typeof e
+        }
+          , o = t.Radio
+          , d = t.Radio = {};
+        d.VERSION = "2.0.0",
+        d.noConflict = function() {
+            return t.Radio = o,
+            this
+        }
+        ,
+        d.DEBUG = !1,
+        d._debugText = function(e, t, n) {
+            return e + (n ? " on the " + n + " channel" : "") + ': "' + t + '"'
+        }
+        ,
+        d.debugLog = function(e, t, n) {
+            d.DEBUG && console && console.warn
+        }
+        ;
+        var u = /\s+/;
+        d._eventsApi = function(t, n, s, r) {
+            if (!s)
+                return !1;
+            var a = {};
+            if ("object" === ("undefined" == typeof s ? "undefined" : i(s))) {
+                for (var o in s) {
+                    var d = t[n].apply(t, [o, s[o]].concat(r));
+                    u.test(o) ? e.extend(a, d) : a[o] = d
+                }
+                return a
+            }
+            if (u.test(s)) {
+                for (var l = s.split(u), y = 0, h = l.length; y < h; y++)
+                    a[l[y]] = t[n].apply(t, [l[y]].concat(r));
+                return a
+            }
+            return !1
+        }
+        ,
+        d._callHandler = function(e, t, n) {
+            var s = n[0]
+              , r = n[1]
+              , a = n[2];
+            switch (n.length) {
+            case 0:
+                return e.call(t);
+            case 1:
+                return e.call(t, s);
+            case 2:
+                return e.call(t, s, r);
+            case 3:
+                return e.call(t, s, r, a);
+            default:
+                return e.apply(t, n)
+            }
+        }
+        ;
+        var l = {};
+        e.extend(d, {
+            log: function(t, n) {
+                "undefined" != typeof console && e.toArray(arguments).slice(2)
             },
-            _addModuleDefinition: function(e, t, n, s) {
-                var r = this._getDefine(n)
-                  , a = this._getStartWithParent(n, t);
-                r && t.addDefinition(r, s),
-                this._addStartWithParent(e, t, a)
+            tuneIn: function(e) {
+                var t = d.channel(e);
+                return t._tunedIn = !0,
+                t.on("all", r(e)),
+                this
             },
-            _getStartWithParent: function(e, t) {
-                var s;
-                return n.isFunction(e) && e.prototype instanceof a.Module ? (s = t.constructor.prototype.startWithParent,
-                !!n.isUndefined(s) || s) : !n.isObject(e) || (s = e.startWithParent,
-                !!n.isUndefined(s) || s)
-            },
-            _getDefine: function(e) {
-                return !n.isFunction(e) || e.prototype instanceof a.Module ? n.isObject(e) ? e.define : null : e
-            },
-            _addStartWithParent: function(e, t, n) {
-                t.startWithParent = t.startWithParent && n,
-                t.startWithParent && !t.startWithParentIsConfigured && (t.startWithParentIsConfigured = !0,
-                e.addInitializer(function(e) {
-                    t.startWithParent && t.start(e)
-                }))
+            tuneOut: function(e) {
+                var t = d.channel(e);
+                return t._tunedIn = !1,
+                t.off("all", r(e)),
+                delete l[e],
+                this
             }
         }),
-        a
+        d.Requests = {
+            request: function(t) {
+                var n = e.toArray(arguments).slice(1)
+                  , s = d._eventsApi(this, "request", t, n);
+                if (s)
+                    return s;
+                var r = this.channelName
+                  , a = this._requests;
+                if (r && this._tunedIn && d.log.apply(this, [r, t].concat(n)),
+                a && (a[t] || a.default)) {
+                    var i = a[t] || a.default;
+                    return n = a[t] ? n : arguments,
+                    d._callHandler(i.callback, i.context, n)
+                }
+                d.debugLog("An unhandled request was fired", t, r)
+            },
+            reply: function(e, t, n) {
+                return d._eventsApi(this, "reply", e, [t, n]) ? this : (this._requests || (this._requests = {}),
+                this._requests[e] && d.debugLog("A request was overwritten", e, this.channelName),
+                this._requests[e] = {
+                    callback: a(t),
+                    context: n || this
+                },
+                this)
+            },
+            replyOnce: function(t, n, s) {
+                if (d._eventsApi(this, "replyOnce", t, [n, s]))
+                    return this;
+                var r = this
+                  , i = e.once(function() {
+                    return r.stopReplying(t),
+                    a(n).apply(this, arguments)
+                });
+                return this.reply(t, i, s)
+            },
+            stopReplying: function(e, t, n) {
+                return d._eventsApi(this, "stopReplying", e) ? this : (e || t || n ? s(this._requests, e, t, n) || d.debugLog("Attempted to remove the unregistered request", e, this.channelName) : delete this._requests,
+                this)
+            }
+        },
+        d._channels = {},
+        d.channel = function(e) {
+            if (!e)
+                throw new Error("You must provide a name for the channel.");
+            return d._channels[e] ? d._channels[e] : d._channels[e] = new d.Channel(e)
+        }
+        ,
+        d.Channel = function(e) {
+            this.channelName = e
+        }
+        ,
+        e.extend(d.Channel.prototype, t.Events, d.Requests, {
+            reset: function() {
+                return this.off(),
+                this.stopListening(),
+                this.stopReplying(),
+                this
+            }
+        });
+        var y, h, m = [t.Events, d.Requests];
+        return e.each(m, function(t) {
+            e.each(t, function(t, n) {
+                d[n] = function(t) {
+                    return h = e.toArray(arguments).slice(1),
+                    y = this.channel(t),
+                    y[n].apply(y, h)
+                }
+            })
+        }),
+        d.reset = function(t) {
+            var n = t ? [this._channels[t]] : this._channels;
+            e.each(n, function(e) {
+                e.reset()
+            })
+        }
+        ,
+        d
     })
 }
 , function(e, t, n) {
     var s, r, a;
     !function(i) {
-        r = [n(37), n(30), t],
+        r = [n(59), n(56), t],
         s = i,
         a = "function" == typeof s ? s.apply(t, r) : s,
         !(void 0 !== a && (e.exports = a))
@@ -22165,7 +23444,7 @@
 , function(e, t, n) {
     var s, r;
     !function(a, i) {
-        s = [n(30), n(37)],
+        s = [n(56), n(59)],
         r = function(e, t) {
             return i(e, t)
         }
@@ -22175,7 +23454,7 @@
         "use strict";
         var n = e.Wreqr
           , s = e.Wreqr = {};
-        return e.Wreqr.VERSION = "1.3.6",
+        return e.Wreqr.VERSION = "1.4.0",
         e.Wreqr.noConflict = function() {
             return e.Wreqr = n,
             this
@@ -22190,12 +23469,12 @@
             return n.extend = e.Model.extend,
             t.extend(n.prototype, e.Events, {
                 setHandlers: function(e) {
-                    t.each(e, function(e, n) {
+                    t.each(e, t.bind(function(e, n) {
                         var s = null ;
                         t.isObject(e) && !t.isFunction(e) && (s = e.context,
                         e = e.callback),
                         this.setHandler(n, e, s)
-                    }, this)
+                    }, this))
                 },
                 setHandler: function(e, t, n) {
                     var s = {
@@ -22324,9 +23603,9 @@
                     if (n) {
                         s = s || this;
                         var r = "vent" === e ? "on" : "setHandler";
-                        t.each(n, function(n, a) {
+                        t.each(n, t.bind(function(n, a) {
                             this[e][r](a, t.bind(n, s))
-                        }, this)
+                        }, this))
                     }
                 }
             }),
@@ -22353,11 +23632,11 @@
                     n
                 },
                 _proxyMethods: function() {
-                    t.each(["vent", "commands", "reqres"], function(e) {
-                        t.each(s[e], function(t) {
+                    t.each(["vent", "commands", "reqres"], t.bind(function(e) {
+                        t.each(s[e], t.bind(function(t) {
                             this[e][t] = r(this, e, t)
-                        }, this)
-                    }, this)
+                        }, this))
+                    }, this))
                 }
             });
             var s = {
@@ -22386,7 +23665,7 @@
 	* @website: https://www.improvely.com/
 	*/
     !function(a, i) {
-        s = [n(1), n(46)],
+        s = [n(1), n(75)],
         r = function(e, t) {
             return a.daterangepicker = i(e, t)
         }
@@ -24959,38 +26238,6 @@
         e.fn.timepicker.Constructor = r
     }(jQuery, window, document)
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
-    var n, s, r;
-    n = "א".charCodeAt(0),
-    r = "ת".charCodeAt(0),
-    s = function(e) {
-        var t;
-        return n <= (t = e.charCodeAt(0)) && t <= r
-    }
-    ,
-    $.fn.autoRTL = function(e) {
-        return null == e && (e = {}),
-        this.each(function() {
-            var e, t, n;
-            if (e = $(this),
-            n = e.is(":input") ? e.val() : e.text(),
-            n = $.trim(n),
-            0 !== n.length)
-                return t = s(n.charAt(0)),
-                t ? e.css({
-                    direction: "rtl",
-                    textAlign: "right"
-                }) : e.css({
-                    direction: "ltr",
-                    textAlign: "left"
-                })
-        })
-    }
-    ,
-    $("body").on("keypress", "[data-auto-rtl]", function() {
-        return $(this).autoRTL()
-    })
-}
 , function(e, t) {
     var n = {}.hasOwnProperty;
     W.brara.namespace("brara.Backbone"),
@@ -25150,169 +26397,383 @@
         e
     }
 }
+, , , , , , , , , , , , , , function(e, t, n) {
+    n(862),
+    n(242),
+    n(864),
+    n(865),
+    e.exports = n(11).Symbol
+}
 , function(e, t, n) {
-    var s = {}.hasOwnProperty;
-    n(716),
-    W.brara.namespace("brara.ViewHelpers"),
-    W.brara.ViewHelpers.attributesToString = function(e) {
-        var t, n, r;
-        null == e && (e = {}),
-        t = [];
-        for (n in e)
-            s.call(e, n) && (r = e[n],
-            t.push(this.escape(this.cleanValue(n)) + "='" + this.escape(this.cleanValue(r)) + "'"));
-        return t.length > 0 ? " " + t.join(" ") : ""
-    }
-    ,
-    W.brara.ViewHelpers.contentTag = function(e, t, n) {
-        var s, r, a;
-        return null == t && (t = ""),
-        null == n && (n = {}),
-        s = this.attributesToString(n),
-        a = "<" + e + s + ">",
-        t = this.escapeIfUnsafe(t),
-        r = "</" + e + ">",
-        this.safeString(a + t + r)
-    }
-    ,
-    W.brara.ViewHelpers.linkTo = function(e, t) {
-        return this.contentTag("a", e, {
-            href: t
-        })
-    }
-    ,
-    W.brara.ViewHelpers.radio = function(e, t, n, s) {
-        var r, a;
-        return null == s && (s = {}),
-        s.type || (s.type = "radio"),
-        s.id || (s.id = t + "-" + n),
-        s.name || (s.name = t),
-        s.value || (s.value = n),
-        a = this.contentTag("input", "", s),
-        r = this.safeString(a + e),
-        this.contentTag("label", r, {
-            class: "radio"
-        })
+    n(94),
+    n(95),
+    e.exports = n(142).f("iterator")
+}
+, function(e, t) {
+    e.exports = function() {}
+}
+, , function(e, t, n) {
+    var s = n(31)
+      , r = n(240)
+      , a = n(849);
+    e.exports = function(e) {
+        return function(t, n, i) {
+            var o, d = s(t), u = r(d.length), l = a(i, u);
+            if (e && n != n) {
+                for (; u > l; )
+                    if (o = d[l++],
+                    o != o)
+                        return !0
+            } else
+                for (; u > l; l++)
+                    if ((e || l in d) && d[l] === n)
+                        return e || l || 0;
+            return !e && -1
+        }
     }
 }
 , function(e, t, n) {
-    n(717),
-    W.brara.ViewHelpers.getTimeFromSeconds = function(e, t) {
-        var n, s, r, a, i, o;
-        if (null == t && (t = {}),
-        i = null != e && !isNaN(e),
-        !i)
-            return null ;
-        if (_.defaults(t, {
-            wrapInSpan: !1
-        }),
-        e = Math.abs(Math.round(e)),
-        s = Math.floor(e / 60),
-        o = {},
-        o.seconds = e,
-        o.hours = Math.floor(s / 60),
-        o.minutes = Math.floor(s % 60),
-        o.days = Math.floor(o.hours / 24),
-        r = {},
-        t.wrapInSpan)
-            for (n in o)
-                a = o[n],
-                r[n] = this.contentTag("span", a);
-        else
-            r = o;
-        return 1 === o.days ? this.safe_t("common.time.day", {
-            day: r.days
-        }) : o.days > 1 ? this.safe_t("common.time.days", {
-            days: r.days
-        }) : o.hours > 0 ? 0 === o.minutes ? this.safe_t("common.time.hours", {
-            hours: r.hours
-        }) : this.safe_t("common.time.hours_minutes", {
-            hours: r.hours,
-            minutes: r.minutes
-        }) : o.minutes > 0 ? this.safe_t("common.time.minutes", {
-            minutes: r.minutes
-        }) : this.safe_t("common.time.seconds", {
-            seconds: r.seconds
-        })
-    }
-    ,
-    W.brara.ViewHelpers.getTimeDurationSince = function(e, t) {
-        var n, s, r, a;
-        return null == t && (t = {}),
-        s = (new Date).getTime(),
-        (a = null != e && !isNaN(e) && (n = s - e) > 0) ? (_.defaults(t, {
-            wrapInSpan: !1
-        }),
-        r = Math.round(n / 1e3),
-        r > 60 ? I18n.t("common.time.ago", {
-            time: this.getTimeFromSeconds(r, t)
-        }) : I18n.t("common.time.now")) : null
-    }
-    ,
-    W.brara.ViewHelpers.timeDistanceInWords = function(e, t) {
-        var n, s, r, a, i;
-        return null == t && (t = new Date),
-        e = new Date(e),
-        t = new Date(t),
-        n = Math.round(Math.abs((t - e) / 60 / 1e3)),
-        n >= 0 && n <= 1 ? 0 === n ? I18n.t("datetime.distance_in_words.less_than_x_minutes", {
-            count: 1
-        }) : I18n.t("datetime.distance_in_words.x_minutes", {
-            count: n
-        }) : n >= 2 && n <= 44 ? I18n.t("datetime.distance_in_words.x_minutes", {
-            count: n
-        }) : n >= 45 && n <= 89 ? I18n.t("datetime.distance_in_words.about_x_hours", {
-            count: 1
-        }) : n >= 90 && n <= 1439 ? I18n.t("datetime.distance_in_words.about_x_hours", {
-            count: Math.round(n / 60)
-        }) : n >= 1440 && n <= 2519 ? I18n.t("datetime.distance_in_words.x_days", {
-            count: 1
-        }) : n >= 2520 && n <= 43199 ? I18n.t("datetime.distance_in_words.x_days", {
-            count: Math.round(n / 1440)
-        }) : n >= 43200 && n <= 86399 ? I18n.t("datetime.distance_in_words.about_x_months", {
-            count: 1
-        }) : n >= 86400 && n <= 525599 ? I18n.t("datetime.distance_in_words.x_months", {
-            count: Math.round(n / 43200)
-        }) : (r = e.getFullYear(),
-        i = t.getFullYear(),
-        a = n % 525600,
-        s = Math.floor(n / 525600),
-        e.getMonth() + 1 >= 3 && r++,
-        t.getMonth() + 1 < 3 && i--,
-        a < 131400 ? I18n.t("datetime.distance_in_words.about_x_years", {
-            count: s
-        }) : a < 394200 ? I18n.t("datetime.distance_in_words.over_x_years", {
-            count: s
-        }) : I18n.t("datetime.distance_in_words.almost_x_years", {
-            count: s + 1
-        }))
-    }
-    ,
-    W.brara.ViewHelpers.timeDistanceInWordsFromNow = function(e, t) {
-        var n;
-        return null == t && (t = {}),
-        t = _.extend({
-            ago: !1
-        }, t),
-        n = W.brara.ViewHelpers.timeDistanceInWords(e),
-        t.ago ? I18n.t("common.time.ago", {
-            time: n
-        }) : n
+    var s = n(49)
+      , r = n(136)
+      , a = n(74);
+    e.exports = function(e) {
+        var t = s(e)
+          , n = r.f;
+        if (n)
+            for (var i, o = n(e), d = a.f, u = 0; o.length > u; )
+                d.call(e, i = o[u++]) && t.push(i);
+        return t
     }
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    n(767),
-    n(764),
-    n(763),
-    n(772),
-    n(766),
-    n(770),
-    n(771),
-    n(769),
-    n(768),
-    n(765),
-    n(773),
-    n(774)
+, , , , function(e, t, n) {
+    var s = n(72);
+    e.exports = Array.isArray || function(e) {
+        return "Array" == s(e)
+    }
+}
+, , function(e, t, n) {
+    "use strict";
+    var s = n(134)
+      , r = n(90)
+      , a = n(91)
+      , i = {};
+    n(47)(i, n(16)("iterator"), function() {
+        return this
+    }),
+    e.exports = function(e, t, n) {
+        e.prototype = s(i, {
+            next: r(1, n)
+        }),
+        a(e, t + " Iterator")
+    }
+}
+, , function(e, t) {
+    e.exports = function(e, t) {
+        return {
+            value: t,
+            done: !!e
+        }
+    }
+}
+, function(e, t, n) {
+    var s = n(49)
+      , r = n(31);
+    e.exports = function(e, t) {
+        for (var n, a = r(e), i = s(a), o = i.length, d = 0; o > d; )
+            if (a[n = i[d++]] === t)
+                return n
+    }
+}
+, , , function(e, t, n) {
+    var s = n(39)
+      , r = n(29)
+      , a = n(49);
+    e.exports = n(38) ? Object.defineProperties : function(e, t) {
+        r(e);
+        for (var n, i = a(t), o = i.length, d = 0; o > d; )
+            s.f(e, n = i[d++], t[n]);
+        return e
+    }
+}
+, function(e, t, n) {
+    var s = n(31)
+      , r = n(235).f
+      , a = {}.toString
+      , i = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : []
+      , o = function(e) {
+        try {
+            return r(e)
+        } catch (e) {
+            return i.slice()
+        }
+    };
+    e.exports.f = function(e) {
+        return i && "[object Window]" == a.call(e) ? o(e) : r(s(e))
+    }
+}
+, , , , , , function(e, t, n) {
+    var s = n(139)
+      , r = n(131);
+    e.exports = function(e) {
+        return function(t, n) {
+            var a, i, o = String(r(t)), d = s(n), u = o.length;
+            return d < 0 || d >= u ? e ? "" : void 0 : (a = o.charCodeAt(d),
+            a < 55296 || a > 56319 || d + 1 === u || (i = o.charCodeAt(d + 1)) < 56320 || i > 57343 ? e ? o.charAt(d) : a : e ? o.slice(d, d + 2) : (a - 55296 << 10) + (i - 56320) + 65536)
+        }
+    }
+}
+, function(e, t, n) {
+    var s = n(139)
+      , r = Math.max
+      , a = Math.min;
+    e.exports = function(e, t) {
+        return e = s(e),
+        e < 0 ? r(e + t, 0) : a(e, t)
+    }
+}
+, , , function(e, t, n) {
+    "use strict";
+    var s = n(826)
+      , r = n(837)
+      , a = n(58)
+      , i = n(31);
+    e.exports = n(233)(Array, "Array", function(e, t) {
+        this._t = i(e),
+        this._i = 0,
+        this._k = t
+    }, function() {
+        var e = this._t
+          , t = this._k
+          , n = this._i++;
+        return !e || n >= e.length ? (this._t = void 0,
+        r(1)) : "keys" == t ? r(0, n) : "values" == t ? r(0, e[n]) : r(0, [n, e[n]])
+    }, "values"),
+    a.Arguments = a.Array,
+    s("keys"),
+    s("values"),
+    s("entries")
+}
+, , , , , , , , , , function(e, t, n) {
+    "use strict";
+    var s = n(22)
+      , r = n(46)
+      , a = n(38)
+      , i = n(30)
+      , o = n(238)
+      , d = n(234).KEY
+      , u = n(57)
+      , l = n(138)
+      , y = n(91)
+      , h = n(93)
+      , m = n(16)
+      , T = n(142)
+      , c = n(141)
+      , p = n(838)
+      , M = n(829)
+      , f = n(833)
+      , S = n(29)
+      , g = n(31)
+      , _ = n(140)
+      , b = n(90)
+      , v = n(134)
+      , D = n(842)
+      , A = n(135)
+      , C = n(39)
+      , E = n(49)
+      , L = A.f
+      , w = C.f
+      , H = D.f
+      , I = s.Symbol
+      , k = s.JSON
+      , N = k && k.stringify
+      , O = "prototype"
+      , x = m("_hidden")
+      , P = m("toPrimitive")
+      , F = {}.propertyIsEnumerable
+      , j = l("symbol-registry")
+      , Y = l("symbols")
+      , B = l("op-symbols")
+      , R = Object[O]
+      , W = "function" == typeof I
+      , J = s.QObject
+      , Z = !J || !J[O] || !J[O].findChild
+      , K = a && u(function() {
+        return 7 != v(w({}, "a", {
+            get: function() {
+                return w(this, "a", {
+                    value: 7
+                }).a
+            }
+        })).a
+    }) ? function(e, t, n) {
+        var s = L(R, t);
+        s && delete R[t],
+        w(e, t, n),
+        s && e !== R && w(R, t, s)
+    }
+    : w
+      , z = function(e) {
+        var t = Y[e] = v(I[O]);
+        return t._k = e,
+        t
+    }
+      , U = W && "symbol" == typeof I.iterator ? function(e) {
+        return "symbol" == typeof e
+    }
+    : function(e) {
+        return e instanceof I
+    }
+      , G = function(e, t, n) {
+        return e === R && G(B, t, n),
+        S(e),
+        t = _(t, !0),
+        S(n),
+        r(Y, t) ? (n.enumerable ? (r(e, x) && e[x][t] && (e[x][t] = !1),
+        n = v(n, {
+            enumerable: b(0, !1)
+        })) : (r(e, x) || w(e, x, b(1, {})),
+        e[x][t] = !0),
+        K(e, t, n)) : w(e, t, n)
+    }
+      , V = function(e, t) {
+        S(e);
+        for (var n, s = M(t = g(t)), r = 0, a = s.length; a > r; )
+            G(e, n = s[r++], t[n]);
+        return e
+    }
+      , $ = function(e, t) {
+        return void 0 === t ? v(e) : V(v(e), t)
+    }
+      , q = function(e) {
+        var t = F.call(this, e = _(e, !0));
+        return !(this === R && r(Y, e) && !r(B, e)) && (!(t || !r(this, e) || !r(Y, e) || r(this, x) && this[x][e]) || t)
+    }
+      , X = function(e, t) {
+        if (e = g(e),
+        t = _(t, !0),
+        e !== R || !r(Y, t) || r(B, t)) {
+            var n = L(e, t);
+            return !n || !r(Y, t) || r(e, x) && e[x][t] || (n.enumerable = !0),
+            n
+        }
+    }
+      , Q = function(e) {
+        for (var t, n = H(g(e)), s = [], a = 0; n.length > a; )
+            r(Y, t = n[a++]) || t == x || t == d || s.push(t);
+        return s
+    }
+      , ee = function(e) {
+        for (var t, n = e === R, s = H(n ? B : g(e)), a = [], i = 0; s.length > i; )
+            !r(Y, t = s[i++]) || n && !r(R, t) || a.push(Y[t]);
+        return a
+    };
+    W || (I = function() {
+        if (this instanceof I)
+            throw TypeError("Symbol is not a constructor!");
+        var e = h(arguments.length > 0 ? arguments[0] : void 0)
+          , t = function(n) {
+            this === R && t.call(B, n),
+            r(this, x) && r(this[x], e) && (this[x][e] = !1),
+            K(this, e, b(1, n))
+        };
+        return a && Z && K(R, e, {
+            configurable: !0,
+            set: t
+        }),
+        z(e)
+    }
+    ,
+    o(I[O], "toString", function() {
+        return this._k
+    }),
+    A.f = X,
+    C.f = G,
+    n(235).f = D.f = Q,
+    n(74).f = q,
+    n(136).f = ee,
+    a && !n(88) && o(R, "propertyIsEnumerable", q, !0),
+    T.f = function(e) {
+        return z(m(e))
+    }
+    ),
+    i(i.G + i.W + i.F * !W, {
+        Symbol: I
+    });
+    for (var te = "hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","), ne = 0; te.length > ne; )
+        m(te[ne++]);
+    for (var te = E(m.store), ne = 0; te.length > ne; )
+        c(te[ne++]);
+    i(i.S + i.F * !W, "Symbol", {
+        for: function(e) {
+            return r(j, e += "") ? j[e] : j[e] = I(e)
+        },
+        keyFor: function(e) {
+            if (U(e))
+                return p(j, e);
+            throw TypeError(e + " is not a symbol!")
+        },
+        useSetter: function() {
+            Z = !0
+        },
+        useSimple: function() {
+            Z = !1
+        }
+    }),
+    i(i.S + i.F * !W, "Object", {
+        create: $,
+        defineProperty: G,
+        defineProperties: V,
+        getOwnPropertyDescriptor: X,
+        getOwnPropertyNames: Q,
+        getOwnPropertySymbols: ee
+    }),
+    k && i(i.S + i.F * (!W || u(function() {
+        var e = I();
+        return "[null]" != N([e]) || "{}" != N({
+            a: e
+        }) || "{}" != N(Object(e))
+    })), "JSON", {
+        stringify: function(e) {
+            if (void 0 !== e && !U(e)) {
+                for (var t, n, s = [e], r = 1; arguments.length > r; )
+                    s.push(arguments[r++]);
+                return t = s[1],
+                "function" == typeof t && (n = t),
+                !n && f(t) || (t = function(e, t) {
+                    if (n && (t = n.call(this, e, t)),
+                    !U(t))
+                        return t
+                }
+                ),
+                s[1] = t,
+                N.apply(k, s)
+            }
+        }
+    }),
+    I[O][P] || n(47)(I[O], P, I[O].valueOf),
+    y(I, "Symbol"),
+    y(Math, "Math", !0),
+    y(s.JSON, "JSON", !0)
+}
+, , function(e, t, n) {
+    n(141)("asyncIterator")
+}
+, function(e, t, n) {
+    n(141)("observable")
+}
+, function(e, t, n) {
+    n(871),
+    n(868),
+    n(867),
+    n(876),
+    n(870),
+    n(874),
+    n(875),
+    n(873),
+    n(872),
+    n(869),
+    n(877),
+    n(878)
 }
 , function(e, t) {
     !function() {
@@ -26834,7 +28295,7 @@
                 else if (!Date.CultureStrings || !Date.CultureStrings[r])
                     if ("undefined" != typeof t && this.exports !== t)
                         try {
-                            n(775)("./" + r + ".js"),
+                            n(879)("./" + r + ".js"),
                             s = r,
                             Date.CultureStrings.lang = r,
                             Date.CultureInfo = new l
@@ -27327,7 +28788,7 @@
             process: function(e, t) {
                 return function(n) {
                     var s = e.call(this, n);
-                    return [t.call(this, s[0]), s[1]]
+                    return [t.call(this, s[0]), s[1]];
                 }
             },
             min: function(t, n) {
@@ -27991,162 +29452,162 @@
         }()
     }
     var a = {
-        "./af-ZA.js": 776,
-        "./ar-AE.js": 777,
-        "./ar-BH.js": 778,
-        "./ar-DZ.js": 779,
-        "./ar-EG.js": 780,
-        "./ar-IQ.js": 781,
-        "./ar-JO.js": 782,
-        "./ar-KW.js": 783,
-        "./ar-LB.js": 784,
-        "./ar-LY.js": 785,
-        "./ar-MA.js": 786,
-        "./ar-OM.js": 787,
-        "./ar-QA.js": 788,
-        "./ar-SA.js": 789,
-        "./ar-SY.js": 790,
-        "./ar-TN.js": 791,
-        "./ar-YE.js": 792,
-        "./az-Cyrl-AZ.js": 793,
-        "./az-Latn-AZ.js": 794,
-        "./be-BY.js": 795,
-        "./bg-BG.js": 796,
-        "./bs-Latn-BA.js": 797,
-        "./ca-ES.js": 798,
-        "./cs-CZ.js": 799,
-        "./cy-GB.js": 800,
-        "./da-DK.js": 801,
-        "./de-AT.js": 802,
-        "./de-CH.js": 803,
-        "./de-DE.js": 804,
-        "./de-LI.js": 805,
-        "./de-LU.js": 806,
-        "./dv-MV.js": 807,
-        "./el-GR.js": 808,
-        "./en-029.js": 809,
-        "./en-AU.js": 810,
-        "./en-BZ.js": 811,
-        "./en-CA.js": 812,
-        "./en-GB.js": 813,
-        "./en-IE.js": 814,
-        "./en-JM.js": 815,
-        "./en-NZ.js": 816,
-        "./en-PH.js": 817,
-        "./en-TT.js": 818,
-        "./en-ZA.js": 819,
-        "./en-ZW.js": 820,
-        "./es-AR.js": 821,
-        "./es-BO.js": 822,
-        "./es-CL.js": 823,
-        "./es-CO.js": 824,
-        "./es-CR.js": 825,
-        "./es-DO.js": 826,
-        "./es-EC.js": 827,
-        "./es-ES.js": 828,
-        "./es-GT.js": 829,
-        "./es-HN.js": 830,
-        "./es-MX.js": 831,
-        "./es-NI.js": 832,
-        "./es-PA.js": 833,
-        "./es-PE.js": 834,
-        "./es-PR.js": 835,
-        "./es-PY.js": 836,
-        "./es-SV.js": 837,
-        "./es-UY.js": 838,
-        "./es-VE.js": 839,
-        "./et-EE.js": 840,
-        "./eu-ES.js": 841,
-        "./fa-IR.js": 842,
-        "./fi-FI.js": 843,
-        "./fo-FO.js": 844,
-        "./fr-BE.js": 845,
-        "./fr-CA.js": 846,
-        "./fr-CH.js": 847,
-        "./fr-FR.js": 848,
-        "./fr-LU.js": 849,
-        "./fr-MC.js": 850,
-        "./gl-ES.js": 851,
-        "./gu-IN.js": 852,
-        "./he-IL.js": 853,
-        "./hi-IN.js": 854,
-        "./hr-BA.js": 855,
-        "./hr-HR.js": 856,
-        "./hu-HU.js": 857,
-        "./hy-AM.js": 858,
-        "./id-ID.js": 859,
-        "./is-IS.js": 860,
-        "./it-CH.js": 861,
-        "./it-IT.js": 862,
-        "./ja-JP.js": 863,
-        "./ka-GE.js": 864,
-        "./kk-KZ.js": 865,
-        "./kn-IN.js": 866,
-        "./ko-KR.js": 867,
-        "./kok-IN.js": 868,
-        "./ky-KG.js": 869,
-        "./lt-LT.js": 870,
-        "./lv-LV.js": 871,
-        "./mi-NZ.js": 872,
-        "./mk-MK.js": 873,
-        "./mn-MN.js": 874,
-        "./mr-IN.js": 875,
-        "./ms-BN.js": 876,
-        "./ms-MY.js": 877,
-        "./mt-MT.js": 878,
-        "./nb-NO.js": 879,
-        "./nl-BE.js": 880,
-        "./nl-NL.js": 881,
-        "./nn-NO.js": 882,
-        "./ns-ZA.js": 883,
-        "./pa-IN.js": 884,
-        "./pl-PL.js": 885,
-        "./pt-BR.js": 886,
-        "./pt-PT.js": 887,
-        "./quz-BO.js": 888,
-        "./quz-EC.js": 889,
-        "./quz-PE.js": 890,
-        "./ro-RO.js": 891,
-        "./ru-RU.js": 892,
-        "./sa-IN.js": 893,
-        "./se-FI.js": 894,
-        "./se-NO.js": 895,
-        "./se-SE.js": 896,
-        "./sk-SK.js": 897,
-        "./sl-SI.js": 898,
-        "./sma-NO.js": 899,
-        "./sma-SE.js": 900,
-        "./smj-NO.js": 901,
-        "./smj-SE.js": 902,
-        "./smn-FI.js": 903,
-        "./sms-FI.js": 904,
-        "./sq-AL.js": 905,
-        "./sr-Cyrl-BA.js": 906,
-        "./sr-Cyrl-CS.js": 907,
-        "./sr-Latn-BA.js": 908,
-        "./sr-Latn-CS.js": 909,
-        "./sv-FI.js": 910,
-        "./sv-SE.js": 911,
-        "./sw-KE.js": 912,
-        "./syr-SY.js": 913,
-        "./ta-IN.js": 914,
-        "./te-IN.js": 915,
-        "./th-TH.js": 916,
-        "./tn-ZA.js": 917,
-        "./tr-TR.js": 918,
-        "./tt-RU.js": 919,
-        "./uk-UA.js": 920,
-        "./ur-PK.js": 921,
-        "./uz-Cyrl-UZ.js": 922,
-        "./uz-Latn-UZ.js": 923,
-        "./vi-VN.js": 924,
-        "./xh-ZA.js": 925,
-        "./zh-CN.js": 926,
-        "./zh-HK.js": 927,
-        "./zh-MO.js": 928,
-        "./zh-SG.js": 929,
-        "./zh-TW.js": 930,
-        "./zu-ZA.js": 931
+        "./af-ZA.js": 880,
+        "./ar-AE.js": 881,
+        "./ar-BH.js": 882,
+        "./ar-DZ.js": 883,
+        "./ar-EG.js": 884,
+        "./ar-IQ.js": 885,
+        "./ar-JO.js": 886,
+        "./ar-KW.js": 887,
+        "./ar-LB.js": 888,
+        "./ar-LY.js": 889,
+        "./ar-MA.js": 890,
+        "./ar-OM.js": 891,
+        "./ar-QA.js": 892,
+        "./ar-SA.js": 893,
+        "./ar-SY.js": 894,
+        "./ar-TN.js": 895,
+        "./ar-YE.js": 896,
+        "./az-Cyrl-AZ.js": 897,
+        "./az-Latn-AZ.js": 898,
+        "./be-BY.js": 899,
+        "./bg-BG.js": 900,
+        "./bs-Latn-BA.js": 901,
+        "./ca-ES.js": 902,
+        "./cs-CZ.js": 903,
+        "./cy-GB.js": 904,
+        "./da-DK.js": 905,
+        "./de-AT.js": 906,
+        "./de-CH.js": 907,
+        "./de-DE.js": 908,
+        "./de-LI.js": 909,
+        "./de-LU.js": 910,
+        "./dv-MV.js": 911,
+        "./el-GR.js": 912,
+        "./en-029.js": 913,
+        "./en-AU.js": 914,
+        "./en-BZ.js": 915,
+        "./en-CA.js": 916,
+        "./en-GB.js": 917,
+        "./en-IE.js": 918,
+        "./en-JM.js": 919,
+        "./en-NZ.js": 920,
+        "./en-PH.js": 921,
+        "./en-TT.js": 922,
+        "./en-ZA.js": 923,
+        "./en-ZW.js": 924,
+        "./es-AR.js": 925,
+        "./es-BO.js": 926,
+        "./es-CL.js": 927,
+        "./es-CO.js": 928,
+        "./es-CR.js": 929,
+        "./es-DO.js": 930,
+        "./es-EC.js": 931,
+        "./es-ES.js": 932,
+        "./es-GT.js": 933,
+        "./es-HN.js": 934,
+        "./es-MX.js": 935,
+        "./es-NI.js": 936,
+        "./es-PA.js": 937,
+        "./es-PE.js": 938,
+        "./es-PR.js": 939,
+        "./es-PY.js": 940,
+        "./es-SV.js": 941,
+        "./es-UY.js": 942,
+        "./es-VE.js": 943,
+        "./et-EE.js": 944,
+        "./eu-ES.js": 945,
+        "./fa-IR.js": 946,
+        "./fi-FI.js": 947,
+        "./fo-FO.js": 948,
+        "./fr-BE.js": 949,
+        "./fr-CA.js": 950,
+        "./fr-CH.js": 951,
+        "./fr-FR.js": 952,
+        "./fr-LU.js": 953,
+        "./fr-MC.js": 954,
+        "./gl-ES.js": 955,
+        "./gu-IN.js": 956,
+        "./he-IL.js": 957,
+        "./hi-IN.js": 958,
+        "./hr-BA.js": 959,
+        "./hr-HR.js": 960,
+        "./hu-HU.js": 961,
+        "./hy-AM.js": 962,
+        "./id-ID.js": 963,
+        "./is-IS.js": 964,
+        "./it-CH.js": 965,
+        "./it-IT.js": 966,
+        "./ja-JP.js": 967,
+        "./ka-GE.js": 968,
+        "./kk-KZ.js": 969,
+        "./kn-IN.js": 970,
+        "./ko-KR.js": 971,
+        "./kok-IN.js": 972,
+        "./ky-KG.js": 973,
+        "./lt-LT.js": 974,
+        "./lv-LV.js": 975,
+        "./mi-NZ.js": 976,
+        "./mk-MK.js": 977,
+        "./mn-MN.js": 978,
+        "./mr-IN.js": 979,
+        "./ms-BN.js": 980,
+        "./ms-MY.js": 981,
+        "./mt-MT.js": 982,
+        "./nb-NO.js": 983,
+        "./nl-BE.js": 984,
+        "./nl-NL.js": 985,
+        "./nn-NO.js": 986,
+        "./ns-ZA.js": 987,
+        "./pa-IN.js": 988,
+        "./pl-PL.js": 989,
+        "./pt-BR.js": 990,
+        "./pt-PT.js": 991,
+        "./quz-BO.js": 992,
+        "./quz-EC.js": 993,
+        "./quz-PE.js": 994,
+        "./ro-RO.js": 995,
+        "./ru-RU.js": 996,
+        "./sa-IN.js": 997,
+        "./se-FI.js": 998,
+        "./se-NO.js": 999,
+        "./se-SE.js": 1e3,
+        "./sk-SK.js": 1001,
+        "./sl-SI.js": 1002,
+        "./sma-NO.js": 1003,
+        "./sma-SE.js": 1004,
+        "./smj-NO.js": 1005,
+        "./smj-SE.js": 1006,
+        "./smn-FI.js": 1007,
+        "./sms-FI.js": 1008,
+        "./sq-AL.js": 1009,
+        "./sr-Cyrl-BA.js": 1010,
+        "./sr-Cyrl-CS.js": 1011,
+        "./sr-Latn-BA.js": 1012,
+        "./sr-Latn-CS.js": 1013,
+        "./sv-FI.js": 1014,
+        "./sv-SE.js": 1015,
+        "./sw-KE.js": 1016,
+        "./syr-SY.js": 1017,
+        "./ta-IN.js": 1018,
+        "./te-IN.js": 1019,
+        "./th-TH.js": 1020,
+        "./tn-ZA.js": 1021,
+        "./tr-TR.js": 1022,
+        "./tt-RU.js": 1023,
+        "./uk-UA.js": 1024,
+        "./ur-PK.js": 1025,
+        "./uz-Cyrl-UZ.js": 1026,
+        "./uz-Latn-UZ.js": 1027,
+        "./vi-VN.js": 1028,
+        "./xh-ZA.js": 1029,
+        "./zh-CN.js": 1030,
+        "./zh-HK.js": 1031,
+        "./zh-MO.js": 1032,
+        "./zh-SG.js": 1033,
+        "./zh-TW.js": 1034,
+        "./zu-ZA.js": 1035
     };
     s.keys = function() {
         return Object.keys(a)
@@ -28154,7 +29615,7 @@
     ,
     s.resolve = r,
     e.exports = s,
-    s.id = 775
+    s.id = 879
 }
 , function(e, t) {
     Date.CultureStrings = Date.CultureStrings || {},
@@ -55165,7 +56626,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.$ = n(939)
+        e.exports = t.$ = n(1043)
     }
     ).call(t, function() {
         return this
@@ -55173,7 +56634,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.I18n = n(1017)
+        e.exports = t.I18n = n(1121)
     }
     ).call(t, function() {
         return this
@@ -55181,7 +56642,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.Marionette = n(472)
+        e.exports = t.Marionette = n(792)
     }
     ).call(t, function() {
         return this
@@ -55189,7 +56650,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.OpenLayers = n(932)
+        e.exports = t.OpenLayers = n(1036)
     }
     ).call(t, function() {
         return this
@@ -55197,7 +56658,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t._ = n(37)
+        e.exports = t._ = n(59)
     }
     ).call(t, function() {
         return this
@@ -55205,7 +56666,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.io = n(1025)
+        e.exports = t.io = n(1131)
     }
     ).call(t, function() {
         return this
@@ -55213,7 +56674,7 @@
 }
 , function(e, t, n) {
     (function(t) {
-        e.exports = t.jQuery = n(46)
+        e.exports = t.jQuery = n(75)
     }
     ).call(t, function() {
         return this
@@ -55222,7 +56683,7 @@
 , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     var s, r, a;
     !function(i, o) {
-        r = [n(46)],
+        r = [n(75)],
         s = o,
         a = "function" == typeof s ? s.apply(t, r) : s,
         !(void 0 !== a && (e.exports = a))
@@ -55810,6 +57271,158 @@
         t
     })
 }
+, function(e, t) {
+    var n = !1
+      , s = {}.hasOwnProperty;
+    "function" == typeof n && n("./safe-string"),
+    W.brara.namespace("brara.ViewHelpers"),
+    W.brara.ViewHelpers.attributesToString = function(e) {
+        var t, n, r;
+        null == e && (e = {}),
+        t = [];
+        for (n in e)
+            s.call(e, n) && (r = e[n],
+            t.push(this.escape(this.cleanValue(n)) + "='" + this.escape(this.cleanValue(r)) + "'"));
+        return t.length > 0 ? " " + t.join(" ") : ""
+    }
+    ,
+    W.brara.ViewHelpers.contentTag = function(e, t, n) {
+        var s, r, a;
+        return null == t && (t = ""),
+        null == n && (n = {}),
+        s = this.attributesToString(n),
+        a = "<" + e + s + ">",
+        t = this.escapeIfUnsafe(t),
+        r = "</" + e + ">",
+        this.safeString(a + t + r)
+    }
+    ,
+    W.brara.ViewHelpers.linkTo = function(e, t) {
+        return this.contentTag("a", e, {
+            href: t
+        })
+    }
+    ,
+    W.brara.ViewHelpers.radio = function(e, t, n, s) {
+        var r, a;
+        return null == s && (s = {}),
+        s.type || (s.type = "radio"),
+        s.id || (s.id = t + "-" + n),
+        s.name || (s.name = t),
+        s.value || (s.value = n),
+        a = this.contentTag("input", "", s),
+        r = this.safeString(a + e),
+        this.contentTag("label", r, {
+            class: "radio"
+        })
+    }
+}
+, function(e, t) {
+    var n = !1;
+    "function" == typeof n && n("./tags"),
+    W.brara.ViewHelpers.getTimeFromSeconds = function(e, t) {
+        var n, s, r, a, i, o;
+        if (null == t && (t = {}),
+        i = null != e && !isNaN(e),
+        !i)
+            return null ;
+        if (_.defaults(t, {
+            wrapInSpan: !1
+        }),
+        e = Math.abs(Math.round(e)),
+        s = Math.floor(e / 60),
+        o = {},
+        o.seconds = e,
+        o.hours = Math.floor(s / 60),
+        o.minutes = Math.floor(s % 60),
+        o.days = Math.floor(o.hours / 24),
+        r = {},
+        t.wrapInSpan)
+            for (n in o)
+                a = o[n],
+                r[n] = this.contentTag("span", a);
+        else
+            r = o;
+        return 1 === o.days ? this.safe_t("common.time.day", {
+            day: r.days
+        }) : o.days > 1 ? this.safe_t("common.time.days", {
+            days: r.days
+        }) : o.hours > 0 ? 0 === o.minutes ? this.safe_t("common.time.hours", {
+            hours: r.hours
+        }) : this.safe_t("common.time.hours_minutes", {
+            hours: r.hours,
+            minutes: r.minutes
+        }) : o.minutes > 0 ? this.safe_t("common.time.minutes", {
+            minutes: r.minutes
+        }) : this.safe_t("common.time.seconds", {
+            seconds: r.seconds
+        })
+    }
+    ,
+    W.brara.ViewHelpers.getTimeDurationSince = function(e, t) {
+        var n, s, r, a;
+        return null == t && (t = {}),
+        s = (new Date).getTime(),
+        (a = null != e && !isNaN(e) && (n = s - e) > 0) ? (_.defaults(t, {
+            wrapInSpan: !1
+        }),
+        r = Math.round(n / 1e3),
+        r > 60 ? I18n.t("common.time.ago", {
+            time: this.getTimeFromSeconds(r, t)
+        }) : I18n.t("common.time.now")) : null
+    }
+    ,
+    W.brara.ViewHelpers.timeDistanceInWords = function(e, t) {
+        var n, s, r, a, i;
+        return null == t && (t = new Date),
+        e = new Date(e),
+        t = new Date(t),
+        n = Math.round(Math.abs((t - e) / 60 / 1e3)),
+        n >= 0 && n <= 1 ? 0 === n ? I18n.t("datetime.distance_in_words.less_than_x_minutes", {
+            count: 1
+        }) : I18n.t("datetime.distance_in_words.x_minutes", {
+            count: n
+        }) : n >= 2 && n <= 44 ? I18n.t("datetime.distance_in_words.x_minutes", {
+            count: n
+        }) : n >= 45 && n <= 89 ? I18n.t("datetime.distance_in_words.about_x_hours", {
+            count: 1
+        }) : n >= 90 && n <= 1439 ? I18n.t("datetime.distance_in_words.about_x_hours", {
+            count: Math.round(n / 60)
+        }) : n >= 1440 && n <= 2519 ? I18n.t("datetime.distance_in_words.x_days", {
+            count: 1
+        }) : n >= 2520 && n <= 43199 ? I18n.t("datetime.distance_in_words.x_days", {
+            count: Math.round(n / 1440)
+        }) : n >= 43200 && n <= 86399 ? I18n.t("datetime.distance_in_words.about_x_months", {
+            count: 1
+        }) : n >= 86400 && n <= 525599 ? I18n.t("datetime.distance_in_words.x_months", {
+            count: Math.round(n / 43200)
+        }) : (r = e.getFullYear(),
+        i = t.getFullYear(),
+        a = n % 525600,
+        s = Math.floor(n / 525600),
+        e.getMonth() + 1 >= 3 && r++,
+        t.getMonth() + 1 < 3 && i--,
+        a < 131400 ? I18n.t("datetime.distance_in_words.about_x_years", {
+            count: s
+        }) : a < 394200 ? I18n.t("datetime.distance_in_words.over_x_years", {
+            count: s
+        }) : I18n.t("datetime.distance_in_words.almost_x_years", {
+            count: s + 1
+        }))
+    }
+    ,
+    W.brara.ViewHelpers.timeDistanceInWordsFromNow = function(e, t) {
+        var n;
+        return null == t && (t = {}),
+        t = _.extend({
+            ago: !1
+        }, t),
+        n = W.brara.ViewHelpers.timeDistanceInWords(e),
+        t.ago ? I18n.t("common.time.ago", {
+            time: n
+        }) : n
+    }
+}
 , , function(e, t) {
     (function() {
         var e = {}.hasOwnProperty;
@@ -55934,7 +57547,7 @@
 	 * Released under the MIT license
 	 */
     !function(i) {
-        r = [n(46)],
+        r = [n(75)],
         s = i,
         a = "function" == typeof s ? s.apply(t, r) : s,
         !(void 0 !== a && (e.exports = a))
@@ -56002,222 +57615,222 @@
         }()
     }
     var a = {
-        "./af": 182,
-        "./af.js": 182,
-        "./ar": 188,
-        "./ar-dz": 183,
-        "./ar-dz.js": 183,
-        "./ar-ly": 184,
-        "./ar-ly.js": 184,
-        "./ar-ma": 185,
-        "./ar-ma.js": 185,
-        "./ar-sa": 186,
-        "./ar-sa.js": 186,
-        "./ar-tn": 187,
-        "./ar-tn.js": 187,
-        "./ar.js": 188,
-        "./az": 189,
-        "./az.js": 189,
-        "./be": 190,
-        "./be.js": 190,
-        "./bg": 192,
-        "./bg-x": 191,
-        "./bg-x.js": 191,
-        "./bg.js": 192,
-        "./bn": 193,
-        "./bn.js": 193,
-        "./bo": 194,
-        "./bo.js": 194,
-        "./br": 195,
-        "./br.js": 195,
-        "./bs": 196,
-        "./bs.js": 196,
-        "./ca": 197,
-        "./ca.js": 197,
-        "./cs": 198,
-        "./cs.js": 198,
-        "./cv": 199,
-        "./cv.js": 199,
-        "./cy": 200,
-        "./cy.js": 200,
-        "./da": 201,
-        "./da.js": 201,
-        "./de": 203,
-        "./de-at": 202,
-        "./de-at.js": 202,
-        "./de.js": 203,
-        "./dv": 204,
-        "./dv.js": 204,
-        "./el": 205,
-        "./el.js": 205,
-        "./en-au": 206,
-        "./en-au.js": 206,
-        "./en-ca": 207,
-        "./en-ca.js": 207,
-        "./en-gb": 208,
-        "./en-gb.js": 208,
-        "./en-ie": 209,
-        "./en-ie.js": 209,
-        "./en-nz": 210,
-        "./en-nz.js": 210,
-        "./eo": 211,
-        "./eo.js": 211,
-        "./es": 213,
-        "./es-do": 212,
-        "./es-do.js": 212,
-        "./es.js": 213,
-        "./et": 214,
-        "./et.js": 214,
-        "./eu": 215,
-        "./eu.js": 215,
-        "./fa": 216,
-        "./fa.js": 216,
-        "./fi": 217,
-        "./fi.js": 217,
-        "./fo": 218,
-        "./fo.js": 218,
-        "./fr": 221,
-        "./fr-ca": 219,
-        "./fr-ca.js": 219,
-        "./fr-ch": 220,
-        "./fr-ch.js": 220,
-        "./fr.js": 221,
-        "./fy": 222,
-        "./fy.js": 222,
-        "./gd": 223,
-        "./gd.js": 223,
-        "./gl": 224,
-        "./gl.js": 224,
-        "./he": 225,
-        "./he.js": 225,
-        "./hi": 226,
-        "./hi.js": 226,
-        "./hr": 227,
-        "./hr.js": 227,
-        "./hu": 228,
-        "./hu.js": 228,
-        "./hy-am": 229,
-        "./hy-am.js": 229,
-        "./id": 230,
-        "./id.js": 230,
-        "./is": 231,
-        "./is.js": 231,
-        "./it": 232,
-        "./it.js": 232,
-        "./ja": 233,
-        "./ja.js": 233,
-        "./jv": 234,
-        "./jv.js": 234,
-        "./ka": 235,
-        "./ka.js": 235,
-        "./kk": 236,
-        "./kk.js": 236,
-        "./km": 237,
-        "./km.js": 237,
-        "./ko": 238,
-        "./ko.js": 238,
-        "./ky": 239,
-        "./ky.js": 239,
-        "./lb": 240,
-        "./lb.js": 240,
-        "./lo": 241,
-        "./lo.js": 241,
-        "./lt": 242,
-        "./lt.js": 242,
-        "./lv": 243,
-        "./lv.js": 243,
-        "./me": 244,
-        "./me.js": 244,
-        "./mi": 245,
-        "./mi.js": 245,
-        "./mk": 246,
-        "./mk.js": 246,
-        "./ml": 247,
-        "./ml.js": 247,
-        "./mr": 248,
-        "./mr.js": 248,
-        "./ms": 250,
-        "./ms-my": 249,
-        "./ms-my.js": 249,
-        "./ms.js": 250,
-        "./my": 251,
-        "./my.js": 251,
-        "./nb": 252,
-        "./nb.js": 252,
-        "./ne": 253,
-        "./ne.js": 253,
-        "./nl": 255,
-        "./nl-be": 254,
-        "./nl-be.js": 254,
-        "./nl.js": 255,
-        "./nn": 256,
-        "./nn.js": 256,
-        "./pa-in": 257,
-        "./pa-in.js": 257,
-        "./pl": 258,
-        "./pl.js": 258,
-        "./pt": 260,
-        "./pt-br": 259,
-        "./pt-br.js": 259,
-        "./pt.js": 260,
-        "./ro": 261,
-        "./ro.js": 261,
-        "./ru": 262,
-        "./ru.js": 262,
-        "./se": 263,
-        "./se.js": 263,
-        "./si": 264,
-        "./si.js": 264,
-        "./sk": 265,
-        "./sk.js": 265,
-        "./sl": 266,
-        "./sl.js": 266,
-        "./sq": 267,
-        "./sq.js": 267,
-        "./sr": 269,
-        "./sr-cyrl": 268,
-        "./sr-cyrl.js": 268,
-        "./sr.js": 269,
-        "./ss": 270,
-        "./ss.js": 270,
-        "./sv": 271,
-        "./sv.js": 271,
-        "./sw": 272,
-        "./sw.js": 272,
-        "./ta": 273,
-        "./ta.js": 273,
-        "./te": 274,
-        "./te.js": 274,
-        "./tet": 275,
-        "./tet.js": 275,
-        "./th": 276,
-        "./th.js": 276,
-        "./tl-ph": 277,
-        "./tl-ph.js": 277,
-        "./tlh": 278,
-        "./tlh.js": 278,
-        "./tr": 279,
-        "./tr.js": 279,
-        "./tzl": 280,
-        "./tzl.js": 280,
-        "./tzm": 282,
-        "./tzm-latn": 281,
-        "./tzm-latn.js": 281,
-        "./tzm.js": 282,
-        "./uk": 283,
-        "./uk.js": 283,
-        "./uz": 284,
-        "./uz.js": 284,
-        "./vi": 285,
-        "./vi.js": 285,
-        "./x-pseudo": 286,
-        "./x-pseudo.js": 286,
-        "./zh-cn": 287,
-        "./zh-cn.js": 287,
-        "./zh-hk": 288,
-        "./zh-hk.js": 288,
-        "./zh-tw": 289,
-        "./zh-tw.js": 289
+        "./af": 245,
+        "./af.js": 245,
+        "./ar": 251,
+        "./ar-dz": 246,
+        "./ar-dz.js": 246,
+        "./ar-ly": 247,
+        "./ar-ly.js": 247,
+        "./ar-ma": 248,
+        "./ar-ma.js": 248,
+        "./ar-sa": 249,
+        "./ar-sa.js": 249,
+        "./ar-tn": 250,
+        "./ar-tn.js": 250,
+        "./ar.js": 251,
+        "./az": 252,
+        "./az.js": 252,
+        "./be": 253,
+        "./be.js": 253,
+        "./bg": 255,
+        "./bg-x": 254,
+        "./bg-x.js": 254,
+        "./bg.js": 255,
+        "./bn": 256,
+        "./bn.js": 256,
+        "./bo": 257,
+        "./bo.js": 257,
+        "./br": 258,
+        "./br.js": 258,
+        "./bs": 259,
+        "./bs.js": 259,
+        "./ca": 260,
+        "./ca.js": 260,
+        "./cs": 261,
+        "./cs.js": 261,
+        "./cv": 262,
+        "./cv.js": 262,
+        "./cy": 263,
+        "./cy.js": 263,
+        "./da": 264,
+        "./da.js": 264,
+        "./de": 266,
+        "./de-at": 265,
+        "./de-at.js": 265,
+        "./de.js": 266,
+        "./dv": 267,
+        "./dv.js": 267,
+        "./el": 268,
+        "./el.js": 268,
+        "./en-au": 269,
+        "./en-au.js": 269,
+        "./en-ca": 270,
+        "./en-ca.js": 270,
+        "./en-gb": 271,
+        "./en-gb.js": 271,
+        "./en-ie": 272,
+        "./en-ie.js": 272,
+        "./en-nz": 273,
+        "./en-nz.js": 273,
+        "./eo": 274,
+        "./eo.js": 274,
+        "./es": 276,
+        "./es-do": 275,
+        "./es-do.js": 275,
+        "./es.js": 276,
+        "./et": 277,
+        "./et.js": 277,
+        "./eu": 278,
+        "./eu.js": 278,
+        "./fa": 279,
+        "./fa.js": 279,
+        "./fi": 280,
+        "./fi.js": 280,
+        "./fo": 281,
+        "./fo.js": 281,
+        "./fr": 284,
+        "./fr-ca": 282,
+        "./fr-ca.js": 282,
+        "./fr-ch": 283,
+        "./fr-ch.js": 283,
+        "./fr.js": 284,
+        "./fy": 285,
+        "./fy.js": 285,
+        "./gd": 286,
+        "./gd.js": 286,
+        "./gl": 287,
+        "./gl.js": 287,
+        "./he": 288,
+        "./he.js": 288,
+        "./hi": 289,
+        "./hi.js": 289,
+        "./hr": 290,
+        "./hr.js": 290,
+        "./hu": 291,
+        "./hu.js": 291,
+        "./hy-am": 292,
+        "./hy-am.js": 292,
+        "./id": 293,
+        "./id.js": 293,
+        "./is": 294,
+        "./is.js": 294,
+        "./it": 295,
+        "./it.js": 295,
+        "./ja": 296,
+        "./ja.js": 296,
+        "./jv": 297,
+        "./jv.js": 297,
+        "./ka": 298,
+        "./ka.js": 298,
+        "./kk": 299,
+        "./kk.js": 299,
+        "./km": 300,
+        "./km.js": 300,
+        "./ko": 301,
+        "./ko.js": 301,
+        "./ky": 302,
+        "./ky.js": 302,
+        "./lb": 303,
+        "./lb.js": 303,
+        "./lo": 304,
+        "./lo.js": 304,
+        "./lt": 305,
+        "./lt.js": 305,
+        "./lv": 306,
+        "./lv.js": 306,
+        "./me": 307,
+        "./me.js": 307,
+        "./mi": 308,
+        "./mi.js": 308,
+        "./mk": 309,
+        "./mk.js": 309,
+        "./ml": 310,
+        "./ml.js": 310,
+        "./mr": 311,
+        "./mr.js": 311,
+        "./ms": 313,
+        "./ms-my": 312,
+        "./ms-my.js": 312,
+        "./ms.js": 313,
+        "./my": 314,
+        "./my.js": 314,
+        "./nb": 315,
+        "./nb.js": 315,
+        "./ne": 316,
+        "./ne.js": 316,
+        "./nl": 318,
+        "./nl-be": 317,
+        "./nl-be.js": 317,
+        "./nl.js": 318,
+        "./nn": 319,
+        "./nn.js": 319,
+        "./pa-in": 320,
+        "./pa-in.js": 320,
+        "./pl": 321,
+        "./pl.js": 321,
+        "./pt": 323,
+        "./pt-br": 322,
+        "./pt-br.js": 322,
+        "./pt.js": 323,
+        "./ro": 324,
+        "./ro.js": 324,
+        "./ru": 325,
+        "./ru.js": 325,
+        "./se": 326,
+        "./se.js": 326,
+        "./si": 327,
+        "./si.js": 327,
+        "./sk": 328,
+        "./sk.js": 328,
+        "./sl": 329,
+        "./sl.js": 329,
+        "./sq": 330,
+        "./sq.js": 330,
+        "./sr": 332,
+        "./sr-cyrl": 331,
+        "./sr-cyrl.js": 331,
+        "./sr.js": 332,
+        "./ss": 333,
+        "./ss.js": 333,
+        "./sv": 334,
+        "./sv.js": 334,
+        "./sw": 335,
+        "./sw.js": 335,
+        "./ta": 336,
+        "./ta.js": 336,
+        "./te": 337,
+        "./te.js": 337,
+        "./tet": 338,
+        "./tet.js": 338,
+        "./th": 339,
+        "./th.js": 339,
+        "./tl-ph": 340,
+        "./tl-ph.js": 340,
+        "./tlh": 341,
+        "./tlh.js": 341,
+        "./tr": 342,
+        "./tr.js": 342,
+        "./tzl": 343,
+        "./tzl.js": 343,
+        "./tzm": 345,
+        "./tzm-latn": 344,
+        "./tzm-latn.js": 344,
+        "./tzm.js": 345,
+        "./uk": 346,
+        "./uk.js": 346,
+        "./uz": 347,
+        "./uz.js": 347,
+        "./vi": 348,
+        "./vi.js": 348,
+        "./x-pseudo": 349,
+        "./x-pseudo.js": 349,
+        "./zh-cn": 350,
+        "./zh-cn.js": 350,
+        "./zh-hk": 351,
+        "./zh-hk.js": 351,
+        "./zh-tw": 352,
+        "./zh-tw.js": 352
     };
     s.keys = function() {
         return Object.keys(a)
@@ -56225,7 +57838,7 @@
     ,
     s.resolve = r,
     e.exports = s,
-    s.id = 1024
+    s.id = 1130
 }
 , function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -58237,181 +59850,9 @@
             !(void 0 !== __WEBPACK_AMD_DEFINE_RESULT__ && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
         }()
     }
-    ).call(exports, __webpack_require__(290)(module))
+    ).call(exports, __webpack_require__(353)(module))
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
-    $.fn.typeahead.defaults.highlighter = function(e) {
-        var t, n, s = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"), r = new RegExp(s,"ig"), a = 0;
-        for (t = $("<span />"); null !== (n = r.exec(e)); )
-            n.index > a && t.append($("<span />").text(e.substring(a, n.index))),
-            t.append($("<strong />").text(n[0])),
-            a = r.lastIndex;
-        return a < e.length && t.append($("<span />").text(e.substring(a))),
-        t.html()
-    }
-}
-, function(e, t) {
-    !function(e) {
-        var t = function(t, n) {
-            var s, r, a, i, o = e(t), d = !1, u = null , l = {}, y = this;
-            e.extend(l, n),
-            s = e("<ul />").addClass("map-search-results hidden").css({
-                position: "absolute",
-                display: "block"
-            }).appendTo(o),
-            r = e("input[type=submit]", o),
-            a = e("input[type=text]", o),
-            this.textInput = a,
-            s.css("top", a.top),
-            s.css("left", a.left),
-            s.css("width", a.innerWidth() + "px"),
-            o.bind("submit.searchbox", function() {
-                if ("" !== a.val()) {
-                    var t = y.lonlatRegex.exec(a.val());
-                    null !== t ? l.onselect({
-                        location: {
-                            lon: t[1],
-                            lat: t[2]
-                        }
-                    }, 1, 1, !0) : (T(e(this)),
-                    h())
-                }
-                return !1
-            });
-            var h = function() {
-                a.addClass("loading"),
-                r.prop("disabled", !0)
-            }
-              , m = function() {
-                a.removeClass("loading"),
-                r.prop("disabled", !1),
-                a.prop("disabled", !1)
-            }
-              , T = function(t) {
-                var n = l.map.getCenter().transform(l.map.getProjectionObject(), l.remoteProjection)
-                  , s = t.serialize() + "&lon=" + n.lon + "&lat=" + n.lat;
-                l.maxDistance && (s += "&max_distance_kms=" + l.maxDistance),
-                l.options && Object.forEach(l.options, function(e, t) {
-                    s += "&" + e + "=" + t
-                }),
-                e.ajax({
-                    url: l.url,
-                    data: s
-                }).success(function(e) {
-                    c(e, !1)
-                }).error(function() {
-                    c([], !0)
-                })
-            }
-              , c = function(t, n) {
-                if (s.empty(),
-                n === !0)
-                    p("Error retrieving search results.");
-                else if ("" === t || t.isEmpty())
-                    p("No results found"),
-                    l.onsearch(0);
-                else {
-                    if (l.onsearch(t.length),
-                    1 === t.length)
-                        return m(),
-                        b(),
-                        void l.onselect(t.first(), 1, 1);
-                    t.forEach(function(t, n) {
-                        var r = e("<li />").addClass("search-item").append(e("<a />").attr("href", "#").text(t.name).data("searchbox", t).data("searchbox-index", n));
-                        s.append(r)
-                    })
-                }
-                _(),
-                m()
-            }
-              , p = function(t) {
-                s.append(e("<li />").append(e("<div/>").text(t).addClass("message search-item")))
-            };
-            a.bind("keydown.searchbox", function(e) {
-                var t = !1;
-                switch (e.which) {
-                case 38:
-                    S(),
-                    t = !0;
-                    break;
-                case 40:
-                    f(),
-                    t = !0;
-                    break;
-                case 27:
-                    b();
-                    break;
-                case 13:
-                    M(i) && e.preventDefault()
-                }
-                d && t && e.preventDefault()
-            }),
-            a.bind("keyup.searchbox", function() {
-                e(this).val() !== u && (u = e(this).val(),
-                g(null ))
-            }),
-            s.delegate("li.search-item", "mousedown", function() {
-                M(e(this))
-            }),
-            a.bind("blur.searchbox", function() {
-                b()
-            });
-            var M = function(t) {
-                if (!d || !t)
-                    return !1;
-                var n = e("a", t);
-                a.val(n.text()),
-                b();
-                var r = n.data("searchbox")
-                  , i = n.data("searchbox-index")
-                  , o = s.children(".search-item").length;
-                return l.onselect(r, i + 1, o),
-                !0
-            }
-              , f = function() {
-                if (!i)
-                    return void g(e("li.search-item:first", s));
-                var t = i.next("li.search-item");
-                g(0 === t.length ? e("li.search-item:first", s) : t)
-            }
-              , S = function() {
-                if (!i)
-                    return void g(e("li.search-item:last", s));
-                var t = i.prev("li.search-item");
-                g(0 === t.length ? e("li.search-item:last", s) : t)
-            }
-              , g = function(e) {
-                i && i.removeClass("item-selected"),
-                i = e,
-                i && i.addClass("item-selected")
-            }
-              , _ = function() {
-                s.width(a.innerWidth() + "px"),
-                s.removeClass("hidden"),
-                d = !0,
-                a.focus()
-            }
-              , b = function() {
-                s.addClass("hidden"),
-                i && i.removeClass("item-selected"),
-                g(null ),
-                d = !1
-            }
-        };
-        t.prototype.lonlatRegex = new RegExp(/^\s?(-?\d+(?:\.\d+)?)\s*[,\s]{1}\s*(-?\d+(?:\.\d+)?)\s*$/),
-        t.prototype.focus = function() {
-            this.textInput.focus()
-        }
-        ,
-        e.fn.searchbox = function(n) {
-            return this.each(function() {
-                var s = e(this);
-                s.data("searchbox") || s.data("searchbox", new t(this,n))
-            })
-        }
-    }(jQuery)
-}
-, function(e, t) {
+, , , , , , function(e, t) {
     OpenLayers.Animation = function(e) {
         function t(e, t, n) {
             t = t > 0 ? t : Number.POSITIVE_INFINITY;
@@ -60263,7 +61704,7 @@
             e && e.length)
                 for (var t, n = 0, s = e.length; n < s; ++n)
                     t = e[n],
-                    t instanceof OpenLayers.Layer.Vector ? this.addTargetLayer(t) : this.addTarget(t);
+                    t instanceof OpenLayers.Layer.Vector ? this.addTargetLayer(t) : this.addTarget(t)
         },
         addTargetLayer: function(e) {
             this.addTarget({
@@ -63211,7 +64652,7 @@
         },
         dblclick: function(e) {
             return this.handleDouble(e),
-            !this.stopDouble
+            !this.stopDouble;
         },
         handleDouble: function(e) {
             this.passesDblclickTolerance(e) && (this.double && this.callback("dblclick", [e]),
@@ -67970,7 +69411,7 @@
         b: -1
     },
     OpenLayers.Renderer.SVG.preventDefault = function(e) {
-        e.preventDefault && e.preventDefault();
+        e.preventDefault && e.preventDefault()
     }
 }
 , function(e, t) {
@@ -69259,459 +70700,104 @@
     }
 }
 , function(e, t, n) {
-    n(936),
-    n(1084),
-    n(1136),
-    n(1137),
-    n(1085),
-    n(1168),
-    n(304),
-    n(308),
-    n(306),
-    n(305),
-    n(307),
-    n(1086),
-    n(1104),
-    n(1083),
-    n(1167),
-    n(1150),
-    n(1152),
+    n(1040),
     n(1138),
-    n(1142),
-    n(1144),
+    n(1190),
+    n(1191),
     n(1139),
+    n(1222),
+    n(354),
+    n(358),
+    n(356),
+    n(355),
+    n(357),
     n(1140),
-    n(1147),
-    n(1165),
-    n(1166),
-    n(1141),
-    n(1149),
-    n(1148),
-    n(1151),
-    n(1143),
-    n(1110),
-    n(1114),
-    n(1113),
-    n(1159),
-    n(1087),
-    n(1125),
-    n(1128),
-    n(1131),
-    n(1133),
-    n(1132),
-    n(1134),
-    n(1092),
-    n(1105),
-    n(1106),
-    n(1153),
-    n(1126),
-    n(1103),
-    n(305),
-    n(1115),
-    n(1116),
-    n(1123),
-    n(1121),
-    n(1117),
-    n(1118),
-    n(1119),
-    n(1124),
-    n(1127),
-    n(1096),
-    n(1088),
-    n(1129),
-    n(1097),
-    n(1098),
-    n(1157),
-    n(1107),
-    n(1108),
-    n(1161),
-    n(1160),
-    n(1162),
-    n(1164),
-    n(1163),
-    n(1156),
-    n(1122),
-    n(1091),
     n(1158),
-    n(1145),
+    n(1137),
+    n(1221),
+    n(1204),
+    n(1206),
+    n(1192),
+    n(1196),
+    n(1198),
+    n(1193),
+    n(1194),
+    n(1201),
+    n(1219),
+    n(1220),
+    n(1195),
+    n(1203),
+    n(1202),
+    n(1205),
+    n(1197),
+    n(1164),
+    n(1168),
+    n(1167),
+    n(1213),
+    n(1141),
+    n(1179),
+    n(1182),
+    n(1185),
+    n(1187),
+    n(1186),
+    n(1188),
     n(1146),
-    n(1101),
-    n(1130),
-    n(1094),
-    n(1120),
-    n(308),
-    n(1154),
-    n(1109),
-    n(306),
-    n(304),
-    n(1112),
+    n(1159),
+    n(1160),
+    n(1207),
+    n(1180),
+    n(1157),
+    n(355),
+    n(1169),
+    n(1170),
+    n(1177),
+    n(1175),
+    n(1171),
+    n(1172),
+    n(1173),
+    n(1178),
+    n(1181),
+    n(1150),
+    n(1142),
+    n(1183),
+    n(1151),
+    n(1152),
+    n(1211),
+    n(1161),
+    n(1162),
+    n(1215),
+    n(1214),
+    n(1216),
+    n(1218),
+    n(1217),
+    n(1210),
+    n(1176),
+    n(1145),
+    n(1212),
+    n(1199),
+    n(1200),
     n(1155),
-    n(1093),
-    n(307),
-    n(1135),
-    n(1102),
-    n(1111),
-    n(1090),
-    n(1095),
-    n(1100),
-    n(1089),
-    n(1099),
+    n(1184),
+    n(1148),
+    n(1174),
+    n(358),
+    n(1208),
+    n(1163),
+    n(356),
+    n(354),
+    n(1166),
+    n(1209),
+    n(1147),
+    n(357),
+    n(1189),
+    n(1156),
+    n(1165),
+    n(1144),
+    n(1149),
+    n(1154),
+    n(1143),
+    n(1153),
     window.OL = window.OpenLayers,
     OL.Renderer.SVG.prototype.MAX_PIXEL = Number.MAX_VALUE
-}
-, function(e, t) {
-    !function(e) {
-        "use strict";
-        var t = function(t, n) {
-            this.$element = e(t),
-            this.options = e.extend({}, e.fn.typeahead.defaults, n),
-            this.matcher = this.options.matcher || this.matcher,
-            this.sorter = this.options.sorter || this.sorter,
-            this.highlighter = this.options.highlighter || this.highlighter,
-            this.updater = this.options.updater || this.updater,
-            this.source = this.options.source,
-            this.$menu = e(this.options.menu),
-            this.shown = !1,
-            this.listen()
-        };
-        t.prototype = {
-            constructor: t,
-            select: function() {
-                var e = this.$menu.find(".active").attr("data-value");
-                return this.$element.val(this.updater(e)).change(),
-                this.hide()
-            },
-            updater: function(e) {
-                return e
-            },
-            show: function() {
-                var t = e.extend({}, this.$element.position(), {
-                    height: this.$element[0].offsetHeight
-                });
-                return this.$menu.insertAfter(this.$element).css({
-                    top: t.top + t.height,
-                    left: t.left
-                }).show(),
-                this.shown = !0,
-                this
-            },
-            hide: function() {
-                return this.$menu.hide(),
-                this.shown = !1,
-                this
-            },
-            lookup: function(t) {
-                var n;
-                return this.query = this.$element.val(),
-                !this.query || this.query.length < this.options.minLength ? this.shown ? this.hide() : this : (n = e.isFunction(this.source) ? this.source(this.query, e.proxy(this.process, this)) : this.source,
-                n ? this.process(n) : this)
-            },
-            process: function(t) {
-                var n = this;
-                return t = e.grep(t, function(e) {
-                    return n.matcher(e)
-                }),
-                t = this.sorter(t),
-                t.length ? this.render(t.slice(0, this.options.items)).show() : this.shown ? this.hide() : this
-            },
-            matcher: function(e) {
-                return ~e.toLowerCase().indexOf(this.query.toLowerCase())
-            },
-            sorter: function(e) {
-                for (var t, n = [], s = [], r = []; t = e.shift(); )
-                    t.toLowerCase().indexOf(this.query.toLowerCase()) ? ~t.indexOf(this.query) ? s.push(t) : r.push(t) : n.push(t);
-                return n.concat(s, r)
-            },
-            highlighter: function(e) {
-                var t = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");
-                return e.replace(new RegExp("(" + t + ")","ig"), function(e, t) {
-                    return "<strong>" + t + "</strong>"
-                })
-            },
-            render: function(t) {
-                var n = this;
-                return t = e(t).map(function(t, s) {
-                    return t = e(n.options.item).attr("data-value", s),
-                    t.find("a").html(n.highlighter(s)),
-                    t[0]
-                }),
-                t.first().addClass("active"),
-                this.$menu.html(t),
-                this
-            },
-            next: function(t) {
-                var n = this.$menu.find(".active").removeClass("active")
-                  , s = n.next();
-                s.length || (s = e(this.$menu.find("li")[0])),
-                s.addClass("active")
-            },
-            prev: function(e) {
-                var t = this.$menu.find(".active").removeClass("active")
-                  , n = t.prev();
-                n.length || (n = this.$menu.find("li").last()),
-                n.addClass("active")
-            },
-            listen: function() {
-                this.$element.on("focus", e.proxy(this.focus, this)).on("blur", e.proxy(this.blur, this)).on("keypress", e.proxy(this.keypress, this)).on("keyup", e.proxy(this.keyup, this)),
-                this.eventSupported("keydown") && this.$element.on("keydown", e.proxy(this.keydown, this)),
-                this.$menu.on("click", e.proxy(this.click, this)).on("mouseenter", "li", e.proxy(this.mouseenter, this)).on("mouseleave", "li", e.proxy(this.mouseleave, this))
-            },
-            eventSupported: function(e) {
-                var t = e in this.$element;
-                return t || (this.$element.setAttribute(e, "return;"),
-                t = "function" == typeof this.$element[e]),
-                t
-            },
-            move: function(e) {
-                if (this.shown) {
-                    switch (e.keyCode) {
-                    case 9:
-                    case 13:
-                    case 27:
-                        e.preventDefault();
-                        break;
-                    case 38:
-                        e.preventDefault(),
-                        this.prev();
-                        break;
-                    case 40:
-                        e.preventDefault(),
-                        this.next()
-                    }
-                    e.stopPropagation()
-                }
-            },
-            keydown: function(t) {
-                this.suppressKeyPressRepeat = ~e.inArray(t.keyCode, [40, 38, 9, 13, 27]),
-                this.move(t)
-            },
-            keypress: function(e) {
-                this.suppressKeyPressRepeat || this.move(e)
-            },
-            keyup: function(e) {
-                switch (e.keyCode) {
-                case 40:
-                case 38:
-                case 16:
-                case 17:
-                case 18:
-                    break;
-                case 9:
-                case 13:
-                    if (!this.shown)
-                        return;
-                    this.select();
-                    break;
-                case 27:
-                    if (!this.shown)
-                        return;
-                    this.hide();
-                    break;
-                default:
-                    this.lookup()
-                }
-                e.stopPropagation(),
-                e.preventDefault()
-            },
-            focus: function(e) {
-                this.focused = !0
-            },
-            blur: function(e) {
-                this.focused = !1,
-                !this.mousedover && this.shown && this.hide()
-            },
-            click: function(e) {
-                e.stopPropagation(),
-                e.preventDefault(),
-                this.select(),
-                this.$element.focus()
-            },
-            mouseenter: function(t) {
-                this.mousedover = !0,
-                this.$menu.find(".active").removeClass("active"),
-                e(t.currentTarget).addClass("active")
-            },
-            mouseleave: function(e) {
-                this.mousedover = !1,
-                !this.focused && this.shown && this.hide()
-            }
-        };
-        var n = e.fn.typeahead;
-        e.fn.typeahead = function(n) {
-            return this.each(function() {
-                var s = e(this)
-                  , r = s.data("typeahead")
-                  , a = "object" == typeof n && n;
-                r || s.data("typeahead", r = new t(this,a)),
-                "string" == typeof n && r[n]()
-            })
-        }
-        ,
-        e.fn.typeahead.defaults = {
-            source: [],
-            items: 8,
-            menu: '<ul class="typeahead dropdown-menu"></ul>',
-            item: '<li><a href="#"></a></li>',
-            minLength: 1
-        },
-        e.fn.typeahead.Constructor = t,
-        e.fn.typeahead.noConflict = function() {
-            return e.fn.typeahead = n,
-            this
-        }
-        ,
-        e(document).on("focus.typeahead.data-api", '[data-provide="typeahead"]', function(t) {
-            var n = e(this);
-            n.data("typeahead") || n.typeahead(n.data())
-        })
-    }(window.jQuery)
-}
-, function(e, t) {
-    jQuery.fn.pagination = function(e, t) {
-        return t = jQuery.extend({
-            items_per_page: 10,
-            num_display_entries: 10,
-            current_page: 0,
-            num_edge_entries: 0,
-            link_to: "#",
-            prev_text: "Prev",
-            next_text: "Next",
-            ellipse_text: "...",
-            prev_show_always: !0,
-            next_show_always: !0,
-            callback: function() {
-                return !1
-            }
-        }, t || {}),
-        this.each(function() {
-            function n() {
-                return Math.ceil(e / t.items_per_page)
-            }
-            function s() {
-                var e = Math.ceil(t.num_display_entries / 2)
-                  , s = n()
-                  , r = s - t.num_display_entries
-                  , a = i > e ? Math.max(Math.min(i - e, r), 0) : 0
-                  , o = i > e ? Math.min(i + e, s) : Math.min(t.num_display_entries, s);
-                return [a, o]
-            }
-            function r(e, n) {
-                i = e,
-                a();
-                var s = t.callback(e, o);
-                return s || (n.stopPropagation ? n.stopPropagation() : n.cancelBubble = !0),
-                s
-            }
-            function a() {
-                o.empty();
-                var e = s()
-                  , a = n()
-                  , d = function(e) {
-                    return function(t) {
-                        return r(e, t)
-                    }
-                }
-                  , u = function(e, n) {
-                    if (e = e < 0 ? 0 : e < a ? e : a - 1,
-                    n = jQuery.extend({
-                        text: e + 1,
-                        classes: ""
-                    }, n || {}),
-                    e == i)
-                        var s = jQuery("<span class='current'>" + n.text + "</span>");
-                    else
-                        var s = jQuery("<a>" + n.text + "</a>").bind("click", d(e)).attr("href", t.link_to.replace(/__id__/, e));
-                    n.classes && s.addClass(n.classes),
-                    o.append(s)
-                };
-                if (t.prev_text && (i > 0 || t.prev_show_always) && u(i - 1, {
-                    text: t.prev_text,
-                    classes: "prev"
-                }),
-                e[0] > 0 && t.num_edge_entries > 0) {
-                    for (var l = Math.min(t.num_edge_entries, e[0]), y = 0; y < l; y++)
-                        u(y);
-                    t.num_edge_entries < e[0] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o)
-                }
-                for (var y = e[0]; y < e[1]; y++)
-                    u(y);
-                if (e[1] < a && t.num_edge_entries > 0) {
-                    a - t.num_edge_entries > e[1] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o);
-                    for (var h = Math.max(a - t.num_edge_entries, e[1]), y = h; y < a; y++)
-                        u(y)
-                }
-                t.next_text && (i < a - 1 || t.next_show_always) && u(i + 1, {
-                    text: t.next_text,
-                    classes: "next"
-                })
-            }
-            var i = t.current_page;
-            e = !e || e < 0 ? 1 : e,
-            t.items_per_page = !t.items_per_page || t.items_per_page < 0 ? 1 : t.items_per_page;
-            var o = jQuery(this);
-            this.selectPage = function(e) {
-                r(e)
-            }
-            ,
-            this.prevPage = function() {
-                return i > 0 && (r(i - 1),
-                !0)
-            }
-            ,
-            this.nextPage = function() {
-                return i < n() - 1 && (r(i + 1),
-                !0)
-            }
-            ,
-            a()
-        })
-    }
-}
-, function(e, t) {
-    !function() {
-        Element.prototype.scrollIntoViewIfNeeded || (Element.prototype.scrollIntoViewIfNeeded = function(e) {
-            function t(t, n, s, r) {
-                return !1 === e || s <= t + r && t <= n + r ? Math.min(s, Math.max(n, t)) : (n + s) / 2
-            }
-            function n(e, t, s, r) {
-                return {
-                    left: e,
-                    top: t,
-                    width: s,
-                    height: r,
-                    right: e + s,
-                    bottom: t + r,
-                    translate: function(a, i) {
-                        return n(a + e, i + t, s, r)
-                    },
-                    relativeFromTo: function(i, o) {
-                        var d = e
-                          , u = t;
-                        if (i = i.offsetParent,
-                        o = o.offsetParent,
-                        i === o)
-                            return a;
-                        for (; i; i = i.offsetParent)
-                            d += i.offsetLeft + i.clientLeft,
-                            u += i.offsetTop + i.clientTop;
-                        for (; o; o = o.offsetParent)
-                            d -= o.offsetLeft + o.clientLeft,
-                            u -= o.offsetTop + o.clientTop;
-                        return n(d, u, s, r)
-                    }
-                }
-            }
-            for (var s, r = this, a = n(this.offsetLeft, this.offsetTop, this.offsetWidth, this.offsetHeight); (s = r.parentNode)instanceof HTMLElement; ) {
-                var i = s.offsetLeft + s.clientLeft
-                  , o = s.offsetTop + s.clientTop;
-                a = a.relativeFromTo(r, s).translate(-i, -o),
-                s.scrollLeft = t(s.scrollLeft, a.right - s.clientWidth, a.left, s.clientWidth),
-                s.scrollTop = t(s.scrollTop, a.bottom - s.clientHeight, a.top, s.clientHeight),
-                a = a.translate(i - s.scrollLeft, o - s.scrollTop),
-                r = s
-            }
-        }
-        )
-    }()
 }
 ]);
