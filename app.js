@@ -5343,9 +5343,9 @@
             return this._addAerials(),
             this._addModulesLayers(re.RASTER),
             this._addRasterLayers(),
-            this._addVectorLayers(),
             this._addModulesLayers(re.FEATURE),
             this._addModulesLayers(re.MARKER),
+            this._addVectorLayers(),
             this._setLayersAncestry(),
             this._setModuleLayersAncestry()
         },
@@ -7795,7 +7795,7 @@
         _formSubmitted: function(e) {
             e.preventDefault();
             var t = this.model.toJSON()
-              , i = Boolean(t.cityID)
+              , i = this.options.showCitySelect
               , n = new c.default(this.options.feature,t,{
                 updateStreet: this.options.editStreet,
                 getCityById: i,
@@ -30316,10 +30316,7 @@
             })
         },
         shouldDisableEmptyStreet: function() {
-            if (this.model.attributes.hasHNs)
-                return !0;
-            var e = this.model.getAddress();
-            return e.street && !e.street.isEmpty
+            return this.model.attributes.hasHNs === !0
         },
         shouldShowRoutingSelect: function() {
             var e = this.model;
@@ -30450,7 +30447,7 @@
             e.preventDefault(),
             t.fadeOut("fast", function() {
                 t.hasClass("new-alt-street") ? t.remove() : t.addClass("deleted"),
-                i.toggleAltStreetTable();
+                i.toggleAltStreetTable()
             })
         },
         addAltStreetFrom: function() {
