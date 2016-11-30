@@ -9240,7 +9240,7 @@
             }))
         },
         serialize: function() {
-            var e = this.navigable ? c.default.TYPE.ADD : c.default.TYPE.DELETE
+            var e = this.navigable ? c.default.TYPE.ADD : c.default.TYPE.UPDATE
               , t = {
                 _objectType: u.default.JUNCTION_NC,
                 action: e,
@@ -9736,10 +9736,12 @@
         }, {
             key: "getCityExists",
             value: function(e, t, i, n) {
+                var s = parseInt(t, 10)
+                  , r = parseInt(i, 10);
                 return $.get(W.Config.paths.cityExists, {
                     cityName: e,
-                    countryID: t,
-                    stateID: i,
+                    countryID: isNaN(s) ? void 0 : s,
+                    stateID: isNaN(r) ? void 0 : r,
                     box: this._toUnprojectedBBOX(n)
                 })
             }
@@ -11184,7 +11186,7 @@
                 if (null != this._promise)
                     return this._promise;
                 var t = $.Deferred();
-                $.get("/WAS/country_by_ip").done(function(i) {
+                return $.get("/WAS/country_by_ip").done(function(i) {
                     var n = new e(i);
                     return n.persist(),
                     t.resolve(n)
@@ -11193,7 +11195,8 @@
                     return i.persist(),
                     t.resolve(i)
                 }),
-                this._promise = t.promise()
+                this._promise = t.promise(),
+                this._promise
             }
         }, {
             key: "getCurrent",
@@ -12514,7 +12517,7 @@
             "click .next": "nextClicked"
         },
         initialize: function() {
-            return this.model.on("destroy", this.destroy, this);
+            return this.model.on("destroy", this.destroy, this)
         },
         _onClickDelete: function() {
             return this.$el.addClass("deleting"),
@@ -30316,7 +30319,10 @@
             })
         },
         shouldDisableEmptyStreet: function() {
-            return this.model.attributes.hasHNs === !0
+            var e = this.model.getAddress()
+              , t = null != e.street && !e.street.isEmpty
+              , i = this.model.attributes.hasHNs;
+            return i && !t
         },
         shouldShowRoutingSelect: function() {
             var e = this.model;
@@ -30447,7 +30453,7 @@
             e.preventDefault(),
             t.fadeOut("fast", function() {
                 t.hasClass("new-alt-street") ? t.remove() : t.addClass("deleted"),
-                i.toggleAltStreetTable()
+                i.toggleAltStreetTable();
             })
         },
         addAltStreetFrom: function() {
@@ -38146,9 +38152,9 @@
         },
         readRestriction: function() {
             var e = this.$el.find("form")
-              , t = e.find("input[name=days]:checked").map(function(e) {
-                return parseInt(e, 10)
-            }).toArray()
+              , t = e.find("input[name=days]:checked").toArray().map(function(e) {
+                return parseInt(e.value, 10)
+            })
               , i = e.find("input[name=fromTime]").val()
               , n = e.find("input[name=toTime]").val()
               , s = this.isEveryWeekSelected()
@@ -40699,7 +40705,7 @@
             mteReady: "MajorTrafficEvents/Ready",
             logger: "ErrorReport"
         },
-        enabled_modules: ["Cities"],
+        enabled_modules: ["Cities", "Comments"],
         units: {
             lonLatPrecision: 5
         },
@@ -40893,24 +40899,22 @@
         },
         deployments: {
             usa: {
-                api_base: "/Descartes-beta/app",
+                api_base: "/Descartes/app",
                 search: {
                     server: "/SearchServer/mozi"
-                },
-                enabled_modules: ["Cities", "Comments"]
+                }
             },
             row: {
-                api_base: "/row-Descartes-beta/app",
+                api_base: "/row-Descartes/app",
                 search: {
                     server: "/row-SearchServer/mozi"
                 }
             },
             il: {
-                api_base: "/il-Descartes-beta/app",
+                api_base: "/il-Descartes/app",
                 search: {
                     server: "/il-SearchServer/mozi"
-                },
-                enabled_modules: ["Cities", "Comments"]
+                }
             }
         }
     }
