@@ -27070,7 +27070,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             shouldDisableEmptyStreet: function() {
                 var e = this.model.getAddress(),
-                    t = null != e.street && !e.street.isEmpty,
+                    t = null != e.street && e.street.isEmpty,
                     i = this.model.attributes.hasHNs;
                 return i && !t
             },
