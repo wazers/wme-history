@@ -7420,7 +7420,7 @@ button.close {
     line-height: 1
 }
 
-@media (-webkit-transform-3d),all and (transform-3d) {
+@media (-webkit-transform-3d),(transform-3d) {
     .carousel-inner>.item {
         -webkit-transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;

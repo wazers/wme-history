@@ -37332,7 +37332,7 @@ webpackJsonp([1], [function(e, t, i) {
             mteReady: "MajorTrafficEvents/Ready",
             logger: "ErrorReport"
         },
-        enabled_modules: ["Cities", "Comments"],
+        enabled_modules: ["Comments", "Cities"],
         units: {
             lonLatPrecision: 5
         },
@@ -37466,6 +37466,7 @@ webpackJsonp([1], [function(e, t, i) {
         user_editing_enabled: !0,
         big_junctions: {
             shownByDefault: !0,
+            minDisplayZoom: 2,
             minRank: 4,
             enable: !0
         },
