@@ -44,7 +44,7 @@
                     a.src = t.p + "" + e + ".js/" + ({
                         1: "app"
                     }[e] || e) + "-" + {
-                        1: "c6b99b02ff8bb2372d6d"
+                        1: "c63299f215f9660c3a2f"
                     }[e] + ".js",
                     s.appendChild(a)
             }
@@ -55,46 +55,46 @@
         t(0)
 }([function(e, t, n) {
     "use strict";
-    n(898),
-        n(987),
-        n(988),
-        n(638),
-        n(637),
-        n(981),
-        n(903),
-        n(640),
-        n(666),
+    n(901),
+        n(990),
+        n(991),
+        n(642),
+        n(641),
+        n(984),
+        n(906),
+        n(644),
+        n(669),
+        n(667),
         n(664),
+        n(668),
+        n(643),
+        n(638),
         n(661),
         n(665),
-        n(639),
-        n(634),
-        n(658),
-        n(662),
-        n(660),
         n(663),
-        n(659),
-        n(727),
+        n(666),
+        n(662),
+        n(730),
         n(1),
-        n(364),
-        n(657),
-        n(667),
-        n(899),
-        n(641),
-        n(902),
-        n(57),
-        n(900),
-        n(655),
-        n(652),
-        n(656),
+        n(366),
+        n(660),
         n(670),
-        n(986),
-        n(668),
-        n(669),
+        n(902),
+        n(645),
+        n(905),
+        n(56),
+        n(903),
+        n(658),
+        n(655),
+        n(659),
+        n(673),
+        n(989),
         n(671),
-        n(983),
-        n(984),
-        n(1084)
+        n(672),
+        n(674),
+        n(986),
+        n(987),
+        n(1087)
 }, function(e, t, n) {
     (function(e) {
         ! function(t, n) {
@@ -914,7 +914,7 @@
                 if (!Hr[t] && "undefined" != typeof e && e && e.exports)
                     try {
                         s = Cr._abbr,
-                            n(991)("./" + t),
+                            n(994)("./" + t),
                             et(s)
                     } catch (e) {}
                 return Hr[t]
@@ -2658,7 +2658,7 @@
                 t.prototype = Xr,
                 t
         })
-    }).call(t, n(358)(e))
+    }).call(t, n(360)(e))
 }, , , , , , , , , , function(e, t) {
     var n = e.exports = {
         version: "2.4.0"
@@ -2667,27 +2667,27 @@
 }, , , , , , function(e, t, n) {
     var s = n(141)("wks"),
         r = n(95),
-        a = n(22).Symbol,
+        a = n(23).Symbol,
         i = "function" == typeof a,
         o = e.exports = function(e) {
             return s[e] || (s[e] = i && a[e] || (i ? a : r)("Symbol." + e))
         };
     o.store = s
-}, , , , , function(e, t) {
+}, , , , , , function(e, t) {
     var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = n)
-}, , , , , , , , , function(e, t, n) {
-    var s = n(48);
+}, , , , , , , , function(e, t, n) {
+    var s = n(47);
     e.exports = function(e) {
         if (!s(e))
             throw TypeError(e + " is not an object!");
         return e
     }
 }, function(e, t, n) {
-    var s = n(22),
+    var s = n(23),
         r = n(11),
         a = n(73),
-        i = n(47),
+        i = n(46),
         o = "prototype",
         d = function(e, t, n) {
             var u, l, y, h = e & d.F,
@@ -2734,13 +2734,13 @@
         d.R = 128,
         e.exports = d
 }, function(e, t, n) {
-    var s = n(237),
+    var s = n(239),
         r = n(134);
     e.exports = function(e) {
         return s(r(e))
     }
 }, , , , , function(e, t, n) {
-    e.exports = !n(58)(function() {
+    e.exports = !n(57)(function() {
         return 7 != Object.defineProperty({}, "a", {
             get: function() {
                 return 7
@@ -2749,7 +2749,7 @@
     })
 }, function(e, t, n) {
     var s = n(31),
-        r = n(236),
+        r = n(238),
         a = n(143),
         i = Object.defineProperty;
     t.f = n(38) ? Object.defineProperty : function(e, t, n) {
@@ -2765,7 +2765,7 @@
         return "value" in n && (e[t] = n.value),
             e
     }
-}, , , , , , , function(e, t) {
+}, , , , , , function(e, t) {
     var n = {}.hasOwnProperty;
     e.exports = function(e, t) {
         return n.call(e, t)
@@ -2785,7 +2785,7 @@
         return "object" == typeof e ? null !== e : "function" == typeof e
     }
 }, function(e, t, n) {
-    var s = n(242),
+    var s = n(244),
         r = n(136);
     e.exports = Object.keys || function(e) {
         return s(e, r)
@@ -2795,7 +2795,7 @@
     (function(a) {
         ! function(i) {
             var o = "object" == typeof self && self.self === self && self || "object" == typeof a && a.global === a && a;
-            s = [n(60), n(75), t],
+            s = [n(59), n(75), t],
                 r = function(e, t, n) {
                     o.Backbone = i(o, n, e, t)
                 }
@@ -4914,7 +4914,7 @@
             }
             .apply(t, s), !(void 0 !== r && (e.exports = r))
     }).call(this)
-}, , , , , , , , , , , function(e, t, n) {
+}, , , , , , , , , , , , function(e, t, n) {
     "use strict";
 
     function s(e) {
@@ -4923,9 +4923,9 @@
         }
     }
     t.__esModule = !0;
-    var r = n(649),
+    var r = n(652),
         a = s(r),
-        i = n(648),
+        i = n(651),
         o = s(i),
         d = "function" == typeof o.default && "symbol" == typeof a.default ? function(e) {
             return typeof e
@@ -9227,7 +9227,7 @@
     }
 }, function(e, t, n) {
     var s = n(39).f,
-        r = n(46),
+        r = n(45),
         a = n(17)("toStringTag");
     e.exports = function(e, t, n) {
         e && !r(e = n ? e : e.prototype, a) && s(e, a, {
@@ -9248,8 +9248,8 @@
     }
 }, function(e, t, n) {
     "use strict";
-    var s = n(709)(!0);
-    n(238)(String, "String", function(e) {
+    var s = n(712)(!0);
+    n(240)(String, "String", function(e) {
         this._t = String(e),
             this._i = 0
     }, function() {
@@ -9265,8 +9265,8 @@
             })
     })
 }, function(e, t, n) {
-    n(713);
-    for (var s = n(22), r = n(47), a = n(59), i = n(17)("toStringTag"), o = ["NodeList", "DOMTokenList", "MediaList", "StyleSheetList", "CSSRuleList"], d = 0; d < 5; d++) {
+    n(716);
+    for (var s = n(23), r = n(46), a = n(58), i = n(17)("toStringTag"), o = ["NodeList", "DOMTokenList", "MediaList", "StyleSheetList", "CSSRuleList"], d = 0; d < 5; d++) {
         var u = o[d],
             l = s[u],
             y = l && l.prototype;
@@ -9286,8 +9286,8 @@
         return e
     }
 }, function(e, t, n) {
-    var s = n(48),
-        r = n(22).document,
+    var s = n(47),
+        r = n(23).document,
         a = s(r) && s(r.createElement);
     e.exports = function(e) {
         return a ? r.createElement(e) : {}
@@ -9296,7 +9296,7 @@
     e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")
 }, function(e, t, n) {
     var s = n(31),
-        r = n(702),
+        r = n(705),
         a = n(136),
         i = n(140)("IE_PROTO"),
         o = function() {},
@@ -9307,7 +9307,7 @@
                 r = "<",
                 i = ">";
             for (t.style.display = "none",
-                n(235).appendChild(t),
+                n(237).appendChild(t),
                 t.src = "javascript:",
                 e = t.contentWindow.document,
                 e.open(),
@@ -9330,8 +9330,8 @@
         r = n(92),
         a = n(33),
         i = n(143),
-        o = n(46),
-        d = n(236),
+        o = n(45),
+        d = n(238),
         u = Object.getOwnPropertyDescriptor;
     t.f = n(38) ? u : function(e, t) {
         if (e = a(e),
@@ -9352,7 +9352,7 @@
         return s[e] || (s[e] = r(e))
     }
 }, function(e, t, n) {
-    var s = n(22),
+    var s = n(23),
         r = "__core-js_shared__",
         a = s[r] || (s[r] = {});
     e.exports = function(e) {
@@ -9365,7 +9365,7 @@
         return isNaN(e = +e) ? 0 : (e > 0 ? s : n)(e)
     }
 }, function(e, t, n) {
-    var s = n(48);
+    var s = n(47);
     e.exports = function(e, t) {
         if (!s(e))
             return e;
@@ -9379,7 +9379,7 @@
         throw TypeError("Can't convert object to primitive value")
     }
 }, function(e, t, n) {
-    var s = n(22),
+    var s = n(23),
         r = n(11),
         a = n(90),
         i = n(145),
@@ -9392,10 +9392,10 @@
     }
 }, function(e, t, n) {
     t.f = n(17)
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    e.exports = n(22).document && document.documentElement
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+    e.exports = n(23).document && document.documentElement
 }, function(e, t, n) {
-    e.exports = !n(38) && !n(58)(function() {
+    e.exports = !n(38) && !n(57)(function() {
         return 7 != Object.defineProperty(n(135)("div"), "a", {
             get: function() {
                 return 7
@@ -9411,13 +9411,13 @@
     "use strict";
     var s = n(90),
         r = n(32),
-        a = n(243),
-        i = n(47),
-        o = n(46),
-        d = n(59),
-        u = n(696),
+        a = n(245),
+        i = n(46),
+        o = n(45),
+        d = n(58),
+        u = n(699),
         l = n(93),
-        y = n(241),
+        y = n(243),
         h = n(17)("iterator"),
         m = !([].keys && "next" in [].keys()),
         T = "@@iterator",
@@ -9479,14 +9479,14 @@
     }
 }, function(e, t, n) {
     var s = n(95)("meta"),
-        r = n(48),
-        a = n(46),
+        r = n(47),
+        a = n(45),
         i = n(39).f,
         o = 0,
         d = Object.isExtensible || function() {
             return !0
         },
-        u = !n(58)(function() {
+        u = !n(57)(function() {
             return d(Object.preventExtensions({}))
         }),
         l = function(e) {
@@ -9531,13 +9531,13 @@
             onFreeze: m
         }
 }, function(e, t, n) {
-    var s = n(242),
+    var s = n(244),
         r = n(136).concat("length", "prototype");
     t.f = Object.getOwnPropertyNames || function(e) {
         return s(e, r)
     }
 }, function(e, t, n) {
-    var s = n(46),
+    var s = n(45),
         r = n(94),
         a = n(140)("IE_PROTO"),
         i = Object.prototype;
@@ -9546,9 +9546,9 @@
             s(e, a) ? e[a] : "function" == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? i : null
     }
 }, function(e, t, n) {
-    var s = n(46),
+    var s = n(45),
         r = n(33),
-        a = n(689)(!1),
+        a = n(692)(!1),
         i = n(140)("IE_PROTO");
     e.exports = function(e, t) {
         var n, o = r(e),
@@ -9561,7 +9561,7 @@
         return u
     }
 }, function(e, t, n) {
-    e.exports = n(47)
+    e.exports = n(46)
 }, , function(e, t, n) {
     var s = n(142),
         r = Math.min;
@@ -20759,7 +20759,7 @@
                 }
         }
     }(jQuery)
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     "use strict";
     $.fn.typeahead.defaults.highlighter = function(e) {
         var t, n, s = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"),
@@ -21321,19 +21321,19 @@
             }
         })
     }()
-}, , , , , , , function(e, t, n) {
+}, , , , , , function(e, t, n) {
     e.exports = {
-        default: n(685),
+        default: n(688),
         __esModule: !0
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(686),
+        default: n(689),
         __esModule: !0
     }
 }, , , function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(57))
+        e.exports = s(n(56))
     }(this, function(e) {
         function t() {
             return (65536 * (1 + Math.random()) | 0).toString(16).substring(1)
@@ -21474,7 +21474,7 @@
     })
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(57), n(60), n(654))
+        e.exports = s(n(56), n(59), n(657))
     }(this, function(e, t, n) {
         "use strict";
 
@@ -23168,7 +23168,7 @@
     })
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(60), n(57))
+        e.exports = s(n(59), n(56))
     }(this, function(e, t) {
         "use strict";
 
@@ -23350,7 +23350,7 @@
 }, function(e, t, n) {
     var s, r, a;
     ! function(i) {
-        r = [n(60), n(57), t],
+        r = [n(59), n(56), t],
             s = i,
             a = "function" == typeof s ? s.apply(t, r) : s, !(void 0 !== a && (e.exports = a))
     }(function(e, t, n) {
@@ -23783,7 +23783,7 @@
 }, function(e, t, n) {
     var s, r;
     ! function(a, i) {
-        s = [n(57), n(60)],
+        s = [n(56), n(59)],
             r = function(e, t) {
                 return i(e, t)
             }
@@ -25896,16 +25896,16 @@
     /*!
      * Timepicker Component for Twitter Bootstrap
      *
-     * Copyright 2013 Joris de Wit
+     * Copyright 2013 Joris de Wit and bootstrap-timepicker contributors
      *
      * Contributors https://github.com/jdewit/bootstrap-timepicker/graphs/contributors
      *
      * For the full copyright and license information, please view the LICENSE
      * file that was distributed with this source code.
      */
-    ! function(e, t, n, s) {
+    ! function(e, t, n) {
         "use strict";
-        var r = function(t, n) {
+        var s = function(t, n) {
             this.widget = "",
                 this.$element = e(t),
                 this.defaultTime = n.defaultTime,
@@ -25916,19 +25916,27 @@
                 this.modalBackdrop = n.modalBackdrop,
                 this.orientation = n.orientation,
                 this.secondStep = n.secondStep,
+                this.snapToStep = n.snapToStep,
                 this.showInputs = n.showInputs,
                 this.showMeridian = n.showMeridian,
                 this.showSeconds = n.showSeconds,
                 this.template = n.template,
                 this.appendWidgetTo = n.appendWidgetTo,
                 this.showWidgetOnAddonClick = n.showWidgetOnAddonClick,
+                this.icons = n.icons,
+                this.maxHours = n.maxHours,
+                this.explicitMode = n.explicitMode,
+                this.handleDocumentClick = function(e) {
+                    var t = e.data.scope;
+                    t.$element.parent().find(e.target).length || t.$widget.is(e.target) || t.$widget.find(e.target).length || t.hideWidget()
+                },
                 this._init()
         };
-        r.prototype = {
-                constructor: r,
+        s.prototype = {
+                constructor: s,
                 _init: function() {
                     var t = this;
-                    this.showWidgetOnAddonClick && (this.$element.parent().hasClass("input-append") || this.$element.parent().hasClass("input-prepend")) ? (this.$element.parent(".input-append, .input-prepend").find(".add-on").on({
+                    this.showWidgetOnAddonClick && this.$element.parent().hasClass("input-group") && this.$element.parent().hasClass("bootstrap-timepicker") ? (this.$element.parent(".input-group.bootstrap-timepicker").find(".input-group-addon").on({
                                 "click.timepicker": e.proxy(this.showWidget, this)
                             }),
                             this.$element.on({
@@ -25986,7 +25994,7 @@
                             this.hour--
                         }
                     else
-                        this.hour <= 0 ? this.hour = 23 : this.hour--
+                        this.hour <= 0 ? this.hour = this.maxHours - 1 : this.hour--
                 },
                 decrementMinute: function(e) {
                     var t;
@@ -26000,14 +26008,31 @@
                         this.second = e + 60) : this.second = e
                 },
                 elementKeydown: function(e) {
-                    switch (e.keyCode) {
+                    switch (e.which) {
                         case 9:
+                            if (e.shiftKey) {
+                                if ("hour" === this.highlightedUnit) {
+                                    this.hideWidget();
+                                    break
+                                }
+                                this.highlightPrevUnit()
+                            } else {
+                                if (this.showMeridian && "meridian" === this.highlightedUnit || this.showSeconds && "second" === this.highlightedUnit || !this.showMeridian && !this.showSeconds && "minute" === this.highlightedUnit) {
+                                    this.hideWidget();
+                                    break
+                                }
+                                this.highlightNextUnit()
+                            }
+                            e.preventDefault(),
+                                this.updateFromElementVal();
+                            break;
                         case 27:
                             this.updateFromElementVal();
                             break;
                         case 37:
                             e.preventDefault(),
-                                this.highlightPrevUnit();
+                                this.highlightPrevUnit(),
+                                this.updateFromElementVal();
                             break;
                         case 38:
                             switch (e.preventDefault(),
@@ -26032,7 +26057,8 @@
                             break;
                         case 39:
                             e.preventDefault(),
-                                this.highlightNextUnit();
+                                this.highlightNextUnit(),
+                                this.updateFromElementVal();
                             break;
                         case 40:
                             switch (e.preventDefault(),
@@ -26077,10 +26103,10 @@
                             n = '<span class="bootstrap-timepicker-minute"></span>',
                             s = '<span class="bootstrap-timepicker-second"></span>',
                             r = '<span class="bootstrap-timepicker-meridian"></span>'),
-                        a = '<table><tr><td><a href="#" data-action="incrementHour"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><i class="icon-chevron-up"></i></a></td>' + (this.showSeconds ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="incrementSecond"><i class="icon-chevron-up"></i></a></td>' : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="toggleMeridian"><i class="icon-chevron-up"></i></a></td>' : "") + "</tr><tr><td>" + t + '</td> <td class="separator">:</td><td>' + n + "</td> " + (this.showSeconds ? '<td class="separator">:</td><td>' + s + "</td>" : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td>' + r + "</td>" : "") + '</tr><tr><td><a href="#" data-action="decrementHour"><i class="icon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><i class="icon-chevron-down"></i></a></td>' + (this.showSeconds ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="decrementSecond"><i class="icon-chevron-down"></i></a></td>' : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="toggleMeridian"><i class="icon-chevron-down"></i></a></td>' : "") + "</tr></table>",
+                        a = '<table><tr><td><a href="#" data-action="incrementHour"><span class="' + this.icons.up + '"></span></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><span class="' + this.icons.up + '"></span></a></td>' + (this.showSeconds ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="incrementSecond"><span class="' + this.icons.up + '"></span></a></td>' : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="toggleMeridian"><span class="' + this.icons.up + '"></span></a></td>' : "") + "</tr><tr><td>" + t + '</td> <td class="separator">:</td><td>' + n + "</td> " + (this.showSeconds ? '<td class="separator">:</td><td>' + s + "</td>" : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td>' + r + "</td>" : "") + '</tr><tr><td><a href="#" data-action="decrementHour"><span class="' + this.icons.down + '"></span></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><span class="' + this.icons.down + '"></span></a></td>' + (this.showSeconds ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="decrementSecond"><span class="' + this.icons.down + '"></span></a></td>' : "") + (this.showMeridian ? '<td class="separator">&nbsp;</td><td><a href="#" data-action="toggleMeridian"><span class="' + this.icons.down + '"></span></a></td>' : "") + "</tr></table>",
                         this.template) {
                         case "modal":
-                            e = '<div class="bootstrap-timepicker-widget modal hide fade in" data-backdrop="' + (this.modalBackdrop ? "true" : "false") + '"><div class="modal-header"><a href="#" class="close" data-dismiss="modal">×</a><h3>Pick a Time</h3></div><div class="modal-content">' + a + '</div><div class="modal-footer"><a href="#" class="btn btn-primary" data-dismiss="modal">OK</a></div></div>';
+                            e = '<div class="bootstrap-timepicker-widget modal hide fade in" data-backdrop="' + (this.modalBackdrop ? "true" : "false") + '"><div class="modal-header"><a href="#" class="close" data-dismiss="modal">&times;</a><h3>Pick a Time</h3></div><div class="modal-content">' + a + '</div><div class="modal-footer"><a href="#" class="btn btn-primary" data-dismiss="modal">OK</a></div></div>';
                             break;
                         case "dropdown":
                             e = '<div class="bootstrap-timepicker-widget dropdown-menu">' + a + "</div>"
@@ -26102,7 +26128,7 @@
                             }
                         }),
                         "modal" === this.template && this.$widget.modal ? this.$widget.modal("hide") : this.$widget.removeClass("open"),
-                        e(n).off("mousedown.timepicker, touchend.timepicker"),
+                        e(n).off("mousedown.timepicker, touchend.timepicker", this.handleDocumentClick),
                         this.isOpen = !1,
                         this.$widget.detach())
                 },
@@ -26181,7 +26207,7 @@
                                 this.toggleMeridian();
                         12 === this.hour && (this.hour = 0)
                     }
-                    return 23 === this.hour ? void(this.hour = 0) : void this.hour++
+                    return this.hour === this.maxHours - 1 ? void(this.hour = 0) : void this.hour++
                 },
                 incrementMinute: function(e) {
                     var t;
@@ -26223,6 +26249,9 @@
                         return !1
                     }
                 },
+                changeToNearestStep: function(e, t) {
+                    return e % t === 0 ? e : Math.round(e % t / t) ? (e + (t - e % t)) % 60 : e - e % t
+                },
                 place: function() {
                     if (!this.isInline) {
                         var n = this.$widget.outerWidth(),
@@ -26231,14 +26260,16 @@
                             a = e(t).width(),
                             i = e(t).height(),
                             o = e(t).scrollTop(),
-                            d = parseInt(this.$element.parents().filter(function() {}).first().css("z-index"), 10) + 10,
+                            d = parseInt(this.$element.parents().filter(function() {
+                                return "auto" !== e(this).css("z-index")
+                            }).first().css("z-index"), 10) + 10,
                             u = this.component ? this.component.parent().offset() : this.$element.offset(),
                             l = this.component ? this.component.outerHeight(!0) : this.$element.outerHeight(!1),
                             y = this.component ? this.component.outerWidth(!0) : this.$element.outerWidth(!1),
                             h = u.left,
                             m = u.top;
                         this.$widget.removeClass("timepicker-orient-top timepicker-orient-bottom timepicker-orient-right timepicker-orient-left"),
-                            "auto" !== this.orientation.x ? (this.picker.addClass("datepicker-orient-" + this.orientation.x),
+                            "auto" !== this.orientation.x ? (this.$widget.addClass("timepicker-orient-" + this.orientation.x),
                                 "right" === this.orientation.x && (h -= n - y)) : (this.$widget.addClass("timepicker-orient-left"),
                                 u.left < 0 ? h -= u.left - r : u.left + n > a && (h = a - n - r));
                         var T, c, p = this.orientation.y;
@@ -26290,64 +26321,73 @@
                 setTime: function(e, t) {
                     if (!e)
                         return void this.clear();
-                    var n, s, r, a, i;
-                    "object" == typeof e && e.getMonth ? (s = e.getHours(),
-                            r = e.getMinutes(),
-                            a = e.getSeconds(),
-                            this.showMeridian && (i = "AM",
-                                s > 12 && (i = "PM",
-                                    s %= 12),
-                                12 === s && (i = "PM"))) : (i = null !== e.match(/p/i) ? "PM" : "AM",
-                            e = e.replace(/[^0-9\:]/g, ""),
-                            n = e.split(":"),
-                            s = n[0] ? n[0].toString() : n.toString(),
-                            r = n[1] ? n[1].toString() : "",
-                            a = n[2] ? n[2].toString() : "",
-                            s.length > 4 && (a = s.substr(4, 2)),
-                            s.length > 2 && (r = s.substr(2, 2),
-                                s = s.substr(0, 2)),
-                            r.length > 2 && (a = r.substr(2, 2),
-                                r = r.substr(0, 2)),
-                            a.length > 2 && (a = a.substr(2, 2)),
-                            s = parseInt(s, 10),
+                    var n, s, r, a, i, o;
+                    if ("object" == typeof e && e.getMonth)
+                        r = e.getHours(),
+                        a = e.getMinutes(),
+                        i = e.getSeconds(),
+                        this.showMeridian && (o = "AM",
+                            r > 12 && (o = "PM",
+                                r %= 12),
+                            12 === r && (o = "PM"));
+                    else {
+                        if (n = (/a/i.test(e) ? 1 : 0) + (/p/i.test(e) ? 2 : 0),
+                            n > 2)
+                            return void this.clear();
+                        if (s = e.replace(/[^0-9\:]/g, "").split(":"),
+                            r = s[0] ? s[0].toString() : s.toString(),
+                            this.explicitMode && r.length > 2 && r.length % 2 !== 0)
+                            return void this.clear();
+                        a = s[1] ? s[1].toString() : "",
+                            i = s[2] ? s[2].toString() : "",
+                            r.length > 4 && (i = r.slice(-2),
+                                r = r.slice(0, -2)),
+                            r.length > 2 && (a = r.slice(-2),
+                                r = r.slice(0, -2)),
+                            a.length > 2 && (i = a.slice(-2),
+                                a = a.slice(0, -2)),
                             r = parseInt(r, 10),
                             a = parseInt(a, 10),
-                            isNaN(s) && (s = 0),
+                            i = parseInt(i, 10),
                             isNaN(r) && (r = 0),
                             isNaN(a) && (a = 0),
-                            this.showMeridian ? s < 1 ? s = 1 : s > 12 && (s = 12) : (s >= 24 ? s = 23 : s < 0 && (s = 0),
-                                s < 13 && "PM" === i && (s += 12)),
-                            r < 0 ? r = 0 : r >= 60 && (r = 59),
-                            this.showSeconds && (isNaN(a) ? a = 0 : a < 0 ? a = 0 : a >= 60 && (a = 59))),
-                        this.hour = s,
-                        this.minute = r,
-                        this.second = a,
-                        this.meridian = i,
+                            isNaN(i) && (i = 0),
+                            i > 59 && (i = 59),
+                            a > 59 && (a = 59),
+                            r >= this.maxHours && (r = this.maxHours - 1),
+                            this.showMeridian ? (r > 12 && (n = 2,
+                                    r -= 12),
+                                n || (n = 1),
+                                0 === r && (r = 12),
+                                o = 1 === n ? "AM" : "PM") : r < 12 && 2 === n ? r += 12 : r >= this.maxHours ? r = this.maxHours - 1 : (r < 0 || 12 === r && 1 === n) && (r = 0)
+                    }
+                    this.hour = r,
+                        this.snapToStep ? (this.minute = this.changeToNearestStep(a, this.minuteStep),
+                            this.second = this.changeToNearestStep(i, this.secondStep)) : (this.minute = a,
+                            this.second = i),
+                        this.meridian = o,
                         this.update(t)
                 },
                 showWidget: function() {
-                    if (!this.isOpen && !this.$element.is(":disabled")) {
-                        this.$widget.appendTo(this.appendWidgetTo);
-                        var t = this;
-                        e(n).on("mousedown.timepicker, touchend.timepicker", function(e) {
-                                t.$element.parent().find(e.target).length || t.$widget.is(e.target) || t.$widget.find(e.target).length || t.hideWidget()
-                            }),
-                            this.$element.trigger({
-                                type: "show.timepicker",
-                                time: {
-                                    value: this.getTime(),
-                                    hours: this.hour,
-                                    minutes: this.minute,
-                                    seconds: this.second,
-                                    meridian: this.meridian
-                                }
-                            }),
-                            this.place(),
-                            this.disableFocus && this.$element.blur(),
-                            "" === this.hour && (this.defaultTime ? this.setDefaultTime(this.defaultTime) : this.setTime("0:0:0")),
-                            "modal" === this.template && this.$widget.modal ? this.$widget.modal("show").on("hidden", e.proxy(this.hideWidget, this)) : this.isOpen === !1 && this.$widget.addClass("open"),
-                            this.isOpen = !0
-                    }
+                    this.isOpen || this.$element.is(":disabled") || (this.$widget.appendTo(this.appendWidgetTo),
+                        e(n).on("mousedown.timepicker, touchend.timepicker", {
+                            scope: this
+                        }, this.handleDocumentClick),
+                        this.$element.trigger({
+                            type: "show.timepicker",
+                            time: {
+                                value: this.getTime(),
+                                hours: this.hour,
+                                minutes: this.minute,
+                                seconds: this.second,
+                                meridian: this.meridian
+                            }
+                        }),
+                        this.place(),
+                        this.disableFocus && this.$element.blur(),
+                        "" === this.hour && (this.defaultTime ? this.setDefaultTime(this.defaultTime) : this.setTime("0:0:0")),
+                        "modal" === this.template && this.$widget.modal ? this.$widget.modal("show").on("hidden", e.proxy(this.hideWidget, this)) : this.isOpen === !1 && this.$widget.addClass("open"),
+                        this.isOpen = !0)
                 },
                 toggleMeridian: function() {
                     this.meridian = "AM" === this.meridian ? "PM" : "AM"
@@ -26404,9 +26444,12 @@
                 widgetKeydown: function(t) {
                     var n = e(t.target),
                         s = n.attr("class").replace("bootstrap-timepicker-", "");
-                    switch (t.keyCode) {
+                    switch (t.which) {
                         case 9:
-                            if (this.showMeridian && "meridian" === s || this.showSeconds && "second" === s || !this.showMeridian && !this.showSeconds && "minute" === s)
+                            if (t.shiftKey) {
+                                if ("hour" === s)
+                                    return this.hideWidget()
+                            } else if (this.showMeridian && "meridian" === s || this.showSeconds && "second" === s || !this.showMeridian && !this.showSeconds && "minute" === s)
                                 return this.hideWidget();
                             break;
                         case 27:
@@ -26450,17 +26493,17 @@
                     }
                 },
                 widgetKeyup: function(e) {
-                    (65 === e.keyCode || 77 === e.keyCode || 80 === e.keyCode || 46 === e.keyCode || 8 === e.keyCode || e.keyCode >= 46 && e.keyCode <= 57) && this.updateFromWidgetInputs()
+                    (65 === e.which || 77 === e.which || 80 === e.which || 46 === e.which || 8 === e.which || e.which >= 48 && e.which <= 57 || e.which >= 96 && e.which <= 105) && this.updateFromWidgetInputs()
                 }
             },
             e.fn.timepicker = function(t) {
                 var n = Array.apply(null, arguments);
                 return n.shift(),
                     this.each(function() {
-                        var s = e(this),
-                            a = s.data("timepicker"),
+                        var r = e(this),
+                            a = r.data("timepicker"),
                             i = "object" == typeof t && t;
-                        a || s.data("timepicker", a = new r(this, e.extend({}, e.fn.timepicker.defaults, i, e(this).data()))),
+                        a || r.data("timepicker", a = new s(this, e.extend({}, e.fn.timepicker.defaults, i, e(this).data()))),
                             "string" == typeof t && a[t].apply(a, n)
                     })
             },
@@ -26476,14 +26519,26 @@
                     y: "auto"
                 },
                 secondStep: 15,
+                snapToStep: !1,
                 showSeconds: !1,
                 showInputs: !0,
                 showMeridian: !0,
                 template: "dropdown",
                 appendWidgetTo: "body",
-                showWidgetOnAddonClick: !0
+                showWidgetOnAddonClick: !0,
+                icons: {
+                    up: "glyphicon glyphicon-chevron-up",
+                    down: "glyphicon glyphicon-chevron-down"
+                },
+                maxHours: 24,
+                explicitMode: !1
             },
-            e.fn.timepicker.Constructor = r
+            e.fn.timepicker.Constructor = s,
+            e(n).on("focus.timepicker.data-api click.timepicker.data-api", '[data-provide="timepicker"]', function(t) {
+                var n = e(this);
+                n.data("timepicker") || (t.preventDefault(),
+                    n.timepicker())
+            })
     }(jQuery, window, document)
 }, function(e, t) {
     var n = {}.hasOwnProperty;
@@ -26629,10 +26684,10 @@
                 e
         }
 }, , , , , , , , , , , , , , function(e, t, n) {
-    n(723),
-        n(247),
-        n(725),
-        n(726),
+    n(726),
+        n(249),
+        n(728),
+        n(729),
         e.exports = n(11).Symbol
 }, function(e, t, n) {
     n(96),
@@ -26642,8 +26697,8 @@
     e.exports = function() {}
 }, , function(e, t, n) {
     var s = n(33),
-        r = n(245),
-        a = n(710);
+        r = n(247),
+        a = n(713);
     e.exports = function(e) {
         return function(t, n, i) {
             var o, d = s(t),
@@ -26662,7 +26717,7 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(49),
+    var s = n(48),
         r = n(139),
         a = n(74);
     e.exports = function(e) {
@@ -26684,7 +26739,7 @@
         r = n(92),
         a = n(93),
         i = {};
-    n(47)(i, n(17)("iterator"), function() {
+    n(46)(i, n(17)("iterator"), function() {
             return this
         }),
         e.exports = function(e, t, n) {
@@ -26701,7 +26756,7 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(49),
+    var s = n(48),
         r = n(33);
     e.exports = function(e, t) {
         for (var n, a = r(e), i = s(a), o = i.length, d = 0; o > d;)
@@ -26711,7 +26766,7 @@
 }, , , function(e, t, n) {
     var s = n(39),
         r = n(31),
-        a = n(49);
+        a = n(48);
     e.exports = n(38) ? Object.defineProperties : function(e, t) {
         r(e);
         for (var n, i = a(t), o = i.length, d = 0; o > d;)
@@ -26720,7 +26775,7 @@
     }
 }, function(e, t, n) {
     var s = n(33),
-        r = n(240).f,
+        r = n(242).f,
         a = {}.toString,
         i = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [],
         o = function(e) {
@@ -26755,11 +26810,11 @@
     }
 }, , , function(e, t, n) {
     "use strict";
-    var s = n(687),
-        r = n(698),
-        a = n(59),
+    var s = n(690),
+        r = n(701),
+        a = n(58),
         i = n(33);
-    e.exports = n(238)(Array, "Array", function(e, t) {
+    e.exports = n(240)(Array, "Array", function(e, t) {
             this._t = i(e),
                 this._i = 0,
                 this._k = t
@@ -26776,31 +26831,31 @@
         s("entries")
 }, , , , , , , , , , function(e, t, n) {
     "use strict";
-    var s = n(22),
-        r = n(46),
+    var s = n(23),
+        r = n(45),
         a = n(38),
         i = n(32),
-        o = n(243),
-        d = n(239).KEY,
-        u = n(58),
+        o = n(245),
+        d = n(241).KEY,
+        u = n(57),
         l = n(141),
         y = n(93),
         h = n(95),
         m = n(17),
         T = n(145),
         c = n(144),
-        p = n(699),
-        M = n(690),
-        f = n(694),
+        p = n(702),
+        M = n(693),
+        f = n(697),
         S = n(31),
         g = n(33),
         _ = n(143),
         b = n(92),
         v = n(137),
-        D = n(703),
+        D = n(706),
         A = n(138),
         C = n(39),
-        E = n(49),
+        E = n(48),
         L = A.f,
         w = C.f,
         H = D.f,
@@ -26908,7 +26963,7 @@
             }),
             A.f = X,
             C.f = G,
-            n(240).f = D.f = Q,
+            n(242).f = D.f = Q,
             n(74).f = q,
             n(139).f = ee,
             a && !n(90) && o(R, "propertyIsEnumerable", q, !0),
@@ -26967,7 +27022,7 @@
                 }
             }
         }),
-        I[O][P] || n(47)(I[O], P, I[O].valueOf),
+        I[O][P] || n(46)(I[O], P, I[O].valueOf),
         y(I, "Symbol"),
         y(Math, "Math", !0),
         y(s.JSON, "JSON", !0)
@@ -26976,18 +27031,18 @@
 }, function(e, t, n) {
     n(144)("observable")
 }, function(e, t, n) {
-    n(732),
-        n(729),
-        n(728),
-        n(737),
+    n(735),
+        n(732),
         n(731),
-        n(735),
-        n(736),
+        n(740),
         n(734),
-        n(733),
-        n(730),
         n(738),
-        n(739)
+        n(739),
+        n(737),
+        n(736),
+        n(733),
+        n(741),
+        n(742)
 }, function(e, t) {
     ! function() {
         var e = Date,
@@ -28437,27 +28492,27 @@
                     else if (!Date.CultureStrings || !Date.CultureStrings[r])
                         if ("undefined" != typeof t && this.exports !== t)
                             try {
-                                n(740)("./" + r + ".js"),
+                                n(743)("./" + r + ".js"),
                                     s = r,
                                     Date.CultureStrings.lang = r,
                                     Date.CultureInfo = new l
                             } catch (e) {
                                 throw new Error("The DateJS IETF language tag '" + r + "' could not be loaded by Node. It likely does not exist.")
                             }
-                        else {
-                            if (!Date.Config || !Date.Config.i18n)
-                                return Date.console.error("The DateJS IETF language tag '" + r + "' is not available and has not been loaded."), !1;
-                            o = !0,
-                                d(r).done(function() {
-                                    s = r,
-                                        Date.CultureStrings = Date.CultureStrings || {},
-                                        Date.CultureStrings.lang = r,
-                                        Date.CultureInfo = new l,
-                                        e.Parsing.Normalizer.buildReplaceData(),
-                                        e.Grammar && e.Grammar.buildGrammarFormats(),
-                                        i && setTimeout(i, 0)
-                                })
-                        }
+                    else {
+                        if (!Date.Config || !Date.Config.i18n)
+                            return Date.console.error("The DateJS IETF language tag '" + r + "' is not available and has not been loaded."), !1;
+                        o = !0,
+                            d(r).done(function() {
+                                s = r,
+                                    Date.CultureStrings = Date.CultureStrings || {},
+                                    Date.CultureStrings.lang = r,
+                                    Date.CultureInfo = new l,
+                                    e.Parsing.Normalizer.buildReplaceData(),
+                                    e.Grammar && e.Grammar.buildGrammarFormats(),
+                                    i && setTimeout(i, 0)
+                            })
+                    }
                     e.Parsing.Normalizer.buildReplaceData(),
                         e.Grammar && e.Grammar.buildGrammarFormats(), !o && i && setTimeout(i, 0)
                 },
@@ -28930,7 +28985,7 @@
                 process: function(e, t) {
                     return function(n) {
                         var s = e.call(this, n);
-                        return [t.call(this, s[0]), s[1]];
+                        return [t.call(this, s[0]), s[1]]
                     }
                 },
                 min: function(t, n) {
@@ -29558,169 +29613,169 @@
         }()
     }
     var a = {
-        "./af-ZA.js": 741,
-        "./ar-AE.js": 742,
-        "./ar-BH.js": 743,
-        "./ar-DZ.js": 744,
-        "./ar-EG.js": 745,
-        "./ar-IQ.js": 746,
-        "./ar-JO.js": 747,
-        "./ar-KW.js": 748,
-        "./ar-LB.js": 749,
-        "./ar-LY.js": 750,
-        "./ar-MA.js": 751,
-        "./ar-OM.js": 752,
-        "./ar-QA.js": 753,
-        "./ar-SA.js": 754,
-        "./ar-SY.js": 755,
-        "./ar-TN.js": 756,
-        "./ar-YE.js": 757,
-        "./az-Cyrl-AZ.js": 758,
-        "./az-Latn-AZ.js": 759,
-        "./be-BY.js": 760,
-        "./bg-BG.js": 761,
-        "./bs-Latn-BA.js": 762,
-        "./ca-ES.js": 763,
-        "./cs-CZ.js": 764,
-        "./cy-GB.js": 765,
-        "./da-DK.js": 766,
-        "./de-AT.js": 767,
-        "./de-CH.js": 768,
-        "./de-DE.js": 769,
-        "./de-LI.js": 770,
-        "./de-LU.js": 771,
-        "./dv-MV.js": 772,
-        "./el-GR.js": 773,
-        "./en-029.js": 774,
-        "./en-AU.js": 775,
-        "./en-BZ.js": 776,
-        "./en-CA.js": 777,
-        "./en-GB.js": 778,
-        "./en-IE.js": 779,
-        "./en-JM.js": 780,
-        "./en-NZ.js": 781,
-        "./en-PH.js": 782,
-        "./en-TT.js": 783,
-        "./en-ZA.js": 784,
-        "./en-ZW.js": 785,
-        "./es-AR.js": 786,
-        "./es-BO.js": 787,
-        "./es-CL.js": 788,
-        "./es-CO.js": 789,
-        "./es-CR.js": 790,
-        "./es-DO.js": 791,
-        "./es-EC.js": 792,
-        "./es-ES.js": 793,
-        "./es-GT.js": 794,
-        "./es-HN.js": 795,
-        "./es-MX.js": 796,
-        "./es-NI.js": 797,
-        "./es-PA.js": 798,
-        "./es-PE.js": 799,
-        "./es-PR.js": 800,
-        "./es-PY.js": 801,
-        "./es-SV.js": 802,
-        "./es-UY.js": 803,
-        "./es-VE.js": 804,
-        "./et-EE.js": 805,
-        "./eu-ES.js": 806,
-        "./fa-IR.js": 807,
-        "./fi-FI.js": 808,
-        "./fo-FO.js": 809,
-        "./fr-BE.js": 810,
-        "./fr-CA.js": 811,
-        "./fr-CH.js": 812,
-        "./fr-FR.js": 813,
-        "./fr-LU.js": 814,
-        "./fr-MC.js": 815,
-        "./gl-ES.js": 816,
-        "./gu-IN.js": 817,
-        "./he-IL.js": 818,
-        "./hi-IN.js": 819,
-        "./hr-BA.js": 820,
-        "./hr-HR.js": 821,
-        "./hu-HU.js": 822,
-        "./hy-AM.js": 823,
-        "./id-ID.js": 824,
-        "./is-IS.js": 825,
-        "./it-CH.js": 826,
-        "./it-IT.js": 827,
-        "./ja-JP.js": 828,
-        "./ka-GE.js": 829,
-        "./kk-KZ.js": 830,
-        "./kn-IN.js": 831,
-        "./ko-KR.js": 832,
-        "./kok-IN.js": 833,
-        "./ky-KG.js": 834,
-        "./lt-LT.js": 835,
-        "./lv-LV.js": 836,
-        "./mi-NZ.js": 837,
-        "./mk-MK.js": 838,
-        "./mn-MN.js": 839,
-        "./mr-IN.js": 840,
-        "./ms-BN.js": 841,
-        "./ms-MY.js": 842,
-        "./mt-MT.js": 843,
-        "./nb-NO.js": 844,
-        "./nl-BE.js": 845,
-        "./nl-NL.js": 846,
-        "./nn-NO.js": 847,
-        "./ns-ZA.js": 848,
-        "./pa-IN.js": 849,
-        "./pl-PL.js": 850,
-        "./pt-BR.js": 851,
-        "./pt-PT.js": 852,
-        "./quz-BO.js": 853,
-        "./quz-EC.js": 854,
-        "./quz-PE.js": 855,
-        "./ro-RO.js": 856,
-        "./ru-RU.js": 857,
-        "./sa-IN.js": 858,
-        "./se-FI.js": 859,
-        "./se-NO.js": 860,
-        "./se-SE.js": 861,
-        "./sk-SK.js": 862,
-        "./sl-SI.js": 863,
-        "./sma-NO.js": 864,
-        "./sma-SE.js": 865,
-        "./smj-NO.js": 866,
-        "./smj-SE.js": 867,
-        "./smn-FI.js": 868,
-        "./sms-FI.js": 869,
-        "./sq-AL.js": 870,
-        "./sr-Cyrl-BA.js": 871,
-        "./sr-Cyrl-CS.js": 872,
-        "./sr-Latn-BA.js": 873,
-        "./sr-Latn-CS.js": 874,
-        "./sv-FI.js": 875,
-        "./sv-SE.js": 876,
-        "./sw-KE.js": 877,
-        "./syr-SY.js": 878,
-        "./ta-IN.js": 879,
-        "./te-IN.js": 880,
-        "./th-TH.js": 881,
-        "./tn-ZA.js": 882,
-        "./tr-TR.js": 883,
-        "./tt-RU.js": 884,
-        "./uk-UA.js": 885,
-        "./ur-PK.js": 886,
-        "./uz-Cyrl-UZ.js": 887,
-        "./uz-Latn-UZ.js": 888,
-        "./vi-VN.js": 889,
-        "./xh-ZA.js": 890,
-        "./zh-CN.js": 891,
-        "./zh-HK.js": 892,
-        "./zh-MO.js": 893,
-        "./zh-SG.js": 894,
-        "./zh-TW.js": 895,
-        "./zu-ZA.js": 896
+        "./af-ZA.js": 744,
+        "./ar-AE.js": 745,
+        "./ar-BH.js": 746,
+        "./ar-DZ.js": 747,
+        "./ar-EG.js": 748,
+        "./ar-IQ.js": 749,
+        "./ar-JO.js": 750,
+        "./ar-KW.js": 751,
+        "./ar-LB.js": 752,
+        "./ar-LY.js": 753,
+        "./ar-MA.js": 754,
+        "./ar-OM.js": 755,
+        "./ar-QA.js": 756,
+        "./ar-SA.js": 757,
+        "./ar-SY.js": 758,
+        "./ar-TN.js": 759,
+        "./ar-YE.js": 760,
+        "./az-Cyrl-AZ.js": 761,
+        "./az-Latn-AZ.js": 762,
+        "./be-BY.js": 763,
+        "./bg-BG.js": 764,
+        "./bs-Latn-BA.js": 765,
+        "./ca-ES.js": 766,
+        "./cs-CZ.js": 767,
+        "./cy-GB.js": 768,
+        "./da-DK.js": 769,
+        "./de-AT.js": 770,
+        "./de-CH.js": 771,
+        "./de-DE.js": 772,
+        "./de-LI.js": 773,
+        "./de-LU.js": 774,
+        "./dv-MV.js": 775,
+        "./el-GR.js": 776,
+        "./en-029.js": 777,
+        "./en-AU.js": 778,
+        "./en-BZ.js": 779,
+        "./en-CA.js": 780,
+        "./en-GB.js": 781,
+        "./en-IE.js": 782,
+        "./en-JM.js": 783,
+        "./en-NZ.js": 784,
+        "./en-PH.js": 785,
+        "./en-TT.js": 786,
+        "./en-ZA.js": 787,
+        "./en-ZW.js": 788,
+        "./es-AR.js": 789,
+        "./es-BO.js": 790,
+        "./es-CL.js": 791,
+        "./es-CO.js": 792,
+        "./es-CR.js": 793,
+        "./es-DO.js": 794,
+        "./es-EC.js": 795,
+        "./es-ES.js": 796,
+        "./es-GT.js": 797,
+        "./es-HN.js": 798,
+        "./es-MX.js": 799,
+        "./es-NI.js": 800,
+        "./es-PA.js": 801,
+        "./es-PE.js": 802,
+        "./es-PR.js": 803,
+        "./es-PY.js": 804,
+        "./es-SV.js": 805,
+        "./es-UY.js": 806,
+        "./es-VE.js": 807,
+        "./et-EE.js": 808,
+        "./eu-ES.js": 809,
+        "./fa-IR.js": 810,
+        "./fi-FI.js": 811,
+        "./fo-FO.js": 812,
+        "./fr-BE.js": 813,
+        "./fr-CA.js": 814,
+        "./fr-CH.js": 815,
+        "./fr-FR.js": 816,
+        "./fr-LU.js": 817,
+        "./fr-MC.js": 818,
+        "./gl-ES.js": 819,
+        "./gu-IN.js": 820,
+        "./he-IL.js": 821,
+        "./hi-IN.js": 822,
+        "./hr-BA.js": 823,
+        "./hr-HR.js": 824,
+        "./hu-HU.js": 825,
+        "./hy-AM.js": 826,
+        "./id-ID.js": 827,
+        "./is-IS.js": 828,
+        "./it-CH.js": 829,
+        "./it-IT.js": 830,
+        "./ja-JP.js": 831,
+        "./ka-GE.js": 832,
+        "./kk-KZ.js": 833,
+        "./kn-IN.js": 834,
+        "./ko-KR.js": 835,
+        "./kok-IN.js": 836,
+        "./ky-KG.js": 837,
+        "./lt-LT.js": 838,
+        "./lv-LV.js": 839,
+        "./mi-NZ.js": 840,
+        "./mk-MK.js": 841,
+        "./mn-MN.js": 842,
+        "./mr-IN.js": 843,
+        "./ms-BN.js": 844,
+        "./ms-MY.js": 845,
+        "./mt-MT.js": 846,
+        "./nb-NO.js": 847,
+        "./nl-BE.js": 848,
+        "./nl-NL.js": 849,
+        "./nn-NO.js": 850,
+        "./ns-ZA.js": 851,
+        "./pa-IN.js": 852,
+        "./pl-PL.js": 853,
+        "./pt-BR.js": 854,
+        "./pt-PT.js": 855,
+        "./quz-BO.js": 856,
+        "./quz-EC.js": 857,
+        "./quz-PE.js": 858,
+        "./ro-RO.js": 859,
+        "./ru-RU.js": 860,
+        "./sa-IN.js": 861,
+        "./se-FI.js": 862,
+        "./se-NO.js": 863,
+        "./se-SE.js": 864,
+        "./sk-SK.js": 865,
+        "./sl-SI.js": 866,
+        "./sma-NO.js": 867,
+        "./sma-SE.js": 868,
+        "./smj-NO.js": 869,
+        "./smj-SE.js": 870,
+        "./smn-FI.js": 871,
+        "./sms-FI.js": 872,
+        "./sq-AL.js": 873,
+        "./sr-Cyrl-BA.js": 874,
+        "./sr-Cyrl-CS.js": 875,
+        "./sr-Latn-BA.js": 876,
+        "./sr-Latn-CS.js": 877,
+        "./sv-FI.js": 878,
+        "./sv-SE.js": 879,
+        "./sw-KE.js": 880,
+        "./syr-SY.js": 881,
+        "./ta-IN.js": 882,
+        "./te-IN.js": 883,
+        "./th-TH.js": 884,
+        "./tn-ZA.js": 885,
+        "./tr-TR.js": 886,
+        "./tt-RU.js": 887,
+        "./uk-UA.js": 888,
+        "./ur-PK.js": 889,
+        "./uz-Cyrl-UZ.js": 890,
+        "./uz-Latn-UZ.js": 891,
+        "./vi-VN.js": 892,
+        "./xh-ZA.js": 893,
+        "./zh-CN.js": 894,
+        "./zh-HK.js": 895,
+        "./zh-MO.js": 896,
+        "./zh-SG.js": 897,
+        "./zh-TW.js": 898,
+        "./zu-ZA.js": 899
     };
     s.keys = function() {
             return Object.keys(a)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 740
+        s.id = 743
 }, function(e, t) {
     Date.CultureStrings = Date.CultureStrings || {},
         Date.CultureStrings["af-ZA"] = {
@@ -35224,7 +35279,7 @@
             AKDT: "AKDT",
             HADT: "HADT"
         },
-        Date.CultureStrings.lang = "dv-MV";
+        Date.CultureStrings.lang = "dv-MV"
 }, function(e, t) {
     Date.CultureStrings = Date.CultureStrings || {},
         Date.CultureStrings["el-GR"] = {
@@ -56573,37 +56628,37 @@
     e.exports = n
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.$ = n(904)
+        e.exports = t.$ = n(907)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.I18n = n(982)
+        e.exports = t.I18n = n(985)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.Marionette = n(653)
+        e.exports = t.Marionette = n(656)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.OpenLayers = n(897)
+        e.exports = t.OpenLayers = n(900)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t._ = n(60)
+        e.exports = t._ = n(59)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.io = n(992)
+        e.exports = t.io = n(995)
     }).call(t, function() {
         return this
     }())
@@ -57521,229 +57576,229 @@
         }()
     }
     var a = {
-        "./af": 250,
-        "./af.js": 250,
-        "./ar": 256,
-        "./ar-dz": 251,
-        "./ar-dz.js": 251,
-        "./ar-ly": 252,
-        "./ar-ly.js": 252,
-        "./ar-ma": 253,
-        "./ar-ma.js": 253,
-        "./ar-sa": 254,
-        "./ar-sa.js": 254,
-        "./ar-tn": 255,
-        "./ar-tn.js": 255,
-        "./ar.js": 256,
-        "./az": 257,
-        "./az.js": 257,
-        "./be": 258,
-        "./be.js": 258,
-        "./bg": 259,
-        "./bg.js": 259,
-        "./bn": 260,
-        "./bn.js": 260,
-        "./bo": 261,
-        "./bo.js": 261,
-        "./br": 262,
-        "./br.js": 262,
-        "./bs": 263,
-        "./bs.js": 263,
-        "./ca": 264,
-        "./ca.js": 264,
-        "./cs": 265,
-        "./cs.js": 265,
-        "./cv": 266,
-        "./cv.js": 266,
-        "./cy": 267,
-        "./cy.js": 267,
-        "./da": 268,
-        "./da.js": 268,
-        "./de": 270,
-        "./de-at": 269,
-        "./de-at.js": 269,
-        "./de.js": 270,
-        "./dv": 271,
-        "./dv.js": 271,
-        "./el": 272,
-        "./el.js": 272,
-        "./en-au": 273,
-        "./en-au.js": 273,
-        "./en-ca": 274,
-        "./en-ca.js": 274,
-        "./en-gb": 275,
-        "./en-gb.js": 275,
-        "./en-ie": 276,
-        "./en-ie.js": 276,
-        "./en-nz": 277,
-        "./en-nz.js": 277,
-        "./eo": 278,
-        "./eo.js": 278,
-        "./es": 280,
-        "./es-do": 279,
-        "./es-do.js": 279,
-        "./es.js": 280,
-        "./et": 281,
-        "./et.js": 281,
-        "./eu": 282,
-        "./eu.js": 282,
-        "./fa": 283,
-        "./fa.js": 283,
-        "./fi": 284,
-        "./fi.js": 284,
-        "./fo": 285,
-        "./fo.js": 285,
-        "./fr": 288,
-        "./fr-ca": 286,
-        "./fr-ca.js": 286,
-        "./fr-ch": 287,
-        "./fr-ch.js": 287,
-        "./fr.js": 288,
-        "./fy": 289,
-        "./fy.js": 289,
-        "./gd": 290,
-        "./gd.js": 290,
-        "./gl": 291,
-        "./gl.js": 291,
-        "./he": 292,
-        "./he.js": 292,
-        "./hi": 293,
-        "./hi.js": 293,
-        "./hr": 294,
-        "./hr.js": 294,
-        "./hu": 295,
-        "./hu.js": 295,
-        "./hy-am": 296,
-        "./hy-am.js": 296,
-        "./id": 297,
-        "./id.js": 297,
-        "./is": 298,
-        "./is.js": 298,
-        "./it": 299,
-        "./it.js": 299,
-        "./ja": 300,
-        "./ja.js": 300,
-        "./jv": 301,
-        "./jv.js": 301,
-        "./ka": 302,
-        "./ka.js": 302,
-        "./kk": 303,
-        "./kk.js": 303,
-        "./km": 304,
-        "./km.js": 304,
-        "./ko": 305,
-        "./ko.js": 305,
-        "./ky": 306,
-        "./ky.js": 306,
-        "./lb": 307,
-        "./lb.js": 307,
-        "./lo": 308,
-        "./lo.js": 308,
-        "./lt": 309,
-        "./lt.js": 309,
-        "./lv": 310,
-        "./lv.js": 310,
-        "./me": 311,
-        "./me.js": 311,
-        "./mi": 312,
-        "./mi.js": 312,
-        "./mk": 313,
-        "./mk.js": 313,
-        "./ml": 314,
-        "./ml.js": 314,
-        "./mr": 315,
-        "./mr.js": 315,
-        "./ms": 317,
-        "./ms-my": 316,
-        "./ms-my.js": 316,
-        "./ms.js": 317,
-        "./my": 318,
-        "./my.js": 318,
-        "./nb": 319,
-        "./nb.js": 319,
-        "./ne": 320,
-        "./ne.js": 320,
-        "./nl": 322,
-        "./nl-be": 321,
-        "./nl-be.js": 321,
-        "./nl.js": 322,
-        "./nn": 323,
-        "./nn.js": 323,
-        "./pa-in": 324,
-        "./pa-in.js": 324,
-        "./pl": 325,
-        "./pl.js": 325,
-        "./pt": 327,
-        "./pt-br": 326,
-        "./pt-br.js": 326,
-        "./pt.js": 327,
-        "./ro": 328,
-        "./ro.js": 328,
-        "./ru": 329,
-        "./ru.js": 329,
-        "./se": 330,
-        "./se.js": 330,
-        "./si": 331,
-        "./si.js": 331,
-        "./sk": 332,
-        "./sk.js": 332,
-        "./sl": 333,
-        "./sl.js": 333,
-        "./sq": 334,
-        "./sq.js": 334,
-        "./sr": 336,
-        "./sr-cyrl": 335,
-        "./sr-cyrl.js": 335,
-        "./sr.js": 336,
-        "./ss": 337,
-        "./ss.js": 337,
-        "./sv": 338,
-        "./sv.js": 338,
-        "./sw": 339,
-        "./sw.js": 339,
-        "./ta": 340,
-        "./ta.js": 340,
-        "./te": 341,
-        "./te.js": 341,
-        "./tet": 342,
-        "./tet.js": 342,
-        "./th": 343,
-        "./th.js": 343,
-        "./tl-ph": 344,
-        "./tl-ph.js": 344,
-        "./tlh": 345,
-        "./tlh.js": 345,
-        "./tr": 346,
-        "./tr.js": 346,
-        "./tzl": 347,
-        "./tzl.js": 347,
-        "./tzm": 349,
-        "./tzm-latn": 348,
-        "./tzm-latn.js": 348,
-        "./tzm.js": 349,
-        "./uk": 350,
-        "./uk.js": 350,
-        "./uz": 351,
-        "./uz.js": 351,
-        "./vi": 352,
-        "./vi.js": 352,
-        "./x-pseudo": 353,
-        "./x-pseudo.js": 353,
-        "./yo": 354,
-        "./yo.js": 354,
-        "./zh-cn": 355,
-        "./zh-cn.js": 355,
-        "./zh-hk": 356,
-        "./zh-hk.js": 356,
-        "./zh-tw": 357,
-        "./zh-tw.js": 357
+        "./af": 252,
+        "./af.js": 252,
+        "./ar": 258,
+        "./ar-dz": 253,
+        "./ar-dz.js": 253,
+        "./ar-ly": 254,
+        "./ar-ly.js": 254,
+        "./ar-ma": 255,
+        "./ar-ma.js": 255,
+        "./ar-sa": 256,
+        "./ar-sa.js": 256,
+        "./ar-tn": 257,
+        "./ar-tn.js": 257,
+        "./ar.js": 258,
+        "./az": 259,
+        "./az.js": 259,
+        "./be": 260,
+        "./be.js": 260,
+        "./bg": 261,
+        "./bg.js": 261,
+        "./bn": 262,
+        "./bn.js": 262,
+        "./bo": 263,
+        "./bo.js": 263,
+        "./br": 264,
+        "./br.js": 264,
+        "./bs": 265,
+        "./bs.js": 265,
+        "./ca": 266,
+        "./ca.js": 266,
+        "./cs": 267,
+        "./cs.js": 267,
+        "./cv": 268,
+        "./cv.js": 268,
+        "./cy": 269,
+        "./cy.js": 269,
+        "./da": 270,
+        "./da.js": 270,
+        "./de": 272,
+        "./de-at": 271,
+        "./de-at.js": 271,
+        "./de.js": 272,
+        "./dv": 273,
+        "./dv.js": 273,
+        "./el": 274,
+        "./el.js": 274,
+        "./en-au": 275,
+        "./en-au.js": 275,
+        "./en-ca": 276,
+        "./en-ca.js": 276,
+        "./en-gb": 277,
+        "./en-gb.js": 277,
+        "./en-ie": 278,
+        "./en-ie.js": 278,
+        "./en-nz": 279,
+        "./en-nz.js": 279,
+        "./eo": 280,
+        "./eo.js": 280,
+        "./es": 282,
+        "./es-do": 281,
+        "./es-do.js": 281,
+        "./es.js": 282,
+        "./et": 283,
+        "./et.js": 283,
+        "./eu": 284,
+        "./eu.js": 284,
+        "./fa": 285,
+        "./fa.js": 285,
+        "./fi": 286,
+        "./fi.js": 286,
+        "./fo": 287,
+        "./fo.js": 287,
+        "./fr": 290,
+        "./fr-ca": 288,
+        "./fr-ca.js": 288,
+        "./fr-ch": 289,
+        "./fr-ch.js": 289,
+        "./fr.js": 290,
+        "./fy": 291,
+        "./fy.js": 291,
+        "./gd": 292,
+        "./gd.js": 292,
+        "./gl": 293,
+        "./gl.js": 293,
+        "./he": 294,
+        "./he.js": 294,
+        "./hi": 295,
+        "./hi.js": 295,
+        "./hr": 296,
+        "./hr.js": 296,
+        "./hu": 297,
+        "./hu.js": 297,
+        "./hy-am": 298,
+        "./hy-am.js": 298,
+        "./id": 299,
+        "./id.js": 299,
+        "./is": 300,
+        "./is.js": 300,
+        "./it": 301,
+        "./it.js": 301,
+        "./ja": 302,
+        "./ja.js": 302,
+        "./jv": 303,
+        "./jv.js": 303,
+        "./ka": 304,
+        "./ka.js": 304,
+        "./kk": 305,
+        "./kk.js": 305,
+        "./km": 306,
+        "./km.js": 306,
+        "./ko": 307,
+        "./ko.js": 307,
+        "./ky": 308,
+        "./ky.js": 308,
+        "./lb": 309,
+        "./lb.js": 309,
+        "./lo": 310,
+        "./lo.js": 310,
+        "./lt": 311,
+        "./lt.js": 311,
+        "./lv": 312,
+        "./lv.js": 312,
+        "./me": 313,
+        "./me.js": 313,
+        "./mi": 314,
+        "./mi.js": 314,
+        "./mk": 315,
+        "./mk.js": 315,
+        "./ml": 316,
+        "./ml.js": 316,
+        "./mr": 317,
+        "./mr.js": 317,
+        "./ms": 319,
+        "./ms-my": 318,
+        "./ms-my.js": 318,
+        "./ms.js": 319,
+        "./my": 320,
+        "./my.js": 320,
+        "./nb": 321,
+        "./nb.js": 321,
+        "./ne": 322,
+        "./ne.js": 322,
+        "./nl": 324,
+        "./nl-be": 323,
+        "./nl-be.js": 323,
+        "./nl.js": 324,
+        "./nn": 325,
+        "./nn.js": 325,
+        "./pa-in": 326,
+        "./pa-in.js": 326,
+        "./pl": 327,
+        "./pl.js": 327,
+        "./pt": 329,
+        "./pt-br": 328,
+        "./pt-br.js": 328,
+        "./pt.js": 329,
+        "./ro": 330,
+        "./ro.js": 330,
+        "./ru": 331,
+        "./ru.js": 331,
+        "./se": 332,
+        "./se.js": 332,
+        "./si": 333,
+        "./si.js": 333,
+        "./sk": 334,
+        "./sk.js": 334,
+        "./sl": 335,
+        "./sl.js": 335,
+        "./sq": 336,
+        "./sq.js": 336,
+        "./sr": 338,
+        "./sr-cyrl": 337,
+        "./sr-cyrl.js": 337,
+        "./sr.js": 338,
+        "./ss": 339,
+        "./ss.js": 339,
+        "./sv": 340,
+        "./sv.js": 340,
+        "./sw": 341,
+        "./sw.js": 341,
+        "./ta": 342,
+        "./ta.js": 342,
+        "./te": 343,
+        "./te.js": 343,
+        "./tet": 344,
+        "./tet.js": 344,
+        "./th": 345,
+        "./th.js": 345,
+        "./tl-ph": 346,
+        "./tl-ph.js": 346,
+        "./tlh": 347,
+        "./tlh.js": 347,
+        "./tr": 348,
+        "./tr.js": 348,
+        "./tzl": 349,
+        "./tzl.js": 349,
+        "./tzm": 351,
+        "./tzm-latn": 350,
+        "./tzm-latn.js": 350,
+        "./tzm.js": 351,
+        "./uk": 352,
+        "./uk.js": 352,
+        "./uz": 353,
+        "./uz.js": 353,
+        "./vi": 354,
+        "./vi.js": 354,
+        "./x-pseudo": 355,
+        "./x-pseudo.js": 355,
+        "./yo": 356,
+        "./yo.js": 356,
+        "./zh-cn": 357,
+        "./zh-cn.js": 357,
+        "./zh-hk": 358,
+        "./zh-hk.js": 358,
+        "./zh-tw": 359,
+        "./zh-tw.js": 359
     };
     s.keys = function() {
             return Object.keys(a)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 991
+        s.id = 994
 }, function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
     (function(module) {
@@ -59675,7 +59730,7 @@
                 }
                 .apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), !(void 0 !== __WEBPACK_AMD_DEFINE_RESULT__ && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
         }()
-    }).call(exports, __webpack_require__(358)(module))
+    }).call(exports, __webpack_require__(360)(module))
 }, , , , , , function(e, t) {
     OpenLayers.Animation = function(e) {
         function t(e, t, n) {
@@ -70356,103 +70411,103 @@
                 d += "lon" == t ? e < 0 ? OpenLayers.i18n("W") : OpenLayers.i18n("E") : e < 0 ? OpenLayers.i18n("S") : OpenLayers.i18n("N")
         }
 }, function(e, t, n) {
-    n(901),
-        n(999),
-        n(1051),
-        n(1052),
-        n(1e3),
-        n(1083),
-        n(359),
-        n(363),
-        n(361),
-        n(360),
-        n(362),
-        n(1001),
-        n(1019),
-        n(998),
-        n(1082),
-        n(1065),
-        n(1067),
-        n(1053),
-        n(1057),
-        n(1059),
+    n(904),
+        n(1002),
         n(1054),
         n(1055),
-        n(1062),
-        n(1080),
-        n(1081),
+        n(1003),
+        n(1086),
+        n(361),
+        n(365),
+        n(363),
+        n(362),
+        n(364),
+        n(1004),
+        n(1022),
+        n(1001),
+        n(1085),
+        n(1068),
+        n(1070),
         n(1056),
-        n(1064),
-        n(1063),
-        n(1066),
+        n(1060),
+        n(1062),
+        n(1057),
         n(1058),
-        n(1025),
-        n(1029),
+        n(1065),
+        n(1083),
+        n(1084),
+        n(1059),
+        n(1067),
+        n(1066),
+        n(1069),
+        n(1061),
         n(1028),
-        n(1074),
-        n(1002),
-        n(1040),
+        n(1032),
+        n(1031),
+        n(1077),
+        n(1005),
         n(1043),
         n(1046),
-        n(1048),
-        n(1047),
         n(1049),
-        n(1007),
-        n(1020),
+        n(1051),
+        n(1050),
+        n(1052),
+        n(1010),
+        n(1023),
+        n(1024),
+        n(1071),
+        n(1044),
         n(1021),
-        n(1068),
-        n(1041),
-        n(1018),
-        n(360),
-        n(1030),
-        n(1031),
-        n(1038),
-        n(1036),
-        n(1032),
+        n(362),
         n(1033),
         n(1034),
+        n(1041),
         n(1039),
+        n(1035),
+        n(1036),
+        n(1037),
         n(1042),
-        n(1011),
-        n(1003),
-        n(1044),
-        n(1012),
-        n(1013),
-        n(1072),
-        n(1022),
-        n(1023),
-        n(1076),
+        n(1045),
+        n(1014),
+        n(1006),
+        n(1047),
+        n(1015),
+        n(1016),
         n(1075),
-        n(1077),
+        n(1025),
+        n(1026),
         n(1079),
         n(1078),
-        n(1071),
-        n(1037),
-        n(1006),
-        n(1073),
-        n(1060),
-        n(1061),
-        n(1016),
-        n(1045),
+        n(1080),
+        n(1082),
+        n(1081),
+        n(1074),
+        n(1040),
         n(1009),
-        n(1035),
-        n(363),
-        n(1069),
-        n(1024),
-        n(361),
-        n(359),
+        n(1076),
+        n(1063),
+        n(1064),
+        n(1019),
+        n(1048),
+        n(1012),
+        n(1038),
+        n(365),
+        n(1072),
         n(1027),
-        n(1070),
+        n(363),
+        n(361),
+        n(1030),
+        n(1073),
+        n(1011),
+        n(364),
+        n(1053),
+        n(1020),
+        n(1029),
         n(1008),
-        n(362),
-        n(1050),
+        n(1013),
+        n(1018),
+        n(1007),
         n(1017),
-        n(1026),
-        n(1005),
-        n(1010),
-        n(1015),
-        n(1004),
-        n(1014),
         window.OL = window.OpenLayers,
         OL.Renderer.SVG.prototype.MAX_PIXEL = Number.MAX_VALUE
 }]);

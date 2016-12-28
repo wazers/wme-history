@@ -12192,6 +12192,15 @@ body[dir=rtl] .olControlScaleLine {
     float: left
 }
 
+#sidebar .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #3d3d3d;
+    z-index: 5;
+    opacity: .5
+}
+
 #sidebar #sidebarContent {
     position: relative;
     height: inherit
@@ -13745,6 +13754,21 @@ body[dir=rtl] .olControlScaleLine {
 
 .panel.place-update-edit .actions,.panel.place-update-edit .changes,.panel.place-update-edit .navigation,.panel.place-update-edit .request-details {
     padding: 15px
+}
+
+.panel.place-update-edit .external-provider-link {
+    font-weight: 700
+}
+
+.panel.place-update-edit .external-providers-list .anchor {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    display: inline-block
+}
+
+.panel.place-update-edit .external-providers-list .id {
+    display: inline-block
 }
 
 .panel.place-update-edit .image-preview,.panel.place-update-edit .missing-image {
@@ -15808,27 +15832,6 @@ body[dir=rtl] .olControlScaleLine {
     border-top-color: #fff
 }
 
-.bootstrap-timepicker .icon-chevron-up:after {
-    content: "\F077"
-}
-
-.bootstrap-timepicker .icon-chevron-down:after,.bootstrap-timepicker .icon-chevron-up:after {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.bootstrap-timepicker .icon-chevron-down:after {
-    content: "\F078"
-}
-
-.date-input-group+.bootstrap-timepicker {
-    width: auto
-}
-
 .daterangepicker td.available:hover,.daterangepicker th.available:hover {
     background-color: #f3f3f3
 }
@@ -15849,7 +15852,7 @@ body[dir=rtl] .olControlScaleLine {
     background-color: #9ec9d6
 }
 
-.end-date+.input-group-addon,.end-time+.input-group-addon,.start-date+.input-group-addon,.start-time+.input-group-addon {
+.end-date+.input-group-addon,.start-date+.input-group-addon {
     cursor: pointer
 }
 
@@ -16506,11 +16509,11 @@ html[dir=rtl] .select2-container-multi .select2-search-choice-close {
     right: 13px
 }
 
-.bootstrap-timepicker .add-on {
+.bootstrap-timepicker .input-group-addon {
     cursor: pointer
 }
 
-.bootstrap-timepicker .add-on i {
+.bootstrap-timepicker .input-group-addon i {
     display: inline-block;
     width: 16px;
     height: 16px
