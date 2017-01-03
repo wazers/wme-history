@@ -33789,10 +33789,11 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(187),
         u = n(l),
-        d = Marionette.CollectionView.extend({
+        d = Marionette.View.extend({
             template: "templates/venue/external-provider/list",
-            childView: r.default,
-            childViewContainer: ".list",
+            regions: {
+                list: ".list"
+            },
             events: {
                 "click .add": "_onAddClicked"
             },
@@ -33817,7 +33818,11 @@ webpackJsonp([1], [function(e, t, i) {
                 return this.trigger("change", e)
             },
             onRender: function() {
-                return this.stickit(this.viewModel)
+                return this.showChildView("list", new Marionette.CollectionView({
+                        childView: r.default,
+                        collection: this.collection
+                    })),
+                    this.stickit(this.viewModel)
             },
             _onAddClicked: function(e) {
                 return e.preventDefault && e.preventDefault(),
