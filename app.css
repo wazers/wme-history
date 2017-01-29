@@ -8459,6 +8459,7 @@ h4 {
 
 .waze-tooltip {
     display: inline-block;
+    cursor: help;
     color: #59899e
 }
 
@@ -13458,6 +13459,14 @@ body[dir=rtl] .olControlScaleLine {
     margin-bottom: 5px
 }
 
+#edit-panel .parkingType-tooltip-content,.edit-panel .parkingType-tooltip-content {
+    text-align: left
+}
+
+#edit-panel .parkingType-tooltip-header,.edit-panel .parkingType-tooltip-header {
+    text-decoration: underline
+}
+
 .select2-drop-active {
     border-color: #ccc;
     box-shadow: compact(none,false,false,false,false,false,false,false,false,false)
@@ -13735,6 +13744,14 @@ body[dir=rtl] .olControlScaleLine {
 
 .categories .select2-container {
     margin-bottom: 5px
+}
+
+.parkingType-tooltip-content {
+    text-align: left
+}
+
+.parkingType-tooltip-header {
+    text-decoration: underline
 }
 
 .panel.place-update-edit .header .id {

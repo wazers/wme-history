@@ -2824,7 +2824,7 @@ webpackJsonp([1], [function(e, t, i) {
                 return !1
             },
             _toggleFormControls: function(e) {
-                this.$(".attributes-form input, textarea, select").prop("disabled", !e)
+                this.$(".attributes-form").find("input, textarea, select").prop("disabled", !e)
             },
             isModelEditable: function() {
                 return this.model.arePropertiesEditable()
@@ -3189,7 +3189,7 @@ webpackJsonp([1], [function(e, t, i) {
     t.default = {
             UNKNOWN: "UNKNOWN",
             PARKING_TYPE_PUBLIC: i,
-            PARKING_TYPE: [i],
+            PARKING_TYPE: [i, "RESTRICTED", "PRIVATE"],
             COST_TYPE: ["FREE", "LOW", "MODERATE", "EXPENSIVE"],
             PAYMENT_TYPE: ["CASH", "CHECKS", "CREDIT"],
             LOT_TYPE: ["STREET_LEVEL", "STREET_LEVEL_COVERED", "MULTI_LEVEL", "UNDERGROUND"],
@@ -12673,10 +12673,6 @@ webpackJsonp([1], [function(e, t, i) {
                         return 0 === e
                     }
                 },
-                ".new-comment-form": {
-                    observe: "enabled",
-                    visible: !0
-                },
                 ".new-comment-text": {
                     observe: "commentText",
                     attributes: [{
@@ -12704,7 +12700,6 @@ webpackJsonp([1], [function(e, t, i) {
                         following: this.commentable.isFollowing(),
                         commentCount: this.collection.length,
                         commentText: "",
-                        enabled: this.options.enabled,
                         disableFollowing: !1,
                         submitting: !1
                     }),
@@ -26022,8 +26017,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _renderConversationRegion: function() {
                 var e = new u.default({
-                    commentable: this.model,
-                    enabled: this.model.arePropertiesEditable()
+                    commentable: this.model
                 });
                 return this.showChildView("conversationRegion", e)
             },
@@ -26709,6 +26703,11 @@ webpackJsonp([1], [function(e, t, i) {
         c = n(d),
         h = r.default.extend({
             template: "templates/venue/venue-edit-more-info-parking-lot",
+            ui: {
+                parkingTypeTooltip: ".parkingType-tooltip",
+                parkingTypeTooltipTemplate: ".parkingType-tooltip-template",
+                hasTBRTooltip: ".hasTBR-tooltip"
+            },
             bindings: {
                 "[name=canExitWhileClosed]": "canExitWhileClosed",
                 "[name=lotType]": "lotType",
@@ -26745,7 +26744,13 @@ webpackJsonp([1], [function(e, t, i) {
                     this.viewModel.on("change", this._onViewModelChange.bind(this))
             },
             onRender: function() {
-                return this.stickit(this.viewModel)
+                this.ui.hasTBRTooltip.tooltip(),
+                    this.ui.parkingTypeTooltip.tooltip({
+                        title: this.ui.parkingTypeTooltipTemplate.html(),
+                        html: !0,
+                        placement: "right"
+                    }),
+                    this.stickit(this.viewModel)
             },
             _onViewModelChange: function() {
                 var e = $.extend(!0, {}, this.model.attributes.categoryAttributes);
@@ -30417,12 +30422,12 @@ webpackJsonp([1], [function(e, t, i) {
                 this.mouseOver = !1
             },
             _onClipboardCopied: function(e) {
-                return this.ui.mousePosition.next(".tooltip").find(".tooltip-inner").text(I18n.t("footer.coords_copied"))
+                return this.ui.mousePosition.next(".tooltip").find(".tooltip-inner").text(I18n.t("footer.coords_copied"));
             },
             _updateHtmlFromLonLat: function(e) {
                 var t = this._formatOutput(e);
                 if (t !== this.ui.mousePosition.html())
-                    return this.ui.mousePosition.html(t);
+                    return this.ui.mousePosition.html(t)
             },
             _onMapMouseMove: function(e) {
                 if (null != e && !this.mouseOver) {
@@ -41421,42 +41426,54 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, n, s, r, o, a, l, u, d, c, h, p, f;
+                        var e, t, n, s, r, o, a, l, u, d, c, h, p, f, g, m, v;
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
                             s = i(51),
-                            n.push("<form class='attributes-form'>\n<fieldset class='controls-container'>\n<div class='side-panel-section'>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.parking.fields.parkingType"))) + "</label>"),
-                            c = s.PARKING_TYPE,
+                            n.push("<form class='attributes-form'>\n<fieldset class='controls-container'>\n<div class='side-panel-section'>\n<div class='form-group'>\n<template class='hidden parkingType-tooltip-template'>\n<ul class='list-unstyled parkingType-tooltip-content'>"),
+                            p = s.PARKING_TYPE,
                             r = 0,
-                            l = c.length; r < l; r++)
-                            f = c[r],
-                            n.push("<div class='parking-type-option'>\n<input id='parking-type-" + f + "' type='radio' name='parkingType' value='" + t(e(f)) + "'>\n<label for='parking-type-" + t(e(f)) + "' title='" + t(e(this.t("edit.landmark.parking.titles.parkingType." + f))) + "'>"),
-                            n.push("" + t(e(this.t("edit.landmark.parking.types.parkingType." + f)))),
+                            u = p.length; r < u; r++)
+                            v = p[r],
+                            n.push("<li>\n<span class='parkingType-tooltip-header'>"),
+                            n.push("" + t(e(this.t("edit.landmark.parking.types.parkingType." + v)))),
+                            n.push("</span>\n<span>-</span>\n<span>"),
+                            n.push("" + t(e(this.t("edit.landmark.parking.titles.parkingType." + v)))),
+                            n.push("</span>\n</li>");
+                        for (n.push("</ul>\n</template>\n<label class='control-label control-label-inline'>"),
+                            n.push("" + t(e(this.t("edit.landmark.parking.fields.parkingType")))),
+                            n.push("</label>\n<i class='parkingType-tooltip waze-tooltip'></i>"),
+                            f = s.PARKING_TYPE,
+                            o = 0,
+                            d = f.length; o < d; o++)
+                            v = f[o],
+                            n.push("<div class='parking-type-option'>\n<input id='parking-type-" + v + "' type='radio' name='parkingType' value='" + t(e(v)) + "'>\n<label for='parking-type-" + t(e(v)) + "'>"),
+                            n.push("" + t(e(this.t("edit.landmark.parking.types.parkingType." + v)))),
                             n.push("</label>\n</div>");
-                        for (n.push("</div>\n<div class='form-group'>\n<label class='control-label' title='" + t(e(this.t("edit.landmark.parking.titles.hasTBR"))) + "'>"),
+                        for (n.push("</div>\n<div class='form-group'>\n<label class='control-label control-label-inline'>"),
                             n.push("" + t(e(this.t("edit.landmark.parking.fields.hasTBR")))),
-                            n.push("</label>\n<input id='has-tbr' type='checkbox' name='hasTBR'>\n<label for='has-tbr'>"),
+                            n.push("</label>\n<i class='hasTBR-tooltip waze-tooltip' title='" + t(e(this.t("edit.landmark.parking.titles.hasTBR"))) + "'></i>\n<input id='has-tbr' type='checkbox' name='hasTBR'>\n<label for='has-tbr'>"),
                             n.push("" + t(e(this.t("edit.landmark.parking.general.yes")))),
                             n.push("</label>\n</div>\n</div>\n<div class='side-panel-section'>\n<div class='opening-hours'></div>\n<div class='controls-container form-group'>\n<input id='can-exit-checkbox' type='checkbox' name='canExitWhileClosed'>\n<label for='can-exit-checkbox'>"),
                             n.push("" + e(this.t("edit.landmark.parking.fields.canExitWhileClosed"))),
                             n.push("</label>\n</div>\n</div>\n<div class='side-panel-section'>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.parking.fields.costType"))) + "</label>\n<select class='form-control' name='costType'></select>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.parking.fields.paymentType"))) + "</label>"),
-                            h = s.PAYMENT_TYPE,
-                            o = 0,
-                            u = h.length; o < u; o++)
-                            f = h[o],
-                            n.push("<div class='payment-checkbox'>\n<input id='payment-checkbox-" + f + "' type='checkbox' name='paymentType' value='" + t(e(f)) + "'>\n<label for='payment-checkbox-" + t(e(f)) + "'>"),
-                            n.push("" + e(this.t("edit.landmark.parking.types.paymentType." + f))),
+                            g = s.PAYMENT_TYPE,
+                            a = 0,
+                            c = g.length; a < c; a++)
+                            v = g[a],
+                            n.push("<div class='payment-checkbox'>\n<input id='payment-checkbox-" + v + "' type='checkbox' name='paymentType' value='" + t(e(v)) + "'>\n<label for='payment-checkbox-" + t(e(v)) + "'>"),
+                            n.push("" + e(this.t("edit.landmark.parking.types.paymentType." + v))),
                             n.push("</label>\n</div>");
                         for (n.push("</div>\n<div class='form-group'>"),
                             n.push("" + e(this.renderPartial("templates/venue/venue-edit-more-info-services", this))),
                             n.push("</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.parking.fields.estimatedNumberOfSpots"))) + "</label>\n<select class='form-control' name='estimatedNumberOfSpots'></select>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.parking.fields.lotType"))) + "</label>"),
-                            p = s.LOT_TYPE,
-                            a = 0,
-                            d = p.length; a < d; a++)
-                            f = p[a],
-                            n.push("<div class='lot-checkbox'>\n<input id='lot-checkbox-" + f + "' type='checkbox' name='lotType' value='" + t(e(f)) + "'>\n<label for='lot-checkbox-" + t(e(f)) + "'>"),
-                            n.push("" + e(this.t("edit.landmark.parking.types.lotType." + f))),
+                            m = s.LOT_TYPE,
+                            l = 0,
+                            h = m.length; l < h; l++)
+                            v = m[l],
+                            n.push("<div class='lot-checkbox'>\n<input id='lot-checkbox-" + v + "' type='checkbox' name='lotType' value='" + t(e(v)) + "'>\n<label for='lot-checkbox-" + t(e(v)) + "'>"),
+                            n.push("" + e(this.t("edit.landmark.parking.types.lotType." + v))),
                             n.push("</label>\n</div>");
                         return n.push("</div>\n</div>\n<div class='side-panel-section'>"),
                             n.push("" + e(this.renderPartial("templates/venue/venue-edit-more-info-contact", this))),
