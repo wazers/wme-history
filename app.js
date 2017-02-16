@@ -1,10 +1,10 @@
 webpackJsonp([1], [function(e, t, i) {
-    i(639),
-        i(367),
-        e.exports = i(640)
+    i(645),
+        i(370),
+        e.exports = i(646)
 }, , function(e, t, i) {
     e.exports = {
-        default: i(684),
+        default: i(689),
         __esModule: !0
     }
 }, function(e, t) {
@@ -40,8 +40,8 @@ webpackJsonp([1], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(6),
-        r = i(128);
+    var n, s = i(5),
+        r = i(134);
     n = OpenLayers.Class(s, {
             subActions: null,
             initialize: function(e) {
@@ -108,74 +108,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var s = i(131),
-        r = n(s),
-        o = {};
-    o.isUndefined = function(e) {
-            return void 0 === e
-        },
-        o.isDefined = function(e) {
-            return void 0 !== e
-        },
-        o.defined = function(e) {
-            return "undefined" != typeof e && null !== e
-        },
-        o.localStorage = {
-            get: function(e) {
-                try {
-                    var t = window.localStorage.getItem(e);
-                    return t ? JSON.parse(t) : null
-                } catch (e) {
-                    return null
-                }
-            },
-            set: function(e, t) {
-                try {
-                    return t = (0,
-                            r.default)(t),
-                        window.localStorage.setItem(e, t), !0
-                } catch (e) {
-                    return !1
-                }
-            }
-        },
-        o.copyAttributes = function(e, t, i) {
-            for (var n = 0, s = i.length; n < s; n++)
-                o.isDefined(t[i[n]]) && (e[i[n]] = t[i[n]])
-        },
-        o.protect = function(e, t, i) {
-            try {
-                t.call(i)
-            } catch (t) {
-                throw $.post(Waze.Config.paths.logger, {
-                        action: e,
-                        type: t.name,
-                        message: t.message,
-                        trace: t.stack
-                    }),
-                    t
-            }
-        },
-        o.is = function(e, t) {
-            var i = Object.prototype.toString.call(t).slice(8, -1);
-            return void 0 !== t && null !== t && i === e
-        },
-        o.isPowerOfTwo = function(e) {
-            return 0 === (e & e - 1)
-        },
-        o.metricToImperial = {
-            km: "mi"
-        },
-        e.exports = o
-}, function(e, t, i) {
-    "use strict";
-    var n, s = i(5);
+    var n, s = i(7);
     n = OpenLayers.Class({
             model: null,
             GEOMETRY_FIELDS: ["geometry"],
@@ -219,8 +152,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(5),
-        r = i(115);
+    var n, s = i(7),
+        r = i(120);
     n = OpenLayers.Class({
             id: null,
             state: null,
@@ -312,8 +245,72 @@ webpackJsonp([1], [function(e, t, i) {
         n.ALL_PERMISSIONS = 2147483647,
         e.exports = n
 }, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var s = i(137),
+        r = n(s),
+        o = {};
+    o.isUndefined = function(e) {
+            return void 0 === e
+        },
+        o.isDefined = function(e) {
+            return void 0 !== e
+        },
+        o.defined = function(e) {
+            return "undefined" != typeof e && null !== e
+        },
+        o.localStorage = {
+            get: function(e) {
+                try {
+                    var t = window.localStorage.getItem(e);
+                    return t ? JSON.parse(t) : null
+                } catch (e) {
+                    return null
+                }
+            },
+            set: function(e, t) {
+                try {
+                    return t = (0,
+                            r.default)(t),
+                        window.localStorage.setItem(e, t), !0
+                } catch (e) {
+                    return !1
+                }
+            }
+        },
+        o.copyAttributes = function(e, t, i) {
+            for (var n = 0, s = i.length; n < s; n++)
+                o.isDefined(t[i[n]]) && (e[i[n]] = t[i[n]])
+        },
+        o.protect = function(e, t, i) {
+            try {
+                t.call(i)
+            } catch (t) {
+                throw $.post(Waze.Config.paths.logger, {
+                        action: e,
+                        type: t.name,
+                        message: t.message,
+                        trace: t.stack
+                    }),
+                    t
+            }
+        },
+        o.is = function(e, t) {
+            var i = Object.prototype.toString.call(t).slice(8, -1);
+            return void 0 !== t && null !== t && i === e
+        },
+        o.metricToImperial = {
+            km: "mi"
+        },
+        e.exports = o
+}, function(e, t, i) {
     e.exports = {
-        default: i(675),
+        default: i(680),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -331,7 +328,7 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(6),
+        l = i(5),
         u = n(l),
         d = OL.Class(u.default, {
             initialize: function(e, t, i) {
@@ -445,9 +442,44 @@ webpackJsonp([1], [function(e, t, i) {
         });
     t.default = d,
         e.exports = t.default
+}, function(e, t) {
+    "use strict";
+    t.__esModule = !0,
+        t.default = function(e, t) {
+            if (!(e instanceof t))
+                throw new TypeError("Cannot call a class as a function")
+        }
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(5);
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(238),
+        r = n(s);
+    t.default = function() {
+        function e(e, t) {
+            for (var i = 0; i < t.length; i++) {
+                var n = t[i];
+                n.enumerable = n.enumerable || !1,
+                    n.configurable = !0,
+                    "value" in n && (n.writable = !0),
+                    (0,
+                        r.default)(e, n.key, n)
+            }
+        }
+        return function(t, i, n) {
+            return i && e(t.prototype, i),
+                n && e(t, n),
+                t
+        }
+    }()
+}, function(e, t, i) {
+    "use strict";
+    var n, s = i(7);
     n = {},
         n.EARTH_RADIUS_KM = 6371,
         n.EARTH_CIRC_KM = 40075,
@@ -586,8 +618,8 @@ webpackJsonp([1], [function(e, t, i) {
             } else if (e instanceof OpenLayers.Geometry.LineString) {
                 var f, g, m, v, y, _ = this.getSortedSegments(),
                     b = e.getSortedSegments(),
-                    w = b.length,
-                    E = {
+                    E = b.length,
+                    w = {
                         point: !0
                     };
                 e: for (s = 0,
@@ -595,9 +627,9 @@ webpackJsonp([1], [function(e, t, i) {
                     f = _[s],
                         v = f.x1,
                         y = f.y1;
-                    for (var S = 0; S < w; ++S) {
+                    for (var S = 0; S < E; ++S) {
                         if (g = b[S],
-                            m = OpenLayers.Geometry.segmentsIntersect(f, g, E)) {
+                            m = OpenLayers.Geometry.segmentsIntersect(f, g, w)) {
                             u = 0,
                                 l = {
                                     distance: 0,
@@ -625,14 +657,14 @@ webpackJsonp([1], [function(e, t, i) {
                 if (a || (l = l.distance),
                     0 !== u && f) {
                     i = e.distanceTo(new OpenLayers.Geometry.Point(f.x2, f.y2), t);
-                    var C = a ? i.distance : i;
-                    C < u && (l = a ? {
+                    var M = a ? i.distance : i;
+                    M < u && (l = a ? {
                         distance: u,
                         x0: i.x1,
                         y0: i.y1,
                         x1: i.x0,
                         y1: i.y0
-                    } : C)
+                    } : M)
                 }
             } else
                 l = e.distanceTo(this, t),
@@ -724,9 +756,9 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(42),
-        s = i(430),
-        r = (i(5),
-            i(70)),
+        s = i(434),
+        r = (i(7),
+            i(72)),
         o = {};
     o.safe_t = function(e, t) {
             var i, n = {};
@@ -1000,6 +1032,27 @@ webpackJsonp([1], [function(e, t, i) {
             }
         },
         e.exports = o
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(238),
+        r = n(s);
+    t.default = function(e, t, i) {
+        return t in e ? (0,
+                r.default)(e, t, {
+                value: i,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = i,
+            e
+    }
 }, function(e, t) {
     "use strict";
     var i = OpenLayers.Class({
@@ -1065,7 +1118,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i
 }, function(e, t, i) {
     "use strict";
-    var n = i(18),
+    var n = i(20),
         s = OpenLayers.Class({
             uniqueID: null,
             events: null,
@@ -1136,27 +1189,6 @@ webpackJsonp([1], [function(e, t, i) {
         });
     s.baseID = 0,
         e.exports = s
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(233),
-        r = n(s);
-    t.default = function(e, t, i) {
-        return t in e ? (0,
-                r.default)(e, t, {
-                value: i,
-                enumerable: !0,
-                configurable: !0,
-                writable: !0
-            }) : e[t] = i,
-            e
-    }
 }, , function(e, t, i) {
     "use strict";
 
@@ -1165,8 +1197,8 @@ webpackJsonp([1], [function(e, t, i) {
             t = _.extend({}, o, t),
             r(e)(t)
     }
-    var s = i(13),
-        r = i(999);
+    var s = i(15),
+        r = i(1003);
     r.keys().map(r);
     var o = {
         t: I18n.t.bind(I18n),
@@ -1183,148 +1215,13 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = {
             getHTML: n
         }
-}, function(e, t) {
-    "use strict";
-    t.__esModule = !0,
-        t.default = function(e, t) {
-            if (!(e instanceof t))
-                throw new TypeError("Cannot call a class as a function")
-        }
 }, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(233),
-        r = n(s);
-    t.default = function() {
-        function e(e, t) {
-            for (var i = 0; i < t.length; i++) {
-                var n = t[i];
-                n.enumerable = n.enumerable || !1,
-                    n.configurable = !0,
-                    "value" in n && (n.writable = !0),
-                    (0,
-                        r.default)(e, n.key, n)
-            }
-        }
-        return function(t, i, n) {
-            return i && e(t.prototype, i),
-                n && e(t, n),
-                t
-        }
-    }()
-}, function(e, t, i) {
-    "use strict";
-    var n, s = i(7),
-        r = i(5);
-    n = OpenLayers.Class(OpenLayers.Feature.Vector, s, {
-            initialize: function(e, t) {
-                this.attributes = e || {},
-                    t && t.parse && e && this.parse(e),
-                    e && (this.attributes = OL.Util.extend(this.attributes, e)),
-                    _.defaults(this.attributes, _.result(this, "defaults"))
-            },
-            merge: function(e) {
-                this.parse(e),
-                    OpenLayers.Util.extend(this.attributes, e),
-                    this.originalValues && (this.originalValues = void 0)
-            },
-            getOriginalValue: function(e) {
-                return this.originalValues && !_.isUndefined(this.originalValues[e]) ? this.originalValues[e] : this.attributes[e]
-            },
-            getID: function() {
-                return this.attributes.id
-            },
-            setID: function(e) {
-                this.attributes.id = e
-            },
-            getVersion: function() {
-                return this.attributes.version || s.prototype.getVersion.apply(this)
-            },
-            clone: function() {
-                var e, t = null,
-                    i = _.extend({}, this.attributes);
-                return this.attributes.geometry && (t = this.attributes.geometry.clone()),
-                    i.geometry = t,
-                    e = new n(i),
-                    e.state = this.state,
-                    e
-            },
-            getPermissions: function() {
-                return r.isDefined(this.attributes.permissions) ? this.attributes.permissions : 0
-            },
-            getAttributes: function() {
-                return this.attributes
-            },
-            CLASS_NAME: "Waze.Feature.Vector"
-        }),
-        Object.defineProperty(n.prototype, "geometry", {
-            get: function() {
-                if (this.attributes)
-                    return this.attributes.geometry
-            },
-            set: function(e) {
-                this.attributes.geometry = e
-            }
-        }),
-        e.exports = n
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(646),
-        r = n(s),
-        o = i(8),
-        a = n(o);
-    t.default = function() {
-        function e(e, t) {
-            var i = [],
-                n = !0,
-                s = !1,
-                r = void 0;
-            try {
-                for (var o, l = (0,
-                        a.default)(e); !(n = (o = l.next()).done) && (i.push(o.value), !t || i.length !== t); n = !0)
-                ;
-            } catch (e) {
-                s = !0,
-                    r = e
-            } finally {
-                try {
-                    !n && l.return && l.return()
-                } finally {
-                    if (s)
-                        throw r
-                }
-            }
-            return i
-        }
-        return function(t, i) {
-            if (Array.isArray(t))
-                return t;
-            if ((0,
-                    r.default)(Object(t)))
-                return e(t, i);
-            throw new TypeError("Invalid attempt to destructure non-iterable instance")
-        }
-    }()
-}, , function(e, t, i) {
     "use strict";
     var n = (i(66), {
         _getManifestsWith: function(e) {
             return W.Config.enabled_modules.map(function(t) {
                 try {
-                    return i(1e3)("./" + t + "/Manifest")[e]
+                    return i(1004)("./" + t + "/Manifest")[e]
                 } catch (e) {
                     throw new Error("Error loading module " + t + ":\nManifest file does not exist.")
                 }
@@ -1345,6 +1242,9 @@ webpackJsonp([1], [function(e, t, i) {
         },
         getLayers: function() {
             return _.flatten(this._getManifestsWith("layers"))
+        },
+        getLayerSwitcherConfig: function() {
+            return this._getManifestsWith("layerSwitcher")
         },
         getFeatureEditors: function() {
             return this._getManifestsWith("feature").filter(function(e) {
@@ -1405,6 +1305,106 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i
 }, function(e, t, i) {
     "use strict";
+    var n, s = i(6),
+        r = i(7);
+    n = OpenLayers.Class(OpenLayers.Feature.Vector, s, {
+            initialize: function(e, t) {
+                this.attributes = e || {},
+                    t && t.parse && e && this.parse(e),
+                    e && (this.attributes = OL.Util.extend(this.attributes, e)),
+                    _.defaults(this.attributes, _.result(this, "defaults"))
+            },
+            merge: function(e) {
+                this.parse(e),
+                    OpenLayers.Util.extend(this.attributes, e),
+                    this.originalValues && (this.originalValues = void 0)
+            },
+            getOriginalValue: function(e) {
+                return this.originalValues && !_.isUndefined(this.originalValues[e]) ? this.originalValues[e] : this.attributes[e]
+            },
+            getID: function() {
+                return this.attributes.id
+            },
+            setID: function(e) {
+                this.attributes.id = e
+            },
+            getVersion: function() {
+                return this.attributes.version || s.prototype.getVersion.apply(this)
+            },
+            clone: function() {
+                var e, t = null,
+                    i = _.extend({}, this.attributes);
+                return this.attributes.geometry && (t = this.attributes.geometry.clone()),
+                    i.geometry = t,
+                    e = new n(i),
+                    e.state = this.state,
+                    e
+            },
+            getPermissions: function() {
+                return r.isDefined(this.attributes.permissions) ? this.attributes.permissions : 0
+            },
+            getAttributes: function() {
+                return this.attributes
+            },
+            CLASS_NAME: "Waze.Feature.Vector"
+        }),
+        Object.defineProperty(n.prototype, "geometry", {
+            get: function() {
+                if (this.attributes)
+                    return this.attributes.geometry
+            },
+            set: function(e) {
+                this.attributes.geometry = e
+            }
+        }),
+        e.exports = n
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(652),
+        r = n(s),
+        o = i(8),
+        a = n(o);
+    t.default = function() {
+        function e(e, t) {
+            var i = [],
+                n = !0,
+                s = !1,
+                r = void 0;
+            try {
+                for (var o, l = (0,
+                        a.default)(e); !(n = (o = l.next()).done) && (i.push(o.value), !t || i.length !== t); n = !0)
+                ;
+            } catch (e) {
+                s = !0,
+                    r = e
+            } finally {
+                try {
+                    !n && l.return && l.return()
+                } finally {
+                    if (s)
+                        throw r
+                }
+            }
+            return i
+        }
+        return function(t, i) {
+            if (Array.isArray(t))
+                return t;
+            if ((0,
+                    r.default)(Object(t)))
+                return e(t, i);
+            throw new TypeError("Invalid attempt to destructure non-iterable instance")
+        }
+    }()
+}, , function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -1418,24 +1418,24 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(7),
+        l = i(6),
         u = n(l),
-        d = i(89),
+        d = i(71),
         c = n(d),
-        h = i(21),
+        h = i(23),
         p = n(h),
-        f = i(10),
+        f = i(12),
         g = n(f),
         m = i(56),
         v = n(m),
         y = i(54),
         b = n(y),
-        w = i(113),
-        E = n(w),
+        E = i(118),
+        w = n(E),
         S = i(9),
-        C = n(S),
-        M = i(5),
-        A = n(M),
+        M = n(S),
+        C = i(7),
+        A = n(C),
         L = OL.Class(p.default, {
             defaults: function() {
                 return {
@@ -1476,19 +1476,19 @@ webpackJsonp([1], [function(e, t, i) {
             FLAG_ATTRIBUTES: {
                 tunnel: {
                     mask: "flags",
-                    flag: E.default.FLAGS.TUNNEL
+                    flag: w.default.FLAGS.TUNNEL
                 },
                 unpaved: {
                     mask: "flags",
-                    flag: E.default.FLAGS.UNPAVED
+                    flag: w.default.FLAGS.UNPAVED
                 },
                 fwdSpeedCamera: {
                     mask: "fwdFlags",
-                    flag: E.default.FWD.SPEED_CAMERA
+                    flag: w.default.FWD.SPEED_CAMERA
                 },
                 revSpeedCamera: {
                     mask: "revFlags",
-                    flag: E.default.REV.SPEED_CAMERA
+                    flag: w.default.REV.SPEED_CAMERA
                 }
             },
             initialize: function(e) {
@@ -1734,9 +1734,9 @@ webpackJsonp([1], [function(e, t, i) {
                 if (b < 0)
                     return !1;
                 b = Math.sqrt(b);
-                var w = (-y + b) / (2 * v),
-                    E = (-y - b) / (2 * v);
-                return [w, E].sort().forEach(function(i) {
+                var E = (-y + b) / (2 * v),
+                    w = (-y - b) / (2 * v);
+                return [E, w].sort().forEach(function(i) {
                         if (i >= 0 && i <= 1) {
                             var n = new OpenLayers.Geometry.Point(e[0].x + i * l / r, e[0].y + i * u / o);
                             m.push({
@@ -1918,7 +1918,7 @@ webpackJsonp([1], [function(e, t, i) {
             lockTurns: function(e, t) {
                 var i = {};
                 i[this.getTurnsLockAttribute(e)] = !0;
-                var n = new C.default(this, i);
+                var n = new M.default(this, i);
                 return t ? n : this.model.actionManager.add(n)
             },
             getFwdHeading: function() {
@@ -2006,7 +2006,7 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(3),
-        s = i(6),
+        s = i(5),
         r = OL.Class(s, {
             initialize: function(e, t, i) {
                 this._turnGraph = e,
@@ -2061,9 +2061,9 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s = i(19),
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
         l = function() {
             function e(t, i) {
@@ -2140,82 +2140,8 @@ webpackJsonp([1], [function(e, t, i) {
         },
         e.exports = l
 }, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        o = i(8),
-        a = n(o),
-        l = i(182),
-        u = n(l),
-        d = OL.Class(u.default, {
-            initialize: function() {
-                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                this.attributes = e
-            },
-            set: function(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                if ("string" == typeof e) {
-                    var i = e,
-                        n = arguments[1];
-                    e = {},
-                        e[i] = n,
-                        t = arguments[2] || {}
-                }
-                var s = !1,
-                    o = !0,
-                    l = !1,
-                    u = void 0;
-                try {
-                    for (var d, c = (0,
-                            a.default)((0,
-                            r.default)(e)); !(o = (d = c.next()).done); o = !0) {
-                        var h = d.value,
-                            p = e[h];
-                        if (this.attributes[h] !== p) {
-                            var f = this.attributes[h];
-                            this.attributes[h] = p,
-                                s = !0,
-                                this.trigger("change:" + h, _.extend({
-                                    newValue: p,
-                                    oldValue: f
-                                }, t))
-                        }
-                    }
-                } catch (e) {
-                    l = !0,
-                        u = e
-                } finally {
-                    try {
-                        !o && c.return && c.return()
-                    } finally {
-                        if (l)
-                            throw u
-                    }
-                }
-                if (s)
-                    return this.trigger("change", t)
-            },
-            get: function(e) {
-                return this.attributes[e]
-            },
-            toJSON: function() {
-                return $.extend({}, this.attributes)
-            }
-        });
-    t.default = d,
-        e.exports = t.default
-}, function(e, t, i) {
     e.exports = {
-        default: i(686),
+        default: i(691),
         __esModule: !0
     }
 }, , , , function(e, t, i) {
@@ -2269,7 +2195,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(6),
+    var n, s = i(5),
         r = i(4),
         o = i(62),
         a = i(3);
@@ -2338,7 +2264,81 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(206),
+    var s = i(2),
+        r = n(s),
+        o = i(8),
+        a = n(o),
+        l = i(187),
+        u = n(l),
+        d = OL.Class(u.default, {
+            initialize: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                this.attributes = e
+            },
+            set: function(e) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                if ("string" == typeof e) {
+                    var i = e,
+                        n = arguments[1];
+                    e = {},
+                        e[i] = n,
+                        t = arguments[2] || {}
+                }
+                var s = !1,
+                    o = !0,
+                    l = !1,
+                    u = void 0;
+                try {
+                    for (var d, c = (0,
+                            a.default)((0,
+                            r.default)(e)); !(o = (d = c.next()).done); o = !0) {
+                        var h = d.value,
+                            p = e[h];
+                        if (this.attributes[h] !== p) {
+                            var f = this.attributes[h];
+                            this.attributes[h] = p,
+                                s = !0,
+                                this.trigger("change:" + h, _.extend({
+                                    newValue: p,
+                                    oldValue: f
+                                }, t))
+                        }
+                    }
+                } catch (e) {
+                    l = !0,
+                        u = e
+                } finally {
+                    try {
+                        !o && c.return && c.return()
+                    } finally {
+                        if (l)
+                            throw u
+                    }
+                }
+                if (s)
+                    return this.trigger("change", t)
+            },
+            get: function(e) {
+                return this.attributes[e]
+            },
+            toJSON: function() {
+                return $.extend({}, this.attributes)
+            }
+        });
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(211),
         r = n(s),
         o = r.default.extend({
             TYPE: {
@@ -2392,7 +2392,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(5);
+    var n, s = i(7);
     n = OpenLayers.Class(OpenLayers.Renderer.SVG, {
             initialize: function() {
                 OpenLayers.Renderer.SVG.prototype.initialize.apply(this, arguments),
@@ -2473,8 +2473,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, , , function(e, t, i) {
     "use strict";
-    var n, s = i(6),
-        r = i(7);
+    var n, s = i(5),
+        r = i(6);
     n = OL.Class(s, {
             object: null,
             repository: null,
@@ -2537,15 +2537,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(71),
+    var r = i(74),
         o = s(r),
         a = i(2),
         l = s(a),
-        u = i(7),
+        u = i(6),
         d = s(u),
-        c = i(24),
+        c = i(21),
         h = s(c),
-        p = i(425),
+        p = i(429),
         f = n(p),
         g = OL.Class(OL.Format.GeoJSON, {
             initialize: function() {
@@ -2591,7 +2591,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(7);
+    var n, s = i(6);
     n = OpenLayers.Class(s, {
             initialize: function() {
                 s.prototype.initialize.apply(this, arguments),
@@ -2808,8 +2808,8 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(9),
-        s = i(70),
-        r = i(12),
+        s = i(72),
+        r = i(14),
         o = Marionette.View.extend({
             dataModel: null,
             events: {
@@ -2903,10 +2903,10 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = o
 }, , , , , function(e, t, i) {
     "use strict";
-    var n, s = i(6),
-        r = i(102),
+    var n, s = i(5),
+        r = i(107),
         o = i(4),
-        a = i(101),
+        a = i(106),
         l = i(3);
     n = OpenLayers.Class(r, {
             segment: null,
@@ -2984,18 +2984,18 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(21),
-        r = i(7),
-        o = i(192),
-        a = i(68),
-        l = i(122),
-        u = i(188),
-        d = i(460),
-        c = i(458),
+    var n, s = i(23),
+        r = i(6),
+        o = i(197),
+        a = i(69),
+        l = i(127),
+        u = i(193),
+        d = i(465),
+        c = i(463),
         h = i(53),
-        p = i(10),
+        p = i(12),
         f = i(51),
-        g = i(111);
+        g = i(116);
     n = OpenLayers.Class(s, {
             defaults: function() {
                 return {
@@ -3215,7 +3215,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(21);
+    var n, s = i(23);
     n = OpenLayers.Class(s, {
             TYPE: {
                 DISCONNECTION: "DISCONNECTION",
@@ -3282,7 +3282,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(455),
+    var s = i(460),
         r = n(s),
         o = void 0,
         a = r.default.extend({
@@ -3333,9 +3333,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
-        o = i(7),
+        o = i(6),
         a = n(o),
         l = OL.Class(a.default, {
             attributesToCompare: ["fromTime", "toTime", "fromDate", "toDate", "vehicleTypes", "days", "description", "difficult"],
@@ -3555,11 +3555,11 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(30),
+    var s, r = i(29),
         o = n(r),
-        a = i(446),
-        l = i(12),
-        u = i(5);
+        a = i(450),
+        l = i(14),
+        u = i(7);
     s = Marionette.Object.extend({
             KEEP_CHANGED: function(e, t) {
                 return e
@@ -3582,10 +3582,7 @@ webpackJsonp([1], [function(e, t, i) {
             onDemand: !0,
             additionalInfo: null,
             useVersions: !0,
-            filterName: null,
-            FILTERS: null,
-            maskToFilter: null,
-            filterCount: 0,
+            filter: null,
             storePersistentSeparately: !1,
             initialize: function(e, t) {
                 OpenLayers.Util.extend(this, t),
@@ -3595,51 +3592,12 @@ webpackJsonp([1], [function(e, t, i) {
                     this.idGenerator = new a(this.GENERATED_ID_BASE, this.GENERATED_ID_STEP),
                     null === this.projection && (this.projection = this.DEFAULT_PROJECTION),
                     this.active = !u.defined(t.active) || t.active,
-                    this._generateMaskToFilterMap(),
-                    this.model.repositoryFilters.has(this.objectType) && this.model.repositoryFilters.on("change:" + this.objectType, this._onFilterChanged, this)
+                    this.filter && this.filter.on("change", this._onFilterChanged, this)
             },
-            _generateMaskToFilterMap: function() {
-                if (null !== this.FILTERS) {
-                    var e = this;
-                    this.maskToFilter = {},
-                        _.each(this.FILTERS, function(t, i) {
-                            if (!u.isPowerOfTwo(t.mask))
-                                throw new Error("Invalid mask value " + t.mask + " for filter " + i + ". Mask values should be a power of two.");
-                            if (!_.isUndefined(e.maskToFilter[t.mask]))
-                                throw new Error("Duplicate mask value " + t.mask + " for filter " + i);
-                            e.maskToFilter[t.mask] = t,
-                                e.filterCount++
-                        })
-                }
-            },
-            _onFilterChanged: function(e, t) {
-                for (var i = e.previous(this.objectType), n = !1, s = 1, r = 0; r < this.filterCount; r++) {
-                    var o = t % 2 === 1,
-                        a = i % 2 === 1;
-                    !a && o ? n = !0 : a && !o && this._removeFilteredObjects(this.maskToFilter[s]),
-                        i >>= 1,
-                        t >>= 1,
-                        s <<= 1
-                }
-                n && this.clear({
+            _onFilterChanged: function() {
+                this.clear({
                     keepUnsaved: !0
                 })
-            },
-            _removeFilteredObjects: function(e) {
-                var t = [];
-                _.each(this.objects, function(i) {
-                        i.isUnchanged() && e.callback(i) && t.push(i)
-                    }),
-                    this.remove(t)
-            },
-            toggleFilterBit: function(e) {
-                this.model.repositoryFilters.set(this.objectType, this.getFilter() ^ e.mask)
-            },
-            isFilterBitSet: function(e) {
-                return 0 !== (e.mask & this.getFilter())
-            },
-            getFilter: function() {
-                return this.model.repositoryFilters.get(this.objectType)
             },
             setActive: function(e) {
                 this.active = e,
@@ -3649,22 +3607,13 @@ webpackJsonp([1], [function(e, t, i) {
             },
             updateDataExtent: function(e, t, i) {
                 var n = {};
-                if (i < this.minZoom)
-                    return this.clear({
-                            keepUnsaved: !0,
-                            keepSelected: !0
-                        }),
-                        null;
-                if (!this.filtered && (!this.onDemand || this.currentDataBounds && this.currentDataBounds.containsBounds(e)))
-                    return null;
-                if (this.filterName) {
-                    var s = 0;
-                    return this.model.repositoryFilters.has(this.objectType) && (s = this.getFilter()),
-                        n[this.filterName] = s,
-                        n
-                }
-                return n[this.objectType + "s"] = !0,
-                    n
+                return i < this.minZoom ? (this.clear({
+                        keepUnsaved: !0,
+                        keepSelected: !0
+                    }),
+                    null) : !this.filtered && (!this.onDemand || this.currentDataBounds && this.currentDataBounds.containsBounds(e)) ? null : this.filter ? (this.filter.isEmpty() || (n[this.filter.getName()] = this.filter.serialize()),
+                    n) : (n[this.objectType + "s"] = !0,
+                    n)
             },
             get: function(e) {
                 return this.objects[e] || this.persistentObjects[e]
@@ -3732,9 +3681,6 @@ webpackJsonp([1], [function(e, t, i) {
                     }, this),
                     e && e.silent || t.length > 0 && (this.trigger(l.REMOVED, t),
                         this.trigger(l.UPDATED))
-            },
-            setFilterBit: function(e, t) {
-                t ? this.filter |= e : this.filter &= ~e
             },
             mergeObjects: function(e, t, i, n) {
                 this.currentDataBounds = i.clone(),
@@ -3824,7 +3770,7 @@ webpackJsonp([1], [function(e, t, i) {
     var n, s = i(4),
         r = i(40),
         o = (i(3),
-            i(195));
+            i(200));
     n = OpenLayers.Class(s, {
             city: null,
             initialize: function(e, t, i, n, r) {
@@ -3881,7 +3827,7 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(9),
         a = n(o),
-        l = i(98),
+        l = i(103),
         u = n(l),
         d = i(27),
         c = n(d),
@@ -3950,17 +3896,17 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s, r = (i(6),
-            i(34)),
-        o = i(35),
+    var n, s, r = (i(5),
+            i(33)),
+        o = i(34),
         a = i(4),
-        l = i(76),
-        u = i(10),
-        d = i(5),
-        c = i(183),
+        l = i(78),
+        u = i(12),
+        d = i(7),
+        c = i(188),
         h = i(27),
-        p = i(67),
-        f = i(83),
+        p = i(68),
+        f = i(84),
         g = i(28);
     _.defer(function() {
             n = i(49)
@@ -4083,7 +4029,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(6);
+    var n, s = i(5);
     n = OpenLayers.Class(s, {
             feature: null,
             repo: null,
@@ -4151,7 +4097,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(12),
+    var s = i(14),
         r = n(s),
         o = OL.Class(OL.Layer.Vector, {
             repo: null,
@@ -4273,11 +4219,444 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(19),
+    var s, r = i(16),
+        o = n(r),
+        a = i(135),
+        l = (n(a),
+            i(237)),
+        u = n(l),
+        d = i(637),
+        c = n(d),
+        h = i(638),
+        p = n(h),
+        f = i(636),
+        g = n(f),
+        m = i(635),
+        v = n(m),
+        y = i(639),
+        b = n(y),
+        E = i(236),
+        w = n(E),
+        S = i(441),
+        M = n(S),
+        C = i(439),
+        A = n(C),
+        L = i(66),
+        T = n(L),
+        O = i(436),
+        I = n(O),
+        D = i(442),
+        x = n(D),
+        P = i(437),
+        k = n(P),
+        R = i(183),
+        N = n(R),
+        V = i(448),
+        z = n(V),
+        U = i(446),
+        j = n(U),
+        F = i(447),
+        G = n(F),
+        B = i(438),
+        H = n(B),
+        q = i(3),
+        Y = n(q),
+        K = i(12),
+        J = n(K),
+        Z = i(440),
+        X = n(Z),
+        Q = i(37),
+        ee = n(Q),
+        te = i(136),
+        ie = n(te),
+        ne = i(21),
+        se = n(ne),
+        re = se.default.LAYER_TYPE,
+        oe = {
+            WMS: "wms",
+            MAPNIK: "mapnik"
+        },
+        ae = {
+            ARCHIVE: "archive",
+            AREA_MANAGERS: "area_managers",
+            BIG_JUNCTIONS: "big_junctions",
+            CLOSURES: "closures",
+            EDITABLE_AREAS: "editable_areas",
+            LANDMARKS: "landmarks",
+            NODES: "nodes",
+            PLACE_UPDATES: "place_updates",
+            PROBLEMS: "problems",
+            SATELLITE_IMAGERY: "satellite_imagery",
+            SEGMENTS: "segments",
+            SPEED_CAMERAS: "speed_cameras",
+            UPDATE_REQUESTS: "update_requests",
+            LIVE_USERS: "live_users",
+            GPS_POINTS: "gps_points",
+            ROADS: "roads"
+        },
+        le = {
+            initializeLayers: function() {
+                this._addAerials(),
+                    this._addModulesLayers(re.RASTER),
+                    this._addRasterLayers(),
+                    this._addModulesLayers(re.FEATURE),
+                    this._addModulesLayers(re.MARKER),
+                    this._addVectorLayers()
+            },
+            _addRasterLayers: function() {
+                return this._addRasterLayer(W.Config.raster_layers[ae.GPS_POINTS]),
+                    this._addRasterLayer(W.Config.raster_layers[ae.ROADS]),
+                    this.roadLayers = [this.getLayerByUniqueName(ae.ROADS)],
+                    W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
+                    this._setRoadLayerParams()
+            },
+            _addRasterLayer: function(e) {
+                var t = {},
+                    i = e.type || oe.WMS,
+                    n = I18n.t("layers.name." + e.uniqueName),
+                    s = e.file_name || W.Config.raster_layers[i].file_name,
+                    r = W.Config.raster_layers[i].servers.map(function(e) {
+                        return e + "/" + s
+                    });
+                $.extend(t, W.Config.raster_layers.options, e.options),
+                    t.tileSize = new OL.Size(t.tileWidth, t.tileHeight),
+                    t.removeBackBufferDelay = 0,
+                    t.uniqueName = e.uniqueName,
+                    t.visibility = e.visible;
+                var o = {
+                        text: I18n.t("layers.loading", {
+                            layer_name: n
+                        })
+                    },
+                    a = void 0;
+                if (i === oe.WMS) {
+                    var l = {};
+                    $.extend(l, W.Config.raster_layers.wms.params, e.params),
+                        l.layers = e.layers,
+                        a = new OL.Layer.WMS(n, r, l, t)
+                } else
+                    a = new X.default(n, r, t),
+                    $.extend(a.params, e.params);
+                return a.type = i,
+                    a.events.on({
+                        loadstart: function(e) {
+                            return function() {
+                                return W.vent.trigger("operationPending", {
+                                    operation: e
+                                })
+                            }
+                        }(o),
+                        loadend: function(e) {
+                            return function() {
+                                return W.vent.trigger("operationDone", {
+                                    operation: e
+                                })
+                            }
+                        }(o)
+                    }),
+                    this.addUniqueLayer(a),
+                    a
+            },
+            _setRoadLayerParams: function() {
+                var e = this.snapshotManager && this.snapshotManager.isSnapshotOn() ? -1 : 1,
+                    t = {
+                        timestamp: e,
+                        waitFor: W.model.lastTransactionID
+                    };
+                this.roadLayers.forEach(function(e) {
+                    e.type === oe.MAPNIK ? e.params.addToQuery = $.param(t) : _.extend(e.params, t)
+                })
+            },
+            _refreshRoadLayers: function(e) {
+                return this._setRoadLayerParams(),
+                    this.roadLayers.map(function(e) {
+                        return e.redraw({
+                                force: !0
+                            }),
+                            e.removeBackBuffer()
+                    })
+            },
+            _addVectorLayers: function() {
+                return this.segmentLayer = new M.default(I18n.t("layers.name.segments"), W.model, W.model.segments, {
+                        styleMap: p.default,
+                        uniqueName: ae.SEGMENTS,
+                        selectable: !0,
+                        featureType: Y.default.SEGMENT
+                    }),
+                    this.nodeLayer = new A.default(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
+                        styleMap: c.default,
+                        uniqueName: ae.NODES,
+                        selectable: !0,
+                        featureType: Y.default.NODE
+                    }),
+                    this.landmarkLayer = new T.default(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
+                        styleMap: u.default,
+                        uniqueName: ae.LANDMARKS,
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        selectable: !0,
+                        featureType: Y.default.VENUE
+                    }),
+                    this.bigJunctionLayer = new T.default(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
+                        styleMap: v.default,
+                        uniqueName: ae.BIG_JUNCTIONS,
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        selectable: !0,
+                        featureType: Y.default.BIG_JUNCTION,
+                        toggleRepo: !0
+                    }),
+                    this.bigJunctionPathLayer = new OL.Layer.Vector("bigJunctionPathLayer", {
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        renderers: [ee.default],
+                        styleMap: ie.default,
+                        selectable: !0
+                    }),
+                    this.camerasLayer = new T.default(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
+                        styleMap: g.default,
+                        uniqueName: ae.SPEED_CAMERAS,
+                        selectable: !0,
+                        featureType: Y.default.SPEED_CAMERA,
+                        toggleRepo: !0,
+                        rendererOptions: {
+                            zIndexing: !0
+                        }
+                    }),
+                    this.problemLayer = new H.default(I18n.t("layers.name.problems"), [W.model.problems], {
+                        markerClass: N.default,
+                        uniqueName: ae.PROBLEMS,
+                        className: "map-problems"
+                    }),
+                    this.updateRequestLayer = new H.default(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
+                        markerClass: z.default,
+                        uniqueName: ae.UPDATE_REQUESTS,
+                        className: "update-requests"
+                    }),
+                    this.archiveLayer = new I.default(I18n.t("layers.name.archive"), {
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        uniqueName: ae.ARCHIVE
+                    }),
+                    this.userLayer = new x.default(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
+                        uniqueName: ae.EDITABLE_AREAS
+                    }),
+                    this.managedAreasLayer = new T.default(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
+                        styleMap: w.default,
+                        uniqueName: ae.AREA_MANAGERS
+                    }),
+                    this.sketchLayer = new OpenLayers.Layer.Vector("sketch", {
+                        styleMap: b.default,
+                        selectable: !0
+                    }),
+                    this.placeUpdatesLayer = new H.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: j.default,
+                        uniqueName: ae.PLACE_UPDATES,
+                        className: "place-updates",
+                        filter: function(e) {
+                            return e.hasUpdateRequests() && !e.isParkingLot()
+                        }
+                    }),
+                    this.parkingPlaceUpdatesLayer = new H.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: j.default,
+                        uniqueName: "PARKING_PLACE_UPDATES",
+                        className: "place-updates",
+                        filter: function(e) {
+                            return e.hasUpdateRequests() && e.isParkingLot()
+                        }
+                    }),
+                    this.liveUsersLayer = new OL.Layer.Markers(I18n.t("layers.name.live_users"), {
+                        uniqueName: ae.LIVE_USERS,
+                        className: "live-users"
+                    }),
+                    this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.camerasLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.bigJunctionPathLayer, this.liveUsersLayer]),
+                    this.closuresMarkerLayer = new H.default(I18n.t("layers.name.closures"), [W.model.roadClosures], {
+                        markerClass: G.default,
+                        uniqueName: ae.CLOSURES,
+                        toggleRepo: !0
+                    }),
+                    this.addUniqueLayer(this.closuresMarkerLayer)
+            },
+            _addModulesLayers: function(e) {
+                for (var t = se.default.getLayers().filter(function(t) {
+                        return t.type === e
+                    }), i = 0; i < t.length; i++) {
+                    var n = t[i];
+                    if (n.type === re.RASTER)
+                        this._addModuleRasterLayer(n);
+                    else if (n.type === re.FEATURE)
+                        this._addModuleFeatureLayer(n);
+                    else {
+                        if (n.type !== re.MARKER)
+                            throw new Error("Invalid layer type " + n.type);
+                        this._addModuleMarkerLayer(n)
+                    }
+                }
+            },
+            _addModuleRasterLayer: function(e) {
+                return this._addRasterLayer(e.options)
+            },
+            _addModuleFeatureLayer: function(e) {
+                var t = e.options || {},
+                    i = [W.model.getRepository(t.objectType)],
+                    n = void 0;
+                n = t.enableZIndexing ? {
+                    zIndexing: !0
+                } : {};
+                var s = new T.default(t.name, W.model, i, {
+                    uniqueName: e.uniqueName,
+                    visibility: t.visibleByDefault,
+                    styleMap: t.styleMap,
+                    selectable: t.selectable,
+                    featureType: t.objectType,
+                    toggleRepo: !0,
+                    rendererOptions: n
+                });
+                return this.addUniqueLayer(s)
+            },
+            _addModuleMarkerLayer: function(e) {
+                var t = e.options || {},
+                    i = [W.model.getRepository(t.objectType)],
+                    n = new H.default(t.name, i, {
+                        uniqueName: e.uniqueName,
+                        markerClass: t.markerClass,
+                        className: t.markerClassName,
+                        visibility: t.visibleByDefault,
+                        featureType: t.objectType,
+                        filter: t.filter
+                    });
+                return this.addUniqueLayer(n)
+            },
+            getLayerByUniqueName: function(e) {
+                return this.getLayersBy("uniqueName", e)[0]
+            },
+            _addAerials: function() {
+                var e = W.Config.map.initialPosition[W.location.code],
+                    t = new OL.LonLat(e.lon, e.lat);
+                J.default.project(t);
+                var i = new k.default({
+                    name: I18n.t("layers.name.satellite_imagery"),
+                    key: "AIzaSyCn64OU_OShrM5EgKeBiUKBkFn2yLW1gDw",
+                    type: "satellite",
+                    zoomOffset: 12,
+                    numZoomLevels: 11,
+                    zoom: e.initialZoom,
+                    minResolution: .037322767712175846,
+                    center: t,
+                    uniqueName: ae.SATELLITE_IMAGERY,
+                    transitionEffect: "resize"
+                });
+                this.addUniqueLayer(i);
+                var n = {
+                    text: I18n.t("layers.loading", {
+                        layer_name: I18n.t("layers.name.satellite_imagery")
+                    })
+                };
+                return i.events.on({
+                        loadstart: function() {
+                            if (this.getVisibility())
+                                return W.vent.trigger("operationPending", {
+                                    operation: n
+                                })
+                        },
+                        loadend: function() {
+                            return W.vent.trigger("operationDone", {
+                                operation: n
+                            })
+                        },
+                        loaderror: function() {
+                            return W.vent.trigger("operationDone", {
+                                operation: n
+                            })
+                        }
+                    }),
+                    this.setCenter(t, e.initialZoom)
+            },
+            getLayersByRepos: function(e, t) {
+                return (t || null == this.layersPerRepo) && (this.layersPerRepo = this.layers.reduce(function(e, t) {
+                        if (null != t.repo)
+                            for (var i = 0; i < t.repo.length; i++) {
+                                var n = t.repo[i];
+                                null == e[n.name] && (e[n.name] = []),
+                                    e[n.name].push(t)
+                            }
+                        return e
+                    }, {})),
+                    _.pick(this.layersPerRepo, e)
+            },
+            showLayerByObjectType: function(e) {
+                var t = W.model.getRepository(e),
+                    i = this.getLayersByRepos([t.name]);
+                return i[t.name].map(function(e) {
+                    return e.setVisibility(!0)
+                })
+            },
+            addUniqueLayer: function(e) {
+                if (e.uniqueName) {
+                    var t = this.getLayersBy("uniqueName", e.uniqueName);
+                    if (t.length > 0)
+                        throw new Error("Cannot add layer " + e.uniqueName + ", the provided\n        uniqueName already exists.")
+                }
+                return this.addLayer(e)
+            },
+            addUniqueLayers: function(e) {
+                var t = this;
+                return e.map(function(e) {
+                    return t.addUniqueLayer(e)
+                })
+            }
+        };
+    le.layerVisibilityBitmask = (s = {},
+            (0,
+                o.default)(s, ae.SATELLITE_IMAGERY, 0),
+            (0,
+                o.default)(s, ae.ROADS, 2),
+            (0,
+                o.default)(s, ae.GPS_POINTS, 3),
+            (0,
+                o.default)(s, ae.AREA_MANAGERS, 4),
+            (0,
+                o.default)(s, ae.LANDMARKS, 5),
+            (0,
+                o.default)(s, ae.SPEED_CAMERAS, 6),
+            (0,
+                o.default)(s, ae.PROBLEMS, 7),
+            (0,
+                o.default)(s, ae.UPDATE_REQUESTS, 8),
+            (0,
+                o.default)(s, ae.EDITABLE_AREAS, 9),
+            (0,
+                o.default)(s, ae.LIVE_USERS, 10),
+            (0,
+                o.default)(s, ae.PLACE_UPDATES, 11),
+            (0,
+                o.default)(s, ae.BIG_JUNCTIONS, 12),
+            (0,
+                o.default)(s, ae.CLOSURES, 13),
+            s),
+        le.LAYER_UNIQUE_NAMES = ae,
+        t.default = le,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
-        l = i(118),
+        l = i(123),
         u = (n(l),
             function() {
                 function e(t) {
@@ -4418,17 +4797,17 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
-        o = i(211),
+        o = i(218),
         a = n(o),
-        l = i(112),
+        l = i(117),
         u = n(l),
         d = i(9),
         c = n(d),
-        h = i(557),
+        h = i(565),
         p = n(h),
-        f = i(545),
+        f = i(553),
         g = n(f),
         m = Backbone.Model.extend({
             MORE_INFO_DEFAULTS: [{
@@ -4576,6 +4955,69 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(10),
+        r = n(s),
+        o = i(11),
+        a = n(o),
+        l = function() {
+            function e() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0;
+                (0,
+                    r.default)(this, e),
+                this._value = t
+            }
+            return (0,
+                    a.default)(e, [{
+                    key: "add",
+                    value: function(e) {
+                        this._value |= e
+                    }
+                }, {
+                    key: "remove",
+                    value: function(e) {
+                        this._value &= ~e
+                    }
+                }, {
+                    key: "setBits",
+                    value: function(e) {
+                        var t = this;
+                        e.forEach(function(e) {
+                            e[1] ? t.add(e[0]) : t.remove(e[0])
+                        })
+                    }
+                }, {
+                    key: "isEnabled",
+                    value: function(e) {
+                        var t = this._value & e;
+                        return 0 !== t
+                    }
+                }, {
+                    key: "isDisabled",
+                    value: function(e) {
+                        var t = this._value & e;
+                        return 0 === t
+                    }
+                }, {
+                    key: "value",
+                    get: function() {
+                        return this._value
+                    }
+                }]),
+                e
+        }();
+    t.default = l,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(2),
         r = n(s),
         o = i(8),
@@ -4617,11 +5059,11 @@ webpackJsonp([1], [function(e, t, i) {
                 throw m
         }
     }
-    var w = OpenLayers,
-        E = w.INCHES_PER_UNIT;
+    var E = OpenLayers,
+        w = E.INCHES_PER_UNIT;
     l = {
             convert: function(e, t, i) {
-                return e * E[t] / E[i];
+                return e * w[t] / w[i]
             },
             localizeUnit: function(e) {
                 return u[e] && W.model.isImperial ? e = h[e] : d[e] && !W.model.isImperial && (e = p[e]),
@@ -4643,13 +5085,18 @@ webpackJsonp([1], [function(e, t, i) {
         l.UNIT = c,
         t.default = l,
         e.exports = t.default
-}, , , , , , function(e, t, i) {
+}, function(e, t, i) {
+    e.exports = {
+        default: i(688),
+        __esModule: !0
+    }
+}, , , , , function(e, t, i) {
     "use strict";
-    var n, s = i(6),
-        r = i(34),
+    var n, s = i(5),
+        r = i(33),
         o = i(4),
         a = i(3),
-        l = i(80);
+        l = i(82);
     n = OpenLayers.Class(o, {
             point: null,
             segments: null,
@@ -4772,15 +5219,15 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s = i(22),
+    var s = i(24),
         r = n(s),
         o = i(2),
         a = n(o),
-        l = (i(89),
-            i(113),
-            i(626)),
+        l = (i(71),
+            i(118),
+            i(632)),
         u = i(26),
-        d = i(70).UNIT,
+        d = i(72).UNIT,
         c = OpenLayers.Class(u, {
             children: null,
             address: null,
@@ -4985,8 +5432,8 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = c
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(21),
-        r = i(5),
+    var n, s = i(23),
+        r = i(7),
         o = i(56);
     n = OpenLayers.Class(s, {
             nested: {
@@ -5293,477 +5740,11 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s, r = i(16),
-        o = n(r),
-        a = i(129),
-        l = (n(a),
-            i(232)),
-        u = n(l),
-        d = i(631),
-        c = n(d),
-        h = i(632),
-        p = n(h),
-        f = i(630),
-        g = n(f),
-        m = i(629),
-        v = n(m),
-        y = i(633),
-        b = n(y),
-        w = i(231),
-        E = n(w),
-        S = i(437),
-        C = n(S),
-        M = i(435),
-        A = n(M),
-        L = i(66),
-        O = n(L),
-        D = i(432),
-        T = n(D),
-        I = i(438),
-        x = n(I),
-        k = i(433),
-        N = n(k),
-        R = i(178),
-        P = n(R),
-        V = i(444),
-        z = n(V),
-        F = i(442),
-        j = n(F),
-        U = i(443),
-        B = n(U),
-        G = i(434),
-        H = n(G),
-        q = i(3),
-        Y = n(q),
-        K = i(10),
-        J = n(K),
-        Z = i(436),
-        X = n(Z),
-        Q = i(37),
-        ee = n(Q),
-        te = i(130),
-        ie = n(te),
-        ne = i(24),
-        se = n(ne),
-        re = se.default.LAYER_TYPE,
-        oe = {
-            WMS: "wms",
-            MAPNIK: "mapnik"
-        },
-        ae = {
-            ARCHIVE: "archive",
-            AREA_MANAGERS: "area_managers",
-            BIG_JUNCTIONS: "big_junctions",
-            CLOSURES: "closures",
-            EDITABLE_AREAS: "editable_areas",
-            LANDMARKS: "landmarks",
-            NODES: "nodes",
-            PLACE_UPDATES: "place_updates",
-            PROBLEMS: "problems",
-            SATELLITE_IMAGERY: "satellite_imagery",
-            SEGMENTS: "segments",
-            SPEED_CAMERAS: "speed_cameras",
-            UPDATE_REQUESTS: "update_requests",
-            GPS_POINTS: "gps_points",
-            ROADS: "roads",
-            LIVE_USERS: "live_users"
-        },
-        le = {
-            initializeLayers: function() {
-                return this._addAerials(),
-                    this._addModulesLayers(re.RASTER),
-                    this._addRasterLayers(),
-                    this._addModulesLayers(re.FEATURE),
-                    this._addModulesLayers(re.MARKER),
-                    this._addVectorLayers(),
-                    this._setLayersAncestry(),
-                    this._setModuleLayersAncestry()
-            },
-            _addRasterLayers: function() {
-                return this._addRasterLayer(W.Config.raster_layers[ae.GPS_POINTS]),
-                    this._addRasterLayer(W.Config.raster_layers[ae.ROADS]),
-                    this.roadLayers = [this.getLayerByUniqueName(ae.ROADS)],
-                    W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
-                    this._setRoadLayerParams()
-            },
-            _addRasterLayer: function(e) {
-                var t = {},
-                    i = e.type || oe.WMS,
-                    n = I18n.t("layers.name." + e.uniqueName),
-                    s = e.file_name || W.Config.raster_layers[i].file_name,
-                    r = W.Config.raster_layers[i].servers.map(function(e) {
-                        return e + "/" + s
-                    });
-                $.extend(t, W.Config.raster_layers.options, e.options),
-                    t.tileSize = new OL.Size(t.tileWidth, t.tileHeight),
-                    t.removeBackBufferDelay = 0,
-                    t.uniqueName = e.uniqueName,
-                    t.visibility = e.visible;
-                var o = {
-                        text: I18n.t("layers.loading", {
-                            layer_name: n
-                        })
-                    },
-                    a = void 0;
-                if (i === oe.WMS) {
-                    var l = {};
-                    $.extend(l, W.Config.raster_layers.wms.params, e.params),
-                        l.layers = e.layers,
-                        a = new OL.Layer.WMS(n, r, l, t)
-                } else
-                    a = new X.default(n, r, t),
-                    $.extend(a.params, e.params);
-                return a.type = i,
-                    a.events.on({
-                        loadstart: function(e) {
-                            return function() {
-                                return W.vent.trigger("operationPending", {
-                                    operation: e
-                                })
-                            }
-                        }(o),
-                        loadend: function(e) {
-                            return function() {
-                                return W.vent.trigger("operationDone", {
-                                    operation: e
-                                })
-                            }
-                        }(o)
-                    }),
-                    this.addUniqueLayer(a),
-                    a
-            },
-            _setRoadLayerParams: function() {
-                var e = this.snapshotManager && this.snapshotManager.isSnapshotOn() ? -1 : 1,
-                    t = {
-                        timestamp: e,
-                        waitFor: W.model.lastTransactionID
-                    };
-                this.roadLayers.forEach(function(e) {
-                    e.type === oe.MAPNIK ? e.params.addToQuery = $.param(t) : _.extend(e.params, t)
-                })
-            },
-            _refreshRoadLayers: function(e) {
-                return this._setRoadLayerParams(),
-                    this.roadLayers.map(function(e) {
-                        return e.redraw({
-                                force: !0
-                            }),
-                            e.removeBackBuffer()
-                    })
-            },
-            _addVectorLayers: function() {
-                return this.segmentLayer = new C.default(I18n.t("layers.name.segments"), W.model, W.model.segments, {
-                        styleMap: p.default,
-                        displayInLayerSwitcher: !1,
-                        uniqueName: ae.SEGMENTS,
-                        selectable: !0,
-                        featureType: Y.default.SEGMENT
-                    }),
-                    this.nodeLayer = new A.default(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
-                        styleMap: c.default,
-                        displayInLayerSwitcher: !1,
-                        uniqueName: ae.NODES,
-                        selectable: !0,
-                        featureType: Y.default.NODE
-                    }),
-                    this.landmarkLayer = new O.default(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
-                        styleMap: u.default,
-                        displayInLayerSwitcher: !0,
-                        visibility: W.Config.venues.shownByDefault,
-                        uniqueName: ae.LANDMARKS,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        selectable: !0,
-                        featureType: Y.default.VENUE,
-                        toggleRepo: !0
-                    }),
-                    this.bigJunctionLayer = new O.default(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
-                        styleMap: v.default,
-                        displayInLayerSwitcher: W.Config.big_junctions.enable,
-                        visibility: W.Config.big_junctions.shownByDefault && W.Config.big_junctions.enable,
-                        uniqueName: ae.BIG_JUNCTIONS,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        selectable: !0,
-                        featureType: Y.default.BIG_JUNCTION,
-                        toggleRepo: !0
-                    }),
-                    this.bigJunctionPathLayer = new OL.Layer.Vector("bigJunctionPathLayer", {
-                        displayInLayerSwitcher: !1,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        renderers: [ee.default],
-                        styleMap: ie.default,
-                        selectable: !0
-                    }),
-                    this.camerasLayer = new O.default(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
-                        styleMap: g.default,
-                        displayInLayerSwitcher: !0,
-                        visibility: W.Config.cameras.shownByDefault,
-                        uniqueName: ae.SPEED_CAMERAS,
-                        selectable: !0,
-                        featureType: Y.default.SPEED_CAMERA,
-                        toggleRepo: !0,
-                        rendererOptions: {
-                            zIndexing: !0
-                        }
-                    }),
-                    this.problemLayer = new H.default(I18n.t("layers.name.problems"), [W.model.problems], {
-                        markerClass: P.default,
-                        uniqueName: ae.PROBLEMS,
-                        className: "map-problems",
-                        toggleRepo: !0
-                    }),
-                    this.updateRequestLayer = new H.default(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
-                        markerClass: z.default,
-                        uniqueName: ae.UPDATE_REQUESTS,
-                        className: "update-requests",
-                        visibility: W.Config.update_requests.shownByDefault,
-                        toggleRepo: !0
-                    }),
-                    this.archiveLayer = new T.default(I18n.t("layers.name.archive"), {
-                        displayInLayerSwitcher: !1,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        uniqueName: ae.ARCHIVE
-                    }),
-                    this.userLayer = new x.default(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
-                        visibility: !1,
-                        displayInLayerSwitcher: !0,
-                        uniqueName: ae.EDITABLE_AREAS
-                    }),
-                    this.managedAreasLayer = new O.default(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
-                        styleMap: E.default,
-                        displayInLayerSwitcher: !0,
-                        visibility: !1,
-                        uniqueName: ae.AREA_MANAGERS
-                    }),
-                    this.sketchLayer = new OpenLayers.Layer.Vector("sketch", {
-                        styleMap: b.default,
-                        displayInLayerSwitcher: !1,
-                        selectable: !0
-                    }),
-                    this.placeUpdatesLayer = new H.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: j.default,
-                        uniqueName: ae.PLACE_UPDATES,
-                        className: "place-updates",
-                        displayInLayerSwitcher: !0,
-                        visibility: W.Config.place_updates.shownByDefault,
-                        toggleFilter: "retrieveUpdateRequests",
-                        filter: function(e) {
-                            return e.hasUpdateRequests()
-                        }
-                    }),
-                    this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.camerasLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.bigJunctionPathLayer]),
-                    this.closuresMarkerLayer = new H.default(I18n.t("layers.name.closures"), [W.model.roadClosures], {
-                        markerClass: B.default,
-                        uniqueName: ae.CLOSURES,
-                        visibility: W.Config.closures.shownByDefault,
-                        displayInLayerSwitcher: !0,
-                        toggleRepo: !0
-                    }),
-                    this.addUniqueLayer(this.closuresMarkerLayer)
-            },
-            _addModulesLayers: function(e) {
-                for (var t = se.default.getLayers().filter(function(t) {
-                        return t.type === e
-                    }), i = 0; i < t.length; i++) {
-                    var n = t[i];
-                    if (n.type === re.RASTER)
-                        this._addModuleRasterLayer(n);
-                    else if (n.type === re.FEATURE)
-                        this._addModuleFeatureLayer(n);
-                    else {
-                        if (n.type !== re.MARKER)
-                            throw new Error("Invalid layer type " + n.type);
-                        this._addModuleMarkerLayer(n)
-                    }
-                }
-            },
-            _addModuleRasterLayer: function(e) {
-                return this._addRasterLayer(e.options)
-            },
-            _addModuleFeatureLayer: function(e) {
-                var t = e.options || {},
-                    i = [W.model.getRepository(t.objectType)],
-                    n = void 0;
-                n = t.enableZIndexing ? {
-                    zIndexing: !0
-                } : {};
-                var s = new O.default(t.name, W.model, i, {
-                    uniqueName: e.uniqueName,
-                    visibility: t.visibleByDefault,
-                    displayInLayerSwitcher: t.toggleable,
-                    styleMap: t.styleMap,
-                    selectable: t.selectable,
-                    featureType: t.objectType,
-                    toggleRepo: !0,
-                    rendererOptions: n
-                });
-                return this.addUniqueLayer(s)
-            },
-            _addModuleMarkerLayer: function(e) {
-                var t = e.options || {},
-                    i = [W.model.getRepository(t.objectType)],
-                    n = new H.default(t.name, i, {
-                        uniqueName: e.uniqueName,
-                        markerClass: t.markerClass,
-                        className: t.markerClassName,
-                        displayInLayerSwitcher: t.toggleable,
-                        visibility: t.visibleByDefault,
-                        featureType: t.objectType,
-                        filter: t.filter
-                    });
-                return this.addUniqueLayer(n)
-            },
-            _setModuleLayersAncestry: function() {
-                var e = this;
-                se.default.getLayers(),
-                    se.default.getLayers().forEach(function(t) {
-                        if (t.parentLayerUniqueName) {
-                            var i = e.getLayerByUniqueName(t.uniqueName),
-                                n = e.getLayerByUniqueName(t.parentLayerUniqueName);
-                            i.parentLayer = n,
-                                n.childLayers = [i]
-                        }
-                    })
-            },
-            getLayerByUniqueName: function(e) {
-                return this.getLayersBy("uniqueName", e)[0]
-            },
-            _addAerials: function() {
-                var e = W.Config.map.initialPosition[W.location.code],
-                    t = new OL.LonLat(e.lon, e.lat);
-                J.default.project(t);
-                var i = new N.default({
-                    name: I18n.t("layers.name.satellite_imagery"),
-                    key: "AIzaSyCn64OU_OShrM5EgKeBiUKBkFn2yLW1gDw",
-                    type: "satellite",
-                    zoomOffset: 12,
-                    numZoomLevels: 11,
-                    zoom: e.initialZoom,
-                    minResolution: .037322767712175846,
-                    center: t,
-                    uniqueName: ae.SATELLITE_IMAGERY,
-                    shortcutKey: "S+i",
-                    transitionEffect: "resize"
-                });
-                this.addUniqueLayer(i);
-                var n = {
-                    text: I18n.t("layers.loading", {
-                        layer_name: I18n.t("layers.name.satellite_imagery")
-                    })
-                };
-                return i.events.on({
-                        loadstart: function() {
-                            if (this.getVisibility())
-                                return W.vent.trigger("operationPending", {
-                                    operation: n
-                                })
-                        },
-                        loadend: function() {
-                            return W.vent.trigger("operationDone", {
-                                operation: n
-                            })
-                        },
-                        loaderror: function() {
-                            return W.vent.trigger("operationDone", {
-                                operation: n
-                            })
-                        }
-                    }),
-                    this.setCenter(t, e.initialZoom)
-            },
-            _setLayersAncestry: function() {
-                this.placeUpdatesLayer.parent = this.landmarkLayer,
-                    this.landmarkLayer.childLayers = [this.placeUpdatesLayer]
-            },
-            getLayersByRepos: function(e, t) {
-                return (t || null == this.layersPerRepo) && (this.layersPerRepo = this.layers.reduce(function(e, t) {
-                        if (t.displayInLayerSwitcher && null != t.repo)
-                            for (var i = 0; i < t.repo.length; i++) {
-                                var n = t.repo[i];
-                                null == e[n.name] && (e[n.name] = []),
-                                    e[n.name].push(t)
-                            }
-                        return e
-                    }, {})),
-                    _.pick(this.layersPerRepo, e)
-            },
-            showLayerByObjectType: function(e) {
-                var t = W.model.getRepository(e),
-                    i = this.getLayersByRepos([t.name]);
-                return i[t.name].map(function(e) {
-                    return e.setVisibility(!0)
-                })
-            },
-            addUniqueLayer: function(e) {
-                if (e.uniqueName) {
-                    var t = this.getLayersBy("uniqueName", e.uniqueName);
-                    if (t.length > 0)
-                        throw new Error("Cannot add layer " + e.uniqueName + ", the provided\n        uniqueName already exists.")
-                }
-                return this.addLayer(e)
-            },
-            addUniqueLayers: function(e) {
-                var t = this;
-                return e.map(function(e) {
-                    return t.addUniqueLayer(e)
-                })
-            }
-        };
-    le.layerVisibilityBitmask = (s = {},
-            (0,
-                o.default)(s, ae.SATELLITE_IMAGERY, 0),
-            (0,
-                o.default)(s, ae.ROADS, 2),
-            (0,
-                o.default)(s, ae.GPS_POINTS, 3),
-            (0,
-                o.default)(s, ae.AREA_MANAGERS, 4),
-            (0,
-                o.default)(s, ae.LANDMARKS, 5),
-            (0,
-                o.default)(s, ae.SPEED_CAMERAS, 6),
-            (0,
-                o.default)(s, ae.PROBLEMS, 7),
-            (0,
-                o.default)(s, ae.UPDATE_REQUESTS, 8),
-            (0,
-                o.default)(s, ae.EDITABLE_AREAS, 9),
-            (0,
-                o.default)(s, ae.LIVE_USERS, 10),
-            (0,
-                o.default)(s, ae.PLACE_UPDATES, 11),
-            (0,
-                o.default)(s, ae.BIG_JUNCTIONS, 12),
-            (0,
-                o.default)(s, ae.CLOSURES, 13),
-            s),
-        le.LAYER_UNIQUE_NAMES = ae,
-        t.default = le,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var s = i(19),
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
-        l = i(67),
+        l = i(68),
         u = function() {
             function e(t, i, n) {
                 (0,
@@ -5884,9 +5865,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(21),
-        s = i(7),
-        r = i(10),
+    var n = i(23),
+        s = i(6),
+        r = i(12),
         o = OL.Class(n, {
             DEFAULT_POLYGON_SIZE_METERS: 50,
             MAX_SUBJECT_LENGTH: 30,
@@ -5966,7 +5947,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
         o = Marionette.Behavior.extend({
             defaults: {
@@ -6119,7 +6100,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(206),
+    var s = i(211),
         r = n(s),
         o = r.default.extend({
             TYPE: {
@@ -6156,13 +6137,13 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(13),
+        l = i(15),
         u = n(l),
-        d = i(124),
+        d = i(129),
         c = n(d),
         h = i(36),
         p = n(h),
-        f = i(89),
+        f = i(71),
         g = n(f),
         m = c.default.extend({
             className: "feed-item feed-issue",
@@ -6243,61 +6224,128 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(19),
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
         l = function() {
-            function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0;
+            function e(t) {
+                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [];
                 (0,
                     r.default)(this, e),
-                this._value = t
+                this._id = t,
+                    Array.isArray(i) || (i = [i]),
+                    this._strategies = i,
+                    this._state = !1
             }
             return (0,
                     a.default)(e, [{
-                    key: "add",
-                    value: function(e) {
-                        this._value |= e
+                    key: "getId",
+                    value: function() {
+                        return this._id
                     }
                 }, {
-                    key: "remove",
+                    key: "setState",
                     value: function(e) {
-                        this._value &= ~e
+                        this._state = e
                     }
                 }, {
-                    key: "setBits",
-                    value: function(e) {
-                        var t = this;
-                        e.forEach(function(e) {
-                            e[1] ? t.add(e[0]) : t.remove(e[0])
+                    key: "getState",
+                    value: function() {
+                        return this._state
+                    }
+                }, {
+                    key: "isLeaf",
+                    value: function() {
+                        return !0
+                    }
+                }, {
+                    key: "writeStateToApp",
+                    value: function(e, t) {
+                        this._strategies.forEach(function(i) {
+                            return i.writeStateToApp(e, t)
                         })
                     }
-                }, {
-                    key: "isEnabled",
-                    value: function(e) {
-                        var t = this._value & e;
-                        return 0 !== t
-                    }
-                }, {
-                    key: "isDisabled",
-                    value: function(e) {
-                        var t = this._value & e;
-                        return 0 === t
-                    }
-                }, {
-                    key: "value",
-                    get: function() {
-                        return this._value
+                }], [{
+                    key: "of",
+                    value: function(t, i) {
+                        return new e(t, i)
                     }
                 }]),
                 e
         }();
     t.default = l,
         e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(653),
+        r = n(s);
+    t.default = r.default || function(e) {
+        for (var t = 1; t < arguments.length; t++) {
+            var i = arguments[t];
+            for (var n in i)
+                Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n])
+        }
+        return e
+    }
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(656),
+        r = n(s),
+        o = i(654),
+        a = n(o),
+        l = i(74),
+        u = n(l);
+    t.default = function(e, t) {
+        if ("function" != typeof t && null !== t)
+            throw new TypeError("Super expression must either be null or a function, not " + ("undefined" == typeof t ? "undefined" : (0,
+                u.default)(t)));
+        e.prototype = (0,
+                a.default)(t && t.prototype, {
+                constructor: {
+                    value: e,
+                    enumerable: !1,
+                    writable: !0,
+                    configurable: !0
+                }
+            }),
+            t && (r.default ? (0,
+                r.default)(e, t) : e.__proto__ = t)
+    }
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(74),
+        r = n(s);
+    t.default = function(e, t) {
+        if (!e)
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        return !t || "object" !== ("undefined" == typeof t ? "undefined" : (0,
+            r.default)(t)) && "function" != typeof t ? e : t
+    }
 }, , function(e, t, i) {
-    var n = i(32),
-        s = i(11),
+    var n = i(31),
+        s = i(13),
         r = i(58);
     e.exports = function(e, t) {
         var i = (s.Object || {})[e] || Object[e],
@@ -6307,10 +6355,10 @@ webpackJsonp([1], [function(e, t, i) {
                 i(1)
             }), "Object", o)
     }
-}, , , , , , , function(e, t, i) {
+}, , , , , , , , function(e, t, i) {
     "use strict";
     var n, s, r = i(4),
-        o = i(6),
+        o = i(5),
         a = i(3);
     _.defer(function() {
             n = i(62)
@@ -6375,7 +6423,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(6);
+    var n, s = i(5);
     n = OpenLayers.Class(s, {
             object: null,
             repo: null,
@@ -6420,12 +6468,12 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = (i(6),
+    var n, s = (i(5),
             i(4)),
-        r = i(34),
-        o = i(35),
+        r = i(33),
+        o = i(34),
         a = i(49),
-        l = i(5),
+        l = i(7),
         u = i(26),
         d = i(28),
         c = i(27);
@@ -6616,10 +6664,10 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = (i(6),
+    var n, s = (i(5),
             i(64)),
-        r = i(76),
-        o = i(34),
+        r = i(78),
+        o = i(33),
         a = i(62),
         l = i(4),
         u = i(3);
@@ -6756,7 +6804,7 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(61),
         u = n(l),
-        d = i(77),
+        d = i(79),
         c = n(d),
         h = {
             getCityFromDataModel: !1,
@@ -6816,9 +6864,9 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(6),
+        l = i(5),
         u = n(l),
-        d = i(5),
+        d = i(7),
         c = n(d),
         h = OL.Class(u.default, {
             GEOMETRY_FIELDS: ["geometry", "fractionPoint"],
@@ -6899,9 +6947,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(6),
-        r = i(35),
-        o = i(102),
+    var n, s = i(5),
+        r = i(34),
+        o = i(107),
         a = i(3);
     n = OpenLayers.Class(o, {
             segment: null,
@@ -7010,7 +7058,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(12),
+    var n = i(14),
         s = i(65),
         r = OL.Class(OL.Control.ModifyFeature, {
             standalone: !0,
@@ -7063,13 +7111,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
-        o = i(21),
+        o = i(23),
         a = n(o),
-        l = i(474),
+        l = i(478),
         u = n(l),
-        d = i(110),
+        d = i(115),
         c = n(d),
         h = i(53),
         p = n(h),
@@ -7154,11 +7202,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(194),
+    var s = i(199),
         r = n(s),
-        o = i(467),
+        o = i(471),
         a = n(o),
-        l = i(10),
+        l = i(12),
         u = n(l),
         d = ["fromSegID", "fromSegFwd", "toSegID", "toSegFwd", "junctionID"],
         c = Backbone.Model.extend({
@@ -7279,7 +7327,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
         o = i(51);
     t.default = Backbone.Model.extend({
@@ -7357,9 +7405,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(21),
-        r = i(7),
-        o = i(70).UNIT;
+    var n, s = i(23),
+        r = i(6),
+        o = i(72).UNIT;
     n = OpenLayers.Class(s, {
             nested: {
                 geometry: OL.Geometry
@@ -7407,7 +7455,7 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        o = i(10),
+        o = i(12),
         a = n(o),
         l = {
             parse: function(e) {
@@ -7440,7 +7488,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(10),
+    var n, s = i(12),
         r = i(26);
     n = OpenLayers.Class({
             ARROW_DISTANCE: 70,
@@ -7579,9 +7627,9 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(182),
+        l = i(187),
         u = n(l),
-        d = i(29),
+        d = i(35),
         c = n(d),
         h = OL.Class(u.default, {
             initialize: function() {
@@ -7824,16 +7872,91 @@ webpackJsonp([1], [function(e, t, i) {
         },
         t.default = l,
         e.exports = t.default
-}, function(e, t) {
+}, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.default = {
-            RASTER_LAYER_NAME: "cities",
-            FEATURES_LAYER_NAME: "cities_features",
-            MARKERS_LAYER_NAME: "cities_markers"
-        },
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        o = i(8),
+        a = n(o),
+        l = Marionette.Behavior.extend({
+            _eventsRegistered: !1,
+            initialize: function() {
+                return this._registerEvents()
+            },
+            onBeforeDestroy: function() {
+                return this._unregisterEvents()
+            },
+            _registerEvents: function() {
+                if (!this._eventsRegistered) {
+                    var e = !0,
+                        t = !1,
+                        i = void 0;
+                    try {
+                        for (var n, s = (0,
+                                a.default)((0,
+                                r.default)(this.view.accelerators)); !(e = (n = s.next()).done); e = !0) {
+                            var o = n.value,
+                                l = this.view.accelerators[o];
+                            W.accelerators.events.register(o, this.view, this.view[l])
+                        }
+                    } catch (e) {
+                        t = !0,
+                            i = e
+                    } finally {
+                        try {
+                            !e && s.return && s.return()
+                        } finally {
+                            if (t)
+                                throw i
+                        }
+                    }
+                    this._eventsRegistered = !0
+                }
+            },
+            _unregisterEvents: function() {
+                if (this._eventsRegistered) {
+                    var e = !0,
+                        t = !1,
+                        i = void 0;
+                    try {
+                        for (var n, s = (0,
+                                a.default)((0,
+                                r.default)(this.view.accelerators)); !(e = (n = s.next()).done); e = !0) {
+                            var o = n.value,
+                                l = this.view.accelerators[o];
+                            W.accelerators.events.unregister(o, this.view, this.view[l])
+                        }
+                    } catch (e) {
+                        t = !0,
+                            i = e
+                    } finally {
+                        try {
+                            !e && s.return && s.return()
+                        } finally {
+                            if (t)
+                                throw i
+                        }
+                    }
+                    this._eventsRegistered = !1
+                }
+            },
+            onEditingEnabled: function() {
+                return this._registerEvents()
+            },
+            onEditingDisabled: function() {
+                return this._unregisterEvents()
+            }
+        });
+    t.default = l,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -7846,15 +7969,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(489),
+    var s = i(492),
         r = n(s),
-        o = i(12),
+        o = i(14),
         a = n(o),
-        l = i(127),
+        l = i(133),
         u = n(l),
-        d = i(104),
+        d = i(109),
         c = n(d),
-        h = i(13),
+        h = i(15),
         p = n(h),
         f = Marionette.View.extend({
             template: "templates/address/edit",
@@ -8135,7 +8258,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(15),
         r = n(s),
         o = Marionette.View.extend({
             tagName: "li",
@@ -8193,15 +8316,86 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(10),
+        r = n(s),
+        o = i(11),
+        a = n(o),
+        l = function() {
+            function e(t) {
+                (0,
+                    r.default)(this, e),
+                this._layerUniqueName = t
+            }
+            return (0,
+                    a.default)(e, [{
+                    key: "writeStateToApp",
+                    value: function(e, t) {
+                        var i = t.map.getLayerByUniqueName(this._layerUniqueName),
+                            n = i.repo;
+                        i.setVisibility(e),
+                            n && i.toggleRepo && n.forEach(function(t) {
+                                return t.setActive(e)
+                            })
+                    }
+                }]),
+                e
+        }();
+    t.default = l,
+        e.exports = t.default
+}, function(e, t) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.default = {
+            GROUP_ISSUES: "GROUP_ISSUES",
+            GROUP_MAP_ISSUES: "GROUP_MAP_ISSUES",
+            ITEM_MAP_PROBLEMS: "ITEM_MAP_PROBLEMS",
+            ITEM_CLOSED_MAP_PROBLEMS: "ITEM_CLOSED_MAP_PROBLEMS",
+            ITEM_UPDATE_REQUESTS: "ITEM_UPDATE_REQUESTS",
+            ITEM_CLOSED_UPDATE_REQUESTS: "ITEM_CLOSED_UPDATE_REQUESTS",
+            ITEM_PLACE_UPDATE_REQUESTS: "ITEM_PLACE_UPDATE_REQUESTS",
+            GROUP_PARKING_ISSUES: "GROUP_PARKING_ISSUES",
+            ITEM_PARKING_MAP_PROBLEMS: "ITEM_PARKING_MAP_PROBLEMS",
+            ITEM_PARKING_CLOSED_MAP_PROBLEMS: "ITEM_PARKING_CLOSED_MAP_PROBLEMS",
+            ITEM_PARKING_PLACE_UPDATE_REQUESTS: "ITEM_PARKING_PLACE_UPDATE_REQUESTS",
+            GROUP_PLACES: "GROUP_PLACES",
+            ITEM_VENUES: "ITEM_VENUES",
+            ITEM_RESIDENTIAL_PLACES: "ITEM_RESIDENTIAL_PLACES",
+            ITEM_PARKING_PLACES: "ITEM_PARKING_PLACES",
+            GROUP_ROAD: "GROUP_ROAD",
+            ITEM_ROAD: "ITEM_ROAD",
+            ITEM_JUNCTION_BOXES: "ITEM_JUNCTION_BOXES",
+            ITEM_CLOSURES: "ITEM_CLOSURES",
+            ITEM_SPEED_CAMERAS: "ITEM_SPEED_CAMERAS",
+            GROUP_DISPLAY: "GROUP_DISPLAY",
+            ITEM_SATELLITE_IMAGERY: "ITEM_SATELLITE_IMAGERY",
+            ITEM_AREA_MANAGERS: "ITEM_AREA_MANAGERS",
+            ITEM_GPS_POINTS: "ITEM_GPS_POINTS",
+            ITEM_LIVE_USERS: "ITEM_LIVE_USERS",
+            ITEM_EDITABLE_AREAS: "ITEM_EDITABLE_AREAS"
+        },
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
         r = n(s),
         o = i(3),
         a = n(o),
-        l = i(21),
+        l = i(23),
         u = n(l),
         d = i(53),
         c = n(d),
-        h = i(115),
+        h = i(120),
         p = (n(h),
             Backbone.Model.extend({
                 type: a.default.MTE,
@@ -8303,46 +8497,6 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = Marionette.View.extend({
-        template: "Waze/Modules/Toolbar/templates/layer-switcher-checkbox",
-        tagName: "li",
-        events: {
-            "change input.toggle": "_onVisibilityChanged"
-        },
-        bindings: {
-            "input.toggle": {
-                attributes: [{
-                    name: "disabled",
-                    observe: "disabled"
-                }]
-            }
-        },
-        attributes: function() {
-            return {
-                "data-layer-id": this.model.get("layer").id
-            }
-        },
-        className: function() {
-            var e = this.model.get("layer");
-            if (e.draggable)
-                return "draggable"
-        },
-        onRender: function() {
-            return this.stickit()
-        },
-        _onVisibilityChanged: function(e) {
-            var t = this.model.get("layer"),
-                i = e.target.checked;
-            return t.setVisibility(i)
-        }
-    });
-    t.default = i,
-        e.exports = t.default
-}, function(e, t) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
     var i = {
         selectionRequiredOption: function(e) {
             var t = Backbone.$("<option/>").prop("disabled", "disabled").prop("selected", "selected").text(e).val("");
@@ -8423,7 +8577,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(5);
+    var n, s = i(7);
     n = OpenLayers.Class({
             visit: function(e) {
                 var t = this[e.CLASS_NAME.split(".").last()];
@@ -8455,7 +8609,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             permalinkMarker: new OL.StyleMap({
                 default: new OL.Style({
-                    externalGraphic: i(251),
+                    externalGraphic: i(254),
                     graphicYOffset: -53,
                     graphicWidth: 37,
                     graphicHeight: 53
@@ -8502,7 +8656,7 @@ webpackJsonp([1], [function(e, t, i) {
             default: new OpenLayers.Style(s, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return i(997)("./" + n[e.attributes.code] + ".png")
+                        return i(1001)("./" + n[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -8519,7 +8673,7 @@ webpackJsonp([1], [function(e, t, i) {
                 graphicZIndex: 2
             },
             driveArrow: {
-                externalGraphic: i(948),
+                externalGraphic: i(953),
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -8539,7 +8693,7 @@ webpackJsonp([1], [function(e, t, i) {
                 graphicZIndex: 2
             },
             matchedSegmentArrow: {
-                externalGraphic: i(250),
+                externalGraphic: i(253),
                 rotation: "${angle}",
                 fillOpacity: .7,
                 graphicWidth: 9,
@@ -8552,14 +8706,14 @@ webpackJsonp([1], [function(e, t, i) {
             },
             pinA: {
                 pointerEvents: "visiblePainted",
-                externalGraphic: i(957),
+                externalGraphic: i(962),
                 graphicWidth: 33,
                 graphicHeight: 40,
                 graphicYOffset: -35
             },
             pinB: {
                 pointerEvents: "visiblePainted",
-                externalGraphic: i(958),
+                externalGraphic: i(963),
                 graphicWidth: 33,
                 graphicHeight: 40,
                 graphicYOffset: -35
@@ -8570,7 +8724,7 @@ webpackJsonp([1], [function(e, t, i) {
                 graphicZIndex: 3
             },
             suggestedRouteArrow: {
-                externalGraphic: i(950),
+                externalGraphic: i(955),
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -8609,22 +8763,17 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     e.exports = {
-        default: i(677),
+        default: i(682),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(683),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    e.exports = {
-        default: i(687),
+        default: i(692),
         __esModule: !0
     }
 }, , function(e, t, i) {
-    var n = i(72),
-        s = i(17)("toStringTag"),
+    var n = i(75),
+        s = i(19)("toStringTag"),
         r = "Arguments" == n(function() {
             return arguments
         }()),
@@ -8642,7 +8791,7 @@ webpackJsonp([1], [function(e, t, i) {
     var n, s = i(4),
         r = i(9),
         o = i(61),
-        a = i(77);
+        a = i(79);
     n = OpenLayers.Class(s, {
             segment: null,
             attributes: null,
@@ -8680,7 +8829,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = i(4),
         a = n(o),
@@ -8690,7 +8839,7 @@ webpackJsonp([1], [function(e, t, i) {
         c = n(d),
         h = i(9),
         p = n(h),
-        f = i(103),
+        f = i(108),
         g = n(f),
         m = OL.Class(a.default, {
             bigJunction: null,
@@ -8842,9 +8991,9 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(4),
-        r = i(6),
+        r = i(5),
         o = i(61),
-        a = i(77),
+        a = i(79),
         l = (i(50),
             i(3));
     n = OpenLayers.Class(s, {
@@ -8917,7 +9066,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = i(3),
         a = n(o),
@@ -8958,22 +9107,22 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = (i(6),
+    var n, s = (i(5),
             i(4)),
-        r = i(106),
+        r = i(111),
         o = i(64),
-        a = i(76),
+        a = i(78),
         l = i(49),
         u = i(27),
-        d = i(34),
-        c = i(35),
+        d = i(33),
+        c = i(34),
         h = i(40),
         p = i(9),
         f = (i(3),
             i(26)),
         g = i(28),
-        m = (i(83),
-            i(67));
+        m = (i(84),
+            i(68));
     n = OpenLayers.Class(s, {
             ELLIPSE_PRECISION: .17453292519943295,
             ellipse: null,
@@ -9142,13 +9291,13 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(4),
         r = n(s),
-        o = i(6),
+        o = i(5),
         a = n(o),
         l = i(3),
         u = n(l),
         d = i(9),
         c = n(d),
-        h = i(103),
+        h = i(108),
         p = n(h),
         f = OL.Class(r.default, {
             initialize: function(e, t) {
@@ -9216,7 +9365,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = i(3),
         a = n(o),
@@ -9260,11 +9409,11 @@ webpackJsonp([1], [function(e, t, i) {
             value: !0
         }),
         t.UpdateFractionPoint = t.ReplaceHouseNumberSegment = t.DeleteHouseNumber = t.AddHouseNumber = void 0;
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = i(4),
         a = n(o),
-        l = i(105),
+        l = i(110),
         u = n(l),
         d = OL.Class(r.default, {
             GEOMETRY_FIELDS: ["geometry", "fractionPoint"],
@@ -9423,12 +9572,12 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(4),
-        r = i(98),
-        o = i(35),
+        r = i(103),
+        o = i(34),
         a = i(62),
-        l = i(34),
+        l = i(33),
         u = i(3),
-        d = i(6);
+        d = i(5);
     n = OpenLayers.Class(s, {
             node: null,
             mergeNode: null,
@@ -9494,7 +9643,7 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(3),
         u = n(l),
-        d = i(6),
+        d = i(5),
         c = n(d),
         h = OL.Class(r.default, {
             initialize: function(e, t, i, n) {
@@ -9542,14 +9691,14 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(30),
+    var s, r = i(29),
         o = n(r),
         a = i(4),
-        l = i(6),
+        l = i(5),
         u = i(3),
-        d = i(35),
-        c = i(34),
-        h = i(157),
+        d = i(34),
+        c = i(33),
+        h = i(162),
         p = i(64);
     s = OpenLayers.Class(a, {
             node: null,
@@ -9721,7 +9870,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = OL.Class(r.default, {
             GEOMETRY_FIELDS: ["geometry", "fractionPoint"],
@@ -9794,7 +9943,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = OL.Class(r.default, {
             prevApproved: null,
@@ -9849,7 +9998,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(5),
         r = n(s),
         o = i(3),
         a = n(o),
@@ -9881,9 +10030,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(128),
-        r = i(5),
-        o = i(10);
+    var n, s = i(134),
+        r = i(7),
+        o = i(12);
     n = OpenLayers.Class(s, {
             root: null,
             currentContainer: null,
@@ -9971,13 +10120,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(653),
+    var s = i(91),
         r = n(s),
-        o = i(19),
+        o = i(10),
         a = n(o),
-        l = i(20),
+        l = i(11),
         u = n(l),
-        d = i(10),
+        d = i(12),
         c = 1.7,
         h = function() {
             function e(t) {
@@ -10055,7 +10204,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
         o = OL.Class(r.default, {
             ErrorMessages: {
@@ -10099,9 +10248,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(457),
+    var n, s = i(462),
         r = i(42),
-        o = i(84);
+        o = i(85);
     n = OpenLayers.Class({
             COOKIE_NAME: "_web_session",
             CSRF_COOKIE_NAME: "_csrf_token",
@@ -10242,9 +10391,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(30),
+    var s = i(29),
         r = n(s),
-        o = i(131),
+        o = i(137),
         a = n(o),
         l = void 0,
         u = OpenLayers.Class({
@@ -10388,41 +10537,33 @@ webpackJsonp([1], [function(e, t, i) {
                         "S+40": "zoomOut",
                         f: "search",
                         221: "nextFeedItem",
-                        219: "prevFeedItem"
+                        219: "prevFeedItem",
+                        "S+i": "toggleSatelliteImagery",
+                        "S+g": "toggleGPSpoints",
+                        "S+r": "toggleRoads",
+                        "S+m": "toggleMapcomments",
+                        "S+a": "toggleAreaManagers",
+                        "S+b": "toggleJunctionboxes",
+                        "S+s": "toggleSpeedcameras",
+                        "S+p": "toggleMapProblems",
+                        "S+u": "toggleUpdateRequests",
+                        "S+e": "toggleEditableAreas",
+                        "S+c": "toggleRoadClosures",
+                        "S+v": "toggleLiveUsers"
                     }),
                     W.Config.chat.enable && this.registerShortcut("A+c", "toggleChat")
-            },
-            bindToMap: function(e) {
-                var t = this;
-                return e.events.on({
-                    addlayer: function(e) {
-                        return t.registerLayerAction(e.layer),
-                            t.registerLayerShortcut(e.layer)
-                    }
-                })
-            },
-            registerLayerShortcut: function(e) {
-                if (e.accelerator) {
-                    var t = void 0;
-                    if (e.shortcutKey)
-                        t = e.shortcutKey;
-                    else {
-                        if (!e.uniqueName)
-                            return;
-                        t = "S+" + e.uniqueName.charAt(0).toLowerCase()
-                    }
-                    return this.registerShortcut(t, e.accelerator)
-                }
             },
             onKeyDown: function(e) {
                 if (!$(e.target).is(":input")) {
                     var t = new l(e),
                         i = this.shortcutToAction[t];
-                    return i && i.enabled === !0 ? (this.events.triggerEvent(i.id), !1) : void 0
+                    return i && i.enabled === !0 ? (this.events.triggerEvent(i.id, {
+                        action: i
+                    }), !1) : void 0
                 }
             },
             registerActions: function() {
-                return this.addAction("undo"),
+                this.addAction("undo"),
                     this.addAction("redo"),
                     this.addAction("save"),
                     this.addAction("delete", {
@@ -10516,26 +10657,55 @@ webpackJsonp([1], [function(e, t, i) {
                         group: "navigation"
                     }),
                     this.addAction("nextFeedItem"),
-                    this.addAction("prevFeedItem")
-            },
-            registerLayersActions: function(e) {
-                var t = this;
-                return e.forEach(function(e) {
-                    return t.registerLayerAction(e),
-                        t.registerLayerShortcut(e)
-                })
-            },
-            registerLayerAction: function(e) {
-                if (e.displayInLayerSwitcher) {
-                    var t = new RegExp(" ", "g"),
-                        i = "toggle" + e.name.replace(t, "");
-                    this.addAction(i, {
-                            group: "layers",
-                            layerToggle: !0,
-                            layerKey: e.uniqueName
-                        }),
-                        e.accelerator = i
-                }
+                    this.addAction("prevFeedItem"),
+                    this.addAction("toggleSatelliteImagery", {
+                        group: "layers",
+                        toggler: "ITEM_SATELLITE_IMAGERY"
+                    }),
+                    this.addAction("toggleGPSpoints", {
+                        group: "layers",
+                        toggler: "ITEM_GPS_POINTS"
+                    }),
+                    this.addAction("toggleRoads", {
+                        group: "layers",
+                        toggler: "ITEM_ROAD"
+                    }),
+                    this.addAction("toggleMapcomments", {
+                        group: "layers",
+                        toggler: "ITEM_MAP_COMMENTS"
+                    }),
+                    this.addAction("toggleAreaManagers", {
+                        group: "layers",
+                        toggler: "ITEM_AREA_MANAGERS"
+                    }),
+                    this.addAction("toggleJunctionboxes", {
+                        group: "layers",
+                        toggler: "ITEM_JUNCTION_BOXES"
+                    }),
+                    this.addAction("toggleSpeedcameras", {
+                        group: "layers",
+                        toggler: "ITEM_SPEED_CAMERAS"
+                    }),
+                    this.addAction("toggleMapProblems", {
+                        group: "layers",
+                        toggler: "ITEM_MAP_PROBLEMS"
+                    }),
+                    this.addAction("toggleUpdateRequests", {
+                        group: "layers",
+                        toggler: "ITEM_UPDATE_REQUESTS"
+                    }),
+                    this.addAction("toggleEditableAreas", {
+                        group: "layers",
+                        toggler: "ITEM_EDITABLE_AREAS"
+                    }),
+                    this.addAction("toggleRoadClosures", {
+                        group: "layers",
+                        toggler: "ITEM_CLOSURES"
+                    }),
+                    this.addAction("toggleLiveUsers", {
+                        group: "layers",
+                        toggler: "ITEM_LIVE_USERS"
+                    })
             },
             persist: function() {
                 return window.localStorage.setItem(this.LocalStorageKey, (0,
@@ -10809,7 +10979,7 @@ webpackJsonp([1], [function(e, t, i) {
                             } else {
                                 s = i.geometry.getVertices("node" === n),
                                     l = !1;
-                                for (var b = 0, w = s.length; b < w; ++b)
+                                for (var b = 0, E = s.length; b < E; ++b)
                                     r = s[b],
                                     a = r.distanceTo(t),
                                     a <= u[n] && (y < c.rank || y === c.rank && a < c.dist) && (c = {
@@ -10846,7 +11016,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(427);
+    var n, s = i(431);
     n = OpenLayers.Class(OL.Feature.Vector, {
             initialize: function(e, t, i) {
                 OL.Feature.Vector.prototype.initialize.apply(this, [new s(e), t, i])
@@ -10871,9 +11041,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
-        o = i(10),
+        o = i(12),
         a = (n(o),
             OpenLayers.Class(r.default, {
                 nested: {
@@ -10984,9 +11154,9 @@ webpackJsonp([1], [function(e, t, i) {
         o = n(r),
         a = i(52),
         l = n(a),
-        u = i(175),
+        u = i(180),
         d = n(u),
-        c = i(172),
+        c = i(177),
         h = n(c),
         p = l.default.prototype.TYPE,
         f = {
@@ -11022,11 +11192,11 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r = i(16),
         o = n(r),
-        a = i(419),
+        a = i(423),
         l = n(a),
-        u = i(422),
+        u = i(426),
         d = n(u),
-        c = i(416),
+        c = i(420),
         h = n(c),
         p = i(52).prototype.TYPE,
         f = {
@@ -11050,7 +11220,7 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(52),
-        r = i(21);
+        r = i(23);
     n = OpenLayers.Class(s, {
             initialize: function(e, t) {
                 r.prototype.initialize.apply(this, arguments),
@@ -11071,7 +11241,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(21);
+    var n, s = i(23);
     n = OpenLayers.Class(s, {
             nested: {
                 geometry: OL.Geometry,
@@ -11162,9 +11332,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
-        o = i(112),
+        o = i(117),
         a = n(o),
         l = {
             open: "open",
@@ -11231,9 +11401,9 @@ webpackJsonp([1], [function(e, t, i) {
             value: !0
         }),
         t.Collection = t.ChatMessage = void 0;
-    var s = i(29),
+    var s = i(35),
         r = n(s),
-        o = i(117),
+        o = i(122),
         a = n(o),
         l = OL.Class(r.default, {
             getSenderID: function() {
@@ -11272,7 +11442,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(29),
+    var s = i(35),
         r = n(s),
         o = OL.Class(r.default, {
             getCenter: function() {
@@ -11359,12 +11529,12 @@ webpackJsonp([1], [function(e, t, i) {
     }
     var s = i(2),
         r = n(s),
-        o = i(19),
+        o = i(10),
         a = n(o),
-        l = i(20),
+        l = i(11),
         u = n(l),
         d = i(28),
-        c = i(80),
+        c = i(82),
         h = i(26),
         p = function() {
             function e(t, i) {
@@ -11463,12 +11633,12 @@ webpackJsonp([1], [function(e, t, i) {
     }
     var s = i(2),
         r = n(s),
-        o = i(19),
+        o = i(10),
         a = n(o),
-        l = i(20),
+        l = i(11),
         u = n(l),
-        d = i(83),
-        c = i(67),
+        d = i(84),
+        c = i(68),
         h = i(28),
         p = i(41),
         f = function() {
@@ -11643,11 +11813,11 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(19),
+        l = i(10),
         u = n(l),
-        d = i(20),
+        d = i(11),
         c = n(d),
-        h = i(5),
+        h = i(7),
         p = n(h),
         f = function() {
             function e(t) {
@@ -11795,7 +11965,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             TYPE: {
@@ -11819,7 +11989,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(133),
+    var s = i(138),
         r = n(s),
         o = Backbone.Model.extend({
             defaults: {
@@ -11893,9 +12063,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(21),
+    var s = i(23),
         r = n(s),
-        o = i(186),
+        o = i(191),
         a = n(o),
         l = {
             INVALID_ENV: "INVALID_ENV",
@@ -11925,7 +12095,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             nested: {
@@ -11945,7 +12115,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(115),
+    var s = i(120),
         r = n(s),
         o = Backbone.Model.extend({
             defaults: {
@@ -12005,7 +12175,7 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(119),
+        l = i(124),
         u = n(l),
         d = u.default.extend({
             __setSuggestedValue: function(e) {
@@ -12114,8 +12284,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(21),
-        s = i(7),
+    var n = i(23),
+        s = i(6),
         r = OL.Class(n, {
             defaults: {
                 id: null,
@@ -12145,6 +12315,20 @@ webpackJsonp([1], [function(e, t, i) {
             }
         });
     e.exports = r
+}, function(e, t) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.default = {
+            RASTER_LAYER_NAME: "cities",
+            FEATURES_LAYER_NAME: "cities_features",
+            MARKERS_LAYER_NAME: "cities_markers",
+            GROUP_DISPLAY: "GROUP_DISPLAY",
+            GROUP_CITIES: "GROUP_CITIES",
+            ITEM_CITY_NAMES: "ITEM_CITY_NAMES"
+        },
+        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
 
@@ -12158,13 +12342,13 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(43),
         r = n(s),
-        o = i(199),
+        o = i(205),
         a = n(o),
-        l = i(197),
+        l = i(203),
         u = n(l),
-        d = i(483),
+        d = i(486),
         c = n(d),
-        h = i(481),
+        h = i(484),
         p = n(h),
         f = Marionette.View.extend({
             compositeSegment: null,
@@ -12370,15 +12554,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(190),
+    var s = i(195),
         r = n(s),
         o = i(63),
         a = n(o),
-        l = i(152),
+        l = i(157),
         u = n(l),
-        d = i(162),
+        d = i(167),
         c = n(d),
-        h = i(155),
+        h = i(160),
         p = n(h),
         f = i(43),
         g = n(f),
@@ -12450,7 +12634,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _hasObsoleteDirection: function(e, t) {
                 var i = e.calculateForwardValuesForSegment(t.segID);
-                return !_.contains(i, t.forward);
+                return !_.contains(i, t.forward)
             },
             applyToAllSegments: function(e, t) {
                 for (var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {}, n = this._findMissingSegments(e, t), s = [], r = new g.default({
@@ -12521,7 +12705,7 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(43),
         u = n(l),
-        d = i(198),
+        d = i(204),
         c = n(d),
         h = {
             getSharedClosures: function(e) {
@@ -12554,8 +12738,8 @@ webpackJsonp([1], [function(e, t, i) {
                                 partial: y.length !== e.length,
                                 reverseSegments: this._getClosureReverseSegments(y, i)
                             }),
-                            w = l.findOpposite(b);
-                        null != w ? w.mergeWithOpposite(b) : l.push(b)
+                            E = l.findOpposite(b);
+                        null != E ? E.mergeWithOpposite(b) : l.push(b)
                     }
                 } catch (e) {
                     h = !0,
@@ -12647,11 +12831,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(488),
+    var s = i(491),
         r = n(s),
-        o = i(85),
+        o = i(86),
         a = n(o),
-        l = i(123),
+        l = i(128),
         u = n(l),
         d = Marionette.CompositeView.extend({
             childView: r.default,
@@ -12775,92 +12959,6 @@ webpackJsonp([1], [function(e, t, i) {
         });
     t.default = d,
         e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        o = i(8),
-        a = n(o),
-        l = Marionette.Behavior.extend({
-            _eventsRegistered: !1,
-            initialize: function() {
-                return this._registerEvents()
-            },
-            onBeforeDestroy: function() {
-                return this._unregisterEvents()
-            },
-            _registerEvents: function() {
-                if (!this._eventsRegistered) {
-                    var e = !0,
-                        t = !1,
-                        i = void 0;
-                    try {
-                        for (var n, s = (0,
-                                a.default)((0,
-                                r.default)(this.view.accelerators)); !(e = (n = s.next()).done); e = !0) {
-                            var o = n.value,
-                                l = this.view.accelerators[o];
-                            W.accelerators.events.register(o, this.view, this.view[l])
-                        }
-                    } catch (e) {
-                        t = !0,
-                            i = e
-                    } finally {
-                        try {
-                            !e && s.return && s.return()
-                        } finally {
-                            if (t)
-                                throw i
-                        }
-                    }
-                    this._eventsRegistered = !0
-                }
-            },
-            _unregisterEvents: function() {
-                if (this._eventsRegistered) {
-                    var e = !0,
-                        t = !1,
-                        i = void 0;
-                    try {
-                        for (var n, s = (0,
-                                a.default)((0,
-                                r.default)(this.view.accelerators)); !(e = (n = s.next()).done); e = !0) {
-                            var o = n.value,
-                                l = this.view.accelerators[o];
-                            W.accelerators.events.unregister(o, this.view, this.view[l])
-                        }
-                    } catch (e) {
-                        t = !0,
-                            i = e
-                    } finally {
-                        try {
-                            !e && s.return && s.return()
-                        } finally {
-                            if (t)
-                                throw i
-                        }
-                    }
-                    this._eventsRegistered = !1
-                }
-            },
-            onEditingEnabled: function() {
-                return this._registerEvents()
-            },
-            onEditingDisabled: function() {
-                return this._unregisterEvents()
-            }
-        });
-    t.default = l,
-        e.exports = t.default
 }, function(e, t) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -12928,7 +13026,7 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(41),
         r = n(s),
-        o = i(87),
+        o = i(88),
         a = n(o),
         l = Backbone.Collection.extend({
             model: a.default,
@@ -12958,7 +13056,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(210),
+    var s = i(215),
         r = n(s),
         o = 3,
         a = Marionette.CompositeView.extend({
@@ -13045,7 +13143,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(210),
+    var s = i(215),
         r = n(s),
         o = I18n.t("internal.wiki_best_practices_link"),
         a = I18n.t("internal.wiki_area_manager"),
@@ -13073,11 +13171,11 @@ webpackJsonp([1], [function(e, t, i) {
             LEVEL_UPGRADE_5: l
         },
         f = {
-            LEVEL_UPGRADE_2: i(952),
-            LEVEL_UPGRADE_3: i(953),
-            LEVEL_UPGRADE_4: i(954),
-            LEVEL_UPGRADE_5: i(955),
-            LEVEL_UPGRADE_6: i(956)
+            LEVEL_UPGRADE_2: i(957),
+            LEVEL_UPGRADE_3: i(958),
+            LEVEL_UPGRADE_4: i(959),
+            LEVEL_UPGRADE_5: i(960),
+            LEVEL_UPGRADE_6: i(961)
         },
         g = r.default.extend({
             tagName: "div",
@@ -13139,7 +13237,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(124),
+    var s = i(129),
         r = n(s),
         o = r.default.extend({
             className: "feed-item feed-notification",
@@ -13160,6 +13258,169 @@ webpackJsonp([1], [function(e, t, i) {
             }
         });
     t.default = o,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(16),
+        r = n(s),
+        o = i(524),
+        a = n(o),
+        l = i(527),
+        u = n(l),
+        d = Marionette.Object.extend({
+            initialize: function(e) {
+                this.map = e.map,
+                    this.actionManager = e.actionManager,
+                    this.togglers = e.togglerTree,
+                    this.controller = e.controller,
+                    this.layerSwitcherLayout = new a.default,
+                    this.state = new Backbone.Model,
+                    this.treeState = new Backbone.Model,
+                    this._readState(),
+                    this.listenTo(this.state, "change", this._onChange),
+                    this.listenTo(this.layerSwitcherLayout, "render", this._onRender)
+            },
+            _readState: function() {
+                this.state.set(this.togglers.getState()),
+                    this.treeState.set(this.togglers.getTreeState())
+            },
+            _onRender: function() {
+                this._initAccelerators(),
+                    this._renderLayerSwitcher()
+            },
+            destroy: function() {
+                this._destroyAccelerators()
+            },
+            getLayout: function() {
+                return this.layerSwitcherLayout
+            },
+            _renderLayerSwitcher: function() {
+                this.layerSwitcherListView = new u.default({
+                        state: this.state,
+                        treeState: this.treeState
+                    }),
+                    this.layerSwitcherLayout.showChildView("layersList", this.layerSwitcherListView)
+            },
+            _onChange: function() {
+                this.togglers.setState(this.layerSwitcherListView.state.toJSON()),
+                    this.togglers.writeToLocalStorage(),
+                    this._updateApp()
+            },
+            _updateApp: function() {
+                this.togglers.writeStateToApp({
+                        map: this.map,
+                        dataModel: W.model
+                    }),
+                    this.controller.updateModel(!0),
+                    this._readState()
+            },
+            _getLayerSwitcherAccelerators: function() {
+                return _.values(W.accelerators.Actions).filter(function(e) {
+                    return null != e.toggler
+                })
+            },
+            _initAccelerators: function() {
+                var e = this;
+                this._getLayerSwitcherAccelerators().forEach(function(t) {
+                    e._registerLayerAccelerator(t.name, t.toggler)
+                })
+            },
+            _destroyAccelerators: function() {
+                var e = this;
+                this._getLayerSwitcherAccelerators().forEach(function(t) {
+                    e._unregisterLayerAccelerator(t.name, t.toggler)
+                })
+            },
+            _registerLayerAccelerator: function(e, t) {
+                W.accelerators.events.register(e, this, this._setLayerVisibility)
+            },
+            _unregisterLayerAccelerator: function(e, t) {
+                W.accelerators.events.unregister(e, this, this._setLayerVisibility)
+            },
+            _setLayerVisibility: function(e) {
+                var t = this.togglers.getState(),
+                    i = e.action.toggler;
+                this.togglers.setState((0,
+                        r.default)({}, i, !t[i])),
+                    this._updateApp()
+            }
+        });
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(73),
+        r = n(s),
+        o = i(10),
+        a = n(o),
+        l = i(11),
+        u = n(l),
+        d = i(93),
+        c = n(d),
+        h = i(92),
+        p = n(h),
+        f = i(90),
+        g = n(f),
+        m = function(e) {
+            function t(e, i, n) {
+                (0,
+                    a.default)(this, t);
+                var s = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, e, n));
+                return s._children = i,
+                    s
+            }
+            return (0,
+                    p.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "getId",
+                    value: function() {
+                        return this._id
+                    }
+                }, {
+                    key: "getChildren",
+                    value: function() {
+                        return this._children
+                    }
+                }, {
+                    key: "appendChild",
+                    value: function(e) {
+                        this.getChildren().push(e)
+                    }
+                }, {
+                    key: "isLeaf",
+                    value: function() {
+                        return !1
+                    }
+                }], [{
+                    key: "of",
+                    value: function(e, i, n) {
+                        return new t(e, i, n)
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = m,
         e.exports = t.default
 }, function(e, t) {
     "use strict";
@@ -13184,7 +13445,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(191),
+    var s = i(196),
         r = n(s),
         o = r.default.extend();
     o.prototype.deafults = _.extend({
@@ -13252,13 +13513,13 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(562),
+        l = i(570),
         u = n(l),
-        d = i(561),
+        d = i(569),
         c = n(d),
-        h = i(564),
+        h = i(572),
         p = n(h),
-        f = i(565),
+        f = i(573),
         g = n(f),
         m = Marionette.Object.extend({
             ignoredErrors: {
@@ -13377,103 +13638,6 @@ webpackJsonp([1], [function(e, t, i) {
         });
     t.default = m,
         e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(572),
-        r = n(s),
-        o = i(576),
-        a = n(o),
-        l = Marionette.Object.extend({
-            initialize: function(e) {
-                return this.map = e.map,
-                    this.actionManager = e.actionManager,
-                    this.layerAttributes = e.layerAttributes || function(e) {
-                        return {}
-                    },
-                    this.layerSwitcherLayout = new r.default,
-                    this.listenTo(this.layerSwitcherLayout, "render", this._onRender)
-            },
-            _onRender: function() {
-                return this._initAccelerators(),
-                    this._bindMapEvents(),
-                    this._renderLayerSwitcher()
-            },
-            destroy: function() {
-                return this._destroyAccelerators(),
-                    this._unbindMapEvents()
-            },
-            getLayout: function() {
-                return this.layerSwitcherLayout
-            },
-            _bindMapEvents: function() {
-                return this.map.events.on({
-                    addlayer: this._renderLayerSwitcher,
-                    changelayer: this._renderLayerSwitcher,
-                    removelayer: this._renderLayerSwitcher,
-                    changebaselayer: this._renderLayerSwitcher,
-                    scope: this
-                })
-            },
-            _unbindMapEvents: function() {
-                return this.map.events.un({
-                    addlayer: this._renderLayerSwitcher,
-                    changelayer: this._renderLayerSwitcher,
-                    removelayer: this._renderLayerSwitcher,
-                    changebaselayer: this._renderLayerSwitcher,
-                    scope: this
-                })
-            },
-            _renderLayerSwitcher: function() {
-                var e = this,
-                    t = this.map.layers.filter(function(e) {
-                        return e.displayInLayerSwitcher
-                    }).map(function(t) {
-                        return new Backbone.Model(_.extend({
-                            layer: t
-                        }, e.layerAttributes(t)))
-                    });
-                return this.layerSwitcherListView = new a.default({
-                        map: this.map,
-                        actionManager: this.actionManager,
-                        collection: new Backbone.Collection(t)
-                    }),
-                    this.layerSwitcherLayout.showChildView("layersList", this.layerSwitcherListView)
-            },
-            _initAccelerators: function() {
-                var e = this;
-                return this.map.layers.map(function(t) {
-                    return e._registerLayerAccelerator(t)
-                })
-            },
-            _destroyAccelerators: function() {
-                var e = this;
-                return this.map.layers.map(function(t) {
-                    return e._unregisterLayerAccelerator(t)
-                })
-            },
-            _registerLayerAccelerator: function(e) {
-                if (e.accelerator)
-                    return W.accelerators.events.register(e.accelerator, e, this._setLayerVisibility)
-            },
-            _unregisterLayerAccelerator: function(e) {
-                if (e.accelerator)
-                    return W.accelerators.events.unregister(e.accelerator, e, this._setLayerVisibility)
-            },
-            _setLayerVisibility: function() {
-                return this.setVisibility(!this.visibility)
-            }
-        });
-    t.default = l,
-        e.exports = t.default
 }, function(e, t) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -13495,7 +13659,7 @@ webpackJsonp([1], [function(e, t, i) {
         },
         regions: {
             search: "#search",
-            layerSwitcher: "#layer-switcher",
+            layerSwitcher: ".layer-switcher-container",
             toolbar: "#edit-buttons"
         },
         onRender: function() {
@@ -13521,7 +13685,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(573),
+    var s = i(580),
         r = n(s),
         o = Backbone.Collection.extend({
             model: r.default
@@ -13539,46 +13703,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(126),
-        r = n(s),
-        o = r.default.extend({
-            template: "Waze/Modules/Toolbar/templates/layer-switcher-filter",
-            events: {
-                "click .closed-filter": "_onFilterClicked"
-            },
-            initialize: function() {
-                this.layer = this.model.get("layer"),
-                    this.repo = this.layer.repo[0],
-                    this.filter = this.repo.FILTERS[this.options.filterName]
-            },
-            serializeData: function() {
-                var e = r.default.prototype.serializeData.apply(this, arguments);
-                return e.filter = this.repo.isFilterBitSet(this.filter),
-                    e.onText = this.options.translations.active,
-                    e.offText = this.options.translations.inactive,
-                    e
-            },
-            _onFilterClicked: function() {
-                return this.repo.toggleFilterBit(this.filter),
-                    W.controller.updateModel(!0),
-                    this.render()
-            }
-        });
-    o.prototype.events = _.extend(o.prototype.events, r.default.prototype.events),
-        t.default = o,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(10),
+    var s = i(12),
         r = n(s),
         o = Marionette.View.extend({
             template: "Waze/Modules/Toolbar/templates/search",
@@ -13591,15 +13716,14 @@ webpackJsonp([1], [function(e, t, i) {
                 this.map = e.map;
                 var n = new OL.StyleMap({
                     default: new OL.Style({
-                        externalGraphic: i(251),
+                        externalGraphic: i(254),
                         graphicYOffset: -53,
                         graphicWidth: 37,
                         graphicHeight: 53
                     })
                 });
                 this.layerView = new OL.Layer.Vector("Search", {
-                        styleMap: n,
-                        displayInLayerSwitcher: !1
+                        styleMap: n
                     }),
                     this.layerView.events.on({
                         moveend: this._onMapMove,
@@ -13862,7 +13986,7 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(53),
-        r = i(13);
+        r = i(15);
     n = Marionette.View.extend({
             className: "location-info",
             template: "Waze/Modules/Topbar/templates/location-info",
@@ -13918,11 +14042,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(15),
         r = n(s),
-        o = i(609),
+        o = i(614),
         a = n(o),
-        l = i(227),
+        l = i(232),
         u = n(l),
         d = Marionette.View.extend({
             tagName: "li",
@@ -14043,9 +14167,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(68),
+    var s = i(69),
         r = n(s),
-        o = i(13),
+        o = i(15),
         a = (n(o),
             Marionette.View.extend({
                 template: "templates/place_updates/image_dialog",
@@ -14076,15 +14200,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(607),
+    var s = i(612),
         r = n(s),
-        o = i(161),
+        o = i(166),
         a = n(o),
-        l = i(84),
+        l = i(85),
         u = (n(l),
-            i(225)),
+            i(230)),
         d = n(u),
-        c = i(13),
+        c = i(15),
         h = n(c),
         p = Marionette.View.extend({
             APPROVE_ACTION_NAMES: {
@@ -14235,9 +14359,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(232),
+    var s = i(237),
         r = n(s),
-        o = i(14),
+        o = i(17),
         a = n(o),
         l = Marionette.Behavior.extend({
             defaults: {
@@ -14248,12 +14372,9 @@ webpackJsonp([1], [function(e, t, i) {
             _currentLocationDrawn: !1,
             initialize: function() {
                 this._vectorLayer = new OL.Layer.Vector("", {
-                        displayInLayerSwitcher: !1,
                         styleMap: r.default
                     }),
-                    this._markerLayer = new OL.Layer.Markers("", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this._markerLayer = new OL.Layer.Markers(""),
                     W.map.addLayers([this._vectorLayer, this._markerLayer]),
                     $(this._vectorLayer.div).addClass(this.options.layerClassName)
             },
@@ -14296,13 +14417,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(614),
+    var s = i(619),
         r = n(s),
-        o = i(615),
+        o = i(620),
         a = n(o),
         l = i(54),
         u = n(l),
-        d = i(15),
+        d = i(18),
         c = n(d),
         h = OL.Class(c.default, {
             template: "restriction/layout",
@@ -14500,9 +14621,9 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        o = i(22),
+        o = i(24),
         a = n(o),
-        l = i(71),
+        l = i(74),
         u = n(l),
         d = {
             bfs: function(e, t, i) {
@@ -14613,7 +14734,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(628),
+    var s = i(634),
         r = n(s),
         o = "#c290c6",
         a = "#00ece3",
@@ -14731,7 +14852,7 @@ webpackJsonp([1], [function(e, t, i) {
                 strokeDashstyle: "dash"
             }
         }),
-        w = W.rule("_sketch", !0, {
+        E = W.rule("_sketch", !0, {
             externalGraphic: null,
             strokeWidth: 3,
             strokeColor: "#00ece3",
@@ -14741,7 +14862,7 @@ webpackJsonp([1], [function(e, t, i) {
             fillOpacity: 1,
             graphicZIndex: 0
         }),
-        E = W.rule("isResidential", !0, {
+        w = W.rule("isResidential", !0, {
             graphicName: "triangle"
         }),
         S = {
@@ -14757,13 +14878,13 @@ webpackJsonp([1], [function(e, t, i) {
             fontFamily: "FontAwesome",
             label: ""
         },
-        C = W.rule("dragPoint", !0, S),
-        M = W.rule("dragPoint", !0, _.defaults({
+        M = W.rule("dragPoint", !0, S),
+        C = W.rule("dragPoint", !0, _.defaults({
             fillColor: "#25d7fd",
             fillOpacity: .3
         }, S));
     t.default = new OL.StyleMap({
-            default: f([w, C, v, b, E]),
+            default: f([E, M, v, b, w]),
             highlight: f([W.defaultRule({
                 Point: {
                     fontFamily: r.default.fontFamily,
@@ -14780,7 +14901,7 @@ webpackJsonp([1], [function(e, t, i) {
                     strokeColor: l,
                     fillColor: l
                 }
-            }), w, M, y, E]),
+            }), E, C, y, w]),
             select: f([g]),
             highlightselected: f([g]),
             delete: f([m]),
@@ -14789,68 +14910,20 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     e.exports = {
-        default: i(680),
+        default: i(685),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(681),
+        default: i(686),
         __esModule: !0
     }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(650),
-        r = n(s),
-        o = i(648),
-        a = n(o),
-        l = i(71),
-        u = n(l);
-    t.default = function(e, t) {
-        if ("function" != typeof t && null !== t)
-            throw new TypeError("Super expression must either be null or a function, not " + ("undefined" == typeof t ? "undefined" : (0,
-                u.default)(t)));
-        e.prototype = (0,
-                a.default)(t && t.prototype, {
-                constructor: {
-                    value: e,
-                    enumerable: !1,
-                    writable: !0,
-                    configurable: !0
-                }
-            }),
-            t && (r.default ? (0,
-                r.default)(e, t) : e.__proto__ = t)
-    }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(71),
-        r = n(s);
-    t.default = function(e, t) {
-        if (!e)
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        return !t || "object" !== ("undefined" == typeof t ? "undefined" : (0,
-            r.default)(t)) && "function" != typeof t ? e : t
-    }
 }, , , , , , , , , , function(e, t, i) {
-    var n, s, r, o = i(73),
-        a = i(695),
-        l = i(237),
-        u = i(137),
-        d = i(23),
+    var n, s, r, o = i(76),
+        a = i(700),
+        l = i(240),
+        u = i(142),
+        d = i(25),
         c = d.process,
         h = d.setImmediate,
         p = d.clearImmediate,
@@ -14881,7 +14954,7 @@ webpackJsonp([1], [function(e, t, i) {
             p = function(e) {
                 delete m[e]
             },
-            "process" == i(72)(c) ? n = function(e) {
+            "process" == i(75)(c) ? n = function(e) {
                 c.nextTick(o(y, e, 1))
             } :
             f ? (s = new f,
@@ -14905,10 +14978,10 @@ webpackJsonp([1], [function(e, t, i) {
             clear: p
         }
 }, , function(e, t, i) {
-    var n = i(135),
-        s = i(17)("iterator"),
+    var n = i(140),
+        s = i(19)("iterator"),
         r = i(59);
-    e.exports = i(11).getIteratorMethod = function(e) {
+    e.exports = i(13).getIteratorMethod = function(e) {
         if (void 0 != e)
             return e[s] || e["@@iterator"] || r[n(e)]
     }
@@ -14918,46 +14991,46 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i.p + "img/location-pin9ec58e180e175fd30652e4c15b957a95.png"
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
     "use strict";
-    i(915),
-        i(911),
-        i(932),
-        i(944),
-        i(945),
-        i(942),
-        i(943),
-        i(946),
-        i(921),
-        i(931),
-        i(923),
-        i(920),
-        i(934),
-        i(918),
-        i(927),
-        i(925),
-        i(914),
-        i(913),
-        i(917),
-        i(929),
-        i(919),
-        i(922),
-        i(924),
+    i(920),
         i(916),
-        i(930),
+        i(937),
+        i(949),
+        i(950),
+        i(947),
+        i(948),
+        i(951),
         i(926),
         i(936),
-        i(935),
-        i(937),
-        i(938),
+        i(928),
+        i(925),
         i(939),
-        i(940),
+        i(923),
+        i(932),
+        i(930),
+        i(919),
+        i(918),
+        i(922),
+        i(934),
+        i(924),
+        i(927),
+        i(929),
+        i(921),
+        i(935),
+        i(931),
         i(941),
-        i(933),
-        i(912),
-        i(908),
-        i(910),
-        i(909),
-        i(947),
-        i(928)
+        i(940),
+        i(942),
+        i(943),
+        i(944),
+        i(945),
+        i(946),
+        i(938),
+        i(917),
+        i(913),
+        i(915),
+        i(914),
+        i(952),
+        i(933)
 }, function(e, t, i) {
     "use strict";
 
@@ -14966,13 +15039,13 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s = i(234),
+    var s = i(239),
         r = n(s),
         o = i(2),
         a = n(o),
         l = $.Deferred();
-    W.Config = i(992),
-        W.Config.raster_layers = i(993),
+    W.Config = i(996),
+        W.Config.raster_layers = i(997),
         W.Config.ready = l,
         W.Config.init = function() {
             Waze.Config.deployments && $.extend(!0, Waze.Config, Waze.Config.deployments[W.location.code]),
@@ -15006,7 +15079,7 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(3),
         u = n(l),
-        d = i(6),
+        d = i(5),
         c = n(d),
         h = OL.Class(r.default, {
             initialize: function(e, t, i, n, s) {
@@ -15076,7 +15149,7 @@ webpackJsonp([1], [function(e, t, i) {
         p = n(h),
         f = i(54),
         g = n(f),
-        m = i(6),
+        m = i(5),
         v = n(m),
         y = OL.Class(u.default, {
             initialize: function(e, t, i, n, s, r) {
@@ -15215,10 +15288,10 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(30),
+    var s, r = i(29),
         o = n(r),
-        a = i(128),
-        l = i(5);
+        a = i(134),
+        l = i(7);
     s = OpenLayers.Class(a, {
             result: null,
             problemUpdates: null,
@@ -15265,7 +15338,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(5),
+    var n, s = i(7),
         r = i(4);
     n = OpenLayers.Class({
             actions: null,
@@ -15387,26 +15460,22 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(2),
+    var s = i(138),
         r = n(s),
-        o = i(8),
+        o = i(80),
         a = n(o),
-        l = i(133),
+        l = i(382),
         u = n(l),
-        d = i(78),
+        d = i(169),
         c = n(d),
-        h = i(379),
+        h = i(378),
         p = n(h),
-        f = i(164),
+        f = i(191),
         g = n(f),
-        m = i(375),
+        m = i(388),
         v = n(m),
-        y = i(186),
-        b = n(y),
-        w = i(385),
-        E = n(w),
-        S = i(29),
-        C = (n(S),
+        y = i(35),
+        b = (n(y),
             Backbone.Model.extend({
                 defaults: {
                     loading: !0,
@@ -15417,7 +15486,7 @@ webpackJsonp([1], [function(e, t, i) {
                     editing: !1,
                     featureSelected: !1,
                     user: null,
-                    mode: g.default.DEFAULT
+                    mode: c.default.DEFAULT
                 },
                 layout: null,
                 modeController: null,
@@ -15426,16 +15495,16 @@ webpackJsonp([1], [function(e, t, i) {
                 },
                 start: function() {
                     var e = this;
-                    return this.atlas = new v.default,
-                        this.layout = new p.default({
+                    return this.atlas = new p.default,
+                        this.layout = new u.default({
                             model: this
                         }),
-                        this.modeController = new E.default({
+                        this.modeController = new v.default({
                             model: this,
                             layout: this.layout
                         }),
-                        this.listenTo(this.modeController, c.default.STATE_CHANGED, this.trigger.bind(this, c.default.STATE_CHANGED)),
-                        $.when(b.default.getCurrent()).done(function(t) {
+                        this.listenTo(this.modeController, a.default.STATE_CHANGED, this.trigger.bind(this, a.default.STATE_CHANGED)),
+                        $.when(g.default.getCurrent()).done(function(t) {
                             return W.location = t,
                                 e._redirectToLocation(),
                                 W.location.redirectToLocale(),
@@ -15530,7 +15599,7 @@ webpackJsonp([1], [function(e, t, i) {
                 },
                 requestModeChange: function(e) {
                     var t = this;
-                    return new u.default(function(i, n) {
+                    return new r.default(function(i, n) {
                         t.modeController.canExitMode() ? (W.Report.generalAction("mode_changed", e),
                             i(t.set({
                                 mode: e
@@ -15539,52 +15608,23 @@ webpackJsonp([1], [function(e, t, i) {
                     })
                 },
                 getState: function() {
-                    var e = {
-                        mode: this.get("mode")
-                    };
-                    return _.extend(e, this.modeController.getState())
+                    var e = this.get("mode"),
+                        t = {};
+                    return e !== c.default.DEFAULT && (t.mode = e),
+                        _.extend(t, this.modeController.getState())
                 },
                 _restoreState: function() {
-                    return this._restoreMode(),
-                        this._restoreRepositoryFilters()
+                    this._restoreMode()
                 },
                 _restoreMode: function() {
                     if (this._urlParams.mode) {
                         var e = parseInt(this._urlParams.mode, 10);
-                        g.default.isValid(e) && this.set("mode", e)
+                        c.default.isValid(e) && this.set("mode", e)
                     }
                     return this.modeController.restore(this._urlParams)
-                },
-                _restoreRepositoryFilters: function() {
-                    var e = !0,
-                        t = !1,
-                        i = void 0;
-                    try {
-                        for (var n, s = (0,
-                                a.default)((0,
-                                r.default)(this._urlParams)); !(e = (n = s.next()).done); e = !0) {
-                            var o = n.value,
-                                l = this._urlParams[o],
-                                u = o.split(W.Config.permalink.filterSuffix);
-                            if (u.length > 1) {
-                                var d = u[0];
-                                W.model.repositoryFilters.set(d, l)
-                            }
-                        }
-                    } catch (e) {
-                        t = !0,
-                            i = e
-                    } finally {
-                        try {
-                            !e && s.return && s.return()
-                        } finally {
-                            if (t)
-                                throw i
-                        }
-                    }
                 }
             }));
-    t.default = C,
+    t.default = b,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -15597,56 +15637,56 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(445),
-        r = i(589),
+    var s = i(449),
+        r = i(594),
         o = n(r),
-        a = i(376),
+        a = i(379),
         l = n(a),
-        u = i(414),
+        u = i(418),
         d = n(u),
-        c = i(378),
+        c = i(381),
         h = n(c),
-        p = i(517),
+        p = i(520),
         f = n(p),
-        g = i(399),
+        g = i(402),
         m = n(g),
-        v = i(636),
+        v = i(642),
         y = n(v),
-        _ = i(168),
+        _ = i(173),
         b = n(_),
-        w = i(449),
-        E = n(w),
-        S = i(448),
-        C = n(S),
-        M = i(598),
-        A = n(M),
-        L = i(167),
-        O = n(L),
-        D = i(384),
-        T = n(D),
-        I = i(451),
-        x = n(I),
-        k = i(29),
-        N = (n(k),
-            i(408)),
-        R = n(N),
-        P = i(548),
-        V = n(P),
-        z = i(560),
-        F = n(z),
-        j = i(386),
-        U = n(j),
-        B = i(392),
-        G = n(B),
-        H = i(566),
-        q = n(H),
-        Y = i(637),
-        K = n(Y),
-        J = i(24),
-        Z = n(J),
-        X = i(623),
-        Q = n(X),
-        ee = OL.Class({
+        E = i(454),
+        w = n(E),
+        S = i(453),
+        M = n(S),
+        C = i(603),
+        A = n(C),
+        L = i(172),
+        T = n(L),
+        O = i(387),
+        I = n(O),
+        D = i(456),
+        x = n(D),
+        P = i(411),
+        k = n(P),
+        R = i(556),
+        N = n(R),
+        V = i(568),
+        z = n(V),
+        U = i(389),
+        j = n(U),
+        F = i(395),
+        G = n(F),
+        B = i(574),
+        H = n(B),
+        q = i(643),
+        Y = n(q),
+        K = i(21),
+        J = n(K),
+        Z = i(629),
+        X = n(Z),
+        Q = i(525),
+        ee = n(Q),
+        te = OL.Class({
             initialize: function() {},
             heft: function(e) {
                 return W.Config.init(),
@@ -15654,21 +15694,21 @@ webpackJsonp([1], [function(e, t, i) {
                     W.commands = new Backbone.Wreqr.Commands,
                     W.reqres = new Backbone.Wreqr.RequestResponse,
                     W.model = new d.default,
-                    W.model.loginManager = W.loginManager = new O.default,
+                    W.model.loginManager = W.loginManager = new T.default,
                     W.accelerators = new b.default,
                     this._initKeyboard(),
-                    W.map = new T.default({
+                    W.map = new I.default({
                         app: e
                     }),
                     W.map.registerAccelerators(W.accelerators),
-                    W.accelerators.bindToMap(W.map),
+                    W.togglerTree = ee.default.create(),
                     W.editingMediator = new h.default,
-                    W.selectionManager = new U.default(W.model, W.map.layers),
+                    W.selectionManager = new j.default(W.model, W.map.layers),
                     W.geometryEditing = new m.default(W.selectionManager, W.editingMediator, W.map, W.model),
-                    new V.default({
+                    new N.default({
                         mediator: W.editingMediator
                     }),
-                    new q.default({
+                    new H.default({
                         map: W.map,
                         selectionManager: W.selectionManager
                     }),
@@ -15676,12 +15716,12 @@ webpackJsonp([1], [function(e, t, i) {
                         map: W.map,
                         viewContainer: W.map.zoomBar.geoLocationContainer
                     }),
-                    new R.default({
+                    new k.default({
                         mediator: W.editingMediator,
                         map: W.map
                     }),
-                    new K.default($("#tutorial-dialog")),
-                    new Q.default(W.model).activate(),
+                    new Y.default($("#tutorial-dialog")),
+                    new X.default(W.model).activate(),
                     this._heftController(),
                     this._heftMarx(),
                     this._heftModules(),
@@ -15694,24 +15734,24 @@ webpackJsonp([1], [function(e, t, i) {
                     W.accelerators.activate()
             },
             _heftController: function() {
-                return W.snapshotManager = new G.default(W.model.actionManager),
+                W.snapshotManager = new G.default(W.model.actionManager),
                     W.map.setSnapshotManager(W.snapshotManager),
                     W.controller = new l.default({
                         snapshotManager: W.snapshotManager
                     }),
-                    new F.default({
+                    new z.default({
                         controller: W.controller,
                         mediator: W.editingMediator
                     }),
                     W.editingMediator.activate(),
-                    W.map.initMapState(W.selectionManager, W.app),
+                    W.map.initMapState(W.selectionManager, W.app, W.togglerTree),
                     W.map.setEditingMediator(W.editingMediator)
             },
             _heftMarx: function() {
                 if (W.Config.chat.enable) {
                     var e = new x.default(W.model),
-                        t = new E.default(W.model, e, W.map),
-                        i = new C.default(W.model, e, t),
+                        t = new w.default(W.model, e, W.map),
+                        i = new M.default(W.model, e, t),
                         n = new A.default({
                             model: i,
                             map: W.map
@@ -15731,12 +15771,12 @@ webpackJsonp([1], [function(e, t, i) {
                 var e = {
                     map: W.map
                 };
-                return Z.default.getEntryPoints().forEach(function(t) {
+                return J.default.getEntryPoints().forEach(function(t) {
                     return t(e)
                 })
             }
         });
-    t.default = ee,
+    t.default = te,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -15755,22 +15795,22 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(16),
         u = n(l),
-        d = i(5),
+        d = i(7),
         c = n(d),
-        h = i(624),
+        h = i(630),
         p = n(h),
         f = i(41),
         g = n(f),
-        m = i(426),
+        m = i(430),
         v = n(m),
-        y = i(191),
+        y = i(196),
         _ = n(y),
-        b = i(163),
-        w = n(b),
-        E = i(4),
-        S = n(E),
-        C = i(165),
-        M = n(C),
+        b = i(168),
+        E = n(b),
+        w = i(4),
+        S = n(w),
+        M = i(170),
+        C = n(M),
         A = OpenLayers.Class(p.default, {
             events: null,
             scale: null,
@@ -15789,7 +15829,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.app = W.app,
                     this.model = W.model,
                     this.map = W.map,
-                    this.descartes = new M.default(this.map),
+                    this.descartes = new C.default(this.map),
                     this.selectionManager = W.selectionManager,
                     this.events = new OpenLayers.Events(this),
                     this.serializer = new g.default,
@@ -15813,8 +15853,6 @@ webpackJsonp([1], [function(e, t, i) {
                             return this.updateModel(!1)
                         }),
                         (0,
-                            u.default)(t, "changelayer", this.onLayerVisibilityChange),
-                        (0,
                             u.default)(t, "scope", this),
                         t))
                 }
@@ -15830,8 +15868,6 @@ webpackJsonp([1], [function(e, t, i) {
                             u.default)(t, "moveend", function() {
                             return this.updateModel(!1)
                         }),
-                        (0,
-                            u.default)(t, "changelayer", this.onLayerVisibilityChange),
                         (0,
                             u.default)(t, "scope", this),
                         t))
@@ -15879,30 +15915,6 @@ webpackJsonp([1], [function(e, t, i) {
                     return (0,
                         a.default)(t).isEmpty() ? void 0 : (this.app.isSandboxMode() && (t.sandbox = !0),
                         this.sendReadFeatures(t, i))
-                }
-            },
-            onLayerVisibilityChange: function(e) {
-                if ("visibility" === e.property) {
-                    var t = e.layer,
-                        i = t.repo,
-                        n = t.getVisibility(),
-                        s = !1;
-                    return i && t.toggleRepo && (i.forEach(function(e) {
-                                return e.setActive(n)
-                            }),
-                            s = !0),
-                        i && t.toggleFilter && (i.forEach(function(e) {
-                                return e[t.toggleFilter] = n
-                            }),
-                            s = !0),
-                        s && this.updateModel(!0),
-                        t.parentLayer && n === !0 && t.parentLayer.setVisibility(!0),
-                        t.childLayers && n === !1 && t.childLayers.forEach(function(e) {
-                            return e.setVisibility(!1)
-                        }),
-                        t.childLayers && n === !0 && t.childLayers.forEach(function(e) {
-                            e.toggleable || e.setVisibility(!0)
-                        }), !0
                 }
             },
             sendReadFeatures: function(e, t) {
@@ -15956,7 +15968,7 @@ webpackJsonp([1], [function(e, t, i) {
                     i
             },
             _serializeActions: function(e) {
-                var t = new w.default,
+                var t = new E.default,
                     i = new S.default;
                 return i.subActions = e,
                     i.accept(t),
@@ -16079,27 +16091,27 @@ webpackJsonp([1], [function(e, t, i) {
                     }
                     var _ = t.model.getModifiedObjects(),
                         b = !0,
-                        w = !1,
-                        E = void 0;
+                        E = !1,
+                        w = void 0;
                     try {
-                        for (var S, C = (0,
+                        for (var S, M = (0,
                                 r.default)((0,
-                                a.default)(_)); !(b = (S = C.next()).done); b = !0) {
+                                a.default)(_)); !(b = (S = M.next()).done); b = !0) {
                             d = S.value;
-                            for (var M = _[d], A = 0; A < M[OL.State.DELETE].length; A++) {
-                                var L = M[OL.State.DELETE][A];
+                            for (var C = _[d], A = 0; A < C[OL.State.DELETE].length; A++) {
+                                var L = C[OL.State.DELETE][A];
                                 t.model[d].remove(L)
                             }
                         }
                     } catch (e) {
-                        w = !0,
-                            E = e
+                        E = !0,
+                            w = e
                     } finally {
                         try {
-                            !b && C.return && C.return()
+                            !b && M.return && M.return()
                         } finally {
-                            if (w)
-                                throw E
+                            if (E)
+                                throw w
                         }
                     }
                     null != e.segmentsIdMapping && t.model.getTurnGraph().deleteNewSegments((0,
@@ -16130,13 +16142,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(501),
+    var s = i(504),
         r = n(s),
-        o = i(388),
+        o = i(391),
         a = n(o),
-        l = i(575),
+        l = i(582),
         u = n(l),
-        d = i(584),
+        d = i(589),
         c = n(d),
         h = Marionette.Object.extend({
             sidebarLayout: null,
@@ -16154,7 +16166,9 @@ webpackJsonp([1], [function(e, t, i) {
                     }),
                     this.toolbarController = new u.default({
                         actionManager: W.model.actionManager,
+                        togglerTree: W.togglerTree,
                         app: W.app,
+                        controller: W.controller,
                         dataModel: W.model,
                         loginManager: W.loginManager,
                         map: W.map,
@@ -16212,7 +16226,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(29),
+    var s = i(35),
         r = n(s),
         o = OL.Class(r.default, {
             initialize: function() {
@@ -16268,13 +16282,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(618),
+    var s = i(623),
         r = n(s),
-        o = i(380),
+        o = i(383),
         a = n(o),
-        l = i(15),
+        l = i(18),
         u = (n(l),
-            i(387)),
+            i(390)),
         d = n(u);
     t.default = Marionette.View.extend({
             el: "body",
@@ -16367,9 +16381,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(383),
+    var s = i(386),
         r = n(s),
-        o = i(382),
+        o = i(385),
         a = n(o),
         l = Marionette.View.extend({
             el: "body",
@@ -16411,7 +16425,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(15);
+    var n, s = i(18);
     n = OpenLayers.Class(s, {
             olEvents: null,
             events: {
@@ -16455,7 +16469,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(166),
+    var s = i(171),
         r = n(s),
         o = Marionette.View.extend({
             template: "templates/login/sandbox-message",
@@ -16483,11 +16497,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(381),
+    var s = i(384),
         r = n(s),
-        o = i(597),
+        o = i(602),
         a = n(o),
-        l = i(166),
+        l = i(171),
         u = n(l),
         d = OL.Class(r.default, {
             template: "login/welcome-popup",
@@ -16527,17 +16541,17 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(82),
-        r = i(413),
-        o = i(403),
-        a = i(450),
-        l = i(599),
-        u = i(616),
-        d = i(541),
-        c = i(540),
-        h = i(619),
-        p = i(415),
-        f = i(18);
+    var n, s = i(67),
+        r = i(417),
+        o = i(406),
+        a = i(455),
+        l = i(604),
+        u = i(621),
+        d = i(549),
+        c = i(548),
+        h = i(624),
+        p = i(419),
+        f = i(20);
     n = OpenLayers.Class(OL.Map, s, {
             DefaultPanInPixel: 20,
             navigationControl: null,
@@ -16585,12 +16599,11 @@ webpackJsonp([1], [function(e, t, i) {
                     $(window).on("resize", $.proxy(this.resize, this)),
                     this.initializeLayers()
             },
-            initMapState: function(e, t) {
-                this.mapState = new a(this, e, t),
+            initMapState: function(e, t, i) {
+                this.mapState = new a(this, e, t, i),
                     new d({
                         app: this.app,
                         location: W.location,
-                        repositoryFilters: W.model.repositoryFilters,
                         mapState: this.mapState,
                         el: $("<div/>").addClass("WazeControlPermalink").appendTo(this.footerControl.div)
                     }).render(),
@@ -16598,15 +16611,14 @@ webpackJsonp([1], [function(e, t, i) {
             },
             registerAccelerators: function(e) {
                 e.events.on({
-                        panUp: this.panUp,
-                        panRight: this.panRight,
-                        panDown: this.panDown,
-                        panLeft: this.panLeft,
-                        zoomIn: this.zoomIn,
-                        zoomOut: this.zoomOut,
-                        scope: this
-                    }),
-                    e.registerLayersActions(this.layers)
+                    panUp: this.panUp,
+                    panRight: this.panRight,
+                    panDown: this.panDown,
+                    panLeft: this.panLeft,
+                    zoomIn: this.zoomIn,
+                    zoomOut: this.zoomOut,
+                    scope: this
+                })
             },
             _addFooterControls: function() {
                 this.addFooterControl({
@@ -16767,17 +16779,6 @@ webpackJsonp([1], [function(e, t, i) {
                 var t = this.getLayersBy("uniqueName", e).first();
                 return t ? t.getVisibility() : null
             },
-            setLayerVisibility: function(e, t) {
-                var i = this.getLayersBy("uniqueName", e).first();
-                i && (i.setVisibility(t),
-                    i.repo && (i.toggleRepo && i.repo.forEach(function(e) {
-                            e.setActive(t)
-                        }),
-                        i.toggleFilter && i.repo.forEach(function(e) {
-                            e[i.toggleFilter] = t
-                        })),
-                    i.parentLayer && t === !0 && i.parentLayer.setVisibility(!0))
-            },
             getPannable: function() {
                 var e = this;
                 return {
@@ -16818,13 +16819,13 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r = i(16),
         o = n(r),
-        a = i(164),
+        a = i(169),
         l = n(a),
-        u = i(78),
+        u = i(80),
         d = n(u),
-        c = i(377),
+        c = i(380),
         h = n(c),
-        p = i(524),
+        p = i(532),
         f = n(p),
         g = Marionette.Object.extend({
             MODE_TO_CLASS: (s = {},
@@ -16889,17 +16890,17 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
-        o = i(19),
+        o = i(10),
         a = n(o),
-        l = i(20),
+        l = i(11),
         u = n(l),
         d = i(3),
         c = n(d),
-        h = i(5),
+        h = i(7),
         p = (n(h),
-            i(230)),
+            i(235)),
         f = n(p),
         g = 25,
         m = function() {
@@ -17108,7 +17109,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(617),
+    var s = i(622),
         r = n(s),
         o = Marionette.View.extend({
             template: "templates/sidebar/advanced-tools",
@@ -17147,13 +17148,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(12),
+    var s = i(14),
         r = (n(s),
-            i(492)),
+            i(495)),
         o = n(r),
-        a = i(390),
+        a = i(393),
         l = n(a),
-        u = i(391),
+        u = i(394),
         d = n(u),
         c = Marionette.View.extend({
             template: "templates/sidebar/sidebar",
@@ -17246,7 +17247,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(18),
+    var s = i(20),
         r = n(s),
         o = Marionette.View.extend({
             template: "templates/sidebar/user-details",
@@ -17280,11 +17281,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(393),
+    var s = i(396),
         r = n(s),
-        o = i(389),
+        o = i(392),
         a = n(o),
-        l = i(613),
+        l = i(618),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/sidebar/user-info",
@@ -17382,12 +17383,12 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25),
+    var n, s = i(22),
         r = (i(49),
             i(26),
-            i(634)),
-        o = i(588),
-        a = i(635);
+            i(640)),
+        o = i(593),
+        a = i(641);
     n = OpenLayers.Class(OpenLayers.Control, s, {
             sidePanelView: null,
             editableAreasListView: null,
@@ -17546,12 +17547,12 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25),
-        r = i(100),
-        o = i(14),
+    var n, s = i(22),
+        r = i(105),
+        o = i(17),
         a = i(56),
-        l = i(12),
-        u = i(5);
+        l = i(14),
+        u = i(7);
     n = OpenLayers.Class(OpenLayers.Control, s, {
             model: null,
             layer: null,
@@ -17564,9 +17565,7 @@ webpackJsonp([1], [function(e, t, i) {
                 OpenLayers.Control.prototype.initialize.apply(this, [e]),
                     s.prototype.initialize.apply(this, [e]),
                     this.model = W.model,
-                    this.layer = new OL.Layer.Markers("Bridge", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.layer = new OL.Layer.Markers("Bridge"),
                     this.segments = []
             },
             destroy: function() {
@@ -17669,15 +17668,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(22),
         r = n(s),
         o = i(56),
         a = (n(o),
-            i(177)),
+            i(182)),
         l = n(a),
         u = i(3),
         d = n(u),
-        c = i(154),
+        c = i(159),
         h = n(c),
         p = new OpenLayers.Class(OpenLayers.Control.Button, r.default, {
             keyboardCodes: null,
@@ -17758,8 +17757,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25),
-        r = i(169),
+    var n, s = i(22),
+        r = i(174),
         o = i(26);
     n = OpenLayers.Class(OpenLayers.Control.DrawFeature, s, {
             keyHandler: null,
@@ -17874,8 +17873,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25),
-        r = i(428);
+    var n, s = i(22),
+        r = i(432);
     n = OpenLayers.Class(OpenLayers.Control, s, {
             keyHandler: null,
             handler: null,
@@ -17966,15 +17965,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(22),
         r = n(s),
         o = i(27),
         a = n(o),
-        l = i(14),
+        l = i(17),
         u = n(l),
-        d = i(228),
+        d = i(233),
         c = n(d),
-        h = i(12),
+        h = i(14),
         p = n(h),
         f = i(3),
         g = n(f),
@@ -17982,8 +17981,8 @@ webpackJsonp([1], [function(e, t, i) {
         v = n(m),
         y = i(54),
         b = n(y),
-        w = i(596),
-        E = n(w),
+        E = i(601),
+        w = n(E),
         S = OpenLayers.Class(OpenLayers.Control, r.default, {
             showArrows: !0,
             showAllArrows: !1,
@@ -18005,9 +18004,7 @@ webpackJsonp([1], [function(e, t, i) {
                 OpenLayers.Control.prototype.initialize.apply(this, [e]),
                     r.default.prototype.initialize.apply(this, [e]),
                     this.model = W.model,
-                    this.conLayer = new OL.Layer.Markers("Node Connections", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.conLayer = new OL.Layer.Markers("Node Connections"),
                     this.selectionManager = W.selectionManager,
                     W.accelerators.events.on({
                         spreadArrows: this.toggleArrowOffset,
@@ -18098,7 +18095,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var t = this._getTurnModelFromEvent(e),
                     i = this.model.getTurnGraph(),
                     n = i.getTurnThroughNode(t.node, t.fromSeg, t.toSeg);
-                W.app.layout.getRegion("dialogRegion").show(new E.default({
+                W.app.layout.getRegion("dialogRegion").show(new w.default({
                     turn: n,
                     dataModel: this.model,
                     editable: t.modifiable
@@ -18264,37 +18261,37 @@ webpackJsonp([1], [function(e, t, i) {
                         this.offsetArrows && !h || (s = 0),
                         h && (this.model.isLeftHand && null !== a && (s = (90 - a) / 90),
                             this.model.isLeftHand || null === o || (s = (90 - o) / 90));
-                    var w, E, S = this.conLayer.map.getResolution(),
-                        C = (this.arrowDistanceFromNodeInPixels + this.arrowHeight * s) * S,
-                        M = (450 - n) % 360,
+                    var E, w, S = this.conLayer.map.getResolution(),
+                        M = (this.arrowDistanceFromNodeInPixels + this.arrowHeight * s) * S,
+                        C = (450 - n) % 360,
                         A = n.toRad(),
-                        L = new OpenLayers.LonLat(e.geometry.x + Math.cos(A) * C, e.geometry.y + Math.sin(A) * C),
-                        O = new OpenLayers.Marker(L, new u.default("connection-arrow")),
-                        D = $("<div />");
-                    if (w = $("<div/>").addClass("button-container").appendTo(D),
+                        L = new OpenLayers.LonLat(e.geometry.x + Math.cos(A) * M, e.geometry.y + Math.sin(A) * M),
+                        T = new OpenLayers.Marker(L, new u.default("connection-arrow")),
+                        O = $("<div />");
+                    if (E = $("<div/>").addClass("button-container").appendTo(O),
                         h) {
-                        var T = A - Math.PI / 2,
-                            I = this.uturnArrowOffsetInPixels * S;
-                        this.model.isLeftHand && (T += Math.PI,
-                                D.addClass("lefthand")),
-                            L.lon += Math.cos(T) * I,
-                            L.lat += Math.sin(T) * I
+                        var I = A - Math.PI / 2,
+                            D = this.uturnArrowOffsetInPixels * S;
+                        this.model.isLeftHand && (I += Math.PI,
+                                O.addClass("lefthand")),
+                            L.lon += Math.cos(I) * D,
+                            L.lat += Math.sin(I) * D
                     }
-                    if (D.addClass("arrow").css("transform", "rotate(" + M + "deg)"),
-                        D.toggleClass("difficult", b),
-                        D.toggleClass("uturn", h),
+                    if (O.addClass("arrow").css("transform", "rotate(" + C + "deg)"),
+                        O.toggleClass("difficult", b),
+                        O.toggleClass("uturn", h),
                         c) {
-                        D.addClass("open"),
-                            W.Config.restrictions.allowEditing && r && (E = $("<div />").addClass("restrictions").addClass("arrow-button").addClass("waze-icon-clock").css("transform", "rotate(" + -M + "deg)").appendTo(w));
-                        var x = $("<div />").addClass("instruction-override-button").addClass("fa").addClass("fa-volume-up").addClass("arrow-button").css("transform", "rotate(" + -M + "deg)").appendTo(w);
+                        O.addClass("open"),
+                            W.Config.restrictions.allowEditing && r && (w = $("<div />").addClass("restrictions").addClass("arrow-button").addClass("waze-icon-clock").css("transform", "rotate(" + -C + "deg)").appendTo(E));
+                        var x = $("<div />").addClass("instruction-override-button").addClass("fa").addClass("fa-volume-up").addClass("arrow-button").css("transform", "rotate(" + -C + "deg)").appendTo(E);
                         g.getTurnData().hasInstructionOpcode() && x.addClass("has-opcode"),
-                            _ && (D.addClass("restricted"),
-                                $("<div />").addClass("restriction-badge").appendTo(D).css("transform", "rotate(" + -M + "deg)"))
+                            _ && (O.addClass("restricted"),
+                                $("<div />").addClass("restriction-badge").appendTo(O).css("transform", "rotate(" + -C + "deg)"))
                     } else
-                        D.addClass("closed"),
-                        D.append($("<div />").addClass("closed-badge").css("transform", "rotate(" + -M + "deg)"));
-                    this.showArrows || O.icon.$div.addClass("disabled"),
-                        D.data("model", {
+                        O.addClass("closed"),
+                        O.append($("<div />").addClass("closed-badge").css("transform", "rotate(" + -C + "deg)"));
+                    this.showArrows || T.icon.$div.addClass("disabled"),
+                        O.data("model", {
                             node: e,
                             fromSeg: t,
                             toSeg: i,
@@ -18302,8 +18299,8 @@ webpackJsonp([1], [function(e, t, i) {
                             value: c,
                             modifiable: d
                         }),
-                        D.appendTo(O.icon.$div),
-                        this.conLayer.addMarker(O)
+                        O.appendTo(T.icon.$div),
+                        this.conLayer.addMarker(T)
                 }
             },
             zoomChanged: function() {
@@ -18323,17 +18320,17 @@ webpackJsonp([1], [function(e, t, i) {
     }
     var s, r = i(16),
         o = n(r),
-        a = i(411),
-        l = i(406),
-        u = i(398),
-        d = i(394),
-        c = i(407),
-        h = i(129),
-        p = i(400),
-        f = i(401),
-        g = i(108),
+        a = i(415),
+        l = i(409),
+        u = i(401),
+        d = i(397),
+        c = i(410),
+        h = i(135),
+        p = i(403),
+        f = i(404),
+        g = i(113),
         m = i(3),
-        v = i(24),
+        v = i(21),
         y = OpenLayers.Class({
             selectionManager: null,
             modifyControl: null,
@@ -18448,7 +18445,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(108),
+    var s = i(113),
         r = n(s),
         o = i(9),
         a = n(o),
@@ -18544,7 +18541,7 @@ webpackJsonp([1], [function(e, t, i) {
                 },
                 dragVertex: function(e, t) {
                     return this.isDragging && this.removeRadiusHandle(),
-                        this.layer.drawFeature(this.feature);
+                        this.layer.drawFeature(this.feature)
                 },
                 dragComplete: function(e) {
                     if (e === this.radiusHandle) {
@@ -18572,19 +18569,17 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(108),
+    var s = i(113),
         r = n(s),
         o = i(9),
         a = n(o),
-        l = i(402),
+        l = i(405),
         u = n(l),
         d = OL.Class(r.default, {
             MIN_COMPONENTS: 4,
             initialize: function(e, t) {
                 t.mode = OL.Control.ModifyFeature.RESHAPE | OL.Control.ModifyFeature.DRAG,
-                    null == this.markerLayer && (this.markerLayer = new OL.Layer.Markers("navigationPointMarkers", {
-                        displayInLayerSwitcher: !1
-                    })),
+                    null == this.markerLayer && (this.markerLayer = new OL.Layer.Markers("navigationPointMarkers")),
                     t.map.addLayer(this.markerLayer),
                     r.default.prototype.initialize.apply(this, arguments)
             },
@@ -18688,11 +18683,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(81),
+    var s = i(83),
         r = n(s),
-        o = i(14),
+        o = i(17),
         a = n(o),
-        l = i(10),
+        l = i(12),
         u = n(l),
         d = OL.Class(OL.Marker, {
             dragging: null,
@@ -18816,31 +18811,31 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(30),
+    var r = i(29),
         o = s(r),
         a = i(2),
         l = s(a),
         u = i(8),
         d = s(u),
-        c = i(440),
+        c = i(444),
         h = s(c),
-        p = i(171),
+        p = i(176),
         f = s(p),
-        g = i(160),
+        g = i(165),
         m = s(g),
-        v = i(105),
+        v = i(110),
         y = s(v),
-        _ = i(156),
+        _ = i(161),
         b = n(_),
-        w = i(63),
-        E = s(w),
-        S = i(595),
-        C = s(S),
-        M = i(37),
-        A = s(M),
-        L = i(439),
-        O = s(L),
-        D = Marionette.Object.extend({
+        E = i(63),
+        w = s(E),
+        S = i(600),
+        M = s(S),
+        C = i(37),
+        A = s(C),
+        L = i(443),
+        T = s(L),
+        O = Marionette.Object.extend({
             MIN_EDIT_ZOOM: 6,
             HOUSE_NUMBERS_SAVE_ERROR_CODE: 716,
             _editingLock: null,
@@ -18893,7 +18888,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.editable = this.options.editable,
                     this.enabled = this.options.editable,
                     this.segments = this.options.segments,
-                    this.lightboxView = new C.default({
+                    this.lightboxView = new M.default({
                         model: this.model,
                         pm: this
                     }),
@@ -18910,15 +18905,12 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _initLayers: function() {
                 return this.layer = new OL.Layer.Vector("houseNumbers", {
-                        displayInLayerSwitcher: !1,
                         renderers: [A.default],
                         rendererOptions: {
                             zIndexing: !0
                         }
                     }),
-                    this.markerLayer = new OL.Layer.Markers("houseNumberMarkers", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.markerLayer = new OL.Layer.Markers("houseNumberMarkers"),
                     this.map.addLayer(this.layer),
                     this.map.addLayer(this.markerLayer),
                     $(this.markerLayer.div).addClass("house-numbers-layer")
@@ -18976,7 +18968,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var t = this;
                 if (!this.selectedNumber.isNew) {
                     var i = new OL.Geometry.Point(this.selectedNumber.lonlat.lon, this.selectedNumber.lonlat.lat),
-                        n = new E.default;
+                        n = new w.default;
                     this.model.actionManager.add(n),
                         this.ignoreUpdates(function() {
                             if (t.selectedNumber.model.changedSegment()) {
@@ -19118,7 +19110,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.unselectNumber(this.selectedNumber),
                         this.selectedNumber = e;
                     var t = this.selectedNumber.model.fractionPoint.clone();
-                    return this.fractionPoint = new O.default(new OL.LonLat(t.x, t.y), this.joinedGeometry, this.map),
+                    return this.fractionPoint = new T.default(new OL.LonLat(t.x, t.y), this.joinedGeometry, this.map),
                         this.markerLayer.addMarker(this.fractionPoint),
                         this.fractionPoint.dragging.activate(this.fractionPoint.icon.$div),
                         this.fractionPoint.layer = this.markerLayer,
@@ -19148,7 +19140,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var e = this,
                     t = new OL.Geometry.Point(this.fractionPoint.lonlat.lon, this.fractionPoint.lonlat.lat);
                 this.selectedNumber.isNew ? this.selectedNumber.model.fractionPoint = t : this.ignoreUpdates(function() {
-                    var t = new E.default;
+                    var t = new w.default;
                     e.model.actionManager.add(t);
                     var i = e.houseNumberSets[e.fractionPoint.closestSegment.getID()],
                         n = new b.UpdateFractionPoint(e.selectedNumber.model, i, e.fractionPoint);
@@ -19345,7 +19337,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var e = this;
                 return this.showingForceDialog = !1,
                     this.invalidHouseNumbers.isEmpty() || this.ignoreUpdates(function() {
-                        var t = new E.default;
+                        var t = new w.default;
                         return e.model.actionManager.add(t),
                             e.invalidHouseNumbers.map(function(e) {
                                 return t.doSubAction(new y.default(e.model.parent, e.model, {
@@ -19357,7 +19349,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             CLASS_NAME: "W.Control.HouseNumbers"
         });
-    t.default = D,
+    t.default = O,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -19369,10 +19361,10 @@ webpackJsonp([1], [function(e, t, i) {
     }
     var s, r = i(2),
         o = n(r),
-        a = i(25),
-        l = i(429),
-        u = i(169),
-        d = i(170),
+        a = i(22),
+        l = i(433),
+        u = i(174),
+        d = i(175),
         c = i(3);
     s = OpenLayers.Class(OpenLayers.Control, a, {
             geometryTypes: null,
@@ -19774,14 +19766,14 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(405),
-        r = i(12),
+    var n, s = i(408),
+        r = i(14),
         o = i(56),
         a = i(3),
-        l = i(106),
-        u = i(159),
-        d = i(170),
-        c = i(5);
+        l = i(111),
+        u = i(164),
+        d = i(175),
+        c = i(7);
     n = OpenLayers.Class(s, {
             model: null,
             origGeometries: null,
@@ -19832,11 +19824,11 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _getArrowVector: function(e, t, n) {
                 var s, r, o;
-                return e.isOneWay() ? (s = i(t ? 949 : 250),
+                return e.isOneWay() ? (s = i(t ? 954 : 253),
                         r = 9,
                         o = 360 - n.last().toDeg(),
                         e.attributes.revDirection === !0 && (o -= 180)) : (r = 5,
-                        s = i(951)),
+                        s = i(956)),
                     new OpenLayers.Feature.Vector(n.first(), {}, {
                         externalGraphic: s,
                         rotation: o,
@@ -20011,10 +20003,10 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25),
-        r = i(150),
-        o = i(14),
-        a = i(12),
+    var n, s = i(22),
+        r = i(155),
+        o = i(17),
+        a = i(14),
         l = i(56);
     n = OL.Class(OL.Control, s, {
             model: null,
@@ -20027,9 +20019,7 @@ webpackJsonp([1], [function(e, t, i) {
                 OL.Control.prototype.initialize.apply(this, [e]),
                     s.prototype.initialize.apply(this, [e]),
                     this.model = W.model,
-                    this.layer = new OL.Layer.Markers("newNodes", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.layer = new OL.Layer.Markers("newNodes"),
                     this.segments = []
             },
             destroy: function() {
@@ -20140,13 +20130,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(611),
+    var s = i(616),
         r = n(s),
-        o = i(605),
+        o = i(610),
         a = n(o),
-        l = i(462),
+        l = i(467),
         u = n(l),
-        d = i(107),
+        d = i(112),
         c = n(d),
         h = OL.Class({
             layer: null,
@@ -20219,7 +20209,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25);
+    var n, s = i(22);
     n = OpenLayers.Class(OpenLayers.Control.Button, s, {
             actionManager: null,
             initialize: function(e, t) {
@@ -20257,7 +20247,63 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25);
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(22),
+        r = n(s),
+        o = OpenLayers.Class(OpenLayers.Control.Button, r.default, {
+            _actionManager: null,
+            initialize: function(e, t, i, n) {
+                OpenLayers.Control.prototype.initialize.apply(this, [n]),
+                    this._actionManager = e,
+                    this._roadLayers = t,
+                    this._controller = i,
+                    this.autoActivate = !1,
+                    this._actionManager.events.on({
+                        scope: this,
+                        hasActions: this._redraw,
+                        noActions: this._redraw
+                    }),
+                    W.accelerators.events.register("reloadData", this, this.trigger),
+                    this._redraw()
+            },
+            destroy: function() {
+                this._actionManager.events.un({
+                        scope: this,
+                        hasActions: this._redraw,
+                        noActions: this._redraw
+                    }),
+                    W.accelerators.events.unregister("reloadData", this, this.trigger),
+                    OpenLayers.Control.prototype.destroy.apply(this)
+            },
+            _canReload: function() {
+                return !this._actionManager.canUndo()
+            },
+            _redraw: function() {
+                this._canReload() ? this.enable() : this.disable()
+            },
+            trigger: function() {
+                this._canReload() && (this._roadLayers.forEach(function(e) {
+                        e.redraw({
+                                force: !0
+                            }),
+                            e.removeBackBuffer()
+                    }),
+                    this._controller.reload())
+            }
+        });
+    t.default = o,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    var n, s = i(22);
     n = OpenLayers.Class(OpenLayers.Control.Button, s, {
             actionManager: null,
             $unsavedActionsCounter: null,
@@ -20310,9 +20356,9 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(30),
+    var s, r = i(29),
         o = n(r),
-        a = i(177);
+        a = i(182);
     s = OpenLayers.Class(OpenLayers.Control, {
             multipleKeys: null,
             toggleKey: null,
@@ -20591,7 +20637,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(25);
+    var n, s = i(22);
     n = OpenLayers.Class(OpenLayers.Control.Button, s, {
             actionManager: null,
             initialize: function(e, t) {
@@ -20766,30 +20812,29 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r, o = i(30),
+    var s, r, o = i(29),
         a = n(o),
         l = i(2),
         u = n(l),
-        d = (i(5),
+        d = (i(7),
             i(55)),
-        c = i(459),
-        h = i(466),
-        p = i(447),
-        f = i(465),
-        g = i(373),
-        m = i(3),
-        v = i(35),
-        y = i(99),
-        b = i(100),
+        c = i(626),
+        h = i(464),
+        p = i(470),
+        f = i(451),
+        g = i(469),
+        m = i(376),
+        v = i(3),
+        y = i(34),
+        b = i(104),
+        E = i(105),
         w = i(63),
-        E = i(464),
-        S = i(24),
-        C = i(185),
-        M = i(184);
+        S = i(21),
+        M = i(190),
+        C = i(189);
     r = OpenLayers.Class({
             events: null,
             actionManager: null,
-            repositoryFilters: null,
             segments: null,
             nodes: null,
             users: null,
@@ -20821,123 +20866,100 @@ webpackJsonp([1], [function(e, t, i) {
             initialize: function(e) {
                 var t = this,
                     i = new OpenLayers.Projection("EPSG:900913");
-                this.repositoryFilters = E.restore(),
-                    OpenLayers.Util.extend(this, e),
+                OpenLayers.Util.extend(this, e),
                     this.events = new OpenLayers.Events(this),
-                    this.actionManager = new g(this),
+                    this.actionManager = new m(this),
                     this.distanceCache = new s(new OpenLayers.Projection("EPSG:900913")),
                     this.repos = {},
                     this.reposByObjectType = {},
-                    this.addRepository("segments", m.SEGMENT, {}, h),
-                    this.addRepository("nodes", m.NODE, {
+                    this.addRepository("segments", v.SEGMENT, {}, p),
+                    this.addRepository("nodes", v.NODE, {
                         onDemand: !1
                     }),
-                    this.addRepository("users", m.USER, {
+                    this.addRepository("users", v.USER, {
                         onDemand: !1,
                         useVersions: !1
                     }),
-                    this.addRepository("streets", m.STREET, {
+                    this.addRepository("streets", v.STREET, {
                         onDemand: !1,
                         storePersistentSeparately: !0
                     }),
-                    this.addRepository("countries", m.COUNTRY, {
+                    this.addRepository("countries", v.COUNTRY, {
                         onDemand: !1,
                         storePersistentSeparately: !0
                     }),
-                    this.addRepository("states", m.STATE, {
+                    this.addRepository("states", v.STATE, {
                         onDemand: !1,
                         storePersistentSeparately: !0
                     }),
-                    this.addRepository("junctions", m.JUNCTION, {
+                    this.addRepository("junctions", v.JUNCTION, {
                         onDemand: !1
                     }),
-                    this.addRepository("bigJunctions", m.BIG_JUNCTION, {
+                    this.addRepository("bigJunctions", v.BIG_JUNCTION, {
                         active: W.Config.big_junctions.shownByDefault && W.Config.big_junctions.enable,
                         minZoom: W.Config.big_junctions.minDisplayZoom
                     }),
-                    this.addRepository("problems", m.MAP_PROBLEM, {
-                        filterName: "problemFilter",
-                        FILTERS: {
-                            CLOSED: {
-                                mask: 1,
-                                callback: function(e) {
-                                    return !e.attributes.open
-                                }
-                            }
-                        }
+                    this.addRepository("problems", v.MAP_PROBLEM, {
+                        filter: new c("problemFilter", ["ALL", "PARKING"], {
+                            OPEN: 0,
+                            CLOSED: 1
+                        })
                     }),
-                    this.addRepository("mapUpdateRequests", m.UPDATE_REQUEST, {
-                        filterName: "mapUpdateRequestFilter",
-                        FILTERS: {
-                            CLOSED: {
-                                mask: 1,
-                                callback: function(e) {
-                                    return !e.attributes.open
-                                }
-                            }
-                        }
+                    this.addRepository("mapUpdateRequests", v.UPDATE_REQUEST, {
+                        filter: new c("mapUpdateRequestFilter", ["ALL", "PARKING"], {
+                            OPEN: 0,
+                            CLOSED: 1
+                        })
                     }),
-                    this.addRepository("roadClosures", m.ROAD_CLOSURE, {
+                    this.addRepository("roadClosures", v.ROAD_CLOSURE, {
                         minZoom: Waze.Config.closures.minDisplayZoom,
                         active: Waze.Config.closures.shownByDefault
                     }),
-                    this.addRepository("venues", m.VENUE, {
-                        active: Waze.Config.venues.shownByDefault,
-                        filterName: "venueFilter",
-                        FILTERS: {
-                            RESIDENTIAL: {
-                                mask: 1,
-                                callback: function(e) {
-                                    return e.attributes.residential
-                                }
-                            },
-                            PARKING: {
-                                mask: 2,
-                                callback: function(e) {
-                                    return e.isParkingLot()
-                                }
-                            }
-                        }
-                    }, p),
-                    this.addRepository("cameras", m.SPEED_CAMERA, {
+                    this.addRepository("venues", v.VENUE, {
+                        filter: new c("venueFilter", ["ALL", "RESIDENTIAL", "PARKING"], {
+                            SHOW: 0,
+                            UPDATE_REQUEST: 1
+                        })
+                    }, f),
+                    this.addRepository("cameras", v.SPEED_CAMERA, {
                         minZoom: Waze.Config.cameras.minDisplayZoom,
                         active: Waze.Config.cameras.shownByDefault
                     }),
-                    this.addRepository("userAreas", m.USER_AREA, {
+                    this.addRepository("userAreas", v.USER_AREA, {
                         minZoom: Waze.Config.editable_areas.minDisplayZoom
                     }),
-                    this.addRepository("problemDetails", m.PROBLEM_DETAILS, {
+                    this.addRepository("problemDetails", v.PROBLEM_DETAILS, {
                         url: Waze.Config.paths.problemDetails,
                         localProjection: i,
                         onDemand: !1
-                    }, c),
-                    this.addRepository("houseNumbers", m.HOUSE_NUMBER, {
+                    }, h),
+                    this.addRepository("houseNumbers", v.HOUSE_NUMBER, {
                         url: Waze.Config.paths.houseNumbers,
                         localProjection: i,
                         onDemand: !1
-                    }, c),
-                    this.addRepository("updateRequestSessions", m.UPDATE_REQUEST_SESSION, {
+                    }, h),
+                    this.addRepository("updateRequestSessions", v.UPDATE_REQUEST_SESSION, {
                         url: Waze.Config.paths.updateRequestSessions,
                         localProjection: i,
                         onDemand: !1
-                    }, c),
-                    this.addRepository("archives", m.ARCHIVE_SESSION, {
+                    }, h),
+                    this.addRepository("archives", v.ARCHIVE_SESSION, {
                         url: Waze.Config.paths.archive,
                         onDemand: !1
-                    }, c),
-                    this.addRepository("archiveSessions", m.ARCHIVE_SESSION_DATA, {
+                    }, h),
+                    this.addRepository("archiveSessions", v.ARCHIVE_SESSION_DATA, {
                         url: Waze.Config.paths.archiveSessions,
                         onDemand: !1,
                         localProjection: i
-                    }, c),
+                    }, h),
                     this.addRepository("managedAreas", "managedArea"),
-                    this.addRepository("majorTrafficEvents", m.MTE),
-                    this.addRepository("restrictedAreas", m.RESTRICTED_AREA, {}, f),
+                    this.addRepository("majorTrafficEvents", v.MTE),
+                    this.addRepository("restrictedAreas", v.RESTRICTED_AREA, {}, g),
                     S.getRepositories().forEach(function(e) {
                         t.addRepository(e.repositoryName, e.featureType, e.repositoryConfig, e.repositoryClass)
                     }),
-                    this._roadGraph = new M(this.nodes, this.segments),
-                    this._turnGraph = new C(this._roadGraph),
+                    this._roadGraph = new C(this.nodes, this.segments),
+                    this._turnGraph = new M(this._roadGraph),
                     W.prefs.on("change:isImperial", function(e, t, i) {
                         null !== t && (this.isImperial = t)
                     }, this),
@@ -21024,15 +21046,6 @@ webpackJsonp([1], [function(e, t, i) {
             },
             deleteSegments: function(e) {
                 if (1 === e.length)
-                    this.actionManager.add(new v(e[0]));
-                else if (e.length > 1) {
-                    for (var t = [], i = 0, n = e.length; i < n; i++)
-                        t.push(new v(e[i]));
-                    this.actionManager.add(new w(t))
-                }
-            },
-            deleteObjects: function(e) {
-                if (1 === e.length)
                     this.actionManager.add(new y(e[0]));
                 else if (e.length > 1) {
                     for (var t = [], i = 0, n = e.length; i < n; i++)
@@ -21040,12 +21053,21 @@ webpackJsonp([1], [function(e, t, i) {
                     this.actionManager.add(new w(t))
                 }
             },
-            deleteNodes: function(e) {
+            deleteObjects: function(e) {
                 if (1 === e.length)
-                    this.actionManager.add(new b(null, e[0]));
+                    this.actionManager.add(new b(e[0]));
                 else if (e.length > 1) {
                     for (var t = [], i = 0, n = e.length; i < n; i++)
-                        t.push(new b(null, e[i]));
+                        t.push(new b(e[i]));
+                    this.actionManager.add(new w(t))
+                }
+            },
+            deleteNodes: function(e) {
+                if (1 === e.length)
+                    this.actionManager.add(new E(null, e[0]));
+                else if (e.length > 1) {
+                    for (var t = [], i = 0, n = e.length; i < n; i++)
+                        t.push(new E(null, e[i]));
                     this.actionManager.add(new w(t))
                 }
             },
@@ -21147,9 +21169,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(19),
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
         l = i(37),
         u = function() {
@@ -21197,7 +21219,6 @@ webpackJsonp([1], [function(e, t, i) {
                     key: "_initVectorLayer",
                     value: function() {
                         var e = {
-                            displayInLayerSwitcher: !1,
                             styleMap: this._styleMap
                         };
                         this._options.extendedMode && (e.renderers = [l]),
@@ -21226,7 +21247,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             nested: {
@@ -21248,9 +21269,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(171),
+    var s = i(176),
         r = n(s),
-        o = i(7),
+        o = i(6),
         a = n(o),
         l = OpenLayers.Class(a.default, {
             nested: {
@@ -21295,7 +21316,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             nested: {
@@ -21323,9 +21344,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(420),
+    var s = i(424),
         r = n(s),
-        o = i(7),
+        o = i(6),
         a = n(o),
         l = OL.Class(a.default, {
             nested: {
@@ -21346,7 +21367,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             nested: {
@@ -21368,7 +21389,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             nested: {
@@ -21388,9 +21409,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(421),
+    var s = i(425),
         r = n(s),
-        o = i(7),
+        o = i(6),
         a = n(o),
         l = OL.Class(a.default, {
             nested: {
@@ -21403,7 +21424,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(7);
+    var n, s = i(6);
     n = OpenLayers.Class(s, {
             nested: {
                 driveGeometry: OL.Geometry,
@@ -21486,7 +21507,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             nested: {
@@ -21498,29 +21519,29 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = {
-            issues: i(502),
-            problems: i(173),
-            problemDetails: i(174)
+            issues: i(505),
+            problems: i(178),
+            problemDetails: i(179)
         },
         s = {
             segments: i(26),
-            nodes: i(80),
-            bigJunctions: i(109),
-            updateRequestSessions: i(423),
-            archives: i(452),
-            archiveSessions: i(453),
+            nodes: i(82),
+            bigJunctions: i(114),
+            updateRequestSessions: i(427),
+            archives: i(457),
+            archiveSessions: i(458),
             venues: i(50),
             users: i(42),
-            cameras: i(114),
-            mapUpdateRequests: i(176),
-            houseNumbers: i(417),
-            roadClosures: i(190),
-            junctions: i(456),
-            managedAreas: i(418),
-            userAreas: i(424),
-            notifications: i(87),
-            majorTrafficEvents: i(125),
-            restrictedAreas: i(189),
+            cameras: i(119),
+            mapUpdateRequests: i(181),
+            houseNumbers: i(421),
+            roadClosures: i(195),
+            junctions: i(461),
+            managedAreas: i(422),
+            userAreas: i(428),
+            notifications: i(88),
+            majorTrafficEvents: i(132),
+            restrictedAreas: i(194),
             restrictions: i(54)
         };
     e.exports = {
@@ -21627,7 +21648,6 @@ webpackJsonp([1], [function(e, t, i) {
                 if (!OpenLayers.Handler.prototype.activate.apply(this, arguments))
                     return !1;
                 var e = OpenLayers.Util.extend({
-                        displayInLayerSwitcher: !1,
                         calculateInRange: OpenLayers.Function.True
                     }, this.layerOptions),
                     t = OpenLayers.Layer.Vector.prototype.renderers;
@@ -21861,7 +21881,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(5),
+    var s = i(7),
         r = n(s),
         o = OL.Class({
             LocalStorageKey: "hiddenMessages",
@@ -21873,7 +21893,7 @@ webpackJsonp([1], [function(e, t, i) {
                 return !this.hiddenMessages[this.name]
             },
             render: function() {
-                var e = i(18);
+                var e = i(20);
                 return e.getHTML("templates/" + this.name)
             },
             hide: function(e) {
@@ -21923,13 +21943,12 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(37),
-        r = i(130),
-        o = i(116);
+        r = i(136),
+        o = i(121);
     n = OpenLayers.Class(OpenLayers.Layer.Vector, {
             rendererOptions: {
                 zIndexing: !0
             },
-            displayInLayerSwitcher: !0,
             renderers: [s],
             styleMap: r,
             initialize: function(e, t) {
@@ -21991,9 +22010,9 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(131),
+    var s, r = i(137),
         o = n(r);
-    i(5),
+    i(7),
         s = OpenLayers.Class(OpenLayers.Layer.XYZ, {
             key: null,
             tileUrl: "https://www.googleapis.com/tile/v1/tiles/${z}/${x}/${y}?session=${session}&key=${key}",
@@ -22503,9 +22522,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
-        o = i(81),
+        o = i(83),
         a = n(o),
         l = OL.Class(OL.Marker, {
             dragging: null,
@@ -22563,11 +22582,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
-        o = i(81),
+        o = i(83),
         a = n(o),
-        l = i(18),
+        l = i(20),
         u = n(l),
         d = OL.Class(OL.Marker, {
             model: null,
@@ -22702,7 +22721,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
         o = OL.Class(OL.Marker, {
             initialize: function(e, t, i) {
@@ -22750,7 +22769,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
         o = OL.Class(OL.Marker, {
             model: null,
@@ -22811,11 +22830,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
-        o = i(10),
+        o = i(12),
         a = n(o),
-        l = i(79),
+        l = i(81),
         u = (n(l),
             OL.Class(OL.Marker, {
                 model: null,
@@ -22867,7 +22886,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(178),
+    var s = i(183),
         r = n(s),
         o = OL.Class(r.default, {
             initialize: function(e) {
@@ -22909,19 +22928,19 @@ webpackJsonp([1], [function(e, t, i) {
         o = s(r),
         a = i(8),
         l = s(a),
-        u = i(29),
+        u = i(35),
         d = s(u),
-        c = i(117),
+        c = i(122),
         h = s(c),
-        p = i(181),
+        p = i(186),
         f = s(p),
-        g = i(180),
+        g = i(185),
         m = n(g),
-        v = i(5),
+        v = i(7),
         y = s(v),
         b = "chatSettings",
-        w = void 0,
         E = void 0,
+        w = void 0,
         S = OL.Class(d.default, {
             initialize: function(e, t) {
                 return this._wazeModel = e,
@@ -22931,7 +22950,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.users = new h.default([], {
                         model: f.default
                     }),
-                    this.rooms = new E,
+                    this.rooms = new w,
                     this._refreshRooms(),
                     this._marx.on("firstConnect", this._onMarxFirstConnect, this),
                     this._marx.on("reconnect", this._onMarxReconnect, this),
@@ -23062,7 +23081,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var t = this.rooms.findWhere({
                     name: e
                 });
-                return null == t && (t = new w({
+                return null == t && (t = new E({
                             name: e
                         }),
                         this.rooms.add(t)),
@@ -23160,7 +23179,7 @@ webpackJsonp([1], [function(e, t, i) {
                 return this.messages.add(n)
             }
         });
-    t.ChatRoom = w = OL.Class(d.default, {
+    t.ChatRoom = E = OL.Class(d.default, {
             initialize: function() {
                 return d.default.prototype.initialize.apply(this, arguments)
             },
@@ -23183,8 +23202,8 @@ webpackJsonp([1], [function(e, t, i) {
                         })
             }
         }),
-        t.ChatRooms = E = OL.Class(h.default, {
-            model: w,
+        t.ChatRooms = w = OL.Class(h.default, {
+            model: E,
             _aliases: {
                 Belgium: "Benelux",
                 Netherlands: "Benelux",
@@ -23211,7 +23230,7 @@ webpackJsonp([1], [function(e, t, i) {
                                 h = e[c],
                                 p = t._getRoomNameByCountry(h),
                                 f = i[p];
-                            null != f ? n.push(f.addId(h.id)) : (f = new w({
+                            null != f ? n.push(f.addId(h.id)) : (f = new E({
                                     name: p,
                                     ids: [h.id]
                                 }),
@@ -23245,8 +23264,8 @@ webpackJsonp([1], [function(e, t, i) {
             }
         }),
         t.Chat = S,
-        t.ChatRoom = w,
-        t.ChatRooms = E
+        t.ChatRoom = E,
+        t.ChatRooms = w
 }, function(e, t) {
     "use strict";
     e.exports = OpenLayers.Class({
@@ -23274,11 +23293,9 @@ webpackJsonp([1], [function(e, t, i) {
     var n, s = i(55);
     n = OpenLayers.Class(s, {
             landmarkBounds: null,
-            updateRequestBounds: null,
             venueLevel: null,
             categoryBrands: null,
             zoomToSize: null,
-            retrieveUpdateRequests: !1,
             initialize: function(e, t) {
                 s.prototype.initialize.apply(this, arguments),
                     this.zoomToSize = W.Config.venues.zoomToSize,
@@ -23292,36 +23309,21 @@ webpackJsonp([1], [function(e, t, i) {
             updateDataExtent: function(e, t, i) {
                 var n = this.zoomToSize[i],
                     s = {};
-                if (!n)
-                    return s;
-                var r = this.model.repositoryFilters.get(this.objectType);
-                return this._areLandmarksInBounds(e) && this.venueLevel === n || (s.venueLevel = n,
-                        s[this.filterName] = r,
-                        this.retrieveUpdateRequests && (s.venueUpdateRequests = !0)),
-                    this.retrieveUpdateRequests && !this._areUpdateRequestsInBounds(e) && (s.venueUpdateRequests = !0,
-                        s.venueLevel = n,
-                        s[this.filterName] = r),
-                    s
+                return n ? (this._areLandmarksInBounds(e) && this.venueLevel === n || this.filter.isEmpty() || (s.venueLevel = n,
+                        s[this.filter.getName()] = this.filter.serialize()),
+                    s) : s
             },
             _areLandmarksInBounds: function(e) {
                 return this.landmarkBounds && this.landmarkBounds.containsBounds(e)
             },
-            _areUpdateRequestsInBounds: function(e) {
-                return this.updateRequestBounds && this.updateRequestBounds.containsBounds(e)
-            },
             mergeObjects: function(e, t, i, n, r) {
-                this.isFilterBitSet(this.FILTERS.PARKING) || (e.objects = e.objects.filter(function(e) {
-                        return !this.FILTERS.PARKING.callback(e)
-                    }, this)),
-                    this.landmarkBounds = i.clone(),
-                    this.retrieveUpdateRequests ? this.updateRequestBounds = i.clone() : this.updateRequestBounds = null,
+                this.landmarkBounds = i.clone(),
                     this.venueLevel = e.venueLevel,
                     this.categoryBrands = e.categoryBrands || {},
                     s.prototype.mergeObjects.apply(this, arguments)
             },
             clear: function() {
                 this.landmarkBounds = null,
-                    this.updateRequestBounds = null,
                     this.venueLevel = null,
                     s.prototype.clear.apply(this, arguments)
             },
@@ -23339,11 +23341,110 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(29),
-        r = n(s),
-        o = i(117),
+    var s, r, o = i(2),
         a = n(o),
-        l = i(5),
+        l = i(91),
+        u = n(l),
+        d = i(10),
+        c = n(d),
+        h = i(11),
+        p = n(h),
+        f = i(16),
+        g = n(f),
+        m = i(67),
+        v = n(m),
+        y = i(131),
+        _ = n(y),
+        b = i(71),
+        E = n(b),
+        w = _.default,
+        S = v.default.LAYER_UNIQUE_NAMES,
+        M = (s = {},
+            (0,
+                g.default)(s, S.SATELLITE_IMAGERY, w.ITEM_SATELLITE_IMAGERY),
+            (0,
+                g.default)(s, S.ROADS, w.ITEM_ROAD),
+            (0,
+                g.default)(s, S.GPS_POINTS, w.ITEM_GPS_POINTS),
+            (0,
+                g.default)(s, S.AREA_MANAGERS, w.ITEM_AREA_MANAGERS),
+            (0,
+                g.default)(s, S.LANDMARKS, w.ITEM_VENUES),
+            (0,
+                g.default)(s, S.SPEED_CAMERAS, w.ITEM_SPEED_CAMERAS),
+            (0,
+                g.default)(s, S.PROBLEMS, w.ITEM_MAP_PROBLEMS),
+            (0,
+                g.default)(s, S.UPDATE_REQUESTS, w.ITEM_UPDATE_REQUESTS),
+            (0,
+                g.default)(s, S.EDITABLE_AREAS, w.ITEM_EDITABLE_AREAS),
+            (0,
+                g.default)(s, S.LIVE_USERS, w.ITEM_LIVE_USERS),
+            (0,
+                g.default)(s, S.PLACE_UPDATES, w.ITEM_PLACE_UPDATE_REQUESTS),
+            (0,
+                g.default)(s, S.BIG_JUNCTIONS, w.ITEM_JUNCTION_BOXES),
+            (0,
+                g.default)(s, S.CLOSURES, w.ITEM_CLOSURES),
+            s),
+        C = (r = {},
+            (0,
+                g.default)(r, w.GROUP_ISSUES, !0),
+            (0,
+                g.default)(r, w.GROUP_MAP_ISSUES, !0),
+            (0,
+                g.default)(r, w.GROUP_PLACES, !0),
+            (0,
+                g.default)(r, w.GROUP_ROAD, !0),
+            (0,
+                g.default)(r, w.GROUP_DISPLAY, !0),
+            r),
+        A = function() {
+            function e(t) {
+                (0,
+                    c.default)(this, e),
+                this._urlParams = t
+            }
+            return (0,
+                    p.default)(e, [{
+                    key: "isLayerParamPresent",
+                    value: function() {
+                        return null != this._urlParams.layers && /^\d+$/.test(this._urlParams.layers)
+                    }
+                }, {
+                    key: "getTogglersState",
+                    value: function() {
+                        var e = (0,
+                                u.default)({}, C),
+                            t = new E.default(this._urlParams.layers);
+                        return (0,
+                                a.default)(M).forEach(function(i) {
+                                var n = v.default.layerVisibilityBitmask[i];
+                                e[M[i]] = t.isEnabled(n)
+                            }),
+                            e
+                    }
+                }]),
+                e
+        }();
+    t.default = A,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(35),
+        r = n(s),
+        o = i(122),
+        a = n(o),
+        l = i(7),
         u = (n(l),
             3e3),
         d = 3e3,
@@ -23388,10 +23489,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _activate: function() {
                 return this._connected || (this._connected = !0,
-                        this._adapter.activate(),
-                        this._isUserAuthorized() && this.set({
-                            showLayer: !0
-                        })),
+                        this._adapter.activate()),
                     this.sendUserPanMessage()
             },
             _onUserPan: function(e) {
@@ -23583,19 +23681,18 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(29),
+        l = i(35),
         u = n(l),
-        d = i(129),
+        d = i(135),
         c = n(d),
-        h = i(82),
-        p = n(h),
-        f = i(5),
-        g = n(f),
-        m = i(24),
-        v = n(m),
-        y = OL.Class(u.default, {
+        h = i(67),
+        p = (n(h),
+            i(7)),
+        f = n(p),
+        g = i(452),
+        m = n(g),
+        v = OL.Class(u.default, {
             locationsPerEnv: null,
-            layerVisibility: null,
             mapLocation: null,
             isMapLocationChanged: !1,
             mapSelection: null,
@@ -23603,32 +23700,18 @@ webpackJsonp([1], [function(e, t, i) {
             preselectedProblem: null,
             marker: null,
             urlParams: null,
-            initialize: function(e, t, i) {
-                var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
-                this.map = e,
+            initialize: function(e, t, i, n) {
+                return this.map = e,
                     this.selectionManager = t,
                     this.app = i,
-                    this.attributes = n,
+                    this.togglers = n,
                     u.default.prototype.initialize.apply(this, arguments),
                     this.mapSelection = {},
                     this.marker = !1,
-                    this._layerVisibilityBitmask = _.clone(p.default.layerVisibilityBitmask);
-                for (var s = v.default.getLayers(), r = 0; r < s.length; r++) {
-                    var o = s[r],
-                        a = o.uniqueName,
-                        l = o.permalinkBitNumber;
-                    this._layerVisibilityBitmask[a] = l
-                }
-                return this.layerVisibility = this.map.layers.reduce(function(e, t) {
-                        return t.displayInLayerSwitcher && (e[t.uniqueName] = t.getVisibility()),
-                            e
-                    }, {}),
                     this.locationsPerEnv = {},
                     this._restore(),
                     this.map.events.on({
-                        changelayer: this._onLayerVisibilityChanged,
                         moveend: this._onMapLocationChanged,
-                        addlayer: this._onLayerAdd,
                         scope: this
                     }),
                     this.selectionManager.events.on({
@@ -23639,19 +23722,19 @@ webpackJsonp([1], [function(e, t, i) {
                     W.vent.on({
                         "problems:shown": this._onProblemShown,
                         "problems:closed": this._onProblemClosed
-                    }, this), !0
+                    }, this),
+                    this.togglers.on("change", this._triggerStateChanged, this), !0
             },
             destroy: function() {
-                return this.map.events.un({
-                        changelayer: this._onLayerVisibilityChanged,
+                this.map.events.un({
                         moveend: this._onMapLocationChanged,
-                        addlayer: this._onLayerAdd,
                         scope: this
                     }),
                     this.selectionManager.events.un({
                         selectionchanged: this._onSelectionChanged,
                         scope: this
-                    })
+                    }),
+                    this.togglers.off("change", this._onTogglersChanged, this)
             },
             _onMapLocationChanged: function() {
                 return this.updateMapLocation()
@@ -23671,46 +23754,9 @@ webpackJsonp([1], [function(e, t, i) {
                         this._setMapLocation()
                 }
             },
-            _getLayerVisibilityBitmask: function() {
-                var e = 0,
-                    t = !0,
-                    i = !1,
-                    n = void 0;
-                try {
-                    for (var s, o = (0,
-                            a.default)((0,
-                            r.default)(this.layerVisibility)); !(t = (s = o.next()).done); t = !0) {
-                        var l = s.value,
-                            u = this.layerVisibility[l];
-                        u && !_.isUndefined(this._layerVisibilityBitmask[l]) && (e += 1 << this._layerVisibilityBitmask[l])
-                    }
-                } catch (e) {
-                    i = !0,
-                        n = e
-                } finally {
-                    try {
-                        !t && o.return && o.return()
-                    } finally {
-                        if (i)
-                            throw n
-                    }
-                }
-                return e
-            },
-            _onLayerAdd: function(e) {
-                var t = e.layer.uniqueName;
-                if (t)
-                    return null != this.layerVisibility[t] ? this.map.setLayerVisibility(t, this.layerVisibility[t]) : void 0
-            },
-            _onLayerVisibilityChanged: function(e) {
-                var t = e.layer.uniqueName;
-                return "visibility" === e.property && null != this.layerVisibility[t] && (this.layerVisibility[t] = e.layer.visibility,
-                    this._setLocalStorage(y.LOCAL_STORAGE_LAYER_VISIBILITY, this.layerVisibility),
-                    this._triggerStateChanged()), !0
-            },
             _setLocalStorage: function(e, t) {
                 if (!W.app.isSandboxMode())
-                    return g.default.localStorage.set(e, t)
+                    return f.default.localStorage.set(e, t)
             },
             updateMapLocation: function() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : W.location.code,
@@ -23720,7 +23766,7 @@ webpackJsonp([1], [function(e, t, i) {
                     return t.zoom = i,
                         this.mapLocation = t,
                         this.locationsPerEnv[e] = t,
-                        this._setLocalStorage(y.LOCAL_STORAGE_MAP_LOCATION, this.locationsPerEnv),
+                        this._setLocalStorage(v.LOCAL_STORAGE_MAP_LOCATION, this.locationsPerEnv),
                         this.isMapLocationChanged = !0,
                         this._triggerStateChanged(), !0
             },
@@ -23754,9 +23800,9 @@ webpackJsonp([1], [function(e, t, i) {
             _triggerStateChanged: function() {
                 return this.trigger("statechanged", {
                     center: this._getProjectedCenter(),
-                    layers: this._getLayerVisibilityBitmask(),
                     selection: this.mapSelection,
-                    marker: this.marker
+                    marker: this.marker,
+                    s: this.togglers.serialize()
                 })
             },
             _getProjectedCenter: function() {
@@ -23766,61 +23812,19 @@ webpackJsonp([1], [function(e, t, i) {
                     t.zoom = e,
                     t
             },
+            _isTogglerTreeParamPresent: function() {
+                return null != this.urlParams.s && /^\d+$/.test(this.urlParams.s)
+            },
             _restoreLayerVisibility: function() {
-                this._enableLayersFromPermalink(),
-                    this._enableLayersWithSelectedObjects()
-            },
-            _enableLayersFromPermalink: function() {
-                var e = this;
-                return this.urlParams.layers && /^\d+$/.test(this.urlParams.layers) ? function() {
-                    var t = [],
-                        i = !0,
-                        n = !1,
-                        s = void 0;
-                    try {
-                        for (var o, l = (0,
-                                a.default)((0,
-                                r.default)(e._layerVisibilityBitmask)); !(i = (o = l.next()).done); i = !0) {
-                            var u = o.value,
-                                d = e._layerVisibilityBitmask[u],
-                                c = 0 !== (e.urlParams.layers & 1 << d);
-                            t.push(e.layerVisibility[u] = c)
-                        }
-                    } catch (e) {
-                        n = !0,
-                            s = e
-                    } finally {
-                        try {
-                            !i && l.return && l.return()
-                        } finally {
-                            if (n)
-                                throw s
-                        }
-                    }
-                    return t
-                }() : void(this.layerVisibility = _.extend(this.layerVisibility, g.default.localStorage.get(y.LOCAL_STORAGE_LAYER_VISIBILITY)))
-            },
-            _enableLayersWithSelectedObjects: function() {
-                null != this.mapSelection && this._enableLayersByRepos(_.keys(this.mapSelection))
-            },
-            _enableLayersByRepos: function(e) {
-                var t = this;
-                this.preselectedProblem && e.push(this.preselectedProblem.repo.name);
-                var i = this.map.getLayersByRepos(e);
-                return function() {
-                    for (var n = [], s = 0; s < e.length; s++) {
-                        var r = e[s],
-                            o = void 0;
-                        null != i[r] && (o = i[r].map(function(e) {
-                                return t.layerVisibility[e.uniqueName] = !0
-                            })),
-                            n.push(o)
-                    }
-                    return n
-                }()
+                var e = new m.default(this.urlParams);
+                this._isTogglerTreeParamPresent() ? this.togglers.setStateFromBitfield(this.urlParams.s) : e.isLayerParamPresent() ? this.togglers.setState(e.getTogglersState()) : this.togglers.readFromLocalStorage(),
+                    this.togglers.writeStateToApp({
+                        map: this.map,
+                        dataModel: W.model
+                    })
             },
             _restoreMapLocation: function() {
-                this.locationsPerEnv = g.default.localStorage.get(y.LOCAL_STORAGE_MAP_LOCATION),
+                this.locationsPerEnv = f.default.localStorage.get(v.LOCAL_STORAGE_MAP_LOCATION),
                     null == this.locationsPerEnv && (this.locationsPerEnv = {});
                 var e = this.locationsPerEnv[W.location.code];
                 if (this.urlParams.lat && this.urlParams.lon) {
@@ -23905,40 +23909,17 @@ webpackJsonp([1], [function(e, t, i) {
                 }
             },
             _setupMap: function() {
-                var e = !0,
-                    t = !1,
-                    i = void 0;
-                try {
-                    for (var n, s = (0,
-                            a.default)((0,
-                            r.default)(this.layerVisibility)); !(e = (n = s.next()).done); e = !0) {
-                        var o = n.value,
-                            l = this.layerVisibility[o];
-                        this.map.setLayerVisibility(o, l)
-                    }
-                } catch (e) {
-                    t = !0,
-                        i = e
-                } finally {
-                    try {
-                        !e && s.return && s.return()
-                    } finally {
-                        if (t)
-                            throw i
-                    }
-                }
                 if (this._setMapLocation(),
                     this.marker) {
-                    var u = new OL.Layer.Vector("PermalinkMarker", {
-                            styleMap: c.default.permalinkMarker,
-                            displayInLayerSwitcher: !1
+                    var e = new OL.Layer.Vector("PermalinkMarker", {
+                            styleMap: c.default.permalinkMarker
                         }),
-                        d = void 0;
-                    d = this.mapLocation ? this.mapLocation.clone() : this.map.getCenter();
-                    var h = new OL.Geometry.Point(d.lon, d.lat),
-                        p = new OL.Feature.Vector(h);
-                    this.map.addLayer(u),
-                        u.addFeatures(p)
+                        t = void 0;
+                    t = this.mapLocation ? this.mapLocation.clone() : this.map.getCenter();
+                    var i = new OL.Geometry.Point(t.lon, t.lat),
+                        n = new OL.Feature.Vector(i);
+                    this.map.addLayer(e),
+                        e.addFeatures(n)
                 }
                 return W.model.events.register("mergeend", this, this._selectObjects)
             },
@@ -23958,11 +23939,10 @@ webpackJsonp([1], [function(e, t, i) {
                     this._setupMap()
             }
         });
-    _.extend(y, {
-            LOCAL_STORAGE_MAP_LOCATION: "mapLocation",
-            LOCAL_STORAGE_LAYER_VISIBILITY: "layerVisibility"
+    _.extend(v, {
+            LOCAL_STORAGE_MAP_LOCATION: "mapLocation"
         }),
-        t.default = y,
+        t.default = v,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -23975,7 +23955,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(167),
+    var s = i(172),
         r = n(s),
         o = {
             NotConnected: 0,
@@ -24022,7 +24002,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(7);
+    var n, s = i(6);
     n = OpenLayers.Class(s, {
             averageSpeed: null,
             getAverageSpeed: function() {
@@ -24034,8 +24014,8 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(7),
-        r = i(454);
+    var n, s = i(6),
+        r = i(459);
     n = OpenLayers.Class(s, {
             nested: {
                 driveParts: r
@@ -24063,7 +24043,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             MATCH_TYPE: {
@@ -24079,7 +24059,7 @@ webpackJsonp([1], [function(e, t, i) {
             }
         });
     t.default = o,
-        e.exports = t.default
+        e.exports = t.default;
 }, function(e, t, i) {
     "use strict";
 
@@ -24091,7 +24071,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(234),
+    var s = i(239),
         r = n(s),
         o = Backbone.Model.extend({
             constructor: function() {
@@ -24117,7 +24097,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             getAllSegments: function() {
@@ -24128,9 +24108,9 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(7),
+    var n, s = i(6),
         r = i(42),
-        o = i(187);
+        o = i(192);
     n = OpenLayers.Class(s, {
             nested: {
                 editableAreas: OL.Geometry,
@@ -24187,7 +24167,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(7),
+    var s = i(6),
         r = n(s),
         o = OL.Class(r.default, {
             nested: {
@@ -24200,7 +24180,7 @@ webpackJsonp([1], [function(e, t, i) {
     "use strict";
     var n, s = i(55),
         r = i(41),
-        o = i(5);
+        o = i(7);
     n = OpenLayers.Class(s, {
             serializer: null,
             initialize: function(e, t) {
@@ -24252,13 +24232,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(84),
+    var s = i(85),
         r = n(s),
-        o = i(461),
+        o = i(466),
         a = n(o),
-        l = i(119),
+        l = i(124),
         u = n(l),
-        d = i(193),
+        d = i(198),
         c = n(d),
         h = OL.Class({
             TYPE: {
@@ -24336,7 +24316,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(84),
+    var s = i(85),
         r = n(s),
         o = r.default.extend({
             TYPE: {
@@ -24435,45 +24415,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(5),
-        r = n(s),
-        o = Backbone.Model.extend({
-            LOCAL_STORAGE_KEY: "layerFilters",
-            defaults: {
-                mapProblem: 0,
-                mapUpdateRequest: 0,
-                venue: 0
-            },
-            initialize: function() {
-                var e = this;
-                return this.on("change", function() {
-                    return e.persist()
-                })
-            },
-            persist: function() {
-                return r.default.localStorage.set(this.LOCAL_STORAGE_KEY, this.toJSON())
-            }
-        });
-    o.restore = function() {
-            var e = r.default.localStorage.get(o.prototype.LOCAL_STORAGE_KEY);
-            return new o(e)
-        },
-        t.default = o,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
     var s = i(55),
         r = n(s),
-        o = i(189),
+        o = i(194),
         a = n(o),
         l = OL.Class(r.default, {
             MIN_CONVERAGE: .9,
@@ -24594,7 +24538,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(110),
+    var s = i(115),
         r = n(s),
         o = OL.Class({
             graphNodes: null,
@@ -24644,7 +24588,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
         o = OL.Class(OL.Marker, {
             EVENT_SUFFIX: ".access-point-view",
@@ -24689,9 +24633,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(472),
+    var s = i(476),
         r = n(s),
-        o = i(473),
+        o = i(477),
         a = n(o),
         l = Marionette.Object.extend({
             initialize: function() {
@@ -24804,7 +24748,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(471),
+    var s = i(475),
         r = n(s),
         o = Marionette.CollectionView.extend({
             template: "Waze/Modules/BigJunction/templates/path_list",
@@ -24852,9 +24796,9 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(469),
+        l = i(473),
         u = n(l),
-        d = i(116),
+        d = i(121),
         c = n(d),
         h = Marionette.Object.extend({
             _pathVectors: null,
@@ -24864,9 +24808,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.map = this.options.map,
                     this.pathLayer = this.map.bigJunctionPathLayer,
                     this.driveRenderer = new c.default(this.pathLayer),
-                    this.accessPointLayer = new OL.Layer.Markers("accessPointLayer", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.accessPointLayer = new OL.Layer.Markers("accessPointLayer"),
                     this.map.addLayer(this.accessPointLayer),
                     this._drawAccessPoints(),
                     this._drawShortSegments()
@@ -24983,9 +24925,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(194),
+    var s = i(199),
         r = n(s),
-        o = i(468),
+        o = i(472),
         a = n(o),
         l = OL.Class({
             MAX_PATHS: 100,
@@ -25052,7 +24994,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(120);
+    var n = i(201);
     t.default = {
             init: function(e) {
                 var t = e.map;
@@ -25094,70 +25036,70 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(120),
-        r = n(s),
-        o = i(477),
+    var s, r, o = i(16),
         a = n(o),
-        l = i(195),
+        l = i(201),
         u = n(l),
-        d = i(478),
+        d = i(481),
         c = n(d),
-        h = i(480),
+        h = i(200),
         p = n(h),
-        f = i(479),
+        f = i(482),
         g = n(f),
-        m = i(24),
+        m = i(483),
         v = n(m),
-        y = i(475),
+        y = i(21),
         _ = n(y),
-        b = v.default.LAYER_TYPE,
-        w = "city",
-        E = "cities";
+        b = i(479),
+        E = n(b),
+        w = i(217),
+        S = n(w),
+        M = i(90),
+        C = n(M),
+        A = i(130),
+        L = n(A),
+        T = _.default.LAYER_TYPE,
+        O = "city",
+        I = "cities";
     t.default = {
             entryPoint: {
                 callback: "init",
-                class: _.default
+                class: E.default
             },
             feature: {
-                repositoryName: E,
-                repositoryClass: c.default,
-                featureType: w,
-                modelClass: u.default,
-                featureEditorClass: p.default,
+                repositoryName: I,
+                repositoryClass: g.default,
+                featureType: O,
+                modelClass: p.default,
+                featureEditorClass: v.default,
                 repositoryConfig: {
                     onDemand: !1,
                     storePersistentSeparately: !0
                 }
             },
             layers: [{
-                type: b.FEATURE,
-                uniqueName: r.default.FEATURES_LAYER_NAME,
-                permalinkBitNumber: 15,
+                type: T.FEATURE,
+                uniqueName: u.default.FEATURES_LAYER_NAME,
                 options: {
-                    objectType: w,
+                    objectType: O,
                     selectable: !0,
-                    toggleable: !1,
                     visibleByDefault: !1
                 }
             }, {
-                type: b.MARKER,
-                uniqueName: r.default.MARKERS_LAYER_NAME,
-                permalinkBitNumber: 16,
-                parentLayerUniqueName: r.default.RASTER_LAYER_NAME,
+                type: T.MARKER,
+                uniqueName: u.default.MARKERS_LAYER_NAME,
                 options: {
                     name: I18n.t("layers.name.city_names"),
-                    objectType: w,
-                    toggleable: !1,
+                    objectType: O,
                     visibleByDefault: !1,
-                    markerClass: a.default,
+                    markerClass: c.default,
                     filter: function(e) {
                         return e.showMarker()
                     }
                 }
             }, {
-                type: b.RASTER,
-                uniqueName: r.default.RASTER_LAYER_NAME,
-                permalinkBitNumber: 1,
+                type: T.RASTER,
+                uniqueName: u.default.RASTER_LAYER_NAME,
                 options: {
                     uniqueName: "cities",
                     visible: !1,
@@ -25174,14 +25116,27 @@ webpackJsonp([1], [function(e, t, i) {
                     params: {
                         clientLayer: "cities"
                     }
-                },
-                layerSwitcherOptions: {
-                    viewClass: g.default,
-                    options: {
-                        translations: I18n.t("layer_switcher.filters.city_names")
-                    }
                 }
-            }]
+            }],
+            layerSwitcher: {
+                togglers: [{
+                    parent: u.default.GROUP_DISPLAY,
+                    toggler: S.default.of(u.default.GROUP_CITIES, [C.default.of(u.default.ITEM_CITY_NAMES, new L.default(u.default.MARKERS_LAYER_NAME))], new L.default(u.default.RASTER_LAYER_NAME)),
+                    template: "Waze/Modules/Cities/templates/layer_switcher"
+                }],
+                defaultVisibility: (s = {},
+                    (0,
+                        a.default)(s, u.default.GROUP_CITIES, !1),
+                    (0,
+                        a.default)(s, u.default.ITEM_CITY_NAMES, !1),
+                    s),
+                bitNumbers: (r = {},
+                    (0,
+                        a.default)(r, u.default.GROUP_CITIES, 27),
+                    (0,
+                        a.default)(r, u.default.ITEM_CITY_NAMES, 28),
+                    r)
+            }
         },
         e.exports = t.default
 }, function(e, t, i) {
@@ -25189,7 +25144,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(14),
+    var n = i(17),
         s = "selected";
     t.default = OL.Class(OL.Marker, {
             initialize: function(e) {
@@ -25225,21 +25180,21 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        o = i(132),
+        o = i(73),
         a = n(o),
-        l = i(19),
+        l = i(10),
         u = n(l),
-        d = i(20),
+        d = i(11),
         c = n(d),
-        h = i(236),
+        h = i(93),
         p = n(h),
-        f = i(654),
+        f = i(659),
         g = n(f),
-        m = i(235),
+        m = i(92),
         v = n(m),
         y = i(55),
-        _ = (i(10),
-            i(165)),
+        _ = (i(12),
+            i(170)),
         b = function(e) {
             function t() {
                 return (0,
@@ -25296,48 +25251,7 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(120),
-        r = n(s),
-        o = i(126),
-        a = n(o),
-        l = a.default.extend({
-            template: "Waze/Modules/Toolbar/templates/layer-switcher-filter",
-            events: {
-                "click .closed-filter": "_onFilterClicked"
-            },
-            initialize: function() {
-                this.layer = this.model.get("layer"),
-                    this.cityNamesLayer = W.map.getLayerByUniqueName(r.default.MARKERS_LAYER_NAME),
-                    this.filter = this.cityNamesLayer.getVisibility()
-            },
-            serializeData: function() {
-                return {
-                    layer: this.layer,
-                    filter: this.filter,
-                    onText: this.options.translations.active,
-                    offText: this.options.translations.inactive
-                }
-            },
-            _onFilterClicked: function() {
-                return this.filter = !this.filter,
-                    this.cityNamesLayer.setVisibility(this.filter)
-            }
-        });
-    l.prototype.events = _.extend(l.prototype.events, a.default.prototype.events),
-        t.default = l,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var s = i(133),
+    var s = i(138),
         r = n(s),
         o = i(44),
         a = i(9);
@@ -25464,9 +25378,9 @@ webpackJsonp([1], [function(e, t, i) {
         l = n(a),
         u = i(43),
         d = (n(u),
-            i(127)),
+            i(133)),
         c = n(d),
-        h = i(86),
+        h = i(87),
         p = n(h),
         f = Marionette.View.extend({
             template: "Waze/Modules/Closures/templates/edit",
@@ -25672,7 +25586,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(482),
+    var s = i(485),
         r = n(s),
         o = Marionette.CompositeView.extend({
             template: "Waze/Modules/Closures/templates/list",
@@ -25752,42 +25666,57 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(85),
+    var s = i(86),
         r = n(s),
-        o = i(485),
+        o = i(488),
         a = n(o),
-        l = i(486),
+        l = i(489),
         u = n(l),
         d = i(40),
         c = n(d),
-        h = i(24),
+        h = i(21),
         p = n(h),
-        f = p.default.LAYER_TYPE,
-        g = "mapComment",
-        m = "mapComments",
-        v = "mapComments";
+        f = i(90),
+        g = n(f),
+        m = i(130),
+        v = n(m),
+        y = p.default.LAYER_TYPE,
+        _ = "mapComment",
+        b = "mapComments",
+        E = "mapComments";
     t.default = {
             feature: {
-                repositoryName: v,
-                featureType: g,
+                repositoryName: E,
+                featureType: _,
                 modelClass: r.default,
                 featureEditorClass: u.default
             },
             layers: [{
-                type: f.FEATURE,
-                uniqueName: m,
-                permalinkBitNumber: 14,
+                type: y.FEATURE,
+                uniqueName: b,
                 options: {
                     name: I18n.t("layers.name.comments"),
-                    objectType: g,
+                    objectType: _,
                     selectable: !0,
-                    toggleable: !0,
                     visibleByDefault: !0,
                     styleMap: a.default,
                     enableZIndexing: !0,
                     enableGeometryEditing: !0
                 }
             }],
+            layerSwitcher: {
+                togglers: [{
+                    id: "ITEM_MAP_COMMENTS",
+                    parent: "GROUP_ROAD",
+                    toggler: g.default.of("ITEM_MAP_COMMENTS", new v.default(b))
+                }],
+                defaultVisibility: {
+                    ITEM_MAP_COMMENTS: !0
+                },
+                bitNumbers: {
+                    ITEM_MAP_COMMENTS: 26
+                }
+            },
             menu: {
                 name: "map-comments",
                 displayClass: "waze-icon-bubble",
@@ -25796,7 +25725,7 @@ webpackJsonp([1], [function(e, t, i) {
                     featureName: I18n.t("drawing.map_comment"),
                     primaryShape: "point",
                     secondaryShape: "polygon",
-                    layerUniqueName: m,
+                    layerUniqueName: b,
                     createFeature: function(e, t) {
                         var i = new r.default({
                                 geometry: e
@@ -25945,17 +25874,17 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(44),
         r = n(s),
-        o = i(487),
+        o = i(490),
         a = n(o),
-        l = i(202),
+        l = i(208),
         u = n(l),
-        d = i(86),
+        d = i(87),
         c = n(d),
-        h = i(123),
+        h = i(128),
         p = n(h),
         f = i(65),
         g = n(f),
-        m = i(85),
+        m = i(86),
         v = n(m),
         y = r.default.extend({
             template: "Waze/Modules/Comments/templates/feature_editor",
@@ -26063,9 +25992,9 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s = i(123),
+    var s = i(128),
         r = n(s),
-        o = i(85),
+        o = i(86),
         a = n(o),
         l = Marionette.View.extend({
             template: "Waze/Modules/Comments/templates/name_editor",
@@ -26153,7 +26082,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(15),
         r = n(s),
         o = Marionette.View.extend({
             tagName: "li",
@@ -26244,11 +26173,11 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(42),
         a = n(o),
-        l = i(470),
+        l = i(474),
         u = n(l),
-        d = i(158),
+        d = i(163),
         c = n(d),
-        h = i(121),
+        h = i(126),
         p = n(h),
         f = r.default.extend({
             events: _.extend({}, r.default.prototype.events, {
@@ -26342,20 +26271,20 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r, o = i(16),
         a = n(o),
-        l = i(490),
+        l = i(493),
         u = n(l),
-        d = i(491),
+        d = i(494),
         c = n(d),
-        h = i(493),
+        h = i(496),
         p = n(h),
-        f = i(496),
+        f = i(499),
         g = n(f),
         m = i(3),
         v = n(m),
-        y = i(497),
+        y = i(500),
         b = n(y),
-        w = i(24),
-        E = n(w),
+        E = i(21),
+        w = n(E),
         S = Marionette.Object.extend({
             TYPE_TO_EDITOR_CLASS: (s = {},
                 (0,
@@ -26387,7 +26316,7 @@ webpackJsonp([1], [function(e, t, i) {
             initialize: function() {
                 var e = this;
                 return this.typeToEditorClass = _.clone(this.TYPE_TO_EDITOR_CLASS),
-                    E.default.getFeatureEditors().map(function(t) {
+                    w.default.getFeatureEditors().map(function(t) {
                         var i = t.featureType,
                             n = t.featureEditorClass;
                         return e.typeToEditorClass[i] = n
@@ -26423,9 +26352,9 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(44),
         r = n(s),
-        o = i(495),
+        o = i(498),
         a = n(o),
-        l = i(604),
+        l = i(609),
         u = n(l),
         d = i(9),
         c = n(d),
@@ -26435,22 +26364,22 @@ webpackJsonp([1], [function(e, t, i) {
         g = n(f),
         m = i(42),
         v = (n(m),
-            i(225)),
+            i(230)),
         y = n(v),
-        b = i(179),
-        w = i(587),
-        E = n(w),
-        S = i(593),
-        C = n(S),
-        M = i(205),
-        A = n(M),
-        L = i(121),
-        O = n(L),
-        D = i(204),
-        T = n(D),
-        I = i(494),
-        x = n(I),
-        k = r.default.extend({
+        b = i(184),
+        E = i(592),
+        w = n(E),
+        S = i(598),
+        M = n(S),
+        C = i(210),
+        A = n(C),
+        L = i(126),
+        T = n(L),
+        O = i(209),
+        I = n(O),
+        D = i(497),
+        x = n(D),
+        P = r.default.extend({
             behaviors: {
                 restoreLastTab: {
                     behaviorClass: A.default
@@ -26617,7 +26546,7 @@ webpackJsonp([1], [function(e, t, i) {
                         name: e
                     })
                 });
-                return this.aliasesLayout = new E.default({
+                return this.aliasesLayout = new w.default({
                         collection: new b.Collection(e),
                         editable: this.model.arePropertiesEditable()
                     }),
@@ -26626,7 +26555,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _initExternalProvidersView: function() {
                 var e = this,
-                    t = new C.default({
+                    t = new M.default({
                         venue: this.model,
                         editable: !0
                     });
@@ -26657,7 +26586,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.showChildView("categoriesRegion", this.suggestedCategoriesView)
             },
             _initMoreInfoTab: function() {
-                var e = this.model.isParkingLot() ? x.default : T.default;
+                var e = this.model.isParkingLot() ? x.default : I.default;
                 return this.moreInfoView = new e({
                         model: this.model,
                         serviceTypes: this._getServiceTypes(),
@@ -26678,7 +26607,7 @@ webpackJsonp([1], [function(e, t, i) {
                         this._initOpeningHoursView(),
                         this._initAliasesView(),
                         this._isExternalProviderEditingAllowed() && this._initExternalProvidersView()),
-                    this.showChildView("addressEdit", new O.default({
+                    this.showChildView("addressEdit", new T.default({
                         addressModel: this.model.getAddress(),
                         dataModel: this.dataModel,
                         feature: this.model,
@@ -26688,7 +26617,7 @@ webpackJsonp([1], [function(e, t, i) {
                     r.default.prototype.onRender.apply(this, arguments)
             }
         });
-    t.default = k,
+    t.default = P,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -26701,13 +26630,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(204),
+    var s = i(209),
         r = n(s),
-        o = i(127),
+        o = i(133),
         a = n(o),
         l = i(51),
         u = n(l),
-        d = i(111),
+        d = i(116),
         c = n(d),
         h = r.default.extend({
             template: "templates/venue/venue-edit-more-info-parking-lot",
@@ -26794,9 +26723,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(122),
+    var r = i(127),
         o = s(r),
-        a = i(18),
+        a = i(20),
         l = n(a),
         u = Marionette.View.extend({
             events: {
@@ -26886,10 +26815,10 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n, s = i(44),
-        r = i(101),
-        o = i(203),
+        r = i(106),
+        o = i(125),
         a = i(3),
-        l = i(12);
+        l = i(14);
     n = s.extend({
             behaviors: {
                 accelerators: {
@@ -26945,37 +26874,37 @@ webpackJsonp([1], [function(e, t, i) {
             default: e
         }
     }
-    var s, r = i(30),
+    var s, r = i(29),
         o = n(r),
         a = i(2),
         l = n(a),
         u = i(44),
-        d = i(228),
-        c = i(79),
+        d = i(233),
+        c = i(81),
         h = i(63),
-        p = i(148),
+        p = i(153),
         f = i(9),
         g = (i(42),
-            i(104)),
+            i(109)),
         m = i(26),
-        v = i(13),
-        y = i(196),
-        b = i(205),
-        w = i(203),
-        E = i(404),
-        S = i(499),
-        C = i(498),
-        M = i(200),
-        A = i(201),
-        L = i(18),
-        O = i(89);
+        v = i(15),
+        y = i(202),
+        b = i(210),
+        E = i(125),
+        w = i(407),
+        S = i(502),
+        M = i(501),
+        C = i(206),
+        A = i(207),
+        L = i(20),
+        T = i(71);
     s = u.extend({
             behaviors: {
                 restoreLastTab: {
                     behaviorClass: b
                 },
                 accelerators: {
-                    behaviorClass: w
+                    behaviorClass: E
                 }
             },
             events: _.extend({}, u.prototype.events, {
@@ -27061,7 +26990,7 @@ webpackJsonp([1], [function(e, t, i) {
             _initTTSView: function() {
                 var e = this.model.getAddress(),
                     t = this.model.children[0].geometry.components[0];
-                this.streetModel = new C,
+                this.streetModel = new M,
                     null !== e.street && this.streetModel.set({
                         name: e.street.name,
                         isEmpty: e.street.isEmpty,
@@ -27082,7 +27011,7 @@ webpackJsonp([1], [function(e, t, i) {
                     canSaveClosures: !this.dataModel.actionManager.canSave(),
                     canAdd: !0,
                     dataModel: this.dataModel,
-                    editViewConfig: M.SEGMENT,
+                    editViewConfig: C.SEGMENT,
                     listViewConfig: A.SEGMENT
                 });
                 this.showChildView("closuresRegion", e)
@@ -27256,7 +27185,7 @@ webpackJsonp([1], [function(e, t, i) {
                 return !e.mixed.roadType && e.isRoutable() && e.canEditRoutingRoadTypes()
             },
             shouldShowHouseNumbersButton: function() {
-                return Waze.Config.houseNumbers.allowEditing && 1 === this.model.children.length && this.model.houseNumbersEditablePerType()
+                return Waze.Config.houseNumbers.allowEditing && 1 === this.model.children.length && this.model.houseNumbersEditablePerType();
             },
             shouldDisableHouseNumbersButton: function() {
                 return this.dataModel.actionManager.canSave()
@@ -27298,7 +27227,7 @@ webpackJsonp([1], [function(e, t, i) {
                 return o.forEach(function(t) {
                         var n = i[t],
                             r = e.attributes[t],
-                            o = new O(r);
+                            o = new T(r);
                         o.setBits(n),
                             s[t] = o.value
                     }),
@@ -27474,7 +27403,7 @@ webpackJsonp([1], [function(e, t, i) {
             editHouseNumbers: function() {
                 var e = this.model.children.first(),
                     t = e.getEntireStreet(this.dataModel);
-                new E({
+                new w({
                     model: this.dataModel,
                     map: W.map,
                     editable: e.canEditHouseNumbers(),
@@ -27607,9 +27536,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(627),
+    var s = i(633),
         r = n(s),
-        o = i(18),
+        o = i(20),
         a = n(o),
         l = Marionette.View.extend({
             template: "templates/segment/tts-playback",
@@ -27659,15 +27588,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(107),
+    var s = i(112),
         r = (n(s),
-            i(87)),
+            i(88)),
         o = n(r),
-        a = i(209),
+        a = i(214),
         l = n(a),
-        u = i(515),
+        u = i(518),
         d = n(u),
-        c = i(87).prototype.TYPE,
+        c = i(88).prototype.TYPE,
         h = i(36).prototype.TYPE,
         p = Marionette.Object.extend({
             initialize: function(e) {
@@ -27787,17 +27716,17 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(504),
+    var s = i(507),
         r = n(s),
-        o = i(503),
+        o = i(506),
         a = n(o),
-        l = i(500),
+        l = i(503),
         u = n(l),
-        d = i(208),
+        d = i(213),
         c = n(d),
-        h = i(514),
+        h = i(517),
         p = n(h),
-        f = i(510),
+        f = i(513),
         g = n(f),
         m = Marionette.Object.extend({
             browser: null,
@@ -27875,11 +27804,11 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r = i(16),
         o = n(r),
-        a = i(506),
+        a = i(509),
         l = n(a),
-        u = i(507),
+        u = i(510),
         d = n(u),
-        c = i(508),
+        c = i(511),
         h = n(c),
         p = i(36).prototype.TYPE,
         f = {
@@ -27964,11 +27893,11 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(41),
         r = n(s),
-        o = i(207),
+        o = i(212),
         a = n(o),
-        l = i(509),
+        l = i(512),
         u = n(l),
-        d = i(505),
+        d = i(508),
         c = n(d),
         h = Backbone.Model.extend({
             defaults: {
@@ -28048,7 +27977,7 @@ webpackJsonp([1], [function(e, t, i) {
         a = n(o),
         l = i(36),
         u = n(l),
-        d = i(12),
+        d = i(14),
         c = n(d),
         h = u.default.prototype.TYPE,
         p = Backbone.Collection.extend({
@@ -28271,7 +28200,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(207),
+    var s = i(212),
         r = n(s),
         o = r.default.extend({
             parse: function(e) {
@@ -28296,13 +28225,13 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r = i(16),
         o = n(r),
-        a = i(88),
+        a = i(89),
         l = n(a),
-        u = i(511),
+        u = i(514),
         d = n(u),
-        c = i(513),
+        c = i(516),
         h = n(c),
-        p = i(512),
+        p = i(515),
         f = n(p),
         g = i(36).prototype.TYPE,
         m = Marionette.CollectionView.extend({
@@ -28339,7 +28268,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(88),
+    var s = i(89),
         r = n(s),
         o = r.default.extend({
             className: function() {
@@ -28363,7 +28292,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(88),
+    var s = i(89),
         r = n(s),
         o = r.default.extend({
             className: function() {
@@ -28389,7 +28318,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(88),
+    var s = i(89),
         r = n(s),
         o = r.default.extend({
             className: function() {
@@ -28412,9 +28341,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(208),
+    var s = i(213),
         r = n(s),
-        o = i(516),
+        o = i(519),
         a = n(o),
         l = r.default.extend({
             childView: a.default,
@@ -28434,7 +28363,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(209),
+    var s = i(214),
         r = n(s),
         o = r.default.extend({
             className: "notification-detail notification-detail-pm",
@@ -28459,7 +28388,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(124),
+    var s = i(129),
         r = n(s),
         o = r.default.extend({
             className: "feed-item feed-notification-pm",
@@ -28484,11 +28413,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(518),
+    var s = i(521),
         r = n(s),
-        o = i(519),
+        o = i(522),
         a = n(o),
-        l = i(10),
+        l = i(12),
         u = n(l),
         d = Marionette.Object.extend({
             LOCATION_REQUEST_TIMEOUT_MILLIS: 1e4,
@@ -28611,6 +28540,549 @@ webpackJsonp([1], [function(e, t, i) {
     });
     t.default = i,
         e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(10),
+        r = n(s),
+        o = i(11),
+        a = n(o),
+        l = function() {
+            function e(t, i, n) {
+                (0,
+                    r.default)(this, e),
+                this._repoName = t,
+                    this._categoryName = i,
+                    this._attributeName = n
+            }
+            return (0,
+                    a.default)(e, [{
+                    key: "writeStateToApp",
+                    value: function(e, t) {
+                        var i = t.dataModel[this._repoName].filter;
+                        i.setAttribute(this._categoryName, this._attributeName, e)
+                    }
+                }]),
+                e
+        }();
+    t.default = l,
+        e.exports = t.default
+}, function(e, t) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = Marionette.View.extend({
+        template: "Waze/Modules/LayerSwitcher/templates/layout",
+        regions: {
+            layersList: ".layer-switcher-container"
+        }
+    });
+    t.default = i,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s, r = i(91),
+        o = n(r),
+        a = i(2),
+        l = n(a),
+        u = i(10),
+        d = n(u),
+        c = i(11),
+        h = n(c),
+        p = i(16),
+        f = n(p),
+        g = i(21),
+        m = n(g),
+        v = i(67),
+        y = n(v),
+        _ = i(7),
+        b = n(_),
+        E = i(90),
+        w = n(E),
+        S = i(217),
+        M = n(S),
+        C = i(523),
+        A = n(C),
+        L = i(130),
+        T = n(L),
+        O = i(131),
+        I = n(O),
+        D = i(526),
+        x = n(D),
+        P = (s = {},
+            (0,
+                f.default)(s, I.default.GROUP_ISSUES, !0),
+            (0,
+                f.default)(s, I.default.GROUP_MAP_ISSUES, !0),
+            (0,
+                f.default)(s, I.default.ITEM_MAP_PROBLEMS, !0),
+            (0,
+                f.default)(s, I.default.ITEM_CLOSED_MAP_PROBLEMS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_UPDATE_REQUESTS, !0),
+            (0,
+                f.default)(s, I.default.ITEM_CLOSED_UPDATE_REQUESTS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_PLACE_UPDATE_REQUESTS, !1),
+            (0,
+                f.default)(s, I.default.GROUP_PARKING_ISSUES, !1),
+            (0,
+                f.default)(s, I.default.ITEM_PARKING_MAP_PROBLEMS, !0),
+            (0,
+                f.default)(s, I.default.ITEM_PARKING_CLOSED_MAP_PROBLEMS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_PARKING_PLACE_UPDATE_REQUESTS, !0),
+            (0,
+                f.default)(s, I.default.GROUP_PLACES, !0),
+            (0,
+                f.default)(s, I.default.ITEM_VENUES, !0),
+            (0,
+                f.default)(s, I.default.ITEM_RESIDENTIAL_PLACES, !1),
+            (0,
+                f.default)(s, I.default.ITEM_PARKING_PLACES, !1),
+            (0,
+                f.default)(s, I.default.GROUP_ROAD, !0),
+            (0,
+                f.default)(s, I.default.ITEM_ROAD, !0),
+            (0,
+                f.default)(s, I.default.ITEM_JUNCTION_BOXES, W.Config.big_junctions.enable),
+            (0,
+                f.default)(s, I.default.ITEM_CLOSURES, !1),
+            (0,
+                f.default)(s, I.default.ITEM_SPEED_CAMERAS, !1),
+            (0,
+                f.default)(s, I.default.GROUP_DISPLAY, !0),
+            (0,
+                f.default)(s, I.default.ITEM_SATELLITE_IMAGERY, !0),
+            (0,
+                f.default)(s, I.default.ITEM_AREA_MANAGERS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_GPS_POINTS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_LIVE_USERS, !1),
+            (0,
+                f.default)(s, I.default.ITEM_EDITABLE_AREAS, !1),
+            s),
+        k = function() {
+            function e(t) {
+                (0,
+                    d.default)(this, e),
+                this._LOCAL_STORAGE_KEY = "togglersState",
+                    this._tree = t,
+                    this._togglers = this._getTogglersMap(),
+                    this._bitFieldSerializer = new x.default
+            }
+            return (0,
+                    h.default)(e, [{
+                    key: "_getTogglersMap",
+                    value: function() {
+                        var e = {};
+                        return this._eachToggler(this._tree, !0, function(t) {
+                                e[t.getId()] = t
+                            }),
+                            e
+                    }
+                }, {
+                    key: "setState",
+                    value: function(e) {
+                        var t = this;
+                        (0,
+                            l.default)(e).forEach(function(i) {
+                                var n = e[i];
+                                t._togglers[i].setState(n)
+                            }),
+                            this.trigger("change")
+                    }
+                }, {
+                    key: "writeStateToApp",
+                    value: function(e) {
+                        this._eachToggler(this._tree, !0, function(t, i) {
+                            t.writeStateToApp(i && t.getState(), e)
+                        })
+                    }
+                }, {
+                    key: "getState",
+                    value: function() {
+                        var e = (0,
+                            o.default)({}, this._togglers);
+                        return (0,
+                                l.default)(e).forEach(function(t) {
+                                e[t] = e[t].getState()
+                            }),
+                            e
+                    }
+                }, {
+                    key: "append",
+                    value: function(e, t) {
+                        this._togglers[e].appendChild(t),
+                            this._togglers = this._getTogglersMap()
+                    }
+                }, {
+                    key: "_eachToggler",
+                    value: function(e, t, i) {
+                        var n = this;
+                        e.getChildren().forEach(function(e) {
+                            i(e, t),
+                                e.isLeaf() || n._eachToggler(e, t && e.getState(), i)
+                        })
+                    }
+                }, {
+                    key: "getTreeState",
+                    value: function() {
+                        var e = {};
+                        return this._eachToggler(this._tree, !0, function(t, i) {
+                                e[t.getId()] = i
+                            }),
+                            e
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return this._bitFieldSerializer.convertStateToBitfield(this.getState())
+                    }
+                }, {
+                    key: "setStateFromBitfield",
+                    value: function(e) {
+                        var t = this._bitFieldSerializer.convertBitFieldToState(e);
+                        this.setState(t)
+                    }
+                }, {
+                    key: "readFromLocalStorage",
+                    value: function() {
+                        var e = b.default.localStorage.get(this._LOCAL_STORAGE_KEY);
+                        null != e && this.setStateFromBitfield(e)
+                    }
+                }, {
+                    key: "writeToLocalStorage",
+                    value: function() {
+                        b.default.localStorage.set(this._LOCAL_STORAGE_KEY, this.serialize())
+                    }
+                }], [{
+                    key: "create",
+                    value: function() {
+                        var t = y.default.LAYER_UNIQUE_NAMES,
+                            i = I.default,
+                            n = new e(M.default.of("ROOT", [M.default.of(i.GROUP_ISSUES, [M.default.of(i.GROUP_MAP_ISSUES, [w.default.of(i.ITEM_MAP_PROBLEMS, new A.default("problems", "ALL", "OPEN")), w.default.of(i.ITEM_CLOSED_MAP_PROBLEMS, new A.default("problems", "ALL", "CLOSED")), w.default.of(i.ITEM_UPDATE_REQUESTS, new A.default("mapUpdateRequests", "ALL", "OPEN")), w.default.of(i.ITEM_CLOSED_UPDATE_REQUESTS, new A.default("mapUpdateRequests", "ALL", "CLOSED"))]), w.default.of(i.ITEM_PLACE_UPDATE_REQUESTS, [new A.default("venues", "ALL", "UPDATE_REQUEST"), new T.default(t.PLACE_UPDATES)]), M.default.of(i.GROUP_PARKING_ISSUES, [w.default.of(i.ITEM_PARKING_MAP_PROBLEMS, new A.default("problems", "PARKING", "OPEN")), w.default.of(i.ITEM_PARKING_CLOSED_MAP_PROBLEMS, new A.default("problems", "PARKING", "CLOSED")), w.default.of(i.ITEM_PARKING_PLACE_UPDATE_REQUESTS, [new A.default("venues", "PARKING", "UPDATE_REQUEST"), new T.default("PARKING_PLACE_UPDATES")])])]), M.default.of(i.GROUP_PLACES, [w.default.of(i.ITEM_VENUES, new A.default("venues", "ALL", "SHOW")), w.default.of(i.ITEM_RESIDENTIAL_PLACES, new A.default("venues", "RESIDENTIAL", "SHOW")), w.default.of(i.ITEM_PARKING_PLACES, new A.default("venues", "PARKING", "SHOW"))]), M.default.of(i.GROUP_ROAD, [w.default.of(i.ITEM_ROAD, new T.default(t.ROADS)), w.default.of(i.ITEM_JUNCTION_BOXES, new T.default(t.BIG_JUNCTIONS)), w.default.of(i.ITEM_CLOSURES, new T.default(t.CLOSURES)), w.default.of(i.ITEM_SPEED_CAMERAS, new T.default(t.SPEED_CAMERAS))]), M.default.of(i.GROUP_DISPLAY, [w.default.of(i.ITEM_SATELLITE_IMAGERY, new T.default(t.SATELLITE_IMAGERY)), w.default.of(i.ITEM_AREA_MANAGERS, new T.default(t.AREA_MANAGERS)), w.default.of(i.ITEM_GPS_POINTS, new T.default(t.GPS_POINTS)), w.default.of(i.ITEM_EDITABLE_AREAS, new T.default(t.EDITABLE_AREAS)), w.default.of(i.ITEM_LIVE_USERS, new T.default(t.LIVE_USERS))])])),
+                            s = m.default.getLayerSwitcherConfig(),
+                            r = (0,
+                                o.default)({}, P);
+                        return s.forEach(function(e) {
+                                e.togglers.forEach(function(e) {
+                                        return n.append(e.parent, e.toggler)
+                                    }),
+                                    (0,
+                                        o.default)(r, e.defaultVisibility)
+                            }),
+                            n.setState(r),
+                            n
+                    }
+                }]),
+                e
+        }();
+    (0,
+        o.default)(k.prototype, Backbone.Events),
+    t.default = k,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s, r = i(2),
+        o = n(r),
+        a = i(91),
+        l = n(a),
+        u = i(10),
+        d = n(u),
+        c = i(11),
+        h = n(c),
+        p = i(16),
+        f = n(p),
+        g = i(21),
+        m = n(g),
+        v = i(131),
+        y = n(v),
+        _ = (s = {},
+            (0,
+                f.default)(s, y.default.GROUP_ISSUES, 0),
+            (0,
+                f.default)(s, y.default.GROUP_MAP_ISSUES, 1),
+            (0,
+                f.default)(s, y.default.ITEM_MAP_PROBLEMS, 2),
+            (0,
+                f.default)(s, y.default.ITEM_CLOSED_MAP_PROBLEMS, 3),
+            (0,
+                f.default)(s, y.default.ITEM_UPDATE_REQUESTS, 4),
+            (0,
+                f.default)(s, y.default.ITEM_CLOSED_UPDATE_REQUESTS, 5),
+            (0,
+                f.default)(s, y.default.ITEM_PLACE_UPDATE_REQUESTS, 6),
+            (0,
+                f.default)(s, y.default.GROUP_PARKING_ISSUES, 7),
+            (0,
+                f.default)(s, y.default.ITEM_PARKING_MAP_PROBLEMS, 8),
+            (0,
+                f.default)(s, y.default.ITEM_PARKING_CLOSED_MAP_PROBLEMS, 9),
+            (0,
+                f.default)(s, y.default.ITEM_PARKING_PLACE_UPDATE_REQUESTS, 10),
+            (0,
+                f.default)(s, y.default.GROUP_PLACES, 11),
+            (0,
+                f.default)(s, y.default.ITEM_VENUES, 12),
+            (0,
+                f.default)(s, y.default.ITEM_RESIDENTIAL_PLACES, 13),
+            (0,
+                f.default)(s, y.default.ITEM_PARKING_PLACES, 14),
+            (0,
+                f.default)(s, y.default.GROUP_ROAD, 15),
+            (0,
+                f.default)(s, y.default.ITEM_ROAD, 16),
+            (0,
+                f.default)(s, y.default.ITEM_JUNCTION_BOXES, 17),
+            (0,
+                f.default)(s, y.default.ITEM_CLOSURES, 18),
+            (0,
+                f.default)(s, y.default.ITEM_SPEED_CAMERAS, 19),
+            (0,
+                f.default)(s, y.default.GROUP_DISPLAY, 20),
+            (0,
+                f.default)(s, y.default.ITEM_SATELLITE_IMAGERY, 21),
+            (0,
+                f.default)(s, y.default.ITEM_AREA_MANAGERS, 22),
+            (0,
+                f.default)(s, y.default.ITEM_GPS_POINTS, 23),
+            (0,
+                f.default)(s, y.default.ITEM_LIVE_USERS, 24),
+            (0,
+                f.default)(s, y.default.ITEM_EDITABLE_AREAS, 25),
+            s),
+        b = function() {
+            function e() {
+                var t = this;
+                (0,
+                    d.default)(this, e),
+                this._togglerBitNumber = (0,
+                        l.default)({}, _),
+                    m.default.getLayerSwitcherConfig().forEach(function(e) {
+                        (0,
+                            l.default)(t._togglerBitNumber, e.bitNumbers)
+                    })
+            }
+            return (0,
+                    h.default)(e, [{
+                    key: "convertStateToBitfield",
+                    value: function(e) {
+                        var t = this;
+                        return (0,
+                            o.default)(e).reduce(function(i, n) {
+                            return e[n] && (i |= 1 << t._togglerBitNumber[n]),
+                                i
+                        }, 0)
+                    }
+                }, {
+                    key: "convertBitFieldToState",
+                    value: function(e) {
+                        var t = this;
+                        return (0,
+                            o.default)(this._togglerBitNumber).reduce(function(i, n) {
+                            return i[n] = 0 !== (e & 1 << t._togglerBitNumber[n]),
+                                i
+                        }, {})
+                    }
+                }]),
+                e
+        }();
+    t.default = b,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        o = i(73),
+        a = n(o),
+        l = i(10),
+        u = n(l),
+        d = i(11),
+        c = n(d),
+        h = i(93),
+        p = n(h),
+        f = i(92),
+        g = n(f),
+        m = i(125),
+        v = n(m),
+        y = function(e) {
+            function t() {
+                return (0,
+                        u.default)(this, t),
+                    (0,
+                        p.default)(this, (t.__proto__ || (0,
+                        a.default)(t)).apply(this, arguments))
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "ui",
+                    value: function() {
+                        return {
+                            content: ".content"
+                        }
+                    }
+                }, {
+                    key: "events",
+                    value: function() {
+                        return {
+                            "click .toolbar-button": "_toggleVisibility"
+                        }
+                    }
+                }, {
+                    key: "initialize",
+                    value: function(e) {
+                        this.state = e.state,
+                            this.treeState = e.treeState,
+                            this.moreOptionsState = new Backbone.Model({
+                                showMoreOptions: !1
+                            }),
+                            this.stateBindings = this._getStateBindings(),
+                            this.treeStateBindings = this._getTreeStateBindings(),
+                            this._windowResizeCallback = this._setViewHeight.bind(this),
+                            $(window).on("resize", this._windowResizeCallback)
+                    }
+                }, {
+                    key: "_toggleVisibility",
+                    value: function() {
+                        this.ui.content.toggleClass("not-visible")
+                    }
+                }, {
+                    key: "onDestroy",
+                    value: function() {
+                        $(window).off("resize", this._windowResizeCallback)
+                    }
+                }, {
+                    key: "_setViewHeight",
+                    value: function() {
+                        var e = $(".WazeMapFooter").offset().top - this.ui.content.offset().top;
+                        this.ui.content.outerHeight(e)
+                    }
+                }, {
+                    key: "_getTreeStateBindings",
+                    value: function() {
+                        return (0,
+                            r.default)(this.treeState.attributes).reduce(function(e, t) {
+                            return e[".toggler .layer-switcher-" + t.toLowerCase()] = {
+                                    attributes: [{
+                                        name: "disabled",
+                                        observe: t,
+                                        onGet: function(e) {
+                                            return !e
+                                        }
+                                    }]
+                                },
+                                e
+                        }, {})
+                    }
+                }, {
+                    key: "_getStateBindings",
+                    value: function() {
+                        return (0,
+                            r.default)(this.state.attributes).reduce(function(e, t) {
+                            return e[".layer-switcher-" + t.toLowerCase()] = t,
+                                e
+                        }, {})
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this.stickit(this.state, this.stateBindings),
+                            this.stickit(this.treeState, this.treeStateBindings),
+                            this.stickit(this.moreOptionsState, this.moreOptionsBindings)
+                    }
+                }, {
+                    key: "onAttach",
+                    value: function() {
+                        this._setViewHeight()
+                    }
+                }, {
+                    key: "template",
+                    get: function() {
+                        return "Waze/Modules/LayerSwitcher/templates/layer-switcher"
+                    }
+                }, {
+                    key: "className",
+                    get: function() {
+                        return "layer-switcher"
+                    }
+                }, {
+                    key: "behaviors",
+                    get: function() {
+                        return {
+                            accelerators: {
+                                behaviorClass: v.default
+                            }
+                        }
+                    }
+                }, {
+                    key: "accelerators",
+                    get: function() {
+                        return {
+                            displayLayerSwitcher: "_toggleVisibility"
+                        }
+                    }
+                }, {
+                    key: "moreOptionsBindings",
+                    get: function() {
+                        return {
+                            ".extended": {
+                                observe: "showMoreOptions",
+                                visible: !0
+                            },
+                            ".more-options-toggle .title": {
+                                observe: "showMoreOptions",
+                                onGet: function(e) {
+                                    return e ? I18n.t("layer_switcher.more_options.hide") : I18n.t("layer_switcher.more_options.show")
+                                }
+                            },
+                            ".more-options-toggle input": "showMoreOptions"
+                        }
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = y,
+        e.exports = t.default
 }, function(e, t) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -28670,7 +29142,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(520),
+    var s = i(528),
         r = n(s),
         o = i(41),
         a = n(o),
@@ -28729,21 +29201,21 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(534),
+    var s = i(542),
         r = n(s),
-        o = i(99),
+        o = i(104),
         a = n(o),
-        l = i(12),
+        l = i(14),
         u = n(l),
-        d = i(527),
+        d = i(535),
         c = n(d),
-        h = i(535),
+        h = i(543),
         p = n(h),
-        f = i(125),
+        f = i(132),
         g = n(f),
-        m = i(213),
+        m = i(220),
         v = n(m),
-        y = i(214),
+        y = i(221),
         _ = n(y),
         b = Marionette.Object.extend({
             initialize: function(e) {
@@ -28884,17 +29356,17 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(78),
+    var s = i(80),
         r = n(s),
-        o = i(12),
+        o = i(14),
         a = n(o),
-        l = i(525),
+        l = i(533),
         u = n(l),
-        d = i(537),
+        d = i(545),
         c = n(d),
-        h = i(539),
+        h = i(547),
         p = n(h),
-        f = i(523),
+        f = i(531),
         g = n(f),
         m = Backbone.Model.extend({
             defaults: {
@@ -28918,7 +29390,8 @@ webpackJsonp([1], [function(e, t, i) {
                         map: this.map,
                         editingMediator: W.editingMediator,
                         actionManager: this.dataModel.actionManager,
-                        mteModeState: this.mteModeState
+                        mteModeState: this.mteModeState,
+                        togglerTree: W.togglerTree
                     }),
                     this.topbarLayout = new p.default({
                         map: this.map,
@@ -28995,79 +29468,44 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(8),
-        o = n(r),
-        a = i(2),
-        l = n(a),
-        u = i(16),
-        d = n(u),
-        c = i(215),
-        h = n(c),
-        p = i(82),
-        f = n(p),
-        g = i(219),
-        m = n(g),
-        v = i(538),
-        y = n(v),
-        _ = i(216),
-        b = n(_),
-        w = Marionette.Object.extend({
-            visibilityMapping: (s = {},
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.CLOSURES, !0),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.GPS_POINTS, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.BIG_JUNCTIONS, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.SPEED_CAMERAS, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.PROBLEMS, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.UPDATE_REQUESTS, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.PLACE_UPDATES, !1),
-                (0,
-                    d.default)(s, f.default.LAYER_UNIQUE_NAMES.LIVE_USERS, !1),
-                s),
-            layerVisibilityOnEnter: null,
+    var s = i(216),
+        r = n(s),
+        o = i(224),
+        a = n(o),
+        l = i(546),
+        u = n(l),
+        d = i(222),
+        c = n(d),
+        h = Marionette.Object.extend({
             initialize: function(e) {
-                var t = this;
                 return this.app = e.app,
                     this.map = e.map,
                     this.editingMediator = e.editingMediator,
                     this.actionManager = e.actionManager,
                     this.mteModeState = e.mteModeState,
-                    this._setLayersVisibility(),
-                    this.searchView = new m.default({
+                    this.searchView = new a.default({
                         map: this.map
                     }),
-                    this.layerSwitcherController = new h.default({
+                    this.layerSwitcherController = new r.default({
                         map: this.map,
                         actionManager: this.actionManager,
-                        layerAttributes: function(e) {
-                            return {
-                                disabled: (0,
-                                    l.default)(t.visibilityMapping).indexOf(e.uniqueName) > -1
-                            }
-                        }
+                        togglerTree: e.togglerTree
                     }),
-                    this.toolbarButtons = new y.default({
+                    this.toolbarButtons = new u.default({
                         mteModeState: this.mteModeState
                     }),
                     this.toolbarButtons.on("saveClicked", this._onSaveClicked, this),
                     this.toolbarButtons.on("addClicked", this._onAddClicked, this),
                     this.toolbarButtons.on("deleteClicked", this._onDeleteClicked, this),
                     this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this),
-                    this.toolbarLayout = new b.default({
+                    this.toolbarLayout = new c.default({
                         model: this.app,
                         className: "toolbar toolbar-mte"
                     }),
                     this.listenTo(this.toolbarLayout, "render", this._onRender)
             },
             destroy: function() {
-                return this._restoreLayersVisibility(),
-                    this.toolbarLayout.destroy(),
+                return this.toolbarLayout.destroy(),
                     this.layerSwitcherController.destroy(),
                     this.editingMediator.off("change:editingEnabled", this._onEditingEnabledChanged, this)
             },
@@ -29085,59 +29523,9 @@ webpackJsonp([1], [function(e, t, i) {
             _onDeleteClicked: function() {
                 return this.trigger("deleteClicked")
             },
-            _onEditingEnabledChanged: function() {},
-            _setLayersVisibility: function() {
-                this.layerVisibilityOnEnter = {};
-                var e = !0,
-                    t = !1,
-                    i = void 0;
-                try {
-                    for (var n, s = (0,
-                            o.default)((0,
-                            l.default)(this.visibilityMapping)); !(e = (n = s.next()).done); e = !0) {
-                        var r = n.value,
-                            a = this.visibilityMapping[r];
-                        this.layerVisibilityOnEnter[r] = this.map.getLayerVisibility(r),
-                            this.map.setLayerVisibility(r, a)
-                    }
-                } catch (e) {
-                    t = !0,
-                        i = e
-                } finally {
-                    try {
-                        !e && s.return && s.return()
-                    } finally {
-                        if (t)
-                            throw i
-                    }
-                }
-            },
-            _restoreLayersVisibility: function() {
-                var e = !0,
-                    t = !1,
-                    i = void 0;
-                try {
-                    for (var n, s = (0,
-                            o.default)((0,
-                            l.default)(this.layerVisibilityOnEnter)); !(e = (n = s.next()).done); e = !0) {
-                        var r = n.value,
-                            a = this.layerVisibilityOnEnter[r];
-                        this.map.setLayerVisibility(r, a)
-                    }
-                } catch (e) {
-                    t = !0,
-                        i = e
-                } finally {
-                    try {
-                        !e && s.return && s.return()
-                    } finally {
-                        if (t)
-                            throw i
-                    }
-                }
-            }
+            _onEditingEnabledChanged: function() {}
         });
-    t.default = w,
+    t.default = h,
         e.exports = t.default
 }, function(e, t) {
     "use strict";
@@ -29162,7 +29550,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(526),
+    var s = i(534),
         r = n(s),
         o = Backbone.Collection.extend({
             model: r.default,
@@ -29229,11 +29617,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
-        o = i(529),
+        o = i(537),
         a = n(o),
-        l = i(13),
+        l = i(15),
         u = n(l),
         d = Marionette.CompositeView.extend({
             template: "Waze/Modules/MTE/templates/contributors/list",
@@ -29410,24 +29798,24 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(196),
+        l = i(202),
         u = n(l),
-        d = i(200),
+        d = i(206),
         c = n(d),
-        h = i(201),
+        h = i(207),
         p = n(h),
-        f = i(79),
+        f = i(81),
         g = n(f),
-        m = i(230),
+        m = i(235),
         v = n(m),
-        y = i(528),
+        y = i(536),
         b = n(y),
-        w = Marionette.View.extend({
+        E = Marionette.View.extend({
             template: function() {
                 return I18n.t("mte.edit.closures.empty")
             }
         }),
-        E = Marionette.View.extend({
+        w = Marionette.View.extend({
             template: "Waze/Modules/MTE/templates/item_edit/closures",
             regions: {
                 closuresRegion: ".closures"
@@ -29452,7 +29840,7 @@ webpackJsonp([1], [function(e, t, i) {
                             editViewConfig: c.default.MTE
                         }),
                         this._drawClosures(),
-                        this._toggleMarkers(!1)) : this.closuresView = new w
+                        this._toggleMarkers(!1)) : this.closuresView = new E
             },
             onRender: function() {
                 this.showChildView("closuresRegion", this.closuresView)
@@ -29502,7 +29890,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this._toggleMarkers(!0)
             }
         });
-    t.default = E,
+    t.default = w,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -29702,9 +30090,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
-        o = i(536),
+        o = i(544),
         a = n(o),
         l = {
             THIS_WEEK: {
@@ -29838,32 +30226,32 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(22),
+        l = i(24),
         u = n(l),
-        d = i(121),
+        d = i(126),
         c = n(d),
         h = i(40),
         p = n(h),
-        f = i(86),
+        f = i(87),
         g = n(f),
-        m = i(522),
+        m = i(530),
         v = n(m),
-        y = i(125),
+        y = i(132),
         b = n(y),
-        w = i(521),
-        E = n(w),
-        S = i(533),
-        C = n(S),
-        M = i(9),
-        A = n(M),
-        L = i(13),
-        O = n(L),
-        D = i(531),
-        T = n(D),
-        I = i(530),
-        x = n(I),
-        k = i(532),
-        N = n(k),
+        E = i(529),
+        w = n(E),
+        S = i(541),
+        M = n(S),
+        C = i(9),
+        A = n(C),
+        L = i(15),
+        T = n(L),
+        O = i(539),
+        I = n(O),
+        D = i(538),
+        x = n(D),
+        P = i(540),
+        k = n(P),
         R = Marionette.View.extend({
             className: "mte-edit-view",
             template: "Waze/Modules/MTE/templates/mte_edit_view",
@@ -30069,7 +30457,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             onRender: function() {
                 var e = this;
-                this.namesView = new C.default({
+                this.namesView = new M.default({
                         model: this.model,
                         editable: this.model.arePropertiesEditable()
                     }),
@@ -30123,7 +30511,7 @@ webpackJsonp([1], [function(e, t, i) {
             _isMTEValid: function() {
                 var e = this.ui.attributesForm.get(0).checkValidity();
                 return null != this.validator && this.unstickit(this.validator, this.validationErrorsBindings),
-                    this.validator = E.default.validate(this.model),
+                    this.validator = w.default.validate(this.model),
                     this.stickit(this.validator, this.validationErrorsBindings),
                     this.validator.isValid() && e
             },
@@ -30143,12 +30531,12 @@ webpackJsonp([1], [function(e, t, i) {
                     return this.trigger("backButtonClicked")
             },
             _loadMTEDetails: function(e, t, i) {
-                return e.show(new T.default({
+                return e.show(new I.default({
                         loading: !0,
                         loadingMessage: t
                     })),
                     this.api.getMTEDetails(this.model.get("id")).fail(function() {
-                        return e.show(new T.default({
+                        return e.show(new I.default({
                             error: !0,
                             errorMessage: i
                         }))
@@ -30157,7 +30545,7 @@ webpackJsonp([1], [function(e, t, i) {
             _onClosuresTabClick: function() {
                 var e = this;
                 return this._loadMTEDetails(this.getRegion("closuresRegion"), I18n.t("mte.edit.closures.loading"), I18n.t("mte.edit.closures.error")).done(function(t) {
-                    return e.showChildView("closuresRegion", new N.default({
+                    return e.showChildView("closuresRegion", new k.default({
                         map: e.options.map,
                         model: e.model,
                         mteModeState: e.mteModeState,
@@ -30193,7 +30581,7 @@ webpackJsonp([1], [function(e, t, i) {
                             })
                         }).fail(function(e) {
                             var t = e.errorList ? e.errorList.code : void 0;
-                            alert(O.default.getSaveErrorTitle(t, "mte.edit.submit_failed"))
+                            alert(T.default.getSaveErrorTitle(t, "mte.edit.submit_failed"))
                         })
             },
             _onPublishClicked: function() {
@@ -30207,7 +30595,7 @@ webpackJsonp([1], [function(e, t, i) {
                         })
                     }).fail(function(e) {
                         var t = e.errorList ? e.errorList.code : void 0;
-                        alert(O.default.getSaveErrorTitle(t, "mte.edit.publish_failed"))
+                        alert(T.default.getSaveErrorTitle(t, "mte.edit.publish_failed"))
                     })
             },
             _onFormSubmitted: function(e) {
@@ -30227,7 +30615,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(15),
         r = n(s),
         o = Marionette.View.extend({
             tagName: "li",
@@ -30293,7 +30681,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(22),
+    var s = i(24),
         r = n(s),
         o = function(e) {
             return [{
@@ -30370,9 +30758,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(222),
+    var s = i(227),
         r = n(s),
-        o = i(223),
+        o = i(228),
         a = n(o),
         l = Marionette.View.extend({
             template: "Waze/Modules/MTE/templates/topbar",
@@ -30403,9 +30791,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(229),
+    var s = i(234),
         r = n(s),
-        o = i(10),
+        o = i(12),
         a = n(o),
         l = Marionette.View.extend({
             granularity: 10,
@@ -30490,37 +30878,30 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(2),
+    var s = i(80),
         r = n(s),
-        o = i(8),
+        o = i(234),
         a = n(o),
-        l = i(78),
-        u = n(l),
-        d = i(229),
-        c = n(d),
-        h = Backbone.Model.extend({
+        l = Backbone.Model.extend({
             defaults: function() {
                 return {
                     env: null,
                     lon: null,
                     lat: null,
-                    layers: null,
                     zoom: null,
                     marker: !1,
                     appState: {},
                     selection: {},
-                    filters: {}
+                    s: 0
                 }
             },
-            hrefAttributes: ["env", "lon", "lat", "layers", "zoom", "marker"],
+            hrefAttributes: ["env", "lon", "lat", "s", "zoom", "marker"],
             initialize: function(e) {
                 return this.app = e.app,
                     this.mapState = e.mapState,
                     this.location = e.location,
-                    this.repositoryFilters = e.repositoryFilters,
                     this._bindEvents(),
                     this._setAppState(),
-                    this._setFilters(),
                     this._setLocation(),
                     this
             },
@@ -30528,9 +30909,8 @@ webpackJsonp([1], [function(e, t, i) {
                 return this._unbindEvents()
             },
             _bindEvents: function() {
-                return this.listenTo(this.app, "change:mode", this._setAppState),
-                    this.listenTo(this.app, u.default.STATE_CHANGED, this._setAppState),
-                    this.listenTo(this.repositoryFilters, "change", this._setFilters),
+                this.listenTo(this.app, "change:mode", this._setAppState),
+                    this.listenTo(this.app, r.default.STATE_CHANGED, this._setAppState),
                     this.location.events.register("change", this, this._setLocation),
                     this.mapState.on("statechanged", this._setMapState, this)
             },
@@ -30539,49 +30919,21 @@ webpackJsonp([1], [function(e, t, i) {
                     this.mapState.off("statechanged", this._setMapState, this)
             },
             _setAppState: function() {
-                return this.set({
+                this.set({
                     appState: this.app.getState()
                 })
             },
             _setLocation: function() {
-                return this.set({
+                this.set({
                     env: this.location.code
-                })
-            },
-            _setFilters: function() {
-                var e = {},
-                    t = !0,
-                    i = !1,
-                    n = void 0;
-                try {
-                    for (var s, o = (0,
-                            a.default)((0,
-                            r.default)(this.repositoryFilters.attributes)); !(t = (s = o.next()).done); t = !0) {
-                        var l = s.value,
-                            u = this.repositoryFilters.attributes[l];
-                        e["" + l + W.Config.permalink.filterSuffix] = u
-                    }
-                } catch (e) {
-                    i = !0,
-                        n = e
-                } finally {
-                    try {
-                        !t && o.return && o.return()
-                    } finally {
-                        if (i)
-                            throw n
-                    }
-                }
-                return this.set({
-                    filters: e
                 })
             },
             _setMapState: function(e) {
                 return this.set({
                     lon: e.center.lon.toFixed(W.Config.units.lonLatPrecision),
                     lat: e.center.lat.toFixed(W.Config.units.lonLatPrecision),
+                    s: e.s,
                     zoom: e.center.zoom,
-                    layers: e.layers,
                     marker: !!e.marker || void 0,
                     selection: e.selection
                 })
@@ -30589,13 +30941,12 @@ webpackJsonp([1], [function(e, t, i) {
             getHref: function() {
                 var e = _.pick(this.attributes, this.hrefAttributes);
                 _.extend(e, this.get("appState")),
-                    _.extend(e, this.get("filters")),
                     _.extend(e, this.get("selection"));
                 var t = OL.Util.getParameterString(e);
                 return "" + window.location.origin + window.location.pathname + "?" + t
             }
         }),
-        p = Marionette.View.extend({
+        u = Marionette.View.extend({
             template: "Waze/Modules/MapControls/templates/permalink",
             mapState: null,
             marker: null,
@@ -30612,14 +30963,13 @@ webpackJsonp([1], [function(e, t, i) {
                 return Marionette.View.prototype.initialize.apply(this, arguments),
                     this.mapState = e.mapState,
                     this.mapState.on("statechanged", this._setLivemapLink, this),
-                    this.permalinkModel = new h({
+                    this.permalinkModel = new l({
                         app: e.app,
                         mapState: e.mapState,
-                        location: e.location,
-                        repositoryFilters: e.repositoryFilters
+                        location: e.location
                     }),
                     this.listenTo(this.permalinkModel, "change", this._setPermalinkLink),
-                    this.clipboard = new c.default,
+                    this.clipboard = new a.default,
                     this.clipboard.events.on({
                         copied: this._onClipboardCopied,
                         scope: this
@@ -30658,7 +31008,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.clipboard.setEl(this.ui.permalink)
             }
         });
-    t.default = p,
+    t.default = u,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -30671,9 +31021,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(69),
+    var s = i(70),
         r = n(s),
-        o = i(553),
+        o = i(561),
         a = n(o),
         l = r.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -30715,9 +31065,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(554),
+    var s = i(562),
         r = n(s),
-        o = i(69),
+        o = i(70),
         a = n(o),
         l = a.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -30743,21 +31093,21 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s, r = i(16),
         o = n(r),
-        a = i(69),
+        a = i(70),
         l = n(a),
-        u = i(543),
+        u = i(551),
         d = n(u),
-        c = i(546),
+        c = i(554),
         h = n(c),
-        p = i(542),
+        p = i(550),
         f = n(p),
-        g = i(547),
+        g = i(555),
         m = n(g),
         v = i(3),
         y = n(v),
         _ = i(52).prototype.TYPE,
         b = {},
-        w = (s = {},
+        E = (s = {},
             (0,
                 o.default)(s, _.DISCONNECTION, l.default),
             (0,
@@ -30769,7 +31119,7 @@ webpackJsonp([1], [function(e, t, i) {
             s);
     b.createAdapter = function(e) {
             var t = void 0;
-            return new(t = e.type === y.default.UPDATE_REQUEST ? m.default : w[e.attributes.problemType])(e)
+            return new(t = e.type === y.default.UPDATE_REQUEST ? m.default : E[e.attributes.problemType])(e)
         },
         t.default = b,
         e.exports = t.default
@@ -30797,9 +31147,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(558),
+    var s = i(566),
         r = n(s),
-        o = i(69),
+        o = i(70),
         a = n(o),
         l = a.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -30823,13 +31173,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(211),
+    var s = i(218),
         r = n(s),
         o = i(9),
         a = (n(o),
-            i(559)),
+            i(567)),
         l = n(a),
-        u = i(69),
+        u = i(70),
         d = n(u),
         c = d.default.extend({
             MORE_INFO_DEFAULTS: [{
@@ -30911,11 +31261,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(107),
+    var s = i(112),
         r = n(s),
-        o = i(551),
+        o = i(559),
         a = n(o),
-        l = i(549),
+        l = i(557),
         u = n(l),
         d = OL.Class({
             editController: null,
@@ -30994,15 +31344,15 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(552),
+    var s = i(560),
         r = n(s),
-        o = i(544),
+        o = i(552),
         a = n(o),
-        l = i(556),
+        l = i(564),
         u = n(l),
-        d = i(12),
+        d = i(14),
         c = n(d),
-        h = i(550),
+        h = i(558),
         p = n(h),
         f = Marionette.Object.extend({
             initialize: function() {
@@ -31101,9 +31451,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(19),
+    var s = i(10),
         r = n(s),
-        o = i(20),
+        o = i(11),
         a = n(o),
         l = function() {
             function e(t) {
@@ -31157,9 +31507,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(202),
+    var s = i(208),
         r = n(s),
-        o = i(13),
+        o = i(15),
         a = n(o),
         l = Marionette.View.extend({
             maxHeight: null,
@@ -31368,17 +31718,16 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(116),
+    var s = i(121),
         r = n(s),
         o = i(37),
         a = n(o),
-        l = i(130),
+        l = i(136),
         u = n(l),
         d = OL.Class(OL.Layer.Vector, {
             rendererOptions: {
                 zIndexing: !0
             },
-            displayInLayerSwitcher: !1,
             renderers: [a.default],
             styleMap: u.default,
             initialize: function() {
@@ -31399,7 +31748,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(555),
+    var s = i(563),
         r = n(s),
         o = Marionette.Object.extend({
             layer: null,
@@ -31616,9 +31965,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(214),
+    var s = i(221),
         r = n(s),
-        o = i(213),
+        o = i(220),
         a = n(o),
         l = Marionette.Object.extend({
             initialize: function(e) {
@@ -31668,7 +32017,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(212),
+    var s = i(219),
         r = n(s),
         o = Backbone.Collection.extend({
             model: r.default,
@@ -31725,7 +32074,6 @@ webpackJsonp([1], [function(e, t, i) {
             _ensureLayer: function() {
                 if (null == this.layer)
                     return this.layer = new OL.Layer.Vector("spotlight", {
-                            displayInLayerSwitcher: !1,
                             renderers: [r.default]
                         }),
                         this.map.addLayer(this.layer)
@@ -31734,7 +32082,7 @@ webpackJsonp([1], [function(e, t, i) {
                 this._ensureLayer();
                 var e = this.map.getExtent().scale(2).toGeometry(),
                     t = new OL.Feature.Vector(e, null, a);
-                return this.layer.addFeatures(t)
+                return this.layer.addFeatures(t);
             },
             drawAndFocusSpotlightAtPoint: function(e) {
                 this._isSpotlightInBounds(e) || this.map.setCenter(new OL.LonLat(e.x, e.y)),
@@ -31777,7 +32125,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(212),
+    var s = i(219),
         r = n(s),
         o = Marionette.View.extend({
             template: "Waze/Modules/Save/templates/error_item",
@@ -31824,7 +32172,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(563),
+    var s = i(571),
         r = n(s),
         o = Marionette.CompositeView.extend({
             childView: r.default,
@@ -31873,7 +32221,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(15),
         r = n(s),
         o = Marionette.View.extend({
             CLOSE_TIMEOUT_MILLIS: 2e3,
@@ -31921,11 +32269,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(568),
+    var s = i(576),
         r = n(s),
-        o = i(571),
+        o = i(579),
         a = n(o),
-        l = i(570),
+        l = i(578),
         u = n(l),
         d = Marionette.Object.extend({
             initialize: function(e) {
@@ -31961,7 +32309,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(10),
+    var s = i(12),
         r = n(s),
         o = OL.Class({
             DEFAULT_HEADING: 0,
@@ -32055,9 +32403,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(14),
+    var s = i(17),
         r = n(s),
-        o = i(81),
+        o = i(83),
         a = n(o),
         l = OL.Class(OL.Marker, {
             DRAG_POINT_RADIUS: 7,
@@ -32149,11 +32497,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
-        o = i(5),
+        o = i(7),
         a = (n(o),
-            i(569)),
+            i(577)),
         l = n(a),
         u = OL.Class(r.default, {
             DRAG_THROTTLE_MILLIS: 200,
@@ -32201,9 +32549,7 @@ webpackJsonp([1], [function(e, t, i) {
                         if (this.svActive)
                             return this.el.toggle(!e)
                     }),
-                    this.markerLayer = new OL.Layer.Markers("streetViewPin", {
-                        displayInLayerSwitcher: !1
-                    }),
+                    this.markerLayer = new OL.Layer.Markers("streetViewPin"),
                     this.map.addLayer(this.markerLayer),
                     this.pin = new l.default(this.map.getCenter() || new OL.LonLat(0, 0), this.map),
                     this.pin.toggleVisibility(!1),
@@ -32328,9 +32674,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(10),
+    var s = i(12),
         r = n(s),
-        o = i(567),
+        o = i(575),
         a = n(o),
         l = Backbone.Model.extend({
             defaults: function() {
@@ -32386,19 +32732,6 @@ webpackJsonp([1], [function(e, t, i) {
         });
     t.default = l,
         e.exports = t.default
-}, function(e, t) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var i = Marionette.View.extend({
-        template: "Waze/Modules/Toolbar/templates/layer-switcher",
-        regions: {
-            layersList: "#layer-switcher-list"
-        }
-    });
-    t.default = i,
-        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -32415,7 +32748,7 @@ webpackJsonp([1], [function(e, t, i) {
             secondaryControl: null
         },
         initialize: function() {
-            var e = i(217),
+            var e = i(223),
                 t = this.get("children");
             if (null != t)
                 return this.children = new e(t),
@@ -32446,49 +32779,52 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(412),
+    var r = i(416),
         o = s(r),
-        a = i(409),
+        a = i(413),
         l = s(a),
-        u = i(410),
+        u = i(412),
         d = s(u),
-        c = i(395),
+        c = i(414),
         h = s(c),
-        p = i(151),
+        p = i(398),
         f = s(p),
-        g = i(149),
+        g = i(156),
         m = s(g),
-        v = i(396),
+        v = i(154),
         y = s(v),
-        b = i(397),
-        w = s(b),
-        E = i(153),
-        S = s(E),
-        C = i(40),
-        M = s(C),
-        A = i(50),
+        b = i(399),
+        E = s(b),
+        w = i(400),
+        S = s(w),
+        M = i(158),
+        C = s(M),
+        A = i(40),
         L = s(A),
-        O = i(122),
-        D = n(O),
-        T = i(114),
-        I = s(T),
-        x = i(109),
-        k = s(x),
+        T = i(50),
+        O = s(T),
+        I = i(127),
+        D = n(I),
+        x = i(119),
+        P = s(x),
+        k = i(114),
+        R = s(k),
         N = i(49),
-        R = s(N),
-        P = i(24),
-        V = s(P),
-        z = i(82),
-        F = s(z),
-        j = i(217),
-        U = s(j),
-        B = OL.Class({
+        V = s(N),
+        z = i(21),
+        U = s(z),
+        j = i(67),
+        F = s(j),
+        G = i(223),
+        B = s(G),
+        $ = OL.Class({
             initialize: function(e) {
                 var t = this;
                 this.actionManager = e.actionManager,
                     this.map = e.map,
                     this.selectionManager = e.selectionManager,
                     this.dataModel = e.dataModel,
+                    this.controller = e.controller,
                     this.loginManager = e.loginManager,
                     this.editingMediator = e.editingMediator,
                     this.app = e.app,
@@ -32497,9 +32833,9 @@ webpackJsonp([1], [function(e, t, i) {
                     })
             },
             getToolbarButtons: function(e) {
-                var t = V.default.getMenus().map(this.createMenu.bind(this)),
+                var t = U.default.getMenus().map(this.createMenu.bind(this)),
                     i = [].concat(t, this._generateVenueMenu(), this._generateDrawingControls(), this._generateEditingControls().reverse());
-                return new U.default(i)
+                return new B.default(i)
             },
             _enableControlsByRank: function(e) {
                 W.Config.big_junctions.enable && this.drawBigJunction.control.setEnabled(null != e && this.loginManager.canEditBigJunctions())
@@ -32507,12 +32843,12 @@ webpackJsonp([1], [function(e, t, i) {
             _generateEditingControls: function() {
                 return [{
                     title: I18n.t("toolbar.delete"),
-                    control: new h.default(this.dataModel, {
+                    control: new f.default(this.dataModel, {
                         displayClass: "waze-icon-trash"
                     })
                 }, {
                     title: I18n.t("toolbar.redo"),
-                    control: new l.default(this.actionManager, {
+                    control: new d.default(this.actionManager, {
                         displayClass: "waze-icon-redo"
                     })
                 }, {
@@ -32522,9 +32858,14 @@ webpackJsonp([1], [function(e, t, i) {
                     })
                 }, {
                     title: I18n.t("toolbar.save.title"),
-                    control: new d.default(this.actionManager, {
+                    control: new h.default(this.actionManager, {
                         editingMediator: this.editingMediator,
                         displayClass: "waze-icon-save"
+                    })
+                }, {
+                    title: I18n.t("toolbar.reload"),
+                    control: new l.default(this.actionManager, this.map.roadLayers, this.controller, {
+                        displayClass: "waze-icon-reload"
                     })
                 }]
             },
@@ -32532,11 +32873,11 @@ webpackJsonp([1], [function(e, t, i) {
                 var e = this,
                     t = [{
                         title: I18n.t("drawing.road"),
-                        control: new y.default(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
+                        control: new E.default(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
                             accelerator: "drawSegment",
                             enableSnapping: !0,
                             featureAdded: function(t, i, n) {
-                                e.actionManager.add(new R.default(t, {
+                                e.actionManager.add(new V.default(t, {
                                         createNodes: !0,
                                         openAllTurns: W.prefs.get("enableTurnsByDefault"),
                                         createTwoWay: W.prefs.get("twoWaySegmentsByDefault"),
@@ -32549,9 +32890,9 @@ webpackJsonp([1], [function(e, t, i) {
                         })
                     }, {
                         title: I18n.t("drawing.roundabout"),
-                        control: new w.default({
+                        control: new S.default({
                             onRoundaboutAdded: function(t) {
-                                var i = new S.default(t);
+                                var i = new C.default(t);
                                 e.actionManager.add(i),
                                     _.defer(function() {
                                         e.selectionManager.select(i.roundaboutSegments)
@@ -32560,13 +32901,13 @@ webpackJsonp([1], [function(e, t, i) {
                         })
                     }, {
                         title: I18n.t("drawing.camera"),
-                        control: new y.default(this.map.sketchLayer, this.map.camerasLayer, OL.Handler.Point, {
+                        control: new E.default(this.map.sketchLayer, this.map.camerasLayer, OL.Handler.Point, {
                             enableSnapping: !0,
                             featureAdded: function(t) {
-                                var i = new I.default({
+                                var i = new P.default({
                                     geometry: t.geometry
                                 });
-                                e.actionManager.add(new M.default(i, e.dataModel.cameras)),
+                                e.actionManager.add(new L.default(i, e.dataModel.cameras)),
                                     _.defer(function() {
                                         e.selectionManager.select([i])
                                     })
@@ -32575,13 +32916,13 @@ webpackJsonp([1], [function(e, t, i) {
                     }];
                 return W.Config.big_junctions.enable && (this.drawBigJunction = {
                         title: I18n.t("drawing.big_junction"),
-                        control: new y.default(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
+                        control: new E.default(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
                             accelerator: "drawBigJunction",
                             featureAdded: function(t) {
-                                var i = new k.default({
+                                var i = new R.default({
                                     geometry: t.geometry
                                 });
-                                e.actionManager.add(new m.default(i)),
+                                e.actionManager.add(new y.default(i)),
                                     _.defer(function() {
                                         e.selectionManager.select([i])
                                     })
@@ -32604,11 +32945,11 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _generateVenueMenuItem: function(e) {
                 var t = function(t, i) {
-                        var n = new L.default({
+                        var n = new O.default({
                             geometry: t,
                             categories: [e]
                         });
-                        return i.actionManager.add(new f.default(n)),
+                        return i.actionManager.add(new m.default(n)),
                             n
                     },
                     i = {
@@ -32655,14 +32996,14 @@ webpackJsonp([1], [function(e, t, i) {
             createDrawControl: function(e, t, i, n) {
                 var s = void 0;
                 return s = "point" === e ? OL.Handler.Point : OL.Handler.Polygon,
-                    new y.default(this.map.sketchLayer, t, s, {
+                    new E.default(this.map.sketchLayer, t, s, {
                         enableSnapping: n,
                         featureAdded: i,
                         drawingType: e
                     })
             }
         });
-    t.default = B,
+    t.default = $,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -32675,19 +33016,20 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(216),
+    var s = i(222),
         r = n(s),
-        o = i(219),
+        o = i(224),
         a = n(o),
-        l = i(215),
+        l = i(216),
         u = n(l),
-        d = i(578),
+        d = i(583),
         c = n(d),
-        h = i(574),
+        h = i(581),
         p = n(h),
         f = Marionette.Object.extend({
             initialize: function(e) {
                 this.map = e.map,
+                    this.controller = e.controller,
                     this.editingMediator = e.mediator,
                     this.actionManager = e.actionManager,
                     this.selectionManager = e.selectionManager,
@@ -32700,7 +33042,9 @@ webpackJsonp([1], [function(e, t, i) {
                     this.listenTo(this.toolbarLayout, "render", this._onRender),
                     this.layerSwitcherController = new u.default({
                         map: this.map,
-                        actionManager: this.actionManager
+                        actionManager: this.actionManager,
+                        togglerTree: e.togglerTree,
+                        controller: this.controller
                     }),
                     this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this)
             },
@@ -32716,6 +33060,7 @@ webpackJsonp([1], [function(e, t, i) {
             _initEditingToolbar: function() {
                 var e = new p.default({
                     actionManager: this.actionManager,
+                    controller: this.controller,
                     map: this.map,
                     app: this.app,
                     selectionManager: this.selectionManager,
@@ -32757,208 +33102,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(5),
-        r = (n(s),
-            i(126)),
-        o = n(r),
-        a = i(218),
-        l = n(a),
-        u = i(577),
-        d = n(u),
-        c = i(24),
-        h = n(c),
-        p = {
-            problems: {
-                viewClass: l.default,
-                options: {
-                    filterName: "CLOSED",
-                    translations: I18n.t("layer_switcher.filters.closed_problems")
-                }
-            },
-            update_requests: {
-                viewClass: l.default,
-                options: {
-                    filterName: "CLOSED",
-                    translations: I18n.t("layer_switcher.filters.closed_problems")
-                }
-            },
-            landmarks: {
-                viewClass: d.default
-            }
-        },
-        f = Marionette.CompositeView.extend({
-            template: "Waze/Modules/Toolbar/templates/layer-switcher-list",
-            childViewContainer: ".togglers",
-            childView: function(e) {
-                var t = e.get("layer");
-                return this.specificViews[t.uniqueName] ? this.specificViews[t.uniqueName].viewClass : o.default
-            },
-            childViewOptions: function(e) {
-                var t = e.get("layer");
-                return this.specificViews[t.uniqueName] ? this.specificViews[t.uniqueName].options : {}
-            },
-            className: "layer-switcher",
-            ui: {
-                togglers: ".togglers",
-                reloadButton: ".reload-button",
-                dropdown: ".dropdown",
-                dropdownMenu: ".dropdown-menu"
-            },
-            events: {
-                "click @ui.reloadButton": "_onReloadClick"
-            },
-            initialize: function(e) {
-                this.map = e.map,
-                    this.actionManager = e.actionManager,
-                    this.specificViews = _.clone(p);
-                for (var t = h.default.getLayers(), i = 0; i < t.length; i++) {
-                    var n = t[i];
-                    n.layerSwitcherOptions && (this.specificViews[n.uniqueName] = n.layerSwitcherOptions)
-                }
-            },
-            onRender: function() {
-                return this._initSortable(),
-                    this._initReloadButton(),
-                    this._registerEventHandlers()
-            },
-            onDestroy: function() {
-                return this._unregisterEventHandlers()
-            },
-            _initSortable: function() {
-                var e = this;
-                return this.ui.togglers.sortable({
-                    handle: ".handle",
-                    items: ".draggable",
-                    forcePlaceholderSize: !0
-                }).bind("sortupdate", function(t, i) {
-                    var n = i.index - i.oldindex,
-                        s = i.item.data("layer-id");
-                    return e.map.raiseLayer(e.map.getLayer(s), n)
-                })
-            },
-            _initReloadButton: function() {
-                return this._renderReloadButton()
-            },
-            _registerEventHandlers: function() {
-                return this.actionManager.events.on({
-                        hasActions: this._renderReloadButton,
-                        noActions: this._renderReloadButton,
-                        scope: this
-                    }),
-                    W.accelerators.events.on({
-                        reloadData: this._onReloadClick,
-                        scope: this
-                    })
-            },
-            _unregisterEventHandlers: function() {
-                return this.actionManager.events.un({
-                        hasActions: this._renderReloadButton,
-                        noActions: this._renderReloadButton,
-                        scope: this
-                    }),
-                    W.accelerators.events.un({
-                        reloadData: this._onReloadClick,
-                        scope: this
-                    })
-            },
-            _renderReloadButton: function() {
-                var e = this._isReloadEnabled();
-                return this.ui.reloadButton.toggleClass("reload-disabled", !e),
-                    e ? this.ui.reloadButton.tooltip("destroy") : this.ui.reloadButton.tooltip({
-                        title: I18n.t("layer_switcher.reload"),
-                        placement: "auto left"
-                    })
-            },
-            _isReloadEnabled: function() {
-                return !this.actionManager.canUndo()
-            },
-            _onReloadClick: function() {
-                if (this._isReloadEnabled()) {
-                    for (var e = 0; e < this.map.roadLayers.length; e++) {
-                        var t = this.map.roadLayers[e];
-                        t.redraw({
-                                force: !0
-                            }),
-                            t.removeBackBuffer()
-                    }
-                    return W.controller.reload()
-                }
-            }
-        });
-    t.default = f,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(218),
+    var s = i(225),
         r = n(s),
-        o = r.default.extend({
-            template: "Waze/Modules/Toolbar/templates/layer-switcher-checkbox",
-            events: {
-                "change input.toggle": "_toggleParking"
-            },
-            serializeData: function() {
-                return {
-                    layer: {
-                        id: _.uniqueId("parking"),
-                        name: I18n.t("layers.name.landmarks_parking"),
-                        visibility: this.layer.visibility && this.repo.isFilterBitSet(this.filter)
-                    }
-                }
-            },
-            _toggleParking: function(e) {
-                return this.repo.clear(),
-                    this.repo.toggleFilterBit(this.filter),
-                    W.controller.updateModel(!0),
-                    this.render()
-            }
-        }),
-        a = Marionette.View.extend({
-            template: "Waze/Modules/Toolbar/templates/layer-switcher-venues",
-            tagName: "ul",
-            className: "list-unstyled",
-            regions: {
-                layerControl: ".layer-control",
-                parkingControl: ".parking-control"
-            },
-            onRender: function() {
-                this.showChildView("layerControl", new r.default({
-                        model: this.model,
-                        filterName: "RESIDENTIAL",
-                        translations: I18n.t("layer_switcher.filters.residential")
-                    })),
-                    this.showChildView("parkingControl", new o({
-                        model: this.model.clone().set({
-                            disabled: !this.model.get("layer").visibility
-                        }),
-                        filterName: "PARKING"
-                    }))
-            }
-        });
-    t.default = a,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(220),
-        r = n(s),
-        o = i(579),
+        o = i(584),
         a = n(o),
         l = Marionette.CollectionView.extend({
             childView: r.default,
@@ -32996,7 +33142,7 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(16),
         r = n(s),
-        o = i(220),
+        o = i(225),
         a = n(o),
         l = Marionette.CompositeView.extend({
             template: "Waze/Modules/Toolbar/templates/toolbar-item-group",
@@ -33087,11 +33233,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(581),
+    var s = i(586),
         r = n(s),
-        o = i(583),
+        o = i(588),
         a = n(o),
-        l = i(582),
+        l = i(587),
         u = n(l),
         d = Marionette.View.extend({
             MAIN_LIST_NUM_ITEMS: 3,
@@ -33161,7 +33307,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(221),
+    var s = i(226),
         r = n(s),
         o = Marionette.CompositeView.extend({
             childView: r.default,
@@ -33203,7 +33349,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(231),
+    var s = i(236),
         r = n(s),
         o = Marionette.Object.extend({
             _highlightedArea: null,
@@ -33248,7 +33394,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(221),
+    var s = i(226),
         r = n(s),
         o = Marionette.CompositeView.extend({
             childView: r.default,
@@ -33287,13 +33433,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(222),
+    var s = i(227),
         r = n(s),
-        o = i(223),
+        o = i(228),
         a = n(o),
-        l = i(580),
+        l = i(585),
         u = n(l),
-        d = i(585),
+        d = i(590),
         c = n(d),
         h = Marionette.Object.extend({
             initialize: function() {
@@ -33377,8 +33523,8 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(179),
-        r = i(586),
+    var s = i(184),
+        r = i(591),
         o = n(r),
         a = Marionette.CompositeView.extend({
             MAX_ALIASES: 4,
@@ -33448,14 +33594,14 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
-        o = i(181),
+        o = i(186),
         a = (n(o),
-            i(180),
-            i(591)),
+            i(185),
+            i(596)),
         l = n(a),
-        u = i(590),
+        u = i(595),
         d = n(u),
         c = 13,
         h = OpenLayers.Class(r.default, {
@@ -33710,7 +33856,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             template: "chat_message",
@@ -33745,7 +33891,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
         o = OpenLayers.Class(r.default, {
             tagName: "li",
@@ -33867,11 +34013,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(592),
+    var s = i(597),
         r = n(s),
-        o = i(594),
+        o = i(599),
         a = n(o),
-        l = i(188),
+        l = i(193),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/venue/external-provider/list",
@@ -33956,9 +34102,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(601),
+    var s = i(606),
         r = n(s),
-        o = i(13),
+        o = i(15),
         a = n(o),
         l = OL.Class(r.default, {
             loadingAnimation: null,
@@ -34108,21 +34254,21 @@ webpackJsonp([1], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        o = i(132),
+        o = i(73),
         a = n(o),
-        l = i(19),
+        l = i(10),
         u = n(l),
-        d = i(20),
+        d = i(11),
         c = n(d),
-        h = i(236),
+        h = i(93),
         p = n(h),
-        f = i(235),
+        f = i(92),
         g = n(f),
-        m = i(118),
+        m = i(123),
         v = n(m),
         y = i(27),
         b = n(y),
-        w = function(e) {
+        E = function(e) {
             function t() {
                 return (0,
                         u.default)(this, t),
@@ -34212,7 +34358,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View);
-    t.default = w,
+    t.default = E,
         e.exports = t.default
 }, function(e, t) {
     "use strict";
@@ -34247,30 +34393,19 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
-        o = i(441),
+        o = i(445),
         a = n(o),
         l = OpenLayers.Class(r.default, {
             initialize: function(e) {
-                var t = this;
-                return r.default.prototype.initialize.apply(this, arguments),
+                r.default.prototype.initialize.apply(this, arguments),
                     this.map = e.map,
                     this.model = e.model,
                     this.model.users.on("add", this._addUser, this),
                     this.model.users.on("remove", this._onRemoveUser, this),
-                    this.layer = new OL.Layer.Markers(I18n.t("layers.name.live_users"), {
-                        shortcutKey: "S+v",
-                        accelerator: "toggleLiveUsers",
-                        uniqueName: "live_users",
-                        className: "live-users"
-                    }),
-                    this.model.on("change:showLayer", function() {
-                        if (t.model.get("showLayer"))
-                            return t.map.addLayer(t.layer)
-                    }),
-                    this._markersByUserId = {},
-                    this
+                    this.layer = this.map.liveUsersLayer,
+                    this._markersByUserId = {}
             },
             _addUser: function(e) {
                 var t = new a.default(e, this.map, this.layer);
@@ -34306,9 +34441,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
-        o = i(12),
+        o = i(14),
         a = n(o),
         l = OL.Class(r.default, {
             template: "location-message",
@@ -34389,7 +34524,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
         o = OL.Class(r.default, {
             initialize: function(e) {
@@ -34426,7 +34561,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(192),
+    var n = i(197),
         s = Marionette.View.extend({
             template: "templates/opening_hours/add",
             ui: {
@@ -34565,9 +34700,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(603),
+    var s = i(608),
         r = n(s),
-        o = i(602),
+        o = i(607),
         a = n(o),
         l = Marionette.CompositeView.extend({
             template: "templates/opening_hours/layout",
@@ -34610,7 +34745,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(612),
+    var s = i(617),
         r = n(s),
         o = Marionette.Object.extend({
             _nextVenue: null,
@@ -34683,11 +34818,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(224),
+    var s = i(229),
         r = n(s),
         o = i(51),
         a = (n(o),
-            i(13)),
+            i(15)),
         l = n(a),
         u = function(e, t) {
             var i = t.attributes.categoryAttributes;
@@ -34737,13 +34872,13 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(119),
+    var s = i(124),
         r = (n(s),
-            i(193)),
+            i(198)),
         o = n(r),
-        a = i(224),
+        a = i(229),
         l = n(a),
-        u = i(606),
+        u = i(611),
         d = n(u),
         c = Marionette.CollectionView.extend({
             childView: function(e) {
@@ -34763,9 +34898,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(10),
+    var s = i(12),
         r = n(s),
-        o = i(227),
+        o = i(232),
         a = n(o),
         l = "#c290c6",
         u = "#00ece3",
@@ -34829,7 +34964,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(608),
+    var s = i(613),
         r = n(s),
         o = Marionette.CompositeView.extend({
             template: "templates/place_updates/external_provider/list",
@@ -34856,7 +34991,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(226),
+    var s = i(231),
         r = n(s),
         o = r.default.extend({
             template: "templates/place_updates/flag",
@@ -34924,7 +35059,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(15),
+    var s = i(18),
         r = n(s),
         o = OL.Class(r.default, {
             events: {
@@ -34966,11 +35101,11 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(226),
+    var s = i(231),
         r = n(s),
-        o = i(610),
+        o = i(615),
         a = n(o),
-        l = i(12),
+        l = i(14),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/place_updates/layout",
@@ -35083,7 +35218,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(600),
+    var s = i(605),
         r = n(s),
         o = Backbone.Marionette.View.extend({
             template: "templates/prefs-panel",
@@ -35122,9 +35257,9 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(86),
+    var s = i(87),
         r = n(s),
-        o = i(15),
+        o = i(18),
         a = n(o),
         l = i(54),
         u = n(l),
@@ -35315,11 +35450,11 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(8),
         a = n(o),
-        l = i(22),
+        l = i(24),
         u = n(l),
-        d = i(30),
+        d = i(29),
         c = n(d),
-        h = i(15),
+        h = i(18),
         p = n(h),
         f = OL.Class(p.default, {
             dateFormat: I18n.t("restrictions.dateformat"),
@@ -35706,6 +35841,80 @@ webpackJsonp([1], [function(e, t, i) {
             }
         }
     }
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        o = i(10),
+        a = n(o),
+        l = i(11),
+        u = n(l),
+        d = function() {
+            function e(t, i, n) {
+                (0,
+                    a.default)(this, e),
+                this._name = t,
+                    this._attributeBitNumbers = n,
+                    this._categoryOrder = i,
+                    this._attributes = i.map(function() {
+                        return (0,
+                            r.default)(n).reduce(function(e, t) {
+                            return e[t] = !1,
+                                e
+                        }, {})
+                    })
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "getName",
+                    value: function() {
+                        return this._name
+                    }
+                }, {
+                    key: "setAttribute",
+                    value: function(e, t, i) {
+                        var n = this._categoryOrder.indexOf(e),
+                            s = this._attributes[n][t];
+                        i !== s && (this._attributes[n][t] = i,
+                            this.trigger("change"))
+                    }
+                }, {
+                    key: "_attributesToBitField",
+                    value: function(e) {
+                        var t = this;
+                        return (0,
+                            r.default)(e).reduce(function(i, n) {
+                            return e[n] && (i |= 1 << t._attributeBitNumbers[n]),
+                                i
+                        }, 0)
+                    }
+                }, {
+                    key: "isEmpty",
+                    value: function() {
+                        return this._attributes.map(this._attributesToBitField.bind(this)).every(function(e) {
+                            return 0 === e
+                        })
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return this._attributes.map(this._attributesToBitField.bind(this)).join(",")
+                    }
+                }]),
+                e
+        }();
+    _.extend(d.prototype, Backbone.Events),
+        t.default = d,
+        e.exports = t.default
 }, function(e, t) {
     "use strict";
     Waze.Rule = OL.Class(OL.Rule, {
@@ -35781,8 +35990,8 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i
 }, function(e, t, i) {
     "use strict";
-    var n, s = i(622),
-        r = i(12);
+    var n, s = i(628),
+        r = i(14);
     n = OpenLayers.Class({
             flashService: null,
             initialize: function(e, t) {
@@ -36015,7 +36224,7 @@ webpackJsonp([1], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(10),
+    var s = i(12),
         r = n(s),
         o = OL.Class({
             initialize: function() {},
@@ -36055,56 +36264,60 @@ webpackJsonp([1], [function(e, t, i) {
     var i = {
         fontFamily: "WazeFont",
         unicodeMap: {
-            ".waze-icon-arrow-down": 61696,
-            ".waze-icon-arrow-left": 61697,
-            ".waze-icon-arrow-right": 61698,
-            ".waze-icon-arrow-up": 61699,
-            ".waze-icon-attach": 61700,
-            ".waze-icon-bubble": 61701,
-            ".waze-icon-c-alert": 61702,
-            ".waze-icon-c-arrow-down": 61703,
-            ".waze-icon-c-arrow-left": 61704,
-            ".waze-icon-c-arrow-right": 61705,
-            ".waze-icon-c-arrow-up": 61706,
-            ".waze-icon-calendar": 61707,
-            ".waze-icon-check": 61708,
-            ".waze-icon-clock": 61709,
-            ".waze-icon-close": 61710,
-            ".waze-icon-closure": 61711,
-            ".waze-icon-crosshair": 61712,
-            ".waze-icon-detach": 61713,
-            ".waze-icon-edit": 61714,
-            ".waze-icon-envelope": 61715,
-            ".waze-icon-event": 61716,
-            ".waze-icon-full-arrow-down": 61717,
-            ".waze-icon-full-arrow-left": 61718,
-            ".waze-icon-full-arrow-right": 61719,
-            ".waze-icon-full-arrow-up": 61720,
-            ".waze-icon-hive": 61721,
-            ".waze-icon-house": 61722,
-            ".waze-icon-km": 61723,
-            ".waze-icon-layers": 61724,
-            ".waze-icon-map": 61725,
-            ".waze-icon-place": 61726,
-            ".waze-icon-place-car": 61727,
-            ".waze-icon-place-culture": 61728,
-            ".waze-icon-place-food-drink": 61729,
-            ".waze-icon-place-lodging": 61730,
-            ".waze-icon-place-natural": 61731,
-            ".waze-icon-place-other": 61732,
-            ".waze-icon-place-outdoors": 61733,
-            ".waze-icon-place-professional": 61734,
-            ".waze-icon-place-shopping": 61735,
-            ".waze-icon-place-transportation": 61736,
-            ".waze-icon-plus": 61737,
-            ".waze-icon-plus_neg": 61738,
-            ".waze-icon-redo": 61739,
-            ".waze-icon-road": 61740,
-            ".waze-icon-save": 61741,
-            ".waze-icon-star": 61742,
-            ".waze-icon-trash": 61743,
-            ".waze-icon-undo": 61744,
-            ".waze-icon-view": 61745
+            ".waze-icon-area": 61696,
+            ".waze-icon-arrow-down": 61697,
+            ".waze-icon-arrow-left": 61698,
+            ".waze-icon-arrow-right": 61699,
+            ".waze-icon-arrow-up": 61700,
+            ".waze-icon-attach": 61701,
+            ".waze-icon-bubble": 61702,
+            ".waze-icon-c-alert": 61703,
+            ".waze-icon-c-arrow-down": 61704,
+            ".waze-icon-c-arrow-left": 61705,
+            ".waze-icon-c-arrow-right": 61706,
+            ".waze-icon-c-arrow-up": 61707,
+            ".waze-icon-calendar": 61708,
+            ".waze-icon-check": 61709,
+            ".waze-icon-clock": 61710,
+            ".waze-icon-close": 61711,
+            ".waze-icon-closed-issue": 61712,
+            ".waze-icon-closure": 61713,
+            ".waze-icon-crosshair": 61714,
+            ".waze-icon-detach": 61715,
+            ".waze-icon-edit": 61716,
+            ".waze-icon-envelope": 61717,
+            ".waze-icon-event": 61718,
+            ".waze-icon-full-arrow-down": 61719,
+            ".waze-icon-full-arrow-left": 61720,
+            ".waze-icon-full-arrow-right": 61721,
+            ".waze-icon-full-arrow-up": 61722,
+            ".waze-icon-hive": 61723,
+            ".waze-icon-house": 61724,
+            ".waze-icon-km": 61725,
+            ".waze-icon-layers": 61726,
+            ".waze-icon-map": 61727,
+            ".waze-icon-place": 61728,
+            ".waze-icon-place-car": 61729,
+            ".waze-icon-place-culture": 61730,
+            ".waze-icon-place-food-drink": 61731,
+            ".waze-icon-place-lodging": 61732,
+            ".waze-icon-place-natural": 61733,
+            ".waze-icon-place-other": 61734,
+            ".waze-icon-place-outdoors": 61735,
+            ".waze-icon-place-professional": 61736,
+            ".waze-icon-place-shopping": 61737,
+            ".waze-icon-place-transportation": 61738,
+            ".waze-icon-plus": 61739,
+            ".waze-icon-plus_neg": 61740,
+            ".waze-icon-redo": 61741,
+            ".waze-icon-reload": 61742,
+            ".waze-icon-road": 61743,
+            ".waze-icon-save": 61744,
+            ".waze-icon-star": 61745,
+            ".waze-icon-trash": 61746,
+            ".waze-icon-undo": 61747,
+            ".waze-icon-view": 61748,
+            ".waze-icon-visible": 61749
         },
         toUnicode: function(e) {
             var t = this.unicodeMap["." + e];
@@ -36224,7 +36437,7 @@ webpackJsonp([1], [function(e, t, i) {
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return i(996)("./camera" + t.attributes.type + t.attributes.validated + ".png")
+                            return i(1e3)("./camera" + t.attributes.type + t.attributes.validated + ".png")
                     }
                 }
             })
@@ -36463,7 +36676,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(18),
+    var n = i(20),
         s = OpenLayers.Class({
             ResultsPerPage: 5,
             $element: null,
@@ -36547,7 +36760,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n = i(18),
+    var n = i(20),
         s = OpenLayers.Class({
             ResultsPerPage: 5,
             $element: null,
@@ -36612,8 +36825,8 @@ webpackJsonp([1], [function(e, t, i) {
     }
     var s, r = i(2),
         o = n(r),
-        a = i(168),
-        l = i(18);
+        a = i(173),
+        l = i(20);
     s = OpenLayers.Class({
             events: null,
             $element: null,
@@ -36701,7 +36914,7 @@ webpackJsonp([1], [function(e, t, i) {
         e.exports = s
 }, function(e, t, i) {
     "use strict";
-    var n = i(18),
+    var n = i(20),
         s = OpenLayers.Class({
             videos: ["intro", "before_you_start", "getting_started", "basic_terms", "basic_editing", "map_problems", "examples"],
             videoDetails: null,
@@ -36801,16 +37014,16 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = s
 }, , function(e, t, i) {
     "use strict";
-    i(988),
-        i(18),
-        i(368),
-        i(625),
-        i(621),
-        i(620);
-    var n = i(374),
-        s = i(463);
-    i(13),
-        i(431),
+    i(992),
+        i(20),
+        i(371),
+        i(631),
+        i(627),
+        i(625);
+    var n = i(377),
+        s = i(468);
+    i(15),
+        i(435),
         $(document).ready(function() {
             W.app = new n,
                 W.prefs = new s,
@@ -36819,34 +37032,34 @@ webpackJsonp([1], [function(e, t, i) {
         })
 }, function(e, t, i) {
     "use strict";
-    var n = i(998);
+    var n = i(1002);
     window.require = function(e) {
         return e = "./" + e + ".js",
             n(e)
     }
 }, , , , , , function(e, t, i) {
     e.exports = {
-        default: i(676),
+        default: i(681),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(678),
+        default: i(683),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(679),
+        default: i(684),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(682),
+        default: i(687),
         __esModule: !0
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(685),
+        default: i(690),
         __esModule: !0
     }
 }, , , function(e, t, i) {
@@ -36858,28 +37071,9 @@ webpackJsonp([1], [function(e, t, i) {
         }
     }
     t.__esModule = !0;
-    var s = i(647),
-        r = n(s);
-    t.default = r.default || function(e) {
-        for (var t = 1; t < arguments.length; t++) {
-            var i = arguments[t];
-            for (var n in i)
-                Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n])
-        }
-        return e
-    }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(132),
+    var s = i(73),
         r = n(s),
-        o = i(649),
+        o = i(655),
         a = n(o);
     t.default = function e(t, i, n) {
         null === t && (t = Function.prototype);
@@ -36896,15 +37090,15 @@ webpackJsonp([1], [function(e, t, i) {
         return void 0 !== l ? l.call(n) : void 0
     }
 }, , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
-    i(97),
-        i(96),
-        e.exports = i(714)
+    i(101),
+        i(100),
+        e.exports = i(719)
 }, function(e, t, i) {
-    i(97),
-        i(96),
-        e.exports = i(715)
+    i(101),
+        i(100),
+        e.exports = i(720)
 }, function(e, t, i) {
-    var n = i(11),
+    var n = i(13),
         s = n.JSON || (n.JSON = {
             stringify: JSON.stringify
         });
@@ -36912,47 +37106,47 @@ webpackJsonp([1], [function(e, t, i) {
         return s.stringify.apply(s, arguments)
     }
 }, function(e, t, i) {
-    i(717),
-        e.exports = i(11).Object.assign
+    i(722),
+        e.exports = i(13).Object.assign
 }, function(e, t, i) {
-    i(718);
-    var n = i(11).Object;
+    i(723);
+    var n = i(13).Object;
     e.exports = function(e, t) {
         return n.create(e, t)
     }
 }, function(e, t, i) {
-    i(719);
-    var n = i(11).Object;
+    i(724);
+    var n = i(13).Object;
     e.exports = function(e, t, i) {
         return n.defineProperty(e, t, i)
     }
 }, function(e, t, i) {
-    i(720),
-        e.exports = i(11).Object.freeze
+    i(725),
+        e.exports = i(13).Object.freeze
 }, function(e, t, i) {
-    i(721);
-    var n = i(11).Object;
+    i(726);
+    var n = i(13).Object;
     e.exports = function(e, t) {
         return n.getOwnPropertyDescriptor(e, t)
     }
 }, function(e, t, i) {
-    i(722),
-        e.exports = i(11).Object.getPrototypeOf
-}, function(e, t, i) {
-    i(723),
-        e.exports = i(11).Object.keys
-}, function(e, t, i) {
-    i(724),
-        e.exports = i(11).Object.setPrototypeOf
-}, function(e, t, i) {
     i(727),
-        e.exports = i(11).Object.values
+        e.exports = i(13).Object.getPrototypeOf
 }, function(e, t, i) {
-    i(249),
-        i(96),
-        i(97),
-        i(725),
-        e.exports = i(11).Promise
+    i(728),
+        e.exports = i(13).Object.keys
+}, function(e, t, i) {
+    i(729),
+        e.exports = i(13).Object.setPrototypeOf
+}, function(e, t, i) {
+    i(732),
+        e.exports = i(13).Object.values
+}, function(e, t, i) {
+    i(252),
+        i(100),
+        i(101),
+        i(730),
+        e.exports = i(13).Promise
 }, , , , function(e, t) {
     e.exports = function(e, t, i, n) {
         if (!(e instanceof t) || void 0 !== n && n in e)
@@ -36960,12 +37154,12 @@ webpackJsonp([1], [function(e, t, i) {
         return e
     }
 }, , , function(e, t, i) {
-    var n = i(73),
-        s = i(698),
-        r = i(696),
-        o = i(31),
-        a = i(247),
-        l = i(248),
+    var n = i(76),
+        s = i(703),
+        r = i(701),
+        o = i(30),
+        a = i(250),
+        l = i(251),
         u = {},
         d = {},
         t = e.exports = function(e, t, i, c, h) {
@@ -37009,13 +37203,13 @@ webpackJsonp([1], [function(e, t, i) {
     }
 }, function(e, t, i) {
     var n = i(59),
-        s = i(17)("iterator"),
+        s = i(19)("iterator"),
         r = Array.prototype;
     e.exports = function(e) {
         return void 0 !== e && (n.Array === e || r[s] === e)
     }
 }, , function(e, t, i) {
-    var n = i(31);
+    var n = i(30);
     e.exports = function(e, t, i, s) {
         try {
             return s ? t(n(i)[0], i[1]) : t(i)
@@ -37026,7 +37220,7 @@ webpackJsonp([1], [function(e, t, i) {
         }
     }
 }, , function(e, t, i) {
-    var n = i(17)("iterator"),
+    var n = i(19)("iterator"),
         s = !1;
     try {
         var r = [7][n]();
@@ -37057,12 +37251,12 @@ webpackJsonp([1], [function(e, t, i) {
         return i
     }
 }, , , function(e, t, i) {
-    var n = i(23),
-        s = i(246).set,
+    var n = i(25),
+        s = i(249).set,
         r = n.MutationObserver || n.WebKitMutationObserver,
         o = n.process,
         a = n.Promise,
-        l = "process" == i(72)(o);
+        l = "process" == i(75)(o);
     e.exports = function() {
         var e, t, i, u = function() {
             var n, s;
@@ -37115,10 +37309,10 @@ webpackJsonp([1], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(48),
-        s = i(141),
-        r = i(74),
-        o = i(94),
-        a = i(239),
+        s = i(146),
+        r = i(77),
+        o = i(98),
+        a = i(242),
         l = Object.assign;
     e.exports = !l || i(58)(function() {
             var e = {},
@@ -37139,8 +37333,8 @@ webpackJsonp([1], [function(e, t, i) {
         l
 }, , , function(e, t, i) {
     var n = i(48),
-        s = i(33),
-        r = i(74).f;
+        s = i(32),
+        r = i(77).f;
     e.exports = function(e) {
         return function(t) {
             for (var i, o = s(t), a = n(o), l = a.length, u = 0, d = []; l > u;)
@@ -37157,7 +37351,7 @@ webpackJsonp([1], [function(e, t, i) {
     }
 }, function(e, t, i) {
     var n = i(47),
-        s = i(31),
+        s = i(30),
         r = function(e, t) {
             if (s(e), !n(t) && null !== t)
                 throw TypeError(t + ": can't set as prototype!")
@@ -37165,7 +37359,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = {
         set: Object.setPrototypeOf || ("__proto__" in {} ? function(e, t, n) {
             try {
-                n = i(73)(Function.call, i(140).f(Object.prototype, "__proto__").set, 2),
+                n = i(76)(Function.call, i(145).f(Object.prototype, "__proto__").set, 2),
                     n(e, []),
                     t = !(e instanceof Array)
             } catch (e) {
@@ -37181,11 +37375,11 @@ webpackJsonp([1], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    var n = i(23),
-        s = i(11),
+    var n = i(25),
+        s = i(13),
         r = i(39),
         o = i(38),
-        a = i(17)("species");
+        a = i(19)("species");
     e.exports = function(e) {
         var t = "function" == typeof s[e] ? s[e] : n[e];
         o && t && !t[a] && r.f(t, a, {
@@ -37196,123 +37390,123 @@ webpackJsonp([1], [function(e, t, i) {
         })
     }
 }, function(e, t, i) {
-    var n = i(31),
-        s = i(134),
-        r = i(17)("species");
+    var n = i(30),
+        s = i(139),
+        r = i(19)("species");
     e.exports = function(e, t) {
         var i, o = n(e).constructor;
         return void 0 === o || void 0 == (i = n(o)[r]) ? t : s(i)
     }
 }, , , function(e, t, i) {
-    var n = i(31),
-        s = i(248);
-    e.exports = i(11).getIterator = function(e) {
+    var n = i(30),
+        s = i(251);
+    e.exports = i(13).getIterator = function(e) {
         var t = s(e);
         if ("function" != typeof t)
             throw TypeError(e + " is not iterable!");
         return n(t.call(e))
     }
 }, function(e, t, i) {
-    var n = i(135),
-        s = i(17)("iterator"),
+    var n = i(140),
+        s = i(19)("iterator"),
         r = i(59);
-    e.exports = i(11).isIterable = function(e) {
+    e.exports = i(13).isIterable = function(e) {
         var t = Object(e);
         return void 0 !== t[s] || "@@iterator" in t || r.hasOwnProperty(n(t))
     }
 }, , function(e, t, i) {
-    var n = i(32);
+    var n = i(31);
     n(n.S + n.F, "Object", {
-        assign: i(704)
+        assign: i(709)
     })
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(31);
     n(n.S, "Object", {
-        create: i(139)
+        create: i(144)
     })
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(31);
     n(n.S + n.F * !i(38), "Object", {
         defineProperty: i(39).f
     })
 }, function(e, t, i) {
     var n = i(47),
-        s = i(241).onFreeze;
-    i(91)("freeze", function(e) {
+        s = i(244).onFreeze;
+    i(95)("freeze", function(e) {
         return function(t) {
             return e && n(t) ? e(s(t)) : t
         }
     })
 }, function(e, t, i) {
-    var n = i(33),
-        s = i(140).f;
-    i(91)("getOwnPropertyDescriptor", function() {
+    var n = i(32),
+        s = i(145).f;
+    i(95)("getOwnPropertyDescriptor", function() {
         return function(e, t) {
             return s(n(e), t)
         }
     })
 }, function(e, t, i) {
-    var n = i(94),
-        s = i(243);
-    i(91)("getPrototypeOf", function() {
+    var n = i(98),
+        s = i(246);
+    i(95)("getPrototypeOf", function() {
         return function(e) {
             return s(n(e))
         }
     })
 }, function(e, t, i) {
-    var n = i(94),
+    var n = i(98),
         s = i(48);
-    i(91)("keys", function() {
+    i(95)("keys", function() {
         return function(e) {
             return s(n(e))
         }
     })
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(31);
     n(n.S, "Object", {
-        setPrototypeOf: i(709).set
+        setPrototypeOf: i(714).set
     })
 }, function(e, t, i) {
     "use strict";
-    var n, s, r, o = i(90),
-        a = i(23),
-        l = i(73),
-        u = i(135),
-        d = i(32),
+    var n, s, r, o = i(94),
+        a = i(25),
+        l = i(76),
+        u = i(140),
+        d = i(31),
         c = i(47),
-        h = i(134),
-        p = i(691),
-        f = i(694),
-        g = i(711),
-        m = i(246).set,
-        v = i(703)(),
+        h = i(139),
+        p = i(696),
+        f = i(699),
+        g = i(716),
+        m = i(249).set,
+        v = i(708)(),
         y = "Promise",
         _ = a.TypeError,
         b = a.process,
-        w = a[y],
+        E = a[y],
         b = a.process,
-        E = "process" == u(b),
+        w = "process" == u(b),
         S = function() {},
-        C = !! function() {
+        M = !! function() {
             try {
-                var e = w.resolve(1),
-                    t = (e.constructor = {})[i(17)("species")] = function(e) {
+                var e = E.resolve(1),
+                    t = (e.constructor = {})[i(19)("species")] = function(e) {
                         e(S, S)
                     };
-                return (E || "function" == typeof PromiseRejectionEvent) && e.then(S) instanceof t
+                return (w || "function" == typeof PromiseRejectionEvent) && e.then(S) instanceof t
             } catch (e) {}
         }(),
-        M = function(e, t) {
-            return e === t || e === w && t === r
+        C = function(e, t) {
+            return e === t || e === E && t === r
         },
         A = function(e) {
             var t;
             return !(!c(e) || "function" != typeof(t = e.then)) && t
         },
         L = function(e) {
-            return M(w, e) ? new O(e) : new s(e)
+            return C(E, e) ? new T(e) : new s(e)
         },
-        O = s = function(e) {
+        T = s = function(e) {
             var t, i;
             this.promise = new e(function(e, n) {
                     if (void 0 !== t || void 0 !== i)
@@ -37323,7 +37517,7 @@ webpackJsonp([1], [function(e, t, i) {
                 this.resolve = h(t),
                 this.reject = h(i)
         },
-        D = function(e) {
+        O = function(e) {
             try {
                 e()
             } catch (e) {
@@ -37332,7 +37526,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }
             }
         },
-        T = function(e, t) {
+        I = function(e, t) {
             if (!e._n) {
                 e._n = !0;
                 var i = e._c;
@@ -37343,7 +37537,7 @@ webpackJsonp([1], [function(e, t, i) {
                                 l = t.reject,
                                 u = t.domain;
                             try {
-                                o ? (s || (2 == e._h && k(e),
+                                o ? (s || (2 == e._h && P(e),
                                         e._h = 1),
                                     o === !0 ? i = n : (u && u.enter(),
                                         i = o(n),
@@ -37356,20 +37550,20 @@ webpackJsonp([1], [function(e, t, i) {
                         o(i[r++]);
                     e._c = [],
                         e._n = !1,
-                        t && !e._h && I(e)
+                        t && !e._h && D(e)
                 })
             }
         },
-        I = function(e) {
+        D = function(e) {
             m.call(a, function() {
                 var t, i, n, s = e._v;
-                if (x(e) && (t = D(function() {
-                            E ? b.emit("unhandledRejection", s, e) : (i = a.onunhandledrejection) ? i({
+                if (x(e) && (t = O(function() {
+                            w ? b.emit("unhandledRejection", s, e) : (i = a.onunhandledrejection) ? i({
                                 promise: e,
                                 reason: s
                             }) : (n = a.console) && n.error && n.error("Unhandled promise rejection", s)
                         }),
-                        e._h = E || x(e) ? 2 : 1),
+                        e._h = w || x(e) ? 2 : 1),
                     e._a = void 0,
                     t)
                     throw t.error
@@ -37384,23 +37578,23 @@ webpackJsonp([1], [function(e, t, i) {
                     return !1;
             return !0
         },
-        k = function(e) {
+        P = function(e) {
             m.call(a, function() {
                 var t;
-                E ? b.emit("rejectionHandled", e) : (t = a.onrejectionhandled) && t({
+                w ? b.emit("rejectionHandled", e) : (t = a.onrejectionhandled) && t({
                     promise: e,
                     reason: e._v
                 })
             })
         },
-        N = function(e) {
+        k = function(e) {
             var t = this;
             t._d || (t._d = !0,
                 t = t._w || t,
                 t._v = e,
                 t._s = 2,
                 t._a || (t._a = t._c.slice()),
-                T(t, !0))
+                I(t, !0))
         },
         R = function(e) {
             var t, i = this;
@@ -37416,29 +37610,29 @@ webpackJsonp([1], [function(e, t, i) {
                             _d: !1
                         };
                         try {
-                            t.call(e, l(R, n, 1), l(N, n, 1))
+                            t.call(e, l(R, n, 1), l(k, n, 1))
                         } catch (e) {
-                            N.call(n, e)
+                            k.call(n, e)
                         }
                     }): (i._v = e,
                         i._s = 1,
-                        T(i, !1))
+                        I(i, !1))
                 } catch (e) {
-                    N.call({
+                    k.call({
                         _w: i,
                         _d: !1
                     }, e)
                 }
             }
         };
-    C || (w = function(e) {
-                p(this, w, y, "_h"),
+    M || (E = function(e) {
+                p(this, E, y, "_h"),
                     h(e),
                     n.call(this);
                 try {
-                    e(l(R, this, 1), l(N, this, 1))
+                    e(l(R, this, 1), l(k, this, 1))
                 } catch (e) {
-                    N.call(this, e)
+                    k.call(this, e)
                 }
             },
             n = function(e) {
@@ -37450,35 +37644,35 @@ webpackJsonp([1], [function(e, t, i) {
                     this._h = 0,
                     this._n = !1
             },
-            n.prototype = i(708)(w.prototype, {
+            n.prototype = i(713)(E.prototype, {
                 then: function(e, t) {
-                    var i = L(g(this, w));
+                    var i = L(g(this, E));
                     return i.ok = "function" != typeof e || e,
                         i.fail = "function" == typeof t && t,
-                        i.domain = E ? b.domain : void 0,
+                        i.domain = w ? b.domain : void 0,
                         this._c.push(i),
                         this._a && this._a.push(i),
-                        this._s && T(this, !1),
+                        this._s && I(this, !1),
                         i.promise
                 },
                 catch: function(e) {
                     return this.then(void 0, e)
                 }
             }),
-            O = function() {
+            T = function() {
                 var e = new n;
                 this.promise = e,
                     this.resolve = l(R, e, 1),
-                    this.reject = l(N, e, 1)
+                    this.reject = l(k, e, 1)
             }
         ),
-        d(d.G + d.W + d.F * !C, {
-            Promise: w
+        d(d.G + d.W + d.F * !M, {
+            Promise: E
         }),
-        i(93)(w, y),
-        i(710)(y),
-        r = i(11)[y],
-        d(d.S + d.F * !C, y, {
+        i(97)(E, y),
+        i(715)(y),
+        r = i(13)[y],
+        d(d.S + d.F * !M, y, {
             reject: function(e) {
                 var t = L(this),
                     i = t.reject;
@@ -37486,9 +37680,9 @@ webpackJsonp([1], [function(e, t, i) {
                     t.promise
             }
         }),
-        d(d.S + d.F * (o || !C), y, {
+        d(d.S + d.F * (o || !M), y, {
             resolve: function(e) {
-                if (e instanceof w && M(e.constructor, this))
+                if (e instanceof E && C(e.constructor, this))
                     return e;
                 var t = L(this),
                     i = t.resolve;
@@ -37496,15 +37690,15 @@ webpackJsonp([1], [function(e, t, i) {
                     t.promise
             }
         }),
-        d(d.S + d.F * !(C && i(700)(function(e) {
-            w.all(e).catch(S)
+        d(d.S + d.F * !(M && i(705)(function(e) {
+            E.all(e).catch(S)
         })), y, {
             all: function(e) {
                 var t = this,
                     i = L(t),
                     n = i.resolve,
                     s = i.reject,
-                    r = D(function() {
+                    r = O(function() {
                         var i = [],
                             r = 0,
                             o = 1;
@@ -37528,7 +37722,7 @@ webpackJsonp([1], [function(e, t, i) {
                 var t = this,
                     i = L(t),
                     n = i.reject,
-                    s = D(function() {
+                    s = O(function() {
                         f(e, !1, function(e) {
                             t.resolve(e).then(i.resolve, n)
                         })
@@ -37538,8 +37732,8 @@ webpackJsonp([1], [function(e, t, i) {
             }
         })
 }, , function(e, t, i) {
-    var n = i(32),
-        s = i(707)(!1);
+    var n = i(31),
+        s = i(712)(!1);
     n(n.S, "Object", {
         values: function(e) {
             return s(e)
@@ -37617,7 +37811,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = i.p + "img/unknownb34dd18530431d8e3b14a4750cbe4352.png"
 }, function(e, t, i) {
     e.exports = i.p + "img/video-notext00f564d3d1e7b4eaa9f30c473da6a09f.png"
-}, , , , , function(e, t) {
+}, , , , function(e, t) {
     (function() {
         "use strict";
         window.Waze = window.Waze || window.W || {},
@@ -37695,9 +37889,6 @@ webpackJsonp([1], [function(e, t, i) {
                 local: "EPSG:900913"
             }
         },
-        permalink: {
-            filterSuffix: "Filter"
-        },
         tts: {
             url: "https://ttsgw.world.waze.com/TTSGateway/Text2SpeechServlet",
             report_problem_url: "https://goo.gl/aAI4mu",
@@ -37744,11 +37935,7 @@ webpackJsonp([1], [function(e, t, i) {
         difficult_turns: {
             enable: !0
         },
-        update_requests: {
-            shownByDefault: !1
-        },
         place_updates: {
-            shownByDefault: !1,
             focusZoom: 6
         },
         problems: {
@@ -37763,13 +37950,11 @@ webpackJsonp([1], [function(e, t, i) {
             allowEditing: !0
         },
         closures: {
-            shownByDefault: !0,
             minDisplayZoom: 0
         },
         cameras: {
             minDisplayZoom: 3,
-            minDragZoom: 3,
-            shownByDefault: !1
+            minDragZoom: 3
         },
         editable_areas: {
             minDisplayZoom: 0
@@ -37783,13 +37968,11 @@ webpackJsonp([1], [function(e, t, i) {
         },
         user_editing_enabled: !0,
         big_junctions: {
-            shownByDefault: !0,
             minDisplayZoom: 2,
             minRank: 4,
             enable: !0
         },
         venues: {
-            shownByDefault: !1,
             image_bucket_url: "https://venue-image.waze.com/",
             zoomToSize: {
                 0: 1,
@@ -37954,317 +38137,12 @@ webpackJsonp([1], [function(e, t, i) {
         }()
     }
     var r = {
-        "./camera2false.png": 959,
-        "./camera2true.png": 960,
-        "./camera3false.png": 961,
-        "./camera3true.png": 962,
-        "./camera4false.png": 963,
-        "./camera4true.png": 964
-    };
-    n.keys = function() {
-            return Object.keys(r)
-        },
-        n.resolve = s,
-        e.exports = n,
-        n.id = 996
-}, function(e, t, i) {
-    function n(e) {
-        return i(s(e))
-    }
-
-    function s(e) {
-        return r[e] || function() {
-            throw new Error("Cannot find module '" + e + "'.")
-        }()
-    }
-    var r = {
-        "./big_direction_end.png": 965,
-        "./big_direction_exit_left.png": 966,
-        "./big_direction_exit_right.png": 967,
-        "./big_direction_forward.png": 968,
-        "./big_direction_left.png": 969,
-        "./big_direction_right.png": 970,
-        "./big_direction_u.png": 971,
-        "./big_directions_roundabout.png": 972,
-        "./big_directions_roundabout_UK.png": 973,
-        "./big_directions_roundabout_UK_l.png": 974,
-        "./big_directions_roundabout_UK_s.png": 975,
-        "./big_directions_roundabout_l.png": 976,
-        "./big_directions_roundabout_r.png": 977,
-        "./big_directions_roundabout_r_UK.png": 978,
-        "./big_directions_roundabout_s.png": 979,
-        "./big_directions_roundabout_u.png": 980,
-        "./big_directions_roundabout_u_UK.png": 981,
-        "./unknown.png": 982
-    };
-    n.keys = function() {
-            return Object.keys(r)
-        },
-        n.resolve = s,
-        e.exports = n,
-        n.id = 997
-}, function(e, t, i) {
-    function n(e) {
-        return i(s(e))
-    }
-
-    function s(e) {
-        return r[e] || function() {
-            throw new Error("Cannot find module '" + e + "'.")
-        }()
-    }
-    var r = {
-        "./Waze/Action/AddAlternateStreet.js": 148,
-        "./Waze/Action/AddBigJunction.js": 149,
-        "./Waze/Action/AddIntersection.js": 150,
-        "./Waze/Action/AddLandmark.js": 151,
-        "./Waze/Action/AddNode.js": 76,
-        "./Waze/Action/AddOrGetCity.js": 61,
-        "./Waze/Action/AddOrGetStreet.js": 77,
-        "./Waze/Action/AddRoadClosure.js": 152,
-        "./Waze/Action/AddSegment.js": 49,
-        "./Waze/Action/CompositeAction.js": 4,
-        "./Waze/Action/ConnectSegment.js": 34,
-        "./Waze/Action/CreateObject.js": 40,
-        "./Waze/Action/CreateRoundabout.js": 153,
-        "./Waze/Action/DeleteBigJunction.js": 154,
-        "./Waze/Action/DeleteNode.js": 98,
-        "./Waze/Action/DeleteObject.js": 99,
-        "./Waze/Action/DeleteRoadClosure.js": 155,
-        "./Waze/Action/DeleteSegment.js": 35,
-        "./Waze/Action/DisconnectSegment.js": 62,
-        "./Waze/Action/HouseNumber.js": 156,
-        "./Waze/Action/MergeNode.js": 157,
-        "./Waze/Action/MergeSegments.js": 100,
-        "./Waze/Action/ModifyAllConnections.js": 101,
-        "./Waze/Action/ModifyConnection.js": 369,
-        "./Waze/Action/ModifyConnectionRestriction.js": 370,
-        "./Waze/Action/ModifyJunctionPath.js": 158,
-        "./Waze/Action/MoveNode.js": 159,
-        "./Waze/Action/MultiAction.js": 63,
-        "./Waze/Action/ReplaceNCSegmentID.js": 371,
-        "./Waze/Action/SegmentAction.js": 102,
-        "./Waze/Action/SplitSegments.js": 64,
-        "./Waze/Action/UpdateBigJunctionConnectedSegments.js": 103,
-        "./Waze/Action/UpdateFeatureAddress.js": 104,
-        "./Waze/Action/UpdateFeatureGeometry.js": 65,
-        "./Waze/Action/UpdateHouseNumber.js": 105,
-        "./Waze/Action/UpdateHouseNumberGeometry.js": 160,
-        "./Waze/Action/UpdateObject.js": 9,
-        "./Waze/Action/UpdatePlaceUpdate.js": 161,
-        "./Waze/Action/UpdateRoadClosure.js": 162,
-        "./Waze/Action/UpdateSegmentGeometry.js": 106,
-        "./Waze/Action/Visitor/Serializor.js": 372,
-        "./Waze/Action/Visitor/TreeSerializor.js": 163,
-        "./Waze/Feature/Vector/BigJunction.js": 109,
-        "./Waze/Feature/Vector/ClosureProblem.js": 172,
-        "./Waze/Feature/Vector/CompositeSegment.js": 79,
-        "./Waze/Feature/Vector/Factory/MapProblem.js": 173,
-        "./Waze/Feature/Vector/Factory/MapProblemDetails.js": 174,
-        "./Waze/Feature/Vector/JunctionPath.js": 110,
-        "./Waze/Feature/Vector/Landmark.js": 50,
-        "./Waze/Feature/Vector/Landmark/ParkingAttributes.js": 111,
-        "./Waze/Feature/Vector/Landmark/ParkingEnum.js": 51,
-        "./Waze/Feature/Vector/MapProblem.js": 52,
-        "./Waze/Feature/Vector/Node.js": 80,
-        "./Waze/Feature/Vector/ProblemResolution.js": 112,
-        "./Waze/Feature/Vector/Segment.js": 26,
-        "./Waze/Feature/Vector/SegmentFlags.js": 113,
-        "./Waze/Feature/Vector/SpeedCamera.js": 114,
-        "./Waze/Feature/Vector/TurnProblem.js": 175,
-        "./Waze/Feature/Vector/UpdateRequest.js": 176,
-        "./Waze/Model/Graph/Actions/SetTurn.js": 27,
-        "./Waze/Model/Graph/Actions/SplitTurns.js": 183,
-        "./Waze/Model/Graph/InstructionOpcode.js": 118,
-        "./Waze/Model/Graph/RoadGraph.js": 184,
-        "./Waze/Model/Graph/Turn.js": 83,
-        "./Waze/Model/Graph/TurnData.js": 67,
-        "./Waze/Model/Graph/TurnGraph.js": 185,
-        "./Waze/Model/Graph/Vertex.js": 28,
-        "./Waze/Modules/Closures/Models/ClosureActionBuilder.js": 197,
-        "./Waze/Modules/Closures/Models/SharedClosure.js": 43,
-        "./Waze/Modules/Closures/Models/SharedClosures.js": 198,
-        "./Waze/Modules/Closures/Models/SharedClosuresBuilder.js": 199
-    };
-    n.keys = function() {
-            return Object.keys(r)
-        },
-        n.resolve = s,
-        e.exports = n,
-        n.id = 998
-}, function(e, t, i) {
-    function n(e) {
-        return i(s(e))
-    }
-
-    function s(e) {
-        return r[e] || function() {
-            throw new Error("Cannot find module '" + e + "'.")
-        }()
-    }
-    var r = {
-        "./Waze/Modules/BigJunction/templates/path_item.hamlc": 1088,
-        "./Waze/Modules/BigJunction/templates/validation_errors.hamlc": 1089,
-        "./Waze/Modules/Cities/templates/feature_editor.hamlc": 1090,
-        "./Waze/Modules/Closures/templates/edit.hamlc": 1091,
-        "./Waze/Modules/Closures/templates/item.hamlc": 1092,
-        "./Waze/Modules/Closures/templates/layout.hamlc": 1093,
-        "./Waze/Modules/Closures/templates/list.hamlc": 1094,
-        "./Waze/Modules/Comments/templates/feature_editor.hamlc": 1095,
-        "./Waze/Modules/Comments/templates/name_editor.hamlc": 1096,
-        "./Waze/Modules/Conversation/templates/item.hamlc": 1097,
-        "./Waze/Modules/Conversation/templates/list.hamlc": 1098,
-        "./Waze/Modules/Feed/templates/feed.hamlc": 1099,
-        "./Waze/Modules/Feed/templates/feed_group.hamlc": 1100,
-        "./Waze/Modules/Feed/templates/issue_item.hamlc": 1101,
-        "./Waze/Modules/Feed/templates/message_item.hamlc": 1102,
-        "./Waze/Modules/Feed/templates/notification_detail.hamlc": 1103,
-        "./Waze/Modules/Feed/templates/notification_item.hamlc": 1104,
-        "./Waze/Modules/GeoLocation/templates/pan_button.hamlc": 1105,
-        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 1106,
-        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 1107,
-        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 1108,
-        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 1109,
-        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 1110,
-        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 1111,
-        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 1112,
-        "./Waze/Modules/MTE/templates/mte_list.hamlc": 1113,
-        "./Waze/Modules/MTE/templates/sidebar.hamlc": 1114,
-        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 1115,
-        "./Waze/Modules/MTE/templates/topbar.hamlc": 1116,
-        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 1117,
-        "./Waze/Modules/MapControls/templates/permalink.hamlc": 1118,
-        "./Waze/Modules/Problems/templates/_navigation.hamlc": 1119,
-        "./Waze/Modules/Problems/templates/closure_description.hamlc": 1120,
-        "./Waze/Modules/Problems/templates/edit.hamlc": 1121,
-        "./Waze/Modules/Save/templates/error_item.hamlc": 1122,
-        "./Waze/Modules/Save/templates/error_list.hamlc": 1123,
-        "./Waze/Modules/Save/templates/success.hamlc": 1124,
-        "./Waze/Modules/Toolbar/templates/layer-switcher-checkbox.hamlc": 1125,
-        "./Waze/Modules/Toolbar/templates/layer-switcher-filter.hamlc": 1126,
-        "./Waze/Modules/Toolbar/templates/layer-switcher-list.hamlc": 1127,
-        "./Waze/Modules/Toolbar/templates/layer-switcher-venues.hamlc": 1128,
-        "./Waze/Modules/Toolbar/templates/layer-switcher.hamlc": 1129,
-        "./Waze/Modules/Toolbar/templates/search.hamlc": 1130,
-        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 1131,
-        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 1132,
-        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 1133,
-        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 1134,
-        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 1135,
-        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 1136,
-        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 1137,
-        "./Waze/Modules/Topbar/templates/layout.hamlc": 1138,
-        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 1139,
-        "./Waze/Modules/Topbar/templates/location-info.hamlc": 1140,
-        "./templates/add_update_details.hamlc": 1141,
-        "./templates/additional_details.hamlc": 1142,
-        "./templates/address/edit.hamlc": 1143,
-        "./templates/archive-panel.hamlc": 1144,
-        "./templates/archive-sessions.hamlc": 1145,
-        "./templates/big-junction-edit.hamlc": 1146,
-        "./templates/camera-edit.hamlc": 1147,
-        "./templates/chat.hamlc": 1148,
-        "./templates/chat_intro_tip.hamlc": 1149,
-        "./templates/chat_message.hamlc": 1150,
-        "./templates/chat_user.hamlc": 1151,
-        "./templates/chrome_autofill_off.hamlc": 1152,
-        "./templates/editable-areas.hamlc": 1153,
-        "./templates/house-number.hamlc": 1154,
-        "./templates/house-numbers-lightbox.hamlc": 1155,
-        "./templates/instruction-override.hamlc": 1156,
-        "./templates/keyboard_shortcuts/list.hamlc": 1157,
-        "./templates/keyboard_shortcuts/modal.hamlc": 1158,
-        "./templates/location-message.hamlc": 1159,
-        "./templates/location-switcher.hamlc": 1160,
-        "./templates/login/login-form.hamlc": 1161,
-        "./templates/login/sandbox-message.hamlc": 1162,
-        "./templates/login/welcome-popup.hamlc": 1163,
-        "./templates/map.hamlc": 1164,
-        "./templates/node-edit.hamlc": 1165,
-        "./templates/opening_hours/add.hamlc": 1166,
-        "./templates/opening_hours/item.hamlc": 1167,
-        "./templates/opening_hours/layout.hamlc": 1168,
-        "./templates/place_updates/actions.hamlc": 1169,
-        "./templates/place_updates/add_details.hamlc": 1170,
-        "./templates/place_updates/add_image.hamlc": 1171,
-        "./templates/place_updates/add_venue.hamlc": 1172,
-        "./templates/place_updates/changed_field.hamlc": 1173,
-        "./templates/place_updates/changed_field_item.hamlc": 1174,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 1175,
-        "./templates/place_updates/delete_venue.hamlc": 1176,
-        "./templates/place_updates/external_provider/item.hamlc": 1177,
-        "./templates/place_updates/external_provider/list.hamlc": 1178,
-        "./templates/place_updates/flag.hamlc": 1179,
-        "./templates/place_updates/image.hamlc": 1180,
-        "./templates/place_updates/image_dialog.hamlc": 1181,
-        "./templates/place_updates/item.hamlc": 1182,
-        "./templates/place_updates/layout.hamlc": 1183,
-        "./templates/place_updates/panel_header.hamlc": 1184,
-        "./templates/place_updates/place_details.hamlc": 1185,
-        "./templates/place_updates/update_venue.hamlc": 1186,
-        "./templates/prefs-panel.hamlc": 1187,
-        "./templates/restriction/edit.hamlc": 1188,
-        "./templates/restriction/item.hamlc": 1189,
-        "./templates/restriction/layout.hamlc": 1190,
-        "./templates/restriction/list.hamlc": 1191,
-        "./templates/restriction/toggle-checkboxes.hamlc": 1192,
-        "./templates/segment/address-edit.hamlc": 1193,
-        "./templates/segment/alt-streets-edit.hamlc": 1194,
-        "./templates/segment/average-speed-camera.hamlc": 1195,
-        "./templates/segment/edit-panel.hamlc": 1196,
-        "./templates/segment/flag-attribute.hamlc": 1197,
-        "./templates/segment/routing.hamlc": 1198,
-        "./templates/segment/speed-limit.hamlc": 1199,
-        "./templates/segment/tts-playback-popover.hamlc": 1200,
-        "./templates/segment/tts-playback.hamlc": 1201,
-        "./templates/session-expired.hamlc": 1202,
-        "./templates/sidebar/advanced-tools.hamlc": 1203,
-        "./templates/sidebar/links.hamlc": 1204,
-        "./templates/sidebar/sidebar.hamlc": 1205,
-        "./templates/sidebar/user-details.hamlc": 1206,
-        "./templates/sidebar/user-info.hamlc": 1207,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 1208,
-        "./templates/sidebar/user-sandbox.hamlc": 1209,
-        "./templates/snapshot-message.hamlc": 1210,
-        "./templates/snapshot-toggler.hamlc": 1211,
-        "./templates/snapshot_message.hamlc": 1212,
-        "./templates/tips/watch-tutorial.hamlc": 1213,
-        "./templates/tutorial-lightbox.hamlc": 1214,
-        "./templates/user-greeting.hamlc": 1215,
-        "./templates/util/day-checkboxes.hamlc": 1216,
-        "./templates/venue/alias.hamlc": 1217,
-        "./templates/venue/aliases-layout.hamlc": 1218,
-        "./templates/venue/category-tag.hamlc": 1219,
-        "./templates/venue/external-provider/item.hamlc": 1220,
-        "./templates/venue/external-provider/list.hamlc": 1221,
-        "./templates/venue/suggested-categories.hamlc": 1222,
-        "./templates/venue/venue-categories.hamlc": 1223,
-        "./templates/venue/venue-edit-general.hamlc": 1224,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 1225,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 1226,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 1227,
-        "./templates/venue/venue-edit-more-info.hamlc": 1228,
-        "./templates/venue/venue-edit.hamlc": 1229
-    };
-    n.keys = function() {
-            return Object.keys(r)
-        },
-        n.resolve = s,
-        e.exports = n,
-        n.id = 999
-}, function(e, t, i) {
-    function n(e) {
-        return i(s(e))
-    }
-
-    function s(e) {
-        return r[e] || function() {
-            throw new Error("Cannot find module '" + e + "'.")
-        }()
-    }
-    var r = {
-        "./Cities/Manifest": 476,
-        "./Comments/Manifest": 484
+        "./camera2false.png": 964,
+        "./camera2true.png": 965,
+        "./camera3false.png": 966,
+        "./camera3true.png": 967,
+        "./camera4false.png": 968,
+        "./camera4true.png": 969
     };
     n.keys = function() {
             return Object.keys(r)
@@ -38272,6 +38150,313 @@ webpackJsonp([1], [function(e, t, i) {
         n.resolve = s,
         e.exports = n,
         n.id = 1e3
+}, function(e, t, i) {
+    function n(e) {
+        return i(s(e))
+    }
+
+    function s(e) {
+        return r[e] || function() {
+            throw new Error("Cannot find module '" + e + "'.")
+        }()
+    }
+    var r = {
+        "./big_direction_end.png": 970,
+        "./big_direction_exit_left.png": 971,
+        "./big_direction_exit_right.png": 972,
+        "./big_direction_forward.png": 973,
+        "./big_direction_left.png": 974,
+        "./big_direction_right.png": 975,
+        "./big_direction_u.png": 976,
+        "./big_directions_roundabout.png": 977,
+        "./big_directions_roundabout_UK.png": 978,
+        "./big_directions_roundabout_UK_l.png": 979,
+        "./big_directions_roundabout_UK_s.png": 980,
+        "./big_directions_roundabout_l.png": 981,
+        "./big_directions_roundabout_r.png": 982,
+        "./big_directions_roundabout_r_UK.png": 983,
+        "./big_directions_roundabout_s.png": 984,
+        "./big_directions_roundabout_u.png": 985,
+        "./big_directions_roundabout_u_UK.png": 986,
+        "./unknown.png": 987
+    };
+    n.keys = function() {
+            return Object.keys(r)
+        },
+        n.resolve = s,
+        e.exports = n,
+        n.id = 1001
+}, function(e, t, i) {
+    function n(e) {
+        return i(s(e))
+    }
+
+    function s(e) {
+        return r[e] || function() {
+            throw new Error("Cannot find module '" + e + "'.")
+        }()
+    }
+    var r = {
+        "./Waze/Action/AddAlternateStreet.js": 153,
+        "./Waze/Action/AddBigJunction.js": 154,
+        "./Waze/Action/AddIntersection.js": 155,
+        "./Waze/Action/AddLandmark.js": 156,
+        "./Waze/Action/AddNode.js": 78,
+        "./Waze/Action/AddOrGetCity.js": 61,
+        "./Waze/Action/AddOrGetStreet.js": 79,
+        "./Waze/Action/AddRoadClosure.js": 157,
+        "./Waze/Action/AddSegment.js": 49,
+        "./Waze/Action/CompositeAction.js": 4,
+        "./Waze/Action/ConnectSegment.js": 33,
+        "./Waze/Action/CreateObject.js": 40,
+        "./Waze/Action/CreateRoundabout.js": 158,
+        "./Waze/Action/DeleteBigJunction.js": 159,
+        "./Waze/Action/DeleteNode.js": 103,
+        "./Waze/Action/DeleteObject.js": 104,
+        "./Waze/Action/DeleteRoadClosure.js": 160,
+        "./Waze/Action/DeleteSegment.js": 34,
+        "./Waze/Action/DisconnectSegment.js": 62,
+        "./Waze/Action/HouseNumber.js": 161,
+        "./Waze/Action/MergeNode.js": 162,
+        "./Waze/Action/MergeSegments.js": 105,
+        "./Waze/Action/ModifyAllConnections.js": 106,
+        "./Waze/Action/ModifyConnection.js": 372,
+        "./Waze/Action/ModifyConnectionRestriction.js": 373,
+        "./Waze/Action/ModifyJunctionPath.js": 163,
+        "./Waze/Action/MoveNode.js": 164,
+        "./Waze/Action/MultiAction.js": 63,
+        "./Waze/Action/ReplaceNCSegmentID.js": 374,
+        "./Waze/Action/SegmentAction.js": 107,
+        "./Waze/Action/SplitSegments.js": 64,
+        "./Waze/Action/UpdateBigJunctionConnectedSegments.js": 108,
+        "./Waze/Action/UpdateFeatureAddress.js": 109,
+        "./Waze/Action/UpdateFeatureGeometry.js": 65,
+        "./Waze/Action/UpdateHouseNumber.js": 110,
+        "./Waze/Action/UpdateHouseNumberGeometry.js": 165,
+        "./Waze/Action/UpdateObject.js": 9,
+        "./Waze/Action/UpdatePlaceUpdate.js": 166,
+        "./Waze/Action/UpdateRoadClosure.js": 167,
+        "./Waze/Action/UpdateSegmentGeometry.js": 111,
+        "./Waze/Action/Visitor/Serializor.js": 375,
+        "./Waze/Action/Visitor/TreeSerializor.js": 168,
+        "./Waze/Feature/Vector/BigJunction.js": 114,
+        "./Waze/Feature/Vector/ClosureProblem.js": 177,
+        "./Waze/Feature/Vector/CompositeSegment.js": 81,
+        "./Waze/Feature/Vector/Factory/MapProblem.js": 178,
+        "./Waze/Feature/Vector/Factory/MapProblemDetails.js": 179,
+        "./Waze/Feature/Vector/JunctionPath.js": 115,
+        "./Waze/Feature/Vector/Landmark.js": 50,
+        "./Waze/Feature/Vector/Landmark/ParkingAttributes.js": 116,
+        "./Waze/Feature/Vector/Landmark/ParkingEnum.js": 51,
+        "./Waze/Feature/Vector/MapProblem.js": 52,
+        "./Waze/Feature/Vector/Node.js": 82,
+        "./Waze/Feature/Vector/ProblemResolution.js": 117,
+        "./Waze/Feature/Vector/Segment.js": 26,
+        "./Waze/Feature/Vector/SegmentFlags.js": 118,
+        "./Waze/Feature/Vector/SpeedCamera.js": 119,
+        "./Waze/Feature/Vector/TurnProblem.js": 180,
+        "./Waze/Feature/Vector/UpdateRequest.js": 181,
+        "./Waze/Model/Graph/Actions/SetTurn.js": 27,
+        "./Waze/Model/Graph/Actions/SplitTurns.js": 188,
+        "./Waze/Model/Graph/InstructionOpcode.js": 123,
+        "./Waze/Model/Graph/RoadGraph.js": 189,
+        "./Waze/Model/Graph/Turn.js": 84,
+        "./Waze/Model/Graph/TurnData.js": 68,
+        "./Waze/Model/Graph/TurnGraph.js": 190,
+        "./Waze/Model/Graph/Vertex.js": 28,
+        "./Waze/Modules/Closures/Models/ClosureActionBuilder.js": 203,
+        "./Waze/Modules/Closures/Models/SharedClosure.js": 43,
+        "./Waze/Modules/Closures/Models/SharedClosures.js": 204,
+        "./Waze/Modules/Closures/Models/SharedClosuresBuilder.js": 205
+    };
+    n.keys = function() {
+            return Object.keys(r)
+        },
+        n.resolve = s,
+        e.exports = n,
+        n.id = 1002
+}, function(e, t, i) {
+    function n(e) {
+        return i(s(e))
+    }
+
+    function s(e) {
+        return r[e] || function() {
+            throw new Error("Cannot find module '" + e + "'.")
+        }()
+    }
+    var r = {
+        "./Waze/Modules/BigJunction/templates/path_item.hamlc": 1092,
+        "./Waze/Modules/BigJunction/templates/validation_errors.hamlc": 1093,
+        "./Waze/Modules/Cities/templates/feature_editor.hamlc": 1094,
+        "./Waze/Modules/Cities/templates/layer_switcher.hamlc": 1095,
+        "./Waze/Modules/Closures/templates/edit.hamlc": 1096,
+        "./Waze/Modules/Closures/templates/item.hamlc": 1097,
+        "./Waze/Modules/Closures/templates/layout.hamlc": 1098,
+        "./Waze/Modules/Closures/templates/list.hamlc": 1099,
+        "./Waze/Modules/Comments/templates/feature_editor.hamlc": 1100,
+        "./Waze/Modules/Comments/templates/name_editor.hamlc": 1101,
+        "./Waze/Modules/Conversation/templates/item.hamlc": 1102,
+        "./Waze/Modules/Conversation/templates/list.hamlc": 1103,
+        "./Waze/Modules/Feed/templates/feed.hamlc": 1104,
+        "./Waze/Modules/Feed/templates/feed_group.hamlc": 1105,
+        "./Waze/Modules/Feed/templates/issue_item.hamlc": 1106,
+        "./Waze/Modules/Feed/templates/message_item.hamlc": 1107,
+        "./Waze/Modules/Feed/templates/notification_detail.hamlc": 1108,
+        "./Waze/Modules/Feed/templates/notification_item.hamlc": 1109,
+        "./Waze/Modules/GeoLocation/templates/pan_button.hamlc": 1110,
+        "./Waze/Modules/LayerSwitcher/templates/checkbox.hamlc": 1111,
+        "./Waze/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 1112,
+        "./Waze/Modules/LayerSwitcher/templates/layout.hamlc": 1113,
+        "./Waze/Modules/LayerSwitcher/templates/module-togglers.hamlc": 1114,
+        "./Waze/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 1115,
+        "./Waze/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 1116,
+        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 1117,
+        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 1118,
+        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 1119,
+        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 1120,
+        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 1121,
+        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 1122,
+        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 1123,
+        "./Waze/Modules/MTE/templates/mte_list.hamlc": 1124,
+        "./Waze/Modules/MTE/templates/sidebar.hamlc": 1125,
+        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 1126,
+        "./Waze/Modules/MTE/templates/topbar.hamlc": 1127,
+        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 1128,
+        "./Waze/Modules/MapControls/templates/permalink.hamlc": 1129,
+        "./Waze/Modules/Problems/templates/_navigation.hamlc": 1130,
+        "./Waze/Modules/Problems/templates/closure_description.hamlc": 1131,
+        "./Waze/Modules/Problems/templates/edit.hamlc": 1132,
+        "./Waze/Modules/Save/templates/error_item.hamlc": 1133,
+        "./Waze/Modules/Save/templates/error_list.hamlc": 1134,
+        "./Waze/Modules/Save/templates/success.hamlc": 1135,
+        "./Waze/Modules/Toolbar/templates/search.hamlc": 1136,
+        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 1137,
+        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 1138,
+        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 1139,
+        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 1140,
+        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 1141,
+        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 1142,
+        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 1143,
+        "./Waze/Modules/Topbar/templates/layout.hamlc": 1144,
+        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 1145,
+        "./Waze/Modules/Topbar/templates/location-info.hamlc": 1146,
+        "./templates/add_update_details.hamlc": 1147,
+        "./templates/additional_details.hamlc": 1148,
+        "./templates/address/edit.hamlc": 1149,
+        "./templates/archive-panel.hamlc": 1150,
+        "./templates/archive-sessions.hamlc": 1151,
+        "./templates/big-junction-edit.hamlc": 1152,
+        "./templates/camera-edit.hamlc": 1153,
+        "./templates/chat.hamlc": 1154,
+        "./templates/chat_intro_tip.hamlc": 1155,
+        "./templates/chat_message.hamlc": 1156,
+        "./templates/chat_user.hamlc": 1157,
+        "./templates/chrome_autofill_off.hamlc": 1158,
+        "./templates/editable-areas.hamlc": 1159,
+        "./templates/house-number.hamlc": 1160,
+        "./templates/house-numbers-lightbox.hamlc": 1161,
+        "./templates/instruction-override.hamlc": 1162,
+        "./templates/keyboard_shortcuts/list.hamlc": 1163,
+        "./templates/keyboard_shortcuts/modal.hamlc": 1164,
+        "./templates/location-message.hamlc": 1165,
+        "./templates/location-switcher.hamlc": 1166,
+        "./templates/login/login-form.hamlc": 1167,
+        "./templates/login/sandbox-message.hamlc": 1168,
+        "./templates/login/welcome-popup.hamlc": 1169,
+        "./templates/map.hamlc": 1170,
+        "./templates/node-edit.hamlc": 1171,
+        "./templates/opening_hours/add.hamlc": 1172,
+        "./templates/opening_hours/item.hamlc": 1173,
+        "./templates/opening_hours/layout.hamlc": 1174,
+        "./templates/place_updates/actions.hamlc": 1175,
+        "./templates/place_updates/add_details.hamlc": 1176,
+        "./templates/place_updates/add_image.hamlc": 1177,
+        "./templates/place_updates/add_venue.hamlc": 1178,
+        "./templates/place_updates/changed_field.hamlc": 1179,
+        "./templates/place_updates/changed_field_item.hamlc": 1180,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 1181,
+        "./templates/place_updates/delete_venue.hamlc": 1182,
+        "./templates/place_updates/external_provider/item.hamlc": 1183,
+        "./templates/place_updates/external_provider/list.hamlc": 1184,
+        "./templates/place_updates/flag.hamlc": 1185,
+        "./templates/place_updates/image.hamlc": 1186,
+        "./templates/place_updates/image_dialog.hamlc": 1187,
+        "./templates/place_updates/item.hamlc": 1188,
+        "./templates/place_updates/layout.hamlc": 1189,
+        "./templates/place_updates/panel_header.hamlc": 1190,
+        "./templates/place_updates/place_details.hamlc": 1191,
+        "./templates/place_updates/update_venue.hamlc": 1192,
+        "./templates/prefs-panel.hamlc": 1193,
+        "./templates/restriction/edit.hamlc": 1194,
+        "./templates/restriction/item.hamlc": 1195,
+        "./templates/restriction/layout.hamlc": 1196,
+        "./templates/restriction/list.hamlc": 1197,
+        "./templates/restriction/toggle-checkboxes.hamlc": 1198,
+        "./templates/segment/address-edit.hamlc": 1199,
+        "./templates/segment/alt-streets-edit.hamlc": 1200,
+        "./templates/segment/average-speed-camera.hamlc": 1201,
+        "./templates/segment/edit-panel.hamlc": 1202,
+        "./templates/segment/flag-attribute.hamlc": 1203,
+        "./templates/segment/routing.hamlc": 1204,
+        "./templates/segment/speed-limit.hamlc": 1205,
+        "./templates/segment/tts-playback-popover.hamlc": 1206,
+        "./templates/segment/tts-playback.hamlc": 1207,
+        "./templates/session-expired.hamlc": 1208,
+        "./templates/sidebar/advanced-tools.hamlc": 1209,
+        "./templates/sidebar/links.hamlc": 1210,
+        "./templates/sidebar/sidebar.hamlc": 1211,
+        "./templates/sidebar/user-details.hamlc": 1212,
+        "./templates/sidebar/user-info.hamlc": 1213,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 1214,
+        "./templates/sidebar/user-sandbox.hamlc": 1215,
+        "./templates/snapshot-message.hamlc": 1216,
+        "./templates/snapshot-toggler.hamlc": 1217,
+        "./templates/snapshot_message.hamlc": 1218,
+        "./templates/tips/watch-tutorial.hamlc": 1219,
+        "./templates/tutorial-lightbox.hamlc": 1220,
+        "./templates/user-greeting.hamlc": 1221,
+        "./templates/util/day-checkboxes.hamlc": 1222,
+        "./templates/venue/alias.hamlc": 1223,
+        "./templates/venue/aliases-layout.hamlc": 1224,
+        "./templates/venue/category-tag.hamlc": 1225,
+        "./templates/venue/external-provider/item.hamlc": 1226,
+        "./templates/venue/external-provider/list.hamlc": 1227,
+        "./templates/venue/suggested-categories.hamlc": 1228,
+        "./templates/venue/venue-categories.hamlc": 1229,
+        "./templates/venue/venue-edit-general.hamlc": 1230,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 1231,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 1232,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 1233,
+        "./templates/venue/venue-edit-more-info.hamlc": 1234,
+        "./templates/venue/venue-edit.hamlc": 1235
+    };
+    n.keys = function() {
+            return Object.keys(r)
+        },
+        n.resolve = s,
+        e.exports = n,
+        n.id = 1003
+}, function(e, t, i) {
+    function n(e) {
+        return i(s(e))
+    }
+
+    function s(e) {
+        return r[e] || function() {
+            throw new Error("Cannot find module '" + e + "'.")
+        }()
+    }
+    var r = {
+        "./Cities/Manifest": 480,
+        "./Comments/Manifest": 487
+    };
+    n.keys = function() {
+            return Object.keys(r)
+        },
+        n.resolve = s,
+        e.exports = n,
+        n.id = 1004
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     e.exports = function() {
             return function(e) {
@@ -38329,6 +38514,33 @@ webpackJsonp([1], [function(e, t, i) {
                             i.push("" + t(e(this.t("edit.address.city")))),
                             i.push("</label>\n<div class='controls'>\n<input class='city-name form-control' type='text' autocomplete='off'>\n</div>\n</div>\n<div class='action-buttons'>\n<button class='btn btn-default cancel-button' type='button'>" + t(e(this.t("edit.cancel"))) + "</button>\n<button class='btn btn-primary save-button' type='button'>" + t(e(this.t("edit.apply"))) + "</button>\n</div>\n<div class='loading waze-loader-sm'></div>\n</form>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, i, n;
+                        return e = this.__cleanValue,
+                            t = [],
+                            i = "Waze/Modules/LayerSwitcher/templates/checkbox",
+                            n = "Waze/Modules/LayerSwitcher/templates/text-checkboxes",
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_CITIES"
+                            }))),
+                            t.push("<ul class='children extended horizontal-checkboxes'>\n<li>"),
+                            t.push("" + e(this.renderPartial(n, {
+                                title: this.t("layer_switcher.togglers.ITEM_CITY_NAMES"),
+                                items: [{
+                                    id: "ITEM_CITY_NAMES",
+                                    iconName: "visible"
+                                }]
+                            }))),
+                            t.push("</li>\n</ul>"),
+                            t.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
             }
@@ -38684,6 +38896,244 @@ webpackJsonp([1], [function(e, t, i) {
                             i = [],
                             i.push("<button class='btn btn-default pan-button'>\n<span></span>\n</button>\n<button class='btn btn-default loading' disabled='" + t(e(!0)) + "'>\n<span class='fa-spin'></span>\n</button>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, i, n;
+                        return t = this.__htmlEscape,
+                            e = this.__cleanValue,
+                            i = [],
+                            n = "layer-switcher-" + this.id.toLowerCase(),
+                            i.push("<div class='controls-container toggler'>\n<input class='" + ["toggle", "" + t(e(n))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "' id='" + t(e(n)) + "' type='checkbox'>\n<label for='" + t(e(n)) + "'>\n<span class='label-text'>" + t(e(this.t("layer_switcher.togglers." + this.id))) + "</span>\n</label>\n</div>"),
+                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t;
+                        return e = this.__cleanValue,
+                            t = [],
+                            t.push("<div class='toolbar-button waze-icon-layers'></div>\n<div class='content not-visible'>\n<div class='scrollable'>"),
+                            t.push("" + e(this.renderPartial("Waze/Modules/LayerSwitcher/templates/togglers-tree"))),
+                            t.push("</div>\n<div class='more-options-toggle'>\n<label>\n<div class='title'></div>\n<input type='checkbox'>\n</label>\n</div>\n</div>"),
+                            t.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e;
+                        return e = [],
+                            e.push("<div class='layer-switcher-container'></div>"),
+                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t, i) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, n, s, r, o, a, l, u, d, c, h;
+                        for (e = this.__cleanValue,
+                            t = [],
+                            s = "Waze/Modules/LayerSwitcher/templates/checkbox",
+                            n = i(21),
+                            o = n.getLayerSwitcherConfig(),
+                            a = 0,
+                            u = o.length; a < u; a++)
+                            for (r = o[a],
+                                c = r.togglers,
+                                l = 0,
+                                d = c.length; l < d; l++)
+                                h = c[l],
+                                h.parent === this.id && (t.push("<li>"),
+                                    h.template ? t.push("" + e(this.renderPartial(h.template))) : t.push("" + e(this.renderPartial(s, {
+                                        id: h.id
+                                    }))),
+                                    t.push("</li>"));
+                        return t.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, i, n, s, r, o, a;
+                        for (t = this.__htmlEscape,
+                            e = this.__cleanValue,
+                            i = [],
+                            i.push("<div class='text-checkboxes'>\n<span class='title'>" + t(e(this.title)) + "</span>\n<div class='checkboxes'>"),
+                            a = this.items,
+                            n = 0,
+                            r = a.length; n < r; n++)
+                            s = a[n],
+                            o = "layer-switcher-" + s.id.toLowerCase(),
+                            i.push("<div class='text-checkbox toggler'>\n<input class='" + t(e(o)) + "' id='" + t(e(o)) + "' type='checkbox'>\n<label for='" + t(e(o)) + "' title='" + t(e(this.t("layer_switcher.togglers." + s.id))) + "'>\n<i class='waze-icon-" + s.iconName + "'></i>\n</label>\n</div>");
+                        return i.push("</div>\n</div>"),
+                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, i, n;
+                        return e = this.__cleanValue,
+                            t = [],
+                            i = "Waze/Modules/LayerSwitcher/templates/checkbox",
+                            n = "Waze/Modules/LayerSwitcher/templates/text-checkboxes",
+                            t.push("<ul class='list-unstyled togglers'>\n<li class='group'>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_ISSUES"
+                            }))),
+                            t.push("<ul class='children'>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_MAP_ISSUES"
+                            }))),
+                            t.push("<ul class='children extended horizontal-checkboxes'>\n<li>"),
+                            t.push("" + e(this.renderPartial(n, {
+                                title: this.t("layer_switcher.togglers.ITEM_MAP_PROBLEMS"),
+                                items: [{
+                                    id: "ITEM_MAP_PROBLEMS",
+                                    iconName: "visible"
+                                }, {
+                                    id: "ITEM_CLOSED_MAP_PROBLEMS",
+                                    iconName: "closed-issue"
+                                }]
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(n, {
+                                title: this.t("layer_switcher.togglers.ITEM_UPDATE_REQUESTS"),
+                                items: [{
+                                    id: "ITEM_UPDATE_REQUESTS",
+                                    iconName: "visible"
+                                }, {
+                                    id: "ITEM_CLOSED_UPDATE_REQUESTS",
+                                    iconName: "closed-issue"
+                                }]
+                            }))),
+                            t.push("</li>\n</ul>\n</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_PLACE_UPDATE_REQUESTS"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_PARKING_ISSUES"
+                            }))),
+                            t.push("<ul class='children extended horizontal-checkboxes'>\n<li>"),
+                            t.push("" + e(this.renderPartial(n, {
+                                title: this.t("layer_switcher.togglers.ITEM_PARKING_MAP_PROBLEMS"),
+                                items: [{
+                                    id: "ITEM_PARKING_MAP_PROBLEMS",
+                                    iconName: "visible"
+                                }, {
+                                    id: "ITEM_PARKING_CLOSED_MAP_PROBLEMS",
+                                    iconName: "closed-issue"
+                                }]
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(n, {
+                                title: this.t("layer_switcher.togglers.ITEM_PARKING_PLACE_UPDATE_REQUESTS"),
+                                items: [{
+                                    id: "ITEM_PARKING_PLACE_UPDATE_REQUESTS",
+                                    iconName: "visible"
+                                }]
+                            }))),
+                            t.push("</li>\n</ul>\n</li>\n</ul>\n</li>\n<li class='group'>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_PLACES"
+                            }))),
+                            t.push("<ul class='children'>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_VENUES"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_RESIDENTIAL_PLACES"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_PARKING_PLACES"
+                            }))),
+                            t.push("</li>\n</ul>\n</li>\n<li class='group'>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_ROAD"
+                            }))),
+                            t.push("<ul class='children'>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_ROAD"
+                            }))),
+                            t.push("</li>"),
+                            W.Config.big_junctions.enable && (t.push("<li>"),
+                                t.push("" + e(this.renderPartial(i, {
+                                    id: "ITEM_JUNCTION_BOXES"
+                                }))),
+                                t.push("</li>")),
+                            t.push("<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_CLOSURES"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_SPEED_CAMERAS"
+                            }))),
+                            t.push("</li>"),
+                            t.push("" + e(this.renderPartial("Waze/Modules/LayerSwitcher/templates/module-togglers", {
+                                id: "GROUP_ROAD"
+                            }))),
+                            t.push("</ul>\n</li>\n<li class='group'>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "GROUP_DISPLAY"
+                            }))),
+                            t.push("<ul class='children'>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_SATELLITE_IMAGERY"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_AREA_MANAGERS"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_GPS_POINTS"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_EDITABLE_AREAS"
+                            }))),
+                            t.push("</li>\n<li>"),
+                            t.push("" + e(this.renderPartial(i, {
+                                id: "ITEM_LIVE_USERS"
+                            }))),
+                            t.push("</li>"),
+                            t.push("" + e(this.renderPartial("Waze/Modules/LayerSwitcher/templates/module-togglers", {
+                                id: "GROUP_DISPLAY"
+                            }))),
+                            t.push("</ul>\n</li>\n</ul>"),
+                            t.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
             }
@@ -39123,80 +39573,6 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='toggler'>"),
-                            this.layer.draggable && i.push("<span class='handle'>\n&#xf142;&#xf142;\n</span>"),
-                            i.push("<input class='toggle' id='layer-switcher-" + this.layer.id + "' type='checkbox' checked='" + t(e(this.layer.visibility)) + "'>\n<label for='layer-switcher-" + t(e(this.layer.id)) + "'>\n<span class='label-text'>" + t(e(this.layer.name)) + "</span>\n</label>\n</div>"),
-                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e, t, i;
-                        return t = this.__htmlEscape,
-                            e = this.__cleanValue,
-                            i = [],
-                            i.push("" + e(this.renderPartial("Waze/Modules/Toolbar/templates/layer-switcher-checkbox", this))),
-                            i.push("<a class='closed-filter'>"),
-                            this.filter ? i.push("" + t(e(this.offText))) : i.push("" + t(e(this.onText))),
-                            i.push("</a>"),
-                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "").replace(/[\s\n]*\u0091/gm, "").replace(/\u0092[\s\n]*/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e;
-                        return e = [],
-                            e.push("<div>\n<div class='fa fa-repeat reload-button'></div>\n<ul class='list-unstyled togglers'></ul>\n</div>"),
-                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e;
-                        return e = [],
-                            e.push("<ul class='layer-control list-unstyled'></ul>\n<ul class='list-unstyled parking-control'></ul>"),
-                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e;
-                        return e = [],
-                            e.push("<div class='toolbar-button waze-icon-layers'></div>\n<menu class='controls-container dropdown-menu'>\n<div id='layer-switcher-list'></div>\n</menu>"),
-                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e, t, i;
-                        return t = this.__htmlEscape,
-                            e = this.__cleanValue,
-                            i = [],
                             i.push("<form class='form-search'>\n<div class='input-wrapper'>\n<input class='search-query' autocomplete='off' name='q' spellcheck='off' type='text' placeholder='" + t(e(this.t("toolbar.search"))) + "'>\n<i class='fa fa-spin fa-spinner input-addon input-addon-right spinner'></i>\n</div>\n</form>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -39252,7 +39628,7 @@ webpackJsonp([1], [function(e, t, i) {
                             i.push("" + t(e(this.t("modes.name.default")))),
                             i.push("</li>\n<li class='mode-item' data-mode='" + t(e(1)) + "'>"),
                             i.push("" + t(e(this.t("modes.name.mte")))),
-                            i.push("</li>\n</ul>\n</menu>\n</div>\n<div id='search'></div>\n<div id='edit-buttons'></div>\n<div class='toolbar-separator'></div>\n<div id='layer-switcher'></div>"),
+                            i.push("</li>\n</ul>\n</menu>\n</div>\n<div id='search'></div>\n<div id='edit-buttons'></div>\n<div class='toolbar-separator'></div>\n<div class='layer-switcher-container'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -39629,7 +40005,7 @@ webpackJsonp([1], [function(e, t, i) {
                         if (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(187),
+                            s = i(192),
                             this.areas.isEmpty())
                             n.push("<p class='message'>" + t(e(this.t("user.areas.no_areas"))) + "</p>");
                         else {
@@ -40084,7 +40460,7 @@ webpackJsonp([1], [function(e, t, i) {
                             n.push("" + t(e(this.t("venues.update_requests.panel.change.suggested")))),
                             n.push("<i class='fa fa-crosshairs'></i>\n</div>");
                         else if ("images" === this.fieldName) {
-                            for (s = i(68).SIZE,
+                            for (s = i(69).SIZE,
                                 n.push("<div class='removed-title'>" + t(e(this.t("venues.update_requests.panel.change.removed"))) + "</div>\n<div class='remove-images'>"),
                                 l = this.getRemovedImages(),
                                 r = 0,
@@ -40248,7 +40624,7 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(68).SIZE,
+                            s = i(69).SIZE,
                             this.image ? n.push("<a>\n<img class='image-preview' src='" + t(e(this.image.getUrl(s.MOBILE))) + "' data-image-id='" + t(e(this.image.id)) + "'>\n</a>") : n.push("<div class='missing-image'></div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -40612,7 +40988,7 @@ webpackJsonp([1], [function(e, t, i) {
             var e = {}.hasOwnProperty;
             return function(t) {
                 return function() {
-                        var t, n, s, r, o, a, l, u, d, c, h, p, f, g, m, v, y, _, b, w, E, S, C, M, A, L;
+                        var t, n, s, r, o, a, l, u, d, c, h, p, f, g, m, v, y, _, b, E, w, S, M, C, A, L;
                         if (n = this.__htmlEscape,
                             t = this.__cleanValue,
                             s = [],
@@ -40637,7 +41013,7 @@ webpackJsonp([1], [function(e, t, i) {
                             s.push("" + n(t(this.t("edit.address.street")))),
                             s.push("<div class='controls-container in-label toggle-empty'>\n<input id='emptyStreet' type='checkbox' name='emptyStreet' checked='" + n(t(!!(null != (h = this.address.street) ? h.isEmpty : void 0))) + "' disabled='" + n(t(this.disableEmptyStreet)) + "'>\n<label for='emptyStreet'>" + n(t(this.t("edit.address.none"))) + "</label>\n</div>\n</label>\n<div class='controls input-group'>\n<input class='form-control streetName' autocomplete='off' type='text' name='streetName' title='Street name' maxlength='100' value='" + n(t(null != (y = this.address.street) ? y.name : void 0)) + "' required='" + n(t(!(null != (_ = this.address.street) ? _.isEmpty : void 0))) + "' disabled='" + n(t(!!(null != (b = this.address.street) ? b.isEmpty : void 0))) + "'>\n<span class='input-group-btn tts-playback-region'></span>\n</div>\n</div>\n<div class='form-group toggleable-input'>\n<label class='control-label'>"),
                             s.push("" + n(t(this.t("edit.address.city")))),
-                            s.push("<div class='controls-container in-label toggle-empty'>\n<input id='emptyCity' type='checkbox' name='emptyCity' checked='" + n(t(!!(null != (w = this.address.city) ? w.isEmpty() : void 0))) + "'>\n<label for='emptyCity'>" + n(t(this.t("edit.address.none"))) + "</label>\n</div>\n</label>\n<div class='controls'>\n<input class='form-control' autocomplete='off' maxlength='100' name='cityName' title='City name' type='text' value='" + n(t(null != (E = this.address.city) && null != (S = E.attributes) ? S.name : void 0)) + "' pattern='" + n(t(r)) + "' required='" + n(t(!(null != (C = this.address.city) ? C.isEmpty() : void 0))) + "' disabled='" + n(t(!!(null != (M = this.address.city) ? M.isEmpty() : void 0))) + "'>\n</div>\n</div>"),
+                            s.push("<div class='controls-container in-label toggle-empty'>\n<input id='emptyCity' type='checkbox' name='emptyCity' checked='" + n(t(!!(null != (E = this.address.city) ? E.isEmpty() : void 0))) + "'>\n<label for='emptyCity'>" + n(t(this.t("edit.address.none"))) + "</label>\n</div>\n</label>\n<div class='controls'>\n<input class='form-control' autocomplete='off' maxlength='100' name='cityName' title='City name' type='text' value='" + n(t(null != (w = this.address.city) && null != (S = w.attributes) ? S.name : void 0)) + "' pattern='" + n(t(r)) + "' required='" + n(t(!(null != (M = this.address.city) ? M.isEmpty() : void 0))) + "' disabled='" + n(t(!!(null != (C = this.address.city) ? C.isEmpty() : void 0))) + "'>\n</div>\n</div>"),
                             this.hasStates) {
                             s.push("<div class='form-group'>\n<label class='control-label'>" + n(t(this.t("edit.address.state"))) + "</label>\n<div class='controls'>\n<select class='form-control' name='stateID' required>"),
                                 this.segment.mixed.state && s.push("<option value=''></option>"),
@@ -40722,7 +41098,7 @@ webpackJsonp([1], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i, n, s, r, o, a, l, u, d, c, h, p, f, g, m, v, y, _, b, w, E, S, C, M;
+                        var e, t, i, n, s, r, o, a, l, u, d, c, h, p, f, g, m, v, y, _, b, E, w, S, M, C;
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
@@ -40747,8 +41123,8 @@ webpackJsonp([1], [function(e, t, i) {
                             m = this.segment.HIGHWAY_ROAD_TYPES,
                             s = 0,
                             l = m.length; s < l; s++)
-                            C = m[s],
-                            i.push("" + e(this.h.roadTypeOption(this.segment, C)));
+                            M = m[s],
+                            i.push("" + e(this.h.roadTypeOption(this.segment, M)));
                         for (i.push("</optgroup>\n<optgroup label='" + t(e(this.t("segment.categories.streets"))) + "'>"),
                             i.push("" + e(this.h.roadTypeOption(this.segment, 2))),
                             i.push("" + e(this.h.roadTypeOption(this.segment, 1))),
@@ -40761,8 +41137,8 @@ webpackJsonp([1], [function(e, t, i) {
                             v = this.segment.NON_DRIVABLE_ROAD_TYPES,
                             r = 0,
                             u = v.length; r < u; r++)
-                            C = v[r],
-                            i.push("" + e(this.h.roadTypeOption(this.segment, C)));
+                            M = v[r],
+                            i.push("" + e(this.h.roadTypeOption(this.segment, M)));
                         for (i.push("</optgroup>\n</select>"),
                             this.view.shouldShowRoutingRoadTypeMessage() && i.push("<div class='hint'>" + e(this.view.getRoutingRoadTypeMessage()) + "</div>"),
                             i.push("<div class='controls-container'>\n<input id='tollRoadCheck' type='checkbox' name='tollRoad' checked='" + t(e(!!this.segment.attributes.toll)) + "' mixed='" + t(e(!!this.segment.mixed.toll)) + "'>\n<label for='tollRoadCheck'>" + t(e(this.t("edit.segment.fields.toll"))) + "</label>\n</div>\n<div class='controls-container'>"),
@@ -40841,11 +41217,11 @@ webpackJsonp([1], [function(e, t, i) {
                                     for (i.push("<li>"),
                                         i.push("" + t(e(this.t("edit.segment.fields.updated_by") + ":"))),
                                         i.push("<ul class='list-unstyled updated-by-list'>"),
-                                        w = this.segment.attributes.updatedBy,
+                                        E = this.segment.attributes.updatedBy,
                                         p = 0,
-                                        d = w.length; p < d; p++)
-                                        M = w[p],
-                                        i.push("<li>" + e(this.h.userProfile(M)) + "\n&lrm;\n</li>");
+                                        d = E.length; p < d; p++)
+                                        C = E[p],
+                                        i.push("<li>" + e(this.h.userProfile(C)) + "\n&lrm;\n</li>");
                                     i.push("</ul>\n</li>")
                                 } else
                                     i.push("<li>\n<span class='name'>" + t(e(this.t("edit.segment.fields.updated_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.segment.attributes.updatedBy)) + "</span>\n</li>");
@@ -40859,11 +41235,11 @@ webpackJsonp([1], [function(e, t, i) {
                                 for (i.push("<li>"),
                                     i.push("" + t(e(this.t("edit.segment.fields.created_by") + ":"))),
                                     i.push("<ul class='created-by-list list-unstyled'>"),
-                                    E = this.segment.attributes.createdBy,
+                                    w = this.segment.attributes.createdBy,
                                     f = 0,
-                                    c = E.length; f < c; f++)
-                                    M = E[f],
-                                    i.push("<li>" + e(this.h.userProfile(M)) + "\n&lrm;\n</li>");
+                                    c = w.length; f < c; f++)
+                                    C = w[f],
+                                    i.push("<li>" + e(this.h.userProfile(C)) + "\n&lrm;\n</li>");
                                 i.push("</ul>\n</li>")
                             } else
                                 i.push("<li>\n<span>" + t(e(this.t("edit.segment.fields.created_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.segment.attributes.createdBy)) + "</span>\n</li>");
@@ -41103,7 +41479,7 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(70).UNIT,
+                            s = i(72).UNIT,
                             W.Config.user_editing_enabled ? (n.push("" + t(e(this.t("user.info.edit_area.title", {
                                     distance: this.h.lengthString(this.editableMiles, {
                                         units: s.MILE,
@@ -41193,7 +41569,7 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(983))) + "'>"),
+                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(988))) + "'>"),
                             n.push("" + t(e(this.t("tutorial.title")))),
                             n.push("</a>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -41594,7 +41970,7 @@ webpackJsonp([1], [function(e, t, i) {
                             this.landmark.attributes.residential || n.push("<div class='more-info tab-pane' id='landmark-edit-more-info'></div>"),
                             n.push("<div class='tab-pane' id='landmark-edit-photos'>\n<div class='image-view'>"),
                             this.hasImages || n.push("<em>" + t(e(this.t("edit.landmark.no_photos"))) + "</em>"),
-                            s = i(68).SIZE,
+                            s = i(69).SIZE,
                             l = this.images,
                             r = 0,
                             a = l.length; r < a; r++)
