@@ -44,7 +44,7 @@
                     a.src = t.p + "" + e + ".js/" + ({
                         1: "app"
                     }[e] || e) + "-" + {
-                        1: "a26d3a359b626eeabb68"
+                        1: "6007f3f6fe512b29ecc3"
                     }[e] + ".js",
                     s.appendChild(a)
             }
@@ -55,45 +55,45 @@
         t(0)
 }([function(e, t, n) {
     "use strict";
-    n(906),
-        n(994),
-        n(995),
-        n(648),
-        n(647),
-        n(911),
-        n(650),
-        n(674),
-        n(672),
-        n(669),
-        n(673),
-        n(649),
-        n(644),
-        n(666),
+    n(928),
+        n(1018),
+        n(1019),
         n(670),
-        n(668),
+        n(669),
+        n(933),
+        n(672),
+        n(696),
+        n(694),
+        n(691),
+        n(695),
         n(671),
-        n(667),
-        n(735),
+        n(666),
+        n(688),
+        n(692),
+        n(690),
+        n(693),
+        n(689),
+        n(757),
         n(1),
-        n(369),
-        n(665),
-        n(675),
-        n(907),
-        n(651),
-        n(910),
-        n(57),
-        n(908),
-        n(663),
-        n(660),
-        n(664),
-        n(678),
-        n(993),
-        n(676),
-        n(677),
-        n(679),
-        n(990),
-        n(991),
-        n(1091)
+        n(382),
+        n(687),
+        n(697),
+        n(929),
+        n(673),
+        n(932),
+        n(63),
+        n(930),
+        n(685),
+        n(682),
+        n(686),
+        n(700),
+        n(1017),
+        n(698),
+        n(699),
+        n(701),
+        n(1014),
+        n(1015),
+        n(1115)
 }, function(e, t, n) {
     (function(e) {
         ! function(t, n) {
@@ -913,7 +913,7 @@
                 if (!Hr[t] && "undefined" != typeof e && e && e.exports)
                     try {
                         s = Cr._abbr,
-                            n(998)("./" + t),
+                            n(1022)("./" + t),
                             et(s)
                     } catch (e) {}
                 return Hr[t]
@@ -2657,16 +2657,16 @@
                 t.prototype = Xr,
                 t
         })
-    }).call(t, n(363)(e))
-}, , , , , , , , , , , , function(e, t) {
+    }).call(t, n(376)(e))
+}, , , , , , , , , , , , , function(e, t) {
     var n = e.exports = {
         version: "2.4.0"
     };
     "number" == typeof __e && (__e = n)
-}, , , , , , function(e, t, n) {
-    var s = n(148)("wks"),
-        r = n(99),
-        a = n(25).Symbol,
+}, , , , , , , , , function(e, t, n) {
+    var s = n(155)("wks"),
+        r = n(105),
+        a = n(29).Symbol,
         i = "function" == typeof a,
         o = e.exports = function(e) {
             return s[e] || (s[e] = i && a[e] || (i ? a : r)("Symbol." + e))
@@ -2675,18 +2675,11 @@
 }, , , , , , function(e, t) {
     var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = n)
-}, , , , , function(e, t, n) {
-    var s = n(47);
-    e.exports = function(e) {
-        if (!s(e))
-            throw TypeError(e + " is not an object!");
-        return e
-    }
 }, function(e, t, n) {
-    var s = n(25),
-        r = n(13),
-        a = n(76),
-        i = n(46),
+    var s = n(29),
+        r = n(14),
+        a = n(64),
+        i = n(51),
         o = "prototype",
         d = function(e, t, n) {
             var u, l, y, h = e & d.F,
@@ -2732,26 +2725,19 @@
         d.U = 64,
         d.R = 128,
         e.exports = d
-}, function(e, t, n) {
-    var s = n(242),
-        r = n(141);
+}, , , , function(e, t, n) {
+    var s = n(52);
     e.exports = function(e) {
-        return s(r(e))
+        if (!s(e))
+            throw TypeError(e + " is not an object!");
+        return e
     }
-}, , , , , , function(e, t, n) {
-    e.exports = !n(58)(function() {
-        return 7 != Object.defineProperty({}, "a", {
-            get: function() {
-                return 7
-            }
-        }).a
-    })
 }, function(e, t, n) {
-    var s = n(30),
-        r = n(241),
-        a = n(150),
+    var s = n(34),
+        r = n(253),
+        a = n(158),
         i = Object.defineProperty;
-    t.f = n(38) ? Object.defineProperty : function(e, t, n) {
+    t.f = n(44) ? Object.defineProperty : function(e, t, n) {
         if (s(e),
             t = a(t, !0),
             s(n),
@@ -2764,15 +2750,29 @@
         return "value" in n && (e[t] = n.value),
             e
     }
+}, function(e, t, n) {
+    var s = n(254),
+        r = n(148);
+    e.exports = function(e) {
+        return s(r(e))
+    }
+}, , , , , , , , function(e, t, n) {
+    e.exports = !n(65)(function() {
+        return 7 != Object.defineProperty({}, "a", {
+            get: function() {
+                return 7
+            }
+        }).a
+    })
 }, , , , , , function(e, t) {
     var n = {}.hasOwnProperty;
     e.exports = function(e, t) {
         return n.call(e, t)
     }
 }, function(e, t, n) {
-    var s = n(39),
-        r = n(96);
-    e.exports = n(38) ? function(e, t, n) {
+    var s = n(35),
+        r = n(83);
+    e.exports = n(44) ? function(e, t, n) {
             return s.f(e, t, r(1, n))
         } :
         function(e, t, n) {
@@ -2784,17 +2784,42 @@
         return "object" == typeof e ? null !== e : "function" == typeof e
     }
 }, function(e, t, n) {
-    var s = n(247),
-        r = n(143);
+    var s = n(262),
+        r = n(150);
     e.exports = Object.keys || function(e) {
         return s(e, r)
     }
 }, , , , , , , , , function(e, t, n) {
+    "use strict";
+
+    function s(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var r = n(681),
+        a = s(r),
+        i = n(680),
+        o = s(i),
+        d = "function" == typeof o.default && "symbol" == typeof a.default ? function(e) {
+            return typeof e
+        } :
+        function(e) {
+            return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : typeof e
+        };
+    t.default = "function" == typeof o.default && "symbol" === d(a.default) ? function(e) {
+            return "undefined" == typeof e ? "undefined" : d(e)
+        } :
+        function(e) {
+            return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : "undefined" == typeof e ? "undefined" : d(e)
+        }
+}, function(e, t, n) {
     var s, r;
     (function(a) {
         ! function(i) {
             var o = "object" == typeof self && self.self === self && self || "object" == typeof a && a.global === a && a;
-            s = [n(60), n(102), t],
+            s = [n(67), n(107), t],
                 r = function(e, t, n) {
                     o.Backbone = i(o, n, e, t)
                 }
@@ -3961,6 +3986,30 @@
     }).call(t, function() {
         return this
     }())
+}, function(e, t, n) {
+    var s = n(146);
+    e.exports = function(e, t, n) {
+        if (s(e),
+            void 0 === t)
+            return e;
+        switch (n) {
+            case 1:
+                return function(n) {
+                    return e.call(t, n)
+                };
+            case 2:
+                return function(n, s) {
+                    return e.call(t, n, s)
+                };
+            case 3:
+                return function(n, s, r) {
+                    return e.call(t, n, s, r)
+                }
+        }
+        return function() {
+            return e.apply(t, arguments)
+        }
+    }
 }, function(e, t) {
     e.exports = function(e) {
         try {
@@ -4913,65 +4962,14 @@
             }
             .apply(t, s), !(void 0 !== r && (e.exports = r))
     }).call(this)
-}, , , , , , , , , , , , , , function(e, t, n) {
-    "use strict";
-
-    function s(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var r = n(658),
-        a = s(r),
-        i = n(657),
-        o = s(i),
-        d = "function" == typeof o.default && "symbol" == typeof a.default ? function(e) {
-            return typeof e
-        } :
-        function(e) {
-            return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : typeof e
-        };
-    t.default = "function" == typeof o.default && "symbol" === d(a.default) ? function(e) {
-            return "undefined" == typeof e ? "undefined" : d(e)
-        } :
-        function(e) {
-            return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : "undefined" == typeof e ? "undefined" : d(e)
-        }
-}, function(e, t) {
+}, , , , , , , , , , , , , , function(e, t) {
     var n = {}.toString;
     e.exports = function(e) {
         return n.call(e).slice(8, -1)
     }
-}, function(e, t, n) {
-    var s = n(139);
-    e.exports = function(e, t, n) {
-        if (s(e),
-            void 0 === t)
-            return e;
-        switch (n) {
-            case 1:
-                return function(n) {
-                    return e.call(t, n)
-                };
-            case 2:
-                return function(n, s) {
-                    return e.call(t, n, s)
-                };
-            case 3:
-                return function(n, s, r) {
-                    return e.call(t, n, s, r)
-                }
-        }
-        return function() {
-            return e.apply(t, arguments)
-        }
-    }
 }, function(e, t) {
     t.f = {}.propertyIsEnumerable
-}, , , , , , , , , , , , , , , , , function(e, t) {
-    e.exports = !0
-}, , function(e, t) {
+}, function(e, t) {
     e.exports = function(e, t) {
         return {
             enumerable: !(1 & e),
@@ -4981,30 +4979,14 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(39).f,
-        r = n(45),
-        a = n(19)("toStringTag");
-    e.exports = function(e, t, n) {
-        e && !r(e = n ? e : e.prototype, a) && s(e, a, {
-            configurable: !0,
-            value: t
-        })
-    }
-}, function(e, t, n) {
-    var s = n(141);
+    var s = n(148);
     e.exports = function(e) {
         return Object(s(e))
     }
-}, function(e, t) {
-    var n = 0,
-        s = Math.random();
-    e.exports = function(e) {
-        return "Symbol(".concat(void 0 === e ? "" : e, ")_", (++n + s).toString(36))
-    }
 }, function(e, t, n) {
     "use strict";
-    var s = n(717)(!0);
-    n(243)(String, "String", function(e) {
+    var s = n(738)(!0);
+    n(257)(String, "String", function(e) {
         this._t = String(e),
             this._i = 0
     }, function() {
@@ -5019,9 +5001,27 @@
                 done: !1
             })
     })
+}, , , , , , , , , , , , , , , , , function(e, t) {
+    e.exports = !0
+}, , function(e, t, n) {
+    var s = n(35).f,
+        r = n(50),
+        a = n(23)("toStringTag");
+    e.exports = function(e, t, n) {
+        e && !r(e = n ? e : e.prototype, a) && s(e, a, {
+            configurable: !0,
+            value: t
+        })
+    }
+}, function(e, t) {
+    var n = 0,
+        s = Math.random();
+    e.exports = function(e) {
+        return "Symbol(".concat(void 0 === e ? "" : e, ")_", (++n + s).toString(36))
+    }
 }, function(e, t, n) {
-    n(721);
-    for (var s = n(25), r = n(46), a = n(59), i = n(19)("toStringTag"), o = ["NodeList", "DOMTokenList", "MediaList", "StyleSheetList", "CSSRuleList"], d = 0; d < 5; d++) {
+    n(743);
+    for (var s = n(29), r = n(51), a = n(66), i = n(23)("toStringTag"), o = ["NodeList", "DOMTokenList", "MediaList", "StyleSheetList", "CSSRuleList"], d = 0; d < 5; d++) {
         var u = o[d],
             l = s[u],
             y = l && l.prototype;
@@ -9272,7 +9272,7 @@
             a || (n.jQuery = n.$ = ue),
             ue
     })
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     e.exports = function(e) {
         if ("function" != typeof e)
             throw TypeError(e + " is not a function!");
@@ -9285,8 +9285,8 @@
         return e
     }
 }, function(e, t, n) {
-    var s = n(47),
-        r = n(25).document,
+    var s = n(52),
+        r = n(29).document,
         a = s(r) && s(r.createElement);
     e.exports = function(e) {
         return a ? r.createElement(e) : {}
@@ -9294,19 +9294,19 @@
 }, function(e, t) {
     e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")
 }, function(e, t, n) {
-    var s = n(30),
-        r = n(710),
-        a = n(143),
-        i = n(147)("IE_PROTO"),
+    var s = n(34),
+        r = n(731),
+        a = n(150),
+        i = n(154)("IE_PROTO"),
         o = function() {},
         d = "prototype",
         u = function() {
-            var e, t = n(142)("iframe"),
+            var e, t = n(149)("iframe"),
                 s = a.length,
                 r = "<",
                 i = ">";
             for (t.style.display = "none",
-                n(240).appendChild(t),
+                n(252).appendChild(t),
                 t.src = "javascript:",
                 e = t.contentWindow.document,
                 e.open(),
@@ -9325,14 +9325,14 @@
             void 0 === t ? n : r(n, t)
     }
 }, function(e, t, n) {
-    var s = n(77),
-        r = n(96),
-        a = n(32),
-        i = n(150),
-        o = n(45),
-        d = n(241),
+    var s = n(82),
+        r = n(83),
+        a = n(36),
+        i = n(158),
+        o = n(50),
+        d = n(253),
         u = Object.getOwnPropertyDescriptor;
-    t.f = n(38) ? u : function(e, t) {
+    t.f = n(44) ? u : function(e, t) {
         if (e = a(e),
             t = i(t, !0),
             d)
@@ -9345,13 +9345,13 @@
 }, function(e, t) {
     t.f = Object.getOwnPropertySymbols
 }, function(e, t, n) {
-    var s = n(148)("keys"),
-        r = n(99);
+    var s = n(155)("keys"),
+        r = n(105);
     e.exports = function(e) {
         return s[e] || (s[e] = r(e))
     }
 }, function(e, t, n) {
-    var s = n(25),
+    var s = n(29),
         r = "__core-js_shared__",
         a = s[r] || (s[r] = {});
     e.exports = function(e) {
@@ -9364,7 +9364,13 @@
         return isNaN(e = +e) ? 0 : (e > 0 ? s : n)(e)
     }
 }, function(e, t, n) {
-    var s = n(47);
+    var s = n(156),
+        r = Math.min;
+    e.exports = function(e) {
+        return e > 0 ? r(s(e), 9007199254740991) : 0
+    }
+}, function(e, t, n) {
+    var s = n(52);
     e.exports = function(e, t) {
         if (!s(e))
             return e;
@@ -9378,11 +9384,11 @@
         throw TypeError("Can't convert object to primitive value")
     }
 }, function(e, t, n) {
-    var s = n(25),
-        r = n(13),
-        a = n(94),
-        i = n(152),
-        o = n(39).f;
+    var s = n(29),
+        r = n(14),
+        a = n(102),
+        i = n(160),
+        o = n(35).f;
     e.exports = function(e) {
         var t = r.Symbol || (r.Symbol = a ? {} : s.Symbol || {});
         "_" == e.charAt(0) || e in t || o(t, e, {
@@ -9390,34 +9396,34 @@
         })
     }
 }, function(e, t, n) {
-    t.f = n(19)
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    e.exports = n(25).document && document.documentElement
+    t.f = n(23)
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+    e.exports = n(29).document && document.documentElement
 }, function(e, t, n) {
-    e.exports = !n(38) && !n(58)(function() {
-        return 7 != Object.defineProperty(n(142)("div"), "a", {
+    e.exports = !n(44) && !n(65)(function() {
+        return 7 != Object.defineProperty(n(149)("div"), "a", {
             get: function() {
                 return 7
             }
         }).a
     })
 }, function(e, t, n) {
-    var s = n(75);
+    var s = n(81);
     e.exports = Object("z").propertyIsEnumerable(0) ? Object : function(e) {
         return "String" == s(e) ? e.split("") : Object(e)
     }
-}, function(e, t, n) {
+}, , , function(e, t, n) {
     "use strict";
-    var s = n(94),
-        r = n(31),
-        a = n(248),
-        i = n(46),
-        o = n(45),
-        d = n(59),
-        u = n(704),
-        l = n(97),
-        y = n(246),
-        h = n(19)("iterator"),
+    var s = n(102),
+        r = n(30),
+        a = n(263),
+        i = n(51),
+        o = n(50),
+        d = n(66),
+        u = n(726),
+        l = n(104),
+        y = n(261),
+        h = n(23)("iterator"),
         m = !([].keys && "next" in [].keys()),
         T = "@@iterator",
         c = "keys",
@@ -9476,16 +9482,16 @@
                 r(r.P + r.F * (m || L), t, b);
         return b
     }
-}, function(e, t, n) {
-    var s = n(99)("meta"),
-        r = n(47),
-        a = n(45),
-        i = n(39).f,
+}, , function(e, t, n) {
+    var s = n(105)("meta"),
+        r = n(52),
+        a = n(50),
+        i = n(35).f,
         o = 0,
         d = Object.isExtensible || function() {
             return !0
         },
-        u = !n(58)(function() {
+        u = !n(65)(function() {
             return d(Object.preventExtensions({}))
         }),
         l = function(e) {
@@ -9530,25 +9536,25 @@
             onFreeze: m
         }
 }, function(e, t, n) {
-    var s = n(247),
-        r = n(143).concat("length", "prototype");
+    var s = n(262),
+        r = n(150).concat("length", "prototype");
     t.f = Object.getOwnPropertyNames || function(e) {
         return s(e, r)
     }
 }, function(e, t, n) {
-    var s = n(45),
-        r = n(98),
-        a = n(147)("IE_PROTO"),
+    var s = n(50),
+        r = n(84),
+        a = n(154)("IE_PROTO"),
         i = Object.prototype;
     e.exports = Object.getPrototypeOf || function(e) {
         return e = r(e),
             s(e, a) ? e[a] : "function" == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? i : null
     }
 }, function(e, t, n) {
-    var s = n(45),
-        r = n(32),
-        a = n(697)(!1),
-        i = n(147)("IE_PROTO");
+    var s = n(50),
+        r = n(36),
+        a = n(720)(!1),
+        i = n(154)("IE_PROTO");
     e.exports = function(e, t) {
         var n, o = r(e),
             d = 0,
@@ -9560,13 +9566,7 @@
         return u
     }
 }, function(e, t, n) {
-    e.exports = n(46)
-}, , function(e, t, n) {
-    var s = n(149),
-        r = Math.min;
-    e.exports = function(e) {
-        return e > 0 ? r(s(e), 9007199254740991) : 0
-    }
+    e.exports = n(51)
 }, , function(e, t) {}, , , function(e, t, n) {
     ! function(e, t) {
         t(n(1))
@@ -13955,7 +13955,7 @@
                 },
                 translate: function(e, n, s) {
                     var r = t.words[s];
-                    return 1 === s.length ? n ? r[0] : r[1] : e + " " + t.correctGrammaticalCase(e, r)
+                    return 1 === s.length ? n ? r[0] : r[1] : e + " " + t.correctGrammaticalCase(e, r);
                 }
             },
             n = e.defineLocale("me", {
@@ -19195,7 +19195,7 @@
                             "select" === s.get(0).tagName.toLowerCase() && (this.select = r = n.element),
                             r && e.each(["id", "multiple", "ajax", "query", "createSearchChoice", "initSelection", "data", "tags"], function() {
                                 if (this in n)
-                                    throw new Error("Option '" + this + "' is not allowed for Select2 when attached to a <select> element.");
+                                    throw new Error("Option '" + this + "' is not allowed for Select2 when attached to a <select> element.")
                             }),
                             n.debug = n.debug || e.fn.select2.defaults.debug,
                             n.debug && console && console.warn && (null != n.id,
@@ -20758,7 +20758,7 @@
                 }
         }
     }(jQuery)
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     "use strict";
     $.fn.typeahead.defaults.highlighter = function(e) {
         var t, n, s = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"),
@@ -20971,7 +20971,7 @@
             default: e
         }
     }
-    var r = n(74),
+    var r = n(62),
         a = s(r);
     ! function(e) {
         var t = function(t, n) {
@@ -21320,19 +21320,19 @@
             }
         })
     }()
-}, , , , , , function(e, t, n) {
+}, , , , , , , function(e, t, n) {
     e.exports = {
-        default: n(693),
+        default: n(716),
         __esModule: !0
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(694),
+        default: n(717),
         __esModule: !0
     }
-}, , function(e, t, n) {
+}, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(57))
+        e.exports = s(n(63))
     }(this, function(e) {
         function t() {
             return (65536 * (1 + Math.random()) | 0).toString(16).substring(1)
@@ -21473,7 +21473,7 @@
     })
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(57), n(60), n(662))
+        e.exports = s(n(63), n(67), n(684))
     }(this, function(e, t, n) {
         "use strict";
 
@@ -21484,8 +21484,8 @@
         function r(e) {
             for (var n = arguments.length, s = Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++)
                 s[r - 1] = arguments[r];
-            var a = z(e),
-                i = J.call(this, a),
+            var a = K(e),
+                i = W.call(this, a),
                 o = void 0;
             return t.isFunction(i) && (o = i.apply(this, s)),
                 this.trigger.apply(this, arguments),
@@ -21561,7 +21561,7 @@
             t.each(i, function(t) {
                 var r = e[t];
                 if (!r)
-                    throw new G('Method "' + t + '" was configured as an event handler, but does not exist.');
+                    throw new U('Method "' + t + '" was configured as an event handler, but does not exist.');
                 e[a](n, s, r)
             })
         }
@@ -21569,7 +21569,7 @@
         function S(e, n, s, r) {
             if (n && s) {
                 if (!t.isObject(s))
-                    throw new G({
+                    throw new U({
                         message: "Bindings must be an object.",
                         url: "marionette.functions.html#marionettebindevents"
                     });
@@ -21592,11 +21592,11 @@
         function b(e, n, s, r) {
             if (n && s) {
                 if (!t.isObject(s))
-                    throw new G({
+                    throw new U({
                         message: "Bindings must be an object.",
                         url: "marionette.functions.html#marionettebindrequests"
                     });
-                var a = Z.call(e, s);
+                var a = J.call(e, s);
                 n[r](a, e)
             }
         }
@@ -21621,7 +21621,7 @@
         }
 
         function C(e, n) {
-            return e.behaviorClass ? e.behaviorClass : t.isFunction(e) ? e : t.isFunction(Oe.Behaviors.behaviorsLookup) ? Oe.Behaviors.behaviorsLookup(e, n)[n] : Oe.Behaviors.behaviorsLookup[n]
+            return e.behaviorClass ? e.behaviorClass : t.isFunction(e) ? e : t.isFunction(xe.Behaviors.behaviorsLookup) ? xe.Behaviors.behaviorsLookup(e, n)[n] : xe.Behaviors.behaviorsLookup[n]
         }
 
         function E(e, n) {
@@ -21638,21 +21638,31 @@
             return [e + t.uniqueId(".evt"), n].join(" ")
         }
 
-        function w(e, n) {
+        function w(e) {
+            return !!ie[e]
+        }
+
+        function H(e, t) {
+            return ie[e] = t
+        }
+
+        function I(e, n) {
             t.isString(n) && (n = {
                 event: n
             });
             var s = n.event,
-                r = n.preventDefault !== !1,
-                a = n.stopPropagation !== !1;
-            return function(t) {
-                r && t.preventDefault(),
-                    a && t.stopPropagation(),
-                    e.triggerMethod(s, e)
-            }
+                r = !!n.preventDefault;
+            w("triggersPreventDefault") && (r = n.preventDefault !== !1);
+            var a = !!n.stopPropagation;
+            return w("triggersStopPropagation") && (a = n.stopPropagation !== !1),
+                function(t) {
+                    r && t.preventDefault(),
+                        a && t.stopPropagation(),
+                        e.triggerMethod(s, e, t)
+                }
         }
 
-        function H(e) {
+        function k(e) {
             e.supportsDestroyLifecycle || a(e, "before:destroy", e);
             var t = !!e._isAttached;
             t && a(e, "before:detach", e),
@@ -21663,92 +21673,80 @@
                 e.supportsDestroyLifecycle || a(e, "destroy", e)
         }
 
-        function I(e, t) {
-            return e instanceof me ? e : k(e, t)
-        }
-
-        function k(e, n) {
+        function N(e, n) {
             var s = t.extend({}, n);
             if (t.isString(e))
                 return t.extend(s, {
                         el: e
                     }),
-                    N(s);
+                    O(s);
             if (t.isFunction(e))
                 return t.extend(s, {
                         regionClass: e
                     }),
-                    N(s);
+                    O(s);
             if (t.isObject(e))
-                return e.selector && B("The selector option on a Region definition object is deprecated. Use el to pass a selector string"),
+                return e.selector && Y("The selector option on a Region definition object is deprecated. Use el to pass a selector string"),
                     t.extend(s, {
                         el: e.selector
                     }, e),
-                    N(s);
-            throw new G({
+                    O(s);
+            throw new U({
                 message: "Improper region configuration type.",
                 url: "marionette.region.html#region-configuration-types"
             })
         }
 
-        function N(e) {
+        function O(e) {
             var n = e.regionClass,
                 s = t.omit(e, "regionClass");
             return new n(s)
         }
 
-        function O() {
-            throw new G({
+        function x() {
+            throw new U({
                 message: "You must define where your behaviors are stored.",
                 url: "marionette.behaviors.md#behaviorslookup"
             })
         }
-
-        function x(e) {
-            return !!ke[e]
-        }
-
-        function P(e, t) {
-            return ke[e] = t
-        }
         e = "default" in e ? e.default : e,
             t = "default" in t ? t.default : t,
             n = "default" in n ? n.default : n;
-        var F = "3.1.0",
-            j = function(e) {
+        var P = "3.2.0",
+            F = function(e) {
                 return function(t) {
                     for (var n = arguments.length, s = Array(n > 1 ? n - 1 : 0), r = 1; r < n; r++)
                         s[r - 1] = arguments[r];
                     return e.apply(t, s)
                 }
             },
-            Y = e.Model.extend,
-            B = function e(n, s) {
+            j = e.Model.extend,
+            Y = function e(n, s) {
                 t.isObject(n) && (n = n.prev + " is going to be removed in the future. Please use " + n.next + " instead." + (n.url ? " See: " + n.url : "")),
-                    Oe.DEV_MODE && (void 0 !== s && s || e._cache[n] || (e._warn("Deprecation warning: " + n),
+                    xe.DEV_MODE && (void 0 !== s && s || e._cache[n] || (e._warn("Deprecation warning: " + n),
                         e._cache[n] = !0))
             };
-        B._console = "undefined" != typeof console ? console : {},
-            B._warn = function() {
-                var e = B._console.warn || B._console.log || t.noop;
-                return e.apply(B._console, arguments)
+        Y._console = "undefined" != typeof console ? console : {},
+            Y._warn = function() {
+                var e = Y._console.warn || Y._console.log || t.noop;
+                return e.apply(Y._console, arguments)
             },
-            B._cache = {};
-        var R = function(t) {
-                return e.$.contains(document.documentElement, t)
+            Y._cache = {};
+        var B = function(e) {
+                return document.documentElement.contains(e && e.parentNode)
             },
-            W = function(e, n) {
+            R = function(e, n) {
                 var s = this;
                 e && t.each(n, function(t) {
                     var n = e[t];
                     void 0 !== n && (s[t] = n)
                 })
             },
-            J = function(e) {
+            W = function(e) {
                 if (e)
                     return this.options && void 0 !== this.options[e] ? this.options[e] : this[e]
             },
-            Z = function(e) {
+            J = function(e) {
                 var n = this;
                 return t.reduce(e, function(e, s, r) {
                     return t.isFunction(s) || (s = n[s]),
@@ -21756,48 +21754,48 @@
                         e
                 }, {})
             },
-            K = /(^|:)(\w)/gi,
-            z = t.memoize(function(e) {
-                return "on" + e.replace(K, s)
+            Z = /(^|:)(\w)/gi,
+            K = t.memoize(function(e) {
+                return "on" + e.replace(Z, s)
             }),
-            U = ["description", "fileName", "lineNumber", "name", "message", "number"],
-            G = Y.call(Error, {
-                urlRoot: "http://marionettejs.com/docs/v" + F + "/",
+            z = ["description", "fileName", "lineNumber", "name", "message", "number"],
+            U = j.call(Error, {
+                urlRoot: "http://marionettejs.com/docs/v" + P + "/",
                 constructor: function(e, n) {
                     t.isObject(e) ? (n = e,
                         e = n.message) : n || (n = {});
                     var s = Error.call(this, e);
-                    t.extend(this, t.pick(s, U), t.pick(n, U)),
+                    t.extend(this, t.pick(s, z), t.pick(n, z)),
                         this.captureStackTrace(),
                         n.url && (this.url = this.urlRoot + n.url)
                 },
                 captureStackTrace: function() {
-                    Error.captureStackTrace && Error.captureStackTrace(this, G)
+                    Error.captureStackTrace && Error.captureStackTrace(this, U)
                 },
                 toString: function() {
                     return this.name + ": " + this.message + (this.url ? " See: " + this.url : "")
                 }
             });
-        G.extend = Y;
-        var V = function() {
+        U.extend = j;
+        var G = function() {
                 for (var e = arguments.length, n = Array(e), s = 0; s < e; s++)
                     n[s] = arguments[s];
                 this.options = t.extend.apply(t, [{}, t.result(this, "options")].concat(n))
             },
-            $ = {
-                normalizeMethods: Z,
-                _setOptions: V,
-                mergeOptions: W,
-                getOption: J,
+            V = {
+                normalizeMethods: J,
+                _setOptions: G,
+                mergeOptions: R,
+                getOption: W,
                 bindEvents: g,
                 unbindEvents: _
             },
-            q = {
+            $ = {
                 _initRadio: function() {
                     var e = t.result(this, "channelName");
                     if (e) {
                         if (!n)
-                            throw new G({
+                            throw new U({
                                 name: "BackboneRadioMissing",
                                 message: 'The dependency "backbone.radio" is missing.'
                             });
@@ -21820,16 +21818,16 @@
                 bindRequests: v,
                 unbindRequests: D
             },
-            X = ["channelName", "radioEvents", "radioRequests"],
-            Q = function(e) {
+            q = ["channelName", "radioEvents", "radioRequests"],
+            X = function(e) {
                 this._setOptions(e),
-                    this.mergeOptions(e, X),
+                    this.mergeOptions(e, q),
                     this.cid = t.uniqueId(this.cidPrefix),
                     this._initRadio(),
                     this.initialize.apply(this, arguments)
             };
-        Q.extend = Y,
-            t.extend(Q.prototype, e.Events, $, q, {
+        X.extend = j,
+            t.extend(X.prototype, e.Events, V, $, {
                 cidPrefix: "mno",
                 _isDestroyed: !1,
                 isDestroyed: function() {
@@ -21849,9 +21847,38 @@
                 },
                 triggerMethod: r
             });
-        var ee = function(e) {
-            this.templateId = e
-        };
+        var Q = {
+                createBuffer: function() {
+                    return document.createDocumentFragment()
+                },
+                appendChildren: function(t, n) {
+                    e.$(t).append(n)
+                },
+                beforeEl: function(t, n) {
+                    e.$(t).before(n)
+                },
+                replaceEl: function(e, t) {
+                    if (e !== t) {
+                        var n = t.parentNode;
+                        n && n.replaceChild(e, t)
+                    }
+                },
+                detachContents: function(t) {
+                    e.$(t).contents().detach()
+                },
+                setInnerContent: function(t, n) {
+                    e.$(t).html(n)
+                },
+                removeEl: function(t) {
+                    e.$(t).remove()
+                },
+                findEls: function(t, n) {
+                    return e.$(t, n)
+                }
+            },
+            ee = function(e) {
+                this.templateId = e
+            };
         t.extend(ee, {
                 templateCaches: {},
                 get: function(e, t) {
@@ -21871,7 +21898,7 @@
                         this.templateCaches = {}
                 }
             }),
-            t.extend(ee.prototype, {
+            t.extend(ee.prototype, Q, {
                 load: function(e) {
                     if (this.compiledTemplate)
                         return this.compiledTemplate;
@@ -21879,14 +21906,14 @@
                     return this.compiledTemplate = this.compileTemplate(t, e),
                         this.compiledTemplate
                 },
-                loadTemplate: function(t, n) {
-                    var s = e.$(t);
-                    if (!s.length)
-                        throw new G({
+                loadTemplate: function(e, t) {
+                    var n = this.findEls(e);
+                    if (!n.length)
+                        throw new U({
                             name: "NoTemplateError",
-                            message: 'Could not find template: "' + t + '"'
+                            message: 'Could not find template: "' + e + '"'
                         });
-                    return s.html()
+                    return n.html()
                 },
                 compileTemplate: function(e, n) {
                     return t.template(e, n)
@@ -21895,8 +21922,11 @@
         var te = t.invokeMap || t.invoke,
             ne = {
                 _initBehaviors: function() {
+                    this._behaviors = this._getBehaviors()
+                },
+                _getBehaviors: function() {
                     var e = t.result(this, "behaviors");
-                    this._behaviors = t.isObject(e) ? E(this, e) : {}
+                    return t.isObject(e) ? E(this, e) : {}
                 },
                 _getBehaviorTriggers: function() {
                     var e = te(this._behaviors, "getTriggers");
@@ -21950,48 +21980,52 @@
                 return L(t[1], t[2])
             },
             ie = {
+                triggersStopPropagation: !0,
+                triggersPreventDefault: !0
+            },
+            oe = {
                 _getViewTriggers: function(e, n) {
                     return t.reduce(n, function(t, n, s) {
                         return s = ae(s),
-                            t[s] = w(e, n),
+                            t[s] = I(e, n),
                             t
                     }, {})
                 }
             },
-            oe = function(e, n) {
+            de = function(e, n) {
                 return t.reduce(e, function(e, t, s) {
-                    var r = de(s, n);
+                    var r = ue(s, n);
                     return e[r] = t,
                         e
                 }, {})
             },
-            de = function(e, t) {
+            ue = function(e, t) {
                 return e.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(e) {
                     return t[e.slice(4)]
                 })
             },
-            ue = function e(n, s, r) {
+            le = function e(n, s, r) {
                 return t.each(n, function(a, i) {
-                        t.isString(a) ? n[i] = de(a, s) : t.isObject(a) && t.isArray(r) && (t.extend(a, e(t.pick(a, r), s)),
+                        t.isString(a) ? n[i] = ue(a, s) : t.isObject(a) && t.isArray(r) && (t.extend(a, e(t.pick(a, r), s)),
                             t.each(r, function(e) {
                                 var n = a[e];
-                                t.isString(n) && (a[e] = de(n, s))
+                                t.isString(n) && (a[e] = ue(n, s))
                             }))
                     }),
                     n
             },
-            le = {
+            ye = {
                 normalizeUIKeys: function(e) {
-                    var t = this._getUIBindings();
-                    return oe(e, t)
-                },
-                normalizeUIString: function(e) {
                     var t = this._getUIBindings();
                     return de(e, t)
                 },
+                normalizeUIString: function(e) {
+                    var t = this._getUIBindings();
+                    return ue(e, t)
+                },
                 normalizeUIValues: function(e, t) {
                     var n = this._getUIBindings();
-                    return ue(e, n, t)
+                    return le(e, n, t)
                 },
                 _getUIBindings: function() {
                     var e = t.result(this, "_uiBindings"),
@@ -22023,7 +22057,7 @@
                     return this._ui[e]
                 }
             },
-            ye = {
+            he = {
                 supportsRenderLifecycle: !0,
                 supportsDestroyLifecycle: !0,
                 _isDestroyed: !1,
@@ -22067,13 +22101,6 @@
                         this._undelegateBehaviorEntityEvents(),
                         this
                 },
-                _ensureViewIsIntact: function() {
-                    if (this._isDestroyed)
-                        throw new G({
-                            name: "ViewDestroyedError",
-                            message: 'View (cid: "' + this.cid + '") has already been destroyed and cannot be used.'
-                        })
-                },
                 destroy: function() {
                     if (this._isDestroyed)
                         return this;
@@ -22082,7 +22109,7 @@
                     return this.triggerMethod.apply(this, ["before:destroy", this].concat(n)),
                         e && this.triggerMethod("before:detach", this),
                         this.unbindUIElements(),
-                        this._removeElement(),
+                        this.removeEl(this.el),
                         e && (this._isAttached = !1,
                             this.triggerMethod("detach", this)),
                         this._removeChildren(),
@@ -22104,30 +22131,20 @@
                         this
                 },
                 getUI: function(e) {
-                    return this._ensureViewIsIntact(),
-                        this._getUI(e)
+                    return this._getUI(e)
                 },
                 childViewEventPrefix: "childview",
                 triggerMethod: function() {
                     var e = r.apply(this, arguments);
                     return this._triggerEventOnBehaviors.apply(this, arguments),
-                        this._triggerEventOnParentLayout.apply(this, arguments),
                         e
                 },
                 _buildEventProxies: function() {
                     this._childViewEvents = t.result(this, "childViewEvents"),
                         this._childViewTriggers = t.result(this, "childViewTriggers")
                 },
-                _triggerEventOnParentLayout: function() {
-                    var e = this._parentView();
-                    e && e._childViewEventHandler.apply(e, arguments)
-                },
-                _parentView: function() {
-                    for (var e = this._parent; e;) {
-                        if (e instanceof Me)
-                            return e;
-                        e = e._parent
-                    }
+                _proxyChildViewEvents: function(e) {
+                    this.listenTo(e, "all", this._childViewEventHandler)
                 },
                 _childViewEventHandler: function(e) {
                     for (var n = this.normalizeMethods(this._childViewEvents), s = arguments.length, r = Array(s > 1 ? s - 1 : 0), a = 1; a < s; a++)
@@ -22142,36 +22159,44 @@
                     }
                 }
             };
-        t.extend(ye, ne, $, se, ie, le);
-        var he = ["allowMissingEl", "parentEl", "replaceElement"],
-            me = Q.extend({
+        t.extend(he, Q, ne, V, se, oe, ye);
+        var me = ["allowMissingEl", "parentEl", "replaceElement"],
+            Te = X.extend({
                 cidPrefix: "mnr",
                 replaceElement: !1,
                 _isReplaced: !1,
                 constructor: function(t) {
                     if (this._setOptions(t),
-                        this.mergeOptions(t, he),
+                        this.mergeOptions(t, me),
                         this._initEl = this.el = this.getOption("el"),
                         this.el = this.el instanceof e.$ ? this.el[0] : this.el, !this.el)
-                        throw new G({
+                        throw new U({
                             name: "NoElError",
                             message: 'An "el" must be specified for a region.'
                         });
                     this.$el = this.getEl(this.el),
-                        Q.call(this, t)
+                        X.call(this, t)
                 },
                 show: function(e, t) {
                     if (this._ensureElement(t))
-                        return this._ensureView(e),
+                        return e = this._getView(e, t),
                             e === this.currentView ? this : (this.triggerMethod("before:show", this, e, t),
-                                M(e),
-                                this.empty(t),
-                                e.on("destroy", this._empty, this),
-                                e._parent = this,
+                                e._isAttached || this.empty(t),
+                                this._setupChildView(e),
                                 this._renderView(e),
                                 this._attachView(e, t),
+                                this.currentView = e,
                                 this.triggerMethod("show", this, e, t),
                                 this)
+                },
+                _setupChildView: function(e) {
+                    M(e),
+                        this._proxyChildViewEvents(e),
+                        e.on("destroy", this._empty, this)
+                },
+                _proxyChildViewEvents: function(e) {
+                    var t = this._parentView;
+                    t && t._proxyChildViewEvents(e)
                 },
                 _renderView: function(e) {
                     e._isRendered || (e.supportsRenderLifecycle || a(e, "before:render", e),
@@ -22181,13 +22206,12 @@
                 },
                 _attachView: function(e) {
                     var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                        s = !e._isAttached && R(this.el),
+                        s = !e._isAttached && B(this.el),
                         r = "undefined" == typeof n.replaceElement ? !!t.result(this, "replaceElement") : !!n.replaceElement;
                     s && a(e, "before:attach", e),
                         r ? this._replaceEl(e) : this.attachHtml(e),
                         s && (e._isAttached = !0,
-                            a(e, "attach", e)),
-                        this.currentView = e
+                            a(e, "attach", e))
                 },
                 _ensureElement: function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
@@ -22196,46 +22220,61 @@
                         var n = "undefined" == typeof e.allowMissingEl ? !!t.result(this, "allowMissingEl") : !!e.allowMissingEl;
                         if (n)
                             return !1;
-                        throw new G('An "el" must exist in DOM for this region ' + this.cid)
+                        throw new U('An "el" must exist in DOM for this region ' + this.cid)
                     }
                     return !0
                 },
-                _ensureView: function(e) {
-                    if (!e)
-                        throw new G({
+                _getView: function(t) {
+                    if (!t)
+                        throw new U({
                             name: "ViewNotValid",
                             message: "The view passed is undefined and therefore invalid. You must pass a view instance to show."
                         });
-                    if (e._isDestroyed)
-                        throw new G({
+                    if (t._isDestroyed)
+                        throw new U({
                             name: "ViewDestroyedError",
-                            message: 'View (cid: "' + e.cid + '") has already been destroyed and cannot be used.'
-                        })
+                            message: 'View (cid: "' + t.cid + '") has already been destroyed and cannot be used.'
+                        });
+                    if (t instanceof e.View)
+                        return t;
+                    var n = this._getViewOptions(t);
+                    return new Se(n)
                 },
-                getEl: function(n) {
-                    return e.$(n, t.result(this, "parentEl"))
+                _getViewOptions: function(e) {
+                    if (t.isFunction(e))
+                        return {
+                            template: e
+                        };
+                    if (t.isObject(e))
+                        return e;
+                    var n = function() {
+                        return e
+                    };
+                    return {
+                        template: n
+                    }
+                },
+                getEl: function(e) {
+                    return this.findEls(e, t.result(this, "parentEl"))
                 },
                 _replaceEl: function(e) {
-                    this._restoreEl();
-                    var t = this.el.parentNode;
-                    t.replaceChild(e.el, this.el),
+                    this._restoreEl(),
+                        e.on("before:destroy", this._restoreEl, this),
+                        this.replaceEl(e.el, this.el),
                         this._isReplaced = !0
                 },
                 _restoreEl: function() {
                     if (this._isReplaced) {
                         var e = this.currentView;
-                        if (e) {
-                            var t = e.el.parentNode;
-                            t && (t.replaceChild(this.el, e.el),
-                                this._isReplaced = !1)
-                        }
+                        e && (this.replaceEl(this.el, e.el),
+                            this._isReplaced = !1)
                     }
                 },
                 isReplaced: function() {
                     return !!this._isReplaced
                 },
                 attachHtml: function(e) {
-                    this.el.appendChild(e.el)
+                    this.appendChildren(this.el, e.el)
                 },
                 empty: function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
@@ -22246,7 +22285,7 @@
                         return this._ensureElement(e) && this.detachHtml(),
                             this;
                     var n = !e.preventDestroy;
-                    return n || B("The preventDestroy option is deprecated. Use Region#detachView"),
+                    return n || Y("The preventDestroy option is deprecated. Use Region#detachView"),
                         this._empty(t, n),
                         this
                 },
@@ -22256,11 +22295,15 @@
                         this._restoreEl(),
                         delete this.currentView,
                         e._isDestroyed || (this._removeView(e, t),
-                            delete e._parent),
+                            this._stopChildViewEvents(e)),
                         this.triggerMethod("empty", this, e)
                 },
+                _stopChildViewEvents: function(e) {
+                    var t = this._parentView;
+                    t && this._parentView.stopListening(e)
+                },
                 _removeView: function(e, t) {
-                    return t ? void(e.destroy ? e.destroy() : H(e)) : void this._detachView(e)
+                    return t ? void(e.destroy ? e.destroy() : k(e)) : void this._detachView(e)
                 },
                 detachView: function() {
                     var e = this.currentView;
@@ -22276,7 +22319,7 @@
                             a(e, "detach", e))
                 },
                 detachHtml: function() {
-                    this.$el.contents().detach()
+                    this.detachContents(this.el)
                 },
                 hasView: function() {
                     return !!this.currentView
@@ -22289,11 +22332,15 @@
                 },
                 destroy: function(e) {
                     return this.reset(e),
-                        Q.prototype.destroy.apply(this, arguments)
+                        X.prototype.destroy.apply(this, arguments)
                 }
-            }),
-            Te = {
-                regionClass: me,
+            });
+        t.extend(Te.prototype, Q);
+        var ce = function(e, t) {
+                return e instanceof Te ? e : N(e, t)
+            },
+            pe = {
+                regionClass: Te,
                 _initRegions: function() {
                     this.regions = this.regions || {},
                         this._regions = {},
@@ -22320,14 +22367,14 @@
                             parentEl: t.partial(t.result, this, "el")
                         };
                     return t.reduce(e, function(e, t, r) {
-                        return e[r] = I(t, s),
+                        return e[r] = ce(t, s),
                             n._addRegion(e[r], r),
                             e
                     }, {})
                 },
                 _addRegion: function(e, t) {
                     this.triggerMethod("before:add:region", this, t, e),
-                        e._parent = this,
+                        e._parentView = this,
                         this._regions[t] = e,
                         this.triggerMethod("add:region", this, t, e)
                 },
@@ -22374,10 +22421,10 @@
                     return this.getRegion(e).currentView
                 }
             },
-            ce = {
+            Me = {
                 render: function(e, n) {
                     if (!e)
-                        throw new G({
+                        throw new U({
                             name: "TemplateNotFoundError",
                             message: "Cannot render the template since its false, null or undefined."
                         });
@@ -22385,12 +22432,12 @@
                     return s(n)
                 }
             },
-            pe = ["behaviors", "childViewEventPrefix", "childViewEvents", "childViewTriggers", "collectionEvents", "events", "modelEvents", "regionClass", "regions", "template", "templateContext", "triggers", "ui"],
-            Me = e.View.extend({
+            fe = ["behaviors", "childViewEventPrefix", "childViewEvents", "childViewTriggers", "collectionEvents", "events", "modelEvents", "regionClass", "regions", "template", "templateContext", "triggers", "ui"],
+            Se = e.View.extend({
                 constructor: function(n) {
                     this.render = t.bind(this.render, this),
                         this._setOptions(n),
-                        this.mergeOptions(n, pe),
+                        this.mergeOptions(n, fe),
                         M(this),
                         this._initBehaviors(),
                         this._initRegions();
@@ -22416,25 +22463,24 @@
                     var t = !!this.el;
                     return e.View.prototype.setElement.apply(this, arguments),
                         t && (this._isRendered = !!this.$el.length,
-                            this._isAttached = R(this.el)),
+                            this._isAttached = B(this.el)),
                         this._isRendered && this.bindUIElements(),
                         this
                 },
                 render: function() {
-                    return this._ensureViewIsIntact(),
-                        this.triggerMethod("before:render", this),
+                    return this._isDestroyed ? this : (this.triggerMethod("before:render", this),
                         this._isRendered && this._reInitRegions(),
                         this._renderTemplate(),
                         this.bindUIElements(),
                         this._isRendered = !0,
                         this.triggerMethod("render", this),
-                        this
+                        this)
                 },
                 _renderTemplate: function() {
                     var e = this.getTemplate();
                     if (e !== !1) {
                         var t = this.mixinTemplateContext(this.serializeData()),
-                            n = ce.render(e, t, this);
+                            n = Me.render(e, t, this);
                         this.attachElContent(n)
                     }
                 },
@@ -22447,7 +22493,7 @@
                     return t.extend(e, n)
                 },
                 attachElContent: function(e) {
-                    return this.$el.html(e),
+                    return this.setInnerContent(this.el, e),
                         this
                 },
                 _removeChildren: function() {
@@ -22457,10 +22503,10 @@
                     return t.chain(this.getRegions()).map("currentView").compact().value()
                 }
             });
-        t.extend(Me.prototype, ye, Te);
-        var fe = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck", "reduce"],
-            Se = function(e, n) {
-                t.each(fe, function(s) {
+        t.extend(Se.prototype, he, pe);
+        var ge = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck", "reduce"],
+            _e = function(e, n) {
+                t.each(ge, function(s) {
                     e[s] = function() {
                         var e = t.values(t.result(this, n)),
                             r = [e].concat(t.toArray(arguments));
@@ -22468,15 +22514,15 @@
                     }
                 })
             },
-            ge = function(e) {
+            be = function(e) {
                 this._views = {},
                     this._indexByModel = {},
                     this._indexByCustom = {},
                     this._updateLength(),
                     t.each(e, t.bind(this.add, this))
             };
-        Se(ge.prototype, "_views"),
-            t.extend(ge.prototype, {
+        _e(be.prototype, "_views"),
+            t.extend(be.prototype, {
                 add: function(e, t) {
                     return this._add(e, t)._updateLength()
                 },
@@ -22522,13 +22568,13 @@
                         this
                 }
             });
-        var _e = ["behaviors", "childView", "childViewEventPrefix", "childViewEvents", "childViewOptions", "childViewTriggers", "collectionEvents", "events", "filter", "emptyView", "emptyViewOptions", "modelEvents", "reorderOnSort", "sort", "triggers", "ui", "viewComparator"],
-            be = e.View.extend({
+        var ve = ["behaviors", "childView", "childViewEventPrefix", "childViewEvents", "childViewOptions", "childViewTriggers", "collectionEvents", "events", "filter", "emptyView", "emptyViewOptions", "modelEvents", "reorderOnSort", "sort", "triggers", "ui", "viewComparator"],
+            De = e.View.extend({
                 sort: !0,
                 constructor: function(n) {
                     this.render = t.bind(this.render, this),
                         this._setOptions(n),
-                        this.mergeOptions(n, _e),
+                        this.mergeOptions(n, ve),
                         M(this),
                         this._initBehaviors(),
                         this.once("render", this._initialEvents),
@@ -22576,49 +22622,39 @@
                     this._removeChildModels(n.removed)
                 },
                 _removeChildModels: function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                        n = t.checkEmpty,
-                        s = n !== !1,
-                        r = this._getRemovedViews(e);
-                    r.length && (this.children._updateLength(),
-                        this._updateIndices(r, !1),
-                        s && this._checkEmpty())
+                    var t = this._getRemovedViews(e);
+                    t.length && (this.children._updateLength(),
+                        this._updateIndices(t, !1),
+                        this.isEmpty() && this._showEmptyView())
                 },
                 _getRemovedViews: function(e) {
                     var n = this;
                     return t.reduce(e, function(e, t) {
-                        var s = n.children.findByModel(t);
+                        var s = t && n.children.findByModel(t);
                         return !s || s._isDestroyed ? e : (n._removeChildView(s),
                             e.push(s),
                             e)
                     }, [])
                 },
-                _findGreatestIndexedView: function(e) {
-                    return t.reduce(e, function(e, t) {
-                        return !e || e._index < t._index ? t : e
-                    }, void 0)
-                },
                 _removeChildView: function(e) {
                     this.triggerMethod("before:remove:child", this, e),
                         this.children._remove(e),
-                        e.destroy ? e.destroy() : H(e),
-                        delete e._parent,
+                        e.destroy ? e.destroy() : k(e),
                         this.stopListening(e),
                         this.triggerMethod("remove:child", this, e)
                 },
                 setElement: function() {
                     var t = !!this.el;
                     return e.View.prototype.setElement.apply(this, arguments),
-                        t && (this._isAttached = R(this.el)),
+                        t && (this._isAttached = B(this.el)),
                         this
                 },
                 render: function() {
-                    return this._ensureViewIsIntact(),
-                        this.triggerMethod("before:render", this),
+                    return this._isDestroyed ? this : (this.triggerMethod("before:render", this),
                         this._renderChildren(),
                         this._isRendered = !0,
                         this.triggerMethod("render", this),
-                        this
+                        this)
                 },
                 setFilter: function(e) {
                     var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
@@ -22693,13 +22729,11 @@
                 },
                 _emptyViewIndex: -1,
                 _appendReorderedChildren: function(e) {
-                    this.$el.append(e)
+                    this.appendChildren(this.el, e)
                 },
                 _renderChildren: function() {
                     this._isRendered && (this._destroyEmptyView(),
-                        this._destroyChildren({
-                            checkEmpty: !1
-                        }));
+                        this._destroyChildren());
                     var e = this._filteredSortedModels();
                     this.isEmpty({
                         processedModels: e
@@ -22716,9 +22750,8 @@
                     return r
                 },
                 _setupChildView: function(e, t) {
-                    e._parent = this,
-                        M(e),
-                        this._proxyChildEvents(e),
+                    M(e),
+                        this._proxyChildViewEvents(e),
                         this.sort && (e._index = t)
                 },
                 _showCollection: function(e) {
@@ -22753,7 +22786,7 @@
                 _sortModelsBy: function(e, n) {
                     return "string" == typeof n ? t.sortBy(e, function(e) {
                         return e.get(n)
-                    }) : 1 === n.length ? t.sortBy(e, t.bind(n, this)) : e.sort(t.bind(n, this))
+                    }) : 1 === n.length ? t.sortBy(e, t.bind(n, this)) : t.clone(e).sort(t.bind(n, this))
                 },
                 _showEmptyView: function() {
                     var n = this._getEmptyView();
@@ -22782,12 +22815,12 @@
                 _getChildView: function(e) {
                     var t = this.childView;
                     if (!t)
-                        throw new G({
+                        throw new U({
                             name: "NoChildViewError",
                             message: 'A "childView" must be specified'
                         });
                     if (t = this._getView(t, e), !t)
-                        throw new G({
+                        throw new U({
                             name: "InvalidChildViewError",
                             message: '"childView" must be a view class or a function that returns a view class'
                         });
@@ -22816,9 +22849,13 @@
                 },
                 _updateIndices: function(e, n) {
                     if (this.sort) {
-                        var s = t.isArray(e) ? this._findGreatestIndexedView(e) : e;
-                        this.children.each(function(e) {
-                            e._index >= s._index && (e._index += n ? 1 : -1)
+                        if (!n)
+                            return void t.each(t.sortBy(this.children._views, "_index"), function(e, t) {
+                                e._index = t
+                            });
+                        var s = t.isArray(e) ? t.max(e, "_index") : e;
+                        t.isObject(s) && this.children.each(function(e) {
+                            e._index >= s._index && (e._index += 1)
                         })
                     }
                 },
@@ -22853,18 +22890,16 @@
                             n = this._filterModels(n)),
                         0 === n.length
                 },
-                _checkEmpty: function() {
-                    this.isEmpty() && this._showEmptyView()
-                },
                 attachBuffer: function(e, t) {
-                    e.$el.append(t)
+                    this.appendChildren(e.el, t)
                 },
                 _createBuffer: function() {
-                    var e = document.createDocumentFragment();
+                    var e = this,
+                        n = this.createBuffer();
                     return t.each(this._bufferedChildren, function(t) {
-                            e.appendChild(t.el)
+                            e.appendChildren(n, t.el)
                         }),
-                        e
+                        n
                 },
                 attachHtml: function(e, t, n) {
                     e._isBuffering ? e._bufferedChildren.splice(n, 0, t) : e._insertBefore(t, n) || e._insertAfter(t)
@@ -22874,42 +22909,35 @@
                         s = this.sort && t < this.children.length - 1;
                     return s && (n = this.children.find(function(e) {
                         return e._index === t + 1
-                    })), !!n && (n.$el.before(e.el), !0)
+                    })), !!n && (this.beforeEl(n.el, e.el), !0)
                 },
                 _insertAfter: function(e) {
-                    this.$el.append(e.el)
+                    this.appendChildren(this.el, e.el)
                 },
                 _initChildViewStorage: function() {
-                    this.children = new ge
+                    this.children = new be
                 },
                 _removeChildren: function() {
-                    this._destroyChildren({
-                        checkEmpty: !1
-                    })
+                    this._destroyChildren()
                 },
                 _destroyChildren: function(e) {
-                    if (this.children.length) {
-                        this.triggerMethod("before:destroy:children", this);
-                        var t = this.children.map("model");
-                        this._removeChildModels(t, e),
-                            this.triggerMethod("destroy:children", this)
-                    }
+                    this.children.length && (this.triggerMethod("before:destroy:children", this),
+                        this.children.each(t.bind(this._removeChildView, this)),
+                        this.children._updateLength(),
+                        this.triggerMethod("destroy:children", this))
                 },
                 _shouldAddChild: function(e, n) {
                     var s = this.filter;
                     return !t.isFunction(s) || s.call(this, e, n, this.collection)
-                },
-                _proxyChildEvents: function(e) {
-                    this.listenTo(e, "all", this._childViewEventHandler)
                 }
             });
-        t.extend(be.prototype, ye);
-        var ve = ["childViewContainer", "template", "templateContext"],
-            De = be.extend({
+        t.extend(De.prototype, he);
+        var Ae = ["childViewContainer", "template", "templateContext"],
+            Ce = De.extend({
                 constructor: function(e) {
-                    B("CompositeView is deprecated. Convert to View at your earliest convenience"),
-                        this.mergeOptions(e, ve),
-                        be.prototype.constructor.apply(this, arguments)
+                    Y("CompositeView is deprecated. Convert to View at your earliest convenience"),
+                        this.mergeOptions(e, Ae),
+                        De.prototype.constructor.apply(this, arguments)
                 },
                 _initialEvents: function() {
                     this.collection && (this.listenTo(this.collection, "add", this._onCollectionAdd),
@@ -22922,7 +22950,7 @@
                     if (!t)
                         return this.constructor;
                     if (t = this._getView(t, e), !t)
-                        throw new G({
+                        throw new U({
                             name: "InvalidChildViewError",
                             message: '"childView" must be a view class or a function that returns a view class'
                         });
@@ -22932,8 +22960,7 @@
                     return this.serializeModel()
                 },
                 render: function() {
-                    return this._ensureViewIsIntact(),
-                        this._isRendering = !0,
+                    return this._isDestroyed ? this : (this._isRendering = !0,
                         this.resetChildViewContainer(),
                         this.triggerMethod("before:render", this),
                         this._renderTemplate(),
@@ -22942,22 +22969,22 @@
                         this._isRendering = !1,
                         this._isRendered = !0,
                         this.triggerMethod("render", this),
-                        this
+                        this)
                 },
                 renderChildren: function() {
-                    (this._isRendered || this._isRendering) && be.prototype._renderChildren.call(this)
+                    (this._isRendered || this._isRendering) && De.prototype._renderChildren.call(this)
                 },
                 attachBuffer: function(e, t) {
                     var n = this.getChildViewContainer(e);
-                    n.append(t)
+                    this.appendChildren(n, t)
                 },
                 _insertAfter: function(e) {
                     var t = this.getChildViewContainer(this, e);
-                    t.append(e.el)
+                    this.appendChildren(t, e.el)
                 },
                 _appendReorderedChildren: function(e) {
                     var t = this.getChildViewContainer(this);
-                    t.append(e)
+                    this.appendChildren(t, e)
                 },
                 getChildViewContainer: function(e, n) {
                     if (e.$childViewContainer)
@@ -22966,9 +22993,9 @@
                         r = e.childViewContainer;
                     if (r) {
                         var a = t.result(e, "childViewContainer");
-                        if (s = "@" === a.charAt(0) && e.ui ? e.ui[a.substr(4)] : e.$(a),
+                        if (s = "@" === a.charAt(0) && e.ui ? e.ui[a.substr(4)] : this.findEls(a, e.$el),
                             s.length <= 0)
-                            throw new G({
+                            throw new U({
                                 name: "ChildViewContainerMissingError",
                                 message: 'The specified "childViewContainer" was not found: ' + e.childViewContainer
                             })
@@ -22981,18 +23008,18 @@
                     this.$childViewContainer && (this.$childViewContainer = void 0)
                 }
             }),
-            Ae = t.pick(Me.prototype, "serializeModel", "getTemplate", "_renderTemplate", "mixinTemplateContext", "attachElContent");
-        t.extend(De.prototype, Ae);
-        var Ce = ["collectionEvents", "events", "modelEvents", "triggers", "ui"],
-            Ee = Q.extend({
+            Ee = t.pick(Se.prototype, "serializeModel", "getTemplate", "_renderTemplate", "mixinTemplateContext", "attachElContent");
+        t.extend(Ce.prototype, Ee);
+        var Le = ["collectionEvents", "events", "modelEvents", "triggers", "ui"],
+            we = X.extend({
                 cidPrefix: "mnb",
                 constructor: function(e, n) {
                     this.view = n,
                         this.defaults = t.clone(t.result(this, "defaults", {})),
                         this._setOptions(this.defaults, e),
-                        this.mergeOptions(this.options, Ce),
+                        this.mergeOptions(this.options, Le),
                         this.ui = t.extend({}, t.result(this, "ui"), t.result(n, "ui")),
-                        Q.apply(this, arguments)
+                        X.apply(this, arguments)
                 },
                 $: function() {
                     return this.view.$.apply(this.view, arguments)
@@ -23015,8 +23042,7 @@
                         this
                 },
                 getUI: function(e) {
-                    return this.view._ensureViewIsIntact(),
-                        this._getUI(e)
+                    return this._getUI(e)
                 },
                 delegateEntityEvents: function() {
                     return this._delegateEntityEvents(this.view.model, this.view.collection),
@@ -23044,24 +23070,24 @@
                     }
                 }
             });
-        t.extend(Ee.prototype, se, ie, le);
-        var Le = ["region", "regionClass"],
-            we = Q.extend({
+        t.extend(we.prototype, se, oe, ye);
+        var He = ["region", "regionClass"],
+            Ie = X.extend({
                 cidPrefix: "mna",
                 constructor: function(e) {
                     this._setOptions(e),
-                        this.mergeOptions(e, Le),
+                        this.mergeOptions(e, He),
                         this._initRegion(),
-                        Q.prototype.constructor.apply(this, arguments)
+                        X.prototype.constructor.apply(this, arguments)
                 },
-                regionClass: me,
+                regionClass: Te,
                 _initRegion: function() {
                     var e = this.region;
                     if (e) {
                         var t = {
                             regionClass: this.regionClass
                         };
-                        this._region = I(e, t)
+                        this._region = ce(e, t)
                     }
                 },
                 getRegion: function() {
@@ -23081,11 +23107,11 @@
                         this
                 }
             }),
-            He = ["appRoutes", "controller"],
-            Ie = e.Router.extend({
+            ke = ["appRoutes", "controller"],
+            Ne = e.Router.extend({
                 constructor: function(t) {
                     this._setOptions(t),
-                        this.mergeOptions(t, He),
+                        this.mergeOptions(t, ke),
                         e.Router.apply(this, arguments);
                     var n = this.appRoutes,
                         s = this._getController();
@@ -23119,55 +23145,54 @@
                 _addAppRoute: function(e, n, s) {
                     var r = e[s];
                     if (!r)
-                        throw new G('Method "' + s + '" was not found on the controller');
+                        throw new U('Method "' + s + '" was not found on the controller');
                     this.route(n, s, t.bind(r, e))
                 },
                 triggerMethod: r
             });
-        t.extend(Ie.prototype, $);
-        var ke = {},
-            Ne = e.Marionette,
-            Oe = e.Marionette = {};
-        return Oe.noConflict = function() {
-                return e.Marionette = Ne,
+        t.extend(Ne.prototype, V);
+        var Oe = e.Marionette,
+            xe = e.Marionette = {};
+        return xe.noConflict = function() {
+                return e.Marionette = Oe,
                     this
             },
-            Oe.bindEvents = j(g),
-            Oe.unbindEvents = j(_),
-            Oe.bindRequests = j(v),
-            Oe.unbindRequests = j(D),
-            Oe.mergeOptions = j(W),
-            Oe.getOption = j(J),
-            Oe.normalizeMethods = j(Z),
-            Oe.extend = Y,
-            Oe.isNodeAttached = R,
-            Oe.deprecate = B,
-            Oe.triggerMethod = j(r),
-            Oe.triggerMethodOn = a,
-            Oe.isEnabled = x,
-            Oe.setEnabled = P,
-            Oe.monitorViewEvents = M,
-            Oe.Behaviors = {},
-            Oe.Behaviors.behaviorsLookup = O,
-            Oe.Application = we,
-            Oe.AppRouter = Ie,
-            Oe.Renderer = ce,
-            Oe.TemplateCache = ee,
-            Oe.View = Me,
-            Oe.CollectionView = be,
-            Oe.CompositeView = De,
-            Oe.Behavior = Ee,
-            Oe.Region = me,
-            Oe.Error = G,
-            Oe.Object = Q,
-            Oe.DEV_MODE = !1,
-            Oe.FEATURES = ke,
-            Oe.VERSION = F,
-            Oe
+            xe.bindEvents = F(g),
+            xe.unbindEvents = F(_),
+            xe.bindRequests = F(v),
+            xe.unbindRequests = F(D),
+            xe.mergeOptions = F(R),
+            xe.getOption = F(W),
+            xe.normalizeMethods = F(J),
+            xe.extend = j,
+            xe.isNodeAttached = B,
+            xe.deprecate = Y,
+            xe.triggerMethod = F(r),
+            xe.triggerMethodOn = a,
+            xe.isEnabled = w,
+            xe.setEnabled = H,
+            xe.monitorViewEvents = M,
+            xe.Behaviors = {},
+            xe.Behaviors.behaviorsLookup = x,
+            xe.Application = Ie,
+            xe.AppRouter = Ne,
+            xe.Renderer = Me,
+            xe.TemplateCache = ee,
+            xe.View = Se,
+            xe.CollectionView = De,
+            xe.CompositeView = Ce,
+            xe.Behavior = we,
+            xe.Region = Te,
+            xe.Error = U,
+            xe.Object = X,
+            xe.DEV_MODE = !1,
+            xe.FEATURES = ie,
+            xe.VERSION = P,
+            xe
     })
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(60), n(57))
+        e.exports = s(n(67), n(63))
     }(this, function(e, t) {
         "use strict";
 
@@ -23349,7 +23374,7 @@
 }, function(e, t, n) {
     var s, r, a;
     ! function(i) {
-        r = [n(60), n(57), t],
+        r = [n(67), n(63), t],
             s = i,
             a = "function" == typeof s ? s.apply(t, r) : s, !(void 0 !== a && (e.exports = a))
     }(function(e, t, n) {
@@ -23782,7 +23807,7 @@
 }, function(e, t, n) {
     var s, r;
     ! function(a, i) {
-        s = [n(57), n(60)],
+        s = [n(63), n(67)],
             r = function(e, t) {
                 return i(e, t)
             }
@@ -23993,14 +24018,14 @@
 }, function(e, t, n) {
     var s, r;
     /**
-     * @version: 2.1.24
+     * @version: 2.1.25
      * @author: Dan Grossman http://www.dangrossman.info/
-     * @copyright: Copyright (c) 2012-2016 Dan Grossman. All rights reserved.
+     * @copyright: Copyright (c) 2012-2017 Dan Grossman. All rights reserved.
      * @license: Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
-     * @website: https://www.improvely.com/
+     * @website: https://www.daterangepicker.com/
      */
     ! function(a, i) {
-        s = [n(1), n(102)],
+        s = [n(1), n(107)],
             r = function(e, t) {
                 return a.daterangepicker = i(e, t)
             }
@@ -24037,7 +24062,7 @@
                 this.cancelClass = "btn-default",
                 this.locale = {
                     direction: "ltr",
-                    format: "MM/DD/YYYY",
+                    format: e.localeData().longDateFormat("L"),
                     separator: " - ",
                     applyLabel: "Apply",
                     cancelLabel: "Cancel",
@@ -24065,8 +24090,13 @@
                     "string" == typeof s.locale.applyLabel && (this.locale.applyLabel = s.locale.applyLabel),
                     "string" == typeof s.locale.cancelLabel && (this.locale.cancelLabel = s.locale.cancelLabel),
                     "string" == typeof s.locale.weekLabel && (this.locale.weekLabel = s.locale.weekLabel),
-                    "string" == typeof s.locale.customRangeLabel && (this.locale.customRangeLabel = s.locale.customRangeLabel)),
-                this.container.addClass(this.locale.direction),
+                    "string" == typeof s.locale.customRangeLabel)) {
+                var a = document.createElement("textarea");
+                a.innerHTML = s.locale.customRangeLabel;
+                var i = a.value;
+                this.locale.customRangeLabel = i
+            }
+            if (this.container.addClass(this.locale.direction),
                 "string" == typeof s.startDate && (this.startDate = e(s.startDate, this.locale.format)),
                 "string" == typeof s.endDate && (this.endDate = e(s.endDate, this.locale.format)),
                 "string" == typeof s.minDate && (this.minDate = e(s.minDate, this.locale.format)),
@@ -24101,37 +24131,37 @@
                 "function" == typeof s.isCustomDate && (this.isCustomDate = s.isCustomDate),
                 "boolean" == typeof s.alwaysShowCalendars && (this.alwaysShowCalendars = s.alwaysShowCalendars),
                 0 != this.locale.firstDay)
-                for (var a = this.locale.firstDay; a > 0;)
+                for (var o = this.locale.firstDay; o > 0;)
                     this.locale.daysOfWeek.push(this.locale.daysOfWeek.shift()),
-                    a--;
-            var i, o, d;
+                    o--;
+            var d, u, l;
             if ("undefined" == typeof s.startDate && "undefined" == typeof s.endDate && t(this.element).is("input[type=text]")) {
-                var u = t(this.element).val(),
-                    l = u.split(this.locale.separator);
-                i = o = null,
-                    2 == l.length ? (i = e(l[0], this.locale.format),
-                        o = e(l[1], this.locale.format)) : this.singleDatePicker && "" !== u && (i = e(u, this.locale.format),
-                        o = e(u, this.locale.format)),
-                    null !== i && null !== o && (this.setStartDate(i),
-                        this.setEndDate(o))
+                var y = t(this.element).val(),
+                    h = y.split(this.locale.separator);
+                d = u = null,
+                    2 == h.length ? (d = e(h[0], this.locale.format),
+                        u = e(h[1], this.locale.format)) : this.singleDatePicker && "" !== y && (d = e(y, this.locale.format),
+                        u = e(y, this.locale.format)),
+                    null !== d && null !== u && (this.setStartDate(d),
+                        this.setEndDate(u))
             }
             if ("object" == typeof s.ranges) {
-                for (d in s.ranges) {
-                    i = "string" == typeof s.ranges[d][0] ? e(s.ranges[d][0], this.locale.format) : e(s.ranges[d][0]),
-                        o = "string" == typeof s.ranges[d][1] ? e(s.ranges[d][1], this.locale.format) : e(s.ranges[d][1]),
-                        this.minDate && i.isBefore(this.minDate) && (i = this.minDate.clone());
-                    var y = this.maxDate;
-                    if (this.dateLimit && y && i.clone().add(this.dateLimit).isAfter(y) && (y = i.clone().add(this.dateLimit)),
-                        y && o.isAfter(y) && (o = y.clone()), !(this.minDate && o.isBefore(this.minDate, this.timepicker ? "minute" : "day") || y && i.isAfter(y, this.timepicker ? "minute" : "day"))) {
-                        var h = document.createElement("textarea");
-                        h.innerHTML = d;
-                        var m = h.value;
-                        this.ranges[m] = [i, o]
+                for (l in s.ranges) {
+                    d = "string" == typeof s.ranges[l][0] ? e(s.ranges[l][0], this.locale.format) : e(s.ranges[l][0]),
+                        u = "string" == typeof s.ranges[l][1] ? e(s.ranges[l][1], this.locale.format) : e(s.ranges[l][1]),
+                        this.minDate && d.isBefore(this.minDate) && (d = this.minDate.clone());
+                    var m = this.maxDate;
+                    if (this.dateLimit && m && d.clone().add(this.dateLimit).isAfter(m) && (m = d.clone().add(this.dateLimit)),
+                        m && u.isAfter(m) && (u = m.clone()), !(this.minDate && u.isBefore(this.minDate, this.timepicker ? "minute" : "day") || m && d.isAfter(m, this.timepicker ? "minute" : "day"))) {
+                        var a = document.createElement("textarea");
+                        a.innerHTML = l;
+                        var i = a.value;
+                        this.ranges[i] = [d, u]
                     }
                 }
                 var T = "<ul>";
-                for (d in this.ranges)
-                    T += '<li data-range-key="' + d + '">' + d + "</li>";
+                for (l in this.ranges)
+                    T += '<li data-range-key="' + l + '">' + l + "</li>";
                 this.showCustomRangeLabel && (T += '<li data-range-key="' + this.locale.customRangeLabel + '">' + this.locale.customRangeLabel + "</li>"),
                     T += "</ul>",
                     this.container.find(".ranges").prepend(T)
@@ -24175,9 +24205,9 @@
                         "object" == typeof t && (this.startDate = e(t)),
                         this.timePicker || (this.startDate = this.startDate.startOf("day")),
                         this.timePicker && this.timePickerIncrement && this.startDate.minute(Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement),
-                        this.minDate && this.startDate.isBefore(this.minDate) && (this.startDate = this.minDate,
+                        this.minDate && this.startDate.isBefore(this.minDate) && (this.startDate = this.minDate.clone(),
                             this.timePicker && this.timePickerIncrement && this.startDate.minute(Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement)),
-                        this.maxDate && this.startDate.isAfter(this.maxDate) && (this.startDate = this.maxDate,
+                        this.maxDate && this.startDate.isAfter(this.maxDate) && (this.startDate = this.maxDate.clone(),
                             this.timePicker && this.timePickerIncrement && this.startDate.minute(Math.floor(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement)),
                         this.isShowing || this.updateElement(),
                         this.updateMonthsInView()
@@ -24188,7 +24218,7 @@
                         this.timePicker || (this.endDate = this.endDate.endOf("day")),
                         this.timePicker && this.timePickerIncrement && this.endDate.minute(Math.round(this.endDate.minute() / this.timePickerIncrement) * this.timePickerIncrement),
                         this.endDate.isBefore(this.startDate) && (this.endDate = this.startDate.clone()),
-                        this.maxDate && this.endDate.isAfter(this.maxDate) && (this.endDate = this.maxDate),
+                        this.maxDate && this.endDate.isAfter(this.maxDate) && (this.endDate = this.maxDate.clone()),
                         this.dateLimit && this.startDate.clone().add(this.dateLimit).isBefore(this.endDate) && (this.endDate = this.startDate.clone().add(this.dateLimit)),
                         this.previousRightTime = this.endDate.clone(),
                         this.isShowing || this.updateElement(),
@@ -24360,7 +24390,7 @@
                             n = this.endDate.clone(),
                                 s = this.startDate;
                             var a = this.container.find(".calendar.right .calendar-time div");
-                            if (!this.endDate && "" != a.html() && (n.hour(a.find(".hourselect option:selected").val() || n.hour()),
+                            if ("" != a.html() && (n.hour(a.find(".hourselect option:selected").val() || n.hour()),
                                     n.minute(a.find(".minuteselect option:selected").val() || n.minute()),
                                     n.second(a.find(".secondselect option:selected").val() || n.second()), !this.timePicker24Hour)) {
                                 var i = a.find(".ampmselect option:selected").val();
@@ -24554,7 +24584,7 @@
                         var o = this.leftCalendar,
                             d = this.rightCalendar,
                             u = this.startDate;
-                        this.endDate || this.container.find(".calendar td").each(function(e, n) {
+                        this.endDate || this.container.find(".calendar tbody td").each(function(e, n) {
                             if (!t(n).hasClass("week")) {
                                 var s = t(n).attr("data-title"),
                                     r = s.substr(1, 1),
@@ -24628,7 +24658,7 @@
                         }
                         t++
                     }
-                    e && this.showCustomRangeLabel && (this.chosenLabel = this.container.find(".ranges li:last").addClass("active").html(),
+                    e && (this.showCustomRangeLabel ? this.chosenLabel = this.container.find(".ranges li:last").addClass("active").html() : this.chosenLabel = null,
                         this.showCalendars())
                 },
                 clickApply: function(e) {
@@ -26682,22 +26712,22 @@
             return e.htmlSafe || (e = this.escape(this.cleanValue(e))),
                 e
         }
-}, , , , , , , , , , , , , , function(e, t, n) {
-    n(731),
-        n(252),
-        n(733),
-        n(734),
-        e.exports = n(13).Symbol
+}, , , , , , , , , , , , , , , function(e, t, n) {
+    n(753),
+        n(265),
+        n(755),
+        n(756),
+        e.exports = n(14).Symbol
 }, function(e, t, n) {
-    n(100),
-        n(101),
-        e.exports = n(152).f("iterator")
+    n(85),
+        n(106),
+        e.exports = n(160).f("iterator")
 }, function(e, t) {
     e.exports = function() {}
 }, , function(e, t, n) {
-    var s = n(32),
-        r = n(250),
-        a = n(718);
+    var s = n(36),
+        r = n(157),
+        a = n(739);
     e.exports = function(e) {
         return function(t, n, i) {
             var o, d = s(t),
@@ -26715,10 +26745,10 @@
             return !e && -1
         }
     }
-}, function(e, t, n) {
-    var s = n(48),
-        r = n(146),
-        a = n(77);
+}, , function(e, t, n) {
+    var s = n(53),
+        r = n(153),
+        a = n(82);
     e.exports = function(e) {
         var t = s(e),
             n = r.f;
@@ -26727,18 +26757,18 @@
                 d.call(e, i = o[u++]) && t.push(i);
         return t
     }
-}, , , , function(e, t, n) {
-    var s = n(75);
+}, , , function(e, t, n) {
+    var s = n(81);
     e.exports = Array.isArray || function(e) {
         return "Array" == s(e)
     }
-}, , function(e, t, n) {
+}, function(e, t, n) {
     "use strict";
-    var s = n(144),
-        r = n(96),
-        a = n(97),
+    var s = n(151),
+        r = n(83),
+        a = n(104),
         i = {};
-    n(46)(i, n(19)("iterator"), function() {
+    n(51)(i, n(23)("iterator"), function() {
             return this
         }),
         e.exports = function(e, t, n) {
@@ -26747,7 +26777,7 @@
                 }),
                 a(e, t + " Iterator")
         }
-}, , function(e, t) {
+}, function(e, t) {
     e.exports = function(e, t) {
         return {
             value: t,
@@ -26755,26 +26785,26 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(48),
-        r = n(32);
+    var s = n(53),
+        r = n(36);
     e.exports = function(e, t) {
         for (var n, a = r(e), i = s(a), o = i.length, d = 0; o > d;)
             if (a[n = i[d++]] === t)
                 return n
     }
 }, , , function(e, t, n) {
-    var s = n(39),
-        r = n(30),
-        a = n(48);
-    e.exports = n(38) ? Object.defineProperties : function(e, t) {
+    var s = n(35),
+        r = n(34),
+        a = n(53);
+    e.exports = n(44) ? Object.defineProperties : function(e, t) {
         r(e);
         for (var n, i = a(t), o = i.length, d = 0; o > d;)
             s.f(e, n = i[d++], t[n]);
         return e
     }
 }, function(e, t, n) {
-    var s = n(32),
-        r = n(245).f,
+    var s = n(36),
+        r = n(260).f,
         a = {}.toString,
         i = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [],
         o = function(e) {
@@ -26788,8 +26818,8 @@
         return i && "[object Window]" == a.call(e) ? o(e) : r(s(e))
     }
 }, , , , , , function(e, t, n) {
-    var s = n(149),
-        r = n(141);
+    var s = n(156),
+        r = n(148);
     e.exports = function(e) {
         return function(t, n) {
             var a, i, o = String(r(t)),
@@ -26800,20 +26830,20 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(149),
+    var s = n(156),
         r = Math.max,
         a = Math.min;
     e.exports = function(e, t) {
         return e = s(e),
             e < 0 ? r(e + t, 0) : a(e, t)
     }
-}, , , function(e, t, n) {
+}, , , , function(e, t, n) {
     "use strict";
-    var s = n(695),
-        r = n(706),
-        a = n(59),
-        i = n(32);
-    e.exports = n(243)(Array, "Array", function(e, t) {
+    var s = n(718),
+        r = n(727),
+        a = n(66),
+        i = n(36);
+    e.exports = n(257)(Array, "Array", function(e, t) {
             this._t = i(e),
                 this._i = 0,
                 this._k = t
@@ -26830,31 +26860,31 @@
         s("entries")
 }, , , , , , , , , , function(e, t, n) {
     "use strict";
-    var s = n(25),
-        r = n(45),
-        a = n(38),
-        i = n(31),
-        o = n(248),
-        d = n(244).KEY,
-        u = n(58),
-        l = n(148),
-        y = n(97),
-        h = n(99),
-        m = n(19),
-        T = n(152),
-        c = n(151),
-        p = n(707),
-        M = n(698),
-        f = n(702),
-        S = n(30),
-        g = n(32),
-        _ = n(150),
-        b = n(96),
-        v = n(144),
-        D = n(711),
-        A = n(145),
-        C = n(39),
-        E = n(48),
+    var s = n(29),
+        r = n(50),
+        a = n(44),
+        i = n(30),
+        o = n(263),
+        d = n(259).KEY,
+        u = n(65),
+        l = n(155),
+        y = n(104),
+        h = n(105),
+        m = n(23),
+        T = n(160),
+        c = n(159),
+        p = n(728),
+        M = n(722),
+        f = n(725),
+        S = n(34),
+        g = n(36),
+        _ = n(158),
+        b = n(83),
+        v = n(151),
+        D = n(732),
+        A = n(152),
+        C = n(35),
+        E = n(53),
         L = A.f,
         w = C.f,
         H = D.f,
@@ -26962,10 +26992,10 @@
             }),
             A.f = X,
             C.f = G,
-            n(245).f = D.f = Q,
-            n(77).f = q,
-            n(146).f = ee,
-            a && !n(94) && o(R, "propertyIsEnumerable", q, !0),
+            n(260).f = D.f = Q,
+            n(82).f = q,
+            n(153).f = ee,
+            a && !n(102) && o(R, "propertyIsEnumerable", q, !0),
             T.f = function(e) {
                 return z(m(e))
             }
@@ -27021,27 +27051,27 @@
                 }
             }
         }),
-        I[O][P] || n(46)(I[O], P, I[O].valueOf),
+        I[O][P] || n(51)(I[O], P, I[O].valueOf),
         y(I, "Symbol"),
         y(Math, "Math", !0),
         y(s.JSON, "JSON", !0)
 }, , function(e, t, n) {
-    n(151)("asyncIterator")
+    n(159)("asyncIterator")
 }, function(e, t, n) {
-    n(151)("observable")
+    n(159)("observable")
 }, function(e, t, n) {
-    n(740),
-        n(737),
-        n(736),
-        n(745),
-        n(739),
-        n(743),
-        n(744),
-        n(742),
-        n(741),
-        n(738),
-        n(746),
-        n(747)
+    n(762),
+        n(759),
+        n(758),
+        n(767),
+        n(761),
+        n(765),
+        n(766),
+        n(764),
+        n(763),
+        n(760),
+        n(768),
+        n(769)
 }, function(e, t) {
     ! function() {
         var e = Date,
@@ -28491,7 +28521,7 @@
                     else if (!Date.CultureStrings || !Date.CultureStrings[r])
                         if ("undefined" != typeof t && this.exports !== t)
                             try {
-                                n(748)("./" + r + ".js"),
+                                n(770)("./" + r + ".js"),
                                     s = r,
                                     Date.CultureStrings.lang = r,
                                     Date.CultureInfo = new l
@@ -29612,169 +29642,169 @@
         }()
     }
     var a = {
-        "./af-ZA.js": 749,
-        "./ar-AE.js": 750,
-        "./ar-BH.js": 751,
-        "./ar-DZ.js": 752,
-        "./ar-EG.js": 753,
-        "./ar-IQ.js": 754,
-        "./ar-JO.js": 755,
-        "./ar-KW.js": 756,
-        "./ar-LB.js": 757,
-        "./ar-LY.js": 758,
-        "./ar-MA.js": 759,
-        "./ar-OM.js": 760,
-        "./ar-QA.js": 761,
-        "./ar-SA.js": 762,
-        "./ar-SY.js": 763,
-        "./ar-TN.js": 764,
-        "./ar-YE.js": 765,
-        "./az-Cyrl-AZ.js": 766,
-        "./az-Latn-AZ.js": 767,
-        "./be-BY.js": 768,
-        "./bg-BG.js": 769,
-        "./bs-Latn-BA.js": 770,
-        "./ca-ES.js": 771,
-        "./cs-CZ.js": 772,
-        "./cy-GB.js": 773,
-        "./da-DK.js": 774,
-        "./de-AT.js": 775,
-        "./de-CH.js": 776,
-        "./de-DE.js": 777,
-        "./de-LI.js": 778,
-        "./de-LU.js": 779,
-        "./dv-MV.js": 780,
-        "./el-GR.js": 781,
-        "./en-029.js": 782,
-        "./en-AU.js": 783,
-        "./en-BZ.js": 784,
-        "./en-CA.js": 785,
-        "./en-GB.js": 786,
-        "./en-IE.js": 787,
-        "./en-JM.js": 788,
-        "./en-NZ.js": 789,
-        "./en-PH.js": 790,
-        "./en-TT.js": 791,
-        "./en-ZA.js": 792,
-        "./en-ZW.js": 793,
-        "./es-AR.js": 794,
-        "./es-BO.js": 795,
-        "./es-CL.js": 796,
-        "./es-CO.js": 797,
-        "./es-CR.js": 798,
-        "./es-DO.js": 799,
-        "./es-EC.js": 800,
-        "./es-ES.js": 801,
-        "./es-GT.js": 802,
-        "./es-HN.js": 803,
-        "./es-MX.js": 804,
-        "./es-NI.js": 805,
-        "./es-PA.js": 806,
-        "./es-PE.js": 807,
-        "./es-PR.js": 808,
-        "./es-PY.js": 809,
-        "./es-SV.js": 810,
-        "./es-UY.js": 811,
-        "./es-VE.js": 812,
-        "./et-EE.js": 813,
-        "./eu-ES.js": 814,
-        "./fa-IR.js": 815,
-        "./fi-FI.js": 816,
-        "./fo-FO.js": 817,
-        "./fr-BE.js": 818,
-        "./fr-CA.js": 819,
-        "./fr-CH.js": 820,
-        "./fr-FR.js": 821,
-        "./fr-LU.js": 822,
-        "./fr-MC.js": 823,
-        "./gl-ES.js": 824,
-        "./gu-IN.js": 825,
-        "./he-IL.js": 826,
-        "./hi-IN.js": 827,
-        "./hr-BA.js": 828,
-        "./hr-HR.js": 829,
-        "./hu-HU.js": 830,
-        "./hy-AM.js": 831,
-        "./id-ID.js": 832,
-        "./is-IS.js": 833,
-        "./it-CH.js": 834,
-        "./it-IT.js": 835,
-        "./ja-JP.js": 836,
-        "./ka-GE.js": 837,
-        "./kk-KZ.js": 838,
-        "./kn-IN.js": 839,
-        "./ko-KR.js": 840,
-        "./kok-IN.js": 841,
-        "./ky-KG.js": 842,
-        "./lt-LT.js": 843,
-        "./lv-LV.js": 844,
-        "./mi-NZ.js": 845,
-        "./mk-MK.js": 846,
-        "./mn-MN.js": 847,
-        "./mr-IN.js": 848,
-        "./ms-BN.js": 849,
-        "./ms-MY.js": 850,
-        "./mt-MT.js": 851,
-        "./nb-NO.js": 852,
-        "./nl-BE.js": 853,
-        "./nl-NL.js": 854,
-        "./nn-NO.js": 855,
-        "./ns-ZA.js": 856,
-        "./pa-IN.js": 857,
-        "./pl-PL.js": 858,
-        "./pt-BR.js": 859,
-        "./pt-PT.js": 860,
-        "./quz-BO.js": 861,
-        "./quz-EC.js": 862,
-        "./quz-PE.js": 863,
-        "./ro-RO.js": 864,
-        "./ru-RU.js": 865,
-        "./sa-IN.js": 866,
-        "./se-FI.js": 867,
-        "./se-NO.js": 868,
-        "./se-SE.js": 869,
-        "./sk-SK.js": 870,
-        "./sl-SI.js": 871,
-        "./sma-NO.js": 872,
-        "./sma-SE.js": 873,
-        "./smj-NO.js": 874,
-        "./smj-SE.js": 875,
-        "./smn-FI.js": 876,
-        "./sms-FI.js": 877,
-        "./sq-AL.js": 878,
-        "./sr-Cyrl-BA.js": 879,
-        "./sr-Cyrl-CS.js": 880,
-        "./sr-Latn-BA.js": 881,
-        "./sr-Latn-CS.js": 882,
-        "./sv-FI.js": 883,
-        "./sv-SE.js": 884,
-        "./sw-KE.js": 885,
-        "./syr-SY.js": 886,
-        "./ta-IN.js": 887,
-        "./te-IN.js": 888,
-        "./th-TH.js": 889,
-        "./tn-ZA.js": 890,
-        "./tr-TR.js": 891,
-        "./tt-RU.js": 892,
-        "./uk-UA.js": 893,
-        "./ur-PK.js": 894,
-        "./uz-Cyrl-UZ.js": 895,
-        "./uz-Latn-UZ.js": 896,
-        "./vi-VN.js": 897,
-        "./xh-ZA.js": 898,
-        "./zh-CN.js": 899,
-        "./zh-HK.js": 900,
-        "./zh-MO.js": 901,
-        "./zh-SG.js": 902,
-        "./zh-TW.js": 903,
-        "./zu-ZA.js": 904
+        "./af-ZA.js": 771,
+        "./ar-AE.js": 772,
+        "./ar-BH.js": 773,
+        "./ar-DZ.js": 774,
+        "./ar-EG.js": 775,
+        "./ar-IQ.js": 776,
+        "./ar-JO.js": 777,
+        "./ar-KW.js": 778,
+        "./ar-LB.js": 779,
+        "./ar-LY.js": 780,
+        "./ar-MA.js": 781,
+        "./ar-OM.js": 782,
+        "./ar-QA.js": 783,
+        "./ar-SA.js": 784,
+        "./ar-SY.js": 785,
+        "./ar-TN.js": 786,
+        "./ar-YE.js": 787,
+        "./az-Cyrl-AZ.js": 788,
+        "./az-Latn-AZ.js": 789,
+        "./be-BY.js": 790,
+        "./bg-BG.js": 791,
+        "./bs-Latn-BA.js": 792,
+        "./ca-ES.js": 793,
+        "./cs-CZ.js": 794,
+        "./cy-GB.js": 795,
+        "./da-DK.js": 796,
+        "./de-AT.js": 797,
+        "./de-CH.js": 798,
+        "./de-DE.js": 799,
+        "./de-LI.js": 800,
+        "./de-LU.js": 801,
+        "./dv-MV.js": 802,
+        "./el-GR.js": 803,
+        "./en-029.js": 804,
+        "./en-AU.js": 805,
+        "./en-BZ.js": 806,
+        "./en-CA.js": 807,
+        "./en-GB.js": 808,
+        "./en-IE.js": 809,
+        "./en-JM.js": 810,
+        "./en-NZ.js": 811,
+        "./en-PH.js": 812,
+        "./en-TT.js": 813,
+        "./en-ZA.js": 814,
+        "./en-ZW.js": 815,
+        "./es-AR.js": 816,
+        "./es-BO.js": 817,
+        "./es-CL.js": 818,
+        "./es-CO.js": 819,
+        "./es-CR.js": 820,
+        "./es-DO.js": 821,
+        "./es-EC.js": 822,
+        "./es-ES.js": 823,
+        "./es-GT.js": 824,
+        "./es-HN.js": 825,
+        "./es-MX.js": 826,
+        "./es-NI.js": 827,
+        "./es-PA.js": 828,
+        "./es-PE.js": 829,
+        "./es-PR.js": 830,
+        "./es-PY.js": 831,
+        "./es-SV.js": 832,
+        "./es-UY.js": 833,
+        "./es-VE.js": 834,
+        "./et-EE.js": 835,
+        "./eu-ES.js": 836,
+        "./fa-IR.js": 837,
+        "./fi-FI.js": 838,
+        "./fo-FO.js": 839,
+        "./fr-BE.js": 840,
+        "./fr-CA.js": 841,
+        "./fr-CH.js": 842,
+        "./fr-FR.js": 843,
+        "./fr-LU.js": 844,
+        "./fr-MC.js": 845,
+        "./gl-ES.js": 846,
+        "./gu-IN.js": 847,
+        "./he-IL.js": 848,
+        "./hi-IN.js": 849,
+        "./hr-BA.js": 850,
+        "./hr-HR.js": 851,
+        "./hu-HU.js": 852,
+        "./hy-AM.js": 853,
+        "./id-ID.js": 854,
+        "./is-IS.js": 855,
+        "./it-CH.js": 856,
+        "./it-IT.js": 857,
+        "./ja-JP.js": 858,
+        "./ka-GE.js": 859,
+        "./kk-KZ.js": 860,
+        "./kn-IN.js": 861,
+        "./ko-KR.js": 862,
+        "./kok-IN.js": 863,
+        "./ky-KG.js": 864,
+        "./lt-LT.js": 865,
+        "./lv-LV.js": 866,
+        "./mi-NZ.js": 867,
+        "./mk-MK.js": 868,
+        "./mn-MN.js": 869,
+        "./mr-IN.js": 870,
+        "./ms-BN.js": 871,
+        "./ms-MY.js": 872,
+        "./mt-MT.js": 873,
+        "./nb-NO.js": 874,
+        "./nl-BE.js": 875,
+        "./nl-NL.js": 876,
+        "./nn-NO.js": 877,
+        "./ns-ZA.js": 878,
+        "./pa-IN.js": 879,
+        "./pl-PL.js": 880,
+        "./pt-BR.js": 881,
+        "./pt-PT.js": 882,
+        "./quz-BO.js": 883,
+        "./quz-EC.js": 884,
+        "./quz-PE.js": 885,
+        "./ro-RO.js": 886,
+        "./ru-RU.js": 887,
+        "./sa-IN.js": 888,
+        "./se-FI.js": 889,
+        "./se-NO.js": 890,
+        "./se-SE.js": 891,
+        "./sk-SK.js": 892,
+        "./sl-SI.js": 893,
+        "./sma-NO.js": 894,
+        "./sma-SE.js": 895,
+        "./smj-NO.js": 896,
+        "./smj-SE.js": 897,
+        "./smn-FI.js": 898,
+        "./sms-FI.js": 899,
+        "./sq-AL.js": 900,
+        "./sr-Cyrl-BA.js": 901,
+        "./sr-Cyrl-CS.js": 902,
+        "./sr-Latn-BA.js": 903,
+        "./sr-Latn-CS.js": 904,
+        "./sv-FI.js": 905,
+        "./sv-SE.js": 906,
+        "./sw-KE.js": 907,
+        "./syr-SY.js": 908,
+        "./ta-IN.js": 909,
+        "./te-IN.js": 910,
+        "./th-TH.js": 911,
+        "./tn-ZA.js": 912,
+        "./tr-TR.js": 913,
+        "./tt-RU.js": 914,
+        "./uk-UA.js": 915,
+        "./ur-PK.js": 916,
+        "./uz-Cyrl-UZ.js": 917,
+        "./uz-Latn-UZ.js": 918,
+        "./vi-VN.js": 919,
+        "./xh-ZA.js": 920,
+        "./zh-CN.js": 921,
+        "./zh-HK.js": 922,
+        "./zh-MO.js": 923,
+        "./zh-SG.js": 924,
+        "./zh-TW.js": 925,
+        "./zu-ZA.js": 926
     };
     s.keys = function() {
             return Object.keys(a)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 748
+        s.id = 770
 }, function(e, t) {
     Date.CultureStrings = Date.CultureStrings || {},
         Date.CultureStrings["af-ZA"] = {
@@ -56627,47 +56657,47 @@
     e.exports = n
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.$ = n(912)
+        e.exports = t.$ = n(934)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.I18n = n(989)
+        e.exports = t.I18n = n(1013)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.Marionette = n(661)
+        e.exports = t.Marionette = n(683)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.OpenLayers = n(905)
+        e.exports = t.OpenLayers = n(927)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t._ = n(60)
+        e.exports = t._ = n(67)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.io = n(999)
+        e.exports = t.io = n(1023)
     }).call(t, function() {
         return this
     }())
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.jQuery = n(102)
+        e.exports = t.jQuery = n(107)
     }).call(t, function() {
         return this
     }())
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     var s;
     ! function(r) {
         if ("undefined" != typeof e && e.exports)
@@ -57279,7 +57309,7 @@
      * Released under the MIT license
      */
     ! function(i) {
-        r = [n(102)],
+        r = [n(107)],
             s = i,
             a = "function" == typeof s ? s.apply(t, r) : s, !(void 0 !== a && (e.exports = a))
     }(function(e) {
@@ -57348,229 +57378,229 @@
         }()
     }
     var a = {
-        "./af": 255,
-        "./af.js": 255,
-        "./ar": 261,
-        "./ar-dz": 256,
-        "./ar-dz.js": 256,
-        "./ar-ly": 257,
-        "./ar-ly.js": 257,
-        "./ar-ma": 258,
-        "./ar-ma.js": 258,
-        "./ar-sa": 259,
-        "./ar-sa.js": 259,
-        "./ar-tn": 260,
-        "./ar-tn.js": 260,
-        "./ar.js": 261,
-        "./az": 262,
-        "./az.js": 262,
-        "./be": 263,
-        "./be.js": 263,
-        "./bg": 264,
-        "./bg.js": 264,
-        "./bn": 265,
-        "./bn.js": 265,
-        "./bo": 266,
-        "./bo.js": 266,
-        "./br": 267,
-        "./br.js": 267,
-        "./bs": 268,
-        "./bs.js": 268,
-        "./ca": 269,
-        "./ca.js": 269,
-        "./cs": 270,
-        "./cs.js": 270,
-        "./cv": 271,
-        "./cv.js": 271,
-        "./cy": 272,
-        "./cy.js": 272,
-        "./da": 273,
-        "./da.js": 273,
-        "./de": 275,
-        "./de-at": 274,
-        "./de-at.js": 274,
-        "./de.js": 275,
-        "./dv": 276,
-        "./dv.js": 276,
-        "./el": 277,
-        "./el.js": 277,
-        "./en-au": 278,
-        "./en-au.js": 278,
-        "./en-ca": 279,
-        "./en-ca.js": 279,
-        "./en-gb": 280,
-        "./en-gb.js": 280,
-        "./en-ie": 281,
-        "./en-ie.js": 281,
-        "./en-nz": 282,
-        "./en-nz.js": 282,
-        "./eo": 283,
-        "./eo.js": 283,
-        "./es": 285,
-        "./es-do": 284,
-        "./es-do.js": 284,
-        "./es.js": 285,
-        "./et": 286,
-        "./et.js": 286,
-        "./eu": 287,
-        "./eu.js": 287,
-        "./fa": 288,
-        "./fa.js": 288,
-        "./fi": 289,
-        "./fi.js": 289,
-        "./fo": 290,
-        "./fo.js": 290,
-        "./fr": 293,
-        "./fr-ca": 291,
-        "./fr-ca.js": 291,
-        "./fr-ch": 292,
-        "./fr-ch.js": 292,
-        "./fr.js": 293,
-        "./fy": 294,
-        "./fy.js": 294,
-        "./gd": 295,
-        "./gd.js": 295,
-        "./gl": 296,
-        "./gl.js": 296,
-        "./he": 297,
-        "./he.js": 297,
-        "./hi": 298,
-        "./hi.js": 298,
-        "./hr": 299,
-        "./hr.js": 299,
-        "./hu": 300,
-        "./hu.js": 300,
-        "./hy-am": 301,
-        "./hy-am.js": 301,
-        "./id": 302,
-        "./id.js": 302,
-        "./is": 303,
-        "./is.js": 303,
-        "./it": 304,
-        "./it.js": 304,
-        "./ja": 305,
-        "./ja.js": 305,
-        "./jv": 306,
-        "./jv.js": 306,
-        "./ka": 307,
-        "./ka.js": 307,
-        "./kk": 308,
-        "./kk.js": 308,
-        "./km": 309,
-        "./km.js": 309,
-        "./ko": 310,
-        "./ko.js": 310,
-        "./ky": 311,
-        "./ky.js": 311,
-        "./lb": 312,
-        "./lb.js": 312,
-        "./lo": 313,
-        "./lo.js": 313,
-        "./lt": 314,
-        "./lt.js": 314,
-        "./lv": 315,
-        "./lv.js": 315,
-        "./me": 316,
-        "./me.js": 316,
-        "./mi": 317,
-        "./mi.js": 317,
-        "./mk": 318,
-        "./mk.js": 318,
-        "./ml": 319,
-        "./ml.js": 319,
-        "./mr": 320,
-        "./mr.js": 320,
-        "./ms": 322,
-        "./ms-my": 321,
-        "./ms-my.js": 321,
-        "./ms.js": 322,
-        "./my": 323,
-        "./my.js": 323,
-        "./nb": 324,
-        "./nb.js": 324,
-        "./ne": 325,
-        "./ne.js": 325,
-        "./nl": 327,
-        "./nl-be": 326,
-        "./nl-be.js": 326,
-        "./nl.js": 327,
-        "./nn": 328,
-        "./nn.js": 328,
-        "./pa-in": 329,
-        "./pa-in.js": 329,
-        "./pl": 330,
-        "./pl.js": 330,
-        "./pt": 332,
-        "./pt-br": 331,
-        "./pt-br.js": 331,
-        "./pt.js": 332,
-        "./ro": 333,
-        "./ro.js": 333,
-        "./ru": 334,
-        "./ru.js": 334,
-        "./se": 335,
-        "./se.js": 335,
-        "./si": 336,
-        "./si.js": 336,
-        "./sk": 337,
-        "./sk.js": 337,
-        "./sl": 338,
-        "./sl.js": 338,
-        "./sq": 339,
-        "./sq.js": 339,
-        "./sr": 341,
-        "./sr-cyrl": 340,
-        "./sr-cyrl.js": 340,
-        "./sr.js": 341,
-        "./ss": 342,
-        "./ss.js": 342,
-        "./sv": 343,
-        "./sv.js": 343,
-        "./sw": 344,
-        "./sw.js": 344,
-        "./ta": 345,
-        "./ta.js": 345,
-        "./te": 346,
-        "./te.js": 346,
-        "./tet": 347,
-        "./tet.js": 347,
-        "./th": 348,
-        "./th.js": 348,
-        "./tl-ph": 349,
-        "./tl-ph.js": 349,
-        "./tlh": 350,
-        "./tlh.js": 350,
-        "./tr": 351,
-        "./tr.js": 351,
-        "./tzl": 352,
-        "./tzl.js": 352,
-        "./tzm": 354,
-        "./tzm-latn": 353,
-        "./tzm-latn.js": 353,
-        "./tzm.js": 354,
-        "./uk": 355,
-        "./uk.js": 355,
-        "./uz": 356,
-        "./uz.js": 356,
-        "./vi": 357,
-        "./vi.js": 357,
-        "./x-pseudo": 358,
-        "./x-pseudo.js": 358,
-        "./yo": 359,
-        "./yo.js": 359,
-        "./zh-cn": 360,
-        "./zh-cn.js": 360,
-        "./zh-hk": 361,
-        "./zh-hk.js": 361,
-        "./zh-tw": 362,
-        "./zh-tw.js": 362
+        "./af": 268,
+        "./af.js": 268,
+        "./ar": 274,
+        "./ar-dz": 269,
+        "./ar-dz.js": 269,
+        "./ar-ly": 270,
+        "./ar-ly.js": 270,
+        "./ar-ma": 271,
+        "./ar-ma.js": 271,
+        "./ar-sa": 272,
+        "./ar-sa.js": 272,
+        "./ar-tn": 273,
+        "./ar-tn.js": 273,
+        "./ar.js": 274,
+        "./az": 275,
+        "./az.js": 275,
+        "./be": 276,
+        "./be.js": 276,
+        "./bg": 277,
+        "./bg.js": 277,
+        "./bn": 278,
+        "./bn.js": 278,
+        "./bo": 279,
+        "./bo.js": 279,
+        "./br": 280,
+        "./br.js": 280,
+        "./bs": 281,
+        "./bs.js": 281,
+        "./ca": 282,
+        "./ca.js": 282,
+        "./cs": 283,
+        "./cs.js": 283,
+        "./cv": 284,
+        "./cv.js": 284,
+        "./cy": 285,
+        "./cy.js": 285,
+        "./da": 286,
+        "./da.js": 286,
+        "./de": 288,
+        "./de-at": 287,
+        "./de-at.js": 287,
+        "./de.js": 288,
+        "./dv": 289,
+        "./dv.js": 289,
+        "./el": 290,
+        "./el.js": 290,
+        "./en-au": 291,
+        "./en-au.js": 291,
+        "./en-ca": 292,
+        "./en-ca.js": 292,
+        "./en-gb": 293,
+        "./en-gb.js": 293,
+        "./en-ie": 294,
+        "./en-ie.js": 294,
+        "./en-nz": 295,
+        "./en-nz.js": 295,
+        "./eo": 296,
+        "./eo.js": 296,
+        "./es": 298,
+        "./es-do": 297,
+        "./es-do.js": 297,
+        "./es.js": 298,
+        "./et": 299,
+        "./et.js": 299,
+        "./eu": 300,
+        "./eu.js": 300,
+        "./fa": 301,
+        "./fa.js": 301,
+        "./fi": 302,
+        "./fi.js": 302,
+        "./fo": 303,
+        "./fo.js": 303,
+        "./fr": 306,
+        "./fr-ca": 304,
+        "./fr-ca.js": 304,
+        "./fr-ch": 305,
+        "./fr-ch.js": 305,
+        "./fr.js": 306,
+        "./fy": 307,
+        "./fy.js": 307,
+        "./gd": 308,
+        "./gd.js": 308,
+        "./gl": 309,
+        "./gl.js": 309,
+        "./he": 310,
+        "./he.js": 310,
+        "./hi": 311,
+        "./hi.js": 311,
+        "./hr": 312,
+        "./hr.js": 312,
+        "./hu": 313,
+        "./hu.js": 313,
+        "./hy-am": 314,
+        "./hy-am.js": 314,
+        "./id": 315,
+        "./id.js": 315,
+        "./is": 316,
+        "./is.js": 316,
+        "./it": 317,
+        "./it.js": 317,
+        "./ja": 318,
+        "./ja.js": 318,
+        "./jv": 319,
+        "./jv.js": 319,
+        "./ka": 320,
+        "./ka.js": 320,
+        "./kk": 321,
+        "./kk.js": 321,
+        "./km": 322,
+        "./km.js": 322,
+        "./ko": 323,
+        "./ko.js": 323,
+        "./ky": 324,
+        "./ky.js": 324,
+        "./lb": 325,
+        "./lb.js": 325,
+        "./lo": 326,
+        "./lo.js": 326,
+        "./lt": 327,
+        "./lt.js": 327,
+        "./lv": 328,
+        "./lv.js": 328,
+        "./me": 329,
+        "./me.js": 329,
+        "./mi": 330,
+        "./mi.js": 330,
+        "./mk": 331,
+        "./mk.js": 331,
+        "./ml": 332,
+        "./ml.js": 332,
+        "./mr": 333,
+        "./mr.js": 333,
+        "./ms": 335,
+        "./ms-my": 334,
+        "./ms-my.js": 334,
+        "./ms.js": 335,
+        "./my": 336,
+        "./my.js": 336,
+        "./nb": 337,
+        "./nb.js": 337,
+        "./ne": 338,
+        "./ne.js": 338,
+        "./nl": 340,
+        "./nl-be": 339,
+        "./nl-be.js": 339,
+        "./nl.js": 340,
+        "./nn": 341,
+        "./nn.js": 341,
+        "./pa-in": 342,
+        "./pa-in.js": 342,
+        "./pl": 343,
+        "./pl.js": 343,
+        "./pt": 345,
+        "./pt-br": 344,
+        "./pt-br.js": 344,
+        "./pt.js": 345,
+        "./ro": 346,
+        "./ro.js": 346,
+        "./ru": 347,
+        "./ru.js": 347,
+        "./se": 348,
+        "./se.js": 348,
+        "./si": 349,
+        "./si.js": 349,
+        "./sk": 350,
+        "./sk.js": 350,
+        "./sl": 351,
+        "./sl.js": 351,
+        "./sq": 352,
+        "./sq.js": 352,
+        "./sr": 354,
+        "./sr-cyrl": 353,
+        "./sr-cyrl.js": 353,
+        "./sr.js": 354,
+        "./ss": 355,
+        "./ss.js": 355,
+        "./sv": 356,
+        "./sv.js": 356,
+        "./sw": 357,
+        "./sw.js": 357,
+        "./ta": 358,
+        "./ta.js": 358,
+        "./te": 359,
+        "./te.js": 359,
+        "./tet": 360,
+        "./tet.js": 360,
+        "./th": 361,
+        "./th.js": 361,
+        "./tl-ph": 362,
+        "./tl-ph.js": 362,
+        "./tlh": 363,
+        "./tlh.js": 363,
+        "./tr": 364,
+        "./tr.js": 364,
+        "./tzl": 365,
+        "./tzl.js": 365,
+        "./tzm": 367,
+        "./tzm-latn": 366,
+        "./tzm-latn.js": 366,
+        "./tzm.js": 367,
+        "./uk": 368,
+        "./uk.js": 368,
+        "./uz": 369,
+        "./uz.js": 369,
+        "./vi": 370,
+        "./vi.js": 370,
+        "./x-pseudo": 371,
+        "./x-pseudo.js": 371,
+        "./yo": 372,
+        "./yo.js": 372,
+        "./zh-cn": 373,
+        "./zh-cn.js": 373,
+        "./zh-hk": 374,
+        "./zh-hk.js": 374,
+        "./zh-tw": 375,
+        "./zh-tw.js": 375
     };
     s.keys = function() {
             return Object.keys(a)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 998
+        s.id = 1022
 }, function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
     (function(module) {
@@ -59502,7 +59532,7 @@
                 }
                 .apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), !(void 0 !== __WEBPACK_AMD_DEFINE_RESULT__ && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
         }()
-    }).call(exports, __webpack_require__(363)(module))
+    }).call(exports, __webpack_require__(376)(module))
 }, , , , , , function(e, t) {
     OpenLayers.Animation = function(e) {
         function t(e, t, n) {
@@ -70183,103 +70213,103 @@
                 d += "lon" == t ? e < 0 ? OpenLayers.i18n("W") : OpenLayers.i18n("E") : e < 0 ? OpenLayers.i18n("S") : OpenLayers.i18n("N")
         }
 }, function(e, t, n) {
-    n(909),
-        n(1006),
-        n(1058),
-        n(1059),
-        n(1007),
+    n(931),
+        n(1030),
+        n(1082),
+        n(1083),
+        n(1031),
+        n(1114),
+        n(377),
+        n(381),
+        n(379),
+        n(378),
+        n(380),
+        n(1032),
+        n(1050),
+        n(1029),
+        n(1113),
+        n(1096),
+        n(1098),
+        n(1084),
+        n(1088),
         n(1090),
-        n(364),
-        n(368),
-        n(366),
-        n(365),
-        n(367),
-        n(1008),
-        n(1026),
-        n(1005),
+        n(1085),
+        n(1086),
+        n(1093),
+        n(1111),
+        n(1112),
+        n(1087),
+        n(1095),
+        n(1094),
+        n(1097),
         n(1089),
-        n(1072),
-        n(1074),
+        n(1056),
         n(1060),
-        n(1064),
-        n(1066),
+        n(1059),
+        n(1105),
+        n(1033),
+        n(1071),
+        n(1074),
+        n(1077),
+        n(1079),
+        n(1078),
+        n(1080),
+        n(1038),
+        n(1051),
+        n(1052),
+        n(1099),
+        n(1072),
+        n(1049),
+        n(378),
         n(1061),
         n(1062),
         n(1069),
-        n(1087),
-        n(1088),
+        n(1067),
         n(1063),
-        n(1071),
+        n(1064),
+        n(1065),
         n(1070),
         n(1073),
-        n(1065),
-        n(1032),
-        n(1036),
-        n(1035),
-        n(1081),
-        n(1009),
-        n(1047),
-        n(1050),
-        n(1053),
-        n(1055),
-        n(1054),
-        n(1056),
-        n(1014),
-        n(1027),
-        n(1028),
+        n(1042),
+        n(1034),
         n(1075),
-        n(1048),
-        n(1025),
-        n(365),
-        n(1037),
-        n(1038),
-        n(1045),
         n(1043),
-        n(1039),
+        n(1044),
+        n(1103),
+        n(1053),
+        n(1054),
+        n(1107),
+        n(1106),
+        n(1108),
+        n(1110),
+        n(1109),
+        n(1102),
+        n(1068),
+        n(1037),
+        n(1104),
+        n(1091),
+        n(1092),
+        n(1047),
+        n(1076),
         n(1040),
+        n(1066),
+        n(381),
+        n(1100),
+        n(1055),
+        n(379),
+        n(377),
+        n(1058),
+        n(1101),
+        n(1039),
+        n(380),
+        n(1081),
+        n(1048),
+        n(1057),
+        n(1036),
         n(1041),
         n(1046),
-        n(1049),
-        n(1018),
-        n(1010),
-        n(1051),
-        n(1019),
-        n(1020),
-        n(1079),
-        n(1029),
-        n(1030),
-        n(1083),
-        n(1082),
-        n(1084),
-        n(1086),
-        n(1085),
-        n(1078),
-        n(1044),
-        n(1013),
-        n(1080),
-        n(1067),
-        n(1068),
-        n(1023),
-        n(1052),
-        n(1016),
-        n(1042),
-        n(368),
-        n(1076),
-        n(1031),
-        n(366),
-        n(364),
-        n(1034),
-        n(1077),
-        n(1015),
-        n(367),
-        n(1057),
-        n(1024),
-        n(1033),
-        n(1012),
-        n(1017),
-        n(1022),
-        n(1011),
-        n(1021),
+        n(1035),
+        n(1045),
         window.OL = window.OpenLayers,
         OL.Renderer.SVG.prototype.MAX_PIXEL = Number.MAX_VALUE
 }]);

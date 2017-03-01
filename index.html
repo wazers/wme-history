@@ -7,7 +7,7 @@
         <title>Waze Map Editor</title>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="/assets-editor/css/app-e38a7c94e810cfb9b1534488d5350d61.css" rel="stylesheet">
+        <link href="/assets-editor/css/app-26e237cbbbb0ac14bb3c55e2007bf61a.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -28,7 +28,7 @@
     </head>
 
     <body>
-        <svg style="height: 0px; width: 0px; position: absolute">
+        <svg style="height: 0px; width: 0px; position: absolute;">
             <defs>
                 <filter id="spotlightBlur">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
@@ -50,7 +50,7 @@
                             <span class="short-title">Map Editor</span>
                         </div>
                         <div id="debug">
-                            <div class="version">v1.29-11-g1fab6aec
+                            <div class="version">v1.31
                             </div>
                             <div class="version descrates"></div>
                         </div>
@@ -77,7 +77,7 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="/assets-editor/js/vendor-407297d217dfe7e140d0.js"></script>
+        <script src="/assets-editor/js/vendor-84cc7b0e987073394653.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -213,16 +213,16 @@
                         "ITEM_PARKING_PLACE_UPDATE_REQUESTS": "Updates",
                         "GROUP_PLACES": "Places",
                         "ITEM_VENUES": "Venues",
-                        "ITEM_RESIDENTIAL_PLACES": "Residentials",
-                        "ITEM_PARKING_PLACES": "Parking spots",
+                        "ITEM_RESIDENTIAL_PLACES": "Residential",
+                        "ITEM_PARKING_PLACES": "Parking lots",
                         "GROUP_ROAD": "Road",
                         "ITEM_ROAD": "Roads",
-                        "ITEM_JUNCTION_BOXES": "Juntion Boxes",
+                        "ITEM_JUNCTION_BOXES": "Junction Boxes",
                         "ITEM_CLOSURES": "Closures",
-                        "ITEM_SPEED_CAMERAS": "Speed Cameras",
+                        "ITEM_SPEED_CAMERAS": "Speed cameras",
                         "ITEM_MAP_COMMENTS": "Map comments",
                         "GROUP_DISPLAY": "Display",
-                        "ITEM_SATELLITE_IMAGERY": "Satellite Imagery",
+                        "ITEM_SATELLITE_IMAGERY": "Satellite imagery",
                         "ITEM_AREA_MANAGERS": "Area managers",
                         "ITEM_GPS_POINTS": "GPS points",
                         "ITEM_LIVE_USERS": "Live users",
@@ -696,8 +696,10 @@
                             "road_type": "Road type",
                             "routing": "Routing",
                             "toll": "Toll Road",
+                            "toll_road": "Toll Road",
                             "tunnel": "Tunnel",
                             "unpaved": "Unpaved",
+                            "headlights": "Headlights required",
                             "direction": "Direction",
                             "fwdSpeedCamera": "A to B",
                             "revSpeedCamera": "B to A",
@@ -716,7 +718,8 @@
                         },
                         "speed_limit": {
                             "fwdMaxSpeed": "A to B",
-                            "revMaxSpeed": "B to A"
+                            "revMaxSpeed": "B to A",
+                            "verified": "Verified"
                         },
                         "lock_levels": {
                             "staff": "Staff",
@@ -1263,6 +1266,7 @@
                                 "toggleEditableAreas": "Toggle editable areas",
                                 "toggleRoadClosures": "Toggle road closures",
                                 "toggleLiveUsers": "Toggle live users",
+                                "togglePlaces": "Toggle places",
                                 "displayLayerSwitcher": "Toggle layer switcher window",
                                 "spreadArrows": "Spread connectivity arrows",
                                 "hideArrows": "Hide connectivity arrows",
@@ -1538,35 +1542,40 @@
                     }
                 },
                 "tutorial": {
+                    "header": "Map editing 101",
                     "title": "Why not take a few minutes to watch our Map Editor's guide?",
                     "videos": {
                         "intro": {
                             "title": "Introduction",
                             "video_id": "Gqdy1jLlf50"
                         },
-                        "before_you_start": {
-                            "title": "Before You Start",
-                            "video_id": "8MOTzB9Z6Do"
+                        "segments": {
+                            "title": "Segments",
+                            "video_id": "DN2Mv1KKtRw"
                         },
-                        "getting_started": {
-                            "title": "Getting Started",
-                            "video_id": "ULrKqItJ0wg"
+                        "attributes": {
+                            "title": "Attributes",
+                            "video_id": "dxVukvUSxfQ"
                         },
-                        "basic_terms": {
-                            "title": "Basic Terms",
-                            "video_id": "SJ_IQIO0wpg"
+                        "turns": {
+                            "title": "Turns",
+                            "video_id": "yGg3Azwc-NM"
                         },
-                        "basic_editing": {
-                            "title": "Basic Editing",
-                            "video_id": "15vy37idAzI"
+                        "house_numbers": {
+                            "title": "House numbers",
+                            "video_id": "Eiuuyp1iyQg"
                         },
-                        "map_problems": {
-                            "title": "Map Problems",
-                            "video_id": "CpxM3Mkc6U0"
+                        "permalinks": {
+                            "title": "Permalinks",
+                            "video_id": "-2ReW6XQu50"
                         },
-                        "examples": {
-                            "title": "Examples",
-                            "video_id": "5chT48tlYGM"
+                        "places_points": {
+                            "title": "Places: points",
+                            "video_id": "DJkj9zAs2Ao"
+                        },
+                        "places_areas": {
+                            "title": "Places: areas",
+                            "video_id": "qeHNDjn97x4"
                         }
                     }
                 },
@@ -1608,7 +1617,7 @@
                 "restrictions": {
                     "dateformat": "dd/MM/yyyy",
                     "dateRangeFormat": "DD/MM/YYYY",
-                    "title": "Time based restrictions",
+                    "title": "Time-based restrictions",
                     "none": "No restrictions",
                     "add": "Add restriction",
                     "permanent": "Every week",
@@ -1813,6 +1822,7 @@
                 "feed": {
                     "empty": "No more messages & issues!",
                     "load_more": "Load More",
+                    "load_first_time": "Loading map issues in your area",
                     "details": {
                         "next": "Next",
                         "done": "Done"
@@ -1928,6 +1938,22 @@
                                 "shortMessage": "Let's get started!",
                                 "message": "Check out Wazeopedia for helpful resources and tips.",
                                 "linkText": "Read about best editing practices"
+                            },
+                            "DISCOVER_COMMUNITY_FORUM": {
+                                "title": "Discover Community Forums",
+                                "shortMessage": "Dive deep into the world of Waze Map Editing."
+                            },
+                            "DISCOVER_LOCAL_WIKI": {
+                                "title": "Visit your local wiki",
+                                "shortMessage": "Get answers to questions you didn’t even know you had."
+                            },
+                            "FIRST_TIME_VIDEOS": {
+                                "title": "Editing 101",
+                                "shortMessage": "Not sure what to do next? These videos might help!"
+                            },
+                            "CHECK_YOUR_NEIGHBORHOOD": {
+                                "title": "Welcome home!",
+                                "shortMessage": "Explore and edit your neighborhood."
                             }
                         }
                     },
@@ -2045,16 +2071,166 @@
                         "empty": "No Events Found"
                     }
                 },
+                "objects": {
+                    "common": {
+                        "fields": {
+                            "geometry": "Geometry",
+                            "rank": "Level",
+                            "lockRank": "Lock level",
+                            "permissions": "Permissions"
+                        }
+                    },
+                    "houseNumber": {
+                        "name": "House number"
+                    },
+                    "node": {
+                        "name": "Node",
+                        "fields": {
+                            "segIDs": "Segments"
+                        }
+                    },
+                    "nodeConnection": {
+                        "name": "Turn"
+                    },
+                    "roadClosure": {
+                        "name": "Road Closure"
+                    },
+                    "segment": {
+                        "name": "Segment",
+                        "fields": {
+                            "type": "Type",
+                            "roadType": "Road type",
+                            "fwdDirection": "A →B direction",
+                            "revDirection": "B →A direction",
+                            "fwdMaxSpeed": "A →B speed limit",
+                            "revMaxSpeed": "B →A speed limit",
+                            "fwdToll": "A →B toll road",
+                            "revToll": "B →A toll road",
+                            "fwdMaxSpeedUnverified": "A →B speed limit verification",
+                            "revMaxSpeedUnverified": "B →A speed limit verification",
+                            "fwdTurnsLocked": "A →B turns confirmed",
+                            "revTurnsLocked": "B →A turns confirmed",
+                            "level": "Elevation",
+                            "routingRoadType": "Routing preference",
+                            "flags": "Flags",
+                            "fwdFlags": "A →B flags",
+                            "revFlags": "B →A flags",
+                            "primaryStreetID": "Primary street name",
+                            "fromCrossroads": "From cross roads",
+                            "toCrossroads": "To cross roads",
+                            "streetIDs": "Alternative street names",
+                            "fwdRestrictions": "A →B time-based restrictions",
+                            "revRestrictions": "B →A time-based restrictions"
+                        },
+                        "flag_fields": {
+                            "tunnel": "Tunnel",
+                            "unpaved": "Unpaved",
+                            "headlights": "Headlights required",
+                            "fwdSpeedCamera": "A →B average speed camera",
+                            "revSpeedCamera": "B →A average speed camera"
+                        }
+                    },
+                    "venue": {
+                        "name": "Place",
+                        "fields": {
+                            "name": "Name",
+                            "description": "Description",
+                            "url": "URL",
+                            "phone": "Phone",
+                            "brand": "Brand",
+                            "residential": "Residential Place",
+                            "openingHours": "Opening hours",
+                            "categories": "Categories",
+                            "categoryAttributes": "Category attributes",
+                            "services": "Services",
+                            "entryExitPoints": "Entry points",
+                            "images": "Images",
+                            "venueUpdateRequests": "Place Update Request",
+                            "aliases": "Alternative names",
+                            "approved": "Approved",
+                            "externalProviderIDs": "External providers",
+                            "adLocked": "Ad-locked"
+                        },
+                        "category_fields": {
+                            "canExitWhileClosed": "Cars can exit when lot is closed",
+                            "costType": "Cost",
+                            "lotType": "Lot elevation",
+                            "paymentType": "Payment types",
+                            "estimatedNumberOfSpots": "Number of spots",
+                            "parkingType": "Primary lot type",
+                            "hasTBR": "Does lot type vary depending on time/day?"
+                        }
+                    },
+                    "venueUpdateRequest": {
+                        "name": "Place Update Request"
+                    },
+                    "bigJunction": {
+                        "name": "Junction Box",
+                        "fields": {
+                            "connections": "Connections"
+                        }
+                    },
+                    "camera": {
+                        "name": "Speed Camera",
+                        "fields": {
+                            "type": "Type",
+                            "validated": "Validated",
+                            "speed": "Speed",
+                            "azymuth": "Azymuth"
+                        }
+                    }
+                },
+                "element_history": {
+                    "show": "View History",
+                    "hide": "Hide History",
+                    "no_history": "No history found",
+                    "history_error": "There was an error while loading the history",
+                    "load_more": "Load more",
+                    "changed_from": "Changed from",
+                    "changed_to": "to",
+                    "changed_by": "by",
+                    "approved": "approved",
+                    "rejected": "rejected",
+                    "object_created": "%{object} created",
+                    "object_deleted": "%{object} deleted",
+                    "multiple_changes": "Multiple changes",
+                    "segment_created_by_split": "Segment created by split",
+                    "segment_created_by_merge": "Segment created by merge",
+                    "actions": {
+                        "default": {
+                            "ADD": "added",
+                            "UPDATE": "updated",
+                            "DELETE": "deleted"
+                        },
+                        "nodeConnection": {
+                            "ADD": "allowed",
+                            "DELETE": "disallowed"
+                        }
+                    },
+                    "preview_actions": {
+                        "ADD": "Added %{field}",
+                        "UPDATE": "Updated %{field}",
+                        "DELETE": "Deleted %{field}"
+                    },
+                    "boolean_attributes": {
+                        "enabled": "Yes",
+                        "disabled": "No"
+                    },
+                    "visual_attributes": {
+                        "old_value": "this",
+                        "new_value": "this"
+                    }
+                },
                 "internal": {
                     "ur_forum_link": "http://www.waze.com/forum",
                     "editing_forum_link": "http://www.waze.com/forum/viewforum.php?f=8",
                     "editing_local_forum_link": "https://www.waze.com/forum/viewforum.php?f=19",
-                    "wiki_link": "http://www.waze.com/wiki/index.php/Map_Editing_-_select_map_editor",
-                    "wiki_best_practices_link": "https://wiki.waze.com/wiki/Best_map_editing_practice",
-                    "wiki_rank_link": "https://wiki.waze.com/wiki/Editing_rank",
-                    "wiki_area_manager": "https://wiki.waze.com/wiki/Area_manager",
-                    "wiki_country_manager": "https://wiki.waze.com/wiki/Roles_and_responsibilities#Country_Manager",
-                    "wiki_mentoring": "https://wiki.waze.com/wiki/Mentor",
+                    "wiki_link": "https://wazeopedia.waze.com",
+                    "wiki_best_practices_link": "https://wazeopedia.waze.com/wiki/Global/Best_map_editing_practice",
+                    "wiki_rank_link": "https://wazeopedia.waze.com/wiki/Global/Your_Rank_and_Points#Waze_Map_Editing_Ranks",
+                    "wiki_area_manager": "https://wazeopedia.waze.com/wiki/Global/Area_Manager",
+                    "wiki_country_manager": "https://wazeopedia.waze.com/wiki/Global/Roles_and_responsibilities#Country_Manager",
+                    "wiki_mentoring": "https://wazeopedia.waze.com/wiki/Global/Mentoring",
                     "status_page_link": "http://status.waze.com"
                 }
             };
@@ -2104,7 +2280,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="/assets-editor/js/app-a26d3a359b626eeabb68.js"></script>
+        <script src="/assets-editor/js/app-6007f3f6fe512b29ecc3.js"></script>
     </body>
 
 </html>
