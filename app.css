@@ -8996,6 +8996,10 @@ div.olLayerDiv {
     right: 27px
 }
 
+.layer-switcher-shown:not(.street-view-mode) .olControlPanZoomBar {
+    right: 244px
+}
+
 .olControlPanZoomBar {
     top: 9px;
     right: 10px
@@ -10703,37 +10707,6 @@ kbd.shiftKey:before {
     background-color: #ccc
 }
 
-#chat-overlay .chat-intro-tip {
-    position: absolute;
-    right: -15px;
-    bottom: 35px;
-    top: auto;
-    left: auto;
-    display: block;
-    width: 300px
-}
-
-#chat-overlay .chat-intro-tip h3 {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0
-}
-
-#chat-overlay .chat-intro-tip .btn,#chat-overlay .chat-intro-tip p {
-    font-size: 13px
-}
-
-#chat-overlay .chat-intro-tip .go-invisible {
-    font-size: 11px;
-    float: right;
-    margin-top: 11px
-}
-
-#chat-overlay .chat-intro-tip .arrow {
-    left: auto;
-    right: 22px
-}
-
 #chat-overlay #chat,#chat-overlay.open #chat-toggle {
     display: none
 }
@@ -11244,15 +11217,11 @@ kbd.shiftKey:before {
 }
 
 .layer-switcher .content {
-    min-width: 230px;
+    width: 230px;
     top: 40px;
     background-color: #fff;
     position: absolute;
     right: 0
-}
-
-.layer-switcher .content .not-visible {
-    opacity: 0
 }
 
 .layer-switcher .scrollable {
