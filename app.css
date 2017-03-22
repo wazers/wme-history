@@ -8193,8 +8193,8 @@ select.form-control:focus {
 
 @font-face {
     font-family: WazeFont;
-    src: url(/assets-editorfont/8bca7e14cbe78b683e72e446210d67a8.eot);
-    src: url(/assets-editorfont/8bca7e14cbe78b683e72e446210d67a8.eot?#iefix) format("embedded-opentype"),url(/assets-editorfont/c15c0a41e11eebc8b34b6d15e3ed5c99.woff) format("woff"),url(/assets-editorfont/12f263aa99da0656003f2f336ad3f96b.ttf) format("truetype"),url(/assets-editorfont/fbb2e47fbded4c1d7b459db5b4ab96ab.svg#WazeFont) format("svg");
+    src: url(/assets-editorfont/b45820cd7148840546023cede91addf1.eot);
+    src: url(/assets-editorfont/b45820cd7148840546023cede91addf1.eot?#iefix) format("embedded-opentype"),url(/assets-editorfont/16b7ce72fd0ddc661e1bb9bfba96c689.woff) format("woff"),url(/assets-editorfont/2492c39a9b8edbac674abbff93385656.ttf) format("truetype"),url(/assets-editorfont/687b9b0905e2000707b2f0202c4986d6.svg#WazeFont) format("svg");
     font-weight: 400;
     font-style: normal
 }
@@ -8202,7 +8202,7 @@ select.form-control:focus {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     @font-face {
         font-family:WazeFont;
-        src: url(/assets-editorfont/fbb2e47fbded4c1d7b459db5b4ab96ab.svg#WazeFont) format("svg")
+        src: url(/assets-editorfont/687b9b0905e2000707b2f0202c4986d6.svg#WazeFont) format("svg")
     }
 }
 
@@ -8210,7 +8210,7 @@ select.form-control:focus {
     content: attr(data-icon)
 }
 
-.waze-icon-area:before,.waze-icon-arrow-down:before,.waze-icon-arrow-left:before,.waze-icon-arrow-right:before,.waze-icon-arrow-up:before,.waze-icon-attach:before,.waze-icon-bubble:before,.waze-icon-c-alert:before,.waze-icon-c-arrow-down:before,.waze-icon-c-arrow-left:before,.waze-icon-c-arrow-right:before,.waze-icon-c-arrow-up:before,.waze-icon-calendar:before,.waze-icon-check:before,.waze-icon-clock:before,.waze-icon-close:before,.waze-icon-closed-issue:before,.waze-icon-closure:before,.waze-icon-crosshair:before,.waze-icon-detach:before,.waze-icon-edit:before,.waze-icon-envelope:before,.waze-icon-event:before,.waze-icon-full-arrow-down:before,.waze-icon-full-arrow-left:before,.waze-icon-full-arrow-right:before,.waze-icon-full-arrow-up:before,.waze-icon-hive:before,.waze-icon-house:before,.waze-icon-km:before,.waze-icon-layers:before,.waze-icon-map:before,.waze-icon-place-car:before,.waze-icon-place-culture:before,.waze-icon-place-food-drink:before,.waze-icon-place-lodging:before,.waze-icon-place-natural:before,.waze-icon-place-other:before,.waze-icon-place-outdoors:before,.waze-icon-place-professional:before,.waze-icon-place-shopping:before,.waze-icon-place-transportation:before,.waze-icon-place:before,.waze-icon-plus:before,.waze-icon-plus_neg:before,.waze-icon-redo:before,.waze-icon-reload:before,.waze-icon-road:before,.waze-icon-save:before,.waze-icon-star:before,.waze-icon-trash:before,.waze-icon-undo:before,.waze-icon-view:before,.waze-icon-visible:before,[data-icon]:before {
+.waze-icon-area:before,.waze-icon-arrow-down:before,.waze-icon-arrow-left:before,.waze-icon-arrow-right:before,.waze-icon-arrow-up:before,.waze-icon-attach:before,.waze-icon-bubble:before,.waze-icon-c-alert:before,.waze-icon-c-arrow-down:before,.waze-icon-c-arrow-left:before,.waze-icon-c-arrow-right:before,.waze-icon-c-arrow-up:before,.waze-icon-calendar:before,.waze-icon-check:before,.waze-icon-clock:before,.waze-icon-close:before,.waze-icon-closed-issue:before,.waze-icon-closure:before,.waze-icon-crosshair:before,.waze-icon-detach:before,.waze-icon-edit:before,.waze-icon-envelope:before,.waze-icon-event:before,.waze-icon-full-arrow-down:before,.waze-icon-full-arrow-left:before,.waze-icon-full-arrow-right:before,.waze-icon-full-arrow-up:before,.waze-icon-hive:before,.waze-icon-house:before,.waze-icon-km:before,.waze-icon-layers:before,.waze-icon-map:before,.waze-icon-pin:before,.waze-icon-place-car:before,.waze-icon-place-culture:before,.waze-icon-place-food-drink:before,.waze-icon-place-lodging:before,.waze-icon-place-natural:before,.waze-icon-place-other:before,.waze-icon-place-outdoors:before,.waze-icon-place-professional:before,.waze-icon-place-shopping:before,.waze-icon-place-transportation:before,.waze-icon-place:before,.waze-icon-plus:before,.waze-icon-plus_neg:before,.waze-icon-redo:before,.waze-icon-reload:before,.waze-icon-road:before,.waze-icon-save:before,.waze-icon-star:before,.waze-icon-trash:before,.waze-icon-undo:before,.waze-icon-view:before,.waze-icon-visible:before,[data-icon]:before {
     display: inline-block;
     font-family: WazeFont;
     font-style: normal;
@@ -8353,92 +8353,96 @@ select.form-control:focus {
     content: "\F11F"
 }
 
-.waze-icon-place:before {
+.waze-icon-pin:before {
     content: "\F120"
 }
 
-.waze-icon-place-car:before {
+.waze-icon-place:before {
     content: "\F121"
 }
 
-.waze-icon-place-culture:before {
+.waze-icon-place-car:before {
     content: "\F122"
 }
 
-.waze-icon-place-food-drink:before {
+.waze-icon-place-culture:before {
     content: "\F123"
 }
 
-.waze-icon-place-lodging:before {
+.waze-icon-place-food-drink:before {
     content: "\F124"
 }
 
-.waze-icon-place-natural:before {
+.waze-icon-place-lodging:before {
     content: "\F125"
 }
 
-.waze-icon-place-other:before {
+.waze-icon-place-natural:before {
     content: "\F126"
 }
 
-.waze-icon-place-outdoors:before {
+.waze-icon-place-other:before {
     content: "\F127"
 }
 
-.waze-icon-place-professional:before {
+.waze-icon-place-outdoors:before {
     content: "\F128"
 }
 
-.waze-icon-place-shopping:before {
+.waze-icon-place-professional:before {
     content: "\F129"
 }
 
-.waze-icon-place-transportation:before {
+.waze-icon-place-shopping:before {
     content: "\F12A"
 }
 
-.waze-icon-plus:before {
+.waze-icon-place-transportation:before {
     content: "\F12B"
 }
 
-.waze-icon-plus_neg:before {
+.waze-icon-plus:before {
     content: "\F12C"
 }
 
-.waze-icon-redo:before {
+.waze-icon-plus_neg:before {
     content: "\F12D"
 }
 
-.waze-icon-reload:before {
+.waze-icon-redo:before {
     content: "\F12E"
 }
 
-.waze-icon-road:before {
+.waze-icon-reload:before {
     content: "\F12F"
 }
 
-.waze-icon-save:before {
+.waze-icon-road:before {
     content: "\F130"
 }
 
-.waze-icon-star:before {
+.waze-icon-save:before {
     content: "\F131"
 }
 
-.waze-icon-trash:before {
+.waze-icon-star:before {
     content: "\F132"
 }
 
-.waze-icon-undo:before {
+.waze-icon-trash:before {
     content: "\F133"
 }
 
-.waze-icon-view:before {
+.waze-icon-undo:before {
     content: "\F134"
 }
 
-.waze-icon-visible:before {
+.waze-icon-view:before {
     content: "\F135"
+}
+
+.waze-icon-visible:before {
+    content: "\F136"
 }
 
 .flex-parent {
@@ -8996,8 +9000,12 @@ div.olLayerDiv {
     right: 27px
 }
 
-.layer-switcher-shown:not(.street-view-mode) .olControlPanZoomBar {
+.layer-switcher-pinned:not(.street-view-mode) .olControlPanZoomBar {
     right: 244px
+}
+
+.layer-switcher-pinned #topbar-container {
+    margin-right: 230px
 }
 
 .olControlPanZoomBar {
@@ -11216,7 +11224,7 @@ kbd.shiftKey:before {
     }
 }
 
-.layer-switcher .content {
+.layer-switcher .menu {
     width: 230px;
     top: 40px;
     background-color: #fff;
@@ -11225,13 +11233,11 @@ kbd.shiftKey:before {
 }
 
 .layer-switcher .scrollable {
-    height: 100%;
+    height: calc(100% - 36px);
     overflow-y: auto
 }
 
 .layer-switcher .more-options-toggle {
-    position: absolute;
-    bottom: 0;
     height: 36px;
     line-height: 36px;
     padding-left: 12px;
@@ -11239,10 +11245,10 @@ kbd.shiftKey:before {
     width: 100%;
     color: #93c4d3;
     background-color: #fff;
-    box-shadow: 0 -1px 2px #e9e9e9
+    box-shadow: 0 1px 2px #e9e9e9
 }
 
-.layer-switcher .more-options-toggle input {
+.layer-switcher .more-options-toggle input[name=show-more-options] {
     display: none
 }
 
@@ -11251,13 +11257,32 @@ kbd.shiftKey:before {
     text-decoration: underline
 }
 
+.layer-switcher .more-options-toggle .pinned {
+    float: right;
+    font-size: 21px
+}
+
+.layer-switcher .more-options-toggle .text-checkbox input[type=checkbox]:checked+label {
+    color: #56cbe7
+}
+
+.layer-switcher .more-options-toggle .text-checkbox input[type=checkbox]:not([disabled]):active:checked+label {
+    color: #29bde1
+}
+
 .layer-switcher .toggler {
     padding-top: 4px;
     padding-bottom: 4px
 }
 
+.layer-switcher .toggler.main .label-text {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
 .layer-switcher .togglers {
-    padding: 10px 10px 40px;
+    padding: 10px;
     margin-bottom: 0
 }
 
@@ -11292,10 +11317,6 @@ kbd.shiftKey:before {
     line-height: 20px;
     display: inline-block;
     margin-left: 12px
-}
-
-.layer-switcher .controls-container input:checked+label {
-    font-weight: bolder
 }
 
 .layer-switcher .controls-container input+label {

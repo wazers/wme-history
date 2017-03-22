@@ -3,11 +3,11 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Join the community of map editors to update Waze’s live map around your home, work and anywhere you drive.">
+        <meta name="description" content="Join the community of map editors to update the Waze map around your home, work and anywhere you drive.">
         <title>Waze Map Editor</title>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="/assets-editor/css/app-dcb27cfb3a5dec86141b16b81356cbde.css" rel="stylesheet">
+        <link href="/assets-editor/css/app-43a523db03cab134f2fd5a3528630916.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -50,7 +50,7 @@
                             <span class="short-title">Map Editor</span>
                         </div>
                         <div id="debug">
-                            <div class="version">v1.32-2-ge9b0e6b
+                            <div class="version">v1.33-4-g94074d6
                             </div>
                             <div class="version descrates"></div>
                         </div>
@@ -77,16 +77,16 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="/assets-editor/js/vendor-c62e2d45c0860fcd50fa.js"></script>
+        <script src="/assets-editor/js/vendor-156a629a19e86f2c0e77.js"></script>
         <script type="text/javascript">
-            I18n.locale = "en";
+            I18n.locale = "en-US";
 
             I18n.translations = {};
-            I18n.translations["en"] = {
-                "language_name": "English",
+            I18n.translations["en-US"] = {
+                "language_name": "US English",
                 "title": "Waze Map Editor",
                 "title_short": "Map Editor",
-                "meta_description": "Join the community of map editors to update Waze’s live map around your home, work and anywhere you drive.",
+                "meta_description": "Join the community of map editors to update the Waze map around your home, work and anywhere you drive.",
                 "time": {
                     "formats": {
                         "default": "%a, %d %b %Y %H:%M:%S %z",
@@ -94,11 +94,11 @@
                         "long": "%B %d, %Y %H:%M"
                     },
                     "am": "am",
-                    "pm": "pm"
+                    "pm": "pm "
                 },
                 "datetime": {
                     "distance_in_words": {
-                        "half_a_minute": "half a minute",
+                        "half_a_minute": "30 seconds",
                         "less_than_x_seconds": {
                             "one": "1 second",
                             "other": "%{count} seconds"
@@ -108,7 +108,7 @@
                             "other": "%{count} seconds"
                         },
                         "less_than_x_minutes": {
-                            "one": "a minute",
+                            "one": "1 minute",
                             "other": "%{count} minutes"
                         },
                         "x_minutes": {
@@ -147,8 +147,8 @@
                 },
                 "formats": {
                     "boolean": {
-                        "is_true": "Yes",
-                        "is_false": "No"
+                        "is_true": "Yes ",
+                        "is_false": "No "
                     },
                     "date": {
                         "month_range": {
@@ -163,7 +163,7 @@
                 "envs": {
                     "title": "Environments",
                     "row": "World",
-                    "usa": "US & Canada only",
+                    "usa": "North America only",
                     "il": "Israel only"
                 },
                 "modes": {
@@ -173,7 +173,7 @@
                         "mte": "Event Mode"
                     },
                     "exit": {
-                        "save_changes": "Save your changes before switching mode"
+                        "save_changes": "Save your changes before switching modes"
                     }
                 },
                 "footer": {
@@ -182,19 +182,19 @@
                     "status": "Status",
                     "keyboard_shortcuts": "Keyboard shortcuts",
                     "copy_to_clipboard": "Press %{button} to copy",
-                    "link_copied": "Link copied",
+                    "link_copied": "Permalink copied",
                     "coords_copied": "Coordinates copied"
                 },
                 "login": {
                     "greeting": "Hey there, %{stranger}",
                     "stranger": "stranger",
-                    "subtitle": "Please login to start mapping",
+                    "subtitle": "Please log in to start map editing",
                     "forgot_password": "I don't know my username or password",
                     "form": {
                         "username": "Username",
                         "password": "Password",
                         "action": "Log In",
-                        "error": "invalid user name or password",
+                        "error": "Invalid username or password",
                         "server_error": "Login failed, please try again later"
                     }
                 },
@@ -203,36 +203,36 @@
                         "GROUP_ISSUES": "Issues",
                         "GROUP_MAP_ISSUES": "Map",
                         "ITEM_MAP_PROBLEMS": "Problems",
-                        "ITEM_CLOSED_MAP_PROBLEMS": "Closed problems",
-                        "ITEM_UPDATE_REQUESTS": "Updates",
-                        "ITEM_CLOSED_UPDATE_REQUESTS": "Closed update requests",
-                        "ITEM_PLACE_UPDATE_REQUESTS": "Places",
-                        "GROUP_PARKING_ISSUES": "Parking",
+                        "ITEM_CLOSED_MAP_PROBLEMS": "Show/hide closed",
+                        "ITEM_UPDATE_REQUESTS": "Update requests",
+                        "ITEM_CLOSED_UPDATE_REQUESTS": "Show/hide closed",
+                        "ITEM_PLACE_UPDATE_REQUESTS": "Place updates",
+                        "GROUP_PARKING_ISSUES": "Parking lots",
                         "ITEM_PARKING_MAP_PROBLEMS": "Problems",
-                        "ITEM_PARKING_CLOSED_MAP_PROBLEMS": "Closed parking problems",
+                        "ITEM_PARKING_CLOSED_MAP_PROBLEMS": "Show/hide closed",
                         "ITEM_PARKING_PLACE_UPDATE_REQUESTS": "Updates",
                         "GROUP_PLACES": "Places",
-                        "ITEM_VENUES": "Venues",
+                        "ITEM_VENUES": "Public",
                         "ITEM_RESIDENTIAL_PLACES": "Residential",
                         "ITEM_PARKING_PLACES": "Parking lots",
-                        "GROUP_ROAD": "Road",
-                        "ITEM_ROAD": "Roads",
+                        "GROUP_ROAD": "Roads",
+                        "ITEM_ROAD": "Segments",
                         "ITEM_JUNCTION_BOXES": "Junction Boxes",
-                        "ITEM_CLOSURES": "Closures",
-                        "ITEM_SPEED_CAMERAS": "Speed cameras",
+                        "ITEM_CLOSURES": "Road Closures",
+                        "ITEM_SPEED_CAMERAS": "Enforcement Cameras",
                         "ITEM_MAP_COMMENTS": "Map comments",
                         "GROUP_DISPLAY": "Display",
                         "ITEM_SATELLITE_IMAGERY": "Satellite imagery",
                         "ITEM_AREA_MANAGERS": "Area managers",
-                        "ITEM_GPS_POINTS": "GPS points",
+                        "ITEM_GPS_POINTS": "GPS tracks",
                         "ITEM_LIVE_USERS": "Live users",
                         "ITEM_EDITABLE_AREAS": "Editable areas",
                         "GROUP_CITIES": "Cities",
                         "ITEM_CITY_NAMES": "Names"
                     },
                     "more_options": {
-                        "show": "More options",
-                        "hide": "Less options"
+                        "show": "More detail",
+                        "hide": "Less detail"
                     }
                 },
                 "measurements": {
@@ -243,8 +243,8 @@
                         "ft": "%{count} ft"
                     },
                     "speed": {
-                        "km": "%{speed} km/h",
-                        "mi": "%{speed} mp/h"
+                        "km": "%{speed} kmh",
+                        "mi": "%{speed} mph"
                     },
                     "area": {
                         "km_squared": "%{area} km²",
@@ -252,13 +252,13 @@
                     }
                 },
                 "geolocation": {
-                    "tooltip": "Show my location"
+                    "tooltip": "Center map on my current location"
                 },
                 "area_managers_list": {
                     "title": "Area managers",
                     "rest": {
-                        "one": "1 more",
-                        "other": "%{count} more"
+                        "one": "One other",
+                        "other": "%{count} others"
                     }
                 },
                 "user": {
@@ -269,8 +269,8 @@
                     },
                     "info": {
                         "greeting": "Hey %{username}!",
-                        "level_name": "level %{level}",
-                        "staff_level_name": "staff editor",
+                        "level_name": "level %{level} editor",
+                        "staff_level_name": "Waze staff editor",
                         "edit_area": {
                             "title": "You can edit %{distance} around roads you've driven",
                             "mi": {
@@ -284,16 +284,16 @@
                         },
                         "area_manager": "and everywhere in the area you manage",
                         "country_manager": "and everywhere in the country you manage",
-                        "points": "%{points} points",
+                        "points": "You have %{points} points",
                         "edits": "%{edits} edits",
-                        "editing_restricted": "Editing in this area is restricted to area managers. To report a map problem please visit our %{forum_link}.",
+                        "editing_restricted": "Editing in this area is restricted to area managers. To report a map problem, please visit our %{forum_link}.",
                         "forum": "forum"
                     },
                     "drives": {
                         "title": "Drives",
                         "subtitle": "Choose one of your drives to see it on the map",
                         "no_drives": "We can't find any of your drives.",
-                        "no_drives_explanation": "Have you started driving with the Waze app yet? If so, please make sure you logged into the Map Editor with the same credentials you use in the app.",
+                        "no_drives_explanation": "Have you started driving with the Waze app yet? If so, please make sure you log in to the Waze Map Editor with the same username and password you use in the app.",
                         "error": "Error finding your drives, please try again later."
                     },
                     "areas": {
@@ -307,7 +307,7 @@
                         "subtitle": "Advanced Preferences",
                         "two_way": "Draw new roads as two-way",
                         "turns_allowed": "Draw new roads with all turns allowed",
-                        "require_deselect": "Select only on empty selection",
+                        "require_deselect": "Select only if nothing else is selected\n(multi-select still available)",
                         "language": "Language",
                         "units": {
                             "title": "Units",
@@ -322,14 +322,14 @@
                     }
                 },
                 "pending": {
-                    "road_data": "Loading road data..."
+                    "road_data": "Loading map data..."
                 },
                 "save": {
                     "success": {
-                        "title": "Saved Successfully!",
+                        "title": "Saved successfully!",
                         "pending_venues": {
-                            "no_names": "Some changes to places are pending approval",
-                            "with_names": "Some changes to places (%{names}) are pending approval"
+                            "no_names": "Some changes to Places are pending approval",
+                            "with_names": "Some changes to Places (%{names}) are pending approval"
                         },
                         "change_count": {
                             "segments": {
@@ -337,16 +337,16 @@
                                 "other": "%{count} segments"
                             },
                             "nodes": {
-                                "one": "1 node",
-                                "other": "%{count} nodes"
+                                "one": "1 junction",
+                                "other": "%{count} junctions"
                             },
                             "venues": {
                                 "one": "1 place",
                                 "other": "%{count} places"
                             },
                             "bigJunctions": {
-                                "one": "1 Junction box",
-                                "other": "%{count} Junctions boxes"
+                                "one": "1 Junction Box",
+                                "other": "%{count} Junctions Boxes"
                             }
                         }
                     },
@@ -355,7 +355,7 @@
                         "title_ignorable": "There might be something wrong with this edit",
                         "suggestion": "Suggestion",
                         "collated": {
-                            "one": "1 error",
+                            "one": "One error",
                             "other": "%{count} errors"
                         },
                         "actions": {
@@ -369,89 +369,89 @@
                     "default_solution": "Check and try again",
                     "error_types": {
                         "101": {
-                            "title": "You have no permissions to make some of the changes"
+                            "title": "You do not have permission to make some of the changes"
                         },
                         "700": {
                             "title": "An error occurred while saving",
                             "solution": "Try again later"
                         },
                         "701": {
-                            "title": "The highlighted element was moved beyond the allowed distance"
+                            "title": "The highlighted object was moved or stretched beyond the allowed distance"
                         },
                         "702": {
-                            "title": "While you were editing, the elements you're trying to save have been modified or deleted",
-                            "solution": "Refresh and try again"
+                            "title": "Oops! It looks like someone else changed one or more map objects you edited before you saved",
+                            "solution": "Reload the map to start over. Make these changes again, if necessary."
                         },
                         "703": {
-                            "title": "The highlighted segments are not connected by a node",
-                            "solution": "Connect them to one another and then try again"
+                            "title": "The highlighted segments are not connected by a junction node",
+                            "solution": "Connect them to each other, then save again"
                         },
                         "704": {
-                            "title": "The highlighted angle is not allowed in a road"
+                            "title": "The angle in the highlighted segment is too sharp and not allowed"
                         },
                         "705": {
-                            "title": "There's a problem with the highlighted segment & node",
-                            "solution": "Reconnect the segment to the node and try again"
+                            "title": "There is a problem with the highlighted segment and node",
+                            "solution": "Reconnect the segment to the node and save again"
                         },
                         "706": {
-                            "title": "The highlighted place has an illegal shape",
-                            "solution": "Fix it and try again"
+                            "title": "The highlighted Place has an illegal shape",
+                            "solution": "Fix it and save again"
                         },
                         "707": {
                             "title": "The highlighted roundabouts cannot intersect each other"
                         },
                         "709": {
-                            "title": "The highlighted roundabout does not form a circle"
+                            "title": "The highlighted roundabout does not form a full loop"
                         },
                         "710": {
                             "title": "You cannot add cities to this country",
-                            "solution": "Check the spelling of the city names you have added and try again"
+                            "solution": "Check the spelling of the city names you have entered and save again"
                         },
                         "711": {
-                            "title": "The highlighted road is too far from the city it was added to",
-                            "solution": "Check the city name and try again"
+                            "title": "The highlighted road is too far from the city you entered",
+                            "solution": "Check the city name and save again"
                         },
                         "712": {
-                            "title": "The highlighted road is too far from the state it was added to",
-                            "solution": "Check the state and try again"
+                            "title": "The highlighted road is too far from the state you entered",
+                            "solution": "Check the state and save again"
                         },
                         "713": {
-                            "title": "The highlighted road is too far from the country it was added to",
-                            "solution": "Check the country and try again"
+                            "title": "The highlighted road is too far from the country you entered",
+                            "solution": "Check the country and save again"
                         },
                         "716": {
-                            "title": "The highlighted place has an invalid house number"
+                            "title": "The highlighted Place has an invalid house number"
                         },
                         "718": {
-                            "title": "Duplicate place"
+                            "title": "Duplicate Place"
                         },
                         "721": {
-                            "title": "The navigation point for the place is too far",
-                            "solution": "Move the navigation point closer to the place and try again"
+                            "title": "The navigation point for the Place is too far from the Place itself",
+                            "solution": "Move the navigation point closer to the Place and save again"
                         },
                         "722": {
-                            "title": "Cannot save a place without any categories",
-                            "solution": "Add at least one category and try again"
+                            "title": "Cannot save a Place with no categories",
+                            "solution": "Add at least one category and save again"
                         },
                         "725": {
-                            "title": "The highlighted segment is too long",
-                            "solution": "Make it shorter or split it into several segments and try again"
+                            "title": "The highlighted segment is longer than 100km",
+                            "solution": "Make it shorter or cut it into multiple segments and save again"
                         },
                         "726": {
                             "title": "The highlighted segment is too complex",
-                            "solution": "Remove geometry points or split it and try again"
+                            "solution": "Remove geometry points or cut the segment into multiple segments and save again"
                         },
                         "730": {
-                            "title": "The size of the highlighted Junction box cannot exceed 1 kilometer"
+                            "title": "The highlighted junction box size cannot exceed 1 kilometer"
                         },
                         "731": {
-                            "title": "The highlighted Junction box cannot contain more than 60 segments"
+                            "title": "The highlighted junction box cannot contain more than 60 segments"
                         },
                         "732": {
-                            "title": "The highlighted Junction box must contain at least one connection"
+                            "title": "The highlighted junction box must contain at least one connection"
                         },
                         "733": {
-                            "title": "The highlighted Junction box must have only one connection for every entry/exit pair"
+                            "title": "The highlighted junction box must have only one connection for every entry/exit pair"
                         },
                         "735": {
                             "title": "The highlighted node cannot have more than 16 connections"
@@ -463,14 +463,14 @@
                             "title": "Invalid speed limit"
                         },
                         "739": {
-                            "title": "Unverified max speed entered"
+                            "title": "Unverified max speed"
                         },
                         "744": {
                             "title": "The highlighted segment has been modified recently and will be rebuilt.",
-                            "solution": "Limit the closure time to less than 2 days."
+                            "solution": "Limit the closure to less than 2 days."
                         },
                         "752": {
-                            "title": "You have to be an MTE manager to mark a crisis event as submitted"
+                            "title": "You must be an MTE manager to mark a crisis event as submitted"
                         },
                         "755": {
                             "title": "End time is too far in the future"
@@ -490,7 +490,7 @@
                         },
                         "2000": {
                             "title": "Possible disconnection",
-                            "solution": "Consider connecting the segment to another node"
+                            "solution": "Consider connecting the segment to another junction node"
                         },
                         "2001": {
                             "title": "Overlapping segments",
@@ -498,23 +498,23 @@
                         },
                         "2002": {
                             "title": "Irregularly shaped segment",
-                            "solution": "Improve the geometric structure of the segment"
+                            "solution": "Simplify the geometry of the segment"
                         },
                         "2003": {
-                            "title": "Isolated segment - all turns from it are closed",
-                            "solution": "Change the turn rules for this segment"
+                            "title": "Isolated segment: all turns from this segment are disallowed",
+                            "solution": "Set legal turns to allowed"
                         },
                         "2004": {
                             "title": "Turn too sharp",
                             "solution": "Consider altering the segment structure around this turn"
                         },
                         "2005": {
-                            "title": "Very short segment - less than 5m",
-                            "solution": "Consider changing its structure"
+                            "title": "The highlighted segment is shorter than 5 m",
+                            "solution": "Make the segment at least 5 m (16 ft) long."
                         },
                         "2006": {
                             "title": "Intersecting segments with the same elevation",
-                            "solution": "Create a junction between the segments or change their elevation"
+                            "solution": "Create a junction node between the segments or change their elevation"
                         },
                         "2007": {
                             "title": "Non-highway toll road",
@@ -525,7 +525,7 @@
                             "solution": "Consider changing the segment structure or directionality"
                         },
                         "3000": {
-                            "title": "New segment length is greater than 10% of the old segments length",
+                            "title": "New segment length is greater than 10% of the old segment length",
                             "solution": "Make sure the new segment structure is correct"
                         },
                         "3003": {
@@ -537,30 +537,30 @@
                             "solution": "Make sure no segments with house numbers were accidentally deleted"
                         },
                         "7002": {
-                            "title": "The highlighted place has an invalid house number"
+                            "title": "The highlighted Place has an invalid house number"
                         },
                         "7007": {
-                            "title": "The highlighted place is out of the country bounds",
-                            "solution": "Move it and try again"
+                            "title": "The highlighted Place is out of the country bounds",
+                            "solution": "Move it and save again"
                         },
                         "7008": {
-                            "title": "The highlighted place has an invalid website address"
+                            "title": "The highlighted Place has an invalid website address"
                         },
                         "7010": {
-                            "title": "Invalid opening hours"
+                            "title": "Invalid open hour"
                         },
                         "7016": {
-                            "title": "The highlighted place has an invalid phone number"
+                            "title": "The highlighted Place has an invalid phone number"
                         },
                         "7017": {
-                            "title": "The highlighted place does not have a house number",
-                            "solution": "Add the house number and try again"
+                            "title": "The highlighted Place does not have a house number",
+                            "solution": "Add the house number and save again"
                         },
                         "7019": {
-                            "title": "Invalid place opening hours - overlapping times"
+                            "title": "Opening hours are overlapping"
                         },
                         "9013": {
-                            "title": "Cannot mark event with no closures as ready"
+                            "title": "An event must have closures attached to be marked as ready"
                         },
                         "default": {
                             "title": "Something went wrong"
@@ -575,7 +575,7 @@
                     "save": {
                         "title": "Save"
                     },
-                    "search": "Search for an address or place",
+                    "search": "Search for an address or Place",
                     "search_event": "Search for an event"
                 },
                 "drawing": {
@@ -585,7 +585,7 @@
                     "parking_lot": "Parking lot",
                     "point": "%{name} (point)",
                     "polygon": "%{name} (area)",
-                    "big_junction": "Junction box",
+                    "big_junction": "Junction Box",
                     "camera": "Camera",
                     "venue": "Place",
                     "map_comment": "Map comment"
@@ -599,21 +599,21 @@
                         "satellite_imagery": "Satellite Imagery",
                         "cities": "Cities",
                         "roads": "Roads",
-                        "gps_points": "GPS points",
+                        "gps_points": "GPS tracks",
                         "area_managers": "Area Managers",
-                        "big_junctions": "Junction boxes",
+                        "big_junctions": "Junction Boxes",
                         "segments": "Segments",
                         "nodes": "Nodes",
                         "landmarks": "Places",
                         "landmarks_parking": "Parking lots",
-                        "speed_cameras": "Speed cameras",
+                        "speed_cameras": "Enforcement Cameras",
                         "problems": "Map Problems",
                         "update_requests": "Update Requests",
                         "archive": "Archive",
                         "editable_areas": "Editable Areas",
                         "closures": "Road Closures",
-                        "live_users": "Live Users",
-                        "place_updates": "Place updates",
+                        "live_users": "Other Editors",
+                        "place_updates": "Place Updates",
                         "comments": "Map comments"
                     }
                 },
@@ -623,7 +623,7 @@
                     "to": "To"
                 },
                 "edit": {
-                    "unsaved_changes": "Changes you have made will be lost. Are you sure do you want to continue?",
+                    "unsaved_changes": "Changes you have made will be lost. Are you sure you want to continue?",
                     "house_numbers": {
                         "toolbar": {
                             "close": "Close",
@@ -632,19 +632,19 @@
                             "save": "Save",
                             "add": "Add"
                         },
-                        "zoom_to_edit": "Zoom in to edit",
+                        "zoom_to_edit": "Zoom in to edit house numbers",
                         "save": {
-                            "success": "House numbers successfully saved",
-                            "invalid": "Some house numbers are invalid. You can fix them and try to save again."
+                            "success": "House number(s) successfully saved",
+                            "invalid": "There are errors with some house numbers. You can fix them and try to save again."
                         },
                         "force": {
-                            "title": "If you are certain they're correct - force them.",
+                            "title": "If you are certain they are correct, you may try to force them.",
                             "action": "Force",
                             "continue": "Continue editing"
                         },
                         "errors": {
                             "0": "Unknown error",
-                            "1": "Number already exists",
+                            "1": "House number already exists on this street, or in a Place address",
                             "2": "Wrong side",
                             "3": "Number out of sequence",
                             "4": "Number too far from segment",
@@ -653,9 +653,9 @@
                         }
                     },
                     "more_options": "More options",
-                    "multiple_values": "Multiple",
+                    "multiple_values": "< Multiple >",
                     "created": "Created: %{time} by %{user}",
-                    "updated": "Updated: %{time} by %{user}",
+                    "updated": "Modified: %{time} by %{user}",
                     "id": "ID: %{num}",
                     "on": "On",
                     "edit": "Edit",
@@ -671,7 +671,7 @@
                         "country": "Country",
                         "state": "State",
                         "city": "City",
-                        "street": "Street",
+                        "street": "Local Street",
                         "none": "None",
                         "no_street": "No street",
                         "no_city": "No city"
@@ -687,22 +687,22 @@
                         "permissions": {
                             "big_junction": {
                                 "title": "You cannot edit this node.",
-                                "description": "This node is part of a Junction box and cannot be edited. Delete the Junction box to edit it."
+                                "description": "This junction node is part of a junction box and cannot be edited. Delete the junction to edit it."
                             }
                         }
                     },
                     "segment": {
                         "fields": {
                             "road_type": "Road type",
-                            "routing": "Routing",
-                            "toll": "Toll Road",
-                            "toll_road": "Toll Road",
+                            "routing": "Routing road type",
+                            "toll": "Toll road",
+                            "toll_road": "Toll road",
                             "tunnel": "Tunnel",
                             "unpaved": "Unpaved",
                             "headlights": "Headlights required",
                             "direction": "Direction",
-                            "fwdSpeedCamera": "A to B",
-                            "revSpeedCamera": "B to A",
+                            "fwdSpeedCamera": "A → B",
+                            "revSpeedCamera": "B → A",
                             "level": "Elevation",
                             "lock": "Lock",
                             "length": "Length",
@@ -710,37 +710,37 @@
                             "speed_limit": "Speed limit",
                             "length_value": "%{length} meters",
                             "created_by": "Created by",
-                            "updated_by": "Updated by"
+                            "updated_by": "Modified by"
                         },
                         "tabs": {
                             "general": "General",
-                            "closures": "Closures"
+                            "closures": "Road Closures"
                         },
                         "speed_limit": {
-                            "fwdMaxSpeed": "A to B",
-                            "revMaxSpeed": "B to A",
+                            "fwdMaxSpeed": "A → B",
+                            "revMaxSpeed": "B → A",
                             "verified": "Verified"
                         },
                         "lock_levels": {
-                            "staff": "Staff",
+                            "staff": "Waze Staff",
                             "automatic": "Automatic (%{rank})"
                         },
                         "levels": {
                             "0": "Ground"
                         },
-                        "op_direction": "segments are in opposing directions",
+                        "op_direction": "segments are mixed B → A and A → B",
                         "no_common": {
-                            "street": "No common street",
-                            "city": "No common city",
-                            "state": "No common state",
-                            "country": "No common country"
+                            "street": "Multiple streets",
+                            "city": "Multiple cities",
+                            "state": "Multiple states",
+                            "country": "Multiple countries"
                         },
                         "actions": {
                             "select_entire_street": "Select entire street",
                             "select_entire_roundabout": "Select entire roundabout",
                             "edit_house_numbers": "Edit house numbers",
                             "view_house_numbers": "View house numbers",
-                            "add_alt_street": "Add alternative name",
+                            "add_alt_street": "Add alternate name",
                             "restrictions": {
                                 "add": "Add restrictions",
                                 "edit": "Edit restrictions",
@@ -756,13 +756,13 @@
                             "no_number": "None"
                         },
                         "delete_confirm": {
-                            "multiple": "You are about to delete multiple segments, are you sure?",
-                            "multiple_hn": "You are about to delete multiple segments, some of which have house numbers, are you sure?",
-                            "hn": "The segment you are about to delete has house numbers, are you sure?"
+                            "multiple": "You are about to delete multiple segments. Are you sure?",
+                            "multiple_hn": "You are about to delete multiple segments, some of which have house numbers. Are you sure?",
+                            "hn": "The segment you are about to delete has house numbers. Are you sure?"
                         },
                         "city_confirm": {
-                            "no_city": "This city '%{city_name}' doesn't exist yet. Are you sure you want to create it?",
-                            "distant": "This city '%{city_name}' is distant from the current location. Are you sure you want to assign it to this segment?"
+                            "no_city": "This city '%{city_name}' doesn't exist. Are you sure you want to create it?",
+                            "distant": "This city '%{city_name}' is quite distant from the current location. Are you sure you want to assign it to this segment?"
                         },
                         "permissions": {
                             "area": {
@@ -774,34 +774,34 @@
                                 "description": "You need to be a level %{lockLevel} editor to edit this segment."
                             },
                             "has_closures": {
-                                "title": "This segment has one or more road closures.",
+                                "title": "This segment contains one or more road closures.",
                                 "description": "Remove all road closures to edit it."
                             },
                             "big_junction": {
                                 "title": "You cannot edit this segment.",
-                                "description": "This segment is part of a Junction box and cannot be edited. Delete the Junction box to edit it."
+                                "description": "This segment is part of a junction box and cannot be edited. Delete the junction box to edit it."
                             },
                             "multiple": {
                                 "title": "You cannot edit these segments.",
-                                "description": "One or more segments may be locked or out of your editing area."
+                                "description": "One or more segments may be locked or outside of your editing area."
                             }
                         },
                         "routing": {
                             "road_type": {
-                                "prev": "Unfavored",
-                                "current": "Neutral",
-                                "next": "Preferred"
+                                "prev": "One type lower",
+                                "current": "Unchanged",
+                                "next": "One type higher"
                             },
-                            "info": "This segment will be used as %{roadType} for routing purposes"
+                            "info": "This segment will be treated as %{roadType} for routing purposes"
                         }
                     },
                     "map_comment": {
                         "title": "One comment selected",
                         "fields": {
-                            "subject": "Title",
+                            "subject": "Title ",
                             "body": "Comment",
                             "lock": "Lock",
-                            "endDate": "Expiration",
+                            "endDate": "Expiration ",
                             "type": "Type"
                         },
                         "name_edit": {
@@ -817,19 +817,19 @@
                         "name_exists": "A city named %{name} already exists"
                     },
                     "camera": {
-                        "title": "One speed camera selected",
+                        "title": "One enforcement camera selected",
                         "fields": {
-                            "speed": "Max speed",
+                            "speed": "Camera speed limit",
                             "approved": "Approved",
                             "type": {
                                 "2": "Speed camera",
-                                "3": "Dummy",
+                                "3": "Fake",
                                 "4": "Red light camera"
                             }
                         }
                     },
                     "landmark": {
-                        "title": "One place selected",
+                        "title": "One Place selected",
                         "unnamed": "Unnamed",
                         "tabs": {
                             "general": "General",
@@ -838,24 +838,24 @@
                         },
                         "no_address": "No address",
                         "no_photos": "No photos",
-                        "select_categories": "Select Categories",
+                        "select_categories": "Select categories",
                         "external_providers": "External providers",
-                        "add_external_provider": "Add linked Google place",
+                        "add_external_provider": "Link this Waze Place to a Google Place (R3+ editors)",
                         "tooltip": {
-                            "categories": "Parking lot places have a unique structure. If you wish to create a parking lot place, choose that category from the “create place” button at the top bar.",
-                            "parking_lot": "To optimize parking information, you can only select one category when choosing Parking lot. If you wish to add more categories, create an additional place."
+                            "categories": "If you wish to create a parking lot place, choose that category from the “create place” button at the top bar.",
+                            "parking_lot": "To optimize parking information, Parking Lot must be the only category. If you wish to add more categories, create an additional place."
                         },
                         "aliases": {
-                            "add": "Add alternative name"
+                            "add": "Add alternate name"
                         },
                         "opening_hours": {
-                            "title": "Opening hours",
+                            "title": "Open hours",
                             "add": "Add times",
-                            "add_title": "Add opening hours",
+                            "add_title": "Add open hours",
                             "errors": {
                                 "days": "No days selected. Select at least one day",
-                                "fromHour": "Start time is wrong",
-                                "toHour": "End time is wrong",
+                                "fromHour": "Start time is incorrect",
+                                "toHour": "End time is incorrect",
                                 "same": "Start time is the same as end time"
                             },
                             "time_span": {
@@ -865,10 +865,10 @@
                             }
                         },
                         "update_requests": {
-                            "pending": "This place has pending place updates. click here to see them.",
-                            "unapproved": "This place is not approved yet. click here to see the update request.",
-                            "ad_locked": "This place is currently advertised. Changes you submit to it are pending staff moderation.",
-                            "moderation": "Changes you submit to this place are pending moderation."
+                            "pending": "This Place has pending updates. Click here to see them.",
+                            "unapproved": "This Place is not approved yet. Click here to see the request.",
+                            "ad_locked": "This Place is currently advertised. Changes you submit to it will be pending Waze staff moderation.",
+                            "moderation": "Changes you submit to this Place are pending moderation."
                         },
                         "type": {
                             "point": "Point",
@@ -876,51 +876,52 @@
                             "convert_to_area": "Convert to area"
                         },
                         "residential": {
-                            "convert_to": "Convert to residential",
+                            "convert_to": "Convert to residential/private (address only)",
                             "convert_from": "Convert to public"
                         },
                         "fields": {
-                            "contact": "Contact Info",
+                            "contact": "Contact info",
                             "services": "Services",
                             "url": "Website",
                             "phone": "Phone",
                             "categories": "Categories",
                             "type": "Type",
-                            "residential": "Residential",
+                            "residential": "Private Residential",
                             "name": "Name",
                             "address": "Address",
                             "brand": "Brand",
                             "description": "Description",
                             "lock": "Lock",
                             "streetID": "Address",
-                            "entryExitPoints": "Navigation point",
-                            "geometry": "Location/Geometry",
-                            "openingHours": "Opening hours",
+                            "entryExitPoints": "Stop point",
+                            "geometry": "Location / Geometry",
+                            "openingHours": "Open hours",
                             "houseNumber": "House number",
-                            "aliases": "Alternative names",
+                            "aliases": "Alternate names",
                             "images": "Photos",
                             "lockRank": "Lock"
                         },
                         "parking": {
-                            "operator": "Operator",
+                            "operator": "Operator ",
                             "general": {
-                                "yes": "Yes"
+                                "yes": "Yes",
+                                "true": true
                             },
                             "fields": {
                                 "canExitWhileClosed": "Cars can exit when lot is closed",
-                                "costType": "Cost",
+                                "costType": "Cost ",
                                 "lotType": "Lot elevation",
                                 "paymentType": "Payment types",
-                                "estimatedNumberOfSpots": "Number of spots",
+                                "estimatedNumberOfSpots": "Number of parking spaces",
                                 "parkingType": "Primary lot type",
                                 "hasTBR": "Does lot type vary depending on time/day?"
                             },
                             "titles": {
                                 "hasTBR": "Check \"yes\" to mark this lot and add time-based restrictions once supported.",
                                 "parkingType": {
-                                    "PUBLIC": "Unrestricted public access",
-                                    "RESTRICTED": "Some lot restrictions apply (customers, visitors, patrons, etc.)",
-                                    "PRIVATE": "Only accessible to a specified group (residents, employees, etc.)"
+                                    "PUBLIC": "Unrestricted public access; or restricted access but useful to Wazers to be suggested (e.g. a large mall, university,  airport with multiple lots)",
+                                    "RESTRICTED": "Some lot restrictions apply (customers, visitors, patrons, etc.). Will NOT be suggested to Wazers",
+                                    "PRIVATE": "Only accessible to a specified group (residents, employees, etc.). Will NOT be suggested to Wazers"
                                 }
                             },
                             "types": {
@@ -938,13 +939,13 @@
                                 },
                                 "paymentType": {
                                     "CASH": "Cash",
-                                    "CHECKS": "Checks",
-                                    "CREDIT": "Credit"
+                                    "CHECKS": "Check",
+                                    "CREDIT": "Credit card"
                                 },
                                 "lotType": {
                                     "STREET_LEVEL": "Street level",
                                     "STREET_LEVEL_COVERED": "Street level covered",
-                                    "MULTI_LEVEL": "Multi level",
+                                    "MULTI_LEVEL": "Multi-level",
                                     "UNDERGROUND": "Underground"
                                 },
                                 "estimatedNumberOfSpots": {
@@ -954,13 +955,13 @@
                                     "R_61_TO_100": "61-100",
                                     "R_101_TO_300": "101-300",
                                     "R_301_TO_600": "301-600",
-                                    "R_600_PLUS": "600+"
+                                    "R_600_PLUS": "601+"
                                 }
                             }
                         }
                     },
                     "big_junction": {
-                        "title": "One Junction box selected",
+                        "title": "One junction box selected",
                         "no_address": "No address",
                         "segments": "Included segments: %{segments}",
                         "select_segments": "Select included segments",
@@ -973,7 +974,7 @@
                             "address": "Address",
                             "lock": "Lock",
                             "streetID": "Address",
-                            "geometry": "Location/Geometry",
+                            "geometry": "Location / Geometry",
                             "houseNumber": "House number",
                             "connections": "Connections"
                         }
@@ -982,22 +983,22 @@
                 "venues": {
                     "services": {
                         "VALLET_SERVICE": "Valet service",
-                        "DRIVETHROUGH": "Drive-through",
+                        "DRIVETHROUGH": "Drive-thru",
                         "WI_FI": "Wi-Fi",
                         "RESTROOMS": "Restrooms",
                         "CREDIT_CARDS": "Accepts credit cards",
                         "RESERVATIONS": "Reservations",
                         "OUTSIDE_SEATING": "Outdoor seating",
                         "AIR_CONDITIONING": "Air conditioning",
-                        "PARKING_FOR_CUSTOMERS": "Parking for customers",
-                        "DELIVERIES": "Deliveries",
-                        "TAKE_AWAY": "Take Away",
+                        "PARKING_FOR_CUSTOMERS": "Customer parking",
+                        "DELIVERIES": "Delivery",
+                        "TAKE_AWAY": "Take-out",
                         "WHEELCHAIR_ACCESSIBLE": "Wheelchair accessible",
-                        "DISABILITY_PARKING": "Disability parking",
-                        "CARPOOL_PARKING": "Carpool parking",
-                        "EV_CHARGING_STATION": "EV charging",
+                        "DISABILITY_PARKING": "Accessible parking",
+                        "CARPOOL_PARKING": "Park and Ride",
+                        "EV_CHARGING_STATION": "Electric vehicle charging",
                         "CAR_WASH": "Car wash",
-                        "SECURITY": "Security",
+                        "SECURITY": "Security ",
                         "AIRPORT_SHUTTLE": "Airport shuttle"
                     },
                     "images": {
@@ -1010,23 +1011,23 @@
                         "panel": {
                             "flag_title": {
                                 "IMAGE": "Flagged picture",
-                                "VENUE": "Flagged place"
+                                "VENUE": "Flagged Place"
                             },
                             "title": {
-                                "ADD_VENUE": "New place",
-                                "DELETE_VENUE": "Removed place",
-                                "UPDATE_VENUE": "New details for place",
+                                "ADD_VENUE": "New Place",
+                                "DELETE_VENUE": "Removed Place",
+                                "UPDATE_VENUE": "New details for Place",
                                 "ADD_IMAGE": "New picture"
                             },
                             "action": {
                                 "open": "Open",
                                 "approve": "Approve",
                                 "reject": "Reject",
-                                "reject_flag": "Ignore Flag",
+                                "reject_flag": "Ignore flag",
                                 "add_to_map": "Add to map",
                                 "solved": "Solved",
-                                "merge": "Merge places",
-                                "delete": "Delete place",
+                                "merge": "Merge Places",
+                                "delete": "Delete Place",
                                 "delete_picture": "Delete picture"
                             },
                             "change": {
@@ -1039,23 +1040,23 @@
                             },
                             "next": "Next",
                             "done": "Done",
-                            "next_venue": "Next place",
+                            "next_venue": "Next Place",
                             "added_on": "%{added_on_title} %{date}",
                             "added_on_title": "Added on",
                             "picture_added_on_title": "Picture added on",
                             "suggested_on_title": "Suggested on",
                             "added_by": "%{added_by_title} %{username}",
                             "added_by_title": "By",
-                            "uneditable": "These suggestions can only be approved by an editor with level %{level} and up",
-                            "out_of_edit_area": "You cannot edit this suggestion since it's out of your editing area",
-                            "needs_staff_approval": "Suggestion pending staff approval",
-                            "place_deleted": "Place Deleted",
+                            "uneditable": "These requests can only be approved by an editor with level %{level} or higher",
+                            "out_of_edit_area": "You cannot edit this request because it is outside your editing area",
+                            "needs_staff_approval": "Request pending Waze staff approval",
+                            "place_deleted": "Place deleted",
                             "flag_reason": "Flag reason:"
                         },
                         "flags": {
                             "CLOSED": "Place closed",
                             "MOVED": "Place moved",
-                            "RESIDENTIAL": "Residential",
+                            "RESIDENTIAL": "Private Residential",
                             "DUPLICATE": "Duplicate of",
                             "INAPPROPRIATE": "Inappropriate",
                             "WRONG_DETAILS": "Wrong details",
@@ -1065,10 +1066,10 @@
                         }
                     },
                     "categories": {
-                        "CAR_SERVICES": "Car services",
+                        "CAR_SERVICES": "Car Services",
                         "GAS_STATION": "Gas Station",
                         "PARKING_LOT": "Parking Lot",
-                        "GARAGE_AUTOMOTIVE_SHOP": "Garage / Automotive Shop",
+                        "GARAGE_AUTOMOTIVE_SHOP": "Garage / Auto Shop",
                         "CAR_WASH": "Car Wash",
                         "TRANSPORTATION": "Transportation",
                         "AIRPORT": "Airport",
@@ -1081,51 +1082,53 @@
                         "TUNNEL": "Tunnel",
                         "TAXI_STATION": "Taxi Station",
                         "JUNCTION_INTERCHANGE": "Junction / Interchange",
-                        "PROFESSIONAL_AND_PUBLIC": "Professional and public",
+                        "PROFESSIONAL_AND_PUBLIC": "Professional and Public",
                         "COLLEGE_UNIVERSITY": "College / University",
                         "SCHOOL": "School",
                         "CONVENTIONS_EVENT_CENTER": "Conventions / Event Center",
                         "GOVERNMENT": "Government",
                         "LIBRARY": "Library",
                         "CITY_HALL": "City Hall",
-                        "ORGANIZATION_OR_ASSOCIATION": "Organization or Association",
-                        "PRISON_CORRECTIONAL_FACILITY": "Prison / Correctional Facility",
+                        "ORGANIZATION_OR_ASSOCIATION": "Organization / Association",
+                        "PRISON_CORRECTIONAL_FACILITY": "Jail / Prison / Correctional Facility",
                         "COURTHOUSE": "Courthouse",
                         "CEMETERY": "Cemetery",
                         "FIRE_DEPARTMENT": "Fire Department",
                         "POLICE_STATION": "Police Station",
                         "MILITARY": "Military",
-                        "HOSPITAL_MEDICAL_CARE": "Hospital / Medical Care",
-                        "OFFICES": "Offices",
+                        "HOSPITAL_MEDICAL_CARE": "[Old] Hospital / Medical Care",
+                        "HOSPITAL_URGENT_CARE": "Hospital / Urgent Care",
+                        "DOCTOR_CLINIC": "Doctor / Clinic",
+                        "OFFICES": "Offices (incl. non-emergency medical)",
                         "POST_OFFICE": "Post Office",
                         "RELIGIOUS_CENTER": "Religious Center",
-                        "KINDERGARDEN": "Kindergarten",
+                        "KINDERGARDEN": "Preschool / Daycare",
                         "FACTORY_INDUSTRIAL": "Factory / Industrial",
                         "EMBASSY_CONSULATE": "Embassy / Consulate",
                         "INFORMATION_POINT": "Information Point",
-                        "SHOPPING_AND_SERVICES": "Shopping and services",
+                        "SHOPPING_AND_SERVICES": "Shopping / Services",
                         "ARTS_AND_CRAFTS": "Arts & Crafts",
                         "BANK_FINANCIAL": "Bank / Financial",
                         "SPORTING_GOODS": "Sporting Goods",
                         "BOOKSTORE": "Bookstore",
                         "PHOTOGRAPHY": "Photography",
                         "CAR_DEALERSHIP": "Car Dealership",
-                        "FASHION_AND_CLOTHING": "Fashion and Clothing",
+                        "FASHION_AND_CLOTHING": "Clothing / Fashion",
                         "CONVENIENCE_STORE": "Convenience Store",
                         "PERSONAL_CARE": "Personal Care",
                         "DEPARTMENT_STORE": "Department Store",
                         "PHARMACY": "Pharmacy",
                         "ELECTRONICS": "Electronics",
-                        "FLOWERS": "Flowers",
-                        "FURNITURE_HOME_STORE": "Furniture / Home Store",
-                        "GIFTS": "Gifts",
+                        "FLOWERS": "Florist",
+                        "FURNITURE_HOME_STORE": "Home Furnishing",
+                        "GIFTS": "Gift Shop",
                         "GYM_FITNESS": "Gym / Fitness",
                         "SWIMMING_POOL": "Swimming Pool",
                         "HARDWARE_STORE": "Hardware Store",
                         "MARKET": "Market",
                         "SUPERMARKET_GROCERY": "Supermarket / Grocery",
                         "JEWELRY": "Jewelry",
-                        "LAUNDRY_DRY_CLEAN": "Laundry / Dry Clean",
+                        "LAUNDRY_DRY_CLEAN": "Laundromat / Dry Cleaner",
                         "SHOPPING_CENTER": "Shopping Center",
                         "MUSIC_STORE": "Music Store",
                         "PET_STORE_VETERINARIAN_SERVICES": "Pet Store / Veterinarian Services",
@@ -1138,12 +1141,12 @@
                         "RESTAURANT": "Restaurant",
                         "BAKERY": "Bakery",
                         "DESSERT": "Dessert",
-                        "CAFE": "Coffee shop",
+                        "CAFE": "Coffee Shop",
                         "FAST_FOOD": "Fast Food",
                         "FOOD_COURT": "Food Court",
-                        "BAR": "Bar",
+                        "BAR": "Bar / Winery / Tasting Room",
                         "ICE_CREAM": "Ice Cream",
-                        "CULTURE_AND_ENTERTAINEMENT": "Culture & entertainment",
+                        "CULTURE_AND_ENTERTAINEMENT": "Culture / Entertainment",
                         "ART_GALLERY": "Art Gallery",
                         "CASINO": "Casino",
                         "CLUB": "Club",
@@ -1156,7 +1159,7 @@
                         "STADIUM_ARENA": "Stadium / Arena",
                         "THEME_PARK": "Theme Park",
                         "ZOO_AQUARIUM": "Zoo / Aquarium",
-                        "RACING_TRACK": "Racing Track",
+                        "RACING_TRACK": "Race Track",
                         "THEATER": "Theater",
                         "OTHER": "Other",
                         "RESIDENCE_HOME": "Residence / Home",
@@ -1164,7 +1167,7 @@
                         "LODGING": "Lodging",
                         "HOTEL": "Hotel",
                         "HOSTEL": "Hostel",
-                        "CAMPING_TRAILER_PARK": "Camping / Trailer Park",
+                        "CAMPING_TRAILER_PARK": "Campground / RV Park",
                         "COTTAGE_CABIN": "Cottage / Cabin",
                         "BED_AND_BREAKFAST": "Bed & Breakfast",
                         "OUTDOORS": "Outdoors",
@@ -1176,15 +1179,15 @@
                         "PLAZA": "Plaza",
                         "PROMENADE": "Promenade",
                         "POOL": "Pool",
-                        "SCENIC_LOOKOUT_VIEWPOINT": "Scenic Lookout / Viewpoint",
+                        "SCENIC_LOOKOUT_VIEWPOINT": "Rest Area / Scenic Overlook",
                         "SKI_AREA": "Ski Area",
-                        "NATURAL_FEATURES": "Natural Features",
+                        "NATURAL_FEATURES": "Natural Feature",
                         "ISLAND": "Island",
-                        "SEA_LAKE_POOL": "Sea / Lake / Pool",
+                        "SEA_LAKE_POOL": "Sea / Lake / Pond",
                         "RIVER_STREAM": "River / Stream",
                         "FOREST_GROVE": "Forest / Grove",
                         "FARM": "Farm",
-                        "CHARGING_STATION": "Charging Station",
+                        "CHARGING_STATION": "EV Charging Station",
                         "CANAL": "Canal",
                         "SWAMP_MARSH": "Swamp / Marsh",
                         "DAM": "Dam",
@@ -1192,7 +1195,7 @@
                     }
                 },
                 "tts": {
-                    "play": "Play sound",
+                    "play": "Listen to street name",
                     "report_problem": "Report a problem"
                 },
                 "keyboard_shortcuts": {
@@ -1207,7 +1210,7 @@
                                 "delete": "Delete the selected item",
                                 "search": "Focus search bar",
                                 "showShortcutsDialog": "Show shortcuts dialog",
-                                "reloadData": "Reload map data",
+                                "reloadData": "Refresh map data",
                                 "nextFeedItem": "Next feed item",
                                 "prevFeedItem": "Previous feed item"
                             }
@@ -1227,14 +1230,14 @@
                             "description": "Editing",
                             "members": {
                                 "toggleMultipleSelection": "Toggle multiple selection",
-                                "allowAllConnections": "Allow all connections",
-                                "disallowAllConnections": "Disallow all connections",
+                                "allowAllConnections": "Allow all turns",
+                                "disallowAllConnections": "Disallow all turns",
                                 "toggleSegmentDirection": "Toggle segment direction",
                                 "editSegmentAddress": "Edit segment address",
                                 "selectEntireStreet": "Select entire street",
-                                "increaseSegmentLevel": "Increase segment level",
-                                "decreaseSegmentLevel": "Decrease segment level",
-                                "editHouseNumbers": "Add/Edit house numbers",
+                                "increaseSegmentLevel": "Increase segment elevation",
+                                "decreaseSegmentLevel": "Decrease segment elevation",
+                                "editHouseNumbers": "Add/edit house numbers",
                                 "editClosures": "Edit closures",
                                 "editRestrictions": "Edit restrictions"
                             }
@@ -1243,24 +1246,24 @@
                             "description": "Drawing",
                             "members": {
                                 "drawSegment": "Draw a new road",
-                                "drawPlace": "Add a new point place",
-                                "drawLandmark": "Add a new area place",
-                                "drawBigJunction": "Add a new Junction box",
+                                "drawPlace": "Add a new point Place",
+                                "drawLandmark": "Add a new area Place",
+                                "drawBigJunction": "Add a new junction box",
                                 "drawGasStation": "Draw a new gas station",
                                 "drawParkingLot": "Draw a new parking lot",
-                                "drawRoundabout": "Draw a new Roundabout"
+                                "drawRoundabout": "Draw a new roundabout"
                             }
                         },
                         "layers": {
-                            "description": "Layer toggling",
+                            "description": "Layers",
                             "members": {
                                 "toggleSatelliteImagery": "Toggle satellite imagery",
                                 "toggleGPSpoints": "Toggle GPS points",
                                 "toggleRoads": "Toggle roads",
                                 "toggleMapcomments": "Toggle map comments",
                                 "toggleAreaManagers": "Toggle area managers",
-                                "toggleJunctionboxes": "Toggle Junction Boxes",
-                                "toggleSpeedcameras": "Toggle speed cameras",
+                                "toggleJunctionboxes": "Toggle junction boxes",
+                                "toggleSpeedcameras": "Toggle cameras",
                                 "toggleMapProblems": "Toggle map problems",
                                 "toggleUpdateRequests": "Toggle update requests",
                                 "toggleEditableAreas": "Toggle editable areas",
@@ -1268,9 +1271,9 @@
                                 "toggleLiveUsers": "Toggle live users",
                                 "togglePlaces": "Toggle places",
                                 "displayLayerSwitcher": "Toggle layer switcher window",
-                                "spreadArrows": "Spread connectivity arrows",
-                                "hideArrows": "Hide connectivity arrows",
-                                "showAllArrows": "Show connectivity arrows for all visible segments",
+                                "spreadArrows": "Spread turn arrows",
+                                "hideArrows": "Hide turn arrows",
+                                "showAllArrows": "Show restricted turns for all visible segments",
                                 "colorEmptyStreets": "Highlight segments with no name",
                                 "toggleChat": "Toggle chat window",
                                 "closeStreetView": "Close Street View"
@@ -1280,12 +1283,12 @@
                 },
                 "play_mode": {
                     "title": "Practice mode",
-                    "description": "Edits you make here are just for practice, and can't be saved.",
+                    "description": "Map edits you make here are just for practice and cannot be saved.",
                     "login_link": "Log in",
-                    "login_msg": "%{login_link} to make live edits.",
+                    "login_msg": "%{login_link} to make map edits.",
                     "sidebar": {
-                        "subtitle": "You’re now in practice mode.",
-                        "description": "Your editing actions will not be saved but you can explore editing the map.",
+                        "subtitle": "You are now in practice mode.",
+                        "description": "Your editing actions will not be saved, but you can explore the map editor.",
                         "login": "To make your edits permanent, login with your Waze account and contribute your knowledge to the map.",
                         "help": "Need help creating your account?"
                     }
@@ -1293,119 +1296,119 @@
                 "problems": {
                     "types": {
                         "1": {
-                            "title": "Crooked segment detected",
-                            "description": "Road geometry indicates difficult turns",
-                            "solution": "Add, adjust, or delete geometry nodes to match road shape"
+                            "title": "Segment with abnormal geometry detected",
+                            "description": "The segment geometry appears to contain too many sharp angles which is not normal in road design.",
+                            "solution": "Modify the geometry of the segment to remove sharp angles and to better match the actual road shape."
                         },
                         "2": {
-                            "title": "Floating segment detected",
-                            "description": "Segment is not connected on both sides",
-                            "solution": "Connect segment on both ends"
+                            "title": "Segment with no connections detected",
+                            "description": "Segment is not connected at both ends",
+                            "solution": "Connect segment on at least one end."
                         },
                         "3": {
                             "title": "Missing junction detected",
-                            "description": "Segments crossing at same road level without junction present",
-                            "solution": "Adjust segments to different road levels, or add a junction"
+                            "description": "Segments at the same elevation cross without a junction",
+                            "solution": "Adjust elevation or add a junction."
                         },
                         "5": {
                             "title": "Overlapping segments detected",
                             "description": "Two or more segments overlap",
-                            "solution": "Check that all segments are correct. Move or delete as needed."
+                            "solution": "Check that all segments are correct. Move or delete as necessary."
                         },
                         "6": {
-                            "title": "Routing problem detected (unexitable segment)",
-                            "description": "Segment does not have an allowed exit point (all turns closed)",
-                            "solution": "Open turn arrows at junction node, or adjust road direction to two-way"
+                            "title": "Routing problem detected (segment with no exit)",
+                            "description": "All turns from this segment are restricted",
+                            "solution": "Allow outbound turns, or possibly the segment needs to be set to two-way.."
                         },
                         "7": {
                             "title": "Inconsistent road type detected",
-                            "description": "Segments with shared street name have different road type",
-                            "solution": "Check road type is correct for all segments with this street name"
+                            "description": "Segments with the same name have different road types",
+                            "solution": "Verify road type is correct for all segments with this street name."
                         },
                         "8": {
                             "title": "Short segment detected",
                             "description": "Segment is less than 5 meters and not part of a junction",
-                            "solution": "Either lengthen or delete segment"
+                            "solution": "Make the segment at least 5m long or delete it."
                         },
                         "10": {
-                            "title": "Too many segments connecting at junction detected",
-                            "description": "Junction connects more than 5 segments",
-                            "solution": "Check that all connections are needed, delete any unnecessary."
+                            "title": "Junction with more than 5 connected segments detected",
+                            "description": "There are more than 5 segments connected to this single junction",
+                            "solution": "Verify that all segments are required at this junction, and delete any which are unnecessary."
                         },
                         "11": {
                             "title": "Inconsistent segment direction detected",
-                            "description": "Segments with shared street ID have different traffic direction",
-                            "solution": "Adjust segments with shared street ID to same road direction"
+                            "description": "Segments with the same name have different traffic direction",
+                            "solution": "Verify that segments with the same name have the correction direction, and change as necessary."
                         },
                         "12": {
-                            "title": "Unnecessary junction nodes detected",
-                            "description": "Connected segments have same street ID and road type",
-                            "solution": "Delete unnecessary junction nodes"
+                            "title": "Unnecessary junctions detected",
+                            "description": "These two segments appear identical and are have a junction between them.",
+                            "solution": "If the junction is not needed and the segments have the same speed limit, delete it."
                         },
                         "13": {
                             "title": "Improper ramp connection detected",
-                            "description": "Ramp connected to road type other than highway/freeway",
-                            "solution": "Change ramp road type, or connecting segments road type"
+                            "description": "This ramp is connected to a road type other than Freeway or Highway",
+                            "solution": "Change ramp road type to the same as the type of connected segments."
                         },
                         "14": {
-                            "title": "Wrong road level detected",
-                            "description": "Connected segments have difference in road level greater than 2",
-                            "solution": "Adjust road level to match the connecting segment"
+                            "title": "Wrong road elevation detected",
+                            "description": "Connected segments should be within 2 elevation levels of each other.",
+                            "solution": "Adjust the elevations of connected segments to be within 2 levels of each other."
                         },
                         "15": {
-                            "title": "Sharp turn detected",
-                            "description": "Segments are connected by a turn that’s less than 30 degrees",
-                            "solution": "Adjust or close difficult turns at junction"
+                            "title": "Very sharp turn detected",
+                            "description": "Segments are connected by a turn that is less than 30 degrees",
+                            "solution": "Verify and adjust the angle at which these segments meet, or restrict the turns between them."
                         },
                         "16": {
                             "title": "Irregular toll road detected",
-                            "description": "Road type is inconsistent with type recommended for toll roads",
-                            "solution": "Uncheck toll road or adjust segment type to Highway/Freeway"
+                            "description": "Toll roads should be a Freeway or Highway road type.",
+                            "solution": "Remove the Toll Road option for these segments, or adjust the road type. You must also follow local guidelines for road types."
                         },
                         "17": {
                             "title": "Segment without details detected",
-                            "description": "Segment requires city and/or street name",
-                            "solution": "Set street and city name for segment"
+                            "description": "Segments require a name, city, state, and country",
+                            "solution": "Enter and apply the segment name, city, state and country."
                         },
                         "19": {
                             "title": "Irregular roundabout segment detected",
-                            "description": "Roundabout contains two way or no direction segment",
-                            "solution": "Adjust segment direction to be consistent with roundabout direction"
+                            "description": "This roundabout contains a two-way or no-direction segment",
+                            "solution": "Verify the segment direction and adjust as necessary to be consistent across all roundabout segments."
                         },
                         "20": {
                             "title": "Irregular roundabout segment detected",
-                            "description": "Roundabout contains segment with incorrect road direction",
-                            "solution": "Adjust segment direction to be consistent with roundabout direction"
+                            "description": "This roundabout contains a segment with an incorrect road direction",
+                            "solution": "Verify the segment direction and adjust as necessary to be consistent across all roundabout segments."
                         },
                         "21": {
                             "title": "Wrong street name detected",
-                            "description": "Segment street name does not match surrounding information",
-                            "solution": "Correct street names for segments, as needed"
+                            "description": "The name of this segment does not match those around it",
+                            "solution": "Verify and correct street names as necessary."
                         },
                         "22": {
                             "title": "Invalid dead end detected",
-                            "description": "One way segment contains a dead end with no allowed exit",
-                            "solution": "Check that nearby segments should not be connected or change road direction to two way"
+                            "description": "This dead-end segment is set to one-way.",
+                            "solution": "All dead-end segments should be set to two-way. Change and save again."
                         },
                         "50": {
-                            "title": "Parking Lot input as point",
-                            "description": "Parking Lot should be input as area polygon",
-                            "solution": "Convert to area polygon and set navigation point close to segment"
+                            "title": "Parking Lot set as a Point",
+                            "description": "Parking Lot Place should be Area type",
+                            "solution": "Change to an Area and set navigation point close to a driveable segment"
                         },
                         "51": {
                             "title": "Place not reachable",
                             "description": "Navigation point for this Place is too far from the nearest segment.",
-                            "solution": "Move navigation point closer to segment."
+                            "solution": "Move navigation point closer to a routeable segment."
                         },
                         "52": {
                             "title": "Place missing from Waze map",
-                            "description": "Place missing from Waze map, create a new place and set navigation point close to segment.",
-                            "solution": "Create a new place and set navigation point close to segment."
+                            "description": "Place missing from Waze map. Create a new place and set the navigation point close to the segment.",
+                            "solution": "Create a new place and set the navigation point close to the segment."
                         },
                         "53": {
                             "title": "Unmatched Places",
-                            "description": "Waze and Google Places are not matched.",
-                            "solution": "Add a linked Google Place to this location."
+                            "description": "Waze and Google Places are too far apart.",
+                            "solution": "Link this Waze Place to a Google Place (R3+ editors)"
                         },
                         "70": {
                             "title": "Missing Parking Lot Place",
@@ -1417,64 +1420,64 @@
                         },
                         "101": {
                             "title": "Driving direction mismatch",
-                            "description": "Part of the route is in the wrong driving direction",
-                            "solution": "Change the driving direction to match that of the routes"
+                            "description": "Drivers appear to be driving against the one-way direction of one or more segments.",
+                            "solution": "Determine if the Waze map is incorrect and update segment directionality as required."
                         },
                         "102": {
                             "title": "Missing junction",
-                            "description": "The roads are close to each other, however, they are not connected by a junction",
-                            "solution": "Drag the edge of one road so that it touches the other"
+                            "description": "The roads are close to each other, but they are not connected by a junction node",
+                            "solution": "Determine whether the roads actually intersect, and connect them as needed"
                         },
                         "103": {
                             "title": "Missing road",
-                            "description": "The roads are too far apart from each other and most likely a road is missing in between",
-                            "solution": "Draw a new road connecting the two disconnected roads"
+                            "description": "Wazers appear to be driving between two roads, and there could be a road missing in between",
+                            "solution": "If a road really is missing, draw a new road connecting the two segments"
                         },
                         "104": {
-                            "title": "Cross roads junction missing",
-                            "description": "The roads intersect each other, however, there is no junction in the intersection point",
-                            "solution": "Select both roads and create a junction by clicking the junction icon"
+                            "title": "Crossing roads with no junction node",
+                            "description": "The roads cross each other, but there is no junction node at the intersection point",
+                            "solution": "If the roads do actually intersect, select them both and click the button which appears above the intersection to create a junction node. If they do not intersect, then adjust the Elevation of at least one segment"
                         },
                         "105": {
                             "title": "Road type mismatch",
-                            "description": "The route goes through some unnavigable roads such as rails or private roads",
-                            "solution": "Select the unnavigable roads and change its type"
+                            "description": "Wazers' drives appear to go through some unnavigable roads types, such as railroad or walking trail",
+                            "solution": "Determine if the route is accurate and change road type on segments as necessary. Ignore this error if the Waze route is not accurately located"
                         },
                         "106": {
-                            "title": "Restricted turn might be allowed",
+                            "title": "Disallowed turn might be allowed",
                             "description": "The route goes through a turn which is marked as not allowed",
-                            "solution": "If the turn is allowed, mark it as such, otherwise, choose 'Not identified'"
+                            "solution": "If the turn is allowed, set it as Allowed. Otherwise, choose 'Not identified'"
                         },
                         "200": {
                             "title": "Suggested route frequently ignored",
-                            "description": "Most users did not follow the suggested route",
-                            "solution": "Check whether the route is allowed"
+                            "description": "Many Wazers do not follow the suggested route in this area",
+                            "solution": "Check along the route ahead, including alternate routes, and determine if there is a map error which is causing the drivers to deviate from the suggested route"
                         },
                         "300": {
                             "title": "Road Closure Request",
-                            "description": "A closure is requested on the segment",
-                            "solution": "Create closures on the segment as needed"
+                            "description": "A closure is requested on this segment.",
+                            "solution": "Create closures on this segment as needed"
                         }
                     },
                     "panel": {
                         "auto_detected": "Automatically detected",
                         "closure": {
                             "title": "Road closure request",
-                            "reported": "Requested by feed",
+                            "reported": "Requested by feed from Waze Partner",
                             "start_time": "From",
                             "end_time": "To",
-                            "street": "Street",
-                            "from_cross_street": "From crossing street",
-                            "to_cross_street": "To crossing street",
+                            "street": "Local Street",
+                            "from_cross_street": "From cross street",
+                            "to_cross_street": "To cross street",
                             "schedule": "Schedule",
                             "states": {
                                 "solved": "Road closure added",
-                                "not_identified": "Irrelevant data"
+                                "not_identified": "Incorrect data"
                             }
                         },
                         "done": "Done",
                         "next": "Next map problem",
-                        "no_permission": "This issue is outside of your editing area",
+                        "no_permission": "This issue is outside of your editable area",
                         "section": {
                             "action": "Report as",
                             "description": "Problem",
@@ -1488,9 +1491,9 @@
                         },
                         "more_info": {
                             "allSessions": "Related user drives (GPS traces)",
-                            "averageSession": "Average weighted drive",
+                            "averageSession": "Averaged drives",
                             "drive": "User drive (GPS trace)",
-                            "route": "Waze provided route",
+                            "route": "Waze-provided route",
                             "not_available": "Not available"
                         },
                         "closed": {
@@ -1503,8 +1506,8 @@
                 },
                 "update_requests": {
                     "panel": {
-                        "confirm": "This update request still has recent pending questions to the reporter. Are you sure you want to close it?",
-                        "reported": "Reported on: %{date}",
+                        "confirm": "This Update Request has recent pending questions to the reporter. Are you sure you want to close it?",
+                        "reported": "Submitted on: %{date}",
                         "next": "Next update request"
                     },
                     "types": {
@@ -1516,11 +1519,11 @@
                         "11": "Turn not allowed",
                         "12": "Incorrect junction",
                         "13": "Missing bridge overpass",
-                        "14": "Wrong driving direction",
+                        "14": "Improper / Poor navigation instructions",
                         "15": "Missing exit",
                         "16": "Missing road",
-                        "18": "Missing landmark",
-                        "19": "Blocked road",
+                        "18": "Missing Place",
+                        "19": "Closed road",
                         "21": "Missing street name",
                         "22": "Incorrect street prefix or suffix",
                         "23": "Missing or invalid speed limit"
@@ -1528,7 +1531,7 @@
                 },
                 "conversation": {
                     "no_comments": "No comments yet.",
-                    "ask": "You can ask the user who reported this issue for more information",
+                    "ask": "You can ask the Wazer who submitted this report for more information",
                     "follow": "Follow conversation",
                     "send": "Send",
                     "enter": "Enter comment...",
@@ -1537,13 +1540,13 @@
                 },
                 "session": {
                     "expired": {
-                        "title": "Your session has expired.",
+                        "title": "Your editing session has expired.",
                         "description": "Please log in again to continue editing"
                     }
                 },
                 "tutorial": {
-                    "header": "Map editing 101",
-                    "title": "Why not take a few minutes to watch our Map Editor's guide?",
+                    "header": "Map Editing 101",
+                    "title": "Please take a few minutes to watch our Map Editor's guide.",
                     "videos": {
                         "intro": {
                             "title": "Introduction",
@@ -1580,11 +1583,11 @@
                     }
                 },
                 "welcome": {
-                    "title": "Welcome to the Waze map editor",
+                    "title": "Welcome to the Waze Map Editor",
                     "content": "Waze maps are user edited and open to anyone who wants to contribute.\nHelp improve routing in your area by ensuring the map is current and accurate.\nCurious to try? Use the practice mode!",
                     "tutorial": {
                         "title": "Get Started",
-                        "description": "Watch our video tutorial and learn all the basics to becoming a mapper"
+                        "description": "Watch our video tutorial to learn about map editing, then read the wiki to learn how to edit correctly."
                     },
                     "play_mode": {
                         "title": "Practice mode",
@@ -1596,7 +1599,7 @@
                     },
                     "forum": {
                         "title": "Forums",
-                        "description": "Need advice? Check out your local forum to get help from experienced editors"
+                        "description": "Need advice? Check out the United States forum to get help from experienced editors"
                     }
                 },
                 "instruction_override": {
@@ -1611,7 +1614,7 @@
                         "CONTINUE": "Continue",
                         "EXIT_LEFT": "Exit left",
                         "EXIT_RIGHT": "Exit right",
-                        "UTURN": "Uturn"
+                        "UTURN": "U-turn"
                     }
                 },
                 "restrictions": {
@@ -1636,7 +1639,7 @@
                     "mixed": "These restrictions only apply to some of the segments selected",
                     "wraparound": "The restriction will end on the following day",
                     "apply_to_all": "Apply to all",
-                    "copy_all": "Copy same restrictions to opposite direction",
+                    "copy_all": "Copy these restrictions to the opposite direction",
                     "creating": "Creating a new restriction",
                     "past": "This restriction is set in the past",
                     "editing": "Editing an existing restriction",
@@ -1647,18 +1650,18 @@
                         "uturn": "Making a U-turn at %{street} is restricted on"
                     },
                     "groups": {
-                        "fwdRestrictions": "A to B",
-                        "revRestrictions": "B to A"
+                        "fwdRestrictions": "A → B",
+                        "revRestrictions": "B → A"
                     },
                     "vehicle_types": {
                         "0": "Trucks",
                         "1": "Public Transportation",
                         "2": "Taxis",
                         "3": "Buses",
-                        "6": "RV",
+                        "6": "Recreational vehicles",
                         "7": "Towing vehicles",
                         "8": "Motorcycles",
-                        "9": "Private vehicles",
+                        "9": "Personal vehicles",
                         "10": "Hazardous materials"
                     },
                     "errors": {
@@ -1675,7 +1678,7 @@
                     "difficult_turn": "Difficult turn"
                 },
                 "closures": {
-                    "add": "Add a closure",
+                    "add": "Add closure",
                     "apply_to_all": "Apply to all",
                     "delete_confirm": "Delete closure \"%{info}\"?",
                     "delete_confirm_no_reason": "Delete closure?",
@@ -1710,8 +1713,8 @@
                         "provider": "Provided by %{provider}"
                     },
                     "tooltip": {
-                        "mte": "List only contains events in the closure's time and location",
-                        "permanent": "Check this box only if the closure is permanent and Waze should ignore any detected movement"
+                        "mte": "List only contains events within the closure's time and location",
+                        "permanent": "Check this box if Waze should ignore any detected movement across the segment during the closure period."
                     },
                     "choose_event": "Choose Event",
                     "no_event_selected": "None",
@@ -1720,26 +1723,26 @@
                         "required": "Field is required",
                         "invalid": "Field is invalid",
                         "invalid-date": "Invalid date (YYYY-MM-dd HH:mm)",
-                        "in-past": "Date can't be in the past",
+                        "in-past": "Date cannot be in the past",
                         "before-start-date": "End date must be later than start date"
                     }
                 },
                 "segment": {
                     "categories": {
-                        "highways": "Highways",
-                        "streets": "Streets",
-                        "other_drivable": "Other - drivable",
-                        "non_drivable": "Non-drivable"
+                        "highways": "Major public roads",
+                        "streets": "Local public roads",
+                        "other_drivable": "Other drivable roads",
+                        "non_drivable": "Non-drivable roads"
                     },
                     "heading": {
                         "0": "east",
-                        "1": "north-east",
+                        "1": "northeast",
                         "2": "north",
-                        "3": "north-west",
+                        "3": "northwest",
                         "4": "west",
-                        "5": "south-west",
+                        "5": "southwest",
                         "6": "south",
-                        "7": "south-east"
+                        "7": "southeast"
                     },
                     "direction": {
                         "0": "Unknown",
@@ -1748,24 +1751,24 @@
                         "3": "Two way (⇆)",
                         "label": {
                             "0": "Unknown",
-                            "3": "Two way"
+                            "3": "Two way (⇆)"
                         }
                     },
                     "road_types": {
-                        "1": "Street",
+                        "1": "Local Street",
                         "2": "Primary Street",
-                        "3": "Freeway",
+                        "3": "Freeway (Interstate / Other)",
                         "4": "Ramp",
-                        "5": "Walking Trail",
+                        "5": "Routable Pedestrian Path",
                         "6": "Major Highway",
                         "7": "Minor Highway",
                         "8": "Off-road / Not maintained",
-                        "10": "Pedestrian Boardwalk",
+                        "10": "Non-Routable Pedestrian Path",
                         "15": "Ferry",
                         "16": "Stairway",
                         "17": "Private Road",
                         "18": "Railroad",
-                        "19": "Runway/Taxiway",
+                        "19": "Runway / Taxiway",
                         "20": "Parking Lot Road"
                     },
                     "address": {
@@ -1773,7 +1776,7 @@
                     }
                 },
                 "street_view": {
-                    "tooltip": "Drag for Street View"
+                    "tooltip": "Drag onto map for Street View"
                 },
                 "date": {
                     "today": "today",
@@ -1815,7 +1818,7 @@
                 },
                 "feed": {
                     "empty": "No more messages & issues!",
-                    "load_more": "Load More",
+                    "load_more": "Load more",
                     "load_first_time": "Loading map issues in your area",
                     "details": {
                         "next": "Next",
@@ -1833,46 +1836,46 @@
                                 "buttonText": "Reply"
                             },
                             "FLAGGED_USER": {
-                                "title": "You've been flagged",
+                                "title": "You have been flagged",
                                 "shortMessage": "Repeated questionable activity",
                                 "message": "Be advised: If these editing practices continue your account will be blocked.",
-                                "linkText": "Read about best editing practices"
+                                "linkText": "Read about best map editing practices"
                             },
                             "BLOCKED_USER": {
-                                "title": "You've been Blocked",
-                                "shortMessage": "Editing permissions suspended",
+                                "title": "You have been blocked",
+                                "shortMessage": "Map editing permissions suspended",
                                 "message": "Due to repeated questionable edits, your account is blocked from editing. Points may have also been reduced.",
-                                "linkText": "Read about best editing practices"
+                                "linkText": "Read about best map editing practices"
                             },
                             "ACTIVATED_USER": {
-                                "title": "You're active again",
-                                "shortMessage": "Editing permissions restored",
-                                "message": "Going forward, be careful that your edits are valid and don't harm the map.",
-                                "linkText": "Read about best editing practices"
+                                "title": "You are active again",
+                                "shortMessage": "Editing permissions have been restored",
+                                "message": "From now on, be careful that your edits are valid and do not harm the map.",
+                                "linkText": "Read about best map editing practices"
                             },
                             "SOON_TO_BE_UPGRADED": {
-                                "title": "You're %{progress}% there, already!",
+                                "title": "You are %{progress}% to the next editor level!",
                                 "shortMessage": "It's so close...",
                                 "message": "All that hard work is paying off! Just a few more edits to go and you reach the next level.",
                                 "linkText": "Read about levels and permissions"
                             },
                             "LEVEL_UPGRADE": {
                                 "subject": "Congratulations!",
-                                "title": "You're level %{level} editor!",
+                                "title": "You're a level %{level} editor!",
                                 "message": "There's a whole new world to explore with advanced permissions, forums, and more.",
                                 "linkText": "Read about levels and permissions"
                             },
                             "LEVEL_UPGRADE_2": {
                                 "subject": "Congratulations!",
                                 "title": "You're a level 2 editor!",
-                                "message": "There's a whole new world to explore in Level 2. Edit 1.6 km around your driven areas, approve pending Places requests, and get Robot mood in your Waze app.",
+                                "message": "There's a whole new world to explore as a Level 2 editor. Edit 1 mile around your driven areas, approve pending Places requests, and get Robot mood in your Waze app.",
                                 "shortMessage": "There's a whole new world to explore...",
                                 "buttonText": "Read about levels and permissions"
                             },
                             "LEVEL_UPGRADE_3": {
                                 "subject": "Congratulations!",
                                 "title": "You're a level 3 editor!",
-                                "message": "There's a whole new world to explore in Level 3! Edit any object locked to your level, become an Area Manager, and get 8-bit mood in the Waze app.",
+                                "message": "There's a whole new world to explore as a Level 3 editor! Edit 3 miles around your driven areas, edit any object locked to your level, become an Area Manager, and get 8-bit mood in the Waze app.",
                                 "shortMessage": "There's a whole new world to explore...",
                                 "buttonText": "Read about Area Managers",
                                 "linkText": "Read about levels and permissions"
@@ -1880,7 +1883,7 @@
                             "LEVEL_UPGRADE_4": {
                                 "subject": "Congratulations!",
                                 "title": "You're a level 4 editor!",
-                                "message": "There's a whole new world to explore in Level 4! Edit 3.2 km around your driven areas and any object locked to your level. This is a great time to start mentoring other editors.",
+                                "message": "There's a whole new world to explore as a Level 4 editor! Edit 4 miles around your driven areas and any object locked to your level. This is a great time to start mentoring other editors.",
                                 "shortMessage": "There's a whole new world to explore...",
                                 "buttonText": "Read about Waze Mentoring",
                                 "linkText": "Read about levels and permissions"
@@ -1888,7 +1891,7 @@
                             "LEVEL_UPGRADE_5": {
                                 "subject": "Congratulations!",
                                 "title": "You're a level 5 editor!",
-                                "message": "Get ready to explore level 5! Edit any object locked to this level and, if you're not one yet, apply to become a Country Manager.",
+                                "message": "Get ready to explore Level 5! Edit any object locked to this level. Depending on your edits and involvement in the editing community, you could be considered for Country Manager. See the United States forum for more information.",
                                 "shortMessage": "Get ready to explore...",
                                 "buttonText": "Read about Country Management",
                                 "linkText": "Read about levels and permissions"
@@ -1896,45 +1899,45 @@
                             "LEVEL_UPGRADE_6": {
                                 "subject": "Congratulations!",
                                 "title": "You're a level 6 editor!",
-                                "message": "Welcome! You're now part of an elite group of the world's top Wazers. You can edit pretty much anything on the Waze Map. Have fun!  :)",
+                                "message": "Welcome! You're now part of an elite group of the world's top Wazers. You can edit pretty much anything on the Waze Map. Have fun! :)",
                                 "shortMessage": "You've reached the top!"
                             },
                             "MEET_FELLOW_EDITORS": {
                                 "title": "Meet fellow editors",
                                 "shortMessage": "Get to know the community",
                                 "message": "Learn more about map editing in the Waze Community Forums.",
-                                "buttonText": "Visit local forum"
+                                "buttonText": "Visit your local forum"
                             },
                             "GOT_A_QUESTION": {
-                                "title": "Got a question?",
+                                "title": "Have a question?",
                                 "shortMessage": "Chat with fellow editors",
-                                "message": "Use Map Chat to connect with editors around you, located on the bottom right corner of your screen"
+                                "message": "Use Map Chat to communicate with editors around you, located on the bottom right corner of your screen"
                             },
                             "NEW_EDITOR_NEARBY": {
-                                "title": "New editor nearby",
-                                "shortMessage": "Say hi to %{username} and offer help",
-                                "message": "One of the best ways to improve the map is by welcoming new editors to the community. Go ahead, introduce yourself.",
+                                "title": "There is a new editor nearby",
+                                "shortMessage": "Say \"Hi!\" to %{username} and offer to help",
+                                "message": "One of the best ways to improve the map is by welcoming new editors to the community. Go ahead and introduce yourself.",
                                 "buttonText": "Visit %{username}'s profile"
                             },
                             "NEW_ACTIVE_EDITORS_NEARBY": {
-                                "title": "New active editors nearby",
-                                "shortMessage": "Go ahead, say hello",
-                                "message": "%{usernames} are active new editors in your area. Send them a message and introduce the community."
+                                "title": "There are new active editors nearby",
+                                "shortMessage": "Go ahead and say hello",
+                                "message": "%{usernames} are active new editors in your area. Send them a message and introduce them to the community."
                             },
                             "WELCOME_NEW_EDITOR": {
                                 "title": "Welcome new editor",
                                 "shortMessage": "So happy you're here!",
-                                "message": "Get connected to other editors in your area.",
+                                "message": "Get connected with other editors in your area.",
                                 "linkText": "Find your local Community Forum"
                             },
                             "WELCOME_TO_WME": {
                                 "title": "Welcome to the Waze Map Editor",
                                 "shortMessage": "Let's get started!",
                                 "message": "Check out Wazeopedia for helpful resources and tips.",
-                                "linkText": "Read about best editing practices"
+                                "linkText": "Read about best map editing practices"
                             },
                             "DISCOVER_COMMUNITY_FORUM": {
-                                "title": "Discover Community Forums",
+                                "title": "Discover community forums",
                                 "shortMessage": "Dive deep into the world of Waze Map Editing."
                             },
                             "DISCOVER_LOCAL_WIKI": {
@@ -1942,7 +1945,7 @@
                                 "shortMessage": "Get answers to questions you didn’t even know you had."
                             },
                             "FIRST_TIME_VIDEOS": {
-                                "title": "Editing 101",
+                                "title": "Map Editing 101",
                                 "shortMessage": "Not sure what to do next? These videos might help!"
                             },
                             "CHECK_YOUR_NEIGHBORHOOD": {
@@ -1954,21 +1957,21 @@
                     "messages": {
                         "from": "From",
                         "more_items": {
-                            "one": "1 More Private Message",
-                            "other": "%{count} More Private Messages"
+                            "one": "1 more Private Message",
+                            "other": "%{count} more Private Messages"
                         }
                     },
                     "issues": {
                         "next": "Next issue",
                         "motivations": {
                             "REPORTED_BY_USER": "Reported by you",
-                            "USER_FOLLOWS_ISSUE": "New comments on an issue you follow",
-                            "USER_FOLLOWS_ISSUE_LAST_COMMENT": "An issue you follow",
-                            "CLOSE_TO_FAVORITES": "Around a favorite place",
-                            "NEAR_DRIVES": "Around a recent drive",
-                            "ISSUE_AGE": "An old issue. Would you help closing it?",
-                            "ISSUE_REOPENED": "Reopened issue",
-                            "CAN_BE_SOLVED_BY_RANK": "High-rank issue"
+                            "USER_FOLLOWS_ISSUE": "You are following this Update Request",
+                            "USER_FOLLOWS_ISSUE_LAST_COMMENT": "Followed Update Request with new comments",
+                            "CLOSE_TO_FAVORITES": "Near a frequent destination",
+                            "NEAR_DRIVES": "Near a recent drive",
+                            "ISSUE_AGE": "Old Problem. Please help fix and close it.",
+                            "ISSUE_REOPENED": "Problem reopened",
+                            "CAN_BE_SOLVED_BY_RANK": "Problem for a higher-level editor"
                         }
                     }
                 },
@@ -1979,7 +1982,7 @@
                         "submit": "Submit",
                         "submitted": "Submitted",
                         "submit_confirm": "Submit this event? Once you hit submit, this event goes live on waze.com/events.",
-                        "submit_failed": "Submitting event failed",
+                        "submit_failed": "Event submission failed",
                         "publish": "Publish",
                         "published": "Published",
                         "publish_failed": "Publish failed",
@@ -1987,7 +1990,7 @@
                         "select_city": "Select City",
                         "location_tooltip": "List only contains nearby locations. Search the map to find others",
                         "tweet_text": "Tweet text",
-                        "twitter_accounts_urls": "Twitter accounts urls",
+                        "twitter_accounts_urls": "Twitter accounts URLs",
                         "toolbar": {
                             "add": "Add event",
                             "save": "Save",
@@ -1995,7 +1998,7 @@
                         },
                         "tabs": {
                             "general": "General",
-                            "closures": "Closures",
+                            "closures": "Road Closures",
                             "closures_disabled": "Save event to add closures",
                             "contributors": "Contributors",
                             "partners_disabled": "Save event to add partners"
@@ -2020,12 +2023,12 @@
                             "add": "Add"
                         },
                         "validation_errors": {
-                            "location": "Please enter a location",
-                            "names": "Please add a name",
+                            "location": "Please enter a city",
+                            "names": "Please enter a name",
                             "english_name": "Please use English letters, numbers and punctuation",
-                            "english_name_length": "Name is too long",
-                            "start_date": "Please add a start date",
-                            "end_date": "Please add an end date",
+                            "english_name_length": "The MTE name is too long. Please shorten and then save.",
+                            "start_date": "Please enter a start date",
+                            "end_date": "Please enter an end date",
                             "end_before_start": "End date must be later than start date"
                         },
                         "pending_changes": "There are pending changes. Are you sure you want to go back?",
@@ -2033,19 +2036,19 @@
                         "back_to_search": "Search events",
                         "waze_event_page": "Waze Event Page",
                         "fields": {
-                            "category": "Category",
+                            "category": "Category ",
                             "url": "Event website",
                             "location": "Location",
                             "start_date": "Start",
                             "end_date": "End"
                         },
                         "categories": {
-                            "FESTIVAL": "Festival",
-                            "PARADE": "Parade",
-                            "MARATHON": "Marathon",
+                            "FESTIVAL": "Festival ",
+                            "PARADE": "Parade ",
+                            "MARATHON": "Marathon ",
                             "RACE": "Race",
-                            "CYCLING": "Cycling",
-                            "CONCERT": "Concert",
+                            "CYCLING": "Cycling ",
+                            "CONCERT": "Concert ",
                             "GAME_DAY": "Game day",
                             "PAPAL_VISIT": "Papal visit",
                             "PRESIDENTIAL_VISIT": "Presidential visit",
@@ -2112,7 +2115,7 @@
                             "primaryStreetID": "Primary street name",
                             "fromCrossroads": "From cross roads",
                             "toCrossroads": "To cross roads",
-                            "streetIDs": "Alternative street names",
+                            "streetIDs": "Alternate street names",
                             "fwdRestrictions": "A →B time-based restrictions",
                             "revRestrictions": "B →A time-based restrictions"
                         },
@@ -2133,14 +2136,14 @@
                             "phone": "Phone",
                             "brand": "Brand",
                             "residential": "Residential Place",
-                            "openingHours": "Opening hours",
+                            "openingHours": "Open hours",
                             "categories": "Categories",
                             "categoryAttributes": "Category attributes",
                             "services": "Services",
                             "entryExitPoints": "Entry points",
                             "images": "Images",
-                            "venueUpdateRequests": "Place Update Request",
-                            "aliases": "Alternative names",
+                            "venueUpdateRequests": "Place update request",
+                            "aliases": "Alternate names",
                             "approved": "Approved",
                             "externalProviderIDs": "External providers",
                             "adLocked": "Ad-locked",
@@ -2148,16 +2151,16 @@
                         },
                         "category_fields": {
                             "canExitWhileClosed": "Cars can exit when lot is closed",
-                            "costType": "Cost",
+                            "costType": "Price ",
                             "lotType": "Lot elevation",
                             "paymentType": "Payment types",
-                            "estimatedNumberOfSpots": "Number of spots",
+                            "estimatedNumberOfSpots": "Number of parking spaces",
                             "parkingType": "Primary lot type",
                             "hasTBR": "Does lot type vary depending on time/day?"
                         }
                     },
                     "venueUpdateRequest": {
-                        "name": "Place Update Request"
+                        "name": "Place update request"
                     },
                     "bigJunction": {
                         "name": "Junction Box",
@@ -2166,12 +2169,12 @@
                         }
                     },
                     "camera": {
-                        "name": "Speed Camera",
+                        "name": "Enforcement camera",
                         "fields": {
                             "type": "Type",
                             "validated": "Validated",
-                            "speed": "Speed",
-                            "azymuth": "Azymuth"
+                            "speed": "Speed limit",
+                            "azymuth": "Azimuth"
                         }
                     }
                 },
@@ -2179,7 +2182,7 @@
                     "show": "View History",
                     "hide": "Hide History",
                     "no_history": "No history found",
-                    "history_error": "There was an error while loading the history",
+                    "history_error": "There was an error trying to load the history",
                     "load_more": "Load more",
                     "changed_from": "Changed from",
                     "changed_to": "to",
@@ -2189,7 +2192,7 @@
                     "object_created": "%{object} created",
                     "object_deleted": "%{object} deleted",
                     "multiple_changes": "Multiple changes",
-                    "segment_created_by_split": "Segment created by split",
+                    "segment_created_by_split": "Segment created by cut",
                     "segment_created_by_merge": "Segment created by merge",
                     "actions": {
                         "default": {
@@ -2208,8 +2211,8 @@
                         "DELETE": "Deleted %{field}"
                     },
                     "boolean_attributes": {
-                        "enabled": "Yes",
-                        "disabled": "No"
+                        "enabled": true,
+                        "disabled": false
                     },
                     "visual_attributes": {
                         "old_value": "this",
@@ -2231,7 +2234,7 @@
             };
 
             I18n.languageNames = {
-                "en": "English",
+                "en-US": "US English",
                 "en-GB": "English (UK)",
                 "es": "Español",
                 "es-419": "Español América Latina",
@@ -2270,12 +2273,12 @@
                 "ar": "العربية"
             };
 
-            I18n.availableLocales = ["en", "en-GB", "es", "es-419", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar"];
+            I18n.availableLocales = ["en-US", "en-GB", "es", "es-419", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar"];
 
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="/assets-editor/js/app-c05c089a1996c9c61847.js"></script>
+        <script src="/assets-editor/js/app-4b7b729ec751ab691670.js"></script>
     </body>
 
 </html>
