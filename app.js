@@ -12720,8 +12720,7 @@ webpackJsonp([1], [function(e, t, i) {
             iw: "he",
             ji: "yi",
             in: "id",
-            "en-UK": "en-GB",
-            "en-US": "en-US"
+            "en-UK": "en-GB"
         },
         t.default = f,
         e.exports = t.default
@@ -21385,7 +21384,7 @@ webpackJsonp([1], [function(e, t, i) {
                 this.origGeometries = {}
             },
             onFeaturesMerge: function() {
-                this.verifySelectionValidity();
+                this.verifySelectionValidity()
             },
             verifySelectionValidity: function() {
                 this.resetVertices()
@@ -40138,7 +40137,7 @@ webpackJsonp([1], [function(e, t, i) {
     }).call(window)
 }, , , , function(e, t) {
     e.exports = {
-        default_locale: "en-US",
+        default_locale: "en",
         api_base: "/Descartes/app",
         loginPath: "/login/create",
         paths: {
