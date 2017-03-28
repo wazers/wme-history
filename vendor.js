@@ -44,7 +44,7 @@
                     a.src = t.p + "" + e + ".js/" + ({
                         1: "app"
                     }[e] || e) + "-" + {
-                        1: "f4275b41e3038eb12ed6"
+                        1: "3fc528b897c22d3dc221"
                     }[e] + ".js",
                     s.appendChild(a)
             }
