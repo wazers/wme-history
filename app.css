@@ -11333,15 +11333,16 @@ kbd.shiftKey:before {
 }
 
 .navigation-point {
-    margin-top: -12.5px;
-    margin-left: -12.5px;
-    width: 25px;
-    height: 25px;
-    border-radius: 25px;
-    border: 3px solid #00ece3;
+    margin-top: -11px;
+    margin-left: -11px;
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    border: 2px solid #3d3d3d;
+    color: #3d3d3d;
     background-color: #fff;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 19px;
     padding-left: 2px
 }
 
@@ -12212,7 +12213,7 @@ body[dir=rtl] .olControlScaleLine {
     opacity: .8
 }
 
-.WazeControlBridgeCreatorOver,.WazeControlEditNodeConnectionsOver,.WazeControlMapProblemsOver,.WazeControlNodeCreatorOver,.WazeControlUpdateRequestsOver {
+.WazeControlEditNodeConnectionsOver,.WazeControlMapProblemsOver,.WazeControlUpdateRequestsOver {
     cursor: pointer
 }
 
