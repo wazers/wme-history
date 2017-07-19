@@ -7,7 +7,7 @@
         <title>Waze Map Editor</title>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="/assets-editor/css/app-274098192218d06ef7983eaf1eec37ba.css" rel="stylesheet">
+        <link href="/assets-editor/css/app-f88d2abdbd768765e72ec8f0e2faca51.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -50,7 +50,7 @@
                             <span class="short-title">Map Editor</span>
                         </div>
                         <div id="debug">
-                            <div class="version">v1.35-7-g78c1d47
+                            <div class="version">v1.35-49-g7870050
                             </div>
                             <div class="version descrates"></div>
                         </div>
@@ -77,7 +77,7 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="/assets-editor/js/vendor-ec44295df89d54dd6d9d.js"></script>
+        <script src="/assets-editor/js/vendor-d87b4056f92296faad78.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -484,6 +484,10 @@
                         "765": {
                             "title": "Map comment expiration date is invalid"
                         },
+                        "766": {
+                            "title": "Parking Lot should be input as area polygon",
+                            "solution": "Convert to area polygon and set navigation point close to segment"
+                        },
                         "1000": {
                             "title": "Connectivity problem",
                             "solution": "Check that all segments are properly connected and their turns are properly defined"
@@ -700,6 +704,7 @@
                             "tunnel": "Tunnel",
                             "unpaved": "Unpaved",
                             "headlights": "Headlights required",
+                            "nearbyHOV": "Nearby HOV",
                             "direction": "Direction",
                             "fwdSpeedCamera": "A to B",
                             "revSpeedCamera": "B to A",
@@ -711,6 +716,9 @@
                             "length_value": "%{length} meters",
                             "created_by": "Created by",
                             "updated_by": "Updated by"
+                        },
+                        "tooltips": {
+                            "nearbyHOV": "Use checkbox if segment is next to a separated segment marked as HOV or bus lane.  This ensures GPS deviation is taken into account when creating ETA."
                         },
                         "tabs": {
                             "general": "General",
@@ -839,8 +847,11 @@
                         "no_address": "No address",
                         "no_photos": "No photos",
                         "select_categories": "Select Categories",
-                        "external_providers": "External providers",
-                        "add_external_provider": "Add linked Google place",
+                        "external_providers": {
+                            "title": "External providers",
+                            "add": "Add linked Google place",
+                            "search": "Search for a place"
+                        },
                         "tooltip": {
                             "categories": "Parking lot places have a unique structure. If you wish to create a parking lot place, choose that category from the “create place” button at the top bar.",
                             "parking_lot": "To optimize parking information, you can only select one category when choosing Parking lot. If you wish to add more categories, create an additional place."
@@ -901,6 +912,9 @@
                             "images": "Photos",
                             "lockRank": "Lock"
                         },
+                        "add_operator": {
+                            "text": "Add an operator to the list"
+                        },
                         "parking": {
                             "operator": "Operator",
                             "general": {
@@ -939,7 +953,15 @@
                                 "paymentType": {
                                     "CASH": "Cash",
                                     "CHECKS": "Checks",
-                                    "CREDIT": "Credit"
+                                    "CREDIT": "Credit",
+                                    "DEBIT_CARD": "Credit card",
+                                    "PERMIT": "Permit",
+                                    "MEMBERSHIP": "Membership",
+                                    "PREPAID": "Prepaid",
+                                    "PARKING_APP": "Parking app",
+                                    "DIGITAL_WALLET": "Digital wallet",
+                                    "SMS_CALL": "SMS call",
+                                    "ELECTRONIC_PASS": "Electronic pass"
                                 },
                                 "lotType": {
                                     "STREET_LEVEL": "Street level",
@@ -1549,7 +1571,7 @@
                     "videos": {
                         "intro": {
                             "title": "Introduction",
-                            "video_id": "Gqdy1jLlf50"
+                            "video_id": "x4AUXpHB5-4"
                         },
                         "segments": {
                             "title": "Segments",
@@ -1617,64 +1639,151 @@
                     }
                 },
                 "restrictions": {
-                    "dateformat": "dd/MM/yyyy",
-                    "dateRangeFormat": "DD/MM/YYYY",
-                    "title": "Time-based restrictions",
-                    "none": "No restrictions",
-                    "add": "Add restriction",
-                    "permanent": "Every week",
-                    "date_range": "Range",
-                    "all_vehicles_title": "Restriction for all vehicle types",
-                    "vehicles_explanation": "These vehicle types are not allowed",
-                    "all_vehicles": "All",
-                    "some_vehicles": "Some",
-                    "headers": {
-                        "days": "Days",
-                        "time": "Time",
-                        "range": "Range",
-                        "vehicles": "Vehicles",
-                        "actions": "Actions"
+                    "modal_headers": {
+                        "restriction_summary": "Time based restrictions",
+                        "creating_restriction": "Add restriction",
+                        "editing_restriction": "Edit restriction",
+                        "limited_permissions": "You do not have permission to edit some of these restrictions",
+                        "multiple_segments": "Editing multiple segments"
                     },
-                    "mixed": "These restrictions only apply to some of the segments selected",
-                    "wraparound": "The restriction will end on the following day",
-                    "apply_to_all": "Apply to all",
-                    "copy_all": "Copy same restrictions to opposite direction",
-                    "creating": "Creating a new restriction",
-                    "past": "This restriction is set in the past",
-                    "editing": "Editing an existing restriction",
-                    "group_title": {
-                        "segment": "Driving %{direction} on %{street} is restricted on",
-                        "multiple": "Editing multiple segments",
-                        "node": "Turning from %{from_street} to %{to_street} is restricted on",
-                        "uturn": "Making a U-turn at %{street} is restricted on"
+                    "summary": {
+                        "table_headers": {
+                            "lane": "Lane",
+                            "days": "Days",
+                            "time": "Time",
+                            "during": "During",
+                            "summary": "Summary"
+                        },
+                        "badges": {
+                            "allowed": "Only",
+                            "blocked": "Disallowed",
+                            "toll_free": "Free"
+                        },
+                        "tooltips": {
+                            "toll_free": "Vehicles still need to meet \"only\" criteria"
+                        },
+                        "disposition": {
+                            "WHOLE_SEGMENT": "All",
+                            "LEFT_LANE": "Left",
+                            "MIDDLE_LANE": "Middle",
+                            "RIGHT_LANE": "Right"
+                        }
                     },
-                    "groups": {
-                        "fwdRestrictions": "A to B",
-                        "revRestrictions": "B to A"
+                    "editing": {
+                        "segment": {
+                            "applies": "Applies to",
+                            "laneType": {
+                                "NONE": "None",
+                                "HOV": "HOV",
+                                "HOT": "HOT",
+                                "EXPRESS": "Express",
+                                "BUS": "Bus",
+                                "FAST": "Fast"
+                            },
+                            "disposition": {
+                                "WHOLE_SEGMENT": "Entire Segment",
+                                "LEFT_LANE": "Left lane",
+                                "MIDDLE_LANE": "Middle Lane",
+                                "RIGHT_LANE": "Right lane"
+                            }
+                        },
+                        "actions": {
+                            "apply_to_all": "Apply to all segments",
+                            "delete": "Delete"
+                        },
+                        "toggle": {
+                            "select": "Select",
+                            "all": "All",
+                            "none": "None"
+                        },
+                        "placeholders": {
+                            "description": "Restriction description"
+                        },
+                        "timeframe": {
+                            "days": "Days",
+                            "hours": "Hours",
+                            "all_day": "All Day",
+                            "applies": "Applies",
+                            "always": "Every week",
+                            "every_month": "Range",
+                            "overnight": "Restriction will end on the following day"
+                        },
+                        "driving": {
+                            "no_vehicle": "No vehicle",
+                            "all_vehicles": "All vehicles",
+                            "only_vehicles": "Only",
+                            "other_vehicles_restricted": "Other vehicles are restricted",
+                            "other_vehicles_allowed": "Other vehicles are allowed",
+                            "add_vehicle": "Add vehicle",
+                            "min_passengers": "At least %{count} passengers",
+                            "all_passengers": "Any number of passengers",
+                            "types": {
+                                "DRIVING_BLOCKED": "prohibited",
+                                "DRIVING_ALLOWED": "allowed",
+                                "DRIVING_TOLL_FREE": "toll free"
+                            },
+                            "dropdowns": {
+                                "vehicle_type": "Vehicle type",
+                                "num_passengers": "Num passengers",
+                                "subscription": "Subscription"
+                            },
+                            "prepositions": {
+                                "num_passengers": "with",
+                                "subscription": "and"
+                            }
+                        },
+                        "validation": {
+                            "description_char_limit": "Description exceeds %{char_limit} characters",
+                            "weekdays": "Select at least one day",
+                            "fromTime": "Enter a valid start time",
+                            "toTime": "Enter a valid end time",
+                            "startDate": "Enter a valid start date",
+                            "startDate_in_past": "Start date can not be in the past",
+                            "endDate": "Enter a valid end date",
+                            "vehicle_type": "Select at least one vehicle"
+                        },
+                        "titles": {
+                            "turn": {
+                                "restricted": "Turning from %{from_street} to %{to_street} is restricted on",
+                                "not_restricted": "Turning from %{from_street} to %{to_street} is not restricted"
+                            },
+                            "uturn": {
+                                "restricted": "Making a U-turn at %{street} is restricted on",
+                                "not_restricted": "Making a U-turn at %{street} is not restricted"
+                            },
+                            "segment": {
+                                "restricted": "Driving %{direction} on %{street} is restricted on",
+                                "not_restricted": "Driving %{direction} on %{street} is not restricted",
+                                "both_ways": "both ways"
+                            }
+                        },
+                        "sections": {
+                            "driving_prefix": "Driving is",
+                            "driving_suffix": "for",
+                            "driving_blocked": "Driving is prohibited for",
+                            "more_info": "Additional information",
+                            "applies_to_some": "These restrictions apply to some of the segments",
+                            "validation": "Please fix the following errors before saving your changes"
+                        }
                     },
+                    "buttons": {
+                        "add": "Add",
+                        "add_new": "Add new",
+                        "cancel": "Cancel",
+                        "apply": "Apply"
+                    },
+                    "difficult_turn": "Difficult turn",
                     "vehicle_types": {
-                        "0": "Trucks",
-                        "1": "Public Transportation",
-                        "2": "Taxis",
-                        "3": "Buses",
-                        "6": "RV",
-                        "7": "Towing vehicles",
-                        "8": "Motorcycles",
-                        "9": "Private vehicles",
-                        "10": "Hazardous materials"
-                    },
-                    "errors": {
-                        "days": "Please select at least one day",
-                        "hours": "Hours cannot be the same",
-                        "vehicle_types": "Please select at least one vehicle type",
-                        "general": "Invalid restriction, please review"
-                    },
-                    "time_span": {
-                        "all_day": "All day",
-                        "from": "From",
-                        "to": "To"
-                    },
-                    "difficult_turn": "Difficult turn"
+                        "PRIVATE": "Private",
+                        "BUS": "Bus",
+                        "HAZARDOUS_MATERIALS": "Hazardous materials",
+                        "MOTORCYCLE": "Motorcycle",
+                        "PUBLIC_TRANSPORTATION": "Public transportation",
+                        "RV": "Rv",
+                        "TAXI": "Taxi",
+                        "TOWING_VEHICLE": "Towing vehicle",
+                        "TRUCK": "Truck"
+                    }
                 },
                 "closures": {
                     "add": "Add a closure",
@@ -1686,6 +1795,7 @@
                     "date_not_set": "Not set",
                     "save_your_changes": "Save your changes to edit closures",
                     "enable_layer": "Enable the road closures layer to edit closures",
+                    "permanent_confirm": "Are you sure?\n\nYou have marked the \"HOV Adjacent\" checkbox. This segment is next to an HOV or Service Road.  Marking this box avoids incorrect GPS reporting of movement on a closed segment.\n\nPlease only check this box if two segments are directly next to each other.",
                     "success": {
                         "add": "Closure created successfully",
                         "update": "Closure updated successfully",
@@ -1708,12 +1818,12 @@
                         "endDate": "End",
                         "direction": "Direction",
                         "event": "Event",
-                        "permanent": "Ignore Traffic",
+                        "permanent": "HOV/Service Road adjacent",
                         "provider": "Provided by %{provider}"
                     },
                     "tooltip": {
                         "mte": "List only contains events in the closure's time and location",
-                        "permanent": "Check this box only if the closure is permanent and Waze should ignore any detected movement"
+                        "permanent": "Use this checkbox if the closed segment(s) is next to an HOV/Service road. GPS may not be able to differentiate these segments and Waze will keep this segment closed even if movement is detected."
                     },
                     "choose_event": "Choose Event",
                     "no_event_selected": "None",
@@ -2122,6 +2232,7 @@
                             "tunnel": "Tunnel",
                             "unpaved": "Unpaved",
                             "headlights": "Headlights required",
+                            "nearbyHOV": "Nearby HOV",
                             "fwdSpeedCamera": "A →B average speed camera",
                             "revSpeedCamera": "B →A average speed camera"
                         }
@@ -2228,7 +2339,8 @@
                     "wiki_area_manager": "https://wazeopedia.waze.com/wiki/Global/Area_Manager",
                     "wiki_country_manager": "https://wazeopedia.waze.com/wiki/Global/Roles_and_responsibilities#Country_Manager",
                     "wiki_mentoring": "https://wazeopedia.waze.com/wiki/Global/Mentoring",
-                    "status_page_link": "http://status.waze.com"
+                    "status_page_link": "http://status.waze.com",
+                    "add_operator_form": "https://docs.google.com/a/google.com/forms/d/e/1FAIpQLScJW5U2Q51cu6nk1AoWNtgS5DxSMPj4lC8oOEDynD64lVF1YQ/viewform"
                 }
             };
 
@@ -2278,7 +2390,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="/assets-editor/js/app-4baf7e8c6d1ee47b5bc8.js"></script>
+        <script src="/assets-editor/js/app-2ea221dd01ab8f25574b.js"></script>
     </body>
 
 </html>
