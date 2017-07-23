@@ -5584,9 +5584,9 @@ webpackJsonp([1], [function(e, t, i) {
         N = i(469),
         V = n(N),
         U = i(467),
-        z = n(U),
-        j = i(468),
-        F = n(j),
+        j = n(U),
+        z = i(468),
+        F = n(z),
         B = i(459),
         G = n(B),
         H = i(5),
@@ -5784,7 +5784,7 @@ webpackJsonp([1], [function(e, t, i) {
                         selectable: !0
                     }),
                     this.placeUpdatesLayer = new G.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: z.default,
+                        markerClass: j.default,
                         uniqueName: oe.PLACE_UPDATES,
                         className: "place-updates",
                         filter: function(e) {
@@ -5792,7 +5792,7 @@ webpackJsonp([1], [function(e, t, i) {
                         }
                     }),
                     this.parkingPlaceUpdatesLayer = new G.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: z.default,
+                        markerClass: j.default,
                         uniqueName: "PARKING_PLACE_UPDATES",
                         className: "place-updates",
                         filter: function(e) {
@@ -15295,37 +15295,35 @@ webpackJsonp([1], [function(e, t, i) {
         r = n(s),
         o = i(22),
         a = n(o),
-        l = i(4),
+        l = i(6),
         u = n(l),
-        d = i(6),
+        d = i(2),
         c = n(d),
-        h = i(2),
+        h = i(3),
         p = n(h),
-        f = i(3),
+        f = i(10),
         g = n(f),
-        m = i(10),
+        m = i(9),
         v = n(m),
-        _ = i(9),
-        y = n(_),
-        b = i(46),
-        E = i(607),
-        w = i(606),
-        S = i(604),
-        M = i(605),
-        C = i(610),
-        T = i(39),
-        A = function(e) {
+        _ = i(46),
+        y = i(607),
+        b = i(606),
+        E = i(604),
+        w = i(605),
+        S = i(610),
+        M = i(39),
+        C = function(e) {
             function t() {
                 return (0,
-                        p.default)(this, t),
+                        c.default)(this, t),
                     (0,
-                        v.default)(this, (t.__proto__ || (0,
-                        c.default)(t)).apply(this, arguments))
+                        g.default)(this, (t.__proto__ || (0,
+                        u.default)(t)).apply(this, arguments))
             }
             return (0,
-                    y.default)(t, e),
+                    v.default)(t, e),
                 (0,
-                    g.default)(t, [{
+                    p.default)(t, [{
                     key: "defaults",
                     value: function() {
                         return {
@@ -15336,18 +15334,18 @@ webpackJsonp([1], [function(e, t, i) {
                 }]),
                 t
         }(Backbone.Model),
-        I = function(e) {
+        T = function(e) {
             function t() {
                 return (0,
-                        p.default)(this, t),
+                        c.default)(this, t),
                     (0,
-                        v.default)(this, (t.__proto__ || (0,
-                        c.default)(t)).apply(this, arguments))
+                        g.default)(this, (t.__proto__ || (0,
+                        u.default)(t)).apply(this, arguments))
             }
             return (0,
-                    y.default)(t, e),
+                    v.default)(t, e),
                 (0,
-                    g.default)(t, [{
+                    p.default)(t, [{
                     key: "regions",
                     value: function() {
                         return {
@@ -15389,27 +15387,21 @@ webpackJsonp([1], [function(e, t, i) {
                                     "drive-profile-toll-free": {
                                         observe: "drivingModality",
                                         onGet: function(e) {
-                                            return e === b.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
+                                            return e === _.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
                                         }
                                     },
                                     "drive-profile-allowed": {
                                         observe: "drivingModality",
                                         onGet: function(e) {
-                                            return e === b.RESTRICTION_MODALITY.DRIVING_ALLOWED
+                                            return e === _.RESTRICTION_MODALITY.DRIVING_ALLOWED
                                         }
                                     }
                                 }
                             },
-                            ".help-message-blocked": {
+                            ".help-message": {
                                 observe: "drivingModality",
-                                visible: function(e) {
-                                    return e === b.RESTRICTION_MODALITY.DRIVING_ALLOWED || e === b.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
-                                }
-                            },
-                            ".help-message-free": {
-                                observe: "drivingModality",
-                                visible: function(e) {
-                                    return e === b.RESTRICTION_MODALITY.DRIVING_BLOCKED
+                                onGet: function(e) {
+                                    return e === _.RESTRICTION_MODALITY.DRIVING_BLOCKED ? I18n.t("restrictions.editing.driving.other_vehicles_allowed") : e === _.RESTRICTION_MODALITY.DRIVING_ALLOWED ? I18n.t("restrictions.editing.driving.other_vehicles_restricted") : e === _.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? I18n.t("restrictions.editing.driving.other_vehicles_pay_toll") : void 0
                                 }
                             },
                             "select, textarea, .do-update, .do-create": {
@@ -15439,7 +15431,7 @@ webpackJsonp([1], [function(e, t, i) {
                             this._canEditRestrictions = e.canEditRestrictions,
                             this._subscriptions = e.subscriptions,
                             this._timeframe = this._restriction.getTimeFrame(),
-                            this.model = new A({
+                            this.model = new C({
                                 restrictionEditable: this._isRestrictionEditable(),
                                 description: this._restriction.getDescription(),
                                 drivingModality: null
@@ -15449,12 +15441,11 @@ webpackJsonp([1], [function(e, t, i) {
                 }, {
                     key: "_getDriveProfileTypeOptions",
                     value: function() {
-                        return (0,
-                            u.default)(b.RESTRICTION_MODALITY).map(function(e) {
+                        return [_.RESTRICTION_MODALITY.DRIVING_ALLOWED, _.RESTRICTION_MODALITY.DRIVING_TOLL_FREE, _.RESTRICTION_MODALITY.DRIVING_BLOCKED].map(function(e) {
                             return {
                                 value: e,
                                 label: I18n.t("restrictions.editing.driving.types." + e),
-                                disabled: e === b.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
+                                disabled: e === _.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
                             }
                         })
                     }
@@ -15463,10 +15454,10 @@ webpackJsonp([1], [function(e, t, i) {
                     value: function() {
                         this.stickit();
                         var e = this._isRestrictionEditable();
-                        this._isSegmentRestriction() && this.showChildView("segmentEditingRegion", w.RestrictionEditSegmentView.for(this._restriction, {
+                        this._isSegmentRestriction() && this.showChildView("segmentEditingRegion", b.RestrictionEditSegmentView.for(this._restriction, {
                                 restrictionEditable: e
                             })),
-                            this.showChildView("timeframeEditingRegion", C.TimeFrameEditView.for(this._timeframe, {
+                            this.showChildView("timeframeEditingRegion", S.TimeFrameEditView.for(this._timeframe, {
                                 restrictionEditable: e
                             })),
                             this._showDriveProfileEdit()
@@ -15487,12 +15478,12 @@ webpackJsonp([1], [function(e, t, i) {
                 }, {
                     key: "_isSegmentRestriction",
                     value: function() {
-                        return this._restriction instanceof T.SegmentRestriction
+                        return this._restriction instanceof M.SegmentRestriction
                     }
                 }, {
                     key: "_getDrivingModality",
                     value: function() {
-                        return this._restriction.getDrivingModality()
+                        return this._isNewRestriction ? _.RESTRICTION_MODALITY.DRIVING_ALLOWED : this._restriction.getDrivingModality()
                     }
                 }, {
                     key: "_showDriveProfileEdit",
@@ -15502,9 +15493,9 @@ webpackJsonp([1], [function(e, t, i) {
                             i = void 0 === t ? this._getDrivingModality() : t,
                             n = this._isRestrictionEditable(),
                             s = void 0;
-                        s = i === b.RESTRICTION_MODALITY.DRIVING_BLOCKED ? S.DriveProfileBlockedEditView.for(this._restriction, {
+                        s = i === _.RESTRICTION_MODALITY.DRIVING_BLOCKED ? E.DriveProfileBlockedEditView.for(this._restriction, {
                                 restrictionEditable: n
-                            }) : M.DriveProfileFreeEditView.for(this._restriction, {
+                            }) : w.DriveProfileFreeEditView.for(this._restriction, {
                                 restrictionEditable: n,
                                 subscriptions: this._subscriptions
                             }),
@@ -15522,7 +15513,7 @@ webpackJsonp([1], [function(e, t, i) {
                             n = this.getChildView("timeframeEditingRegion"),
                             s = this.getChildView("driveProfileEditingRegion"),
                             r = void 0;
-                        i === b.RESTRICTION_MODALITY.DRIVING_ALLOWED ? r = b.RESTRICTION_TYPE.BLOCKED : i === b.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? r = b.RESTRICTION_TYPE.TOLL : i === b.RESTRICTION_MODALITY.DRIVING_BLOCKED && (r = s.getRestrictionData().defaultType);
+                        i === _.RESTRICTION_MODALITY.DRIVING_ALLOWED ? r = _.RESTRICTION_TYPE.BLOCKED : i === _.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? r = _.RESTRICTION_TYPE.TOLL : i === _.RESTRICTION_MODALITY.DRIVING_BLOCKED && (r = s.getRestrictionData().defaultType);
                         var o = {
                             defaultType: r,
                             description: t
@@ -15540,8 +15531,8 @@ webpackJsonp([1], [function(e, t, i) {
                     key: "_validate",
                     value: function() {
                         var e = [];
-                        return this.model.attributes.description.length > b.RESTRICTION_DESCRIPTION_CHAR_LIMIT && e.push(I18n.t("restrictions.editing.validation.description_char_limit", {
-                                char_limit: b.RESTRICTION_DESCRIPTION_CHAR_LIMIT
+                        return this.model.attributes.description.length > _.RESTRICTION_DESCRIPTION_CHAR_LIMIT && e.push(I18n.t("restrictions.editing.validation.description_char_limit", {
+                                char_limit: _.RESTRICTION_DESCRIPTION_CHAR_LIMIT
                             })),
                             e
                     }
@@ -15553,7 +15544,7 @@ webpackJsonp([1], [function(e, t, i) {
                                 r.default)(["timeframeEditingRegion", "driveProfileEditingRegion"].map(function(e) {
                                 return t.getChildView(e).validate()
                             }))),
-                            n = new E.RestrictionEditValidationView({
+                            n = new y.RestrictionEditValidationView({
                                 errorMessages: i
                             });
                         return this.showChildView("validationRegion", n),
@@ -15586,7 +15577,7 @@ webpackJsonp([1], [function(e, t, i) {
                 t
         }(Marionette.View);
     t.default = {
-            RestrictionEditView: I
+            RestrictionEditView: T
         },
         e.exports = t.default
 }, function(e, t, i) {
@@ -15612,10 +15603,10 @@ webpackJsonp([1], [function(e, t, i) {
         p = n(h),
         f = i(104),
         g = i(46),
-        m = i(97),
-        v = i(96),
-        y = i(39),
-        b = function(e) {
+        m = (i(97),
+            i(96)),
+        v = i(39),
+        y = function(e) {
             function t() {
                 return (0,
                         a.default)(this, t),
@@ -15646,7 +15637,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }]),
                 t
         }(Backbone.Model),
-        E = function(e) {
+        b = function(e) {
             function t() {
                 return (0,
                         a.default)(this, t),
@@ -15677,16 +15668,8 @@ webpackJsonp([1], [function(e, t, i) {
                         return {
                             "click ": "item:edit",
                             "click .do-edit": "item:edit",
-                            "click .do-view": "item:edit",
                             "click .do-delete": "item:delete",
                             "click .do-applyToAll": "item:applyToAll"
-                        }
-                    }
-                }, {
-                    key: "ui",
-                    value: function() {
-                        return {
-                            tooltip: ".waze-tooltip"
                         }
                     }
                 }, {
@@ -15700,7 +15683,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.getUI("tooltip").tooltip()
+                        this.$(".badge-tooltip, .apply-to-all-tooltip").tooltip()
                     }
                 }, {
                     key: "_formatWeekdays",
@@ -15717,19 +15700,6 @@ webpackJsonp([1], [function(e, t, i) {
                         }).formatHours()
                     }
                 }, {
-                    key: "_formatDates",
-                    value: function() {
-                        var e = this.getTimeFrame();
-                        if (e.isDuringDates()) {
-                            var t = moment(e.getStartDate(), m.DATE_FORMAT).toDate(),
-                                i = moment(e.getEndDate(), m.DATE_FORMAT).toDate();
-                            return t = I18n.l("date.formats.short", t),
-                                i = I18n.l("date.formats.short", i),
-                                t + " - " + i
-                        }
-                        return I18n.t("restrictions.editing.timeframe.always")
-                    }
-                }, {
                     key: "_formatDriveProfile",
                     value: function(e) {
                         var t = "",
@@ -15738,7 +15708,7 @@ webpackJsonp([1], [function(e, t, i) {
                         if (t = n > 0 ? i + " (+" + n + ")" : i,
                             e.hasSubscriptions()) {
                             var s = e.getSubscriptions().map(this._formatSubscription, this);
-                            t = t + " " + I18n.t("restrictions.editing.driving.prepositions.subscription") + " " + s
+                            t = t + " " + I18n.t("restrictions.editing.driving.prepositions.with") + " " + s
                         }
                         return t
                     }
@@ -15761,7 +15731,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }, {
                     key: "_formatVehicleTypes",
                     value: function(e) {
-                        var t = _.invert(v.VEHICLE_TYPES);
+                        var t = _.invert(m.VEHICLE_TYPES);
                         return e.map(function(e) {
                             return I18n.t("restrictions.vehicle_types." + t[e])
                         }).join(", ")
@@ -15770,9 +15740,9 @@ webpackJsonp([1], [function(e, t, i) {
                     key: "_formatLane",
                     value: function() {
                         var e = this.getRestriction();
-                        if (e instanceof y.SegmentRestriction) {
+                        if (e instanceof v.SegmentRestriction) {
                             var t = e.getDisposition(),
-                                i = _.invert(y.RESTRICTION_SEGMENT_DISPOSITION)[t];
+                                i = _.invert(v.RESTRICTION_SEGMENT_DISPOSITION)[t];
                             return I18n.t("restrictions.summary.disposition." + i)
                         }
                         return ""
@@ -15786,7 +15756,6 @@ webpackJsonp([1], [function(e, t, i) {
                             laneStr: this._formatLane(),
                             daysStr: this._formatWeekdays(),
                             timeStr: this._formatTime(),
-                            duringStr: this._formatDates(),
                             summaryStr: this._formatSummary(),
                             canModifyRestriction: e,
                             canApplyToAll: t
@@ -15815,7 +15784,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View),
-        w = function(e) {
+        E = function(e) {
             function t() {
                 return (0,
                         a.default)(this, t),
@@ -15834,7 +15803,7 @@ webpackJsonp([1], [function(e, t, i) {
                 }, {
                     key: "childView",
                     value: function() {
-                        return E
+                        return b
                     }
                 }, {
                     key: "childViewTriggers",
@@ -15872,14 +15841,14 @@ webpackJsonp([1], [function(e, t, i) {
                             this._canApplyToAll = e.canApplyToAll,
                             this._subscriptions = e.subscriptions,
                             this.collection = new Backbone.Collection(e.restrictions.map(function(e) {
-                                return b.for(e)
+                                return y.for(e)
                             }))
                     }
                 }]),
                 t
         }(Marionette.CollectionView);
     t.default = {
-            RestrictionsListView: w
+            RestrictionsListView: E
         },
         e.exports = t.default
 }, function(e, t, i) {
@@ -17564,7 +17533,7 @@ webpackJsonp([1], [function(e, t, i) {
                                     })
                                 },
                                 fwdMaxSpeed: function(e) {
-                                    return c.default.speedString(e);
+                                    return c.default.speedString(e)
                                 },
                                 revMaxSpeed: function(e) {
                                     return c.default.speedString(e)
@@ -18135,8 +18104,8 @@ webpackJsonp([1], [function(e, t, i) {
         N = n(P),
         V = i(613),
         U = n(V),
-        z = i(412),
-        j = n(z),
+        j = i(412),
+        z = n(j),
         F = i(418),
         B = n(F),
         G = i(618),
@@ -18166,7 +18135,7 @@ webpackJsonp([1], [function(e, t, i) {
                     W.map.registerAccelerators(W.accelerators),
                     W.togglerTree = ee.default.create(),
                     W.editingMediator = new h.default,
-                    W.selectionManager = new j.default(W.model, W.map.layers),
+                    W.selectionManager = new z.default(W.model, W.map.layers),
                     W.geometryEditing = new m.default(W.selectionManager, W.editingMediator, W.map, W.model),
                     new H.default({
                         map: W.map,
@@ -19234,7 +19203,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             setLayerZIndex: function(e, t) {
                 var i = Boolean(e.markers);
-                e.setZIndex(this.Z_INDEX_BASE[e.isBaseLayer ? "BaseLayer" : i ? "MarkerOverlay" : "Overlay"] + 5 * t);
+                e.setZIndex(this.Z_INDEX_BASE[e.isBaseLayer ? "BaseLayer" : i ? "MarkerOverlay" : "Overlay"] + 5 * t)
             },
             getLayerVisibility: function(e) {
                 var t = this.getLayersBy("uniqueName", e).first();
@@ -27752,7 +27721,7 @@ webpackJsonp([1], [function(e, t, i) {
             templateContext: {
                 formatDate: function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                    return I18n.l("date.formats.default", e)
+                    return I18n.l("date.formats.default", e);
                 },
                 formatTime: function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
@@ -30033,8 +30002,7 @@ webpackJsonp([1], [function(e, t, i) {
                 e.html(A.getHTML("templates/segment/alt-streets-edit", this.serializeData())),
                     this.$altStreetFormTemplate = this.$(".alt-street-form-template").detach(),
                     this.model.arePropertiesEditable() || (this.$(".add-alt-street-btn").prop("disabled", !0),
-                        this.$(".alt-street-list").addClass("undeletable")),
-                    this.toggleAltStreetTable()
+                        this.$(".alt-street-list").addClass("undeletable"))
             },
             emptyAddressToggled: function(e) {
                 var t = $(e.target),
@@ -30303,12 +30271,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             addAltStreetClicked: function(e) {
                 e.preventDefault(),
-                    this.addAltStreetFrom(),
-                    this.toggleAltStreetTable()
-            },
-            toggleAltStreetTable: function() {
-                var e = this.$el.find(".add-alt-street-form");
-                e.toggle(e.find("tr:not(.deleted)").length > 1)
+                    this.addAltStreetFrom()
             },
             processAltStreets: function(e) {
                 var t = [],
@@ -30337,12 +30300,10 @@ webpackJsonp([1], [function(e, t, i) {
                     })
             },
             deleteAltStreetClicked: function(e) {
-                var t = $(e.target).parents(".alt-street, .new-alt-street"),
-                    i = this;
+                var t = $(e.target).parents(".alt-street, .new-alt-street");
                 e.preventDefault(),
                     t.fadeOut("fast", function() {
-                        t.hasClass("new-alt-street") ? t.remove() : t.addClass("deleted"),
-                            i.toggleAltStreetTable()
+                        t.hasClass("new-alt-street") ? t.remove() : t.addClass("deleted")
                     })
             },
             addAltStreetFrom: function() {
@@ -38441,9 +38402,9 @@ webpackJsonp([1], [function(e, t, i) {
         N = i(69),
         V = s(N),
         U = i(25),
-        z = s(U),
-        j = i(94),
-        F = s(j),
+        j = s(U),
+        z = i(94),
+        F = s(z),
         B = i(240),
         G = s(B),
         H = OL.Class({
@@ -38462,7 +38423,7 @@ webpackJsonp([1], [function(e, t, i) {
                     })
             },
             getToolbarButtons: function(e) {
-                var t = z.default.getMenus().map(this.createMenu.bind(this)),
+                var t = j.default.getMenus().map(this.createMenu.bind(this)),
                     i = [].concat(t, this._generateVenueMenu(), this._generateDrawingControls(), this._generateEditingControls().reverse());
                 return new G.default(i)
             },
@@ -39319,7 +39280,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.userPresenters[e.get("id")] = t;
                 var i = this.model.users.models.indexOf(e),
                     n = this.ui.users.children().eq(i);
-                return n.length ? t.$el.insertBefore(n) : t.$el.appendTo(this.ui.users)
+                return n.length ? t.$el.insertBefore(n) : t.$el.appendTo(this.ui.users);
             },
             _onUserRemoved: function(e) {
                 var t = e.item.get("id"),
@@ -42594,7 +42555,7 @@ webpackJsonp([1], [function(e, t, i) {
         r = i(23)("species");
     e.exports = function(e, t) {
         var i, o = n(e).constructor;
-        return void 0 === o || void 0 == (i = n(o)[r]) ? t : s(i);
+        return void 0 === o || void 0 == (i = n(o)[r]) ? t : s(i)
     }
 }, , , function(e, t, i) {
     var n = i(34),
@@ -44878,18 +44839,18 @@ webpackJsonp([1], [function(e, t, i) {
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='drive-profile-edit-blocked'>\n<div class='drive-profile-group'>\n<label>\n<input type='radio' name='isAllVehicles' value='true'>"),
+                            i.push("<div class='drive-profile-edit-blocked'>\n<div class='drive-profile-group'>\n<div class='controls-container'>\n<input id='all-vehicles-on-radio' type='radio' name='isAllVehicles' value='true'>\n<label for='all-vehicles-on-radio'>"),
                             i.push("" + t(e(this.t("restrictions.editing.driving.all_vehicles")))),
-                            i.push("</label>\n</div>\n<div class='drive-profile-group drive-profile-vehicles-group'>\n<label>\n<input type='radio' name='isAllVehicles' value='false'>"),
+                            i.push("</label>\n</div>\n</div>\n<div class='drive-profile-group drive-profile-vehicles-group'>\n<div class='controls-container'>\n<input id='all-vehicles-off-radio' type='radio' name='isAllVehicles' value='false'>\n<label class='drive-profile-vehicles-option-label' for='all-vehicles-off-radio'>"),
                             i.push("" + t(e(this.t("restrictions.editing.driving.only_vehicles")))),
-                            i.push("</label>\n<div class='drive-profile-vehicle-types'>"),
+                            i.push("</label>\n</div>\n<div class='drive-profile-vehicle-types'>"),
                             o = this.getVehicleTypes(),
                             n = 0,
                             r = o.length; n < r; n++)
                             s = o[n],
-                            i.push("<label class='vehicle-type-label'>\n<input class='vehicle-type' type='checkbox' value='" + t(e(s.value)) + "'>"),
+                            i.push("<div class='controls-container'>\n<input class='vehicle-type' id='vehicle-type-" + s.value + "-checkbox' type='checkbox' value='" + t(e(s.value)) + "'>\n<label class='vehicle-type-label' for='vehicle-type-" + t(e(s.value)) + "-checkbox'>"),
                             i.push("" + t(e(this.t("restrictions.vehicle_types." + s.key)))),
-                            i.push("</label>");
+                            i.push("</label>\n</div>");
                         return i.push("</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -44942,12 +44903,16 @@ webpackJsonp([1], [function(e, t, i) {
                                         n.push("</a>\n</li>"));
                                 n.push("</ul>\n</div>")
                             } else
-                                n.push("" + i(t(this.t("restrictions.editing.driving.all_vehicles"))));
-                            if (n.push("</div>\n<span class='driving-preposition'>"),
-                                n.push("" + i(t(this.t("restrictions.editing.driving.prepositions.num_passengers")))),
-                                n.push("</span>\n<div class='num-passengers'>"),
+                                n.push("<div class='all-vehicles'>"),
+                                n.push("" + i(t(this.t("restrictions.editing.driving.all_vehicles")))),
+                                n.push("</div>");
+                            if (n.push("</div>"),
                                 this.hasNumPassengers) {
-                                for (n.push("<div class='btn-group'>\n<span class='dropdown-toggle restriction-chip' data-toggle='" + i(t(this.numPassengersEditable ? "dropdown" : void 0)) + "'>\n<span class='restriction-chip-content'>"),
+                                for (n.push("<div class='num-passengers'>"),
+                                    this.hasVehicleType && (n.push("<span class='driving-preposition'>"),
+                                        n.push("" + i(t(this.t("restrictions.editing.driving.prepositions.with")))),
+                                        n.push("</span>")),
+                                    n.push("<div class='btn-group'>\n<span class='dropdown-toggle restriction-chip' data-toggle='" + i(t(this.numPassengersEditable ? "dropdown" : void 0)) + "'>\n<span class='restriction-chip-content'>"),
                                     n.push("" + i(t(this.t("restrictions.editing.driving.min_passengers", {
                                         count: this.numPassengers
                                     })))),
@@ -44963,14 +44928,16 @@ webpackJsonp([1], [function(e, t, i) {
                                         count: s
                                     })))),
                                     n.push("</a>\n</li>");
-                                n.push("</ul>\n</div>")
-                            } else
-                                n.push("" + i(t(this.t("restrictions.editing.driving.all_passengers"))));
-                            if (n.push("</div>"),
-                                this.hasSubscription) {
-                                n.push("<div class='subscription'>\n<span class='driving-preposition'>"),
-                                    n.push("" + i(t(this.t("restrictions.editing.driving.prepositions.subscription")))),
-                                    n.push("</span>\n<div class='btn-group'>\n<span class='dropdown-toggle restriction-chip' data-toggle='" + i(t(this.subscriptionEditable ? "dropdown" : void 0)) + "'>\n<span class='restriction-chip-content'>"),
+                                n.push("</ul>\n</div>\n</div>")
+                            }
+                            if (this.hasSubscription) {
+                                n.push("<div class='subscription'>"),
+                                    this.hasNumPassengers ? (n.push("<span class='driving-preposition'>"),
+                                        n.push("" + i(t(this.t("restrictions.editing.driving.prepositions.and")))),
+                                        n.push("</span>")) : this.hasVehicleType && (n.push("<span class='driving-preposition'>"),
+                                        n.push("" + i(t(this.t("restrictions.editing.driving.prepositions.with")))),
+                                        n.push("</span>")),
+                                    n.push("<div class='btn-group'>\n<span class='dropdown-toggle restriction-chip' data-toggle='" + i(t(this.subscriptionEditable ? "dropdown" : void 0)) + "'>\n<span class='restriction-chip-content'>"),
                                     n.push("" + i(t(this.subscriptionName))),
                                     n.push("</span>"),
                                     this.subscriptionEditable && n.push("<i class='do-delete-subscription drive-profile-item-action fa fa-times-circle'></i>"),
@@ -44985,7 +44952,7 @@ webpackJsonp([1], [function(e, t, i) {
                             }
                         }
                         return n.push("</div>"),
-                            this.restrictionEditable && (n.push("<div class='drive-profile-item-actions'>\n<div class='do-delete-item drive-profile-item-action'>\n<i class='waze-icon-trash'></i>\n</div>"),
+                            this.restrictionEditable && (n.push("<div class='drive-profile-item-actions'>\n<div class='do-delete-item drive-profile-item-action'>\n<i class='fa fa-trash'></i>\n</div>"),
                                 this.isExhaustive || (n.push("<div class='btn-group'>\n<span class='drive-profile-item-action dropdown-toggle' data-toggle='dropdown'>\n<i class='fa fa-plus'></i>\n</span>\n<ul class='dropdown-menu'>"),
                                     this.hasVehicleType || (n.push("<li>\n<a class='do-init-vehicle-type' data-target='#'>"),
                                         n.push("" + i(t(this.t("restrictions.editing.driving.dropdowns.vehicle_type")))),
@@ -45012,19 +44979,15 @@ webpackJsonp([1], [function(e, t, i) {
                             i = [],
                             i.push("<div class='modal-header'>\n<h3 class='modal-title'>"),
                             this.isNewRestriction ? i.push("" + t(e(this.t("restrictions.modal_headers.creating_restriction")))) : i.push("" + t(e(this.t("restrictions.modal_headers.editing_restriction")))),
-                            i.push("</h3>\n</div>\n<div class='modal-body'>\n<div class='restriction-editing-region'>\n<div class='restriction-validation-region'></div>\n<div class='restriction-editing-section'>\n<div class='restriction-editing-title'>"),
+                            i.push("</h3>\n</div>\n<div class='modal-body'>\n<div class='restriction-editing-region'>\n<div class='restriction-validation-region'></div>\n<div class='restriction-editing-section'>\n<div class='restriction-editing-title restriction-editing-title-main'>"),
                             i.push("" + t(e(this.editingTitle))),
                             i.push("</div>\n<div class='segment-editing-region'></div>\n<div class='timeframe-editing-region'></div>\n</div>\n<div class='restriction-editing-section'>\n<div class='driving-modality-editing-region'>\n<div class='restriction-editing-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.sections.driving_prefix")))),
-                            i.push("</div>\n<select class='do-change-driving-modality driving-modality-select'></select>\n<div class='restriction-editing-title'>"),
+                            i.push("<select class='do-change-driving-modality driving-modality-select form-control'></select>"),
                             i.push("" + t(e(this.t("restrictions.editing.sections.driving_suffix")))),
                             i.push("</div>\n</div>\n<div class='drive-profile-editing-region'></div>\n</div>\n<div class='restriction-editing-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.sections.more_info")))),
-                            i.push("</div>\n<div class='description-editing-region'>\n<textarea class='form-control' name='description' placeholder='" + t(e(this.t("restrictions.editing.placeholders.description"))) + "'></textarea>\n</div>\n</div>\n</div>\n<div class='modal-footer'>\n<div class='footer-region'>\n<div class='help-region'>\n<div class='help-message help-message-blocked'>\n<i class='fa fa-exclamation-triangle'></i>"),
-                            i.push("" + t(e(this.t("restrictions.editing.driving.other_vehicles_restricted")))),
-                            i.push("</div>\n<div class='help-message help-message-free'>\n<i class='fa fa-exclamation-triangle'></i>"),
-                            i.push("" + t(e(this.t("restrictions.editing.driving.other_vehicles_allowed")))),
-                            i.push("</div>\n</div>\n<div class='buttons-region'>\n<button class='btn btn-default do-cancel'>" + t(e(this.t("restrictions.buttons.cancel"))) + "</button>"),
+                            i.push("</div>\n<div class='description-editing-region'>\n<textarea class='form-control' name='description' placeholder='" + t(e(this.t("restrictions.editing.placeholders.description"))) + "'></textarea>\n</div>\n</div>\n</div>\n<div class='modal-footer'>\n<div class='footer-region'>\n<div class='controls-region'>\n<div class='help-message-region'>\n<i class='fa fa-exclamation-circle'></i>\n<div class='help-message'></div>\n</div>\n</div>\n<div class='buttons-region'>\n<button class='btn btn-default do-cancel'>" + t(e(this.t("restrictions.buttons.cancel"))) + "</button>"),
                             this.isNewRestriction ? i.push("<button class='btn btn-primary do-create'>" + t(e(this.t("restrictions.buttons.add"))) + "</button>") : i.push("<button class='btn btn-primary do-update'>" + t(e(this.t("restrictions.buttons.apply"))) + "</button>"),
                             i.push("</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -45043,7 +45006,7 @@ webpackJsonp([1], [function(e, t, i) {
                             i = [],
                             i.push("<div class='restriction-editing-container'>\n<div class='restriction-section-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.segment.applies")))),
-                            i.push("</div>\n<div class='segment-section-content'>\n<select name='disposition'></select>\n<select name='laneType'></select>\n</div>\n</div>"),
+                            i.push("</div>\n<div class='segment-section-content'>\n<select class='form-control' name='disposition'></select>\n<select class='form-control' name='laneType'></select>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -45058,7 +45021,7 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='restriction-editing-title'>"),
+                            i.push("<div class='restriction-validation-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.sections.validation")))),
                             i.push("</div>\n<div class='collection-region'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -45081,9 +45044,7 @@ webpackJsonp([1], [function(e, t, i) {
                             i.push("" + t(e(this.daysStr))),
                             i.push("</td>\n<td>"),
                             i.push("" + t(e(this.timeStr))),
-                            i.push("</td>\n<td>"),
-                            i.push("" + t(e(this.duringStr))),
-                            i.push("</td>\n<td title='" + t(e(this.summaryStr)) + "'>"),
+                            i.push("</td>\n<td class='restriction-item-summary' title='" + t(e(this.summaryStr)) + "'>\n<div class='restriction-item-details'>"),
                             this.isAllowed && (i.push("<span class='restriction-item-badge restriction-item-badge-allowed'>"),
                                 i.push("" + t(e(this.t("restrictions.summary.badges.allowed")))),
                                 i.push("</span>")),
@@ -45092,14 +45053,14 @@ webpackJsonp([1], [function(e, t, i) {
                                 i.push("</span>")),
                             this.isTollFree && (i.push("<span class='restriction-item-badge restriction-item-badge-toll-free'>"),
                                 i.push("" + t(e(this.t("restrictions.summary.badges.toll_free")))),
-                                i.push("<i class='waze-tooltip' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("restrictions.summary.tooltips.toll_free"))) + "'></i>\n</span>")),
+                                i.push("<i class='badge-tooltip fa fa-info-circle' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("restrictions.summary.tooltips.toll_free"))) + "'></i>\n</span>")),
+                            i.push("<div class='restriction-item-details-summary'>"),
                             i.push("" + t(e(this.summaryStr))),
-                            i.push("</td>\n<td>\n<div class='restriction-actions'>"),
+                            i.push("</div>\n</div>\n</td>\n<td>\n<div class='restriction-actions'>"),
                             this.canModifyRestriction && (i.push("<div class='restriction-editing-actions'>"),
-                                this.canApplyToAll && i.push("<i class='do-applyToAll waze-icon-plus' title='" + t(e(this.t("restrictions.editing.actions.apply_to_all"))) + "'></i>"),
-                                i.push("<i class='do-delete waze-icon-trash' title='" + t(e(this.t("restrictions.editing.actions.delete"))) + "'></i>\n</div>")),
-                            this.canModifyRestriction ? i.push("<i class='do-edit waze-icon-arrow-right'></i>") : i.push("<i class='do-view waze-icon-view'></i>"),
-                            i.push("</div>\n</td>"),
+                                this.canApplyToAll && i.push("<i class='apply-to-all-tooltip do-applyToAll fa fa-clone' title='" + t(e(this.t("restrictions.editing.actions.apply_to_all"))) + "'></i>"),
+                                i.push("<i class='do-delete fa fa-trash' title='" + t(e(this.t("restrictions.editing.actions.delete"))) + "'></i>\n</div>")),
+                            i.push("<i class='do-edit fa fa-chevron-right restriction-action-edit'></i>\n</div>\n</td>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -45133,7 +45094,7 @@ webpackJsonp([1], [function(e, t, i) {
                             this.editingMultipleSegments && (i.push("<div class='modal-header-message'>"),
                                 i.push("" + t(e(this.t("restrictions.modal_headers.multiple_segments")))),
                                 i.push("</div>")),
-                            this.canEditRestrictions || (i.push("<div class='modal-header-message'>\n<i class='waze-icon-c-alert'></i>"),
+                            this.canEditRestrictions || (i.push("<div class='modal-header-message'>\n<i class='fa fa-exclamation-circle'></i>"),
                                 i.push("" + t(e(this.t("restrictions.modal_headers.limited_permissions")))),
                                 i.push("</div>")),
                             i.push("</div>\n</div>\n<div class='modal-body'>\n<div class='forward-restrictions-summary restriction-summary-group'>\n<div class='restriction-summary-title'>\n<div class='direction-icons direction-icons-a-to-b'>\n      <span class='direction-icon direction-icon-a'>\n      A\n      </span>\n      <span class='direction-icon-to'>\n      &gt;\n      </span>\n      <span class='direction-icon direction-icon-b'>\n      B\n      </span>\n</div>\n<div class='restriction-summary-group-name'>"),
@@ -45177,14 +45138,12 @@ webpackJsonp([1], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<table class='restrictions-table table'>\n<thead>\n<tr class='info'>\n<th class='restriction-segment-attribute'>"),
+                            i.push("<table class='restrictions-table table'>\n<thead>\n<tr>\n<th class='restriction-segment-attribute'>"),
                             i.push("" + t(e(this.t("restrictions.summary.table_headers.lane")))),
                             i.push("</th>\n<th>"),
                             i.push("" + t(e(this.t("restrictions.summary.table_headers.days")))),
                             i.push("</th>\n<th>"),
                             i.push("" + t(e(this.t("restrictions.summary.table_headers.time")))),
-                            i.push("</th>\n<th>"),
-                            i.push("" + t(e(this.t("restrictions.summary.table_headers.during")))),
                             i.push("</th>\n<th>"),
                             i.push("" + t(e(this.t("restrictions.summary.table_headers.summary")))),
                             i.push("</th>\n<th></th>\n</tr>\n</thead>\n<tbody></tbody>\n</table>"),
@@ -45205,16 +45164,16 @@ webpackJsonp([1], [function(e, t, i) {
                             i.push("<div class='modal-header'>\n<h3 class='modal-title'>"),
                             i.push("" + t(e(this.t("restrictions.modal_headers.restriction_summary")))),
                             i.push("</h3>\n<div class='modal-header-messages'>"),
-                            this.canEditRestrictions || (i.push("<div class='modal-header-message'>\n<i class='waze-icon-c-alert'></i>"),
+                            this.canEditRestrictions || (i.push("<div class='modal-header-message'>\n<i class='fa fa-exclamation-circle'></i>"),
                                 i.push("" + t(e(this.t("restrictions.modal_headers.limited_permissions")))),
                                 i.push("</div>")),
-                            i.push("</div>\n</div>\n<div class='modal-body'>\n<div class='restriction-summary-title'>\n<div class='restriction-summary-group-name'>"),
+                            i.push("</div>\n</div>\n<div class='modal-body'>\n<div class='restriction-summary-group'>\n<div class='restriction-summary-title'>\n<div class='restriction-summary-group-name'>"),
                             i.push("" + t(e(this.summaryTitle))),
                             i.push("</div>\n</div>\n<div class='restrictions-list-region'>"),
                             i.push("" + e(this.renderPartial("Waze/Modules/Restrictions/templates/restrictions_summary_table"))),
-                            i.push("</div>\n<button class='btn btn-default do-create'>" + t(e(this.t("restrictions.buttons.add_new"))) + "</button>\n</div>\n<div class='modal-footer'>\n<div class='footer-region'>\n<div class='help-region'>\n<label>\n<input type='checkbox' name='isDifficult'>"),
+                            i.push("</div>\n<button class='btn btn-default do-create'>" + t(e(this.t("restrictions.buttons.add_new"))) + "</button>\n</div>\n</div>\n<div class='modal-footer'>\n<div class='footer-region'>\n<div class='controls-region'>\n<div class='controls-container'>\n<input id='is-difficult-checkbox' type='checkbox' name='isDifficult'>\n<label for='is-difficult-checkbox'>"),
                             i.push("" + t(e(this.t("restrictions.difficult_turn")))),
-                            i.push("</label>\n</div>\n<div class='buttons-region'>\n<button class='btn btn-default do-close'>" + t(e(this.t("restrictions.buttons.cancel"))) + "</button>\n<button class='btn btn-primary do-apply'>" + t(e(this.t("restrictions.buttons.apply"))) + "</button>\n</div>\n</div>\n</div>"),
+                            i.push("</label>\n</div>\n</div>\n<div class='buttons-region'>\n<button class='btn btn-default do-close'>" + t(e(this.t("restrictions.buttons.cancel"))) + "</button>\n<button class='btn btn-primary do-apply'>" + t(e(this.t("restrictions.buttons.apply"))) + "</button>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -45236,9 +45195,9 @@ webpackJsonp([1], [function(e, t, i) {
                             s = 0,
                             r = o.length; s < r; s++)
                             n = o[s],
-                            i.push("<label>\n<input class='weekday' type='checkbox' value='" + t(e(this.getWeekdayFromOrdinal(n))) + "'>"),
+                            i.push("<div class='controls-container'>\n<input class='weekday' id='day-ordinal-" + n + "-checkbox' type='checkbox' value='" + t(e(this.getWeekdayFromOrdinal(n))) + "'>\n<label for='day-ordinal-" + t(e(n)) + "-checkbox'>"),
                             i.push("" + t(e(this.t("date.abbr_day_names")[n]))),
-                            i.push("</label>");
+                            i.push("</label>\n</div>");
                         return i.push("</div>\n<div class='timeframe-weekdays-toggle'>"),
                             i.push("      " + t(e(this.t("restrictions.editing.toggle.select")))),
                             i.push("      <span>\n      :&nbsp;\n      </span>\n      <span class='do-toggle-weekdays-all weekdays-toggle'>"),
@@ -45247,15 +45206,15 @@ webpackJsonp([1], [function(e, t, i) {
                             i.push("      " + t(e(this.t("restrictions.editing.toggle.none")))),
                             i.push("      </span>\n</div>\n</div>\n</div>\n<div class='timeframe-section timeframe-section-hours'>\n<div class='restriction-section-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.hours")))),
-                            i.push("</div>\n<div class='timeframe-hours-controls'>\n<div class='timeframe-section-content'>\n<div class='bootstrap-timepicker input-group timepicker'>\n<input class='form-control timepicker-from-time' name='fromTime'>\n<span class='input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n<div class='bootstrap-timepicker input-group timepicker'>\n<input class='form-control timepicker-to-time' name='toTime'>\n<span class='input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n<div class='timeframe-all-day'>\n<input type='checkbox' name='isAllDay'>\n<label for='isAllDay'>"),
+                            i.push("</div>\n<div class='timeframe-hours-controls'>\n<div class='timeframe-section-content'>\n<div class='bootstrap-timepicker input-group timepicker'>\n<input class='form-control timepicker-from-time' name='fromTime'>\n<span class='input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n<div class='bootstrap-timepicker input-group timepicker'>\n<input class='form-control timepicker-to-time' name='toTime'>\n<span class='input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n<div class='controls-container timeframe-all-day'>\n<input id='is-all-day-checkbox' type='checkbox' name='isAllDay'>\n<label for='is-all-day-checkbox'>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.all_day")))),
                             i.push("</label>\n</div>\n</div>\n<div class='timeframe-overnight-message'>\n<i class='waze-tooltip'></i>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.overnight")))),
                             i.push("</div>\n</div>\n</div>\n<div class='timeframe-section timeframe-section-dates'>\n<div class='restriction-section-title'>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.applies")))),
-                            i.push("</div>\n<div class='timeframe-section-content'>\n<div>\n<label>\n<input type='radio' name='isDuringDates' value='false'>"),
+                            i.push("</div>\n<div class='timeframe-section-content'>\n<div class='controls-container timeframe-section-option'>\n<input id='is-during-dates-off-radio' type='radio' name='isDuringDates' value='false'>\n<label for='is-during-dates-off-radio'>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.always")))),
-                            i.push("</label>\n</div>\n<div>\n<label class='label-datepicker'>\n<input type='radio' name='isDuringDates' value='true'>"),
+                            i.push("</label>\n</div>\n<div class='controls-container timeframe-section-option'>\n<input id='is-during-dates-on-radio' type='radio' name='isDuringDates' value='true'>\n<label class='label-datepicker' for='is-during-dates-on-radio'>"),
                             i.push("" + t(e(this.t("restrictions.editing.timeframe.every_month")))),
                             i.push("</label>\n<input class='btn btn-default datepicker'>\n</div>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "").replace(/[\s\n]*\u0091/gm, "").replace(/\u0092[\s\n]*/gm, "")

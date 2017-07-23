@@ -7692,7 +7692,7 @@ button.close {
 
 @media (min-width: 768px) {
     .modal-dialog {
-        width:600px;
+        width:670px;
         margin: 30px auto
     }
 
@@ -8695,19 +8695,19 @@ select.form-control:focus {
 }
 
 .controls-container input[type=radio]:checked+label,.controls-container input[type=radio]:not(:checked)+label {
-    padding-left: 20px;
+    padding-left: 23px;
     margin-left: 5px
 }
 
 .controls-container input[type=radio]:checked+label:before,.controls-container input[type=radio]:not(:checked)+label:before {
     left: 0;
-    top: 3px;
+    top: 1px;
     border-radius: 50%
 }
 
 .controls-container input[type=radio]:checked+label:after,.controls-container input[type=radio]:not(:checked)+label:after {
     content: "";
-    top: 6px;
+    top: 4px;
     left: 3px;
     position: absolute;
     border-radius: 50%;
@@ -13748,6 +13748,10 @@ body[dir=rtl] .olControlScaleLine {
     width: 14px
 }
 
+#edit-panel .add-alt-street-form tr:only-child,.edit-panel .add-alt-street-form tr:only-child {
+    display: none
+}
+
 #edit-panel .add-alt-street-form .new-alt-street label,.edit-panel .add-alt-street-form .new-alt-street label {
     float: left;
     line-height: 20px
@@ -16358,40 +16362,74 @@ body[dir=rtl] .olControlScaleLine {
     cursor: pointer
 }
 
+.restrictions-modal .modal-body {
+    padding: 0
+}
+
 .restrictions-modal label {
     font-weight: 400
 }
 
 .restrictions-modal .footer-region {
     display: flex;
-    justify-content: space-between
+    align-items: center
 }
 
-.restrictions-modal .footer-region .help-region .help-message {
+.restrictions-modal .footer-region .controls-region {
+    display: flex;
+    align-items: center;
+    padding-left: 16px
+}
+
+.restrictions-modal .footer-region .controls-region .help-message-region {
+    display: flex;
+    align-items: center;
     font-weight: 700;
     color: #f68f23
+}
+
+.restrictions-modal .footer-region .controls-region i {
+    margin-right: 6px
+}
+
+.restrictions-modal .footer-region .buttons-region {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1
+}
+
+.restrictions-modal .footer-region .btn {
+    width: 100px
 }
 
 .restrictions-modal .modal-header-messages .modal-header-message {
     margin-bottom: 6px
 }
 
+.restrictions-modal .modal-header-messages .modal-header-message i {
+    margin-right: 3px
+}
+
 .restrictions-modal .modal-header-messages :first-child {
-    margin-top: 6px
+    margin-top: 4px
 }
 
 .restrictions-modal .modal-header-messages :last-child {
     margin-bottom: 0
 }
 
-.restriction-editing-region .restriction-editing-title {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px
+.restriction-editing-region {
+    padding: 15px
 }
 
-.restriction-editing-region .restriction-editing-section {
-    margin-bottom: 24px
+.restriction-editing-region .restriction-editing-title,.restriction-editing-region .restriction-validation-region .restriction-validation-title {
+    font-size: 15px;
+    font-weight: 700;
+    padding: 20px 16px 10px
+}
+
+.restriction-editing-region .restriction-editing-title-main,.restriction-editing-region .restriction-validation-region .restriction-validation-title {
+    padding-top: 10px
 }
 
 .restriction-editing-region .restriction-editing-section .restriction-editing-container {
@@ -16400,26 +16438,44 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .restriction-editing-region .restriction-editing-section .restriction-editing-container .restriction-section-title {
-    width: 60px;
+    width: 76px;
     margin-right: 20px
 }
 
-.restriction-editing-region .restriction-validation-region .restriction-editing-title,.restriction-editing-region .restriction-validation-region .restriction-validation-error {
+.restriction-editing-region .restriction-validation-region {
     color: #ed503b
 }
 
-.restriction-editing-region .restriction-validation-region .collection-region {
-    margin-bottom: 24px
+.restriction-editing-region .restriction-validation-region .restriction-validation-title {
+    padding-bottom: 5px
+}
+
+.restriction-editing-region .restriction-validation-region ul {
+    list-style: none;
+    padding-left: 32px
+}
+
+.restriction-editing-region .restriction-validation-region li:before {
+    content: "\F06A";
+    font-family: FontAwesome;
+    display: inline-block;
+    padding-right: 8px
 }
 
 .restriction-editing-region .segment-editing-region .restriction-editing-container {
-    padding: 16px;
+    padding: 10px 16px;
     display: flex;
-    margin-bottom: 12px
+    margin-bottom: 8px;
+    align-items: center
 }
 
 .restriction-editing-region .segment-editing-region select {
-    margin-right: 12px
+    display: inline-block;
+    width: 160px
+}
+
+.restriction-editing-region .segment-editing-region select:not(:first-child) {
+    margin-left: 8px
 }
 
 .restriction-editing-region .timeframe-editing-region .timepicker i {
@@ -16432,32 +16488,44 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section:not(:last-child) {
-    border-bottom: 1px solid #dbdbdb
+    position: relative
+}
+
+.restriction-editing-region .timeframe-editing-region .timeframe-section:not(:last-child):before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: #dbdbdb
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-content {
     display: flex;
-    align-items: center;
-    flex-grow: 1
+    flex-grow: 2;
+    justify-content: space-between
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-weekdays .timeframe-weekdays {
-    flex-grow: 1
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px
 }
 
-.restriction-editing-region .timeframe-editing-region .timeframe-section-weekdays .timeframe-weekdays label {
+.restriction-editing-region .timeframe-editing-region .timeframe-section-weekdays .timeframe-weekdays .controls-container {
+    width: 65px;
     margin-right: 5px
-}
-
-.restriction-editing-region .timeframe-editing-region .timeframe-section-weekdays .timeframe-weekdays-toggle {
-    align-self: flex-start;
-    flex-shrink: 0
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-weekdays .timeframe-weekdays-toggle .weekdays-toggle {
     cursor: pointer;
     color: #59899e;
     text-decoration: underline
+}
+
+.restriction-editing-region .timeframe-editing-region .timeframe-section-hours,.restriction-editing-region .timeframe-editing-region .timeframe-section-hours .timeframe-section-content {
+    align-items: center
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-hours .timepicker {
@@ -16469,26 +16537,43 @@ body[dir=rtl] .olControlScaleLine {
     margin-top: 8px
 }
 
+.restriction-editing-region .timeframe-editing-region .timeframe-section-dates .restriction-section-title {
+    margin-top: 1px
+}
+
 .restriction-editing-region .timeframe-editing-region .timeframe-section-dates .timeframe-section-content {
     flex-direction: column;
     align-items: flex-start
+}
+
+.restriction-editing-region .timeframe-editing-region .timeframe-section-dates .timeframe-section-option {
+    display: flex;
+    align-items: center
+}
+
+.restriction-editing-region .timeframe-editing-region .timeframe-section-dates .timeframe-section-option .label-datepicker {
+    margin-bottom: 0
 }
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-dates .label-datepicker {
     margin-right: 10px
 }
 
-.restriction-editing-region .driving-modality-editing-region {
-    display: flex;
-    align-items: baseline
+.restriction-editing-region .driving-modality-editing-region .restriction-editing-title,.restriction-editing-region .driving-modality-editing-region .restriction-validation-region .restriction-validation-title,.restriction-editing-region .restriction-validation-region .driving-modality-editing-region .restriction-validation-title {
+    padding-bottom: 8px
 }
 
 .restriction-editing-region .driving-modality-editing-region select {
+    display: inline;
     margin: 0 8px
 }
 
-.restriction-editing-region .driving-modality-editing-region .restriction-editing-title {
-    margin-bottom: 20px
+.restriction-editing-region .driving-modality-select {
+    width: 120px
+}
+
+.restriction-editing-region .drive-profile-editing-region {
+    font-size: 12px
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-blocked {
@@ -16505,12 +16590,25 @@ body[dir=rtl] .olControlScaleLine {
     margin-right: 10px
 }
 
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-blocked .drive-profile-vehicles-option-label {
+    width: 110px
+}
+
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-blocked .drive-profile-vehicle-types {
+    columns: 2
+}
+
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-blocked .vehicle-type-label {
+    width: 190px;
     display: block
 }
 
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .btn-group.open .dropdown-toggle {
+    box-shadow: none!important
+}
+
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .add-drive-profile-item {
-    border: 1px dashed;
+    border: 2px dashed;
     text-align: center;
     border-radius: 5px;
     padding: 10px 15px;
@@ -16523,8 +16621,9 @@ body[dir=rtl] .olControlScaleLine {
     justify-content: space-between;
     border-radius: 5px;
     min-height: 60px;
-    padding: 10px 15px;
-    margin-bottom: 5px
+    padding: 16px;
+    margin-bottom: 8px;
+    font-weight: 700
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .drive-profile-item-attributes {
@@ -16533,22 +16632,27 @@ body[dir=rtl] .olControlScaleLine {
     flex-flow: wrap
 }
 
-.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .drive-profile-item-attributes .restriction-chip {
-    display: block;
-    margin: 2px 0
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .is-blank {
+    font-weight: 700;
+    font-weight: 600;
+    font-style: italic;
+    opacity: .5
 }
 
-.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .is-blank,.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .num-passengers,.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .vehicle-type {
-    font-weight: 700
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .all-vehicles {
+    margin-right: 8px
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .driving-preposition {
-    margin: 0 8px
+    margin: 0 8px;
+    font-weight: 400
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip {
+    display: flex;
+    align-items: center;
     border-radius: 15px;
-    padding: 5px 12px
+    padding: 5px 7px 5px 12px
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip[data-toggle=dropdown] {
@@ -16557,6 +16661,15 @@ body[dir=rtl] .olControlScaleLine {
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip .restriction-chip-content {
     margin-right: 5px
+}
+
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip .restriction-chip-content+i {
+    font-size: 16px;
+    background: none
+}
+
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip:hover {
+    opacity: .8
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip i {
@@ -16584,8 +16697,15 @@ body[dir=rtl] .olControlScaleLine {
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .drive-profile-item-actions .drive-profile-item-action {
     cursor: pointer;
     border-radius: 15px;
-    padding: 5px 10px;
-    margin: 0 3px
+    padding: 4px 12px
+}
+
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .drive-profile-item-actions .drive-profile-item-action:hover {
+    opacity: .8
+}
+
+.restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .drive-profile-item-actions .do-delete-item {
+    margin-right: 8px
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item.drive-profile-item-sticky .do-delete-item {
@@ -16593,67 +16713,99 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .restriction-editing-region .drive-profile-editing-region.drive-profile-allowed .add-drive-profile-item {
-    border-color: rgba(63,188,113,.4)
+    border-color: rgba(63,188,113,.3)
 }
 
 .restriction-editing-region .drive-profile-editing-region.drive-profile-allowed .drive-profile-item {
-    background-color: rgba(63,188,113,.4)
+    background-color: rgba(63,188,113,.2)
 }
 
 .restriction-editing-region .drive-profile-editing-region.drive-profile-allowed .drive-profile-item-action,.restriction-editing-region .drive-profile-editing-region.drive-profile-allowed .restriction-chip {
     background-color: rgba(63,188,113,.3)
 }
 
+.restriction-editing-region .drive-profile-editing-region.drive-profile-allowed .add-drive-profile-item:hover {
+    background-color: rgba(63,188,113,.1)
+}
+
 .restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .add-drive-profile-item {
     border-color: rgba(86,203,231,.4)
 }
 
-.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .drive-profile-item,.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .drive-profile-item-action,.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .restriction-chip {
+.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .drive-profile-item {
+    background-color: rgba(86,203,231,.2)
+}
+
+.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .add-drive-profile-item:hover,.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .drive-profile-item-action,.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .restriction-chip {
     background-color: rgba(86,203,231,.4)
+}
+
+.restriction-editing-region .drive-profile-editing-region.drive-profile-toll-free .add-drive-profile-item:hover {
+    background-color: rgba(86,203,231,.1)
 }
 
 .restrictions-summary.restrictions-summary-turn .restriction-segment-attribute {
     display: none
 }
 
+.restrictions-summary.restrictions-summary-turn td:nth-child(2),.restrictions-summary.restrictions-summary-turn th:nth-child(2) {
+    padding-left: 20px
+}
+
 .restrictions-summary .restrictions-some-message {
-    margin: 10px 0
+    margin: 10px 8px
 }
 
 .restrictions-summary .restriction-summary-group {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #dbdbdb
+    position: relative;
+    padding-bottom: 26px;
+    margin-bottom: 1px
 }
 
-.restrictions-summary .restriction-summary-group.bidi-restrictions-summary {
-    margin-bottom: 0;
-    border-bottom: none
+.restrictions-summary .restriction-summary-group:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #dbdbdb
 }
 
-.restrictions-summary .restriction-summary-group-name {
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 16px;
-    display: inline-block
+.restrictions-summary .restriction-summary-group:last-child:before {
+    content: none
 }
 
-.restrictions-summary .direction-icons {
-    margin-right: 3px;
-    display: inline-block
+.restrictions-summary .btn.do-create {
+    margin-left: 32px
 }
 
-.restrictions-summary .direction-icon {
-    border-radius: 50%;
-    padding: 0 4px;
-    border: 2px solid #3d3d3d;
-    font-size: 10px;
+.restrictions-summary .restriction-summary-title {
+    display: flex;
+    align-items: center;
+    padding: 24px 32px 16px;
     font-weight: 700
 }
 
+.restrictions-summary .direction-icons {
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+    text-transform: uppercase
+}
+
+.restrictions-summary .direction-icon {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #3d3d3d;
+    font-size: 10px
+}
+
 .restrictions-summary .direction-icon-to {
-    font-weight: 700;
-    margin: 0 1px 0 2px
+    margin: 0 6px
 }
 
 .restrictions-summary .direction-icon-b {
@@ -16663,8 +16815,11 @@ body[dir=rtl] .olControlScaleLine {
 
 .restrictions-summary .direction-icon-bidi {
     border-radius: 10px;
-    padding: 2px 10px;
-    text-transform: uppercase
+    width: 63px
+}
+
+.restrictions-summary .restrictions-list-region {
+    margin: 0 16px
 }
 
 .restrictions-summary .restrictions-table {
@@ -16678,25 +16833,60 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .restrictions-summary .restrictions-table td {
-    vertical-align: middle;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100px;
-    overflow: hidden
+    vertical-align: middle
+}
+
+.restrictions-summary .restrictions-table td:first-child,.restrictions-summary .restrictions-table th:first-child {
+    padding-left: 20px
+}
+
+.restrictions-summary .restrictions-table td:last-child,.restrictions-summary .restrictions-table th:last-child {
+    padding-right: 20px
+}
+
+.restrictions-summary .restrictions-table th {
+    border-bottom: none;
+    background: #dfecf0
+}
+
+.restrictions-summary .restrictions-table tr:first-child td {
+    border-top: none
 }
 
 .restrictions-summary .restriction-list-item:hover {
     cursor: pointer
 }
 
+.restrictions-summary .restriction-list-item:hover td {
+    background: #e9e9e9
+}
+
+.restrictions-summary .restriction-list-item td.restriction-item-summary {
+    max-width: 200px
+}
+
+.restrictions-summary .restriction-list-item .restriction-item-details {
+    display: flex;
+    align-items: center
+}
+
+.restrictions-summary .restriction-list-item .restriction-item-details-summary {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
 .restrictions-summary .restriction-list-item .restriction-item-badge {
     border-radius: 10px;
     color: #fff;
-    display: inline-block;
-    font-size: 10px;
-    font-size: bold;
+    display: flex;
+    align-items: center;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
     margin-right: 5px;
-    padding: 2px 10px
+    padding: 3px 10px;
+    letter-spacing: .5px
 }
 
 .restrictions-summary .restriction-list-item .restriction-item-badge-blocked {
@@ -16708,25 +16898,40 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .restrictions-summary .restriction-list-item .restriction-item-badge-toll-free {
-    background-color: #56cbe7
+    background-color: #56cbe7;
+    padding-right: 4px
 }
 
-.restrictions-summary .restriction-list-item .restriction-item-badge-toll-free .waze-tooltip {
-    color: #fff
+.restrictions-summary .restriction-list-item .restriction-item-badge-toll-free .badge-tooltip {
+    color: #fff;
+    margin-left: 3px;
+    font-size: 11px
 }
 
 .restrictions-summary .restriction-list-item .restriction-actions {
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
+    align-items: center
+}
+
+.restrictions-summary .restriction-list-item .restriction-action-edit {
+    font-size: 10px;
+    color: #9a9a9a
 }
 
 .restrictions-summary .restriction-list-item .restriction-editing-actions {
     display: flex;
-    visibility: hidden
+    visibility: hidden;
+    padding: 0 7px;
+    margin-right: 3px
 }
 
 .restrictions-summary .restriction-list-item .restriction-editing-actions i {
-    margin: 0 4px
+    padding: 0 5px
+}
+
+.restrictions-summary .restriction-list-item .restriction-editing-actions .apply-to-all-tooltip+.tooltip {
+    white-space: pre
 }
 
 .restrictions-summary .restriction-list-item:hover .restriction-editing-actions {
