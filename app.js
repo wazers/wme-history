@@ -35388,7 +35388,8 @@ webpackJsonp([1], [function(e, t, i) {
                     n = void 0 === i ? [] : i;
                 (0,
                     u.default)(this, e),
-                this._reversedSegmentsIDs = p.default.getReversedSegments(n),
+                this._segments = n,
+                    this._reversedSegmentsIDs = p.default.getReversedSegments(n),
                     this._segmentIDs = n.map(function(e) {
                         return e.getID()
                     }),
@@ -35403,6 +35404,22 @@ webpackJsonp([1], [function(e, t, i) {
                     value: function() {
                         return (0,
                             a.default)(this._segmentIDs).length > 1
+                    }
+                }, {
+                    key: "hasForwardDirection",
+                    value: function() {
+                        var e = this;
+                        return this._segments.some(function(t) {
+                            return e._isReversed(t.getID()) ? t.attributes.revDirection : t.attributes.fwdDirection
+                        })
+                    }
+                }, {
+                    key: "hasReverseDirection",
+                    value: function() {
+                        var e = this;
+                        return this._segments.some(function(t) {
+                            return e._isReversed(t.getID()) ? t.attributes.fwdDirection : t.attributes.revDirection
+                        })
                     }
                 }, {
                     key: "appliesToAllSegments",
@@ -36597,6 +36614,18 @@ webpackJsonp([1], [function(e, t, i) {
                                     }
                                 }]
                             },
+                            ".forward-restrictions-summary": {
+                                observe: "hasForwardDirection",
+                                visible: !0
+                            },
+                            ".reverse-restrictions-summary": {
+                                observe: "hasReverseDirection",
+                                visible: !0
+                            },
+                            ".bidi-restrictions-summary": {
+                                observe: "hasBidiDirection",
+                                visible: !0
+                            },
                             ".forward-restrictions-summary .restrictions-all-list-region ": {
                                 observe: "hasFwdAll",
                                 visible: !0
@@ -36704,16 +36733,21 @@ webpackJsonp([1], [function(e, t, i) {
                             a = (0,
                                 r.default)(o, 2);
                         this._bidiAll = a[0],
-                            this._bidiSome = a[1],
-                            this.model = new Backbone.Model({
-                                canEditRestrictions: this._canEditRestrictions,
-                                hasFwdAll: this._fwdAll.length > 0,
-                                hasFwdSome: this._fwdSome.length > 0,
-                                hasRevAll: this._revAll.length > 0,
-                                hasRevSome: this._revSome.length > 0,
-                                hasBidiAll: this._bidiAll.length > 0,
-                                hasBidiSome: this._bidiSome.length > 0
-                            })
+                            this._bidiSome = a[1];
+                        var l = this._restrictionsBuilder.hasForwardDirection(),
+                            u = this._restrictionsBuilder.hasReverseDirection();
+                        this.model = new Backbone.Model({
+                            canEditRestrictions: this._canEditRestrictions,
+                            hasFwdAll: this._fwdAll.length > 0,
+                            hasFwdSome: this._fwdSome.length > 0,
+                            hasRevAll: this._revAll.length > 0,
+                            hasRevSome: this._revSome.length > 0,
+                            hasBidiAll: this._bidiAll.length > 0,
+                            hasBidiSome: this._bidiSome.length > 0,
+                            hasForwardDirection: l,
+                            hasReverseDirection: u,
+                            hasBidiDirection: l && u
+                        })
                     }
                 }, {
                     key: "templateContext",
@@ -39280,7 +39314,7 @@ webpackJsonp([1], [function(e, t, i) {
                     this.userPresenters[e.get("id")] = t;
                 var i = this.model.users.models.indexOf(e),
                     n = this.ui.users.children().eq(i);
-                return n.length ? t.$el.insertBefore(n) : t.$el.appendTo(this.ui.users);
+                return n.length ? t.$el.insertBefore(n) : t.$el.appendTo(this.ui.users)
             },
             _onUserRemoved: function(e) {
                 var t = e.item.get("id"),
@@ -39528,7 +39562,7 @@ webpackJsonp([1], [function(e, t, i) {
             },
             _initAutoComplete: function() {
                 var e = this,
-                    t = r.default.unproject(this.options.venueCentroid),
+                    t = r.default.unproject(this.options.venueCentroid.clone()),
                     i = t.y + "," + t.x;
                 this.ui.uuid.select2({
                     minimumInputLength: this.AUTO_COMPLETE.MIN_INPUT_LENGHT,
