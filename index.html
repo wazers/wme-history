@@ -50,7 +50,7 @@
                             <span class="short-title">Map Editor</span>
                         </div>
                         <div id="debug">
-                            <div class="version">v1.37-24-g23b9b1f
+                            <div class="version">v1.37-38-ga2290d5
                             </div>
                             <div class="version descrates"></div>
                         </div>
@@ -77,7 +77,7 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-8ca2594d20f01d2eb66c.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-d749ccb73129cb187e5b.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -1654,12 +1654,12 @@
                             "summary": "Summary"
                         },
                         "badges": {
-                            "allowed": "Only",
-                            "blocked": "Disallowed",
-                            "toll_free": "Free"
+                            "allowed": "Allowed",
+                            "blocked": "Prohibited",
+                            "toll_free": "Toll free"
                         },
                         "tooltips": {
-                            "toll_free": "Vehicles still need to meet \"only\" criteria"
+                            "toll_free": "Vehicles must also meet all of the “Allowed” restrictions"
                         },
                         "disposition": {
                             "WHOLE_SEGMENT": "All",
@@ -1674,7 +1674,7 @@
                         },
                         "segment": {
                             "toll_road": "Toll road",
-                            "toll_road_disabled": "Remove toll restrictions to mark as toll",
+                            "toll_road_disabled": "There are “toll free” restrictions on this segment, so it can’t be marked as a toll road.",
                             "applies": "Applies to",
                             "laneType": {
                                 "NONE": "None",
@@ -1687,7 +1687,7 @@
                             "disposition": {
                                 "WHOLE_SEGMENT": "Entire Segment",
                                 "LEFT_LANE": "Left lane",
-                                "MIDDLE_LANE": "Middle Lane",
+                                "MIDDLE_LANE": "Middle lane",
                                 "RIGHT_LANE": "Right lane"
                             }
                         },
@@ -1706,8 +1706,8 @@
                         "timeframe": {
                             "days": "Days",
                             "hours": "Hours",
-                            "all_day": "All Day",
-                            "all_week": "Every Day",
+                            "all_day": "All day",
+                            "all_week": "Every day",
                             "applies": "Applies",
                             "always": "Every week",
                             "every_month": "Range",
@@ -1719,11 +1719,11 @@
                             "only_vehicles": "Only",
                             "other_vehicles_restricted": "Other vehicles are restricted",
                             "other_vehicles_pay_toll": "Other vehicles must pay toll",
-                            "other_vehicles_allowed": "Other vehicles are allowed",
+                            "other_vehicles_allowed": "Only vehicles listed here are allowed",
                             "add_vehicle": "Add vehicle",
-                            "min_passengers": "At least %{count} passengers",
+                            "min_passengers": "Min. %{count} passengers",
                             "all_passengers": "Any number of passengers",
-                            "toll_disabled": "Toll can not be applied for turns and toll roads",
+                            "toll_disabled": "There are “toll free” restrictions on this segment, so it can’t be marked as a Toll Road.",
                             "types": {
                                 "DRIVING_BLOCKED": "prohibited",
                                 "DRIVING_ALLOWED": "allowed",
@@ -1731,8 +1731,8 @@
                             },
                             "dropdowns": {
                                 "vehicle_type": "Vehicle type",
-                                "num_passengers": "Num passengers",
-                                "subscription": "Subscription"
+                                "num_passengers": "Minimum passengers",
+                                "subscription": "Requires a pass"
                             },
                             "prepositions": {
                                 "with": "with",
@@ -1784,9 +1784,12 @@
                         "BUS": "Bus",
                         "HAZARDOUS_MATERIALS": "Hazardous materials",
                         "CAV": "Clean air vehicle",
+                        "EV": "Electric",
+                        "HYBRID": "Hybrid",
+                        "CLEAN_FUEL": "Clean fuel",
                         "MOTORCYCLE": "Motorcycle",
                         "PUBLIC_TRANSPORTATION": "Public transportation",
-                        "RV": "Rv",
+                        "RV": "RV",
                         "TAXI": "Taxi",
                         "TOWING_VEHICLE": "Towing vehicle",
                         "TRUCK": "Truck"
@@ -2057,7 +2060,7 @@
                                 "shortMessage": "Dive deep into the world of Waze Map Editing."
                             },
                             "DISCOVER_LOCAL_WIKI": {
-                                "title": "Visit your local wiki",
+                                "title": "Visit your local Wazeopedia",
                                 "shortMessage": "Get answers to questions you didn’t even know you had."
                             },
                             "FIRST_TIME_VIDEOS": {
@@ -2397,7 +2400,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-573230bc49ae0e953466.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-f4d570e5de43fdfc0794.js"></script>
     </body>
 
 </html>

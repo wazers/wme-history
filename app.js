@@ -4236,7 +4236,7 @@ webpackJsonp([0], [, function(e, t, i) {
             _setTime: function(e, t) {
                 var i = t.view[this.options.modelAttribute].get(t.observe),
                     n = this._getDate(i);
-                return this._isValidDate(n) ? [n, this._padTime(e)].join(" ") : null
+                return this._isValidDate(n) ? [n, this._padTime(e)].join(" ") : " " + this._padTime(e)
             },
             _padTime: function(e) {
                 var t = e.split(":");
@@ -4245,7 +4245,7 @@ webpackJsonp([0], [, function(e, t, i) {
                     e
             },
             _isValidDate: function(e) {
-                return "Invalid Date" !== new Date(e).toString()
+                return null != Date.parse(e)
             }
         });
     t.default = r,
@@ -4892,7 +4892,10 @@ webpackJsonp([0], [, function(e, t, i) {
             MOTORCYCLE: 1024,
             PRIVATE: 1280,
             HAZARDOUS_MATERIALS: 1536,
-            CAV: 1792
+            CAV: 1792,
+            EV: 1808,
+            HYBRID: 1824,
+            CLEAN_FUEL: 1840
         },
         p = function() {
             function e() {
@@ -18032,7 +18035,7 @@ webpackJsonp([0], [, function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='preview'>\n<h3 class='subject-preview'></h3>\n<div class='body-preview'></div>\n<div class='edit-button'>\n<i class='waze-icon-edit'></i>\n</div>\n</div>\n<form class='edit'>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.map_comment.fields.subject"))) + "</label>\n<div class='controls'>\n<input class='form-control subject-input' type='text'>\n<div class='input-max-length subject-max-length'></div>\n</div>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.map_comment.fields.body"))) + "</label>\n<div class='controls'>\n<textarea class='body-textarea form-control'></textarea>\n<div class='body-max-length input-max-length'></div>\n</div>\n</div>\n<button class='apply-button btn btn-block btn-primary' type='button'>"),
+                            i.push("<div class='preview'>\n<h3 class='subject-preview'></h3>\n<div class='body-preview'></div>\n<div class='edit-button'>\n<i class='waze-icon-edit'></i>\n</div>\n</div>\n<form class='edit'>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.map_comment.fields.subject"))) + "</label>\n<div class='controls'>\n<input class='form-control subject-input' type='text'>\n<div class='input-max-length subject-max-length'></div>\n</div>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.map_comment.fields.body"))) + "</label>\n<div class='controls'>\n<textarea class='body-textarea form-control'></textarea>\n<div class='body-max-length input-max-length'></div>\n</div>\n</div>\n<button class='apply-button btn btn-block btn-primary' type='submit'>"),
                             i.push("" + t(e(this.t("edit.map_comment.name_edit.apply")))),
                             i.push("</button>\n</form>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -20428,7 +20431,7 @@ webpackJsonp([0], [, function(e, t, i) {
                     geometryEditing: {
                         enable: !0,
                         options: {
-                            mode: OL.Control.ModifyFeature.DRAG
+                            mode: OL.Control.ModifyFeature.DRAG | OL.Control.ModifyFeature.RESHAPE
                         }
                     }
                 }
@@ -20732,7 +20735,7 @@ webpackJsonp([0], [, function(e, t, i) {
             },
             events: {
                 "click @ui.editButton": "_onEditButtonClicked",
-                "click @ui.applyButton": "_onApplyButtonClicked"
+                "submit form": "_onApplyButtonClicked"
             },
             bindings: {
                 ".preview": {
@@ -20787,14 +20790,15 @@ webpackJsonp([0], [, function(e, t, i) {
                     showingPreview: !1
                 })
             },
-            _onApplyButtonClicked: function() {
-                this.model.set({
+            _onApplyButtonClicked: function(e) {
+                return e.preventDefault(),
+                    this.model.set({
                         showingPreview: !0
                     }),
                     this.trigger("changed", {
                         subject: this.model.get("subject"),
                         body: this.model.get("body")
-                    })
+                    }), !1
             }
         });
     e.exports = l
@@ -23397,7 +23401,7 @@ webpackJsonp([0], [, function(e, t, i) {
                             a = o[n],
                             r = a.locale,
                             l = a.tts,
-                            i.push("<option value='" + t(e(l)) + "'>" + t(e(I18n.languageNames[r])) + "</option>");
+                            i.push("<option value='" + t(e(l)) + "'>" + t(e(I18n.languageNames[r] || r || l)) + "</option>");
                         return i.push("</select>\n<buttton class='btn btn-primary play-button'>" + t(e(this.t("tts.play"))) + "</buttton>\n<a class='report-problem-link' href='" + t(e(W.Config.tts.report_problem_url)) + "' target='_blank'>"),
                             i.push("" + t(e(this.t("tts.report_problem")))),
                             i.push("</a>"),
@@ -38879,12 +38883,14 @@ webpackJsonp([0], [, function(e, t, i) {
             _onCategoryClicked: function(e) {
                 var t = this.model.attributes.categories,
                     i = _.without(t.clone(), e.category);
-                if (e.replace) {
+                if (e.isSuggested)
+                    i.pop(),
+                    i.push(e.category);
+                else {
                     if (t.length > 0 && t[0] === e.category)
                         return;
                     i.unshift(e.category)
-                } else
-                    i.push(e.category);
+                }
                 return this.categoriesChanged(i)
             },
             onOpeningHoursChanged: function() {
@@ -39003,7 +39009,9 @@ webpackJsonp([0], [, function(e, t, i) {
                     r.default.prototype.onRender.apply(this, arguments)
             },
             _initBrandAutoComplete: function() {
-                this.ui.brandInput.select2()
+                this.ui.brandInput.select2({
+                    allowClear: !0
+                })
             },
             _renderAddressEdit: function() {
                 this.showChildView("addressEdit", new A.default({
@@ -39125,17 +39133,17 @@ webpackJsonp([0], [, function(e, t, i) {
                 return I18n.t("venues.categories." + e.id)
             },
             onSuggestCategoryClicked: function(e) {
-                this._categoryClickHelper(e, !1)
+                this._categoryClickHelper(e, !0)
             },
             onCategoryClicked: function(e) {
-                this._categoryClickHelper(e, !0)
+                this._categoryClickHelper(e, !1)
             },
             _categoryClickHelper: function(e, t) {
                 e.preventDefault();
                 var i = $(e.target).data("category");
                 return this.trigger("categoryClicked", {
                     category: i,
-                    replace: t
+                    isSuggested: t
                 })
             }
         });
@@ -41817,10 +41825,10 @@ webpackJsonp([0], [, function(e, t, i) {
                     this.ui.partialHeader.show()) : this.ui.full.append(t.el)
             },
             viewComparator: function(e, t) {
-                var i = new Date(e.get("startDate")),
-                    n = new Date(t.get("startDate")),
-                    s = new Date(e.get("endDate")),
-                    r = new Date(t.get("endDate"));
+                var i = Date.parse(e.get("startDate")),
+                    n = Date.parse(t.get("startDate")),
+                    s = Date.parse(e.get("endDate")),
+                    r = Date.parse(t.get("endDate"));
                 if (i > n)
                     return 1;
                 if (i === n) {
@@ -42023,10 +42031,10 @@ webpackJsonp([0], [, function(e, t, i) {
                     t = this.model.get("startDate"),
                     i = this.model.get("endDate");
                 t && (e = e.filter(function(e) {
-                        return new Date(e.get("startDate")) <= new Date(t)
+                        return Date.parse(e.get("startDate")) <= Date.parse(t)
                     })),
                     i && (e = e.filter(function(e) {
-                        return new Date(e.get("endDate")) >= new Date(i)
+                        return Date.parse(e.get("endDate")) >= Date.parse(i)
                     }));
                 var n = e.map(function(e) {
                     return {
@@ -45801,7 +45809,7 @@ webpackJsonp([0], [, function(e, t, i) {
                     })
             },
             filter: function(e) {
-                if (new Date(e.get("startDate")) > this.model.get("dateFilter").endDate)
+                if (Date.parse(e.get("startDate")) > this.model.get("dateFilter").endDate)
                     return !1;
                 var t = this.model.get("query"),
                     i = e.getEnglishName(),
@@ -45859,8 +45867,8 @@ webpackJsonp([0], [, function(e, t, i) {
                 }
             },
             _shortDate: function() {
-                var e = new Date(this.model.get("startDate")),
-                    t = new Date(this.model.get("endDate"));
+                var e = Date.parse(this.model.get("startDate")),
+                    t = Date.parse(this.model.get("endDate"));
                 return s.default.formatMonthRange(e, t)
             }
         });
@@ -46388,7 +46396,7 @@ webpackJsonp([0], [, function(e, t, i) {
                 null === o ? t.names = I18n.t("mte.edit.validation_errors.names") : o.length > 25 ? t.names = I18n.t("mte.edit.validation_errors.english_name_length") : n.test(o) || (t.names = I18n.t("mte.edit.validation_errors.english_name")),
                 null === i && (t.startDate = I18n.t("mte.edit.validation_errors.start_date")),
                 null === r && (t.endDate = I18n.t("mte.edit.validation_errors.end_date")),
-                null !== i && null !== r && new Date(i) > new Date(r) && (t.endDate = I18n.t("mte.edit.validation_errors.end_before_start")),
+                null !== i && null !== r && Date.parse(i) > Date.parse(r) && (t.endDate = I18n.t("mte.edit.validation_errors.end_before_start")),
                 new s(t)
         },
         s.ENGLISH_NAME_PATTERN = n,
