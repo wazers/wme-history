@@ -15202,7 +15202,7 @@ body[dir=rtl] .olControlScaleLine {
     background-color: #f8bf16;
 }
 
-.problem-edit[data-state=solved] .header, .problem-edit[data-state=not-identified] .header {
+.problem-edit[data-state=solved] .header, .problem-edit[data-state=not-identified] .header, .problem-edit[data-state=closed-automatically] .header {
     background-color: #599e5c;
 }
 

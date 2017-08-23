@@ -7,7 +7,7 @@
         <title>Waze Map Editor</title>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-8d18d28e73eebe942705c10d6f8ac338.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-f2598c87eeeba9fd7a92fdaff06687c3.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -50,7 +50,7 @@
                             <span class="short-title">Map Editor</span>
                         </div>
                         <div id="debug">
-                            <div class="version">v1.37-38-ga2290d5
+                            <div class="version">v1.38-20-g662a40e
                             </div>
                             <div class="version descrates"></div>
                         </div>
@@ -77,7 +77,7 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-d749ccb73129cb187e5b.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-b97521c03af98c423606.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -704,7 +704,7 @@
                             "tunnel": "Tunnel",
                             "unpaved": "Unpaved",
                             "headlights": "Headlights required",
-                            "nearbyHOV": "Nearby HOV",
+                            "nearbyHOV": "Next to carpool/HOV/bus lane",
                             "direction": "Direction",
                             "fwdSpeedCamera": "A to B",
                             "revSpeedCamera": "B to A",
@@ -1410,6 +1410,11 @@
                             "description": "One way segment contains a dead end with no allowed exit",
                             "solution": "Check that nearby segments should not be connected or change road direction to two way"
                         },
+                        "23": {
+                            "title": "Routing problem",
+                            "description": "All turns closed into segment, impossible to route through.",
+                            "solution": "Validate that at least one of the connected segments have an open turn to the segment."
+                        },
                         "50": {
                             "title": "Parking Lot input as point",
                             "description": "Parking Lot should be input as area polygon",
@@ -1674,7 +1679,7 @@
                         },
                         "segment": {
                             "toll_road": "Toll road",
-                            "toll_road_disabled": "There are “toll free” restrictions on this segment, so it can’t be marked as a toll road.",
+                            "toll_road_disabled": "This box is only checked if every vehicle must pay a toll, without exception. Since “toll free” rules are added, it is disabled.",
                             "applies": "Applies to",
                             "laneType": {
                                 "NONE": "None",
@@ -1720,10 +1725,10 @@
                             "other_vehicles_restricted": "Other vehicles are restricted",
                             "other_vehicles_pay_toll": "Other vehicles must pay toll",
                             "other_vehicles_allowed": "Only vehicles listed here are allowed",
-                            "add_vehicle": "Add vehicle",
+                            "add_vehicle": "Add new rule",
                             "min_passengers": "Min. %{count} passengers",
                             "all_passengers": "Any number of passengers",
-                            "toll_disabled": "There are “toll free” restrictions on this segment, so it can’t be marked as a Toll Road.",
+                            "toll_disabled": "This is marked as a toll road for every vehicle, so “toll free” rules can’t be added.",
                             "types": {
                                 "DRIVING_BLOCKED": "prohibited",
                                 "DRIVING_ALLOWED": "allowed",
@@ -1844,7 +1849,8 @@
                         "invalid-date": "Invalid date (YYYY-MM-dd HH:mm)",
                         "in-past": "Date can't be in the past",
                         "before-start-date": "End date must be later than start date"
-                    }
+                    },
+                    "lock_message": "You need to be a level %{lockLevel} editor / Waze partner editor to add / edit a closure."
                 },
                 "segment": {
                     "categories": {
@@ -2400,7 +2406,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-f4d570e5de43fdfc0794.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-00e470d199dbb3f78161.js"></script>
     </body>
 
 </html>
