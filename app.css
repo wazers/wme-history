@@ -9015,8 +9015,8 @@ select.form-control:focus {
 
 @font-face {
     font-family: "WazeFont";
-    src: url(//editor-assets.waze.com/beta/font/b45820cd7148840546023cede91addf1.eot);
-    src: url(//editor-assets.waze.com/beta/font/b45820cd7148840546023cede91addf1.eot?#iefix) format("embedded-opentype"), url(//editor-assets.waze.com/beta/font/16b7ce72fd0ddc661e1bb9bfba96c689.woff) format("woff"), url(//editor-assets.waze.com/beta/font/2492c39a9b8edbac674abbff93385656.ttf) format("truetype"), url(//editor-assets.waze.com/beta/font/687b9b0905e2000707b2f0202c4986d6.svg#WazeFont) format("svg");
+    src: url(//editor-assets.waze.com/beta/font/9555ec58bf7655b40f7e9d1da5e9bf83.eot);
+    src: url(//editor-assets.waze.com/beta/font/9555ec58bf7655b40f7e9d1da5e9bf83.eot?#iefix) format("embedded-opentype"), url(//editor-assets.waze.com/beta/font/b5af037d5068c99cd45153a540069346.woff2) format("woff2"), url(//editor-assets.waze.com/beta/font/f4c3a3640247072402e04508f4079783.woff) format("woff"), url(//editor-assets.waze.com/beta/font/22c8cadbac36dc9cde227631ab2f0465.ttf) format("truetype"), url(//editor-assets.waze.com/beta/font/6fb25e22f2fca04837d5137259a63e50.svg#WazeFont) format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -9024,7 +9024,7 @@ select.form-control:focus {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     @font-face {
         font-family: "WazeFont";
-        src: url(//editor-assets.waze.com/beta/font/687b9b0905e2000707b2f0202c4986d6.svg#WazeFont) format("svg");
+        src: url(//editor-assets.waze.com/beta/font/6fb25e22f2fca04837d5137259a63e50.svg#WazeFont) format("svg");
     }
 }
 
@@ -9032,7 +9032,7 @@ select.form-control:focus {
     content: attr(data-icon);
 }
 
-[data-icon]:before, .waze-icon-area:before, .waze-icon-arrow-down:before, .waze-icon-arrow-left:before, .waze-icon-arrow-right:before, .waze-icon-arrow-up:before, .waze-icon-attach:before, .waze-icon-bubble:before, .waze-icon-c-alert:before, .waze-icon-c-arrow-down:before, .waze-icon-c-arrow-left:before, .waze-icon-c-arrow-right:before, .waze-icon-c-arrow-up:before, .waze-icon-calendar:before, .waze-icon-check:before, .waze-icon-clock:before, .waze-icon-close:before, .waze-icon-closed-issue:before, .waze-icon-closure:before, .waze-icon-crosshair:before, .waze-icon-detach:before, .waze-icon-edit:before, .waze-icon-envelope:before, .waze-icon-event:before, .waze-icon-full-arrow-down:before, .waze-icon-full-arrow-left:before, .waze-icon-full-arrow-right:before, .waze-icon-full-arrow-up:before, .waze-icon-hive:before, .waze-icon-house:before, .waze-icon-km:before, .waze-icon-layers:before, .waze-icon-map:before, .waze-icon-pin:before, .waze-icon-place:before, .waze-icon-place-car:before, .waze-icon-place-culture:before, .waze-icon-place-food-drink:before, .waze-icon-place-lodging:before, .waze-icon-place-natural:before, .waze-icon-place-other:before, .waze-icon-place-outdoors:before, .waze-icon-place-professional:before, .waze-icon-place-shopping:before, .waze-icon-place-transportation:before, .waze-icon-plus:before, .waze-icon-plus_neg:before, .waze-icon-redo:before, .waze-icon-reload:before, .waze-icon-road:before, .waze-icon-save:before, .waze-icon-star:before, .waze-icon-trash:before, .waze-icon-undo:before, .waze-icon-view:before, .waze-icon-visible:before {
+[data-icon]:before, .waze-icon-area:before, .waze-icon-arrow-down:before, .waze-icon-arrow-left:before, .waze-icon-arrow-right:before, .waze-icon-arrow-up:before, .waze-icon-attach:before, .waze-icon-bubble:before, .waze-icon-c-alert:before, .waze-icon-c-arrow-down:before, .waze-icon-c-arrow-left:before, .waze-icon-c-arrow-right:before, .waze-icon-c-arrow-up:before, .waze-icon-calendar:before, .waze-icon-check:before, .waze-icon-clock:before, .waze-icon-close:before, .waze-icon-closed-issue:before, .waze-icon-closure:before, .waze-icon-crosshair:before, .waze-icon-detach:before, .waze-icon-edit:before, .waze-icon-envelope:before, .waze-icon-event:before, .waze-icon-full-arrow-down:before, .waze-icon-full-arrow-left:before, .waze-icon-full-arrow-right:before, .waze-icon-full-arrow-two-sided:before, .waze-icon-full-arrow-up:before, .waze-icon-hive:before, .waze-icon-house:before, .waze-icon-km:before, .waze-icon-layers:before, .waze-icon-map:before, .waze-icon-pin:before, .waze-icon-place:before, .waze-icon-place-car:before, .waze-icon-place-culture:before, .waze-icon-place-food-drink:before, .waze-icon-place-lodging:before, .waze-icon-place-natural:before, .waze-icon-place-other:before, .waze-icon-place-outdoors:before, .waze-icon-place-professional:before, .waze-icon-place-shopping:before, .waze-icon-place-transportation:before, .waze-icon-plus:before, .waze-icon-plus_neg:before, .waze-icon-redo:before, .waze-icon-reload:before, .waze-icon-road:before, .waze-icon-route:before, .waze-icon-save:before, .waze-icon-star:before, .waze-icon-trash:before, .waze-icon-undo:before, .waze-icon-view:before, .waze-icon-visible:before {
     display: inline-block;
     font-family: "WazeFont";
     font-style: normal;
@@ -9151,120 +9151,128 @@ select.form-control:focus {
     content: "\F119";
 }
 
-.waze-icon-full-arrow-up:before {
+.waze-icon-full-arrow-two-sided:before {
     content: "\F11A";
 }
 
-.waze-icon-hive:before {
+.waze-icon-full-arrow-up:before {
     content: "\F11B";
 }
 
-.waze-icon-house:before {
+.waze-icon-hive:before {
     content: "\F11C";
 }
 
-.waze-icon-km:before {
+.waze-icon-house:before {
     content: "\F11D";
 }
 
-.waze-icon-layers:before {
+.waze-icon-km:before {
     content: "\F11E";
 }
 
-.waze-icon-map:before {
+.waze-icon-layers:before {
     content: "\F11F";
 }
 
-.waze-icon-pin:before {
+.waze-icon-map:before {
     content: "\F120";
 }
 
-.waze-icon-place:before {
+.waze-icon-pin:before {
     content: "\F121";
 }
 
-.waze-icon-place-car:before {
+.waze-icon-place:before {
     content: "\F122";
 }
 
-.waze-icon-place-culture:before {
+.waze-icon-place-car:before {
     content: "\F123";
 }
 
-.waze-icon-place-food-drink:before {
+.waze-icon-place-culture:before {
     content: "\F124";
 }
 
-.waze-icon-place-lodging:before {
+.waze-icon-place-food-drink:before {
     content: "\F125";
 }
 
-.waze-icon-place-natural:before {
+.waze-icon-place-lodging:before {
     content: "\F126";
 }
 
-.waze-icon-place-other:before {
+.waze-icon-place-natural:before {
     content: "\F127";
 }
 
-.waze-icon-place-outdoors:before {
+.waze-icon-place-other:before {
     content: "\F128";
 }
 
-.waze-icon-place-professional:before {
+.waze-icon-place-outdoors:before {
     content: "\F129";
 }
 
-.waze-icon-place-shopping:before {
+.waze-icon-place-professional:before {
     content: "\F12A";
 }
 
-.waze-icon-place-transportation:before {
+.waze-icon-place-shopping:before {
     content: "\F12B";
 }
 
-.waze-icon-plus:before {
+.waze-icon-place-transportation:before {
     content: "\F12C";
 }
 
-.waze-icon-plus_neg:before {
+.waze-icon-plus:before {
     content: "\F12D";
 }
 
-.waze-icon-redo:before {
+.waze-icon-plus_neg:before {
     content: "\F12E";
 }
 
-.waze-icon-reload:before {
+.waze-icon-redo:before {
     content: "\F12F";
 }
 
-.waze-icon-road:before {
+.waze-icon-reload:before {
     content: "\F130";
 }
 
-.waze-icon-save:before {
+.waze-icon-road:before {
     content: "\F131";
 }
 
-.waze-icon-star:before {
+.waze-icon-route:before {
     content: "\F132";
 }
 
-.waze-icon-trash:before {
+.waze-icon-save:before {
     content: "\F133";
 }
 
-.waze-icon-undo:before {
+.waze-icon-star:before {
     content: "\F134";
 }
 
-.waze-icon-view:before {
+.waze-icon-trash:before {
     content: "\F135";
 }
 
-.waze-icon-visible:before {
+.waze-icon-undo:before {
     content: "\F136";
+}
+
+.waze-icon-view:before {
+    content: "\F137";
+}
+
+.waze-icon-visible:before {
+    content: "\F138";
 }
 
 .flex-parent {
@@ -9515,7 +9523,7 @@ input, button, select, textarea {
     max-width: none;
 }
 
-#editor-container #WazeMap [class^=waze-icon] {
+#editor-container #WazeMap [class^=waze-icon].olControlNoSelect {
     display: none;
 }
 
@@ -11299,7 +11307,7 @@ kbd.shiftKey::before {
 }
 
 .edit-closure .date-input-group {
-    width: 62%;
+    width: 58%;
     margin-right: 8px;
 }
 
@@ -12039,22 +12047,96 @@ kbd.shiftKey::before {
 }
 
 .navigation-point {
+    margin-top: -7px;
+    /*rtl:ignore*/
+    margin-left: -7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    color: white;
+    background-image: linear-gradient(0deg, #4d84ff 0%, #7eccff 100%);
+    font-size: 12px;
+    line-height: 14px;
+    padding-left: 1px;
+}
+
+.navigation-point.primary {
     margin-top: -11px;
     /*rtl:ignore*/
     margin-left: -11px;
     width: 22px;
     height: 22px;
     border-radius: 22px;
-    border: 2px solid #3d3d3d;
-    color: #3d3d3d;
-    background-color: white;
-    font-size: 16px;
-    line-height: 19px;
-    padding-left: 2px;
+    font-size: 15px;
+    line-height: 21px;
+    padding-left: 3px;
 }
 
-.navigation-point:hover {
+.navigation-point.transparent {
+    opacity: 0.25;
+}
+
+.navigation-point.draggable {
     cursor: move;
+}
+
+@keyframes arrowPulse {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    12% {
+        transform: translate(0, -5px);
+    }
+
+    24% {
+        transform: translate(0, 0px);
+    }
+
+    36% {
+        transform: translate(0, -5px);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+}
+
+.navigation-point.centered .waze-icon-full-arrow-up {
+    display: block;
+}
+
+.navigation-point .waze-icon-full-arrow-up {
+    display: none;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+}
+
+.navigation-point .waze-icon-full-arrow-up::before {
+    animation: arrowPulse 3.5s 0s infinite;
+    animation-delay: 2s;
+}
+
+.navigation-point .arrow-up {
+    top: -100%;
+}
+
+.navigation-point .arrow-down {
+    transform: rotate(180deg);
+    bottom: -100%;
+}
+
+.navigation-point .arrow-left {
+    transform: rotate(-90deg);
+    top: 0;
+    left: -90%;
+}
+
+.navigation-point .arrow-right {
+    transform: rotate(90deg);
+    top: 0;
+    right: -90%;
 }
 
 .house-numbers-layer .uneditable-number {
@@ -12466,6 +12548,140 @@ kbd.shiftKey::before {
     height: 22px;
 }
 
+.connection-arrow .arrow.difficult.open {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -72px 0px;
+    width: 36px;
+    height: 37px;
+}
+
+.connection-arrow .arrow.difficult.open:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: 0px -37px;
+    width: 36px;
+    height: 37px;
+}
+
+.connection-arrow .arrow.difficult.restricted {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -108px 0px;
+    width: 34px;
+    height: 39px;
+}
+
+.connection-arrow .arrow.difficult.restricted:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -36px 0px;
+    width: 36px;
+    height: 37px;
+}
+
+.connection-arrow .arrow.difficult.closed {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: 0px 0px;
+    width: 36px;
+    height: 37px;
+}
+
+.connection-arrow .arrow.difficult.closed:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -36px -37px;
+    width: 36px;
+    height: 37px;
+}
+
+.connection-arrow .arrow.difficult.uturn {
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    /*rtl:ignore*/
+    margin-left: -11px;
+}
+
+.connection-arrow .arrow.difficult.uturn.open {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -22px -96px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.open:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -22px -74px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.restricted {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -66px -74px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.restricted:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -110px -74px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.closed {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -72px -37px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.closed:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -66px -96px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.open {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: 0px -96px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.open:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -44px -96px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.restricted {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -44px -74px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.restricted:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -88px -74px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.closed {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: -108px -39px;
+    width: 22px;
+    height: 22px;
+}
+
+.connection-arrow .arrow.difficult.uturn.lefthand.closed:hover {
+    background-image: url(//editor-assets.waze.com/beta/img/turns-difficult11fe96ffa43a348c0820d9723e52503e.png);
+    background-position: 0px -74px;
+    width: 22px;
+    height: 22px;
+}
+
 .connection-arrow .arrow .button-container {
     width: 79px;
     height: auto;
@@ -12813,6 +13029,11 @@ kbd.shiftKey::before {
 
 .sandbox-message {
     background-color: #c290c6;
+    position: absolute;
+    z-index: 1041;
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
 }
 
 .location-message {
@@ -13056,11 +13277,11 @@ body[dir=rtl] .olControlScaleLine {
 
 #sidebar #sidebarContent {
     position: relative;
-    height: inherit;
+    height: auto;
 }
 
 #sidebar #sidebarContent .sidebar-layout {
-    height: inherit;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -14258,6 +14479,75 @@ body[dir=rtl] .olControlScaleLine {
     cursor: pointer;
 }
 
+#edit-panel .navigation-point-view .add-button, .edit-panel .navigation-point-view .add-button {
+    padding: 0;
+    font-weight: 400;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .edit-form .buttons, .edit-panel .navigation-point-view .navigation-point-list-item .edit-form .buttons {
+    text-align: right;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .edit-form .entry-controls, .edit-panel .navigation-point-view .navigation-point-list-item .edit-form .entry-controls {
+    display: flex;
+    align-items: center;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .edit-form .entry-controls .type, .edit-panel .navigation-point-view .navigation-point-list-item .edit-form .entry-controls .type {
+    margin-right: 10px;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview, .edit-panel .navigation-point-view .navigation-point-list-item .preview {
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.2s background-color;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview:hover {
+    background-color: #f3f3f3;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview:hover .buttons, .edit-panel .navigation-point-view .navigation-point-list-item .preview:hover .buttons {
+    opacity: 1;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview.primary .name, .edit-panel .navigation-point-view .navigation-point-list-item .preview.primary .name {
+    font-weight: bold;
+    font-weight: 700;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .name, .edit-panel .navigation-point-view .navigation-point-list-item .preview .name {
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .arrow-icon, .edit-panel .navigation-point-view .navigation-point-list-item .preview .arrow-icon {
+    margin-right: 5px;
+    color: #26bae8;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .buttons, .edit-panel .navigation-point-view .navigation-point-list-item .preview .buttons {
+    transition: 0.2s all;
+    opacity: 0;
+    display: flex;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button {
+    color: #59899e;
+    cursor: pointer;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover {
+    color: #98b7c5;
+}
+
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button {
+    margin-right: 7px;
+}
+
 #edit-panel .image-preview-container, .edit-panel .image-preview-container {
     width: 100px;
     max-height: 75px;
@@ -14757,9 +15047,7 @@ body[dir=rtl] .olControlScaleLine {
 
 #WazeMap .place-update:hover {
     cursor: pointer;
-    -webkit-filter: compact(brightness(110%), false, false, false, false, false, false, false, false, false);
-    -moz-filter: compact(brightness(110%), false, false, false, false, false, false, false, false, false);
-    filter: compact(brightness(110%), false, false, false, false, false, false, false, false, false);
+    filter: brightness(110%);
 }
 
 #WazeMap .place-update.high {
@@ -15114,6 +15402,10 @@ body[dir=rtl] .olControlScaleLine {
 
 .conversation-view .comment .comment-content {
     padding: 10px 15px 10px 15px;
+}
+
+.conversation-view .comment .comment-content .text {
+    word-break: break-word;
 }
 
 .conversation-view .comment .comment-content.reporter {
