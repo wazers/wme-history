@@ -15957,7 +15957,8 @@ webpackJsonp([0], [function(e, t, i) {
                     return r.default.formatAddress(e.getAddress())
                 },
                 entryExitPoints: function(e) {
-                    return e.getNavigationPoint().point
+                    var t = e.getNavigationPoints()[0];
+                    return null != t ? t.getPoint() : e.attributes.geometry.getCentroid()
                 },
                 openingHours: function(e) {
                     return e.getOpeningHours().map(r.default.formatOpeningHour).join(", ")
