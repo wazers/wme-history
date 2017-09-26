@@ -5,9 +5,10 @@
         <meta charset="utf-8">
         <meta name="description" content="Join the community of map editors to update Waze’s live map around your home, work and anywhere you drive.">
         <title>Waze Map Editor</title>
-        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-afefc8670070b8fb258636e32a57a617.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-085cc0494bd824f0859051348f301a40.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -43,21 +44,18 @@
         </div>
         <div class="app container-fluid not-visible">
             <section id="app-head">
-                <div class="row row-offset-330">
-                    <aside class="col-fixed-330">
+                <div class="container-fluid">
+                    <aside>
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
-                            <span class="short-title">Map Editor</span>
-                        </div>
-                        <div id="debug">
-                            <div class="version">v1.39-2-gbaebe4c
+                            <div id="debug">
+                                <div class="version">v2.0-7-gf426716
+                                </div>
+                                <div class="version descrates"></div>
                             </div>
-                            <div class="version descrates"></div>
                         </div>
-                    </aside>
-                    <div class="col-offset-330">
                         <div id="toolbar"></div>
-                    </div>
+                    </aside>
                 </div>
             </section>
             <div class="edit-area row-fluid">
@@ -77,7 +75,7 @@
             <div id="dialog-region"></div>
         </div>
         <script src="//maps.google.com/maps/api/js"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-6b0f0b3b3ace856e9b65.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-ea25e630b9e6e9a307c1.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -91,7 +89,7 @@
                     "formats": {
                         "default": "%a, %d %b %Y %H:%M:%S %z",
                         "short": "%d %b %H:%M",
-                        "long": "%B %d, %Y %H:%M"
+                        "long": "%a %b %d %Y, %H:%M"
                     },
                     "am": "am",
                     "pm": "pm"
@@ -188,6 +186,7 @@
                 "login": {
                     "greeting": "Hey there, %{stranger}",
                     "stranger": "stranger",
+                    "title": "Login",
                     "subtitle": "Please login to start mapping",
                     "forgot_password": "I don't know my username or password",
                     "form": {
@@ -226,6 +225,7 @@
                         "ITEM_AREA_MANAGERS": "Area managers",
                         "ITEM_GPS_POINTS": "GPS points",
                         "ITEM_LIVE_USERS": "Live users",
+                        "ITEM_DISALLOWED_TURNS": "Disallowed turns",
                         "ITEM_EDITABLE_AREAS": "Editable areas",
                         "GROUP_CITIES": "Cities",
                         "ITEM_CITY_NAMES": "Names"
@@ -309,6 +309,9 @@
                         "turns_allowed": "Draw new roads with all turns allowed",
                         "require_deselect": "Select only on empty selection",
                         "language": "Language",
+                        "turn_arrows": "Turn arrows",
+                        "spread_turn_arrows": "Spread when arrows overlap",
+                        "show_transparent_turn_arrows": "Make transparent",
                         "units": {
                             "title": "Units",
                             "metric": "Metric",
@@ -579,20 +582,27 @@
                     "save": {
                         "title": "Save"
                     },
-                    "search": "Search for an address or place",
-                    "search_event": "Search for an event"
+                    "search": "Search location",
+                    "search_event": "Search for an event",
+                    "drawing": "Road",
+                    "map-comments": "Comment",
+                    "cancel": "Cancel",
+                    "add_house_numbers": "Add house numbers",
+                    "venues": "Place"
                 },
                 "drawing": {
                     "road": "Road",
                     "roundabout": "Roundabout",
                     "gas_station": "Gas station",
                     "parking_lot": "Parking lot",
-                    "point": "%{name} (point)",
-                    "polygon": "%{name} (area)",
+                    "point": "Create Point",
+                    "polygon": "Create Area",
                     "big_junction": "Junction box",
                     "camera": "Camera",
                     "venue": "Place",
-                    "map_comment": "Map comment"
+                    "map_comment": "Map comment",
+                    "map_comment_point": "Point",
+                    "map_comment_area": "Area"
                 },
                 "layers": {
                     "loading": "Loading %{layer_name}...",
@@ -627,15 +637,12 @@
                     "to": "To"
                 },
                 "edit": {
+                    "placeholder": {
+                        "date": "yyyy-mm-dd",
+                        "time": "hh:mm"
+                    },
                     "unsaved_changes": "Changes you have made will be lost. Are you sure do you want to continue?",
                     "house_numbers": {
-                        "toolbar": {
-                            "close": "Close",
-                            "redo": "Redo",
-                            "undo": "Undo",
-                            "save": "Save",
-                            "add": "Add"
-                        },
                         "zoom_to_edit": "Zoom in to edit",
                         "save": {
                             "success": "House numbers successfully saved",
@@ -678,7 +685,8 @@
                         "street": "Street",
                         "none": "None",
                         "no_street": "No street",
-                        "no_city": "No city"
+                        "no_city": "No city",
+                        "edit": "edit"
                     },
                     "node": {
                         "title": "One node selected",
@@ -697,6 +705,7 @@
                     },
                     "segment": {
                         "fields": {
+                            "address": "Address",
                             "road_type": "Road type",
                             "routing": "Routing",
                             "toll": "This is a toll road",
@@ -706,6 +715,7 @@
                             "headlights": "Headlights required",
                             "nearbyHOV": "Next to carpool/HOV/bus lane",
                             "direction": "Direction",
+                            "restriction": "Restriction",
                             "fwdSpeedCamera": "A to B",
                             "revSpeedCamera": "B to A",
                             "level": "Elevation",
@@ -718,7 +728,8 @@
                             "updated_by": "Updated by"
                         },
                         "tooltips": {
-                            "nearbyHOV": "Use checkbox if segment is next to a separated segment marked as HOV or bus lane.  This ensures GPS deviation is taken into account when creating ETA."
+                            "nearbyHOV": "Use checkbox if segment is next to a separated segment marked as HOV or bus lane.  This ensures GPS deviation is taken into account when creating ETA.",
+                            "junction_exits": "Junction Box exits"
                         },
                         "tabs": {
                             "general": "General",
@@ -731,7 +742,7 @@
                         },
                         "lock_levels": {
                             "staff": "Staff",
-                            "automatic": "Automatic (%{rank})"
+                            "automatic": "Auto (%{rank})"
                         },
                         "levels": {
                             "0": "Ground"
@@ -779,15 +790,15 @@
                             },
                             "locked": {
                                 "title": "This segment is locked.",
-                                "description": "You need to be a level %{lockLevel} editor to edit this segment."
+                                "description": "You need to be a level %{lockLevel} / Waze partner editor to edit this segment."
                             },
                             "has_closures": {
                                 "title": "This segment has one or more road closures.",
                                 "description": "Remove all road closures to edit it."
                             },
                             "big_junction": {
-                                "title": "You cannot edit this segment.",
-                                "description": "This segment is part of a Junction box and cannot be edited. Delete the Junction box to edit it."
+                                "title": "Some attributes cannot be edited.",
+                                "description": "This segment is part of a junction box. Use the junction box to edit this segment's restrictions."
                             },
                             "multiple": {
                                 "title": "You cannot edit these segments.",
@@ -818,7 +829,8 @@
                         "type": {
                             "point": "Point",
                             "area": "Area"
-                        }
+                        },
+                        "clear": "Clear"
                     },
                     "city": {
                         "title": "One city selected",
@@ -861,7 +873,7 @@
                         },
                         "opening_hours": {
                             "title": "Opening hours",
-                            "add": "Add times",
+                            "add": "Add Opening Times",
                             "add_title": "Add opening hours",
                             "errors": {
                                 "days": "No days selected. Select at least one day",
@@ -903,7 +915,6 @@
                             "convert_from": "Convert to public"
                         },
                         "fields": {
-                            "contact": "Contact Info",
                             "services": "Services",
                             "url": "Website",
                             "phone": "Phone",
@@ -1000,6 +1011,7 @@
                         "no_address": "No address",
                         "segments": "Included segments: %{segments}",
                         "select_segments": "Select included segments",
+                        "entries": "Available entry points into this junction",
                         "validation_errors": {
                             "has_restrictions": "Has restrictions",
                             "trivial_connection_exists": "Direct connection exists"
@@ -1011,7 +1023,7 @@
                             "streetID": "Address",
                             "geometry": "Location/Geometry",
                             "houseNumber": "House number",
-                            "connections": "Connections"
+                            "entrances": "Entrances"
                         }
                     }
                 },
@@ -1040,7 +1052,8 @@
                         "added_on": "%{added_on_title} %{date}",
                         "added_on_title": "Added on",
                         "added_by": "%{added_by_title} %{username}",
-                        "added_by_title": "by"
+                        "added_by_title": "by",
+                        "delete": "Delete Photo"
                     },
                     "update_requests": {
                         "panel": {
@@ -1049,6 +1062,7 @@
                                 "VENUE": "Flagged place"
                             },
                             "title": {
+                                "MAIN_TITLE": "Place Update Request",
                                 "ADD_VENUE": "New place",
                                 "DELETE_VENUE": "Removed place",
                                 "UPDATE_VENUE": "New details for place",
@@ -1058,8 +1072,10 @@
                                 "open": "Open",
                                 "approve": "Approve",
                                 "reject": "Reject",
+                                "reopen": "Reopen",
                                 "reject_flag": "Ignore Flag",
-                                "add_to_map": "Add to map",
+                                "reopen_flag": "Reopen Flag",
+                                "add_to_map": "Approve",
                                 "solved": "Solved",
                                 "merge": "Merge places",
                                 "delete": "Delete place",
@@ -1315,16 +1331,20 @@
                         }
                     }
                 },
+                "snapshot": {
+                    "title": "You're in snapshot mode",
+                    "description": "Editing is disabled",
+                    "back_to_editing": "Back to editing"
+                },
                 "play_mode": {
-                    "title": "Practice mode",
-                    "description": "Edits you make here are just for practice, and can't be saved.",
-                    "login_link": "Log in",
-                    "login_msg": "%{login_link} to make live edits.",
+                    "title": "You’re in practice mode",
+                    "description": "Get to know the Waze Editor. Once you’re ready make real edits",
                     "sidebar": {
                         "subtitle": "You’re now in practice mode.",
-                        "description": "Your editing actions will not be saved but you can explore editing the map.",
-                        "login": "To make your edits permanent, login with your Waze account and contribute your knowledge to the map.",
-                        "help": "Need help creating your account?"
+                        "help": "Find your login info",
+                        "join": "Join the map editing community and your changes can improve the map and routing in your area.",
+                        "hey": "Be an editor,",
+                        "login_link": "Sign In"
                     }
                 },
                 "problems": {
@@ -1499,6 +1519,9 @@
                         }
                     },
                     "panel": {
+                        "titles": {
+                            "map_problem": "Map Problem"
+                        },
                         "auto_detected": "Automatically detected",
                         "closure": {
                             "title": "Road closure request",
@@ -1524,9 +1547,9 @@
                             "conversation": "Conversation"
                         },
                         "states": {
-                            "open": "Open",
-                            "solved": "Solved",
-                            "not_identified": "Not identified"
+                            "open": "Reopen",
+                            "solved": "Mark as Solved",
+                            "not_identified": "Mark as Not identified"
                         },
                         "more_info": {
                             "allSessions": "Related user drives (GPS traces)",
@@ -1623,23 +1646,23 @@
                     }
                 },
                 "welcome": {
-                    "title": "Welcome to the Waze map editor",
-                    "content": "Waze maps are user edited and open to anyone who wants to contribute.\nHelp improve routing in your area by ensuring the map is current and accurate.\nCurious to try? Use the practice mode!",
+                    "title": "Welcome to the Waze Map Editor",
+                    "content": "Become a Map Editor and improve traffic and routing in your area. Try it out in practice mode.",
                     "tutorial": {
-                        "title": "Get Started",
-                        "description": "Watch our video tutorial and learn all the basics to becoming a mapper"
+                        "title": "Get started",
+                        "description": "Learn the basics with these video tutorials"
                     },
                     "play_mode": {
                         "title": "Practice mode",
-                        "description": "Try the editor in practice mode and get your bearings"
+                        "description": "Try the editor and get your bearings"
                     },
                     "wiki": {
-                        "title": "Community wiki",
-                        "description": "Visit the community wiki for everything you need to know about the map editor"
+                        "title": "Community Wiki",
+                        "description": "Everything you need to know about the map editor"
                     },
                     "forum": {
                         "title": "Forums",
-                        "description": "Need advice? Check out your local forum to get help from experienced editors"
+                        "description": "Need advice? Get help from experienced editors"
                     }
                 },
                 "instruction_override": {
@@ -1885,8 +1908,8 @@
                     },
                     "direction": {
                         "0": "Unknown",
-                        "1": "One way (A → B)",
-                        "2": "One way (B → A)",
+                        "1": "A → B",
+                        "2": "B → A",
                         "3": "Two way (⇆)",
                         "label": {
                             "0": "Unknown",
@@ -1912,7 +1935,8 @@
                     },
                     "address": {
                         "none": "Unnamed segment"
-                    }
+                    },
+                    "house_number_disable_message": "Before editing house numbers, you need to save your current changes."
                 },
                 "street_view": {
                     "tooltip": "Drag for Street View"
@@ -1964,9 +1988,9 @@
                         "done": "Done"
                     },
                     "notifications": {
-                        "more_items": {
-                            "one": "1 More Notification",
-                            "other": "%{count} More Notifications"
+                        "collapsed_message": {
+                            "one": "1 Notification",
+                            "other": "%{count} Notifications"
                         },
                         "type": {
                             "PRIVATE_FORUM_MESSAGE": {
@@ -2088,16 +2112,16 @@
                                 "shortMessage": "Not sure what to do next? These videos might help!"
                             },
                             "CHECK_YOUR_NEIGHBORHOOD": {
-                                "title": "Welcome home!",
+                                "title": "See your home",
                                 "shortMessage": "Explore and edit your neighborhood."
                             }
                         }
                     },
                     "messages": {
                         "from": "From",
-                        "more_items": {
-                            "one": "1 More Private Message",
-                            "other": "%{count} More Private Messages"
+                        "collapsed_message": {
+                            "one": "1 Private Message",
+                            "other": "%{count} Private Messages"
                         }
                     },
                     "issues": {
@@ -2231,6 +2255,7 @@
                         "name": "Segment",
                         "fields": {
                             "type": "Type",
+                            "address": "Address",
                             "roadType": "Road type",
                             "fwdDirection": "A →B direction",
                             "revDirection": "B →A direction",
@@ -2376,6 +2401,7 @@
                 "en-GB": "English (UK)",
                 "es": "Español",
                 "es-419": "Español América Latina",
+                "fa-IR": "پارسی",
                 "fr": "Français",
                 "it": "Italiano",
                 "ru": "Русский",
@@ -2411,12 +2437,12 @@
                 "ar": "العربية"
             };
 
-            I18n.availableLocales = ["en", "en-US", "en-GB", "es", "es-419", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar"];
+            I18n.availableLocales = ["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar"];
 
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-477a08f1416546ca801c.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-eaa36305fe1d8db8d6fc.js"></script>
     </body>
 
 </html>
