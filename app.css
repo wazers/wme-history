@@ -8937,6 +8937,7 @@ select.form-control:focus {
     cursor: pointer;
     font-weight: normal;
     white-space: nowrap;
+    margin-bottom: 0;
 }
 
 .controls-container input[type="checkbox"]:not(:checked) + label:before, .controls-container input[type="checkbox"]:checked + label:before, .controls-container input[type="radio"]:not(:checked) + label:before, .controls-container input[type="radio"]:checked + label:before {
@@ -9475,7 +9476,7 @@ h4 {
 @charset "UTF-8"; .waze-tooltip {
     display: inline-block;
     cursor: default;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .waze-tooltip::before {
@@ -9539,22 +9540,22 @@ input, button, select, textarea {
 
 input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: #b2b9bd !important;
+    color: #92999d !important;
 }
 
 input::-moz-placeholder {
     /* Firefox 19+ */
-    color: #b2b9bd !important;
+    color: #92999d !important;
 }
 
 input:-ms-input-placeholder {
     /* IE 10+ */
-    color: #b2b9bd !important;
+    color: #92999d !important;
 }
 
 input:-moz-placeholder {
     /* Firefox 18- */
-    color: #b2b9bd !important;
+    color: #92999d !important;
 }
 
 .not-shown {
@@ -10268,7 +10269,7 @@ kbd.shiftKey::before {
     width: 23px;
     height: 23px;
     line-height: 23px;
-    margin-right: 3px;
+    margin-right: 2px;
     text-align: center;
     background-color: white;
     border-radius: 100%;
@@ -10281,8 +10282,8 @@ kbd.shiftKey::before {
 }
 
 .waze-radio-container label[for=lockRank-6], .waze-radio-container label[for=lockRank-null], .waze-radio-container label[for|=direction], .waze-radio-container label.data-mixed-indicator {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
     width: auto;
     border-radius: 13px;
 }
@@ -10332,7 +10333,7 @@ a.waze-link:hover, .btn-link:hover {
 }
 
 a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disabled {
-    color: #b2b9bd;
+    color: #92999d;
     pointer-events: none;
 }
 
@@ -10342,7 +10343,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .waze-gray-link {
-    color: #b2b9bd;
+    color: #92999d;
     text-decoration: underline;
     transition: all 150ms;
 }
@@ -10605,11 +10606,11 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     }
 }
 
-.toolbar .toolbar-button.reload .menu-title, .toolbar .toolbar-button.delete-feature-s- .menu-title {
+.toolbar .toolbar-button.reload .menu-title, .toolbar .toolbar-button.delete-feature .menu-title {
     display: none;
 }
 
-.toolbar .toolbar-button.reload .item-icon, .toolbar .toolbar-button.delete-feature-s- .item-icon {
+.toolbar .toolbar-button.reload .item-icon, .toolbar .toolbar-button.delete-feature .item-icon {
     display: block;
     position: relative;
     top: 8px;
@@ -10620,13 +10621,13 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .toolbar .toolbar-button.reload .item-icon, .toolbar .toolbar-button.delete-feature-s- .item-icon {
+    .toolbar .toolbar-button.reload .item-icon, .toolbar .toolbar-button.delete-feature .item-icon {
         background-image: url(//editor-assets.waze.com/beta/img/toolbar@2xcd8b2ab08e978d00eeee7817e1a0edda.png);
         background-size: 99px 87px;
     }
 }
 
-.toolbar .toolbar-button.reload.reload .item-icon, .toolbar .toolbar-button.delete-feature-s-.reload .item-icon {
+.toolbar .toolbar-button.reload.reload .item-icon, .toolbar .toolbar-button.delete-feature.reload .item-icon {
     background-image: url(//editor-assets.waze.com/beta/img/toolbar022c8e4d1f16c3825705364ff337bf1b.png);
     background-position: -33px -21px;
     width: 16px;
@@ -10634,7 +10635,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .toolbar .toolbar-button.reload.reload .item-icon, .toolbar .toolbar-button.delete-feature-s-.reload .item-icon {
+    .toolbar .toolbar-button.reload.reload .item-icon, .toolbar .toolbar-button.delete-feature.reload .item-icon {
         background-image: url(//editor-assets.waze.com/beta/img/toolbar@2xcd8b2ab08e978d00eeee7817e1a0edda.png);
         background-size: 99px 87px;
     }
@@ -10699,7 +10700,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     width: 1px;
     height: 46px;
     margin-left: 5px;
-    background-color: #dadada;
+    background-color: #bebebe;
     float: right;
     position: relative;
 }
@@ -11060,7 +11061,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     }
 }
 
-#edit-buttons .culture-entertainment .item-icon::after {
+#edit-buttons .culture-and-entertainement .item-icon::after {
     background-image: url(//editor-assets.waze.com/beta/img/toolbar022c8e4d1f16c3825705364ff337bf1b.png);
     background-position: -30px -37px;
     width: 16px;
@@ -11068,7 +11069,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #edit-buttons .culture-entertainment .item-icon::after {
+    #edit-buttons .culture-and-entertainement .item-icon::after {
         background-image: url(//editor-assets.waze.com/beta/img/toolbar@2xcd8b2ab08e978d00eeee7817e1a0edda.png);
         background-size: 99px 87px;
     }
@@ -11491,7 +11492,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #welcome-popup .language-select .dropdown-toggle {
-    color: #b2b9bd;
+    color: #92999d;
     text-decoration: underline;
     transition: all 150ms;
 }
@@ -12338,7 +12339,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #chat-overlay {
     z-index: 1040 !important;
-    bottom: 37px;
+    bottom: 26px;
     left: 20px;
     display: none;
     position: absolute;
@@ -12357,12 +12358,20 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     display: none;
 }
 
+#chat-overlay.visible-false #chat-toggle button {
+    filter: grayscale(100%);
+}
+
+#chat-overlay.visible-false #chat-toggle button:after {
+    opacity: 0.5;
+}
+
 #chat-overlay.visible-false.has-unread-messages #chat-toggle button {
     background-image: url(//editor-assets.waze.com/beta/img/status-msga23027f611d1e8a683f16c485ed5a05a.png);
 }
 
 #chat-overlay #chat-toggle {
-    height: 43px;
+    height: 40px;
     position: absolute;
     bottom: 0px;
     transition: all 0.3s;
@@ -12375,7 +12384,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: white;
     border-radius: 5px 5px 0px 0px;
     width: 43px;
-    height: 43px;
+    height: 40px;
 }
 
 #chat-overlay #chat-toggle button:after {
@@ -12401,21 +12410,15 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #chat-overlay #chat {
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s;
-    transform: translate3d(0px, 30px, 0px);
+    display: none;
 }
 
 #chat-overlay.open #chat-toggle {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 #chat-overlay.open #chat {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate3d(0px, 0px, 0px);
+    display: block;
 }
 
 #chat {
@@ -12562,7 +12565,6 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #chat .messages {
     width: 427px;
-    float: left;
     border-right: 1px solid rgba(126, 126, 126, 0.26);
     margin-right: -2px;
 }
@@ -12606,21 +12608,22 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #chat .messages .message-list .message.system-message .body {
     font-size: 12px;
-    color: #b2b9bd;
+    color: #92999d;
     text-align: center;
 }
 
 #chat .messages .message-list .message.system-message .body > div {
-    display: inline-block;
+    display: block;
+    text-align: center !important;
 }
 
-#chat .messages .message-list .message.system-message .body:after, #chat .messages .message-list .message.system-message .body:before {
+#chat .messages .message-list .message.system-message .body > div:after, #chat .messages .message-list .message.system-message .body > div:before {
     display: inline-block;
     content: "";
     width: 20px;
     height: 1px;
     background: #dadada;
-    position: Relative;
+    position: relative;
     margin-left: 5px;
     margin-right: 5px;
     top: -3px;
@@ -12646,7 +12649,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #chat .messages .message-list .message.normal-message .from {
-    color: #b2b9bd;
+    color: #92999d;
     font-size: 13px;
     font-weight: normal;
 }
@@ -12686,9 +12689,8 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #chat .users {
     min-height: 110px;
-    float: right;
     padding: 15px;
-    max-height: 310px;
+    max-height: 362px;
     width: 195px;
     vertical-align: top;
     overflow-y: auto;
@@ -12799,7 +12801,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #chat-overlay.connected .chat-body {
-    display: block;
+    display: flex;
 }
 
 #map.street-view-mode #chat .messages {
@@ -12827,7 +12829,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .street-view-control-container {
     position: absolute;
-    bottom: 100px;
+    bottom: 109px;
     right: 0px;
     width: 29px;
     height: 29px;
@@ -13146,7 +13148,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     height: 14px;
     border-radius: 14px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
     background-color: #00ece3;
     font-size: 12px;
     line-height: 14px;
@@ -13856,12 +13858,21 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     height: 39px;
 }
 
-.olMap.problem-selected .map-problem:not(.selected) {
-    opacity: 0.3;
+.olMap.problem-selected .map-problem {
+    opacity: 0.8;
 }
 
-.olMap.problem-selected .map-problem:not(.selected) {
-    opacity: 0.3;
+.olMap.problem-selected .map-problem:hover {
+    opacity: 1;
+}
+
+.olMap.problem-selected .selected {
+    filter: brightness(110%);
+    opacity: 1;
+}
+
+.olMap.problem-selected .selected.low {
+    filter: brightness(105%);
 }
 
 .editing-disabled .map-problem:hover {
@@ -13874,8 +13885,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-top: -18px;
     /*rtl:ignore*/
     margin-left: -13px;
-    margin-top: -36px;
-    transition: transform 100ms ease-in;
+    margin-top: -30px;
     cursor: pointer;
 }
 
@@ -13918,8 +13928,12 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .map-problem:hover {
-    transform: translate3d(0px, -1px, 0px);
+    filter: brightness(110%);
     z-index: 999;
+}
+
+.map-problem.low:hover {
+    filter: brightness(105%);
 }
 
 .map-problem.user-generated.solved {
@@ -14127,19 +14141,18 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     content: "";
     position: absolute;
     left: 0px;
-    bottom: 40px;
+    bottom: 26px;
     display: block;
     width: 30px;
     height: 30px;
     border-radius: 0px 0px 0px 5px;
-    box-shadow: -10px 10px 0px 5px #f6f7f7;
+    box-shadow: -10px 4px 0px 0px #f6f7f7;
     z-index: 999;
 }
 
 .olTileImage {
     filter: brightness(0.9);
     opacity: 0;
-    transition: opacity 150ms;
 }
 
 .olMapViewport {
@@ -14176,7 +14189,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-top: 5px;
     font-size: 14px;
     opacity: 1;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 #WazeMap .map-message .map-message-icon {
@@ -14190,7 +14203,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #WazeMap .map-message .return-to-edit-mode {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .WazeMapFooter {
@@ -14198,7 +14211,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 26px;
     padding-right: 20px;
     padding-left: 20px;
     background-color: #f6f7f7;
@@ -14207,7 +14220,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .footer-messages {
     position: absolute;
-    bottom: 40px;
+    bottom: 26px;
     left: 0;
     width: 100%;
 }
@@ -14263,7 +14276,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .olControlAttribution, .WazeControlMousePosition, .WazeControlPermalink {
-    line-height: 40px;
+    line-height: 26px;
     color: #354148;
     font-size: 12px;
     margin-left: 10px;
@@ -14282,16 +14295,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .olControlAttribution span {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .olControlAttribution a.waze-black-link {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .olControlAttribution a:after {
     display: inline-block;
-    color: #b2b9bd;
+    color: #92999d;
     content: " | ";
     padding: 0 10px;
 }
@@ -14302,27 +14315,31 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .WazeControlPermalink {
     float: right;
-    margin-top: 2px;
+    margin-top: 0px;
 }
 
 .WazeControlPermalink .permalink, .WazeControlPermalink .livemap-link {
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.WazeControlPermalink .permalink .icon, .WazeControlPermalink .livemap-link .icon {
     background-image: url(//editor-assets.waze.com/beta/img/buttons8ced0849575bdc8e5c3ada94ec3a4f39.png);
     background-position: -36px -24px;
     width: 15px;
     height: 15px;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 10px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .WazeControlPermalink .permalink, .WazeControlPermalink .livemap-link {
+    .WazeControlPermalink .permalink .icon, .WazeControlPermalink .livemap-link .icon {
         background-image: url(//editor-assets.waze.com/beta/img/buttons@2x020bee09fb359da41d99d42fd78fd9a8.png);
         background-size: 81px 69px;
     }
 }
 
-.WazeControlPermalink .livemap-link {
+.WazeControlPermalink .livemap-link .icon {
     background-image: url(//editor-assets.waze.com/beta/img/buttons8ced0849575bdc8e5c3ada94ec3a4f39.png);
     background-position: -51px 0px;
     width: 18px;
@@ -14330,14 +14347,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .WazeControlPermalink .livemap-link {
+    .WazeControlPermalink .livemap-link .icon {
         background-image: url(//editor-assets.waze.com/beta/img/buttons@2x020bee09fb359da41d99d42fd78fd9a8.png);
         background-size: 81px 69px;
     }
 }
 
 .WazeControlPermalink a {
-    line-height: 40px;
+    line-height: 26px;
     font-size: 15px;
     color: #59899e;
     cursor: pointer;
@@ -14391,7 +14408,7 @@ body[dir=rtl] .olControlScaleLine {
     display: block;
     font-size: 11px;
     line-height: 14px;
-    margin-top: 12px;
+    margin-top: 6px;
     text-align: center;
 }
 
@@ -14567,7 +14584,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .panel .header .reported {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .panel .header .title {
@@ -14576,7 +14593,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .panel .header .id {
-    color: #b2b9bd;
+    color: #92999d;
     font-weight: normal;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -14713,14 +14730,14 @@ body[dir=rtl] .olControlScaleLine {
     z-index: 3;
     height: 20px;
     position: absolute;
-    bottom: 35px;
+    bottom: 21px;
     color: #354148 !important;
 }
 
 #sidebar waze-links {
     display: block;
-    height: 40px;
-    line-height: 40px;
+    height: 26px;
+    line-height: 26px;
     padding: 0 6px;
     white-space: nowrap;
 }
@@ -14760,8 +14777,10 @@ body[dir=rtl] .olControlScaleLine {
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
-    height: 35px;
+    padding-top: 0px;
+    padding-bottom: 5px;
     display: flex;
+    flex-wrap: wrap;
     z-index: 4;
     position: relative;
 }
@@ -14785,6 +14804,8 @@ body[dir=rtl] .olControlScaleLine {
     padding: 0;
     text-align: center;
     text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #sidebar .nav-tabs li a[disabled] {
@@ -15017,7 +15038,6 @@ body[dir=rtl] .olControlScaleLine {
     margin-bottom: 5px;
     box-sizing: border-box;
     border-radius: 8px;
-    overflow: hidden;
     cursor: pointer;
     transition: all 200ms ease-in-out;
 }
@@ -15229,7 +15249,7 @@ body[dir=rtl] .olControlScaleLine {
     display: inline-block;
     font-weight: 400;
     font-size: 11px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 #sidebar #user-details .user-stats .stat, #sidebar #user-details .user-stats .separator {
@@ -15335,7 +15355,7 @@ body[dir=rtl] .olControlScaleLine {
     height: 1px;
     left: 0px;
     bottom: -1px;
-    background: #dadada;
+    background: #bebebe;
 }
 
 #sidebar .sandbox .links a:last-child:after {
@@ -15420,7 +15440,6 @@ body[dir=rtl] .olControlScaleLine {
     margin-bottom: 5px;
     box-sizing: border-box;
     border-radius: 8px;
-    overflow: hidden;
     cursor: pointer;
     transition: all 200ms ease-in-out;
 }
@@ -15591,7 +15610,7 @@ body[dir=rtl] .olControlScaleLine {
     height: 1px;
     left: 0px;
     bottom: -1px;
-    background: #dadada;
+    background: #bebebe;
 }
 
 .sandbox .links a:last-child:after {
@@ -15774,7 +15793,7 @@ body[dir=rtl] .olControlScaleLine {
     display: inline-block;
     font-weight: 400;
     font-size: 11px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 #user-details .user-stats .stat, #user-details .user-stats .separator {
@@ -15959,13 +15978,30 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 #edit-panel .inner-form, .edit-panel .inner-form {
-    padding: 23px;
+    padding: 23px 29px;
     border: 1px solid #dadada;
     border-radius: 3px;
 }
 
+#edit-panel .address-edit-view .address-form, .edit-panel .address-edit-view .address-form {
+    padding-bottom: 0px;
+}
+
 #edit-panel .address-edit-view .address-form .action-buttons, .edit-panel .address-edit-view .address-form .action-buttons {
     margin-top: 20px;
+    padding: 16px 0px;
+    height: 62px;
+    position: relative;
+}
+
+#edit-panel .address-edit-view .address-form .action-buttons:before, .edit-panel .address-edit-view .address-form .action-buttons:before {
+    content: "";
+    left: -29px;
+    right: -29px;
+    background: #dadada;
+    height: 1px;
+    position: absolute;
+    top: 0px;
 }
 
 #edit-panel .address-edit-view .address-form .toggle-empty.in-label, .edit-panel .address-edit-view .address-form .toggle-empty.in-label {
@@ -15979,12 +16015,14 @@ body[dir=rtl] .olControlScaleLine {
     padding-left: 22px;
 }
 
-#edit-panel .address-edit-view .preview .address-edit-btn, .edit-panel .address-edit-view .preview .address-edit-btn {
+#edit-panel .address-edit-view .preview .address-edit-input, .edit-panel .address-edit-view .preview .address-edit-input {
+    padding-left: 10px;
+    padding-right: 10px;
     display: inline-block;
     text-decoration: none;
 }
 
-#edit-panel .address-edit-view .preview .address-edit-btn.disabled .address-edit-icon, .edit-panel .address-edit-view .preview .address-edit-btn.disabled .address-edit-icon {
+#edit-panel .address-edit-view .preview .address-edit-input.disabled .address-edit-icon, .edit-panel .address-edit-view .preview .address-edit-input.disabled .address-edit-icon {
     display: none;
 }
 
@@ -15996,15 +16034,23 @@ body[dir=rtl] .olControlScaleLine {
     display: none;
 }
 
-#edit-panel .address-edit-btn:before, #edit-panel .address-edit-btn:after, .edit-panel .address-edit-btn:before, .edit-panel .address-edit-btn:after {
-    content: "(";
+#edit-panel .address-edit-input, #edit-panel .full-address, .edit-panel .address-edit-input, .edit-panel .full-address {
+    background: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    width: 100%;
+    border-radius: 8px;
+    border: 0 none;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: inline-block;
-    color: #354148;
-    text-decoration: none;
+    color: #3d3d3d;
 }
 
-#edit-panel .address-edit-btn:after, .edit-panel .address-edit-btn:after {
-    content: ")";
+#edit-panel .address-edit-input.disabled, #edit-panel .full-address.disabled, .edit-panel .address-edit-input.disabled, .edit-panel .full-address.disabled {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    background-color: #eeeeee;
+    cursor: not-allowed;
 }
 
 #edit-panel .additional-attributes, .edit-panel .additional-attributes {
@@ -16131,7 +16177,7 @@ body[dir=rtl] .olControlScaleLine {
     right: 10px;
     bottom: 4px;
     font-weight: normal;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 #edit-panel .map-comment-feature-editor .new-comment-form .input-max-length, .edit-panel .map-comment-feature-editor .new-comment-form .input-max-length {
@@ -16190,7 +16236,12 @@ body[dir=rtl] .olControlScaleLine {
     margin-bottom: 10px;
 }
 
+#edit-panel .segment .address-form .primary-street, .edit-panel .segment .address-form .primary-street {
+    padding: 23px 29px;
+}
+
 #edit-panel .segment .address-form, .edit-panel .segment .address-form {
+    padding: 0;
     position: relative;
 }
 
@@ -16342,6 +16393,17 @@ body[dir=rtl] .olControlScaleLine {
     border-radius: 8px 0px 0px 8px;
 }
 
+#edit-panel .segment .address-edit-view .address-form .action-buttons, .edit-panel .segment .address-edit-view .address-form .action-buttons {
+    padding: 16px 29px;
+    height: 62px;
+    margin-top: 10px;
+    border-top: 1px solid #dadada;
+}
+
+#edit-panel .segment .address-edit-view .address-form .action-buttons:before, .edit-panel .segment .address-edit-view .address-form .action-buttons:before {
+    content: none;
+}
+
 #edit-panel .contents, .edit-panel .contents {
     overflow: auto;
 }
@@ -16354,6 +16416,7 @@ body[dir=rtl] .olControlScaleLine {
 
 #edit-panel .alt-street-list, .edit-panel .alt-street-list {
     margin-top: 3px;
+    padding-left: 10px;
 }
 
 #edit-panel .alt-street-list li, .edit-panel .alt-street-list li {
@@ -16373,9 +16436,32 @@ body[dir=rtl] .olControlScaleLine {
     opacity: 1.0;
 }
 
+#edit-panel .alt-streets-actions, .edit-panel .alt-streets-actions {
+    padding-left: 29px;
+}
+
 #edit-panel .alt-streets-actions .add-alt-street-btn, .edit-panel .alt-streets-actions .add-alt-street-btn {
-    font-size: 14px;
+    position: relative;
+    top: -5px;
+    display: inline-block;
     color: #26bae8;
+}
+
+#edit-panel .alt-street-delete, .edit-panel .alt-street-delete {
+    background-image: url(//editor-assets.waze.com/beta/img/toolbar022c8e4d1f16c3825705364ff337bf1b.png);
+    background-position: -65px -16px;
+    width: 13px;
+    height: 16px;
+    position: absolute;
+    display: block;
+    transition: opacity 150ms;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #edit-panel .alt-street-delete, .edit-panel .alt-street-delete {
+        background-image: url(//editor-assets.waze.com/beta/img/toolbar@2xcd8b2ab08e978d00eeee7817e1a0edda.png);
+        background-size: 99px 87px;
+    }
 }
 
 #edit-panel .add-alt-street-form, .edit-panel .add-alt-street-form {
@@ -16398,17 +16484,42 @@ body[dir=rtl] .olControlScaleLine {
     display: none;
 }
 
+#edit-panel .add-alt-street-form .alt-street, .edit-panel .add-alt-street-form .alt-street {
+    width: 100%;
+    position: relative;
+    padding: 23px 29px;
+    border-top: 1px solid #dadada;
+}
+
+#edit-panel .add-alt-street-form .alt-street .alt-street-delete, .edit-panel .add-alt-street-form .alt-street .alt-street-delete {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    opacity: 0;
+}
+
+#edit-panel .add-alt-street-form .alt-street:hover .alt-street-delete, .edit-panel .add-alt-street-form .alt-street:hover .alt-street-delete {
+    opacity: 1;
+}
+
+#edit-panel .add-alt-street-form .alt-street .city-name, #edit-panel .add-alt-street-form .alt-street .street-name, .edit-panel .add-alt-street-form .alt-street .city-name, .edit-panel .add-alt-street-form .alt-street .street-name {
+    display: inline-block;
+}
+
 #edit-panel .add-alt-street-form .new-alt-street, .edit-panel .add-alt-street-form .new-alt-street {
     position: relative;
+    padding: 23px 29px;
 }
 
 #edit-panel .add-alt-street-form .new-alt-street:before, .edit-panel .add-alt-street-form .new-alt-street:before {
     content: "";
     display: block;
     height: 1px;
-    background-color: #b2b9bd;
-    margin-left: -23px;
-    margin-right: -23px;
+    background-color: #dadada;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
 }
 
 #edit-panel .add-alt-street-form .new-alt-street .alt-street-block, .edit-panel .add-alt-street-form .new-alt-street .alt-street-block {
@@ -16427,8 +16538,13 @@ body[dir=rtl] .olControlScaleLine {
 
 #edit-panel .add-alt-street-form .new-alt-street .alt-street-delete, .edit-panel .add-alt-street-form .new-alt-street .alt-street-delete {
     position: absolute;
-    right: -20px;
+    right: 10px;
     top: 10px;
+    opacity: 0;
+}
+
+#edit-panel .add-alt-street-form .new-alt-street:hover .alt-street-delete, .edit-panel .add-alt-street-form .new-alt-street:hover .alt-street-delete {
+    opacity: 1;
 }
 
 #edit-panel .add-alt-street-form .new-alt-street label, .edit-panel .add-alt-street-form .new-alt-street label {
@@ -16445,6 +16561,11 @@ body[dir=rtl] .olControlScaleLine {
 #edit-panel .add-alt-street-form .new-alt-street label input[type=text], #edit-panel .add-alt-street-form .new-alt-street label input[type=password], .edit-panel .add-alt-street-form .new-alt-street label input[type=text], .edit-panel .add-alt-street-form .new-alt-street label input[type=password] {
     width: 100%;
     display: block;
+}
+
+#edit-panel .add-alt-street-form .new-alt-street .city-container, .edit-panel .add-alt-street-form .new-alt-street .city-container {
+    display: inline-block;
+    width: 100%;
 }
 
 #edit-panel .add-alt-street-form .new-alt-street .street-block, .edit-panel .add-alt-street-form .new-alt-street .street-block {
@@ -16946,7 +17067,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .panel.place-update-edit .add-details {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .panel.place-update-edit .request-details, .panel.place-update-edit .changes, .panel.place-update-edit .navigation {
@@ -17044,6 +17165,8 @@ body[dir=rtl] .olControlScaleLine {
 
 .panel.place-update-edit .name {
     margin: 0;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .panel.place-update-edit .categories {
@@ -17253,7 +17376,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .venue-image-dialog .details {
     margin-top: 10px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .venue-image-dialog .close {
@@ -17329,7 +17452,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 #WazeMap .place-updates.highlight-selected .place-update {
-    opacity: 0.3;
+    opacity: 0.7;
 }
 
 #WazeMap .place-updates.highlight-selected .place-update.selected {
@@ -17342,14 +17465,13 @@ body[dir=rtl] .olControlScaleLine {
     margin-top: -18px;
     /*rtl:ignore*/
     margin-left: -13px;
-    margin-top: -36px;
-    transition: transform 100ms ease-in;
+    margin-top: -30px;
 }
 
 #WazeMap .place-update:hover {
     cursor: pointer;
-    transform: translate3d(0px, -1px, 0px);
     filter: brightness(110%);
+    opacity: 1;
 }
 
 #WazeMap .place-update.high {
@@ -17851,11 +17973,12 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .conversation-view .comment .comment-title .date {
-    color: #b2b9bd;
+    color: #92999d;
     font-weight: normal;
 }
 
 .conversation-view .comment .text {
+    user-select: initial;
     background: #ffffff;
     border-radius: 8px;
     padding: 9px 14px 9px 14px;
@@ -17938,11 +18061,11 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .problem-edit[data-state=not-identified] .header .main-title {
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .problem-edit[data-state=not-identified] .header .dot {
-    background-color: #b2b9bd;
+    background-color: #92999d;
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -18072,7 +18195,7 @@ body[dir=rtl] .olControlScaleLine {
     position: absolute;
     right: 10px;
     bottom: 30px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .problem-edit .conversation.loading .comment-count-badge {
@@ -18184,7 +18307,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .geolocation-control-container {
-    bottom: 65px;
+    bottom: 67px;
     position: absolute;
     right: 0px;
     margin-right: -2px;
@@ -18279,10 +18402,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .topbar .area-managers {
     padding: 0 10px;
-    color: #dadada;
-    font-size: 11px;
-    font-weight: bold;
-    font-weight: 600;
+    color: white;
 }
 
 .topbar .area-managers .main-list-region, .topbar .area-managers .rest-list-region, .topbar .area-managers .title {
@@ -18291,11 +18411,6 @@ body[dir=rtl] .olControlScaleLine {
 
 .topbar .area-managers a, .topbar .area-managers .rest-list .dropdown {
     color: #26bae8;
-}
-
-.topbar .area-managers a:hover, .topbar .area-managers .rest-list .dropdown:hover {
-    color: white !important;
-    text-decoration: underline !important;
 }
 
 .topbar .area-managers .rest-list {
@@ -18321,7 +18436,7 @@ body[dir=rtl] .olControlScaleLine {
 }
 
 .topbar .area-managers .rest-list .area-manager-item {
-    padding: 0 5px;
+    padding: 0 15px;
     font-size: 11px;
     font-weight: bold;
     font-weight: 600;
@@ -18478,7 +18593,7 @@ body[dir=rtl] .olControlScaleLine {
     text-align: center;
     margin-top: 19px;
     margin-bottom: 30px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .feed-empty-image {
@@ -18574,7 +18689,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .feed-item .content .timestamp {
     font-size: 11px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .feed-item .delete {
@@ -18743,7 +18858,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .feed-issue .content .subtext, [class*='feed-issue-'] .content .subtext {
     font-size: 11px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 .feed-issue-ur.feed-issue-open.severity-low .icon {
@@ -19868,7 +19983,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .map-comment-name-editor .reported-date {
     font-size: 11px;
-    color: #b2b9bd;
+    color: #92999d;
 }
 
 #edit-panel .city-feature-editor .feature-editor-header {
@@ -19952,7 +20067,7 @@ body[dir=rtl] .olControlScaleLine {
 
 .toggleHistory {
     padding: 11px;
-    color: #b2b9bd;
+    color: #92999d;
     text-align: left;
     cursor: pointer;
     font-weight: bold;
