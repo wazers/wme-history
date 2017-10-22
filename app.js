@@ -1892,7 +1892,7 @@ webpackJsonp([0], [function(e, t, i) {
         M = n(S),
         k = i(14),
         T = n(k),
-        C = i(41),
+        C = i(38),
         A = i(27),
         I = n(A),
         O = OL.Class(g.default, {
@@ -2527,79 +2527,6 @@ webpackJsonp([0], [function(e, t, i) {
         return (0,
             s.default)(e)
     }
-}, , , function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = i(179),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = s.default.extend({
-            TYPE: {
-                MAP_PROBLEM: "MAP_PROBLEM",
-                VENUE_UPDATE_REQUEST: "VENUE_UPDATE_REQUEST",
-                UPDATE_REQUEST: "UPDATE_REQUEST"
-            },
-            MOTIVATIONS: {
-                1: "REPORTED_BY_USER",
-                2: "USER_FOLLOWS_ISSUE",
-                4: "USER_FOLLOWS_ISSUE_LAST_COMMENT",
-                8: "CLOSE_TO_FAVORITES",
-                16: "NEAR_DRIVES",
-                32: "ISSUE_AGE",
-                64: "ISSUE_REOPENED",
-                128: "CAN_BE_SOLVED_BY_RANK"
-            },
-            defaults: {
-                state: ""
-            },
-            initialize: function() {
-                s.default.prototype.initialize.apply(this),
-                    this.set("state", this.getFeedIssueState())
-            },
-            _isModified: function() {
-                return !1
-            },
-            _isResolved: function() {
-                return !1
-            },
-            getSeverity: function() {
-                return null
-            },
-            onModelChanged: function() {
-                this.set("modified", this._isModified()),
-                    this.set("state", this.getFeedIssueState())
-            },
-            onModelSynced: function() {
-                if (this.set("modified", !1),
-                    this.set("state", this.getFeedIssueState()),
-                    this._isResolved())
-                    return this.trigger("resolved")
-            },
-            onModelRemoved: function() {
-                return this.destroy()
-            },
-            sync: function(e, t) {
-                var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
-                if ("delete" === e) {
-                    var n = W.Config.paths.issues + "/" + t.get("type") + "/" + t.get("id");
-                    i.url = encodeURI(n)
-                }
-                return Backbone.sync(e, t, i)
-            },
-            getFeedIssueState: function() {
-                return ""
-            }
-        });
-    r.prototype.defaults = _.extend({
-            modified: !1
-        }, s.default.prototype.defaults),
-        t.default = r,
-        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
 
@@ -2745,6 +2672,79 @@ webpackJsonp([0], [function(e, t, i) {
             RESTRICTION_SEGMENT_LANE_TYPE: S,
             RESTRICTION_SEGMENT_DISPOSITION: E
         },
+        e.exports = t.default
+}, , , function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(179),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = s.default.extend({
+            TYPE: {
+                MAP_PROBLEM: "MAP_PROBLEM",
+                VENUE_UPDATE_REQUEST: "VENUE_UPDATE_REQUEST",
+                UPDATE_REQUEST: "UPDATE_REQUEST"
+            },
+            MOTIVATIONS: {
+                1: "REPORTED_BY_USER",
+                2: "USER_FOLLOWS_ISSUE",
+                4: "USER_FOLLOWS_ISSUE_LAST_COMMENT",
+                8: "CLOSE_TO_FAVORITES",
+                16: "NEAR_DRIVES",
+                32: "ISSUE_AGE",
+                64: "ISSUE_REOPENED",
+                128: "CAN_BE_SOLVED_BY_RANK"
+            },
+            defaults: {
+                state: ""
+            },
+            initialize: function() {
+                s.default.prototype.initialize.apply(this),
+                    this.set("state", this.getFeedIssueState())
+            },
+            _isModified: function() {
+                return !1
+            },
+            _isResolved: function() {
+                return !1
+            },
+            getSeverity: function() {
+                return null
+            },
+            onModelChanged: function() {
+                this.set("modified", this._isModified()),
+                    this.set("state", this.getFeedIssueState())
+            },
+            onModelSynced: function() {
+                if (this.set("modified", !1),
+                    this.set("state", this.getFeedIssueState()),
+                    this._isResolved())
+                    return this.trigger("resolved")
+            },
+            onModelRemoved: function() {
+                return this.destroy()
+            },
+            sync: function(e, t) {
+                var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+                if ("delete" === e) {
+                    var n = W.Config.paths.issues + "/" + t.get("type") + "/" + t.get("id");
+                    i.url = encodeURI(n)
+                }
+                return Backbone.sync(e, t, i)
+            },
+            getFeedIssueState: function() {
+                return ""
+            }
+        });
+    r.prototype.defaults = _.extend({
+            modified: !1
+        }, s.default.prototype.defaults),
+        t.default = r,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -7335,7 +7335,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(239),
         u = i(131),
-        d = i(41),
+        d = i(38),
         c = new l.DateTimeUtil,
         h = function() {
             function e() {
@@ -7503,7 +7503,7 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(153),
         c = n(d),
-        h = i(40),
+        h = i(41),
         f = n(h),
         p = i(75),
         g = n(p),
@@ -16428,7 +16428,7 @@ webpackJsonp([0], [function(e, t, i) {
         w = i(823),
         E = i(824),
         S = i(825),
-        M = i(41),
+        M = i(38),
         k = function(e) {
             function t() {
                 return (0,
@@ -16726,7 +16726,7 @@ webpackJsonp([0], [function(e, t, i) {
         p = i(107),
         g = i(53),
         m = i(93),
-        v = i(41),
+        v = i(38),
         y = function(e) {
             function t() {
                 return (0,
@@ -17471,7 +17471,7 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(15),
         c = n(d),
-        h = i(41),
+        h = i(38),
         f = i(132),
         p = i(107),
         g = function(e) {
@@ -20305,7 +20305,7 @@ webpackJsonp([0], [function(e, t, i) {
     var n = i(25),
         s = i(16),
         r = i(34),
-        a = i(39),
+        a = i(40),
         o = i(22)("species");
     e.exports = function(e) {
         var t = "function" == typeof s[e] ? s[e] : n[e];
@@ -21365,7 +21365,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     var n = i(32);
-    n(n.S + n.F * !i(39), "Object", {
+    n(n.S + n.F * !i(40), "Object", {
         defineProperty: i(34).f
     })
 }, function(e, t, i) {
@@ -22024,7 +22024,7 @@ webpackJsonp([0], [function(e, t, i) {
         d = n(u),
         c = i(508),
         h = n(c),
-        f = i(40).prototype.TYPE,
+        f = i(41).prototype.TYPE,
         p = {
             TYPE_TO_CLASS: (s = {},
                 (0,
@@ -22052,7 +22052,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(40),
+    var s = i(41),
         r = n(s),
         a = i(62),
         o = n(a),
@@ -22189,7 +22189,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(40),
+    var n = i(41),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -22230,7 +22230,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(40),
+    var s = i(41),
         r = n(s),
         a = i(181),
         o = n(a),
@@ -38569,7 +38569,7 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function() {
                         var e = this._turnArrow.getFromSegment().areTurnsLocked(this._turnArrow.getNode()),
                             t = this._turnArrow.getTurn().getTurnData().isAllowed();
-                        return W.Config.restrictions.allowEditing && e && t && !this._turnArrow.getTurn().getTurnData().hasSegmentPath()
+                        return W.Config.restrictions.allowEditing && e && t
                     }
                 }, {
                     key: "onRender",
@@ -38769,11 +38769,12 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(53),
         v = i(210),
-        _ = i(107),
-        y = i(240),
-        b = i(826),
-        w = i(137),
-        E = function(e) {
+        _ = i(38),
+        y = i(107),
+        b = i(240),
+        w = i(826),
+        E = i(137),
+        S = function(e) {
             function t() {
                 return (0,
                         o.default)(this, t),
@@ -38790,7 +38791,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return {
                             contentRegion: {
                                 el: ".modal-content",
-                                regionClass: w.DialogContentRegion,
+                                regionClass: E.DialogContentRegion,
                                 onEscapeKeydown: this._onEscapeKeydown.bind(this)
                             }
                         }
@@ -38798,7 +38799,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_onEscapeKeydown",
                     value: function(e) {
-                        if (this.getChildView("contentRegion") instanceof y.RestrictionEditView)
+                        if (this.getChildView("contentRegion") instanceof b.RestrictionEditView)
                             return e.preventDefault(),
                                 this._showSummaryView(), !1
                     }
@@ -38809,7 +38810,7 @@ webpackJsonp([0], [function(e, t, i) {
                             this._turn = e.turn,
                             this._canEditRestrictions = e.canEditRestrictions,
                             this._restrictions = this._turn.getTurnData().getRestrictions(),
-                            this._viewHelpers = new _.TurnRestrictionViewHelpers({
+                            this._viewHelpers = new y.TurnRestrictionViewHelpers({
                                 turn: this._turn,
                                 dataModel: this._dataModel
                             })
@@ -38874,7 +38875,7 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function() {
                         var e = this._turn.getTurnData().withRestrictions(this._restrictions),
                             t = this._turn.withTurnData(e);
-                        this.showChildView("contentRegion", new b.TurnRestrictionsSummaryView({
+                        this.showChildView("contentRegion", new w.TurnRestrictionsSummaryView({
                             turn: t,
                             canEditRestrictions: this._canEditRestrictions,
                             subscriptions: this._dataModel.getRestrictionSubscriptions(),
@@ -38888,7 +38889,7 @@ webpackJsonp([0], [function(e, t, i) {
                             t = e.restriction,
                             i = e.isNewRestriction,
                             n = void 0 !== i && i;
-                        this.showChildView("contentRegion", new y.RestrictionEditView({
+                        this.showChildView("contentRegion", new b.RestrictionEditView({
                             restriction: t,
                             isNewRestriction: n,
                             canEditRestrictions: this._canEditRestrictions,
@@ -38900,13 +38901,18 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_showCreateTurnRestrictionView",
                     value: function() {
-                        var e = new v.TurnRestriction({
-                            defaultType: m.RESTRICTION_TYPE.FREE
-                        });
-                        this._showEditView({
-                            restriction: e,
-                            isNewRestriction: !0
-                        })
+                        var e = this._turn.getTurnData().hasSegmentPath(),
+                            t = void 0;
+                        t = e ? new _.SegmentRestriction({
+                                direction: null,
+                                defaultType: m.RESTRICTION_TYPE.FREE
+                            }) : new v.TurnRestriction({
+                                defaultType: m.RESTRICTION_TYPE.FREE
+                            }),
+                            this._showEditView({
+                                restriction: t,
+                                isNewRestriction: !0
+                            })
                     }
                 }, {
                     key: "_updateIsTurnDifficult",
@@ -38933,7 +38939,7 @@ webpackJsonp([0], [function(e, t, i) {
                 t
         }(Marionette.View);
     t.default = {
-            TurnRestrictionsMainView: E
+            TurnRestrictionsMainView: S
         },
         e.exports = t.default
 }, function(e, t, i) {
@@ -39088,7 +39094,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(5),
         g = n(p),
-        m = i(41),
+        m = i(38),
         v = function(e) {
             function t() {
                 return (0,
@@ -41346,7 +41352,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(50),
         o = n(a),
-        l = i(40),
+        l = i(41),
         u = n(l),
         d = i(24),
         c = n(d),
@@ -41683,7 +41689,7 @@ webpackJsonp([0], [function(e, t, i) {
         l = i(846),
         u = n(l),
         d = i(96).prototype.TYPE,
-        c = i(40).prototype.TYPE,
+        c = i(41).prototype.TYPE,
         h = Marionette.Object.extend({
             initialize: function(e) {
                 return this.currentFeedItem = null,
@@ -41890,7 +41896,7 @@ webpackJsonp([0], [function(e, t, i) {
         h = n(c),
         f = i(852),
         p = n(f),
-        g = i(40).prototype.TYPE,
+        g = i(41).prototype.TYPE,
         m = Marionette.CollectionView.extend({
             TYPE_TO_VIEW: (s = {},
                 (0,
@@ -46244,7 +46250,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(19),
         v = n(m),
-        _ = i(41),
+        _ = i(38),
         y = i(889),
         b = i(240),
         w = i(890),
@@ -46654,7 +46660,7 @@ webpackJsonp([0], [function(e, t, i) {
         p = i(5),
         g = n(p),
         m = i(241),
-        v = i(41),
+        v = i(38),
         y = function(e) {
             function t() {
                 return (0,
