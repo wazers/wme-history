@@ -28310,7 +28310,7 @@ webpackJsonp([0], [function(e, t, i) {
                         if (W.Config.chat.enable) {
                             var e = new N.default({
                                     app: W.app,
-                                    authCookieName: D.default.prototype.COOKIE_NAME
+                                    authCookieName: W.loginManager.getAuthCookieName()
                                 }),
                                 t = new T.default(W.model, e, W.map),
                                 i = new A.default(W.model, e, t);
@@ -32622,6 +32622,11 @@ webpackJsonp([0], [function(e, t, i) {
                                 user: null,
                                 logout: !0
                             }))
+                    }
+                }, {
+                    key: "getAuthCookieName",
+                    value: function() {
+                        return "_web_session"
                     }
                 }]),
                 e
