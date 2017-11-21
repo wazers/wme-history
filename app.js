@@ -752,7 +752,7 @@ webpackJsonp([0], [function(e, t, i) {
             default: e
         }
     }
-    var s = i(33),
+    var s = i(32),
         r = n(s),
         a = i(59),
         o = n(a),
@@ -2504,12 +2504,12 @@ webpackJsonp([0], [function(e, t, i) {
         CLASS_NAME: "Waze.Control"
     });
     e.exports = n
-}, , function(e, t, i) {
+}, function(e, t, i) {
     e.exports = {
         default: i(399),
         __esModule: !0
     }
-}, , , , function(e, t, i) {
+}, , , , , function(e, t, i) {
     "use strict";
     t.__esModule = !0;
     var n = i(493),
@@ -5186,7 +5186,7 @@ webpackJsonp([0], [function(e, t, i) {
         V = n(N),
         U = i(82),
         j = n(U),
-        F = function(e) {
+        z = function(e) {
             function t(e) {
                 var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                 (0,
@@ -5350,10 +5350,10 @@ webpackJsonp([0], [function(e, t, i) {
                 t
         }(w.default);
     (0,
-        r.default)(F.prototype, {
+        r.default)(z.prototype, {
         CLASS_NAME: "Waze.Action.SplitSegments"
     }),
-    t.default = F,
+    t.default = z,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -5447,7 +5447,7 @@ webpackJsonp([0], [function(e, t, i) {
         __esModule: !0
     }
 }, function(e, t, i) {
-    var n = i(32),
+    var n = i(33),
         s = i(16),
         r = i(57);
     e.exports = function(e, t) {
@@ -6559,45 +6559,45 @@ webpackJsonp([0], [function(e, t, i) {
         a = n(r),
         o = i(222),
         l = n(o),
-        u = i(717),
+        u = i(719),
         d = n(u),
         c = i(223),
         h = n(c),
-        f = i(718),
+        f = i(720),
         p = n(f),
-        g = i(726),
+        g = i(728),
         m = n(g),
-        v = i(727),
+        v = i(729),
         y = n(v),
         b = i(224),
         w = n(b),
-        E = i(728),
+        E = i(730),
         S = n(E),
-        M = i(729),
+        M = i(731),
         k = n(M),
         T = i(105),
         C = n(T),
-        A = i(730),
+        A = i(732),
         I = n(A),
-        O = i(754),
+        O = i(756),
         L = n(O),
-        D = i(755),
+        D = i(757),
         R = n(D),
         x = i(225),
         P = n(x),
-        N = i(756),
+        N = i(758),
         V = n(N),
-        U = i(757),
+        U = i(759),
         j = n(U),
-        F = i(758),
-        z = n(F),
-        B = i(759),
+        z = i(760),
+        F = n(z),
+        B = i(761),
         G = n(B),
         H = i(8),
         q = n(H),
         Y = i(12),
         K = n(Y),
-        J = i(760),
+        J = i(762),
         Z = n(J),
         X = i(44),
         Q = n(X),
@@ -6638,8 +6638,8 @@ webpackJsonp([0], [function(e, t, i) {
                     this._addVectorLayers()
             },
             _addRasterLayers: function() {
-                return this._addRasterLayer(W.Config.raster_layers[ae.GPS_POINTS]),
-                    this._addRasterLayer(W.Config.raster_layers[ae.ROADS]),
+                return this._addRasterLayer(W.Config.raster_layers[ae.ROADS]),
+                    this._addRasterLayer(W.Config.raster_layers[ae.GPS_POINTS]),
                     this.roadLayers = [this.getLayerByUniqueName(ae.ROADS)],
                     W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
                     this._setRoadLayerParams()
@@ -6808,7 +6808,7 @@ webpackJsonp([0], [function(e, t, i) {
                     }),
                     this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.camerasLayer, this.bigJunctionPathLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.liveUsersLayer]),
                     this.closuresMarkerLayer = new G.default(I18n.t("layers.name.closures"), [W.model.roadClosures], {
-                        markerClass: z.default,
+                        markerClass: F.default,
                         uniqueName: ae.CLOSURES,
                         toggleRepo: !0
                     }),
@@ -7833,7 +7833,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(33),
+    var s = i(32),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -9257,7 +9257,7 @@ webpackJsonp([0], [function(e, t, i) {
             default: new OpenLayers.Style(s, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return i(731)("./" + n[e.attributes.code] + ".png")
+                        return i(733)("./" + n[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -9279,7 +9279,7 @@ webpackJsonp([0], [function(e, t, i) {
                 graphicZIndex: 2
             },
             driveArrow: {
-                externalGraphic: i(750),
+                externalGraphic: i(752),
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -9312,14 +9312,14 @@ webpackJsonp([0], [function(e, t, i) {
             },
             pinA: {
                 pointerEvents: "visiblePainted",
-                externalGraphic: i(751),
+                externalGraphic: i(753),
                 graphicWidth: 33,
                 graphicHeight: 40,
                 graphicYOffset: -35
             },
             pinB: {
                 pointerEvents: "visiblePainted",
-                externalGraphic: i(752),
+                externalGraphic: i(754),
                 graphicWidth: 33,
                 graphicHeight: 40,
                 graphicYOffset: -35
@@ -9330,7 +9330,7 @@ webpackJsonp([0], [function(e, t, i) {
                 graphicZIndex: 3
             },
             suggestedRouteArrow: {
-                externalGraphic: i(753),
+                externalGraphic: i(755),
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -9858,7 +9858,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(861),
+    var s = i(863),
         r = n(s),
         a = i(24),
         o = n(a),
@@ -10466,7 +10466,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(7),
         u = n(l),
-        d = i(891),
+        d = i(893),
         c = i(30),
         h = i(74).UNIT,
         f = OpenLayers.Class(c, {
@@ -10827,7 +10827,9 @@ webpackJsonp([0], [function(e, t, i) {
                 i = void 0;
             i = this.enabled && e.enabled ? this.isActive() ? "ItemActive" : "ItemInactive" : "ItemDisabled";
             var n = this.model.get("iconClass");
-            return t + " " + e.displayClass + " " + i + " " + n
+            return [t, e.displayClass, i, n].filter(function(e) {
+                return null != e
+            }).join(" ")
         },
         events: {
             click: "_onToolbarButtonClick",
@@ -11455,7 +11457,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(33),
+    var n = i(32),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -12597,11 +12599,11 @@ webpackJsonp([0], [function(e, t, i) {
         h = i(1),
         f = n(h),
         p = i(60),
-        g = i(687),
-        m = i(688),
-        v = i(689),
-        y = i(690),
-        b = i(691),
+        g = i(689),
+        m = i(690),
+        v = i(691),
+        y = i(692),
+        b = i(693),
         w = i(207),
         E = i(8),
         S = i(42),
@@ -13916,7 +13918,7 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = n
 }, function(e, t, i) {
     "use strict";
-    var n = i(701),
+    var n = i(703),
         s = OpenLayers.Class(OL.Feature.Vector, {
             initialize: function(e, t, i) {
                 OL.Feature.Vector.prototype.initialize.apply(this, [new n(e), t, i])
@@ -14830,7 +14832,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(716),
+    var n = i(718),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -15218,7 +15220,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(776),
+    var s = i(778),
         r = n(s),
         a = i(230),
         o = n(a),
@@ -15378,7 +15380,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(15),
         r = n(s),
-        a = i(777),
+        a = i(779),
         o = n(a),
         l = i(229),
         u = n(l),
@@ -15761,11 +15763,11 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(234),
         u = n(l),
-        d = i(799),
+        d = i(801),
         c = n(d),
-        h = i(800),
+        h = i(802),
         f = n(h),
-        p = i(802),
+        p = i(804),
         g = n(p),
         m = Marionette.Object.extend({
             ignoredErrors: {
@@ -15902,7 +15904,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(44),
         u = n(l),
-        d = i(797),
+        d = i(799),
         c = n(d),
         h = {
             fillColor: "black",
@@ -16174,13 +16176,13 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(27),
         c = n(d),
-        h = i(818),
+        h = i(820),
         f = n(h),
-        p = i(827),
+        p = i(829),
         g = n(p),
-        m = i(828),
+        m = i(830),
         v = n(m),
-        _ = i(829),
+        _ = i(831),
         y = n(_),
         b = function() {
             function e(t, i, n) {
@@ -16423,11 +16425,11 @@ webpackJsonp([0], [function(e, t, i) {
         m = i(5),
         v = n(m),
         _ = i(53),
-        y = i(821),
-        b = i(822),
-        w = i(823),
-        E = i(824),
-        S = i(825),
+        y = i(823),
+        b = i(824),
+        w = i(825),
+        E = i(826),
+        S = i(827),
         M = i(38),
         k = function(e) {
             function t() {
@@ -17009,11 +17011,11 @@ webpackJsonp([0], [function(e, t, i) {
             LEVEL_UPGRADE_5: o
         },
         f = {
-            LEVEL_UPGRADE_2: i(841),
-            LEVEL_UPGRADE_3: i(842),
-            LEVEL_UPGRADE_4: i(843),
-            LEVEL_UPGRADE_5: i(844),
-            LEVEL_UPGRADE_6: i(845)
+            LEVEL_UPGRADE_2: i(843),
+            LEVEL_UPGRADE_3: i(844),
+            LEVEL_UPGRADE_4: i(845),
+            LEVEL_UPGRADE_5: i(846),
+            LEVEL_UPGRADE_6: i(847)
         },
         p = s.default.extend({
             tagName: "div",
@@ -17150,7 +17152,7 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(33),
+    var n = i(32),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -17252,7 +17254,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(5),
         g = n(p),
-        m = i(874),
+        m = i(876),
         v = n(m),
         y = i(129),
         b = n(y),
@@ -17802,9 +17804,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(255),
         u = n(l),
-        d = i(892),
+        d = i(894),
         c = n(d),
-        h = i(894),
+        h = i(896),
         f = n(h),
         p = Marionette.View.extend({
             compositeSegment: null,
@@ -18971,9 +18973,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(914),
+        a = i(916),
         o = n(a),
-        l = i(915),
+        l = i(917),
         u = n(l),
         d = Marionette.Object.extend({
             initialize: function(e) {
@@ -19522,9 +19524,9 @@ webpackJsonp([0], [function(e, t, i) {
         V = i(30),
         U = n(V),
         j = i(27),
-        F = n(j),
-        z = i(51),
-        B = n(z),
+        z = n(j),
+        F = i(51),
+        B = n(F),
         W = i(195),
         G = n(W),
         H = function(e) {
@@ -19656,8 +19658,8 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "openConnection",
                     value: function(e, t, i) {
                         if (t.isTurnAllowedBySegDirections(e, i)) {
-                            var n = F.default.for(e, t),
-                                s = F.default.for(i, t).getOpposite(),
+                            var n = z.default.for(e, t),
+                                s = z.default.for(i, t).getOpposite(),
                                 r = this.model.getTurnGraph(),
                                 a = r.getTurn(n, s);
                             a = a.withTurnData(a.getTurnData().withState(B.default.State.ALLOWED));
@@ -19728,7 +19730,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(930),
+    var n = i(932),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -19881,21 +19883,21 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
     i(397),
-        i(959),
-        e.exports = i(1e3)
+        i(961),
+        e.exports = i(1002)
 }, function(e, t, i) {
     "use strict";
     i(398),
         i(29),
-        i(664),
-        i(667),
+        i(665),
         i(668),
         i(669),
-        i(670);
-    var n = i(671),
-        s = i(957);
+        i(670),
+        i(671);
+    var n = i(672),
+        s = i(959);
     i(15),
-        i(958),
+        i(960),
         $(document).ready(function() {
             W.app = new n,
                 W.prefs = new s,
@@ -19920,7 +19922,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = i(25),
         l = i(56),
         u = i(122),
-        d = i(32),
+        d = i(33),
         c = i(46),
         h = i(114),
         f = i(409),
@@ -20393,134 +20395,135 @@ webpackJsonp([0], [function(e, t, i) {
         "./Waze/Modules/LayerSwitcher/templates/module-togglers.hamlc": 463,
         "./Waze/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 533,
         "./Waze/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 534,
-        "./Waze/Modules/Login/templates/login-form.hamlc": 535,
-        "./Waze/Modules/Login/templates/login-view.hamlc": 536,
-        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 537,
-        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 538,
-        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 539,
-        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 540,
-        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 541,
-        "./Waze/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 542,
-        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 543,
-        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 544,
-        "./Waze/Modules/MTE/templates/mte_list.hamlc": 545,
-        "./Waze/Modules/MTE/templates/sidebar.hamlc": 546,
-        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 547,
-        "./Waze/Modules/MTE/templates/topbar.hamlc": 548,
-        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 549,
-        "./Waze/Modules/MapControls/templates/permalink.hamlc": 550,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 551,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/item.hamlc": 552,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 553,
-        "./Waze/Modules/Problems/templates/_navigation.hamlc": 554,
-        "./Waze/Modules/Problems/templates/closure_description.hamlc": 555,
-        "./Waze/Modules/Problems/templates/edit.hamlc": 556,
-        "./Waze/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 557,
-        "./Waze/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 558,
-        "./Waze/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 559,
-        "./Waze/Modules/Restrictions/templates/restriction_edit.hamlc": 560,
-        "./Waze/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 561,
-        "./Waze/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 562,
-        "./Waze/Modules/Restrictions/templates/restrictions_list_item.hamlc": 563,
-        "./Waze/Modules/Restrictions/templates/restrictions_main.hamlc": 564,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 565,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 566,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 567,
-        "./Waze/Modules/Restrictions/templates/timeframe_edit.hamlc": 568,
-        "./Waze/Modules/Save/templates/error_item.hamlc": 569,
-        "./Waze/Modules/Save/templates/error_list.hamlc": 570,
-        "./Waze/Modules/Save/templates/success.hamlc": 571,
-        "./Waze/Modules/Toolbar/templates/search.hamlc": 572,
-        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 573,
-        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 574,
-        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 575,
-        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 576,
-        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 577,
-        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 578,
-        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 579,
-        "./Waze/Modules/Topbar/templates/layout.hamlc": 580,
-        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 581,
-        "./Waze/Modules/Topbar/templates/location-info.hamlc": 582,
-        "./templates/add_update_details.hamlc": 583,
-        "./templates/additional_details.hamlc": 584,
-        "./templates/address/edit.hamlc": 585,
-        "./templates/archive-panel.hamlc": 586,
-        "./templates/archive-sessions.hamlc": 587,
-        "./templates/big-junction-edit.hamlc": 588,
-        "./templates/camera-edit.hamlc": 589,
-        "./templates/chrome_autofill_off.hamlc": 590,
-        "./templates/editable-areas.hamlc": 591,
-        "./templates/house-number.hamlc": 592,
-        "./templates/house-numbers-lightbox.hamlc": 593,
-        "./templates/instruction-override.hamlc": 594,
-        "./templates/keyboard_shortcuts/list.hamlc": 595,
-        "./templates/keyboard_shortcuts/modal.hamlc": 596,
-        "./templates/location-message.hamlc": 597,
-        "./templates/location-switcher.hamlc": 598,
-        "./templates/login/sandbox-message.hamlc": 599,
-        "./templates/map.hamlc": 600,
-        "./templates/node-edit.hamlc": 601,
-        "./templates/opening_hours/add.hamlc": 602,
-        "./templates/opening_hours/item.hamlc": 603,
-        "./templates/opening_hours/layout.hamlc": 604,
-        "./templates/place_updates/actions.hamlc": 605,
-        "./templates/place_updates/add_details.hamlc": 606,
-        "./templates/place_updates/add_image.hamlc": 607,
-        "./templates/place_updates/add_venue.hamlc": 608,
-        "./templates/place_updates/changed_field.hamlc": 609,
-        "./templates/place_updates/changed_field_item.hamlc": 610,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 611,
-        "./templates/place_updates/delete_venue.hamlc": 612,
-        "./templates/place_updates/external_provider/item.hamlc": 613,
-        "./templates/place_updates/external_provider/list.hamlc": 614,
-        "./templates/place_updates/flag.hamlc": 615,
-        "./templates/place_updates/image.hamlc": 616,
-        "./templates/place_updates/image_dialog.hamlc": 617,
-        "./templates/place_updates/item.hamlc": 618,
-        "./templates/place_updates/layout.hamlc": 619,
-        "./templates/place_updates/panel_header.hamlc": 620,
-        "./templates/place_updates/place_details.hamlc": 621,
-        "./templates/place_updates/update_venue.hamlc": 622,
-        "./templates/prefs-panel.hamlc": 623,
-        "./templates/segment/address-edit.hamlc": 624,
-        "./templates/segment/alt-streets-edit.hamlc": 625,
-        "./templates/segment/average-speed-camera.hamlc": 626,
-        "./templates/segment/edit-panel.hamlc": 627,
-        "./templates/segment/flag-attribute.hamlc": 628,
-        "./templates/segment/junction-exit-layout.hamlc": 629,
-        "./templates/segment/junction-exit.hamlc": 630,
-        "./templates/segment/routing.hamlc": 631,
-        "./templates/segment/speed-limit.hamlc": 632,
-        "./templates/segment/tts-playback-popover.hamlc": 633,
-        "./templates/segment/tts-playback.hamlc": 634,
-        "./templates/sidebar/advanced-tools.hamlc": 635,
-        "./templates/sidebar/links.hamlc": 636,
-        "./templates/sidebar/sidebar.hamlc": 637,
-        "./templates/sidebar/user-details.hamlc": 638,
-        "./templates/sidebar/user-info.hamlc": 639,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 640,
-        "./templates/sidebar/user-sandbox.hamlc": 641,
-        "./templates/snapshot-message.hamlc": 642,
-        "./templates/snapshot-toggler.hamlc": 643,
-        "./templates/tips/watch-tutorial.hamlc": 644,
-        "./templates/turn-arrow.hamlc": 646,
-        "./templates/tutorial-lightbox.hamlc": 647,
-        "./templates/user-greeting.hamlc": 648,
-        "./templates/util/day-checkboxes.hamlc": 649,
-        "./templates/util/toggle-checkboxes.hamlc": 650,
-        "./templates/venue/alias.hamlc": 651,
-        "./templates/venue/aliases-layout.hamlc": 652,
-        "./templates/venue/category-tag.hamlc": 653,
-        "./templates/venue/external-provider/item.hamlc": 654,
-        "./templates/venue/external-provider/list.hamlc": 655,
-        "./templates/venue/suggested-categories.hamlc": 656,
-        "./templates/venue/venue-categories.hamlc": 657,
-        "./templates/venue/venue-edit-general.hamlc": 658,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 659,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 660,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 661,
-        "./templates/venue/venue-edit-more-info.hamlc": 662,
-        "./templates/venue/venue-edit.hamlc": 663
+        "./Waze/Modules/Login/templates/email_verification.hamlc": 535,
+        "./Waze/Modules/Login/templates/login_main.hamlc": 536,
+        "./Waze/Modules/Login/templates/login_view.hamlc": 537,
+        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 538,
+        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 539,
+        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 540,
+        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 541,
+        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 542,
+        "./Waze/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 543,
+        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 544,
+        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 545,
+        "./Waze/Modules/MTE/templates/mte_list.hamlc": 546,
+        "./Waze/Modules/MTE/templates/sidebar.hamlc": 547,
+        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 548,
+        "./Waze/Modules/MTE/templates/topbar.hamlc": 549,
+        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 550,
+        "./Waze/Modules/MapControls/templates/permalink.hamlc": 551,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 552,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/item.hamlc": 553,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 554,
+        "./Waze/Modules/Problems/templates/_navigation.hamlc": 555,
+        "./Waze/Modules/Problems/templates/closure_description.hamlc": 556,
+        "./Waze/Modules/Problems/templates/edit.hamlc": 557,
+        "./Waze/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 558,
+        "./Waze/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 559,
+        "./Waze/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 560,
+        "./Waze/Modules/Restrictions/templates/restriction_edit.hamlc": 561,
+        "./Waze/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 562,
+        "./Waze/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 563,
+        "./Waze/Modules/Restrictions/templates/restrictions_list_item.hamlc": 564,
+        "./Waze/Modules/Restrictions/templates/restrictions_main.hamlc": 565,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 566,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 567,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 568,
+        "./Waze/Modules/Restrictions/templates/timeframe_edit.hamlc": 569,
+        "./Waze/Modules/Save/templates/error_item.hamlc": 570,
+        "./Waze/Modules/Save/templates/error_list.hamlc": 571,
+        "./Waze/Modules/Save/templates/success.hamlc": 572,
+        "./Waze/Modules/Toolbar/templates/search.hamlc": 573,
+        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 574,
+        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 575,
+        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 576,
+        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 577,
+        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 578,
+        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 579,
+        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 580,
+        "./Waze/Modules/Topbar/templates/layout.hamlc": 581,
+        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 582,
+        "./Waze/Modules/Topbar/templates/location-info.hamlc": 583,
+        "./templates/add_update_details.hamlc": 584,
+        "./templates/additional_details.hamlc": 585,
+        "./templates/address/edit.hamlc": 586,
+        "./templates/archive-panel.hamlc": 587,
+        "./templates/archive-sessions.hamlc": 588,
+        "./templates/big-junction-edit.hamlc": 589,
+        "./templates/camera-edit.hamlc": 590,
+        "./templates/chrome_autofill_off.hamlc": 591,
+        "./templates/editable-areas.hamlc": 592,
+        "./templates/house-number.hamlc": 593,
+        "./templates/house-numbers-lightbox.hamlc": 594,
+        "./templates/instruction-override.hamlc": 595,
+        "./templates/keyboard_shortcuts/list.hamlc": 596,
+        "./templates/keyboard_shortcuts/modal.hamlc": 597,
+        "./templates/location-message.hamlc": 598,
+        "./templates/location-switcher.hamlc": 599,
+        "./templates/login/sandbox-message.hamlc": 600,
+        "./templates/map.hamlc": 601,
+        "./templates/node-edit.hamlc": 602,
+        "./templates/opening_hours/add.hamlc": 603,
+        "./templates/opening_hours/item.hamlc": 604,
+        "./templates/opening_hours/layout.hamlc": 605,
+        "./templates/place_updates/actions.hamlc": 606,
+        "./templates/place_updates/add_details.hamlc": 607,
+        "./templates/place_updates/add_image.hamlc": 608,
+        "./templates/place_updates/add_venue.hamlc": 609,
+        "./templates/place_updates/changed_field.hamlc": 610,
+        "./templates/place_updates/changed_field_item.hamlc": 611,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 612,
+        "./templates/place_updates/delete_venue.hamlc": 613,
+        "./templates/place_updates/external_provider/item.hamlc": 614,
+        "./templates/place_updates/external_provider/list.hamlc": 615,
+        "./templates/place_updates/flag.hamlc": 616,
+        "./templates/place_updates/image.hamlc": 617,
+        "./templates/place_updates/image_dialog.hamlc": 618,
+        "./templates/place_updates/item.hamlc": 619,
+        "./templates/place_updates/layout.hamlc": 620,
+        "./templates/place_updates/panel_header.hamlc": 621,
+        "./templates/place_updates/place_details.hamlc": 622,
+        "./templates/place_updates/update_venue.hamlc": 623,
+        "./templates/prefs-panel.hamlc": 624,
+        "./templates/segment/address-edit.hamlc": 625,
+        "./templates/segment/alt-streets-edit.hamlc": 626,
+        "./templates/segment/average-speed-camera.hamlc": 627,
+        "./templates/segment/edit-panel.hamlc": 628,
+        "./templates/segment/flag-attribute.hamlc": 629,
+        "./templates/segment/junction-exit-layout.hamlc": 630,
+        "./templates/segment/junction-exit.hamlc": 631,
+        "./templates/segment/routing.hamlc": 632,
+        "./templates/segment/speed-limit.hamlc": 633,
+        "./templates/segment/tts-playback-popover.hamlc": 634,
+        "./templates/segment/tts-playback.hamlc": 635,
+        "./templates/sidebar/advanced-tools.hamlc": 636,
+        "./templates/sidebar/links.hamlc": 637,
+        "./templates/sidebar/sidebar.hamlc": 638,
+        "./templates/sidebar/user-details.hamlc": 639,
+        "./templates/sidebar/user-info.hamlc": 640,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 641,
+        "./templates/sidebar/user-sandbox.hamlc": 642,
+        "./templates/snapshot-message.hamlc": 643,
+        "./templates/snapshot-toggler.hamlc": 644,
+        "./templates/tips/watch-tutorial.hamlc": 645,
+        "./templates/turn-arrow.hamlc": 647,
+        "./templates/tutorial-lightbox.hamlc": 648,
+        "./templates/user-greeting.hamlc": 649,
+        "./templates/util/day-checkboxes.hamlc": 650,
+        "./templates/util/toggle-checkboxes.hamlc": 651,
+        "./templates/venue/alias.hamlc": 652,
+        "./templates/venue/aliases-layout.hamlc": 653,
+        "./templates/venue/category-tag.hamlc": 654,
+        "./templates/venue/external-provider/item.hamlc": 655,
+        "./templates/venue/external-provider/list.hamlc": 656,
+        "./templates/venue/suggested-categories.hamlc": 657,
+        "./templates/venue/venue-categories.hamlc": 658,
+        "./templates/venue/venue-edit-general.hamlc": 659,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 660,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 661,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 662,
+        "./templates/venue/venue-edit-more-info.hamlc": 663,
+        "./templates/venue/venue-edit.hamlc": 664
     };
     n.keys = function() {
             return Object.keys(r)
@@ -21174,7 +21177,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='layer-switcher-container'>\n<div class='toolbar-button waze-icon-layers'></div>\n<div class='menu not-visible'>\n<div class='more-options-toggle'>\n<label>\n<div class='title'></div>\n<input type='checkbox' name='show-more-options'>\n</label>\n<div class='pinned text-checkbox'>\n<input id='layer-switcher-pinned-input' type='checkbox' name='pinned'>\n<label for='layer-switcher-pinned-input' title='" + t(e(this.t("Pin layer switcher"))) + "'>\n<i class='waze-icon-pin'></i>\n</label>\n</div>\n</div>\n<div class='scrollable'>"),
+                            i.push("<div class='layer-switcher-container'>\n<div class='toolbar-button waze-btn waze-btn-white waze-icon-layers'></div>\n<div class='menu not-visible'>\n<div class='more-options-toggle'>\n<label>\n<div class='title'></div>\n<input type='checkbox' name='show-more-options'>\n</label>\n<div class='pinned text-checkbox'>\n<input id='layer-switcher-pinned-input' type='checkbox' name='pinned'>\n<label for='layer-switcher-pinned-input' title='" + t(e(this.t("Pin layer switcher"))) + "'>\n<i class='waze-icon-pin'></i>\n</label>\n</div>\n</div>\n<div class='scrollable'>"),
                             i.push("" + e(this.renderPartial("Waze/Modules/LayerSwitcher/templates/togglers-tree"))),
                             i.push("</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -21364,7 +21367,7 @@ webpackJsonp([0], [function(e, t, i) {
         return n.defineProperty(e, t, i)
     }
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(33);
     n(n.S + n.F * !i(40), "Object", {
         defineProperty: i(34).f
     })
@@ -21404,7 +21407,7 @@ webpackJsonp([0], [function(e, t, i) {
     i(471),
         e.exports = i(16).Object.assign
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(33);
     n(n.S + n.F, "Object", {
         assign: i(472)
     })
@@ -21548,7 +21551,7 @@ webpackJsonp([0], [function(e, t, i) {
     i(481),
         e.exports = i(16).Object.setPrototypeOf
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(33);
     n(n.S, "Object", {
         setPrototypeOf: i(482).set
     })
@@ -21588,7 +21591,7 @@ webpackJsonp([0], [function(e, t, i) {
         return n.create(e, t)
     }
 }, function(e, t, i) {
-    var n = i(32);
+    var n = i(33);
     n(n.S, "Object", {
         create: i(117)
     })
@@ -21596,7 +21599,7 @@ webpackJsonp([0], [function(e, t, i) {
     i(487),
         e.exports = i(16).Object.values
 }, function(e, t, i) {
-    var n = i(32),
+    var n = i(33),
         s = i(488)(!1);
     n(n.S, "Object", {
         values: function(e) {
@@ -21932,7 +21935,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(56),
-        s = i(32),
+        s = i(33),
         r = i(72),
         a = i(170),
         o = i(171),
@@ -22940,7 +22943,7 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    var n = i(33),
+    var n = i(32),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -23829,12 +23832,49 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='login-title'>"),
-                            i.push("" + t(e(this.t("login.title")))),
-                            i.push("</div>\n<div class='form-title'>\n<div class='expired-warning text-warning'>" + t(e(this.t("session.expired.title"))) + "</div>\n<span class='title-text'></span>\n</div>\n<form action='#' method='post'>\n<input class='form-control input-border username' name='username' required='" + t(e(!0)) + "' type='text' placeholder='" + t(e(this.t("login.form.username"))) + "'>\n<input class='form-control input-border password' name='password' required='" + t(e(!0)) + "' type='password' placeholder='" + t(e(this.t("login.form.password"))) + "'>\n<div class='error-message text-danger'></div>\n<div class='form-action'>\n<button class='submit waze-btn waze-btn-blue' type='submit'>\n<span class='loading'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
-                            i.push("" + t(e(this.t("login.form.action")))),
-                            i.push("</button>\n</div>\n<a class='forgot-password waze-gray-link' href='/forgot_password'>" + t(e(this.t("login.forgot_password"))) + "</a>\n</form>"),
+                            i.push("<div class='login-verification-view'>\n<div class='step-email-missing'>\n<div class='verification-image verification-image-verify'></div>\n<div class='login-title verification-title'>"),
+                            i.push("" + t(e(this.t("login.email_verification.missing.title")))),
+                            i.push("</div>\n<div class='verification-messages'>"),
+                            i.push("" + t(e(this.t("login.email_verification.missing.message")))),
+                            i.push("</div>\n<div class='verification-actions'>\n<div class='btn-wrapper'>\n<a class='waze-btn waze-btn-blue waze-btn-small' href='" + t(e(this.dashboardURL)) + "' target='_blank'>"),
+                            i.push("" + t(e(this.t("login.email_verification.missing.add_email")))),
+                            i.push("</a>\n</div>\n</div>\n</div>\n<div class='step-verification'>\n<div class='verification-image verification-image-verify'></div>\n<div class='login-title verification-title'>"),
+                            i.push("" + t(e(this.t("login.email_verification.verify.title")))),
+                            i.push("</div>\n<div class='alert-danger verification-alert'>"),
+                            i.push("" + t(e(this.t("login.email_verification.verify.error")))),
+                            i.push("</div>\n<div class='verification-messages'>"),
+                            i.push("" + t(e(this.t("login.email_verification.verify.message", {
+                                recipient: this.recipient
+                            })))),
+                            i.push("</div>\n<div class='verification-actions'>\n<div class='btn-wrapper'>\n<button class='do-send-verification-email waze-btn waze-btn-blue waze-btn-small'>\n<span class='emailSending'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
+                            i.push("" + t(e(this.t("login.email_verification.verify.send_email")))),
+                            i.push("</button>\n</div>\n<div class='btn-wrapper'>\n<a class='waze-btn waze-btn-small waze-btn-white' href='" + t(e(this.dashboardURL)) + "' target='_blank'>"),
+                            i.push("" + t(e(this.t("login.email_verification.verify.change_email")))),
+                            i.push("</a>\n</div>\n</div>\n</div>\n<div class='step-verification-done'>\n<div class='verification-image verification-image-sent'></div>\n<div class='login-title verification-title'>"),
+                            i.push("" + t(e(this.t("login.email_verification.sent.title")))),
+                            i.push("</div>\n<div class='alert-success verification-alert'>"),
+                            i.push("" + t(e(this.t("login.email_verification.sent.alert", {
+                                recipient: this.recipient
+                            })))),
+                            i.push("</div>\n<div class='verification-messages'>"),
+                            i.push("" + t(e(this.t("login.email_verification.sent.message")))),
+                            i.push("</div>\n</div>\n<div class='login-verification-footer'>\n<a class='do-back-to-login waze-link'>\n&lt;"),
+                            i.push("" + t(e(this.t("login.email_verification.back_to_login")))),
+                            i.push("</a>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e;
+                        return e = [],
+                            e.push("<div class='modal-content'></div>"),
+                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
             }
@@ -23848,7 +23888,7 @@ webpackJsonp([0], [function(e, t, i) {
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='modal-content'>\n<div id='welcome-popup'>\n<div class='clearfix map-modal-body'>\n<div class='login'>\n<div class='action dropdown language-select'>\n<a class='dropdown-toggle waze-gray-link' data-toggle='dropdown' href='#'>"),
+                            i.push("<div id='login-popup'>\n<div class='language-select'>\n<a class='dropdown-toggle waze-gray-link' data-toggle='dropdown' href='#'>"),
                             i.push("" + t(e(I18n.t("language_name")))),
                             i.push("<i class='fa fa-angle-down'></i>\n</a>\n<ul class='dropdown-menu' role='menu'>"),
                             a = I18n.availableLocales,
@@ -23858,9 +23898,15 @@ webpackJsonp([0], [function(e, t, i) {
                             i.push("<li>\n<a class='change-language' href='" + t(e(s !== W.Config.default_locale ? "/" + s : void 0)) + "/editor' data-locale='" + t(e(s)) + "'>"),
                             i.push("" + t(e(I18n.languageNames[s]))),
                             i.push("</a>\n</li>");
-                        return i.push("</ul>\n</div>\n<div class='welcome-message'>\n<h2>" + t(e(this.t("welcome.title"))) + "</h2>\n<p>"),
+                        return i.push("</ul>\n</div>\n<div class='welcome-message'>\n<h2 class='login-title'>"),
+                            i.push("" + t(e(this.t("welcome.title")))),
+                            i.push("</h2>\n<p>"),
                             i.push("" + t(e(this.t("welcome.content")))),
-                            i.push("</p>\n</div>\n</div>\n<div class='login-form'></div>\n<div class='links'>\n<a class='btn btn-default tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.tutorial.description"))) + "</div>\n</a>\n<a class='btn btn-default wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.wiki.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.wiki.description"))) + "</div>\n</a>\n<a class='btn btn-default forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.forum.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.forum.description"))) + "</div>\n</a>\n<a class='btn btn-default playmode' href='#'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.play_mode.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.play_mode.description"))) + "</div>\n</a>\n</div>\n</div>\n</div>\n</div>"),
+                            i.push("</p>\n</div>\n<div class='login-popup-content'>\n<div class='login-form'>\n<div class='login-title'>"),
+                            i.push("" + t(e(this.t("login.title")))),
+                            i.push("</div>\n<div class='form-title'>\n<div class='expired-warning text-warning'>" + t(e(this.t("session.expired.title"))) + "</div>\n<span class='title-text'></span>\n</div>\n<form action='#' method='post'>\n<input class='form-control input-border username' name='username' required='" + t(e(!0)) + "' type='text' placeholder='" + t(e(this.t("login.form.username"))) + "'>\n<input class='form-control input-border password' name='password' required='" + t(e(!0)) + "' type='password' placeholder='" + t(e(this.t("login.form.password"))) + "'>\n<div class='error-message text-danger'></div>\n<div class='form-action'>\n<button class='submit waze-btn waze-btn-blue' type='submit'>\n<span class='loading'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
+                            i.push("" + t(e(this.t("login.form.action")))),
+                            i.push("</button>\n</div>\n<a class='forgot-password waze-gray-link' href='/forgot_password'>" + t(e(this.t("login.forgot_password"))) + "</a>\n</form>\n</div>\n<div class='login-popup-links'>\n<a class='btn btn-default tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.tutorial.description"))) + "</div>\n</a>\n<a class='btn btn-default wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.wiki.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.wiki.description"))) + "</div>\n</a>\n<a class='btn btn-default forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.forum.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.forum.description"))) + "</div>\n</a>\n<a class='btn btn-default playmode' href='#'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.play_mode.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.play_mode.description"))) + "</div>\n</a>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -24829,7 +24875,7 @@ webpackJsonp([0], [function(e, t, i) {
                             i.push("" + t(e(this.t("modes.name.default")))),
                             i.push("</li>\n<li class='mode-item' data-mode='" + t(e(1)) + "'>"),
                             i.push("" + t(e(this.t("modes.name.mte")))),
-                            i.push("</li>\n</ul>\n</menu>\n</div>\n<div id='search'></div>\n<div id='edit-buttons'></div>\n<div class='toolbar-separator'></div>\n<div class='layer-switcher-container'></div>"),
+                            i.push("</li>\n</ul>\n</menu>\n</div>\n<div id='search'></div>\n<div id='edit-buttons'></div>\n<div class='layer-switcher-container'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -26378,9 +26424,13 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='user-profile'>\n<div class='" + ["level-icon", "level-icon-" + t(e(this.normalizedLevel))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "'></div>\n<div class='user-about'>\n<h3>"),
+                            i.push("<div class='user-profile'>\n<a class='" + ["level-icon", "level-icon-" + t(e(this.normalizedLevel))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "' href='" + t(e(this.h.userProfileLink({
+                                userName: this.userName
+                            }))) + "' target='_blank'></a>\n<div class='user-about'>\n<h3>\n<a class='profile-link' href='" + t(e(this.h.userProfileLink({
+                                userName: this.userName
+                            }))) + "' target='_blank'>"),
                             i.push("" + t(e(this.userName))),
-                            i.push("</h3>\n<div class='level'>"),
+                            i.push("</a>\n</h3>\n<div class='level'>"),
                             this.isStaff ? i.push("" + e(this.safe_t("user.info.staff_level_name"))) : i.push("" + e(this.safe_t("user.info.level_name", {
                                 level: this.normalizedLevel
                             }))),
@@ -26499,7 +26549,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(645))) + "'>"),
+                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(646))) + "'>"),
                             n.push("" + t(e(this.t("tutorial.title")))),
                             n.push("</a>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -26969,8 +27019,8 @@ webpackJsonp([0], [function(e, t, i) {
         a = i(7),
         o = n(a),
         l = $.Deferred();
-    W.Config = i(665),
-        W.Config.raster_layers = i(666),
+    W.Config = i(666),
+        W.Config.raster_layers = i(667),
         W.Config.ready = l,
         W.Config.init = function() {
             Waze.Config.deployments && $.extend(!0, Waze.Config, Waze.Config.deployments[W.location.code]),
@@ -27023,7 +27073,9 @@ webpackJsonp([0], [function(e, t, i) {
         login: {
             paths: {
                 get: "/login/get",
-                create: "/login/create"
+                create: "/login/create",
+                dashboard: "/dashboard",
+                email_verification: "/UsersProfile/email/verify"
             }
         },
         search: {
@@ -27528,19 +27580,19 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(33),
+    var s = i(32),
         r = n(s),
         a = i(102),
         o = n(a),
-        l = i(672),
+        l = i(673),
         u = n(l),
         d = i(202),
         c = n(d),
-        h = i(678),
+        h = i(680),
         f = n(h),
         p = i(197),
         g = n(p),
-        m = i(831),
+        m = i(833),
         v = n(m),
         y = Backbone.Model.extend({
             defaults: {
@@ -27720,12 +27772,11 @@ webpackJsonp([0], [function(e, t, i) {
         value: !0
     });
     var s = i(137),
-        r = i(673),
+        r = i(674),
         a = n(r),
-        o = i(674),
+        o = i(675),
         l = n(o),
-        u = i(676),
-        d = n(u);
+        u = i(677);
     t.default = Marionette.View.extend({
             el: "body",
             template: !1,
@@ -27818,8 +27869,9 @@ webpackJsonp([0], [function(e, t, i) {
                 if (this.model.get("editing"))
                     e.empty();
                 else {
-                    var t = new d.default({
-                        app: W.app
+                    var t = new u.LoginMainView({
+                        app: W.app,
+                        loginManager: W.loginManager
                     });
                     e.show(t, {
                         keyboard: !1,
@@ -27898,7 +27950,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(675),
+    var n = i(676),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -27990,8 +28042,8 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(677),
-        g = n(p),
+        p = i(678),
+        g = i(679),
         m = function(e) {
             function t() {
                 return (0,
@@ -28004,55 +28056,68 @@ webpackJsonp([0], [function(e, t, i) {
                     f.default)(t, e),
                 (0,
                     u.default)(t, [{
-                    key: "events",
-                    value: function() {
-                        return {
-                            "click .playmode": "_onPlaymodeClicked",
-                            "click .change-language": "_onChangeLanguageClicked"
-                        }
-                    }
-                }, {
                     key: "regions",
                     value: function() {
                         return {
-                            loginForm: ".login-form"
+                            contentRegion: ".modal-content"
                         }
                     }
                 }, {
                     key: "initialize",
                     value: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
-                            app: null
+                            app: null,
+                            loginManager: null
                         };
-                        this._app = e.app
+                        this._app = e.app,
+                            this._loginManager = e.loginManager
                     }
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.showChildView("loginForm", new g.default)
+                        this._showLoginView()
                     }
                 }, {
-                    key: "_onPlaymodeClicked",
-                    value: function(e) {
-                        e.preventDefault(),
-                            this._app.activateSandboxMode()
+                    key: "onChildviewLoginFormDone",
+                    value: function() {
+                        this._needsEmailVerfication() && this._showEmailVerificationView()
                     }
                 }, {
-                    key: "_onChangeLanguageClicked",
-                    value: function(e) {
-                        e.preventDefault();
-                        var t = $(e.target).data("locale");
-                        this._app.changeAppLocale(t)
+                    key: "onChildviewLoginVerificationBack",
+                    value: function() {
+                        this._showLoginView()
+                    }
+                }, {
+                    key: "_needsEmailVerfication",
+                    value: function() {
+                        return !1
+                    }
+                }, {
+                    key: "_showLoginView",
+                    value: function() {
+                        this.showChildView("contentRegion", new p.LoginView({
+                            app: this._app,
+                            loginManager: this._loginManager
+                        }))
+                    }
+                }, {
+                    key: "_showEmailVerificationView",
+                    value: function() {
+                        this.showChildView("contentRegion", new g.EmailVerificationView({
+                            loginManager: this._loginManager
+                        }))
                     }
                 }, {
                     key: "template",
                     get: function() {
-                        return "Waze/Modules/Login/templates/login-view"
+                        return "Waze/Modules/Login/templates/login_main"
                     }
                 }]),
                 t
         }(Marionette.View);
-    t.default = m,
+    t.default = {
+            LoginMainView: m
+        },
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -28090,24 +28155,32 @@ webpackJsonp([0], [function(e, t, i) {
                     f.default)(t, e),
                 (0,
                     u.default)(t, [{
+                    key: "events",
+                    value: function() {
+                        return {
+                            "click .playmode": "_onPlaymodeClicked",
+                            "click .change-language": "_onChangeLanguageClicked",
+                            "submit form": "_onSubmit"
+                        }
+                    }
+                }, {
                     key: "initialize",
                     value: function() {
-                        var e = W.loginManager.expired;
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
+                            app: null,
+                            loginManager: null
+                        };
+                        this._app = e.app,
+                            this._loginManager = e.loginManager;
+                        var t = W.loginManager.expired;
                         this._viewModel = new Backbone.Model({
                             username: "",
                             password: "",
                             loading: !1,
                             errorMessage: "",
-                            expired: e,
-                            title: e ? I18n.t("session.expired.description") : I18n.t("login.subtitle")
+                            expired: t,
+                            title: t ? I18n.t("session.expired.description") : I18n.t("login.subtitle")
                         })
-                    }
-                }, {
-                    key: "events",
-                    value: function() {
-                        return {
-                            "submit form": "_onSubmit"
-                        }
                     }
                 }, {
                     key: "bindings",
@@ -28143,24 +28216,186 @@ webpackJsonp([0], [function(e, t, i) {
                             });
                         var i = this._viewModel.get("username"),
                             n = this._viewModel.get("password");
-                        W.loginManager.login(i, n).fail(function(e) {
+                        this._loginManager.login(i, n).fail(function(e) {
                                 t._viewModel.set("errorMessage", p[e.status] || I18n.t("login.form.server_error"))
                             }).always(function() {
                                 t._viewModel.set({
-                                    loading: !1
-                                })
+                                        loading: !1
+                                    }),
+                                    t.triggerMethod("login:form:done")
                             }),
                             W.Report.loginAction("login_tap")
                     }
                 }, {
+                    key: "_onPlaymodeClicked",
+                    value: function(e) {
+                        e.preventDefault(),
+                            this._app.activateSandboxMode()
+                    }
+                }, {
+                    key: "_onChangeLanguageClicked",
+                    value: function(e) {
+                        e.preventDefault();
+                        var t = $(e.target).data("locale");
+                        this._app.changeAppLocale(t)
+                    }
+                }, {
                     key: "template",
                     get: function() {
-                        return "Waze/Modules/Login/templates/login-form"
+                        return "Waze/Modules/Login/templates/login_view"
                     }
                 }]),
                 t
         }(Marionette.View);
-    t.default = g,
+    t.default = {
+            LoginView: g
+        },
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(32),
+        r = n(s),
+        a = i(3),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(5),
+        g = n(p),
+        m = function(e) {
+            function t() {
+                return (0,
+                        u.default)(this, t),
+                    (0,
+                        f.default)(this, (t.__proto__ || (0,
+                        o.default)(t)).apply(this, arguments))
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "bindings",
+                    value: function() {
+                        return {
+                            ".step-email-missing": {
+                                observe: "stepEmailMissing",
+                                visible: !0
+                            },
+                            ".step-verification": {
+                                observe: "stepDoVerification",
+                                visible: !0
+                            },
+                            ".step-verification-done": {
+                                observe: "stepVerificationDone",
+                                visible: !0
+                            },
+                            ".step-verification .verification-alert": {
+                                observe: "emailFailed",
+                                visible: !0
+                            },
+                            ".emailSending": {
+                                observe: "emailSending",
+                                visible: !0
+                            },
+                            ".do-send-verification-email": {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "emailSending"
+                                }]
+                            }
+                        }
+                    }
+                }, {
+                    key: "triggers",
+                    value: function() {
+                        return {
+                            "click .do-back-to-login": "login:verification:back"
+                        }
+                    }
+                }, {
+                    key: "events",
+                    value: function() {
+                        return {
+                            "click .do-send-verification-email": "_doSendVerificationEmail"
+                        }
+                    }
+                }, {
+                    key: "initialize",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
+                            loginManager: null
+                        };
+                        this._loginManager = e.loginManager;
+                        var t = !this._loginManager.hasEmail();
+                        this.model = new Backbone.Model({
+                            stepEmailMissing: t,
+                            stepDoVerification: !t,
+                            stepVerificationDone: !1,
+                            emailFailed: !1,
+                            emailSending: !1
+                        })
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this.stickit()
+                    }
+                }, {
+                    key: "templateContext",
+                    value: function() {
+                        return {
+                            recipient: this._loginManager.getUserEmailAddress(),
+                            dashboardURL: W.Config.login.paths.dashboard
+                        }
+                    }
+                }, {
+                    key: "_doSendVerificationEmail",
+                    value: function() {
+                        var e = this;
+                        return this.model.set({
+                                emailFailed: !1,
+                                emailSending: !0
+                            }),
+                            r.default.resolve($.post(W.Config.login.paths.email_verification, {
+                                locale: I18n.currentLocale()
+                            })).then(function(t) {
+                                e.model.set({
+                                    stepVerificationDone: !0,
+                                    stepDoVerification: !1
+                                })
+                            }, function(t) {
+                                e.model.set({
+                                    emailFailed: !0
+                                })
+                            }).then(function() {
+                                e.model.set({
+                                    emailSending: !1
+                                })
+                            })
+                    }
+                }, {
+                    key: "template",
+                    get: function() {
+                        return "Waze/Modules/Login/templates/email_verification"
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = {
+            EmailVerificationView: m
+        },
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -28177,54 +28412,54 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(679),
-        u = i(682),
+        l = i(681),
+        u = i(684),
         d = n(u),
-        c = i(685),
+        c = i(687),
         h = n(c),
         f = i(205),
         p = n(f),
-        g = i(692),
+        g = i(694),
         m = n(g),
-        v = i(693),
+        v = i(695),
         _ = n(v),
-        y = i(696),
+        y = i(698),
         b = n(y),
-        w = i(708),
+        w = i(710),
         E = n(w),
         S = i(221),
         M = n(S),
-        k = i(709),
+        k = i(711),
         T = n(k),
-        C = i(710),
+        C = i(712),
         A = n(C),
-        I = i(711),
+        I = i(713),
         O = n(I),
-        L = i(713),
+        L = i(715),
         D = n(L),
-        R = i(715),
+        R = i(717),
         x = n(R),
-        P = i(771),
+        P = i(773),
         N = n(P),
-        V = i(772),
+        V = i(774),
         U = n(V),
-        j = i(782),
-        F = n(j),
-        z = i(796),
-        B = n(z),
-        G = i(803),
+        j = i(784),
+        z = n(j),
+        F = i(798),
+        B = n(F),
+        G = i(805),
         H = n(G),
-        q = i(804),
+        q = i(806),
         Y = n(q),
-        K = i(805),
+        K = i(807),
         J = n(K),
-        Z = i(811),
+        Z = i(813),
         X = n(Z),
         Q = i(26),
         ee = n(Q),
-        te = i(812),
+        te = i(814),
         ie = n(te),
-        ne = i(814),
+        ne = i(816),
         se = n(ne),
         re = function() {
             function e() {
@@ -28259,7 +28494,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 map: W.map,
                                 viewContainer: W.map.zoomBar.geoLocationContainer
                             }),
-                            new F.default({
+                            new z.default({
                                 mediator: W.editingMediator,
                                 mapLayers: [W.map.problemLayer, W.map.updateRequestLayer]
                             }),
@@ -28367,9 +28602,9 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(5),
         g = n(p),
-        m = i(680),
+        m = i(682),
         v = n(m),
-        y = i(681),
+        y = i(683),
         b = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -28978,9 +29213,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(683),
+        p = i(685),
         g = n(p),
-        m = i(684),
+        m = i(686),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -29442,7 +29677,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(50),
         v = n(m),
-        y = i(686),
+        y = i(688),
         b = n(y),
         w = i(203),
         E = n(w),
@@ -30184,9 +30419,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(694),
+    var s = i(696),
         r = n(s),
-        a = i(695),
+        a = i(697),
         o = n(a),
         l = i(12),
         u = n(l),
@@ -30353,11 +30588,11 @@ webpackJsonp([0], [function(e, t, i) {
         d = n(u),
         c = i(1),
         h = n(c),
-        f = i(697),
-        p = i(698),
+        f = i(699),
+        p = i(700),
         g = i(219),
-        m = i(706),
-        v = i(707),
+        m = i(708),
+        v = i(709),
         y = i(145),
         b = i(8),
         w = i(26),
@@ -30764,7 +30999,7 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = a
 }, function(e, t, i) {
     "use strict";
-    var n = i(699),
+    var n = i(701),
         s = i(24),
         r = i(76),
         a = i(8),
@@ -30823,10 +31058,10 @@ webpackJsonp([0], [function(e, t, i) {
                 var s = void 0,
                     r = void 0,
                     a = void 0;
-                return e.isOneWay() ? (s = i(t ? 704 : 218),
+                return e.isOneWay() ? (s = i(t ? 706 : 218),
                         r = 9,
                         a = 360 - n.last().toDeg(), !0 === e.attributes.revDirection && (a -= 180)) : (r = 5,
-                        s = i(705)),
+                        s = i(707)),
                     new OpenLayers.Feature.Vector(n.first(), {}, {
                         externalGraphic: s,
                         rotation: a,
@@ -31005,11 +31240,11 @@ webpackJsonp([0], [function(e, t, i) {
             }
         }(n),
         r = i(31),
-        a = i(700),
+        a = i(702),
         o = i(213),
         l = i(214),
-        u = i(702),
-        d = i(703),
+        u = i(704),
+        d = i(705),
         c = OpenLayers.Class(OpenLayers.Control, r, {
             geometryTypes: null,
             clickout: !0,
@@ -32364,7 +32599,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(712),
+        l = i(714),
         u = n(l),
         d = function() {
             function e(t) {
@@ -32471,7 +32706,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(714),
+        d = i(716),
         c = i(68),
         h = /^(post|delete)$/,
         f = function() {
@@ -32516,10 +32751,13 @@ webpackJsonp([0], [function(e, t, i) {
                         if (this._hasUser() && !this.expired && 403 === t.status)
                             try {
                                 var i = JSON.parse(t.responseText),
-                                    n = i.errorList[0];
-                                103 !== n.code && 100 !== n.code || (this.expired = !0,
-                                    this.returningUser = !1,
-                                    this.events.triggerEvent("sessionExpired"))
+                                    n = i.errorList;
+                                if (null != n && n.length > 0) {
+                                    var s = n[0];
+                                    103 !== s.code && 100 !== s.code || (this.expired = !0,
+                                        this.returningUser = !1,
+                                        this.events.triggerEvent("sessionExpired"))
+                                }
                             } catch (e) {}
                     }
                 }, {
@@ -32528,14 +32766,34 @@ webpackJsonp([0], [function(e, t, i) {
                         return null !== this.user
                     }
                 }, {
+                    key: "isAuthenticated",
+                    value: function() {
+                        return !this.expired && this._hasUser()
+                    }
+                }, {
                     key: "isLoggedIn",
                     value: function() {
-                        return null !== this.user && !this.expired
+                        return this.isAuthenticated()
                     }
                 }, {
                     key: "isFirstLogin",
                     value: function() {
-                        return this.user && this.user.isFirstLogin
+                        return this._hasUser() && this.user.isFirstLogin
+                    }
+                }, {
+                    key: "isVerifiedEmail",
+                    value: function() {
+                        return this._hasUser() && !0 === this.user.emailVerified
+                    }
+                }, {
+                    key: "hasEmail",
+                    value: function() {
+                        return this._hasUser() && this.user.hasEmail()
+                    }
+                }, {
+                    key: "getUserEmailAddress",
+                    value: function() {
+                        return this.user.getEmail()
                     }
                 }, {
                     key: "getUserRank",
@@ -32579,7 +32837,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "_getCsrfToken",
                     value: function() {
                         var e = $.cookie("_csrf_token");
-                        return null !== e ? e : $.get(W.Config.login.paths.get)
+                        return null !== e && void 0 !== e ? e : $.get(W.Config.login.paths.get)
                     }
                 }, {
                     key: "_doLogin",
@@ -32651,6 +32909,8 @@ webpackJsonp([0], [function(e, t, i) {
         },
         o = OpenLayers.Class(n, {
             isFirstLogin: !1,
+            emailVerified: !1,
+            email: null,
             nested: {
                 editableAreas: OL.Geometry,
                 managedAreas: OL.Geometry,
@@ -32685,21 +32945,27 @@ webpackJsonp([0], [function(e, t, i) {
             isCountryManager: function() {
                 return this.editableCountryIDs && !this.editableCountryIDs.isEmpty()
             },
+            hasEmail: function() {
+                return null != this.email
+            },
+            getEmail: function() {
+                return this.email
+            },
             CLASS_NAME: "Waze.Feature.Vector.LoggedInUser"
         });
     e.exports = o
 }, function(e, t, i) {
     "use strict";
     var n = i(104),
-        s = i(761),
-        r = i(762),
-        a = i(763),
-        o = i(765),
-        l = i(766),
-        u = i(767),
-        d = i(768),
-        c = i(769),
-        h = i(770),
+        s = i(763),
+        r = i(764),
+        a = i(765),
+        o = i(767),
+        l = i(768),
+        u = i(769),
+        d = i(770),
+        c = i(771),
+        h = i(772),
         f = i(29),
         p = OpenLayers.Class(OL.Map, n, {
             DefaultPanInPixel: 20,
@@ -33047,7 +33313,7 @@ webpackJsonp([0], [function(e, t, i) {
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return i(719)("./camera" + t.attributes.type + t.attributes.validated + ".png")
+                            return i(721)("./camera" + t.attributes.type + t.attributes.validated + ".png")
                     }
                 }
             })
@@ -33085,19 +33351,19 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./camera2false.png": 720,
-        "./camera2true.png": 721,
-        "./camera3false.png": 722,
-        "./camera3true.png": 723,
-        "./camera4false.png": 724,
-        "./camera4true.png": 725
+        "./camera2false.png": 722,
+        "./camera2true.png": 723,
+        "./camera3false.png": 724,
+        "./camera3true.png": 725,
+        "./camera4false.png": 726,
+        "./camera4true.png": 727
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 719
+        n.id = 721
 }, function(e, t, i) {
     e.exports = i.p + "img/camera2falsea81daea9d3458f341a839f7951a51b0f.png"
 }, function(e, t, i) {
@@ -33406,31 +33672,31 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./big_direction_end.png": 732,
-        "./big_direction_exit_left.png": 733,
-        "./big_direction_exit_right.png": 734,
-        "./big_direction_forward.png": 735,
-        "./big_direction_left.png": 736,
-        "./big_direction_right.png": 737,
-        "./big_direction_u.png": 738,
-        "./big_directions_roundabout.png": 739,
-        "./big_directions_roundabout_UK.png": 740,
-        "./big_directions_roundabout_UK_l.png": 741,
-        "./big_directions_roundabout_UK_s.png": 742,
-        "./big_directions_roundabout_l.png": 743,
-        "./big_directions_roundabout_r.png": 744,
-        "./big_directions_roundabout_r_UK.png": 745,
-        "./big_directions_roundabout_s.png": 746,
-        "./big_directions_roundabout_u.png": 747,
-        "./big_directions_roundabout_u_UK.png": 748,
-        "./unknown.png": 749
+        "./big_direction_end.png": 734,
+        "./big_direction_exit_left.png": 735,
+        "./big_direction_exit_right.png": 736,
+        "./big_direction_forward.png": 737,
+        "./big_direction_left.png": 738,
+        "./big_direction_right.png": 739,
+        "./big_direction_u.png": 740,
+        "./big_directions_roundabout.png": 741,
+        "./big_directions_roundabout_UK.png": 742,
+        "./big_directions_roundabout_UK_l.png": 743,
+        "./big_directions_roundabout_UK_s.png": 744,
+        "./big_directions_roundabout_l.png": 745,
+        "./big_directions_roundabout_r.png": 746,
+        "./big_directions_roundabout_r_UK.png": 747,
+        "./big_directions_roundabout_s.png": 748,
+        "./big_directions_roundabout_u.png": 749,
+        "./big_directions_roundabout_u_UK.png": 750,
+        "./unknown.png": 751
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 731
+        n.id = 733
 }, function(e, t, i) {
     e.exports = i.p + "img/big_direction_end25226c71aed0efd3a2db41978066febc.png"
 }, function(e, t, i) {
@@ -34261,7 +34527,7 @@ webpackJsonp([0], [function(e, t, i) {
         b = n(y),
         w = i(14),
         E = n(w),
-        S = i(764),
+        S = i(766),
         M = n(S),
         k = function(e) {
             function t() {
@@ -35037,7 +35303,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(33),
+    var n = i(32),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -35295,11 +35561,11 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(773),
+        l = i(775),
         u = n(l),
-        d = i(774),
+        d = i(776),
         c = n(d),
-        h = i(781),
+        h = i(783),
         f = n(h),
         p = i(232),
         g = n(p),
@@ -35426,7 +35692,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(775),
+    var n = i(777),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -35504,7 +35770,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(227),
         r = n(s),
-        a = i(780),
+        a = i(782),
         o = n(a),
         l = i(24),
         u = n(l),
@@ -35621,7 +35887,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(228),
         o = n(a),
-        l = i(779),
+        l = i(781),
         u = n(l),
         d = Marionette.CollectionView.extend({
             childView: function(e) {
@@ -35635,7 +35901,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(778),
+    var n = i(780),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -35905,9 +36171,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(232),
         u = n(l),
-        d = i(783),
+        d = i(785),
         c = n(d),
-        h = i(784),
+        h = i(786),
         f = n(h),
         p = function() {
             function e(t) {
@@ -36060,15 +36326,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(785),
+    var s = i(787),
         r = n(s),
-        a = i(786),
+        a = i(788),
         o = n(a),
-        l = i(793),
+        l = i(795),
         u = n(l),
         d = i(24),
         c = n(d),
-        h = i(795),
+        h = i(797),
         f = n(h),
         p = Marionette.Object.extend({
             initialize: function() {
@@ -36300,11 +36566,11 @@ webpackJsonp([0], [function(e, t, i) {
         a = n(r),
         o = i(62),
         l = n(o),
-        u = i(787),
+        u = i(789),
         d = n(u),
-        c = i(789),
+        c = i(791),
         h = n(c),
-        f = i(791),
+        f = i(793),
         p = n(f),
         g = i(181),
         m = n(g),
@@ -36338,7 +36604,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(788),
+    var s = i(790),
         r = n(s),
         a = i(62),
         o = n(a),
@@ -36415,7 +36681,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(790),
+    var s = i(792),
         r = n(s),
         a = i(62),
         o = n(a),
@@ -36496,7 +36762,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(62),
         r = n(s),
-        a = i(792),
+        a = i(794),
         o = n(a),
         l = r.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -36577,7 +36843,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(794),
+    var n = i(796),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -36786,7 +37052,7 @@ webpackJsonp([0], [function(e, t, i) {
     s.addUniqueValueRules("default", "type", {
             homePin: {
                 pointerEvents: "visiblePainted",
-                externalGraphic: i(798),
+                externalGraphic: i(800),
                 graphicWidth: 33,
                 graphicHeight: 40,
                 graphicYOffset: -35
@@ -36822,7 +37088,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(801),
+    var n = i(803),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -37237,11 +37503,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(806),
+    var s = i(808),
         r = n(s),
-        a = i(807),
+        a = i(809),
         o = n(a),
-        l = i(809),
+        l = i(811),
         u = n(l),
         d = Marionette.Object.extend({
             initialize: function(e) {
@@ -37339,7 +37605,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(12),
         r = n(s),
-        a = i(808),
+        a = i(810),
         o = n(a),
         l = Backbone.Model.extend({
             defaults: function() {
@@ -37500,7 +37766,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(810),
+        p = i(812),
         g = n(p),
         m = function(e) {
             function t() {
@@ -37944,7 +38210,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(813),
+        d = i(815),
         c = i(24),
         h = function() {
             function e(t, i) {
@@ -38099,15 +38365,15 @@ webpackJsonp([0], [function(e, t, i) {
         E = n(w),
         S = i(198),
         M = n(S),
-        k = i(815),
+        k = i(817),
         T = n(k),
         C = i(135),
         A = n(C),
-        I = i(816),
+        I = i(818),
         O = n(I),
         L = i(148),
         D = n(L),
-        R = i(830),
+        R = i(832),
         x = n(R),
         P = (s = {},
             (0,
@@ -38334,7 +38600,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(817),
+        l = i(819),
         u = n(l),
         d = function() {
             function e(t, i, n) {
@@ -38452,9 +38718,9 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         _ = i(150),
         y = n(_),
-        b = i(819),
+        b = i(821),
         w = n(b),
-        E = i(820),
+        E = i(822),
         S = function(e) {
             function t(e) {
                 (0,
@@ -38777,7 +39043,7 @@ webpackJsonp([0], [function(e, t, i) {
         _ = i(38),
         y = i(107),
         b = i(240),
-        w = i(826),
+        w = i(828),
         E = i(137),
         S = function(e) {
             function t() {
@@ -40889,9 +41155,9 @@ webpackJsonp([0], [function(e, t, i) {
         l = n(o),
         u = i(102),
         d = n(u),
-        c = i(832),
+        c = i(834),
         h = n(c),
-        f = i(937),
+        f = i(939),
         p = n(f),
         g = Marionette.Object.extend({
             MODE_TO_CLASS: (s = {},
@@ -40956,13 +41222,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(833),
+    var s = i(835),
         r = n(s),
-        a = i(856),
+        a = i(858),
         o = n(a),
-        l = i(913),
+        l = i(915),
         u = n(l),
-        d = i(931),
+        d = i(933),
         c = n(d),
         h = Marionette.Object.extend({
             sidebarLayout: null,
@@ -41046,19 +41312,19 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(834),
+    var s = i(836),
         r = n(s),
-        a = i(839),
+        a = i(841),
         o = n(a),
-        l = i(840),
+        l = i(842),
         u = n(l),
         d = i(243),
         c = n(d),
-        h = i(847),
+        h = i(849),
         f = n(h),
-        p = i(849),
+        p = i(851),
         g = n(p),
-        m = i(853),
+        m = i(855),
         v = n(m),
         _ = Marionette.Object.extend({
             browser: null,
@@ -41141,19 +41407,19 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(33),
+    var s = i(32),
         r = n(s),
         a = i(50),
         o = n(a),
         l = i(151),
         u = n(l),
-        d = i(835),
+        d = i(837),
         c = n(d),
-        h = i(836),
+        h = i(838),
         f = n(h),
-        p = i(837),
+        p = i(839),
         g = n(p),
-        m = i(838),
+        m = i(840),
         v = n(m),
         y = Backbone.Model.extend({
             defaults: {
@@ -41496,7 +41762,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(33),
+    var s = i(32),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -41691,7 +41957,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(242),
         o = n(a),
-        l = i(846),
+        l = i(848),
         u = n(l),
         d = i(96).prototype.TYPE,
         c = i(41).prototype.TYPE,
@@ -41848,7 +42114,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(243),
         r = n(s),
-        a = i(848),
+        a = i(850),
         o = n(a),
         l = r.default.extend({
             childView: o.default,
@@ -41895,11 +42161,11 @@ webpackJsonp([0], [function(e, t, i) {
         a = n(r),
         o = i(108),
         l = n(o),
-        u = i(850),
+        u = i(852),
         d = n(u),
-        c = i(851),
+        c = i(853),
         h = n(c),
-        f = i(852),
+        f = i(854),
         p = n(f),
         g = i(41).prototype.TYPE,
         m = Marionette.CollectionView.extend({
@@ -42104,9 +42370,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(854),
+    var s = i(856),
         r = n(s),
-        a = i(855),
+        a = i(857),
         o = n(a),
         l = Marionette.CollectionView.extend({
             className: "feed-group list-unstyled",
@@ -42380,11 +42646,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(857),
+    var s = i(859),
         r = n(s),
-        a = i(904),
+        a = i(906),
         o = n(a),
-        l = i(912),
+        l = i(914),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/sidebar/sidebar",
@@ -42489,17 +42755,17 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s, r, a = i(18),
         o = n(a),
-        l = i(858),
+        l = i(860),
         u = n(l),
-        d = i(862),
+        d = i(864),
         c = n(d),
-        h = i(863),
+        h = i(865),
         f = n(h),
-        p = i(886),
+        p = i(888),
         g = n(p),
         m = i(8),
         v = n(m),
-        y = i(887),
+        y = i(889),
         b = n(y),
         w = i(26),
         E = n(w),
@@ -42572,7 +42838,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(68),
         o = n(a),
-        l = i(859),
+        l = i(861),
         u = n(l),
         d = i(154),
         c = n(d),
@@ -42646,7 +42912,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(860),
+        p = i(862),
         g = n(p),
         m = function(e) {
             function t() {
@@ -42936,9 +43202,9 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(54),
         v = n(m),
-        y = i(864),
+        y = i(866),
         b = n(y),
-        w = i(865),
+        w = i(867),
         E = n(w),
         S = i(19),
         M = n(S),
@@ -42949,17 +43215,17 @@ webpackJsonp([0], [function(e, t, i) {
         I = i(231),
         O = n(I),
         L = i(245),
-        D = i(868),
+        D = i(870),
         R = n(D),
-        x = i(870),
+        x = i(872),
         P = n(x),
         N = i(246),
         V = n(N),
         U = i(154),
         j = n(U),
-        F = i(247),
-        z = n(F),
-        B = i(873),
+        z = i(247),
+        F = n(z),
+        B = i(875),
         G = n(B),
         H = i(248),
         q = n(H),
@@ -42974,7 +43240,7 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(Y),
-        J = i(880),
+        J = i(882),
         Z = n(J),
         X = i(15),
         Q = n(X),
@@ -43298,7 +43564,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_initMoreInfoTab",
                     value: function() {
-                        var e = this.model.isParkingLot() ? G.default : z.default;
+                        var e = this.model.isParkingLot() ? G.default : F.default;
                         return this.moreInfoView = new e({
                                 model: this.model,
                                 serviceTypes: this._getServiceTypes(),
@@ -43504,9 +43770,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(866),
+    var s = i(868),
         r = n(s),
-        a = i(867),
+        a = i(869),
         o = n(a),
         l = Marionette.CompositeView.extend({
             template: "templates/opening_hours/layout",
@@ -43681,7 +43947,7 @@ webpackJsonp([0], [function(e, t, i) {
         value: !0
     });
     var n = i(245),
-        s = i(869),
+        s = i(871),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43756,9 +44022,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(871),
+    var s = i(873),
         r = n(s),
-        a = i(872),
+        a = i(874),
         o = n(a),
         l = i(187),
         u = n(l),
@@ -44039,7 +44305,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(875),
+        p = i(877),
         g = function(e) {
             function t() {
                 return (0,
@@ -44107,11 +44373,11 @@ webpackJsonp([0], [function(e, t, i) {
         w = n(b),
         E = i(157),
         S = n(E),
-        M = i(876),
+        M = i(878),
         k = n(M),
-        T = i(877),
+        T = i(879),
         C = n(T),
-        A = i(878),
+        A = i(880),
         I = n(A),
         O = function(e) {
             function t() {
@@ -44567,7 +44833,7 @@ webpackJsonp([0], [function(e, t, i) {
         m = n(g),
         v = i(8),
         _ = n(v),
-        y = i(879),
+        y = i(881),
         b = (s = {},
             (0,
                 m.default)(s, _.default.HOUSE_NUMBER, y.HouseNumberChangeView),
@@ -44774,14 +45040,14 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(881),
+        p = i(883),
         g = n(p),
-        m = i(884),
+        m = i(886),
         v = n(m),
         y = i(250),
         b = i(191),
         w = n(b),
-        E = i(885),
+        E = i(887),
         S = function(e) {
             function t() {
                 return (0,
@@ -44971,7 +45237,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(882),
+        p = i(884),
         g = n(p),
         m = function(e) {
             function t() {
@@ -45037,7 +45303,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(883),
+        p = i(885),
         g = n(p),
         m = function(e) {
             function t() {
@@ -45620,7 +45886,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(248),
         o = n(a),
-        l = i(888),
+        l = i(890),
         u = i(54),
         d = i(158),
         c = i(64),
@@ -45633,10 +45899,10 @@ webpackJsonp([0], [function(e, t, i) {
         y = i(252),
         b = i(246),
         w = i(110),
-        E = i(895),
-        S = i(897),
-        M = i(901),
-        k = i(903),
+        E = i(897),
+        S = i(899),
+        M = i(903),
+        k = i(905),
         T = i(261),
         C = i(262),
         A = i(29),
@@ -46256,9 +46522,9 @@ webpackJsonp([0], [function(e, t, i) {
         m = i(19),
         v = n(m),
         _ = i(38),
-        y = i(889),
+        y = i(891),
         b = i(240),
-        w = i(890),
+        w = i(892),
         E = i(107),
         S = i(137),
         M = function(e) {
@@ -46963,7 +47229,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(893),
+    var n = i(895),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -47246,7 +47512,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(5),
         f = n(h),
-        p = i(896),
+        p = i(898),
         g = n(p),
         m = i(147),
         v = n(m),
@@ -47530,7 +47796,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(17),
         u = n(l),
-        d = i(898),
+        d = i(900),
         c = n(d),
         h = i(193),
         f = n(h),
@@ -47551,11 +47817,11 @@ webpackJsonp([0], [function(e, t, i) {
         }(_),
         b = i(64),
         w = n(b),
-        E = i(899),
+        E = i(901),
         S = n(E),
         M = i(44),
         k = n(M),
-        T = i(900),
+        T = i(902),
         C = n(T),
         A = Marionette.Object.extend({
             MIN_EDIT_ZOOM: 6,
@@ -48124,7 +48390,6 @@ webpackJsonp([0], [function(e, t, i) {
                     this.input.on("mousedown", function(e) {
                         return e.stopPropagation()
                     }),
-                    this.input.on("keydown", this.forceNumeric),
                     this.input.on("keyup", function(e) {
                         if (e.which === n.ESC)
                             return e.stopPropagation(),
@@ -48209,11 +48474,6 @@ webpackJsonp([0], [function(e, t, i) {
             },
             updateSide: function() {
                 return this.inputWrapper.toggleClass("side-left", this.model.isLeft)
-            },
-            forceNumeric: function(e) {
-                var t = e.which,
-                    i = 65 === t && (e.ctrlKey || e.metaKey);
-                return !!((!e.shiftKey && !e.altKey && !e.ctrlKey || i) && t >= 48 && t <= 57 || t >= 97 && t <= 122 || t >= 65 && t <= 90 || 32 === t || 191 === t || 189 === t || t >= 96 && t <= 105 || 8 === t || 9 === t || 13 === t || 35 === t || 36 === t || 37 === t || 39 === t || 46 === t || 45 === t || i)
             }
         });
     t.default = d,
@@ -48487,7 +48747,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(902),
+    var s = i(904),
         r = n(s),
         a = i(29),
         o = n(a),
@@ -48615,11 +48875,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(905),
+    var s = i(907),
         r = n(s),
-        a = i(909),
+        a = i(911),
         o = n(a),
-        l = i(910),
+        l = i(912),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/sidebar/user-info",
@@ -48673,9 +48933,9 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(31),
-        s = i(906),
-        r = i(907),
-        a = i(908),
+        s = i(908),
+        r = i(909),
+        a = i(910),
         o = OpenLayers.Class(OpenLayers.Control, n, {
             sidePanelView: null,
             editableAreasListView: null,
@@ -49117,7 +49377,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(911),
+    var s = i(913),
         r = n(s),
         a = i(110),
         o = n(a),
@@ -49230,11 +49490,11 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(265),
         u = n(l),
-        d = i(916),
+        d = i(918),
         c = n(d),
-        h = i(918),
+        h = i(920),
         f = n(h),
-        p = i(919),
+        p = i(921),
         g = n(p),
         m = Marionette.Object.extend({
             initialize: function(e) {
@@ -49562,7 +49822,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(160),
         r = n(s),
-        a = i(917),
+        a = i(919),
         o = n(a),
         l = Marionette.CollectionView.extend({
             childView: r.default,
@@ -49730,21 +49990,21 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(920),
+        l = i(922),
         u = n(l),
-        d = i(921),
+        d = i(923),
         c = n(d),
-        h = i(922),
+        h = i(924),
         f = n(h),
         p = i(266),
         g = n(p),
-        m = i(923),
+        m = i(925),
         v = n(m),
-        y = i(924),
+        y = i(926),
         b = n(y),
-        w = i(925),
+        w = i(927),
         E = n(w),
-        S = i(926),
+        S = i(928),
         M = n(S),
         k = i(15),
         T = n(k),
@@ -49752,17 +50012,17 @@ webpackJsonp([0], [function(e, t, i) {
         A = n(C),
         I = i(269),
         O = n(I),
-        L = i(927),
+        L = i(929),
         D = n(L),
-        R = i(928),
+        R = i(930),
         x = n(R),
         P = i(270),
         N = n(P),
         V = i(55),
         U = n(V),
         j = i(77),
-        F = n(j),
-        z = i(95),
+        z = n(j),
+        F = i(95),
         B = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -49772,7 +50032,7 @@ webpackJsonp([0], [function(e, t, i) {
                     Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
             return t.default = e,
                 t
-        }(z),
+        }(F),
         G = i(134),
         H = n(G),
         $ = i(91),
@@ -49968,7 +50228,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "_generateVenueMenuItem",
                     value: function(e) {
                         var t = function(t, i) {
-                                var n = new F.default({
+                                var n = new z.default({
                                     geometry: t,
                                     categories: [e]
                                 });
@@ -50268,7 +50528,8 @@ webpackJsonp([0], [function(e, t, i) {
                     W.selectionManager.events.register("selectionchanged", this, this._onSelectionChanged)
             },
             destroy: function() {
-                return r.default.prototype.destroy.apply(this, arguments),
+                r.default.prototype.destroy.apply(this, arguments),
+                    this.keyboardHandler.destroy(),
                     W.selectionManager.events.unregister("selectionchanged", this, this._onSelectionChanged)
             },
             _onSelectionChanged: function(e) {
@@ -50452,7 +50713,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(31),
-        s = i(929),
+        s = i(931),
         r = OpenLayers.Class(OpenLayers.Control, n, {
             keyHandler: null,
             handler: null,
@@ -50737,9 +50998,9 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(273),
         o = n(a),
-        l = i(932),
+        l = i(934),
         u = n(l),
-        d = i(936),
+        d = i(938),
         c = n(d),
         h = Marionette.Object.extend({
             initialize: function() {
@@ -50778,11 +51039,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(933),
+    var s = i(935),
         r = n(s),
-        a = i(934),
+        a = i(936),
         o = n(a),
-        l = i(935),
+        l = i(937),
         u = n(l),
         d = Marionette.View.extend({
             MAIN_LIST_NUM_ITEMS: 3,
@@ -50996,13 +51257,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(24),
         o = n(a),
-        l = i(938),
+        l = i(940),
         u = n(l),
-        d = i(940),
+        d = i(942),
         c = n(d),
-        h = i(941),
+        h = i(943),
         f = n(h),
-        p = i(942),
+        p = i(944),
         g = n(p),
         m = Backbone.Model.extend({
             defaults: {
@@ -51113,7 +51374,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(264),
         o = n(a),
-        l = i(939),
+        l = i(941),
         u = n(l),
         d = i(263),
         c = n(d),
@@ -51317,15 +51578,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(943),
+    var s = i(945),
         r = n(s),
         a = i(140),
         o = n(a),
         l = i(24),
         u = n(l),
-        d = i(945),
+        d = i(947),
         c = n(d),
-        h = i(947),
+        h = i(949),
         f = n(h),
         p = i(97),
         g = n(p),
@@ -51474,7 +51735,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(20),
         r = n(s),
-        a = i(944),
+        a = i(946),
         o = n(a),
         l = {
             THIS_WEEK: {
@@ -51630,7 +51891,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(946),
+    var n = i(948),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -51679,23 +51940,23 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(80),
         g = n(p),
-        m = i(948),
+        m = i(950),
         v = n(m),
         y = i(97),
         b = n(y),
-        w = i(950),
+        w = i(952),
         E = n(w),
-        S = i(951),
+        S = i(953),
         M = n(S),
         k = i(19),
         T = n(k),
         C = i(15),
         A = n(C),
-        I = i(952),
+        I = i(954),
         O = n(I),
-        L = i(953),
+        L = i(955),
         D = n(L),
-        R = i(955),
+        R = i(957),
         x = n(R),
         P = Marionette.View.extend({
             className: "mte-edit-view",
@@ -52075,7 +52336,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(949),
+    var s = i(951),
         r = n(s),
         a = i(50),
         o = n(a),
@@ -52406,7 +52667,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(20),
         r = n(s),
-        a = i(954),
+        a = i(956),
         o = n(a),
         l = i(15),
         u = n(l),
@@ -52582,7 +52843,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(149),
         v = n(m),
-        y = i(956),
+        y = i(958),
         b = n(y),
         w = Marionette.View.extend({
             template: function() {
@@ -52738,9 +52999,7 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = {}
 }, function(e, t, i) {
     "use strict";
-    i(960),
-        i(961),
-        i(962),
+    i(962),
         i(963),
         i(964),
         i(965),
@@ -52777,10 +53036,12 @@ webpackJsonp([0], [function(e, t, i) {
         i(996),
         i(997),
         i(998),
-        i(999)
+        i(999),
+        i(1e3),
+        i(1001)
 }, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t, i) {
     "use strict";
-    var n = i(1001);
+    var n = i(1003);
     window.require = function(e) {
         return e = "./" + e + ".js",
             n(e)
@@ -52834,7 +53095,7 @@ webpackJsonp([0], [function(e, t, i) {
         "./Waze/Action/UpdatePlaceUpdate.js": 230,
         "./Waze/Action/UpdateRoadClosure.js": 257,
         "./Waze/Action/UpdateSegmentGeometry.js": 144,
-        "./Waze/Action/Visitor/Serializor.js": 1002,
+        "./Waze/Action/Visitor/Serializor.js": 1004,
         "./Waze/Action/Visitor/TreeSerializor.js": 204,
         "./Waze/ActionManager.js": 207,
         "./Waze/DivIcon.js": 21,
@@ -52877,7 +53138,7 @@ webpackJsonp([0], [function(e, t, i) {
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 1001
+        n.id = 1003
 }, function(e, t, i) {
     "use strict";
     var n = i(49),
