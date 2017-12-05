@@ -31244,7 +31244,7 @@ webpackJsonp([0], [function(e, t, i) {
                 var s = this.calculateNodesToParents(e),
                     o = this;
                 Object.forEach(s, function(e, t) {
-                    if (t && t[0].model.isAllowed(r.Nodes.EDIT_GEOMETRY) && t.allPresent) {
+                    if (t && t[0] && t[0].model.isAllowed(r.Nodes.EDIT_GEOMETRY) && t.allPresent) {
                         var i = new u(o.getFeatureGeometries(t), null);
                         i._sketch = !0,
                             i._sketchNode = !0,
