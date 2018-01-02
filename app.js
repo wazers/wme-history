@@ -42470,7 +42470,8 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "templateContext",
                     value: function() {
                         return {
-                            summaryTitle: this._viewHelpers.getSummaryTitle()
+                            summaryTitle: this._viewHelpers.getSummaryTitle(),
+                            canEditDifficultTurns: W.loginManager.user.canEditDifficultTurns()
                         }
                     }
                 }, {
@@ -42480,7 +42481,6 @@ webpackJsonp([0], [function(e, t, i) {
                             this.showChildView("listRegion", new g.default({
                                 restrictions: this._restrictions,
                                 canEditRestrictions: this._canEditRestrictions,
-                                canEditDifficultTurns: W.loginManager.user.canEditDifficultTurns(),
                                 subscriptions: this._subscriptions
                             }))
                     }
