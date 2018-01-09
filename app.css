@@ -13096,8 +13096,8 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .street-view-layer .pin .drag-handle {
     border: 2px solid rgba(51, 51, 51, 0.25);
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 20.50629px;
+    left: 20.50629px;
     margin-top: -7px;
     /*rtl:ignore*/
     margin-left: -7px;
@@ -13145,8 +13145,9 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     line-height: 40px;
     color: rgba(255, 255, 255, 0.5);
     font-size: 26px;
-    margin-top: -44px;
-    margin-left: -44px;
+    margin-top: -22px;
+    /*rtl:ignore*/
+    margin-left: -22px;
     width: 44px;
     height: 44px;
     border-radius: 44px;
