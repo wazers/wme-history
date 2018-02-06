@@ -19021,8 +19021,8 @@ webpackJsonp([0], [function(e, t, i) {
                             t.$el.on("mouseenter", function() {
                                 return n.trigger("tooltip:mouseenter")
                             }),
-                            t.$el.on("mouseleave", function() {
-                                return n.trigger("tooltip:mouseleave")
+                            t.$el.on("mouseleave", function(e) {
+                                0 === t.$el.has(e.target).length ? n.trigger("tooltip:mouseleave") : e.stopPropagation()
                             })
                     }
                 }, {
@@ -30474,12 +30474,18 @@ webpackJsonp([0], [function(e, t, i) {
         }(n),
         r = i(22);
     Backbone.ajax = function(e) {
-        return !e.method && e.type && (e = (0,
-                s.default)({}, e, {
-                method: e.type
-            })),
-            (0,
-                r.request)(e.url, e.data, e)
+        !e.method && e.type && (e = (0,
+            s.default)({}, e, {
+            method: e.type
+        }));
+        var t = (0,
+            r.request)(e.url, e.data, e);
+        return t.then(function(t) {
+            return e.success && e.success.call(e.context, t),
+                t
+        }).catch(function(i) {
+            e.error && e.error.call(e.context, t, null, i.errorString)
+        })
     }
 }, function(e, t, i) {
     "use strict";
