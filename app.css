@@ -12356,6 +12356,23 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     clear: both;
 }
 
+.closures-status-message.success {
+    color: #3c763d;
+}
+
+.closures-status-message.error {
+    color: #a94442;
+    font-weight: bold;
+}
+
+.closures-status-message .closures-status-message-icon {
+    margin-right: 5px;
+}
+
+.closures-status-message.loading .icon-spinner {
+    margin-right: 5px;
+}
+
 .closures-list .add-closure-button {
     margin-bottom: 10px;
     display: inline-block;
@@ -21861,23 +21878,6 @@ body[dir="rtl"] .olControlScaleLine {
     .daterangepicker .calendar.left {
         clear: none !important;
     }
-}
-
-.brara-status-message.success {
-    color: #3c763d;
-}
-
-.brara-status-message.error {
-    color: #a94442;
-    font-weight: bold;
-}
-
-.brara-status-message .brara-status-message-icon {
-    margin-right: 5px;
-}
-
-.brara-status-message.loading .icon-spinner {
-    margin-right: 5px;
 }
 
 .input-group-addon {
