@@ -21517,14 +21517,15 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "_serverRequest",
                     value: function(e) {
                         var t = this,
-                            i = this.map.getCenter(),
-                            n = {
-                                q: e,
-                                max_distance_kms: W.Config.search.maxDistance,
-                                lon: i.lon,
-                                lat: i.lat,
-                                format: "PROTO_JSON_FULL"
-                            };
+                            i = this.map.getCenter().clone();
+                        i = g.default.unproject(i);
+                        var n = {
+                            q: e,
+                            max_distance_kms: W.Config.search.maxDistance,
+                            lon: i.lon,
+                            lat: i.lat,
+                            format: "PROTO_JSON_FULL"
+                        };
                         (0,
                             m.httpGet)(W.Config.search.server, n, {
                             dataType: "json"
@@ -57265,7 +57266,12 @@ webpackJsonp([0], [function(e, t, i) {
     window.require = function(e) {
         return e = "./" + e + ".js",
             n(e)
-    }
+    };
+    window.Waze = new Proxy(window.W, {
+        get: function(e, t) {
+            return e[t]
+        }
+    })
 }, function(e, t, i) {
     function n(e) {
         return i(s(e))
