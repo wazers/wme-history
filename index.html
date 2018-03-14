@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-351f619c6151176d6bee2615e1546783.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-6619b7da11d5bbc2630c94ca04d71acf.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.9-32-g27ed2f8
+                                <div class="version">v2.10-33-g986d99b
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -83,7 +83,7 @@
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-c23623190f9ac4ec35f7.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-2d439c7fb7e1311ddc61.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -770,7 +770,7 @@
                             "headlights": "Headlights required",
                             "nearbyHOV": "Next to carpool/HOV/bus lane",
                             "direction": "Direction",
-                            "restriction": "Restriction",
+                            "restriction": "Restrictions",
                             "fwdSpeedCamera": "A to B",
                             "revSpeedCamera": "B to A",
                             "level": "Elevation",
@@ -866,6 +866,10 @@
                                 "title": "You cannot edit these segments.",
                                 "description": "One or more segments may be locked or out of your editing area."
                             }
+                        },
+                        "restrictions": {
+                            "driving_restrictions": "Driving Restrictions",
+                            "pickup_restrictions": "Pickup Restrictions"
                         },
                         "routing": {
                             "road_type": {
@@ -1005,7 +1009,7 @@
                         "parking": {
                             "operator": "Operator",
                             "general": {
-                                "yes": "Yes"
+                                "true": true
                             },
                             "fields": {
                                 "canExitWhileClosed": "Cars can exit when lot is closed",
@@ -1748,7 +1752,11 @@
                     "restrictions": "Restrictions",
                     "switch_route": "Switch Route",
                     "difficult_turn": "Difficult Turn",
-                    "cant_edit_difficult_turn": "You need a higher level to mark difficult turns"
+                    "cant_edit_difficult_turn": "You need a higher level to mark difficult turns",
+                    "cant_edit_difficult_turn_area": "You need to be in your editing area to mark difficult turns",
+                    "no_tbr_tooltip": "Add the hours when this turn is difficult",
+                    "tbr_tooltip_header": "Difficult turn during:",
+                    "remove_tbrs_first": "In order to disable the difficult turn you must first remove the time based difficult turn"
                 },
                 "restrictions": {
                     "modal_headers": {
@@ -1758,12 +1766,16 @@
                         "limited_permissions": "You do not have permission to edit some of these restrictions",
                         "multiple_segments": "Editing multiple segments"
                     },
+                    "tab_headers": {
+                        "driving": "Driving",
+                        "pickup": "Pick-up"
+                    },
                     "summary": {
                         "table_headers": {
                             "lane": "Lane",
                             "days": "Days",
                             "time": "Time",
-                            "summary": "Summary"
+                            "details": "Details"
                         },
                         "badges": {
                             "allowed": "Allowed",
@@ -1801,6 +1813,10 @@
                                 "LEFT_LANE": "Left lane",
                                 "MIDDLE_LANE": "Middle lane",
                                 "RIGHT_LANE": "Right lane"
+                            },
+                            "action_type": {
+                                "DRIVING": "Driving",
+                                "PICKUP": "Pick-up"
                             }
                         },
                         "actions": {
@@ -1822,6 +1838,7 @@
                             "all_week": "Every day",
                             "applies": "Applies",
                             "always": "Every week",
+                            "date_range": "Between %{start} and %{end}",
                             "every_month": "Range",
                             "overnight": "Restriction will end on the following day"
                         },
@@ -1831,7 +1848,8 @@
                             "only_vehicles": "Only",
                             "other_vehicles_restricted": "Other vehicles are restricted",
                             "other_vehicles_pay_toll": "Other vehicles must pay toll",
-                            "other_vehicles_allowed": "Only vehicles listed here are allowed",
+                            "no_vehicles_allowed": "No vehicles are allowed",
+                            "other_vehicles_allowed": "Any vehicles not mentioned here are allowed",
                             "add_vehicle": "Add new rule",
                             "min_passengers": "Min. %{count} passengers",
                             "all_passengers": "Any number of passengers",
@@ -1851,6 +1869,12 @@
                                 "and": "and"
                             }
                         },
+                        "pickup": {
+                            "allowed": "Allowed",
+                            "not_allowed": "Not Allowed",
+                            "unknown": "Unknown",
+                            "multiple": "Multiple"
+                        },
                         "validation": {
                             "description_char_limit": "Description exceeds %{char_limit} characters",
                             "weekdays": "Select at least one day",
@@ -1864,16 +1888,19 @@
                         "titles": {
                             "turn": {
                                 "restricted": "Turning from %{from_street} to %{to_street} is restricted on",
-                                "not_restricted": "Turning from %{from_street} to %{to_street} is not restricted"
+                                "not_restricted": "Turning from %{from_street} to %{to_street} is not restricted",
+                                "difficult": "Turning from %{from_street} to %{to_street} is difficult on"
                             },
                             "uturn": {
                                 "restricted": "Making a U-turn at %{street} is restricted on",
-                                "not_restricted": "Making a U-turn at %{street} is not restricted"
+                                "not_restricted": "Making a U-turn at %{street} is not restricted",
+                                "difficult": "Making a U-turn at %{street} is difficult on"
                             },
                             "segment": {
-                                "restricted": "Driving %{direction} on %{street} is restricted on",
-                                "not_restricted": "Driving %{direction} on %{street} is not restricted",
-                                "both_ways": "both ways"
+                                "driving_restricted": "Driving %{direction} on %{street} is restricted",
+                                "driving_not_restricted": "Driving %{direction} on %{street} is not restricted",
+                                "both_ways": "both ways",
+                                "pickup": "Pick-up spots %{direction} on %{street}:"
                             }
                         },
                         "sections": {
@@ -2443,8 +2470,8 @@
                         "DELETE": "Deleted %{field}"
                     },
                     "boolean_attributes": {
-                        "enabled": "Yes",
-                        "disabled": "No"
+                        "enabled": true,
+                        "disabled": false
                     },
                     "visual_attributes": {
                         "old_value": "this",
@@ -2516,7 +2543,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-75689ce9350b9473b48c.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-ba6e922a1bd9f27af33a.js"></script>
     </body>
 
 </html>
