@@ -53113,32 +53113,34 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(18),
         r = n(s),
-        a = i(2),
+        a = i(6),
         o = n(a),
-        l = i(0),
+        l = i(2),
         u = n(l),
-        d = i(1),
+        d = i(0),
         c = n(d),
-        h = i(3),
+        h = i(1),
         f = n(h),
-        p = i(4),
+        p = i(3),
         g = n(p),
-        m = i(949),
-        v = i(950),
-        y = function(e) {
+        m = i(4),
+        v = n(m),
+        y = i(949),
+        b = i(950),
+        w = function(e) {
             function t() {
                 return (0,
-                        u.default)(this, t),
+                        c.default)(this, t),
                     (0,
-                        f.default)(this, (t.__proto__ || (0,
-                        o.default)(t)).apply(this, arguments))
+                        g.default)(this, (t.__proto__ || (0,
+                        u.default)(t)).apply(this, arguments))
             }
             return (0,
-                    g.default)(t, e),
+                    v.default)(t, e),
                 (0,
-                    c.default)(t, [{
+                    f.default)(t, [{
                     key: "className",
                     value: function() {
                         return "restrictions-summary restrictions-summary-segment"
@@ -53189,20 +53191,21 @@ webpackJsonp([0], [function(e, t, i) {
                         e = _.omit(e, "drivingRestrictionsBuilder", "pickupRestrictionsBuilder"),
                             this._canEditRestrictions = e.canEditRestrictions,
                             this._showRestrictionType = e.showRestrictionType,
-                            this._drivingView = new m.SegmentRestrictionDrivingView((0,
-                                r.default)({}, e, {
+                            this._drivingView = new y.SegmentRestrictionDrivingView((0,
+                                o.default)({}, e, {
                                 restrictionBuilder: i
                             })),
                             this._pickupView = (0,
-                                v.createPickupView)((0,
-                                r.default)({}, e, {
+                                b.createPickupView)((0,
+                                o.default)({}, e, {
                                 restrictionBuilder: n
                             })),
                             this.model = new Backbone.Model({
                                 canEditRestrictions: this._canEditRestrictions,
                                 editingMultipleSegments: i.hasMultipleSegments(),
                                 currentTab: "driving"
-                            })
+                            }),
+                            this._tollRoadModel = e.tollRoadModel
                     }
                 }, {
                     key: "childViewTriggers",
@@ -53263,7 +53266,8 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function() {
                         this.showChildView("drivingRegion", this._drivingView),
                             this.options.enablePickupRestrictions && this.showChildView("pickupRegion", this._pickupView),
-                            this.stickit()
+                            this.stickit(),
+                            this.stickit(this._tollRoadModel, this.tollRoadBindings)
                     }
                 }, {
                     key: "onAttach",
@@ -53281,10 +53285,41 @@ webpackJsonp([0], [function(e, t, i) {
                     get: function() {
                         return "Waze/Modules/Restrictions/templates/restrictions_summary_segments"
                     }
+                }, {
+                    key: "tollRoadBindings",
+                    get: function() {
+                        return {
+                            ".toll-road-tooltip": {
+                                observe: "hasTollRestriction",
+                                visible: !0
+                            },
+                            "[name=tollRoad]": {
+                                observe: "isTollRoad",
+                                update: _.noop,
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "hasTollRestriction"
+                                }, {
+                                    name: "mixed",
+                                    observe: "isTollRoadMixed"
+                                }, {
+                                    name: "checked",
+                                    observe: ["isTollRoad", "isTollRoadMixed"],
+                                    onGet: function(e) {
+                                        var t = (0,
+                                                r.default)(e, 2),
+                                            i = t[0],
+                                            n = t[1];
+                                        return i && !n
+                                    }
+                                }]
+                            }
+                        }
+                    }
                 }]),
                 t
         }(Marionette.View);
-    t.default = y,
+    t.default = w,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -53427,8 +53462,7 @@ webpackJsonp([0], [function(e, t, i) {
                         this._viewHelpers = e.viewHelpers,
                             this._restrictionsBuilder = e.restrictionBuilder,
                             this._canEditRestrictions = e.canEditRestrictions,
-                            this._subscriptions = e.subscriptions,
-                            this._tollRoadModel = e.tollRoadModel;
+                            this._subscriptions = e.subscriptions;
                         var t = _.partition(this._restrictionsBuilder.getForwardRestrictions(), this._appliesToAll.bind(this)),
                             i = (0,
                                 r.default)(t, 2);
@@ -53467,7 +53501,6 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "onRender",
                     value: function() {
                         this.stickit(),
-                            this.stickit(this._tollRoadModel, this.tollRoadBindings),
                             this.$(".waze-tooltip").tooltip(),
                             this.showChildView("forwardAllListRegion", this._createListView(this._fwdAll)),
                             this.showChildView("forwardSomeListRegion", this._createListView(this._fwdSome, !0)),
@@ -53518,37 +53551,6 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "template",
                     get: function() {
                         return "Waze/Modules/Restrictions/templates/restrictions_driving_segments"
-                    }
-                }, {
-                    key: "tollRoadBindings",
-                    get: function() {
-                        return {
-                            ".toll-road-tooltip": {
-                                observe: "hasTollRestriction",
-                                visible: !0
-                            },
-                            "[name=tollRoad]": {
-                                observe: "isTollRoad",
-                                update: _.noop,
-                                attributes: [{
-                                    name: "disabled",
-                                    observe: "hasTollRestriction"
-                                }, {
-                                    name: "mixed",
-                                    observe: "isTollRoadMixed"
-                                }, {
-                                    name: "checked",
-                                    observe: ["isTollRoad", "isTollRoadMixed"],
-                                    onGet: function(e) {
-                                        var t = (0,
-                                                r.default)(e, 2),
-                                            i = t[0],
-                                            n = t[1];
-                                        return i && !n
-                                    }
-                                }]
-                            }
-                        }
                     }
                 }]),
                 t
