@@ -13,14 +13,14 @@
     }
     var n = window.webpackJsonp;
     window.webpackJsonp = function(s, i, a) {
-        for (var o, d, u, l = 0, y = []; l < s.length; l++)
+        for (var o, d, u, l = 0, h = []; l < s.length; l++)
             d = s[l],
-            r[d] && y.push(r[d][0]),
+            r[d] && h.push(r[d][0]),
             r[d] = 0;
         for (o in i)
             Object.prototype.hasOwnProperty.call(i, o) && (e[o] = i[o]);
-        for (n && n(s, i, a); y.length;)
-            y.shift()();
+        for (n && n(s, i, a); h.length;)
+            h.shift()();
         if (a)
             for (l = 0; l < a.length; l++)
                 u = t(t.s = a[l]);
@@ -57,7 +57,7 @@
                 o.timeout = 12e4,
                 t.nc && o.setAttribute("nonce", t.nc),
                 o.src = t.p + "js/" + e + "-" + {
-                    0: "f147c12b40018b5034a0"
+                    0: "84ab752b2a005139db29"
                 }[e] + ".js";
             var d = setTimeout(n, 12e4);
             return o.onerror = o.onload = n,
@@ -90,7 +90,7 @@
         t.oe = function(e) {
             throw e
         },
-        t(t.s = 1053)
+        t(t.s = 1103)
 }([, , , , , function(e, t, n) {
     (function(e) {
         ! function(t, n) {
@@ -143,7 +143,7 @@
                 return Object.prototype.hasOwnProperty.call(e, t)
             }
 
-            function y(e, t) {
+            function h(e, t) {
                 for (var n in t)
                     l(t, n) && (e[n] = t[n]);
                 return l(t, "toString") && (e.toString = t.toString),
@@ -151,7 +151,7 @@
                     e
             }
 
-            function h(e, t, n, s) {
+            function y(e, t, n, s) {
                 return At(e, t, n, s, !0).utc()
             }
 
@@ -195,8 +195,8 @@
             }
 
             function p(e) {
-                var t = h(NaN);
-                return null != e ? y(T(t), e) : T(t).userInvalidated = !0,
+                var t = y(NaN);
+                return null != e ? h(T(t), e) : T(t).userInvalidated = !0,
                     t
             }
 
@@ -258,7 +258,7 @@
 
             function D(e, n) {
                 var s = !0;
-                return y(function() {
+                return h(function() {
                     if (null != t.deprecationHandler && t.deprecationHandler(null, e),
                         s) {
                         for (var r, i = [], a = 0; a < arguments.length; a++) {
@@ -299,13 +299,13 @@
             }
 
             function L(e, t) {
-                var n, s = y({}, e);
+                var n, s = h({}, e);
                 for (n in t)
                     l(t, n) && (r(e[n]) && r(t[n]) ? (s[n] = {},
-                        y(s[n], e[n]),
-                        y(s[n], t[n])) : null != t[n] ? s[n] = t[n] : delete s[n]);
+                        h(s[n], e[n]),
+                        h(s[n], t[n])) : null != t[n] ? s[n] = t[n] : delete s[n]);
                 for (n in e)
-                    l(e, n) && !l(t, n) && r(e[n]) && (s[n] = y({}, s[n]));
+                    l(e, n) && !l(t, n) && r(e[n]) && (s[n] = h({}, s[n]));
                 return s
             }
 
@@ -331,11 +331,11 @@
                 return this._invalidDate
             }
 
-            function N(e) {
+            function O(e) {
                 return this._ordinal.replace("%d", e)
             }
 
-            function O(e, t, n, s) {
+            function N(e, t, n, s) {
                 var r = this._relativeTime[n];
                 return C(r) ? r(e, t, n, s) : r.replace(/%d/i, e)
             }
@@ -534,18 +534,18 @@
                 return e ? s(this._months) ? this._months[e.month()] : this._months[(this._months.isFormat || gr).test(t) ? "format" : "standalone"][e.month()] : s(this._months) ? this._months : this._months.standalone
             }
 
-            function ye(e, t) {
+            function he(e, t) {
                 return e ? s(this._monthsShort) ? this._monthsShort[e.month()] : this._monthsShort[gr.test(t) ? "format" : "standalone"][e.month()] : s(this._monthsShort) ? this._monthsShort : this._monthsShort.standalone
             }
 
-            function he(e, t, n) {
+            function ye(e, t, n) {
                 var s, r, i, a = e.toLocaleLowerCase();
                 if (!this._monthsParse)
                     for (this._monthsParse = [],
                         this._longMonthsParse = [],
                         this._shortMonthsParse = [],
                         s = 0; s < 12; ++s)
-                        i = h([2e3, s]),
+                        i = y([2e3, s]),
                         this._shortMonthsParse[s] = this.monthsShort(i, "").toLocaleLowerCase(),
                         this._longMonthsParse[s] = this.months(i, "").toLocaleLowerCase();
                 return n ? "MMM" === t ? (r = fr.call(this._shortMonthsParse, a), -1 !== r ? r : null) : (r = fr.call(this._longMonthsParse, a), -1 !== r ? r : null) : "MMM" === t ? -1 !== (r = fr.call(this._shortMonthsParse, a)) ? r : (r = fr.call(this._longMonthsParse, a), -1 !== r ? r : null) : -1 !== (r = fr.call(this._longMonthsParse, a)) ? r : (r = fr.call(this._shortMonthsParse, a), -1 !== r ? r : null)
@@ -554,12 +554,12 @@
             function me(e, t, n) {
                 var s, r, i;
                 if (this._monthsParseExact)
-                    return he.call(this, e, t, n);
+                    return ye.call(this, e, t, n);
                 for (this._monthsParse || (this._monthsParse = [],
                         this._longMonthsParse = [],
                         this._shortMonthsParse = []),
                     s = 0; s < 12; s++) {
-                    if (r = h([2e3, s]),
+                    if (r = y([2e3, s]),
                         n && !this._longMonthsParse[s] && (this._longMonthsParse[s] = new RegExp("^" + this.months(r, "").replace(".", "") + "$", "i"),
                             this._shortMonthsParse[s] = new RegExp("^" + this.monthsShort(r, "").replace(".", "") + "$", "i")),
                         n || this._monthsParse[s] || (i = "^" + this.months(r, "") + "|^" + this.monthsShort(r, ""),
@@ -617,7 +617,7 @@
                     r = [],
                     i = [];
                 for (t = 0; t < 12; t++)
-                    n = h([2e3, t]),
+                    n = y([2e3, t]),
                     s.push(this.monthsShort(n, "")),
                     r.push(this.months(n, "")),
                     i.push(this.months(n, "")),
@@ -715,11 +715,11 @@
                 return "string" == typeof e ? t.weekdaysParse(e) % 7 || 7 : isNaN(e) ? null : e
             }
 
-            function Ne(e, t) {
+            function Oe(e, t) {
                 return e ? s(this._weekdays) ? this._weekdays[e.day()] : this._weekdays[this._weekdays.isFormat.test(t) ? "format" : "standalone"][e.day()] : s(this._weekdays) ? this._weekdays : this._weekdays.standalone
             }
 
-            function Oe(e) {
+            function Ne(e) {
                 return e ? this._weekdaysShort[e.day()] : this._weekdaysShort
             }
 
@@ -734,7 +734,7 @@
                         this._shortWeekdaysParse = [],
                         this._minWeekdaysParse = [],
                         s = 0; s < 7; ++s)
-                        i = h([2e3, 1]).day(s),
+                        i = y([2e3, 1]).day(s),
                         this._minWeekdaysParse[s] = this.weekdaysMin(i, "").toLocaleLowerCase(),
                         this._shortWeekdaysParse[s] = this.weekdaysShort(i, "").toLocaleLowerCase(),
                         this._weekdaysParse[s] = this.weekdays(i, "").toLocaleLowerCase();
@@ -750,7 +750,7 @@
                         this._shortWeekdaysParse = [],
                         this._fullWeekdaysParse = []),
                     s = 0; s < 7; s++) {
-                    if (r = h([2e3, 1]).day(s),
+                    if (r = y([2e3, 1]).day(s),
                         n && !this._fullWeekdaysParse[s] && (this._fullWeekdaysParse[s] = new RegExp("^" + this.weekdays(r, "").replace(".", ".?") + "$", "i"),
                             this._shortWeekdaysParse[s] = new RegExp("^" + this.weekdaysShort(r, "").replace(".", ".?") + "$", "i"),
                             this._minWeekdaysParse[s] = new RegExp("^" + this.weekdaysMin(r, "").replace(".", ".?") + "$", "i")),
@@ -819,7 +819,7 @@
                     d = [],
                     u = [];
                 for (t = 0; t < 7; t++)
-                    n = h([2e3, 1]).day(t),
+                    n = y([2e3, 1]).day(t),
                     s = this.weekdaysMin(n, ""),
                     r = this.weekdaysShort(n, ""),
                     i = this.weekdays(n, ""),
@@ -897,7 +897,7 @@
                 if (!Pr[t] && void 0 !== e && e && e.exports)
                     try {
                         s = kr._abbr;
-                        n(1244)("./" + t),
+                        n(1294)("./" + t),
                             et(s)
                     } catch (e) {}
                 return Pr[t]
@@ -965,13 +965,13 @@
             }
 
             function rt() {
-                return Ns(Pr)
+                return Os(Pr)
             }
 
             function it(e) {
                 var t, n = e._a;
-                return n && -2 === T(e).overflow && (t = n[lr] < 0 || n[lr] > 11 ? lr : n[yr] < 1 || n[yr] > ue(n[ur], n[lr]) ? yr : n[hr] < 0 || n[hr] > 24 || 24 === n[hr] && (0 !== n[mr] || 0 !== n[Tr] || 0 !== n[cr]) ? hr : n[mr] < 0 || n[mr] > 59 ? mr : n[Tr] < 0 || n[Tr] > 59 ? Tr : n[cr] < 0 || n[cr] > 999 ? cr : -1,
-                        T(e)._overflowDayOfYear && (t < ur || t > yr) && (t = yr),
+                return n && -2 === T(e).overflow && (t = n[lr] < 0 || n[lr] > 11 ? lr : n[hr] < 1 || n[hr] > ue(n[ur], n[lr]) ? hr : n[yr] < 0 || n[yr] > 24 || 24 === n[yr] && (0 !== n[mr] || 0 !== n[Tr] || 0 !== n[cr]) ? yr : n[mr] < 0 || n[mr] > 59 ? mr : n[Tr] < 0 || n[Tr] > 59 ? Tr : n[cr] < 0 || n[cr] > 999 ? cr : -1,
+                        T(e)._overflowDayOfYear && (t < ur || t > hr) && (t = hr),
                         T(e)._overflowWeeks && -1 === t && (t = pr),
                         T(e)._overflowWeekday && -1 === t && (t = Mr),
                         T(e).overflow = t),
@@ -991,21 +991,21 @@
                 var t, n, s, r, i = [];
                 if (!e._d) {
                     for (s = ot(e),
-                        e._w && null == e._a[yr] && null == e._a[lr] && ut(e),
+                        e._w && null == e._a[hr] && null == e._a[lr] && ut(e),
                         null != e._dayOfYear && (r = at(e._a[ur], s[ur]),
                             (e._dayOfYear > ee(r) || 0 === e._dayOfYear) && (T(e)._overflowDayOfYear = !0),
                             n = _e(r, 0, e._dayOfYear),
                             e._a[lr] = n.getUTCMonth(),
-                            e._a[yr] = n.getUTCDate()),
+                            e._a[hr] = n.getUTCDate()),
                         t = 0; t < 3 && null == e._a[t]; ++t)
                         e._a[t] = i[t] = s[t];
                     for (; t < 7; t++)
                         e._a[t] = i[t] = null == e._a[t] ? 2 === t ? 1 : 0 : e._a[t];
-                    24 === e._a[hr] && 0 === e._a[mr] && 0 === e._a[Tr] && 0 === e._a[cr] && (e._nextDay = !0,
-                            e._a[hr] = 0),
+                    24 === e._a[yr] && 0 === e._a[mr] && 0 === e._a[Tr] && 0 === e._a[cr] && (e._nextDay = !0,
+                            e._a[yr] = 0),
                         e._d = (e._useUTC ? _e : ge).apply(null, i),
                         null != e._tzm && e._d.setUTCMinutes(e._d.getUTCMinutes() - e._tzm),
-                        e._nextDay && (e._a[hr] = 24),
+                        e._nextDay && (e._a[yr] = 24),
                         e._w && void 0 !== e._w.d && e._w.d !== e._d.getDay() && (T(e).weekdayMismatch = !0)
                 }
             }
@@ -1070,13 +1070,13 @@
                     e._isValid = !1
             }
 
-            function yt(e, t, n, s, r, i) {
-                var a = [ht(e), br.indexOf(t), parseInt(n, 10), parseInt(s, 10), parseInt(r, 10)];
+            function ht(e, t, n, s, r, i) {
+                var a = [yt(e), br.indexOf(t), parseInt(n, 10), parseInt(s, 10), parseInt(r, 10)];
                 return i && a.push(parseInt(i, 10)),
                     a
             }
 
-            function ht(e) {
+            function yt(e) {
                 var t = parseInt(e, 10);
                 return t <= 49 ? 2e3 + t : t <= 999 ? 1900 + t : t
             }
@@ -1107,7 +1107,7 @@
             function pt(e) {
                 var t = Zr.exec(mt(e._i));
                 if (t) {
-                    var n = yt(t[4], t[3], t[2], t[5], t[6], t[7]);
+                    var n = ht(t[4], t[3], t[2], t[5], t[6], t[7]);
                     if (!Tt(t[1], n, e))
                         return;
                     e._a = n,
@@ -1150,10 +1150,10 @@
                         Q(i, s, e)) : e._strict && !s && T(e).unusedTokens.push(i);
                 T(e).charsLeftOver = d - u,
                     o.length > 0 && T(e).unusedInput.push(o),
-                    e._a[hr] <= 12 && !0 === T(e).bigHour && e._a[hr] > 0 && (T(e).bigHour = void 0),
+                    e._a[yr] <= 12 && !0 === T(e).bigHour && e._a[yr] > 0 && (T(e).bigHour = void 0),
                     T(e).parsedDateParts = e._a.slice(0),
                     T(e).meridiem = e._meridiem,
-                    e._a[hr] = St(e._locale, e._a[hr], e._meridiem),
+                    e._a[yr] = St(e._locale, e._a[yr], e._meridiem),
                     dt(e),
                     it(e)
             }
@@ -1182,7 +1182,7 @@
                         T(t).score = i,
                         (null == s || i < s) && (s = i,
                             n = t));
-                y(e, n || t)
+                h(e, n || t)
             }
 
             function _t(e) {
@@ -1279,7 +1279,7 @@
                 return qt(NaN)
             }
 
-            function Nt(e) {
+            function Ot(e) {
                 var t = j(e),
                     n = t.year || 0,
                     s = t.quarter || 0,
@@ -1299,8 +1299,8 @@
                     this._bubble()
             }
 
-            function Ot(e) {
-                return e instanceof Nt
+            function Nt(e) {
+                return e instanceof Ot
             }
 
             function xt(e) {
@@ -1405,7 +1405,7 @@
                 if (M(e, this),
                     e = vt(e),
                     e._a) {
-                    var t = e._isUTC ? h(e._a) : Ct(e._a);
+                    var t = e._isUTC ? y(e._a) : Ct(e._a);
                     this._isDSTShifted = this.isValid() && b(e._a, t.toArray()) > 0
                 } else
                     this._isDSTShifted = !1;
@@ -1427,7 +1427,7 @@
             function qt(e, t) {
                 var n, s, r, i = e,
                     a = null;
-                return Ot(e) ? i = {
+                return Nt(e) ? i = {
                         ms: e._milliseconds,
                         d: e._days,
                         M: e._months
@@ -1435,8 +1435,8 @@
                         t ? i[t] = e : i.milliseconds = e) : (a = qr.exec(e)) ? (n = "-" === a[1] ? -1 : 1,
                         i = {
                             y: 0,
-                            d: _(a[yr]) * n,
-                            h: _(a[hr]) * n,
+                            d: _(a[hr]) * n,
+                            h: _(a[yr]) * n,
                             m: _(a[mr]) * n,
                             s: _(a[Tr]) * n,
                             ms: _(xt(1e3 * a[cr])) * n
@@ -1454,8 +1454,8 @@
                         i = {},
                         i.ms = r.milliseconds,
                         i.M = r.months),
-                    s = new Nt(i),
-                    Ot(e) && l(e, "_locale") && (s._locale = e._locale),
+                    s = new Ot(i),
+                    Nt(e) && l(e, "_locale") && (s._locale = e._locale),
                     s
             }
 
@@ -1553,11 +1553,11 @@
                         this.clone().startOf(t).valueOf() <= n && n <= this.clone().endOf(t).valueOf()))
             }
 
-            function yn(e, t) {
+            function hn(e, t) {
                 return this.isSame(e, t) || this.isAfter(e, t)
             }
 
-            function hn(e, t) {
+            function yn(e, t) {
                 return this.isSame(e, t) || this.isBefore(e, t)
             }
 
@@ -1734,12 +1734,12 @@
                 return this.isValid() ? this.toISOString() : null
             }
 
-            function Nn() {
+            function On() {
                 return c(this)
             }
 
-            function On() {
-                return y({}, T(this))
+            function Nn() {
+                return h({}, T(this))
             }
 
             function xn() {
@@ -1828,7 +1828,7 @@
 
             function Xn(e, t, n, s) {
                 var r = st(),
-                    i = h().set(s, t);
+                    i = y().set(s, t);
                 return r[n](i, e)
             }
 
@@ -1917,7 +1917,7 @@
                 return e < 0 ? Math.floor(e) : Math.ceil(e)
             }
 
-            function ys() {
+            function hs() {
                 var e, t, n, s, r, i = this._milliseconds,
                     a = this._days,
                     o = this._months,
@@ -1933,7 +1933,7 @@
                     n = g(t / 60),
                     d.hours = n % 24,
                     a += g(n / 24),
-                    r = g(hs(a)),
+                    r = g(ys(a)),
                     o += r,
                     a -= ls(ms(r)),
                     s = g(o / 12),
@@ -1944,7 +1944,7 @@
                     this
             }
 
-            function hs(e) {
+            function ys(e) {
                 return 4800 * e / 146097
             }
 
@@ -1958,7 +1958,7 @@
                 var t, n, s = this._milliseconds;
                 if ("month" === (e = F(e)) || "year" === e)
                     return t = this._days + s / 864e5,
-                        n = this._months + hs(t),
+                        n = this._months + ys(t),
                         "month" === e ? n : n / 12;
                 switch (t = this._days + Math.round(ms(this._months)),
                     e) {
@@ -2066,15 +2066,15 @@
                     d = r,
                     u = t,
                     l = e,
-                    y = s ? s.toFixed(3).replace(/\.?0+$/, "") : "",
-                    h = this.asSeconds();
-                if (!h)
+                    h = s ? s.toFixed(3).replace(/\.?0+$/, "") : "",
+                    y = this.asSeconds();
+                if (!y)
                     return "P0D";
-                var m = h < 0 ? "-" : "",
-                    T = Cs(this._months) !== Cs(h) ? "-" : "",
-                    c = Cs(this._days) !== Cs(h) ? "-" : "",
-                    p = Cs(this._milliseconds) !== Cs(h) ? "-" : "";
-                return m + "P" + (a ? T + a + "Y" : "") + (o ? T + o + "M" : "") + (d ? c + d + "D" : "") + (u || l || y ? "T" : "") + (u ? p + u + "H" : "") + (l ? p + l + "M" : "") + (y ? p + y + "S" : "")
+                var m = y < 0 ? "-" : "",
+                    T = Cs(this._months) !== Cs(y) ? "-" : "",
+                    c = Cs(this._days) !== Cs(y) ? "-" : "",
+                    p = Cs(this._milliseconds) !== Cs(y) ? "-" : "";
+                return m + "P" + (a ? T + a + "Y" : "") + (o ? T + o + "M" : "") + (d ? c + d + "D" : "") + (u || l || h ? "T" : "") + (u ? p + u + "H" : "") + (l ? p + l + "M" : "") + (h ? p + h + "S" : "")
             }
             var Ls, ws;
             ws = Array.prototype.some ? Array.prototype.some : function(e) {
@@ -2088,14 +2088,14 @@
                 ks = {};
             t.suppressDeprecationWarnings = !1,
                 t.deprecationHandler = null;
-            var Ns;
-            Ns = Object.keys ? Object.keys : function(e) {
+            var Os;
+            Os = Object.keys ? Object.keys : function(e) {
                 var t, n = [];
                 for (t in e)
                     l(e, t) && n.push(t);
                 return n
             };
-            var Os = {
+            var Ns = {
                     sameDay: "[Today at] LT",
                     nextDay: "[Tomorrow at] LT",
                     nextWeek: "dddd [at] LT",
@@ -2155,8 +2155,8 @@
                 dr = {},
                 ur = 0,
                 lr = 1,
-                yr = 2,
-                hr = 3,
+                hr = 2,
+                yr = 3,
                 mr = 4,
                 Tr = 5,
                 cr = 6,
@@ -2322,49 +2322,49 @@
                 U("hmmss", qs),
                 U("Hmm", $s),
                 U("Hmmss", qs),
-                q(["H", "HH"], hr),
+                q(["H", "HH"], yr),
                 q(["k", "kk"], function(e, t, n) {
                     var s = _(e);
-                    t[hr] = 24 === s ? 0 : s
+                    t[yr] = 24 === s ? 0 : s
                 }),
                 q(["a", "A"], function(e, t, n) {
                     n._isPm = n._locale.isPM(e),
                         n._meridiem = e
                 }),
                 q(["h", "hh"], function(e, t, n) {
-                    t[hr] = _(e),
+                    t[yr] = _(e),
                         T(n).bigHour = !0
                 }),
                 q("hmm", function(e, t, n) {
                     var s = e.length - 2;
-                    t[hr] = _(e.substr(0, s)),
+                    t[yr] = _(e.substr(0, s)),
                         t[mr] = _(e.substr(s)),
                         T(n).bigHour = !0
                 }),
                 q("hmmss", function(e, t, n) {
                     var s = e.length - 4,
                         r = e.length - 2;
-                    t[hr] = _(e.substr(0, s)),
+                    t[yr] = _(e.substr(0, s)),
                         t[mr] = _(e.substr(s, 2)),
                         t[Tr] = _(e.substr(r)),
                         T(n).bigHour = !0
                 }),
                 q("Hmm", function(e, t, n) {
                     var s = e.length - 2;
-                    t[hr] = _(e.substr(0, s)),
+                    t[yr] = _(e.substr(0, s)),
                         t[mr] = _(e.substr(s))
                 }),
                 q("Hmmss", function(e, t, n) {
                     var s = e.length - 4,
                         r = e.length - 2;
-                    t[hr] = _(e.substr(0, s)),
+                    t[yr] = _(e.substr(0, s)),
                         t[mr] = _(e.substr(s, 2)),
                         t[Tr] = _(e.substr(r))
                 });
-            var kr, Nr = /[ap]\.?m?\.?/i,
-                Or = se("Hours", !0),
+            var kr, Or = /[ap]\.?m?\.?/i,
+                Nr = se("Hours", !0),
                 xr = {
-                    calendar: Os,
+                    calendar: Ns,
                     longDateFormat: xs,
                     invalidDate: "Invalid date",
                     ordinal: "%d",
@@ -2376,7 +2376,7 @@
                     weekdays: Cr,
                     weekdaysMin: Lr,
                     weekdaysShort: Er,
-                    meridiemParse: Nr
+                    meridiemParse: Or
                 },
                 Pr = {},
                 Fr = {},
@@ -2450,7 +2450,7 @@
             t.updateOffset = function() {};
             var qr = /^(\-|\+)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/,
                 Xr = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
-            qt.fn = Nt.prototype,
+            qt.fn = Ot.prototype,
                 qt.invalid = kt;
             var Qr = tn(1, "add"),
                 ei = tn(-1, "subtract");
@@ -2502,9 +2502,9 @@
                 U("Do", function(e, t) {
                     return e ? t._dayOfMonthOrdinalParse || t._ordinalParse : t._dayOfMonthOrdinalParseLenient
                 }),
-                q(["D", "DD"], yr),
+                q(["D", "DD"], hr),
                 q("Do", function(e, t) {
-                    t[yr] = _(e.match(Vs)[0], 10)
+                    t[hr] = _(e.match(Vs)[0], 10)
                 });
             var ni = se("Date", !0);
             W("DDD", ["DDDD", 3], "DDDo", "dayOfYear"),
@@ -2584,15 +2584,15 @@
                 oi.isBefore = dn,
                 oi.isBetween = un,
                 oi.isSame = ln,
-                oi.isSameOrAfter = yn,
-                oi.isSameOrBefore = hn,
-                oi.isValid = Nn,
+                oi.isSameOrAfter = hn,
+                oi.isSameOrBefore = yn,
+                oi.isValid = On,
                 oi.lang = ti,
                 oi.locale = vn,
                 oi.localeData = Dn,
                 oi.max = Ur,
                 oi.min = zr,
-                oi.parsingFlags = On,
+                oi.parsingFlags = Nn,
                 oi.set = oe,
                 oi.startOf = An,
                 oi.subtract = ei,
@@ -2622,7 +2622,7 @@
                 oi.weekday = Ye,
                 oi.isoWeekday = Be,
                 oi.dayOfYear = Kn,
-                oi.hour = oi.hours = Or,
+                oi.hour = oi.hours = Nr,
                 oi.minute = oi.minutes = si,
                 oi.second = oi.seconds = ri,
                 oi.millisecond = oi.milliseconds = ai,
@@ -2647,23 +2647,23 @@
             di.calendar = H,
                 di.longDateFormat = I,
                 di.invalidDate = k,
-                di.ordinal = N,
+                di.ordinal = O,
                 di.preparse = qn,
                 di.postformat = qn,
-                di.relativeTime = O,
+                di.relativeTime = N,
                 di.pastFuture = x,
                 di.set = E,
                 di.months = le,
-                di.monthsShort = ye,
+                di.monthsShort = he,
                 di.monthsParse = me,
                 di.monthsRegex = fe,
                 di.monthsShortRegex = Me,
                 di.week = Ce,
                 di.firstDayOfYear = Le,
                 di.firstDayOfWeek = Ee,
-                di.weekdays = Ne,
+                di.weekdays = Oe,
                 di.weekdaysMin = xe,
-                di.weekdaysShort = Oe,
+                di.weekdaysShort = Ne,
                 di.weekdaysParse = Fe,
                 di.weekdaysRegex = Re,
                 di.weekdaysShortRegex = We,
@@ -2681,8 +2681,8 @@
                 t.langData = D("moment.langData is deprecated. Use moment.localeData instead.", st);
             var ui = Math.abs,
                 li = ps("ms"),
-                yi = ps("s"),
-                hi = ps("m"),
+                hi = ps("s"),
+                yi = ps("m"),
                 mi = ps("h"),
                 Ti = ps("d"),
                 ci = ps("w"),
@@ -2705,22 +2705,22 @@
                     M: 11
                 },
                 Ei = Math.abs,
-                Li = Nt.prototype;
+                Li = Ot.prototype;
             return Li.isValid = It,
                 Li.abs = as,
                 Li.add = ds,
                 Li.subtract = us,
                 Li.as = Ts,
                 Li.asMilliseconds = li,
-                Li.asSeconds = yi,
-                Li.asMinutes = hi,
+                Li.asSeconds = hi,
+                Li.asMinutes = yi,
                 Li.asHours = mi,
                 Li.asDays = Ti,
                 Li.asWeeks = ci,
                 Li.asMonths = pi,
                 Li.asYears = Mi,
                 Li.valueOf = cs,
-                Li._bubble = ys,
+                Li._bubble = hs,
                 Li.clone = Ms,
                 Li.get = fs,
                 Li.milliseconds = fi,
@@ -2757,7 +2757,7 @@
                 t.min = Lt,
                 t.max = wt,
                 t.now = Gr,
-                t.utc = h,
+                t.utc = y,
                 t.unix = Vn,
                 t.months = ts,
                 t.isDate = d,
@@ -2768,7 +2768,7 @@
                 t.weekdays = ss,
                 t.parseZone = $n,
                 t.localeData = st,
-                t.isDuration = Ot,
+                t.isDuration = Nt,
                 t.monthsShort = ns,
                 t.weekdaysMin = is,
                 t.defineLocale = tt,
@@ -2782,31 +2782,31 @@
                 t.prototype = oi,
                 t
         })
-    }).call(t, n(297)(e))
-}, , , , , , , , , function(e, t) {
+    }).call(t, n(308)(e))
+}, , , , , , , , , , function(e, t) {
     var n = e.exports = {
         version: "2.5.1"
     };
     "number" == typeof __e && (__e = n)
-}, , , , , , , , , , function(e, t, n) {
-    var s = n(25),
-        r = n(14),
-        i = n(57),
-        a = n(49),
+}, , , , , , , function(e, t, n) {
+    var s = n(24),
+        r = n(15),
+        i = n(43),
+        a = n(44),
         o = function(e, t, n) {
-            var d, u, l, y = e & o.F,
-                h = e & o.G,
+            var d, u, l, h = e & o.F,
+                y = e & o.G,
                 m = e & o.S,
                 T = e & o.P,
                 c = e & o.B,
                 p = e & o.W,
-                M = h ? r : r[t] || (r[t] = {}),
+                M = y ? r : r[t] || (r[t] = {}),
                 f = M.prototype,
-                S = h ? s : m ? s[t] : (s[t] || {}).prototype;
-            h && (n = t);
+                S = y ? s : m ? s[t] : (s[t] || {}).prototype;
+            y && (n = t);
             for (d in n)
-                (u = !y && S && void 0 !== S[d]) && d in M || (l = u ? S[d] : n[d],
-                    M[d] = h && "function" != typeof S[d] ? n[d] : c && u ? i(l, s) : p && S[d] == l ? function(e) {
+                (u = !h && S && void 0 !== S[d]) && d in M || (l = u ? S[d] : n[d],
+                    M[d] = y && "function" != typeof S[d] ? n[d] : c && u ? i(l, s) : p && S[d] == l ? function(e) {
                         var t = function(t, n, s) {
                             if (this instanceof e) {
                                 switch (arguments.length) {
@@ -2836,46 +2836,34 @@
         o.U = 64,
         o.R = 128,
         e.exports = o
-}, function(e, t) {
+}, , function(e, t) {
     var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = n)
-}, , function(e, t, n) {
-    var s = n(129)("wks"),
-        r = n(91),
-        i = n(25).Symbol,
+}, , , function(e, t, n) {
+    var s = n(142)("wks"),
+        r = n(100),
+        i = n(24).Symbol,
         a = "function" == typeof i;
     (e.exports = function(e) {
         return s[e] || (s[e] = a && i[e] || (a ? i : r)("Symbol." + e))
     }).store = s
-}, , , , , function(e, t, n) {
-    var s = n(39);
+}, , , , function(e, t) {
+    e.exports = function(e) {
+        return "object" == typeof e ? null !== e : "function" == typeof e
+    }
+}, , function(e, t, n) {
+    var s = n(31);
     e.exports = function(e) {
         if (!s(e))
             throw TypeError(e + " is not an object!");
         return e
     }
-}, , , , , , function(e, t) {
-    var n;
-    n = function() {
-        return this
-    }();
-    try {
-        n = n || Function("return this")() || (0,
-            eval)("this")
-    } catch (e) {
-        "object" == typeof window && (n = window)
-    }
-    e.exports = n
-}, function(e, t) {
-    e.exports = function(e) {
-        return "object" == typeof e ? null !== e : "function" == typeof e
-    }
-}, function(e, t, n) {
-    var s = n(32),
-        r = n(174),
-        i = n(124),
+}, , , , function(e, t, n) {
+    var s = n(33),
+        r = n(188),
+        i = n(139),
         a = Object.defineProperty;
-    t.f = n(42) ? Object.defineProperty : function(e, t, n) {
+    t.f = n(41) ? Object.defineProperty : function(e, t, n) {
         if (s(e),
             t = i(t, !0),
             s(n),
@@ -2888,45 +2876,34 @@
         return "value" in n && (e[t] = n.value),
             e
     }
-}, function(e, t, n) {
-    var s = n(176),
-        r = n(125);
-    e.exports = function(e) {
-        return s(r(e))
+}, , , function(e, t) {
+    var n;
+    n = function() {
+        return this
+    }();
+    try {
+        n = n || Function("return this")() || (0,
+            eval)("this")
+    } catch (e) {
+        "object" == typeof window && (n = window)
     }
+    e.exports = n
 }, function(e, t, n) {
-    e.exports = !n(50)(function() {
+    e.exports = !n(45)(function() {
         return 7 != Object.defineProperty({}, "a", {
             get: function() {
                 return 7
             }
         }).a
     })
-}, , , , , , , function(e, t, n) {
-    var s = n(40),
-        r = n(75);
-    e.exports = n(42) ? function(e, t, n) {
-            return s.f(e, t, r(1, n))
-        } :
-        function(e, t, n) {
-            return e[t] = n,
-                e
-        }
-}, function(e, t) {
+}, function(e, t, n) {
+    var s = n(135),
+        r = n(136);
     e.exports = function(e) {
-        try {
-            return !!e()
-        } catch (e) {
-            return !0
-        }
+        return s(r(e))
     }
-}, function(e, t) {
-    var n = {}.hasOwnProperty;
-    e.exports = function(e, t) {
-        return n.call(e, t)
-    }
-}, , , , , , function(e, t, n) {
-    var s = n(58);
+}, function(e, t, n) {
+    var s = n(54);
     e.exports = function(e, t, n) {
         if (s(e),
             void 0 === t)
@@ -2949,19 +2926,36 @@
             return e.apply(t, arguments)
         }
     }
+}, function(e, t, n) {
+    var s = n(37),
+        r = n(82);
+    e.exports = n(41) ? function(e, t, n) {
+            return s.f(e, t, r(1, n))
+        } :
+        function(e, t, n) {
+            return e[t] = n,
+                e
+        }
 }, function(e, t) {
+    e.exports = function(e) {
+        try {
+            return !!e()
+        } catch (e) {
+            return !0
+        }
+    }
+}, , , , , , , , , function(e, t) {
     e.exports = function(e) {
         if ("function" != typeof e)
             throw TypeError(e + " is not a function!");
         return e
     }
-}, function(e, t, n) {
-    var s = n(175),
-        r = n(130);
-    e.exports = Object.keys || function(e) {
-        return s(e, r)
+}, function(e, t) {
+    var n = {}.hasOwnProperty;
+    e.exports = function(e, t) {
+        return n.call(e, t)
     }
-}, function(e, t, n) {
+}, , function(e, t, n) {
     "use strict";
 
     function s(e) {
@@ -2970,9 +2964,9 @@
         }
     }
     t.__esModule = !0;
-    var r = n(435),
+    var r = n(459),
         i = s(r),
-        a = n(443),
+        a = n(461),
         o = s(a),
         d = "function" == typeof o.default && "symbol" == typeof i.default ? function(e) {
             return typeof e
@@ -2986,9 +2980,38 @@
         function(e) {
             return e && "function" == typeof o.default && e.constructor === o.default && e !== o.default.prototype ? "symbol" : void 0 === e ? "undefined" : d(e)
         }
-}, function(e, t) {
+}, , , , , , , function(e, t) {
     e.exports = {}
-}, , , , , , , , , , , , function(e, t, n) {
+}, function(e, t, n) {
+    var s = n(190),
+        r = n(143);
+    e.exports = Object.keys || function(e) {
+        return s(e, r)
+    }
+}, function(e, t, n) {
+    var s = n(136);
+    e.exports = function(e) {
+        return Object(s(e))
+    }
+}, function(e, t, n) {
+    "use strict";
+    var s = n(445)(!0);
+    n(137)(String, "String", function(e) {
+        this._t = String(e),
+            this._i = 0
+    }, function() {
+        var e, t = this._t,
+            n = this._i;
+        return n >= t.length ? {
+            value: void 0,
+            done: !0
+        } : (e = s(t, n),
+            this._i += e.length, {
+                value: e,
+                done: !1
+            })
+    })
+}, , , , , , , , , , , function(e, t, n) {
     var s, r;
     (function() {
         function n(e) {
@@ -3042,7 +3065,7 @@
         function o(e, t) {
             var n = x.length,
                 s = e.constructor,
-                r = b.isFunction(s) && s.prototype || y,
+                r = b.isFunction(s) && s.prototype || h,
                 i = "constructor";
             for (b.has(e, i) && !b.contains(t, i) && t.push(i); n--;)
                 (i = x[n]) in e && e[i] !== r[i] && !b.contains(t, i) && t.push(i)
@@ -3050,15 +3073,15 @@
         var d = this,
             u = d._,
             l = Array.prototype,
-            y = Object.prototype,
-            h = Function.prototype,
+            h = Object.prototype,
+            y = Function.prototype,
             m = l.push,
             T = l.slice,
-            c = y.toString,
-            p = y.hasOwnProperty,
+            c = h.toString,
+            p = h.hasOwnProperty,
             M = Array.isArray,
             f = Object.keys,
-            S = h.bind,
+            S = y.bind,
             g = Object.create,
             _ = function() {},
             b = function(e) {
@@ -3413,7 +3436,7 @@
                     r[i] = e;
                 return r
             };
-        var N = function(e, t, n, s, r) {
+        var O = function(e, t, n, s, r) {
             if (!(s instanceof t))
                 return e.apply(n, r);
             var i = C(e.prototype),
@@ -3427,7 +3450,7 @@
                     throw new TypeError("Bind must be called on a function");
                 var n = T.call(arguments, 2),
                     s = function() {
-                        return N(e, s, t, this, n.concat(T.call(arguments)))
+                        return O(e, s, t, this, n.concat(T.call(arguments)))
                     };
                 return s
             },
@@ -3438,7 +3461,7 @@
                             i[a] = t[a] === b ? arguments[s++] : t[a];
                         for (; s < arguments.length;)
                             i.push(arguments[s++]);
-                        return N(e, n, this, this, i)
+                        return O(e, n, this, this, i)
                     };
                 return n
             },
@@ -3542,7 +3565,7 @@
                 }
             },
             b.once = b.partial(b.before, 2);
-        var O = !{
+        var N = !{
                 toString: null
             }.propertyIsEnumerable("toString"),
             x = ["valueOf", "isPrototypeOf", "toString", "propertyIsEnumerable", "hasOwnProperty", "toLocaleString"];
@@ -3554,7 +3577,7 @@
                 var t = [];
                 for (var n in e)
                     b.has(e, n) && t.push(n);
-                return O && o(e, t),
+                return N && o(e, t),
                     t
             },
             b.allKeys = function(e) {
@@ -3563,7 +3586,7 @@
                 var t = [];
                 for (var n in e)
                     t.push(n);
-                return O && o(e, t),
+                return N && o(e, t),
                     t
             },
             b.values = function(e) {
@@ -3927,7 +3950,7 @@
         var r, i;
         ! function(a) {
             var o = "object" == typeof self && self.self === self && self || "object" == typeof s && s.global === s && s;
-            r = [n(73), n(122), t],
+            r = [n(78), n(134), t],
                 void 0 !== (i = function(e, t, n) {
                         o.Backbone = a(o, n, e, t)
                     }
@@ -3987,15 +4010,15 @@
                     }
                 },
                 l = t.Events = {},
-                y = /\s+/,
-                h = function(e, t, s, r, i) {
+                h = /\s+/,
+                y = function(e, t, s, r, i) {
                     var a, o = 0;
                     if (s && "object" == typeof s) {
                         void 0 !== r && "context" in i && void 0 === i.context && (i.context = r);
                         for (a = n.keys(s); o < a.length; o++)
-                            t = h(e, t, a[o], s[a[o]], i)
-                    } else if (s && y.test(s))
-                        for (a = s.split(y); o < a.length; o++)
+                            t = y(e, t, a[o], s[a[o]], i)
+                    } else if (s && h.test(s))
+                        for (a = s.split(h); o < a.length; o++)
                             t = e(t, a[o], r, i);
                     else
                         t = e(t, s, r, i);
@@ -4005,7 +4028,7 @@
                 return m(this, e, t, n)
             };
             var m = function(e, t, n, s, r) {
-                if (e._events = h(T, e._events || {}, t, n, {
+                if (e._events = y(T, e._events || {}, t, n, {
                         context: s,
                         ctx: e,
                         listening: r
@@ -4051,7 +4074,7 @@
                 return e
             };
             l.off = function(e, t, n) {
-                    return this._events ? (this._events = h(c, this._events, e, t, {
+                    return this._events ? (this._events = y(c, this._events, e, t, {
                             context: n,
                             listeners: this._listeners
                         }),
@@ -4080,12 +4103,12 @@
                             var l = e[t];
                             if (!l)
                                 break;
-                            for (var y = [], h = 0; h < l.length; h++) {
-                                var m = l[h];
-                                s && s !== m.callback && s !== m.callback._callback || o && o !== m.context ? y.push(m) : (i = m.listening) && 0 == --i.count && (delete d[i.id],
+                            for (var h = [], y = 0; y < l.length; y++) {
+                                var m = l[y];
+                                s && s !== m.callback && s !== m.callback._callback || o && o !== m.context ? h.push(m) : (i = m.listening) && 0 == --i.count && (delete d[i.id],
                                     delete i.listeningTo[i.objId])
                             }
-                            y.length ? e[t] = y : delete e[t]
+                            h.length ? e[t] = h : delete e[t]
                         }
                         return e
                     }
@@ -4096,12 +4119,12 @@
                 }
             };
             l.once = function(e, t, s) {
-                    var r = h(p, {}, e, t, n.bind(this.off, this));
+                    var r = y(p, {}, e, t, n.bind(this.off, this));
                     return "string" == typeof e && null == s && (t = void 0),
                         this.on(r, t, s)
                 },
                 l.listenToOnce = function(e, t, s) {
-                    var r = h(p, {}, t, s, n.bind(this.stopListening, this, e));
+                    var r = y(p, {}, t, s, n.bind(this.stopListening, this, e));
                     return this.listenTo(e, r)
                 };
             var p = function(e, t, s, r) {
@@ -4119,7 +4142,7 @@
                     return this;
                 for (var t = Math.max(0, arguments.length - 1), n = Array(t), s = 0; s < t; s++)
                     n[s] = arguments[s + 1];
-                return h(M, this._events, e, void 0, n),
+                return y(M, this._events, e, void 0, n),
                     this
             };
             var M = function(e, t, n, s) {
@@ -4218,12 +4241,12 @@
                                 this.changed = {});
                         var u = this.attributes,
                             l = this.changed,
-                            y = this._previousAttributes;
-                        for (var h in r)
-                            t = r[h],
-                            n.isEqual(u[h], t) || o.push(h),
-                            n.isEqual(y[h], t) ? delete l[h] : l[h] = t,
-                            i ? delete u[h] : u[h] = t;
+                            h = this._previousAttributes;
+                        for (var y in r)
+                            t = r[y],
+                            n.isEqual(u[y], t) || o.push(y),
+                            n.isEqual(h[y], t) ? delete l[y] : l[y] = t,
+                            i ? delete u[y] : u[y] = t;
                         if (this.idAttribute in r && (this.id = this.get(this.idAttribute)), !a) {
                             o.length && (this._pending = s);
                             for (var m = 0; m < o.length; m++)
@@ -4457,8 +4480,8 @@
                                 d = [],
                                 u = [],
                                 l = [],
-                                y = {},
-                                h = t.add,
+                                h = {},
+                                y = t.add,
                                 m = t.merge,
                                 T = t.remove,
                                 c = !1,
@@ -4475,23 +4498,23 @@
                                             u.push(f),
                                             p && !c && (c = f.hasChanged(M))
                                     }
-                                    y[f.cid] || (y[f.cid] = !0,
+                                    h[f.cid] || (h[f.cid] = !0,
                                             o.push(f)),
                                         e[a] = f
                                 } else
-                                    h && (i = e[a] = this._prepareModel(i, t)) && (d.push(i),
+                                    y && (i = e[a] = this._prepareModel(i, t)) && (d.push(i),
                                         this._addReference(i, t),
-                                        y[i.cid] = !0,
+                                        h[i.cid] = !0,
                                         o.push(i))
                             }
                             if (T) {
                                 for (a = 0; a < this.length; a++)
                                     i = this.models[a],
-                                    y[i.cid] || l.push(i);
+                                    h[i.cid] || l.push(i);
                                 l.length && this._removeModels(l, t)
                             }
                             var g = !1,
-                                b = !p && h && T;
+                                b = !p && y && T;
                             if (o.length && b ? (g = this.length !== o.length || n.some(this.models, function(e, t) {
                                         return e !== o[t]
                                     }),
@@ -4918,17 +4941,17 @@
                     })
                 }
             });
-            var N = t.History = function() {
+            var O = t.History = function() {
                     this.handlers = [],
                         this.checkUrl = n.bind(this.checkUrl, this),
                         "undefined" != typeof window && (this.location = window.location,
                             this.history = window.history)
                 },
-                O = /^[#\/]|\s+$/g,
+                N = /^[#\/]|\s+$/g,
                 x = /^\/+|\/+$/g,
                 P = /#.*$/;
-            N.started = !1,
-                n.extend(N.prototype, l, {
+            O.started = !1,
+                n.extend(O.prototype, l, {
                     interval: 50,
                     atRoot: function() {
                         return this.location.pathname.replace(/[^\/]$/, "$&/") === this.root && !this.getSearch()
@@ -4953,12 +4976,12 @@
                     },
                     getFragment: function(e) {
                         return null == e && (e = this._usePushState || !this._wantsHashChange ? this.getPath() : this.getHash()),
-                            e.replace(O, "")
+                            e.replace(N, "")
                     },
                     start: function(e) {
-                        if (N.started)
+                        if (O.started)
                             throw new Error("Backbone.history has already been started");
-                        if (N.started = !0,
+                        if (O.started = !0,
                             this.options = n.extend({
                                 root: "/"
                             }, this.options, e),
@@ -5005,7 +5028,7 @@
                             this.iframe && (document.body.removeChild(this.iframe),
                                 this.iframe = null),
                             this._checkUrlInterval && clearInterval(this._checkUrlInterval),
-                            N.started = !1
+                            O.started = !1
                     },
                     route: function(e, t) {
                         this.handlers.unshift({
@@ -5029,7 +5052,7 @@
                             }))
                     },
                     navigate: function(e, t) {
-                        if (!N.started)
+                        if (!O.started)
                             return !1;
                         t && !0 !== t || (t = {
                                 trigger: !!t
@@ -5065,7 +5088,7 @@
                             e.hash = "#" + t
                     }
                 }),
-                t.history = new N;
+                t.history = new O;
             var F = function(e, t) {
                 var s, r = this;
                 return s = e && n.has(e, "constructor") ? e.constructor : function() {
@@ -5077,7 +5100,7 @@
                     s.__super__ = r.prototype,
                     s
             };
-            S.extend = g.extend = L.extend = D.extend = N.extend = F;
+            S.extend = g.extend = L.extend = D.extend = O.extend = F;
             var j = function() {
                     throw new Error('A "url" property or function must be specified')
                 },
@@ -5090,7 +5113,21 @@
                 };
             return t
         })
-    }).call(t, n(38))
+    }).call(t, n(40))
+}, function(e, t, n) {
+    n(439);
+    for (var s = n(24), r = n(44), i = n(64), a = n(27)("toStringTag"), o = "CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,TextTrackList,TouchList".split(","), d = 0; d < o.length; d++) {
+        var u = o[d],
+            l = s[u],
+            h = l && l.prototype;
+        h && !h[a] && r(h, a, u),
+            i[u] = i.Array
+    }
+}, function(e, t) {
+    var n = {}.toString;
+    e.exports = function(e) {
+        return n.call(e).slice(8, -1)
+    }
 }, function(e, t) {
     e.exports = function(e, t) {
         return {
@@ -5100,57 +5137,17 @@
             value: t
         }
     }
-}, function(e, t) {
-    var n = {}.toString;
-    e.exports = function(e) {
-        return n.call(e).slice(8, -1)
-    }
-}, function(e, t) {
-    t.f = {}.propertyIsEnumerable
 }, function(e, t, n) {
-    var s = n(125);
-    e.exports = function(e) {
-        return Object(s(e))
-    }
-}, function(e, t, n) {
-    "use strict";
-    var s = n(437)(!0);
-    n(178)(String, "String", function(e) {
-        this._t = String(e),
-            this._i = 0
-    }, function() {
-        var e, t = this._t,
-            n = this._i;
-        return n >= t.length ? {
-            value: void 0,
-            done: !0
-        } : (e = s(t, n),
-            this._i += e.length, {
-                value: e,
-                done: !1
-            })
-    })
-}, , , , , , , , , , , , function(e, t) {
-    var n = 0,
-        s = Math.random();
-    e.exports = function(e) {
-        return "Symbol(".concat(void 0 === e ? "" : e, ")_", (++n + s).toString(36))
-    }
-}, function(e, t) {
-    t.f = Object.getOwnPropertySymbols
-}, , function(e, t) {
-    e.exports = !0
-}, function(e, t, n) {
-    var s = n(32),
-        r = n(439),
-        i = n(130),
-        a = n(128)("IE_PROTO"),
+    var s = n(33),
+        r = n(442),
+        i = n(143),
+        a = n(141)("IE_PROTO"),
         o = function() {},
         d = function() {
-            var e, t = n(123)("iframe"),
+            var e, t = n(138)("iframe"),
                 s = i.length;
             for (t.style.display = "none",
-                n(180).appendChild(t),
+                n(191).appendChild(t),
                 t.src = "javascript:",
                 e = t.contentWindow.document,
                 e.open(),
@@ -5169,8 +5166,8 @@
             void 0 === t ? n : r(n, t)
     }
 }, function(e, t, n) {
-    var s = n(40).f,
-        r = n(51),
+    var s = n(37).f,
+        r = n(55),
         i = n(27)("toStringTag");
     e.exports = function(e, t, n) {
         e && !r(e = n ? e : e.prototype, i) && s(e, i, {
@@ -5178,24 +5175,86 @@
             value: t
         })
     }
+}, function(e, t) {
+    t.f = {}.propertyIsEnumerable
+}, , , , , , , , , , , , , function(e, t) {
+    e.exports = !0
 }, function(e, t, n) {
-    n(440);
-    for (var s = n(25), r = n(49), i = n(61), a = n(27)("toStringTag"), o = "CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,TextTrackList,TouchList".split(","), d = 0; d < o.length; d++) {
-        var u = o[d],
-            l = s[u],
-            y = l && l.prototype;
-        y && !y[a] && r(y, a, u),
-            i[u] = i.Array
+    var s = n(140),
+        r = Math.min;
+    e.exports = function(e) {
+        return e > 0 ? r(s(e), 9007199254740991) : 0
     }
+}, function(e, t) {
+    var n = 0,
+        s = Math.random();
+    e.exports = function(e) {
+        return "Symbol(".concat(void 0 === e ? "" : e, ")_", (++n + s).toString(36))
+    }
+}, , function(e, t) {
+    t.f = Object.getOwnPropertySymbols
+}, , function(e, t, n) {
+    var s = n(100)("meta"),
+        r = n(31),
+        i = n(55),
+        a = n(37).f,
+        o = 0,
+        d = Object.isExtensible || function() {
+            return !0
+        },
+        u = !n(45)(function() {
+            return d(Object.preventExtensions({}))
+        }),
+        l = function(e) {
+            a(e, s, {
+                value: {
+                    i: "O" + ++o,
+                    w: {}
+                }
+            })
+        },
+        h = function(e, t) {
+            if (!r(e))
+                return "symbol" == typeof e ? e : ("string" == typeof e ? "S" : "P") + e;
+            if (!i(e, s)) {
+                if (!d(e))
+                    return "F";
+                if (!t)
+                    return "E";
+                l(e)
+            }
+            return e[s].i
+        },
+        y = function(e, t) {
+            if (!i(e, s)) {
+                if (!d(e))
+                    return !0;
+                if (!t)
+                    return !1;
+                l(e)
+            }
+            return e[s].w
+        },
+        m = function(e) {
+            return u && T.NEED && d(e) && !i(e, s) && l(e),
+                e
+        },
+        T = e.exports = {
+            KEY: s,
+            NEED: !1,
+            fastKey: h,
+            getWeak: y,
+            onFreeze: m
+        }
 }, function(e, t, n) {
-    var s = n(77),
-        r = n(75),
-        i = n(41),
-        a = n(124),
-        o = n(51),
-        d = n(174),
+    var s = n(85),
+        r = n(82),
+        i = n(42),
+        a = n(139),
+        o = n(55),
+        d = n(188),
         u = Object.getOwnPropertyDescriptor;
-    t.f = n(42) ? u : function(e, t) {
+    t.f = n(41) ? u : function(e, t) {
         if (e = i(e),
             t = a(t, !0),
             d)
@@ -5205,7 +5264,7 @@
         if (o(e, t))
             return r(!s.f.call(e, t), e[t])
     }
-}, , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     var s, r;
     /*!
      * jQuery JavaScript Library v2.2.4
@@ -5274,11 +5333,11 @@
                 de.ready()
         }
 
-        function y() {
-            this.expando = de.expando + y.uid++
+        function h() {
+            this.expando = de.expando + h.uid++
         }
 
-        function h(e, t, n) {
+        function y(e, t, n) {
             var s;
             if (void 0 === n && 1 === e.nodeType)
                 if (s = "data-" + t.replace(He, "-$&").toLowerCase(),
@@ -5333,33 +5392,33 @@
         }
 
         function p(e, t, n, s, r) {
-            for (var i, a, o, d, u, l, y = t.createDocumentFragment(), h = [], m = 0, p = e.length; m < p; m++)
+            for (var i, a, o, d, u, l, h = t.createDocumentFragment(), y = [], m = 0, p = e.length; m < p; m++)
                 if ((i = e[m]) || 0 === i)
                     if ("object" === de.type(i))
-                        de.merge(h, i.nodeType ? [i] : i);
+                        de.merge(y, i.nodeType ? [i] : i);
                     else if (Ye.test(i)) {
-                for (a = a || y.appendChild(t.createElement("div")),
+                for (a = a || h.appendChild(t.createElement("div")),
                     o = (Pe.exec(i) || ["", ""])[1].toLowerCase(),
                     d = je[o] || je._default,
                     a.innerHTML = d[1] + de.htmlPrefilter(i) + d[2],
                     l = d[0]; l--;)
                     a = a.lastChild;
-                de.merge(h, a.childNodes),
-                    a = y.firstChild,
+                de.merge(y, a.childNodes),
+                    a = h.firstChild,
                     a.textContent = ""
             } else
-                h.push(t.createTextNode(i));
-            for (y.textContent = "",
-                m = 0; i = h[m++];)
+                y.push(t.createTextNode(i));
+            for (h.textContent = "",
+                m = 0; i = y[m++];)
                 if (s && de.inArray(i, s) > -1)
                     r && r.push(i);
                 else if (u = de.contains(i.ownerDocument, i),
-                a = T(y.appendChild(i), "script"),
+                a = T(h.appendChild(i), "script"),
                 u && c(a),
                 n)
                 for (l = 0; i = a[l++];)
                     Fe.test(i.type || "") && n.push(i);
-            return y
+            return h
         }
 
         function M() {
@@ -5446,24 +5505,24 @@
         function C(e, t, n, s) {
             t = te.apply([], t);
             var r, i, a, o, d, u, l = 0,
-                y = e.length,
-                h = y - 1,
+                h = e.length,
+                y = h - 1,
                 m = t[0],
                 c = de.isFunction(m);
-            if (c || y > 1 && "string" == typeof m && !oe.checkClone && Ke.test(m))
+            if (c || h > 1 && "string" == typeof m && !oe.checkClone && Ke.test(m))
                 return e.each(function(r) {
                     var i = e.eq(r);
                     c && (t[0] = m.call(this, r, i.html())),
                         C(i, t, n, s)
                 });
-            if (y && (r = p(t, e[0].ownerDocument, !1, e, s),
+            if (h && (r = p(t, e[0].ownerDocument, !1, e, s),
                     i = r.firstChild,
                     1 === r.childNodes.length && (r = i),
                     i || s)) {
                 for (a = de.map(T(r, "script"), b),
-                    o = a.length; l < y; l++)
+                    o = a.length; l < h; l++)
                     d = r,
-                    l !== h && (d = de.clone(d, !0, !0),
+                    l !== y && (d = de.clone(d, !0, !0),
                         o && de.merge(a, T(d, "script"))),
                     n.call(e[l], d, l);
                 if (o)
@@ -5537,17 +5596,17 @@
                     return e
         }
 
-        function N(e, t, n) {
+        function O(e, t, n) {
             var s = ke.exec(t);
             return s ? Math.max(0, s[2] - (n || 0)) + (s[3] || "px") : t
         }
 
-        function O(e, t, n, s, r) {
+        function N(e, t, n, s, r) {
             for (var i = n === (s ? "border" : "content") ? 4 : "width" === t ? 1 : 0, a = 0; i < 4; i += 2)
-                "margin" === n && (a += de.css(e, n + Ne[i], !0, r)),
-                s ? ("content" === n && (a -= de.css(e, "padding" + Ne[i], !0, r)),
-                    "margin" !== n && (a -= de.css(e, "border" + Ne[i] + "Width", !0, r))) : (a += de.css(e, "padding" + Ne[i], !0, r),
-                    "padding" !== n && (a += de.css(e, "border" + Ne[i] + "Width", !0, r)));
+                "margin" === n && (a += de.css(e, n + Oe[i], !0, r)),
+                s ? ("content" === n && (a -= de.css(e, "padding" + Oe[i], !0, r)),
+                    "margin" !== n && (a -= de.css(e, "border" + Oe[i] + "Width", !0, r))) : (a += de.css(e, "padding" + Oe[i], !0, r),
+                    "padding" !== n && (a += de.css(e, "border" + Oe[i] + "Width", !0, r)));
             return a
         }
 
@@ -5564,7 +5623,7 @@
                 s = a && (oe.boxSizingReliable() || r === e.style[t]),
                     r = parseFloat(r) || 0
             }
-            return r + O(e, t, n || (a ? "border" : "content"), s, i) + "px"
+            return r + N(e, t, n || (a ? "border" : "content"), s, i) + "px"
         }
 
         function P(e, t) {
@@ -5573,7 +5632,7 @@
                 s.style && (i[a] = Ee.get(s, "olddisplay"),
                     n = s.style.display,
                     t ? (i[a] || "none" !== n || (s.style.display = ""),
-                        "" === s.style.display && Oe(s) && (i[a] = Ee.access(s, "olddisplay", w(s.nodeName)))) : (r = Oe(s),
+                        "" === s.style.display && Ne(s) && (i[a] = Ee.access(s, "olddisplay", w(s.nodeName)))) : (r = Ne(s),
                         "none" === n && r || Ee.set(s, "olddisplay", r ? n : de.css(s, "display"))));
             for (a = 0; a < o; a++)
                 s = e[a],
@@ -5598,7 +5657,7 @@
                     height: e
                 };
             for (t = t ? 1 : 0; s < 4; s += 2 - t)
-                n = Ne[s],
+                n = Oe[s],
                 r["margin" + n] = r["padding" + n] = e;
             return t && (r.opacity = r.width = e),
                 r
@@ -5612,9 +5671,9 @@
 
         function R(e, t, n) {
             var s, r, i, a, o, d, u, l = this,
-                y = {},
-                h = e.style,
-                m = e.nodeType && Oe(e),
+                h = {},
+                y = e.style,
+                m = e.nodeType && Ne(e),
                 T = Ee.get(e, "fxshow");
             n.queue || (o = de._queueHooks(e, "fx"),
                     null == o.unqueued && (o.unqueued = 0,
@@ -5630,14 +5689,14 @@
                                 de.queue(e, "fx").length || o.empty.fire()
                         })
                     })),
-                1 === e.nodeType && ("height" in t || "width" in t) && (n.overflow = [h.overflow, h.overflowX, h.overflowY],
+                1 === e.nodeType && ("height" in t || "width" in t) && (n.overflow = [y.overflow, y.overflowX, y.overflowY],
                     u = de.css(e, "display"),
-                    "inline" === ("none" === u ? Ee.get(e, "olddisplay") || w(e.nodeName) : u) && "none" === de.css(e, "float") && (h.display = "inline-block")),
-                n.overflow && (h.overflow = "hidden",
+                    "inline" === ("none" === u ? Ee.get(e, "olddisplay") || w(e.nodeName) : u) && "none" === de.css(e, "float") && (y.display = "inline-block")),
+                n.overflow && (y.overflow = "hidden",
                     l.always(function() {
-                        h.overflow = n.overflow[0],
-                            h.overflowX = n.overflow[1],
-                            h.overflowY = n.overflow[2]
+                        y.overflow = n.overflow[0],
+                            y.overflowX = n.overflow[1],
+                            y.overflowY = n.overflow[2]
                     }));
             for (s in t)
                 if (r = t[s],
@@ -5649,11 +5708,11 @@
                             continue;
                         m = !0
                     }
-                    y[s] = T && T[s] || de.style(e, s)
+                    h[s] = T && T[s] || de.style(e, s)
                 } else
                     u = void 0;
-            if (de.isEmptyObject(y))
-                "inline" === ("none" === u ? w(e.nodeName) : u) && (h.display = u);
+            if (de.isEmptyObject(h))
+                "inline" === ("none" === u ? w(e.nodeName) : u) && (y.display = u);
             else {
                 T ? "hidden" in T && (m = T.hidden) : T = Ee.access(e, "fxshow", {}),
                     i && (T.hidden = !m),
@@ -5663,10 +5722,10 @@
                     l.done(function() {
                         var t;
                         Ee.remove(e, "fxshow");
-                        for (t in y)
-                            de.style(e, t, y[t])
+                        for (t in h)
+                            de.style(e, t, h[t])
                     });
-                for (s in y)
+                for (s in h)
                     a = B(m ? T[s] : 0, s, l),
                     s in T || (T[s] = a.start,
                         m && (a.end = a.start,
@@ -5892,8 +5951,8 @@
             },
             ue = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
             le = /^-ms-/,
-            ye = /-([\da-z])/gi,
-            he = function(e, t) {
+            he = /-([\da-z])/gi,
+            ye = function(e, t) {
                 return t.toUpperCase()
             };
         de.fn = de.prototype = {
@@ -6006,7 +6065,7 @@
                         Q.head.appendChild(t).parentNode.removeChild(t)) : n(e))
                 },
                 camelCase: function(e) {
-                    return e.replace(le, "ms-").replace(ye, he)
+                    return e.replace(le, "ms-").replace(he, ye)
                 },
                 nodeName: function(e, t) {
                     return e.nodeName && e.nodeName.toLowerCase() === t.toLowerCase()
@@ -6089,7 +6148,7 @@
              */
             function(e) {
                 function t(e, t, n, s) {
-                    var r, i, a, o, u, y, h, m, T = t && t.ownerDocument,
+                    var r, i, a, o, u, h, y, m, T = t && t.ownerDocument,
                         c = t ? t.nodeType : 9;
                     if (n = n || [],
                         "string" != typeof e || !e || 1 !== c && 9 !== c && 11 !== c)
@@ -6097,8 +6156,8 @@
                     if (!s && ((t ? t.ownerDocument || t : j) !== H && w(t),
                             t = t || H,
                             k)) {
-                        if (11 !== c && (y = ce.exec(e)))
-                            if (r = y[1]) {
+                        if (11 !== c && (h = ce.exec(e)))
+                            if (r = h[1]) {
                                 if (9 === c) {
                                     if (!(a = t.getElementById(r)))
                                         return n;
@@ -6109,24 +6168,24 @@
                                     return n.push(a),
                                         n
                             } else {
-                                if (y[2])
+                                if (h[2])
                                     return $.apply(n, t.getElementsByTagName(e)),
                                         n;
-                                if ((r = y[3]) && S.getElementsByClassName && t.getElementsByClassName)
+                                if ((r = h[3]) && S.getElementsByClassName && t.getElementsByClassName)
                                     return $.apply(n, t.getElementsByClassName(r)),
                                         n
                             }
-                        if (S.qsa && !J[e + " "] && (!N || !N.test(e))) {
+                        if (S.qsa && !J[e + " "] && (!O || !O.test(e))) {
                             if (1 !== c)
                                 T = t,
                                 m = e;
                             else if ("object" !== t.nodeName.toLowerCase()) {
                                 for ((o = t.getAttribute("id")) ? o = o.replace(Me, "\\$&") : t.setAttribute("id", o = F),
-                                    h = v(e),
-                                    i = h.length,
+                                    y = v(e),
+                                    i = y.length,
                                     u = le.test(o) ? "#" + o : "[id='" + o + "']"; i--;)
-                                    h[i] = u + " " + l(h[i]);
-                                m = h.join(","),
+                                    y[i] = u + " " + l(y[i]);
+                                m = y.join(","),
                                     T = pe.test(e) && d(t.parentNode) || t
                             }
                             if (m)
@@ -6206,7 +6265,7 @@
                     return s
                 }
 
-                function y(e, t, n) {
+                function h(e, t, n) {
                     var s = t.dir,
                         r = n && "parentNode" === s,
                         i = B++;
@@ -6235,7 +6294,7 @@
                         }
                 }
 
-                function h(e) {
+                function y(e) {
                     return e.length > 1 ? function(t, n, s) {
                             for (var r = e.length; r--;)
                                 if (!e[r](t, n, s))
@@ -6262,28 +6321,28 @@
                     return r && !r[F] && (r = c(r)),
                         i && !i[F] && (i = c(i, a)),
                         s(function(s, a, o, d) {
-                            var u, l, y, h = [],
+                            var u, l, h, y = [],
                                 c = [],
                                 p = a.length,
                                 M = s || m(t || "*", o.nodeType ? [o] : o, []),
-                                f = !e || !s && t ? M : T(M, h, e, o, d),
+                                f = !e || !s && t ? M : T(M, y, e, o, d),
                                 S = n ? i || (s ? e : p || r) ? [] : a : f;
                             if (n && n(f, S, o, d),
                                 r)
                                 for (u = T(S, c),
                                     r(u, [], o, d),
                                     l = u.length; l--;)
-                                    (y = u[l]) && (S[c[l]] = !(f[c[l]] = y));
+                                    (h = u[l]) && (S[c[l]] = !(f[c[l]] = h));
                             if (s) {
                                 if (i || e) {
                                     if (i) {
                                         for (u = [],
                                             l = S.length; l--;)
-                                            (y = S[l]) && u.push(f[l] = y);
+                                            (h = S[l]) && u.push(f[l] = h);
                                         i(null, S = [], u, d)
                                     }
                                     for (l = S.length; l--;)
-                                        (y = S[l]) && (u = i ? X(s, y) : h[l]) > -1 && (s[u] = !(a[u] = y))
+                                        (h = S[l]) && (u = i ? X(s, h) : y[l]) > -1 && (s[u] = !(a[u] = h))
                                 }
                             } else
                                 S = T(S === a ? S.splice(p, S.length) : S),
@@ -6292,9 +6351,9 @@
                 }
 
                 function p(e) {
-                    for (var t, n, s, r = e.length, i = g.relative[e[0].type], a = i || g.relative[" "], o = i ? 1 : 0, d = y(function(e) {
+                    for (var t, n, s, r = e.length, i = g.relative[e[0].type], a = i || g.relative[" "], o = i ? 1 : 0, d = h(function(e) {
                             return e === t
-                        }, a, !0), u = y(function(e) {
+                        }, a, !0), u = h(function(e) {
                             return X(t, e) > -1
                         }, a, !0), m = [function(e, n, s) {
                             var r = !i && (s || n !== C) || ((t = n).nodeType ? d(e, n, s) : u(e, n, s));
@@ -6302,26 +6361,26 @@
                                 r
                         }]; o < r; o++)
                         if (n = g.relative[e[o].type])
-                            m = [y(h(m), n)];
+                            m = [h(y(m), n)];
                         else {
                             if (n = g.filter[e[o].type].apply(null, e[o].matches),
                                 n[F]) {
                                 for (s = ++o; s < r && !g.relative[e[s].type]; s++)
                                 ;
-                                return c(o > 1 && h(m), o > 1 && l(e.slice(0, o - 1).concat({
+                                return c(o > 1 && y(m), o > 1 && l(e.slice(0, o - 1).concat({
                                     value: " " === e[o - 2].type ? "*" : ""
                                 })).replace(ie, "$1"), n, o < s && p(e.slice(o, s)), s < r && p(e = e.slice(s)), s < r && l(e))
                             }
                             m.push(n)
                         }
-                    return h(m)
+                    return y(m)
                 }
 
                 function M(e, n) {
                     var r = n.length > 0,
                         i = e.length > 0,
                         a = function(s, a, o, d, u) {
-                            var l, y, h, m = 0,
+                            var l, h, y, m = 0,
                                 c = "0",
                                 p = s && [],
                                 M = [],
@@ -6331,22 +6390,22 @@
                                 b = S.length;
                             for (u && (C = a === H || a || u); c !== b && null != (l = S[c]); c++) {
                                 if (i && l) {
-                                    for (y = 0,
+                                    for (h = 0,
                                         a || l.ownerDocument === H || (w(l),
-                                            o = !k); h = e[y++];)
-                                        if (h(l, a || H, o)) {
+                                            o = !k); y = e[h++];)
+                                        if (y(l, a || H, o)) {
                                             d.push(l);
                                             break
                                         }
                                     u && (Y = _)
                                 }
-                                r && ((l = !h && l) && m--,
+                                r && ((l = !y && l) && m--,
                                     s && p.push(l))
                             }
                             if (m += c,
                                 r && c !== m) {
-                                for (y = 0; h = n[y++];)
-                                    h(p, M, a, o);
+                                for (h = 0; y = n[h++];)
+                                    y(p, M, a, o);
                                 if (s) {
                                     if (m > 0)
                                         for (; c--;)
@@ -6362,7 +6421,7 @@
                         };
                     return r ? s(a) : a
                 }
-                var f, S, g, _, b, v, D, A, C, E, L, w, H, I, k, N, O, x, P, F = "sizzle" + 1 * new Date,
+                var f, S, g, _, b, v, D, A, C, E, L, w, H, I, k, O, N, x, P, F = "sizzle" + 1 * new Date,
                     j = e.document,
                     Y = 0,
                     B = 0,
@@ -6398,7 +6457,7 @@
                     de = new RegExp("=" + ee + "*([^\\]'\"]*?)" + ee + "*\\]", "g"),
                     ue = new RegExp(se),
                     le = new RegExp("^" + te + "$"),
-                    ye = {
+                    he = {
                         ID: new RegExp("^#(" + te + ")"),
                         CLASS: new RegExp("^\\.(" + te + ")"),
                         TAG: new RegExp("^(" + te + "|[*])"),
@@ -6408,7 +6467,7 @@
                         bool: new RegExp("^(?:" + Q + ")$", "i"),
                         needsContext: new RegExp("^" + ee + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" + ee + "*((?:-\\d)?\\d*)" + ee + "*\\)|)(?=[^-]|$)", "i")
                     },
-                    he = /^(?:input|select|textarea|button)$/i,
+                    ye = /^(?:input|select|textarea|button)$/i,
                     me = /^h\d$/i,
                     Te = /^[^{]+\{\s*\[native \w/,
                     ce = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
@@ -6497,32 +6556,32 @@
                                 if (void 0 !== t.getElementsByClassName && k)
                                     return t.getElementsByClassName(e)
                             },
-                            O = [],
                             N = [],
+                            O = [],
                             (S.qsa = Te.test(H.querySelectorAll)) && (r(function(e) {
                                     I.appendChild(e).innerHTML = "<a id='" + F + "'></a><select id='" + F + "-\r\\' msallowcapture=''><option selected=''></option></select>",
-                                        e.querySelectorAll("[msallowcapture^='']").length && N.push("[*^$]=" + ee + "*(?:''|\"\")"),
-                                        e.querySelectorAll("[selected]").length || N.push("\\[" + ee + "*(?:value|" + Q + ")"),
-                                        e.querySelectorAll("[id~=" + F + "-]").length || N.push("~="),
-                                        e.querySelectorAll(":checked").length || N.push(":checked"),
-                                        e.querySelectorAll("a#" + F + "+*").length || N.push(".#.+[+~]")
+                                        e.querySelectorAll("[msallowcapture^='']").length && O.push("[*^$]=" + ee + "*(?:''|\"\")"),
+                                        e.querySelectorAll("[selected]").length || O.push("\\[" + ee + "*(?:value|" + Q + ")"),
+                                        e.querySelectorAll("[id~=" + F + "-]").length || O.push("~="),
+                                        e.querySelectorAll(":checked").length || O.push(":checked"),
+                                        e.querySelectorAll("a#" + F + "+*").length || O.push(".#.+[+~]")
                                 }),
                                 r(function(e) {
                                     var t = H.createElement("input");
                                     t.setAttribute("type", "hidden"),
                                         e.appendChild(t).setAttribute("name", "D"),
-                                        e.querySelectorAll("[name=d]").length && N.push("name" + ee + "*[*^$|!~]?="),
-                                        e.querySelectorAll(":enabled").length || N.push(":enabled", ":disabled"),
+                                        e.querySelectorAll("[name=d]").length && O.push("name" + ee + "*[*^$|!~]?="),
+                                        e.querySelectorAll(":enabled").length || O.push(":enabled", ":disabled"),
                                         e.querySelectorAll("*,:x"),
-                                        N.push(",.*:")
+                                        O.push(",.*:")
                                 })),
                             (S.matchesSelector = Te.test(x = I.matches || I.webkitMatchesSelector || I.mozMatchesSelector || I.oMatchesSelector || I.msMatchesSelector)) && r(function(e) {
                                 S.disconnectedMatch = x.call(e, "div"),
                                     x.call(e, "[s!='']:x"),
-                                    O.push("!=", se)
+                                    N.push("!=", se)
                             }),
-                            N = N.length && new RegExp(N.join("|")),
                             O = O.length && new RegExp(O.join("|")),
+                            N = N.length && new RegExp(N.join("|")),
                             t = Te.test(I.compareDocumentPosition),
                             P = t || Te.test(I.contains) ? function(e, t) {
                                 var n = 9 === e.nodeType ? e.documentElement : e,
@@ -6573,7 +6632,7 @@
                     t.matchesSelector = function(e, n) {
                         if ((e.ownerDocument || e) !== H && w(e),
                             n = n.replace(de, "='$1']"),
-                            S.matchesSelector && k && !J[n + " "] && (!O || !O.test(n)) && (!N || !N.test(n)))
+                            S.matchesSelector && k && !J[n + " "] && (!N || !N.test(n)) && (!O || !O.test(n)))
                             try {
                                 var s = x.call(e, n);
                                 if (s || S.disconnectedMatch || e.document && 11 !== e.document.nodeType)
@@ -6630,7 +6689,7 @@
                     g = t.selectors = {
                         cacheLength: 50,
                         createPseudo: s,
-                        match: ye,
+                        match: he,
                         attrHandle: {},
                         find: {},
                         relative: {
@@ -6665,7 +6724,7 @@
                             },
                             PSEUDO: function(e) {
                                 var t, n = !e[6] && e[2];
-                                return ye.CHILD.test(e[0]) ? null : (e[3] ? e[2] = e[4] || e[5] || "" : n && ue.test(n) && (t = v(n, !0)) && (t = n.indexOf(")", n.length - t) - n.length) && (e[0] = e[0].slice(0, t),
+                                return he.CHILD.test(e[0]) ? null : (e[3] ? e[2] = e[4] || e[5] || "" : n && ue.test(n) && (t = v(n, !0)) && (t = n.indexOf(")", n.length - t) - n.length) && (e[0] = e[0].slice(0, t),
                                         e[2] = n.slice(0, t)),
                                     e.slice(0, 3))
                             }
@@ -6701,7 +6760,7 @@
                                         return !!e.parentNode
                                     } :
                                     function(t, n, d) {
-                                        var u, l, y, h, m, T, c = i !== a ? "nextSibling" : "previousSibling",
+                                        var u, l, h, y, m, T, c = i !== a ? "nextSibling" : "previousSibling",
                                             p = t.parentNode,
                                             M = o && t.nodeName.toLowerCase(),
                                             f = !d && !o,
@@ -6709,8 +6768,8 @@
                                         if (p) {
                                             if (i) {
                                                 for (; c;) {
-                                                    for (h = t; h = h[c];)
-                                                        if (o ? h.nodeName.toLowerCase() === M : 1 === h.nodeType)
+                                                    for (y = t; y = y[c];)
+                                                        if (o ? y.nodeName.toLowerCase() === M : 1 === y.nodeType)
                                                             return !1;
                                                     T = c = "only" === e && !T && "nextSibling"
                                                 }
@@ -6718,28 +6777,28 @@
                                             }
                                             if (T = [a ? p.firstChild : p.lastChild],
                                                 a && f) {
-                                                for (h = p,
-                                                    y = h[F] || (h[F] = {}),
-                                                    l = y[h.uniqueID] || (y[h.uniqueID] = {}),
+                                                for (y = p,
+                                                    h = y[F] || (y[F] = {}),
+                                                    l = h[y.uniqueID] || (h[y.uniqueID] = {}),
                                                     u = l[e] || [],
                                                     m = u[0] === Y && u[1],
                                                     S = m && u[2],
-                                                    h = m && p.childNodes[m]; h = ++m && h && h[c] || (S = m = 0) || T.pop();)
-                                                    if (1 === h.nodeType && ++S && h === t) {
+                                                    y = m && p.childNodes[m]; y = ++m && y && y[c] || (S = m = 0) || T.pop();)
+                                                    if (1 === y.nodeType && ++S && y === t) {
                                                         l[e] = [Y, m, S];
                                                         break
                                                     }
-                                            } else if (f && (h = t,
-                                                    y = h[F] || (h[F] = {}),
-                                                    l = y[h.uniqueID] || (y[h.uniqueID] = {}),
+                                            } else if (f && (y = t,
+                                                    h = y[F] || (y[F] = {}),
+                                                    l = h[y.uniqueID] || (h[y.uniqueID] = {}),
                                                     u = l[e] || [],
                                                     m = u[0] === Y && u[1],
                                                     S = m), !1 === S)
                                                 for (;
-                                                    (h = ++m && h && h[c] || (S = m = 0) || T.pop()) && ((o ? h.nodeName.toLowerCase() !== M : 1 !== h.nodeType) || !++S || (f && (y = h[F] || (h[F] = {}),
-                                                            l = y[h.uniqueID] || (y[h.uniqueID] = {}),
+                                                    (y = ++m && y && y[c] || (S = m = 0) || T.pop()) && ((o ? y.nodeName.toLowerCase() !== M : 1 !== y.nodeType) || !++S || (f && (h = y[F] || (y[F] = {}),
+                                                            l = h[y.uniqueID] || (h[y.uniqueID] = {}),
                                                             l[e] = [Y, S]),
-                                                        h !== t));)
+                                                        y !== t));)
                                             ;
                                             return (S -= r) === s || S % s == 0 && S / s >= 0
                                         }
@@ -6831,7 +6890,7 @@
                                 return me.test(e.nodeName)
                             },
                             input: function(e) {
-                                return he.test(e.nodeName)
+                                return ye.test(e.nodeName)
                             },
                             button: function(e) {
                                 var t = e.nodeName.toLowerCase();
@@ -6914,7 +6973,7 @@
                                     }),
                                     o = o.slice(s.length));
                             for (a in g.filter)
-                                !(r = ye[a].exec(o)) || u[a] && !(r = u[a](r)) || (s = r.shift(),
+                                !(r = he[a].exec(o)) || u[a] && !(r = u[a](r)) || (s = r.shift(),
                                     i.push({
                                         value: s,
                                         type: a,
@@ -6941,18 +7000,18 @@
                         return i
                     },
                     A = t.select = function(e, t, n, s) {
-                        var r, i, a, o, u, y = "function" == typeof e && e,
-                            h = !s && v(e = y.selector || e);
+                        var r, i, a, o, u, h = "function" == typeof e && e,
+                            y = !s && v(e = h.selector || e);
                         if (n = n || [],
-                            1 === h.length) {
-                            if (i = h[0] = h[0].slice(0),
+                            1 === y.length) {
+                            if (i = y[0] = y[0].slice(0),
                                 i.length > 2 && "ID" === (a = i[0]).type && S.getById && 9 === t.nodeType && k && g.relative[i[1].type]) {
                                 if (!(t = (g.find.ID(a.matches[0].replace(fe, Se), t) || [])[0]))
                                     return n;
-                                y && (t = t.parentNode),
+                                h && (t = t.parentNode),
                                     e = e.slice(i.shift().value.length)
                             }
-                            for (r = ye.needsContext.test(e) ? 0 : i.length; r-- && (a = i[r], !g.relative[o = a.type]);)
+                            for (r = he.needsContext.test(e) ? 0 : i.length; r-- && (a = i[r], !g.relative[o = a.type]);)
                                 if ((u = g.find[o]) && (s = u(a.matches[0].replace(fe, Se), pe.test(i[0].type) && d(t.parentNode) || t))) {
                                     if (i.splice(r, 1), !(e = s.length && l(i)))
                                         return $.apply(n, s),
@@ -6960,7 +7019,7 @@
                                     break
                                 }
                         }
-                        return (y || D(e, h))(s, t, !k, n, !t || pe.test(e) && d(t.parentNode) || t),
+                        return (h || D(e, y))(s, t, !k, n, !t || pe.test(e) && d(t.parentNode) || t),
                             n
                     },
                     S.sortStable = F.split("").sort(Z).join("") === F,
@@ -7366,8 +7425,8 @@
             Ce = function(e) {
                 return 1 === e.nodeType || 9 === e.nodeType || !+e.nodeType
             };
-        y.uid = 1,
-            y.prototype = {
+        h.uid = 1,
+            h.prototype = {
                 register: function(e, t) {
                     var n = t || {};
                     return e.nodeType ? e[this.expando] = n : Object.defineProperty(e, this.expando, {
@@ -7427,8 +7486,8 @@
                     return void 0 !== t && !de.isEmptyObject(t)
                 }
             };
-        var Ee = new y,
-            Le = new y,
+        var Ee = new h,
+            Le = new h,
             we = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
             He = /[A-Z]/g;
         de.extend({
@@ -7458,7 +7517,7 @@
                             for (n = a.length; n--;)
                                 a[n] && (s = a[n].name,
                                     0 === s.indexOf("data-") && (s = de.camelCase(s.slice(5)),
-                                        h(i, s, r[s])));
+                                        y(i, s, r[s])));
                             Ee.set(i, "hasDataAttrs", !0)
                         }
                         return r
@@ -7473,7 +7532,7 @@
                             if (s = de.camelCase(e),
                                 void 0 !== (n = Le.get(i, s)))
                                 return n;
-                            if (void 0 !== (n = h(i, s, void 0)))
+                            if (void 0 !== (n = y(i, s, void 0)))
                                 return n
                         } else
                             s = de.camelCase(e),
@@ -7562,8 +7621,8 @@
             });
         var Ie = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,
             ke = new RegExp("^(?:([+-])=|)(" + Ie + ")([a-z%]*)$", "i"),
-            Ne = ["Top", "Right", "Bottom", "Left"],
-            Oe = function(e, t) {
+            Oe = ["Top", "Right", "Bottom", "Left"],
+            Ne = function(e, t) {
                 return e = t || e,
                     "none" === de.css(e, "display") || !de.contains(e.ownerDocument, e)
             },
@@ -7600,7 +7659,7 @@
         de.event = {
                 global: {},
                 add: function(e, t, n, s, r) {
-                    var i, a, o, d, u, l, y, h, m, T, c, p = Ee.get(e);
+                    var i, a, o, d, u, l, h, y, m, T, c, p = Ee.get(e);
                     if (p)
                         for (n.handler && (i = n,
                                 n = i.handler,
@@ -7615,9 +7674,9 @@
                             o = We.exec(t[u]) || [],
                             m = c = o[1],
                             T = (o[2] || "").split(".").sort(),
-                            m && (y = de.event.special[m] || {},
-                                m = (r ? y.delegateType : y.bindType) || m,
-                                y = de.event.special[m] || {},
+                            m && (h = de.event.special[m] || {},
+                                m = (r ? h.delegateType : h.bindType) || m,
+                                h = de.event.special[m] || {},
                                 l = de.extend({
                                     type: m,
                                     origType: c,
@@ -7628,16 +7687,16 @@
                                     needsContext: r && de.expr.match.needsContext.test(r),
                                     namespace: T.join(".")
                                 }, i),
-                                (h = d[m]) || (h = d[m] = [],
-                                    h.delegateCount = 0,
-                                    y.setup && !1 !== y.setup.call(e, s, T, a) || e.addEventListener && e.addEventListener(m, a)),
-                                y.add && (y.add.call(e, l),
+                                (y = d[m]) || (y = d[m] = [],
+                                    y.delegateCount = 0,
+                                    h.setup && !1 !== h.setup.call(e, s, T, a) || e.addEventListener && e.addEventListener(m, a)),
+                                h.add && (h.add.call(e, l),
                                     l.handler.guid || (l.handler.guid = n.guid)),
-                                r ? h.splice(h.delegateCount++, 0, l) : h.push(l),
+                                r ? y.splice(y.delegateCount++, 0, l) : y.push(l),
                                 de.event.global[m] = !0)
                 },
                 remove: function(e, t, n, s, r) {
-                    var i, a, o, d, u, l, y, h, m, T, c, p = Ee.hasData(e) && Ee.get(e);
+                    var i, a, o, d, u, l, h, y, m, T, c, p = Ee.hasData(e) && Ee.get(e);
                     if (p && (d = p.events)) {
                         for (t = (t || "").match(ve) || [""],
                             u = t.length; u--;)
@@ -7645,15 +7704,15 @@
                                 m = c = o[1],
                                 T = (o[2] || "").split(".").sort(),
                                 m) {
-                                for (y = de.event.special[m] || {},
-                                    m = (s ? y.delegateType : y.bindType) || m,
-                                    h = d[m] || [],
+                                for (h = de.event.special[m] || {},
+                                    m = (s ? h.delegateType : h.bindType) || m,
+                                    y = d[m] || [],
                                     o = o[2] && new RegExp("(^|\\.)" + T.join("\\.(?:.*\\.|)") + "(\\.|$)"),
-                                    a = i = h.length; i--;)
-                                    l = h[i], !r && c !== l.origType || n && n.guid !== l.guid || o && !o.test(l.namespace) || s && s !== l.selector && ("**" !== s || !l.selector) || (h.splice(i, 1),
-                                        l.selector && h.delegateCount--,
-                                        y.remove && y.remove.call(e, l));
-                                a && !h.length && (y.teardown && !1 !== y.teardown.call(e, T, p.handle) || de.removeEvent(e, m, p.handle),
+                                    a = i = y.length; i--;)
+                                    l = y[i], !r && c !== l.origType || n && n.guid !== l.guid || o && !o.test(l.namespace) || s && s !== l.selector && ("**" !== s || !l.selector) || (y.splice(i, 1),
+                                        l.selector && y.delegateCount--,
+                                        h.remove && h.remove.call(e, l));
+                                a && !y.length && (h.teardown && !1 !== h.teardown.call(e, T, p.handle) || de.removeEvent(e, m, p.handle),
                                     delete d[m])
                             } else
                                 for (m in d)
@@ -8150,10 +8209,10 @@
                     },
                     set: function(e, n, s) {
                         var r, i = s && Xe(e),
-                            a = s && O(e, t, s, "border-box" === de.css(e, "boxSizing", !1, i), i);
+                            a = s && N(e, t, s, "border-box" === de.css(e, "boxSizing", !1, i), i);
                         return a && (r = ke.exec(n)) && "px" !== (r[3] || "px") && (e.style[t] = n,
                                 n = de.css(e, t)),
-                            N(e, n, a)
+                            O(e, n, a)
                     }
                 }
             }),
@@ -8179,11 +8238,11 @@
                 de.cssHooks[e + t] = {
                         expand: function(n) {
                             for (var s = 0, r = {}, i = "string" == typeof n ? n.split(" ") : [n]; s < 4; s++)
-                                r[e + Ne[s] + t] = i[s] || i[s - 2] || i[0];
+                                r[e + Oe[s] + t] = i[s] || i[s - 2] || i[0];
                             return r
                         }
                     },
-                    $e.test(e) || (de.cssHooks[e + t].set = N)
+                    $e.test(e) || (de.cssHooks[e + t].set = O)
             }),
             de.fn.extend({
                 css: function(e, t) {
@@ -8207,7 +8266,7 @@
                 },
                 toggle: function(e) {
                     return "boolean" == typeof e ? e ? this.show() : this.hide() : this.each(function() {
-                        Oe(this) ? de(this).show() : de(this).hide()
+                        Ne(this) ? de(this).show() : de(this).hide()
                     })
                 }
             }),
@@ -8305,7 +8364,7 @@
             },
             de.fn.extend({
                 fadeTo: function(e, t, n, s) {
-                    return this.filter(Oe).css("opacity", 0).show().end().animate({
+                    return this.filter(Ne).css("opacity", 0).show().end().animate({
                         opacity: t
                     }, e, n, s)
                 },
@@ -8440,7 +8499,7 @@
                     e.type = "radio",
                     oe.radioValue = "t" === e.value
             }();
-        var lt, yt = de.expr.attrHandle;
+        var lt, ht = de.expr.attrHandle;
         de.fn.extend({
                 attr: function(e, t) {
                     return Ae(this, de.attr, e, t, arguments.length > 1)
@@ -8490,17 +8549,17 @@
                 }
             },
             de.each(de.expr.match.bool.source.match(/\w+/g), function(e, t) {
-                var n = yt[t] || de.find.attr;
-                yt[t] = function(e, t, s) {
+                var n = ht[t] || de.find.attr;
+                ht[t] = function(e, t, s) {
                     var r, i;
-                    return s || (i = yt[t],
-                            yt[t] = r,
+                    return s || (i = ht[t],
+                            ht[t] = r,
                             r = null != n(e, t, s) ? t.toLowerCase() : null,
-                            yt[t] = i),
+                            ht[t] = i),
                         r
                 }
             });
-        var ht = /^(?:input|select|textarea|button)$/i,
+        var yt = /^(?:input|select|textarea|button)$/i,
             mt = /^(?:a|area)$/i;
         de.fn.extend({
                 prop: function(e, t) {
@@ -8524,7 +8583,7 @@
                     tabIndex: {
                         get: function(e) {
                             var t = de.find.attr(e, "tabindex");
-                            return t ? parseInt(t, 10) : ht.test(e.nodeName) || mt.test(e.nodeName) && e.href ? 0 : -1
+                            return t ? parseInt(t, 10) : yt.test(e.nodeName) || mt.test(e.nodeName) && e.href ? 0 : -1
                         }
                     }
                 },
@@ -8677,7 +8736,7 @@
         var Mt = /^(?:focusinfocus|focusoutblur)$/;
         de.extend(de.event, {
                 trigger: function(e, t, s, r) {
-                    var i, a, o, d, u, l, y, h = [s || Q],
+                    var i, a, o, d, u, l, h, y = [s || Q],
                         m = ae.call(e, "type") ? e.type : e,
                         T = ae.call(e, "namespace") ? e.namespace.split(".") : [];
                     if (a = o = s = s || Q,
@@ -8692,23 +8751,23 @@
                             e.result = void 0,
                             e.target || (e.target = s),
                             t = null == t ? [e] : de.makeArray(t, [e]),
-                            y = de.event.special[m] || {},
-                            r || !y.trigger || !1 !== y.trigger.apply(s, t))) {
-                        if (!r && !y.noBubble && !de.isWindow(s)) {
-                            for (d = y.delegateType || m,
+                            h = de.event.special[m] || {},
+                            r || !h.trigger || !1 !== h.trigger.apply(s, t))) {
+                        if (!r && !h.noBubble && !de.isWindow(s)) {
+                            for (d = h.delegateType || m,
                                 Mt.test(d + m) || (a = a.parentNode); a; a = a.parentNode)
-                                h.push(a),
+                                y.push(a),
                                 o = a;
-                            o === (s.ownerDocument || Q) && h.push(o.defaultView || o.parentWindow || n)
+                            o === (s.ownerDocument || Q) && y.push(o.defaultView || o.parentWindow || n)
                         }
                         for (i = 0;
-                            (a = h[i++]) && !e.isPropagationStopped();)
-                            e.type = i > 1 ? d : y.bindType || m,
+                            (a = y[i++]) && !e.isPropagationStopped();)
+                            e.type = i > 1 ? d : h.bindType || m,
                             l = (Ee.get(a, "events") || {})[e.type] && Ee.get(a, "handle"),
                             l && l.apply(a, t),
                             (l = u && a[u]) && l.apply && Ce(a) && (e.result = l.apply(a, t), !1 === e.result && e.preventDefault());
                         return e.type = m,
-                            r || e.isDefaultPrevented() || y._default && !1 !== y._default.apply(h.pop(), t) || !Ce(s) || u && de.isFunction(s[m]) && !de.isWindow(s) && (o = s[u],
+                            r || e.isDefaultPrevented() || h._default && !1 !== h._default.apply(y.pop(), t) || !Ce(s) || u && de.isFunction(s[m]) && !de.isWindow(s) && (o = s[u],
                                 o && (s[u] = null),
                                 de.event.triggered = m,
                                 s[m](),
@@ -8846,42 +8905,42 @@
                 ajaxTransport: K(Lt),
                 ajax: function(e, t) {
                     function s(e, t, s, o) {
-                        var u, y, f, S, _, v = t;
+                        var u, h, f, S, _, v = t;
                         2 !== g && (g = 2,
                             d && n.clearTimeout(d),
                             r = void 0,
                             a = o || "",
                             b.readyState = e > 0 ? 4 : 0,
                             u = e >= 200 && e < 300 || 304 === e,
-                            s && (S = G(h, b, s)),
-                            S = V(h, S, b, u),
-                            u ? (h.ifModified && (_ = b.getResponseHeader("Last-Modified"),
+                            s && (S = G(y, b, s)),
+                            S = V(y, S, b, u),
+                            u ? (y.ifModified && (_ = b.getResponseHeader("Last-Modified"),
                                     _ && (de.lastModified[i] = _),
                                     (_ = b.getResponseHeader("etag")) && (de.etag[i] = _)),
-                                204 === e || "HEAD" === h.type ? v = "nocontent" : 304 === e ? v = "notmodified" : (v = S.state,
-                                    y = S.data,
+                                204 === e || "HEAD" === y.type ? v = "nocontent" : 304 === e ? v = "notmodified" : (v = S.state,
+                                    h = S.data,
                                     f = S.error,
                                     u = !f)) : (f = v, !e && v || (v = "error",
                                 e < 0 && (e = 0))),
                             b.status = e,
                             b.statusText = (t || v) + "",
-                            u ? c.resolveWith(m, [y, v, b]) : c.rejectWith(m, [b, v, f]),
+                            u ? c.resolveWith(m, [h, v, b]) : c.rejectWith(m, [b, v, f]),
                             b.statusCode(M),
                             M = void 0,
-                            l && T.trigger(u ? "ajaxSuccess" : "ajaxError", [b, h, u ? y : f]),
+                            l && T.trigger(u ? "ajaxSuccess" : "ajaxError", [b, y, u ? h : f]),
                             p.fireWith(m, [b, v]),
-                            l && (T.trigger("ajaxComplete", [b, h]),
+                            l && (T.trigger("ajaxComplete", [b, y]),
                                 --de.active || de.event.trigger("ajaxStop")))
                     }
                     "object" == typeof e && (t = e,
                             e = void 0),
                         t = t || {};
-                    var r, i, a, o, d, u, l, y, h = de.ajaxSetup({}, t),
-                        m = h.context || h,
-                        T = h.context && (m.nodeType || m.jquery) ? de(m) : de.event,
+                    var r, i, a, o, d, u, l, h, y = de.ajaxSetup({}, t),
+                        m = y.context || y,
+                        T = y.context && (m.nodeType || m.jquery) ? de(m) : de.event,
                         c = de.Deferred(),
                         p = de.Callbacks("once memory"),
-                        M = h.statusCode || {},
+                        M = y.statusCode || {},
                         f = {},
                         S = {},
                         g = 0,
@@ -8908,7 +8967,7 @@
                                     this
                             },
                             overrideMimeType: function(e) {
-                                return g || (h.mimeType = e),
+                                return g || (y.mimeType = e),
                                     this
                             },
                             statusCode: function(e) {
@@ -8931,53 +8990,53 @@
                     if (c.promise(b).complete = p.add,
                         b.success = b.done,
                         b.error = b.fail,
-                        h.url = ((e || h.url || ft.href) + "").replace(_t, "").replace(Ct, ft.protocol + "//"),
-                        h.type = t.method || t.type || h.method || h.type,
-                        h.dataTypes = de.trim(h.dataType || "*").toLowerCase().match(ve) || [""],
-                        null == h.crossDomain) {
+                        y.url = ((e || y.url || ft.href) + "").replace(_t, "").replace(Ct, ft.protocol + "//"),
+                        y.type = t.method || t.type || y.method || y.type,
+                        y.dataTypes = de.trim(y.dataType || "*").toLowerCase().match(ve) || [""],
+                        null == y.crossDomain) {
                         u = Q.createElement("a");
                         try {
-                            u.href = h.url,
+                            u.href = y.url,
                                 u.href = u.href,
-                                h.crossDomain = Ht.protocol + "//" + Ht.host != u.protocol + "//" + u.host
+                                y.crossDomain = Ht.protocol + "//" + Ht.host != u.protocol + "//" + u.host
                         } catch (e) {
-                            h.crossDomain = !0
+                            y.crossDomain = !0
                         }
                     }
-                    if (h.data && h.processData && "string" != typeof h.data && (h.data = de.param(h.data, h.traditional)),
-                        z(Et, h, t, b),
+                    if (y.data && y.processData && "string" != typeof y.data && (y.data = de.param(y.data, y.traditional)),
+                        z(Et, y, t, b),
                         2 === g)
                         return b;
-                    l = de.event && h.global,
+                    l = de.event && y.global,
                         l && 0 == de.active++ && de.event.trigger("ajaxStart"),
-                        h.type = h.type.toUpperCase(),
-                        h.hasContent = !At.test(h.type),
-                        i = h.url,
-                        h.hasContent || (h.data && (i = h.url += (gt.test(i) ? "&" : "?") + h.data,
-                            delete h.data), !1 === h.cache && (h.url = bt.test(i) ? i.replace(bt, "$1_=" + St++) : i + (gt.test(i) ? "&" : "?") + "_=" + St++)),
-                        h.ifModified && (de.lastModified[i] && b.setRequestHeader("If-Modified-Since", de.lastModified[i]),
+                        y.type = y.type.toUpperCase(),
+                        y.hasContent = !At.test(y.type),
+                        i = y.url,
+                        y.hasContent || (y.data && (i = y.url += (gt.test(i) ? "&" : "?") + y.data,
+                            delete y.data), !1 === y.cache && (y.url = bt.test(i) ? i.replace(bt, "$1_=" + St++) : i + (gt.test(i) ? "&" : "?") + "_=" + St++)),
+                        y.ifModified && (de.lastModified[i] && b.setRequestHeader("If-Modified-Since", de.lastModified[i]),
                             de.etag[i] && b.setRequestHeader("If-None-Match", de.etag[i])),
-                        (h.data && h.hasContent && !1 !== h.contentType || t.contentType) && b.setRequestHeader("Content-Type", h.contentType),
-                        b.setRequestHeader("Accept", h.dataTypes[0] && h.accepts[h.dataTypes[0]] ? h.accepts[h.dataTypes[0]] + ("*" !== h.dataTypes[0] ? ", " + wt + "; q=0.01" : "") : h.accepts["*"]);
-                    for (y in h.headers)
-                        b.setRequestHeader(y, h.headers[y]);
-                    if (h.beforeSend && (!1 === h.beforeSend.call(m, b, h) || 2 === g))
+                        (y.data && y.hasContent && !1 !== y.contentType || t.contentType) && b.setRequestHeader("Content-Type", y.contentType),
+                        b.setRequestHeader("Accept", y.dataTypes[0] && y.accepts[y.dataTypes[0]] ? y.accepts[y.dataTypes[0]] + ("*" !== y.dataTypes[0] ? ", " + wt + "; q=0.01" : "") : y.accepts["*"]);
+                    for (h in y.headers)
+                        b.setRequestHeader(h, y.headers[h]);
+                    if (y.beforeSend && (!1 === y.beforeSend.call(m, b, y) || 2 === g))
                         return b.abort();
                     _ = "abort";
-                    for (y in {
+                    for (h in {
                             success: 1,
                             error: 1,
                             complete: 1
                         })
-                        b[y](h[y]);
-                    if (r = z(Lt, h, t, b)) {
+                        b[h](y[h]);
+                    if (r = z(Lt, y, t, b)) {
                         if (b.readyState = 1,
-                            l && T.trigger("ajaxSend", [b, h]),
+                            l && T.trigger("ajaxSend", [b, y]),
                             2 === g)
                             return b;
-                        h.async && h.timeout > 0 && (d = n.setTimeout(function() {
+                        y.async && y.timeout > 0 && (d = n.setTimeout(function() {
                             b.abort("timeout")
-                        }, h.timeout));
+                        }, y.timeout));
                         try {
                             g = 1,
                                 r.send(f, s)
@@ -9064,8 +9123,8 @@
             };
         var It = /%20/g,
             kt = /\[\]$/,
-            Nt = /\r?\n/g,
-            Ot = /^(?:submit|button|image|reset|file)$/i,
+            Ot = /\r?\n/g,
+            Nt = /^(?:submit|button|image|reset|file)$/i,
             xt = /^(?:input|select|textarea|keygen)/i;
         de.param = function(e, t) {
                 var n, s = [],
@@ -9093,17 +9152,17 @@
                         return e ? de.makeArray(e) : this
                     }).filter(function() {
                         var e = this.type;
-                        return this.name && !de(this).is(":disabled") && xt.test(this.nodeName) && !Ot.test(e) && (this.checked || !xe.test(e))
+                        return this.name && !de(this).is(":disabled") && xt.test(this.nodeName) && !Nt.test(e) && (this.checked || !xe.test(e))
                     }).map(function(e, t) {
                         var n = de(this).val();
                         return null == n ? null : de.isArray(n) ? de.map(n, function(e) {
                             return {
                                 name: t.name,
-                                value: e.replace(Nt, "\r\n")
+                                value: e.replace(Ot, "\r\n")
                             }
                         }) : {
                             name: t.name,
-                            value: n.replace(Nt, "\r\n")
+                            value: n.replace(Ot, "\r\n")
                         }
                     }).get()
                 }
@@ -9286,21 +9345,21 @@
             de.offset = {
                 setOffset: function(e, t, n) {
                     var s, r, i, a, o, d, u, l = de.css(e, "position"),
-                        y = de(e),
-                        h = {};
+                        h = de(e),
+                        y = {};
                     "static" === l && (e.style.position = "relative"),
-                        o = y.offset(),
+                        o = h.offset(),
                         i = de.css(e, "top"),
                         d = de.css(e, "left"),
                         u = ("absolute" === l || "fixed" === l) && (i + d).indexOf("auto") > -1,
-                        u ? (s = y.position(),
+                        u ? (s = h.position(),
                             a = s.top,
                             r = s.left) : (a = parseFloat(i) || 0,
                             r = parseFloat(d) || 0),
                         de.isFunction(t) && (t = t.call(e, n, de.extend({}, o))),
-                        null != t.top && (h.top = t.top - o.top + a),
-                        null != t.left && (h.left = t.left - o.left + r),
-                        "using" in t ? t.using.call(e, h) : y.css(h)
+                        null != t.top && (y.top = t.top - o.top + a),
+                        null != t.left && (y.left = t.left - o.left + r),
+                        "using" in t ? t.using.call(e, y) : h.css(y)
                 }
             },
             de.fn.extend({
@@ -9423,25 +9482,9 @@
             de
     })
 }, function(e, t, n) {
-    var s = n(39),
-        r = n(25).document,
-        i = s(r) && s(r.createElement);
-    e.exports = function(e) {
-        return i ? r.createElement(e) : {}
-    }
-}, function(e, t, n) {
-    var s = n(39);
-    e.exports = function(e, t) {
-        if (!s(e))
-            return e;
-        var n, r;
-        if (t && "function" == typeof(n = e.toString) && !s(r = n.call(e)))
-            return r;
-        if ("function" == typeof(n = e.valueOf) && !s(r = n.call(e)))
-            return r;
-        if (!t && "function" == typeof(n = e.toString) && !s(r = n.call(e)))
-            return r;
-        throw TypeError("Can't convert object to primitive value")
+    var s = n(81);
+    e.exports = Object("z").propertyIsEnumerable(0) ? Object : function(e) {
+        return "String" == s(e) ? e.split("") : Object(e)
     }
 }, function(e, t) {
     e.exports = function(e) {
@@ -9450,100 +9493,17 @@
         return e
     }
 }, function(e, t, n) {
-    var s = n(127),
-        r = Math.min;
-    e.exports = function(e) {
-        return e > 0 ? r(s(e), 9007199254740991) : 0
-    }
-}, function(e, t) {
-    var n = Math.ceil,
-        s = Math.floor;
-    e.exports = function(e) {
-        return isNaN(e = +e) ? 0 : (e > 0 ? s : n)(e)
-    }
-}, function(e, t, n) {
-    var s = n(129)("keys"),
-        r = n(91);
-    e.exports = function(e) {
-        return s[e] || (s[e] = r(e))
-    }
-}, function(e, t, n) {
-    var s = n(25),
-        r = s["__core-js_shared__"] || (s["__core-js_shared__"] = {});
-    e.exports = function(e) {
-        return r[e] || (r[e] = {})
-    }
-}, function(e, t) {
-    e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")
-}, , function(e, t, n) {
-    t.f = n(27)
-}, function(e, t, n) {
-    var s = n(25),
-        r = n(14),
-        i = n(94),
-        a = n(132),
-        o = n(40).f;
-    e.exports = function(e) {
-        var t = r.Symbol || (r.Symbol = i ? {} : s.Symbol || {});
-        "_" == e.charAt(0) || e in t || o(t, e, {
-            value: a.f(e)
-        })
-    }
-}, function(e, t, n) {
-    var s = n(175),
-        r = n(130).concat("length", "prototype");
-    t.f = Object.getOwnPropertyNames || function(e) {
-        return s(e, r)
-    }
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    e.exports = !n(42) && !n(50)(function() {
-        return 7 != Object.defineProperty(n(123)("div"), "a", {
-            get: function() {
-                return 7
-            }
-        }).a
-    })
-}, function(e, t, n) {
-    var s = n(51),
-        r = n(41),
-        i = n(429)(!1),
-        a = n(128)("IE_PROTO");
-    e.exports = function(e, t) {
-        var n, o = r(e),
-            d = 0,
-            u = [];
-        for (n in o)
-            n != a && s(o, n) && u.push(n);
-        for (; t.length > d;)
-            s(o, n = t[d++]) && (~i(u, n) || u.push(n));
-        return u
-    }
-}, function(e, t, n) {
-    var s = n(76);
-    e.exports = Object("z").propertyIsEnumerable(0) ? Object : function(e) {
-        return "String" == s(e) ? e.split("") : Object(e)
-    }
-}, function(e, t, n) {
-    var s = n(51),
-        r = n(78),
-        i = n(128)("IE_PROTO"),
-        a = Object.prototype;
-    e.exports = Object.getPrototypeOf || function(e) {
-        return e = r(e),
-            s(e, i) ? e[i] : "function" == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? a : null
-    }
-}, function(e, t, n) {
     "use strict";
-    var s = n(94),
-        r = n(24),
-        i = n(179),
-        a = n(49),
-        o = n(51),
-        d = n(61),
-        u = n(438),
-        l = n(96),
-        y = n(177),
-        h = n(27)("iterator"),
+    var s = n(98),
+        r = n(22),
+        i = n(189),
+        a = n(44),
+        o = n(55),
+        d = n(64),
+        u = n(441),
+        l = n(84),
+        h = n(192),
+        y = n(27)("iterator"),
         m = !([].keys && "next" in [].keys()),
         T = function() {
             return this
@@ -9568,18 +9528,18 @@
             D = "values" == p,
             A = !1,
             C = e.prototype,
-            E = C[h] || C["@@iterator"] || p && C[p],
+            E = C[y] || C["@@iterator"] || p && C[p],
             L = E || b(p),
             w = p ? D ? b("entries") : L : void 0,
             H = "Array" == t ? C.entries || E : E;
-        if (H && (_ = y(H.call(new e))) !== Object.prototype && _.next && (l(_, v, !0),
-                s || o(_, h) || a(_, h, T)),
+        if (H && (_ = h(H.call(new e))) !== Object.prototype && _.next && (l(_, v, !0),
+                s || o(_, y) || a(_, y, T)),
             D && E && "values" !== E.name && (A = !0,
                 L = function() {
                     return E.call(this)
                 }
             ),
-            s && !f || !m && !A && C[h] || a(C, h, L),
+            s && !f || !m && !A && C[y] || a(C, y, L),
             d[t] = L,
             d[v] = T,
             p)
@@ -9596,64 +9556,116 @@
         return S
     }
 }, function(e, t, n) {
-    e.exports = n(49)
+    var s = n(31),
+        r = n(24).document,
+        i = s(r) && s(r.createElement);
+    e.exports = function(e) {
+        return i ? r.createElement(e) : {}
+    }
 }, function(e, t, n) {
-    var s = n(25).document;
+    var s = n(31);
+    e.exports = function(e, t) {
+        if (!s(e))
+            return e;
+        var n, r;
+        if (t && "function" == typeof(n = e.toString) && !s(r = n.call(e)))
+            return r;
+        if ("function" == typeof(n = e.valueOf) && !s(r = n.call(e)))
+            return r;
+        if (!t && "function" == typeof(n = e.toString) && !s(r = n.call(e)))
+            return r;
+        throw TypeError("Can't convert object to primitive value")
+    }
+}, function(e, t) {
+    var n = Math.ceil,
+        s = Math.floor;
+    e.exports = function(e) {
+        return isNaN(e = +e) ? 0 : (e > 0 ? s : n)(e)
+    }
+}, function(e, t, n) {
+    var s = n(142)("keys"),
+        r = n(100);
+    e.exports = function(e) {
+        return s[e] || (s[e] = r(e))
+    }
+}, function(e, t, n) {
+    var s = n(24),
+        r = s["__core-js_shared__"] || (s["__core-js_shared__"] = {});
+    e.exports = function(e) {
+        return r[e] || (r[e] = {})
+    }
+}, function(e, t) {
+    e.exports = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")
+}, , , function(e, t, n) {
+    t.f = n(27)
+}, function(e, t, n) {
+    var s = n(24),
+        r = n(15),
+        i = n(98),
+        a = n(146),
+        o = n(37).f;
+    e.exports = function(e) {
+        var t = r.Symbol || (r.Symbol = i ? {} : s.Symbol || {});
+        "_" == e.charAt(0) || e in t || o(t, e, {
+            value: a.f(e)
+        })
+    }
+}, function(e, t, n) {
+    var s = n(190),
+        r = n(143).concat("length", "prototype");
+    t.f = Object.getOwnPropertyNames || function(e) {
+        return s(e, r)
+    }
+}, function(e, t) {}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+    e.exports = function(e, t) {
+        return {
+            value: t,
+            done: !!e
+        }
+    }
+}, function(e, t, n) {
+    e.exports = !n(41) && !n(45)(function() {
+        return 7 != Object.defineProperty(n(138)("div"), "a", {
+            get: function() {
+                return 7
+            }
+        }).a
+    })
+}, function(e, t, n) {
+    e.exports = n(44)
+}, function(e, t, n) {
+    var s = n(55),
+        r = n(42),
+        i = n(443)(!1),
+        a = n(141)("IE_PROTO");
+    e.exports = function(e, t) {
+        var n, o = r(e),
+            d = 0,
+            u = [];
+        for (n in o)
+            n != a && s(o, n) && u.push(n);
+        for (; t.length > d;)
+            s(o, n = t[d++]) && (~i(u, n) || u.push(n));
+        return u
+    }
+}, function(e, t, n) {
+    var s = n(24).document;
     e.exports = s && s.documentElement
 }, function(e, t, n) {
-    var s = n(91)("meta"),
-        r = n(39),
-        i = n(51),
-        a = n(40).f,
-        o = 0,
-        d = Object.isExtensible || function() {
-            return !0
-        },
-        u = !n(50)(function() {
-            return d(Object.preventExtensions({}))
-        }),
-        l = function(e) {
-            a(e, s, {
-                value: {
-                    i: "O" + ++o,
-                    w: {}
-                }
-            })
-        },
-        y = function(e, t) {
-            if (!r(e))
-                return "symbol" == typeof e ? e : ("string" == typeof e ? "S" : "P") + e;
-            if (!i(e, s)) {
-                if (!d(e))
-                    return "F";
-                if (!t)
-                    return "E";
-                l(e)
-            }
-            return e[s].i
-        },
-        h = function(e, t) {
-            if (!i(e, s)) {
-                if (!d(e))
-                    return !0;
-                if (!t)
-                    return !1;
-                l(e)
-            }
-            return e[s].w
-        },
-        m = function(e) {
-            return u && T.NEED && d(e) && !i(e, s) && l(e),
-                e
-        },
-        T = e.exports = {
-            KEY: s,
-            NEED: !1,
-            fastKey: y,
-            getWeak: h,
-            onFreeze: m
-        }
-}, function(e, t) {}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
+    var s = n(55),
+        r = n(66),
+        i = n(141)("IE_PROTO"),
+        a = Object.prototype;
+    e.exports = Object.getPrototypeOf || function(e) {
+        return e = r(e),
+            s(e, i) ? e[i] : "function" == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? a : null
+    }
+}, , function(e, t, n) {
+    var s = n(81);
+    e.exports = Array.isArray || function(e) {
+        return "Array" == s(e)
+    }
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t) {
     e.exports = function(e) {
         return e.webpackPolyfill || (e.deprecate = function() {},
                 e.paths = [],
@@ -18108,7 +18120,7 @@
             }
         }
         e.exports = n
-    }).call(t, n(38))
+    }).call(t, n(40))
 }, function(e, t) {
     function n(e, t) {
         var n = t || 0,
@@ -18195,24 +18207,28 @@
                 return new OpenLayers.Bounds(this.left + e, this.bottom + t, this.right + e, this.top + t)
             },
             extend: function(e) {
-                var t = null;
-                if (e) {
+                if (e)
                     switch (e.CLASS_NAME) {
                         case "OpenLayers.LonLat":
-                            t = new OpenLayers.Bounds(e.lon, e.lat, e.lon, e.lat);
+                            this.extendXY(e.lon, e.lat);
                             break;
                         case "OpenLayers.Geometry.Point":
-                            t = new OpenLayers.Bounds(e.x, e.y, e.x, e.y);
+                            this.extendXY(e.x, e.y);
                             break;
                         case "OpenLayers.Bounds":
-                            t = e
+                            this.centerLonLat = null,
+                                (null == this.left || e.left < this.left) && (this.left = e.left),
+                                (null == this.bottom || e.bottom < this.bottom) && (this.bottom = e.bottom),
+                                (null == this.right || e.right > this.right) && (this.right = e.right),
+                                (null == this.top || e.top > this.top) && (this.top = e.top)
                     }
-                    t && (this.centerLonLat = null,
-                        (null == this.left || t.left < this.left) && (this.left = t.left),
-                        (null == this.bottom || t.bottom < this.bottom) && (this.bottom = t.bottom),
-                        (null == this.right || t.right > this.right) && (this.right = t.right),
-                        (null == this.top || t.top > this.top) && (this.top = t.top))
-                }
+            },
+            extendXY: function(e, t) {
+                this.centerLonLat = null,
+                    (null == this.left || e < this.left) && (this.left = e),
+                    (null == this.bottom || t < this.bottom) && (this.bottom = t),
+                    (null == this.right || e > this.right) && (this.right = e),
+                    (null == this.top || t > this.top) && (this.top = t)
             },
             containsLonLat: function(e, t) {
                 "boolean" == typeof t && (t = {
@@ -18268,12 +18284,12 @@
                 if (t.worldBounds && !s) {
                     var u = t.worldBounds,
                         l = u.getWidth(),
-                        y = !u.containsBounds(n),
-                        h = !u.containsBounds(e);
-                    y && !h ? (e = e.add(-l, 0),
+                        h = !u.containsBounds(n),
+                        y = !u.containsBounds(e);
+                    h && !y ? (e = e.add(-l, 0),
                         s = n.intersectsBounds(e, {
                             inclusive: t.inclusive
-                        })) : h && !y && (n = n.add(-l, 0),
+                        })) : y && !h && (n = n.add(-l, 0),
                         s = e.intersectsBounds(n, {
                             inclusive: t.inclusive
                         }))
@@ -18519,10 +18535,58 @@
         },
         CLASS_NAME: "OpenLayers.Pixel"
     })
-}, , , , , , , function(e, t, n) {
-    var s = n(41),
-        r = n(126),
-        i = n(430);
+}, , , , , , function(e, t, n) {
+    "use strict";
+    var s = n(440),
+        r = n(187),
+        i = n(64),
+        a = n(42);
+    e.exports = n(137)(Array, "Array", function(e, t) {
+            this._t = a(e),
+                this._i = 0,
+                this._k = t
+        }, function() {
+            var e = this._t,
+                t = this._k,
+                n = this._i++;
+            return !e || n >= e.length ? (this._t = void 0,
+                r(1)) : "keys" == t ? r(0, n) : "values" == t ? r(0, e[n]) : r(0, [n, e[n]])
+        }, "values"),
+        i.Arguments = i.Array,
+        s("keys"),
+        s("values"),
+        s("entries")
+}, function(e, t) {
+    e.exports = function() {}
+}, function(e, t, n) {
+    "use strict";
+    var s = n(83),
+        r = n(82),
+        i = n(84),
+        a = {};
+    n(44)(a, n(27)("iterator"), function() {
+            return this
+        }),
+        e.exports = function(e, t, n) {
+            e.prototype = s(a, {
+                    next: r(1, n)
+                }),
+                i(e, t + " Iterator")
+        }
+}, function(e, t, n) {
+    var s = n(37),
+        r = n(33),
+        i = n(65);
+    e.exports = n(41) ? Object.defineProperties : function(e, t) {
+        r(e);
+        for (var n, a = i(t), o = a.length, d = 0; o > d;)
+            s.f(e, n = a[d++], t[n]);
+        return e
+    }
+}, function(e, t, n) {
+    var s = n(42),
+        r = n(99),
+        i = n(444);
     e.exports = function(e) {
         return function(t, n, a) {
             var o, d = s(t),
@@ -18540,25 +18604,16 @@
         }
     }
 }, function(e, t, n) {
-    var s = n(127),
+    var s = n(140),
         r = Math.max,
         i = Math.min;
     e.exports = function(e, t) {
         return e = s(e),
             e < 0 ? r(e + t, 0) : i(e, t)
     }
-}, , , , , function(e, t, n) {
-    e.exports = {
-        default: n(436),
-        __esModule: !0
-    }
 }, function(e, t, n) {
-    n(79),
-        n(97),
-        e.exports = n(132).f("iterator")
-}, function(e, t, n) {
-    var s = n(127),
-        r = n(125);
+    var s = n(140),
+        r = n(136);
     e.exports = function(e) {
         return function(t, n) {
             var i, a, o = String(r(t)),
@@ -18568,106 +18623,60 @@
                 i < 55296 || i > 56319 || d + 1 === u || (a = o.charCodeAt(d + 1)) < 56320 || a > 57343 ? e ? o.charAt(d) : i : e ? o.slice(d, d + 2) : a - 56320 + (i - 55296 << 10) + 65536)
         }
     }
-}, function(e, t, n) {
-    "use strict";
-    var s = n(95),
-        r = n(75),
-        i = n(96),
-        a = {};
-    n(49)(a, n(27)("iterator"), function() {
-            return this
-        }),
-        e.exports = function(e, t, n) {
-            e.prototype = s(a, {
-                    next: r(1, n)
-                }),
-                i(e, t + " Iterator")
-        }
-}, function(e, t, n) {
-    var s = n(40),
-        r = n(32),
-        i = n(59);
-    e.exports = n(42) ? Object.defineProperties : function(e, t) {
-        r(e);
-        for (var n, a = i(t), o = a.length, d = 0; o > d;)
-            s.f(e, n = a[d++], t[n]);
-        return e
-    }
-}, function(e, t, n) {
-    "use strict";
-    var s = n(441),
-        r = n(442),
-        i = n(61),
-        a = n(41);
-    e.exports = n(178)(Array, "Array", function(e, t) {
-            this._t = a(e),
-                this._i = 0,
-                this._k = t
-        }, function() {
-            var e = this._t,
-                t = this._k,
-                n = this._i++;
-            return !e || n >= e.length ? (this._t = void 0,
-                r(1)) : "keys" == t ? r(0, n) : "values" == t ? r(0, e[n]) : r(0, [n, e[n]])
-        }, "values"),
-        i.Arguments = i.Array,
-        s("keys"),
-        s("values"),
-        s("entries")
-}, function(e, t) {
-    e.exports = function() {}
-}, function(e, t) {
-    e.exports = function(e, t) {
-        return {
-            value: t,
-            done: !!e
-        }
-    }
-}, function(e, t, n) {
+}, , , , , , , , , , , , , , function(e, t, n) {
     e.exports = {
-        default: n(444),
+        default: n(460),
         __esModule: !0
     }
 }, function(e, t, n) {
-    n(445),
-        n(182),
-        n(449),
-        n(450),
-        e.exports = n(14).Symbol
+    n(67),
+        n(80),
+        e.exports = n(146).f("iterator")
+}, function(e, t, n) {
+    e.exports = {
+        default: n(462),
+        __esModule: !0
+    }
+}, function(e, t, n) {
+    n(463),
+        n(149),
+        n(466),
+        n(467),
+        e.exports = n(15).Symbol
 }, function(e, t, n) {
     "use strict";
-    var s = n(25),
-        r = n(51),
-        i = n(42),
-        a = n(24),
-        o = n(179),
-        d = n(181).KEY,
-        u = n(50),
-        l = n(129),
-        y = n(96),
-        h = n(91),
+    var s = n(24),
+        r = n(55),
+        i = n(41),
+        a = n(22),
+        o = n(189),
+        d = n(104).KEY,
+        u = n(45),
+        l = n(142),
+        h = n(84),
+        y = n(100),
         m = n(27),
-        T = n(132),
-        c = n(133),
-        p = n(446),
-        M = n(447),
-        f = n(32),
-        S = n(41),
-        g = n(124),
-        _ = n(75),
-        b = n(95),
-        v = n(448),
-        D = n(98),
-        A = n(40),
-        C = n(59),
+        T = n(146),
+        c = n(147),
+        p = n(464),
+        M = n(194),
+        f = n(33),
+        S = n(42),
+        g = n(139),
+        _ = n(82),
+        b = n(83),
+        v = n(465),
+        D = n(105),
+        A = n(37),
+        C = n(65),
         E = D.f,
         L = A.f,
         w = v.f,
         H = s.Symbol,
         I = s.JSON,
         k = I && I.stringify,
-        N = m("_hidden"),
-        O = m("toPrimitive"),
+        O = m("_hidden"),
+        N = m("toPrimitive"),
         x = {}.propertyIsEnumerable,
         P = l("symbol-registry"),
         F = l("symbols"),
@@ -18707,11 +18716,11 @@
                 f(e),
                 t = g(t, !0),
                 f(n),
-                r(F, t) ? (n.enumerable ? (r(e, N) && e[N][t] && (e[N][t] = !1),
+                r(F, t) ? (n.enumerable ? (r(e, O) && e[O][t] && (e[O][t] = !1),
                         n = b(n, {
                             enumerable: _(0, !1)
-                        })) : (r(e, N) || L(e, N, _(1, {})),
-                        e[N][t] = !0),
+                        })) : (r(e, O) || L(e, O, _(1, {})),
+                        e[O][t] = !0),
                     J(e, t, n)) : L(e, t, n)
         },
         U = function(e, t) {
@@ -18725,20 +18734,20 @@
         },
         V = function(e) {
             var t = x.call(this, e = g(e, !0));
-            return !(this === Y && r(F, e) && !r(j, e)) && (!(t || !r(this, e) || !r(F, e) || r(this, N) && this[N][e]) || t)
+            return !(this === Y && r(F, e) && !r(j, e)) && (!(t || !r(this, e) || !r(F, e) || r(this, O) && this[O][e]) || t)
         },
         $ = function(e, t) {
             if (e = S(e),
                 t = g(t, !0),
                 e !== Y || !r(F, t) || r(j, t)) {
                 var n = E(e, t);
-                return !n || !r(F, t) || r(e, N) && e[N][t] || (n.enumerable = !0),
+                return !n || !r(F, t) || r(e, O) && e[O][t] || (n.enumerable = !0),
                     n
             }
         },
         q = function(e) {
             for (var t, n = w(S(e)), s = [], i = 0; n.length > i;)
-                r(F, t = n[i++]) || t == N || t == d || s.push(t);
+                r(F, t = n[i++]) || t == O || t == d || s.push(t);
             return s
         },
         X = function(e) {
@@ -18749,10 +18758,10 @@
     B || (H = function() {
                 if (this instanceof H)
                     throw TypeError("Symbol is not a constructor!");
-                var e = h(arguments.length > 0 ? arguments[0] : void 0),
+                var e = y(arguments.length > 0 ? arguments[0] : void 0),
                     t = function(n) {
                         this === Y && t.call(j, n),
-                            r(this, N) && r(this[N], e) && (this[N][e] = !1),
+                            r(this, O) && r(this[O], e) && (this[O][e] = !1),
                             J(this, e, _(1, n))
                     };
                 return i && W && J(Y, e, {
@@ -18766,10 +18775,10 @@
             }),
             D.f = $,
             A.f = z,
-            n(134).f = v.f = q,
-            n(77).f = V,
-            n(92).f = X,
-            i && !n(94) && o(Y, "propertyIsEnumerable", V, !0),
+            n(148).f = v.f = q,
+            n(85).f = V,
+            n(102).f = X,
+            i && !n(98) && o(Y, "propertyIsEnumerable", V, !0),
             T.f = function(e) {
                 return Z(m(e))
             }
@@ -18827,14 +18836,14 @@
                 }
             }
         }),
-        H.prototype[O] || n(49)(H.prototype, O, H.prototype.valueOf),
-        y(H, "Symbol"),
-        y(Math, "Math", !0),
-        y(s.JSON, "JSON", !0)
+        H.prototype[N] || n(44)(H.prototype, N, H.prototype.valueOf),
+        h(H, "Symbol"),
+        h(Math, "Math", !0),
+        h(s.JSON, "JSON", !0)
 }, function(e, t, n) {
-    var s = n(59),
-        r = n(92),
-        i = n(77);
+    var s = n(65),
+        r = n(102),
+        i = n(85);
     e.exports = function(e) {
         var t = s(e),
             n = r.f;
@@ -18844,13 +18853,8 @@
         return t
     }
 }, function(e, t, n) {
-    var s = n(76);
-    e.exports = Array.isArray || function(e) {
-        return "Array" == s(e)
-    }
-}, function(e, t, n) {
-    var s = n(41),
-        r = n(134).f,
+    var s = n(42),
+        r = n(148).f,
         i = {}.toString,
         a = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [],
         o = function(e) {
@@ -18864,51 +18868,51 @@
         return a && "[object Window]" == i.call(e) ? o(e) : r(s(e))
     }
 }, function(e, t, n) {
-    n(133)("asyncIterator")
+    n(147)("asyncIterator")
 }, function(e, t, n) {
-    n(133)("observable")
-}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+    n(147)("observable")
+}, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     "use strict";
-    n(1054),
-        n(1056),
-        n(1057),
-        n(1058),
-        n(1059),
-        n(1061),
-        n(1062),
-        n(1063),
-        n(1064),
-        n(1065),
-        n(1066),
-        n(1067),
-        n(1068),
-        n(1069),
-        n(1070),
-        n(1071),
-        n(1072),
-        n(1073),
-        n(1243),
-        n(1245),
-        n(1246),
-        n(1247),
-        n(1248),
-        n(1250),
-        n(1251),
-        n(1252),
-        n(74),
-        n(1256),
-        n(1259),
-        n(1260),
-        n(1261),
-        n(1262)
+    n(1104),
+        n(1106),
+        n(1107),
+        n(1108),
+        n(1109),
+        n(1111),
+        n(1112),
+        n(1113),
+        n(1114),
+        n(1115),
+        n(1116),
+        n(1117),
+        n(1118),
+        n(1119),
+        n(1120),
+        n(1121),
+        n(1122),
+        n(1123),
+        n(1293),
+        n(1295),
+        n(1296),
+        n(1297),
+        n(1298),
+        n(1300),
+        n(1301),
+        n(1302),
+        n(79),
+        n(1306),
+        n(1309),
+        n(1310),
+        n(1311),
+        n(1312)
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.$ = n(1055)
-    }).call(t, n(38))
+        e.exports = t.$ = n(1105)
+    }).call(t, n(40))
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.jQuery = n(122)
-    }).call(t, n(38))
+        e.exports = t.jQuery = n(134)
+    }).call(t, n(40))
 }, function(e, t) {
     /*!
      * jQuery Browser Plugin v0.0.6
@@ -18972,7 +18976,7 @@
      * Released under the MIT license
      */
     ! function(a) {
-        r = [n(122)],
+        r = [n(134)],
             s = a,
             void 0 !== (i = "function" == typeof s ? s.apply(t, r) : s) && (e.exports = i)
     }(function(e) {
@@ -19011,17 +19015,17 @@
                     }
                     return document.cookie = [t(r), "=", s(a), d.expires ? "; expires=" + d.expires.toUTCString() : "", d.path ? "; path=" + d.path : "", d.domain ? "; domain=" + d.domain : "", d.secure ? "; secure" : ""].join("")
                 }
-                for (var y = r ? void 0 : {}, h = document.cookie ? document.cookie.split("; ") : [], m = 0, T = h.length; m < T; m++) {
-                    var c = h[m].split("="),
+                for (var h = r ? void 0 : {}, y = document.cookie ? document.cookie.split("; ") : [], m = 0, T = y.length; m < T; m++) {
+                    var c = y[m].split("="),
                         p = n(c.shift()),
                         M = c.join("=");
                     if (r && r === p) {
-                        y = i(M, a);
+                        h = i(M, a);
                         break
                     }
-                    r || void 0 === (M = i(M)) || (y[p] = M)
+                    r || void 0 === (M = i(M)) || (h[p] = M)
                 }
-                return y
+                return h
             };
         o.defaults = {},
             e.removeCookie = function(t, n) {
@@ -19060,8 +19064,8 @@
         })
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.io = n(1060)
-    }).call(t, n(38))
+        e.exports = t.io = n(1110)
+    }).call(t, n(40))
 }, function(module, exports, __webpack_require__) {
     (function(module) {
         var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__, io = module.exports;
@@ -19394,9 +19398,9 @@
                                 l = null;
                             switch (e.type) {
                                 case "error":
-                                    var y = e.reason ? o(r, e.reason) : "",
-                                        h = e.advice ? o(i, e.advice) : "";
-                                    "" === y && "" === h || (l = y + ("" !== h ? "+" + h : ""));
+                                    var h = e.reason ? o(r, e.reason) : "",
+                                        y = e.advice ? o(i, e.advice) : "";
+                                    "" === h && "" === y || (l = h + ("" !== y ? "+" + y : ""));
                                     break;
                                 case "message":
                                     "" !== e.data && (l = e.data);
@@ -20049,20 +20053,20 @@
                     }
 
                     function n(e) {
-                        if (typeof O.addEventListener != L)
-                            O.addEventListener("load", e, !1);
+                        if (typeof N.addEventListener != L)
+                            N.addEventListener("load", e, !1);
                         else if (typeof x.addEventListener != L)
                             x.addEventListener("load", e, !1);
-                        else if (typeof O.attachEvent != L)
-                            M(O, "onload", e);
-                        else if ("function" == typeof O.onload) {
-                            var t = O.onload;
-                            O.onload = function() {
+                        else if (typeof N.attachEvent != L)
+                            M(N, "onload", e);
+                        else if ("function" == typeof N.onload) {
+                            var t = N.onload;
+                            N.onload = function() {
                                 t(),
                                     e()
                             }
                         } else
-                            O.onload = e
+                            N.onload = e
                     }
 
                     function s() {
@@ -20113,9 +20117,9 @@
                                                     l.height = i.getAttribute("height") || "0",
                                                     i.getAttribute("class") && (l.styleclass = i.getAttribute("class")),
                                                     i.getAttribute("align") && (l.align = i.getAttribute("align"));
-                                                for (var y = {}, h = i.getElementsByTagName("param"), m = h.length, T = 0; T < m; T++)
-                                                    "movie" != h[T].getAttribute("name").toLowerCase() && (y[h[T].getAttribute("name")] = h[T].getAttribute("value"));
-                                                d(l, y, n, s)
+                                                for (var h = {}, y = i.getElementsByTagName("param"), m = y.length, T = 0; T < m; T++)
+                                                    "movie" != y[T].getAttribute("name").toLowerCase() && (h[y[T].getAttribute("name")] = y[T].getAttribute("value"));
+                                                d(l, h, n, s)
                                             } else
                                                 u(i),
                                                 s && s(r);
@@ -20168,7 +20172,7 @@
                                 (typeof e.height == L || !/%$/.test(e.height) && parseInt(e.height, 10) < 137) && (e.height = "137"),
                                 x.title = x.title.slice(0, 47) + " - Flash Player Installation";
                             var i = K.ie && K.win ? ["Active"].concat("").join("X") : "PlugIn",
-                                a = "MMredirectURL=" + O.location.toString().replace(/&/g, "%26") + "&MMplayerType=" + i + "&MMdoctitle=" + x.title;
+                                a = "MMredirectURL=" + N.location.toString().replace(/&/g, "%26") + "&MMplayerType=" + i + "&MMdoctitle=" + x.title;
                             if (typeof t.flashvars != L ? t.flashvars += "&" + a : t.flashvars = a,
                                 K.ie && K.win && 4 != r.readyState) {
                                 var o = p("div");
@@ -20180,7 +20184,7 @@
                                         4 == r.readyState ? r.parentNode.removeChild(r) : setTimeout(arguments.callee, 10)
                                     }()
                             }
-                            y(e, t, n)
+                            h(e, t, n)
                         }
                     }
 
@@ -20213,7 +20217,7 @@
                         return t
                     }
 
-                    function y(e, t, n) {
+                    function h(e, t, n) {
                         var s, r = c(n);
                         if (K.wk && K.wk < 312)
                             return s;
@@ -20234,15 +20238,15 @@
                                 u.setAttribute("type", I);
                                 for (var l in e)
                                     e[l] != Object.prototype[l] && ("styleclass" == l.toLowerCase() ? u.setAttribute("class", e[l]) : "classid" != l.toLowerCase() && u.setAttribute(l, e[l]));
-                                for (var y in t)
-                                    t[y] != Object.prototype[y] && "movie" != y.toLowerCase() && h(u, y, t[y]);
+                                for (var h in t)
+                                    t[h] != Object.prototype[h] && "movie" != h.toLowerCase() && y(u, h, t[h]);
                                 r.parentNode.replaceChild(u, r),
                                     s = u
                             }
                         return s
                     }
 
-                    function h(e, t, n) {
+                    function y(e, t, n) {
                         var s = p("param");
                         s.setAttribute("name", t),
                             s.setAttribute("value", n),
@@ -20326,8 +20330,8 @@
                         H = "Shockwave Flash",
                         I = "application/x-shockwave-flash",
                         k = "SWFObjectExprInst",
-                        N = "onreadystatechange",
-                        O = window,
+                        O = "onreadystatechange",
+                        N = window,
                         x = document,
                         P = navigator,
                         F = !1,
@@ -20355,7 +20359,7 @@
                                     o[0] = parseInt(d.replace(/^(.*)\..*$/, "$1"), 10),
                                     o[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10),
                                     o[2] = /[a-zA-Z]/.test(d) ? parseInt(d.replace(/^.*[a-zA-Z]+(.*)$/, "$1"), 10) : 0);
-                            else if (typeof O[["Active"].concat("Object").join("X")] != L)
+                            else if (typeof N[["Active"].concat("Object").join("X")] != L)
                                 try {
                                     var u = new(window[["Active"].concat("Object").join("X")])("ShockwaveFlash.ShockwaveFlash");
                                     u && (d = u.GetVariable("$version")) && (a = !0,
@@ -20374,11 +20378,11 @@
                     (function() {
                         K.w3 && ((typeof x.readyState != L && "complete" == x.readyState || typeof x.readyState == L && (x.getElementsByTagName("body")[0] || x.body)) && e(),
                             W || (typeof x.addEventListener != L && x.addEventListener("DOMContentLoaded", e, !1),
-                                K.ie && K.win && (x.attachEvent(N, function() {
-                                        "complete" == x.readyState && (x.detachEvent(N, arguments.callee),
+                                K.ie && K.win && (x.attachEvent(O, function() {
+                                        "complete" == x.readyState && (x.detachEvent(O, arguments.callee),
                                             e())
                                     }),
-                                    O == top && function() {
+                                    N == top && function() {
                                         if (!W) {
                                             try {
                                                 x.documentElement.doScroll("left")
@@ -20428,7 +20432,7 @@
                             if (K.w3)
                                 return a(e)
                         },
-                        embedSWF: function(e, n, s, r, i, a, u, l, h, m) {
+                        embedSWF: function(e, n, s, r, i, a, u, l, y, m) {
                             var T = {
                                 success: !1,
                                 id: n
@@ -20438,9 +20442,9 @@
                                     s += "",
                                         r += "";
                                     var t = {};
-                                    if (h && typeof h === w)
-                                        for (var c in h)
-                                            t[c] = h[c];
+                                    if (y && typeof y === w)
+                                        for (var c in y)
+                                            t[c] = y[c];
                                     t.data = e,
                                         t.width = s,
                                         t.height = r;
@@ -20452,7 +20456,7 @@
                                         for (var S in u)
                                             typeof p.flashvars != L ? p.flashvars += "&" + S + "=" + u[S] : p.flashvars = S + "=" + u[S];
                                     if (f(i)) {
-                                        var _ = y(t, p, n);
+                                        var _ = h(t, p, n);
                                         t.id == n && g(n, !0),
                                             T.success = !0,
                                             T.ref = _
@@ -20478,7 +20482,7 @@
                         },
                         hasFlashPlayerVersion: f,
                         createSWF: function(e, t, n) {
-                            return K.w3 ? y(e, t, n) : void 0
+                            return K.w3 ? h(e, t, n) : void 0
                         },
                         showExpressInstall: function(e, t, n, s) {
                             K.w3 && o() && d(e, t, n, s)
@@ -20990,7 +20994,7 @@
                     }
                     .apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)
         }()
-    }).call(exports, __webpack_require__(297)(module))
+    }).call(exports, __webpack_require__(308)(module))
 }, function(e, t, n) {
     "use strict";
     jQuery.fn.pagination = function(e, t) {
@@ -21056,16 +21060,16 @@
                             classes: "prev"
                         }),
                         e[0] > 0 && t.num_edge_entries > 0) {
-                        for (var l = Math.min(t.num_edge_entries, e[0]), y = 0; y < l; y++)
-                            u(y);
+                        for (var l = Math.min(t.num_edge_entries, e[0]), h = 0; h < l; h++)
+                            u(h);
                         t.num_edge_entries < e[0] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o)
                     }
-                    for (var y = e[0]; y < e[1]; y++)
-                        u(y);
+                    for (var h = e[0]; h < e[1]; h++)
+                        u(h);
                     if (e[1] < i && t.num_edge_entries > 0) {
                         i - t.num_edge_entries > e[1] && t.ellipse_text && jQuery("<span>" + t.ellipse_text + "</span>").appendTo(o);
-                        for (var h = Math.max(i - t.num_edge_entries, e[1]), y = h; y < i; y++)
-                            u(y)
+                        for (var y = Math.max(i - t.num_edge_entries, e[1]), h = y; h < i; h++)
+                            u(h)
                     }
                     t.next_text && (a < i - 1 || t.next_show_always) && u(a + 1, {
                         text: t.next_text,
@@ -21439,15 +21443,15 @@
                         this.options.container ? i.appendTo(this.options.container) : i.insertAfter(this.$element),
                         this.$element.trigger("inserted.bs." + this.type);
                     var l = this.getPosition(),
-                        y = i[0].offsetWidth,
-                        h = i[0].offsetHeight;
+                        h = i[0].offsetWidth,
+                        y = i[0].offsetHeight;
                     if (u) {
                         var m = o,
                             T = this.getPosition(this.$viewport);
-                        o = "bottom" == o && l.bottom + h > T.bottom ? "top" : "top" == o && l.top - h < T.top ? "bottom" : "right" == o && l.right + y > T.width ? "left" : "left" == o && l.left - y < T.left ? "right" : o,
+                        o = "bottom" == o && l.bottom + y > T.bottom ? "top" : "top" == o && l.top - y < T.top ? "bottom" : "right" == o && l.right + h > T.width ? "left" : "left" == o && l.left - h < T.left ? "right" : o,
                             i.removeClass(m).addClass(o)
                     }
-                    var c = this.getCalculatedOffset(o, l, y, h);
+                    var c = this.getCalculatedOffset(o, l, h, y);
                     this.applyPlacement(c, o);
                     var p = function() {
                         var e = r.hoverState;
@@ -21482,11 +21486,11 @@
                 "top" == n && u != i && (t.top = t.top + i - u);
                 var l = this.getViewportAdjustedDelta(n, t, d, u);
                 l.left ? t.left += l.left : t.top += l.top;
-                var y = /top|bottom/.test(n),
-                    h = y ? 2 * l.left - r + d : 2 * l.top - i + u,
-                    m = y ? "offsetWidth" : "offsetHeight";
+                var h = /top|bottom/.test(n),
+                    y = h ? 2 * l.left - r + d : 2 * l.top - i + u,
+                    m = h ? "offsetWidth" : "offsetHeight";
                 s.offset(t),
-                    this.replaceArrow(h, s[0][m], y)
+                    this.replaceArrow(y, s[0][m], h)
             },
             n.prototype.replaceArrow = function(e, t, n) {
                 this.arrow().css(n ? "left" : "top", 50 * (1 - e / t) + "%").css(n ? "top" : "left", "")
@@ -21635,7 +21639,7 @@
     }(jQuery)
 }, function(e, t, n) {
     "use strict";
-    var s = n(60),
+    var s = n(57),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -22396,10 +22400,10 @@
                         a && this.pause(),
                         this.$indicators.length) {
                         this.$indicators.find(".active").removeClass("active");
-                        var y = e(this.$indicators.children()[this.getItemIndex(i)]);
-                        y && y.addClass("active")
+                        var h = e(this.$indicators.children()[this.getItemIndex(i)]);
+                        h && h.addClass("active")
                     }
-                    var h = e.Event("slid.bs.carousel", {
+                    var y = e.Event("slid.bs.carousel", {
                         relatedTarget: u,
                         direction: o
                     });
@@ -22412,12 +22416,12 @@
                                     r.removeClass(["active", o].join(" ")),
                                     d.sliding = !1,
                                     setTimeout(function() {
-                                        d.$element.trigger(h)
+                                        d.$element.trigger(y)
                                     }, 0)
                             }).emulateTransitionEnd(n.TRANSITION_DURATION)) : (r.removeClass("active"),
                             i.addClass("active"),
                             this.sliding = !1,
-                            this.$element.trigger(h)),
+                            this.$element.trigger(y)),
                         a && this.cycle(),
                         this
                 }
@@ -22450,18 +22454,18 @@
             })
     }(jQuery)
 }, function(e, t, n) {
-    n(1074),
-        n(1232),
-        n(1233),
-        n(1234),
-        n(1235),
-        n(1236),
-        n(1237),
-        n(1238),
-        n(1239),
-        n(1240),
-        n(1241),
-        n(1242)
+    n(1124),
+        n(1282),
+        n(1283),
+        n(1284),
+        n(1285),
+        n(1286),
+        n(1287),
+        n(1288),
+        n(1289),
+        n(1290),
+        n(1291),
+        n(1292)
 }, function(e, t, n) {
     ! function() {
         var e = Date,
@@ -22765,7 +22769,7 @@
                     else if (!Date.CultureStrings || !Date.CultureStrings[r])
                         if (void 0 !== t && this.exports !== t)
                             try {
-                                n(1075)("./" + r + ".js"),
+                                n(1125)("./" + r + ".js"),
                                     s = r,
                                     Date.CultureStrings.lang = r,
                                     Date.CultureInfo = new l
@@ -22810,169 +22814,169 @@
         return t
     }
     var i = {
-        "./af-ZA.js": 1076,
-        "./ar-AE.js": 1077,
-        "./ar-BH.js": 1078,
-        "./ar-DZ.js": 1079,
-        "./ar-EG.js": 1080,
-        "./ar-IQ.js": 1081,
-        "./ar-JO.js": 1082,
-        "./ar-KW.js": 1083,
-        "./ar-LB.js": 1084,
-        "./ar-LY.js": 1085,
-        "./ar-MA.js": 1086,
-        "./ar-OM.js": 1087,
-        "./ar-QA.js": 1088,
-        "./ar-SA.js": 1089,
-        "./ar-SY.js": 1090,
-        "./ar-TN.js": 1091,
-        "./ar-YE.js": 1092,
-        "./az-Cyrl-AZ.js": 1093,
-        "./az-Latn-AZ.js": 1094,
-        "./be-BY.js": 1095,
-        "./bg-BG.js": 1096,
-        "./bs-Latn-BA.js": 1097,
-        "./ca-ES.js": 1098,
-        "./cs-CZ.js": 1099,
-        "./cy-GB.js": 1100,
-        "./da-DK.js": 1101,
-        "./de-AT.js": 1102,
-        "./de-CH.js": 1103,
-        "./de-DE.js": 1104,
-        "./de-LI.js": 1105,
-        "./de-LU.js": 1106,
-        "./dv-MV.js": 1107,
-        "./el-GR.js": 1108,
-        "./en-029.js": 1109,
-        "./en-AU.js": 1110,
-        "./en-BZ.js": 1111,
-        "./en-CA.js": 1112,
-        "./en-GB.js": 1113,
-        "./en-IE.js": 1114,
-        "./en-JM.js": 1115,
-        "./en-NZ.js": 1116,
-        "./en-PH.js": 1117,
-        "./en-TT.js": 1118,
-        "./en-ZA.js": 1119,
-        "./en-ZW.js": 1120,
-        "./es-AR.js": 1121,
-        "./es-BO.js": 1122,
-        "./es-CL.js": 1123,
-        "./es-CO.js": 1124,
-        "./es-CR.js": 1125,
-        "./es-DO.js": 1126,
-        "./es-EC.js": 1127,
-        "./es-ES.js": 1128,
-        "./es-GT.js": 1129,
-        "./es-HN.js": 1130,
-        "./es-MX.js": 1131,
-        "./es-NI.js": 1132,
-        "./es-PA.js": 1133,
-        "./es-PE.js": 1134,
-        "./es-PR.js": 1135,
-        "./es-PY.js": 1136,
-        "./es-SV.js": 1137,
-        "./es-UY.js": 1138,
-        "./es-VE.js": 1139,
-        "./et-EE.js": 1140,
-        "./eu-ES.js": 1141,
-        "./fa-IR.js": 1142,
-        "./fi-FI.js": 1143,
-        "./fo-FO.js": 1144,
-        "./fr-BE.js": 1145,
-        "./fr-CA.js": 1146,
-        "./fr-CH.js": 1147,
-        "./fr-FR.js": 1148,
-        "./fr-LU.js": 1149,
-        "./fr-MC.js": 1150,
-        "./gl-ES.js": 1151,
-        "./gu-IN.js": 1152,
-        "./he-IL.js": 1153,
-        "./hi-IN.js": 1154,
-        "./hr-BA.js": 1155,
-        "./hr-HR.js": 1156,
-        "./hu-HU.js": 1157,
-        "./hy-AM.js": 1158,
-        "./id-ID.js": 1159,
-        "./is-IS.js": 1160,
-        "./it-CH.js": 1161,
-        "./it-IT.js": 1162,
-        "./ja-JP.js": 1163,
-        "./ka-GE.js": 1164,
-        "./kk-KZ.js": 1165,
-        "./kn-IN.js": 1166,
-        "./ko-KR.js": 1167,
-        "./kok-IN.js": 1168,
-        "./ky-KG.js": 1169,
-        "./lt-LT.js": 1170,
-        "./lv-LV.js": 1171,
-        "./mi-NZ.js": 1172,
-        "./mk-MK.js": 1173,
-        "./mn-MN.js": 1174,
-        "./mr-IN.js": 1175,
-        "./ms-BN.js": 1176,
-        "./ms-MY.js": 1177,
-        "./mt-MT.js": 1178,
-        "./nb-NO.js": 1179,
-        "./nl-BE.js": 1180,
-        "./nl-NL.js": 1181,
-        "./nn-NO.js": 1182,
-        "./ns-ZA.js": 1183,
-        "./pa-IN.js": 1184,
-        "./pl-PL.js": 1185,
-        "./pt-BR.js": 1186,
-        "./pt-PT.js": 1187,
-        "./quz-BO.js": 1188,
-        "./quz-EC.js": 1189,
-        "./quz-PE.js": 1190,
-        "./ro-RO.js": 1191,
-        "./ru-RU.js": 1192,
-        "./sa-IN.js": 1193,
-        "./se-FI.js": 1194,
-        "./se-NO.js": 1195,
-        "./se-SE.js": 1196,
-        "./sk-SK.js": 1197,
-        "./sl-SI.js": 1198,
-        "./sma-NO.js": 1199,
-        "./sma-SE.js": 1200,
-        "./smj-NO.js": 1201,
-        "./smj-SE.js": 1202,
-        "./smn-FI.js": 1203,
-        "./sms-FI.js": 1204,
-        "./sq-AL.js": 1205,
-        "./sr-Cyrl-BA.js": 1206,
-        "./sr-Cyrl-CS.js": 1207,
-        "./sr-Latn-BA.js": 1208,
-        "./sr-Latn-CS.js": 1209,
-        "./sv-FI.js": 1210,
-        "./sv-SE.js": 1211,
-        "./sw-KE.js": 1212,
-        "./syr-SY.js": 1213,
-        "./ta-IN.js": 1214,
-        "./te-IN.js": 1215,
-        "./th-TH.js": 1216,
-        "./tn-ZA.js": 1217,
-        "./tr-TR.js": 1218,
-        "./tt-RU.js": 1219,
-        "./uk-UA.js": 1220,
-        "./ur-PK.js": 1221,
-        "./uz-Cyrl-UZ.js": 1222,
-        "./uz-Latn-UZ.js": 1223,
-        "./vi-VN.js": 1224,
-        "./xh-ZA.js": 1225,
-        "./zh-CN.js": 1226,
-        "./zh-HK.js": 1227,
-        "./zh-MO.js": 1228,
-        "./zh-SG.js": 1229,
-        "./zh-TW.js": 1230,
-        "./zu-ZA.js": 1231
+        "./af-ZA.js": 1126,
+        "./ar-AE.js": 1127,
+        "./ar-BH.js": 1128,
+        "./ar-DZ.js": 1129,
+        "./ar-EG.js": 1130,
+        "./ar-IQ.js": 1131,
+        "./ar-JO.js": 1132,
+        "./ar-KW.js": 1133,
+        "./ar-LB.js": 1134,
+        "./ar-LY.js": 1135,
+        "./ar-MA.js": 1136,
+        "./ar-OM.js": 1137,
+        "./ar-QA.js": 1138,
+        "./ar-SA.js": 1139,
+        "./ar-SY.js": 1140,
+        "./ar-TN.js": 1141,
+        "./ar-YE.js": 1142,
+        "./az-Cyrl-AZ.js": 1143,
+        "./az-Latn-AZ.js": 1144,
+        "./be-BY.js": 1145,
+        "./bg-BG.js": 1146,
+        "./bs-Latn-BA.js": 1147,
+        "./ca-ES.js": 1148,
+        "./cs-CZ.js": 1149,
+        "./cy-GB.js": 1150,
+        "./da-DK.js": 1151,
+        "./de-AT.js": 1152,
+        "./de-CH.js": 1153,
+        "./de-DE.js": 1154,
+        "./de-LI.js": 1155,
+        "./de-LU.js": 1156,
+        "./dv-MV.js": 1157,
+        "./el-GR.js": 1158,
+        "./en-029.js": 1159,
+        "./en-AU.js": 1160,
+        "./en-BZ.js": 1161,
+        "./en-CA.js": 1162,
+        "./en-GB.js": 1163,
+        "./en-IE.js": 1164,
+        "./en-JM.js": 1165,
+        "./en-NZ.js": 1166,
+        "./en-PH.js": 1167,
+        "./en-TT.js": 1168,
+        "./en-ZA.js": 1169,
+        "./en-ZW.js": 1170,
+        "./es-AR.js": 1171,
+        "./es-BO.js": 1172,
+        "./es-CL.js": 1173,
+        "./es-CO.js": 1174,
+        "./es-CR.js": 1175,
+        "./es-DO.js": 1176,
+        "./es-EC.js": 1177,
+        "./es-ES.js": 1178,
+        "./es-GT.js": 1179,
+        "./es-HN.js": 1180,
+        "./es-MX.js": 1181,
+        "./es-NI.js": 1182,
+        "./es-PA.js": 1183,
+        "./es-PE.js": 1184,
+        "./es-PR.js": 1185,
+        "./es-PY.js": 1186,
+        "./es-SV.js": 1187,
+        "./es-UY.js": 1188,
+        "./es-VE.js": 1189,
+        "./et-EE.js": 1190,
+        "./eu-ES.js": 1191,
+        "./fa-IR.js": 1192,
+        "./fi-FI.js": 1193,
+        "./fo-FO.js": 1194,
+        "./fr-BE.js": 1195,
+        "./fr-CA.js": 1196,
+        "./fr-CH.js": 1197,
+        "./fr-FR.js": 1198,
+        "./fr-LU.js": 1199,
+        "./fr-MC.js": 1200,
+        "./gl-ES.js": 1201,
+        "./gu-IN.js": 1202,
+        "./he-IL.js": 1203,
+        "./hi-IN.js": 1204,
+        "./hr-BA.js": 1205,
+        "./hr-HR.js": 1206,
+        "./hu-HU.js": 1207,
+        "./hy-AM.js": 1208,
+        "./id-ID.js": 1209,
+        "./is-IS.js": 1210,
+        "./it-CH.js": 1211,
+        "./it-IT.js": 1212,
+        "./ja-JP.js": 1213,
+        "./ka-GE.js": 1214,
+        "./kk-KZ.js": 1215,
+        "./kn-IN.js": 1216,
+        "./ko-KR.js": 1217,
+        "./kok-IN.js": 1218,
+        "./ky-KG.js": 1219,
+        "./lt-LT.js": 1220,
+        "./lv-LV.js": 1221,
+        "./mi-NZ.js": 1222,
+        "./mk-MK.js": 1223,
+        "./mn-MN.js": 1224,
+        "./mr-IN.js": 1225,
+        "./ms-BN.js": 1226,
+        "./ms-MY.js": 1227,
+        "./mt-MT.js": 1228,
+        "./nb-NO.js": 1229,
+        "./nl-BE.js": 1230,
+        "./nl-NL.js": 1231,
+        "./nn-NO.js": 1232,
+        "./ns-ZA.js": 1233,
+        "./pa-IN.js": 1234,
+        "./pl-PL.js": 1235,
+        "./pt-BR.js": 1236,
+        "./pt-PT.js": 1237,
+        "./quz-BO.js": 1238,
+        "./quz-EC.js": 1239,
+        "./quz-PE.js": 1240,
+        "./ro-RO.js": 1241,
+        "./ru-RU.js": 1242,
+        "./sa-IN.js": 1243,
+        "./se-FI.js": 1244,
+        "./se-NO.js": 1245,
+        "./se-SE.js": 1246,
+        "./sk-SK.js": 1247,
+        "./sl-SI.js": 1248,
+        "./sma-NO.js": 1249,
+        "./sma-SE.js": 1250,
+        "./smj-NO.js": 1251,
+        "./smj-SE.js": 1252,
+        "./smn-FI.js": 1253,
+        "./sms-FI.js": 1254,
+        "./sq-AL.js": 1255,
+        "./sr-Cyrl-BA.js": 1256,
+        "./sr-Cyrl-CS.js": 1257,
+        "./sr-Latn-BA.js": 1258,
+        "./sr-Latn-CS.js": 1259,
+        "./sv-FI.js": 1260,
+        "./sv-SE.js": 1261,
+        "./sw-KE.js": 1262,
+        "./syr-SY.js": 1263,
+        "./ta-IN.js": 1264,
+        "./te-IN.js": 1265,
+        "./th-TH.js": 1266,
+        "./tn-ZA.js": 1267,
+        "./tr-TR.js": 1268,
+        "./tt-RU.js": 1269,
+        "./uk-UA.js": 1270,
+        "./ur-PK.js": 1271,
+        "./uz-Cyrl-UZ.js": 1272,
+        "./uz-Latn-UZ.js": 1273,
+        "./vi-VN.js": 1274,
+        "./xh-ZA.js": 1275,
+        "./zh-CN.js": 1276,
+        "./zh-HK.js": 1277,
+        "./zh-MO.js": 1278,
+        "./zh-SG.js": 1279,
+        "./zh-TW.js": 1280,
+        "./zu-ZA.js": 1281
     };
     s.keys = function() {
             return Object.keys(i)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 1075
+        s.id = 1125
 }, function(e, t) {
     Date.CultureStrings = Date.CultureStrings || {},
         Date.CultureStrings["af-ZA"] = {
@@ -50608,13 +50612,13 @@
                         n.addDays(s)
                 }
             },
-            y = function(e) {
+            h = function(e) {
                 return function() {
                     return this._is ? (this._is = !1,
                         this.getMonth() === e) : this.moveToMonth(e, this._orient)
                 }
             },
-            h = function(t) {
+            y = function(t) {
                 return function() {
                     return e.today().set({
                         month: t,
@@ -50629,7 +50633,7 @@
                     t[n[i]] = t[n[i].substring(0, 3)] = r(i)
             };
         m(r, l, u),
-            m(i, h, y);
+            m(i, y, h);
         for (var T = function(e) {
                 return function() {
                     if (this._isSecond)
@@ -51147,30 +51151,30 @@
                         function(i) {
                             for (var a = null, o = null, d = null, u = null, l = [
                                     [], i
-                                ], y = !1, h = 0; h < n.length; h++) {
+                                ], h = !1, y = 0; y < n.length; y++) {
                                 d = null,
                                     o = null,
                                     a = null,
-                                    y = 1 === n.length;
+                                    h = 1 === n.length;
                                 try {
-                                    a = n[h].call(this, i)
+                                    a = n[y].call(this, i)
                                 } catch (e) {
                                     continue
                                 }
                                 if (u = [
                                         [a[0]], a[1]
                                     ],
-                                    a[1].length > 0 && !y)
+                                    a[1].length > 0 && !h)
                                     try {
                                         d = s.call(this, a[1])
                                     } catch (e) {
-                                        y = !0
+                                        h = !0
                                     }
                                 else
-                                    y = !0;
-                                if (y || 0 !== d[1].length || (y = !0), !y) {
+                                    h = !0;
+                                if (h || 0 !== d[1].length || (h = !0), !h) {
                                     for (var m = [], T = 0; T < n.length; T++)
-                                        h !== T && m.push(n[T]);
+                                        y !== T && m.push(n[T]);
                                     o = t.set(m, s).call(this, d[1]),
                                         o[0].length > 0 && (u[0] = u[0].concat(o[0]),
                                             u[1] = o[1])
@@ -51842,16 +51846,16 @@
                 else if (2 === arguments.length && arguments[0] instanceof Date && arguments[1] instanceof Date) {
                     var u = arguments[0].clone(),
                         l = arguments[1].clone(),
-                        y = u > l ? 1 : -1;
+                        h = u > l ? 1 : -1;
                     this.dates = {
                             start: arguments[0].clone(),
                             end: arguments[1].clone()
                         },
-                        s(y, u, l, this),
-                        r(y, u, l);
-                    var h = l - u;
-                    if (0 !== h) {
-                        var m = new TimeSpan(h);
+                        s(h, u, l, this),
+                        r(h, u, l);
+                    var y = l - u;
+                    if (0 !== y) {
+                        var m = new TimeSpan(y);
                         this.set(this.years, this.months, m.getDays(), m.getHours(), m.getMinutes(), m.getSeconds(), m.getMilliseconds())
                     }
                 }
@@ -52010,7 +52014,7 @@
 }, function(e, t, n) {
     (function(t) {
         e.exports = t.moment = n(5)
-    }).call(t, n(38))
+    }).call(t, n(40))
 }, function(e, t, n) {
     function s(e) {
         return n(r(e))
@@ -52023,249 +52027,249 @@
         return t
     }
     var i = {
-        "./af": 298,
-        "./af.js": 298,
-        "./ar": 299,
-        "./ar-dz": 300,
-        "./ar-dz.js": 300,
-        "./ar-kw": 301,
-        "./ar-kw.js": 301,
-        "./ar-ly": 302,
-        "./ar-ly.js": 302,
-        "./ar-ma": 303,
-        "./ar-ma.js": 303,
-        "./ar-sa": 304,
-        "./ar-sa.js": 304,
-        "./ar-tn": 305,
-        "./ar-tn.js": 305,
-        "./ar.js": 299,
-        "./az": 306,
-        "./az.js": 306,
-        "./be": 307,
-        "./be.js": 307,
-        "./bg": 308,
-        "./bg.js": 308,
-        "./bm": 309,
-        "./bm.js": 309,
-        "./bn": 310,
-        "./bn.js": 310,
-        "./bo": 311,
-        "./bo.js": 311,
-        "./br": 312,
-        "./br.js": 312,
-        "./bs": 313,
-        "./bs.js": 313,
-        "./ca": 314,
-        "./ca.js": 314,
-        "./cs": 315,
-        "./cs.js": 315,
-        "./cv": 316,
-        "./cv.js": 316,
-        "./cy": 317,
-        "./cy.js": 317,
-        "./da": 318,
-        "./da.js": 318,
-        "./de": 319,
-        "./de-at": 320,
-        "./de-at.js": 320,
-        "./de-ch": 321,
-        "./de-ch.js": 321,
-        "./de.js": 319,
-        "./dv": 322,
-        "./dv.js": 322,
-        "./el": 323,
-        "./el.js": 323,
-        "./en-au": 324,
-        "./en-au.js": 324,
-        "./en-ca": 325,
-        "./en-ca.js": 325,
-        "./en-gb": 326,
-        "./en-gb.js": 326,
-        "./en-ie": 327,
-        "./en-ie.js": 327,
-        "./en-nz": 328,
-        "./en-nz.js": 328,
-        "./eo": 329,
-        "./eo.js": 329,
-        "./es": 330,
-        "./es-do": 331,
-        "./es-do.js": 331,
-        "./es-us": 332,
-        "./es-us.js": 332,
-        "./es.js": 330,
-        "./et": 333,
-        "./et.js": 333,
-        "./eu": 334,
-        "./eu.js": 334,
-        "./fa": 335,
-        "./fa.js": 335,
-        "./fi": 336,
-        "./fi.js": 336,
-        "./fo": 337,
-        "./fo.js": 337,
-        "./fr": 338,
-        "./fr-ca": 339,
-        "./fr-ca.js": 339,
-        "./fr-ch": 340,
-        "./fr-ch.js": 340,
-        "./fr.js": 338,
-        "./fy": 341,
-        "./fy.js": 341,
-        "./gd": 342,
-        "./gd.js": 342,
-        "./gl": 343,
-        "./gl.js": 343,
-        "./gom-latn": 344,
-        "./gom-latn.js": 344,
-        "./gu": 345,
-        "./gu.js": 345,
-        "./he": 346,
-        "./he.js": 346,
-        "./hi": 347,
-        "./hi.js": 347,
-        "./hr": 348,
-        "./hr.js": 348,
-        "./hu": 349,
-        "./hu.js": 349,
-        "./hy-am": 350,
-        "./hy-am.js": 350,
-        "./id": 351,
-        "./id.js": 351,
-        "./is": 352,
-        "./is.js": 352,
-        "./it": 353,
-        "./it.js": 353,
-        "./ja": 354,
-        "./ja.js": 354,
-        "./jv": 355,
-        "./jv.js": 355,
-        "./ka": 356,
-        "./ka.js": 356,
-        "./kk": 357,
-        "./kk.js": 357,
-        "./km": 358,
-        "./km.js": 358,
-        "./kn": 359,
-        "./kn.js": 359,
-        "./ko": 360,
-        "./ko.js": 360,
-        "./ky": 361,
-        "./ky.js": 361,
-        "./lb": 362,
-        "./lb.js": 362,
-        "./lo": 363,
-        "./lo.js": 363,
-        "./lt": 364,
-        "./lt.js": 364,
-        "./lv": 365,
-        "./lv.js": 365,
-        "./me": 366,
-        "./me.js": 366,
-        "./mi": 367,
-        "./mi.js": 367,
-        "./mk": 368,
-        "./mk.js": 368,
-        "./ml": 369,
-        "./ml.js": 369,
-        "./mr": 370,
-        "./mr.js": 370,
-        "./ms": 371,
-        "./ms-my": 372,
-        "./ms-my.js": 372,
-        "./ms.js": 371,
-        "./my": 373,
-        "./my.js": 373,
-        "./nb": 374,
-        "./nb.js": 374,
-        "./ne": 375,
-        "./ne.js": 375,
-        "./nl": 376,
-        "./nl-be": 377,
-        "./nl-be.js": 377,
-        "./nl.js": 376,
-        "./nn": 378,
-        "./nn.js": 378,
-        "./pa-in": 379,
-        "./pa-in.js": 379,
-        "./pl": 380,
-        "./pl.js": 380,
-        "./pt": 381,
-        "./pt-br": 382,
-        "./pt-br.js": 382,
-        "./pt.js": 381,
-        "./ro": 383,
-        "./ro.js": 383,
-        "./ru": 384,
-        "./ru.js": 384,
-        "./sd": 385,
-        "./sd.js": 385,
-        "./se": 386,
-        "./se.js": 386,
-        "./si": 387,
-        "./si.js": 387,
-        "./sk": 388,
-        "./sk.js": 388,
-        "./sl": 389,
-        "./sl.js": 389,
-        "./sq": 390,
-        "./sq.js": 390,
-        "./sr": 391,
-        "./sr-cyrl": 392,
-        "./sr-cyrl.js": 392,
-        "./sr.js": 391,
-        "./ss": 393,
-        "./ss.js": 393,
-        "./sv": 394,
-        "./sv.js": 394,
-        "./sw": 395,
-        "./sw.js": 395,
-        "./ta": 396,
-        "./ta.js": 396,
-        "./te": 397,
-        "./te.js": 397,
-        "./tet": 398,
-        "./tet.js": 398,
-        "./th": 399,
-        "./th.js": 399,
-        "./tl-ph": 400,
-        "./tl-ph.js": 400,
-        "./tlh": 401,
-        "./tlh.js": 401,
-        "./tr": 402,
-        "./tr.js": 402,
-        "./tzl": 403,
-        "./tzl.js": 403,
-        "./tzm": 404,
-        "./tzm-latn": 405,
-        "./tzm-latn.js": 405,
-        "./tzm.js": 404,
-        "./uk": 406,
-        "./uk.js": 406,
-        "./ur": 407,
-        "./ur.js": 407,
-        "./uz": 408,
-        "./uz-latn": 409,
-        "./uz-latn.js": 409,
-        "./uz.js": 408,
-        "./vi": 410,
-        "./vi.js": 410,
-        "./x-pseudo": 411,
-        "./x-pseudo.js": 411,
-        "./yo": 412,
-        "./yo.js": 412,
-        "./zh-cn": 413,
-        "./zh-cn.js": 413,
-        "./zh-hk": 414,
-        "./zh-hk.js": 414,
-        "./zh-tw": 415,
-        "./zh-tw.js": 415
+        "./af": 309,
+        "./af.js": 309,
+        "./ar": 310,
+        "./ar-dz": 311,
+        "./ar-dz.js": 311,
+        "./ar-kw": 312,
+        "./ar-kw.js": 312,
+        "./ar-ly": 313,
+        "./ar-ly.js": 313,
+        "./ar-ma": 314,
+        "./ar-ma.js": 314,
+        "./ar-sa": 315,
+        "./ar-sa.js": 315,
+        "./ar-tn": 316,
+        "./ar-tn.js": 316,
+        "./ar.js": 310,
+        "./az": 317,
+        "./az.js": 317,
+        "./be": 318,
+        "./be.js": 318,
+        "./bg": 319,
+        "./bg.js": 319,
+        "./bm": 320,
+        "./bm.js": 320,
+        "./bn": 321,
+        "./bn.js": 321,
+        "./bo": 322,
+        "./bo.js": 322,
+        "./br": 323,
+        "./br.js": 323,
+        "./bs": 324,
+        "./bs.js": 324,
+        "./ca": 325,
+        "./ca.js": 325,
+        "./cs": 326,
+        "./cs.js": 326,
+        "./cv": 327,
+        "./cv.js": 327,
+        "./cy": 328,
+        "./cy.js": 328,
+        "./da": 329,
+        "./da.js": 329,
+        "./de": 330,
+        "./de-at": 331,
+        "./de-at.js": 331,
+        "./de-ch": 332,
+        "./de-ch.js": 332,
+        "./de.js": 330,
+        "./dv": 333,
+        "./dv.js": 333,
+        "./el": 334,
+        "./el.js": 334,
+        "./en-au": 335,
+        "./en-au.js": 335,
+        "./en-ca": 336,
+        "./en-ca.js": 336,
+        "./en-gb": 337,
+        "./en-gb.js": 337,
+        "./en-ie": 338,
+        "./en-ie.js": 338,
+        "./en-nz": 339,
+        "./en-nz.js": 339,
+        "./eo": 340,
+        "./eo.js": 340,
+        "./es": 341,
+        "./es-do": 342,
+        "./es-do.js": 342,
+        "./es-us": 343,
+        "./es-us.js": 343,
+        "./es.js": 341,
+        "./et": 344,
+        "./et.js": 344,
+        "./eu": 345,
+        "./eu.js": 345,
+        "./fa": 346,
+        "./fa.js": 346,
+        "./fi": 347,
+        "./fi.js": 347,
+        "./fo": 348,
+        "./fo.js": 348,
+        "./fr": 349,
+        "./fr-ca": 350,
+        "./fr-ca.js": 350,
+        "./fr-ch": 351,
+        "./fr-ch.js": 351,
+        "./fr.js": 349,
+        "./fy": 352,
+        "./fy.js": 352,
+        "./gd": 353,
+        "./gd.js": 353,
+        "./gl": 354,
+        "./gl.js": 354,
+        "./gom-latn": 355,
+        "./gom-latn.js": 355,
+        "./gu": 356,
+        "./gu.js": 356,
+        "./he": 357,
+        "./he.js": 357,
+        "./hi": 358,
+        "./hi.js": 358,
+        "./hr": 359,
+        "./hr.js": 359,
+        "./hu": 360,
+        "./hu.js": 360,
+        "./hy-am": 361,
+        "./hy-am.js": 361,
+        "./id": 362,
+        "./id.js": 362,
+        "./is": 363,
+        "./is.js": 363,
+        "./it": 364,
+        "./it.js": 364,
+        "./ja": 365,
+        "./ja.js": 365,
+        "./jv": 366,
+        "./jv.js": 366,
+        "./ka": 367,
+        "./ka.js": 367,
+        "./kk": 368,
+        "./kk.js": 368,
+        "./km": 369,
+        "./km.js": 369,
+        "./kn": 370,
+        "./kn.js": 370,
+        "./ko": 371,
+        "./ko.js": 371,
+        "./ky": 372,
+        "./ky.js": 372,
+        "./lb": 373,
+        "./lb.js": 373,
+        "./lo": 374,
+        "./lo.js": 374,
+        "./lt": 375,
+        "./lt.js": 375,
+        "./lv": 376,
+        "./lv.js": 376,
+        "./me": 377,
+        "./me.js": 377,
+        "./mi": 378,
+        "./mi.js": 378,
+        "./mk": 379,
+        "./mk.js": 379,
+        "./ml": 380,
+        "./ml.js": 380,
+        "./mr": 381,
+        "./mr.js": 381,
+        "./ms": 382,
+        "./ms-my": 383,
+        "./ms-my.js": 383,
+        "./ms.js": 382,
+        "./my": 384,
+        "./my.js": 384,
+        "./nb": 385,
+        "./nb.js": 385,
+        "./ne": 386,
+        "./ne.js": 386,
+        "./nl": 387,
+        "./nl-be": 388,
+        "./nl-be.js": 388,
+        "./nl.js": 387,
+        "./nn": 389,
+        "./nn.js": 389,
+        "./pa-in": 390,
+        "./pa-in.js": 390,
+        "./pl": 391,
+        "./pl.js": 391,
+        "./pt": 392,
+        "./pt-br": 393,
+        "./pt-br.js": 393,
+        "./pt.js": 392,
+        "./ro": 394,
+        "./ro.js": 394,
+        "./ru": 395,
+        "./ru.js": 395,
+        "./sd": 396,
+        "./sd.js": 396,
+        "./se": 397,
+        "./se.js": 397,
+        "./si": 398,
+        "./si.js": 398,
+        "./sk": 399,
+        "./sk.js": 399,
+        "./sl": 400,
+        "./sl.js": 400,
+        "./sq": 401,
+        "./sq.js": 401,
+        "./sr": 402,
+        "./sr-cyrl": 403,
+        "./sr-cyrl.js": 403,
+        "./sr.js": 402,
+        "./ss": 404,
+        "./ss.js": 404,
+        "./sv": 405,
+        "./sv.js": 405,
+        "./sw": 406,
+        "./sw.js": 406,
+        "./ta": 407,
+        "./ta.js": 407,
+        "./te": 408,
+        "./te.js": 408,
+        "./tet": 409,
+        "./tet.js": 409,
+        "./th": 410,
+        "./th.js": 410,
+        "./tl-ph": 411,
+        "./tl-ph.js": 411,
+        "./tlh": 412,
+        "./tlh.js": 412,
+        "./tr": 413,
+        "./tr.js": 413,
+        "./tzl": 414,
+        "./tzl.js": 414,
+        "./tzm": 415,
+        "./tzm-latn": 416,
+        "./tzm-latn.js": 416,
+        "./tzm.js": 415,
+        "./uk": 417,
+        "./uk.js": 417,
+        "./ur": 418,
+        "./ur.js": 418,
+        "./uz": 419,
+        "./uz-latn": 420,
+        "./uz-latn.js": 420,
+        "./uz.js": 419,
+        "./vi": 421,
+        "./vi.js": 421,
+        "./x-pseudo": 422,
+        "./x-pseudo.js": 422,
+        "./yo": 423,
+        "./yo.js": 423,
+        "./zh-cn": 424,
+        "./zh-cn.js": 424,
+        "./zh-hk": 425,
+        "./zh-hk.js": 425,
+        "./zh-tw": 426,
+        "./zh-tw.js": 426
     };
     s.keys = function() {
             return Object.keys(i)
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 1244
+        s.id = 1294
 }, function(e, t) {
     ! function(e) {
         void 0 === e.fn.each2 && e.extend(e.fn, {
@@ -52349,7 +52353,7 @@
             })
         }
 
-        function y(e, n, s) {
+        function h(e, n, s) {
             s = s || t;
             var r;
             return function() {
@@ -52361,8 +52365,8 @@
             }
         }
 
-        function h(e, t) {
-            var n = y(e, function(e) {
+        function y(e, t) {
+            var n = h(e, function(e) {
                 t.trigger("scroll-debounced", e)
             });
             t.on("scroll", function(e) {
@@ -52412,9 +52416,9 @@
         }
 
         function M(t) {
-            if (!O) {
+            if (!N) {
                 var n = t[0].currentStyle || window.getComputedStyle(t[0], null);
-                O = e(document.createElement("div")).css({
+                N = e(document.createElement("div")).css({
                         position: "absolute",
                         left: "-10000px",
                         top: "-10000px",
@@ -52427,11 +52431,11 @@
                         textTransform: n.textTransform,
                         whiteSpace: "nowrap"
                     }),
-                    O.attr("class", "select2-sizer"),
-                    e(document.body).append(O)
+                    N.attr("class", "select2-sizer"),
+                    e(document.body).append(N)
             }
-            return O.text(t.val()),
-                O.width()
+            return N.text(t.val()),
+                N.width()
         }
 
         function f(t, n, s) {
@@ -52493,12 +52497,12 @@
                                 jsonpCallback: n.jsonpCallback || t,
                                 dataType: n.dataType || "json"
                             },
-                            y = e.extend({}, e.fn.select2.ajaxDefaults.params, l);
+                            h = e.extend({}, e.fn.select2.ajaxDefaults.params, l);
                         s = s ? s.call(o, d.term, d.page, d.context) : null,
                             i = "function" == typeof i ? i.call(o, d.term, d.page, d.context) : i,
                             r && "function" == typeof r.abort && r.abort(),
-                            n.params && (e.isFunction(n.params) ? e.extend(y, n.params.call(o)) : e.extend(y, n.params)),
-                            e.extend(y, {
+                            n.params && (e.isFunction(n.params) ? e.extend(h, n.params.call(o)) : e.extend(h, n.params)),
+                            e.extend(h, {
                                 url: i,
                                 dataType: n.dataType,
                                 data: s,
@@ -52516,7 +52520,7 @@
                                     d.callback(s)
                                 }
                             }),
-                            r = u.call(o, y)
+                            r = u.call(o, h)
                     }, i)
             }
         }
@@ -52617,8 +52621,8 @@
         }
 
         function E(e, n, s, r) {
-            var i, o, d, u, l, y = e,
-                h = !1;
+            var i, o, d, u, l, h = e,
+                y = !1;
             if (!r.createSearchChoice || !r.tokenSeparators || r.tokenSeparators.length < 1)
                 return t;
             for (;;) {
@@ -52631,17 +52635,17 @@
                 if (i = e.substring(0, o),
                     e = e.substring(o + l.length),
                     i.length > 0 && (i = r.createSearchChoice.call(this, i, n)) !== t && null !== i && r.id(i) !== t && null !== r.id(i)) {
-                    for (h = !1,
+                    for (y = !1,
                         d = 0,
                         u = n.length; d < u; d++)
                         if (a(r.id(i), r.id(n[d]))) {
-                            h = !0;
+                            y = !0;
                             break
                         }
-                    h || s(i)
+                    y || s(i)
                 }
             }
-            return y !== e ? e : void 0
+            return h !== e ? e : void 0
         }
 
         function L() {
@@ -52661,7 +52665,7 @@
                 s
         }
         if (window.Select2 === t) {
-            var H, I, k, N, O, x, P, F = {
+            var H, I, k, O, N, x, P, F = {
                     x: 0,
                     y: 0
                 },
@@ -53549,7 +53553,7 @@
                     "ς": "σ"
                 };
             x = e(document),
-                N = function() {
+                O = function() {
                     var e = 1;
                     return function() {
                         return e++
@@ -53573,7 +53577,7 @@
                                 role: "status",
                                 "aria-live": "polite"
                             }).addClass("select2-hidden-accessible").appendTo(document.body)),
-                            this.containerId = "s2id_" + (n.element.attr("id") || "autogen" + N()),
+                            this.containerId = "s2id_" + (n.element.attr("id") || "autogen" + O()),
                             this.containerEventName = this.containerId.replace(/([.])/g, "_").replace(/([;&,\-\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g, "\\$1"),
                             this.container.attr("id", this.containerId),
                             this.container.attr("title", n.element.attr("title")),
@@ -53609,7 +53613,7 @@
                                 this._touchEvent && (this._touchEvent = !1,
                                     this.selectHighlighted())
                             })),
-                            h(80, this.results),
+                            y(80, this.results),
                             this.dropdown.on("scroll-debounced", ".select2-results", this.bind(this.loadMoreIfNeeded)),
                             e(this.container).on("change", ".select2-input", function(e) {
                                 e.stopPropagation()
@@ -53721,25 +53725,25 @@
                             null != n.selectOnClose && (n.selectOnBlur = n.selectOnClose),
                             null != n.ajax && e.isFunction(n.ajax.processResults) && (n.ajax.results = n.ajax.processResults),
                             null != n.language) {
-                            var y = n.language;
-                            e.isFunction(y.noMatches) && (n.formatNoMatches = y.noMatches),
-                                e.isFunction(y.searching) && (n.formatSearching = y.searching),
-                                e.isFunction(y.inputTooShort) && (n.formatInputTooShort = y.inputTooShort),
-                                e.isFunction(y.inputTooLong) && (n.formatInputTooLong = y.inputTooLong),
-                                e.isFunction(y.loadingMore) && (n.formatLoading = y.loadingMore),
-                                e.isFunction(y.maximumSelected) && (n.formatSelectionTooBig = y.maximumSelected)
+                            var h = n.language;
+                            e.isFunction(h.noMatches) && (n.formatNoMatches = h.noMatches),
+                                e.isFunction(h.searching) && (n.formatSearching = h.searching),
+                                e.isFunction(h.inputTooShort) && (n.formatInputTooShort = h.inputTooShort),
+                                e.isFunction(h.inputTooLong) && (n.formatInputTooLong = h.inputTooLong),
+                                e.isFunction(h.loadingMore) && (n.formatLoading = h.loadingMore),
+                                e.isFunction(h.maximumSelected) && (n.formatSelectionTooBig = h.maximumSelected)
                         }
                         if (n = e.extend({}, {
                                 populateResults: function(s, r, i) {
                                     var a, o = this.opts.id,
                                         d = this.liveRegion;
                                     (a = function(s, r, l) {
-                                        var y, h, m, T, c, p, M, f, S, g;
+                                        var h, y, m, T, c, p, M, f, S, g;
                                         s = n.sortResults(s, r, i);
                                         var _ = [];
-                                        for (y = 0,
-                                            h = s.length; y < h; y += 1)
-                                            m = s[y],
+                                        for (h = 0,
+                                            y = s.length; h < y; h += 1)
+                                            m = s[h],
                                             c = !0 === m.disabled,
                                             T = !c && o(m) !== t,
                                             p = m.children && m.children.length > 0,
@@ -53753,7 +53757,7 @@
                                             M.attr("role", "presentation"),
                                             f = e(document.createElement("div")),
                                             f.addClass("select2-result-label"),
-                                            f.attr("id", "select2-result-label-" + N()),
+                                            f.attr("id", "select2-result-label-" + O()),
                                             f.attr("role", "option"),
                                             g = n.formatResult(m, f, i, u.opts.escapeMarkup),
                                             g !== t && (f.html(g),
@@ -53928,16 +53932,16 @@
                             d = o.offset(),
                             u = o.outerHeight(!1),
                             l = o.outerWidth(!1),
-                            y = a.outerHeight(!1),
-                            h = e(window),
-                            m = h.width(),
-                            T = h.height(),
-                            c = h.scrollLeft() + m,
-                            p = h.scrollTop() + T,
+                            h = a.outerHeight(!1),
+                            y = e(window),
+                            m = y.width(),
+                            T = y.height(),
+                            c = y.scrollLeft() + m,
+                            p = y.scrollTop() + T,
                             M = d.top + u,
                             f = d.left,
-                            S = M + y <= p,
-                            g = d.top - y >= h.scrollTop(),
+                            S = M + h <= p,
+                            g = d.top - h >= y.scrollTop(),
                             _ = a.outerWidth(!1),
                             b = a.hasClass("select2-drop-above");
                         b ? (n = !0, !g && S && (s = !0,
@@ -53947,9 +53951,9 @@
                                 d = this.container.offset(),
                                 u = this.container.outerHeight(!1),
                                 l = this.container.outerWidth(!1),
-                                y = a.outerHeight(!1),
-                                c = h.scrollLeft() + m,
-                                p = h.scrollTop() + T,
+                                h = a.outerHeight(!1),
+                                c = y.scrollLeft() + m,
+                                p = y.scrollTop() + T,
                                 M = d.top + u,
                                 f = d.left,
                                 _ = a.outerWidth(!1),
@@ -53960,7 +53964,7 @@
                                 a.css("width", ""),
                                 _ = a.outerWidth(!1) + (i.scrollHeight === i.clientHeight ? 0 : P.width),
                                 _ > l ? l = _ : _ = l,
-                                y = a.outerHeight(!1)) : this.container.removeClass("select2-drop-auto-width"),
+                                h = a.outerHeight(!1)) : this.container.removeClass("select2-drop-auto-width"),
                             "static" !== this.body.css("position") && (t = this.body.offset(),
                                 M -= t.top,
                                 f -= t.left), ! function() {
@@ -53974,8 +53978,8 @@
                             },
                             n ? (this.container.addClass("select2-drop-above"),
                                 a.addClass("select2-drop-above"),
-                                y = a.outerHeight(!1),
-                                r.top = d.top - y,
+                                h = a.outerHeight(!1),
+                                r.top = d.top - h,
                                 r.bottom = "auto") : (r.top = M,
                                 r.bottom = "auto",
                                 this.container.removeClass("select2-drop-above"),
@@ -54182,8 +54186,8 @@
                     updateResults: function(n) {
                         function s() {
                             u.removeClass("select2-active"),
-                                h.positionDropdown(),
-                                l.find(".select2-no-results,.select2-selection-limit,.select2-searching").length ? h.liveRegion.text(l.text()) : h.liveRegion.text(h.opts.formatMatches(l.find('.select2-result-selectable:not(".select2-selected")').length))
+                                y.positionDropdown(),
+                                l.find(".select2-no-results,.select2-selection-limit,.select2-searching").length ? y.liveRegion.text(l.text()) : y.liveRegion.text(y.opts.formatMatches(l.find('.select2-result-selectable:not(".select2-selected")').length))
                         }
 
                         function r(e) {
@@ -54192,55 +54196,55 @@
                         }
                         var i, o, d, u = this.search,
                             l = this.results,
-                            y = this.opts,
-                            h = this,
+                            h = this.opts,
+                            y = this,
                             m = u.val(),
                             T = e.data(this.container, "select2-last-term");
                         if ((!0 === n || !T || !a(m, T)) && (e.data(this.container, "select2-last-term", m), !0 === n || !1 !== this.showSearchInput && this.opened())) {
                             d = ++this.queryCount;
                             var c = this.getMaximumSelectionSize();
                             if (c >= 1 && (i = this.data(),
-                                    e.isArray(i) && i.length >= c && D(y.formatSelectionTooBig, "formatSelectionTooBig")))
-                                return void r("<li class='select2-selection-limit'>" + A(y.formatSelectionTooBig, y.element, c) + "</li>");
-                            if (u.val().length < y.minimumInputLength)
-                                return r(D(y.formatInputTooShort, "formatInputTooShort") ? "<li class='select2-no-results'>" + A(y.formatInputTooShort, y.element, u.val(), y.minimumInputLength) + "</li>" : ""),
+                                    e.isArray(i) && i.length >= c && D(h.formatSelectionTooBig, "formatSelectionTooBig")))
+                                return void r("<li class='select2-selection-limit'>" + A(h.formatSelectionTooBig, h.element, c) + "</li>");
+                            if (u.val().length < h.minimumInputLength)
+                                return r(D(h.formatInputTooShort, "formatInputTooShort") ? "<li class='select2-no-results'>" + A(h.formatInputTooShort, h.element, u.val(), h.minimumInputLength) + "</li>" : ""),
                                     void(n && this.showSearch && this.showSearch(!0));
-                            if (y.maximumInputLength && u.val().length > y.maximumInputLength)
-                                return void r(D(y.formatInputTooLong, "formatInputTooLong") ? "<li class='select2-no-results'>" + A(y.formatInputTooLong, y.element, u.val(), y.maximumInputLength) + "</li>" : "");
-                            y.formatSearching && 0 === this.findHighlightableChoices().length && r("<li class='select2-searching'>" + A(y.formatSearching, y.element) + "</li>"),
+                            if (h.maximumInputLength && u.val().length > h.maximumInputLength)
+                                return void r(D(h.formatInputTooLong, "formatInputTooLong") ? "<li class='select2-no-results'>" + A(h.formatInputTooLong, h.element, u.val(), h.maximumInputLength) + "</li>" : "");
+                            h.formatSearching && 0 === this.findHighlightableChoices().length && r("<li class='select2-searching'>" + A(h.formatSearching, h.element) + "</li>"),
                                 u.addClass("select2-active"),
                                 this.removeHighlight(),
                                 o = this.tokenize(),
                                 o != t && null != o && u.val(o),
                                 this.resultsPage = 1,
-                                y.query({
-                                    element: y.element,
+                                h.query({
+                                    element: h.element,
                                     term: u.val(),
                                     page: this.resultsPage,
                                     context: null,
-                                    matcher: y.matcher,
+                                    matcher: h.matcher,
                                     callback: this.bind(function(i) {
                                         var o;
                                         if (d == this.queryCount) {
                                             if (!this.opened())
                                                 return void this.search.removeClass("select2-active");
-                                            if (i.hasError !== t && D(y.formatAjaxError, "formatAjaxError"))
-                                                return void r("<li class='select2-ajax-error'>" + A(y.formatAjaxError, y.element, i.jqXHR, i.textStatus, i.errorThrown) + "</li>");
+                                            if (i.hasError !== t && D(h.formatAjaxError, "formatAjaxError"))
+                                                return void r("<li class='select2-ajax-error'>" + A(h.formatAjaxError, h.element, i.jqXHR, i.textStatus, i.errorThrown) + "</li>");
                                             if (this.context = i.context === t ? null : i.context,
-                                                this.opts.createSearchChoice && "" !== u.val() && (o = this.opts.createSearchChoice.call(h, u.val(), i.results)) !== t && null !== o && h.id(o) !== t && null !== h.id(o) && 0 === e(i.results).filter(function() {
-                                                    return a(h.id(this), h.id(o))
+                                                this.opts.createSearchChoice && "" !== u.val() && (o = this.opts.createSearchChoice.call(y, u.val(), i.results)) !== t && null !== o && y.id(o) !== t && null !== y.id(o) && 0 === e(i.results).filter(function() {
+                                                    return a(y.id(this), y.id(o))
                                                 }).length && this.opts.createSearchChoicePosition(i.results, o),
-                                                0 === i.results.length && D(y.formatNoMatches, "formatNoMatches"))
-                                                return r("<li class='select2-no-results'>" + A(y.formatNoMatches, y.element, u.val()) + "</li>"),
+                                                0 === i.results.length && D(h.formatNoMatches, "formatNoMatches"))
+                                                return r("<li class='select2-no-results'>" + A(h.formatNoMatches, h.element, u.val()) + "</li>"),
                                                     void(this.showSearch && this.showSearch(u.val()));
                                             l.empty(),
-                                                h.opts.populateResults.call(this, l, i.results, {
+                                                y.opts.populateResults.call(this, l, i.results, {
                                                     term: u.val(),
                                                     page: this.resultsPage,
                                                     context: null
-                                                }), !0 === i.more && D(y.formatLoadMore, "formatLoadMore") && (l.append("<li class='select2-more-results'>" + y.escapeMarkup(A(y.formatLoadMore, y.element, this.resultsPage)) + "</li>"),
+                                                }), !0 === i.more && D(h.formatLoadMore, "formatLoadMore") && (l.append("<li class='select2-more-results'>" + h.escapeMarkup(A(h.formatLoadMore, h.element, this.resultsPage)) + "</li>"),
                                                     window.setTimeout(function() {
-                                                        h.loadMoreIfNeeded()
+                                                        y.loadMoreIfNeeded()
                                                     }, 10)),
                                                 this.postprocessResults(i, n),
                                                 s(),
@@ -54364,7 +54368,7 @@
                     initContainer: function() {
                         var t, s, r = this.container,
                             i = this.dropdown,
-                            a = N();
+                            a = O();
                         this.opts.minimumResultsForSearch < 0 ? this.showSearch(!1) : this.showSearch(!0),
                             this.selection = t = r.find(".select2-choice"),
                             this.focusser = r.find(".select2-focusser"),
@@ -54724,7 +54728,7 @@
                                 s.search[0].focus(),
                                     s.selectChoice(e(this))
                             }),
-                            this.search.attr("id", "s2id_autogen" + N()),
+                            this.search.attr("id", "s2id_autogen" + O()),
                             this.search.prev().text(e("label[for='" + this.opts.element.attr("id") + "']").text()).attr("for", this.search.attr("id")),
                             this.opts.element.on("focus.select2", this.bind(function() {
                                 this.focus()
@@ -55092,8 +55096,8 @@
                     var n, s, i, a, o, d = Array.prototype.slice.call(arguments, 0),
                         u = ["val", "destroy", "opened", "open", "close", "focus", "isFocused", "container", "dropdown", "onSortStart", "onSortEnd", "enable", "disable", "readonly", "positionDropdown", "data", "search"],
                         l = ["opened", "isFocused", "container", "dropdown"],
-                        y = ["val", "data"],
-                        h = {
+                        h = ["val", "data"],
+                        y = {
                             search: "externalSearch"
                         };
                     return this.each(function() {
@@ -55113,9 +55117,9 @@
                                     (s = e(this).data("select2")) === t)
                                     return;
                                 if (i = d[0],
-                                    "container" === i ? a = s.container : "dropdown" === i ? a = s.dropdown : (h[i] && (i = h[i]),
+                                    "container" === i ? a = s.container : "dropdown" === i ? a = s.dropdown : (y[i] && (i = y[i]),
                                         a = s[i].apply(s, d.slice(1))),
-                                    r(d[0], l) >= 0 || r(d[0], y) >= 0 && 1 == d.length)
+                                    r(d[0], l) >= 0 || r(d[0], h) >= 0 && 1 == d.length)
                                     return !1
                             }
                         }),
@@ -55230,7 +55234,7 @@
                         tags: v
                     },
                     util: {
-                        debounce: y,
+                        debounce: h,
                         markMatch: S,
                         escapeMarkup: g,
                         stripDiacritics: s
@@ -55253,7 +55257,7 @@
      * @website: https://www.daterangepicker.com/
      */
     ! function(i, a) {
-        s = [n(5), n(122)],
+        s = [n(5), n(134)],
             void 0 !== (r = function(e, t) {
                     return i.daterangepicker = a(e, t)
                 }
@@ -55364,12 +55368,12 @@
                     o--;
             var d, u, l;
             if (void 0 === s.startDate && void 0 === s.endDate && t(this.element).is("input[type=text]")) {
-                var y = t(this.element).val(),
-                    h = y.split(this.locale.separator);
+                var h = t(this.element).val(),
+                    y = h.split(this.locale.separator);
                 d = u = null,
-                    2 == h.length ? (d = e(h[0], this.locale.format),
-                        u = e(h[1], this.locale.format)) : this.singleDatePicker && "" !== y && (d = e(y, this.locale.format),
-                        u = e(y, this.locale.format)),
+                    2 == y.length ? (d = e(y[0], this.locale.format),
+                        u = e(y[1], this.locale.format)) : this.singleDatePicker && "" !== h && (d = e(h, this.locale.format),
+                        u = e(h, this.locale.format)),
                     null !== d && null !== u && (this.setStartDate(d),
                         this.setEndDate(u))
             }
@@ -55516,20 +55520,20 @@
                         d = s.month.second(),
                         u = e([i, r]).daysInMonth(),
                         l = e([i, r, 1]),
-                        y = e([i, r, u]),
-                        h = e(l).subtract(1, "month").month(),
+                        h = e([i, r, u]),
+                        y = e(l).subtract(1, "month").month(),
                         m = e(l).subtract(1, "month").year(),
-                        T = e([m, h]).daysInMonth(),
+                        T = e([m, y]).daysInMonth(),
                         c = l.day(),
                         s = [];
                     s.firstDay = l,
-                        s.lastDay = y;
+                        s.lastDay = h;
                     for (var p = 0; p < 6; p++)
                         s[p] = [];
                     var M = T - c + this.locale.firstDay + 1;
                     M > T && (M -= 7),
                         c == this.locale.firstDay && (M = T - 6);
-                    for (var f, S, g = e([m, h, M, 12, o, d]), p = 0, f = 0, S = 0; p < 42; p++,
+                    for (var f, S, g = e([m, y, M, 12, o, d]), p = 0, f = 0, S = 0; p < 42; p++,
                         f++,
                         g = e(g).add(24, "hour"))
                         p > 0 && f % 7 == 0 && (f = 0,
@@ -55556,13 +55560,13 @@
                         _ && !_.isBefore(s.firstDay) || this.linkedCalendars && "left" != n ? D += "<th></th>" : D += '<th class="prev available"><i class="fa fa-' + v.left + " glyphicon glyphicon-" + v.left + '"></i></th>';
                     var A = this.locale.monthNames[s[1][1].month()] + s[1][1].format(" YYYY");
                     if (this.showDropdowns) {
-                        for (var C = s[1][1].month(), E = s[1][1].year(), L = b && b.year() || E + 5, w = _ && _.year() || E - 50, H = E == w, I = E == L, k = '<select class="monthselect">', N = 0; N < 12; N++)
-                            (!H || N >= _.month()) && (!I || N <= b.month()) ? k += "<option value='" + N + "'" + (N === C ? " selected='selected'" : "") + ">" + this.locale.monthNames[N] + "</option>" : k += "<option value='" + N + "'" + (N === C ? " selected='selected'" : "") + " disabled='disabled'>" + this.locale.monthNames[N] + "</option>";
+                        for (var C = s[1][1].month(), E = s[1][1].year(), L = b && b.year() || E + 5, w = _ && _.year() || E - 50, H = E == w, I = E == L, k = '<select class="monthselect">', O = 0; O < 12; O++)
+                            (!H || O >= _.month()) && (!I || O <= b.month()) ? k += "<option value='" + O + "'" + (O === C ? " selected='selected'" : "") + ">" + this.locale.monthNames[O] + "</option>" : k += "<option value='" + O + "'" + (O === C ? " selected='selected'" : "") + " disabled='disabled'>" + this.locale.monthNames[O] + "</option>";
                         k += "</select>";
-                        for (var O = '<select class="yearselect">', x = w; x <= L; x++)
-                            O += '<option value="' + x + '"' + (x === E ? ' selected="selected"' : "") + ">" + x + "</option>";
-                        O += "</select>",
-                            A = k + O
+                        for (var N = '<select class="yearselect">', x = w; x <= L; x++)
+                            N += '<option value="' + x + '"' + (x === E ? ' selected="selected"' : "") + ">" + x + "</option>";
+                        N += "</select>",
+                            A = k + N
                     }
                     if (D += '<th colspan="5" class="month">' + A + "</th>",
                         b && !b.isAfter(s.lastDay) || this.linkedCalendars && "right" != n && !this.singleDatePicker ? D += "<th></th>" : D += '<th class="next available"><i class="fa fa-' + v.right + " glyphicon glyphicon-" + v.right + '"></i></th>',
@@ -55632,32 +55636,32 @@
                         for (var o = this.timePicker24Hour ? 0 : 1, d = this.timePicker24Hour ? 23 : 12, u = o; u <= d; u++) {
                             var l = u;
                             this.timePicker24Hour || (l = n.hour() >= 12 ? 12 == u ? 12 : u + 12 : 12 == u ? 0 : u);
-                            var y = n.clone().hour(l),
-                                h = !1;
-                            s && y.minute(59).isBefore(s) && (h = !0),
-                                r && y.minute(0).isAfter(r) && (h = !0),
-                                l != n.hour() || h ? t += h ? '<option value="' + u + '" disabled="disabled" class="disabled">' + u + "</option>" : '<option value="' + u + '">' + u + "</option>" : t += '<option value="' + u + '" selected="selected">' + u + "</option>"
+                            var h = n.clone().hour(l),
+                                y = !1;
+                            s && h.minute(59).isBefore(s) && (y = !0),
+                                r && h.minute(0).isAfter(r) && (y = !0),
+                                l != n.hour() || y ? t += y ? '<option value="' + u + '" disabled="disabled" class="disabled">' + u + "</option>" : '<option value="' + u + '">' + u + "</option>" : t += '<option value="' + u + '" selected="selected">' + u + "</option>"
                         }
                         t += "</select> ",
                             t += ': <select class="minuteselect">';
                         for (var u = 0; u < 60; u += this.timePickerIncrement) {
                             var m = u < 10 ? "0" + u : u,
-                                y = n.clone().minute(u),
-                                h = !1;
-                            s && y.second(59).isBefore(s) && (h = !0),
-                                r && y.second(0).isAfter(r) && (h = !0),
-                                n.minute() != u || h ? t += h ? '<option value="' + u + '" disabled="disabled" class="disabled">' + m + "</option>" : '<option value="' + u + '">' + m + "</option>" : t += '<option value="' + u + '" selected="selected">' + m + "</option>"
+                                h = n.clone().minute(u),
+                                y = !1;
+                            s && h.second(59).isBefore(s) && (y = !0),
+                                r && h.second(0).isAfter(r) && (y = !0),
+                                n.minute() != u || y ? t += y ? '<option value="' + u + '" disabled="disabled" class="disabled">' + m + "</option>" : '<option value="' + u + '">' + m + "</option>" : t += '<option value="' + u + '" selected="selected">' + m + "</option>"
                         }
                         if (t += "</select> ",
                             this.timePickerSeconds) {
                             t += ': <select class="secondselect">';
                             for (var u = 0; u < 60; u++) {
                                 var m = u < 10 ? "0" + u : u,
-                                    y = n.clone().second(u),
-                                    h = !1;
-                                s && y.isBefore(s) && (h = !0),
-                                    r && y.isAfter(r) && (h = !0),
-                                    n.second() != u || h ? t += h ? '<option value="' + u + '" disabled="disabled" class="disabled">' + m + "</option>" : '<option value="' + u + '">' + m + "</option>" : t += '<option value="' + u + '" selected="selected">' + m + "</option>"
+                                    h = n.clone().second(u),
+                                    y = !1;
+                                s && h.isBefore(s) && (y = !0),
+                                    r && h.isAfter(r) && (y = !0),
+                                    n.second() != u || y ? t += y ? '<option value="' + u + '" disabled="disabled" class="disabled">' + m + "</option>" : '<option value="' + u + '">' + m + "</option>" : t += '<option value="' + u + '" selected="selected">' + m + "</option>"
                             }
                             t += "</select> "
                         }
@@ -55816,8 +55820,8 @@
                                     r = s.substr(1, 1),
                                     i = s.substr(3, 1),
                                     l = t(n).parents(".calendar"),
-                                    y = l.hasClass("left") ? o.calendar[r][i] : d.calendar[r][i];
-                                y.isAfter(u) && y.isBefore(a) || y.isSame(a, "day") ? t(n).addClass("in-range") : t(n).removeClass("in-range")
+                                    h = l.hasClass("left") ? o.calendar[r][i] : d.calendar[r][i];
+                                h.isAfter(u) && h.isBefore(a) || h.isSame(a, "day") ? t(n).addClass("in-range") : t(n).removeClass("in-range")
                             }
                         })
                     }
@@ -56381,21 +56385,21 @@
                             d = this.component ? this.component.parent().offset() : this.$element.offset(),
                             u = this.component ? this.component.outerHeight(!0) : this.$element.outerHeight(!1),
                             l = this.component ? this.component.outerWidth(!0) : this.$element.outerWidth(!1),
-                            y = d.left,
-                            h = d.top;
+                            h = d.left,
+                            y = d.top;
                         this.$widget.removeClass("timepicker-orient-top timepicker-orient-bottom timepicker-orient-right timepicker-orient-left"),
                             "auto" !== this.orientation.x ? (this.$widget.addClass("timepicker-orient-" + this.orientation.x),
-                                "right" === this.orientation.x && (y -= n - l)) : (this.$widget.addClass("timepicker-orient-left"),
-                                d.left < 0 ? y -= d.left - 10 : d.left + n > r && (y = r - n - 10));
+                                "right" === this.orientation.x && (h -= n - l)) : (this.$widget.addClass("timepicker-orient-left"),
+                                d.left < 0 ? h -= d.left - 10 : d.left + n > r && (h = r - n - 10));
                         var m, T, c = this.orientation.y;
                         "auto" === c && (m = -a + d.top - s,
                                 T = a + i - (d.top + u + s),
                                 c = Math.max(m, T) === T ? "top" : "bottom"),
                             this.$widget.addClass("timepicker-orient-" + c),
-                            "top" === c ? h += u : h -= s + parseInt(this.$widget.css("padding-top"), 10),
+                            "top" === c ? y += u : y -= s + parseInt(this.$widget.css("padding-top"), 10),
                             this.$widget.css({
-                                top: h,
-                                left: y,
+                                top: y,
+                                left: h,
                                 zIndex: o
                             })
                     }
@@ -56654,8 +56658,8 @@
     }(jQuery, window, document)
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.I18n = n(1249)
-    }).call(t, n(38))
+        e.exports = t.I18n = n(1299)
+    }).call(t, n(40))
 }, function(e, t, n) {
     var s;
     ! function(r) {
@@ -56930,16 +56934,16 @@
                     d = e.getDate(),
                     u = e.getFullYear(),
                     l = e.getMonth() + 1,
-                    y = e.getHours(),
-                    h = y,
-                    m = y > 11 ? 1 : 0,
+                    h = e.getHours(),
+                    y = h,
+                    m = h > 11 ? 1 : 0,
                     T = e.getSeconds(),
                     c = e.getMinutes(),
                     p = e.getTimezoneOffset(),
                     M = Math.floor(Math.abs(p / 60)),
                     f = Math.abs(p) - 60 * M,
                     S = (p > 0 ? "-" : "+") + (M.toString().length < 2 ? "0" + M : M) + (f.toString().length < 2 ? "0" + f : f);
-                return h > 12 ? h -= 12 : 0 === h && (h = 12),
+                return y > 12 ? y -= 12 : 0 === y && (y = 12),
                     n = n.replace("%a", i.abbr_day_names[o]),
                     n = n.replace("%A", i.day_names[o]),
                     n = n.replace("%b", i.abbr_month_names[l]),
@@ -56947,10 +56951,10 @@
                     n = n.replace("%d", s(d)),
                     n = n.replace("%e", d),
                     n = n.replace("%-d", d),
-                    n = n.replace("%H", s(y)),
-                    n = n.replace("%-H", y),
-                    n = n.replace("%I", s(h)),
-                    n = n.replace("%-I", h),
+                    n = n.replace("%H", s(h)),
+                    n = n.replace("%-H", h),
+                    n = n.replace("%I", s(y)),
+                    n = n.replace("%-I", y),
                     n = n.replace("%m", s(l)),
                     n = n.replace("%-m", l),
                     n = n.replace("%M", s(c)),
@@ -57051,15 +57055,15 @@
     }()
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t._ = n(73)
-    }).call(t, n(38))
+        e.exports = t._ = n(78)
+    }).call(t, n(40))
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.uuidGenerator = n(1253)
-    }).call(t, n(38))
+        e.exports = t.uuidGenerator = n(1303)
+    }).call(t, n(40))
 }, function(e, t, n) {
-    var s = n(1254),
-        r = n(1255),
+    var s = n(1304),
+        r = n(1305),
         i = r;
     i.v1 = s,
         i.v4 = r,
@@ -57070,23 +57074,23 @@
             r = t || [];
         e = e || {};
         var a = void 0 !== e.clockseq ? e.clockseq : d,
-            y = void 0 !== e.msecs ? e.msecs : (new Date).getTime(),
-            h = void 0 !== e.nsecs ? e.nsecs : l + 1,
-            m = y - u + (h - l) / 1e4;
+            h = void 0 !== e.msecs ? e.msecs : (new Date).getTime(),
+            y = void 0 !== e.nsecs ? e.nsecs : l + 1,
+            m = h - u + (y - l) / 1e4;
         if (m < 0 && void 0 === e.clockseq && (a = a + 1 & 16383),
-            (m < 0 || y > u) && void 0 === e.nsecs && (h = 0),
-            h >= 1e4)
+            (m < 0 || h > u) && void 0 === e.nsecs && (y = 0),
+            y >= 1e4)
             throw new Error("uuid.v1(): Can't create more than 10M uuids/sec");
-        u = y,
-            l = h,
+        u = h,
+            l = y,
             d = a,
-            y += 122192928e5;
-        var T = (1e4 * (268435455 & y) + h) % 4294967296;
+            h += 122192928e5;
+        var T = (1e4 * (268435455 & h) + y) % 4294967296;
         r[s++] = T >>> 24 & 255,
             r[s++] = T >>> 16 & 255,
             r[s++] = T >>> 8 & 255,
             r[s++] = 255 & T;
-        var c = y / 4294967296 * 1e4 & 268435455;
+        var c = h / 4294967296 * 1e4 & 268435455;
         r[s++] = c >>> 8 & 255,
             r[s++] = 255 & c,
             r[s++] = c >>> 24 & 15 | 16,
@@ -57097,8 +57101,8 @@
             r[s + M] = p[M];
         return t || i(r)
     }
-    var r = n(416),
-        i = n(417),
+    var r = n(427),
+        i = n(428),
         a = r(),
         o = [1 | a[0], a[1], a[2], a[3], a[4], a[5]],
         d = 16383 & (a[6] << 8 | a[7]),
@@ -57119,13 +57123,13 @@
                 t[s + o] = a[o];
         return t || i(a)
     }
-    var r = n(416),
-        i = n(417);
+    var r = n(427),
+        i = n(428);
     e.exports = s
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.Marionette = n(1257)
-    }).call(t, n(38))
+        e.exports = t.Marionette = n(1307)
+    }).call(t, n(40))
 }, function(e, t, n) {
     /**
      * @license
@@ -57139,7 +57143,7 @@
      * http://marionettejs.com
      */
     ! function(t, s) {
-        e.exports = s(n(74), n(73), n(1258))
+        e.exports = s(n(79), n(78), n(1308))
     }(0, function(e, t, n) {
         "use strict";
 
@@ -57186,11 +57190,11 @@
             return !!u(e) && (e._isAttached = !1, !0)
         }
 
-        function y(e) {
+        function h(e) {
             e._isAttached && e._isRendered && i(e, "dom:refresh", e)
         }
 
-        function h(e) {
+        function y(e) {
             e._isAttached && e._isRendered && i(e, "dom:remove", e)
         }
 
@@ -57200,12 +57204,12 @@
 
         function T() {
             a(this, "attach", d),
-                y(this)
+                h(this)
         }
 
         function c() {
             a(this, "before:detach", u),
-                h(this)
+                y(this)
         }
 
         function p() {
@@ -57213,11 +57217,11 @@
         }
 
         function M() {
-            h(this)
+            y(this)
         }
 
         function f() {
-            y(this)
+            h(this)
         }
 
         function S(e) {
@@ -57329,12 +57333,12 @@
             return t instanceof e.$ ? t : e.$(t)
         }
 
-        function N(e) {
+        function O(e) {
             return this.prototype.Dom = t.extend({}, this.prototype.Dom, e),
                 this
         }
 
-        function O(e) {
+        function N(e) {
             e._isRendered || (e.supportsRenderLifecycle || i(e, "before:render", e),
                 e.render(),
                 e.supportsRenderLifecycle || (e._isRendered = !0,
@@ -57661,21 +57665,21 @@
             },
             le = function(e, n) {
                 return t.reduce(e, function(e, t, s) {
-                    return e[ye(s, n)] = t,
+                    return e[he(s, n)] = t,
                         e
                 }, {})
             },
-            ye = function(e, t) {
+            he = function(e, t) {
                 return e.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(e) {
                     return t[e.slice(4)]
                 })
             },
-            he = function e(n, s, r) {
+            ye = function e(n, s, r) {
                 return t.each(n, function(i, a) {
-                        t.isString(i) ? n[a] = ye(i, s) : t.isObject(i) && t.isArray(r) && (t.extend(i, e(t.pick(i, r), s)),
+                        t.isString(i) ? n[a] = he(i, s) : t.isObject(i) && t.isArray(r) && (t.extend(i, e(t.pick(i, r), s)),
                             t.each(r, function(e) {
                                 var n = i[e];
-                                t.isString(n) && (i[e] = ye(n, s))
+                                t.isString(n) && (i[e] = he(n, s))
                             }))
                     }),
                     n
@@ -57687,11 +57691,11 @@
                 },
                 normalizeUIString: function(e) {
                     var t = this._getUIBindings();
-                    return ye(e, t)
+                    return he(e, t)
                 },
                 normalizeUIValues: function(e, t) {
                     var n = this._getUIBindings();
-                    return he(e, n, t)
+                    return ye(e, n, t)
                 },
                 _getUIBindings: function() {
                     var e = t.result(this, "_uiBindings"),
@@ -57911,7 +57915,7 @@
                             e._isAttached || this.empty(t),
                             this._setupChildView(e),
                             this.currentView = e,
-                            O(e),
+                            N(e),
                             this._attachView(e, t),
                             this.triggerMethod("show", this, e, t),
                             this._isSwappingView = !1,
@@ -58070,7 +58074,7 @@
                         te.prototype.destroy.apply(this, arguments))
                 }
             }, {
-                setDomApi: N
+                setDomApi: O
             }),
             fe = function(e, t) {
                 return e instanceof Me ? e : P(e, t)
@@ -58253,7 +58257,7 @@
                     return this.prototype._renderHtml = e,
                         this
                 },
-                setDomApi: N
+                setDomApi: O
             });
         t.extend(be.prototype, ce, Se);
         var ve = ["forEach", "each", "map", "find", "detect", "filter", "select", "reject", "every", "all", "some", "any", "include", "contains", "invoke", "toArray", "first", "initial", "rest", "last", "without", "isEmpty", "pluck", "reduce", "partition"],
@@ -58601,7 +58605,7 @@
                         this._setupChildView(e, t),
                         this._isBuffering ? this.children._add(e) : (this._updateIndices(e, !0),
                             this.children.add(e)),
-                        O(e),
+                        N(e),
                         this._attachView(e, t),
                         this.triggerMethod("add:child", this, e),
                         e
@@ -58692,7 +58696,7 @@
                     return !t.isFunction(s) || s.call(this, e, n, this.collection)
                 }
             }, {
-                setDomApi: N
+                setDomApi: O
             });
         t.extend(Ee.prototype, ce);
         var Le = function() {
@@ -59062,7 +59066,7 @@
                     var n = this,
                         s = this.Dom.createBuffer();
                     return t.each(e, function(e) {
-                            O(e),
+                            N(e),
                                 n.Dom.appendContents(s, e.el, {
                                     _$contents: e.$el
                                 })
@@ -59128,7 +59132,7 @@
                         this.triggerMethod("destroy:children", this))
                 }
             }, {
-                setDomApi: N
+                setDomApi: O
             });
         t.extend(He.prototype, ce);
         var Ie = ["childViewContainer", "template", "templateContext"],
@@ -59213,9 +59217,9 @@
                     this.$childViewContainer && (this.$childViewContainer = void 0)
                 }
             }),
-            Ne = t.pick(be.prototype, "serializeModel", "getTemplate", "_renderTemplate", "_renderHtml", "mixinTemplateContext", "attachElContent");
-        t.extend(ke.prototype, Ne);
-        var Oe = ["collectionEvents", "events", "modelEvents", "triggers", "ui"],
+            Oe = t.pick(be.prototype, "serializeModel", "getTemplate", "_renderTemplate", "_renderHtml", "mixinTemplateContext", "attachElContent");
+        t.extend(ke.prototype, Oe);
+        var Ne = ["collectionEvents", "events", "modelEvents", "triggers", "ui"],
             xe = te.extend({
                 cidPrefix: "mnb",
                 constructor: function(e, n) {
@@ -59223,7 +59227,7 @@
                         this.defaults && W("Behavior defaults are deprecated. For similar functionality set options on the Behavior class."),
                         this.defaults = t.clone(t.result(this, "defaults", {})),
                         this._setOptions(t.extend({}, this.defaults, e)),
-                        this.mergeOptions(this.options, Oe),
+                        this.mergeOptions(this.options, Ne),
                         this.ui = t.extend({}, t.result(this, "ui"), t.result(n, "ui")),
                         te.apply(this, arguments)
                 },
@@ -59408,7 +59412,7 @@
     this && this.Marionette && (this.Mn = this.Marionette)
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(73), n(74))
+        e.exports = s(n(78), n(79))
     }(0, function(e, t) {
         "use strict";
 
@@ -59470,8 +59474,8 @@
                     return i
                 }
                 if (u.test(s)) {
-                    for (var l = s.split(u), y = 0, h = l.length; y < h; y++)
-                        i[l[y]] = t[n].apply(t, [l[y]].concat(r));
+                    for (var l = s.split(u), h = 0, y = l.length; h < y; h++)
+                        i[l[h]] = t[n].apply(t, [l[h]].concat(r));
                     return i
                 }
                 return !1
@@ -59571,13 +59575,13 @@
                         this
                 }
             });
-        var y, h, m = [t.Events, d.Requests];
+        var h, y, m = [t.Events, d.Requests];
         return e.each(m, function(t) {
                 e.each(t, function(t, n) {
                     d[n] = function(t) {
-                        return h = e.toArray(arguments).slice(1),
-                            y = this.channel(t),
-                            y[n].apply(y, h)
+                        return y = e.toArray(arguments).slice(1),
+                            h = this.channel(t),
+                            h[n].apply(h, y)
                     }
                 })
             }),
@@ -59592,7 +59596,7 @@
 }, function(e, t, n) {
     var s, r, i;
     ! function(a) {
-        r = [n(73), n(74), t],
+        r = [n(78), n(79), t],
             s = a,
             void 0 !== (i = "function" == typeof s ? s.apply(t, r) : s) && (e.exports = i)
     }(function(e, t, n) {
@@ -59672,9 +59676,9 @@
                         if (S._destroy = function() {
                                 i.call(this, S.destroy, f, c, S)
                             },
-                            y(f, S, c, g),
-                            m(f, S, c, g),
                             h(f, S, c, g),
+                            m(f, S, c, g),
+                            y(f, S, c, g),
                             g) {
                             e.each(S.events, function(t) {
                                     var r = t + p,
@@ -59774,27 +59778,27 @@
                 return e.has(i, "updateView") || (i.updateView = !i.visible),
                     i
             },
-            y = function(t, n, s, r) {
+            h = function(t, n, s, r) {
                 var i = ["autofocus", "autoplay", "async", "checked", "controls", "defer", "disabled", "hidden", "indeterminate", "loop", "multiple", "open", "readonly", "required", "scoped", "selected"],
                     a = n.view;
                 e.each(n.attributes || [], function(d) {
                     d = e.clone(d),
                         d.view = a;
                     var l = "",
-                        y = d.observe || (d.observe = r),
-                        h = function() {
+                        h = d.observe || (d.observe = r),
+                        y = function() {
                             var n = e.contains(i, d.name) ? "prop" : "attr",
-                                r = u(s, y, d);
+                                r = u(s, h, d);
                             "class" === d.name ? (t.removeClass(l).addClass(r),
                                 l = r) : t[n](d.name, r)
                         };
-                    e.each(e.flatten([y]), function(e) {
-                            o(s, "change:" + e, n, h)
+                    e.each(e.flatten([h]), function(e) {
+                            o(s, "change:" + e, n, y)
                         }),
-                        h()
+                        y()
                 })
             },
-            h = function(t, n, s, r) {
+            y = function(t, n, s, r) {
                 e.each(n.classes || [], function(r, i) {
                     e.isString(r) && (r = {
                             observe: r
@@ -59818,9 +59822,9 @@
                             var o = n.visible,
                                 d = n.visibleFn,
                                 l = u(s, r, n),
-                                y = !!l;
-                            (e.isFunction(o) || e.isString(o)) && (y = !!i.call(a, o, l, n)),
-                            d ? i.call(a, d, t, y, n) : t.toggle(y)
+                                h = !!l;
+                            (e.isFunction(o) || e.isString(o)) && (h = !!i.call(a, o, l, n)),
+                            d ? i.call(a, d, t, h, n) : t.toggle(h)
                         };
                     e.each(e.flatten([r]), function(e) {
                             o(s, "change:" + e, n, d)
@@ -59900,8 +59904,8 @@
                 events: ["change"],
                 update: function(n, s, a, o) {
                     var d, l = o.selectOptions,
-                        y = l && l.collection || void 0,
-                        h = n.prop("multiple");
+                        h = l && l.collection || void 0,
+                        y = n.prop("multiple");
                     if (!l) {
                         l = {};
                         var m = function(e) {
@@ -59913,18 +59917,18 @@
                                 }
                             }).get()
                         };
-                        n.find("optgroup").length ? (y = {
+                        n.find("optgroup").length ? (h = {
                                 opt_labels: []
                             },
-                            n.find("> option").length && (y.opt_labels.push(void 0),
+                            n.find("> option").length && (h.opt_labels.push(void 0),
                                 e.each(n.find("> option"), function(e) {
-                                    y[void 0] = m(t.$(e))
+                                    h[void 0] = m(t.$(e))
                                 })),
                             e.each(n.find("optgroup"), function(e) {
                                 var n = t.$(e).attr("label");
-                                y.opt_labels.push(n),
-                                    y[n] = m(t.$(e).find("option"))
-                            })) : y = m(n.find("option"))
+                                h.opt_labels.push(n),
+                                    h[n] = m(t.$(e).find("option"))
+                            })) : h = m(n.find("option"))
                     }
                     l.valuePath = l.valuePath || "value",
                         l.labelPath = l.labelPath || "label",
@@ -59932,7 +59936,7 @@
                     var T = function(n, s, i) {
                         e.each(n, function(n) {
                             var a, o, d, u = t.$("<option/>"),
-                                y = n;
+                                h = n;
                             "__default__" === n ? (a = i.label,
                                     o = i.value,
                                     d = i.disabled) : (a = r(n, l.labelPath),
@@ -59940,27 +59944,27 @@
                                     d = r(n, l.disabledPath)),
                                 function(t, n, s) {
                                     u.text(t),
-                                        y = n,
-                                        u.data("stickit-bind-val", y),
-                                        e.isArray(y) || e.isObject(y) || u.val(y), !0 === s && u.prop("disabled", "disabled")
+                                        h = n,
+                                        u.data("stickit-bind-val", h),
+                                        e.isArray(h) || e.isObject(h) || u.val(h), !0 === s && u.prop("disabled", "disabled")
                                 }(a, o, d);
                             ! function() {
-                                return !h && null != y && null != i && y === i || !(!e.isObject(i) || !e.isEqual(y, i))
-                            }() ? h && e.isArray(i) && e.each(i, function(t) {
+                                return !y && null != h && null != i && h === i || !(!e.isObject(i) || !e.isEqual(h, i))
+                            }() ? y && e.isArray(i) && e.each(i, function(t) {
                                     e.isObject(t) && (t = r(t, l.valuePath)),
-                                        (t === y || e.isObject(t) && e.isEqual(y, t)) && u.prop("selected", !0)
+                                        (t === h || e.isObject(t) && e.isEqual(h, t)) && u.prop("selected", !0)
                                 }): u.prop("selected", !0),
                                 s.append(u)
                         })
                     };
                     if (n.find("*").remove(),
-                        e.isString(y)) {
+                        e.isString(h)) {
                         var c = window;
-                        0 === y.indexOf("this.") && (c = this),
-                            y = y.replace(/^[a-z]*\.(.+)$/, "$1"),
-                            d = r(c, y)
+                        0 === h.indexOf("this.") && (c = this),
+                            h = h.replace(/^[a-z]*\.(.+)$/, "$1"),
+                            d = r(c, h)
                     } else
-                        d = e.isFunction(y) ? i.call(this, y, n, o) : y;
+                        d = e.isFunction(h) ? i.call(this, h, n, o) : h;
                     if (d instanceof t.Collection) {
                         var p = d,
                             M = function() {
@@ -60019,7 +60023,7 @@
     })
 }, function(e, t, n) {
     ! function(t, s) {
-        e.exports = s(n(74))
+        e.exports = s(n(79))
     }(0, function(e) {
         function t() {
             return (65536 * (1 + Math.random()) | 0).toString(16).substring(1)
@@ -60156,7 +60160,7 @@
 }, function(e, t, n) {
     var s, r;
     ! function(i, a) {
-        s = [n(74), n(73)],
+        s = [n(79), n(78)],
             void 0 !== (r = function(e, t) {
                     return a(e, t)
                 }
@@ -60363,69 +60367,18 @@
             e.Wreqr
     })
 }, function(e, t, n) {
-    n(1263),
-        n(1265),
-        n(1266),
-        n(1267),
-        n(1268),
-        n(1269),
-        n(418),
-        n(419),
-        n(420),
-        n(421),
-        n(422),
-        n(1270),
-        n(1271),
-        n(1272),
-        n(1273),
-        n(1274),
-        n(1275),
-        n(1276),
-        n(1277),
-        n(1278),
-        n(1279),
-        n(1280),
-        n(1281),
-        n(1282),
-        n(1283),
-        n(1284),
-        n(1285),
-        n(1286),
-        n(1287),
-        n(1288),
-        n(1289),
-        n(1290),
-        n(1291),
-        n(1292),
-        n(1293),
-        n(1294),
-        n(1295),
-        n(1296),
-        n(1297),
-        n(1298),
-        n(1299),
-        n(1300),
-        n(1301),
-        n(1302),
-        n(1303),
-        n(1304),
-        n(1305),
-        n(421),
-        n(1306),
-        n(1307),
-        n(1308),
-        n(1309),
-        n(1310),
-        n(1311),
-        n(1312),
-        n(1313),
-        n(1314),
+    n(1313),
         n(1315),
         n(1316),
         n(1317),
         n(1318),
         n(1319),
         n(1320),
+        n(429),
+        n(430),
+        n(431),
+        n(432),
+        n(433),
         n(1321),
         n(1322),
         n(1323),
@@ -60443,15 +60396,11 @@
         n(1335),
         n(1336),
         n(1337),
-        n(419),
         n(1338),
         n(1339),
-        n(420),
-        n(418),
         n(1340),
         n(1341),
         n(1342),
-        n(422),
         n(1343),
         n(1344),
         n(1345),
@@ -60460,15 +60409,74 @@
         n(1348),
         n(1349),
         n(1350),
+        n(1351),
+        n(1352),
+        n(1353),
+        n(1354),
+        n(1355),
+        n(1356),
+        n(1357),
+        n(432),
+        n(1358),
+        n(1359),
+        n(1360),
+        n(1361),
+        n(1362),
+        n(1363),
+        n(1364),
+        n(1365),
+        n(1366),
+        n(1367),
+        n(1368),
+        n(1369),
+        n(1370),
+        n(1371),
+        n(1372),
+        n(1373),
+        n(1374),
+        n(1375),
+        n(1376),
+        n(1377),
+        n(1378),
+        n(1379),
+        n(1380),
+        n(1381),
+        n(1382),
+        n(1383),
+        n(1384),
+        n(1385),
+        n(1386),
+        n(1387),
+        n(1388),
+        n(1389),
+        n(430),
+        n(1390),
+        n(1391),
+        n(431),
+        n(429),
+        n(1392),
+        n(1393),
+        n(1394),
+        n(1395),
+        n(433),
+        n(1396),
+        n(1397),
+        n(1398),
+        n(1399),
+        n(1400),
+        n(1401),
+        n(1402),
+        n(1403),
+        n(1404),
         window.OL = window.OpenLayers,
         OL.Renderer.SVG.prototype.MAX_PIXEL = Number.MAX_VALUE
 }, function(e, t, n) {
     (function(t) {
-        e.exports = t.OpenLayers = n(1264)
-    }).call(t, n(38))
+        e.exports = t.OpenLayers = n(1314)
+    }).call(t, n(40))
 }, function(e, t) {
     var n = {
-        VERSION_NUMBER: "Release 2.12",
+        VERSION_NUMBER: "Release 2.13.1",
         singleFile: !0,
         _getScriptLocation: function() {
             for (var e, t, n = new RegExp("(^|(.*?\\/))(OpenLayers[^\\/]*?\\.js)(\\?|$)"), s = document.getElementsByTagName("script"), r = "", i = 0, a = s.length; i < a; i++)
@@ -60504,8 +60512,8 @@
             format: function(e, t, n) {
                 t || (t = window);
                 var s = function(e, s) {
-                    for (var r, i = s.split(/\.+/), a = 0; a < i.length; a++)
-                        0 == a && (r = t),
+                    for (var r, i = s.split(/\.+/), a = 0; a < i.length && (0 == a && (r = t),
+                            void 0 !== r); a++)
                         r = r[i[a]];
                     return "function" == typeof r && (r = n ? r.apply(null, n) : r()),
                         void 0 === r ? "undefined" : r
@@ -60517,8 +60525,10 @@
             isNumeric: function(e) {
                 return OpenLayers.String.numberRegEx.test(e)
             },
-            numericIf: function(e) {
-                return OpenLayers.String.isNumeric(e) ? parseFloat(e) : e
+            numericIf: function(e, t) {
+                var n = e;
+                return !0 === t && null != e && e.replace && (e = e.replace(/^\s*|\s*$/g, "")),
+                    OpenLayers.String.isNumeric(e) ? parseFloat(e) : n
             }
         },
         OpenLayers.Number = {
@@ -60549,6 +60559,11 @@
                         o = i + s + d
                 }
                 return o
+            },
+            zeroPad: function(e, t, n) {
+                for (var s = e.toString(n || 10); s.length < t;)
+                    s = "0" + s;
+                return s
             }
         },
         OpenLayers.Function = {
@@ -60642,7 +60657,6 @@
         Graticule: "Graticule",
         reprojectDeprecated: "You are using the 'reproject' option on the ${layerName} layer. This option is deprecated: its use was designed to support displaying data over commercial basemaps, but that functionality should now be achieved by using Spherical Mercator support. More information is available from http://trac.openlayers.org/wiki/SphericalMercator.",
         methodDeprecated: "This method has been deprecated and will be removed in 3.0. Please use ${newMethod} instead.",
-        proxyNeeded: "You probably need to set OpenLayers.ProxyHost to access ${url}.See http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#ProxyHost",
         end: ""
     }
 }, function(e, t) {
@@ -60700,7 +60714,6 @@
         OpenLayers.Util.isArray = function(e) {
             return "[object Array]" === Object.prototype.toString.call(e)
         },
-        void 0 === window.$ && (window.$ = OpenLayers.Util.getElement),
         OpenLayers.Util.removeItem = function(e, t) {
             for (var n = e.length - 1; n >= 0; n--)
                 e[n] == t && e.splice(n, 1);
@@ -60714,8 +60727,9 @@
                     return n;
             return -1
         },
+        OpenLayers.Util.dotless = /\./g,
         OpenLayers.Util.modifyDOMElement = function(e, t, n, s, r, i, a, o) {
-            t && (e.id = t),
+            t && (e.id = t.replace(OpenLayers.Util.dotless, "_")),
                 n && (e.style.left = n.x + "px",
                     e.style.top = n.y + "px"),
                 s && (e.style.width = s.w + "px",
@@ -60875,17 +60889,17 @@
             f: 1 / 298.257223563
         },
         OpenLayers.Util.distVincenty = function(e, t) {
-            for (var n = OpenLayers.Util.VincentyConstants, s = n.a, r = n.b, i = n.f, a = OpenLayers.Util.rad(t.lon - e.lon), o = Math.atan((1 - i) * Math.tan(OpenLayers.Util.rad(e.lat))), d = Math.atan((1 - i) * Math.tan(OpenLayers.Util.rad(t.lat))), u = Math.sin(o), l = Math.cos(o), y = Math.sin(d), h = Math.cos(d), m = a, T = 2 * Math.PI, c = 20; Math.abs(m - T) > 1e-12 && --c > 0;) {
+            for (var n = OpenLayers.Util.VincentyConstants, s = n.a, r = n.b, i = n.f, a = OpenLayers.Util.rad(t.lon - e.lon), o = Math.atan((1 - i) * Math.tan(OpenLayers.Util.rad(e.lat))), d = Math.atan((1 - i) * Math.tan(OpenLayers.Util.rad(t.lat))), u = Math.sin(o), l = Math.cos(o), h = Math.sin(d), y = Math.cos(d), m = a, T = 2 * Math.PI, c = 20; Math.abs(m - T) > 1e-12 && --c > 0;) {
                 var p = Math.sin(m),
                     M = Math.cos(m),
-                    f = Math.sqrt(h * p * (h * p) + (l * y - u * h * M) * (l * y - u * h * M));
+                    f = Math.sqrt(y * p * (y * p) + (l * h - u * y * M) * (l * h - u * y * M));
                 if (0 == f)
                     return 0;
-                var S = u * y + l * h * M,
+                var S = u * h + l * y * M,
                     g = Math.atan2(f, S),
-                    _ = Math.asin(l * h * p / f),
+                    _ = Math.asin(l * y * p / f),
                     b = Math.cos(_) * Math.cos(_),
-                    v = S - 2 * u * y / b,
+                    v = S - 2 * u * h / b,
                     D = i / 16 * b * (4 + i * (4 - 3 * b));
                 T = m,
                     m = a + (1 - D) * i * Math.sin(_) * (g + D * f * (v + D * S * (2 * v * v - 1)))
@@ -60898,7 +60912,7 @@
             return (r * C * (g - E * f * (v + E / 4 * (S * (2 * v * v - 1) - E / 6 * v * (4 * f * f - 3) * (4 * v * v - 3))))).toFixed(3) / 1e3
         },
         OpenLayers.Util.destinationVincenty = function(e, t, n) {
-            for (var s = OpenLayers.Util, r = s.VincentyConstants, i = r.a, a = r.b, o = r.f, d = e.lon, u = e.lat, l = n, y = s.rad(t), h = Math.sin(y), m = Math.cos(y), T = (1 - o) * Math.tan(s.rad(u)), c = 1 / Math.sqrt(1 + T * T), p = T * c, M = Math.atan2(T, m), f = c * h, S = 1 - f * f, g = S * (i * i - a * a) / (a * a), _ = 1 + g / 16384 * (4096 + g * (g * (320 - 175 * g) - 768)), b = g / 1024 * (256 + g * (g * (74 - 47 * g) - 128)), v = l / (a * _), D = 2 * Math.PI; Math.abs(v - D) > 1e-12;) {
+            for (var s = OpenLayers.Util, r = s.VincentyConstants, i = r.a, a = r.b, o = r.f, d = e.lon, u = e.lat, l = n, h = s.rad(t), y = Math.sin(h), m = Math.cos(h), T = (1 - o) * Math.tan(s.rad(u)), c = 1 / Math.sqrt(1 + T * T), p = T * c, M = Math.atan2(T, m), f = c * y, S = 1 - f * f, g = S * (i * i - a * a) / (a * a), _ = 1 + g / 16384 * (4096 + g * (g * (320 - 175 * g) - 768)), b = g / 1024 * (256 + g * (g * (74 - 47 * g) - 128)), v = l / (a * _), D = 2 * Math.PI; Math.abs(v - D) > 1e-12;) {
                 var A = Math.cos(2 * M + v),
                     C = Math.sin(v),
                     E = Math.cos(v),
@@ -60908,45 +60922,45 @@
             }
             var w = p * C - c * E * m,
                 H = Math.atan2(p * E + c * C * m, (1 - o) * Math.sqrt(f * f + w * w)),
-                I = Math.atan2(C * h, c * E - p * C * m),
+                I = Math.atan2(C * y, c * E - p * C * m),
                 k = o / 16 * S * (4 + o * (4 - 3 * S)),
-                N = I - (1 - k) * o * f * (v + k * C * (A + k * E * (2 * A * A - 1)));
+                O = I - (1 - k) * o * f * (v + k * C * (A + k * E * (2 * A * A - 1)));
             Math.atan2(f, -w);
-            return new OpenLayers.LonLat(d + s.deg(N), s.deg(H))
+            return new OpenLayers.LonLat(d + s.deg(O), s.deg(H))
         },
-        OpenLayers.Util.getParameters = function(e) {
-            e = null === e || void 0 === e ? window.location.href : e;
-            var t = "";
+        OpenLayers.Util.getParameters = function(e, t) {
+            t = t || {},
+                e = null === e || void 0 === e ? window.location.href : e;
+            var n = "";
             if (OpenLayers.String.contains(e, "?")) {
-                var n = e.indexOf("?") + 1,
-                    s = OpenLayers.String.contains(e, "#") ? e.indexOf("#") : e.length;
-                t = e.substring(n, s)
+                var s = e.indexOf("?") + 1,
+                    r = OpenLayers.String.contains(e, "#") ? e.indexOf("#") : e.length;
+                n = e.substring(s, r)
             }
-            for (var r = {}, i = t.split(/[&;]/), a = 0, o = i.length; a < o; ++a) {
-                var d = i[a].split("=");
-                if (d[0]) {
-                    var u = d[0];
-                    try {
-                        u = decodeURIComponent(u)
-                    } catch (e) {
-                        u = unescape(u)
-                    }
-                    var l = (d[1] || "").replace(/\+/g, " ");
+            for (var i = {}, a = n.split(/[&;]/), o = 0, d = a.length; o < d; ++o) {
+                var u = a[o].split("=");
+                if (u[0]) {
+                    var l = u[0];
                     try {
                         l = decodeURIComponent(l)
                     } catch (e) {
                         l = unescape(l)
                     }
-                    l = l.split(","),
-                        1 == l.length && (l = l[0]),
-                        r[u] = l
+                    var h = (u[1] || "").replace(/\+/g, " ");
+                    try {
+                        h = decodeURIComponent(h)
+                    } catch (e) {
+                        h = unescape(h)
+                    }!1 !== t.splitArgs && (h = h.split(",")),
+                        1 == h.length && (h = h[0]),
+                        i[l] = h
                 }
             }
-            return r
+            return i
         },
         OpenLayers.Util.lastSeqID = 0,
         OpenLayers.Util.createUniqueID = function(e) {
-            return null == e && (e = "id_"),
+            return e = null == e ? "id_" : e.replace(OpenLayers.Util.dotless, "_"),
                 OpenLayers.Util.lastSeqID += 1,
                 e + OpenLayers.Util.lastSeqID
         },
@@ -60954,8 +60968,8 @@
             inches: 1,
             ft: 12,
             mi: 63360,
-            m: 39.3701,
-            km: 39370.1,
+            m: 39.37,
+            km: 39370,
             dd: 4374754,
             yd: 36
         },
@@ -61065,8 +61079,8 @@
                 i = null;
             if (e.getBoundingClientRect) {
                 s = e.getBoundingClientRect();
-                var a = n.scrollTop,
-                    o = n.scrollLeft;
+                var a = window.pageYOffset || n.scrollTop,
+                    o = window.pageXOffset || n.scrollLeft;
                 t[0] = s.left + o,
                     t[1] = s.top + a
             } else if (document.getBoxObjectFor && !r) {
@@ -61102,7 +61116,8 @@
                 OpenLayers.Util.applyDefaults(n, {
                     ignoreCase: !0,
                     ignorePort80: !0,
-                    ignoreHash: !0
+                    ignoreHash: !0,
+                    splitArgs: !1
                 });
             var s = OpenLayers.Util.createUrlObject(e, n),
                 r = OpenLayers.Util.createUrlObject(t, n);
@@ -61144,7 +61159,9 @@
                 var u = e.indexOf("?");
                 d = -1 != u ? e.substr(u) : ""
             }
-            return o.args = OpenLayers.Util.getParameters(d),
+            return o.args = OpenLayers.Util.getParameters(d, {
+                    splitArgs: t.splitArgs
+                }),
                 o.pathname = "/" == a.pathname.charAt(0) ? a.pathname : "/" + a.pathname,
                 o
         },
@@ -61194,18 +61211,18 @@
                     i.style.width = s + "px") : t.h && (r = t.h,
                     i.style.height = r + "px")),
                 n && n.displayClass && (i.className = n.displayClass);
-            var y = document.createElement("div");
-            if (y.innerHTML = e,
-                y.style.overflow = "visible",
-                y.childNodes)
-                for (var h = 0, m = y.childNodes.length; h < m; h++)
-                    y.childNodes[h].style && (y.childNodes[h].style.overflow = "visible");
-            return i.appendChild(y),
+            var h = document.createElement("div");
+            if (h.innerHTML = e,
+                h.style.overflow = "visible",
+                h.childNodes)
+                for (var y = 0, m = h.childNodes.length; y < m; y++)
+                    h.childNodes[y].style && (h.childNodes[y].style.overflow = "visible");
+            return i.appendChild(h),
                 d ? a.appendChild(d) : a.appendChild(i),
-                s || (s = parseInt(y.scrollWidth),
+                s || (s = parseInt(h.scrollWidth),
                     i.style.width = s + "px"),
-                r || (r = parseInt(y.scrollHeight)),
-                i.removeChild(y),
+                r || (r = parseInt(h.scrollHeight)),
+                i.removeChild(h),
                 d ? (d.removeChild(i),
                     a.removeChild(d)) : a.removeChild(i),
                 new OpenLayers.Size(s, r)
@@ -61260,6 +61277,60 @@
                         d += o + '"')),
                 d += "lon" == t ? e < 0 ? OpenLayers.i18n("W") : OpenLayers.i18n("E") : e < 0 ? OpenLayers.i18n("S") : OpenLayers.i18n("N")
         }
+}, function(e, t) {
+    OpenLayers.Util = OpenLayers.Util || {},
+        OpenLayers.Util.vendorPrefix = function() {
+            "use strict";
+
+            function e(e) {
+                return e ? e.replace(/([A-Z])/g, function(e) {
+                    return "-" + e.toLowerCase()
+                }).replace(/^ms-/, "-ms-") : null
+            }
+
+            function t(t) {
+                if (void 0 === a[t]) {
+                    var n = t.replace(/(-[\s\S])/g, function(e) {
+                            return e.charAt(1).toUpperCase()
+                        }),
+                        r = s(n);
+                    a[t] = e(r)
+                }
+                return a[t]
+            }
+
+            function n(e, t) {
+                if (void 0 === o[t]) {
+                    var n, s, i = 0,
+                        a = r.length,
+                        d = void 0 !== e.cssText;
+                    for (o[t] = null; i < a; i++)
+                        if (s = r[i],
+                            s ? (d || (s = s.toLowerCase()),
+                                n = s + t.charAt(0).toUpperCase() + t.slice(1)) : n = t,
+                            void 0 !== e[n]) {
+                            o[t] = n;
+                            break
+                        }
+                }
+                return o[t]
+            }
+
+            function s(e) {
+                return n(i, e)
+            }
+            var r = ["", "O", "ms", "Moz", "Webkit"],
+                i = document.createElement("div").style,
+                a = {},
+                o = {};
+            return {
+                css: t,
+                js: n,
+                style: s,
+                cssCache: a,
+                jsCache: o
+            }
+        }()
 }, function(e, t) {
     OpenLayers.Console = {
             log: function() {},
@@ -61319,8 +61390,11 @@
                 return e.which && 3 == e.which || e.button && 2 == e.button
             },
             stop: function(e, t) {
-                t || (e.preventDefault ? e.preventDefault() : e.returnValue = !1),
+                t || OpenLayers.Event.preventDefault(e),
                     e.stopPropagation ? e.stopPropagation() : e.cancelBubble = !0
+            },
+            preventDefault: function(e) {
+                e.preventDefault ? e.preventDefault() : e.returnValue = !1
             },
             findElement: function(e, t) {
                 for (var n = OpenLayers.Event.element(e); n.parentNode && (!n.tagName || n.tagName.toUpperCase() != t.toUpperCase());)
@@ -61354,9 +61428,8 @@
             _removeElementObservers: function(e) {
                 if (e)
                     for (var t = e.length - 1; t >= 0; t--) {
-                        var n = e[t],
-                            s = new Array(n.element, n.name, n.observer, n.useCapture);
-                        OpenLayers.Event.stopObserving.apply(this, s)
+                        var n = e[t];
+                        OpenLayers.Event.stopObserving.apply(this, [n.element, n.name, n.observer, n.useCapture])
                     }
             },
             stopObserving: function(e, t, n, s) {
@@ -61410,6 +61483,7 @@
                     this.listeners = {},
                     this.extensions = {},
                     this.extensionCount = {},
+                    this._msTouches = [],
                     null != t && this.attachToElement(t)
             },
             destroy: function() {
@@ -61429,8 +61503,10 @@
                 this.element ? OpenLayers.Event.stopObservingElement(this.element) : (this.eventHandler = OpenLayers.Function.bindAsEventListener(this.handleBrowserEvent, this),
                         this.clearMouseListener = OpenLayers.Function.bind(this.clearMouseCache, this)),
                     this.element = e;
-                for (var t = 0, n = this.BROWSER_EVENTS.length; t < n; t++)
-                    OpenLayers.Event.observe(e, this.BROWSER_EVENTS[t], this.eventHandler);
+                for (var t, n = !!window.navigator.msMaxTouchPoints, s = 0, r = this.BROWSER_EVENTS.length; s < r; s++)
+                    t = this.BROWSER_EVENTS[s],
+                    OpenLayers.Event.observe(e, t, this.eventHandler),
+                    n && 0 === t.indexOf("touch") && this.addMsTouchListener(e, t, this.eventHandler);
                 OpenLayers.Event.observe(e, "dragstart", OpenLayers.Event.stop)
             },
             on: function(e) {
@@ -61497,7 +61573,7 @@
                     var s = e.touches;
                     if (s && s[0]) {
                         for (var r, i = 0, a = 0, o = s.length, d = 0; d < o; ++d)
-                            r = s[d],
+                            r = this.getTouchClientXY(s[d]),
                             i += r.clientX,
                             a += r.clientY;
                         e.clientX = i / o,
@@ -61507,55 +61583,377 @@
                         this.triggerEvent(t, e)
                 }
             },
+            getTouchClientXY: function(e) {
+                var t = window.olMockWin || window,
+                    n = t.pageXOffset,
+                    s = t.pageYOffset,
+                    r = e.clientX,
+                    i = e.clientY;
+                return 0 === e.pageY && Math.floor(i) > Math.floor(e.pageY) || 0 === e.pageX && Math.floor(r) > Math.floor(e.pageX) ? (r -= n,
+                        i -= s) : (i < e.pageY - s || r < e.pageX - n) && (r = e.pageX - n,
+                        i = e.pageY - s),
+                    e.olClientX = r,
+                    e.olClientY = i, {
+                        clientX: r,
+                        clientY: i
+                    }
+            },
             clearMouseCache: function() {
                 this.element.scrolls = null,
-                    this.element.lefttop = null;
-                var e = document.body;
-                e && (0 == e.scrollTop && 0 == e.scrollLeft || !navigator.userAgent.match(/iPhone/i)) && (this.element.offsets = null)
+                    this.element.lefttop = null,
+                    this.element.offsets = null
             },
             getMousePosition: function(e) {
                 if (this.includeXY ? this.element.hasScrollEvent || (OpenLayers.Event.observe(window, "scroll", this.clearMouseListener),
                         this.element.hasScrollEvent = !0) : this.clearMouseCache(), !this.element.scrolls) {
                     var t = OpenLayers.Util.getViewportElement();
-                    this.element.scrolls = [t.scrollLeft, t.scrollTop]
+                    this.element.scrolls = [window.pageXOffset || t.scrollLeft, window.pageYOffset || t.scrollTop]
                 }
                 return this.element.lefttop || (this.element.lefttop = [document.documentElement.clientLeft || 0, document.documentElement.clientTop || 0]),
                     this.element.offsets || (this.element.offsets = OpenLayers.Util.pagePosition(this.element)),
                     new OpenLayers.Pixel(e.clientX + this.element.scrolls[0] - this.element.offsets[0] - this.element.lefttop[0], e.clientY + this.element.scrolls[1] - this.element.offsets[1] - this.element.lefttop[1])
             },
+            addMsTouchListener: function(e, t, n) {
+                function s(e) {
+                    n(OpenLayers.Util.applyDefaults({
+                        stopPropagation: function() {
+                            for (var e = r.length - 1; e >= 0; --e)
+                                r[e].stopPropagation()
+                        },
+                        preventDefault: function() {
+                            for (var e = r.length - 1; e >= 0; --e)
+                                r[e].preventDefault()
+                        },
+                        type: t
+                    }, e))
+                }
+                var r = (this.eventHandler,
+                    this._msTouches);
+                switch (t) {
+                    case "touchstart":
+                        return this.addMsTouchListenerStart(e, t, s);
+                    case "touchend":
+                        return this.addMsTouchListenerEnd(e, t, s);
+                    case "touchmove":
+                        return this.addMsTouchListenerMove(e, t, s);
+                    default:
+                        throw "Unknown touch event type"
+                }
+            },
+            addMsTouchListenerStart: function(e, t, n) {
+                var s = this._msTouches,
+                    r = function(e) {
+                        for (var t = !1, r = 0, i = s.length; r < i; ++r)
+                            if (s[r].pointerId == e.pointerId) {
+                                t = !0;
+                                break
+                            }
+                        t || s.push(e),
+                            e.touches = s.slice(),
+                            n(e)
+                    };
+                OpenLayers.Event.observe(e, "MSPointerDown", r);
+                var i = function(e) {
+                    for (var t = 0, n = s.length; t < n; ++t)
+                        if (s[t].pointerId == e.pointerId) {
+                            s.splice(t, 1);
+                            break
+                        }
+                };
+                OpenLayers.Event.observe(e, "MSPointerUp", i)
+            },
+            addMsTouchListenerMove: function(e, t, n) {
+                var s = this._msTouches,
+                    r = function(e) {
+                        if (!(e.pointerType == e.MSPOINTER_TYPE_MOUSE && 0 == e.buttons || 1 == s.length && s[0].pageX == e.pageX && s[0].pageY == e.pageY)) {
+                            for (var t = 0, r = s.length; t < r; ++t)
+                                if (s[t].pointerId == e.pointerId) {
+                                    s[t] = e;
+                                    break
+                                }
+                            e.touches = s.slice(),
+                                n(e)
+                        }
+                    };
+                OpenLayers.Event.observe(e, "MSPointerMove", r)
+            },
+            addMsTouchListenerEnd: function(e, t, n) {
+                var s = this._msTouches,
+                    r = function(e) {
+                        for (var t = 0, r = s.length; t < r; ++t)
+                            if (s[t].pointerId == e.pointerId) {
+                                s.splice(t, 1);
+                                break
+                            }
+                        e.touches = s.slice(),
+                            n(e)
+                    };
+                OpenLayers.Event.observe(e, "MSPointerUp", r)
+            },
             CLASS_NAME: "OpenLayers.Events"
         })
+}, function(e, t) {
+    OpenLayers.Events.buttonclick = OpenLayers.Class({
+        target: null,
+        events: ["mousedown", "mouseup", "click", "dblclick", "touchstart", "touchmove", "touchend", "keydown"],
+        startRegEx: /^mousedown|touchstart$/,
+        cancelRegEx: /^touchmove$/,
+        completeRegEx: /^mouseup|touchend$/,
+        initialize: function(e) {
+            this.target = e;
+            for (var t = this.events.length - 1; t >= 0; --t)
+                this.target.register(this.events[t], this, this.buttonClick, {
+                    extension: !0
+                })
+        },
+        destroy: function() {
+            for (var e = this.events.length - 1; e >= 0; --e)
+                this.target.unregister(this.events[e], this, this.buttonClick);
+            delete this.target
+        },
+        getPressedButton: function(e) {
+            var t, n = 3;
+            do {
+                if (OpenLayers.Element.hasClass(e, "olButton")) {
+                    t = e;
+                    break
+                }
+                e = e.parentNode
+            } while (--n > 0 && e);
+            return t
+        },
+        ignore: function(e) {
+            var t = 3,
+                n = !1;
+            do {
+                if ("a" === e.nodeName.toLowerCase()) {
+                    n = !0;
+                    break
+                }
+                e = e.parentNode
+            } while (--t > 0 && e);
+            return n
+        },
+        buttonClick: function(e) {
+            var t = !0,
+                n = OpenLayers.Event.element(e);
+            if (n && (OpenLayers.Event.isLeftClick(e) || !~e.type.indexOf("mouse"))) {
+                var s = this.getPressedButton(n);
+                if (s) {
+                    if ("keydown" === e.type)
+                        switch (e.keyCode) {
+                            case OpenLayers.Event.KEY_RETURN:
+                            case OpenLayers.Event.KEY_SPACE:
+                                this.target.triggerEvent("buttonclick", {
+                                        buttonElement: s
+                                    }),
+                                    OpenLayers.Event.stop(e),
+                                    t = !1
+                        }
+                    else if (this.startEvt) {
+                        if (this.completeRegEx.test(e.type)) {
+                            var r = OpenLayers.Util.pagePosition(s),
+                                i = OpenLayers.Util.getViewportElement(),
+                                a = window.pageYOffset || i.scrollTop,
+                                o = window.pageXOffset || i.scrollLeft;
+                            r[0] = r[0] - o,
+                                r[1] = r[1] - a,
+                                this.target.triggerEvent("buttonclick", {
+                                    buttonElement: s,
+                                    buttonXY: {
+                                        x: this.startEvt.clientX - r[0],
+                                        y: this.startEvt.clientY - r[1]
+                                    }
+                                })
+                        }
+                        this.cancelRegEx.test(e.type) && delete this.startEvt,
+                            OpenLayers.Event.stop(e),
+                            t = !1
+                    }
+                    this.startRegEx.test(e.type) && (this.startEvt = e,
+                        OpenLayers.Event.stop(e),
+                        t = !1)
+                } else
+                    t = !this.ignore(OpenLayers.Event.element(e)),
+                    delete this.startEvt
+            }
+            return t
+        }
+    })
+}, function(e, t) {
+    OpenLayers.Events.featureclick = OpenLayers.Class({
+            cache: null,
+            map: null,
+            provides: ["featureclick", "nofeatureclick", "featureover", "featureout"],
+            initialize: function(e) {
+                if (this.target = e,
+                    e.object instanceof OpenLayers.Map)
+                    this.setMap(e.object);
+                else {
+                    if (!(e.object instanceof OpenLayers.Layer.Vector))
+                        throw "Listeners for '" + this.provides.join("', '") + "' events can only be registered for OpenLayers.Layer.Vector or OpenLayers.Map instances";
+                    e.object.map ? this.setMap(e.object.map) : e.object.events.register("added", this, function(t) {
+                        this.setMap(e.object.map)
+                    })
+                }
+                for (var t = this.provides.length - 1; t >= 0; --t)
+                    e.extensions[this.provides[t]] = !0
+            },
+            setMap: function(e) {
+                this.map = e,
+                    this.cache = {},
+                    e.events.register("mousedown", this, this.start, {
+                        extension: !0
+                    }),
+                    e.events.register("mouseup", this, this.onClick, {
+                        extension: !0
+                    }),
+                    e.events.register("touchstart", this, this.start, {
+                        extension: !0
+                    }),
+                    e.events.register("touchmove", this, this.cancel, {
+                        extension: !0
+                    }),
+                    e.events.register("touchend", this, this.onClick, {
+                        extension: !0
+                    }),
+                    e.events.register("mousemove", this, this.onMousemove, {
+                        extension: !0
+                    })
+            },
+            start: function(e) {
+                this.startEvt = e
+            },
+            cancel: function(e) {
+                delete this.startEvt
+            },
+            onClick: function(e) {
+                if (this.startEvt && ("touchend" === e.type || OpenLayers.Event.isLeftClick(e))) {
+                    var t = this.getFeatures(this.startEvt);
+                    delete this.startEvt;
+                    for (var n, s, r = {}, i = 0, a = t.length; i < a && (n = t[i],
+                            s = n.layer,
+                            r[s.id] = !0, !1 !== this.triggerEvent("featureclick", {
+                                feature: n
+                            })); ++i)
+                    ;
+                    for (i = 0,
+                        a = this.map.layers.length; i < a; ++i)
+                        (s = this.map.layers[i]) instanceof OpenLayers.Layer.Vector && !r[s.id] && this.triggerEvent("nofeatureclick", {
+                            layer: s
+                        })
+                }
+            },
+            onMousemove: function(e) {
+                delete this.startEvt;
+                for (var t, n = this.getFeatures(e), s = {}, r = [], i = 0, a = n.length; i < a; ++i)
+                    t = n[i],
+                    s[t.id] = t,
+                    this.cache[t.id] || r.push(t);
+                var o = [];
+                for (var d in this.cache)
+                    t = this.cache[d],
+                    t.layer && t.layer.map ? s[t.id] || o.push(t) : delete this.cache[d];
+                for (i = 0,
+                    a = r.length; i < a && (t = r[i],
+                        this.cache[t.id] = t, !1 !== this.triggerEvent("featureover", {
+                            feature: t
+                        })); ++i)
+                ;
+                for (i = 0,
+                    a = o.length; i < a && (t = o[i],
+                        delete this.cache[t.id], !1 !== this.triggerEvent("featureout", {
+                            feature: t
+                        })); ++i)
+                ;
+            },
+            triggerEvent: function(e, t) {
+                var n = t.feature ? t.feature.layer : t.layer,
+                    s = this.target.object;
+                if (s instanceof OpenLayers.Map || s === n)
+                    return this.target.triggerEvent(e, t)
+            },
+            getFeatures: function(e) {
+                var t, n, s, r, i, a = e.clientX,
+                    o = e.clientY,
+                    d = [],
+                    u = [],
+                    l = [];
+                for (r = this.map.layers.length - 1; r >= 0; --r)
+                    if (t = this.map.layers[r],
+                        "none" !== t.div.style.display)
+                        if (t.renderer instanceof OpenLayers.Renderer.Elements) {
+                            if (t instanceof OpenLayers.Layer.Vector)
+                                for (n = document.elementFromPoint(a, o); n && n._featureId;)
+                                    s = t.getFeatureById(n._featureId),
+                                    s ? (d.push(s),
+                                        n.style.display = "none",
+                                        u.push(n),
+                                        n = document.elementFromPoint(a, o)) : n = !1;
+                            l.push(t),
+                                t.div.style.display = "none"
+                        } else
+                            t.renderer instanceof OpenLayers.Renderer.Canvas && (s = t.renderer.getFeatureIdFromEvent(e)) && (d.push(s),
+                                l.push(t));
+                for (r = 0,
+                    i = u.length; r < i; ++r)
+                    u[r].style.display = "";
+                for (r = l.length - 1; r >= 0; --r)
+                    l[r].div.style.display = "block";
+                return d
+            },
+            destroy: function() {
+                for (var e = this.provides.length - 1; e >= 0; --e)
+                    delete this.target.extensions[this.provides[e]];
+                this.map.events.un({
+                        mousemove: this.onMousemove,
+                        mousedown: this.start,
+                        mouseup: this.onClick,
+                        touchstart: this.start,
+                        touchmove: this.cancel,
+                        touchend: this.onClick,
+                        scope: this
+                    }),
+                    delete this.cache,
+                    delete this.map,
+                    delete this.target
+            }
+        }),
+        OpenLayers.Events.nofeatureclick = OpenLayers.Events.featureclick,
+        OpenLayers.Events.featureover = OpenLayers.Events.featureclick,
+        OpenLayers.Events.featureout = OpenLayers.Events.featureclick
 }, function(e, t) {
     OpenLayers.Animation = function(e) {
         function t(e, t, n) {
             t = t > 0 ? t : Number.POSITIVE_INFINITY;
-            var s = ++i,
-                o = +new Date;
-            return a[s] = function() {
-                    a[s] && +new Date - o <= t ? (e(),
-                        a[s] && r(a[s], n)) : delete a[s]
+            var s = ++a,
+                r = +new Date;
+            return o[s] = function() {
+                    o[s] && +new Date - r <= t ? (e(),
+                        o[s] && i(o[s], n)) : delete o[s]
                 },
-                r(a[s], n),
+                i(o[s], n),
                 s
         }
 
         function n(e) {
-            delete a[e]
+            delete o[e]
         }
-        var s = !!(e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame),
-            r = function() {
-                var t = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(t, n) {
+        var s = OpenLayers.Util.vendorPrefix.js(e, "requestAnimationFrame"),
+            r = !!s,
+            i = function() {
+                var t = e[s] || function(t, n) {
                     e.setTimeout(t, 16)
                 };
                 return function(n, s) {
                     t.apply(e, [n, s])
                 }
             }(),
-            i = 0,
-            a = {};
+            a = 0,
+            o = {};
         return {
-            isNative: s,
-            requestFrame: r,
+            isNative: r,
+            requestFrame: i,
             start: t,
             stop: n
         }
@@ -61568,6 +61966,8 @@
             duration: null,
             callbacks: null,
             time: null,
+            minFrameRate: null,
+            startTime: null,
             animationId: null,
             playing: !1,
             initialize: function(e) {
@@ -61579,7 +61979,9 @@
                     this.finish = t,
                     this.duration = n,
                     this.callbacks = s.callbacks,
+                    this.minFrameRate = s.minFrameRate || 30,
                     this.time = 0,
+                    this.startTime = (new Date).getTime(),
                     OpenLayers.Animation.stop(this.animationId),
                     this.animationId = null,
                     this.callbacks && this.callbacks.start && this.callbacks.start.call(this, this.begin),
@@ -61602,7 +62004,7 @@
                     e[t] = this.easing.apply(this, [this.time, n, r, this.duration])
                 }
                 this.time++,
-                    this.callbacks && this.callbacks.eachStep && this.callbacks.eachStep.call(this, e),
+                    this.callbacks && this.callbacks.eachStep && ((new Date).getTime() - this.startTime) / this.time <= 1e3 / this.minFrameRate && this.callbacks.eachStep.call(this, e),
                     this.time > this.duration && this.stop()
             },
             CLASS_NAME: "OpenLayers.Tween"
@@ -61688,12 +62090,17 @@
             numZoomLevels: 16,
             theme: null,
             displayProjection: null,
-            fallThrough: !0,
-            panTween: null,
+            fallThrough: !1,
+            autoUpdateSize: !0,
             eventListeners: null,
+            panTween: null,
             panMethod: OpenLayers.Easing.Expo.easeOut,
             panDuration: 50,
+            zoomTween: null,
+            zoomMethod: OpenLayers.Easing.Quad.easeOut,
+            zoomDuration: 20,
             paddingForPopups: null,
+            layerContainerOriginPx: null,
             minPx: null,
             maxPx: null,
             initialize: function(e, t) {
@@ -61722,15 +62129,19 @@
                     this.events = new OpenLayers.Events(this, this.viewPortDiv, null, this.fallThrough, {
                         includeXY: !0
                     }),
+                    OpenLayers.TileManager && null !== this.tileManager && (this.tileManager instanceof OpenLayers.TileManager || (this.tileManager = new OpenLayers.TileManager(this.tileManager)),
+                        this.tileManager.addMap(this)),
                     s = this.id + "_OpenLayers_Container",
                     this.layerContainerDiv = OpenLayers.Util.createDiv(s),
-                    this.layerContainerDiv.style.width = "100px",
-                    this.layerContainerDiv.style.height = "100px",
                     this.layerContainerDiv.style.zIndex = this.Z_INDEX_BASE.Popup - 1,
+                    this.layerContainerOriginPx = {
+                        x: 0,
+                        y: 0
+                    },
+                    this.applyTransform(),
                     this.viewPortDiv.appendChild(this.layerContainerDiv),
                     this.updateSize(),
-                    this.eventListeners instanceof Object && this.events.on(this.eventListeners),
-                    parseFloat(navigator.appVersion.split("MSIE")[1]) < 9 ? this.events.register("resize", this, this.updateSize) : (this.updateSizeDestroy = OpenLayers.Function.bind(this.updateSize, this),
+                    this.eventListeners instanceof Object && this.events.on(this.eventListeners), !0 === this.autoUpdateSize && (this.updateSizeDestroy = OpenLayers.Function.bind(this.updateSize, this),
                         OpenLayers.Event.observe(window, "resize", this.updateSizeDestroy)),
                     this.theme) {
                     for (var r = !0, i = document.getElementsByTagName("link"), a = 0, o = i.length; a < o; ++a)
@@ -61757,8 +62168,11 @@
                     this.unloadDestroy = OpenLayers.Function.bind(this.destroy, this),
                     OpenLayers.Event.observe(window, "unload", this.unloadDestroy),
                     t && t.layers && (delete this.center,
+                        delete this.zoom,
                         this.addLayers(t.layers),
-                        t.center && !this.getCenter() && this.setCenter(t.center, t.zoom))
+                        t.center && !this.getCenter() && this.setCenter(t.center, t.zoom)),
+                    this.panMethod && (this.panTween = new OpenLayers.Tween(this.panMethod)),
+                    this.zoomMethod && this.applyTransform.transform && (this.zoomTween = new OpenLayers.Tween(this.zoomMethod))
             },
             getViewport: function() {
                 return this.viewPortDiv
@@ -61777,9 +62191,11 @@
                     return !1;
                 if (this.panTween && (this.panTween.stop(),
                         this.panTween = null),
+                    this.zoomTween && (this.zoomTween.stop(),
+                        this.zoomTween = null),
                     OpenLayers.Event.stopObserving(window, "unload", this.unloadDestroy),
                     this.unloadDestroy = null,
-                    this.updateSizeDestroy ? OpenLayers.Event.stopObserving(window, "resize", this.updateSizeDestroy) : this.events.unregister("resize", this, this.updateSize),
+                    this.updateSizeDestroy && OpenLayers.Event.stopObserving(window, "resize", this.updateSizeDestroy),
                     this.paddingForPopups = null,
                     null != this.controls) {
                     for (var e = this.controls.length - 1; e >= 0; --e)
@@ -61791,8 +62207,10 @@
                         this.layers[e].destroy(!1);
                     this.layers = null
                 }
-                this.viewPortDiv && this.div.removeChild(this.viewPortDiv),
+                this.viewPortDiv && this.viewPortDiv.parentNode && this.viewPortDiv.parentNode.removeChild(this.viewPortDiv),
                     this.viewPortDiv = null,
+                    this.tileManager && (this.tileManager.removeMap(this),
+                        this.tileManager = null),
                     this.eventListeners && (this.events.un(this.eventListeners),
                         this.eventListeners = null),
                     this.events.destroy(),
@@ -62019,6 +62437,7 @@
                         }
                     }
                 }
+                this.events.triggerEvent("updatesize")
             },
             getCurrentSize: function() {
                 var e = new OpenLayers.Size(this.div.clientWidth, this.div.clientHeight);
@@ -62074,8 +62493,7 @@
                 }
             },
             panTo: function(e) {
-                if (this.panMethod && this.getExtent().scale(this.panRatio).containsLonLat(e)) {
-                    this.panTween || (this.panTween = new OpenLayers.Tween(this.panMethod));
+                if (this.panTween && this.getExtent().scale(this.panRatio).containsLonLat(e)) {
                     var t = this.getCachedCenter();
                     if (e.equals(t))
                         return;
@@ -62113,6 +62531,7 @@
             },
             setCenter: function(e, t, n, s) {
                 this.panTween && this.panTween.stop(),
+                    this.zoomTween && this.zoomTween.stop(),
                     this.moveTo(e, t, {
                         dragging: n,
                         forceZoomChange: s
@@ -62135,15 +62554,16 @@
                     this.dragging || (this.dragging = !0,
                             this.events.triggerEvent("movestart")),
                         this.center = null,
-                        e && (this.layerContainerDiv.style.left = parseInt(this.layerContainerDiv.style.left) - e + "px",
+                        e && (this.layerContainerOriginPx.x -= e,
                             this.minPx.x -= e,
                             this.maxPx.x -= e),
-                        t && (this.layerContainerDiv.style.top = parseInt(this.layerContainerDiv.style.top) - t + "px",
+                        t && (this.layerContainerOriginPx.y -= t,
                             this.minPx.y -= t,
-                            this.maxPx.y -= t);
-                    var u, l, y;
+                            this.maxPx.y -= t),
+                        this.applyTransform();
+                    var u, l, h;
                     for (l = 0,
-                        y = this.layers.length; l < y; ++l)
+                        h = this.layers.length; l < h; ++l)
                         u = this.layers[l],
                         u.visibility && (u === this.baseLayer || u.inRange) && (u.moveByPx(e, t),
                             u.events.triggerEvent("move"));
@@ -62151,26 +62571,31 @@
                 }
             },
             adjustZoom: function(e) {
-                var t = this.baseLayer.resolutions,
-                    n = this.getMaxExtent().getWidth() / this.size.w;
-                if (this.getResolutionForZoom(e) > n)
-                    for (var s = 0 | e, r = t.length; s < r; ++s)
-                        if (t[s] <= n) {
-                            e = s;
-                            break
-                        }
+                if (this.baseLayer && this.baseLayer.wrapDateLine) {
+                    var t = this.baseLayer.resolutions,
+                        n = this.getMaxExtent().getWidth() / this.size.w;
+                    if (this.getResolutionForZoom(e) > n)
+                        if (this.fractionalZoom)
+                            e = this.getZoomForResolution(n);
+                        else
+                            for (var s = 0 | e, r = t.length; s < r; ++s)
+                                if (t[s] <= n) {
+                                    e = s;
+                                    break
+                                }
+                }
                 return e
             },
+            getMinZoom: function() {
+                return this.adjustZoom(0)
+            },
             moveTo: function(e, t, n) {
-                if (null == e || e instanceof OpenLayers.LonLat || (e = new OpenLayers.LonLat(e)),
+                null == e || e instanceof OpenLayers.LonLat || (e = new OpenLayers.LonLat(e)),
                     n || (n = {}),
                     null != t && (t = parseFloat(t),
-                        this.fractionalZoom || (t = Math.round(t))),
-                    this.baseLayer.wrapDateLine) {
-                    var s = t;
-                    t = this.adjustZoom(t),
-                        t !== s && (e = this.getCenter())
-                }
+                        this.fractionalZoom || (t = Math.round(t)));
+                var s = t;
+                (t = this.adjustZoom(t)) !== s && (e = this.getCenter());
                 var r = n.dragging || this.dragging,
                     i = n.forceZoomChange;
                 if (this.getCachedCenter() || this.isValidLonLat(e) || (e = this.maxExtent.getCenterLonLat(),
@@ -62189,33 +62614,36 @@
                 var u = i || this.isValidZoomLevel(t) && t != this.getZoom(),
                     l = this.isValidLonLat(e) && !e.equals(this.center);
                 if (u || l || r) {
-                    r || this.events.triggerEvent("movestart"),
+                    r || this.events.triggerEvent("movestart", {
+                            zoomChanged: u
+                        }),
                         l && (!u && this.center && this.centerLayerContainer(e),
                             this.center = e.clone());
-                    var y = u ? this.getResolutionForZoom(t) : this.getResolution();
+                    var h = u ? this.getResolutionForZoom(t) : this.getResolution();
                     if (u || null == this.layerContainerOrigin) {
                         this.layerContainerOrigin = this.getCachedCenter(),
-                            this.layerContainerDiv.style.left = "0px",
-                            this.layerContainerDiv.style.top = "0px";
-                        var h = this.getMaxExtent({
+                            this.layerContainerOriginPx.x = 0,
+                            this.layerContainerOriginPx.y = 0,
+                            this.applyTransform();
+                        var y = this.getMaxExtent({
                                 restricted: !0
                             }),
-                            m = h.getCenterLonLat(),
+                            m = y.getCenterLonLat(),
                             T = this.center.lon - m.lon,
                             c = m.lat - this.center.lat,
-                            p = Math.round(h.getWidth() / y),
-                            M = Math.round(h.getHeight() / y);
+                            p = Math.round(y.getWidth() / h),
+                            M = Math.round(y.getHeight() / h);
                         this.minPx = {
-                                x: (this.size.w - p) / 2 - T / y,
-                                y: (this.size.h - M) / 2 - c / y
+                                x: (this.size.w - p) / 2 - T / h,
+                                y: (this.size.h - M) / 2 - c / h
                             },
                             this.maxPx = {
-                                x: this.minPx.x + Math.round(h.getWidth() / y),
-                                y: this.minPx.y + Math.round(h.getHeight() / y)
+                                x: this.minPx.x + Math.round(y.getWidth() / h),
+                                y: this.minPx.y + Math.round(y.getHeight() / h)
                             }
                     }
                     u && (this.zoom = t,
-                        this.resolution = y);
+                        this.resolution = h);
                     var f = this.getExtent();
                     this.baseLayer.visibility && (this.baseLayer.moveTo(f, u, n.dragging),
                             n.dragging || this.baseLayer.events.triggerEvent("moveend", {
@@ -62251,12 +62679,11 @@
                 var t = this.getViewPortPxFromLonLat(this.layerContainerOrigin),
                     n = this.getViewPortPxFromLonLat(e);
                 if (null != t && null != n) {
-                    var s = parseInt(this.layerContainerDiv.style.left),
-                        r = parseInt(this.layerContainerDiv.style.top),
+                    var s = this.layerContainerOriginPx.x,
+                        r = this.layerContainerOriginPx.y,
                         i = Math.round(t.x - n.x),
                         a = Math.round(t.y - n.y);
-                    this.layerContainerDiv.style.left = i + "px",
-                        this.layerContainerDiv.style.top = a + "px";
+                    this.applyTransform(this.layerContainerOriginPx.x = i, this.layerContainerOriginPx.y = a);
                     var o = s - i,
                         d = r - a;
                     this.minPx.x -= o,
@@ -62342,8 +62769,54 @@
                 return null != this.baseLayer && (n = this.baseLayer.getZoomForResolution(e, t)),
                     n
             },
-            zoomTo: function(e) {
-                this.isValidZoomLevel(e) && this.setCenter(null, e)
+            zoomTo: function(e, t) {
+                var n = this;
+                if (n.isValidZoomLevel(e))
+                    if (n.baseLayer.wrapDateLine && (e = n.adjustZoom(e)),
+                        n.zoomTween) {
+                        var s = n.getResolution(),
+                            r = n.getResolutionForZoom(e),
+                            i = {
+                                scale: 1
+                            },
+                            a = {
+                                scale: s / r
+                            };
+                        if (n.zoomTween.playing && n.zoomTween.duration < 3 * n.zoomDuration)
+                            n.zoomTween.finish = {
+                                scale: n.zoomTween.finish.scale * a.scale
+                            };
+                        else {
+                            if (!t) {
+                                var o = n.getSize();
+                                t = {
+                                    x: o.w / 2,
+                                    y: o.h / 2
+                                }
+                            }
+                            n.zoomTween.start(i, a, n.zoomDuration, {
+                                minFrameRate: 50,
+                                callbacks: {
+                                    eachStep: function(e) {
+                                        var s = n.layerContainerOriginPx,
+                                            r = e.scale,
+                                            i = (r - 1) * (s.x - t.x) | 0,
+                                            a = (r - 1) * (s.y - t.y) | 0;
+                                        n.applyTransform(s.x + i, s.y + a, r)
+                                    },
+                                    done: function(e) {
+                                        n.applyTransform();
+                                        var s = n.getResolution() / e.scale,
+                                            r = n.getZoomForResolution(s, !0);
+                                        n.moveTo(n.getZoomTargetCenter(t, s), r, !0)
+                                    }
+                                }
+                            })
+                        }
+                    } else {
+                        var d = t ? n.getZoomTargetCenter(t, n.getResolutionForZoom(e)) : null;
+                        n.setCenter(d, e)
+                    }
             },
             zoomIn: function() {
                 this.zoomTo(this.getZoom() + 1)
@@ -62387,6 +62860,15 @@
                 return null != this.baseLayer && (t = this.baseLayer.getViewPortPxFromLonLat(e)),
                     t
             },
+            getZoomTargetCenter: function(e, t) {
+                var n = null,
+                    s = this.getSize(),
+                    r = s.w / 2 - e.x,
+                    i = e.y - s.h / 2,
+                    a = this.getLonLatFromPixel(e);
+                return a && (n = new OpenLayers.LonLat(a.lon + r * t, a.lat + i * t)),
+                    n
+            },
             getLonLatFromPixel: function(e) {
                 return this.getLonLatFromViewPortPx(e)
             },
@@ -62414,8 +62896,8 @@
             getViewPortPxFromLayerPx: function(e) {
                 var t = null;
                 if (null != e) {
-                    var n = parseInt(this.layerContainerDiv.style.left),
-                        s = parseInt(this.layerContainerDiv.style.top);
+                    var n = this.layerContainerOriginPx.x,
+                        s = this.layerContainerOriginPx.y;
                     t = e.add(n, s)
                 }
                 return t
@@ -62423,8 +62905,8 @@
             getLayerPxFromViewPortPx: function(e) {
                 var t = null;
                 if (null != e) {
-                    var n = -parseInt(this.layerContainerDiv.style.left),
-                        s = -parseInt(this.layerContainerDiv.style.top);
+                    var n = -this.layerContainerOriginPx.x,
+                        s = -this.layerContainerOriginPx.y;
                     t = e.add(n, s),
                         (isNaN(t.x) || isNaN(t.y)) && (t = null)
                 }
@@ -62438,6 +62920,32 @@
                 var t = this.getPixelFromLonLat(e);
                 return this.getLayerPxFromViewPortPx(t)
             },
+            applyTransform: function(e, t, n) {
+                n = n || 1;
+                var s = this.layerContainerOriginPx,
+                    r = 1 !== n;
+                e = e || s.x,
+                    t = t || s.y;
+                var i = this.layerContainerDiv.style,
+                    a = this.applyTransform.transform,
+                    o = this.applyTransform.template;
+                if (void 0 === a && (a = OpenLayers.Util.vendorPrefix.style("transform"),
+                        this.applyTransform.transform = a,
+                        a)) {
+                    var d = OpenLayers.Element.getStyle(this.viewPortDiv, OpenLayers.Util.vendorPrefix.css("transform"));
+                    d && "none" === d || (o = ["translate3d(", ",0) ", "scale3d(", ",1)"],
+                            i[a] = [o[0], "0,0", o[1]].join("")),
+                        o && ~i[a].indexOf(o[0]) || (o = ["translate(", ") ", "scale(", ")"]),
+                        this.applyTransform.template = o
+                }
+                null === a || "translate3d(" !== o[0] && !0 !== r ? (i.left = e + "px",
+                    i.top = t + "px",
+                    null !== a && (i[a] = "")) : (!0 === r && "translate(" === o[0] && (e -= s.x,
+                        t -= s.y,
+                        i.left = s.x + "px",
+                        i.top = s.y + "px"),
+                    i[a] = [o[0], e, "px,", t, "px", o[1], o[2], n, ",", n, o[3]].join(""))
+            },
             CLASS_NAME: "OpenLayers.Map"
         }),
         OpenLayers.Map.TILE_WIDTH = 256,
@@ -62450,7 +62958,7 @@
             initialize: function(e, t) {
                 OpenLayers.Util.extend(this, t),
                     this.projCode = e,
-                    window.Proj4js && (this.proj = new Proj4js.Proj(e))
+                    "object" == typeof Proj4js && (this.proj = new Proj4js.Proj(e))
             },
             getCode: function() {
                 return this.proj ? this.proj.srsCode : this.projCode
@@ -62466,7 +62974,7 @@
                     n = !1;
                 if (t)
                     if (t instanceof OpenLayers.Projection || (t = new OpenLayers.Projection(t)),
-                        window.Proj4js && this.proj.defData && t.proj.defData)
+                        "object" == typeof Proj4js && this.proj.defData && t.proj.defData)
                         n = this.proj.defData.replace(this.titleRegEx, "") == t.proj.defData.replace(this.titleRegEx, "");
                     else if (t.getCode) {
                     var s = this.getCode(),
@@ -62530,8 +63038,9 @@
             }
 
             function t(e) {
-                return e.x = e.x * r / 180,
-                    e.y = Math.log(Math.tan((90 + e.y) * Math.PI / 360)) / Math.PI * r,
+                e.x = e.x * r / 180;
+                var t = Math.log(Math.tan((90 + e.y) * Math.PI / 360)) / Math.PI * r;
+                return e.y = Math.max(-20037508.34, Math.min(t, 20037508.34)),
                     e
             }
 
@@ -62592,6 +63101,8 @@
         metadata: null,
         initialize: function(e, t) {
             this.metadata = {},
+                t = OpenLayers.Util.extend({}, t),
+                null != this.alwaysInRange && (t.alwaysInRange = this.alwaysInRange),
                 this.addOptions(t),
                 this.name = e,
                 null == this.id && (this.id = OpenLayers.Util.createUniqueID(this.CLASS_NAME + "_"),
@@ -62743,7 +63254,7 @@
                 n = this.RESOLUTION_PROPERTIES[e],
                 s[n] = this.options[n],
                 r && this.options[n] && (r = !1);
-            if (null == this.alwaysInRange && (this.alwaysInRange = r),
+            if (null == this.options.alwaysInRange && (this.alwaysInRange = r),
                 null == s.resolutions && (s.resolutions = this.resolutionsFromScales(s.scales)),
                 null == s.resolutions && (s.resolutions = this.calculateResolutions(s)),
                 null == s.resolutions) {
@@ -62814,15 +63325,15 @@
                 void 0 === d && null != o && (d = o + 1);
             if (!("number" != typeof d || d <= 0 || "number" != typeof r && "number" != typeof i)) {
                 var l = new Array(d),
-                    y = 2;
-                "number" == typeof i && "number" == typeof r && (y = Math.pow(r / i, 1 / (d - 1)));
-                var h;
+                    h = 2;
+                "number" == typeof i && "number" == typeof r && (h = Math.pow(r / i, 1 / (d - 1)));
+                var y;
                 if ("number" == typeof r)
-                    for (h = 0; h < d; h++)
-                        l[h] = r / Math.pow(y, h);
+                    for (y = 0; y < d; y++)
+                        l[y] = r / Math.pow(h, y);
                 else
-                    for (h = 0; h < d; h++)
-                        l[d - 1 - h] = i * Math.pow(y, h);
+                    for (y = 0; y < d; y++)
+                        l[d - 1 - y] = i * Math.pow(h, y);
                 return l
             }
         },
@@ -62870,13 +63381,13 @@
                 var l = d - u;
                 n = l > 0 ? a + (d - e) / l : a
             } else {
-                var y, h = Number.POSITIVE_INFINITY;
+                var h, y = Number.POSITIVE_INFINITY;
                 for (s = 0,
                     r = this.resolutions.length; s < r; s++)
                     if (t) {
-                        if ((y = Math.abs(this.resolutions[s] - e)) > h)
+                        if ((h = Math.abs(this.resolutions[s] - e)) > y)
                             break;
-                        h = y
+                        y = h
                     } else if (this.resolutions[s] < e)
                     break;
                 n = Math.max(0, s - 1)
@@ -63118,9 +63629,9 @@
                                 l = this.map.getViewPortPxFromLonLat(s);
                             this.dragPanMapObject(l.x - u.x, u.y - l.y)
                         } else {
-                            var y = this.getMapObjectLonLatFromOLLonLat(s),
-                                h = this.getMapObjectZoomFromOLZoom(r);
-                            this.setMapObjectCenter(y, h, n)
+                            var h = this.getMapObjectLonLatFromOLLonLat(s),
+                                y = this.getMapObjectZoomFromOLZoom(r);
+                            this.setMapObjectCenter(h, y, n)
                         }
                 }
             }
@@ -63237,93 +63748,6 @@
         CLASS_NAME: "OpenLayers.Layer.FixedZoomLevels"
     })
 }, function(e, t) {
-    OpenLayers.Layer.VirtualEarth = OpenLayers.Class(OpenLayers.Layer.EventPane, OpenLayers.Layer.FixedZoomLevels, {
-        MIN_ZOOM_LEVEL: 1,
-        MAX_ZOOM_LEVEL: 19,
-        RESOLUTIONS: [1.40625, .703125, .3515625, .17578125, .087890625, .0439453125, .02197265625, .010986328125, .0054931640625, .00274658203125, .001373291015625, .0006866455078125, .00034332275390625, .000171661376953125, 858306884765625e-19, 4291534423828125e-20, 2145767211914062e-20, 1072883605957031e-20, 536441802978515e-20],
-        type: null,
-        wrapDateLine: !0,
-        sphericalMercator: !1,
-        animationEnabled: !0,
-        initialize: function(e, t) {
-            OpenLayers.Layer.EventPane.prototype.initialize.apply(this, arguments),
-                OpenLayers.Layer.FixedZoomLevels.prototype.initialize.apply(this, arguments),
-                this.sphericalMercator && (OpenLayers.Util.extend(this, OpenLayers.Layer.SphericalMercator),
-                    this.initMercatorParameters())
-        },
-        loadMapObject: function() {
-            var e = OpenLayers.Util.createDiv(this.name),
-                t = this.map.getSize();
-            e.style.width = t.w + "px",
-                e.style.height = t.h + "px",
-                this.div.appendChild(e);
-            try {
-                this.mapObject = new VEMap(this.name)
-            } catch (e) {}
-            if (null != this.mapObject) {
-                try {
-                    this.mapObject.LoadMap(null, null, this.type, !0),
-                        this.mapObject.AttachEvent("onmousedown", OpenLayers.Function.True)
-                } catch (e) {}
-                this.mapObject.HideDashboard(),
-                    "function" == typeof this.mapObject.SetAnimationEnabled && this.mapObject.SetAnimationEnabled(this.animationEnabled)
-            }
-            this.mapObject && this.mapObject.vemapcontrol && this.mapObject.vemapcontrol.PanMap && "function" == typeof this.mapObject.vemapcontrol.PanMap || (this.dragPanMapObject = null)
-        },
-        onMapResize: function() {
-            this.mapObject.Resize(this.map.size.w, this.map.size.h)
-        },
-        getWarningHTML: function() {
-            return OpenLayers.i18n("getLayerWarning", {
-                layerType: "VE",
-                layerLib: "VirtualEarth"
-            })
-        },
-        setMapObjectCenter: function(e, t) {
-            this.mapObject.SetCenterAndZoom(e, t)
-        },
-        getMapObjectCenter: function() {
-            return this.mapObject.GetCenter()
-        },
-        dragPanMapObject: function(e, t) {
-            this.mapObject.vemapcontrol.PanMap(e, -t)
-        },
-        getMapObjectZoom: function() {
-            return this.mapObject.GetZoomLevel()
-        },
-        getMapObjectLonLatFromMapObjectPixel: function(e) {
-            return "undefined" != typeof VEPixel ? this.mapObject.PixelToLatLong(e) : this.mapObject.PixelToLatLong(e.x, e.y)
-        },
-        getMapObjectPixelFromMapObjectLonLat: function(e) {
-            return this.mapObject.LatLongToPixel(e)
-        },
-        getLongitudeFromMapObjectLonLat: function(e) {
-            return this.sphericalMercator ? this.forwardMercator(e.Longitude, e.Latitude).lon : e.Longitude
-        },
-        getLatitudeFromMapObjectLonLat: function(e) {
-            return this.sphericalMercator ? this.forwardMercator(e.Longitude, e.Latitude).lat : e.Latitude
-        },
-        getMapObjectLonLatFromLonLat: function(e, t) {
-            var n;
-            if (this.sphericalMercator) {
-                var s = this.inverseMercator(e, t);
-                n = new VELatLong(s.lat, s.lon)
-            } else
-                n = new VELatLong(t, e);
-            return n
-        },
-        getXFromMapObjectPixel: function(e) {
-            return e.x
-        },
-        getYFromMapObjectPixel: function(e) {
-            return e.y
-        },
-        getMapObjectPixelFromXY: function(e, t) {
-            return "undefined" != typeof VEPixel ? new VEPixel(e, t) : new Msn.VE.Pixel(e, t)
-        },
-        CLASS_NAME: "OpenLayers.Layer.VirtualEarth"
-    })
-}, function(e, t) {
     OpenLayers.Tile = OpenLayers.Class({
         events: null,
         eventListeners: null,
@@ -63362,7 +63786,7 @@
         draw: function(e) {
             e || this.clear();
             var t = this.shouldDraw();
-            return t && !e && (t = !1 !== this.events.triggerEvent("beforedraw")),
+            return t && !e && !1 === this.events.triggerEvent("beforedraw") && (t = null),
                 t
         },
         shouldDraw: function() {
@@ -63401,177 +63825,177 @@
     })
 }, function(e, t) {
     OpenLayers.Tile.Image = OpenLayers.Class(OpenLayers.Tile, {
-        url: null,
-        imgDiv: null,
-        frame: null,
-        imageReloadAttempts: null,
-        layerAlphaHack: null,
-        asyncRequestId: null,
-        blankImageUrl: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAQAIBRAA7",
-        maxGetUrlLength: null,
-        canvasContext: null,
-        crossOriginKeyword: null,
-        initialize: function(e, t, n, s, r, i) {
-            OpenLayers.Tile.prototype.initialize.apply(this, arguments),
-                this.url = s,
-                this.layerAlphaHack = this.layer.alpha && OpenLayers.Util.alphaHack(),
-                (null != this.maxGetUrlLength || this.layer.gutter || this.layerAlphaHack) && (this.frame = document.createElement("div"),
-                    this.frame.style.position = "absolute",
-                    this.frame.style.overflow = "hidden"),
-                null != this.maxGetUrlLength && OpenLayers.Util.extend(this, OpenLayers.Tile.Image.IFrame)
-        },
-        destroy: function() {
-            this.imgDiv && (this.clear(),
-                    this.imgDiv = null,
-                    this.frame = null),
-                this.asyncRequestId = null,
-                OpenLayers.Tile.prototype.destroy.apply(this, arguments)
-        },
-        draw: function() {
-            var e = OpenLayers.Tile.prototype.draw.apply(this, arguments);
-            return e ? (this.layer != this.layer.map.baseLayer && this.layer.reproject && (this.bounds = this.getBoundsFromBaseLayer(this.position)),
-                    this.isLoading ? this._loadEvent = "reload" : (this.isLoading = !0,
-                        this._loadEvent = "loadstart"),
-                    this.positionTile(),
-                    this.renderTile()) : this.unload(),
-                e
-        },
-        renderTile: function() {
-            if (this.layer.div.appendChild(this.getTile()),
-                this.layer.async) {
-                var e = this.asyncRequestId = (this.asyncRequestId || 0) + 1;
-                this.layer.getURLasync(this.bounds, function(t) {
-                    e == this.asyncRequestId && (this.url = t,
-                        this.initImage())
-                }, this)
-            } else
-                this.url = this.layer.getURL(this.bounds),
-                this.initImage()
-        },
-        positionTile: function() {
-            var e = this.getTile().style,
-                t = this.frame ? this.size : this.layer.getImageSize(this.bounds);
-            e.left = this.position.x + "%",
-                e.top = this.position.y + "%",
-                e.width = t.w + "%",
-                e.height = t.h + "%"
-        },
-        clear: function() {
-            OpenLayers.Tile.prototype.clear.apply(this, arguments);
-            var e = this.imgDiv;
-            if (e) {
-                OpenLayers.Event.stopObservingElement(e);
-                var t = this.getTile();
-                t.parentNode === this.layer.div && this.layer.div.removeChild(t),
-                    this.setImgSrc(), !0 === this.layerAlphaHack && (e.style.filter = ""),
-                    OpenLayers.Element.removeClass(e, "olImageLoadError")
-            }
-            this.canvasContext = null
-        },
-        getImage: function() {
-            if (!this.imgDiv) {
-                this.imgDiv = document.createElement("img"),
-                    this.imgDiv.className = "olTileImage",
-                    this.imgDiv.galleryImg = "no";
-                var e = this.imgDiv.style;
-                if (this.frame) {
-                    var t = 0,
-                        n = 0;
-                    this.layer.gutter && (t = this.layer.gutter / this.layer.tileSize.w * 100,
-                            n = this.layer.gutter / this.layer.tileSize.h * 100),
-                        e.left = -t + "%",
-                        e.top = -n + "%",
-                        e.width = 2 * t + 100 + "%",
-                        e.height = 2 * n + 100 + "%"
-                }
-                e.visibility = "hidden",
-                    e.opacity = 0,
-                    this.layer.opacity < 1 && (e.filter = "alpha(opacity=" + 100 * this.layer.opacity + ")"),
-                    e.position = "absolute",
-                    this.layerAlphaHack && (e.paddingTop = e.height,
-                        e.height = "0",
-                        e.width = "100%"),
-                    this.frame && this.frame.appendChild(this.imgDiv)
-            }
-            return this.imgDiv
-        },
-        initImage: function() {
-            this.events.triggerEvent(this._loadEvent);
-            var e = this.getImage();
-            if (this.url && e.getAttribute("src") == this.url)
-                this.onImageLoad();
-            else {
-                var t = OpenLayers.Function.bind(function() {
-                    OpenLayers.Event.stopObservingElement(e),
-                        OpenLayers.Event.observe(e, "load", OpenLayers.Function.bind(this.onImageLoad, this)),
-                        OpenLayers.Event.observe(e, "error", OpenLayers.Function.bind(this.onImageError, this)),
-                        this.imageReloadAttempts = 0,
-                        this.setImgSrc(this.url)
-                }, this);
-                e.getAttribute("src") == this.blankImageUrl ? t() : (OpenLayers.Event.observe(e, "load", t),
-                    OpenLayers.Event.observe(e, "error", t),
-                    this.crossOriginKeyword && e.removeAttribute("crossorigin"),
-                    e.src = this.blankImageUrl)
-            }
-        },
-        setImgSrc: function(e) {
-            var t = this.imgDiv;
-            t.style.visibility = "hidden",
-                t.style.opacity = 0,
-                e && (this.crossOriginKeyword && ("data:" !== e.substr(0, 5) ? t.setAttribute("crossorigin", this.crossOriginKeyword) : t.removeAttribute("crossorigin")),
-                    t.src = e)
-        },
-        getTile: function() {
-            return this.frame ? this.frame : this.getImage()
-        },
-        createBackBuffer: function() {
-            if (this.imgDiv && !this.isLoading) {
-                var e;
-                return this.frame ? (e = this.frame.cloneNode(!1),
-                        e.appendChild(this.imgDiv)) : e = this.imgDiv,
-                    this.imgDiv = null,
+            url: null,
+            imgDiv: null,
+            frame: null,
+            imageReloadAttempts: null,
+            layerAlphaHack: null,
+            asyncRequestId: null,
+            maxGetUrlLength: null,
+            canvasContext: null,
+            crossOriginKeyword: null,
+            initialize: function(e, t, n, s, r, i) {
+                OpenLayers.Tile.prototype.initialize.apply(this, arguments),
+                    this.url = s,
+                    this.layerAlphaHack = this.layer.alpha && OpenLayers.Util.alphaHack(),
+                    (null != this.maxGetUrlLength || this.layer.gutter || this.layerAlphaHack) && (this.frame = document.createElement("div"),
+                        this.frame.style.position = "absolute",
+                        this.frame.style.overflow = "hidden"),
+                    null != this.maxGetUrlLength && OpenLayers.Util.extend(this, OpenLayers.Tile.Image.IFrame)
+            },
+            destroy: function() {
+                this.imgDiv && (this.clear(),
+                        this.imgDiv = null,
+                        this.frame = null),
+                    this.asyncRequestId = null,
+                    OpenLayers.Tile.prototype.destroy.apply(this, arguments)
+            },
+            draw: function() {
+                var e = OpenLayers.Tile.prototype.draw.apply(this, arguments);
+                return e ? (this.layer != this.layer.map.baseLayer && this.layer.reproject && (this.bounds = this.getBoundsFromBaseLayer(this.position)),
+                        this.isLoading ? this._loadEvent = "reload" : (this.isLoading = !0,
+                            this._loadEvent = "loadstart"),
+                        this.renderTile(),
+                        this.positionTile()) : !1 === e && this.unload(),
                     e
-            }
-        },
-        onImageLoad: function() {
-            var e = this.imgDiv;
-            if (OpenLayers.Event.stopObservingElement(e),
-                e.style.visibility = "inherit",
-                e.style.opacity = this.layer.opacity,
-                this.isLoading = !1,
-                this.canvasContext = null,
-                this.events.triggerEvent("loadend"),
-                parseFloat(navigator.appVersion.split("MSIE")[1]) < 7 && this.layer && this.layer.div) {
-                var t = document.createElement("span");
-                t.style.display = "none";
-                var n = this.layer.div;
-                n.appendChild(t),
-                    window.setTimeout(function() {
-                        t.parentNode === n && t.parentNode.removeChild(t)
-                    }, 0)
-            }!0 === this.layerAlphaHack && (e.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + e.src + "', sizingMethod='scale')")
-        },
-        onImageError: function() {
-            var e = this.imgDiv;
-            null != e.src && (this.imageReloadAttempts++,
-                this.imageReloadAttempts <= OpenLayers.IMAGE_RELOAD_ATTEMPTS ? this.setImgSrc(this.layer.getURL(this.bounds)) : (OpenLayers.Element.addClass(e, "olImageLoadError"),
-                    this.events.triggerEvent("loaderror"),
-                    this.onImageLoad()))
-        },
-        getCanvasContext: function() {
-            if (OpenLayers.CANVAS_SUPPORTED && this.imgDiv && !this.isLoading) {
-                if (!this.canvasContext) {
-                    var e = document.createElement("canvas");
-                    e.width = this.size.w,
-                        e.height = this.size.h,
-                        this.canvasContext = e.getContext("2d"),
-                        this.canvasContext.drawImage(this.imgDiv, 0, 0)
+            },
+            renderTile: function() {
+                if (this.layer.async) {
+                    var e = this.asyncRequestId = (this.asyncRequestId || 0) + 1;
+                    this.layer.getURLasync(this.bounds, function(t) {
+                        e == this.asyncRequestId && (this.url = t,
+                            this.initImage())
+                    }, this)
+                } else
+                    this.url = this.layer.getURL(this.bounds),
+                    this.initImage()
+            },
+            positionTile: function() {
+                var e = this.getTile().style,
+                    t = this.frame ? this.size : this.layer.getImageSize(this.bounds),
+                    n = 1;
+                this.layer instanceof OpenLayers.Layer.Grid && (n = this.layer.getServerResolution() / this.layer.map.getResolution()),
+                    e.left = this.position.x + "px",
+                    e.top = this.position.y + "px",
+                    e.width = Math.round(n * t.w) + "px",
+                    e.height = Math.round(n * t.h) + "px"
+            },
+            clear: function() {
+                OpenLayers.Tile.prototype.clear.apply(this, arguments);
+                var e = this.imgDiv;
+                if (e) {
+                    var t = this.getTile();
+                    t.parentNode === this.layer.div && this.layer.div.removeChild(t),
+                        this.setImgSrc(), !0 === this.layerAlphaHack && (e.style.filter = ""),
+                        OpenLayers.Element.removeClass(e, "olImageLoadError")
                 }
-                return this.canvasContext
-            }
-        },
-        CLASS_NAME: "OpenLayers.Tile.Image"
-    })
+                this.canvasContext = null
+            },
+            getImage: function() {
+                if (!this.imgDiv) {
+                    this.imgDiv = OpenLayers.Tile.Image.IMAGE.cloneNode(!1);
+                    var e = this.imgDiv.style;
+                    if (this.frame) {
+                        var t = 0,
+                            n = 0;
+                        this.layer.gutter && (t = this.layer.gutter / this.layer.tileSize.w * 100,
+                                n = this.layer.gutter / this.layer.tileSize.h * 100),
+                            e.left = -t + "%",
+                            e.top = -n + "%",
+                            e.width = 2 * t + 100 + "%",
+                            e.height = 2 * n + 100 + "%"
+                    }
+                    e.visibility = "hidden",
+                        e.opacity = 0,
+                        this.layer.opacity < 1 && (e.filter = "alpha(opacity=" + 100 * this.layer.opacity + ")"),
+                        e.position = "absolute",
+                        this.layerAlphaHack && (e.paddingTop = e.height,
+                            e.height = "0",
+                            e.width = "100%"),
+                        this.frame && this.frame.appendChild(this.imgDiv)
+                }
+                return this.imgDiv
+            },
+            setImage: function(e) {
+                this.imgDiv = e
+            },
+            initImage: function() {
+                if (!this.url && !this.imgDiv)
+                    return void(this.isLoading = !1);
+                this.events.triggerEvent("beforeload"),
+                    this.layer.div.appendChild(this.getTile()),
+                    this.events.triggerEvent(this._loadEvent);
+                var e = this.getImage(),
+                    t = e.getAttribute("src") || "";
+                this.url && OpenLayers.Util.isEquivalentUrl(t, this.url) ? this._loadTimeout = window.setTimeout(OpenLayers.Function.bind(this.onImageLoad, this), 0) : (this.stopLoading(),
+                    this.crossOriginKeyword && e.removeAttribute("crossorigin"),
+                    OpenLayers.Event.observe(e, "load", OpenLayers.Function.bind(this.onImageLoad, this)),
+                    OpenLayers.Event.observe(e, "error", OpenLayers.Function.bind(this.onImageError, this)),
+                    this.imageReloadAttempts = 0,
+                    this.setImgSrc(this.url))
+            },
+            setImgSrc: function(e) {
+                var t = this.imgDiv;
+                e ? (t.style.visibility = "hidden",
+                    t.style.opacity = 0,
+                    this.crossOriginKeyword && ("data:" !== e.substr(0, 5) ? t.setAttribute("crossorigin", this.crossOriginKeyword) : t.removeAttribute("crossorigin")),
+                    t.src = e) : (this.stopLoading(),
+                    this.imgDiv = null,
+                    t.parentNode && t.parentNode.removeChild(t))
+            },
+            getTile: function() {
+                return this.frame ? this.frame : this.getImage()
+            },
+            createBackBuffer: function() {
+                if (this.imgDiv && !this.isLoading) {
+                    var e;
+                    return this.frame ? (e = this.frame.cloneNode(!1),
+                            e.appendChild(this.imgDiv)) : e = this.imgDiv,
+                        this.imgDiv = null,
+                        e
+                }
+            },
+            onImageLoad: function() {
+                var e = this.imgDiv;
+                this.stopLoading(),
+                    e.style.visibility = "inherit",
+                    e.style.opacity = this.layer.opacity,
+                    this.isLoading = !1,
+                    this.canvasContext = null,
+                    this.events.triggerEvent("loadend"), !0 === this.layerAlphaHack && (e.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + e.src + "', sizingMethod='scale')")
+            },
+            onImageError: function() {
+                var e = this.imgDiv;
+                null != e.src && (this.imageReloadAttempts++,
+                    this.imageReloadAttempts <= OpenLayers.IMAGE_RELOAD_ATTEMPTS ? this.setImgSrc(this.layer.getURL(this.bounds)) : (OpenLayers.Element.addClass(e, "olImageLoadError"),
+                        this.events.triggerEvent("loaderror"),
+                        this.onImageLoad()))
+            },
+            stopLoading: function() {
+                OpenLayers.Event.stopObservingElement(this.imgDiv),
+                    window.clearTimeout(this._loadTimeout),
+                    delete this._loadTimeout
+            },
+            getCanvasContext: function() {
+                if (OpenLayers.CANVAS_SUPPORTED && this.imgDiv && !this.isLoading) {
+                    if (!this.canvasContext) {
+                        var e = document.createElement("canvas");
+                        e.width = this.size.w,
+                            e.height = this.size.h,
+                            this.canvasContext = e.getContext("2d"),
+                            this.canvasContext.drawImage(this.imgDiv, 0, 0)
+                    }
+                    return this.canvasContext
+                }
+            },
+            CLASS_NAME: "OpenLayers.Tile.Image"
+        }),
+        OpenLayers.Tile.Image.IMAGE = function() {
+            var e = new Image;
+            return e.className = "olTileImage",
+                e.galleryImg = "no",
+                e
+        }()
 }, function(e, t) {
     OpenLayers.Layer.Grid = OpenLayers.Class(OpenLayers.Layer.HTTPRequest, {
         tileSize: null,
@@ -63583,14 +64007,9 @@
         singleTile: !1,
         ratio: 1.5,
         buffer: 0,
-        transitionEffect: null,
+        transitionEffect: "resize",
         numLoadingTiles: 0,
-        tileLoadingDelay: 85,
         serverResolutions: null,
-        moveTimerId: null,
-        deferMoveGriddedTiles: null,
-        tileQueueId: null,
-        tileQueue: null,
         loading: !1,
         backBuffer: null,
         gridResolution: null,
@@ -63599,27 +64018,26 @@
         backBufferTimerId: null,
         removeBackBufferDelay: null,
         className: null,
+        gridLayout: null,
+        rowSign: null,
+        transitionendEvents: ["transitionend", "webkitTransitionEnd", "otransitionend", "oTransitionEnd"],
         initialize: function(e, t, n, s) {
             OpenLayers.Layer.HTTPRequest.prototype.initialize.apply(this, arguments),
                 this.grid = [],
-                this.tileQueue = [],
-                null === this.removeBackBufferDelay && (this.removeBackBufferDelay = this.singleTile ? 0 : 2500),
-                null === this.className && (this.className = this.singleTile ? "olLayerGridSingleTile" : "olLayerGrid"),
-                OpenLayers.Animation.isNative || (this.deferMoveGriddedTiles = OpenLayers.Function.bind(function() {
-                    this.moveGriddedTiles(!0),
-                        this.moveTimerId = null
-                }, this))
+                this._removeBackBuffer = OpenLayers.Function.bind(this.removeBackBuffer, this),
+                this.initProperties(),
+                this.rowSign = "t" === this.tileOriginCorner.substr(0, 1) ? 1 : -1
+        },
+        initProperties: function() {
+            void 0 === this.options.removeBackBufferDelay && (this.removeBackBufferDelay = this.singleTile ? 0 : 2500),
+                void 0 === this.options.className && (this.className = this.singleTile ? "olLayerGridSingleTile" : "olLayerGrid")
         },
         setMap: function(e) {
             OpenLayers.Layer.HTTPRequest.prototype.setMap.call(this, e),
                 OpenLayers.Element.addClass(this.div, this.className)
         },
         removeMap: function(e) {
-            null !== this.moveTimerId && (window.clearTimeout(this.moveTimerId),
-                    this.moveTimerId = null),
-                this.clearTileQueue(),
-                null !== this.backBufferTimerId && (window.clearTimeout(this.backBufferTimerId),
-                    this.backBufferTimerId = null)
+            this.removeBackBuffer()
         },
         destroy: function() {
             this.removeBackBuffer(),
@@ -63629,16 +64047,25 @@
                 OpenLayers.Layer.HTTPRequest.prototype.destroy.apply(this, arguments)
         },
         clearGrid: function() {
-            if (this.clearTileQueue(),
-                this.grid) {
+            if (this.grid) {
                 for (var e = 0, t = this.grid.length; e < t; e++)
                     for (var n = this.grid[e], s = 0, r = n.length; s < r; s++) {
                         var i = n[s];
                         this.destroyTile(i)
                     }
                 this.grid = [],
-                    this.gridResolution = null
+                    this.gridResolution = null,
+                    this.gridLayout = null
             }
+        },
+        addOptions: function(e, t) {
+            var n = void 0 !== e.singleTile && e.singleTile !== this.singleTile;
+            OpenLayers.Layer.HTTPRequest.prototype.addOptions.apply(this, arguments),
+                this.map && n && (this.initProperties(),
+                    this.clearGrid(),
+                    this.tileSize = this.options.tileSize,
+                    this.setTileSize(),
+                    this.moveTo(null, !0))
         },
         clone: function(e) {
             return null == e && (e = new OpenLayers.Layer.Grid(this.name, this.url, this.params, this.getOptions())),
@@ -63648,10 +64075,8 @@
                 e.gridResolution = null,
                 e.backBuffer = null,
                 e.backBufferTimerId = null,
-                e.tileQueue = [],
-                e.tileQueueId = null,
                 e.loading = !1,
-                e.moveTimerId = null,
+                e.numLoadingTiles = 0,
                 e
         },
         moveTo: function(e, t, n) {
@@ -63659,30 +64084,15 @@
                 null != (e = e || this.map.getExtent())) {
                 var s = !this.grid.length || t,
                     r = this.getTilesBounds(),
-                    i = this.map.getResolution(),
-                    a = this.getServerResolution(i);
-                if (this.singleTile)
-                    (s || !n && !r.containsBounds(e)) && (t && "resize" !== this.transitionEffect && this.removeBackBuffer(),
-                        t && "resize" !== this.transitionEffect || this.applyBackBuffer(a),
-                        this.initSingleTile(e));
-                else {
-                    if (s = s || !r.intersectsBounds(e, {
-                            worldBounds: this.map.baseLayer.wrapDateLine && this.map.getMaxExtent()
-                        }),
-                        i !== a) {
-                        if (e = this.map.calculateBounds(null, a),
-                            s) {
-                            var o = a / i;
-                            this.transformDiv(o)
-                        }
-                    } else
-                        this.div.style.width = "100%",
-                        this.div.style.height = "100%",
-                        this.div.style.left = "0%",
-                        this.div.style.top = "0%";
-                    s ? (t && "resize" === this.transitionEffect && this.applyBackBuffer(a),
-                        this.initGriddedTiles(e)) : this.moveGriddedTiles()
-                }
+                    i = this.map.getResolution();
+                this.getServerResolution(i);
+                this.singleTile ? (s || !n && !r.containsBounds(e)) && (t && "resize" !== this.transitionEffect && this.removeBackBuffer(),
+                    t && "resize" !== this.transitionEffect || this.applyBackBuffer(i),
+                    this.initSingleTile(e)) : (s = s || !r.intersectsBounds(e, {
+                        worldBounds: this.map.baseLayer.wrapDateLine && this.map.getMaxExtent()
+                    }),
+                    s ? (!t || "resize" !== this.transitionEffect && this.gridResolution !== i || this.applyBackBuffer(i),
+                        this.initGriddedTiles(e)) : this.moveGriddedTiles())
             }
         },
         getTileData: function(e) {
@@ -63698,52 +64108,37 @@
                     u = d.left,
                     l = d.top;
                 if (n < u && this.map.baseLayer.wrapDateLine) {
-                    var y = this.map.getMaxExtent().getWidth();
-                    n += y * Math.ceil((u - n) / y)
+                    var h = this.map.getMaxExtent().getWidth();
+                    n += h * Math.ceil((u - n) / h)
                 }
-                var h = (n - u) / (i * a),
+                var y = (n - u) / (i * a),
                     m = (l - s) / (i * o),
-                    T = Math.floor(h),
+                    T = Math.floor(y),
                     c = Math.floor(m);
                 if (c >= 0 && c < r) {
                     var p = this.grid[c][T];
                     p && (t = {
                         tile: p,
-                        i: Math.floor((h - T) * a),
+                        i: Math.floor((y - T) * a),
                         j: Math.floor((m - c) * o)
                     })
                 }
             }
             return t
         },
-        queueTileDraw: function(e) {
-            var t = e.object;
-            return ~OpenLayers.Util.indexOf(this.tileQueue, t) || this.tileQueue.push(t),
-                this.tileQueueId || (this.tileQueueId = OpenLayers.Animation.start(OpenLayers.Function.bind(this.drawTileFromQueue, this), null, this.div)), !1
-        },
-        drawTileFromQueue: function() {
-            0 === this.tileQueue.length ? this.clearTileQueue() : this.tileQueue.shift().draw(!0)
-        },
-        clearTileQueue: function() {
-            OpenLayers.Animation.stop(this.tileQueueId),
-                this.tileQueueId = null,
-                this.tileQueue = []
-        },
         destroyTile: function(e) {
             this.removeTileMonitoringHooks(e),
                 e.destroy()
         },
         getServerResolution: function(e) {
+            var t = Number.POSITIVE_INFINITY;
             if (e = e || this.map.getResolution(),
                 this.serverResolutions && -1 === OpenLayers.Util.indexOf(this.serverResolutions, e)) {
-                var t, n;
-                for (t = this.serverResolutions.length - 1; t >= 0; t--)
-                    if ((n = this.serverResolutions[t]) > e) {
-                        e = n;
-                        break
-                    }
-                if (-1 === t)
-                    throw "no appropriate resolution in serverResolutions"
+                var n, s, r, i;
+                for (n = this.serverResolutions.length - 1; n >= 0 && (r = this.serverResolutions[n], !((s = Math.abs(r - e)) > t)); n--)
+                    t = s,
+                    i = r;
+                e = i
             }
             return e
         },
@@ -63751,27 +64146,13 @@
             var e = this.getServerResolution();
             return this.serverResolutions ? OpenLayers.Util.indexOf(this.serverResolutions, e) : this.map.getZoomForResolution(e) + (this.zoomOffset || 0)
         },
-        transformDiv: function(e) {
-            this.div.style.width = 100 * e + "%",
-                this.div.style.height = 100 * e + "%";
-            var t = this.map.getSize(),
-                n = parseInt(this.map.layerContainerDiv.style.left, 10),
-                s = parseInt(this.map.layerContainerDiv.style.top, 10),
-                r = (n - t.w / 2) * (e - 1),
-                i = (s - t.h / 2) * (e - 1);
-            this.div.style.left = r + "%",
-                this.div.style.top = i + "%"
-        },
-        getResolutionScale: function() {
-            return parseInt(this.div.style.width, 10) / 100
-        },
         applyBackBuffer: function(e) {
             null !== this.backBufferTimerId && this.removeBackBuffer();
             var t = this.backBuffer;
             if (!t) {
                 if (!(t = this.createBackBuffer()))
                     return;
-                this.div.insertBefore(t, this.div.firstChild),
+                e === this.gridResolution ? this.div.insertBefore(t, this.div.firstChild) : this.map.baseLayer.div.parentNode.insertBefore(t, this.map.baseLayer.div),
                     this.backBuffer = t;
                 var n = this.grid[0][0].bounds;
                 this.backBufferLonLat = {
@@ -63780,15 +64161,17 @@
                     },
                     this.backBufferResolution = this.gridResolution
             }
-            var s = t.style,
-                r = this.backBufferResolution / e;
-            s.width = 100 * r + "%",
-                s.height = 100 * r + "%";
-            var i = this.getViewPortPxFromLonLat(this.backBufferLonLat, e),
-                a = parseInt(this.map.layerContainerDiv.style.left, 10),
-                o = parseInt(this.map.layerContainerDiv.style.top, 10);
-            t.style.left = Math.round(i.x - a) + "%",
-                t.style.top = Math.round(i.y - o) + "%"
+            for (var s, r = this.backBufferResolution / e, i = t.childNodes, a = i.length - 1; a >= 0; --a)
+                s = i[a],
+                s.style.top = (r * s._i * s._h | 0) + "px",
+                s.style.left = (r * s._j * s._w | 0) + "px",
+                s.style.width = Math.round(r * s._w) + "px",
+                s.style.height = Math.round(r * s._h) + "px";
+            var o = this.getViewPortPxFromLonLat(this.backBufferLonLat, e),
+                d = this.map.layerContainerOriginPx.x,
+                u = this.map.layerContainerOriginPx.y;
+            t.style.left = Math.round(o.x - d) + "px",
+                t.style.top = Math.round(o.y - u) + "px"
         },
         createBackBuffer: function() {
             var e;
@@ -63796,21 +64179,30 @@
                 e = document.createElement("div"),
                     e.id = this.div.id + "_bb",
                     e.className = "olBackBuffer",
-                    e.style.position = "absolute",
-                    e.style.width = "100%",
-                    e.style.height = "100%";
-                for (var t = 0, n = this.grid.length; t < n; t++)
-                    for (var s = 0, r = this.grid[t].length; s < r; s++) {
-                        var i = this.grid[t][s].createBackBuffer();
-                        i && (i.style.top = t * this.tileSize.h + "%",
-                            i.style.left = s * this.tileSize.w + "%",
-                            e.appendChild(i))
+                    e.style.position = "absolute";
+                var t = this.map;
+                e.style.zIndex = "resize" === this.transitionEffect ? this.getZIndex() - 1 : t.Z_INDEX_BASE.BaseLayer - (t.getNumLayers() - t.getLayerIndex(this));
+                for (var n = 0, s = this.grid.length; n < s; n++)
+                    for (var r = 0, i = this.grid[n].length; r < i; r++) {
+                        var a = this.grid[n][r],
+                            o = this.grid[n][r].createBackBuffer();
+                        o && (o._i = n,
+                            o._j = r,
+                            o._w = a.size.w,
+                            o._h = a.size.h,
+                            o.id = a.id + "_bb",
+                            e.appendChild(o))
                     }
             }
             return e
         },
         removeBackBuffer: function() {
-            this.backBuffer && (this.div.removeChild(this.backBuffer),
+            if (this._transitionElement) {
+                for (var e = this.transitionendEvents.length - 1; e >= 0; --e)
+                    OpenLayers.Event.stopObserving(this._transitionElement, this.transitionendEvents[e], this._removeBackBuffer);
+                delete this._transitionElement
+            }
+            this.backBuffer && (this.backBuffer.parentNode && this.backBuffer.parentNode.removeChild(this.backBuffer),
                 this.backBuffer = null,
                 this.backBufferResolution = null,
                 null !== this.backBufferTimerId && (window.clearTimeout(this.backBufferTimerId),
@@ -63821,8 +64213,8 @@
         },
         setTileSize: function(e) {
             this.singleTile && (e = this.map.getSize(),
-                    e.h = parseInt(e.h * this.ratio),
-                    e.w = parseInt(e.w * this.ratio)),
+                    e.h = parseInt(e.h * this.ratio, 10),
+                    e.w = parseInt(e.w * this.ratio, 10)),
                 OpenLayers.Layer.HTTPRequest.prototype.setTileSize.apply(this, [e])
         },
         getTilesBounds: function() {
@@ -63837,7 +64229,7 @@
             return e
         },
         initSingleTile: function(e) {
-            this.clearTileQueue();
+            this.events.triggerEvent("retile");
             var t = e.getCenterLonLat(),
                 n = e.getWidth() * this.ratio,
                 s = e.getHeight() * this.ratio,
@@ -63860,20 +64252,13 @@
                 r = n * this.tileSize.h,
                 i = e.left - t.lon,
                 a = Math.floor(i / s) - this.buffer,
-                o = i / s - a,
-                d = -o * this.tileSize.w,
-                u = t.lon + a * s,
-                l = e.top - (t.lat + r),
-                y = Math.ceil(l / r) + this.buffer,
-                h = y - l / r,
-                m = -h * this.tileSize.h;
+                o = this.rowSign,
+                d = o * (t.lat - e.top + r);
             return {
                 tilelon: s,
                 tilelat: r,
-                tileoffsetlon: u,
-                tileoffsetlat: t.lat + y * r,
-                tileoffsetx: d,
-                tileoffsety: m
+                startcol: a,
+                startrow: Math[~o ? "floor" : "ceil"](d / r) - this.buffer * o
             }
         },
         getTileOrigin: function() {
@@ -63890,70 +64275,82 @@
             }
             return e
         },
+        getTileBoundsForGridIndex: function(e, t) {
+            var n = this.getTileOrigin(),
+                s = this.gridLayout,
+                r = s.tilelon,
+                i = s.tilelat,
+                a = s.startcol,
+                o = s.startrow,
+                d = this.rowSign;
+            return new OpenLayers.Bounds(n.lon + (a + t) * r, n.lat - (o + e * d) * i * d, n.lon + (a + t + 1) * r, n.lat - (o + (e - 1) * d) * i * d)
+        },
         initGriddedTiles: function(e) {
-            this.clearTileQueue();
+            this.events.triggerEvent("retile");
             var t = this.map.getSize(),
-                n = Math.ceil(t.h / this.tileSize.h) + Math.max(1, 2 * this.buffer),
-                s = Math.ceil(t.w / this.tileSize.w) + Math.max(1, 2 * this.buffer),
-                r = this.getTileOrigin(),
-                i = this.getServerResolution(),
-                a = this.calculateGridLayout(e, r, i),
-                o = Math.round(a.tileoffsetx),
-                d = Math.round(a.tileoffsety),
-                u = a.tileoffsetlon,
-                l = a.tileoffsetlat,
-                y = a.tilelon,
-                h = a.tilelat,
-                m = o,
-                T = u,
-                c = 0,
-                p = parseInt(this.map.layerContainerDiv.style.left),
-                M = parseInt(this.map.layerContainerDiv.style.top),
-                f = [],
-                S = this.map.getCenter();
+                n = this.getTileOrigin(),
+                s = this.map.getResolution(),
+                r = this.getServerResolution(),
+                i = s / r,
+                a = {
+                    w: this.tileSize.w / i,
+                    h: this.tileSize.h / i
+                },
+                o = Math.ceil(t.h / a.h) + 2 * this.buffer + 1,
+                d = Math.ceil(t.w / a.w) + 2 * this.buffer + 1,
+                u = this.calculateGridLayout(e, n, r);
+            this.gridLayout = u;
+            var l = u.tilelon,
+                h = u.tilelat,
+                y = this.map.layerContainerOriginPx.x,
+                m = this.map.layerContainerOriginPx.y,
+                T = this.getTileBoundsForGridIndex(0, 0),
+                c = this.map.getViewPortPxFromLonLat(new OpenLayers.LonLat(T.left, T.top));
+            c.x = Math.round(c.x) - y,
+                c.y = Math.round(c.y) - m;
+            var p = [],
+                M = this.map.getCenter(),
+                f = 0;
             do {
-                var g = this.grid[c++];
-                g || (g = [],
-                        this.grid.push(g)),
-                    u = T,
-                    o = m;
-                var _ = 0;
+                var S = this.grid[f];
+                S || (S = [],
+                    this.grid.push(S));
+                var g = 0;
                 do {
-                    var b = new OpenLayers.Bounds(u, l, u + y, l + h),
-                        v = o;
-                    v -= p;
-                    var D = d;
-                    D -= M;
-                    var A = new OpenLayers.Pixel(v, D),
-                        C = g[_++];
-                    C ? C.moveTo(b, A, !1) : (C = this.addTile(b, A),
-                        this.addTileMonitoringHooks(C),
-                        g.push(C));
-                    var E = b.getCenterLonLat();
-                    f.push({
-                            tile: C,
-                            distance: Math.pow(E.lon - S.lon, 2) + Math.pow(E.lat - S.lat, 2)
+                    T = this.getTileBoundsForGridIndex(f, g);
+                    var _ = c.clone();
+                    _.x = _.x + g * Math.round(a.w),
+                        _.y = _.y + f * Math.round(a.h);
+                    var b = S[g];
+                    b ? b.moveTo(T, _, !1) : (b = this.addTile(T, _),
+                        this.addTileMonitoringHooks(b),
+                        S.push(b));
+                    var v = T.getCenterLonLat();
+                    p.push({
+                            tile: b,
+                            distance: Math.pow(v.lon - M.lon, 2) + Math.pow(v.lat - M.lat, 2)
                         }),
-                        u += y,
-                        o += this.tileSize.w
-                } while (u <= e.right + y * this.buffer || _ < s);
-                l -= h,
-                    d += this.tileSize.h
-            } while (l >= e.bottom - h * this.buffer || c < n);
-            this.removeExcessTiles(c, _),
-                this.gridResolution = this.getServerResolution(),
-                f.sort(function(e, t) {
+                        g += 1
+                } while (T.right <= e.right + l * this.buffer || g < d);
+                f += 1
+            } while (T.bottom >= e.bottom - h * this.buffer || f < o);
+            this.removeExcessTiles(f, g);
+            var s = this.getServerResolution();
+            this.gridResolution = s,
+                p.sort(function(e, t) {
                     return e.distance - t.distance
                 });
-            for (var L = 0, w = f.length; L < w; ++L)
-                f[L].tile.draw()
+            for (var D = 0, A = p.length; D < A; ++D)
+                p[D].tile.draw()
         },
         getMaxExtent: function() {
             return this.maxExtent
         },
         addTile: function(e, t) {
             var n = new this.tileClass(this, t, e, null, this.tileSize, this.tileOptions);
-            return n.events.register("beforedraw", this, this.queueTileDraw),
+            return this.events.triggerEvent("addtile", {
+                    tile: n
+                }),
                 n
         },
         addTileMonitoringHooks: function(e) {
@@ -63963,16 +64360,35 @@
                         this.events.triggerEvent("tileloadstart", {
                             tile: e
                         }),
-                        this.numLoadingTiles++
+                        this.numLoadingTiles++, !this.singleTile && this.backBuffer && this.gridResolution === this.backBufferResolution && OpenLayers.Element.addClass(e.getTile(), "olTileReplacing")
                 },
-                e.onLoadEnd = function() {
-                    this.numLoadingTiles--,
-                        this.events.triggerEvent("tileloaded", {
-                            tile: e
-                        }),
-                        0 === this.tileQueue.length && 0 === this.numLoadingTiles && (this.loading = !1,
-                            this.events.triggerEvent("loadend"),
-                            this.backBuffer && (this.backBufferTimerId = window.setTimeout(OpenLayers.Function.bind(this.removeBackBuffer, this), this.removeBackBufferDelay)))
+                e.onLoadEnd = function(t) {
+                    this.numLoadingTiles--;
+                    var n = "unload" === t.type;
+                    if (this.events.triggerEvent("tileloaded", {
+                            tile: e,
+                            aborted: n
+                        }), !this.singleTile && !n && this.backBuffer && this.gridResolution === this.backBufferResolution) {
+                        var s = e.getTile();
+                        if ("none" === OpenLayers.Element.getStyle(s, "display")) {
+                            var r = document.getElementById(e.id + "_bb");
+                            r && r.parentNode.removeChild(r)
+                        }
+                        OpenLayers.Element.removeClass(s, "olTileReplacing")
+                    }
+                    if (0 === this.numLoadingTiles) {
+                        if (this.backBuffer)
+                            if (0 === this.backBuffer.childNodes.length)
+                                this.removeBackBuffer();
+                            else {
+                                this._transitionElement = n ? this.div.lastChild : e.imgDiv;
+                                for (var i = this.transitionendEvents, a = i.length - 1; a >= 0; --a)
+                                    OpenLayers.Event.observe(this._transitionElement, i[a], this._removeBackBuffer);
+                                this.backBufferTimerId = window.setTimeout(this._removeBackBuffer, this.removeBackBufferDelay)
+                            }
+                        this.loading = !1,
+                            this.events.triggerEvent("loadend")
+                    }
                 },
                 e.onLoadError = function() {
                     this.events.triggerEvent("tileerror", {
@@ -63997,57 +64413,57 @@
                     scope: this
                 })
         },
-        moveGriddedTiles: function(e) {
-            if (!e && !OpenLayers.Animation.isNative)
-                return null != this.moveTimerId && window.clearTimeout(this.moveTimerId),
-                    void(this.moveTimerId = window.setTimeout(this.deferMoveGriddedTiles, this.tileLoadingDelay));
-            for (var t = this.buffer || 1, n = this.getResolutionScale();;) {
-                var s = {
-                        x: this.grid[0][0].position.x * n + parseInt(this.div.style.left, 10) + parseInt(this.map.layerContainerDiv.style.left),
-                        y: this.grid[0][0].position.y * n + parseInt(this.div.style.top, 10) + parseInt(this.map.layerContainerDiv.style.top)
+        moveGriddedTiles: function() {
+            for (var e = this.buffer + 1;;) {
+                var t = this.grid[0][0],
+                    n = {
+                        x: t.position.x + this.map.layerContainerOriginPx.x,
+                        y: t.position.y + this.map.layerContainerOriginPx.y
                     },
+                    s = this.getServerResolution() / this.map.getResolution(),
                     r = {
-                        w: this.tileSize.w * n,
-                        h: this.tileSize.h * n
+                        w: Math.round(this.tileSize.w * s),
+                        h: Math.round(this.tileSize.h * s)
                     };
-                if (s.x > -r.w * (t - 1))
-                    this.shiftColumn(!0);
-                else if (s.x < -r.w * t)
-                    this.shiftColumn(!1);
-                else if (s.y > -r.h * (t - 1))
-                    this.shiftRow(!0);
+                if (n.x > -r.w * (e - 1))
+                    this.shiftColumn(!0, r);
+                else if (n.x < -r.w * e)
+                    this.shiftColumn(!1, r);
+                else if (n.y > -r.h * (e - 1))
+                    this.shiftRow(!0, r);
                 else {
-                    if (!(s.y < -r.h * t))
+                    if (!(n.y < -r.h * e))
                         break;
-                    this.shiftRow(!1)
+                    this.shiftRow(!1, r)
                 }
             }
         },
-        shiftRow: function(e) {
-            for (var t = e ? 0 : this.grid.length - 1, n = this.grid, s = n[t], r = this.getServerResolution(), i = e ? -this.tileSize.h : this.tileSize.h, a = r * -i, o = e ? n.pop() : n.shift(), d = 0, u = s.length; d < u; d++) {
-                var l = s[d],
-                    y = l.bounds.clone(),
-                    h = l.position.clone();
-                y.bottom = y.bottom + a,
-                    y.top = y.top + a,
-                    h.y = h.y + i,
-                    o[d].moveTo(y, h)
+        shiftRow: function(e, t) {
+            var n = this.grid,
+                s = e ? 0 : n.length - 1,
+                r = e ? -1 : 1,
+                i = this.rowSign;
+            this.gridLayout.startrow += r * i;
+            for (var a = n[s], o = n[e ? "pop" : "shift"](), d = 0, u = o.length; d < u; d++) {
+                var l = o[d],
+                    h = a[d].position.clone();
+                h.y += t.h * r,
+                    l.moveTo(this.getTileBoundsForGridIndex(s, d), h)
             }
-            e ? n.unshift(o) : n.push(o)
+            n[e ? "unshift" : "push"](o)
         },
-        shiftColumn: function(e) {
-            for (var t = e ? -this.tileSize.w : this.tileSize.w, n = this.getServerResolution(), s = n * t, r = 0, i = this.grid.length; r < i; r++) {
-                var a = this.grid[r],
-                    o = e ? 0 : a.length - 1,
-                    d = a[o],
-                    u = d.bounds.clone(),
-                    l = d.position.clone();
-                u.left = u.left + s,
-                    u.right = u.right + s,
-                    l.x = l.x + t;
-                var y = e ? this.grid[r].pop() : this.grid[r].shift();
-                y.moveTo(u, l),
-                    e ? a.unshift(y) : a.push(y)
+        shiftColumn: function(e, t) {
+            var n = this.grid,
+                s = e ? 0 : n[0].length - 1,
+                r = e ? -1 : 1;
+            this.gridLayout.startcol += r;
+            for (var i = 0, a = n.length; i < a; i++) {
+                var o = n[i],
+                    d = o[s].position.clone(),
+                    u = o[e ? "pop" : "shift"]();
+                d.x += t.w * r,
+                    u.moveTo(this.getTileBoundsForGridIndex(i, s), d),
+                    o[e ? "unshift" : "push"](u)
             }
         },
         removeExcessTiles: function(e, t) {
@@ -64158,7 +64574,7 @@
         },
         reverseAxisOrder: function() {
             var e = this.projection.getCode();
-            return parseFloat(this.params.VERSION) >= 1.3 && !(!this.yx[e] && !OpenLayers.Projection.defaults[e].yx)
+            return parseFloat(this.params.VERSION) >= 1.3 && !!(this.yx[e] || OpenLayers.Projection.defaults[e] && OpenLayers.Projection.defaults[e].yx)
         },
         getURL: function(e) {
             e = this.adjustBounds(e);
@@ -64402,6 +64818,9 @@
             },
             createElementNS: function(e, t) {
                 return this.xmldom ? "string" == typeof e ? this.xmldom.createNode(1, t, e) : this.xmldom.createNode(1, t, "") : document.createElementNS(e, t)
+            },
+            createDocumentFragment: function() {
+                return this.xmldom ? this.xmldom.createDocumentFragment() : document.createDocumentFragment()
             },
             createTextNode: function(e) {
                 return "string" != typeof e && (e = String(e)),
@@ -64784,6 +65203,7 @@
             title: "",
             autoActivate: !1,
             active: null,
+            handlerOptions: null,
             handler: null,
             eventListeners: null,
             events: null,
@@ -64854,6 +65274,7 @@
             keyMask: null,
             active: !1,
             evt: null,
+            touch: !1,
             initialize: function(e, t, n) {
                 OpenLayers.Util.extend(this, n),
                     this.control = e,
@@ -64866,7 +65287,7 @@
                 this.map = e
             },
             checkModifiers: function(e) {
-                return null == this.keyMask || ((e.shiftKey ? OpenLayers.Handler.MOD_SHIFT : 0) | (e.ctrlKey ? OpenLayers.Handler.MOD_CTRL : 0) | (e.altKey ? OpenLayers.Handler.MOD_ALT : 0)) == this.keyMask
+                return null == this.keyMask || ((e.shiftKey ? OpenLayers.Handler.MOD_SHIFT : 0) | (e.ctrlKey ? OpenLayers.Handler.MOD_CTRL : 0) | (e.altKey ? OpenLayers.Handler.MOD_ALT : 0) | (e.metaKey ? OpenLayers.Handler.MOD_META : 0)) == this.keyMask
             },
             activate: function() {
                 if (this.active)
@@ -64880,7 +65301,15 @@
                     return !1;
                 for (var e = OpenLayers.Events.prototype.BROWSER_EVENTS, t = 0, n = e.length; t < n; t++)
                     this[e[t]] && this.unregister(e[t], this[e[t]]);
-                return this.active = !1, !0
+                return this.touch = !1,
+                    this.active = !1, !0
+            },
+            startTouch: function() {
+                if (!this.touch) {
+                    this.touch = !0;
+                    for (var e = ["mousedown", "mouseup", "mousemove", "click", "dblclick", "mouseout"], t = 0, n = e.length; t < n; t++)
+                        this[e[t]] && this.unregister(e[t], this[e[t]])
+                }
             },
             callback: function(e, t) {
                 e && this.callbacks[e] && this.callbacks[e].apply(this.control, t)
@@ -64905,13 +65334,13 @@
         OpenLayers.Handler.MOD_NONE = 0,
         OpenLayers.Handler.MOD_SHIFT = 1,
         OpenLayers.Handler.MOD_CTRL = 2,
-        OpenLayers.Handler.MOD_ALT = 4
+        OpenLayers.Handler.MOD_ALT = 4,
+        OpenLayers.Handler.MOD_META = 8
 }, function(e, t) {
     OpenLayers.Handler.Drag = OpenLayers.Class(OpenLayers.Handler, {
         started: !1,
         stopDown: !0,
         dragging: !1,
-        touch: !1,
         last: null,
         start: null,
         lastMoveEvt: null,
@@ -64951,7 +65380,7 @@
                     OpenLayers.Element.addClass(this.map.viewPortDiv, "olDragDown"),
                     this.down(e),
                     this.callback("down", [e.xy]),
-                    OpenLayers.Event.stop(e),
+                    OpenLayers.Event.preventDefault(e),
                     this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart ? document.onselectstart : OpenLayers.Function.True),
                     document.onselectstart = OpenLayers.Function.False,
                     t = !this.stopDown) : (this.started = !1,
@@ -64993,14 +65422,7 @@
             return this.dragstart(e)
         },
         touchstart: function(e) {
-            return this.touch || (this.touch = !0,
-                    this.map.events.un({
-                        mousedown: this.mousedown,
-                        mouseup: this.mouseup,
-                        mousemove: this.mousemove,
-                        click: this.click,
-                        scope: this
-                    })),
+            return this.startTouch(),
                 this.dragstart(e)
         },
         mousemove: function(e) {
@@ -65047,8 +65469,7 @@
         },
         deactivate: function() {
             var e = !1;
-            return OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.touch = !1,
-                    this.started = !1,
+            return OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.started = !1,
                     this.dragging = !1,
                     this.start = null,
                     this.last = null,
@@ -65078,8 +65499,8 @@
 }, function(e, t) {
     OpenLayers.Handler.MouseWheel = OpenLayers.Class(OpenLayers.Handler, {
         wheelListener: null,
-        mousePosition: null,
         interval: 0,
+        maxDelta: Number.POSITIVE_INFINITY,
         delta: 0,
         cumulative: !0,
         initialize: function(e, t, n) {
@@ -65095,33 +65516,40 @@
                 for (var t = !1, n = !1, s = !1, r = OpenLayers.Event.element(e); null != r && !s && !t;) {
                     if (!t)
                         try {
+                            var i;
                             if (r.currentStyle)
-                                a = r.currentStyle.overflow;
-                            else
-                                var i = document.defaultView.getComputedStyle(r, null),
-                                    a = i.getPropertyValue("overflow");
-                            t = a && "auto" == a || "scroll" == a
+                                i = r.currentStyle.overflow;
+                            else {
+                                i = document.defaultView.getComputedStyle(r, null).getPropertyValue("overflow")
+                            }
+                            t = i && "auto" == i || "scroll" == i
                         } catch (e) {}
-                    if (!n)
-                        for (var o = 0, d = this.map.layers.length; o < d; o++)
-                            if (r == this.map.layers[o].div || r == this.map.layers[o].pane) {
+                    if (!n && !(n = OpenLayers.Element.hasClass(r, "olScrollable")))
+                        for (var a = 0, o = this.map.layers.length; a < o; a++) {
+                            var d = this.map.layers[a];
+                            if (r == d.div || r == d.pane) {
                                 n = !0;
                                 break
                             }
+                        }
                     s = r == this.map.div,
                         r = r.parentNode
                 }
                 if (!t && s) {
                     if (n) {
                         var u = 0;
-                        e || (e = window.event),
-                            e.wheelDelta ? (u = e.wheelDelta / 120,
-                                window.opera && window.opera.version() < 9.2 && (u = -u)) : e.detail && (u = -e.detail / 3),
-                            this.delta = this.delta + u,
-                            this.interval ? (window.clearTimeout(this._timeoutId),
-                                this._timeoutId = window.setTimeout(OpenLayers.Function.bind(function() {
-                                    this.wheelZoom(e)
-                                }, this), this.interval)) : this.wheelZoom(e)
+                        if (e.wheelDelta ? (u = e.wheelDelta,
+                                u % 160 == 0 && (u *= .75),
+                                u /= 120) : e.detail && (u = -e.detail / Math.abs(e.detail)),
+                            this.delta += u,
+                            window.clearTimeout(this._timeoutId),
+                            this.interval && Math.abs(this.delta) < this.maxDelta) {
+                            var l = OpenLayers.Util.extend({}, e);
+                            this._timeoutId = window.setTimeout(OpenLayers.Function.bind(function() {
+                                this.wheelZoom(l)
+                            }, this), this.interval)
+                        } else
+                            this.wheelZoom(e)
                     }
                     OpenLayers.Event.stop(e)
                 }
@@ -65130,12 +65558,8 @@
         wheelZoom: function(e) {
             var t = this.delta;
             this.delta = 0,
-                t && (this.mousePosition && (e.xy = this.mousePosition),
-                    e.xy || (e.xy = this.map.getPixelFromLonLat(this.map.getCenter())),
-                    t < 0 ? this.callback("down", [e, this.cumulative ? t : -1]) : this.callback("up", [e, this.cumulative ? t : 1]))
-        },
-        mousemove: function(e) {
-            this.mousePosition = e.xy
+                t && (e.xy = this.map.events.getMousePosition(e),
+                    t < 0 ? this.callback("down", [e, this.cumulative ? Math.max(-this.maxDelta, t) : -1]) : this.callback("up", [e, this.cumulative ? Math.min(this.maxDelta, t) : 1]))
         },
         activate: function(e) {
             if (OpenLayers.Handler.prototype.activate.apply(this, arguments)) {
@@ -65172,7 +65596,6 @@
         stopUp: !1,
         layerOptions: null,
         pixelTolerance: 5,
-        touch: !1,
         lastTouchPx: null,
         initialize: function(e, t, n) {
             n && n.layerOptions && n.layerOptions.styleMap || (this.style = OpenLayers.Util.extend(OpenLayers.Feature.Vector.style.default, {})),
@@ -65203,8 +65626,7 @@
             return !!OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.cancel(),
                 null != this.layer.map && (this.destroyFeature(!0),
                     this.layer.destroy(!1)),
-                this.layer = null,
-                this.touch = !1, !0)
+                this.layer = null, !0)
         },
         destroyFeature: function(e) {
             !this.layer || !e && this.persist || this.layer.destroyFeatures(),
@@ -65257,15 +65679,7 @@
             return this.down(e)
         },
         touchstart: function(e) {
-            return this.touch || (this.touch = !0,
-                    this.map.events.un({
-                        mousedown: this.mousedown,
-                        mouseup: this.mouseup,
-                        mousemove: this.mousemove,
-                        click: this.click,
-                        dblclick: this.dblclick,
-                        scope: this
-                    })),
+            return this.startTouch(),
                 this.lastTouchPx = e.xy,
                 this.down(e)
         },
@@ -65388,10 +65802,20 @@
                 n = this.getCurrentPointIndex() - 1,
                 s = t[n],
                 r = e.removeComponent(s);
-            return r && (this.redoStack || (this.redoStack = []),
+            if (r) {
+                if (this.touch && n > 0) {
+                    t = e.components;
+                    var i = t[n - 1],
+                        a = this.getCurrentPointIndex(),
+                        o = t[a];
+                    o.x = i.x,
+                        o.y = i.y
+                }
+                this.redoStack || (this.redoStack = []),
                     this.redoStack.push(s),
-                    this.drawFeature()),
-                r
+                    this.drawFeature()
+            }
+            return r
         },
         redo: function() {
             var e = this.redoStack && this.redoStack.pop();
@@ -65583,13 +66007,13 @@
     OpenLayers.Control.DragPan = OpenLayers.Class(OpenLayers.Control, {
         type: OpenLayers.Control.TYPE_TOOL,
         panned: !1,
-        interval: 1,
+        interval: 0,
         documentDrag: !1,
         kinetic: null,
-        enableKinetic: !1,
+        enableKinetic: !0,
         kineticInterval: 10,
         draw: function() {
-            if (this.enableKinetic) {
+            if (this.enableKinetic && OpenLayers.Kinetic) {
                 var e = {
                     interval: this.kineticInterval
                 };
@@ -66106,6 +66530,7 @@
         out: !1,
         keyMask: null,
         alwaysZoom: !1,
+        zoomOnClick: !0,
         draw: function() {
             this.handler = new OpenLayers.Handler.Box(this, {
                 done: this.zoomBox
@@ -66115,34 +66540,50 @@
         },
         zoomBox: function(e) {
             if (e instanceof OpenLayers.Bounds) {
-                var t;
+                var t, n = e.getCenterPixel();
                 if (this.out) {
-                    var n = Math.abs(e.right - e.left),
-                        s = Math.abs(e.top - e.bottom),
-                        r = Math.min(this.map.size.h / s, this.map.size.w / n),
-                        i = this.map.getExtent(),
-                        a = this.map.getLonLatFromPixel(e.getCenterPixel()),
-                        o = a.lon - i.getWidth() / 2 * r,
-                        d = a.lon + i.getWidth() / 2 * r,
-                        u = a.lat - i.getHeight() / 2 * r,
-                        l = a.lat + i.getHeight() / 2 * r;
-                    t = new OpenLayers.Bounds(o, u, d, l)
+                    var s = e.right - e.left,
+                        r = e.bottom - e.top,
+                        i = Math.min(this.map.size.h / r, this.map.size.w / s),
+                        a = this.map.getExtent(),
+                        o = this.map.getLonLatFromPixel(n),
+                        d = o.lon - a.getWidth() / 2 * i,
+                        u = o.lon + a.getWidth() / 2 * i,
+                        l = o.lat - a.getHeight() / 2 * i,
+                        h = o.lat + a.getHeight() / 2 * i;
+                    t = new OpenLayers.Bounds(d, l, u, h)
                 } else {
                     var y = this.map.getLonLatFromPixel({
                             x: e.left,
                             y: e.bottom
                         }),
-                        h = this.map.getLonLatFromPixel({
+                        m = this.map.getLonLatFromPixel({
                             x: e.right,
                             y: e.top
                         });
-                    t = new OpenLayers.Bounds(y.lon, y.lat, h.lon, h.lat)
+                    t = new OpenLayers.Bounds(y.lon, y.lat, m.lon, m.lat)
                 }
-                var m = this.map.getZoom();
-                this.map.zoomToExtent(t),
-                    m == this.map.getZoom() && 1 == this.alwaysZoom && this.map.zoomTo(m + (this.out ? -1 : 1))
+                var T = this.map.getZoom(),
+                    c = this.map.getSize(),
+                    p = {
+                        x: c.w / 2,
+                        y: c.h / 2
+                    },
+                    M = this.map.getZoomForExtent(t),
+                    f = this.map.getResolution(),
+                    S = this.map.getResolutionForZoom(M);
+                if (f == S)
+                    this.map.setCenter(this.map.getLonLatFromPixel(n));
+                else {
+                    var g = {
+                        x: (f * n.x - S * p.x) / (f - S),
+                        y: (f * n.y - S * p.y) / (f - S)
+                    };
+                    this.map.zoomTo(M, g)
+                }
+                T == this.map.getZoom() && 1 == this.alwaysZoom && this.map.zoomTo(T + (this.out ? -1 : 1))
             } else
-                this.out ? this.map.setCenter(this.map.getLonLatFromPixel(e), this.map.getZoom() - 1) : this.map.setCenter(this.map.getLonLatFromPixel(e), this.map.getZoom() + 1)
+                this.zoomOnClick && (this.out ? this.map.zoomTo(this.map.getZoom() - 1, e) : this.map.zoomTo(this.map.getZoom() + 1, e))
         },
         CLASS_NAME: "OpenLayers.Control.ZoomBox"
     })
@@ -66227,15 +66668,15 @@
                 d = e.x2 - e.x1,
                 u = e.y2 - e.y1,
                 l = t.y2 - t.y1,
-                y = t.x2 - t.x1,
-                h = l * d - y * u,
-                m = y * o - l * a,
+                h = t.x2 - t.x1,
+                y = l * d - h * u,
+                m = h * o - l * a,
                 T = d * o - u * a;
-            if (0 == h)
+            if (0 == y)
                 0 == m && 0 == T && (i = !0);
             else {
-                var c = m / h,
-                    p = T / h;
+                var c = m / y,
+                    p = T / y;
                 if (c >= 0 && c <= 1 && p >= 0 && p <= 1)
                     if (s) {
                         var M = e.x1 + c * d,
@@ -66281,6 +66722,11 @@
             return i
         },
         OpenLayers.Geometry.distanceToSegment = function(e, t) {
+            var n = OpenLayers.Geometry.distanceSquaredToSegment(e, t);
+            return n.distance = Math.sqrt(n.distance),
+                n
+        },
+        OpenLayers.Geometry.distanceSquaredToSegment = function(e, t) {
             var n, s, r = e.x,
                 i = e.y,
                 a = t.x1,
@@ -66288,15 +66734,16 @@
                 d = t.x2,
                 u = t.y2,
                 l = d - a,
-                y = u - o,
-                h = (l * (r - a) + y * (i - o)) / (Math.pow(l, 2) + Math.pow(y, 2));
-            return h <= 0 ? (n = a,
-                s = o) : h >= 1 ? (n = d,
-                s = u) : (n = a + h * l,
-                s = o + h * y), {
-                distance: Math.sqrt(Math.pow(n - r, 2) + Math.pow(s - i, 2)),
+                h = u - o,
+                y = (l * (r - a) + h * (i - o)) / (Math.pow(l, 2) + Math.pow(h, 2));
+            return y <= 0 ? (n = a,
+                s = o) : y >= 1 ? (n = d,
+                s = u) : (n = a + y * l,
+                s = o + y * h), {
+                distance: Math.pow(n - r, 2) + Math.pow(s - i, 2),
                 x: n,
-                y: s
+                y: s,
+                along: y
             }
         }
 }, function(module, exports) {
@@ -66405,12 +66852,12 @@
                     s[o] /= a;
                 i /= a
             }
-            for (var u, d, l = 0, y = 0, o = 0; o < t; ++o)
+            for (var u, d, l = 0, h = 0, o = 0; o < t; ++o)
                 u = r[o],
                 d = s[o],
                 l += u.x * d,
-                y += u.y * d;
-            return new OpenLayers.Geometry.Point(l / i, y / i)
+                h += u.y * d;
+            return new OpenLayers.Geometry.Point(l / i, h / i)
         },
         getGeodesicLength: function(e) {
             for (var t = 0, n = 0, s = this.components.length; n < s; n++)
@@ -66619,7 +67066,7 @@
                     x2: e.x,
                     y2: e.y
                 }] : e.getSortedSegments();
-                var i, a, o, d, u, l, y, h;
+                var i, a, o, d, u, l, h, y;
                 e: for (var m = 0, T = r.length; m < T; ++m) {
                     i = r[m],
                         a = i.x1,
@@ -66627,8 +67074,8 @@
                         d = i.y1,
                         u = i.y2;
                     for (var c = 0, p = s.length; c < p && (l = s[c], !(l.x1 > o)); ++c)
-                        if (!(l.x2 < a) && (y = l.y1,
-                                h = l.y2, !(Math.min(y, h) > Math.max(d, u)) && !(Math.max(y, h) < Math.min(d, u)) && OpenLayers.Geometry.segmentsIntersect(i, l))) {
+                        if (!(l.x2 < a) && (h = l.y1,
+                                y = l.y2, !(Math.min(h, y) > Math.max(d, u)) && !(Math.max(h, y) < Math.min(d, u)) && OpenLayers.Geometry.segmentsIntersect(i, l))) {
                             t = !0;
                             break e
                         }
@@ -66658,7 +67105,7 @@
             return r.sort(e)
         },
         splitWithSegment: function(e, t) {
-            for (var n, s, r, i, a = !(t && !1 === t.edge), o = t && t.tolerance, d = [], u = this.getVertices(), l = [], y = [], h = !1, m = {
+            for (var n, s, r, i, a = !(t && !1 === t.edge), o = t && t.tolerance, d = [], u = this.getVertices(), l = [], h = [], y = !1, m = {
                     point: !0,
                     tolerance: o
                 }, T = null, c = 0, p = u.length - 2; c <= p; ++c)
@@ -66672,24 +67119,24 @@
                         y2: s.y
                     },
                     (r = OpenLayers.Geometry.segmentsIntersect(e, i, m)) instanceof OpenLayers.Geometry.Point && (!!(r.x === e.x1 && r.y === e.y1 || r.x === e.x2 && r.y === e.y2 || r.equals(n) || r.equals(s)) || a)) {
-                    if (r.equals(y[y.length - 1]) || y.push(r.clone()),
+                    if (r.equals(h[h.length - 1]) || h.push(r.clone()),
                         0 === c && r.equals(n))
                         continue;
                     if (r.equals(s))
                         continue;
-                    h = !0,
+                    y = !0,
                         r.equals(n) || l.push(r),
                         d.push(new OpenLayers.Geometry.LineString(l)),
                         l = [r.clone()]
                 }
-            if (h && (l.push(s.clone()),
+            if (y && (l.push(s.clone()),
                     d.push(new OpenLayers.Geometry.LineString(l))),
-                y.length > 0) {
+                h.length > 0) {
                 var M = e.x1 < e.x2 ? 1 : -1,
                     f = e.y1 < e.y2 ? 1 : -1;
                 T = {
                     lines: d,
-                    points: y.sort(function(e, t) {
+                    points: h.sort(function(e, t) {
                         return M * e.x - M * t.x || f * e.y - f * t.y
                     })
                 }
@@ -66700,7 +67147,7 @@
             var n, s, r, i, a = null,
                 o = t && t.mutual;
             if (e instanceof OpenLayers.Geometry.LineString) {
-                var d, u, l, y, h, m, T = this.getVertices(),
+                var d, u, l, h, y, m, T = this.getVertices(),
                     c = [];
                 r = [];
                 for (var p = 0, M = T.length - 2; p <= M; ++p) {
@@ -66715,13 +67162,13 @@
                         i = i || [e],
                         o && c.push(d.clone());
                     for (var f = 0; f < i.length; ++f)
-                        if ((y = i[f].splitWithSegment(l, t)) && (h = y.lines,
-                                h.length > 0 && (h.unshift(f, 1),
-                                    Array.prototype.splice.apply(i, h),
-                                    f += h.length - 2),
+                        if ((h = i[f].splitWithSegment(l, t)) && (y = h.lines,
+                                y.length > 0 && (y.unshift(f, 1),
+                                    Array.prototype.splice.apply(i, y),
+                                    f += y.length - 2),
                                 o))
-                            for (var S = 0, g = y.points.length; S < g; ++S)
-                                m = y.points[S],
+                            for (var S = 0, g = h.points.length; S < g; ++S)
+                                m = h.points[S],
                                 m.equals(d) || (c.push(m),
                                     r.push(new OpenLayers.Geometry.LineString(c)),
                                     c = m.equals(u) ? [] : [m.clone()])
@@ -66747,8 +67194,8 @@
                 i = {},
                 a = Number.POSITIVE_INFINITY;
             if (e instanceof OpenLayers.Geometry.Point) {
-                for (var o, d = this.getSortedSegments(), u = e.x, l = e.y, y = 0, h = d.length; y < h; ++y)
-                    if (o = d[y],
+                for (var o, d = this.getSortedSegments(), u = e.x, l = e.y, h = 0, y = d.length; h < y; ++h)
+                    if (o = d[h],
                         n = OpenLayers.Geometry.distanceToSegment(e, o),
                         n.distance < a) {
                         if (a = n.distance,
@@ -66771,8 +67218,8 @@
                     _ = {
                         point: !0
                     };
-                e: for (var y = 0, h = f.length; y < h; ++y) {
-                    m = f[y],
+                e: for (var h = 0, y = f.length; h < y; ++h) {
+                    m = f[h],
                         p = m.x1,
                         M = m.y1;
                     for (var b = 0; b < g; ++b) {
@@ -66905,19 +67352,36 @@
             return this
         },
         getCentroid: function() {
-            if (this.components && this.components.length > 2) {
-                for (var e = 0, t = 0, n = 0; n < this.components.length - 1; n++) {
-                    var s = this.components[n],
-                        r = this.components[n + 1];
-                    e += (s.x + r.x) * (s.x * r.y - r.x * s.y),
-                        t += (s.y + r.y) * (s.x * r.y - r.x * s.y)
+            if (this.components) {
+                var e = this.components.length;
+                if (e > 0 && e <= 2)
+                    return this.components[0].clone();
+                if (e > 2) {
+                    var t = 0,
+                        n = 0,
+                        s = this.components[0].x,
+                        r = this.components[0].y,
+                        i = -1 * this.getArea();
+                    if (0 != i) {
+                        for (var a = 0; a < e - 1; a++) {
+                            var o = this.components[a],
+                                d = this.components[a + 1];
+                            t += (o.x + d.x - 2 * s) * ((o.x - s) * (d.y - r) - (d.x - s) * (o.y - r)),
+                                n += (o.y + d.y - 2 * r) * ((o.x - s) * (d.y - r) - (d.x - s) * (o.y - r))
+                        }
+                        var u = s + t / (6 * i),
+                            l = r + n / (6 * i)
+                    } else {
+                        for (var a = 0; a < e - 1; a++)
+                            t += this.components[a].x,
+                            n += this.components[a].y;
+                        var u = t / (e - 1),
+                            l = n / (e - 1)
+                    }
+                    return new OpenLayers.Geometry.Point(u, l)
                 }
-                var i = -1 * this.getArea(),
-                    a = e / (6 * i),
-                    o = t / (6 * i);
-                return new OpenLayers.Geometry.Point(a, o)
+                return null
             }
-            return null
         },
         getArea: function() {
             var e = 0;
@@ -66949,7 +67413,7 @@
             return s
         },
         containsPoint: function(e) {
-            for (var t, n, s, r, i, a, o, d = OpenLayers.Number.limitSigDigs, u = d(e.x, 14), l = d(e.y, 14), y = this.components.length - 1, h = 0, m = 0; m < y; ++m)
+            for (var t, n, s, r, i, a, o, d = OpenLayers.Number.limitSigDigs, u = d(e.x, 14), l = d(e.y, 14), h = this.components.length - 1, y = 0, m = 0; m < h; ++m)
                 if (t = this.components[m],
                     s = d(t.x, 14),
                     r = d(t.y, 14),
@@ -66960,15 +67424,15 @@
                     if ((o = d(function(e, t, n, s, r) {
                             return (s - t) / (r - n) * (e - r) + s
                         }(l, s, r, i, a), 14)) == u && (r < a && l >= r && l <= a || r > a && l <= r && l >= a)) {
-                        h = -1;
+                        y = -1;
                         break
                     }
-                    o <= u || s != i && (o < Math.min(s, i) || o > Math.max(s, i)) || (r < a && l >= r && l < a || r > a && l < r && l >= a) && ++h
+                    o <= u || s != i && (o < Math.min(s, i) || o > Math.max(s, i)) || (r < a && l >= r && l < a || r > a && l < r && l >= a) && ++y
                 } else if (l == r && (s <= i && u >= s && u <= i || s >= i && u <= s && u >= i)) {
-                h = -1;
+                y = -1;
                 break
             }
-            return -1 == h ? 1 : !!(1 & h)
+            return -1 == y ? 1 : !!(1 & y)
         },
         intersects: function(e) {
             var t = !1;
@@ -67071,14 +67535,12 @@
         stopSingle: !1,
         stopDouble: !1,
         timerId: null,
-        touch: !1,
         down: null,
         last: null,
         first: null,
         rightclickTimerId: null,
         touchstart: function(e) {
-            return this.touch || (this.unregisterMouseListeners(),
-                    this.touch = !0),
+            return this.startTouch(),
                 this.down = this.getEventInfo(e),
                 this.last = this.getEventInfo(e), !0
         },
@@ -67090,15 +67552,6 @@
                 e.lastTouches = this.last.touches,
                 this.handleSingle(e),
                 this.down = null), !0
-        },
-        unregisterMouseListeners: function() {
-            this.map.events.un({
-                mousedown: this.mousedown,
-                mouseup: this.mouseup,
-                click: this.click,
-                dblclick: this.dblclick,
-                scope: this
-            })
         },
         mousedown: function(e) {
             return this.down = this.getEventInfo(e),
@@ -67138,7 +67591,7 @@
         handleSingle: function(e) {
             if (this.passesTolerance(e))
                 if (null != this.timerId)
-                    this.last.touches && 1 === this.last.touches.length && (this.double && OpenLayers.Event.stop(e),
+                    this.last.touches && 1 === this.last.touches.length && (this.double && OpenLayers.Event.preventDefault(e),
                         this.handleDouble(e)),
                     this.last.touches && 2 === this.last.touches.length || this.clearTimer();
                 else {
@@ -67186,8 +67639,8 @@
                 for (var s, r = 0; r < n; r++)
                     s = e.touches[r],
                     t[r] = {
-                        clientX: s.clientX,
-                        clientY: s.clientY
+                        clientX: s.olClientX,
+                        clientY: s.olClientY
                     }
             }
             return {
@@ -67201,7 +67654,6 @@
                     this.down = null,
                     this.first = null,
                     this.last = null,
-                    this.touch = !1,
                     e = !0),
                 e
         },
@@ -67272,11 +67724,16 @@
                     keyMask: this.zoomBoxKeyMask
                 }),
                 this.dragPan.draw(),
-                this.zoomBox.draw(),
-                this.handlers.wheel = new OpenLayers.Handler.MouseWheel(this, {
+                this.zoomBox.draw();
+            var n = this.map.fractionalZoom ? {} : {
+                cumulative: !1,
+                interval: 50,
+                maxDelta: 6
+            };
+            this.handlers.wheel = new OpenLayers.Handler.MouseWheel(this, {
                     up: this.wheelUp,
                     down: this.wheelDown
-                }, this.mouseWheelOptions),
+                }, OpenLayers.Util.extend(n, this.mouseWheelOptions)),
                 OpenLayers.Control.PinchZoom && (this.pinchZoom = new OpenLayers.Control.PinchZoom(OpenLayers.Util.extend({
                     map: this.map
                 }, this.pinchZoomOptions)))
@@ -67285,26 +67742,17 @@
             e.lastTouches && 2 == e.lastTouches.length && this.map.zoomOut()
         },
         defaultDblClick: function(e) {
-            var t = this.map.getLonLatFromViewPortPx(e.xy);
-            this.map.setCenter(t, this.map.zoom + 1)
+            this.map.zoomTo(this.map.zoom + 1, e.xy)
         },
         defaultDblRightClick: function(e) {
-            var t = this.map.getLonLatFromViewPortPx(e.xy);
-            this.map.setCenter(t, this.map.zoom - 1)
+            this.map.zoomTo(this.map.zoom - 1, e.xy)
         },
         wheelChange: function(e, t) {
+            this.map.fractionalZoom || (t = Math.round(t));
             var n = this.map.getZoom(),
-                s = this.map.getZoom() + Math.round(t);
-            if (s = Math.max(s, 0),
-                (s = Math.min(s, this.map.getNumZoomLevels())) !== n) {
-                var r = this.map.getSize(),
-                    i = r.w / 2 - e.xy.x,
-                    a = e.xy.y - r.h / 2,
-                    o = this.map.baseLayer.getResolutionForZoom(s),
-                    d = this.map.getLonLatFromPixel(e.xy),
-                    u = new OpenLayers.LonLat(d.lon + i * o, d.lat + a * o);
-                this.map.setCenter(u, s)
-            }
+                s = n + t;
+            s = Math.max(s, 0),
+                (s = Math.min(s, this.map.getNumZoomLevels())) !== n && this.map.zoomTo(s, e.xy)
         },
         wheelUp: function(e, t) {
             this.wheelChange(e, t || 1)
@@ -67407,7 +67855,6 @@
         lastFeature: null,
         down: null,
         up: null,
-        touch: !1,
         clickTolerance: 4,
         geometryTypes: null,
         stopClick: !0,
@@ -67418,18 +67865,10 @@
                 this.layer = t
         },
         touchstart: function(e) {
-            return this.touch || (this.touch = !0,
-                this.map.events.un({
-                    mousedown: this.mousedown,
-                    mouseup: this.mouseup,
-                    mousemove: this.mousemove,
-                    click: this.click,
-                    dblclick: this.dblclick,
-                    scope: this
-                })), !!OpenLayers.Event.isMultiTouch(e) || this.mousedown(e)
+            return this.startTouch(), !!OpenLayers.Event.isMultiTouch(e) || this.mousedown(e)
         },
         touchmove: function(e) {
-            OpenLayers.Event.stop(e)
+            OpenLayers.Event.preventDefault(e)
         },
         mousedown: function(e) {
             return (OpenLayers.Event.isLeftClick(e) || OpenLayers.Event.isSingleTouch(e)) && (this.down = e.xy), !this.handle(e) || !this.stopDown
@@ -67459,7 +67898,7 @@
                 this.feature && !this.feature.layer && (this.feature = null),
                 this.lastFeature && !this.lastFeature.layer && (this.lastFeature = null),
                 this.feature) {
-                "touchstart" === t && OpenLayers.Event.stop(e);
+                "touchstart" === t && OpenLayers.Event.preventDefault(e);
                 var i = this.feature != this.lastFeature;
                 this.geometryTypeMatches(this.feature) ? (s && i ? (this.lastFeature && this.triggerCallback(t, "out", [this.lastFeature]),
                         this.triggerCallback(t, "in", [this.feature])) : s && !r || this.triggerCallback(t, "in", [this.feature]),
@@ -67475,7 +67914,8 @@
             if (s)
                 if ("click" == e && this.up && this.down) {
                     var r = Math.sqrt(Math.pow(this.up.x - this.down.x, 2) + Math.pow(this.up.y - this.down.y, 2));
-                    r <= this.clickTolerance && this.callback(s, n)
+                    r <= this.clickTolerance && this.callback(s, n),
+                        this.up = this.down = null
                 } else
                     this.callback(s, n)
         },
@@ -67497,7 +67937,6 @@
                     this.lastFeature = null,
                     this.down = null,
                     this.up = null,
-                    this.touch = !1,
                     this.map.events.un({
                         removelayer: this.handleMapEvents,
                         changelayer: this.handleMapEvents,
@@ -67625,6 +68064,7 @@
             this._removeZoomBar(),
                 this.map.events.un({
                     changebaselayer: this.redraw,
+                    updatesize: this.redraw,
                     scope: this
                 }),
                 OpenLayers.Control.PanZoom.prototype.destroy.apply(this, arguments),
@@ -67633,7 +68073,11 @@
         },
         setMap: function(e) {
             OpenLayers.Control.PanZoom.prototype.setMap.apply(this, arguments),
-                this.map.events.register("changebaselayer", this, this.redraw)
+                this.map.events.on({
+                    changebaselayer: this.redraw,
+                    updatesize: this.redraw,
+                    scope: this
+                })
         },
         redraw: function() {
             null != this.div && (this.removeButtons(),
@@ -67673,14 +68117,15 @@
         _addZoomBar: function(e) {
             var t = OpenLayers.Util.getImageLocation("slider.png"),
                 n = this.id + "_" + this.map.id,
-                s = this.map.getNumZoomLevels() - 1 - this.map.getZoom(),
-                r = OpenLayers.Util.createAlphaImageDiv(n, e.add(-1, s * this.zoomStopHeight), {
+                s = this.map.getMinZoom(),
+                r = this.map.getNumZoomLevels() - 1 - this.map.getZoom(),
+                i = OpenLayers.Util.createAlphaImageDiv(n, e.add(-1, r * this.zoomStopHeight), {
                     w: 20,
                     h: 9
                 }, t, "absolute");
-            r.style.cursor = "move",
-                this.slider = r,
-                this.sliderEvents = new OpenLayers.Events(this, r, null, !0, {
+            i.style.cursor = "move",
+                this.slider = i,
+                this.sliderEvents = new OpenLayers.Events(this, i, null, !0, {
                     includeXY: !0
                 }),
                 this.sliderEvents.on({
@@ -67691,29 +68136,29 @@
                     mousemove: this.zoomBarDrag,
                     mouseup: this.zoomBarUp
                 });
-            var i = {
+            var a = {
                     w: this.zoomStopWidth,
-                    h: this.zoomStopHeight * this.map.getNumZoomLevels()
+                    h: this.zoomStopHeight * (this.map.getNumZoomLevels() - s)
                 },
                 t = OpenLayers.Util.getImageLocation("zoombar.png"),
-                a = null;
+                o = null;
             if (OpenLayers.Util.alphaHack()) {
                 var n = this.id + "_" + this.map.id;
-                a = OpenLayers.Util.createAlphaImageDiv(n, e, {
-                        w: i.w,
+                o = OpenLayers.Util.createAlphaImageDiv(n, e, {
+                        w: a.w,
                         h: this.zoomStopHeight
                     }, t, "absolute", null, "crop"),
-                    a.style.height = i.h + "px"
+                    o.style.height = a.h + "px"
             } else
-                a = OpenLayers.Util.createDiv("OpenLayers_Control_PanZoomBar_Zoombar" + this.map.id, e, i, t);
-            return a.style.cursor = "pointer",
-                a.className = "olButton",
-                this.zoombarDiv = a,
-                this.div.appendChild(a),
-                this.startTop = parseInt(a.style.top),
-                this.div.appendChild(r),
+                o = OpenLayers.Util.createDiv("OpenLayers_Control_PanZoomBar_Zoombar" + this.map.id, e, a, t);
+            return o.style.cursor = "pointer",
+                o.className = "olButton",
+                this.zoombarDiv = o,
+                this.div.appendChild(o),
+                this.startTop = parseInt(o.style.top),
+                this.div.appendChild(i),
                 this.map.events.register("zoomend", this, this.moveZoomBar),
-                e = e.add(0, this.zoomStopHeight * this.map.getNumZoomLevels())
+                e = e.add(0, this.zoomStopHeight * (this.map.getNumZoomLevels() - s))
         },
         _removeZoomBar: function() {
             this.sliderEvents.un({
@@ -67986,7 +68431,10 @@
                         n = s >= this.lowerBoundary && s <= this.upperBoundary;
                         break;
                     case OpenLayers.Filter.Comparison.LIKE:
-                        n = new RegExp(this.value, "gi").test(s)
+                        n = new RegExp(this.value, "gi").test(s);
+                        break;
+                    case OpenLayers.Filter.Comparison.IS_NULL:
+                        n = null === s
                 }
                 return n
             },
@@ -68027,7 +68475,8 @@
         OpenLayers.Filter.Comparison.LESS_THAN_OR_EQUAL_TO = "<=",
         OpenLayers.Filter.Comparison.GREATER_THAN_OR_EQUAL_TO = ">=",
         OpenLayers.Filter.Comparison.BETWEEN = "..",
-        OpenLayers.Filter.Comparison.LIKE = "~"
+        OpenLayers.Filter.Comparison.LIKE = "~",
+        OpenLayers.Filter.Comparison.IS_NULL = "NULL"
 }, function(e, t) {
     OpenLayers.Symbolizer.Point = OpenLayers.Class(OpenLayers.Symbolizer, {
         initialize: function(e) {
@@ -68423,9 +68872,9 @@
                     a = r.h,
                     o = i / 2 * this.ratio - i / 2,
                     d = a / 2 * this.ratio - a / 2;
-                o += parseInt(this.map.layerContainerDiv.style.left, 10),
+                o += this.map.layerContainerOriginPx.x,
                     o = -Math.round(o),
-                    d += parseInt(this.map.layerContainerDiv.style.top, 10),
+                    d += this.map.layerContainerOriginPx.y,
                     d = -Math.round(d),
                     this.div.style.left = o + "px",
                     this.div.style.top = d + "px";
@@ -68433,16 +68882,16 @@
                 if (s = this.renderer.setExtent(u, t),
                     this.renderer.root.style.visibility = "visible", !0 === OpenLayers.IS_GECKO && (this.div.scrollLeft = this.div.scrollLeft), !t && s)
                     for (var l in this.unrenderedFeatures) {
-                        var y = this.unrenderedFeatures[l];
-                        this.drawFeature(y)
+                        var h = this.unrenderedFeatures[l];
+                        this.drawFeature(h)
                     }
             }
             if (!this.drawn || t || !s) {
                 this.drawn = !0;
-                for (var y, l = 0, h = this.features.length; l < h; l++)
-                    this.renderer.locked = l !== h - 1,
-                    y = this.features[l],
-                    this.drawFeature(y)
+                for (var h, l = 0, y = this.features.length; l < y; l++)
+                    this.renderer.locked = l !== y - 1,
+                    h = this.features[l],
+                    this.drawFeature(h)
             }
         },
         display: function(e) {
@@ -68706,12 +69155,14 @@
                 OpenLayers.Control.prototype.deactivate.apply(this, arguments)
         },
         unselectAll: function(e) {
-            for (var t, n, s = this.layers || [this.layer], r = 0; r < s.length; ++r) {
-                t = s[r];
-                for (var i = t.selectedFeatures.length - 1; i >= 0; --i)
-                    n = t.selectedFeatures[i],
-                    e && e.except == n || this.unselect(n)
-            }
+            var t, n, s, r, i = this.layers || [this.layer];
+            for (s = 0; s < i.length; ++s)
+                if (t = i[s],
+                    r = 0,
+                    null != t.selectedFeatures)
+                    for (; t.selectedFeatures.length > r;)
+                        n = t.selectedFeatures[r],
+                        e && e.except == n ? ++r : this.unselect(n)
         },
         clickFeature: function(e) {
             if (!this.hover) {
@@ -68881,16 +69332,16 @@
     })
 }, function(e, t) {
     OpenLayers.Control.ModifyFeature = OpenLayers.Class(OpenLayers.Control, {
+            documentDrag: !1,
             geometryTypes: null,
             clickout: !0,
             toggle: !0,
             standalone: !1,
             layer: null,
             feature: null,
+            vertex: null,
             vertices: null,
             virtualVertices: null,
-            selectControl: null,
-            dragControl: null,
             handlers: null,
             deleteCodes: null,
             virtualStyle: null,
@@ -68915,67 +69366,75 @@
                     this.mode = OpenLayers.Control.ModifyFeature.RESHAPE,
                     OpenLayers.Control.prototype.initialize.apply(this, [t]),
                     OpenLayers.Util.isArray(this.deleteCodes) || (this.deleteCodes = [this.deleteCodes]);
-                var n = this,
-                    s = {
-                        geometryTypes: this.geometryTypes,
-                        clickout: this.clickout,
-                        toggle: this.toggle,
-                        onBeforeSelect: this.beforeSelectFeature,
-                        onSelect: this.selectFeature,
-                        onUnselect: this.unselectFeature,
-                        scope: this
-                    };
-                !1 === this.standalone && (this.selectControl = new OpenLayers.Control.SelectFeature(e, s));
-                var r = {
-                    geometryTypes: ["OpenLayers.Geometry.Point"],
-                    onStart: function(e, t) {
-                        n.dragStart.apply(n, [e, t])
-                    },
-                    onDrag: function(e, t) {
-                        n.dragVertex.apply(n, [e, t])
-                    },
-                    onComplete: function(e) {
-                        n.dragComplete.apply(n, [e])
-                    },
-                    featureCallbacks: {
-                        over: function(e) {
-                            (!0 !== n.standalone || e._sketch || n.feature === e) && n.dragControl.overFeature.apply(n.dragControl, [e])
+                var n = {
+                        down: function(e) {
+                            this.vertex = null;
+                            var t = this.layer.getFeatureFromEvent(this.handlers.drag.evt);
+                            t ? this.dragStart(t) : this.clickout && (this._unselect = this.feature)
+                        },
+                        move: function(e) {
+                            delete this._unselect,
+                                this.vertex && this.dragVertex(this.vertex, e)
+                        },
+                        up: function() {
+                            this.handlers.drag.stopDown = !1,
+                                this._unselect && (this.unselectFeature(this._unselect),
+                                    delete this._unselect)
+                        },
+                        done: function(e) {
+                            this.vertex && this.dragComplete(this.vertex)
                         }
-                    }
-                };
-                this.dragControl = new OpenLayers.Control.DragFeature(e, r);
-                var i = {
-                    keydown: this.handleKeypress
-                };
+                    },
+                    s = {
+                        documentDrag: this.documentDrag,
+                        stopDown: !1
+                    },
+                    r = {
+                        keydown: this.handleKeypress
+                    };
                 this.handlers = {
-                    keyboard: new OpenLayers.Handler.Keyboard(this, i)
+                    keyboard: new OpenLayers.Handler.Keyboard(this, r),
+                    drag: new OpenLayers.Handler.Drag(this, n, s)
                 }
             },
             destroy: function() {
-                this.layer = null,
-                    this.standalone || this.selectControl.destroy(),
-                    this.dragControl.destroy(),
+                this.map && this.map.events.un({
+                        removelayer: this.handleMapEvents,
+                        changelayer: this.handleMapEvents,
+                        scope: this
+                    }),
+                    this.layer = null,
                     OpenLayers.Control.prototype.destroy.apply(this, [])
             },
             activate: function() {
-                return (this.standalone || this.selectControl.activate()) && this.handlers.keyboard.activate() && OpenLayers.Control.prototype.activate.apply(this, arguments)
+                return this.moveLayerToTop(),
+                    this.map.events.on({
+                        removelayer: this.handleMapEvents,
+                        changelayer: this.handleMapEvents,
+                        scope: this
+                    }),
+                    this.handlers.keyboard.activate() && this.handlers.drag.activate() && OpenLayers.Control.prototype.activate.apply(this, arguments)
             },
             deactivate: function() {
                 var e = !1;
                 if (OpenLayers.Control.prototype.deactivate.apply(this, arguments)) {
-                    this.layer.removeFeatures(this.vertices, {
+                    this.moveLayerBack(),
+                        this.map.events.un({
+                            removelayer: this.handleMapEvents,
+                            changelayer: this.handleMapEvents,
+                            scope: this
+                        }),
+                        this.layer.removeFeatures(this.vertices, {
                             silent: !0
                         }),
                         this.layer.removeFeatures(this.virtualVertices, {
                             silent: !0
                         }),
                         this.vertices = [],
-                        this.dragControl.deactivate();
-                    var t = this.feature,
-                        n = t && t.geometry && t.layer;
-                    !1 === this.standalone ? (n && this.selectControl.unselect.apply(this.selectControl, [t]),
-                            this.selectControl.deactivate()) : n && this.unselectFeature(t),
-                        this.handlers.keyboard.deactivate(),
+                        this.handlers.drag.deactivate(),
+                        this.handlers.keyboard.deactivate();
+                    var t = this.feature;
+                    t && t.geometry && t.layer && this.unselectFeature(t),
                         e = !0
                 }
                 return e
@@ -68986,13 +69445,17 @@
                 })
             },
             selectFeature: function(e) {
-                this.standalone && !1 === this.beforeSelectFeature(e) || (this.feature = e,
-                    this.modified = !1,
-                    this.resetVertices(),
-                    this.dragControl.activate(),
-                    this.onModificationStart(this.feature));
-                var t = e.modified;
-                !e.geometry || t && t.geometry || (this._originalGeometry = e.geometry.clone())
+                if (!(this.feature === e || this.geometryTypes && -1 == OpenLayers.Util.indexOf(this.geometryTypes, e.geometry.CLASS_NAME))) {
+                    !1 !== this.beforeSelectFeature(e) && (this.feature && this.unselectFeature(this.feature),
+                        this.feature = e,
+                        this.layer.selectedFeatures.push(e),
+                        this.layer.drawFeature(e, "select"),
+                        this.modified = !1,
+                        this.resetVertices(),
+                        this.onModificationStart(this.feature));
+                    var t = e.modified;
+                    !e.geometry || t && t.geometry || (this._originalGeometry = e.geometry.clone())
+                }
             },
             unselectFeature: function(e) {
                 this.layer.removeFeatures(this.vertices, {
@@ -69011,8 +69474,9 @@
                             silent: !0
                         }),
                         delete this.radiusHandle),
+                    this.layer.drawFeature(this.feature, "default"),
                     this.feature = null,
-                    this.dragControl.deactivate(),
+                    OpenLayers.Util.removeItem(this.layer.selectedFeatures, e),
                     this.onModificationEnd(e),
                     this.layer.events.triggerEvent("afterfeaturemodified", {
                         feature: e,
@@ -69020,23 +69484,23 @@
                     }),
                     this.modified = !1
             },
-            dragStart: function(e, t) {
-                e == this.feature || e.geometry.parent || e == this.dragHandle || e == this.radiusHandle || (!1 === this.standalone && this.feature && this.selectControl.clickFeature.apply(this.selectControl, [this.feature]),
-                    null != this.geometryTypes && -1 == OpenLayers.Util.indexOf(this.geometryTypes, e.geometry.CLASS_NAME) || (this.standalone || this.selectControl.clickFeature.apply(this.selectControl, [e]),
-                        this.dragControl.overFeature.apply(this.dragControl, [e]),
-                        this.dragControl.lastPixel = t,
-                        this.dragControl.handlers.drag.started = !0,
-                        this.dragControl.handlers.drag.start = t,
-                        this.dragControl.handlers.drag.last = t))
+            dragStart: function(e) {
+                var t = "OpenLayers.Geometry.Point" == e.geometry.CLASS_NAME;
+                this.standalone || (e._sketch || !t) && e._sketch || (this.toggle && this.feature === e && (this._unselect = e),
+                        this.selectFeature(e)),
+                    (e._sketch || t) && (this.vertex = e,
+                        this.handlers.drag.stopDown = !0)
             },
             dragVertex: function(e, t) {
-                this.modified = !0,
-                    "OpenLayers.Geometry.Point" == this.feature.geometry.CLASS_NAME ? (this.feature != e && (this.feature = e),
-                        this.layer.events.triggerEvent("vertexmodified", {
-                            vertex: e.geometry,
-                            feature: this.feature,
-                            pixel: t
-                        })) : (e._index ? (e.geometry.parent.addComponent(e.geometry, e._index),
+                var n = this.map.getLonLatFromViewPortPx(t),
+                    s = e.geometry;
+                s.move(n.lon - s.x, n.lat - s.y),
+                    this.modified = !0,
+                    "OpenLayers.Geometry.Point" == this.feature.geometry.CLASS_NAME ? this.layer.events.triggerEvent("vertexmodified", {
+                        vertex: e.geometry,
+                        feature: this.feature,
+                        pixel: t
+                    }) : (e._index ? (e.geometry.parent.addComponent(e.geometry, e._index),
                             delete e._index,
                             OpenLayers.Util.removeItem(this.virtualVertices, e),
                             this.vertices.push(e)) : e == this.dragHandle ? (this.layer.removeFeatures(this.vertices, {
@@ -69055,7 +69519,7 @@
                                 silent: !0
                             }),
                             this.virtualVertices = []),
-                        this.layer.drawFeature(this.feature, this.standalone ? void 0 : this.selectControl.renderIntent)),
+                        this.layer.drawFeature(this.feature, this.standalone ? void 0 : "select")),
                     this.layer.drawFeature(e)
             },
             dragComplete: function(e) {
@@ -69077,8 +69541,7 @@
                 }
             },
             resetVertices: function() {
-                this.dragControl.feature && this.dragControl.outFeature(this.dragControl.feature),
-                    this.vertices.length > 0 && (this.layer.removeFeatures(this.vertices, {
+                this.vertices.length > 0 && (this.layer.removeFeatures(this.vertices, {
                             silent: !0
                         }),
                         this.vertices = []),
@@ -69101,14 +69564,14 @@
             handleKeypress: function(e) {
                 var t = e.keyCode;
                 if (this.feature && -1 != OpenLayers.Util.indexOf(this.deleteCodes, t)) {
-                    var n = this.dragControl.feature;
-                    n && -1 != OpenLayers.Util.indexOf(this.vertices, n) && !this.dragControl.handlers.drag.dragging && n.geometry.parent && (n.geometry.parent.removeComponent(n.geometry),
+                    var n = this.layer.getFeatureFromEvent(this.handlers.drag.evt);
+                    n && -1 != OpenLayers.Util.indexOf(this.vertices, n) && !this.handlers.drag.dragging && n.geometry.parent && (n.geometry.parent.removeComponent(n.geometry),
                         this.layer.events.triggerEvent("vertexremoved", {
                             vertex: n.geometry,
                             feature: this.feature,
                             pixel: e.xy
                         }),
-                        this.layer.drawFeature(this.feature, this.standalone ? void 0 : this.selectControl.renderIntent),
+                        this.layer.drawFeature(this.feature, this.standalone ? void 0 : "select"),
                         this.modified = !0,
                         this.resetVertices(),
                         this.setFeatureState(),
@@ -69142,12 +69605,12 @@
                                     u = n.components[s + 1];
                                 if ("OpenLayers.Geometry.Point" == d.CLASS_NAME && "OpenLayers.Geometry.Point" == u.CLASS_NAME) {
                                     var l = (d.x + u.x) / 2,
-                                        y = (d.y + u.y) / 2,
-                                        h = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(l, y), null, t.virtualStyle);
-                                    h.geometry.parent = n,
-                                        h._index = s + 1,
-                                        h._sketch = !0,
-                                        t.virtualVertices.push(h)
+                                        h = (d.y + u.y) / 2,
+                                        y = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(l, h), null, t.virtualStyle);
+                                    y.geometry.parent = n,
+                                        y._index = s + 1,
+                                        y._sketch = !0,
+                                        t.virtualVertices.push(y)
                                 }
                             }
                     }
@@ -69196,9 +69659,9 @@
                             u = r - t,
                             l = i - n;
                         if (d) {
-                            var y = Math.atan2(l, u),
-                                h = Math.atan2(i, r),
-                                m = h - y;
+                            var h = Math.atan2(l, u),
+                                y = Math.atan2(i, r),
+                                m = y - h;
                             m *= 180 / Math.PI,
                                 e.rotate(m, s)
                         }
@@ -69222,9 +69685,19 @@
                     })
             },
             setMap: function(e) {
-                this.standalone || this.selectControl.setMap(e),
-                    this.dragControl.setMap(e),
+                this.handlers.drag.setMap(e),
                     OpenLayers.Control.prototype.setMap.apply(this, arguments)
+            },
+            handleMapEvents: function(e) {
+                "removelayer" != e.type && "order" != e.property || this.moveLayerToTop()
+            },
+            moveLayerToTop: function() {
+                var e = Math.max(this.map.Z_INDEX_BASE.Feature - 1, this.layer.getZIndex()) + 1;
+                this.layer.setZIndex(e)
+            },
+            moveLayerBack: function() {
+                var e = this.layer.getZIndex() - 1;
+                e >= this.map.Z_INDEX_BASE.Feature ? this.layer.setZIndex(e) : this.map.setLayerZIndex(this.layer, this.map.getLayerIndex(this.layer))
             },
             CLASS_NAME: "OpenLayers.Control.ModifyFeature"
         }),
@@ -69236,8 +69709,8 @@
     OpenLayers.Geometry.MultiLineString = OpenLayers.Class(OpenLayers.Geometry.Collection, {
         componentTypes: ["OpenLayers.Geometry.LineString"],
         split: function(e, t) {
-            for (var n, s, r, i, a, o = null, d = t && t.mutual, u = [], l = [e], y = 0, h = this.components.length; y < h; ++y) {
-                s = this.components[y],
+            for (var n, s, r, i, a, o = null, d = t && t.mutual, u = [], l = [e], h = 0, y = this.components.length; h < y; ++h) {
+                s = this.components[h],
                     i = !1;
                 for (var m = 0; m < l.length; ++m)
                     if (n = s.split(l[m], t)) {
@@ -69267,9 +69740,9 @@
             if (e instanceof OpenLayers.Geometry.LineString) {
                 d = [],
                     o = [e];
-                for (var y = 0, h = this.components.length; y < h; ++y) {
+                for (var h = 0, y = this.components.length; h < y; ++h) {
                     a = !1,
-                        s = this.components[y];
+                        s = this.components[h];
                     for (var m = 0; m < o.length; ++m)
                         if (n = o[m].split(s, t)) {
                             l && (r = n[0],
@@ -69816,77 +70289,78 @@
             setStyle: function(e, t, n) {
                 t = t || e._style,
                     n = n || e._options;
-                var s, r = parseFloat(e.getAttributeNS(null, "r")),
-                    i = 1;
-                if ("OpenLayers.Geometry.Point" == e._geometryClass && r) {
+                var s = t.title || t.graphicTitle;
+                if (s) {
+                    e.setAttributeNS(null, "title", s);
+                    var r = e.getElementsByTagName("title");
+                    if (r.length > 0)
+                        r[0].firstChild.textContent = s;
+                    else {
+                        var i = this.nodeFactory(null, "title");
+                        i.textContent = s,
+                            e.appendChild(i)
+                    }
+                }
+                var a, o = parseFloat(e.getAttributeNS(null, "r")),
+                    d = 1;
+                if ("OpenLayers.Geometry.Point" == e._geometryClass && o) {
                     if (e.style.visibility = "", !1 === t.graphic)
                         e.style.visibility = "hidden";
                     else if (t.externalGraphic) {
-                        if (s = this.getPosition(e),
-                            t.graphicTitle) {
-                            e.setAttributeNS(null, "title", t.graphicTitle);
-                            var a = e.getElementsByTagName("title");
-                            if (a.length > 0)
-                                a[0].firstChild.textContent = t.graphicTitle;
-                            else {
-                                var o = this.nodeFactory(null, "title");
-                                o.textContent = t.graphicTitle,
-                                    e.appendChild(o)
-                            }
-                        }
-                        t.graphicWidth && t.graphicHeight && e.setAttributeNS(null, "preserveAspectRatio", "none");
-                        var d = t.graphicWidth || t.graphicHeight,
-                            u = t.graphicHeight || t.graphicWidth;
-                        d = d || 2 * t.pointRadius,
-                            u = u || 2 * t.pointRadius;
-                        var l = void 0 != t.graphicXOffset ? t.graphicXOffset : -.5 * d,
-                            y = void 0 != t.graphicYOffset ? t.graphicYOffset : -.5 * u,
-                            h = t.graphicOpacity || t.fillOpacity;
-                        e.setAttributeNS(null, "x", (s.x + l).toFixed()),
-                            e.setAttributeNS(null, "y", (s.y + y).toFixed()),
-                            e.setAttributeNS(null, "width", d),
-                            e.setAttributeNS(null, "height", u),
-                            e.setAttributeNS(this.xlinkns, "href", t.externalGraphic),
-                            e.setAttributeNS(null, "style", "opacity: " + h),
-                            e.onclick = OpenLayers.Renderer.SVG.preventDefault
+                        a = this.getPosition(e),
+                            t.graphicWidth && t.graphicHeight && e.setAttributeNS(null, "preserveAspectRatio", "none");
+                        var u = t.graphicWidth || t.graphicHeight,
+                            l = t.graphicHeight || t.graphicWidth;
+                        u = u || 2 * t.pointRadius,
+                            l = l || 2 * t.pointRadius;
+                        var h = void 0 != t.graphicXOffset ? t.graphicXOffset : -.5 * u,
+                            y = void 0 != t.graphicYOffset ? t.graphicYOffset : -.5 * l,
+                            m = t.graphicOpacity || t.fillOpacity;
+                        e.setAttributeNS(null, "x", (a.x + h).toFixed()),
+                            e.setAttributeNS(null, "y", (a.y + y).toFixed()),
+                            e.setAttributeNS(null, "width", u),
+                            e.setAttributeNS(null, "height", l),
+                            e.setAttributeNS(this.xlinkns, "xlink:href", t.externalGraphic),
+                            e.setAttributeNS(null, "style", "opacity: " + m),
+                            e.onclick = OpenLayers.Event.preventDefault
                     } else if (this.isComplexSymbol(t.graphicName)) {
-                        var m = 3 * t.pointRadius,
-                            T = 2 * m,
-                            c = this.importSymbol(t.graphicName);
-                        s = this.getPosition(e),
-                            i = 3 * this.symbolMetrics[c.id][0] / T;
-                        var p = e.parentNode,
-                            M = e.nextSibling;
-                        p && p.removeChild(e),
+                        var T = 3 * t.pointRadius,
+                            c = 2 * T,
+                            p = this.importSymbol(t.graphicName);
+                        a = this.getPosition(e),
+                            d = 3 * this.symbolMetrics[p.id][0] / c;
+                        var M = e.parentNode,
+                            f = e.nextSibling;
+                        M && M.removeChild(e),
                             e.firstChild && e.removeChild(e.firstChild),
-                            e.appendChild(c.firstChild.cloneNode(!0)),
-                            e.setAttributeNS(null, "viewBox", c.getAttributeNS(null, "viewBox")),
-                            e.setAttributeNS(null, "width", T),
-                            e.setAttributeNS(null, "height", T),
-                            e.setAttributeNS(null, "x", s.x - m),
-                            e.setAttributeNS(null, "y", s.y - m),
-                            M ? p.insertBefore(e, M) : p && p.appendChild(e)
+                            e.appendChild(p.firstChild.cloneNode(!0)),
+                            e.setAttributeNS(null, "viewBox", p.getAttributeNS(null, "viewBox")),
+                            e.setAttributeNS(null, "width", c),
+                            e.setAttributeNS(null, "height", c),
+                            e.setAttributeNS(null, "x", a.x - T),
+                            e.setAttributeNS(null, "y", a.y - T),
+                            f ? M.insertBefore(e, f) : M && M.appendChild(e)
                     } else
                         e.setAttributeNS(null, "r", t.pointRadius);
-                    var f = t.rotation;
-                    if ((void 0 !== f || void 0 !== e._rotation) && s)
-                        if (e._rotation = f,
-                            f |= 0,
+                    var S = t.rotation;
+                    if ((void 0 !== S || void 0 !== e._rotation) && a)
+                        if (e._rotation = S,
+                            S |= 0,
                             "svg" !== e.nodeName)
-                            e.setAttributeNS(null, "transform", "rotate(" + f + " " + s.x + " " + s.y + ")");
+                            e.setAttributeNS(null, "transform", "rotate(" + S + " " + a.x + " " + a.y + ")");
                         else {
-                            var S = this.symbolMetrics[c.id];
-                            e.firstChild.setAttributeNS(null, "transform", "rotate(" + f + " " + S[1] + " " + S[2] + ")")
+                            var g = this.symbolMetrics[p.id];
+                            e.firstChild.setAttributeNS(null, "transform", "rotate(" + S + " " + g[1] + " " + g[2] + ")")
                         }
                 }
                 return n.isFilled ? (e.setAttributeNS(null, "fill", t.fillColor),
                         e.setAttributeNS(null, "fill-opacity", t.fillOpacity)) : e.setAttributeNS(null, "fill", "none"),
                     n.isStroked ? (e.setAttributeNS(null, "stroke", t.strokeColor),
                         e.setAttributeNS(null, "stroke-opacity", t.strokeOpacity),
-                        e.setAttributeNS(null, "stroke-width", t.strokeWidth * i),
+                        e.setAttributeNS(null, "stroke-width", t.strokeWidth * d),
                         e.setAttributeNS(null, "stroke-linecap", t.strokeLinecap || "round"),
                         e.setAttributeNS(null, "stroke-linejoin", "round"),
-                        t.strokeDashstyle && e.setAttributeNS(null, "stroke-dasharray", this.dashStyle(t, i))) : e.setAttributeNS(null, "stroke", "none"),
+                        t.strokeDashstyle && e.setAttributeNS(null, "stroke-dasharray", this.dashStyle(t, d))) : e.setAttributeNS(null, "stroke", "none"),
                     t.pointerEvents && e.setAttributeNS(null, "pointer-events", t.pointerEvents),
                     null != t.cursor && e.setAttributeNS(null, "cursor", t.cursor),
                     e
@@ -69982,6 +70456,7 @@
                     r.fontColor = r.labelOutlineColor,
                         r.fontStrokeColor = r.labelOutlineColor,
                         r.fontStrokeWidth = t.labelOutlineWidth,
+                        t.labelOutlineOpacity && (r.fontOpacity = t.labelOutlineOpacity),
                         delete r.labelOutlineWidth,
                         this.drawText(e, r, n)
                 }
@@ -70003,9 +70478,9 @@
                         u._featureId = e) : u.setAttributeNS(null, "pointer-events", "none");
                 var l = t.labelAlign || OpenLayers.Renderer.defaultSymbolizer.labelAlign;
                 u.setAttributeNS(null, "text-anchor", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[0]] || "middle"), !0 === OpenLayers.IS_GECKO && u.setAttributeNS(null, "dominant-baseline", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[1]] || "central");
-                for (var y = t.label.split("\n"), h = y.length; u.childNodes.length > h;)
+                for (var h = t.label.split("\n"), y = h.length; u.childNodes.length > y;)
                     u.removeChild(u.lastChild);
-                for (var m = 0; m < h; m++) {
+                for (var m = 0; m < y; m++) {
                     var T = this.nodeFactory(e + d + "_tspan_" + m, "tspan");
                     if (!0 === t.labelSelect && (T._featureId = e,
                             T._geometry = n,
@@ -70014,10 +70489,10 @@
                         0 == m) {
                         var c = OpenLayers.Renderer.SVG.LABEL_VFACTOR[l[1]];
                         null == c && (c = -.5),
-                            T.setAttribute("dy", c * (h - 1) + "em")
+                            T.setAttribute("dy", c * (y - 1) + "em")
                     } else
                         T.setAttribute("dy", "1em");
-                    T.textContent = "" === y[m] ? " " : y[m],
+                    T.textContent = "" === h[m] ? " " : h[m],
                         T.parentNode || u.appendChild(T)
                 }
                 u.parentNode || this.textRoot.appendChild(u)
@@ -70086,11 +70561,11 @@
                     d.top = Math.max(d.top, o),
                     u.push(a, ",", o);
                 i.setAttributeNS(null, "points", u.join(" "));
-                var y = d.getWidth(),
-                    h = d.getHeight(),
-                    m = [d.left - y, d.bottom - h, 3 * y, 3 * h];
+                var h = d.getWidth(),
+                    y = d.getHeight(),
+                    m = [d.left - h, d.bottom - y, 3 * h, 3 * y];
                 return r.setAttributeNS(null, "viewBox", m.join(" ")),
-                    this.symbolMetrics[t] = [Math.max(y, h), d.getCenterLonLat().lon, d.getCenterLonLat().lat],
+                    this.symbolMetrics[t] = [Math.max(h, y), d.getCenterLonLat().lon, d.getCenterLonLat().lat],
                     this.defs.appendChild(r),
                     r
             },
@@ -70119,15 +70594,430 @@
             b: -1
         },
         OpenLayers.Renderer.SVG.preventDefault = function(e) {
-            e.preventDefault && e.preventDefault()
+            OpenLayers.Event.preventDefault(e)
         }
+}, function(e, t) {
+    OpenLayers.Renderer.Canvas = OpenLayers.Class(OpenLayers.Renderer, {
+            hitDetection: !0,
+            hitOverflow: 0,
+            canvas: null,
+            features: null,
+            pendingRedraw: !1,
+            cachedSymbolBounds: {},
+            initialize: function(e, t) {
+                OpenLayers.Renderer.prototype.initialize.apply(this, arguments),
+                    this.root = document.createElement("canvas"),
+                    this.container.appendChild(this.root),
+                    this.canvas = this.root.getContext("2d"),
+                    this.features = {},
+                    this.hitDetection && (this.hitCanvas = document.createElement("canvas"),
+                        this.hitContext = this.hitCanvas.getContext("2d"))
+            },
+            setExtent: function() {
+                return OpenLayers.Renderer.prototype.setExtent.apply(this, arguments), !1
+            },
+            eraseGeometry: function(e, t) {
+                this.eraseFeatures(this.features[t][0])
+            },
+            supported: function() {
+                return OpenLayers.CANVAS_SUPPORTED
+            },
+            setSize: function(e) {
+                this.size = e.clone();
+                var t = this.root;
+                if (t.style.width = e.w + "px",
+                    t.style.height = e.h + "px",
+                    t.width = e.w,
+                    t.height = e.h,
+                    this.resolution = null,
+                    this.hitDetection) {
+                    var n = this.hitCanvas;
+                    n.style.width = e.w + "px",
+                        n.style.height = e.h + "px",
+                        n.width = e.w,
+                        n.height = e.h
+                }
+            },
+            drawFeature: function(e, t) {
+                var n;
+                if (e.geometry) {
+                    t = this.applyDefaultSymbolizer(t || e.style);
+                    var s, r = e.geometry.getBounds();
+                    this.map.baseLayer && this.map.baseLayer.wrapDateLine && (s = this.map.getMaxExtent());
+                    var i = r && r.intersectsBounds(this.extent, {
+                        worldBounds: s
+                    });
+                    n = "none" !== t.display && !!r && i,
+                        n ? this.features[e.id] = [e, t] : delete this.features[e.id],
+                        this.pendingRedraw = !0
+                }
+                return this.pendingRedraw && !this.locked && (this.redraw(),
+                        this.pendingRedraw = !1),
+                    n
+            },
+            drawGeometry: function(e, t, n) {
+                var s = e.CLASS_NAME;
+                if ("OpenLayers.Geometry.Collection" != s && "OpenLayers.Geometry.MultiPoint" != s && "OpenLayers.Geometry.MultiLineString" != s && "OpenLayers.Geometry.MultiPolygon" != s)
+                    switch (e.CLASS_NAME) {
+                        case "OpenLayers.Geometry.Point":
+                            this.drawPoint(e, t, n);
+                            break;
+                        case "OpenLayers.Geometry.LineString":
+                            this.drawLineString(e, t, n);
+                            break;
+                        case "OpenLayers.Geometry.LinearRing":
+                            this.drawLinearRing(e, t, n);
+                            break;
+                        case "OpenLayers.Geometry.Polygon":
+                            this.drawPolygon(e, t, n)
+                    }
+                else
+                    for (var r = 0; r < e.components.length; r++)
+                        this.drawGeometry(e.components[r], t, n)
+            },
+            drawExternalGraphic: function(e, t, n) {
+                var s = new Image,
+                    r = t.title || t.graphicTitle;
+                r && (s.title = r);
+                var i = t.graphicWidth || t.graphicHeight,
+                    a = t.graphicHeight || t.graphicWidth;
+                i = i || 2 * t.pointRadius,
+                    a = a || 2 * t.pointRadius;
+                var o = void 0 != t.graphicXOffset ? t.graphicXOffset : -.5 * i,
+                    d = void 0 != t.graphicYOffset ? t.graphicYOffset : -.5 * a,
+                    u = t.graphicOpacity || t.fillOpacity,
+                    l = function() {
+                        if (this.features[n]) {
+                            var t = this.getLocalXY(e),
+                                r = t[0],
+                                l = t[1];
+                            if (!isNaN(r) && !isNaN(l)) {
+                                var h = r + o | 0,
+                                    y = l + d | 0,
+                                    m = this.canvas;
+                                m.globalAlpha = u;
+                                var T = OpenLayers.Renderer.Canvas.drawImageScaleFactor || (OpenLayers.Renderer.Canvas.drawImageScaleFactor = /android 2.1/.test(navigator.userAgent.toLowerCase()) ? 320 / window.screen.width : 1);
+                                m.drawImage(s, h * T, y * T, i * T, a * T),
+                                    this.hitDetection && (this.setHitContextStyle("fill", n),
+                                        this.hitContext.fillRect(h, y, i, a))
+                            }
+                        }
+                    };
+                s.onload = OpenLayers.Function.bind(l, this),
+                    s.src = t.externalGraphic
+            },
+            drawNamedSymbol: function(e, t, n) {
+                var s, r, i, a, o, d, u, l, h, y = Math.PI / 180,
+                    m = OpenLayers.Renderer.symbol[t.graphicName];
+                if (!m)
+                    throw new Error(t.graphicName + " is not a valid symbol name");
+                if (m.length && !(m.length < 2)) {
+                    var T = this.getLocalXY(e),
+                        c = T[0],
+                        p = T[1];
+                    if (!isNaN(c) && !isNaN(p)) {
+                        if (this.canvas.lineCap = "round",
+                            this.canvas.lineJoin = "round",
+                            this.hitDetection && (this.hitContext.lineCap = "round",
+                                this.hitContext.lineJoin = "round"),
+                            t.graphicName in this.cachedSymbolBounds)
+                            d = this.cachedSymbolBounds[t.graphicName];
+                        else {
+                            for (d = new OpenLayers.Bounds,
+                                o = 0; o < m.length; o += 2)
+                                d.extend(new OpenLayers.LonLat(m[o], m[o + 1]));
+                            this.cachedSymbolBounds[t.graphicName] = d
+                        }
+                        if (this.canvas.save(),
+                            this.hitDetection && this.hitContext.save(),
+                            this.canvas.translate(c, p),
+                            this.hitDetection && this.hitContext.translate(c, p),
+                            l = y * t.rotation,
+                            isNaN(l) || (this.canvas.rotate(l),
+                                this.hitDetection && this.hitContext.rotate(l)),
+                            u = 2 * t.pointRadius / Math.max(d.getWidth(), d.getHeight()),
+                            this.canvas.scale(u, u),
+                            this.hitDetection && this.hitContext.scale(u, u),
+                            i = d.getCenterLonLat().lon,
+                            a = d.getCenterLonLat().lat,
+                            this.canvas.translate(-i, -a),
+                            this.hitDetection && this.hitContext.translate(-i, -a),
+                            h = t.strokeWidth,
+                            t.strokeWidth = h / u, !1 !== t.fill) {
+                            for (this.setCanvasStyle("fill", t),
+                                this.canvas.beginPath(),
+                                o = 0; o < m.length; o += 2)
+                                s = m[o],
+                                r = m[o + 1],
+                                0 == o && this.canvas.moveTo(s, r),
+                                this.canvas.lineTo(s, r);
+                            if (this.canvas.closePath(),
+                                this.canvas.fill(),
+                                this.hitDetection) {
+                                for (this.setHitContextStyle("fill", n, t),
+                                    this.hitContext.beginPath(),
+                                    o = 0; o < m.length; o += 2)
+                                    s = m[o],
+                                    r = m[o + 1],
+                                    0 == o && this.canvas.moveTo(s, r),
+                                    this.hitContext.lineTo(s, r);
+                                this.hitContext.closePath(),
+                                    this.hitContext.fill()
+                            }
+                        }
+                        if (!1 !== t.stroke) {
+                            for (this.setCanvasStyle("stroke", t),
+                                this.canvas.beginPath(),
+                                o = 0; o < m.length; o += 2)
+                                s = m[o],
+                                r = m[o + 1],
+                                0 == o && this.canvas.moveTo(s, r),
+                                this.canvas.lineTo(s, r);
+                            if (this.canvas.closePath(),
+                                this.canvas.stroke(),
+                                this.hitDetection) {
+                                for (this.setHitContextStyle("stroke", n, t, u),
+                                    this.hitContext.beginPath(),
+                                    o = 0; o < m.length; o += 2)
+                                    s = m[o],
+                                    r = m[o + 1],
+                                    0 == o && this.hitContext.moveTo(s, r),
+                                    this.hitContext.lineTo(s, r);
+                                this.hitContext.closePath(),
+                                    this.hitContext.stroke()
+                            }
+                        }
+                        t.strokeWidth = h,
+                            this.canvas.restore(),
+                            this.hitDetection && this.hitContext.restore(),
+                            this.setCanvasStyle("reset")
+                    }
+                }
+            },
+            setCanvasStyle: function(e, t) {
+                "fill" === e ? (this.canvas.globalAlpha = t.fillOpacity,
+                    this.canvas.fillStyle = t.fillColor) : "stroke" === e ? (this.canvas.globalAlpha = t.strokeOpacity,
+                    this.canvas.strokeStyle = t.strokeColor,
+                    this.canvas.lineWidth = t.strokeWidth) : (this.canvas.globalAlpha = 0,
+                    this.canvas.lineWidth = 1)
+            },
+            featureIdToHex: function(e) {
+                var t = Number(e.split("_").pop()) + 1;
+                t >= 16777216 && (this.hitOverflow = t - 16777215,
+                    t = t % 16777216 + 1);
+                var n = "000000" + t.toString(16),
+                    s = n.length;
+                return n = "#" + n.substring(s - 6, s)
+            },
+            setHitContextStyle: function(e, t, n, s) {
+                var r = this.featureIdToHex(t);
+                "fill" == e ? (this.hitContext.globalAlpha = 1,
+                    this.hitContext.fillStyle = r) : "stroke" == e ? (this.hitContext.globalAlpha = 1,
+                    this.hitContext.strokeStyle = r,
+                    void 0 === s ? this.hitContext.lineWidth = n.strokeWidth + 2 : isNaN(s) || (this.hitContext.lineWidth = n.strokeWidth + 2 / s)) : (this.hitContext.globalAlpha = 0,
+                    this.hitContext.lineWidth = 1)
+            },
+            drawPoint: function(e, t, n) {
+                if (!1 !== t.graphic)
+                    if (t.externalGraphic)
+                        this.drawExternalGraphic(e, t, n);
+                    else if (t.graphicName && "circle" != t.graphicName)
+                    this.drawNamedSymbol(e, t, n);
+                else {
+                    var s = this.getLocalXY(e),
+                        r = s[0],
+                        i = s[1];
+                    if (!isNaN(r) && !isNaN(i)) {
+                        var a = 2 * Math.PI,
+                            o = t.pointRadius;
+                        !1 !== t.fill && (this.setCanvasStyle("fill", t),
+                            this.canvas.beginPath(),
+                            this.canvas.arc(r, i, o, 0, a, !0),
+                            this.canvas.fill(),
+                            this.hitDetection && (this.setHitContextStyle("fill", n, t),
+                                this.hitContext.beginPath(),
+                                this.hitContext.arc(r, i, o, 0, a, !0),
+                                this.hitContext.fill())), !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
+                            this.canvas.beginPath(),
+                            this.canvas.arc(r, i, o, 0, a, !0),
+                            this.canvas.stroke(),
+                            this.hitDetection && (this.setHitContextStyle("stroke", n, t),
+                                this.hitContext.beginPath(),
+                                this.hitContext.arc(r, i, o, 0, a, !0),
+                                this.hitContext.stroke()),
+                            this.setCanvasStyle("reset"))
+                    }
+                }
+            },
+            drawLineString: function(e, t, n) {
+                t = OpenLayers.Util.applyDefaults({
+                        fill: !1
+                    }, t),
+                    this.drawLinearRing(e, t, n)
+            },
+            drawLinearRing: function(e, t, n) {
+                !1 !== t.fill && (this.setCanvasStyle("fill", t),
+                        this.renderPath(this.canvas, e, t, n, "fill"),
+                        this.hitDetection && (this.setHitContextStyle("fill", n, t),
+                            this.renderPath(this.hitContext, e, t, n, "fill"))), !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
+                        this.renderPath(this.canvas, e, t, n, "stroke"),
+                        this.hitDetection && (this.setHitContextStyle("stroke", n, t),
+                            this.renderPath(this.hitContext, e, t, n, "stroke"))),
+                    this.setCanvasStyle("reset")
+            },
+            renderPath: function(e, t, n, s, r) {
+                var i = t.components,
+                    a = i.length;
+                e.beginPath();
+                var o = this.getLocalXY(i[0]),
+                    d = o[0],
+                    u = o[1];
+                if (!isNaN(d) && !isNaN(u)) {
+                    e.moveTo(o[0], o[1]);
+                    for (var l = 1; l < a; ++l) {
+                        var h = this.getLocalXY(i[l]);
+                        e.lineTo(h[0], h[1])
+                    }
+                    "fill" === r ? e.fill() : e.stroke()
+                }
+            },
+            drawPolygon: function(e, t, n) {
+                var s = e.components,
+                    r = s.length;
+                this.drawLinearRing(s[0], t, n);
+                for (var i = 1; i < r; ++i)
+                    this.canvas.globalCompositeOperation = "destination-out",
+                    this.hitDetection && (this.hitContext.globalCompositeOperation = "destination-out"),
+                    this.drawLinearRing(s[i], OpenLayers.Util.applyDefaults({
+                        stroke: !1,
+                        fillOpacity: 1
+                    }, t), n),
+                    this.canvas.globalCompositeOperation = "source-over",
+                    this.hitDetection && (this.hitContext.globalCompositeOperation = "source-over"),
+                    this.drawLinearRing(s[i], OpenLayers.Util.applyDefaults({
+                        fill: !1
+                    }, t), n)
+            },
+            drawText: function(e, t) {
+                var n = this.getLocalXY(e);
+                this.setCanvasStyle("reset"),
+                    this.canvas.fillStyle = t.fontColor,
+                    this.canvas.globalAlpha = t.fontOpacity || 1;
+                var s = [t.fontStyle ? t.fontStyle : "normal", "normal", t.fontWeight ? t.fontWeight : "normal", t.fontSize ? t.fontSize : "1em", t.fontFamily ? t.fontFamily : "sans-serif"].join(" "),
+                    r = t.label.split("\n"),
+                    i = r.length;
+                if (this.canvas.fillText) {
+                    this.canvas.font = s,
+                        this.canvas.textAlign = OpenLayers.Renderer.Canvas.LABEL_ALIGN[t.labelAlign[0]] || "center",
+                        this.canvas.textBaseline = OpenLayers.Renderer.Canvas.LABEL_ALIGN[t.labelAlign[1]] || "middle";
+                    var a = OpenLayers.Renderer.Canvas.LABEL_FACTOR[t.labelAlign[1]];
+                    null == a && (a = -.5);
+                    var o = this.canvas.measureText("Mg").height || this.canvas.measureText("xx").width;
+                    n[1] += o * a * (i - 1);
+                    for (var d = 0; d < i; d++)
+                        t.labelOutlineWidth && (this.canvas.save(),
+                            this.canvas.globalAlpha = t.labelOutlineOpacity || t.fontOpacity || 1,
+                            this.canvas.strokeStyle = t.labelOutlineColor,
+                            this.canvas.lineWidth = t.labelOutlineWidth,
+                            this.canvas.strokeText(r[d], n[0], n[1] + o * d + 1),
+                            this.canvas.restore()),
+                        this.canvas.fillText(r[d], n[0], n[1] + o * d)
+                } else if (this.canvas.mozDrawText) {
+                    this.canvas.mozTextStyle = s;
+                    var u = OpenLayers.Renderer.Canvas.LABEL_FACTOR[t.labelAlign[0]];
+                    null == u && (u = -.5);
+                    var a = OpenLayers.Renderer.Canvas.LABEL_FACTOR[t.labelAlign[1]];
+                    null == a && (a = -.5);
+                    var o = this.canvas.mozMeasureText("xx");
+                    n[1] += o * (1 + a * i);
+                    for (var d = 0; d < i; d++) {
+                        var l = n[0] + u * this.canvas.mozMeasureText(r[d]),
+                            h = n[1] + d * o;
+                        this.canvas.translate(l, h),
+                            this.canvas.mozDrawText(r[d]),
+                            this.canvas.translate(-l, -h)
+                    }
+                }
+                this.setCanvasStyle("reset")
+            },
+            getLocalXY: function(e) {
+                var t = this.getResolution(),
+                    n = this.extent;
+                return [(e.x - this.featureDx) / t + -n.left / t, n.top / t - e.y / t]
+            },
+            clear: function() {
+                var e = this.root.height,
+                    t = this.root.width;
+                this.canvas.clearRect(0, 0, t, e),
+                    this.features = {},
+                    this.hitDetection && this.hitContext.clearRect(0, 0, t, e)
+            },
+            getFeatureIdFromEvent: function(e) {
+                var t, n;
+                if (this.hitDetection && "none" !== this.root.style.display && !this.map.dragging) {
+                    var s = e.xy,
+                        r = 0 | s.x,
+                        i = 0 | s.y,
+                        a = this.hitContext.getImageData(r, i, 1, 1).data;
+                    if (255 === a[3]) {
+                        var o = a[2] + 256 * (a[1] + 256 * a[0]);
+                        if (o) {
+                            t = "OpenLayers_Feature_Vector_" + (o - 1 + this.hitOverflow);
+                            try {
+                                n = this.features[t][0]
+                            } catch (e) {}
+                        }
+                    }
+                }
+                return n
+            },
+            eraseFeatures: function(e) {
+                OpenLayers.Util.isArray(e) || (e = [e]);
+                for (var t = 0; t < e.length; ++t)
+                    delete this.features[e[t].id];
+                this.redraw()
+            },
+            redraw: function() {
+                if (!this.locked) {
+                    var e = this.root.height,
+                        t = this.root.width;
+                    this.canvas.clearRect(0, 0, t, e),
+                        this.hitDetection && this.hitContext.clearRect(0, 0, t, e);
+                    var n, s, r, i = [],
+                        a = this.map.baseLayer && this.map.baseLayer.wrapDateLine && this.map.getMaxExtent();
+                    for (var o in this.features)
+                        this.features.hasOwnProperty(o) && (n = this.features[o][0],
+                            s = n.geometry,
+                            this.calculateFeatureDx(s.getBounds(), a),
+                            r = this.features[o][1],
+                            this.drawGeometry(s, r, n.id),
+                            r.label && i.push([n, r]));
+                    for (var d, u = 0, l = i.length; u < l; ++u)
+                        d = i[u],
+                        this.drawText(d[0].geometry.getCentroid(), d[1])
+                }
+            },
+            CLASS_NAME: "OpenLayers.Renderer.Canvas"
+        }),
+        OpenLayers.Renderer.Canvas.LABEL_ALIGN = {
+            l: "left",
+            r: "right",
+            t: "top",
+            b: "bottom"
+        },
+        OpenLayers.Renderer.Canvas.LABEL_FACTOR = {
+            l: 0,
+            r: -1,
+            t: 0,
+            b: -1
+        },
+        OpenLayers.Renderer.Canvas.drawImageScaleFactor = null
 }, function(e, t) {
     OpenLayers.Control.DrawFeature = OpenLayers.Class(OpenLayers.Control, {
         layer: null,
         callbacks: null,
         multi: !1,
         featureAdded: function() {},
-        handlerOptions: null,
         initialize: function(e, t, n) {
             OpenLayers.Control.prototype.initialize.apply(this, [n]),
                 this.callbacks = OpenLayers.Util.extend({
@@ -70469,20 +71359,20 @@
                     node: this.getGeoTolerance(e.nodeTolerance, n),
                     vertex: this.getGeoTolerance(e.vertexTolerance, n),
                     edge: this.getGeoTolerance(e.edgeTolerance, n)
-                }, y = Math.max(l.node, l.vertex, l.edge), h = {
+                }, h = Math.max(l.node, l.vertex, l.edge), y = {
                     rank: Number.POSITIVE_INFINITY,
                     dist: Number.POSITIVE_INFINITY
                 }, m = !1, T = e.layer.features, c = this.precedence.length, p = new OpenLayers.LonLat(t.x, t.y), M = 0, f = T.length; M < f; ++M)
-                if ((s = T[M]) !== this.feature && !s._sketch && s.state !== OpenLayers.State.DELETE && (!e.filter || e.filter.evaluate(s)) && s.atPoint(p, y, y))
-                    for (var S = 0, g = Math.min(h.rank + 1, c); S < g; ++S)
+                if ((s = T[M]) !== this.feature && !s._sketch && s.state !== OpenLayers.State.DELETE && (!e.filter || e.filter.evaluate(s)) && s.atPoint(p, h, h))
+                    for (var S = 0, g = Math.min(y.rank + 1, c); S < g; ++S)
                         if (r = this.precedence[S],
                             e[r])
                             if ("edge" === r) {
                                 if (o = s.geometry.distanceTo(t, {
                                         details: !0
                                     }),
-                                    (d = o.distance) <= l[r] && d < h.dist) {
-                                    h = {
+                                    (d = o.distance) <= l[r] && d < y.dist) {
+                                    y = {
                                             rank: S,
                                             dist: d,
                                             x: o.x0,
@@ -70496,7 +71386,7 @@
                                     u = !1;
                                 for (var _ = 0, b = i.length; _ < b; ++_)
                                     a = i[_],
-                                    (d = a.distanceTo(t)) <= l[r] && (S < h.rank || S === h.rank && d < h.dist) && (h = {
+                                    (d = a.distanceTo(t)) <= l[r] && (S < y.rank || S === y.rank && d < y.dist) && (y = {
                                             rank: S,
                                             dist: d,
                                             x: a.x,
@@ -70507,7 +71397,7 @@
                                 if (u)
                                     break
                             }
-            return m ? h : null
+            return m ? y : null
         },
         getGeoTolerance: function(e, t) {
             t !== this.resolution && (this.resolution = t,
@@ -70922,11 +71812,11 @@
                     l = this.getBarLen(d);
                 o = u / n[t] * n[i],
                     d = l / n[t] * n[a];
-                var y = o / e / r,
-                    h = d / e / r;
-                "visible" == this.eBottom.style.visibility && (this.eBottom.style.width = Math.round(h) + "px",
+                var h = o / e / r,
+                    y = d / e / r;
+                "visible" == this.eBottom.style.visibility && (this.eBottom.style.width = Math.round(y) + "px",
                         this.eBottom.innerHTML = l + " " + a),
-                    "visible" == this.eTop.style.visibility && (this.eTop.style.width = Math.round(y) + "px",
+                    "visible" == this.eTop.style.visibility && (this.eTop.style.width = Math.round(h) + "px",
                         this.eTop.innerHTML = u + " " + i)
             }
         },
@@ -71023,9 +71913,11 @@
         },
         updateLink: function() {
             var e = this.anchor ? "#" : "?",
-                t = this.base; -
-            1 != t.indexOf(e) && (t = t.substring(0, t.indexOf(e))),
-                t += e + OpenLayers.Util.getParameterString(this.createParams()),
+                t = this.base,
+                n = null; -
+            1 != t.indexOf("#") && 0 == this.anchor && (n = t.substring(t.indexOf("#"), t.length)), -1 != t.indexOf(e) && (t = t.substring(0, t.indexOf(e))),
+                t = t.split("#")[0] + e + OpenLayers.Util.getParameterString(this.createParams()),
+                n && (t += n),
                 this.anchor && !this.element ? window.location.href = t : this.element.href = t
         },
         createParams: function(e, t, n) {
@@ -71055,5 +71947,73 @@
             return s
         },
         CLASS_NAME: "OpenLayers.Control.Permalink"
+    })
+}, function(e, t) {
+    OpenLayers.Kinetic = OpenLayers.Class({
+        threshold: 0,
+        deceleration: .0035,
+        nbPoints: 100,
+        delay: 200,
+        points: void 0,
+        timerId: void 0,
+        initialize: function(e) {
+            OpenLayers.Util.extend(this, e)
+        },
+        begin: function() {
+            OpenLayers.Animation.stop(this.timerId),
+                this.timerId = void 0,
+                this.points = []
+        },
+        update: function(e) {
+            this.points.unshift({
+                    xy: e,
+                    tick: (new Date).getTime()
+                }),
+                this.points.length > this.nbPoints && this.points.pop()
+        },
+        end: function(e) {
+            for (var t, n, s = (new Date).getTime(), r = 0, i = this.points.length; r < i && (n = this.points[r], !(s - n.tick > this.delay)); r++)
+                t = n;
+            if (t) {
+                var a = (new Date).getTime() - t.tick,
+                    o = Math.sqrt(Math.pow(e.x - t.xy.x, 2) + Math.pow(e.y - t.xy.y, 2)),
+                    d = o / a;
+                if (!(0 == d || d < this.threshold)) {
+                    var u = Math.asin((e.y - t.xy.y) / o);
+                    return t.xy.x <= e.x && (u = Math.PI - u), {
+                        speed: d,
+                        theta: u
+                    }
+                }
+            }
+        },
+        move: function(e, t) {
+            var n = e.speed,
+                s = Math.cos(e.theta),
+                r = -Math.sin(e.theta),
+                i = (new Date).getTime(),
+                a = 0,
+                o = 0,
+                d = function() {
+                    if (null != this.timerId) {
+                        var e = (new Date).getTime() - i,
+                            d = -this.deceleration * Math.pow(e, 2) / 2 + n * e,
+                            u = d * s,
+                            l = d * r,
+                            h = {};
+                        h.end = !1; -
+                        this.deceleration * e + n <= 0 && (OpenLayers.Animation.stop(this.timerId),
+                                this.timerId = null,
+                                h.end = !0),
+                            h.x = u - a,
+                            h.y = l - o,
+                            a = u,
+                            o = l,
+                            t(h.x, h.y, h.end)
+                    }
+                };
+            this.timerId = OpenLayers.Animation.start(OpenLayers.Function.bind(d, this))
+        },
+        CLASS_NAME: "OpenLayers.Kinetic"
     })
 }]);

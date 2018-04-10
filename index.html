@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-224467b1da758fdfbbb235dfcb3efaa4.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-913be13e4c73af286d96700f8f8a9b17.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.11-36-g0b45741
+                                <div class="version">v2.12-36-g29f47ac
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -83,7 +83,7 @@
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-6962c43536363c533bfb.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-478181f377db70159c51.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -690,6 +690,20 @@
                     "to": "To"
                 },
                 "edit": {
+                    "merge_landmark": {
+                        "title": "%{count} Places Selected",
+                        "created": "Created %{time}, by %{user}",
+                        "merge": "Merge Here",
+                        "lock_message": "One or more places you selected have a lock level higher than your current.",
+                        "unresolved_message": "Places with open PURS cannot be merged until they’re solved",
+                        "ad_locked": "One or more places is currently advertised, and can't be merged.",
+                        "parking_message": "When converting parking to non parking place, all parking attributes will be lost",
+                        "gas_message": "When converting gas station to non gas station, brand attribute will be lost",
+                        "count_message": "You cant merge more than %{count} places.",
+                        "distance_message": "Places are too far from each other and can't be merged",
+                        "purs_tooltip": "%{count} PURs",
+                        "lock_tooltip": "%{rank} +"
+                    },
                     "placeholder": {
                         "date": "yyyy-mm-dd",
                         "time": "hh:mm"
@@ -720,6 +734,7 @@
                     "more_options": "More options",
                     "multiple_values": "Multiple",
                     "created": "Created: %{time} by %{user}",
+                    "reported": "Reported: %{time} by %{user}",
                     "updated": "Updated: %{time} by %{user}",
                     "id": "ID: %{num}",
                     "on": "On",
@@ -791,9 +806,13 @@
                             "closures": "Closures"
                         },
                         "speed_limit": {
-                            "fwdMaxSpeed": "A to B",
-                            "revMaxSpeed": "B to A",
-                            "verified": "Verified"
+                            "fwdMaxSpeed": "A → B",
+                            "revMaxSpeed": "B → A",
+                            "verified": "Verified",
+                            "added_automatically": "Speed limit was added automatically.",
+                            "correct_question": "Is it correct?",
+                            "true": true,
+                            "false": false
                         },
                         "lock_levels": {
                             "staff": "Staff",
@@ -925,6 +944,9 @@
                         "no_address": "No address",
                         "no_photos": "No photos",
                         "select_categories": "Select Categories",
+                        "merge": {
+                            "pending": "Places successfully merged. Changes will be applied after save."
+                        },
                         "external_providers": {
                             "title": "External providers",
                             "add": "Add linked Google place",
@@ -1009,7 +1031,8 @@
                         "parking": {
                             "operator": "Operator",
                             "general": {
-                                "true": true
+                                "true": true,
+                                "false": false
                             },
                             "fields": {
                                 "canExitWhileClosed": "Cars can exit when lot is closed",
@@ -1758,6 +1781,22 @@
                     "tbr_tooltip_header": "Difficult turn during:",
                     "remove_tbrs_first": "In order to disable the difficult turn you must first remove the time based difficult turn"
                 },
+                "merge_places": {
+                    "title": "Merging %{count} places into %{mainPlaceName}",
+                    "instruction": "Select data to keep",
+                    "connected_google_places": "Connected Google places",
+                    "custom_description": "Custom (write your own),",
+                    "empty": "[Empty]",
+                    "estimate": "Estimate",
+                    "name": {
+                        "main": "Main",
+                        "set_main": "Set as main"
+                    },
+                    "actions": {
+                        "merge": "Merge",
+                        "cancel": "Cancel"
+                    }
+                },
                 "restrictions": {
                     "modal_headers": {
                         "restriction_summary": "Time based restrictions",
@@ -2331,7 +2370,8 @@
                             "rank": "Level",
                             "lockRank": "Lock level",
                             "permissions": "Permissions"
-                        }
+                        },
+                        "rank_too_low": "Editing this option unlocks at a higher level"
                     },
                     "houseNumber": {
                         "name": "House number"
@@ -2453,6 +2493,7 @@
                     "multiple_changes": "Multiple changes",
                     "segment_created_by_split": "Segment created by split",
                     "segment_created_by_merge": "Segment created by merge",
+                    "venue_updated_by_merge": "Venue updated by merge",
                     "actions": {
                         "default": {
                             "ADD": "added",
@@ -2543,7 +2584,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-f147c12b40018b5034a0.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-84ab752b2a005139db29.js"></script>
     </body>
 
 </html>
