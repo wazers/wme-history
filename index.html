@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-913be13e4c73af286d96700f8f8a9b17.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-96a5910c96f79a5414a3500d96d98ac5.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.12-36-g29f47ac
+                                <div class="version">v2.13-37-g20d978d
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -79,11 +79,12 @@
             window.W = {
                 apiKeys: {
                     "googleMapsApiKey": "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
-                }
+                },
+                version: "v2.13-37-g20d978d\n"
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-478181f377db70159c51.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-90d33f5fd49f5d50a469.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -273,7 +274,7 @@
                     },
                     "speed": {
                         "km": "%{speed} km/h",
-                        "mi": "%{speed} mp/h"
+                        "mi": "%{speed} mi/h"
                     },
                     "area": {
                         "km_squared": "%{area} km²",
@@ -522,6 +523,12 @@
                         "766": {
                             "title": "Parking Lot should be input as area polygon",
                             "solution": "Convert to area polygon and set navigation point close to segment"
+                        },
+                        "771": {
+                            "title": "Cannot add road closure since segment forward direction is forbidden"
+                        },
+                        "772": {
+                            "title": "Cannot add road closure since segment reverse direction is forbidden"
                         },
                         "1000": {
                             "title": "Connectivity problem",
@@ -809,10 +816,9 @@
                             "fwdMaxSpeed": "A → B",
                             "revMaxSpeed": "B → A",
                             "verified": "Verified",
-                            "added_automatically": "Speed limit was added automatically.",
-                            "correct_question": "Is it correct?",
-                            "true": true,
-                            "false": false
+                            "verify_speed_limit": "Verify Speed Limit",
+                            "edit": "Edit",
+                            "added_automatically": "Speed limit was added automatically"
                         },
                         "lock_levels": {
                             "staff": "Staff",
@@ -2067,7 +2073,8 @@
                         "17": "Private Road",
                         "18": "Railroad",
                         "19": "Runway/Taxiway",
-                        "20": "Parking Lot Road"
+                        "20": "Parking Lot Road",
+                        "22": "Alley"
                     },
                     "address": {
                         "none": "Unnamed segment"
@@ -2214,9 +2221,9 @@
                             },
                             "NEW_EDITOR_NEARBY": {
                                 "title": "New editor nearby",
-                                "shortMessage": "Say hi to %{username} and offer help",
+                                "shortMessage": "Say hi to %{profileLink} and offer help",
                                 "message": "One of the best ways to improve the map is by welcoming new editors to the community. Go ahead, introduce yourself.",
-                                "buttonText": "Visit %{username}'s profile"
+                                "buttonText": "Visit %{profileLink}'s profile"
                             },
                             "NEW_ACTIVE_EDITORS_NEARBY": {
                                 "title": "New active editors nearby",
@@ -2250,6 +2257,37 @@
                             "CHECK_YOUR_NEIGHBORHOOD": {
                                 "title": "See your home",
                                 "shortMessage": "Explore and edit your neighborhood."
+                            },
+                            "MENTEE_CLICKED_LINK": {
+                                "title": "%{username} joined the community",
+                                "buttonText": "Visit %{username} profile page",
+                                "shortMessage": "An editor you’re mentoring just joined the community!",
+                                "message": "Nice work, your mentoring is paying off. %{username} joined the community"
+                            },
+                            "MENTEE_RETURNED": {
+                                "title": "%{username} edited the map",
+                                "shortMessage": "An editor you’re mentoring edited the map!",
+                                "message": "Way to go! An editor you’re mentoring, %{username}, edited the map.",
+                                "buttonText": "View %{username} profile"
+                            },
+                            "MENTOR_ENCOURAGMENT": {
+                                "title": "Share your wisdom with new editors",
+                                "shortMessage": "Show off your skills by mentoring a new editor",
+                                "message": "When you help a new editor, you help improve map quality in your area. Show new editors the best way to edit the map",
+                                "buttonText": "Start mentoring"
+                            },
+                            "FIRST_EDIT": {
+                                "title": "You made your first edit!",
+                                "shortMessage": "Well done, your edit is now live!",
+                                "message": "Congrats on your first edit! Want to learn more? There’s a few ways to learn: mentoring, wikis and the forum.",
+                                "buttonText": "View Wikis",
+                                "secondButtonText": "View forum"
+                            },
+                            "MENTOR_FEEDBACK_REQUEST": {
+                                "title": "Enjoying the mentoring program?",
+                                "shortMessage": "Take a minute to rate your mentor",
+                                "message": "Help improve the mentoring program, it’ll only take a minute.",
+                                "buttonText": "Leave feedback"
                             }
                         }
                     },
@@ -2529,6 +2567,7 @@
                     "wiki_area_manager": "https://wazeopedia.waze.com/wiki/Global/Area_Manager",
                     "wiki_country_manager": "https://wazeopedia.waze.com/wiki/Global/Roles_and_responsibilities#Country_Manager",
                     "wiki_mentoring": "https://wazeopedia.waze.com/wiki/Global/Mentoring",
+                    "mentoring_feedback_url": "https://wazeopedia.waze.com/wiki/Global/Mentoring",
                     "status_page_link": "http://status.waze.com",
                     "add_operator_form": "https://docs.google.com/a/google.com/forms/d/e/1FAIpQLScJW5U2Q51cu6nk1AoWNtgS5DxSMPj4lC8oOEDynD64lVF1YQ/viewform",
                     "tts_report_problem_url": "https://goo.gl/aAI4mu"
@@ -2584,7 +2623,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-84ab752b2a005139db29.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-61d4bfaea0a02916dd23.js"></script>
     </body>
 
 </html>
