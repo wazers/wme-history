@@ -36769,16 +36769,14 @@ webpackJsonp([0], [function(e, t, i) {
                             t.geometryEditing && t.geometryEditing.options && (r._typeToEditorOptions[t.objectType] = t.geometryEditing.options)
                     }),
                     this.selectionManager.events.register("selectionchanged", this, this.onSelectionChanged),
-                    this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this),
-                    this.editingMediator.on("change:advancedTools", this._onAdvancedToolsChanged, this)
+                    this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this)
             }
             return (0,
                     h.default)(e, [{
                     key: "destroy",
                     value: function() {
                         this.selectionManager.events.unregister("selectionchanged", this, this.onSelectionChanged),
-                            this.editingMediator.un("change:editingEnabled", this._onEditingEnabledChanged, this),
-                            this.editingMediator.un("change:advancedTools", this._onAdvancedToolsChanged, this)
+                            this.editingMediator.un("change:editingEnabled", this._onEditingEnabledChanged, this)
                     }
                 }, {
                     key: "_createGeometryEditor",
@@ -36808,11 +36806,6 @@ webpackJsonp([0], [function(e, t, i) {
                             selectionManager: this.selectionManager,
                             map: this.map
                         })
-                    }
-                }, {
-                    key: "_onAdvancedToolsChanged",
-                    value: function() {
-                        this.editingMediator.get("advancedTools") ? this.selectionManager.enableBoxSelection() : this.selectionManager.disableBoxSelection()
                     }
                 }, {
                     key: "_onEditingEnabledChanged",
@@ -44095,16 +44088,6 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function() {
                         this.selectionMediator.enable()
                     }
-                }, {
-                    key: "enableBoxSelection",
-                    value: function() {
-                        this.selectionMediator.enableBoxSelection()
-                    }
-                }, {
-                    key: "disableBoxSelection",
-                    value: function() {
-                        this.selectionMediator.disableBoxSelection()
-                    }
                 }]),
                 e
         }();
@@ -48340,6 +48323,7 @@ webpackJsonp([0], [function(e, t, i) {
                         r.default)(s, n),
                     s._initLayers(i),
                     s._bindEvents(),
+                    s.enable(),
                     s
             }
             return (0,
@@ -48576,12 +48560,14 @@ webpackJsonp([0], [function(e, t, i) {
                             this._downFeature = null,
                             this._downKeys = [],
                             this._hadMouseDown = !1,
-                            this._hadMouseUp = !1
+                            this._hadMouseUp = !1,
+                            this.disableBoxSelection()
                     }
                 }, {
                     key: "enable",
                     value: function() {
-                        this._disabled = !1
+                        this._disabled = !1,
+                            this.enableBoxSelection()
                     }
                 }, {
                     key: "destroy",
