@@ -43839,9 +43839,8 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_onFeatureBoxSelection",
                     value: function(e) {
-                        var t = e.features;
-                        this.unselectAll(!1),
-                            t && this.selectFeatures(t, !1)
+                        e && e.length > 0 && (this._canAddSelection(e[0]) || this.unselectAll(!1),
+                            this.selectFeatures(e, !1))
                     }
                 }, {
                     key: "_layerVisibilityChanged",
@@ -48453,10 +48452,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 }
                             }
                             this._duringBoxSelection = !1,
-                                this.triggerMethod("map:selection:featureBoxSelection", {
-                                    features: a,
-                                    addSelection: this._isMultiSelect()
-                                })
+                                this.triggerMethod("map:selection:featureBoxSelection", a)
                         }
                     }
                 }, {
