@@ -790,9 +790,8 @@ webpackJsonp([0], [function(e, t, i) {
             })
         },
         f.getDisplayUnitValue = function(e, t, i) {
-            return e = h.default.getLocalizedValue(e, t),
-                i && (e = Math.round(e)),
-                e
+            return null == (e = h.default.getLocalizedValue(e, t)) ? e : (i && (e = Math.round(e)),
+                e)
         },
         f.shortcutMaskToKeys = function(e) {
             var t = "",
@@ -3871,14 +3870,20 @@ webpackJsonp([0], [function(e, t, i) {
                     e
             },
             getLocalizedValue: function(e, t) {
+                if (null == e)
+                    return e;
                 var i = this.localizeUnit(t);
                 return this.convert(e, t, i)
             },
             getLocalizedDisplayValue: function(e, t, i) {
+                if (null == e)
+                    return e;
                 var n = this.convert(e, t, i);
                 return this.getLocalizedValue(n, i)
             },
             getOriginalValue: function(e, t) {
+                if (null == e)
+                    return e;
                 var i = this.localizeUnit(t);
                 return this.convert(e, i, t)
             }
@@ -11232,6 +11237,7 @@ webpackJsonp([0], [function(e, t, i) {
         });
     u.prototype.defaults = {
             type: u.prototype.TYPES.SPEED_CAMERA,
+            validated: !0,
             speed: 0,
             azymuth: 0,
             permissions: o.default.ALL_PERMISSIONS
@@ -54996,7 +55002,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 observe: e + "MaxSpeed",
                                 events: ["blur"],
                                 onSet: function(e) {
-                                    return Number(e)
+                                    return "" === e ? null : Number(e)
                                 },
                                 attributes: [{
                                     name: "disabled",
