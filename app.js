@@ -8,7 +8,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     t.__esModule = !0;
-    var n = i(150),
+    var n = i(144),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -33,7 +33,7 @@ webpackJsonp([0], [function(e, t, i) {
     }()
 }, function(e, t, i) {
     e.exports = {
-        default: i(461),
+        default: i(441),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -60,9 +60,9 @@ webpackJsonp([0], [function(e, t, i) {
         }
     }
     t.__esModule = !0;
-    var s = i(107),
+    var s = i(109),
         r = n(s),
-        a = i(108),
+        a = i(110),
         o = n(a),
         l = i(58),
         u = n(l);
@@ -85,7 +85,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, , function(e, t, i) {
     "use strict";
     t.__esModule = !0;
-    var n = i(457),
+    var n = i(437),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -101,7 +101,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(490),
+        default: i(470),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -115,7 +115,7 @@ webpackJsonp([0], [function(e, t, i) {
     t.__esModule = !0;
     var s = i(2),
         r = n(s),
-        a = i(528),
+        a = i(508),
         o = n(a);
     t.default = function e(t, i, n) {
         null === t && (t = Function.prototype);
@@ -132,129 +132,6 @@ webpackJsonp([0], [function(e, t, i) {
         if (void 0 !== l)
             return l.call(n)
     }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(16),
-        v = n(m),
-        y = function(e) {
-            function t(e) {
-                (0,
-                    o.default)(this, t);
-                var i = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, e));
-                return i.subActions = [],
-                    i
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "destroy",
-                    value: function() {
-                        for (var e = 0, i = this.subActions.length; e < i; e++)
-                            this.subActions[e].destroy();
-                        (0,
-                            f.default)(t.prototype.__proto__ || (0,
-                            r.default)(t.prototype), "destroy", this).call(this)
-                    }
-                }, {
-                    key: "isLeaf",
-                    value: function() {
-                        return !1
-                    }
-                }, {
-                    key: "doSubAction",
-                    value: function(e) {
-                        e.setModel(this.model);
-                        var t = e.doAction();
-                        return !1 !== t ? this.subActions.push(e) : e.destroy(),
-                            t
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {
-                        for (var e = !1, t = void 0, i = 0, n = this.subActions.length; i < n; i++)
-                            t = !1 !== this.subActions[i].doAction(),
-                            e = e || t
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        for (var e = this.subActions.length - 1; e >= 0; e--)
-                            this.subActions[e].undoAction()
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        for (var e = 0, t = this.subActions.length; e < t; e++)
-                            this.subActions[e].redoAction()
-                    }
-                }, {
-                    key: "accept",
-                    value: function(e) {
-                        var t = e.beforeEnter(this);
-                        e.visit(this), !1 !== t && this.subActions.forEach(function(t) {
-                                t.accept(e)
-                            }),
-                            e.afterLeave(this)
-                    }
-                }, {
-                    key: "flat",
-                    value: function() {
-                        var e = _.flatten(this.subActions.map(function(e) {
-                            return e.flat()
-                        }));
-                        return e.push(this),
-                            e
-                    }
-                }, {
-                    key: "getBounds",
-                    value: function() {
-                        var e = void 0,
-                            t = void 0,
-                            i = void 0,
-                            n = void 0;
-                        if (_.isEmpty(this.subActions))
-                            return null;
-                        for (n = this.subActions[0].getBounds(),
-                            e = n ? n.clone() : new OpenLayers.Bounds,
-                            t = 1; t < this.subActions.length; t++)
-                            i = this.subActions[t],
-                            (n = i.getBounds()) && n.getWidth() > 0 && n.getHeight() > 0 && e.extend(n);
-                        return e
-                    }
-                }, {
-                    key: "serialize",
-                    value: function(e, t) {
-                        return null
-                    }
-                }]),
-                t
-        }(v.default);
-    t.default = y,
-        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -413,6 +290,174 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(17),
+        v = n(m),
+        y = function(e) {
+            function t(e) {
+                (0,
+                    o.default)(this, t);
+                var i = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, e));
+                return i.subActions = [],
+                    i
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "destroy",
+                    value: function() {
+                        for (var e = 0, i = this.subActions.length; e < i; e++)
+                            this.subActions[e].destroy();
+                        (0,
+                            f.default)(t.prototype.__proto__ || (0,
+                            r.default)(t.prototype), "destroy", this).call(this)
+                    }
+                }, {
+                    key: "isLeaf",
+                    value: function() {
+                        return !1
+                    }
+                }, {
+                    key: "doSubAction",
+                    value: function(e) {
+                        e.setModel(this.model);
+                        var t = e.doAction();
+                        return !1 !== t ? this.subActions.push(e) : e.destroy(),
+                            t
+                    }
+                }, {
+                    key: "doAction",
+                    value: function() {
+                        for (var e = !1, t = void 0, i = 0, n = this.subActions.length; i < n; i++)
+                            t = !1 !== this.subActions[i].doAction(),
+                            e = e || t
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        for (var e = this.subActions.length - 1; e >= 0; e--)
+                            this.subActions[e].undoAction()
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        for (var e = 0, t = this.subActions.length; e < t; e++)
+                            this.subActions[e].redoAction()
+                    }
+                }, {
+                    key: "accept",
+                    value: function(e) {
+                        var t = e.beforeEnter(this);
+                        e.visit(this), !1 !== t && this.subActions.forEach(function(t) {
+                                t.accept(e)
+                            }),
+                            e.afterLeave(this)
+                    }
+                }, {
+                    key: "flat",
+                    value: function() {
+                        var e = _.flatten(this.subActions.map(function(e) {
+                            return e.flat()
+                        }));
+                        return e.push(this),
+                            e
+                    }
+                }, {
+                    key: "getBounds",
+                    value: function() {
+                        var e = void 0,
+                            t = void 0,
+                            i = void 0,
+                            n = void 0;
+                        if (_.isEmpty(this.subActions))
+                            return null;
+                        for (n = this.subActions[0].getBounds(),
+                            e = n ? n.clone() : new OpenLayers.Bounds,
+                            t = 1; t < this.subActions.length; t++)
+                            i = this.subActions[t],
+                            (n = i.getBounds()) && n.getWidth() > 0 && n.getHeight() > 0 && e.extend(n);
+                        return e
+                    }
+                }, {
+                    key: "serialize",
+                    value: function(e, t) {
+                        return null
+                    }
+                }]),
+                t
+        }(v.default);
+    t.default = y,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    t.__esModule = !0;
+    var s = i(423),
+        r = n(s),
+        a = i(22),
+        o = n(a);
+    t.default = function() {
+        function e(e, t) {
+            var i = [],
+                n = !0,
+                s = !1,
+                r = void 0;
+            try {
+                for (var a, l = (0,
+                        o.default)(e); !(n = (a = l.next()).done) && (i.push(a.value), !t || i.length !== t); n = !0)
+                ;
+            } catch (e) {
+                s = !0,
+                    r = e
+            } finally {
+                try {
+                    !n && l.return && l.return()
+                } finally {
+                    if (s)
+                        throw r
+                }
+            }
+            return i
+        }
+        return function(t, i) {
+            if (Array.isArray(t))
+                return t;
+            if ((0,
+                    r.default)(Object(t)))
+                return e(t, i);
+            throw new TypeError("Invalid attempt to destructure non-iterable instance")
+        }
+    }()
+}, function(e, t, i) {
+    "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
@@ -459,13 +504,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(13),
+    var r = i(11),
         a = n(r),
         o = i(70),
         l = n(o),
         u = i(57),
         d = n(u),
-        c = i(71),
+        c = i(59),
         h = n(c),
         f = {},
         p = 0;
@@ -593,22 +638,18 @@ webpackJsonp([0], [function(e, t, i) {
         f.categoryOption = function(e, t) {
             return f.option(I18n.t("venues.categories." + t), t, e[t] ? t : null, !0)
         },
-        f.directionRadio = function(e, t) {
-            return -1 === t ? f.radio({
+        f.directionRadio = function(e) {
+            return -1 === e ? f.radio({
                 label: I18n.t("edit.multiple_values"),
                 name: "direction",
                 dataType: "numeric",
-                value: t,
-                currentValue: -1,
-                nullable: !0,
-                enable: e.canEditDrivingAttributes()
+                value: e,
+                nullable: !0
             }) : f.radio({
-                label: I18n.t("segment.direction." + t),
+                label: I18n.t("segment.direction." + e),
                 name: "direction",
                 dataType: "numeric",
-                value: t,
-                currentValue: e.attributes.direction,
-                enable: e.canEditDrivingAttributes()
+                value: e
             })
         },
         f.formatDate = function(e) {
@@ -735,34 +776,6 @@ webpackJsonp([0], [function(e, t, i) {
         },
         f.formatRank = function(e) {
             return e === d.default.prototype.StaffRank ? I18n.t("edit.segment.lock_levels.staff") : d.default.normalizeLevel(e)
-        },
-        f.segmentRankOption = function(e, t, i) {
-            var n = void 0,
-                s = "",
-                r = !1;
-            if (null === t)
-                n = I18n.t("edit.segment.lock_levels.automatic", {
-                    rank: f.formatRank(e.attributes.rank)
-                }),
-                s = "automatic",
-                i || (s += " disabled");
-            else if (n = f.formatRank(t),
-                "" === t)
-                n = I18n.t("edit.multiple_values"),
-                s += " data-mixed-indicator",
-                r = !0;
-            else if (!n)
-                return "";
-            return f.radio({
-                label: n,
-                name: "lockRank",
-                dataType: "numeric",
-                value: t,
-                currentValue: e.attributes.lockRank,
-                className: s,
-                nullable: !0,
-                forceChecked: r
-            })
         },
         f.venueRankOption = function(e, t, i) {
             var n = f.formatRank(t);
@@ -891,51 +904,6 @@ webpackJsonp([0], [function(e, t, i) {
         },
         t.default = f,
         e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    t.__esModule = !0;
-    var s = i(443),
-        r = n(s),
-        a = i(22),
-        o = n(a);
-    t.default = function() {
-        function e(e, t) {
-            var i = [],
-                n = !0,
-                s = !1,
-                r = void 0;
-            try {
-                for (var a, l = (0,
-                        o.default)(e); !(n = (a = l.next()).done) && (i.push(a.value), !t || i.length !== t); n = !0)
-                ;
-            } catch (e) {
-                s = !0,
-                    r = e
-            } finally {
-                try {
-                    !n && l.return && l.return()
-                } finally {
-                    if (s)
-                        throw r
-                }
-            }
-            return i
-        }
-        return function(t, i) {
-            if (Array.isArray(t))
-                return t;
-            if ((0,
-                    r.default)(Object(t)))
-                return e(t, i);
-            throw new TypeError("Invalid attempt to destructure non-iterable instance")
-        }
-    }()
 }, , function(e, t, i) {
     "use strict";
 
@@ -955,7 +923,7 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(20),
         c = n(d),
-        h = i(158),
+        h = i(152),
         f = n(h),
         p = function() {
             function e(t, i) {
@@ -1105,6 +1073,25 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+    t.__esModule = !0;
+    var n = i(144),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n);
+    t.default = function(e, t, i) {
+        return t in e ? (0,
+                s.default)(e, t, {
+                value: i,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = i,
+            e
+    }
+}, function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -1192,27 +1179,8 @@ webpackJsonp([0], [function(e, t, i) {
         t.default = h,
         e.exports = t.default
 }, function(e, t, i) {
-    "use strict";
-    t.__esModule = !0;
-    var n = i(150),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n);
-    t.default = function(e, t, i) {
-        return t in e ? (0,
-                s.default)(e, t, {
-                value: i,
-                enumerable: !0,
-                configurable: !0,
-                writable: !0
-            }) : e[t] = i,
-            e
-    }
-}, function(e, t, i) {
     e.exports = {
-        default: i(479),
+        default: i(459),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -1240,7 +1208,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(16),
+        y = i(17),
         b = n(y),
         w = function(e) {
             function t(e, i, n) {
@@ -1388,9 +1356,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(58),
         u = n(l),
-        d = i(109),
+        d = i(111),
         c = n(d),
-        h = i(23),
+        h = i(24),
         f = {};
     f.isUndefined = function(e) {
             return _.isUndefined(e)
@@ -1465,8 +1433,26 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, , function(e, t, i) {
     e.exports = {
-        default: i(453),
+        default: i(433),
         __esModule: !0
+    }
+}, function(e, t, i) {
+    "use strict";
+    t.__esModule = !0;
+    var n = i(86),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n);
+    t.default = function(e) {
+        if (Array.isArray(e)) {
+            for (var t = 0, i = Array(e.length); t < e.length; t++)
+                i[t] = e[t];
+            return i
+        }
+        return (0,
+            s.default)(e)
     }
 }, function(e, t, i) {
     "use strict";
@@ -1575,13 +1561,13 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.FetchError = t.addHttpResponseMiddleware = t.addHttpRequestMiddleware = t.httpRequest = t.httpPost = t.httpGet = void 0;
-    var c = i(108),
+    var c = i(110),
         h = n(c),
-        f = i(107),
+        f = i(109),
         p = n(f),
-        g = i(88),
+        g = i(86),
         m = n(g),
-        v = i(157),
+        v = i(151),
         _ = n(v),
         y = i(6),
         b = n(y),
@@ -1595,7 +1581,7 @@ webpackJsonp([0], [function(e, t, i) {
         I = n(C),
         A = i(7),
         R = n(A),
-        O = i(109),
+        O = i(111),
         D = n(O),
         L = [],
         P = [],
@@ -1759,96 +1745,7 @@ webpackJsonp([0], [function(e, t, i) {
         t.REMOVED = "objectsremoved",
         t.SYNCED = "objectssynced",
         t.UPDATED = "objectsupdated"
-}, function(e, t, i) {
-    "use strict";
-    t.__esModule = !0;
-    var n = i(88),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n);
-    t.default = function(e) {
-        if (Array.isArray(e)) {
-            for (var t = 0, i = Array(e.length); t < e.length; t++)
-                i[t] = e[t];
-            return i
-        }
-        return (0,
-            s.default)(e)
-    }
 }, , function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(6),
-        r = n(s),
-        a = i(15),
-        o = n(a),
-        l = i(20),
-        u = n(l),
-        d = OpenLayers.Class(o.default, {
-            initialize: function(e, t) {
-                this.attributes = e || {},
-                    t && t.parse && e && this.parse(e),
-                    e && (this.attributes = (0,
-                        r.default)(this.attributes, e)),
-                    _.defaults(this.attributes, _.result(this, "defaults"))
-            },
-            merge: function(e) {
-                this.parse(e),
-                    (0,
-                        r.default)(this.attributes, e),
-                    this.originalValues && (this.originalValues = void 0)
-            },
-            getOriginalValue: function(e) {
-                return this.originalValues && !_.isUndefined(this.originalValues[e]) ? this.originalValues[e] : this.attributes[e]
-            },
-            getID: function() {
-                return this.attributes.id
-            },
-            setID: function(e) {
-                this.attributes.id = e
-            },
-            getVersion: function() {
-                return this.attributes.version || o.default.prototype.getVersion.apply(this)
-            },
-            clone: function() {
-                var e = null,
-                    t = _.extend({}, this.attributes);
-                this.attributes.geometry && (e = this.attributes.geometry.clone()),
-                    t.geometry = e;
-                var i = new d(t);
-                return i.state = this.state,
-                    i
-            },
-            getPermissions: function() {
-                return u.default.isDefined(this.attributes.permissions) ? this.attributes.permissions : 0
-            },
-            getAttributes: function() {
-                return this.attributes
-            },
-            CLASS_NAME: "Waze.Feature.Vector"
-        });
-    Object.defineProperty(d.prototype, "geometry", {
-            get: function() {
-                if (this.attributes)
-                    return this.attributes.geometry
-            },
-            set: function(e) {
-                this.attributes.geometry = e
-            }
-        }),
-        t.default = d,
-        e.exports = t.default
-}, function(e, t, i) {
     "use strict";
 
     function n(e) {
@@ -1860,7 +1757,7 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.SEGMENT_DELETION_REJECTION = t.WALKING_ROAD_TYPES = t.HIGHWAY_ROAD_TYPES = t.ROAD_TYPES = void 0;
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -1870,27 +1767,38 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(15),
         f = n(h),
-        p = i(89),
+        p = i(87),
         g = n(p),
-        m = i(29),
+        m = i(31),
         v = n(m),
-        y = i(10),
+        y = i(9),
         b = n(y),
-        w = i(90),
-        E = i(215),
+        w = i(89),
+        E = i(537),
         k = i(19),
         M = n(k),
         S = i(20),
         T = n(S),
         C = i(38),
         I = n(C),
-        A = i(163),
+        A = i(158),
         R = n(A),
         O = i(35),
         D = n(O),
         L = i(49),
         P = n(L),
-        N = {
+        N = i(207),
+        x = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var i in e)
+                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
+            return t.default = e,
+                t
+        }(N),
+        V = {
             NOT_REJECTED: 0,
             USER_RANK_TOO_LOW: 1,
             USER_QUOTA_EXCEEDED: 2,
@@ -1898,7 +1806,7 @@ webpackJsonp([0], [function(e, t, i) {
             HAS_CLOSURES: 4,
             OTHER_REASON: 5
         },
-        x = {
+        F = {
             STREET: 1,
             PRIMARY_STREET: 2,
             FREEWAY: 3,
@@ -1916,12 +1824,12 @@ webpackJsonp([0], [function(e, t, i) {
             PARKING_LOT_ROAD: 20,
             ALLEY: 22
         },
-        V = [x.FREEWAY, x.RAMP, x.MAJOR_HIGHWAY, x.MINOR_HIGHWAY],
-        F = [x.STREET, x.PRIMARY_STREET, x.MINOR_HIGHWAY, x.MAJOR_HIGHWAY, x.FREEWAY],
-        j = [x.STREET, x.PRIMARY_STREET, x.WALKING_TRAIL, x.MAJOR_HIGHWAY, x.MINOR_HIGHWAY, x.OFF_ROAD, x.PEDESTRIAN_BOARDWALK, x.STAIRWAY, x.PRIVATE_ROAD, x.PARKING_LOT_ROAD],
-        U = [x.WALKING_TRAIL, x.PEDESTRIAN_BOARDWALK, x.STAIRWAY],
-        B = [].concat(U, [x.RAILROAD, x.RUNWAY_TAXIWAY]),
-        z = OL.Class(v.default, {
+        U = [F.FREEWAY, F.RAMP, F.MAJOR_HIGHWAY, F.MINOR_HIGHWAY],
+        j = [F.STREET, F.PRIMARY_STREET, F.MINOR_HIGHWAY, F.MAJOR_HIGHWAY, F.FREEWAY],
+        B = [F.STREET, F.PRIMARY_STREET, F.WALKING_TRAIL, F.MAJOR_HIGHWAY, F.MINOR_HIGHWAY, F.OFF_ROAD, F.PEDESTRIAN_BOARDWALK, F.STAIRWAY, F.PRIVATE_ROAD, F.PARKING_LOT_ROAD, F.ALLEY],
+        G = [F.WALKING_TRAIL, F.PEDESTRIAN_BOARDWALK, F.STAIRWAY],
+        z = [].concat(G, [F.RAILROAD, F.RUNWAY_TAXIWAY]),
+        H = OL.Class(v.default, {
             defaults: function() {
                 return {
                     type: 1,
@@ -2139,7 +2047,7 @@ webpackJsonp([0], [function(e, t, i) {
             clone: function() {
                 var e = _.extend({}, this.attributes);
                 this.attributes.geometry && (e.geometry = this.attributes.geometry.clone());
-                var t = new z(e);
+                var t = new H(e);
                 return this.attributes.streetIDs && (t.attributes.streetIDs = this.attributes.streetIDs.concat()),
                     t
             },
@@ -2160,22 +2068,22 @@ webpackJsonp([0], [function(e, t, i) {
                 return this.attributes.fwdDirection ? !this.attributes.revDirection : this.attributes.revDirection
             },
             isDeletable: function() {
-                return this.deletionRejection() === N.NOT_REJECTED
+                return this.deletionRejection() === V.NOT_REJECTED
             },
             deletionRejection: function() {
                 if (this.isInBigJunction())
-                    return N.IN_BIG_JUNCTION;
+                    return V.IN_BIG_JUNCTION;
                 if (this.hasClosures())
-                    return N.HAS_CLOSURES;
+                    return V.HAS_CLOSURES;
                 var e = W.loginManager.user;
                 if (e) {
                     if (this.attributes.createdBy === e.id)
-                        return N.NOT_REJECTED;
+                        return V.NOT_REJECTED;
                     var t = e.canDeleteSegments();
-                    if (t !== N.NOT_REJECTED)
+                    if (t !== V.NOT_REJECTED)
                         return t
                 }
-                return this.isAllowed(w.Segments.DELETE) ? N.NOT_REJECTED : N.OTHER_REASON
+                return this.isAllowed(w.Segments.DELETE) ? V.NOT_REJECTED : V.OTHER_REASON
             },
             reverseDirection: function() {
                 this.isOneWay() && (this.attributes.fwdDirection = !this.attributes.fwdDirection,
@@ -2281,13 +2189,13 @@ webpackJsonp([0], [function(e, t, i) {
                 return null != e.getStreet() && !e.isEmptyStreet()
             },
             isHighway: function() {
-                return V.includes(this.attributes.roadType)
+                return U.includes(this.attributes.roadType)
             },
             isDrivable: function() {
-                return !B.includes(this.attributes.roadType)
+                return !z.includes(this.attributes.roadType)
             },
             isWalkingRoadType: function() {
-                return U.includes(this.attributes.roadType)
+                return G.includes(this.attributes.roadType)
             },
             getVirtualNodes: function() {
                 var e = this;
@@ -2390,12 +2298,6 @@ webpackJsonp([0], [function(e, t, i) {
             canChangeMaxSpeedUnverified: function(e) {
                 return this.arePropertiesEditable() && this.isSpeedUnverified(e)
             },
-            canEditFwdSpeedLimit: function() {
-                return this.canEditDrivingAttributes() && !this.attributes.fwdMaxSpeedUnverified
-            },
-            canEditRevSpeedLimit: function() {
-                return this.canEditDrivingAttributes() && !this.attributes.revMaxSpeedUnverified
-            },
             arePropertiesEditable: function() {
                 return !this.hasClosures() && v.default.prototype.arePropertiesEditable.apply(this, arguments)
             },
@@ -2438,7 +2340,7 @@ webpackJsonp([0], [function(e, t, i) {
                 return this.isAllowed(this.PERMISSIONS.EDIT_CONNECTIONS) && !this.hasToBigJunction()
             },
             isRoutable: function() {
-                return F.includes(this.attributes.roadType)
+                return j.includes(this.attributes.roadType)
             },
             isInRoundabout: function() {
                 return null != this.attributes.junctionID
@@ -2457,9 +2359,9 @@ webpackJsonp([0], [function(e, t, i) {
                 };
                 if (!this.isRoutable())
                     return e;
-                var t = F.indexOf(this.attributes.roadType);
-                return e.prev = F[t - 1] || null,
-                    e.next = F[t + 1] || null,
+                var t = j.indexOf(this.attributes.roadType);
+                return e.prev = j[t - 1] || null,
+                    e.next = j[t + 1] || null,
                     e
             },
             getRoadType: function() {
@@ -2472,10 +2374,10 @@ webpackJsonp([0], [function(e, t, i) {
                 return this.attributes.pickupRestrictions.slice()
             },
             getDrivingRestrictionCount: function() {
-                return this.attributes.restrictions.length
+                return x.dedupRestrictions(this.attributes.restrictions).length
             },
             getPickupRestrictionCount: function() {
-                return this.attributes.pickupRestrictions.length
+                return x.dedupRestrictions(this.attributes.pickupRestrictions).length
             },
             hasRestrictions: function() {
                 return this.getDrivingRestrictionCount() > 0 || this.getPickupRestrictionCount() > 0
@@ -2506,7 +2408,7 @@ webpackJsonp([0], [function(e, t, i) {
                 return !!t && t.allowPickupRestrictions
             },
             supportsHouseNumbers: function() {
-                return j.includes(this.attributes.roadType) && this.hasNonEmptyStreet()
+                return B.includes(this.attributes.roadType) && this.hasNonEmptyStreet()
             },
             MinLevel: -5,
             MaxLevel: 9,
@@ -2531,12 +2433,83 @@ webpackJsonp([0], [function(e, t, i) {
             },
             CLASS_NAME: "Waze.Feature.Vector.Segment"
         });
-    t.default = z,
-        t.ROAD_TYPES = x,
-        t.HIGHWAY_ROAD_TYPES = V,
-        t.WALKING_ROAD_TYPES = U,
-        t.SEGMENT_DELETION_REJECTION = N
+    t.default = H,
+        t.ROAD_TYPES = F,
+        t.HIGHWAY_ROAD_TYPES = U,
+        t.WALKING_ROAD_TYPES = G,
+        t.SEGMENT_DELETION_REJECTION = V
 }, , function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
+        r = n(s),
+        a = i(15),
+        o = n(a),
+        l = i(20),
+        u = n(l),
+        d = OpenLayers.Class(o.default, {
+            initialize: function(e, t) {
+                this.attributes = e || {},
+                    t && t.parse && e && this.parse(e),
+                    e && (this.attributes = (0,
+                        r.default)(this.attributes, e)),
+                    _.defaults(this.attributes, _.result(this, "defaults"))
+            },
+            merge: function(e) {
+                this.parse(e),
+                    (0,
+                        r.default)(this.attributes, e),
+                    this.originalValues && (this.originalValues = void 0)
+            },
+            getOriginalValue: function(e) {
+                return this.originalValues && !_.isUndefined(this.originalValues[e]) ? this.originalValues[e] : this.attributes[e]
+            },
+            getID: function() {
+                return this.attributes.id
+            },
+            setID: function(e) {
+                this.attributes.id = e
+            },
+            getVersion: function() {
+                return this.attributes.version || o.default.prototype.getVersion.apply(this)
+            },
+            clone: function() {
+                var e = null,
+                    t = _.extend({}, this.attributes);
+                this.attributes.geometry && (e = this.attributes.geometry.clone()),
+                    t.geometry = e;
+                var i = new d(t);
+                return i.state = this.state,
+                    i
+            },
+            getPermissions: function() {
+                return u.default.isDefined(this.attributes.permissions) ? this.attributes.permissions : 0
+            },
+            getAttributes: function() {
+                return this.attributes
+            },
+            CLASS_NAME: "Waze.Feature.Vector"
+        });
+    Object.defineProperty(d.prototype, "geometry", {
+            get: function() {
+                if (this.attributes)
+                    return this.attributes.geometry
+            },
+            set: function(e) {
+                this.attributes.geometry = e
+            }
+        }),
+        t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
     "use strict";
 
     function n(e, t) {
@@ -2548,13 +2521,13 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.getHTML = void 0;
-    var s = i(12),
+    var s = i(13),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
             }
         }(s),
-        a = i(492);
+        a = i(472);
     a.keys().map(a);
     var o = {
         t: I18n.t.bind(I18n),
@@ -2578,7 +2551,7 @@ webpackJsonp([0], [function(e, t, i) {
         _getManifestsWith: function(e) {
             return W.Config.enabled_modules.map(function(t) {
                 try {
-                    return i(524)("./" + t + "/Manifest")[e]
+                    return i(504)("./" + t + "/Manifest")[e]
                 } catch (e) {
                     throw new Error("Error loading module " + t + ":\nManifest file does not exist.")
                 }
@@ -2738,8 +2711,8 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(11),
-        v = i(16),
+        m = i(12),
+        v = i(17),
         _ = n(v),
         y = function(e) {
             function t(e, i, n) {
@@ -3020,12 +2993,12 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, , , , , function(e, t, i) {
     e.exports = {
-        default: i(531),
+        default: i(511),
         __esModule: !0
     }
 }, , , function(e, t, i) {
     e.exports = {
-        default: i(537),
+        default: i(517),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -3048,8 +3021,8 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(1),
         c = n(d),
-        h = i(161),
-        f = i(539),
+        h = i(156),
+        f = i(519),
         p = {
             FREE: "FREE",
             BLOCKED: "BLOCKED",
@@ -3261,7 +3234,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(6),
         r = n(s),
-        a = i(207),
+        a = i(202),
         o = n(a),
         l = i(2),
         u = n(l),
@@ -3273,7 +3246,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(540),
+        y = i(520),
         b = n(y),
         w = function(e) {
             function t() {
@@ -3441,7 +3414,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(208),
+    var n = i(203),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -3520,7 +3493,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -3532,15 +3505,15 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(9),
+        m = i(10),
         v = n(m),
         _ = i(19),
         y = n(_),
-        b = i(123),
+        b = i(231),
         w = n(b),
-        E = i(124),
+        E = i(121),
         k = n(E),
-        M = i(10),
+        M = i(9),
         S = n(M),
         T = function(e) {
             function t(e, i) {
@@ -3638,7 +3611,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(9),
+        m = i(10),
         v = n(m),
         _ = function(e) {
             function t(e, i) {
@@ -3843,6 +3816,84 @@ webpackJsonp([0], [function(e, t, i) {
         }
     }
     Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.UNIT = void 0;
+    var s = i(7),
+        r = n(s),
+        a = i(22),
+        o = n(a),
+        l = {},
+        u = {},
+        d = {},
+        c = {
+            KILOMETER: "km",
+            MILE: "mi",
+            METER: "m",
+            FEET: "ft"
+        },
+        h = {};
+    h[c.KILOMETER] = c.MILE,
+        h[c.METER] = c.FEET;
+    var f = {},
+        p = !0,
+        g = !1,
+        m = void 0;
+    try {
+        for (var v, _ = (0,
+                o.default)((0,
+                r.default)(h)); !(p = (v = _.next()).done); p = !0) {
+            var y = v.value,
+                b = h[y];
+            f[b] = y,
+                u[y] = !0,
+                d[b] = !0
+        }
+    } catch (e) {
+        g = !0,
+            m = e
+    } finally {
+        try {
+            !p && _.return && _.return()
+        } finally {
+            if (g)
+                throw m
+        }
+    }
+    var w = OpenLayers,
+        E = w.INCHES_PER_UNIT;
+    l = {
+            convert: function(e, t, i) {
+                return e * E[t] / E[i]
+            },
+            localizeUnit: function(e) {
+                return u[e] && W.model.isImperial ? e = h[e] : d[e] && !W.model.isImperial && (e = f[e]),
+                    e
+            },
+            getLocalizedValue: function(e, t) {
+                var i = this.localizeUnit(t);
+                return this.convert(e, t, i)
+            },
+            getLocalizedDisplayValue: function(e, t, i) {
+                var n = this.convert(e, t, i);
+                return this.getLocalizedValue(n, i)
+            },
+            getOriginalValue: function(e, t) {
+                var i = this.localizeUnit(t);
+                return this.convert(e, i, t)
+            }
+        },
+        t.UNIT = c,
+        t.default = l
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
         value: !0
     });
     var s = i(7),
@@ -3851,7 +3902,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(34),
         u = n(l),
-        d = i(534),
+        d = i(514),
         c = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -3912,7 +3963,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(160),
+        l = i(155),
         u = n(l),
         d = i(48),
         c = function() {
@@ -4128,164 +4179,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(0),
         o = n(a),
-        l = i(3),
-        u = n(l),
-        d = i(1),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(19),
-        g = n(p),
-        m = i(71),
-        v = n(m),
-        y = i(26),
-        b = function(e) {
-            function t(e) {
-                (0,
-                    o.default)(this, t);
-                var i = (0,
-                    u.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, e));
-                i.dataModel = e.dataModel,
-                    i.model = e.selection[0];
-                var n = i.dataModel.getRepository(i.model.type);
-                return i.listenTo(n, y.CHANGED, i.onFeaturesChanged),
-                    i
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    c.default)(t, [{
-                    key: "events",
-                    value: function() {
-                        return {
-                            "submit .attributes-form": "_onAttributesFormSubmitted",
-                            "change .attributes-form input, .attributes-form select, .attributes-form textarea": "_onAttributeChanged"
-                        }
-                    }
-                }]),
-                (0,
-                    c.default)(t, [{
-                    key: "_onAttributesFormSubmitted",
-                    value: function() {
-                        return !1
-                    }
-                }, {
-                    key: "_toggleFormControls",
-                    value: function(e) {
-                        this.$(".attributes-form").find("input, textarea, select").prop("disabled", !e)
-                    }
-                }, {
-                    key: "isModelEditable",
-                    value: function() {
-                        return this.model.arePropertiesEditable()
-                    }
-                }, {
-                    key: "toggleEnabled",
-                    value: function(e) {
-                        e ? this.triggerMethod("editingEnabled") : this.triggerMethod("editingDisabled")
-                    }
-                }, {
-                    key: "serializeElement",
-                    value: function(e) {
-                        var t = void 0,
-                            i = e.data("units"),
-                            n = void 0;
-                        if ("checkbox" === e.attr("type") && e.is("[data-multiple]"))
-                            n = this.$el.find("input[name=" + e.attr("name") + "]:checked"),
-                            t = n.toArray().map(function(e) {
-                                return $(e).val()
-                            });
-                        else {
-                            if ("checkbox" === e.attr("type"))
-                                return e.is(":checked");
-                            t = e.is("select") && e.prop("multiple") ? e.find("option:selected").toArray().map(function(e) {
-                                return $(e).val()
-                            }) : e.is("select") ? e.find("option:selected").val() : e.val()
-                        }
-                        return "boolean" === e.data("type") && (t = e.booleanVal()),
-                            "numeric" === e.data("type") && (t = parseInt(t, 10),
-                                isNaN(t) && e.is("[data-nullable]") ? t = null : i && (t = v.default.getOriginalValue(t, i))),
-                            t
-                    }
-                }, {
-                    key: "_removeMixedOption",
-                    value: function(e) {
-                        var t = e.parents(".waze-radio-container");
-                        t.length > 0 ? t.find(".data-mixed-indicator").remove() : e.find("[data-mixed-indicator]").remove()
-                    }
-                }, {
-                    key: "_onAttributeChanged",
-                    value: function(e) {
-                        var t = $(e.target),
-                            i = t.attr("name"),
-                            n = this.serializeElement(t),
-                            s = this[i + "Changed"],
-                            r = {},
-                            a = {};
-                        if (null != i) {
-                            var o = _.has(this.model.attributes, i),
-                                l = this.model.FLAG_ATTRIBUTES && this.model.FLAG_ATTRIBUTES[i];
-                            (t.is("select") || t.parents(".waze-radio-container").length > 0) && this._removeMixedOption(t),
-                                s ? s.call(this, n) : l ? (a[i] = n,
-                                    this.changed(r, void 0, a)) : o ? (r[i] = n,
-                                    this.changed(r)) : console.error("FeatureEditor: unknown attribute changed '" + i + "'")
-                        }
-                    }
-                }, {
-                    key: "changed",
-                    value: function(e) {
-                        arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-                            arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-                        this.dataModel.actionManager.add(new g.default(this.model, e))
-                    }
-                }, {
-                    key: "onFeaturesChanged",
-                    value: function(e) {
-                        this.hasEditedModelChanged(e) && this.isRendered && !this.isDestroyed() && this.renderOnceLater()
-                    }
-                }, {
-                    key: "hasEditedModelChanged",
-                    value: function(e) {
-                        return 1 === e.length && e[0].getID() === this.model.getID()
-                    }
-                }, {
-                    key: "serializeData",
-                    value: function() {
-                        return this.model
-                    }
-                }, {
-                    key: "onRender",
-                    value: function() {
-                        this._toggleFormControls(this.isModelEditable())
-                    }
-                }]),
-                t
-        }(Marionette.View);
-    t.default = b,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
         l = i(1),
         u = n(l),
         d = i(3),
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(16),
+        p = i(17),
         g = n(p),
         m = i(15),
         v = n(m),
@@ -4363,13 +4263,13 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(16),
+        m = i(17),
         v = n(m),
-        _ = i(9),
+        _ = i(10),
         y = n(_),
-        b = i(79),
+        b = i(77),
         w = n(b),
-        E = i(11),
+        E = i(12),
         k = function(e) {
             function t(e) {
                 var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -4462,7 +4362,7 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.DIRECTION = void 0;
-    var n = i(12),
+    var n = i(13),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -4642,87 +4542,9 @@ webpackJsonp([0], [function(e, t, i) {
         t.DIRECTION = r
 }, , , , , function(e, t, i) {
     e.exports = {
-        default: i(455),
+        default: i(435),
         __esModule: !0
     }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.UNIT = void 0;
-    var s = i(7),
-        r = n(s),
-        a = i(22),
-        o = n(a),
-        l = {},
-        u = {},
-        d = {},
-        c = {
-            KILOMETER: "km",
-            MILE: "mi",
-            METER: "m",
-            FEET: "ft"
-        },
-        h = {};
-    h[c.KILOMETER] = c.MILE,
-        h[c.METER] = c.FEET;
-    var f = {},
-        p = !0,
-        g = !1,
-        m = void 0;
-    try {
-        for (var v, _ = (0,
-                o.default)((0,
-                r.default)(h)); !(p = (v = _.next()).done); p = !0) {
-            var y = v.value,
-                b = h[y];
-            f[b] = y,
-                u[y] = !0,
-                d[b] = !0
-        }
-    } catch (e) {
-        g = !0,
-            m = e
-    } finally {
-        try {
-            !p && _.return && _.return()
-        } finally {
-            if (g)
-                throw m
-        }
-    }
-    var w = OpenLayers,
-        E = w.INCHES_PER_UNIT;
-    l = {
-            convert: function(e, t, i) {
-                return e * E[t] / E[i]
-            },
-            localizeUnit: function(e) {
-                return u[e] && W.model.isImperial ? e = h[e] : d[e] && !W.model.isImperial && (e = f[e]),
-                    e
-            },
-            getLocalizedValue: function(e, t) {
-                var i = this.localizeUnit(t);
-                return this.convert(e, t, i)
-            },
-            getLocalizedDisplayValue: function(e, t, i) {
-                var n = this.convert(e, t, i);
-                return this.getLocalizedValue(n, i)
-            },
-            getOriginalValue: function(e, t) {
-                var i = this.localizeUnit(t);
-                return this.convert(e, i, t)
-            }
-        },
-        t.UNIT = c,
-        t.default = l
 }, function(e, t, i) {
     "use strict";
 
@@ -4740,9 +4562,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(6),
         u = n(l),
-        d = i(533),
+        d = i(513),
         c = n(d),
-        h = i(26),
+        h = i(27),
         f = i(20),
         p = n(f),
         g = Marionette.Object.extend({
@@ -4947,15 +4769,15 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(209),
+        a = i(204),
         o = n(a),
-        l = i(162),
+        l = i(205),
         u = n(l),
         d = i(19),
         c = n(d),
-        h = i(543),
+        h = i(523),
         f = n(h),
-        p = i(544),
+        p = i(524),
         g = n(p),
         m = i(57),
         v = n(m),
@@ -5130,72 +4952,6 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(29),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = OpenLayers.Class(s.default, {
-            TYPE: {
-                DISCONNECTION: "DISCONNECTION",
-                TURN: "TURN",
-                DATA: "DATA",
-                ROAD_CLOSURE: "ROAD_CLOSURE"
-            },
-            nested: {
-                geometry: OL.Geometry,
-                bounds: OL.Geometry
-            },
-            ONE_WEEK_IN_MILLIS: 6048e5,
-            SeverityThreshold: {
-                low: 3,
-                medium: 7
-            },
-            disconnectBounds: null,
-            initialize: function(e) {
-                s.default.prototype.initialize.apply(this, arguments),
-                    this.setSeverity(this.attributes.weight),
-                    this.editable = this.attributes.open
-            },
-            merge: function(e) {
-                s.default.prototype.merge.apply(this, arguments),
-                    this.editable = this.attributes.open
-            },
-            getDisconnectBounds: function() {
-                return this.disconnectBounds || (this.disconnectBounds = this.attributes.bounds.getBounds()),
-                    this.disconnectBounds
-            },
-            setSeverity: function(e) {
-                var t = "high";
-                e <= this.SeverityThreshold.low ? t = "low" : e <= this.SeverityThreshold.medium && (t = "medium"),
-                    this.attributes.severity = t
-            },
-            getSessions: function() {
-                return this.model.problemDetails.get([this.getID()])
-            },
-            isRecentlyClosed: function() {
-                return !this.attributes.open && Date.now() - this.attributes.resolvedOn <= this.ONE_WEEK_IN_MILLIS
-            },
-            getLocation: function() {
-                return this.attributes.geometry
-            },
-            canEdit: function() {
-                return this.isAllowed(this.PERMISSIONS.EDIT)
-            },
-            PERMISSIONS: {
-                EDIT: 1,
-                FORCE_CLOSE: 2
-            },
-            CLASS_NAME: "Waze.Feature.Vector.MapProblem"
-        });
-    t.default = r,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
     var n = Backbone.Model.extend({
         getUrl: function(e) {
             return this.getUrlById(e, this.id)
@@ -5235,7 +4991,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(16),
+        p = i(17),
         g = n(p),
         m = function(e) {
             function t(e, i, n, s, a) {
@@ -5317,7 +5073,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -5333,26 +5089,26 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         y = i(64),
         b = n(y),
-        w = i(9),
+        w = i(10),
         E = n(w),
-        k = i(125),
+        k = i(122),
         M = n(k),
-        S = i(10),
+        S = i(9),
         T = n(S),
         C = i(20),
         I = n(C),
-        A = i(234),
+        A = i(727),
         R = n(A),
         O = i(36),
         D = n(O),
-        L = i(60),
+        L = i(61),
         P = n(L),
-        N = i(112),
+        N = i(157),
         x = n(N),
         V = i(35),
         F = n(V),
-        j = i(95),
-        U = n(j),
+        U = i(94),
+        j = n(U),
         B = function(e) {
             function t(e) {
                 var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -5457,7 +5213,7 @@ webpackJsonp([0], [function(e, t, i) {
                                     e.attributes.revToll = i.revToll,
                                     e.attributes.origIDs = [t],
                                     e.setID(null),
-                                    this.doSubAction(new U.default(e))
+                                    this.doSubAction(new j.default(e))
                             }, this)
                     }
                 }, {
@@ -5561,11 +5317,11 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(19),
         v = n(m),
-        _ = i(168),
+        _ = i(232),
         y = n(_),
         b = i(36),
         w = n(b),
@@ -5646,11 +5402,11 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, , , , , , , , function(e, t, i) {
     var n = i(43),
-        s = i(195),
-        r = i(196),
+        s = i(190),
+        r = i(191),
         a = i(33),
-        o = i(99),
-        l = i(149),
+        o = i(101),
+        l = i(143),
         u = {},
         d = {},
         t = e.exports = function(e, t, i, c, h) {
@@ -5675,7 +5431,7 @@ webpackJsonp([0], [function(e, t, i) {
         t.RETURN = d
 }, function(e, t, i) {
     e.exports = {
-        default: i(485),
+        default: i(465),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -5749,6 +5505,72 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var n = i(31),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = OpenLayers.Class(s.default, {
+            TYPE: {
+                DISCONNECTION: "DISCONNECTION",
+                TURN: "TURN",
+                DATA: "DATA",
+                ROAD_CLOSURE: "ROAD_CLOSURE"
+            },
+            nested: {
+                geometry: OL.Geometry,
+                bounds: OL.Geometry
+            },
+            ONE_WEEK_IN_MILLIS: 6048e5,
+            SeverityThreshold: {
+                low: 3,
+                medium: 7
+            },
+            disconnectBounds: null,
+            initialize: function(e) {
+                s.default.prototype.initialize.apply(this, arguments),
+                    this.setSeverity(this.attributes.weight),
+                    this.editable = this.attributes.open
+            },
+            merge: function(e) {
+                s.default.prototype.merge.apply(this, arguments),
+                    this.editable = this.attributes.open
+            },
+            getDisconnectBounds: function() {
+                return this.disconnectBounds || (this.disconnectBounds = this.attributes.bounds.getBounds()),
+                    this.disconnectBounds
+            },
+            setSeverity: function(e) {
+                var t = "high";
+                e <= this.SeverityThreshold.low ? t = "low" : e <= this.SeverityThreshold.medium && (t = "medium"),
+                    this.attributes.severity = t
+            },
+            getSessions: function() {
+                return this.model.problemDetails.get([this.getID()])
+            },
+            isRecentlyClosed: function() {
+                return !this.attributes.open && Date.now() - this.attributes.resolvedOn <= this.ONE_WEEK_IN_MILLIS
+            },
+            getLocation: function() {
+                return this.attributes.geometry
+            },
+            canEdit: function() {
+                return this.isAllowed(this.PERMISSIONS.EDIT)
+            },
+            PERMISSIONS: {
+                EDIT: 1,
+                FORCE_CLOSE: 2
+            },
+            CLASS_NAME: "Waze.Feature.Vector.MapProblem"
+        });
+    t.default = r,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     t.Segments = {
             EDIT_GEOMETRY: 1,
             EDIT_PROPERTIES: 2,
@@ -5776,30 +5598,30 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(70),
         o = n(a),
-        l = i(29),
+        l = i(31),
         u = n(l),
         d = i(15),
         c = n(d),
-        h = i(114),
-        f = i(76),
+        h = i(113),
+        f = i(74),
         p = n(f),
-        g = i(61),
-        m = i(164),
+        g = i(62),
+        m = i(160),
         v = n(m),
-        y = i(557),
+        y = i(551),
         b = n(y),
-        w = i(219),
+        w = i(217),
         E = n(w),
         k = i(49),
         M = n(k),
-        S = i(10),
+        S = i(9),
         T = n(S),
-        C = i(92),
-        I = i(115),
+        C = i(114),
+        I = i(162),
         A = n(I),
         R = OpenLayers.Class(u.default, {
             defaults: function() {
@@ -6002,37 +5824,155 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = (t.UNKNOWN = "UNKNOWN",
-        t.PARKING_TYPE_PUBLIC = "PUBLIC");
-    t.PARKING_TYPE = [n, "RESTRICTED", "PRIVATE"],
-        t.COST_TYPE = ["FREE", "LOW", "MODERATE", "EXPENSIVE"],
-        t.PAYMENT_TYPE = ["CASH", "CHECKS", "CREDIT", "DEBIT_CARD", "PERMIT", "MEMBERSHIP", "PREPAID", "PARKING_APP", "DIGITAL_WALLET", "SMS_CALL", "ELECTRONIC_PASS"],
-        t.LOT_TYPE = ["STREET_LEVEL", "STREET_LEVEL_COVERED", "MULTI_LEVEL", "UNDERGROUND"],
-        t.SPOTS_ESTIMATE = [{
-            value: "R_1_TO_10",
-            range: [1, 10]
-        }, {
-            value: "R_11_TO_30",
-            range: [11, 30]
-        }, {
-            value: "R_31_TO_60",
-            range: [31, 60]
-        }, {
-            value: "R_61_TO_100",
-            range: [61, 100]
-        }, {
-            value: "R_101_TO_300",
-            range: [101, 300]
-        }, {
-            value: "R_301_TO_600",
-            range: [301, 600]
-        }, {
-            value: "R_600_PLUS",
-            range: [601, 1 / 0]
-        }]
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(3),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(19),
+        g = n(p),
+        m = i(59),
+        v = n(m),
+        y = i(27),
+        b = function(e) {
+            function t(e) {
+                (0,
+                    o.default)(this, t);
+                var i = (0,
+                    u.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, e));
+                i.dataModel = e.dataModel,
+                    i.model = e.selection[0];
+                var n = i.dataModel.getRepository(i.model.type);
+                return i.listenTo(n, y.CHANGED, i.onFeaturesChanged),
+                    i
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "events",
+                    value: function() {
+                        return {
+                            "submit .attributes-form": "_onAttributesFormSubmitted",
+                            "change .attributes-form input, .attributes-form select, .attributes-form textarea": "_onAttributeChanged"
+                        }
+                    }
+                }]),
+                (0,
+                    c.default)(t, [{
+                    key: "_onAttributesFormSubmitted",
+                    value: function() {
+                        return !1
+                    }
+                }, {
+                    key: "_toggleFormControls",
+                    value: function(e) {
+                        this.$(".attributes-form").find("input, textarea, select").prop("disabled", !e)
+                    }
+                }, {
+                    key: "isModelEditable",
+                    value: function() {
+                        return this.model.arePropertiesEditable()
+                    }
+                }, {
+                    key: "toggleEnabled",
+                    value: function(e) {
+                        e ? this.triggerMethod("editingEnabled") : this.triggerMethod("editingDisabled")
+                    }
+                }, {
+                    key: "serializeElement",
+                    value: function(e) {
+                        var t = void 0,
+                            i = e.data("units"),
+                            n = void 0;
+                        if ("checkbox" === e.attr("type") && e.is("[data-multiple]"))
+                            n = this.$el.find("input[name=" + e.attr("name") + "]:checked"),
+                            t = n.toArray().map(function(e) {
+                                return $(e).val()
+                            });
+                        else {
+                            if ("checkbox" === e.attr("type"))
+                                return e.is(":checked");
+                            t = e.is("select") && e.prop("multiple") ? e.find("option:selected").toArray().map(function(e) {
+                                return $(e).val()
+                            }) : e.is("select") ? e.find("option:selected").val() : e.val()
+                        }
+                        return "boolean" === e.data("type") && (t = e.booleanVal()),
+                            "numeric" === e.data("type") && (t = parseInt(t, 10),
+                                isNaN(t) && e.is("[data-nullable]") ? t = null : i && (t = v.default.getOriginalValue(t, i))),
+                            t
+                    }
+                }, {
+                    key: "_removeMixedOption",
+                    value: function(e) {
+                        var t = e.parents(".waze-radio-container");
+                        t.length > 0 ? t.find(".data-mixed-indicator").remove() : e.find("[data-mixed-indicator]").remove()
+                    }
+                }, {
+                    key: "_onAttributeChanged",
+                    value: function(e) {
+                        var t = $(e.target),
+                            i = t.attr("name"),
+                            n = this.serializeElement(t),
+                            s = this[i + "Changed"],
+                            r = {},
+                            a = {};
+                        if (null != i) {
+                            var o = _.has(this.model.attributes, i),
+                                l = this.model.FLAG_ATTRIBUTES && this.model.FLAG_ATTRIBUTES[i];
+                            (t.is("select") || t.parents(".waze-radio-container").length > 0) && this._removeMixedOption(t),
+                                s ? s.call(this, n) : l ? (a[i] = n,
+                                    this.changed(r, void 0, a)) : o ? (r[i] = n,
+                                    this.changed(r)) : console.error("FeatureEditor: unknown attribute changed '" + i + "'")
+                        }
+                    }
+                }, {
+                    key: "changed",
+                    value: function(e) {
+                        arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+                            arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+                        this.dataModel.actionManager.add(new g.default(this.model, e))
+                    }
+                }, {
+                    key: "onFeaturesChanged",
+                    value: function(e) {
+                        this.hasEditedModelChanged(e) && this.isRendered && !this.isDestroyed() && this.renderOnceLater()
+                    }
+                }, {
+                    key: "hasEditedModelChanged",
+                    value: function(e) {
+                        return 1 === e.length && e[0].getID() === this.model.getID()
+                    }
+                }, {
+                    key: "serializeData",
+                    value: function() {
+                        return this.model
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this._toggleFormControls(this.isModelEditable())
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = b,
+        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
 
@@ -6044,7 +5984,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -6244,11 +6184,11 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(63),
         v = n(m),
-        _ = i(206),
+        _ = i(201),
         y = n(_),
         b = function(e) {
             function t(e, i, n, s, a) {
@@ -6327,15 +6267,15 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(16),
+        m = i(17),
         v = n(m),
-        _ = i(169),
+        _ = i(233),
         y = n(_),
-        b = i(9),
+        b = i(10),
         w = n(b),
-        E = i(170),
+        E = i(166),
         k = n(E),
-        M = i(11),
+        M = i(12),
         S = function(e) {
             function t(e) {
                 var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -6434,3069 +6374,11 @@ webpackJsonp([0], [function(e, t, i) {
         }
     }
     Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.SegmentRestrictionViewHelpers = t.TurnRestrictionViewHelpers = t.TimeFrameViewHelpers = void 0;
-    var s = i(0),
-        r = n(s),
-        a = i(1),
-        o = n(a),
-        l = i(264),
-        u = n(l),
-        d = i(161),
-        c = i(38),
-        h = new u.default,
-        f = function() {
-            function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-                    i = t.timeFrame,
-                    n = void 0 === i ? null : i;
-                (0,
-                    r.default)(this, e),
-                this._timeFrame = n
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "formatWeekdays",
-                    value: function() {
-                        if (this._timeFrame.isAllWeek())
-                            return I18n.t("restrictions.editing.timeframe.all_week");
-                        var e = this._timeFrame.getWeekdays(),
-                            t = e.map(function(e) {
-                                return d.WEEKDAY_ORDINALS.indexOf(e)
-                            });
-                        return h.getWeekdaysGist(t, "*").map(function(e) {
-                            return "*" !== e ? I18n.t("date.abbr_day_names")[e] : e
-                        }).join(", ").replace(/, \*,/g, "-")
-                    }
-                }, {
-                    key: "formatHours",
-                    value: function() {
-                        return this._timeFrame.isAllDay() ? I18n.t("restrictions.editing.timeframe.all_day") : this._timeFrame.getFromTime() + " - " + this._timeFrame.getToTime()
-                    }
-                }, {
-                    key: "formatDateRange",
-                    value: function() {
-                        return this._timeFrame.isDuringDates() ? I18n.t("restrictions.editing.timeframe.date_range", {
-                            start: new Date(this._timeFrame.getStartDate()).toLocaleDateString(),
-                            end: new Date(this._timeFrame.getEndDate()).toLocaleDateString()
-                        }) : I18n.t("restrictions.editing.timeframe.always")
-                    }
-                }]),
-                e
-        }(),
-        p = function() {
-            function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-                    i = t.dataModel,
-                    n = t.segment;
-                (0,
-                    r.default)(this, e),
-                this._dataModel = i,
-                    this._segment = n
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "getEditingDrivingTitle",
-                    value: function(e) {
-                        return this.getDrivingRestrictedTitle(e.getDirection())
-                    }
-                }, {
-                    key: "getDrivingRestrictedTitle",
-                    value: function(e) {
-                        return I18n.t("restrictions.editing.titles.segment.driving_restricted", {
-                            street: this._segment.getAddress().getStreetName(),
-                            direction: this._getDirectionString(e)
-                        })
-                    }
-                }, {
-                    key: "getDrivingNotRestrictedTitle",
-                    value: function(e) {
-                        return I18n.t("restrictions.editing.titles.segment.driving_not_restricted", {
-                            street: this._segment.getAddress().getStreetName(),
-                            direction: this._getDirectionString(e)
-                        })
-                    }
-                }, {
-                    key: "getPickupTitle",
-                    value: function(e) {
-                        return I18n.t("restrictions.editing.titles.segment.pickup", {
-                            street: this._segment.getAddress().getStreetName(),
-                            direction: this._getDirectionString(e)
-                        })
-                    }
-                }, {
-                    key: "_getHeading",
-                    value: function(e) {
-                        return e === c.RESTRICTION_SEGMENT_DIRECTION.FWD ? this._segment.getFwdHeading() : e === c.RESTRICTION_SEGMENT_DIRECTION.REV ? this._segment.getRevHeading() : e === c.RESTRICTION_SEGMENT_DIRECTION.BOTH ? null : void 0
-                    }
-                }, {
-                    key: "_getDirectionString",
-                    value: function(e) {
-                        if (e === c.RESTRICTION_SEGMENT_DIRECTION.BOTH)
-                            return I18n.t("restrictions.editing.titles.segment.both_ways");
-                        var t = this._getHeading(e);
-                        return I18n.t("segment.heading")[t]
-                    }
-                }]),
-                e
-        }(),
-        g = function() {
-            function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-                    i = t.dataModel,
-                    n = t.turn;
-                (0,
-                    r.default)(this, e),
-                this._turn = n,
-                    this._dataModel = i,
-                    this._restrictions = this._turn.getTurnData().getRestrictions(),
-                    this._fromSegment = this._dataModel.segments.get(this._turn.getFromVertex().getSegmentID()),
-                    this._toSegment = this._dataModel.segments.get(this._turn.getToVertex().getSegmentID())
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "getEditingTitle",
-                    value: function(e) {
-                        return e.isDifficult() ? this._getDifficultTitle() : this._getRestrictedTitle()
-                    }
-                }, {
-                    key: "getDifficultSummaryTitle",
-                    value: function() {
-                        return this._getDifficultTitle()
-                    }
-                }, {
-                    key: "getSummaryTitle",
-                    value: function() {
-                        return this._getRestrictedTitle()
-                    }
-                }, {
-                    key: "_getRestrictedTitle",
-                    value: function() {
-                        return this._turn.isUturn() ? I18n.t("restrictions.editing.titles.uturn.restricted", {
-                            street: this._fromSegment.getAddress().getStreetName()
-                        }) : I18n.t("restrictions.editing.titles.turn.restricted", {
-                            from_street: this._fromSegment.getAddress().getStreetName(),
-                            to_street: this._toSegment.getAddress().getStreetName()
-                        })
-                    }
-                }, {
-                    key: "_getDifficultTitle",
-                    value: function() {
-                        return this._turn.isUturn() ? I18n.t("restrictions.editing.titles.uturn.difficult", {
-                            street: this._fromSegment.getAddress().getStreetName()
-                        }) : I18n.t("restrictions.editing.titles.turn.difficult", {
-                            from_street: this._fromSegment.getAddress().getStreetName(),
-                            to_street: this._toSegment.getAddress().getStreetName()
-                        })
-                    }
-                }]),
-                e
-        }();
-    t.TimeFrameViewHelpers = f,
-        t.TurnRestrictionViewHelpers = g,
-        t.SegmentRestrictionViewHelpers = p
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.SaveError = void 0;
-    var s = i(108),
-        r = n(s),
-        a = i(107),
-        o = n(a),
-        l = i(88),
-        u = n(l),
-        d = i(157),
-        c = n(d),
-        h = i(18),
-        f = n(h),
-        p = i(22),
-        g = n(p),
-        m = i(7),
-        v = n(m),
-        y = i(6),
-        b = n(y),
-        w = i(1),
-        E = n(w),
-        k = i(2),
-        M = n(k),
-        S = i(0),
-        T = n(S),
-        C = i(3),
-        I = n(C),
-        A = i(4),
-        R = n(A),
-        O = i(20),
-        D = n(O),
-        L = i(59),
-        P = n(L),
-        N = i(267),
-        x = n(N),
-        V = i(249),
-        F = n(V),
-        j = i(9),
-        U = n(j),
-        B = i(23),
-        z = function(e) {
-            function t(e) {
-                (0,
-                    T.default)(this, t);
-                var i = (0,
-                    I.default)(this, (t.__proto__ || (0,
-                    M.default)(t)).call(this, "Save Error"));
-                return Error.captureStackTrace && Error.captureStackTrace(i, t),
-                    i.errors = e,
-                    i
-            }
-            return (0,
-                    R.default)(t, e),
-                t
-        }(function(e) {
-            function t() {
-                var t = (0,
-                    c.default)(e, (0,
-                    u.default)(arguments));
-                return (0,
-                        o.default)(t, (0,
-                        M.default)(this)),
-                    t
-            }
-            return t.prototype = (0,
-                    r.default)(e.prototype, {
-                    constructor: {
-                        value: e,
-                        enumerable: !1,
-                        writable: !0,
-                        configurable: !0
-                    }
-                }),
-                o.default ? (0,
-                    o.default)(t, e) : t.__proto__ = e,
-                t
-        }(Error)),
-        G = function() {
-            function e(t) {
-                (0,
-                    T.default)(this, e),
-                this.scale = null,
-                    this.zoom = null,
-                    this.oldScale = null,
-                    this.keepObjects = !1,
-                    this.lastReadRequest = null,
-                    (0,
-                        b.default)(this, t),
-                    this.app = W.app,
-                    this.model = W.model,
-                    this.map = W.map,
-                    this.descartes = this.app.descartes,
-                    this.selectionManager = W.selectionManager,
-                    this.events = new OpenLayers.Events(this),
-                    this.serializer = new P.default,
-                    this.loadingOperation = {
-                        id: "pending.road_data"
-                    },
-                    this.snapshotManager.on("change:state", this.reload, this),
-                    this.selectionManager.events.on({
-                        selectionchanged: this._onSelectionChange,
-                        scope: this
-                    })
-            }
-            return (0,
-                    E.default)(e, [{
-                    key: "bindToMap",
-                    value: function(e) {
-                        var t = this;
-                        e.events.on({
-                            moveend: function() {
-                                t.updateModel(!1)
-                            }
-                        })
-                    }
-                }, {
-                    key: "reload",
-                    value: function() {
-                        return this.model.clear(),
-                            this.updateModel(!1)
-                    }
-                }, {
-                    key: "updateModel",
-                    value: function(e) {
-                        var t = {};
-                        this.keepObjects = e,
-                            this.oldScale = this.scale,
-                            this.scale = this.map.getScale(),
-                            this.zoom = this.map.getZoom();
-                        var i = this.map.calculateBounds(),
-                            n = this.descartes.getExpandedDataBounds(i);
-                        if (null !== n) {
-                            var s = !0,
-                                r = !1,
-                                a = void 0;
-                            try {
-                                for (var o, l = (0,
-                                        g.default)((0,
-                                        v.default)(this.model.repos)); !(s = (o = l.next()).done); s = !0) {
-                                    var u = o.value,
-                                        d = this.model.repos[u];
-                                    d.active && (0,
-                                        b.default)(t, d.updateDataExtent(i, this.scale, this.zoom))
-                                }
-                            } catch (e) {
-                                r = !0,
-                                    a = e
-                            } finally {
-                                try {
-                                    !s && l.return && l.return()
-                                } finally {
-                                    if (r)
-                                        throw a
-                                }
-                            }
-                            _.isEmpty((0,
-                                v.default)(t)) || (this.app.isSandboxMode() && (t.sandbox = !0),
-                                D.default.printMap(t),
-                                this.sendReadFeatures(t, n))
-                        }
-                    }
-                }, {
-                    key: "_isEqualToLastRequest",
-                    value: function(e, t) {
-                        return null !== this.lastReadRequest && _.isEqual(this.lastReadRequest.filter, e) && t.equals(this.lastReadRequest.bounds)
-                    }
-                }, {
-                    key: "sendReadFeatures",
-                    value: function(e, t) {
-                        var i = this;
-                        if (!this._isEqualToLastRequest(e, t))
-                            return this.events.triggerEvent("loadstart"),
-                                W.vent.trigger("operationPending", {
-                                    operation: this.loadingOperation
-                                }),
-                                null != this.model.lastTransactionID && (e.mapVersionID = this.model.lastTransactionID),
-                                this.snapshotManager.isSnapshotOn() && (e.snapshot = !0),
-                                this.app.set("loadingFeatures", !0),
-                                this.lastReadRequest = {
-                                    filter: e,
-                                    bounds: t
-                                },
-                                this.descartes.getFeatures(this.map.calculateBounds(), e).then(function(e) {
-                                    return i.serializer.read(e),
-                                        i.model.mergeObjects(t, e, i.keepObjects)
-                                }).catch(function(e) {
-                                    "abort" !== e.reason && console.error("Error getting features", e)
-                                }).finally(function() {
-                                    i.events.triggerEvent("loadend"),
-                                        W.vent.trigger("operationDone", {
-                                            operation: i.loadingOperation
-                                        }),
-                                        i.app.set("loadingFeatures", !1),
-                                        i.keepObjects = !1,
-                                        i.lastReadRequest = null
-                                })
-                    }
-                }, {
-                    key: "save",
-                    value: function() {
-                        var e = this,
-                            t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                        return D.default.protect("saving", function() {
-                            var i = t.actions || e.model.actionManager.getActions(),
-                                n = {
-                                    actions: e._serializeActions(i)
-                                };
-                            return e.descartes.postFeatures(n, e.model.getChangesExtent(), t.ignoreWarnings).then(function(t) {
-                                return e._processSaveResponse(t), {
-                                    pendingEdits: e._getPendingEdits(t),
-                                    saveCount: e._getSaveCount(t),
-                                    unsavedFeatures: t.unsavedFeatures
-                                }
-                            }).catch(function(t) {
-                                if (t instanceof B.FetchError) {
-                                    var i = e._parseErrorResponse(t.response),
-                                        n = i[0],
-                                        s = void 0;
-                                    throw n && (s = n.get("code")),
-                                        W.Report.generalAction("save_error", s),
-                                        new z(i)
-                                }
-                                throw t
-                            }).finally(function() {
-                                W.Report.generalAction("save_clicked", e.model.actionManager.unsavedActionsNum())
-                            })
-                        })
-                    }
-                }, {
-                    key: "_serializeActions",
-                    value: function(e) {
-                        var t = new F.default,
-                            i = new U.default;
-                        return i.subActions = e,
-                            i.accept(t),
-                            t.getResult()
-                    }
-                }, {
-                    key: "_getPendingEdits",
-                    value: function(e) {
-                        var t = void 0;
-                        return t = e.pendingEdits ? e.pendingEdits.venues : [], {
-                            venues: this.model.venues.getByIds(t)
-                        }
-                    }
-                }, {
-                    key: "_getSaveCount",
-                    value: function(e) {
-                        for (var t = {}, i = ["segments", "nodes", "venues", "bigJunctions"], n = 0; n < i.length; n++) {
-                            var s = i[n],
-                                r = e[s] || {};
-                            t[s] = (0,
-                                v.default)(r).length
-                        }
-                        return t
-                    }
-                }, {
-                    key: "updateObject",
-                    value: function(e, t, i, n) {
-                        if (!e) {
-                            var s = {};
-                            return s[i] = {
-                                    objects: [t]
-                                },
-                                this.serializer.read(s),
-                                void this.model[i].put(s[i].objects[0])
-                        }
-                        if (!t)
-                            return e.state = OpenLayers.State.DELETE,
-                                void this.model[i].remove(e);
-                        var r = t.id;
-                        return delete t.id,
-                            e.merge(t),
-                            e.setID(r),
-                            n !== r && (e._prevID = n),
-                            delete this.model[i].objects[n],
-                            this.model[i].objects[r] = e,
-                            e.state = null,
-                            e.fid && (e.fid = r),
-                            this.model[i].changed(e),
-                            this.model[i].synced(e)
-                    }
-                }, {
-                    key: "_parseErrorResponse",
-                    value: function(e) {
-                        if (!e) {
-                            return [new x.default({
-                                code: 500,
-                                details: "fatal server error"
-                            })]
-                        }
-                        return this._parseErrors(e)
-                    }
-                }, {
-                    key: "_parseErrors",
-                    value: function(e) {
-                        var t = void 0;
-                        t = e.errorList ? e : {
-                            errorList: [e],
-                            errorLevel: "ERROR"
-                        };
-                        var i = "WARNING" === e.errorLevel,
-                            n = t.errorList.map(function(e) {
-                                return e.ignorable = i,
-                                    new x.default(e, {
-                                        parse: !0
-                                    })
-                            });
-                        return n.length ? n : [new x.default({
-                            code: "default"
-                        })]
-                    }
-                }, {
-                    key: "_processSaveResponse",
-                    value: function(e) {
-                        var t = this;
-                        return D.default.protect("processing save results", function() {
-                            var i = !0,
-                                n = !1,
-                                s = void 0;
-                            try {
-                                for (var r, a = (0,
-                                        g.default)((0,
-                                        v.default)(e)); !(i = (r = a.next()).done); i = !0)
-                                    ! function() {
-                                        var i = r.value,
-                                            n = e[i];
-                                        if (t.model[i]) {
-                                            var s = !0,
-                                                a = !1,
-                                                o = void 0;
-                                            try {
-                                                for (var l, u = (0,
-                                                        g.default)((0,
-                                                        v.default)(n)); !(s = (l = u.next()).done); s = !0)
-                                                    ! function() {
-                                                        var e = l.value,
-                                                            s = n[e];
-                                                        f.default.resolve(t.model[i].get(e)).then(function(n) {
-                                                            t.updateObject(n, s, i, e)
-                                                        })
-                                                    }()
-                                            } catch (e) {
-                                                a = !0,
-                                                    o = e
-                                            } finally {
-                                                try {
-                                                    !s && u.return && u.return()
-                                                } finally {
-                                                    if (a)
-                                                        throw o
-                                                }
-                                            }
-                                        }
-                                    }()
-                            } catch (e) {
-                                n = !0,
-                                    s = e
-                            } finally {
-                                try {
-                                    !i && a.return && a.return()
-                                } finally {
-                                    if (n)
-                                        throw s
-                                }
-                            }
-                            var o = t.model.getModifiedObjects(),
-                                l = !0,
-                                u = !1,
-                                d = void 0;
-                            try {
-                                for (var c, h = (0,
-                                        g.default)((0,
-                                        v.default)(o)); !(l = (c = h.next()).done); l = !0)
-                                    for (var p = c.value, m = o[p], _ = 0; _ < m[OL.State.DELETE].length; _++) {
-                                        var y = m[OL.State.DELETE][_];
-                                        t.model[p].remove(y)
-                                    }
-                            } catch (e) {
-                                u = !0,
-                                    d = e
-                            } finally {
-                                try {
-                                    !l && h.return && h.return()
-                                } finally {
-                                    if (u)
-                                        throw d
-                                }
-                            }
-                            e.userLimits && t.model.loginManager.resetUserLimits(e.userLimits),
-                                null != e.segmentsIdMapping && t.model.getTurnGraph().deleteNewSegments((0,
-                                    v.default)(e.segmentsIdMapping)),
-                                null != e.connections && t.model.getTurnGraph().fromDescartes(e.connections),
-                                t.model.actionManager.clear(),
-                                t.model.setLastTransactionID(e.mapVersionID)
-                        })
-                    }
-                }, {
-                    key: "_onSelectionChange",
-                    value: function() {
-                        return this.app.set("featureSelected", this.selectionManager.hasSelectedFeatures()),
-                            this.app.trigger("selectionChanged", {
-                                selection: W.selectionManager.getSelectedFeatures()
-                            })
-                    }
-                }]),
-                e
-        }();
-    (0,
-        b.default)(G.prototype, {
-        CLASS_NAME: "Waze.Controller"
-    }),
-    t.default = G,
-        t.SaveError = z
-}, , , , function(e, t, i) {
-    var n = i(82),
-        s = i(28)("toStringTag"),
-        r = "Arguments" == n(function() {
-            return arguments
-        }()),
-        a = function(e, t) {
-            try {
-                return e[t]
-            } catch (e) {}
-        };
-    e.exports = function(e) {
-        var t, i, o;
-        return void 0 === e ? "Undefined" : null === e ? "Null" : "string" == typeof(i = a(t = Object(e), s)) ? i : r ? n(t) : "Object" == (o = n(t)) && "function" == typeof t.callee ? "Arguments" : o
-    }
-}, , function(e, t, i) {
-    var n = i(21),
-        s = i(14),
-        r = i(46);
-    e.exports = function(e, t) {
-        var i = (s.Object || {})[e] || Object[e],
-            a = {};
-        a[e] = t(i),
-            n(n.S + n.F * r(function() {
-                i(1)
-            }), "Object", a)
-    }
-}, , , , function(e, t, i) {
-    e.exports = {
-        default: i(474),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    e.exports = {
-        default: i(477),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    e.exports = {
-        default: i(484),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.MAX_POLYGON_SIZE_DEGREES = t.BigJunction = void 0;
-    var s = i(15),
-        r = n(s),
-        a = i(29),
-        o = n(a),
-        l = i(535),
-        u = n(l),
-        d = i(49),
-        c = n(d),
-        h = i(10),
-        f = n(h),
-        p = i(60),
-        g = n(p),
-        m = OL.Class(o.default, {
-            defaults: {
-                name: "",
-                rank: 0,
-                segIDs: [],
-                permissions: r.default.ALL_PERMISSIONS
-            },
-            nested: {
-                geometry: OL.Geometry
-            },
-            _pathCache: null,
-            initialize: function(e) {
-                o.default.prototype.initialize.apply(this, arguments),
-                    _.defaults(this.attributes, this.defaults)
-            },
-            merge: function() {
-                return this._pathCache = null,
-                    o.default.prototype.merge.apply(this, arguments)
-            },
-            getAddress: function() {
-                return c.default.fromCityID(this.attributes.cityID, this.model)
-            },
-            getSegmentCount: function() {
-                return this.attributes.segIDs.length
-            },
-            getPossibleTurns: function() {
-                return null != this._pathCache ? this._pathCache : this._pathCache = u.default.for(this).getAllTurns()
-            },
-            getPossibleTurnsBetween: function(e, t) {
-                return this.getPossibleTurns().filter(function(i) {
-                    return i.getFromVertex().equals(e) && i.getToVertex().equals(t)
-                })
-            },
-            getTurnsFrom: function(e) {
-                var t = this,
-                    i = this.model.getTurnGraph().getLegalTrivialTurnsFrom(e).filter(function(e) {
-                        return !t._isShortSegment(e.getToVertex().getSegmentID())
-                    }),
-                    n = this.model.getTurnGraph().getTurnsFrom(e).filter(function(e) {
-                        return e.getTurnData().hasSegmentPath()
-                    }),
-                    s = i.concat(n);
-                return this.getShortestTurns().filter(function(t) {
-                    return t.getFromVertex().equals(e)
-                }).map(function(e) {
-                    return e.withTurnData(e.getTurnData().withState(g.default.State.DISALLOWED))
-                }).map(function(e) {
-                    var t = s.find(function(t) {
-                        return t.verticesEqual(e)
-                    });
-                    return void 0 !== t ? t : e
-                }).concat(i)
-            },
-            _isShortSegment: function(e) {
-                return this.attributes.segIDs.includes(e)
-            },
-            getShortestTurns: function() {
-                var e = _.groupBy(this.getPossibleTurns(), function(e) {
-                    return e.getFromVertex().toString() + e.getToVertex().toString()
-                });
-                return _.values(e).map(function(e) {
-                    return _.min(e, function(e) {
-                        return e.getTurnData().getSegmentPath().length
-                    })
-                })
-            },
-            getShortSegments: function() {
-                return this.model.segments.getByIds(this.attributes.segIDs)
-            },
-            _getIntersectionWithLine: function(e) {
-                var t = this.attributes.geometry.distanceTo(e, {
-                        details: !0
-                    }),
-                    i = new OL.Geometry.Point(t.x0, t.y0),
-                    n = f.default.getPointEdge(e.components, i); -
-                1 === n && (n = 0);
-                var s = e.components[n],
-                    r = e.components[n + 1];
-                if (this.attributes.geometry.intersects(r)) {
-                    var a = [r, s];
-                    s = a[0],
-                        r = a[1]
-                }
-                var o = f.default.radToDeg(Math.atan2(r.y - s.y, r.x - s.x));
-                return {
-                    x: i.x,
-                    y: i.y,
-                    angle: o
-                }
-            },
-            getAngleAtIntersection: function(e) {
-                return this._getIntersectionWithLine(e).angle
-            },
-            getIntersectionPoint: function(e) {
-                var t = this._getIntersectionWithLine(e);
-                return new OL.Geometry.Point(t.x, t.y)
-            },
-            canEditTurns: function() {
-                return this.isAllowed(this.PERMISSIONS.UPDATE)
-            },
-            arePropertiesEditable: function() {
-                return this.PERMISSIONS.UPDATE && this.isAllowed(this.PERMISSIONS.UPDATE)
-            },
-            isPolygonAreaLegal: function() {
-                var e = f.default.unproject(this.attributes.geometry.getBounds().clone());
-                return e.getWidth() <= .01 && e.getHeight() <= .01
-            },
-            PERMISSIONS: {
-                DELETE: 1,
-                UPDATE: 2
-            },
-            CLASS_NAME: "Waze.Feature.FeatureVector.BigJunction"
-        });
-    t.BigJunction = m,
-        t.MAX_POLYGON_SIZE_DEGREES = .01
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.VEHICLE_TYPES = void 0;
-    var s = i(6),
-        r = n(s),
-        a = i(47),
-        o = n(a),
-        l = i(0),
-        u = n(l),
-        d = i(1),
-        c = n(d),
-        h = {
-            TRUCK: 0,
-            PUBLIC_TRANSPORTATION: 256,
-            TAXI: 272,
-            BUS: 288,
-            RV: 512,
-            TOWING_VEHICLE: 768,
-            MOTORCYCLE: 1024,
-            PRIVATE: 1280,
-            HAZARDOUS_MATERIALS: 1536,
-            CAV: 1792,
-            EV: 1808,
-            HYBRID: 1824,
-            CLEAN_FUEL: 1840
-        },
-        f = function() {
-            function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-                    i = t.vehicleTypes,
-                    n = void 0 === i ? [] : i,
-                    s = t.subscriptions,
-                    r = void 0 === s ? [] : s,
-                    a = t.numPassengers,
-                    l = void 0 === a ? 0 : a;
-                (0,
-                    u.default)(this, e),
-                this._vehicleTypes = n,
-                    this._subscriptions = r,
-                    this._numPassengers = l,
-                    (0,
-                        o.default)(this)
-            }
-            return (0,
-                    c.default)(e, [{
-                    key: "equals",
-                    value: function(e) {
-                        return this._numPassengers === e._numPassengers && _.isEqual(this._vehicleTypes.sort(), e._vehicleTypes.sort()) && _.isEqual(this._subscriptions.sort(), e._subscriptions.sort())
-                    }
-                }, {
-                    key: "with",
-                    value: function() {
-                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                        return new this.constructor((0,
-                            r.default)(this.toJSON(), e))
-                    }
-                }, {
-                    key: "getNumPassengers",
-                    value: function() {
-                        return this._numPassengers
-                    }
-                }, {
-                    key: "getVehicleTypes",
-                    value: function() {
-                        return this._vehicleTypes.slice()
-                    }
-                }, {
-                    key: "getSubscriptions",
-                    value: function() {
-                        return null == this._subscriptions ? [] : this._subscriptions.slice()
-                    }
-                }, {
-                    key: "hasSubscriptions",
-                    value: function() {
-                        return null != this._subscriptions && this._subscriptions.length > 0
-                    }
-                }, {
-                    key: "isAllVehicles",
-                    value: function() {
-                        return !this._vehicleTypes || 0 === this._vehicleTypes.length
-                    }
-                }, {
-                    key: "toJSON",
-                    value: function() {
-                        return {
-                            vehicleTypes: this._vehicleTypes,
-                            numPassengers: this._numPassengers,
-                            subscriptions: this._subscriptions
-                        }
-                    }
-                }]),
-                e
-        }();
-    t.default = f,
-        t.VEHICLE_TYPES = h
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(0),
-        r = n(s),
-        a = i(1),
-        o = n(a),
-        l = i(60),
-        u = n(l),
-        d = function() {
-            function e(t, i, n) {
-                (0,
-                    r.default)(this, e),
-                this._fromVertex = t,
-                    this._toVertex = i,
-                    this._turnData = n
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "getFromVertex",
-                    value: function() {
-                        return this._fromVertex
-                    }
-                }, {
-                    key: "getToVertex",
-                    value: function() {
-                        return this._toVertex
-                    }
-                }, {
-                    key: "getTurnData",
-                    value: function() {
-                        return this._turnData
-                    }
-                }, {
-                    key: "withTurnData",
-                    value: function(t) {
-                        return new e(this._fromVertex, this._toVertex, t)
-                    }
-                }, {
-                    key: "withUnknownTurnData",
-                    value: function() {
-                        return new e(this._fromVertex, this._toVertex, u.default.createUnknown())
-                    }
-                }, {
-                    key: "withFromVertex",
-                    value: function(t) {
-                        return new e(t, this._toVertex, this._turnData)
-                    }
-                }, {
-                    key: "withToVertex",
-                    value: function(t) {
-                        return new e(this._fromVertex, t, this._turnData)
-                    }
-                }, {
-                    key: "isUturn",
-                    value: function() {
-                        return this._fromVertex.getSegmentID() === this._toVertex.getSegmentID() && !this._turnData.hasSegmentPath()
-                    }
-                }, {
-                    key: "toString",
-                    value: function() {
-                        return "" + this._fromVertex + this._toVertex + this._turnData
-                    }
-                }, {
-                    key: "verticesEqual",
-                    value: function(e) {
-                        return this.getFromVertex().equals(e.getFromVertex()) && this.getToVertex().equals(e.getToVertex())
-                    }
-                }]),
-                e
-        }();
-    t.default = d,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(27),
-        r = n(s),
-        a = i(13),
-        o = n(a),
-        l = i(70),
-        u = n(l),
-        d = i(29),
-        c = n(d),
-        h = i(20),
-        f = n(h),
-        p = i(10),
-        g = n(p),
-        m = i(90),
-        v = OpenLayers.Class(c.default, {
-            defaults: function() {
-                return {
-                    segIDs: []
-                }
-            },
-            nested: {
-                geometry: OL.Geometry
-            },
-            eachSegmentPair: function(e, t, i) {
-                (0,
-                    u.default)(e).forEach(function(e) {
-                    var n = (0,
-                            o.default)(e, 2),
-                        s = n[0],
-                        r = n[1],
-                        a = s.split(",");
-                    t.call(i, parseInt(a[0], 10), parseInt(a[1], 10), r, s)
-                })
-            },
-            allConnectionKeys: function(e) {
-                var t = [],
-                    i = [];
-                return this.attributes.segIDs.forEach(function(n) {
-                    var s = this.model.segments.get(n);
-                    this.attributes.segIDs.forEach(function(n) {
-                        var r = this.model.segments.get(n);
-                        s && r && (s !== r || e) && (t.push({
-                                from: s,
-                                to: r
-                            }),
-                            this.isTurnAllowedBySegDirections(s, r) && s.isDrivable() && r.isDrivable() && i.push({
-                                from: s,
-                                to: r
-                            }))
-                    }, this)
-                }, this), {
-                    all: t,
-                    legal: i
-                }
-            },
-            isTurnAllowedBySegDirections: function(e, t) {
-                if (!e || !t)
-                    return !1;
-                var i = e.attributes.toNodeID === this.getID() ? e.attributes.fwdDirection : e.attributes.revDirection,
-                    n = t.attributes.fromNodeID === this.getID() ? t.attributes.fwdDirection : t.attributes.revDirection;
-                return i && n
-            },
-            getSegmentIds: function() {
-                return [].concat((0,
-                    r.default)(this.attributes.segIDs))
-            },
-            getAngleToSegment: function(e) {
-                var t = void 0,
-                    i = void 0,
-                    n = e.geometry.getVertices(),
-                    s = void 0;
-                return e.attributes.fromNodeID === this.getID() ? (t = n[0],
-                        i = n[1]) : (t = n[n.length - 1],
-                        i = n[n.length - 2]),
-                    s = g.default.radToDeg(Math.atan2(i.y - t.y, i.x - t.x)),
-                    s < 0 && (s = 360 + s),
-                    s
-            },
-            getDirectionBetweenSegments: function(e, t) {
-                var i = e.geometry.components,
-                    n = i.length,
-                    s = void 0,
-                    r = void 0,
-                    a = void 0;
-                return e.attributes.toNodeID === this.getID() ? (s = i[n - 2],
-                        r = i[n - 1]) : (s = i[1],
-                        r = i[0]),
-                    a = t.attributes.fromNodeID === this.getID() ? t.geometry.components[1] : t.geometry.components[t.geometry.components.length - 2],
-                    (r.x - s.x) * (a.y - s.y) - (r.y - s.y) * (a.x - s.x) > 0
-            },
-            isDisconnected: function() {
-                return _.isEmpty(this.attributes.segIDs)
-            },
-            isVirtual: function() {
-                var e = this;
-                return this.model.segments.getByIds(this.attributes.segIDs).some(function(t) {
-                    return t.isVirtuallyConnectedToNode(e)
-                })
-            },
-            isConnectedToSegment: function(e) {
-                return this.attributes.segIDs.includes(e.getID())
-            },
-            isConnectedToBigJunction: function() {
-                return this.model.segments.getByIds(this.attributes.segIDs).some(function(e) {
-                    return e.isBigJunctionShort()
-                }, this)
-            },
-            isAllowedToMoveNode: function() {
-                return this.attributes.segIDs.every(function(e) {
-                    var t = this.model.segments.get(e);
-                    return t && t.isAllowed(m.Segments.EDIT_GEOMETRY) && !t.isBigJunctionShort()
-                }, this)
-            },
-            isDeleteable: function(e) {
-                var t = this.attributes.segIDs.map(function(t) {
-                    return e.segments.get(t)
-                });
-                return t = t.filter(function(e) {
-                        return f.default.defined(e)
-                    }),
-                    t.length === this.attributes.segIDs.length && (this.areSegmentsBridgable(t) && c.default.prototype.isDeletable.apply(this))
-            },
-            areSegmentsBridgable: function(e) {
-                if (!e || 2 !== e.length)
-                    return !1;
-                var t = e[0],
-                    i = e[1];
-                if (!this.attributes.segIDs.includes(t.getID()) || !this.attributes.segIDs.includes(i.getID()))
-                    return !1;
-                if (!this.isTurnAllowedBySegDirections(t, i) && !this.isTurnAllowedBySegDirections(i, t))
-                    return !1;
-                if (t.attributes.primaryStreetID !== i.attributes.primaryStreetID)
-                    return !1;
-                var n = ["fwdMaxSpeed", "revMaxSpeed"],
-                    s = n;
-                t.attributes.toNodeID !== i.attributes.fromNodeID && t.attributes.fromNodeID !== i.attributes.toNodeID && (s = n.concat().reverse());
-                var r = n.every(function(e, n) {
-                        return t.attributes[e] === i.attributes[s[n]]
-                    }),
-                    a = t.isDrivable() && i.isDrivable() || t.isWalkingRoadType() && i.isWalkingRoadType();
-                return r && a
-            },
-            allSegmentsPresent: function(e) {
-                return this.attributes.segIDs.every(function(t) {
-                    return e.segments.get(t)
-                })
-            },
-            connectionsExist: function() {
-                return !_.isEmpty(this.allConnectionKeys().legal)
-            },
-            areConnectionsEditable: function() {
-                var e = this.model.segments.getByIds(this.attributes.segIDs);
-                return e.length === this.attributes.segIDs.length && e.every(function(e) {
-                    return e.canEditConnections()
-                })
-            },
-            areAllConnectionsEnabled: function() {
-                var e = this.allConnectionKeys().legal,
-                    t = this.model.getTurnGraph();
-                return !_.isEmpty(e) && e.every(function(e) {
-                    return t.getTurnThroughNode(this, e.from, e.to).getTurnData().isAllowed()
-                }, this)
-            },
-            areAllConnectionsDisabled: function() {
-                var e = this.allConnectionKeys().legal,
-                    t = this.model.getTurnGraph();
-                return !_.isEmpty(e) && e.every(function(e) {
-                    return !t.getTurnThroughNode(this, e.from, e.to).getTurnData().isAllowed()
-                }, this)
-            },
-            PERMISSIONS: {
-                EDIT_GEOMETRY: 1,
-                DELETE: 2,
-                EDIT_OPEN_TURNS: 4,
-                EDIT_CLOSE_TURNS: 8
-            },
-            CLASS_NAME: "Waze.Feature.Vector.Node"
-        });
-    t.default = v,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = t.OpeningHour = Backbone.Model.extend({
-        ALL_DAY_FROM: "00:00",
-        ALL_DAY_TO: "00:00",
-        defaults: function() {
-            return {
-                fromHour: "09:00",
-                toHour: "17:00",
-                days: this.defaultDays.concat()
-            }
-        },
-        defaultDays: [1, 2, 3, 4, 5],
-        isAllDay: function() {
-            return this.get("fromHour") === this.ALL_DAY_FROM && this.get("toHour") === this.ALL_DAY_TO
-        },
-        setAllDay: function() {
-            return this.set("fromHour", this.ALL_DAY_FROM),
-                this.set("toHour", this.ALL_DAY_TO)
-        }
-    });
-    t.Collection = Backbone.Collection.extend({
-        model: n
-    })
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = i(13),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = i(92);
-    t.default = Backbone.Model.extend({
-            defaults: function() {
-                return {
-                    canExitWhileClosed: !1,
-                    numberOfSpots: null,
-                    estimatedNumberOfSpots: null,
-                    costType: r.UNKNOWN,
-                    lotType: [],
-                    paymentType: [],
-                    parkingType: null,
-                    hasTBR: !1
-                }
-            },
-            initialize: function() {
-                this.attributes.numberOfSpots && this.attributes.numberOfSpots > 0 && null === this.attributes.estimatedNumberOfSpots && (this.attributes.estimatedNumberOfSpots = this._getSpotsEstimateValue())
-            },
-            clone: function() {
-                var e = $.extend(!0, {}, this.attributes);
-                return new this.constructor(e)
-            },
-            _getSpotsEstimateValue: function() {
-                var e = this.attributes.numberOfSpots,
-                    t = r.SPOTS_ESTIMATE,
-                    i = null;
-                if (null === e)
-                    return i;
-                for (var n = 0; n < t.length; n++) {
-                    var a = t[n],
-                        o = (0,
-                            s.default)(a.range, 2),
-                        l = o[0],
-                        u = o[1];
-                    if (e >= l && e <= u) {
-                        i = a.value;
-                        break
-                    }
-                }
-                return i
-            }
-        }),
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(29),
-        r = n(s),
-        a = i(15),
-        o = n(a),
-        l = i(71),
-        u = OpenLayers.Class(r.default, {
-            nested: {
-                geometry: OL.Geometry
-            },
-            initialize: function(e) {
-                r.default.prototype.initialize.apply(this, arguments),
-                    _.defaults(this.attributes, this.defaults)
-            },
-            isValidationStateEditable: function() {
-                return this.state === OpenLayers.State.UPDATE || !this.attributes.validated
-            },
-            PERMISSIONS: {
-                EDIT_GEOMETRY: 1,
-                EDIT_PROPERTIES: 2,
-                DELETE: 4
-            },
-            UNITS: {
-                speed: l.UNIT.KILOMETER
-            },
-            TYPES: {
-                SPEED_CAMERA: 2,
-                DUMMY: 3,
-                RED_LIGHT: 4
-            },
-            CLASS_NAME: "Waze.Feature.Vector.SpeedCamera"
-        });
-    u.prototype.defaults = {
-            type: u.prototype.TYPES.SPEED_CAMERA,
-            validated: !0,
-            speed: 0,
-            azymuth: 0,
-            permissions: o.default.ALL_PERMISSIONS
-        },
-        t.default = u,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.NOTIFICATION_TYPES = void 0;
-    var n = i(208),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = {
-            PRIVATE_FORUM_MESSAGE: "PRIVATE_FORUM_MESSAGE",
-            DISCOVER_COMMUNITY_FORUM: "DISCOVER_COMMUNITY_FORUM",
-            DISCOVER_LOCAL_WIKI: "DISCOVER_LOCAL_WIKI",
-            FIRST_TIME_VIDEOS: "FIRST_TIME_VIDEOS",
-            CHECK_YOUR_NEIGHBORHOOD: "CHECK_YOUR_NEIGHBORHOOD",
-            FIRST_EDIT: "FIRST_EDIT",
-            MENTEE_CLICKED_LINK: "MENTEE_CLICKED_LINK",
-            MENTEE_RETURNED: "MENTEE_RETURNED",
-            MENTOR_ENCOURAGMENT: "MENTOR_ENCOURAGMENT",
-            MENTOR_FEEDBACK_REQUEST: "MENTOR_FEEDBACK_REQUEST"
-        },
-        a = s.default.extend({
-            TYPE: r,
-            GROUPS: {
-                PRIVATE_FORUM_MESSAGE: [r.PRIVATE_FORUM_MESSAGE],
-                FIRST_TIME_MESSAGES: [r.DISCOVER_COMMUNITY_FORUM, r.DISCOVER_LOCAL_WIKI, r.FIRST_TIME_VIDEOS, r.CHECK_YOUR_NEIGHBORHOOD],
-                MENTORING: [r.FIRST_EDIT, r.MENTEE_CLICKED_LINK, r.MENTEE_RETURNED, r.MENTOR_ENCOURAGMENT, r.MENTOR_FEEDBACK_REQUEST]
-            },
-            defaults: function() {
-                return {
-                    type: null,
-                    timestamp: null,
-                    parameters: {}
-                }
-            },
-            isForumMessage: function() {
-                var e = this.attributes.type;
-                return this.GROUPS.PRIVATE_FORUM_MESSAGE.indexOf(e) > -1
-            },
-            isFirstTimeMessage: function() {
-                var e = this.attributes.type;
-                return this.GROUPS.FIRST_TIME_MESSAGES.indexOf(e) > -1
-            },
-            isMentoringMessage: function() {
-                var e = this.attributes.type;
-                return this.GROUPS.MENTORING.indexOf(e) > -1
-            },
-            isNotification: function() {
-                return !this.isForumMessage() && !this.isFirstTimeMessage() && !this.isMentoringMessage()
-            },
-            getParameter: function(e) {
-                return this.attributes.parameters[e]
-            }
-        });
-    t.NOTIFICATION_TYPES = r,
-        t.default = a
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-
-    function s(e, t) {
-        for (var i = arguments.length, n = Array(i > 2 ? i - 2 : 0), s = 2; s < i; s++)
-            n[s - 2] = arguments[s];
-        var r = !0,
-            a = !1,
-            o = void 0;
-        try {
-            for (var u, c = (0,
-                    m.default)((0,
-                    p.default)((f = _).omit.apply(f, [(0,
-                    h.default)(t)].concat(n)))); !(r = (u = c.next()).done); r = !0) {
-                var f, g = (0,
-                        d.default)(u.value, 2),
-                    v = g[0],
-                    y = g[1];
-                (0,
-                    l.default)(e, v, y)
-            }
-        } catch (e) {
-            a = !0,
-                o = e
-        } finally {
-            try {
-                !r && c.return && c.return()
-            } finally {
-                if (a)
-                    throw o
-            }
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.WRITABLE_ATTRIBUTES = t.PERMISSIONS = t.CATEGORIES = t.ENGLISH_LOCALE = t.MTE_LOCALES = void 0;
-    var r = i(6),
-        a = n(r),
-        o = i(150),
-        l = n(o),
-        u = i(13),
-        d = n(u),
-        c = i(562),
-        h = n(c),
-        f = i(70),
-        p = n(f),
-        g = i(22),
-        m = n(g),
-        v = i(2),
-        y = n(v),
-        b = i(0),
-        w = n(b),
-        E = i(1),
-        k = n(E),
-        M = i(3),
-        S = n(M),
-        T = i(8),
-        C = n(T),
-        I = i(4),
-        A = n(I),
-        R = i(15),
-        O = n(R),
-        D = i(11),
-        L = function(e) {
-            if (e && e.__esModule)
-                return e;
-            var t = {};
-            if (null != e)
-                for (var i in e)
-                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
-            return t.default = e,
-                t
-        }(D),
-        P = i(29),
-        N = n(P),
-        x = i(49),
-        V = n(x),
-        F = {
-            el: "ελληνικά"
-        },
-        j = {
-            FESTIVAL: "FESTIVAL",
-            PARADE: "PARADE",
-            CONCERT: "CONCERT",
-            SPORTING_EVENT: "SPORTING_EVENT",
-            STADIUM_GAMES: "STADIUM_GAMES",
-            VIP_VISIT: "VIP_VISIT",
-            CRISIS: "CRISIS",
-            CONSTRUCTION: "CONSTRUCTION",
-            OTHER: "OTHER"
-        },
-        U = {
-            EDIT_PROPERTIES: 1,
-            MANIPULATE_PARTNERS: 2,
-            PUBLISH: 4,
-            EDIT_TWEET_TEXT: 16
-        },
-        B = ["id", "category", "cityID", "comment", "startDate", "endDate", "names", "url", "partners", "tweetText"],
-        W = function(e) {
-            function t(e, i) {
-                (0,
-                    w.default)(this, t);
-                var n = (0,
-                    S.default)(this, (t.__proto__ || (0,
-                    y.default)(t)).call(this, e));
-                return N.default.prototype.initialize.apply(n, arguments),
-                    n.type = L.MTE,
-                    n.writableAttributes = B,
-                    n
-            }
-            return (0,
-                    A.default)(t, e),
-                (0,
-                    k.default)(t, [{
-                    key: "defaults",
-                    value: function() {
-                        return {
-                            id: null,
-                            active: null,
-                            category: null,
-                            cityID: null,
-                            comment: null,
-                            contributors: [],
-                            createdBy: null,
-                            createdOn: null,
-                            description: null,
-                            startDate: (new Date).toString("yyyy-MM-dd HH:mm"),
-                            endDate: null,
-                            names: [],
-                            permissions: O.default.ALL_PERMISSIONS & ~U.EDIT_TWEET_TEXT,
-                            updatedBy: null,
-                            updatedOn: null,
-                            url: null,
-                            published: !1,
-                            ready: !1,
-                            uniqueName: null,
-                            partners: [],
-                            tweetText: null,
-                            twitterAccountsUrls: []
-                        }
-                    }
-                }, {
-                    key: "clone",
-                    value: function() {
-                        var e = (0,
-                                C.default)(t.prototype.__proto__ || (0,
-                                y.default)(t.prototype), "clone", this).apply(this, arguments),
-                            i = $.extend(!0, [], this.get("names"));
-                        return e.set({
-                                names: i
-                            }),
-                            e.model = this.model,
-                            e
-                    }
-                }, {
-                    key: "getAddress",
-                    value: function() {
-                        return V.default.fromCityID(this.attributes.cityID, this.model)
-                    }
-                }, {
-                    key: "getEnglishName",
-                    value: function() {
-                        var e = _.where(this.attributes.names, {
-                            locale: this.ENGLISH_LOCALE
-                        });
-                        return e.length > 0 ? e[0].value : null
-                    }
-                }, {
-                    key: "getLocale",
-                    value: function() {
-                        var e = this._getLocalNameObject();
-                        return null !== e ? e.locale : null
-                    }
-                }, {
-                    key: "getLocalName",
-                    value: function() {
-                        var e = this._getLocalNameObject();
-                        return null !== e ? e.value : null
-                    }
-                }, {
-                    key: "_getLocalNameObject",
-                    value: function() {
-                        var e = this,
-                            t = _.reject(this.attributes.names, function(t) {
-                                return t.locale === e.ENGLISH_LOCALE
-                            });
-                        return t.length > 0 ? t[0] : null
-                    }
-                }, {
-                    key: "canPublish",
-                    value: function() {
-                        return !this.isNew() && this.get("ready") && this.isAllowed(U.PUBLISH)
-                    }
-                }, {
-                    key: "canEditPartners",
-                    value: function() {
-                        return this.isAllowed(U.MANIPULATE_PARTNERS)
-                    }
-                }, {
-                    key: "canEditTweetText",
-                    value: function() {
-                        return this.isAllowed(U.EDIT_TWEET_TEXT)
-                    }
-                }]),
-                t
-        }(Backbone.Model);
-    s(W.prototype, O.default.prototype, "clone", "initialize", "constructor"),
-        s(W.prototype, N.default.prototype, "clone", "initialize", "constructor"),
-        (0,
-            a.default)(W.prototype, {
-            PERMISSIONS: U,
-            CATEGORIES: j,
-            MTE_LOCALES: F,
-            ENGLISH_LOCALE: "en"
-        }),
-        t.MTE_LOCALES = F,
-        t.ENGLISH_LOCALE = "en",
-        t.CATEGORIES = j,
-        t.PERMISSIONS = U,
-        t.WRITABLE_ATTRIBUTES = B,
-        t.default = W
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(158),
-        g = n(p),
-        m = i(566),
-        v = n(m),
-        y = function(e) {
-            function t() {
-                return (0,
-                        o.default)(this, t),
-                    (0,
-                        c.default)(this, (t.__proto__ || (0,
-                        r.default)(t)).apply(this, arguments))
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "defaults",
-                    value: function() {
-                        return {
-                            transactionID: null,
-                            actionType: null,
-                            date: null,
-                            userID: null,
-                            objects: []
-                        }
-                    }
-                }, {
-                    key: "getObject",
-                    value: function(e, t) {
-                        return this.attributes.objects.filter(function(i) {
-                            return i.attributes.objectID === t && i.attributes.objectType === e
-                        })[0]
-                    }
-                }, {
-                    key: "nested",
-                    get: function() {
-                        return {
-                            objects: v.default
-                        }
-                    }
-                }]),
-                t
-        }(Backbone.Model);
-    y.ACTIONS = {
-            ADD: "ADD",
-            UPDATE: "UPDATE",
-            DELETE: "DELETE"
-        },
-        _.extend(y.prototype, g.default),
-        t.default = y,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(0),
-        r = n(s),
-        a = i(1),
-        o = n(a),
-        l = function() {
-            function e(t) {
-                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [];
-                (0,
-                    r.default)(this, e),
-                this._id = t,
-                    Array.isArray(i) || (i = [i]),
-                    this._strategies = i,
-                    this._state = !1
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "getId",
-                    value: function() {
-                        return this._id
-                    }
-                }, {
-                    key: "setState",
-                    value: function(e) {
-                        this._state = e
-                    }
-                }, {
-                    key: "getState",
-                    value: function() {
-                        return this._state
-                    }
-                }, {
-                    key: "isLeaf",
-                    value: function() {
-                        return !0
-                    }
-                }, {
-                    key: "writeStateToApp",
-                    value: function(e, t) {
-                        this._strategies.forEach(function(i) {
-                            return i.writeStateToApp(e, t)
-                        })
-                    }
-                }], [{
-                    key: "of",
-                    value: function(t, i) {
-                        return new e(t, i)
-                    }
-                }]),
-                e
-        }();
-    t.default = l,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(29),
-        r = n(s),
-        a = i(15),
-        o = n(a),
-        l = i(10),
-        u = n(l),
-        d = i(23),
-        c = OL.Class(r.default, {
-            DEFAULT_POLYGON_SIZE_METERS: 50,
-            MAX_SUBJECT_LENGTH: 30,
-            MAX_BODY_LENGTH: 2e3,
-            defaults: function() {
-                return {
-                    subject: "",
-                    body: "",
-                    geometry: null,
-                    endDate: null,
-                    lockRank: 0,
-                    isFollowing: !1,
-                    createdOn: null,
-                    createdBy: null,
-                    updatedBy: null,
-                    updatedOn: null,
-                    conversation: [],
-                    permissions: o.default.ALL_PERMISSIONS,
-                    id: null
-                }
-            },
-            nested: {
-                geometry: OL.Geometry
-            },
-            PERMISSIONS: {
-                EDIT_GEOMETRY: 1,
-                EDIT_PROPERTIES: 2,
-                DELETE: 4
-            },
-            DATE_FORMAT: "YYYY-MM-DD HH:mm",
-            isPoint: function() {
-                return "OpenLayers.Geometry.Point" === this.geometry.CLASS_NAME
-            },
-            getPolygonGeometry: function() {
-                return this.isPoint() ? u.default.pointToSquarePolygon(this.geometry, this.DEFAULT_POLYGON_SIZE_METERS) : this.geometry.clone()
-            },
-            getPointGeometry: function() {
-                return this.isPoint() ? this.geometry.clone() : u.default.polygonToPoint(this.geometry)
-            },
-            getComments: function() {
-                return new Backbone.Collection(this.attributes.conversation)
-            },
-            isFollowing: function() {
-                return this.attributes.isFollowing
-            },
-            setFollowing: function(e) {
-                var t = this;
-                return (0,
-                    d.httpPost)(W.Config.paths.mapCommentFollow, {
-                    mapCommentID: this.getID(),
-                    follow: e
-                }).then(function() {
-                    t.attributes.isFollowing = e
-                })
-            },
-            addComment: function(e) {
-                var t = this;
-                return (0,
-                    d.httpPost)(W.Config.paths.mapCommentConversation, {
-                    mapCommentID: this.getID(),
-                    text: e
-                }).then(function(e) {
-                    return e.isAutoFollowed && (t.attributes.isFollowing = !0),
-                        t.attributes.conversation.push(e.comment),
-                        new Backbone.Model(e.comment)
-                })
-            }
-        });
-    t.default = c,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(63),
-        v = n(m),
-        _ = function(e) {
-            function t(e, i, n, s) {
-                (0,
-                    o.default)(this, t);
-                var a = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, s));
-                return a.street = null,
-                    a.city = i,
-                    a.name = e,
-                    a.isEmpty = n,
-                    a
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = null,
-                            t = void 0,
-                            i = !1;
-                        return e = this.isEmpty ? this.model.streets.getByAttributes({
-                                isEmpty: !0,
-                                cityID: this.city.getID()
-                            })[0] : this.model.streets.getByAttributes({
-                                name: this.name,
-                                cityID: this.city.getID()
-                            })[0],
-                            e || (this.isEmpty || this.name,
-                                t = new v.default(null, this.model.streets, {
-                                    name: this.isEmpty ? "" : this.name,
-                                    isEmpty: this.isEmpty,
-                                    cityID: this.city.getID()
-                                }),
-                                e = t.object,
-                                this.doSubAction(t),
-                                i = !0),
-                            this.street = e,
-                            i
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = _,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(79),
-        v = n(m),
-        _ = i(78),
-        y = n(_),
-        b = function(e) {
-            function t(e) {
-                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n._node = e,
-                    n
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this;
-                        if (!this._node.isVirtual())
-                            return !1;
-                        var t = this._node.attributes.segIDs.map(function(t) {
-                            return e.model.segments.get(t)
-                        }).find(function(t) {
-                            return t.isVirtuallyConnectedToNode(e._node)
-                        });
-                        return this.doSubAction(new v.default(t, this._node, {
-                                deleteNode: !1
-                            })),
-                            this.doSubAction(new y.default(t, {
-                                splitNode: this._node,
-                                splitAtPoint: this._node.attributes.geometry
-                            })), !0
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = b,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(16),
-        v = n(m),
-        _ = i(64),
-        y = n(_),
-        b = i(169),
-        w = n(b),
-        E = i(11),
-        k = function(e) {
-            function t(e, i, n, s) {
-                (0,
-                    o.default)(this, t);
-                var a = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, e, s));
-                return a.segment = e,
-                    a.changedState = !1,
-                    a.oldGeometry = i === e.geometry ? i.clone() : i,
-                    a.newGeometry = n === e.geometry ? n.clone() : n,
-                    a
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        this.segment.getID();
-                        var e = this.oldGeometry.getVertices(!0);
-                        if (this.replaceGeometry(),
-                            this.segment.isPoint())
-                            return void this.doSubAction(new y.default(this.segment));
-                        var t = this.segment.geometry.getVertices(!0);
-                        e[0].equals(t[0]) || this.updateEndPoint(this.segment.attributes.fromNodeID, this.touching.fromVertex, !0),
-                            e[1].equals(t[1]) || this.updateEndPoint(this.segment.attributes.toNodeID, this.touching.toVertex, !1),
-                            this.segment.state || (this.changedState = !0,
-                                this.segment.state = OpenLayers.State.UPDATE),
-                            this.model.segments.changed(this.segment)
-                    }
-                }, {
-                    key: "replaceGeometry",
-                    value: function() {
-                        this.segment.geometry.components.length = 0,
-                            this.newGeometry.components.forEach(function(e) {
-                                this.segment.geometry.addComponent(e.clone())
-                            }, this),
-                            this.segment.geometry.calculateBounds(),
-                            this.segment.bounds = this.segment.geometry.bounds
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        this.changedState && (this.segment.state = null),
-                            this.segment.geometry.components.length = 0,
-                            this.oldGeometry.components.forEach(function(e) {
-                                this.segment.geometry.addComponent(e.clone())
-                            }, this),
-                            this.segment.geometry.calculateBounds(),
-                            this.segment.bounds = this.segment.geometry.bounds,
-                            this.model.segments.changed(this.segment),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "undoAction", this).call(this)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.segment.geometry.components.length = 0,
-                            this.newGeometry.components.forEach(function(e) {
-                                this.segment.geometry.addComponent(e.clone())
-                            }, this),
-                            this.segment.geometry.calculateBounds(),
-                            this.segment.bounds = this.segment.geometry.bounds,
-                            this.changedState && (this.segment.state = OpenLayers.State.UPDATE),
-                            this.model.segments.changed(this.segment),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "redoAction", this).call(this)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        var e = {};
-                        return e.id = this.segment.getID(),
-                            e.geometry = this.newGeometry, {
-                                _objectType: E.SEGMENT,
-                                action: v.default.TYPE.UPDATE,
-                                attributes: e
-                            }
-                    }
-                }, {
-                    key: "getBounds",
-                    value: function() {
-                        return this.newGeometry.getBounds().clone()
-                    }
-                }]),
-                t
-        }(w.default);
-    t.default = k,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
         value: !0
     });
     var s = i(6),
         r = n(s),
-        a = i(2),
-        o = n(a),
-        l = i(0),
-        u = n(l),
-        d = i(1),
-        c = n(d),
-        h = i(3),
-        f = n(h),
-        p = i(8),
-        g = n(p),
-        m = i(4),
-        v = n(m),
-        _ = i(16),
-        y = n(_),
-        b = i(51),
-        w = n(b),
-        E = i(9),
-        k = n(E),
-        M = i(11),
-        S = i(113),
-        T = n(S),
-        C = {
-            permissions: 2147483647
-        },
-        I = function(e) {
-            function t(e, i, n) {
-                (0,
-                    u.default)(this, t);
-                var s = (0,
-                    f.default)(this, (t.__proto__ || (0,
-                    o.default)(t)).call(this, n));
-                return s.node = null,
-                    s.point = e.clone(),
-                    delete s.point.parent,
-                    s.segments = i,
-                    s.options = n,
-                    s.nodeAttributes = {},
-                    s
-            }
-            return (0,
-                    v.default)(t, e),
-                (0,
-                    c.default)(t, [{
-                    key: "createNode",
-                    value: function(e) {
-                        var t = new T.default({
-                            geometry: e
-                        });
-                        return t.attributes || (t.attributes = {}),
-                            (0,
-                                r.default)(t.attributes, C, t.attributes),
-                            t.attributes.segIDs = [],
-                            t.state = OpenLayers.State.INSERT,
-                            t.setID(this.model.nodes.generateUniqueID()),
-                            $.extend(!0, this.nodeAttributes, t.attributes),
-                            t
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {
-                        if (this.node = this.createNode(this.point.clone()),
-                            this.node.getID(),
-                            this.model.nodes.put(this.node),
-                            null !== this.segments)
-                            for (var e = 0, t = this.segments.length; e < t; e++)
-                                this.doSubAction(new w.default(this.node, this.segments[e], this.options))
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        (0,
-                            g.default)(t.prototype.__proto__ || (0,
-                            o.default)(t.prototype), "undoAction", this).call(this),
-                            this.model.nodes.remove(this.node)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.model.nodes.put(this.node),
-                            (0,
-                                g.default)(t.prototype.__proto__ || (0,
-                                o.default)(t.prototype), "redoAction", this).call(this)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        var e = this.nodeAttributes;
-                        return e.id = this.node.getID(),
-                            e.geometry = this.point, {
-                                _objectType: M.NODE,
-                                action: y.default.TYPE.ADD,
-                                attributes: e
-                            }
-                    }
-                }]),
-                t
-        }(k.default);
-    t.default = I,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(16),
-        g = n(p),
-        m = function(e) {
-            function t(e, i) {
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.object = e,
-                    n.repo = null,
-                    n.origState = null,
-                    n
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        return this.repo = this.model.getRepository(this.object.type),
-                            null === this.repo ? (console.error("Error deleting object: could not find an object repository for type " + this.object.type), !1) : (this.origState = this.object.state,
-                                this.removeObjct(), !0)
-                    }
-                }, {
-                    key: "removeObjct",
-                    value: function() {
-                        this.object.state === OpenLayers.State.INSERT ? this.repo.remove(this.object) : (this.object.state = OpenLayers.State.DELETE,
-                            this.repo.changed(this.object))
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        this.object.type,
-                            this.object.getID(),
-                            this.object.state = this.origState,
-                            this.object.state === OpenLayers.State.INSERT ? this.repo.put(this.object) : this.repo.changed(this.object)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.removeObjct()
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: this.object.type,
-                            action: g.default.TYPE.DELETE,
-                            attributes: {
-                                id: this.object.getID()
-                            }
-                        }
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = m,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(27),
-        r = n(s),
-        a = i(13),
-        o = n(a),
-        l = i(7),
-        u = n(l),
-        d = i(737),
-        c = n(d),
-        h = i(30),
-        f = n(h),
-        p = i(71),
-        g = i(738),
-        m = n(g),
-        v = OpenLayers.Class(f.default, {
-            children: null,
-            address: null,
-            addressDetails: null,
-            attributeToReducer: null,
-            attributeNames: ["flags", "fwdFlags", "revFlags", "roadType", "direction", "level", "fwdToll", "revToll", "fwdDirection", "revDirection", "fwdMaxSpeed", "fwdMaxSpeedUnverified", "revMaxSpeed", "revMaxSpeedUnverified", "permissions", "updatedBy", "createdBy", "createdOn", "updatedOn", "length", "allowNoDirection", "rank", "lockRank", "routingRoadType", "hasClosures", "hasHNs"],
-            attributeReducers: {
-                permissions: c.default.bitwise.and,
-                length: c.default.sum,
-                rank: c.default.max,
-                hasClosures: c.default.logical.or,
-                hasHNs: c.default.logical.or,
-                flags: c.default.bitwise.or,
-                fwdflags: c.default.bitwise.or,
-                revFlags: c.default.bitwise.or,
-                fwdToll: c.default.logical.or,
-                revToll: c.default.logical.or,
-                fwdMaxSpeedUnverified: c.default.logical.or,
-                revMaxSpeedUnverified: c.default.logical.or
-            },
-            flagAttributeNames: (0,
-                u.default)(f.default.prototype.FLAG_ATTRIBUTES),
-            flagAttributeReducers: (0,
-                u.default)(f.default.prototype.FLAG_ATTRIBUTES).reduce(function(e, t) {
-                return e[t] = c.default.logical.and
-            }, {}),
-            attributeReverses: {
-                fwdDirection: "directionReverser",
-                revDirection: "directionReverser"
-            },
-            reversableAttributes: {
-                fwdMaxSpeed: "revMaxSpeed",
-                revMaxSpeed: "fwdMaxSpeed",
-                fwdDirection: "revDirection",
-                revDirection: "fwdDirection",
-                fwdToll: "revToll",
-                revToll: "fwdToll",
-                fwdFlags: "revFlags",
-                revFlags: "fwdFlags",
-                fwdMaxSpeedUnverified: "revMaxSpeedUnverified",
-                revMaxSpeedUnverified: "fwdMaxSpeedUnverified"
-            },
-            UNITS: {
-                speed: p.UNIT.KILOMETER
-            },
-            initialize: function(e, t, i) {
-                this.children = e,
-                    this.model = t,
-                    this.reverseSegments = i,
-                    this.attributeToReducer = _.extend({}, this.attributeReducers, this.flagAttributeReducers),
-                    this.calcAttributes()
-            },
-            directionReverser: function(e, t) {
-                return e.isOneWay() ? !e.attributes[t] : e.attributes[t]
-            },
-            calcAttributes: function() {
-                var e, t, i = this._computeAttributes(this.attributeNames),
-                    n = (0,
-                        o.default)(i, 2),
-                    s = n[0],
-                    a = n[1],
-                    l = this._computeAttributes(this.flagAttributeNames),
-                    u = (0,
-                        o.default)(l, 2),
-                    d = u[0],
-                    c = u[1];
-                this.attributes = s,
-                    this.flagAttributes = d,
-                    this.mixed = _.extend({}, a, c),
-                    this.address = null,
-                    this.addressDetails = null,
-                    this.calcVirtualAttributes(),
-                    this.attributes.restrictions = (e = []).concat.apply(e, (0,
-                        r.default)(this.children.map(function(e) {
-                        return e.getDrivingRestrictions()
-                    }))),
-                    this.attributes.pickupRestrictions = (t = []).concat.apply(t, (0,
-                        r.default)(this.children.map(function(e) {
-                        return e.getPickupRestrictions()
-                    })))
-            },
-            _computeAttributes: function(e) {
-                var t = this,
-                    i = {},
-                    n = {};
-                return e.forEach(function(e) {
-                    var s = null,
-                        r = t.attributeToReducer[e],
-                        a = _.unique(t.children.map(function(i) {
-                            return t._getChildAttribute(i, e)
-                        }));
-                    1 === a.length ? (s = a[0],
-                            n[e] = !1) : (n[e] = !0,
-                            s = r ? a.reduce(r) : a),
-                        i[e] = s
-                }), [i, n]
-            },
-            calcVirtualAttributes: function() {
-                this.mixed.fwdToll || this.mixed.revToll ? this.mixed.toll = !0 : this.attributes.toll = this.isTollRoad(),
-                    this.mixed.fwdDirection || this.mixed.revDirection ? this.mixed.direction = !0 : this.attributes.direction = this._getDirection()
-            },
-            _getDirection: function() {
-                return (this.attributes.fwdDirection ? 1 : 0) + (this.attributes.revDirection ? 2 : 0)
-            },
-            isTollRoad: function() {
-                return this.attributes.fwdToll || this.attributes.revToll
-            },
-            isTollRoadMixed: function() {
-                return Boolean(this.mixed.toll)
-            },
-            getAddress: function() {
-                return new m.default(this.children.map(function(e) {
-                    return e.getAddress()
-                }), this.model)
-            },
-            getID: function() {
-                return this.children.map(function(e) {
-                    return e.getID()
-                }).join(", ")
-            },
-            isHighway: function() {
-                return this.children.every(function(e) {
-                    return e.isHighway()
-                })
-            },
-            isInBigJunction: function() {
-                return this.children.some(function(e) {
-                    return e.isInBigJunction()
-                })
-            },
-            isInRoundabout: function() {
-                return this.children.every(function(e) {
-                    return e.isInRoundabout()
-                })
-            },
-            isEntireRoundabout: function() {
-                var e = this.children[0].getRoundabout();
-                if (!e)
-                    return !1;
-                var t = this.children.every(function(t) {
-                        return t.attributes.junctionID === e.attributes.id
-                    }),
-                    i = e.attributes.segIDs.length === this.children.length;
-                return t && i
-            },
-            canChangeMaxSpeedUnverified: function(e) {
-                var t = this;
-                return !!this.canEditDrivingAttributes() && this.children.some(function(i) {
-                    var n = t._getAttributeByDirection(i, e);
-                    return i.canChangeMaxSpeedUnverified(n)
-                })
-            },
-            canEditDrivingAttributes: function() {
-                return this.children.every(function(e) {
-                    return e.isDrivable()
-                })
-            },
-            hasConsistentDrivability: function() {
-                return this.children.some(function(e) {
-                    return !e.isDrivable()
-                }) ? this.children.every(function(e) {
-                    return !e.isDrivable()
-                }) : this.children.every(function(e) {
-                    return e.isDrivable()
-                })
-            },
-            allowRestrictionEditing: function() {
-                return this.canEditDrivingAttributes() && f.default.prototype.allowRestrictionEditing.apply(this, arguments)
-            },
-            supportsPickupRestrictions: function() {
-                return this.children.every(function(e) {
-                    return e.supportsPickupRestrictions()
-                })
-            },
-            canEditHouseNumbers: function() {
-                return this.children.every(function(e) {
-                    return e.canEditHouseNumbers()
-                })
-            },
-            supportsHouseNumbers: function() {
-                return this.children.every(function(e) {
-                    return e.supportsHouseNumbers()
-                })
-            },
-            hasSingleNonEmptyStreet: function() {
-                return this.getAddress().hasSingleNonEmptyStreet()
-            },
-            _isReversed: function(e) {
-                return Boolean(this.reverseSegments[e.getID()])
-            },
-            _getChildAttribute: function(e, t) {
-                var i = void 0;
-                if (i = this.flagAttributeNames.indexOf(t) > -1 ? e.getFlagAttribute(t) : e.attributes[t],
-                    this._isReversed(e)) {
-                    var n = this.attributeReverses[t],
-                        s = this.reversableAttributes[t];
-                    n ? i = this[n](e, t) : s && (i = e.attributes[s])
-                }
-                return i
-            },
-            _getAttributeByDirection: function(e, t) {
-                var i = this.reversableAttributes[t];
-                return this._isReversed(e) && i ? i : t
-            },
-            CLASS_NAME: "Waze.Feature.Vector.CompositeSegment"
-        });
-    t.default = v,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    t.STATE_CHANGED = "STATE_CHANGED"
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.LAYER_UNIQUE_NAMES = void 0;
-    var s, r = i(17),
-        a = n(r),
-        o = i(178),
-        l = n(o),
-        u = i(798),
-        d = n(u),
-        c = i(274),
-        h = n(c),
-        f = i(799),
-        p = n(f),
-        g = i(807),
-        m = n(g),
-        v = i(808),
-        y = n(v),
-        b = i(276),
-        w = n(b),
-        E = i(811),
-        k = n(E),
-        M = i(812),
-        S = n(M),
-        T = i(130),
-        C = n(T),
-        I = i(813),
-        A = n(I),
-        R = i(837),
-        O = n(R),
-        D = i(838),
-        L = n(D),
-        P = i(839),
-        N = n(P),
-        x = i(277),
-        V = n(x),
-        F = i(840),
-        j = n(F),
-        U = i(841),
-        B = n(U),
-        z = i(842),
-        G = n(z),
-        H = i(843),
-        Y = n(H),
-        q = i(11),
-        K = function(e) {
-            if (e && e.__esModule)
-                return e;
-            var t = {};
-            if (null != e)
-                for (var i in e)
-                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
-            return t.default = e,
-                t
-        }(q),
-        J = i(10),
-        Z = n(J),
-        X = i(844),
-        Q = n(X),
-        ee = i(53),
-        te = n(ee),
-        ie = i(179),
-        ne = n(ie),
-        se = i(845),
-        re = n(se),
-        ae = i(34),
-        oe = n(ae),
-        le = oe.default.LAYER_TYPE,
-        ue = {
-            WMS: "wms",
-            MAPNIK: "mapnik"
-        },
-        de = {
-            ARCHIVE: "archive",
-            AREA_MANAGERS: "area_managers",
-            BIG_JUNCTIONS: "big_junctions",
-            CLOSURES: "closures",
-            EDITABLE_AREAS: "editable_areas",
-            LANDMARKS: "landmarks",
-            NODES: "nodes",
-            PLACE_UPDATES: "place_updates",
-            PROBLEMS: "problems",
-            SATELLITE_IMAGERY: "satellite_imagery",
-            SATELLITE_OVERLAY: "satellite_overlay",
-            SEGMENTS: "segments",
-            SPEED_CAMERAS: "speed_cameras",
-            UPDATE_REQUESTS: "update_requests",
-            LIVE_USERS: "live_users",
-            SEARCH: "search_layer",
-            GPS_POINTS: "gps_points",
-            ROADS: "roads"
-        },
-        ce = {
-            initializeLayers: function() {
-                this._addAerials(),
-                    this._addModulesLayers(le.RASTER),
-                    this._addRasterLayers(),
-                    this._addModulesLayers(le.FEATURE),
-                    this._addModulesLayers(le.MARKER),
-                    this._addVectorLayers(),
-                    this._clearLayerContainerZIndex()
-            },
-            _addRasterLayers: function() {
-                return this._addRasterLayer(W.Config.raster_layers[de.ROADS]),
-                    this._addRasterLayer(W.Config.raster_layers[de.GPS_POINTS]),
-                    this.roadLayers = [this.getLayerByUniqueName(de.ROADS)],
-                    W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
-                    this._setRoadLayerParams()
-            },
-            _clearLayerContainerZIndex: function() {
-                this.layerContainerDiv.style.zIndex = ""
-            },
-            _addRasterLayer: function(e) {
-                var t = {},
-                    i = e.type || ue.WMS,
-                    n = I18n.t("layers.name." + e.uniqueName),
-                    s = e.file_name || W.Config.raster_layers[i].file_name,
-                    r = W.Config.raster_layers[i].servers.map(function(e) {
-                        return e + "/" + s
-                    });
-                $.extend(t, W.Config.raster_layers.options, e.options),
-                    t.tileSize = new OL.Size(t.tileWidth, t.tileHeight),
-                    t.removeBackBufferDelay = 0,
-                    t.uniqueName = e.uniqueName,
-                    t.visibility = e.visible;
-                var a = {
-                        text: I18n.t("layers.loading", {
-                            layer_name: n
-                        })
-                    },
-                    o = void 0;
-                if (i === ue.WMS) {
-                    var l = {};
-                    $.extend(l, W.Config.raster_layers.wms.params, e.params),
-                        l.layers = e.layers,
-                        o = new OL.Layer.WMS(n, r, l, t)
-                } else
-                    o = new Q.default(n, r, t),
-                    $.extend(o.params, e.params);
-                return o.type = i,
-                    o.events.on({
-                        loadstart: function(e) {
-                            return function() {
-                                return W.vent.trigger("operationPending", {
-                                    operation: e
-                                })
-                            }
-                        }(a),
-                        loadend: function(e) {
-                            return function() {
-                                return W.vent.trigger("operationDone", {
-                                    operation: e
-                                })
-                            }
-                        }(a)
-                    }),
-                    this.addUniqueLayer(o),
-                    o
-            },
-            _setRoadLayerParams: function() {
-                var e = this.snapshotManager && this.snapshotManager.isSnapshotOn() ? -1 : 1,
-                    t = {
-                        timestamp: e,
-                        waitFor: W.model.lastTransactionID
-                    };
-                this.roadLayers.forEach(function(e) {
-                    e.type === ue.MAPNIK ? e.params.addToQuery = $.param(t) : _.extend(e.params, t)
-                })
-            },
-            _refreshRoadLayers: function(e) {
-                return this._setRoadLayerParams(),
-                    this.roadLayers.map(function(e) {
-                        return e.redraw({
-                                force: !0
-                            }),
-                            e.removeBackBuffer()
-                    })
-            },
-            _addVectorLayers: function() {
-                return this.segmentLayer = new k.default(I18n.t("layers.name.segments"), W.model, W.model.segments, {
-                        styleMap: h.default,
-                        uniqueName: de.SEGMENTS,
-                        selectable: !0,
-                        featureType: K.SEGMENT
-                    }),
-                    this.nodeLayer = new S.default(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
-                        styleMap: d.default,
-                        uniqueName: de.NODES,
-                        selectable: !0,
-                        featureType: K.NODE
-                    }),
-                    this.landmarkLayer = new C.default(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
-                        styleMap: l.default,
-                        uniqueName: de.LANDMARKS,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        selectable: !0,
-                        featureType: K.VENUE
-                    }),
-                    this.bigJunctionLayer = new C.default(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
-                        styleMap: m.default,
-                        uniqueName: de.BIG_JUNCTIONS,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        selectable: !0,
-                        featureType: K.BIG_JUNCTION
-                    }),
-                    this.bigJunctionPathLayer = new OL.Layer.Vector("bigJunctionPathLayer", {
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        renderers: [te.default],
-                        styleMap: ne.default,
-                        selectable: !0
-                    }),
-                    this.camerasLayer = new C.default(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
-                        styleMap: p.default,
-                        uniqueName: de.SPEED_CAMERAS,
-                        selectable: !0,
-                        featureType: K.SPEED_CAMERA,
-                        toggleRepo: !0,
-                        rendererOptions: {
-                            zIndexing: !0
-                        }
-                    }),
-                    this.problemLayer = new Y.default(I18n.t("layers.name.problems"), [W.model.problems], {
-                        markerClass: V.default,
-                        uniqueName: de.PROBLEMS,
-                        className: "map-problems"
-                    }),
-                    this.updateRequestLayer = new Y.default(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
-                        markerClass: j.default,
-                        uniqueName: de.UPDATE_REQUESTS,
-                        className: "update-requests"
-                    }),
-                    this.archiveLayer = new A.default(I18n.t("layers.name.archive"), {
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        uniqueName: de.ARCHIVE
-                    }),
-                    this.userLayer = new O.default(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
-                        uniqueName: de.EDITABLE_AREAS
-                    }),
-                    this.managedAreasLayer = new C.default(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
-                        styleMap: w.default,
-                        uniqueName: de.AREA_MANAGERS
-                    }),
-                    this.sketchLayer = new OpenLayers.Layer.Vector("sketch", {
-                        styleMap: y.default,
-                        rendererOptions: {
-                            zIndexing: !0
-                        },
-                        selectable: !0
-                    }),
-                    this.placeUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: B.default,
-                        uniqueName: de.PLACE_UPDATES,
-                        className: "place-updates",
-                        filter: function(e) {
-                            return e.hasUpdateRequests() && !e.isParkingLot() && !e.isResidential()
-                        }
-                    }),
-                    this.parkingPlaceUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: B.default,
-                        uniqueName: "PARKING_PLACE_UPDATES",
-                        className: "place-updates",
-                        filter: function(e) {
-                            return e.hasUpdateRequests() && e.isParkingLot()
-                        }
-                    }),
-                    this.residentialPlaceUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: B.default,
-                        uniqueName: "RESIDENTIAL_PLACE_UPDATES",
-                        className: "place-updates",
-                        filter: function(e) {
-                            return e.hasUpdateRequests() && e.isResidential()
-                        }
-                    }),
-                    this.liveUsersLayer = new OL.Layer.Markers(I18n.t("layers.name.live_users"), {
-                        uniqueName: de.LIVE_USERS,
-                        className: "live-users"
-                    }),
-                    this.searchLayer = new OL.Layer.Vector("Search", {
-                        styleMap: re.default,
-                        uniqueName: de.SEARCH
-                    }),
-                    this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.camerasLayer, this.bigJunctionPathLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.liveUsersLayer, this.searchLayer]),
-                    this.closuresMarkerLayer = new Y.default(I18n.t("layers.name.closures"), [W.model.roadClosures], {
-                        markerClass: G.default,
-                        uniqueName: de.CLOSURES,
-                        toggleRepo: !0
-                    }),
-                    this.addUniqueLayer(this.closuresMarkerLayer)
-            },
-            _addModulesLayers: function(e) {
-                for (var t = oe.default.getLayers().filter(function(t) {
-                        return t.type === e
-                    }), i = 0; i < t.length; i++) {
-                    var n = t[i];
-                    if (n.type === le.RASTER)
-                        this._addModuleRasterLayer(n);
-                    else if (n.type === le.FEATURE)
-                        this._addModuleFeatureLayer(n);
-                    else {
-                        if (n.type !== le.MARKER)
-                            throw new Error("Invalid layer type " + n.type);
-                        this._addModuleMarkerLayer(n)
-                    }
-                }
-            },
-            _addModuleRasterLayer: function(e) {
-                return this._addRasterLayer(e.options)
-            },
-            _addModuleFeatureLayer: function(e) {
-                var t = e.options || {},
-                    i = [W.model.getRepository(t.objectType)],
-                    n = void 0;
-                n = t.enableZIndexing ? {
-                    zIndexing: !0
-                } : {};
-                var s = new C.default(t.name, W.model, i, {
-                    uniqueName: e.uniqueName,
-                    visibility: t.visibleByDefault,
-                    styleMap: t.styleMap,
-                    selectable: t.selectable,
-                    featureType: t.objectType,
-                    toggleRepo: !0,
-                    rendererOptions: n
-                });
-                return this.addUniqueLayer(s)
-            },
-            _addModuleMarkerLayer: function(e) {
-                var t = e.options || {},
-                    i = [W.model.getRepository(t.objectType)],
-                    n = new Y.default(t.name, i, {
-                        uniqueName: e.uniqueName,
-                        markerClass: t.markerClass,
-                        className: t.markerClassName,
-                        visibility: t.visibleByDefault,
-                        featureType: t.objectType,
-                        filter: t.filter
-                    });
-                return this.addUniqueLayer(n)
-            },
-            getLayerByUniqueName: function(e) {
-                return this.getLayersBy("uniqueName", e)[0]
-            },
-            _addAerials: function() {
-                var e = W.Config.map.initialPosition[W.location.code],
-                    t = new OL.LonLat(e.lon, e.lat);
-                Z.default.project(t);
-                var i = new L.default({
-                    name: I18n.t("layers.name.satellite_imagery"),
-                    key: W.apiKeys.googleMapsApiKey,
-                    type: "satellite",
-                    zoomOffset: 12,
-                    numZoomLevels: 11,
-                    zoom: e.initialZoom,
-                    minResolution: .037322767712175846,
-                    center: t,
-                    uniqueName: de.SATELLITE_IMAGERY,
-                    transitionEffect: "resize"
-                });
-                this.addUniqueLayer(i);
-                var n = new N.default(de.SATELLITE_OVERLAY);
-                this.addUniqueLayer(n),
-                    n.setZIndex(Number(i.getZIndex()) + 1);
-                var s = {
-                    text: I18n.t("layers.loading", {
-                        layer_name: I18n.t("layers.name.satellite_imagery")
-                    })
-                };
-                return i.events.on({
-                        loadstart: function() {
-                            if (this.getVisibility())
-                                return W.vent.trigger("operationPending", {
-                                    operation: s
-                                })
-                        },
-                        loadend: function() {
-                            return W.vent.trigger("operationDone", {
-                                operation: s
-                            })
-                        },
-                        loaderror: function() {
-                            return W.vent.trigger("operationDone", {
-                                operation: s
-                            })
-                        }
-                    }),
-                    this.setCenter(t, e.initialZoom)
-            },
-            getLayersByRepos: function(e, t) {
-                return (t || null == this.layersPerRepo) && (this.layersPerRepo = this.layers.reduce(function(e, t) {
-                        if (null != t.repo)
-                            for (var i = 0; i < t.repo.length; i++) {
-                                var n = t.repo[i];
-                                null == e[n.name] && (e[n.name] = []),
-                                    e[n.name].push(t)
-                            }
-                        return e
-                    }, {})),
-                    _.pick(this.layersPerRepo, e)
-            },
-            showLayerByObjectType: function(e) {
-                var t = W.model.getRepository(e);
-                return this.getLayersByRepos([t.name])[t.name].map(function(e) {
-                    return e.setVisibility(!0)
-                })
-            },
-            addUniqueLayer: function(e) {
-                if (e.uniqueName) {
-                    if (this.getLayersBy("uniqueName", e.uniqueName).length > 0)
-                        throw new Error("Cannot add layer " + e.uniqueName + ", the provided\n        uniqueName already exists.")
-                }
-                return this.addLayer(e)
-            },
-            addUniqueLayers: function(e) {
-                var t = this;
-                return e.map(function(e) {
-                    return t.addUniqueLayer(e)
-                })
-            },
-            getPlaceUpdateLayers: function() {
-                return [this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer]
-            }
-        };
-    ce.layerVisibilityBitmask = (s = {},
-            (0,
-                a.default)(s, de.SATELLITE_IMAGERY, 0),
-            (0,
-                a.default)(s, de.ROADS, 2),
-            (0,
-                a.default)(s, de.GPS_POINTS, 3),
-            (0,
-                a.default)(s, de.AREA_MANAGERS, 4),
-            (0,
-                a.default)(s, de.LANDMARKS, 5),
-            (0,
-                a.default)(s, de.SPEED_CAMERAS, 6),
-            (0,
-                a.default)(s, de.PROBLEMS, 7),
-            (0,
-                a.default)(s, de.UPDATE_REQUESTS, 8),
-            (0,
-                a.default)(s, de.EDITABLE_AREAS, 9),
-            (0,
-                a.default)(s, de.LIVE_USERS, 10),
-            (0,
-                a.default)(s, de.PLACE_UPDATES, 11),
-            (0,
-                a.default)(s, de.BIG_JUNCTIONS, 12),
-            (0,
-                a.default)(s, de.CLOSURES, 13),
-            s),
-        ce.LAYER_UNIQUE_NAMES = de,
-        t.default = ce,
-        t.LAYER_UNIQUE_NAMES = de
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = i(26),
-        s = OL.Class(OL.Layer.Vector, {
-            repo: null,
-            _featureMap: null,
-            model: null,
-            initialize: function(e, t, i, n) {
-                this.model = t,
-                    this.repo = i,
-                    OL.Layer.Vector.prototype.initialize.apply(this, [e, n]),
-                    this._featureMap = {},
-                    _(this.repo).isArray() || (this.repo = [this.repo]);
-                for (var s = 0; s < this.repo.length; s++) {
-                    var r = this.repo[s];
-                    this.registerRepoEvents(r)
-                }
-            },
-            registerRepoEvents: function(e) {
-                e.on(n.ADDED, this.onFeaturesAdded, this),
-                    e.on(n.CHANGED, this.onFeaturesChanged, this),
-                    e.on(n.REMOVED, this.onFeaturesRemoved, this)
-            },
-            unregisterRepoEvents: function(e) {
-                e.off(n.ADDED, this.onFeaturesAdded, this),
-                    e.off(n.CHANGED, this.onFeaturesChanged, this),
-                    e.off(n.REMOVED, this.onFeaturesRemoved, this)
-            },
-            destroy: function() {
-                for (var e = 0; e < this.repo.length; e++) {
-                    var t = this.repo[e];
-                    this.unregisterRepoEvents(t)
-                }
-                return OL.Layer.Vector.prototype.destroy.apply(this)
-            },
-            getVector: function(e) {
-                return this._featureMap[e.getID()] || null
-            },
-            onFeaturesAdded: function(e) {
-                var t = this;
-                return e = e.map(function(e) {
-                        var i = new OL.Feature.Vector(e.geometry);
-                        return i.model = e,
-                            t._featureMap[e.getID()] = i,
-                            t.fixRenderIntent(i),
-                            i
-                    }),
-                    this.addFeatures(e)
-            },
-            _getFeatureByPrevId: function(e) {
-                var t = e._prevID;
-                if (!t)
-                    return null;
-                var i = this._featureMap[t];
-                return i ? (this._featureMap[t] = void 0,
-                    this._featureMap[e.getID()] = i,
-                    i) : null
-            },
-            onFeaturesChanged: function(e) {
-                for (var t = [], i = [], n = [], s = 0; s < e.length; s++) {
-                    var r = e[s],
-                        a = this._featureMap[r.getID()] || this._getFeatureByPrevId(r);
-                    if (a)
-                        this.fixRenderIntent(a),
-                        this._updateFeatureModel(a, r),
-                        r.hidden ? (this._featureMap[r.getID()] = void 0,
-                            t.push(a)) : (a.geometry = r.geometry,
-                            this.drawFeature(a)),
-                        (r.isDeleted() || r.hidden) && i.push(a);
-                    else {
-                        var o = new OL.Feature.Vector(r.geometry);
-                        o.model = r,
-                            n.push(o),
-                            this._featureMap[r.getID()] = o
-                    }
-                }
-                return W.selectionManager.unselectFeatures(i),
-                    this.removeFeatures(t),
-                    this.addFeatures(n)
-            },
-            onFeaturesRemoved: function(e) {
-                var t = this,
-                    i = e.map(function(e) {
-                        var i = t._featureMap[e.getID()];
-                        return t._featureMap[e.getID()] = void 0,
-                            i
-                    });
-                i = _(i).filter(function(e) {
-                    return null != e
-                });
-                var n = _(i).filter(function(e) {
-                    return W.selectionManager.isSelected(e)
-                });
-                return W.selectionManager.unselectFeatures(n),
-                    this.removeFeatures(i)
-            },
-            fixRenderIntent: function(e) {
-                e.model.isDeleted() ? e.renderIntent = "delete" : "delete" === e.renderIntent && (e.renderIntent = e.model.isSelected() ? "select" : "default")
-            },
-            _updateFeatureModel: function(e, t) {
-                null != t.geometry && null != e.model.geometry && (t.geometry.id = e.model.geometry.id),
-                    e.model = t
-            },
-            CLASS_NAME: "Waze.Layer.FeatureLayer"
-        });
-    t.default = s,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(6),
-        r = n(s),
-        a = i(27),
+        a = i(23),
         o = n(a),
         l = i(0),
         u = n(l),
@@ -9726,11 +6608,2608 @@ webpackJsonp([0], [function(e, t, i) {
         }
     }
     Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.CHANGE_EVENT = void 0;
+    var s = i(7),
+        r = n(s),
+        a = i(208),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(157),
+        f = n(h),
+        p = i(61),
+        g = n(p),
+        m = i(35),
+        v = n(m),
+        y = i(155),
+        b = n(y),
+        w = function() {
+            function e(t) {
+                (0,
+                    u.default)(this, e),
+                this._roadGraph = t,
+                    this._adjacencyList = new o.default,
+                    this._reverseAdjacencyList = new o.default
+            }
+            return (0,
+                    c.default)(e, [{
+                    key: "getTurn",
+                    value: function(e, t) {
+                        var i = null,
+                            n = this._adjacencyList.get(e.getID());
+                        return n && (i = n[t.getID()]),
+                            i || (i = g.default.createUnknown()),
+                            new f.default(e, t, i)
+                    }
+                }, {
+                    key: "_putTurnInList",
+                    value: function(e, t, i, n) {
+                        var s = e.get(t);
+                        s || (s = {},
+                                e.set(t, s)),
+                            s[i] = n
+                    }
+                }, {
+                    key: "_removeTurnFromList",
+                    value: function(e, t, i) {
+                        var n = e.get(t);
+                        n && (delete n[i],
+                            0 === (0,
+                                r.default)(n).length && e.delete(t))
+                    }
+                }, {
+                    key: "putTurn",
+                    value: function(e) {
+                        var t = e.getTurnData();
+                        if (null === t || t.isUnknown())
+                            return void this._deleteTurn(e);
+                        this._putTurnInList(this._adjacencyList, e.getFromVertex().getID(), e.getToVertex().getID(), t),
+                            this._putTurnInList(this._reverseAdjacencyList, e.getToVertex().getID(), e.getFromVertex().getID(), t),
+                            this.trigger("change", e)
+                    }
+                }, {
+                    key: "_deleteTurn",
+                    value: function(e) {
+                        this._removeTurnFromList(this._adjacencyList, e.getFromVertex().getID(), e.getToVertex().getID()),
+                            this._removeTurnFromList(this._reverseAdjacencyList, e.getToVertex().getID(), e.getFromVertex().getID()),
+                            this.trigger("change", e)
+                    }
+                }, {
+                    key: "getTurnThroughNode",
+                    value: function(e, t, i) {
+                        var n = v.default.for(t, e),
+                            s = v.default.for(i, e).getOpposite();
+                        return this.getTurn(n, s)
+                    }
+                }, {
+                    key: "_getVerticesForPrimaryIndex",
+                    value: function(e, t) {
+                        var i = e.get(t);
+                        return i ? (0,
+                            r.default)(i).map(function(e) {
+                            return v.default.fromID(e)
+                        }) : []
+                    }
+                }, {
+                    key: "getTurnsFrom",
+                    value: function(e) {
+                        var t = this;
+                        return this._getVerticesForPrimaryIndex(this._adjacencyList, e.getID()).map(function(i) {
+                            return t.getTurn(e, i)
+                        }).filter(function(e) {
+                            return !e.getTurnData().isUnknown()
+                        })
+                    }
+                }, {
+                    key: "getLegalTrivialTurnsFrom",
+                    value: function(e) {
+                        var t = this;
+                        return this._roadGraph.getConnectedVertices(e).filter(function(i) {
+                            return t._roadGraph.isTurnLegal(e, i)
+                        }).map(function(i) {
+                            return t.getTurn(e, i)
+                        })
+                    }
+                }, {
+                    key: "getTurnsTo",
+                    value: function(e) {
+                        var t = this;
+                        return this._getVerticesForPrimaryIndex(this._reverseAdjacencyList, e.getID()).map(function(i) {
+                            return t.getTurn(i, e)
+                        }).filter(function(e) {
+                            return !e.getTurnData().isUnknown()
+                        })
+                    }
+                }, {
+                    key: "clear",
+                    value: function() {
+                        this._adjacencyList.clear(),
+                            this._reverseAdjacencyList.clear()
+                    }
+                }, {
+                    key: "fromDescartes",
+                    value: function(e) {
+                        var t = this;
+                        (0,
+                            r.default)(e).forEach(function(i) {
+                                (0,
+                                    r.default)(e[i]).forEach(function(n) {
+                                    var s = e[i][n],
+                                        r = void 0;
+                                    if ("boolean" == typeof s)
+                                        r = s ? g.default.createAllowed() : g.default.createDisallowed();
+                                    else {
+                                        var a = void 0;
+                                        a = s.navigable ? g.default.State.ALLOWED : g.default.State.DISALLOWED;
+                                        var o = s.restrictions.map(function(e) {
+                                            return new b.default(e)
+                                        });
+                                        r = g.default.create(a, o, s.instructionOpCode, s.segmentPath)
+                                    }
+                                    t._putTurnInList(t._adjacencyList, i, n, r),
+                                        t._putTurnInList(t._reverseAdjacencyList, n, i, r)
+                                })
+                            }),
+                            this.trigger("change")
+                    }
+                }, {
+                    key: "_removeVertexFromList",
+                    value: function(e, t) {
+                        e.forEach(function(e, i) {
+                                delete e[t]
+                            }),
+                            e.delete(t)
+                    }
+                }, {
+                    key: "_removeVertex",
+                    value: function(e) {
+                        this._removeVertexFromList(this._adjacencyList, e.getID()),
+                            this._removeVertexFromList(this._reverseAdjacencyList, e.getID())
+                    }
+                }, {
+                    key: "deleteNewSegments",
+                    value: function(e) {
+                        var t = this;
+                        e.forEach(function(e) {
+                            t._removeVertex(v.default.forwardOf(e)),
+                                t._removeVertex(v.default.reverseOf(e))
+                        })
+                    }
+                }, {
+                    key: "toJSON",
+                    value: function() {
+                        var e = {};
+                        return this._adjacencyList.forEach(function(t, i) {
+                                var n = (0,
+                                    r.default)(t).filter(function(e) {
+                                    return null !== t[e]
+                                }).map(function(e) {
+                                    return t[e].isAllowed() || (e += "!"),
+                                        e
+                                });
+                                n.length > 0 && (e[i] = n)
+                            }),
+                            e
+                    }
+                }, {
+                    key: "fromJSON",
+                    value: function(e) {
+                        var t = this;
+                        (0,
+                            r.default)(e).forEach(function(i) {
+                                e[i].forEach(function(e) {
+                                    var n = g.default.createAllowed();
+                                    "!" === e.slice(-1) && (n = g.default.createDisallowed(),
+                                            e = e.slice(0, -1)),
+                                        t.putTurn(new f.default(v.default.fromID(i), v.default.fromID(e), n))
+                                })
+                            }),
+                            this.trigger("change")
+                    }
+                }]),
+                e
+        }();
+    _.extend(w.prototype, Backbone.Events),
+        t.default = w,
+        t.CHANGE_EVENT = "change"
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.SaveError = void 0;
+    var s = i(110),
+        r = n(s),
+        a = i(109),
+        o = n(a),
+        l = i(86),
+        u = n(l),
+        d = i(151),
+        c = n(d),
+        h = i(18),
+        f = n(h),
+        p = i(22),
+        g = n(p),
+        m = i(7),
+        v = n(m),
+        y = i(6),
+        b = n(y),
+        w = i(1),
+        E = n(w),
+        k = i(2),
+        M = n(k),
+        S = i(0),
+        T = n(S),
+        C = i(3),
+        I = n(C),
+        A = i(4),
+        R = n(A),
+        O = i(20),
+        D = n(O),
+        L = i(60),
+        P = n(L),
+        N = i(243),
+        x = n(N),
+        V = i(754),
+        F = n(V),
+        U = i(10),
+        j = n(U),
+        B = i(24),
+        G = function(e) {
+            function t(e) {
+                (0,
+                    T.default)(this, t);
+                var i = (0,
+                    I.default)(this, (t.__proto__ || (0,
+                    M.default)(t)).call(this, "Save Error"));
+                return Error.captureStackTrace && Error.captureStackTrace(i, t),
+                    i.errors = e,
+                    i
+            }
+            return (0,
+                    R.default)(t, e),
+                t
+        }(function(e) {
+            function t() {
+                var t = (0,
+                    c.default)(e, (0,
+                    u.default)(arguments));
+                return (0,
+                        o.default)(t, (0,
+                        M.default)(this)),
+                    t
+            }
+            return t.prototype = (0,
+                    r.default)(e.prototype, {
+                    constructor: {
+                        value: e,
+                        enumerable: !1,
+                        writable: !0,
+                        configurable: !0
+                    }
+                }),
+                o.default ? (0,
+                    o.default)(t, e) : t.__proto__ = e,
+                t
+        }(Error)),
+        z = function() {
+            function e(t) {
+                (0,
+                    T.default)(this, e),
+                this.scale = null,
+                    this.zoom = null,
+                    this.oldScale = null,
+                    this.keepObjects = !1,
+                    this.lastReadRequest = null,
+                    (0,
+                        b.default)(this, t),
+                    this.app = W.app,
+                    this.model = W.model,
+                    this.map = W.map,
+                    this.descartes = this.app.descartes,
+                    this.selectionManager = W.selectionManager,
+                    this.events = new OpenLayers.Events(this),
+                    this.serializer = new P.default,
+                    this.loadingOperation = {
+                        id: "pending.road_data"
+                    },
+                    this.snapshotManager.on("change:state", this.reload, this),
+                    this.selectionManager.events.on({
+                        selectionchanged: this._onSelectionChange,
+                        scope: this
+                    })
+            }
+            return (0,
+                    E.default)(e, [{
+                    key: "bindToMap",
+                    value: function(e) {
+                        var t = this;
+                        e.events.on({
+                            moveend: function() {
+                                t.updateModel(!1)
+                            }
+                        })
+                    }
+                }, {
+                    key: "reload",
+                    value: function() {
+                        return this.model.clear(),
+                            this.updateModel(!1)
+                    }
+                }, {
+                    key: "updateModel",
+                    value: function(e) {
+                        var t = {};
+                        this.keepObjects = e,
+                            this.oldScale = this.scale,
+                            this.scale = this.map.getScale(),
+                            this.zoom = this.map.getZoom();
+                        var i = this.map.calculateBounds(),
+                            n = this.descartes.getExpandedDataBounds(i);
+                        if (null !== n) {
+                            var s = !0,
+                                r = !1,
+                                a = void 0;
+                            try {
+                                for (var o, l = (0,
+                                        g.default)((0,
+                                        v.default)(this.model.repos)); !(s = (o = l.next()).done); s = !0) {
+                                    var u = o.value,
+                                        d = this.model.repos[u];
+                                    d.active && (0,
+                                        b.default)(t, d.updateDataExtent(i, this.scale, this.zoom))
+                                }
+                            } catch (e) {
+                                r = !0,
+                                    a = e
+                            } finally {
+                                try {
+                                    !s && l.return && l.return()
+                                } finally {
+                                    if (r)
+                                        throw a
+                                }
+                            }
+                            _.isEmpty((0,
+                                v.default)(t)) || (this.app.isSandboxMode() && (t.sandbox = !0),
+                                D.default.printMap(t),
+                                this.sendReadFeatures(t, n))
+                        }
+                    }
+                }, {
+                    key: "_isEqualToLastRequest",
+                    value: function(e, t) {
+                        return null !== this.lastReadRequest && _.isEqual(this.lastReadRequest.filter, e) && t.equals(this.lastReadRequest.bounds)
+                    }
+                }, {
+                    key: "sendReadFeatures",
+                    value: function(e, t) {
+                        var i = this;
+                        if (!this._isEqualToLastRequest(e, t))
+                            return this.events.triggerEvent("loadstart"),
+                                W.vent.trigger("operationPending", {
+                                    operation: this.loadingOperation
+                                }),
+                                null != this.model.lastTransactionID && (e.mapVersionID = this.model.lastTransactionID),
+                                this.snapshotManager.isSnapshotOn() && (e.snapshot = !0),
+                                this.app.set("loadingFeatures", !0),
+                                this.lastReadRequest = {
+                                    filter: e,
+                                    bounds: t
+                                },
+                                this.descartes.getFeatures(this.map.calculateBounds(), e).then(function(e) {
+                                    return i.serializer.read(e),
+                                        i.model.mergeObjects(t, e, i.keepObjects)
+                                }).catch(function(e) {
+                                    "abort" !== e.reason && console.error("Error getting features", e)
+                                }).finally(function() {
+                                    i.events.triggerEvent("loadend"),
+                                        W.vent.trigger("operationDone", {
+                                            operation: i.loadingOperation
+                                        }),
+                                        i.app.set("loadingFeatures", !1),
+                                        i.keepObjects = !1,
+                                        i.lastReadRequest = null
+                                })
+                    }
+                }, {
+                    key: "save",
+                    value: function() {
+                        var e = this,
+                            t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                        return D.default.protect("saving", function() {
+                            var i = t.actions || e.model.actionManager.getActions(),
+                                n = {
+                                    actions: e._serializeActions(i)
+                                };
+                            return e.descartes.postFeatures(n, e.model.getChangesExtent(), t.ignoreWarnings).then(function(t) {
+                                return e._processSaveResponse(t), {
+                                    pendingEdits: e._getPendingEdits(t),
+                                    saveCount: e._getSaveCount(t),
+                                    unsavedFeatures: t.unsavedFeatures
+                                }
+                            }).catch(function(t) {
+                                if (t instanceof B.FetchError) {
+                                    var i = e._parseErrorResponse(t.response),
+                                        n = i[0],
+                                        s = void 0;
+                                    throw n && (s = n.get("code")),
+                                        W.Report.generalAction("save_error", s),
+                                        new G(i)
+                                }
+                                throw t
+                            }).finally(function() {
+                                W.Report.generalAction("save_clicked", e.model.actionManager.unsavedActionsNum())
+                            })
+                        })
+                    }
+                }, {
+                    key: "_serializeActions",
+                    value: function(e) {
+                        var t = new F.default,
+                            i = new j.default;
+                        return i.subActions = e,
+                            i.accept(t),
+                            t.getResult()
+                    }
+                }, {
+                    key: "_getPendingEdits",
+                    value: function(e) {
+                        var t = void 0;
+                        return t = e.pendingEdits ? e.pendingEdits.venues : [], {
+                            venues: this.model.venues.getByIds(t)
+                        }
+                    }
+                }, {
+                    key: "_getSaveCount",
+                    value: function(e) {
+                        for (var t = {}, i = ["segments", "nodes", "venues", "bigJunctions"], n = 0; n < i.length; n++) {
+                            var s = i[n],
+                                r = e[s] || {};
+                            t[s] = (0,
+                                v.default)(r).length
+                        }
+                        return t
+                    }
+                }, {
+                    key: "updateObject",
+                    value: function(e, t, i, n) {
+                        if (!e) {
+                            var s = {};
+                            return s[i] = {
+                                    objects: [t]
+                                },
+                                this.serializer.read(s),
+                                void this.model[i].put(s[i].objects[0])
+                        }
+                        if (!t)
+                            return e.state = OpenLayers.State.DELETE,
+                                void this.model[i].remove(e);
+                        var r = t.id;
+                        return delete t.id,
+                            e.merge(t),
+                            e.setID(r),
+                            n !== r && (e._prevID = Number(n)),
+                            delete this.model[i].objects[n],
+                            this.model[i].objects[r] = e,
+                            e.state = null,
+                            e.fid && (e.fid = r),
+                            this.model[i].changed(e),
+                            this.model[i].synced(e)
+                    }
+                }, {
+                    key: "_parseErrorResponse",
+                    value: function(e) {
+                        if (!e) {
+                            return [new x.default({
+                                code: 500,
+                                details: "fatal server error"
+                            })]
+                        }
+                        return this._parseErrors(e)
+                    }
+                }, {
+                    key: "_parseErrors",
+                    value: function(e) {
+                        var t = void 0;
+                        t = e.errorList ? e : {
+                            errorList: [e],
+                            errorLevel: "ERROR"
+                        };
+                        var i = "WARNING" === e.errorLevel,
+                            n = t.errorList.map(function(e) {
+                                return e.ignorable = i,
+                                    new x.default(e, {
+                                        parse: !0
+                                    })
+                            });
+                        return n.length ? n : [new x.default({
+                            code: "default"
+                        })]
+                    }
+                }, {
+                    key: "_processSaveResponse",
+                    value: function(e) {
+                        var t = this;
+                        return D.default.protect("processing save results", function() {
+                            var i = !0,
+                                n = !1,
+                                s = void 0;
+                            try {
+                                for (var r, a = (0,
+                                        g.default)((0,
+                                        v.default)(e)); !(i = (r = a.next()).done); i = !0)
+                                    ! function() {
+                                        var i = r.value,
+                                            n = e[i];
+                                        if (t.model[i]) {
+                                            var s = !0,
+                                                a = !1,
+                                                o = void 0;
+                                            try {
+                                                for (var l, u = (0,
+                                                        g.default)((0,
+                                                        v.default)(n)); !(s = (l = u.next()).done); s = !0)
+                                                    ! function() {
+                                                        var e = l.value,
+                                                            s = n[e];
+                                                        f.default.resolve(t.model[i].get(e)).then(function(n) {
+                                                            t.updateObject(n, s, i, e)
+                                                        })
+                                                    }()
+                                            } catch (e) {
+                                                a = !0,
+                                                    o = e
+                                            } finally {
+                                                try {
+                                                    !s && u.return && u.return()
+                                                } finally {
+                                                    if (a)
+                                                        throw o
+                                                }
+                                            }
+                                        }
+                                    }()
+                            } catch (e) {
+                                n = !0,
+                                    s = e
+                            } finally {
+                                try {
+                                    !i && a.return && a.return()
+                                } finally {
+                                    if (n)
+                                        throw s
+                                }
+                            }
+                            var o = t.model.getModifiedObjects(),
+                                l = !0,
+                                u = !1,
+                                d = void 0;
+                            try {
+                                for (var c, h = (0,
+                                        g.default)((0,
+                                        v.default)(o)); !(l = (c = h.next()).done); l = !0)
+                                    for (var p = c.value, m = o[p], _ = 0; _ < m[OL.State.DELETE].length; _++) {
+                                        var y = m[OL.State.DELETE][_];
+                                        t.model[p].remove(y)
+                                    }
+                            } catch (e) {
+                                u = !0,
+                                    d = e
+                            } finally {
+                                try {
+                                    !l && h.return && h.return()
+                                } finally {
+                                    if (u)
+                                        throw d
+                                }
+                            }
+                            e.userLimits && t.model.loginManager.resetUserLimits(e.userLimits),
+                                null != e.segmentsIdMapping && t.model.getTurnGraph().deleteNewSegments((0,
+                                    v.default)(e.segmentsIdMapping)),
+                                null != e.connections && t.model.getTurnGraph().fromDescartes(e.connections),
+                                t.model.actionManager.clear(),
+                                t.model.setLastTransactionID(e.mapVersionID)
+                        })
+                    }
+                }, {
+                    key: "_onSelectionChange",
+                    value: function() {
+                        return this.app.set("featureSelected", this.selectionManager.hasSelectedFeatures()),
+                            this.app.trigger("selectionChanged", {
+                                selection: W.selectionManager.getSelectedFeatures()
+                            })
+                    }
+                }]),
+                e
+        }();
+    (0,
+        b.default)(z.prototype, {
+        CLASS_NAME: "Waze.Controller"
+    }),
+    t.default = z,
+        t.SaveError = G
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.SegmentRestrictionViewHelpers = t.TurnRestrictionViewHelpers = t.TimeFrameViewHelpers = void 0;
+    var s = i(0),
+        r = n(s),
+        a = i(1),
+        o = n(a),
+        l = i(267),
+        u = n(l),
+        d = i(156),
+        c = i(38),
+        h = new u.default,
+        f = function() {
+            function e() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                    i = t.timeFrame,
+                    n = void 0 === i ? null : i;
+                (0,
+                    r.default)(this, e),
+                this._timeFrame = n
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "formatWeekdays",
+                    value: function() {
+                        if (this._timeFrame.isAllWeek())
+                            return I18n.t("restrictions.editing.timeframe.all_week");
+                        var e = this._timeFrame.getWeekdays(),
+                            t = e.map(function(e) {
+                                return d.WEEKDAY_ORDINALS.indexOf(e)
+                            });
+                        return h.getWeekdaysGist(t, "*").map(function(e) {
+                            return "*" !== e ? I18n.t("date.abbr_day_names")[e] : e
+                        }).join(", ").replace(/, \*,/g, "-")
+                    }
+                }, {
+                    key: "formatHours",
+                    value: function() {
+                        return this._timeFrame.isAllDay() ? I18n.t("restrictions.editing.timeframe.all_day") : this._timeFrame.getFromTime() + " - " + this._timeFrame.getToTime()
+                    }
+                }, {
+                    key: "formatDateRange",
+                    value: function() {
+                        return this._timeFrame.isDuringDates() ? I18n.t("restrictions.editing.timeframe.date_range", {
+                            start: new Date(this._timeFrame.getStartDate()).toLocaleDateString(),
+                            end: new Date(this._timeFrame.getEndDate()).toLocaleDateString()
+                        }) : I18n.t("restrictions.editing.timeframe.always")
+                    }
+                }]),
+                e
+        }(),
+        p = function() {
+            function e() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                    i = t.dataModel,
+                    n = t.segment;
+                (0,
+                    r.default)(this, e),
+                this._dataModel = i,
+                    this._segment = n
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "getEditingDrivingTitle",
+                    value: function(e) {
+                        return this.getDrivingRestrictedTitle(e.getDirection())
+                    }
+                }, {
+                    key: "getDrivingRestrictedTitle",
+                    value: function(e) {
+                        return I18n.t("restrictions.editing.titles.segment.driving_restricted", {
+                            street: this._segment.getAddress().getStreetName(),
+                            direction: this._getDirectionString(e)
+                        })
+                    }
+                }, {
+                    key: "getDrivingNotRestrictedTitle",
+                    value: function(e) {
+                        return I18n.t("restrictions.editing.titles.segment.driving_not_restricted", {
+                            street: this._segment.getAddress().getStreetName(),
+                            direction: this._getDirectionString(e)
+                        })
+                    }
+                }, {
+                    key: "getPickupTitle",
+                    value: function(e) {
+                        return I18n.t("restrictions.editing.titles.segment.pickup", {
+                            street: this._segment.getAddress().getStreetName(),
+                            direction: this._getDirectionString(e)
+                        })
+                    }
+                }, {
+                    key: "_getHeading",
+                    value: function(e) {
+                        return e === c.RESTRICTION_SEGMENT_DIRECTION.FWD ? this._segment.getFwdHeading() : e === c.RESTRICTION_SEGMENT_DIRECTION.REV ? this._segment.getRevHeading() : e === c.RESTRICTION_SEGMENT_DIRECTION.BOTH ? null : void 0
+                    }
+                }, {
+                    key: "_getDirectionString",
+                    value: function(e) {
+                        if (e === c.RESTRICTION_SEGMENT_DIRECTION.BOTH)
+                            return I18n.t("restrictions.editing.titles.segment.both_ways");
+                        var t = this._getHeading(e);
+                        return I18n.t("segment.heading")[t]
+                    }
+                }]),
+                e
+        }(),
+        g = function() {
+            function e() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                    i = t.dataModel,
+                    n = t.turn;
+                (0,
+                    r.default)(this, e),
+                this._turn = n,
+                    this._dataModel = i,
+                    this._restrictions = this._turn.getTurnData().getRestrictions(),
+                    this._fromSegment = this._dataModel.segments.get(this._turn.getFromVertex().getSegmentID()),
+                    this._toSegment = this._dataModel.segments.get(this._turn.getToVertex().getSegmentID())
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "getEditingTitle",
+                    value: function(e) {
+                        return e.isDifficult() ? this._getDifficultTitle() : this._getRestrictedTitle()
+                    }
+                }, {
+                    key: "getDifficultSummaryTitle",
+                    value: function() {
+                        return this._getDifficultTitle()
+                    }
+                }, {
+                    key: "getSummaryTitle",
+                    value: function() {
+                        return this._getRestrictedTitle()
+                    }
+                }, {
+                    key: "_getRestrictedTitle",
+                    value: function() {
+                        return this._turn.isUturn() ? I18n.t("restrictions.editing.titles.uturn.restricted", {
+                            street: this._fromSegment.getAddress().getStreetName()
+                        }) : I18n.t("restrictions.editing.titles.turn.restricted", {
+                            from_street: this._fromSegment.getAddress().getStreetName(),
+                            to_street: this._toSegment.getAddress().getStreetName()
+                        })
+                    }
+                }, {
+                    key: "_getDifficultTitle",
+                    value: function() {
+                        return this._turn.isUturn() ? I18n.t("restrictions.editing.titles.uturn.difficult", {
+                            street: this._fromSegment.getAddress().getStreetName()
+                        }) : I18n.t("restrictions.editing.titles.turn.difficult", {
+                            from_street: this._fromSegment.getAddress().getStreetName(),
+                            to_street: this._toSegment.getAddress().getStreetName()
+                        })
+                    }
+                }]),
+                e
+        }();
+    t.TimeFrameViewHelpers = f,
+        t.TurnRestrictionViewHelpers = g,
+        t.SegmentRestrictionViewHelpers = p
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(59),
+    var n = i(11),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = {
+            selectionRequiredOption: function(e) {
+                return Backbone.$("<option/>").prop("disabled", "disabled").prop("selected", "selected").text(e).val("")
+            },
+            selectOptionsFromList: function(e, t, i) {
+                var n = null,
+                    s = e.map(function(e) {
+                        return {
+                            value: e,
+                            label: t(e)
+                        }
+                    });
+                return void 0 !== i && (s = s.filter(function(e) {
+                        return e.value !== i
+                    }),
+                    n = {
+                        value: i,
+                        label: t(i)
+                    }), {
+                    collection: s,
+                    defaultOption: n
+                }
+            },
+            checkboxList: function(e) {
+                return {
+                    observe: e,
+                    getVal: function(e, t, i) {
+                        return e.filter(":checked").toArray().map(function(e) {
+                            return $(e).attr("value")
+                        })
+                    },
+                    update: function(e, t, i, n) {
+                        var s = t || [];
+                        return e.toArray().forEach(function(e) {
+                            var t = $(e),
+                                i = s.indexOf(t.attr("value")) > -1;
+                            return t.attr("checked", i)
+                        })
+                    }
+                }
+            },
+            requireAndEnableIfNot: function(e) {
+                return [{
+                    observe: e,
+                    name: "required",
+                    onGet: function(e) {
+                        return !e
+                    }
+                }, {
+                    name: "disabled",
+                    observe: e
+                }]
+            },
+            contentsAndVisiblity: function(e) {
+                return {
+                    observe: [e, arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : e],
+                    onGet: function(e) {
+                        var t = (0,
+                                s.default)(e, 2),
+                            i = t[0];
+                        return t[1] && i
+                    },
+                    visible: !0,
+                    updateView: !0
+                }
+            },
+            initBootstrapSupport: function() {
+                return Backbone.Stickit.addHandler({
+                        selector: ".btn-group input[type=radio]",
+                        update: function(e, t) {
+                            if (e.parent(".btn").removeClass("active"),
+                                null !== t && "" !== t) {
+                                var i = e.filter("[value=" + t + "]");
+                                i.parent(".btn").addClass("active"),
+                                    i.prop("checked", "checked")
+                            }
+                        }
+                    }),
+                    Backbone.Stickit.addHandler({
+                        selector: ".btn-group[data-type=boolean] input[type=radio]",
+                        onSet: function(e) {
+                            return "true" === e
+                        }
+                    })
+            }
+        };
+    r.initBootstrapSupport(),
+        t.default = r,
+        e.exports = t.default
+}, , , , function(e, t, i) {
+    var n = i(80),
+        s = i(28)("toStringTag"),
+        r = "Arguments" == n(function() {
+            return arguments
+        }()),
+        a = function(e, t) {
+            try {
+                return e[t]
+            } catch (e) {}
+        };
+    e.exports = function(e) {
+        var t, i, o;
+        return void 0 === e ? "Undefined" : null === e ? "Null" : "string" == typeof(i = a(t = Object(e), s)) ? i : r ? n(t) : "Object" == (o = n(t)) && "function" == typeof t.callee ? "Arguments" : o
+    }
+}, , function(e, t, i) {
+    var n = i(21),
+        s = i(14),
+        r = i(46);
+    e.exports = function(e, t) {
+        var i = (s.Object || {})[e] || Object[e],
+            a = {};
+        a[e] = t(i),
+            n(n.S + n.F * r(function() {
+                i(1)
+            }), "Object", a)
+    }
+}, , , , function(e, t, i) {
+    e.exports = {
+        default: i(454),
+        __esModule: !0
+    }
+}, function(e, t, i) {
+    e.exports = {
+        default: i(457),
+        __esModule: !0
+    }
+}, function(e, t, i) {
+    e.exports = {
+        default: i(464),
+        __esModule: !0
+    }
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.VEHICLE_TYPES = void 0;
+    var s = i(6),
         r = n(s),
-        a = i(117),
+        a = i(47),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = {
+            TRUCK: 0,
+            PUBLIC_TRANSPORTATION: 256,
+            TAXI: 272,
+            BUS: 288,
+            RV: 512,
+            TOWING_VEHICLE: 768,
+            MOTORCYCLE: 1024,
+            PRIVATE: 1280,
+            HAZARDOUS_MATERIALS: 1536,
+            CAV: 1792,
+            EV: 1808,
+            HYBRID: 1824,
+            CLEAN_FUEL: 1840
+        },
+        f = function() {
+            function e() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                    i = t.vehicleTypes,
+                    n = void 0 === i ? [] : i,
+                    s = t.subscriptions,
+                    r = void 0 === s ? [] : s,
+                    a = t.numPassengers,
+                    l = void 0 === a ? 0 : a;
+                (0,
+                    u.default)(this, e),
+                this._vehicleTypes = n,
+                    this._subscriptions = r,
+                    this._numPassengers = l,
+                    (0,
+                        o.default)(this)
+            }
+            return (0,
+                    c.default)(e, [{
+                    key: "equals",
+                    value: function(e) {
+                        return this._numPassengers === e._numPassengers && _.isEqual(this._vehicleTypes.sort(), e._vehicleTypes.sort()) && _.isEqual(this._subscriptions.sort(), e._subscriptions.sort())
+                    }
+                }, {
+                    key: "with",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                        return new this.constructor((0,
+                            r.default)(this.toJSON(), e))
+                    }
+                }, {
+                    key: "getNumPassengers",
+                    value: function() {
+                        return this._numPassengers
+                    }
+                }, {
+                    key: "getVehicleTypes",
+                    value: function() {
+                        return this._vehicleTypes.slice()
+                    }
+                }, {
+                    key: "getSubscriptions",
+                    value: function() {
+                        return null == this._subscriptions ? [] : this._subscriptions.slice()
+                    }
+                }, {
+                    key: "hasSubscriptions",
+                    value: function() {
+                        return null != this._subscriptions && this._subscriptions.length > 0
+                    }
+                }, {
+                    key: "isAllVehicles",
+                    value: function() {
+                        return !this._vehicleTypes || 0 === this._vehicleTypes.length
+                    }
+                }, {
+                    key: "toJSON",
+                    value: function() {
+                        return {
+                            vehicleTypes: this._vehicleTypes,
+                            numPassengers: this._numPassengers,
+                            subscriptions: this._subscriptions
+                        }
+                    }
+                }]),
+                e
+        }();
+    t.default = f,
+        t.VEHICLE_TYPES = h
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = t.OpeningHour = Backbone.Model.extend({
+        ALL_DAY_FROM: "00:00",
+        ALL_DAY_TO: "00:00",
+        defaults: function() {
+            return {
+                fromHour: "09:00",
+                toHour: "17:00",
+                days: this.defaultDays.concat()
+            }
+        },
+        defaultDays: [1, 2, 3, 4, 5],
+        isAllDay: function() {
+            return this.get("fromHour") === this.ALL_DAY_FROM && this.get("toHour") === this.ALL_DAY_TO
+        },
+        setAllDay: function() {
+            return this.set("fromHour", this.ALL_DAY_FROM),
+                this.set("toHour", this.ALL_DAY_TO)
+        }
+    });
+    t.Collection = Backbone.Collection.extend({
+        model: n
+    })
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = (t.UNKNOWN = "UNKNOWN",
+        t.PARKING_TYPE_PUBLIC = "PUBLIC");
+    t.PARKING_TYPE = [n, "RESTRICTED", "PRIVATE"],
+        t.COST_TYPE = ["FREE", "LOW", "MODERATE", "EXPENSIVE"],
+        t.PAYMENT_TYPE = ["CASH", "CHECKS", "CREDIT", "DEBIT_CARD", "PERMIT", "MEMBERSHIP", "PREPAID", "PARKING_APP", "DIGITAL_WALLET", "SMS_CALL", "ELECTRONIC_PASS"],
+        t.LOT_TYPE = ["STREET_LEVEL", "STREET_LEVEL_COVERED", "MULTI_LEVEL", "UNDERGROUND"],
+        t.SPOTS_ESTIMATE = [{
+            value: "R_1_TO_10",
+            range: [1, 10]
+        }, {
+            value: "R_11_TO_30",
+            range: [11, 30]
+        }, {
+            value: "R_31_TO_60",
+            range: [31, 60]
+        }, {
+            value: "R_61_TO_100",
+            range: [61, 100]
+        }, {
+            value: "R_101_TO_300",
+            range: [101, 300]
+        }, {
+            value: "R_301_TO_600",
+            range: [301, 600]
+        }, {
+            value: "R_600_PLUS",
+            range: [601, 1 / 0]
+        }]
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.NOTIFICATION_TYPES = void 0;
+    var n = i(203),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = {
+            PRIVATE_FORUM_MESSAGE: "PRIVATE_FORUM_MESSAGE",
+            DISCOVER_COMMUNITY_FORUM: "DISCOVER_COMMUNITY_FORUM",
+            DISCOVER_LOCAL_WIKI: "DISCOVER_LOCAL_WIKI",
+            FIRST_TIME_VIDEOS: "FIRST_TIME_VIDEOS",
+            CHECK_YOUR_NEIGHBORHOOD: "CHECK_YOUR_NEIGHBORHOOD",
+            FIRST_EDIT: "FIRST_EDIT",
+            MENTEE_CLICKED_LINK: "MENTEE_CLICKED_LINK",
+            MENTEE_RETURNED: "MENTEE_RETURNED",
+            MENTOR_ENCOURAGMENT: "MENTOR_ENCOURAGMENT",
+            MENTOR_FEEDBACK_REQUEST: "MENTOR_FEEDBACK_REQUEST"
+        },
+        a = s.default.extend({
+            TYPE: r,
+            GROUPS: {
+                PRIVATE_FORUM_MESSAGE: [r.PRIVATE_FORUM_MESSAGE],
+                FIRST_TIME_MESSAGES: [r.DISCOVER_COMMUNITY_FORUM, r.DISCOVER_LOCAL_WIKI, r.FIRST_TIME_VIDEOS, r.CHECK_YOUR_NEIGHBORHOOD],
+                MENTORING: [r.FIRST_EDIT, r.MENTEE_CLICKED_LINK, r.MENTEE_RETURNED, r.MENTOR_ENCOURAGMENT, r.MENTOR_FEEDBACK_REQUEST]
+            },
+            defaults: function() {
+                return {
+                    type: null,
+                    timestamp: null,
+                    parameters: {}
+                }
+            },
+            isForumMessage: function() {
+                var e = this.attributes.type;
+                return this.GROUPS.PRIVATE_FORUM_MESSAGE.indexOf(e) > -1
+            },
+            isFirstTimeMessage: function() {
+                var e = this.attributes.type;
+                return this.GROUPS.FIRST_TIME_MESSAGES.indexOf(e) > -1
+            },
+            isMentoringMessage: function() {
+                var e = this.attributes.type;
+                return this.GROUPS.MENTORING.indexOf(e) > -1
+            },
+            isNotification: function() {
+                return !this.isForumMessage() && !this.isFirstTimeMessage() && !this.isMentoringMessage()
+            },
+            getParameter: function(e) {
+                return this.attributes.parameters[e]
+            }
+        });
+    t.NOTIFICATION_TYPES = r,
+        t.default = a
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+
+    function s(e, t) {
+        for (var i = arguments.length, n = Array(i > 2 ? i - 2 : 0), s = 2; s < i; s++)
+            n[s - 2] = arguments[s];
+        var r = !0,
+            a = !1,
+            o = void 0;
+        try {
+            for (var u, c = (0,
+                    m.default)((0,
+                    p.default)((f = _).omit.apply(f, [(0,
+                    h.default)(t)].concat(n)))); !(r = (u = c.next()).done); r = !0) {
+                var f, g = (0,
+                        d.default)(u.value, 2),
+                    v = g[0],
+                    y = g[1];
+                (0,
+                    l.default)(e, v, y)
+            }
+        } catch (e) {
+            a = !0,
+                o = e
+        } finally {
+            try {
+                !r && c.return && c.return()
+            } finally {
+                if (a)
+                    throw o
+            }
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.WRITABLE_ATTRIBUTES = t.PERMISSIONS = t.CATEGORIES = t.ENGLISH_LOCALE = t.MTE_LOCALES = void 0;
+    var r = i(6),
+        a = n(r),
+        o = i(144),
+        l = n(o),
+        u = i(11),
+        d = n(u),
+        c = i(556),
+        h = n(c),
+        f = i(70),
+        p = n(f),
+        g = i(22),
+        m = n(g),
+        v = i(2),
+        y = n(v),
+        b = i(0),
+        w = n(b),
+        E = i(1),
+        k = n(E),
+        M = i(3),
+        S = n(M),
+        T = i(8),
+        C = n(T),
+        I = i(4),
+        A = n(I),
+        R = i(15),
+        O = n(R),
+        D = i(12),
+        L = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var i in e)
+                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
+            return t.default = e,
+                t
+        }(D),
+        P = i(31),
+        N = n(P),
+        x = i(49),
+        V = n(x),
+        F = {
+            el: "ελληνικά"
+        },
+        U = {
+            FESTIVAL: "FESTIVAL",
+            PARADE: "PARADE",
+            CONCERT: "CONCERT",
+            SPORTING_EVENT: "SPORTING_EVENT",
+            STADIUM_GAMES: "STADIUM_GAMES",
+            VIP_VISIT: "VIP_VISIT",
+            CRISIS: "CRISIS",
+            CONSTRUCTION: "CONSTRUCTION",
+            OTHER: "OTHER"
+        },
+        j = {
+            EDIT_PROPERTIES: 1,
+            MANIPULATE_PARTNERS: 2,
+            PUBLISH: 4,
+            EDIT_TWEET_TEXT: 16
+        },
+        B = ["id", "category", "cityID", "comment", "startDate", "endDate", "names", "url", "partners", "tweetText"],
+        G = function(e) {
+            function t(e, i) {
+                (0,
+                    w.default)(this, t);
+                var n = (0,
+                    S.default)(this, (t.__proto__ || (0,
+                    y.default)(t)).call(this, e));
+                return N.default.prototype.initialize.apply(n, arguments),
+                    n.type = L.MTE,
+                    n.writableAttributes = B,
+                    n
+            }
+            return (0,
+                    A.default)(t, e),
+                (0,
+                    k.default)(t, [{
+                    key: "defaults",
+                    value: function() {
+                        return {
+                            id: null,
+                            active: null,
+                            category: null,
+                            cityID: null,
+                            comment: null,
+                            contributors: [],
+                            createdBy: null,
+                            createdOn: null,
+                            description: null,
+                            startDate: (new Date).toString("yyyy-MM-dd HH:mm"),
+                            endDate: null,
+                            names: [],
+                            permissions: O.default.ALL_PERMISSIONS & ~j.EDIT_TWEET_TEXT,
+                            updatedBy: null,
+                            updatedOn: null,
+                            url: null,
+                            published: !1,
+                            ready: !1,
+                            uniqueName: null,
+                            partners: [],
+                            tweetText: null,
+                            twitterAccountsUrls: []
+                        }
+                    }
+                }, {
+                    key: "clone",
+                    value: function() {
+                        var e = (0,
+                                C.default)(t.prototype.__proto__ || (0,
+                                y.default)(t.prototype), "clone", this).apply(this, arguments),
+                            i = $.extend(!0, [], this.get("names"));
+                        return e.set({
+                                names: i
+                            }),
+                            e.model = this.model,
+                            e
+                    }
+                }, {
+                    key: "getAddress",
+                    value: function() {
+                        return V.default.fromCityID(this.attributes.cityID, this.model)
+                    }
+                }, {
+                    key: "getEnglishName",
+                    value: function() {
+                        var e = _.where(this.attributes.names, {
+                            locale: this.ENGLISH_LOCALE
+                        });
+                        return e.length > 0 ? e[0].value : null
+                    }
+                }, {
+                    key: "getLocale",
+                    value: function() {
+                        var e = this._getLocalNameObject();
+                        return null !== e ? e.locale : null
+                    }
+                }, {
+                    key: "getLocalName",
+                    value: function() {
+                        var e = this._getLocalNameObject();
+                        return null !== e ? e.value : null
+                    }
+                }, {
+                    key: "_getLocalNameObject",
+                    value: function() {
+                        var e = this,
+                            t = _.reject(this.attributes.names, function(t) {
+                                return t.locale === e.ENGLISH_LOCALE
+                            });
+                        return t.length > 0 ? t[0] : null
+                    }
+                }, {
+                    key: "canPublish",
+                    value: function() {
+                        return !this.isNew() && this.get("ready") && this.isAllowed(j.PUBLISH)
+                    }
+                }, {
+                    key: "canEditPartners",
+                    value: function() {
+                        return this.isAllowed(j.MANIPULATE_PARTNERS)
+                    }
+                }, {
+                    key: "canEditTweetText",
+                    value: function() {
+                        return this.isAllowed(j.EDIT_TWEET_TEXT)
+                    }
+                }]),
+                t
+        }(Backbone.Model);
+    s(G.prototype, O.default.prototype, "clone", "initialize", "constructor"),
+        s(G.prototype, N.default.prototype, "clone", "initialize", "constructor"),
+        (0,
+            a.default)(G.prototype, {
+            PERMISSIONS: j,
+            CATEGORIES: U,
+            MTE_LOCALES: F,
+            ENGLISH_LOCALE: "en"
+        }),
+        t.MTE_LOCALES = F,
+        t.ENGLISH_LOCALE = "en",
+        t.CATEGORIES = U,
+        t.PERMISSIONS = j,
+        t.WRITABLE_ATTRIBUTES = B,
+        t.default = G
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(152),
+        g = n(p),
+        m = i(560),
+        v = n(m),
+        y = function(e) {
+            function t() {
+                return (0,
+                        o.default)(this, t),
+                    (0,
+                        c.default)(this, (t.__proto__ || (0,
+                        r.default)(t)).apply(this, arguments))
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "defaults",
+                    value: function() {
+                        return {
+                            transactionID: null,
+                            actionType: null,
+                            date: null,
+                            userID: null,
+                            objects: []
+                        }
+                    }
+                }, {
+                    key: "getObject",
+                    value: function(e, t) {
+                        return this.attributes.objects.filter(function(i) {
+                            return i.attributes.objectID === t && i.attributes.objectType === e
+                        })[0]
+                    }
+                }, {
+                    key: "nested",
+                    get: function() {
+                        return {
+                            objects: v.default
+                        }
+                    }
+                }]),
+                t
+        }(Backbone.Model);
+    y.ACTIONS = {
+            ADD: "ADD",
+            UPDATE: "UPDATE",
+            DELETE: "DELETE"
+        },
+        _.extend(y.prototype, g.default),
+        t.default = y,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(0),
+        r = n(s),
+        a = i(1),
+        o = n(a),
+        l = function() {
+            function e(t) {
+                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [];
+                (0,
+                    r.default)(this, e),
+                this._id = t,
+                    Array.isArray(i) || (i = [i]),
+                    this._strategies = i,
+                    this._state = !1
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "getId",
+                    value: function() {
+                        return this._id
+                    }
+                }, {
+                    key: "setState",
+                    value: function(e) {
+                        this._state = e
+                    }
+                }, {
+                    key: "getState",
+                    value: function() {
+                        return this._state
+                    }
+                }, {
+                    key: "isLeaf",
+                    value: function() {
+                        return !0
+                    }
+                }, {
+                    key: "writeStateToApp",
+                    value: function(e, t) {
+                        this._strategies.forEach(function(i) {
+                            return i.writeStateToApp(e, t)
+                        })
+                    }
+                }], [{
+                    key: "of",
+                    value: function(t, i) {
+                        return new e(t, i)
+                    }
+                }]),
+                e
+        }();
+    t.default = l,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(31),
+        r = n(s),
+        a = i(15),
+        o = n(a),
+        l = i(9),
+        u = n(l),
+        d = i(24),
+        c = OL.Class(r.default, {
+            DEFAULT_POLYGON_SIZE_METERS: 50,
+            MAX_SUBJECT_LENGTH: 30,
+            MAX_BODY_LENGTH: 2e3,
+            defaults: function() {
+                return {
+                    subject: "",
+                    body: "",
+                    geometry: null,
+                    endDate: null,
+                    lockRank: 0,
+                    isFollowing: !1,
+                    createdOn: null,
+                    createdBy: null,
+                    updatedBy: null,
+                    updatedOn: null,
+                    conversation: [],
+                    permissions: o.default.ALL_PERMISSIONS,
+                    id: null
+                }
+            },
+            nested: {
+                geometry: OL.Geometry
+            },
+            PERMISSIONS: {
+                EDIT_GEOMETRY: 1,
+                EDIT_PROPERTIES: 2,
+                DELETE: 4
+            },
+            DATE_FORMAT: "YYYY-MM-DD HH:mm",
+            isPoint: function() {
+                return "OpenLayers.Geometry.Point" === this.geometry.CLASS_NAME
+            },
+            getPolygonGeometry: function() {
+                return this.isPoint() ? u.default.pointToSquarePolygon(this.geometry, this.DEFAULT_POLYGON_SIZE_METERS) : this.geometry.clone()
+            },
+            getPointGeometry: function() {
+                return this.isPoint() ? this.geometry.clone() : u.default.polygonToPoint(this.geometry)
+            },
+            getComments: function() {
+                return new Backbone.Collection(this.attributes.conversation)
+            },
+            isFollowing: function() {
+                return this.attributes.isFollowing
+            },
+            setFollowing: function(e) {
+                var t = this;
+                return (0,
+                    d.httpPost)(W.Config.paths.mapCommentFollow, {
+                    mapCommentID: this.getID(),
+                    follow: e
+                }).then(function() {
+                    t.attributes.isFollowing = e
+                })
+            },
+            addComment: function(e) {
+                var t = this;
+                return (0,
+                    d.httpPost)(W.Config.paths.mapCommentConversation, {
+                    mapCommentID: this.getID(),
+                    text: e
+                }).then(function(e) {
+                    return e.isAutoFollowed && (t.attributes.isFollowing = !0),
+                        t.attributes.conversation.push(e.comment),
+                        new Backbone.Model(e.comment)
+                })
+            }
+        });
+    t.default = c,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(10),
+        g = n(p),
+        m = i(63),
+        v = n(m),
+        _ = function(e) {
+            function t(e, i, n, s) {
+                (0,
+                    o.default)(this, t);
+                var a = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, s));
+                return a.street = null,
+                    a.city = i,
+                    a.name = e,
+                    a.isEmpty = n,
+                    a
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = null,
+                            t = void 0,
+                            i = !1;
+                        return e = this.isEmpty ? this.model.streets.getByAttributes({
+                                isEmpty: !0,
+                                cityID: this.city.getID()
+                            })[0] : this.model.streets.getByAttributes({
+                                name: this.name,
+                                cityID: this.city.getID()
+                            })[0],
+                            e || (this.isEmpty || this.name,
+                                t = new v.default(null, this.model.streets, {
+                                    name: this.isEmpty ? "" : this.name,
+                                    isEmpty: this.isEmpty,
+                                    cityID: this.city.getID()
+                                }),
+                                e = t.object,
+                                this.doSubAction(t),
+                                i = !0),
+                            this.street = e,
+                            i
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = _,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(17),
+        v = n(m),
+        _ = i(64),
+        y = n(_),
+        b = i(233),
+        w = n(b),
+        E = i(12),
+        k = function(e) {
+            function t(e, i, n, s) {
+                (0,
+                    o.default)(this, t);
+                var a = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, e, s));
+                return a.segment = e,
+                    a.changedState = !1,
+                    a.oldGeometry = i === e.geometry ? i.clone() : i,
+                    a.newGeometry = n === e.geometry ? n.clone() : n,
+                    a
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        this.segment.getID();
+                        var e = this.oldGeometry.getVertices(!0);
+                        if (this.replaceGeometry(),
+                            this.segment.isPoint())
+                            return void this.doSubAction(new y.default(this.segment));
+                        var t = this.segment.geometry.getVertices(!0);
+                        e[0].equals(t[0]) || this.updateEndPoint(this.segment.attributes.fromNodeID, this.touching.fromVertex, !0),
+                            e[1].equals(t[1]) || this.updateEndPoint(this.segment.attributes.toNodeID, this.touching.toVertex, !1),
+                            this.segment.state || (this.changedState = !0,
+                                this.segment.state = OpenLayers.State.UPDATE),
+                            this.model.segments.changed(this.segment)
+                    }
+                }, {
+                    key: "replaceGeometry",
+                    value: function() {
+                        this.segment.geometry.components.length = 0,
+                            this.newGeometry.components.forEach(function(e) {
+                                this.segment.geometry.addComponent(e.clone())
+                            }, this),
+                            this.segment.geometry.calculateBounds(),
+                            this.segment.bounds = this.segment.geometry.bounds
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        this.changedState && (this.segment.state = null),
+                            this.segment.geometry.components.length = 0,
+                            this.oldGeometry.components.forEach(function(e) {
+                                this.segment.geometry.addComponent(e.clone())
+                            }, this),
+                            this.segment.geometry.calculateBounds(),
+                            this.segment.bounds = this.segment.geometry.bounds,
+                            this.model.segments.changed(this.segment),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "undoAction", this).call(this)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.segment.geometry.components.length = 0,
+                            this.newGeometry.components.forEach(function(e) {
+                                this.segment.geometry.addComponent(e.clone())
+                            }, this),
+                            this.segment.geometry.calculateBounds(),
+                            this.segment.bounds = this.segment.geometry.bounds,
+                            this.changedState && (this.segment.state = OpenLayers.State.UPDATE),
+                            this.model.segments.changed(this.segment),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "redoAction", this).call(this)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        var e = {};
+                        return e.id = this.segment.getID(),
+                            e.geometry = this.newGeometry, {
+                                _objectType: E.SEGMENT,
+                                action: v.default.TYPE.UPDATE,
+                                attributes: e
+                            }
+                    }
+                }, {
+                    key: "getBounds",
+                    value: function() {
+                        return this.newGeometry.getBounds().clone()
+                    }
+                }]),
+                t
+        }(w.default);
+    t.default = k,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
+        r = n(s),
+        a = i(2),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(3),
+        f = n(h),
+        p = i(8),
+        g = n(p),
+        m = i(4),
+        v = n(m),
+        _ = i(17),
+        y = n(_),
+        b = i(51),
+        w = n(b),
+        E = i(10),
+        k = n(E),
+        M = i(12),
+        S = i(159),
+        T = n(S),
+        C = {
+            permissions: 2147483647
+        },
+        I = function(e) {
+            function t(e, i, n) {
+                (0,
+                    u.default)(this, t);
+                var s = (0,
+                    f.default)(this, (t.__proto__ || (0,
+                    o.default)(t)).call(this, n));
+                return s.node = null,
+                    s.point = e.clone(),
+                    delete s.point.parent,
+                    s.segments = i,
+                    s.options = n,
+                    s.nodeAttributes = {},
+                    s
+            }
+            return (0,
+                    v.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "createNode",
+                    value: function(e) {
+                        var t = new T.default({
+                            geometry: e
+                        });
+                        return t.attributes || (t.attributes = {}),
+                            (0,
+                                r.default)(t.attributes, C, t.attributes),
+                            t.attributes.segIDs = [],
+                            t.state = OpenLayers.State.INSERT,
+                            t.setID(this.model.nodes.generateUniqueID()),
+                            $.extend(!0, this.nodeAttributes, t.attributes),
+                            t
+                    }
+                }, {
+                    key: "doAction",
+                    value: function() {
+                        if (this.node = this.createNode(this.point.clone()),
+                            this.node.getID(),
+                            this.model.nodes.put(this.node),
+                            null !== this.segments)
+                            for (var e = 0, t = this.segments.length; e < t; e++)
+                                this.doSubAction(new w.default(this.node, this.segments[e], this.options))
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        (0,
+                            g.default)(t.prototype.__proto__ || (0,
+                            o.default)(t.prototype), "undoAction", this).call(this),
+                            this.model.nodes.remove(this.node)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.model.nodes.put(this.node),
+                            (0,
+                                g.default)(t.prototype.__proto__ || (0,
+                                o.default)(t.prototype), "redoAction", this).call(this)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        var e = this.nodeAttributes;
+                        return e.id = this.node.getID(),
+                            e.geometry = this.point, {
+                                _objectType: M.NODE,
+                                action: y.default.TYPE.ADD,
+                                attributes: e
+                            }
+                    }
+                }]),
+                t
+        }(k.default);
+    t.default = I,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(17),
+        g = n(p),
+        m = function(e) {
+            function t(e, i) {
+                (0,
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.object = e,
+                    n.repo = null,
+                    n.origState = null,
+                    n
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        return this.repo = this.model.getRepository(this.object.type),
+                            null === this.repo ? (console.error("Error deleting object: could not find an object repository for type " + this.object.type), !1) : (this.origState = this.object.state,
+                                this.removeObjct(), !0)
+                    }
+                }, {
+                    key: "removeObjct",
+                    value: function() {
+                        this.object.state === OpenLayers.State.INSERT ? this.repo.remove(this.object) : (this.object.state = OpenLayers.State.DELETE,
+                            this.repo.changed(this.object))
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        this.object.type,
+                            this.object.getID(),
+                            this.object.state = this.origState,
+                            this.object.state === OpenLayers.State.INSERT ? this.repo.put(this.object) : this.repo.changed(this.object)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.removeObjct()
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return {
+                            _objectType: this.object.type,
+                            action: g.default.TYPE.DELETE,
+                            attributes: {
+                                id: this.object.getID()
+                            }
+                        }
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = m,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    t.STATE_CHANGED = "STATE_CHANGED"
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.LAYER_UNIQUE_NAMES = void 0;
+    var s, r = i(16),
+        a = n(r),
+        o = i(171),
+        l = n(o),
+        u = i(781),
+        d = n(u),
+        c = i(251),
+        h = n(c),
+        f = i(782),
+        p = n(f),
+        g = i(790),
+        m = n(g),
+        v = i(791),
+        y = n(v),
+        b = i(253),
+        w = n(b),
+        E = i(794),
+        k = n(E),
+        M = i(795),
+        S = n(M),
+        T = i(126),
+        C = n(T),
+        I = i(796),
+        A = n(I),
+        R = i(820),
+        O = n(R),
+        D = i(821),
+        L = n(D),
+        P = i(822),
+        N = n(P),
+        x = i(254),
+        V = n(x),
+        F = i(823),
+        U = n(F),
+        j = i(824),
+        B = n(j),
+        G = i(825),
+        z = n(G),
+        H = i(826),
+        Y = n(H),
+        q = i(12),
+        K = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var i in e)
+                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
+            return t.default = e,
+                t
+        }(q),
+        J = i(9),
+        Z = n(J),
+        X = i(827),
+        Q = n(X),
+        ee = i(53),
+        te = n(ee),
+        ie = i(172),
+        ne = n(ie),
+        se = i(828),
+        re = n(se),
+        ae = i(34),
+        oe = n(ae),
+        le = oe.default.LAYER_TYPE,
+        ue = {
+            WMS: "wms",
+            MAPNIK: "mapnik"
+        },
+        de = {
+            ARCHIVE: "archive",
+            AREA_MANAGERS: "area_managers",
+            BIG_JUNCTIONS: "big_junctions",
+            CLOSURES: "closures",
+            EDITABLE_AREAS: "editable_areas",
+            LANDMARKS: "landmarks",
+            NODES: "nodes",
+            PLACE_UPDATES: "place_updates",
+            PROBLEMS: "problems",
+            SATELLITE_IMAGERY: "satellite_imagery",
+            SATELLITE_OVERLAY: "satellite_overlay",
+            SEGMENTS: "segments",
+            SPEED_CAMERAS: "speed_cameras",
+            UPDATE_REQUESTS: "update_requests",
+            LIVE_USERS: "live_users",
+            SEARCH: "search_layer",
+            GPS_POINTS: "gps_points",
+            ROADS: "roads"
+        },
+        ce = {
+            initializeLayers: function() {
+                this._addAerials(),
+                    this._addModulesLayers(le.RASTER),
+                    this._addRasterLayers(),
+                    this._addModulesLayers(le.FEATURE),
+                    this._addModulesLayers(le.MARKER),
+                    this._addVectorLayers(),
+                    this._clearLayerContainerZIndex()
+            },
+            _addRasterLayers: function() {
+                return this._addRasterLayer(W.Config.raster_layers[de.ROADS]),
+                    this._addRasterLayer(W.Config.raster_layers[de.GPS_POINTS]),
+                    this.roadLayers = [this.getLayerByUniqueName(de.ROADS)],
+                    W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
+                    this._setRoadLayerParams()
+            },
+            _clearLayerContainerZIndex: function() {
+                this.layerContainerDiv.style.zIndex = ""
+            },
+            _addRasterLayer: function(e) {
+                var t = {},
+                    i = e.type || ue.WMS,
+                    n = I18n.t("layers.name." + e.uniqueName),
+                    s = e.file_name || W.Config.raster_layers[i].file_name,
+                    r = W.Config.raster_layers[i].servers.map(function(e) {
+                        return e + "/" + s
+                    });
+                $.extend(t, W.Config.raster_layers.options, e.options),
+                    t.tileSize = new OL.Size(t.tileWidth, t.tileHeight),
+                    t.removeBackBufferDelay = 0,
+                    t.uniqueName = e.uniqueName,
+                    t.visibility = e.visible;
+                var a = {
+                        text: I18n.t("layers.loading", {
+                            layer_name: n
+                        })
+                    },
+                    o = void 0;
+                if (i === ue.WMS) {
+                    var l = {};
+                    $.extend(l, W.Config.raster_layers.wms.params, e.params),
+                        l.layers = e.layers,
+                        o = new OL.Layer.WMS(n, r, l, t)
+                } else
+                    o = new Q.default(n, r, t),
+                    $.extend(o.params, e.params);
+                return o.type = i,
+                    o.events.on({
+                        loadstart: function(e) {
+                            return function() {
+                                return W.vent.trigger("operationPending", {
+                                    operation: e
+                                })
+                            }
+                        }(a),
+                        loadend: function(e) {
+                            return function() {
+                                return W.vent.trigger("operationDone", {
+                                    operation: e
+                                })
+                            }
+                        }(a)
+                    }),
+                    this.addUniqueLayer(o),
+                    o
+            },
+            _setRoadLayerParams: function() {
+                var e = this.snapshotManager && this.snapshotManager.isSnapshotOn() ? -1 : 1,
+                    t = {
+                        timestamp: e,
+                        waitFor: W.model.lastTransactionID
+                    };
+                this.roadLayers.forEach(function(e) {
+                    e.type === ue.MAPNIK ? e.params.addToQuery = $.param(t) : _.extend(e.params, t)
+                })
+            },
+            _refreshRoadLayers: function(e) {
+                return this._setRoadLayerParams(),
+                    this.roadLayers.map(function(e) {
+                        return e.redraw({
+                                force: !0
+                            }),
+                            e.removeBackBuffer()
+                    })
+            },
+            _addVectorLayers: function() {
+                return this.segmentLayer = new k.default(I18n.t("layers.name.segments"), W.model, W.model.segments, {
+                        styleMap: h.default,
+                        uniqueName: de.SEGMENTS,
+                        selectable: !0,
+                        featureType: K.SEGMENT
+                    }),
+                    this.nodeLayer = new S.default(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
+                        styleMap: d.default,
+                        uniqueName: de.NODES,
+                        selectable: !0,
+                        featureType: K.NODE
+                    }),
+                    this.landmarkLayer = new C.default(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
+                        styleMap: l.default,
+                        uniqueName: de.LANDMARKS,
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        selectable: !0,
+                        featureType: K.VENUE
+                    }),
+                    this.bigJunctionLayer = new C.default(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
+                        styleMap: m.default,
+                        uniqueName: de.BIG_JUNCTIONS,
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        selectable: !0,
+                        featureType: K.BIG_JUNCTION
+                    }),
+                    this.bigJunctionPathLayer = new OL.Layer.Vector("bigJunctionPathLayer", {
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        renderers: [te.default],
+                        styleMap: ne.default,
+                        selectable: !0
+                    }),
+                    this.camerasLayer = new C.default(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
+                        styleMap: p.default,
+                        uniqueName: de.SPEED_CAMERAS,
+                        selectable: !0,
+                        featureType: K.SPEED_CAMERA,
+                        toggleRepo: !0,
+                        rendererOptions: {
+                            zIndexing: !0
+                        }
+                    }),
+                    this.problemLayer = new Y.default(I18n.t("layers.name.problems"), [W.model.problems], {
+                        markerClass: V.default,
+                        uniqueName: de.PROBLEMS,
+                        className: "map-problems"
+                    }),
+                    this.updateRequestLayer = new Y.default(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
+                        markerClass: U.default,
+                        uniqueName: de.UPDATE_REQUESTS,
+                        className: "update-requests"
+                    }),
+                    this.archiveLayer = new A.default(I18n.t("layers.name.archive"), {
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        uniqueName: de.ARCHIVE
+                    }),
+                    this.userLayer = new O.default(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
+                        uniqueName: de.EDITABLE_AREAS
+                    }),
+                    this.managedAreasLayer = new C.default(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
+                        styleMap: w.default,
+                        uniqueName: de.AREA_MANAGERS
+                    }),
+                    this.sketchLayer = new OpenLayers.Layer.Vector("sketch", {
+                        styleMap: y.default,
+                        rendererOptions: {
+                            zIndexing: !0
+                        },
+                        selectable: !0
+                    }),
+                    this.placeUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: B.default,
+                        uniqueName: de.PLACE_UPDATES,
+                        className: "place-updates",
+                        filter: function(e) {
+                            return e.hasUpdateRequests() && !e.isParkingLot() && !e.isResidential()
+                        }
+                    }),
+                    this.parkingPlaceUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: B.default,
+                        uniqueName: "PARKING_PLACE_UPDATES",
+                        className: "place-updates",
+                        filter: function(e) {
+                            return e.hasUpdateRequests() && e.isParkingLot()
+                        }
+                    }),
+                    this.residentialPlaceUpdatesLayer = new Y.default(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: B.default,
+                        uniqueName: "RESIDENTIAL_PLACE_UPDATES",
+                        className: "place-updates",
+                        filter: function(e) {
+                            return e.hasUpdateRequests() && e.isResidential()
+                        }
+                    }),
+                    this.liveUsersLayer = new OL.Layer.Markers(I18n.t("layers.name.live_users"), {
+                        uniqueName: de.LIVE_USERS,
+                        className: "live-users"
+                    }),
+                    this.searchLayer = new OL.Layer.Vector("Search", {
+                        styleMap: re.default,
+                        uniqueName: de.SEARCH
+                    }),
+                    this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.camerasLayer, this.bigJunctionPathLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.liveUsersLayer, this.searchLayer]),
+                    this.closuresMarkerLayer = new Y.default(I18n.t("layers.name.closures"), [W.model.roadClosures], {
+                        markerClass: z.default,
+                        uniqueName: de.CLOSURES,
+                        toggleRepo: !0
+                    }),
+                    this.addUniqueLayer(this.closuresMarkerLayer)
+            },
+            _addModulesLayers: function(e) {
+                for (var t = oe.default.getLayers().filter(function(t) {
+                        return t.type === e
+                    }), i = 0; i < t.length; i++) {
+                    var n = t[i];
+                    if (n.type === le.RASTER)
+                        this._addModuleRasterLayer(n);
+                    else if (n.type === le.FEATURE)
+                        this._addModuleFeatureLayer(n);
+                    else {
+                        if (n.type !== le.MARKER)
+                            throw new Error("Invalid layer type " + n.type);
+                        this._addModuleMarkerLayer(n)
+                    }
+                }
+            },
+            _addModuleRasterLayer: function(e) {
+                return this._addRasterLayer(e.options)
+            },
+            _addModuleFeatureLayer: function(e) {
+                var t = e.options || {},
+                    i = [W.model.getRepository(t.objectType)],
+                    n = void 0;
+                n = t.enableZIndexing ? {
+                    zIndexing: !0
+                } : {};
+                var s = new C.default(t.name, W.model, i, {
+                    uniqueName: e.uniqueName,
+                    visibility: t.visibleByDefault,
+                    styleMap: t.styleMap,
+                    selectable: t.selectable,
+                    featureType: t.objectType,
+                    toggleRepo: !0,
+                    rendererOptions: n
+                });
+                return this.addUniqueLayer(s)
+            },
+            _addModuleMarkerLayer: function(e) {
+                var t = e.options || {},
+                    i = [W.model.getRepository(t.objectType)],
+                    n = new Y.default(t.name, i, {
+                        uniqueName: e.uniqueName,
+                        markerClass: t.markerClass,
+                        className: t.markerClassName,
+                        visibility: t.visibleByDefault,
+                        featureType: t.objectType,
+                        filter: t.filter
+                    });
+                return this.addUniqueLayer(n)
+            },
+            getLayerByUniqueName: function(e) {
+                return this.getLayersBy("uniqueName", e)[0]
+            },
+            _addAerials: function() {
+                var e = W.Config.map.initialPosition[W.location.code],
+                    t = new OL.LonLat(e.lon, e.lat);
+                Z.default.project(t);
+                var i = new L.default({
+                    name: I18n.t("layers.name.satellite_imagery"),
+                    key: W.apiKeys.googleMapsApiKey,
+                    type: "satellite",
+                    zoomOffset: 12,
+                    numZoomLevels: 11,
+                    zoom: e.initialZoom,
+                    minResolution: .037322767712175846,
+                    center: t,
+                    uniqueName: de.SATELLITE_IMAGERY,
+                    transitionEffect: "resize"
+                });
+                this.addUniqueLayer(i);
+                var n = new N.default(de.SATELLITE_OVERLAY);
+                this.addUniqueLayer(n),
+                    n.setZIndex(Number(i.getZIndex()) + 1);
+                var s = {
+                    text: I18n.t("layers.loading", {
+                        layer_name: I18n.t("layers.name.satellite_imagery")
+                    })
+                };
+                return i.events.on({
+                        loadstart: function() {
+                            if (this.getVisibility())
+                                return W.vent.trigger("operationPending", {
+                                    operation: s
+                                })
+                        },
+                        loadend: function() {
+                            return W.vent.trigger("operationDone", {
+                                operation: s
+                            })
+                        },
+                        loaderror: function() {
+                            return W.vent.trigger("operationDone", {
+                                operation: s
+                            })
+                        }
+                    }),
+                    this.setCenter(t, e.initialZoom)
+            },
+            getLayersByRepos: function(e, t) {
+                return (t || null == this.layersPerRepo) && (this.layersPerRepo = this.layers.reduce(function(e, t) {
+                        if (null != t.repo)
+                            for (var i = 0; i < t.repo.length; i++) {
+                                var n = t.repo[i];
+                                null == e[n.name] && (e[n.name] = []),
+                                    e[n.name].push(t)
+                            }
+                        return e
+                    }, {})),
+                    _.pick(this.layersPerRepo, e)
+            },
+            showLayerByObjectType: function(e) {
+                var t = W.model.getRepository(e);
+                return this.getLayersByRepos([t.name])[t.name].map(function(e) {
+                    return e.setVisibility(!0)
+                })
+            },
+            addUniqueLayer: function(e) {
+                if (e.uniqueName) {
+                    if (this.getLayersBy("uniqueName", e.uniqueName).length > 0)
+                        throw new Error("Cannot add layer " + e.uniqueName + ", the provided\n        uniqueName already exists.")
+                }
+                return this.addLayer(e)
+            },
+            addUniqueLayers: function(e) {
+                var t = this;
+                return e.map(function(e) {
+                    return t.addUniqueLayer(e)
+                })
+            },
+            getPlaceUpdateLayers: function() {
+                return [this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer]
+            }
+        };
+    ce.layerVisibilityBitmask = (s = {},
+            (0,
+                a.default)(s, de.SATELLITE_IMAGERY, 0),
+            (0,
+                a.default)(s, de.ROADS, 2),
+            (0,
+                a.default)(s, de.GPS_POINTS, 3),
+            (0,
+                a.default)(s, de.AREA_MANAGERS, 4),
+            (0,
+                a.default)(s, de.LANDMARKS, 5),
+            (0,
+                a.default)(s, de.SPEED_CAMERAS, 6),
+            (0,
+                a.default)(s, de.PROBLEMS, 7),
+            (0,
+                a.default)(s, de.UPDATE_REQUESTS, 8),
+            (0,
+                a.default)(s, de.EDITABLE_AREAS, 9),
+            (0,
+                a.default)(s, de.LIVE_USERS, 10),
+            (0,
+                a.default)(s, de.PLACE_UPDATES, 11),
+            (0,
+                a.default)(s, de.BIG_JUNCTIONS, 12),
+            (0,
+                a.default)(s, de.CLOSURES, 13),
+            s),
+        ce.LAYER_UNIQUE_NAMES = de,
+        t.default = ce,
+        t.LAYER_UNIQUE_NAMES = de
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(27),
+        s = OL.Class(OL.Layer.Vector, {
+            repo: null,
+            _featureMap: null,
+            model: null,
+            initialize: function(e, t, i, n) {
+                this.model = t,
+                    this.repo = i,
+                    OL.Layer.Vector.prototype.initialize.apply(this, [e, n]),
+                    this._featureMap = {},
+                    _(this.repo).isArray() || (this.repo = [this.repo]);
+                for (var s = 0; s < this.repo.length; s++) {
+                    var r = this.repo[s];
+                    this.registerRepoEvents(r)
+                }
+            },
+            registerRepoEvents: function(e) {
+                e.on(n.ADDED, this.onFeaturesAdded, this),
+                    e.on(n.CHANGED, this.onFeaturesChanged, this),
+                    e.on(n.REMOVED, this.onFeaturesRemoved, this)
+            },
+            unregisterRepoEvents: function(e) {
+                e.off(n.ADDED, this.onFeaturesAdded, this),
+                    e.off(n.CHANGED, this.onFeaturesChanged, this),
+                    e.off(n.REMOVED, this.onFeaturesRemoved, this)
+            },
+            destroy: function() {
+                for (var e = 0; e < this.repo.length; e++) {
+                    var t = this.repo[e];
+                    this.unregisterRepoEvents(t)
+                }
+                return OL.Layer.Vector.prototype.destroy.apply(this)
+            },
+            getVector: function(e) {
+                return this._featureMap[e.getID()] || null
+            },
+            onFeaturesAdded: function(e) {
+                var t = this;
+                return e = e.map(function(e) {
+                        var i = new OL.Feature.Vector(e.geometry);
+                        return i.model = e,
+                            t._featureMap[e.getID()] = i,
+                            t.fixRenderIntent(i),
+                            i
+                    }),
+                    this.addFeatures(e)
+            },
+            _getFeatureByPrevId: function(e) {
+                var t = e._prevID;
+                if (!t)
+                    return null;
+                var i = this._featureMap[t];
+                return i ? (this._featureMap[t] = void 0,
+                    this._featureMap[e.getID()] = i,
+                    i) : null
+            },
+            onFeaturesChanged: function(e) {
+                for (var t = [], i = [], n = [], s = 0; s < e.length; s++) {
+                    var r = e[s],
+                        a = this._featureMap[r.getID()] || this._getFeatureByPrevId(r);
+                    if (a)
+                        this.fixRenderIntent(a),
+                        this._updateFeatureModel(a, r),
+                        r.hidden ? (this._featureMap[r.getID()] = void 0,
+                            t.push(a)) : (a.geometry = r.geometry,
+                            this.drawFeature(a)),
+                        (r.isDeleted() || r.hidden) && i.push(a);
+                    else {
+                        var o = new OL.Feature.Vector(r.geometry);
+                        o.model = r,
+                            n.push(o),
+                            this._featureMap[r.getID()] = o
+                    }
+                }
+                return W.selectionManager.unselectFeatures(i),
+                    this.removeFeatures(t),
+                    this.addFeatures(n)
+            },
+            onFeaturesRemoved: function(e) {
+                var t = this,
+                    i = e.map(function(e) {
+                        var i = t._featureMap[e.getID()];
+                        return t._featureMap[e.getID()] = void 0,
+                            i
+                    });
+                i = _(i).filter(function(e) {
+                    return null != e
+                });
+                var n = _(i).filter(function(e) {
+                    return W.selectionManager.isSelected(e)
+                });
+                return W.selectionManager.unselectFeatures(n),
+                    this.removeFeatures(i)
+            },
+            fixRenderIntent: function(e) {
+                e.model.isDeleted() ? e.renderIntent = "delete" : "delete" === e.renderIntent && (e.renderIntent = e.model.isSelected() ? "select" : "default")
+            },
+            _updateFeatureModel: function(e, t) {
+                null != t.geometry && null != e.model.geometry && (t.geometry.id = e.model.geometry.id),
+                    e.model = t
+            },
+            CLASS_NAME: "Waze.Layer.FeatureLayer"
+        });
+    t.default = s,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(60),
+        r = n(s),
+        a = i(115),
         o = n(a),
         l = Backbone.Collection.extend({
             model: o.default,
@@ -9754,7 +9233,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(183),
+    var n = i(176),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -9797,13 +9276,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(22),
         o = n(a),
-        l = i(12),
+        l = i(13),
         u = n(l),
-        d = i(183),
+        d = i(176),
         c = n(d),
         h = i(50),
         f = n(h),
-        p = i(89),
+        p = i(87),
         g = n(p),
         m = function(e) {
             return {
@@ -9902,9 +9381,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
-        a = i(13),
+        a = i(11),
         o = n(a),
         l = i(2),
         u = n(l),
@@ -9916,18 +9395,18 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(955),
+        y = i(940),
         b = n(y),
-        w = i(26),
-        E = i(136),
+        w = i(27),
+        E = i(99),
         k = n(E),
-        M = i(244),
+        M = i(238),
         S = n(M),
-        T = i(231),
+        T = i(229),
         C = n(T),
         I = i(52),
         A = n(I),
-        R = i(956),
+        R = i(941),
         O = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -9938,18 +9417,18 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(R),
-        D = i(127),
+        D = i(177),
         L = n(D),
-        P = i(957),
+        P = i(950),
         N = n(P),
-        x = i(959),
+        x = i(952),
         V = n(x),
         F = i(19),
-        j = n(F),
-        U = i(961),
-        B = n(U),
-        z = i(74),
-        G = function(e) {
+        U = n(F),
+        j = i(954),
+        B = n(j),
+        G = i(73),
+        z = function(e) {
             function t() {
                 return (0,
                         c.default)(this, t),
@@ -10263,7 +9742,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "templateContext",
                     value: function() {
                         var e = (0,
-                                z.getServerConfig)(),
+                                G.getServerConfig)(),
                             t = e.maxAllowedStreetNamesChanges;
                         return {
                             dataModel: this.dataModel,
@@ -10302,7 +9781,7 @@ webpackJsonp([0], [function(e, t, i) {
                             });
                         return i.push.apply(i, (0,
                                 r.default)(t.map(function(e) {
-                                return new j.default(e, {
+                                return new U.default(e, {
                                     streetIDs: n.map(function(e) {
                                         return e.id
                                     })
@@ -10429,88 +9908,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View);
-    t.default = G,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = {
-        selectionRequiredOption: function(e) {
-            return Backbone.$("<option/>").prop("disabled", "disabled").prop("selected", "selected").text(e).val("")
-        },
-        selectOptionsFromList: function(e, t, i) {
-            var n = null,
-                s = e.map(function(e) {
-                    return {
-                        value: e,
-                        label: t(e)
-                    }
-                });
-            return void 0 !== i && (s = s.filter(function(e) {
-                    return e.value !== i
-                }),
-                n = {
-                    value: i,
-                    label: t(i)
-                }), {
-                collection: s,
-                defaultOption: n
-            }
-        },
-        checkboxList: function(e) {
-            return {
-                observe: e,
-                getVal: function(e, t, i) {
-                    return e.filter(":checked").toArray().map(function(e) {
-                        return $(e).attr("value")
-                    })
-                },
-                update: function(e, t, i, n) {
-                    var s = t || [];
-                    return e.toArray().forEach(function(e) {
-                        var t = $(e),
-                            i = s.indexOf(t.attr("value")) > -1;
-                        return t.attr("checked", i)
-                    })
-                }
-            }
-        },
-        requireAndEnableIfNot: function(e) {
-            return [{
-                observe: e,
-                name: "required",
-                onGet: function(e) {
-                    return !e
-                }
-            }, {
-                name: "disabled",
-                observe: e
-            }]
-        },
-        initBootstrapSupport: function() {
-            return Backbone.Stickit.addHandler({
-                    selector: ".btn-group input[type=radio]",
-                    update: function(e, t) {
-                        if (e.parent(".btn").removeClass("active"),
-                            null !== t && "" !== t) {
-                            var i = e.filter("[value=" + t + "]");
-                            i.parent(".btn").addClass("active"),
-                                i.prop("checked", "checked")
-                        }
-                    }
-                }),
-                Backbone.Stickit.addHandler({
-                    selector: ".btn-group[data-type=boolean] input[type=radio]",
-                    onSet: function(e) {
-                        return "true" === e
-                    }
-                })
-        }
-    };
-    n.initBootstrapSupport(),
-        t.default = n,
+    t.default = z,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -10624,7 +10022,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(185),
+        p = i(180),
         g = n(p),
         m = function(e) {
             function t(e) {
@@ -10695,7 +10093,7 @@ webpackJsonp([0], [function(e, t, i) {
     t.default = m,
         e.exports = t.default
 }, , , , , , , , , , , function(e, t, i) {
-    var n = i(101),
+    var n = i(103),
         s = i(28)("iterator"),
         r = i(67);
     e.exports = i(14).getIteratorMethod = function(e) {
@@ -10704,7 +10102,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(463),
+        default: i(443),
         __esModule: !0
     }
 }, , , , function(e, t) {
@@ -10740,7 +10138,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     e.exports = {
-        default: i(487),
+        default: i(467),
         __esModule: !0
     }
 }, function(e, t, i) {
@@ -10756,7 +10154,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(10),
+        a = i(9),
         o = n(a),
         l = {
             parse: function(e) {
@@ -10806,11 +10204,11 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(1),
         c = n(d),
-        h = i(10),
+        h = i(9),
         f = n(h),
-        p = i(59),
+        p = i(60),
         g = n(p),
-        m = i(23),
+        m = i(24),
         v = function() {
             function e() {
                 (0,
@@ -10925,6 +10323,145 @@ webpackJsonp([0], [function(e, t, i) {
         }
     }
     Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.MAX_POLYGON_SIZE_DEGREES = t.BigJunction = void 0;
+    var s = i(15),
+        r = n(s),
+        a = i(31),
+        o = n(a),
+        l = i(515),
+        u = n(l),
+        d = i(49),
+        c = n(d),
+        h = i(9),
+        f = n(h),
+        p = i(61),
+        g = n(p),
+        m = OL.Class(o.default, {
+            defaults: {
+                name: "",
+                rank: 0,
+                segIDs: [],
+                permissions: r.default.ALL_PERMISSIONS
+            },
+            nested: {
+                geometry: OL.Geometry
+            },
+            _pathCache: null,
+            initialize: function(e) {
+                o.default.prototype.initialize.apply(this, arguments),
+                    _.defaults(this.attributes, this.defaults)
+            },
+            merge: function() {
+                return this._pathCache = null,
+                    o.default.prototype.merge.apply(this, arguments)
+            },
+            getAddress: function() {
+                return c.default.fromCityID(this.attributes.cityID, this.model)
+            },
+            getSegmentCount: function() {
+                return this.attributes.segIDs.length
+            },
+            getPossibleTurns: function() {
+                return null != this._pathCache ? this._pathCache : this._pathCache = u.default.for(this).getAllTurns()
+            },
+            getPossibleTurnsBetween: function(e, t) {
+                return this.getPossibleTurns().filter(function(i) {
+                    return i.getFromVertex().equals(e) && i.getToVertex().equals(t)
+                })
+            },
+            getTurnsFrom: function(e) {
+                var t = this,
+                    i = this.model.getTurnGraph().getLegalTrivialTurnsFrom(e).filter(function(e) {
+                        return !t._isShortSegment(e.getToVertex().getSegmentID())
+                    }),
+                    n = this.model.getTurnGraph().getTurnsFrom(e).filter(function(e) {
+                        return e.getTurnData().hasSegmentPath()
+                    }),
+                    s = i.concat(n);
+                return this.getShortestTurns().filter(function(t) {
+                    return t.getFromVertex().equals(e)
+                }).map(function(e) {
+                    return e.withTurnData(e.getTurnData().withState(g.default.State.DISALLOWED))
+                }).map(function(e) {
+                    var t = s.find(function(t) {
+                        return t.verticesEqual(e)
+                    });
+                    return void 0 !== t ? t : e
+                }).concat(i)
+            },
+            _isShortSegment: function(e) {
+                return this.attributes.segIDs.includes(e)
+            },
+            getShortestTurns: function() {
+                var e = _.groupBy(this.getPossibleTurns(), function(e) {
+                    return e.getFromVertex().toString() + e.getToVertex().toString()
+                });
+                return _.values(e).map(function(e) {
+                    return _.min(e, function(e) {
+                        return e.getTurnData().getSegmentPath().length
+                    })
+                })
+            },
+            getShortSegments: function() {
+                return this.model.segments.getByIds(this.attributes.segIDs)
+            },
+            _getIntersectionWithLine: function(e) {
+                var t = this.attributes.geometry.distanceTo(e, {
+                        details: !0
+                    }),
+                    i = new OL.Geometry.Point(t.x0, t.y0),
+                    n = f.default.getPointEdge(e.components, i); -
+                1 === n && (n = 0);
+                var s = e.components[n],
+                    r = e.components[n + 1];
+                if (this.attributes.geometry.intersects(r)) {
+                    var a = [r, s];
+                    s = a[0],
+                        r = a[1]
+                }
+                var o = f.default.radToDeg(Math.atan2(r.y - s.y, r.x - s.x));
+                return {
+                    x: i.x,
+                    y: i.y,
+                    angle: o
+                }
+            },
+            getAngleAtIntersection: function(e) {
+                return this._getIntersectionWithLine(e).angle
+            },
+            getIntersectionPoint: function(e) {
+                var t = this._getIntersectionWithLine(e);
+                return new OL.Geometry.Point(t.x, t.y)
+            },
+            canEditTurns: function() {
+                return this.isAllowed(this.PERMISSIONS.UPDATE)
+            },
+            arePropertiesEditable: function() {
+                return this.PERMISSIONS.UPDATE && this.isAllowed(this.PERMISSIONS.UPDATE)
+            },
+            isPolygonAreaLegal: function() {
+                var e = f.default.unproject(this.attributes.geometry.getBounds().clone());
+                return e.getWidth() <= .01 && e.getHeight() <= .01
+            },
+            PERMISSIONS: {
+                DELETE: 1,
+                UPDATE: 2
+            },
+            CLASS_NAME: "Waze.Feature.FeatureVector.BigJunction"
+        });
+    t.BigJunction = m,
+        t.MAX_POLYGON_SIZE_DEGREES = .01
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
         value: !0
     });
     var s = i(47),
@@ -11000,9 +10537,9 @@ webpackJsonp([0], [function(e, t, i) {
         h = n(c),
         f = i(1),
         p = n(f),
-        g = i(17),
+        g = i(16),
         m = n(g),
-        v = i(89),
+        v = i(87),
         _ = n(v),
         y = {
             SUNDAY: "SUNDAY",
@@ -11155,15 +10692,84 @@ webpackJsonp([0], [function(e, t, i) {
         t.DATE_FORMAT = "YYYY-MM-DD"
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = {
-        FIXED: 0,
-        NOT_A_PROBLEM: 1,
-        AUTO: 2
-    };
-    t.default = n,
+    var s = i(0),
+        r = n(s),
+        a = i(1),
+        o = n(a),
+        l = i(61),
+        u = n(l),
+        d = function() {
+            function e(t, i, n) {
+                (0,
+                    r.default)(this, e),
+                this._fromVertex = t,
+                    this._toVertex = i,
+                    this._turnData = n
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "getFromVertex",
+                    value: function() {
+                        return this._fromVertex
+                    }
+                }, {
+                    key: "getToVertex",
+                    value: function() {
+                        return this._toVertex
+                    }
+                }, {
+                    key: "getTurnData",
+                    value: function() {
+                        return this._turnData
+                    }
+                }, {
+                    key: "withTurnData",
+                    value: function(t) {
+                        return new e(this._fromVertex, this._toVertex, t)
+                    }
+                }, {
+                    key: "withUnknownTurnData",
+                    value: function() {
+                        return new e(this._fromVertex, this._toVertex, u.default.createUnknown())
+                    }
+                }, {
+                    key: "withFromVertex",
+                    value: function(t) {
+                        return new e(t, this._toVertex, this._turnData)
+                    }
+                }, {
+                    key: "withToVertex",
+                    value: function(t) {
+                        return new e(this._fromVertex, t, this._turnData)
+                    }
+                }, {
+                    key: "isUturn",
+                    value: function() {
+                        return this._fromVertex.getSegmentID() === this._toVertex.getSegmentID() && !this._turnData.hasSegmentPath()
+                    }
+                }, {
+                    key: "toString",
+                    value: function() {
+                        return "" + this._fromVertex + this._toVertex + this._turnData
+                    }
+                }, {
+                    key: "verticesEqual",
+                    value: function(e) {
+                        return this.getFromVertex().equals(e.getFromVertex()) && this.getToVertex().equals(e.getToVertex())
+                    }
+                }]),
+                e
+        }();
+    t.default = d,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -11247,17 +10853,218 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(18),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = i(23),
-        a = Backbone.Model.extend({
+    var s = i(23),
+        r = n(s),
+        a = i(11),
+        o = n(a),
+        l = i(70),
+        u = n(l),
+        d = i(31),
+        c = n(d),
+        h = i(20),
+        f = n(h),
+        p = i(9),
+        g = n(p),
+        m = i(89),
+        v = OpenLayers.Class(c.default, {
+            defaults: function() {
+                return {
+                    segIDs: []
+                }
+            },
+            nested: {
+                geometry: OL.Geometry
+            },
+            eachSegmentPair: function(e, t, i) {
+                (0,
+                    u.default)(e).forEach(function(e) {
+                    var n = (0,
+                            o.default)(e, 2),
+                        s = n[0],
+                        r = n[1],
+                        a = s.split(",");
+                    t.call(i, parseInt(a[0], 10), parseInt(a[1], 10), r, s)
+                })
+            },
+            allConnectionKeys: function(e) {
+                var t = [],
+                    i = [];
+                return this.attributes.segIDs.forEach(function(n) {
+                    var s = this.model.segments.get(n);
+                    this.attributes.segIDs.forEach(function(n) {
+                        var r = this.model.segments.get(n);
+                        s && r && (s !== r || e) && (t.push({
+                                from: s,
+                                to: r
+                            }),
+                            this.isTurnAllowedBySegDirections(s, r) && s.isDrivable() && r.isDrivable() && i.push({
+                                from: s,
+                                to: r
+                            }))
+                    }, this)
+                }, this), {
+                    all: t,
+                    legal: i
+                }
+            },
+            isTurnAllowedBySegDirections: function(e, t) {
+                if (!e || !t)
+                    return !1;
+                var i = e.attributes.toNodeID === this.getID() ? e.attributes.fwdDirection : e.attributes.revDirection,
+                    n = t.attributes.fromNodeID === this.getID() ? t.attributes.fwdDirection : t.attributes.revDirection;
+                return i && n
+            },
+            getSegmentIds: function() {
+                return [].concat((0,
+                    r.default)(this.attributes.segIDs))
+            },
+            getAngleToSegment: function(e) {
+                var t = void 0,
+                    i = void 0,
+                    n = e.geometry.getVertices(),
+                    s = void 0;
+                return e.attributes.fromNodeID === this.getID() ? (t = n[0],
+                        i = n[1]) : (t = n[n.length - 1],
+                        i = n[n.length - 2]),
+                    s = g.default.radToDeg(Math.atan2(i.y - t.y, i.x - t.x)),
+                    s < 0 && (s = 360 + s),
+                    s
+            },
+            getDirectionBetweenSegments: function(e, t) {
+                var i = e.geometry.components,
+                    n = i.length,
+                    s = void 0,
+                    r = void 0,
+                    a = void 0;
+                return e.attributes.toNodeID === this.getID() ? (s = i[n - 2],
+                        r = i[n - 1]) : (s = i[1],
+                        r = i[0]),
+                    a = t.attributes.fromNodeID === this.getID() ? t.geometry.components[1] : t.geometry.components[t.geometry.components.length - 2],
+                    (r.x - s.x) * (a.y - s.y) - (r.y - s.y) * (a.x - s.x) > 0
+            },
+            isDisconnected: function() {
+                return _.isEmpty(this.attributes.segIDs)
+            },
+            isVirtual: function() {
+                var e = this;
+                return this.model.segments.getByIds(this.attributes.segIDs).some(function(t) {
+                    return t.isVirtuallyConnectedToNode(e)
+                })
+            },
+            isConnectedToSegment: function(e) {
+                return this.attributes.segIDs.includes(e.getID())
+            },
+            isConnectedToBigJunction: function() {
+                return this.model.segments.getByIds(this.attributes.segIDs).some(function(e) {
+                    return e.isBigJunctionShort()
+                }, this)
+            },
+            isAllowedToMoveNode: function() {
+                return this.attributes.segIDs.every(function(e) {
+                    var t = this.model.segments.get(e);
+                    return t && t.isAllowed(m.Segments.EDIT_GEOMETRY) && !t.isBigJunctionShort()
+                }, this)
+            },
+            isDeleteable: function(e) {
+                var t = this.attributes.segIDs.map(function(t) {
+                    return e.segments.get(t)
+                });
+                return t = t.filter(function(e) {
+                        return f.default.defined(e)
+                    }),
+                    t.length === this.attributes.segIDs.length && (this.areSegmentsBridgable(t) && c.default.prototype.isDeletable.apply(this))
+            },
+            _areDirectionalAttributeSame: function(e, t, i) {
+                var n = i;
+                return e.attributes.toNodeID !== t.attributes.fromNodeID && e.attributes.fromNodeID !== t.attributes.toNodeID && (n = i.concat().reverse()),
+                    i.every(function(i, s) {
+                        return e.attributes[i] === t.attributes[n[s]]
+                    })
+            },
+            areSegmentsBridgable: function(e) {
+                if (!e || 2 !== e.length)
+                    return !1;
+                var t = e[0],
+                    i = e[1];
+                if (!this.attributes.segIDs.includes(t.getID()) || !this.attributes.segIDs.includes(i.getID()))
+                    return !1;
+                if (!this.isTurnAllowedBySegDirections(t, i) && !this.isTurnAllowedBySegDirections(i, t))
+                    return !1;
+                if (t.attributes.primaryStreetID !== i.attributes.primaryStreetID)
+                    return !1;
+                var n = this._areDirectionalAttributeSame(t, i, ["fwdMaxSpeed", "revMaxSpeed"]),
+                    s = this._areDirectionalAttributeSame(t, i, ["fwdToll", "revToll"]),
+                    r = t.isDrivable() && i.isDrivable() || t.isWalkingRoadType() && i.isWalkingRoadType();
+                return n && r && s
+            },
+            allSegmentsPresent: function(e) {
+                return this.attributes.segIDs.every(function(t) {
+                    return e.segments.get(t)
+                })
+            },
+            connectionsExist: function() {
+                return !_.isEmpty(this.allConnectionKeys().legal)
+            },
+            areConnectionsEditable: function() {
+                var e = this.model.segments.getByIds(this.attributes.segIDs);
+                return e.length === this.attributes.segIDs.length && e.every(function(e) {
+                    return e.canEditConnections()
+                })
+            },
+            arePropertiesEditable: function() {
+                return this.areConnectionsEditable()
+            },
+            areAllConnectionsEnabled: function() {
+                var e = this.allConnectionKeys().legal,
+                    t = this.model.getTurnGraph();
+                return !_.isEmpty(e) && e.every(function(e) {
+                    return t.getTurnThroughNode(this, e.from, e.to).getTurnData().isAllowed()
+                }, this)
+            },
+            areAllConnectionsDisabled: function() {
+                var e = this.allConnectionKeys().legal,
+                    t = this.model.getTurnGraph();
+                return !_.isEmpty(e) && e.every(function(e) {
+                    return !t.getTurnThroughNode(this, e.from, e.to).getTurnData().isAllowed()
+                }, this)
+            },
+            PERMISSIONS: {
+                EDIT_GEOMETRY: 1,
+                DELETE: 2,
+                EDIT_OPEN_TURNS: 4,
+                EDIT_CLOSE_TURNS: 8
+            },
+            CLASS_NAME: "Waze.Feature.Vector.Node"
+        });
+    t.default = v,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(18),
+        r = n(s),
+        a = i(208),
+        o = n(a),
+        l = i(24),
+        u = new o.default,
+        d = Backbone.Model.extend({
             defaults: {
                 uuid: null,
                 name: null,
@@ -11274,7 +11081,7 @@ webpackJsonp([0], [function(e, t, i) {
                 var t = this;
                 e || (e = uuidGenerator.v1());
                 var i = this.get("name");
-                return null != i ? s.default.resolve({
+                return null != i ? r.default.resolve({
                     name: i,
                     location: this.get("location"),
                     url: this.get("url")
@@ -11290,7 +11097,7 @@ webpackJsonp([0], [function(e, t, i) {
                     return t.set({
                             name: t.get("uuid")
                         }),
-                        s.default.resolve({
+                        r.default.resolve({
                             name: t.get("uuid"),
                             location: "",
                             url: ""
@@ -11304,20 +11111,132 @@ webpackJsonp([0], [function(e, t, i) {
                         key: W.apiKeys.googleMapsApiKey
                     };
                 return null !== t && (i.sessiontoken = t),
-                    (0,
-                        r.httpGet)(W.Config.places_api.url.details, i).then(function(e) {
-                        return "OK" === e.status ? {
-                            location: e.result.geometry.location,
-                            name: e.result.name + ", " + e.result.formatted_address,
-                            url: e.result.url
-                        } : s.default.reject(new Error("failed getting provider details"))
+                    u.has(e) ? r.default.resolve(u.get(e)) : (0,
+                        l.httpGet)(W.Config.places_api.url.details, i).then(function(t) {
+                        if ("OK" === t.status) {
+                            var i = {
+                                location: t.result.geometry.location,
+                                name: t.result.name + ", " + t.result.formatted_address,
+                                url: t.result.url
+                            };
+                            return u.set(e, i),
+                                i
+                        }
+                        return r.default.reject(new Error("failed getting provider details"))
                     })
             },
             toJSON: function() {
                 return this.get("uuid")
             }
         });
-    t.default = a,
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
+    var n = i(30);
+    e.exports = function(e, t) {
+        if (!n(e) || e._t !== t)
+            throw TypeError("Incompatible receiver, " + t + " required!");
+        return e
+    }
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(11),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = i(114);
+    t.default = Backbone.Model.extend({
+            defaults: function() {
+                return {
+                    canExitWhileClosed: !1,
+                    numberOfSpots: null,
+                    estimatedNumberOfSpots: null,
+                    costType: r.UNKNOWN,
+                    lotType: [],
+                    paymentType: [],
+                    parkingType: null,
+                    hasTBR: !1
+                }
+            },
+            initialize: function() {
+                this.attributes.numberOfSpots && this.attributes.numberOfSpots > 0 && null === this.attributes.estimatedNumberOfSpots && (this.attributes.estimatedNumberOfSpots = this._getSpotsEstimateValue())
+            },
+            clone: function() {
+                var e = $.extend(!0, {}, this.attributes);
+                return new this.constructor(e)
+            },
+            _getSpotsEstimateValue: function() {
+                var e = this.attributes.numberOfSpots,
+                    t = r.SPOTS_ESTIMATE,
+                    i = null;
+                if (null === e)
+                    return i;
+                for (var n = 0; n < t.length; n++) {
+                    var a = t[n],
+                        o = (0,
+                            s.default)(a.range, 2),
+                        l = o[0],
+                        u = o[1];
+                    if (e >= l && e <= u) {
+                        i = a.value;
+                        break
+                    }
+                }
+                return i
+            }
+        }),
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(31),
+        r = n(s),
+        a = i(15),
+        o = n(a),
+        l = i(59),
+        u = OpenLayers.Class(r.default, {
+            nested: {
+                geometry: OL.Geometry
+            },
+            initialize: function(e) {
+                r.default.prototype.initialize.apply(this, arguments),
+                    _.defaults(this.attributes, this.defaults)
+            },
+            PERMISSIONS: {
+                EDIT_GEOMETRY: 1,
+                EDIT_PROPERTIES: 2,
+                DELETE: 4
+            },
+            UNITS: {
+                speed: l.UNIT.KILOMETER
+            },
+            TYPES: {
+                SPEED_CAMERA: 2,
+                DUMMY: 3,
+                RED_LIGHT: 4
+            },
+            CLASS_NAME: "Waze.Feature.Vector.SpeedCamera"
+        });
+    u.prototype.defaults = {
+            type: u.prototype.TYPES.SPEED_CAMERA,
+            speed: 0,
+            azymuth: 0,
+            permissions: o.default.ALL_PERMISSIONS
+        },
+        t.default = u,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -11361,7 +11280,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(17),
+    var n = i(16),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -11422,309 +11341,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(19),
-        v = n(m),
-        y = function(e) {
-            function t(e, i, n, s) {
-                (0,
-                    o.default)(this, t);
-                var a = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, s));
-                return a.bigJunctionID = e,
-                    a.segments = i,
-                    a.action = n,
-                    a.connectedSegments = null,
-                    a
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this._updateConnectedSegments(this.segments, "from"),
-                            t = this._updateConnectedSegments(this.segments, "to");
-                        this.connectedSegments = e.concat(t)
-                    }
-                }, {
-                    key: "_updateConnectedSegments",
-                    value: function(e, i) {
-                        for (var n = [], s = 0; s < e.length; s++) {
-                            var r = e[s],
-                                a = r.attributes[i + "NodeID"],
-                                o = r.getConnectedSegmentsByDirection(i);
-                            n.concat(o);
-                            for (var l = 0; l < o.length; l++) {
-                                var u = o[l];
-                                if (u.isDrivable()) {
-                                    var d = void 0;
-                                    d = u.attributes.fromNodeID === a ? "from" : "to";
-                                    var c = {},
-                                        h = d + "Crossroads",
-                                        f = _.clone(u.attributes[h]);
-                                    t.ADD_JUNCTION_TO_SEGMENT === this.action ? _.contains(f, this.bigJunctionID) || f.push(this.bigJunctionID) : f = _.without(f, this.bigJunctionID),
-                                        c[h] = f,
-                                        this.doSubAction(new v.default(u, c, {
-                                            dontSerialize: !0
-                                        }))
-                                }
-                            }
-                        }
-                        return n
-                    }
-                }]),
-                t
-        }(g.default);
-    _.extend(y, {
-            ADD_JUNCTION_TO_SEGMENT: "add",
-            REMOVE_JUNCTION_FROM_SEGMENT: "remove"
-        }),
-        t.default = y,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(9),
-        v = n(m),
-        _ = i(16),
-        y = n(_),
-        b = i(11),
-        w = i(79),
-        E = n(w),
-        k = function(e) {
-            function t(e) {
-                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                (0,
-                    o.default)(this, t),
-                i.dontSerialize = !0;
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.node = e,
-                    n.prevNodeState = null,
-                    n.hidNode = !1,
-                    n.changedSegAttributes = {},
-                    n.changedSegStates = [],
-                    n
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        if (this.node.state === OpenLayers.State.DELETE)
-                            return !1;
-                        this.node.attributes.segIDs.forEach(function(e) {
-                                var t = this.model.segments.get(e);
-                                this.doSubAction(new E.default(t, this.node))
-                            }, this),
-                            this.node.getID(),
-                            this.node.hidden || (this.hidNode = !0),
-                            this.node.hidden = !0,
-                            this.prevNodeState = this.node.state,
-                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
-                                this.model.nodes.changed(this.node))
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        this.node.getID(),
-                            this.hidNode && delete this.node.hidden,
-                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.put(this.node) : (this.node.state = this.prevNodeState,
-                                this.model.nodes.changed(this.node)),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "undoAction", this).call(this)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.hidNode && (this.node.hidden = !0),
-                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
-                                this.model.nodes.changed(this.node)),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "redoAction", this).call(this)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: b.NODE,
-                            action: y.default.TYPE.DELETE,
-                            attributes: {
-                                id: this.node.getID()
-                            }
-                        }
-                    }
-                }]),
-                t
-        }(v.default);
-    t.default = k,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(78),
-        g = n(p),
-        m = i(125),
-        v = n(m),
-        y = i(51),
-        b = n(y),
-        w = i(79),
-        E = n(w),
-        k = i(9),
-        M = n(k),
-        S = i(11),
-        T = function(e) {
-            function t(e) {
-                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.segment = e,
-                    n.options = i,
-                    n._analyzeSnappedFeatures(),
-                    n
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "_analyzeSnappedFeatures",
-                    value: function() {
-                        var e = this;
-                        if (this.touching = {},
-                            this.snappedFeatures) {
-                            this.snappedFeatures instanceof Array || (this.snappedFeatures = [this.snappedFeatures]),
-                                this.snappedFeatures = this.snappedFeatures.filter(function(e) {
-                                    return e
-                                });
-                            var t = this.segment.geometry.getVertices(!0),
-                                i = t[0],
-                                n = _.last(t),
-                                s = void 0;
-                            this.snappedFeatures.forEach(function(t) {
-                                s = null,
-                                    t.point.equals(i) ? (e.touching.fromVertex = {},
-                                        s = e.touching.fromVertex) : t.point.equals(n) && (e.touching.toVertex = {},
-                                        s = e.touching.toVertex),
-                                    s && (s.feature = t.feature,
-                                        s.point = t.point,
-                                        s.distance = t.distance,
-                                        t.feature.type === S.SEGMENT ? "edge" === t.type || "vertex" === t.type ? s.segmentEdge = !0 : "node" === t.type && (s.segmentNode = !0) : t.feature.type === S.NODE && (s.node = !0))
-                            })
-                        }
-                    }
-                }, {
-                    key: "_connectToExistingNode",
-                    value: function(e, t) {
-                        t !== e.getID() && (t && this.doSubAction(new E.default(this.segment, this.model.nodes.get(t))),
-                            this.doSubAction(new b.default(e, this.segment)))
-                    }
-                }, {
-                    key: "updateEndPoint",
-                    value: function(e, t, i) {
-                        if (t) {
-                            if (t.node)
-                                this._connectToExistingNode(t.feature, e);
-                            else if (t.segmentNode)
-                                e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
-                                this.doSubAction(new v.default(t.point, [this.segment, t.feature]));
-                            else if (t.segmentEdge)
-                                if (e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
-                                    this.segment.isWalkingRoadType() && !t.feature.isWalkingRoadType()) {
-                                    var n = new v.default(t.point, [this.segment]);
-                                    this.doSubAction(n);
-                                    var s = n.node;
-                                    this.doSubAction(new b.default(s, t.feature, {
-                                        virtual: !0
-                                    }))
-                                } else
-                                    this.doSubAction(new g.default(t.feature, {
-                                        splitAtPoint: t.point,
-                                        splitWithSegment: this.segment,
-                                        splittingPointDistance: t.distance
-                                    }))
-                        } else if (e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
-                            this.createNodes) {
-                            var r = void 0;
-                            r = i ? this.segment.geometry.components[0] : this.segment.geometry.components[this.segment.geometry.components.length - 1],
-                                this.doSubAction(new v.default(r, [this.segment]))
-                        }
-                        return !0
-                    }
-                }]),
-                t
-        }(M.default);
-    t.default = T,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(36),
         v = n(m),
@@ -11804,7 +11421,7 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         _ = i(4),
         y = n(_),
-        b = i(16),
+        b = i(17),
         w = n(b),
         E = i(20),
         k = n(E),
@@ -11904,113 +11521,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(9),
-        v = n(m),
-        _ = i(126),
-        y = n(_),
-        b = i(19),
-        w = n(b),
-        E = i(16),
-        k = n(E),
-        M = function(e) {
-            function t(e, i, n) {
-                var s = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
-                (0,
-                    o.default)(this, t);
-                var a = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, s));
-                return a._fromVenues = e,
-                    a._toVenue = i,
-                    a.newAttributes = n,
-                    a
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this;
-                        this._fromVenues.map(function(e) {
-                                return e.getID()
-                            }).join(" "),
-                            this._toVenue.getID(),
-                            this._toVenue.setPendingMerge(!0),
-                            this._fromVenues.forEach(function(t) {
-                                e.doSubAction(new y.default(t, {
-                                    dontSerialize: !0
-                                }))
-                            }),
-                            this.doSubAction(new w.default(this._toVenue, this.newAttributes, {
-                                dontSerialize: !0
-                            }))
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        (0,
-                            f.default)(t.prototype.__proto__ || (0,
-                            r.default)(t.prototype), "undoAction", this).call(this),
-                            this._triggerMainChanged()
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this._toVenue.setPendingMerge(!0),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "redoAction", this).call(this),
-                            this._triggerMainChanged()
-                    }
-                }, {
-                    key: "_triggerMainChanged",
-                    value: function() {
-                        this.model.getRepository(this._toVenue.type).changed(this._toVenue)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: this._toVenue.type,
-                            action: k.default.TYPE.MERGE,
-                            attributes: {
-                                mergedFromVenueIds: this._fromVenues.map(function(e) {
-                                    return e.getID()
-                                }),
-                                mainVenue: this.newAttributes
-                            }
-                        }
-                    }
-                }]),
-                t
-        }(v.default);
-    t.default = M,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -12022,17 +11533,17 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(9),
+        m = i(10),
         v = n(m),
         y = i(51),
         b = n(y),
         w = i(64),
         E = n(w),
-        k = i(95),
+        k = i(94),
         M = n(k),
         S = i(20),
         T = n(S),
-        C = i(30),
+        C = i(29),
         I = n(C),
         A = i(35),
         R = n(A),
@@ -12239,73 +11750,6 @@ webpackJsonp([0], [function(e, t, i) {
     t.default = L,
         e.exports = t.default
 }, function(e, t, i) {
-    var n = i(31);
-    e.exports = function(e, t) {
-        if (!n(e) || e._t !== t)
-            throw TypeError("Incompatible receiver, " + t + " required!");
-        return e
-    }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(36),
-        v = n(m),
-        _ = function(e) {
-            function t(e) {
-                (0,
-                    o.default)(this, t);
-                var i = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this));
-                return i._turn = e,
-                    i
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        if (this.model.segments.getDirectedSegment(this._turn.getFromVertex()).areTurnsLocked()) {
-                            var e = this._turn,
-                                t = this._turn.getTurnData();
-                            t = t.withToggledState(!t.isAllowed()),
-                                e = e.withTurnData(t);
-                            var i = this.model.getTurnGraph(),
-                                n = new v.default(i, e);
-                            this.doSubAction(n)
-                        } else {
-                            var s = this.model.segments.get(this._turn.getFromVertex().getSegmentID()),
-                                r = this.model.nodes.get(this.model.getRoadGraph().getVertexNodeID(this._turn.getFromVertex()));
-                            this.doSubAction(s.lockTurns(r, !0))
-                        }
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = _,
-        e.exports = t.default
-}, function(e, t, i) {
     "use strict";
 
     function n(e) {
@@ -12423,8 +11867,8 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(6),
         r = n(s),
-        a = i(26),
-        o = i(77),
+        a = i(27),
+        o = i(75),
         l = n(o),
         u = OL.Class(OL.Control.ModifyFeature, {
             standalone: !0,
@@ -12512,13 +11956,13 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.MergeHGighlightStyleMap = void 0;
-    var n = i(797),
+    var n = i(780),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
             }
         }(n),
-        r = i(227),
+        r = i(225),
         a = {
             strokeColor: "#ca9ace",
             fillColor: "#c290c6",
@@ -12693,15 +12137,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(814),
+    var s = i(797),
         r = n(s),
-        a = i(275),
+        a = i(252),
         o = n(a),
-        l = i(815),
+        l = i(798),
         u = n(l),
-        d = i(816),
+        d = i(799),
         c = n(d),
-        h = i(817),
+        h = i(800),
         f = n(h),
         p = {
             0: "unknown",
@@ -12734,7 +12178,7 @@ webpackJsonp([0], [function(e, t, i) {
             default: new OpenLayers.Style(g, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return i(818)("./" + p[e.attributes.code] + ".png")
+                        return i(801)("./" + p[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -12861,9 +12305,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(30),
+        d = i(29),
         c = n(d),
-        h = i(10),
+        h = i(9),
         f = n(h),
         p = function() {
             function e(t) {
@@ -13084,7 +12528,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(13),
+        a = i(11),
         o = n(a),
         l = i(58),
         u = n(l),
@@ -13153,7 +12597,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(12),
+    var n = i(13),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -13214,6 +12658,444 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(23),
+        r = n(s),
+        a = i(11),
+        o = n(a),
+        l = i(7),
+        u = n(l),
+        d = i(942),
+        c = n(d),
+        h = i(29),
+        f = n(h),
+        p = i(59),
+        g = i(943),
+        m = n(g),
+        v = OpenLayers.Class(f.default, {
+            children: null,
+            address: null,
+            addressDetails: null,
+            attributeToReducer: null,
+            attributeNames: ["flags", "fwdFlags", "revFlags", "roadType", "direction", "level", "fwdToll", "revToll", "fwdDirection", "revDirection", "fwdMaxSpeed", "fwdMaxSpeedUnverified", "revMaxSpeed", "revMaxSpeedUnverified", "permissions", "updatedBy", "createdBy", "createdOn", "updatedOn", "length", "allowNoDirection", "rank", "lockRank", "routingRoadType", "hasClosures", "hasHNs"],
+            attributeReducers: {
+                permissions: c.default.bitwise.and,
+                length: c.default.sum,
+                rank: c.default.max,
+                hasClosures: c.default.logical.or,
+                hasHNs: c.default.logical.or,
+                flags: c.default.bitwise.or,
+                fwdflags: c.default.bitwise.or,
+                revFlags: c.default.bitwise.or,
+                fwdToll: c.default.logical.or,
+                revToll: c.default.logical.or,
+                fwdMaxSpeedUnverified: c.default.logical.or,
+                revMaxSpeedUnverified: c.default.logical.or
+            },
+            flagAttributeNames: (0,
+                u.default)(f.default.prototype.FLAG_ATTRIBUTES),
+            flagAttributeReducers: (0,
+                u.default)(f.default.prototype.FLAG_ATTRIBUTES).reduce(function(e, t) {
+                return e[t] = c.default.logical.and
+            }, {}),
+            attributeReverses: {
+                fwdDirection: "directionReverser",
+                revDirection: "directionReverser"
+            },
+            reversableAttributes: {
+                fwdMaxSpeed: "revMaxSpeed",
+                revMaxSpeed: "fwdMaxSpeed",
+                fwdDirection: "revDirection",
+                revDirection: "fwdDirection",
+                fwdToll: "revToll",
+                revToll: "fwdToll",
+                fwdFlags: "revFlags",
+                revFlags: "fwdFlags",
+                fwdMaxSpeedUnverified: "revMaxSpeedUnverified",
+                revMaxSpeedUnverified: "fwdMaxSpeedUnverified"
+            },
+            UNITS: {
+                speed: p.UNIT.KILOMETER
+            },
+            initialize: function(e, t, i) {
+                this.children = e,
+                    this.model = t,
+                    this.reverseSegments = i,
+                    this.attributeToReducer = _.extend({}, this.attributeReducers, this.flagAttributeReducers),
+                    this.calcAttributes()
+            },
+            directionReverser: function(e, t) {
+                return e.isOneWay() ? !e.attributes[t] : e.attributes[t]
+            },
+            calcAttributes: function() {
+                var e, t, i = this._computeAttributes(this.attributeNames),
+                    n = (0,
+                        o.default)(i, 2),
+                    s = n[0],
+                    a = n[1],
+                    l = this._computeAttributes(this.flagAttributeNames),
+                    u = (0,
+                        o.default)(l, 2),
+                    d = u[0],
+                    c = u[1];
+                this.attributes = s,
+                    this.flagAttributes = d,
+                    this.mixed = _.extend({}, a, c),
+                    this.address = null,
+                    this.addressDetails = null,
+                    this.calcVirtualAttributes(),
+                    this.attributes.restrictions = (e = []).concat.apply(e, (0,
+                        r.default)(this.children.map(function(e) {
+                        return e.getDrivingRestrictions()
+                    }))),
+                    this.attributes.pickupRestrictions = (t = []).concat.apply(t, (0,
+                        r.default)(this.children.map(function(e) {
+                        return e.getPickupRestrictions()
+                    })))
+            },
+            _computeAttributes: function(e) {
+                var t = this,
+                    i = {},
+                    n = {};
+                return e.forEach(function(e) {
+                    var s = null,
+                        r = t.attributeToReducer[e],
+                        a = _.unique(t.children.map(function(i) {
+                            return t._getChildAttribute(i, e)
+                        }));
+                    1 === a.length ? (s = a[0],
+                            n[e] = !1) : (n[e] = !0,
+                            s = r ? a.reduce(r) : a),
+                        i[e] = s
+                }), [i, n]
+            },
+            calcVirtualAttributes: function() {
+                this.mixed.fwdToll || this.mixed.revToll ? this.mixed.toll = !0 : this.attributes.toll = this.isTollRoad(),
+                    this.mixed.fwdDirection || this.mixed.revDirection ? this.mixed.direction = !0 : this.attributes.direction = this._getDirection()
+            },
+            _getDirection: function() {
+                return (this.attributes.fwdDirection ? 1 : 0) + (this.attributes.revDirection ? 2 : 0)
+            },
+            isTollRoad: function() {
+                return this.attributes.fwdToll || this.attributes.revToll
+            },
+            isTollRoadMixed: function() {
+                return Boolean(this.mixed.toll)
+            },
+            getAddress: function() {
+                return new m.default(this.children.map(function(e) {
+                    return e.getAddress()
+                }), this.model)
+            },
+            getID: function() {
+                return this.children.map(function(e) {
+                    return e.getID()
+                }).join(", ")
+            },
+            isHighway: function() {
+                return this.children.every(function(e) {
+                    return e.isHighway()
+                })
+            },
+            isInBigJunction: function() {
+                return this.children.some(function(e) {
+                    return e.isInBigJunction()
+                })
+            },
+            isInRoundabout: function() {
+                return this.children.every(function(e) {
+                    return e.isInRoundabout()
+                })
+            },
+            isEntireRoundabout: function() {
+                var e = this.children[0].getRoundabout();
+                if (!e)
+                    return !1;
+                var t = this.children.every(function(t) {
+                        return t.attributes.junctionID === e.attributes.id
+                    }),
+                    i = e.attributes.segIDs.length === this.children.length;
+                return t && i
+            },
+            canChangeMaxSpeedUnverified: function(e) {
+                var t = this;
+                return !!this.isDrivable() && this.children.some(function(i) {
+                    var n = t._getAttributeByDirection(i, e);
+                    return i.canChangeMaxSpeedUnverified(n)
+                })
+            },
+            isDrivable: function() {
+                return this.children.every(function(e) {
+                    return e.isDrivable()
+                })
+            },
+            hasConsistentDrivability: function() {
+                return this.children.some(function(e) {
+                    return !e.isDrivable()
+                }) ? this.children.every(function(e) {
+                    return !e.isDrivable()
+                }) : this.children.every(function(e) {
+                    return e.isDrivable()
+                })
+            },
+            allowRestrictionEditing: function() {
+                return this.isDrivable() && f.default.prototype.allowRestrictionEditing.apply(this, arguments)
+            },
+            supportsPickupRestrictions: function() {
+                return this.children.every(function(e) {
+                    return e.supportsPickupRestrictions()
+                })
+            },
+            canEditHouseNumbers: function() {
+                return this.children.every(function(e) {
+                    return e.canEditHouseNumbers()
+                })
+            },
+            supportsHouseNumbers: function() {
+                return this.children.every(function(e) {
+                    return e.supportsHouseNumbers()
+                })
+            },
+            hasSingleNonEmptyStreet: function() {
+                return this.getAddress().hasSingleNonEmptyStreet()
+            },
+            _isReversed: function(e) {
+                return Boolean(this.reverseSegments[e.getID()])
+            },
+            _getChildAttribute: function(e, t) {
+                var i = void 0;
+                if (i = this.flagAttributeNames.indexOf(t) > -1 ? e.getFlagAttribute(t) : e.attributes[t],
+                    this._isReversed(e)) {
+                    var n = this.attributeReverses[t],
+                        s = this.reversableAttributes[t];
+                    n ? i = this[n](e, t) : s && (i = e.attributes[s])
+                }
+                return i
+            },
+            _getAttributeByDirection: function(e, t) {
+                var i = this.reversableAttributes[t];
+                return this._isReversed(e) && i ? i : t
+            },
+            CLASS_NAME: "Waze.Feature.Vector.CompositeSegment"
+        });
+    t.default = v,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(7),
+        r = n(s),
+        a = i(16),
+        o = n(a),
+        l = i(6),
+        u = n(l),
+        d = i(2),
+        c = n(d),
+        h = i(202),
+        f = n(h),
+        p = i(0),
+        g = n(p),
+        m = i(3),
+        v = n(m),
+        y = i(1),
+        b = n(y),
+        w = i(4),
+        E = n(w),
+        k = i(19),
+        M = n(k),
+        S = i(27),
+        T = function(e) {
+            function t(e) {
+                var i = e.dataModel,
+                    n = void 0 === i ? null : i,
+                    s = e.selection,
+                    r = void 0 === s ? [] : s,
+                    a = (0,
+                        f.default)(e, ["dataModel", "selection"]);
+                (0,
+                    g.default)(this, t);
+                var o = (0,
+                    v.default)(this, (t.__proto__ || (0,
+                    c.default)(t)).call(this, (0,
+                    u.default)({}, a)));
+                return o._dataModel = n,
+                    o.repository = o._dataModel.getRepository(r[0].type),
+                    o.setEditedId(r),
+                    o.listenTo(o.repository, S.CHANGED, o.onFeaturesChanged),
+                    o
+            }
+            return (0,
+                    E.default)(t, e),
+                (0,
+                    b.default)(t, [{
+                    key: "events",
+                    value: function() {
+                        return {
+                            "submit .attributes-form": "_onAttributesFormSubmitted"
+                        }
+                    }
+                }]),
+                (0,
+                    b.default)(t, [{
+                    key: "bindings",
+                    value: function() {
+                        return (0,
+                            o.default)({}, ".attributes-form input, .attributes-form textarea, .attributes-form select, .attributes-form label", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: "propertiesEditable",
+                                onGet: _.negate(_.identity)
+                            }]
+                        })
+                    }
+                }, {
+                    key: "templateContext",
+                    value: function() {
+                        return _.pick(this.viewModel.attributes, "id", "createdBy", "updatedBy", "updatedOn")
+                    }
+                }, {
+                    key: "getFeature",
+                    value: function() {
+                        return this.repository.get(this.featureID)
+                    }
+                }, {
+                    key: "_makeViewModelAttributes",
+                    value: function(e) {
+                        return (0,
+                            u.default)({
+                            id: e.getID(),
+                            createdBy: e.attributes.createdBy,
+                            updatedBy: e.attributes.updatedBy,
+                            updatedOn: e.attributes.updatedOn,
+                            propertiesEditable: e.arePropertiesEditable()
+                        }, this.featureToViewModel(e))
+                    }
+                }, {
+                    key: "_makeModelAttributes",
+                    value: function(e) {
+                        var t = {},
+                            i = this.viewModelToFeature();
+                        return (0,
+                                r.default)(e.changedAttributes()).forEach(function(n) {
+                                "function" == typeof i[n] && i[n](e.get(n), t)
+                            }),
+                            t
+                    }
+                }, {
+                    key: "toggleEnabled",
+                    value: function(e) {
+                        e ? this.triggerMethod("editingEnabled") : this.triggerMethod("editingDisabled")
+                    }
+                }, {
+                    key: "simpleAttribute",
+                    value: function(e) {
+                        return function(t, i) {
+                            i[e] = t
+                        }
+                    }
+                }, {
+                    key: "featureToViewModel",
+                    value: function(e) {
+                        return {}
+                    }
+                }, {
+                    key: "viewModelToFeature",
+                    value: function(e) {
+                        return {}
+                    }
+                }, {
+                    key: "_onAttributesFormSubmitted",
+                    value: function() {
+                        return !1
+                    }
+                }, {
+                    key: "hasEditedModelIdChanged",
+                    value: function(e) {
+                        if (1 !== e.length)
+                            return !1;
+                        var t = e[0];
+                        return this.featureID === t._prevID
+                    }
+                }, {
+                    key: "setEditedId",
+                    value: function(e) {
+                        this.featureID = e[0].getID()
+                    }
+                }, {
+                    key: "onFeaturesChanged",
+                    value: function(e) {
+                        if (this.hasEditedModelIdChanged(e))
+                            this.setEditedId(e),
+                            this.renderOnceLater();
+                        else if (this.hasEditedModelChanged(e)) {
+                            var t = this.getFeature();
+                            this.viewModel.set(this._makeViewModelAttributes(t), {
+                                fromRepo: !0
+                            })
+                        }
+                    }
+                }, {
+                    key: "getUpdateAction",
+                    value: function(e) {
+                        var t = this.repository.get(this.featureID);
+                        if (t)
+                            return new M.default(t, e);
+                        console.error("Cannot update a non-existing object with id " + this.featureID + " and type " + this.repository.objectType)
+                    }
+                }, {
+                    key: "_onViewModelChanged",
+                    value: function(e, t) {
+                        if (!t.fromRepo) {
+                            var i = this._makeModelAttributes(e);
+                            if (!_.isEmpty(i)) {
+                                var n = this.getUpdateAction(i);
+                                n && this._dataModel.actionManager.add(n)
+                            }
+                        }
+                    }
+                }, {
+                    key: "hasEditedModelChanged",
+                    value: function(e) {
+                        if (1 !== e.length)
+                            return !1;
+                        var t = e[0];
+                        return this.featureID === t.getID()
+                    }
+                }, {
+                    key: "onBeforeRender",
+                    value: function() {
+                        var e = this.getFeature();
+                        this.viewModel = new Backbone.Model(this._makeViewModelAttributes(e)),
+                            this.listenTo(this.viewModel, "change", this._onViewModelChanged)
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this.stickit(this.viewModel, this.bindings())
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = T,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(7),
         r = n(s),
         a = i(2),
@@ -13226,11 +13108,11 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(10),
+        m = i(9),
         v = n(m),
-        y = i(274),
+        y = i(251),
         b = n(y),
-        w = i(12),
+        w = i(13),
         E = n(w),
         k = function(e) {
             function t() {
@@ -13393,7 +13275,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        a = i(17),
+        a = i(16),
         o = n(a),
         l = i(0),
         u = n(l),
@@ -13688,7 +13570,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, , , , , , , function(e, t, i) {
     var n = i(68),
         s = i(42),
-        r = i(86).f;
+        r = i(84).f;
     e.exports = function(e) {
         return function(t) {
             for (var i, a = s(t), o = n(a), l = o.length, u = 0, d = []; l > u;)
@@ -13724,10 +13606,10 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     var n, s, r, a = i(43),
-        o = i(199),
-        l = i(191),
-        u = i(143),
-        d = i(24),
+        o = i(194),
+        l = i(186),
+        u = i(137),
+        d = i(25),
         c = d.process,
         h = d.setImmediate,
         f = d.clearImmediate,
@@ -13758,7 +13640,7 @@ webpackJsonp([0], [function(e, t, i) {
             f = function(e) {
                 delete v[e]
             },
-            "process" == i(82)(c) ? n = function(e) {
+            "process" == i(80)(c) ? n = function(e) {
                 c.nextTick(a(_, e, 1))
             } :
             g && g.now ? n = function(e) {
@@ -13817,8 +13699,8 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     var n = i(33),
-        s = i(31),
-        r = i(155);
+        s = i(30),
+        r = i(149);
     e.exports = function(e, t) {
         if (n(e),
             s(t) && t.constructor === e)
@@ -13830,7 +13712,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    var n = i(24),
+    var n = i(25),
         s = i(14),
         r = i(37),
         a = i(41),
@@ -13878,7 +13760,7 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(37),
-        s = i(83);
+        s = i(81);
     e.exports = function(e, t, i) {
         t in e ? n.f(e, t, s(0, i)) : e[t] = i
     }
@@ -13905,7 +13787,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(29),
+    var s = i(31),
         r = n(s),
         a = i(15),
         o = n(a),
@@ -13974,6 +13856,18 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = {
+        FIXED: 0,
+        NOT_A_PROBLEM: 1,
+        AUTO: 2
+    };
+    t.default = n,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -13985,13 +13879,13 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(209),
+        a = i(204),
         o = n(a),
-        l = i(547),
+        l = i(527),
         u = n(l),
-        d = i(73),
+        d = i(72),
         c = n(d),
-        h = i(74),
+        h = i(73),
         f = c.default.extend({
             MORE_INFO_DEFAULTS: [{
                 name: "route",
@@ -14070,173 +13964,230 @@ webpackJsonp([0], [function(e, t, i) {
     "use strict";
 
     function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
+        return e.reduce(function(e, t) {
+            return !1 === e.some(function(e) {
+                return e.equals(t)
+            }) ? [].concat((0,
+                r.default)(e), [t]) : e
+        }, [])
     }
     Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s, r = i(17),
-        a = n(r),
-        o = i(75),
-        l = n(o),
-        u = i(212),
-        d = n(u),
-        c = i(213),
-        h = n(c),
-        f = l.default.prototype.TYPE,
-        p = {
-            TYPE_TO_CLASS: (s = {},
-                (0,
-                    a.default)(s, f.DISCONNECTION, l.default),
-                (0,
-                    a.default)(s, f.TURN, d.default),
-                (0,
-                    a.default)(s, f.DATA, l.default),
-                (0,
-                    a.default)(s, f.ROAD_CLOSURE, h.default),
-                s),
-            create: function(e) {
-                return new(0,
-                    this.TYPE_TO_CLASS[e.problemType])(e, {
-                    parse: !0
-                })
-            }
-        };
-    t.default = p,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(75),
-        r = n(s),
-        a = i(29),
-        o = n(a),
-        l = OpenLayers.Class(r.default, {
-            initialize: function(e, t) {
-                o.default.prototype.initialize.apply(this, arguments),
-                    this.editable = this.attributes.open,
-                    this.attributes.reroutePercent = this.reroutePercent(),
-                    this.setSeverity(this.attributes.priority)
-            },
-            reroutePercent: function() {
-                return (this.attributes.reroutesCounter / (this.attributes.reroutesCounter + this.attributes.routesCounter) * 100).toFixed(0)
-            },
-            setSeverity: function(e) {
-                var t = "high";
-                t = -1 === e ? "low" : this.attributes.reroutePercent >= 90 ? "high" : "medium",
-                    this.attributes.severity = t
-            },
-            CLASS_NAME: "Waze.Feature.Vector.TurnProblem"
-        });
-    t.default = l,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = i(75),
-        s = function(e) {
+            value: !0
+        }),
+        t.dedupRestrictions = void 0;
+    var s = i(23),
+        r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
             }
-        }(n),
-        r = OL.Class(s.default, {
-            _location: null,
-            nested: {
-                geometry: OL.Geometry,
-                bounds: OL.Geometry,
-                endPoint: OL.Geometry
-            },
-            initialize: function() {
-                s.default.prototype.initialize.apply(this, arguments),
-                    this._calcLocation()
-            },
-            _calcLocation: function() {
-                this.hasEndPoint() ? this._location = this._getMiddlePoint() : this._location = this.attributes.geometry
-            },
-            _getMiddlePoint: function() {
-                return this.attributes.geometry.clone().resize(.5, this.attributes.endPoint)
-            },
-            hasEndPoint: function() {
-                return null != this.attributes.endPoint
-            },
-            getLocation: function() {
-                return this._location
-            }
-        });
-    t.default = r,
-        e.exports = t.default
+        }(s);
+    t.dedupRestrictions = n
+}, function(e, t, i) {
+    e.exports = {
+        default: i(542),
+        __esModule: !0
+    }
 }, function(e, t, i) {
     "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
+    var n = i(37).f,
+        s = i(82),
+        r = i(150),
+        a = i(43),
+        o = i(148),
+        l = i(85),
+        u = i(136),
+        d = i(182),
+        c = i(197),
+        h = i(41),
+        f = i(106).fastKey,
+        p = i(161),
+        g = h ? "_s" : "size",
+        m = function(e, t) {
+            var i, n = f(t);
+            if ("F" !== n)
+                return e._i[n];
+            for (i = e._f; i; i = i.n)
+                if (i.k == t)
+                    return i
+        };
+    e.exports = {
+        getConstructor: function(e, t, i, u) {
+            var d = e(function(e, n) {
+                o(e, d, t, "_i"),
+                    e._t = t,
+                    e._i = s(null),
+                    e._f = void 0,
+                    e._l = void 0,
+                    e[g] = 0,
+                    void 0 != n && l(n, i, e[u], e)
+            });
+            return r(d.prototype, {
+                    clear: function() {
+                        for (var e = p(this, t), i = e._i, n = e._f; n; n = n.n)
+                            n.r = !0,
+                            n.p && (n.p = n.p.n = void 0),
+                            delete i[n.i];
+                        e._f = e._l = void 0,
+                            e[g] = 0
+                    },
+                    delete: function(e) {
+                        var i = p(this, t),
+                            n = m(i, e);
+                        if (n) {
+                            var s = n.n,
+                                r = n.p;
+                            delete i._i[n.i],
+                                n.r = !0,
+                                r && (r.n = s),
+                                s && (s.p = r),
+                                i._f == n && (i._f = s),
+                                i._l == n && (i._l = r),
+                                i[g]--
+                        }
+                        return !!n
+                    },
+                    forEach: function(e) {
+                        p(this, t);
+                        for (var i, n = a(e, arguments.length > 1 ? arguments[1] : void 0, 3); i = i ? i.n : this._f;)
+                            for (n(i.v, i.k, this); i && i.r;)
+                                i = i.p
+                    },
+                    has: function(e) {
+                        return !!m(p(this, t), e)
+                    }
+                }),
+                h && n(d.prototype, "size", {
+                    get: function() {
+                        return p(this, t)[g]
+                    }
+                }),
+                d
+        },
+        def: function(e, t, i) {
+            var n, s, r = m(e, t);
+            return r ? r.v = i : (e._l = r = {
+                        i: s = f(t, !0),
+                        k: t,
+                        v: i,
+                        p: n = e._l,
+                        n: void 0,
+                        r: !1
+                    },
+                    e._f || (e._f = r),
+                    n && (n.n = r),
+                    e[g]++,
+                    "F" !== s && (e._i[s] = r)),
+                e
+        },
+        getEntry: m,
+        setStrong: function(e, t, i) {
+            u(e, t, function(e, i) {
+                    this._t = p(e, t),
+                        this._k = i,
+                        this._l = void 0
+                }, function() {
+                    for (var e = this, t = e._k, i = e._l; i && i.r;)
+                        i = i.p;
+                    return e._t && (e._l = i = i ? i.n : e._t._f) ? "keys" == t ? d(0, i.k) : "values" == t ? d(0, i.v) : d(0, [i.k, i.v]) : (e._t = void 0,
+                        d(1))
+                }, i ? "entries" : "values", !i, !0),
+                c(t)
         }
     }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s, r = i(17),
-        a = n(r),
-        o = i(548),
-        l = n(o),
-        u = i(550),
-        d = n(u),
-        c = i(552),
-        h = n(c),
-        f = i(75),
-        p = n(f),
-        g = p.default.prototype.TYPE,
-        m = {
-            TYPE_TO_CLASS: (s = {},
-                (0,
-                    a.default)(s, g.DISCONNECTION, l.default),
-                (0,
-                    a.default)(s, g.TURN, d.default),
-                (0,
-                    a.default)(s, g.DATA, h.default),
-                s),
-            create: function(e) {
-                return new(0,
-                    this.TYPE_TO_CLASS[e.problemType])(e, {
-                    parse: !0
-                })
-            }
-        };
-    t.default = m,
-        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = {
-            SPEED_CAMERA: 1
-        },
-        s = {
-            TUNNEL: 1,
-            BRIDGE: 2,
-            PRIVATE: 4,
-            FERRY: 8,
-            UNPAVED: 16,
-            HEADLIGHTS: 32,
-            NEARBY_HOV: 128
-        };
-    t.FLAGS = s,
-        t.FWD = n,
-        t.REV = n
+    var n = i(25),
+        s = i(21),
+        r = i(106),
+        a = i(46),
+        o = i(45),
+        l = i(150),
+        u = i(85),
+        d = i(148),
+        c = i(30),
+        h = i(83),
+        f = i(37).f,
+        p = i(544)(0),
+        g = i(41);
+    e.exports = function(e, t, i, m, v, _) {
+        var y = n[e],
+            b = y,
+            w = v ? "set" : "add",
+            E = b && b.prototype,
+            k = {};
+        return g && "function" == typeof b && (_ || E.forEach && !a(function() {
+                (new b).entries().next()
+            })) ? (b = t(function(t, i) {
+                    d(t, b, e, "_c"),
+                        t._c = new y,
+                        void 0 != i && u(i, v, t[w], t)
+                }),
+                p("add,clear,delete,forEach,get,has,set,keys,values,entries,toJSON".split(","), function(e) {
+                    var t = "add" == e || "set" == e;
+                    e in E && (!_ || "clear" != e) && o(b.prototype, e, function(i, n) {
+                        if (d(this, b, e), !t && _ && !c(i))
+                            return "get" == e && void 0;
+                        var s = this._c[e](0 === i ? 0 : i, n);
+                        return t ? this : s
+                    })
+                }),
+                _ || f(b.prototype, "size", {
+                    get: function() {
+                        return this._c.size
+                    }
+                })) : (b = m.getConstructor(t, e, v, w),
+                l(b.prototype, i),
+                r.NEED = !0),
+            h(b, e),
+            k[e] = b,
+            s(s.G + s.W + s.F, k),
+            _ || m.setStrong(b, e, v),
+            b
+    }
+}, function(e, t, i) {
+    var n = i(103),
+        s = i(548);
+    e.exports = function(e) {
+        return function() {
+            if (n(this) != e)
+                throw TypeError(e + "#toJSON isn't generic");
+            return s(this)
+        }
+    }
+}, function(e, t, i) {
+    "use strict";
+    var n = i(21);
+    e.exports = function(e) {
+        n(n.S, e, { of: function() {
+                for (var e = arguments.length, t = Array(e); e--;)
+                    t[e] = arguments[e];
+                return new this(t)
+            }
+        })
+    }
+}, function(e, t, i) {
+    "use strict";
+    var n = i(21),
+        s = i(54),
+        r = i(43),
+        a = i(85);
+    e.exports = function(e) {
+        n(n.S, e, {
+            from: function(e) {
+                var t, i, n, o, l = arguments[1];
+                return s(this),
+                    t = void 0 !== l,
+                    t && s(l),
+                    void 0 == e ? new this : (i = [],
+                        t ? (n = 0,
+                            o = r(l, arguments[2], 2),
+                            a(e, !1, function(e) {
+                                i.push(o(e, n++))
+                            })) : a(e, !1, i.push, i),
+                        new this(i))
+            }
+        })
+    }
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -14331,7 +14282,7 @@ webpackJsonp([0], [function(e, t, i) {
             initialize: function(e, t) {
                 e = {},
                     this.__setSuggestedValue(e);
-                var n = i(91),
+                var n = i(90),
                     s = new n(e, {
                         parse: !!t && t.parse
                     });
@@ -14425,7 +14376,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(22),
         o = n(a),
-        l = i(217),
+        l = i(215),
         u = n(l),
         d = u.default.extend({
             __setSuggestedValue: function(e) {
@@ -14488,7 +14439,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(10),
+        d = i(9),
         c = n(d),
         h = function() {
             function e() {
@@ -14574,7 +14525,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(29),
+    var n = i(31),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -14797,7 +14748,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(29),
+    var n = i(31),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -14821,9 +14772,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(29),
+    var s = i(31),
         r = n(s),
-        a = i(225),
+        a = i(223),
         o = n(a),
         l = {
             INVALID_ENV: "INVALID_ENV",
@@ -14865,7 +14816,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(20),
         g = n(p),
-        m = i(23),
+        m = i(24),
         v = function() {
             function e(t) {
                 if ((0,
@@ -15017,7 +14968,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(120),
+        p = i(118),
         g = n(p),
         m = function(e) {
             function t(e, i, n) {
@@ -15098,11 +15049,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(573),
+    var s = i(567),
         r = n(s),
-        a = i(121),
+        a = i(119),
         o = n(a),
-        l = i(166),
+        l = i(165),
         u = n(l),
         d = Marionette.CompositeView.extend({
             childView: r.default,
@@ -15361,13 +15312,13 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(19),
         v = n(m),
-        _ = i(94),
+        _ = i(93),
         y = n(_),
-        b = i(122),
+        b = i(120),
         w = n(b),
         E = function(e) {
             function t(e, i, n) {
@@ -15425,156 +15376,13 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(3),
         c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(16),
-        v = n(m),
-        y = i(9),
-        b = n(y),
-        w = i(11),
-        E = i(94),
-        k = n(E),
-        M = i(19),
-        S = n(M),
-        T = i(167),
-        C = n(T),
-        I = i(36),
-        A = n(I),
-        R = function(e) {
-            function t(e, i) {
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.bigJunction = e,
-                    n.attributes = {},
-                    n
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this;
-                        this.initialGeometry = this.bigJunction.geometry.clone();
-                        var t = void 0;
-                        this.bigJunction.getID() || (t = this.model.bigJunctions.generateUniqueID()),
-                            this.bigJunction.setID(t),
-                            this.bigJunction.state = OpenLayers.State.INSERT,
-                            this.model.bigJunctions.put(this.bigJunction);
-                        var i = this._findShortSegments();
-                        i.forEach(function(i) {
-                            e.doSubAction(new S.default(i, {
-                                crossroadID: t
-                            }, {
-                                dontSerialize: !0
-                            }))
-                        });
-                        var n = new C.default(t, i, C.default.ADD_JUNCTION_TO_SEGMENT);
-                        this.doSubAction(n);
-                        var s = n.connectedSegments,
-                            r = this._findMaxRankInSegmentArray(i.concat(s)),
-                            a = _.invoke(i, "getID"),
-                            o = {
-                                segIDs: a,
-                                rank: r
-                            };
-                        _.extend(this.attributes, o),
-                            _.extend(this.bigJunction.attributes, o);
-                        var l = null;
-                        if (this.model.segments.topCityID && (l = this.model.cities.get(this.model.segments.topCityID)),
-                            null === l && null != this.model.countries.top) {
-                            var u = new k.default(this.model.states.top, this.model.countries.top, "", !0);
-                            this.doSubAction(u),
-                                l = u.city
-                        }
-                        return null !== l && (this.attributes.cityID = l.getID(),
-                                this.bigJunction.attributes.cityID = l.getID()),
-                            this.bigJunction.getShortestTurns().forEach(function(t) {
-                                return e.doSubAction(new A.default(e.model.getTurnGraph(), t))
-                            }), !0
-                    }
-                }, {
-                    key: "_findShortSegments",
-                    value: function() {
-                        var e = this;
-                        return this.model.segments.getObjectArray(function(t) {
-                            var i = t.geometry.components;
-                            return !t.isDeleted() && t.isDrivable() && e.initialGeometry.containsPoint(_.first(i)) && e.initialGeometry.containsPoint(_.last(i))
-                        })
-                    }
-                }, {
-                    key: "_findMaxRankInSegmentArray",
-                    value: function(e) {
-                        for (var t = 0, i = 0; i < e.length; i++) {
-                            var n = e[i],
-                                s = n.getLockRank();
-                            s > t && (t = s)
-                        }
-                        return t
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        return (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "undoAction", this).call(this),
-                            this.model.bigJunctions.remove(this.bigJunction)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.model.bigJunctions.put(this.bigJunction),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "redoAction", this).call(this)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        var e = this.attributes;
-                        return e.id = this.bigJunction.getID(),
-                            e.geometry = this.initialGeometry, {
-                                _objectType: w.BIG_JUNCTION,
-                                action: v.default.TYPE.ADD,
-                                attributes: e
-                            }
-                    }
-                }]),
-                t
-        }(b.default);
-    t.default = R,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
         h = i(4),
         f = n(h),
-        p = i(30),
+        p = i(29),
         g = n(p),
-        m = i(9),
+        m = i(10),
         v = n(m),
-        y = i(78),
+        y = i(76),
         b = n(y),
         w = function(e) {
             function t(e, i, n) {
@@ -15631,77 +15439,59 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
+    var s = i(2),
         r = n(s),
-        a = i(2),
+        a = i(0),
         o = n(a),
-        l = i(0),
+        l = i(1),
         u = n(l),
-        d = i(1),
+        d = i(3),
         c = n(d),
-        h = i(3),
+        h = i(4),
         f = n(h),
-        p = i(4),
+        p = i(10),
         g = n(p),
-        m = i(9),
+        m = i(77),
         v = n(m),
-        _ = i(36),
+        _ = i(76),
         y = n(_),
-        b = i(35),
-        w = n(b),
-        E = function(e) {
-            function t(e, i, n, s) {
+        b = function(e) {
+            function t(e) {
+                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                 (0,
-                    u.default)(this, t);
-                var r = (0,
-                    f.default)(this, (t.__proto__ || (0,
-                    o.default)(t)).call(this, s));
-                return r._forwardVertex = w.default.forwardOf(e),
-                    r._reverseVertex = w.default.reverseOf(e),
-                    r._firstSplitID = n,
-                    r._lastSplitID = i,
-                    r
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n._node = e,
+                    n
             }
             return (0,
-                    g.default)(t, e),
+                    f.default)(t, e),
                 (0,
-                    c.default)(t, [{
+                    u.default)(t, [{
                     key: "doAction",
                     value: function() {
-                        var e = this.model.getTurnGraph();
-                        e.getTurnsTo(this._forwardVertex).forEach(function(t) {
-                                t = t.withToVertex(w.default.forwardOf(this._firstSplitID)),
-                                    this.doSubAction(new y.default(e, t, {
-                                        dontSerialize: !0
-                                    }))
-                            }, this),
-                            e.getTurnsFrom(this._forwardVertex).forEach(function(t) {
-                                t = t.withFromVertex(w.default.forwardOf(this._lastSplitID)),
-                                    this.doSubAction(new y.default(e, t, {
-                                        dontSerialize: !0
-                                    }))
-                            }, this),
-                            e.getTurnsFrom(this._reverseVertex).forEach(function(t) {
-                                t = t.withFromVertex(w.default.reverseOf(this._firstSplitID)),
-                                    this.doSubAction(new y.default(e, t, {
-                                        dontSerialize: !0
-                                    }))
-                            }, this),
-                            e.getTurnsTo(this._reverseVertex).forEach(function(t) {
-                                t = t.withToVertex(w.default.reverseOf(this._lastSplitID)),
-                                    this.doSubAction(new y.default(e, t, {
-                                        dontSerialize: !0
-                                    }))
-                            }, this)
+                        var e = this;
+                        if (!this._node.isVirtual())
+                            return !1;
+                        var t = this._node.attributes.segIDs.map(function(t) {
+                            return e.model.segments.get(t)
+                        }).find(function(t) {
+                            return t.isVirtuallyConnectedToNode(e._node)
+                        });
+                        return this.doSubAction(new v.default(t, this._node, {
+                                deleteNode: !1
+                            })),
+                            this.doSubAction(new y.default(t, {
+                                splitNode: this._node,
+                                splitAtPoint: this._node.attributes.geometry
+                            })), !0
                     }
                 }]),
                 t
-        }(v.default);
-    (0,
-        r.default)(E.prototype, {
-        CLASS_NAME: "Waze.Model.Graph.Actions.SplitTurns"
-    }),
-    t.default = E,
+        }(g.default);
+    t.default = b,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -15726,15 +15516,234 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(9),
+        m = i(10),
         v = n(m),
-        _ = i(16),
+        _ = i(17),
         y = n(_),
-        b = i(94),
+        b = i(12),
+        w = i(77),
+        E = n(w),
+        k = function(e) {
+            function t(e) {
+                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                (0,
+                    o.default)(this, t),
+                i.dontSerialize = !0;
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.node = e,
+                    n.prevNodeState = null,
+                    n.hidNode = !1,
+                    n.changedSegAttributes = {},
+                    n.changedSegStates = [],
+                    n
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        if (this.node.state === OpenLayers.State.DELETE)
+                            return !1;
+                        this.node.attributes.segIDs.forEach(function(e) {
+                                var t = this.model.segments.get(e);
+                                this.doSubAction(new E.default(t, this.node))
+                            }, this),
+                            this.node.getID(),
+                            this.node.hidden || (this.hidNode = !0),
+                            this.node.hidden = !0,
+                            this.prevNodeState = this.node.state,
+                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
+                                this.model.nodes.changed(this.node))
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        this.node.getID(),
+                            this.hidNode && delete this.node.hidden,
+                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.put(this.node) : (this.node.state = this.prevNodeState,
+                                this.model.nodes.changed(this.node)),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "undoAction", this).call(this)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.hidNode && (this.node.hidden = !0),
+                            this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
+                                this.model.nodes.changed(this.node)),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "redoAction", this).call(this)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return {
+                            _objectType: b.NODE,
+                            action: y.default.TYPE.DELETE,
+                            attributes: {
+                                id: this.node.getID()
+                            }
+                        }
+                    }
+                }]),
+                t
+        }(v.default);
+    t.default = k,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(76),
+        g = n(p),
+        m = i(122),
+        v = n(m),
+        y = i(51),
+        b = n(y),
+        w = i(77),
+        E = n(w),
+        k = i(10),
+        M = n(k),
+        S = i(12),
+        T = function(e) {
+            function t(e) {
+                var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                (0,
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.segment = e,
+                    n.options = i,
+                    n._analyzeSnappedFeatures(),
+                    n
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "_analyzeSnappedFeatures",
+                    value: function() {
+                        var e = this;
+                        if (this.touching = {},
+                            this.snappedFeatures) {
+                            this.snappedFeatures instanceof Array || (this.snappedFeatures = [this.snappedFeatures]),
+                                this.snappedFeatures = this.snappedFeatures.filter(function(e) {
+                                    return e
+                                });
+                            var t = this.segment.geometry.getVertices(!0),
+                                i = t[0],
+                                n = _.last(t),
+                                s = void 0;
+                            this.snappedFeatures.forEach(function(t) {
+                                s = null,
+                                    t.point.equals(i) ? (e.touching.fromVertex = {},
+                                        s = e.touching.fromVertex) : t.point.equals(n) && (e.touching.toVertex = {},
+                                        s = e.touching.toVertex),
+                                    s && (s.feature = t.feature,
+                                        s.point = t.point,
+                                        s.distance = t.distance,
+                                        t.feature.type === S.SEGMENT ? "edge" === t.type || "vertex" === t.type ? s.segmentEdge = !0 : "node" === t.type && (s.segmentNode = !0) : t.feature.type === S.NODE && (s.node = !0))
+                            })
+                        }
+                    }
+                }, {
+                    key: "_connectToExistingNode",
+                    value: function(e, t) {
+                        t !== e.getID() && (t && this.doSubAction(new E.default(this.segment, this.model.nodes.get(t))),
+                            this.doSubAction(new b.default(e, this.segment)))
+                    }
+                }, {
+                    key: "updateEndPoint",
+                    value: function(e, t, i) {
+                        if (t) {
+                            if (t.node)
+                                this._connectToExistingNode(t.feature, e);
+                            else if (t.segmentNode)
+                                e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
+                                this.doSubAction(new v.default(t.point, [this.segment, t.feature]));
+                            else if (t.segmentEdge)
+                                if (e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
+                                    this.segment.isWalkingRoadType() && !t.feature.isWalkingRoadType()) {
+                                    var n = new v.default(t.point, [this.segment]);
+                                    this.doSubAction(n);
+                                    var s = n.node;
+                                    this.doSubAction(new b.default(s, t.feature, {
+                                        virtual: !0
+                                    }))
+                                } else
+                                    this.doSubAction(new g.default(t.feature, {
+                                        splitAtPoint: t.point,
+                                        splitWithSegment: this.segment,
+                                        splittingPointDistance: t.distance
+                                    }))
+                        } else if (e && this.doSubAction(new E.default(this.segment, this.model.nodes.get(e))),
+                            this.createNodes) {
+                            var r = void 0;
+                            r = i ? this.segment.geometry.components[0] : this.segment.geometry.components[this.segment.geometry.components.length - 1],
+                                this.doSubAction(new v.default(r, [this.segment]))
+                        }
+                        return !0
+                    }
+                }]),
+                t
+        }(M.default);
+    t.default = T,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(10),
+        v = n(m),
+        _ = i(17),
+        y = n(_),
+        b = i(93),
         w = n(b),
-        E = i(122),
+        E = i(120),
         k = n(E),
-        M = i(11),
+        M = i(12),
         S = function(e) {
             function t(e, i) {
                 (0,
@@ -15836,92 +15845,15 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(16),
+        p = i(10),
         g = n(p),
-        m = i(11),
-        v = function(e) {
-            function t(e, i, n) {
-                (0,
-                    o.default)(this, t);
-                var s = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, n));
-                return s.closure = e,
-                    s.segment = i,
-                    s
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: m.ROAD_CLOSURE,
-                            action: g.default.TYPE.ADD,
-                            attributes: {
-                                reason: this.closure.reason,
-                                location: this.closure.location,
-                                segID: this.closure.segID,
-                                id: this.closure.getID(),
-                                startDate: this.closure.startDate,
-                                endDate: this.closure.endDate,
-                                forward: this.closure.forward,
-                                permanent: this.closure.permanent,
-                                eventId: this.closure.eventId
-                            }
-                        }
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {
-                        W.model.repos.roadClosures.put(this.closure)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.doAction()
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        W.model.repos.roadClosures.remove(this.closure)
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = v,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(124),
+        m = i(121),
         v = n(m),
-        y = i(78),
+        y = i(76),
         b = n(y),
-        w = i(125),
+        w = i(122),
         E = n(w),
-        k = i(95),
+        k = i(94),
         M = n(k),
         S = i(36),
         T = n(S),
@@ -15933,16 +15865,16 @@ webpackJsonp([0], [function(e, t, i) {
         D = n(O),
         L = i(19),
         P = n(L),
-        N = i(30),
+        N = i(29),
         x = n(N),
         V = i(35),
         F = n(V),
-        j = i(60),
-        U = n(j),
-        B = i(223),
-        W = n(B),
-        z = Math.PI / 180 * 10,
-        G = function(e) {
+        U = i(61),
+        j = n(U),
+        B = i(221),
+        G = n(B),
+        W = Math.PI / 180 * 10,
+        z = function(e) {
             function t(e) {
                 var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                 (0,
@@ -15982,7 +15914,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "addRoundabout",
                     value: function() {
                         var e = _(this.roundaboutSegments).invoke("getID"),
-                            t = new D.default(new W.default({
+                            t = new D.default(new G.default({
                                 segIDs: e,
                                 type: "RA"
                             }), this.model.junctions);
@@ -16035,7 +15967,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 a = e[t + 1].angle,
                                 t === e.length - 2 && (a += 2 * Math.PI),
                                 o.addPoint(n.clone()),
-                                i = r + z; i < a; i += z)
+                                i = r + W; i < a; i += W)
                                 o.addPoint(new OpenLayers.Geometry.Point(this.ellipse.center.x + this.ellipse.rx * Math.cos(i), this.ellipse.center.y + this.ellipse.ry * Math.sin(i)));
                             i > a && o.addPoint(s.clone()),
                                 this.isLeftHand && (l.attributes.fwdDirection = !1,
@@ -16075,7 +16007,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 s = F.default.for(i, t).getOpposite(),
                                 r = this.model.getTurnGraph(),
                                 a = r.getTurn(n, s);
-                            a = a.withTurnData(a.getTurnData().withState(U.default.State.ALLOWED));
+                            a = a.withTurnData(a.getTurnData().withState(j.default.State.ALLOWED));
                             var o = new T.default(r, a);
                             this.doSubAction(o)
                         }
@@ -16132,179 +16064,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 t
         }(g.default);
-    t.default = G,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(8),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(9),
-        v = n(m),
-        _ = i(16),
-        y = n(_),
-        b = i(11),
-        w = i(19),
-        E = n(w),
-        k = i(167),
-        M = n(k),
-        S = function(e) {
-            function t(e, i) {
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.bigJunction = e,
-                    n.prevJunctionState = null,
-                    n
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this;
-                        if (this.bigJunction.state === OpenLayers.State.DELETE)
-                            return !1;
-                        var t = this.bigJunction.attributes.segIDs.map(function(t) {
-                            return e.model.segments.get(t)
-                        });
-                        t.forEach(function(t) {
-                                e.doSubAction(new E.default(t, {
-                                    crossroadID: null
-                                }, {
-                                    dontSerialize: !0
-                                }))
-                            }),
-                            this.doSubAction(new M.default(this.bigJunction.getID(), t, M.default.REMOVE_JUNCTION_FROM_SEGMENT)),
-                            this.prevJunctionState = this.bigJunction.state,
-                            this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
-                                this.model.bigJunctions.changed(this.bigJunction))
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        this.bigJunction.getID(),
-                            this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.put(this.bigJunction) : (this.bigJunction.state = this.prevJunctionState,
-                                this.model.bigJunctions.changed(this.bigJunction)),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "undoAction", this).call(this)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
-                                this.model.bigJunctions.changed(this.bigJunction)),
-                            (0,
-                                f.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "redoAction", this).call(this)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: b.BIG_JUNCTION,
-                            action: y.default.TYPE.DELETE,
-                            attributes: {
-                                id: this.bigJunction.getID()
-                            }
-                        }
-                    }
-                }]),
-                t
-        }(v.default);
-    t.default = S,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(16),
-        g = n(p),
-        m = i(11),
-        v = function(e) {
-            function t(e, i, n) {
-                (0,
-                    o.default)(this, t);
-                var s = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, n));
-                return s.closure = e,
-                    s.segment = i,
-                    s
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: m.ROAD_CLOSURE,
-                            action: g.default.TYPE.DELETE,
-                            attributes: {
-                                id: this.closure.getID(),
-                                segID: this.closure.segID
-                            }
-                        }
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {
-                        W.model.repos.roadClosures.remove(this.closure)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.doAction()
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        W.model.repos.roadClosures.put(this.closure)
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = v,
+    t.default = z,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -16330,11 +16090,11 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(16),
+        m = i(17),
         v = n(m),
-        y = i(9),
+        y = i(10),
         b = n(y),
-        w = i(171),
+        w = i(167),
         E = n(w),
         k = function(e) {
             function t(e, i, n) {
@@ -16534,66 +16294,6 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(6),
-        r = n(s),
-        a = i(2),
-        o = n(a),
-        l = i(0),
-        u = n(l),
-        d = i(1),
-        c = n(d),
-        h = i(3),
-        f = n(h),
-        p = i(4),
-        g = n(p),
-        m = i(16),
-        v = n(m),
-        _ = function(e) {
-            function t() {
-                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                return (0,
-                        u.default)(this, t),
-                    (0,
-                        f.default)(this, (t.__proto__ || (0,
-                        o.default)(t)).call(this, (0,
-                        r.default)({
-                        dontSerialize: !0
-                    }, e)))
-            }
-            return (0,
-                    g.default)(t, e),
-                (0,
-                    c.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        this.model.loginManager.user.incrementSegmentStreetChangeCount()
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        this.model.loginManager.user.decrementSegmentStreetChangeCount()
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        this.model.loginManager.user.incrementSegmentStreetChangeCount()
-                    }
-                }]),
-                t
-        }(v.default);
-    t.default = _,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
     var s = i(2),
         r = n(s),
         a = i(0),
@@ -16604,121 +16304,14 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
-        m = i(168),
-        v = n(m),
-        _ = i(64),
-        y = n(_),
-        b = i(79),
-        w = n(b),
-        E = i(51),
-        k = n(E),
-        M = i(11),
-        S = i(123),
-        T = n(S),
-        C = i(16),
-        I = n(C),
-        A = function(e) {
-            function t(e, i, n) {
-                (0,
-                    o.default)(this, t);
-                var s = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, n));
-                return s.node = e,
-                    s.mergeNode = i,
-                    s
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "considerMerging",
-                    value: function() {
-                        return !(!this.mergeNode || !this.mergeNode.geometry.equals(this.node.geometry)) && (this.node.isVirtual() && this.doSubAction(new T.default(this.node)),
-                            this.mergeNode.isVirtual() && this.doSubAction(new T.default(this.mergeNode)),
-                            this.node.attributes.segIDs.every(function(e) {
-                                var t = this.model.segments.get(e);
-                                return !this.mergeNode.isConnectedToSegment(t) || t.isPoint()
-                            }, this))
-                    }
-                }, {
-                    key: "moveSegments",
-                    value: function() {
-                        this.node.attributes.segIDs.concat().forEach(function(e) {
-                            var t = this.model.segments.get(e);
-                            t.isPoint() ? this.doSubAction(new y.default(t, {
-                                dontSerialize: !0
-                            })) : (this.doSubAction(new w.default(t, this.node, {
-                                    deleteNode: !1,
-                                    dontSerialize: !0,
-                                    keepTurns: !0
-                                })),
-                                this.doSubAction(new k.default(this.mergeNode, t, {
-                                    dontSerialize: !0
-                                })))
-                        }, this)
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {
-                        if (!this.considerMerging())
-                            return !1;
-                        this.node.getID(),
-                            this.mergeNode.getID(),
-                            this.moveSegments(),
-                            this.doSubAction(new v.default(this.node))
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        var e = {
-                            sourceNodeID: this.node.getID(),
-                            sourceNodeVersion: this.node.attributes.version,
-                            destNodeID: this.mergeNode.getID(),
-                            destNodeVersion: this.node.attributes.version
-                        };
-                        return {
-                            _objectType: M.MERGED_NODE,
-                            action: I.default.TYPE.ADD,
-                            attributes: e
-                        }
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = A,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(11),
+        m = i(12),
         v = i(51),
         _ = n(v),
-        y = i(78),
+        y = i(76),
         b = n(y),
-        w = i(77),
+        w = i(75),
         E = n(w),
         k = function(e) {
             function t(e, i, n, s, a) {
@@ -16825,17 +16418,17 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(19),
         v = n(m),
-        y = i(94),
+        y = i(93),
         b = n(y),
-        w = i(122),
+        w = i(120),
         E = n(w),
-        k = i(241),
+        k = i(728),
         M = n(k),
-        S = i(11),
+        S = i(12),
         T = {
             getCityFromDataModel: !1,
             cityIDField: "cityID",
@@ -16912,7 +16505,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(16),
+        p = i(17),
         g = n(p),
         m = function(e) {
             function t(e, i, n, s) {
@@ -17000,1127 +16593,17 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(2),
+    var s = i(23),
         r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(9),
-        g = n(p),
-        m = i(19),
-        v = n(m),
-        _ = i(77),
-        y = n(_),
-        b = function(e) {
-            function t(e, i) {
-                var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
-                (0,
-                    o.default)(this, t);
-                var s = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, n));
-                return s._venue = e,
-                    s._toResidential = i,
-                    s
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        var e = this._venue;
-                        if (this._toResidential && !e.isPoint()) {
-                            var t = e.getPointGeometry(),
-                                i = new y.default(e, e.model.venues, e.geometry, t);
-                            this.doSubAction(i)
-                        }
-                        return this.doSubAction(new v.default(this._venue, {
-                            residential: this._toResidential
-                        })), !0
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = b,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(16),
-        g = n(p),
-        m = function(e) {
-            function t(e, i, n, s) {
-                (0,
-                    o.default)(this, t);
-                var a = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, s));
-                return a.venue = e,
-                    a.request = i,
-                    a.approved = n,
-                    a.prevApproved = null,
-                    a
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "doAction",
-                    value: function() {
-                        return this.prevApproved = this.request.get("approved"),
-                            this.request.set({
-                                approved: this.approved
-                            }),
-                            this.model.venues.changed(this.venue)
-                    }
-                }, {
-                    key: "undoAction",
-                    value: function() {
-                        return this.request.set({
-                                approved: this.prevApproved
-                            }),
-                            this.model.venues.changed(this.venue)
-                    }
-                }, {
-                    key: "redoAction",
-                    value: function() {
-                        return this.request.set({
-                                approved: this.approved
-                            }),
-                            this.model.venues.changed(this.venue)
-                    }
-                }, {
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: "venueUpdateRequest",
-                            action: "UPDATE",
-                            attributes: {
-                                venueID: this.venue.getID(),
-                                id: this.request.id,
-                                approve: this.approved
-                            }
-                        }
-                    }
-                }]),
-                t
-        }(g.default);
-    t.default = m,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(2),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(3),
-        c = n(d),
-        h = i(4),
-        f = n(h),
-        p = i(16),
-        g = n(p),
-        m = i(11),
-        v = function(e) {
-            function t(e, i) {
-                (0,
-                    o.default)(this, t);
-                var n = (0,
-                    c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n.closure = e,
-                    n
-            }
-            return (0,
-                    f.default)(t, e),
-                (0,
-                    u.default)(t, [{
-                    key: "serialize",
-                    value: function() {
-                        return {
-                            _objectType: m.ROAD_CLOSURE,
-                            action: g.default.TYPE.UPDATE,
-                            attributes: {
-                                reason: this.closure.reason,
-                                location: this.closure.location,
-                                segID: this.closure.segID,
-                                id: this.closure.id,
-                                startDate: this.closure.startDate,
-                                endDate: this.closure.endDate,
-                                forward: this.closure.forward,
-                                permanent: this.closure.permanent,
-                                eventId: this.closure.eventId
-                            }
-                        }
-                    }
-                }, {
-                    key: "doAction",
-                    value: function() {}
-                }]),
-                t
-        }(g.default);
-    t.default = v,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(58),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(20),
-        c = n(d),
-        h = i(10),
-        f = n(h),
-        p = function() {
-            function e() {
-                (0,
-                    o.default)(this, e),
-                this.currentContainer = {},
-                    this.currentContainer._subActions = [],
-                    this.root = this.currentContainer,
-                    this.previousContainers = []
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "visit",
-                    value: function(e) {
-                        this.addAction(e)
-                    }
-                }, {
-                    key: "beforeEnter",
-                    value: function(e) {
-                        if (!e.dontSerialize) {
-                            var t = {};
-                            this.previousContainers.push(this.currentContainer),
-                                this.currentContainer._subActions.push(t),
-                                this.currentContainer = t,
-                                t.name = e.constructor.name,
-                                t._subActions = []
-                        }
-                        return !e.dontSerialize
-                    }
-                }, {
-                    key: "afterLeave",
-                    value: function(e) {
-                        e.dontSerialize || (this.currentContainer = this.previousContainers.pop())
-                    }
-                }, {
-                    key: "addAction",
-                    value: function(e) {
-                        var t = void 0;
-                        e.dontSerialize || (t = e.serialize(),
-                            null !== (t = c.default.deepClone(t)) && (t instanceof Array ? (t = this.serializeGeometries(t),
-                                this.currentContainer._subActions = this.currentContainer._subActions.concat(t)) : (t = this.serializeGeometries(t),
-                                this.currentContainer._subActions.push(t))))
-                    }
-                }, {
-                    key: "serializeGeometries",
-                    value: function(e) {
-                        if ("object" === (void 0 === e ? "undefined" : (0,
-                                r.default)(e)) && null !== e) {
-                            if (Array.isArray(e)) {
-                                for (var t = 0; t < e.length; t++)
-                                    e[t] = this.serializeGeometries(e[t]);
-                                return e
-                            }
-                            if (e instanceof OL.Geometry)
-                                return e = f.default.unproject(e),
-                                    f.default.toGeoJSON(e);
-                            for (var i in e)
-                                e.hasOwnProperty(i) && (e[i] = this.serializeGeometries(e[i]));
-                            return e
-                        }
-                        return e
-                    }
-                }, {
-                    key: "getResult",
-                    value: function() {
-                        return this.root._subActions[0]
-                    }
-                }]),
-                e
-        }();
-    t.default = p,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(6),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(20),
-        c = n(d),
-        h = i(9),
-        f = n(h),
-        p = i(172),
-        g = n(p),
-        m = function() {
-            function e(t, i) {
-                (0,
-                    o.default)(this, e),
-                this.index = -1,
-                    this._savingEnabled = !0,
-                    (0,
-                        r.default)(this, i),
-                    this.model = t,
-                    this.actions = [],
-                    this.events = new OpenLayers.Events(this)
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "add",
-                    value: function(e) {
-                        if ((e.undoSupported() || !1 !== this.events.triggerEvent("beforeclearactions")) && !1 !== this.events.triggerEvent("beforeaction", {
-                                action: e
-                            })) {
-                            var t = this.unsavedActionsNum(),
-                                i = void 0,
-                                n = void 0;
-                            if (e.undoSupported()) {
-                                for (this.index++,
-                                    i = this.index,
-                                    n = this.actions.length; i < n; i++)
-                                    this.actions[i].destroy();
-                                this.actions.splice(this.index, this.actions.length - this.index, e)
-                            } else {
-                                for (i = 0,
-                                    n = this.actions.length; i < n; i++)
-                                    this.actions[i].destroy();
-                                this.actions = [],
-                                    this.index = -1,
-                                    this.events.triggerEvent("afterclearactions", {
-                                        action: e
-                                    })
-                            }
-                            e.setModel(this.model), !1 === e.doAction() && (this.actions.pop(),
-                                    this.index > -1 && this.index--),
-                                0 === t && this.events.triggerEvent("hasActions"),
-                                this.events.triggerEvent("afteraction", {
-                                    action: e
-                                })
-                        }
-                    }
-                }, {
-                    key: "canUndo",
-                    value: function() {
-                        return this.index >= 0
-                    }
-                }, {
-                    key: "canSave",
-                    value: function() {
-                        return this.canUndo() && this.isAllowedToSave()
-                    }
-                }, {
-                    key: "canRedo",
-                    value: function() {
-                        return this.index < this.actions.length - 1
-                    }
-                }, {
-                    key: "unsavedActionsNum",
-                    value: function() {
-                        return this.index + 1
-                    }
-                }, {
-                    key: "undo",
-                    value: function() {
-                        return !!this.canUndo() && (!1 !== this.events.triggerEvent("beforeundoaction", {
-                            action: this.actions[this.index]
-                        }) && (c.default.protect("undoing " + this.actions[this.index].CLASS_NAME, function() {
-                                this.actions[this.index].undoAction()
-                            }, this),
-                            this.index--,
-                            this.events.triggerEvent("afterundoaction", {
-                                action: this.actions[this.index]
-                            }),
-                            0 === this.unsavedActionsNum() && this.events.triggerEvent("noActions"),
-                            W.Report.generalAction("undo_clicked"), !0))
-                    }
-                }, {
-                    key: "redo",
-                    value: function() {
-                        if (!this.canRedo())
-                            return !1;
-                        if (!1 === this.events.triggerEvent("beforeaction", {
-                                action: this.actions[this.index + 1]
-                            }))
-                            return !1;
-                        var e = this.unsavedActionsNum();
-                        return this.index++,
-                            c.default.protect("redoing " + this.actions[this.index].CLASS_NAME, function() {
-                                this.actions[this.index].redoAction()
-                            }, this),
-                            this.events.triggerEvent("afteraction", {
-                                action: this.actions[this.index]
-                            }),
-                            0 === e && this.events.triggerEvent("hasActions"), !0
-                    }
-                }, {
-                    key: "clear",
-                    value: function() {
-                        for (var e = 0, t = this.actions.legnth; e < t; e++)
-                            this.actions[e].destroy();
-                        this.actions = [],
-                            this.index = -1,
-                            this.events.triggerEvent("afterclearactions"),
-                            this.events.triggerEvent("noActions")
-                    }
-                }, {
-                    key: "getChangesBounds",
-                    value: function() {
-                        var e = new f.default;
-                        return e.subActions = this.actions.slice(0, this.index + 1),
-                            e.getBounds()
-                    }
-                }, {
-                    key: "getActions",
-                    value: function() {
-                        return this.actions.slice(0, this.index + 1)
-                    }
-                }, {
-                    key: "toggleSavingEnabled",
-                    value: function(e) {
-                        this._savingEnabled = e
-                    }
-                }, {
-                    key: "isAllowedToSave",
-                    value: function() {
-                        return this.model.loginManager.isLoggedIn() && this._savingEnabled
-                    }
-                }, {
-                    key: "getFlatActions",
-                    value: function() {
-                        return _.flatten(this.getActions().map(function(e) {
-                            return e.flat()
-                        }))
-                    }
-                }, {
-                    key: "hasPendingMerge",
-                    value: function(e) {
-                        var t = this.getFlatActions();
-                        return _.some(t, function(t) {
-                            return t instanceof g.default && t._toVenue.getID() === e
-                        })
-                    }
-                }]),
-                e
-        }();
-    (0,
-        r.default)(m.prototype, {
-        CLASS_NAME: "Waze.ActionManager"
-    }),
-    t.default = m,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    var n = i(37).f,
-        s = i(84),
-        r = i(156),
-        a = i(43),
-        o = i(154),
-        l = i(87),
-        u = i(142),
-        d = i(187),
-        c = i(202),
-        h = i(41),
-        f = i(104).fastKey,
-        p = i(174),
-        g = h ? "_s" : "size",
-        m = function(e, t) {
-            var i, n = f(t);
-            if ("F" !== n)
-                return e._i[n];
-            for (i = e._f; i; i = i.n)
-                if (i.k == t)
-                    return i
-        };
-    e.exports = {
-        getConstructor: function(e, t, i, u) {
-            var d = e(function(e, n) {
-                o(e, d, t, "_i"),
-                    e._t = t,
-                    e._i = s(null),
-                    e._f = void 0,
-                    e._l = void 0,
-                    e[g] = 0,
-                    void 0 != n && l(n, i, e[u], e)
-            });
-            return r(d.prototype, {
-                    clear: function() {
-                        for (var e = p(this, t), i = e._i, n = e._f; n; n = n.n)
-                            n.r = !0,
-                            n.p && (n.p = n.p.n = void 0),
-                            delete i[n.i];
-                        e._f = e._l = void 0,
-                            e[g] = 0
-                    },
-                    delete: function(e) {
-                        var i = p(this, t),
-                            n = m(i, e);
-                        if (n) {
-                            var s = n.n,
-                                r = n.p;
-                            delete i._i[n.i],
-                                n.r = !0,
-                                r && (r.n = s),
-                                s && (s.p = r),
-                                i._f == n && (i._f = s),
-                                i._l == n && (i._l = r),
-                                i[g]--
-                        }
-                        return !!n
-                    },
-                    forEach: function(e) {
-                        p(this, t);
-                        for (var i, n = a(e, arguments.length > 1 ? arguments[1] : void 0, 3); i = i ? i.n : this._f;)
-                            for (n(i.v, i.k, this); i && i.r;)
-                                i = i.p
-                    },
-                    has: function(e) {
-                        return !!m(p(this, t), e)
-                    }
-                }),
-                h && n(d.prototype, "size", {
-                    get: function() {
-                        return p(this, t)[g]
-                    }
-                }),
-                d
-        },
-        def: function(e, t, i) {
-            var n, s, r = m(e, t);
-            return r ? r.v = i : (e._l = r = {
-                        i: s = f(t, !0),
-                        k: t,
-                        v: i,
-                        p: n = e._l,
-                        n: void 0,
-                        r: !1
-                    },
-                    e._f || (e._f = r),
-                    n && (n.n = r),
-                    e[g]++,
-                    "F" !== s && (e._i[s] = r)),
-                e
-        },
-        getEntry: m,
-        setStrong: function(e, t, i) {
-            u(e, t, function(e, i) {
-                    this._t = p(e, t),
-                        this._k = i,
-                        this._l = void 0
-                }, function() {
-                    for (var e = this, t = e._k, i = e._l; i && i.r;)
-                        i = i.p;
-                    return e._t && (e._l = i = i ? i.n : e._t._f) ? "keys" == t ? d(0, i.k) : "values" == t ? d(0, i.v) : d(0, [i.k, i.v]) : (e._t = void 0,
-                        d(1))
-                }, i ? "entries" : "values", !i, !0),
-                c(t)
-        }
-    }
-}, function(e, t, i) {
-    "use strict";
-    var n = i(24),
-        s = i(21),
-        r = i(104),
-        a = i(46),
-        o = i(45),
-        l = i(156),
-        u = i(87),
-        d = i(154),
-        c = i(31),
-        h = i(85),
-        f = i(37).f,
-        p = i(742)(0),
-        g = i(41);
-    e.exports = function(e, t, i, m, v, _) {
-        var y = n[e],
-            b = y,
-            w = v ? "set" : "add",
-            E = b && b.prototype,
-            k = {};
-        return g && "function" == typeof b && (_ || E.forEach && !a(function() {
-                (new b).entries().next()
-            })) ? (b = t(function(t, i) {
-                    d(t, b, e, "_c"),
-                        t._c = new y,
-                        void 0 != i && u(i, v, t[w], t)
-                }),
-                p("add,clear,delete,forEach,get,has,set,keys,values,entries,toJSON".split(","), function(e) {
-                    var t = "add" == e || "set" == e;
-                    e in E && (!_ || "clear" != e) && o(b.prototype, e, function(i, n) {
-                        if (d(this, b, e), !t && _ && !c(i))
-                            return "get" == e && void 0;
-                        var s = this._c[e](0 === i ? 0 : i, n);
-                        return t ? this : s
-                    })
-                }),
-                _ || f(b.prototype, "size", {
-                    get: function() {
-                        return this._c.size
-                    }
-                })) : (b = m.getConstructor(t, e, v, w),
-                l(b.prototype, i),
-                r.NEED = !0),
-            h(b, e),
-            k[e] = b,
-            s(s.G + s.W + s.F, k),
-            _ || m.setStrong(b, e, v),
-            b
-    }
-}, function(e, t, i) {
-    var n = i(101),
-        s = i(746);
-    e.exports = function(e) {
-        return function() {
-            if (n(this) != e)
-                throw TypeError(e + "#toJSON isn't generic");
-            return s(this)
-        }
-    }
-}, function(e, t, i) {
-    "use strict";
-    var n = i(21);
-    e.exports = function(e) {
-        n(n.S, e, { of: function() {
-                for (var e = arguments.length, t = Array(e); e--;)
-                    t[e] = arguments[e];
-                return new this(t)
-            }
-        })
-    }
-}, function(e, t, i) {
-    "use strict";
-    var n = i(21),
-        s = i(54),
-        r = i(43),
-        a = i(87);
-    e.exports = function(e) {
-        n(n.S, e, {
-            from: function(e) {
-                var t, i, n, o, l = arguments[1];
-                return s(this),
-                    t = void 0 !== l,
-                    t && s(l),
-                    void 0 == e ? new this : (i = [],
-                        t ? (n = 0,
-                            o = r(l, arguments[2], 2),
-                            a(e, !1, function(e) {
-                                i.push(o(e, n++))
-                            })) : a(e, !1, i.push, i),
-                        new this(i))
-            }
-        })
-    }
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(0),
-        r = n(s),
-        a = i(1),
-        o = n(a),
-        l = function() {
-            function e(t, i) {
-                (0,
-                    r.default)(this, e),
-                this._vertex = t,
-                    this._segment = i
-            }
-            return (0,
-                    o.default)(e, [{
-                    key: "getVertex",
-                    value: function() {
-                        return this._vertex
-                    }
-                }, {
-                    key: "getSegment",
-                    value: function() {
-                        return this._segment
-                    }
-                }, {
-                    key: "getNode",
-                    value: function() {
-                        return this._segment.model.nodes.get(this.getNodeID())
-                    }
-                }, {
-                    key: "_getDirectedAttribute",
-                    value: function(e) {
-                        var t = this._vertex.isForward() ? "fwd" : "rev";
-                        return this._segment.attributes[t + e]
-                    }
-                }, {
-                    key: "_getEdgeAttribute",
-                    value: function(e) {
-                        var t = this._vertex.isForward() ? "to" : "from";
-                        return this._segment.attributes[t + e]
-                    }
-                }, {
-                    key: "isDirectionAllowed",
-                    value: function() {
-                        return this._getDirectedAttribute("Direction")
-                    }
-                }, {
-                    key: "getDrivingRestrictions",
-                    value: function() {
-                        var e = this._segment.getBidiDrivingRestrictions(),
-                            t = void 0;
-                        return t = this._vertex.isForward() ? this._segment.getForwardDrivingRestrictions() : this._segment.getReverseDrivingRestrictions(),
-                            t.concat(e)
-                    }
-                }, {
-                    key: "getNodeID",
-                    value: function() {
-                        return this._getEdgeAttribute("NodeID")
-                    }
-                }, {
-                    key: "hasBigJunction",
-                    value: function() {
-                        return this._getEdgeAttribute("Crossroads").length > 0
-                    }
-                }, {
-                    key: "getBigJunction",
-                    value: function() {
-                        var e = this._getEdgeAttribute("Crossroads")[0];
-                        return null == e ? null : this._segment.model.bigJunctions.get(e)
-                    }
-                }, {
-                    key: "areTurnsLocked",
-                    value: function() {
-                        return this._getDirectedAttribute("TurnsLocked")
-                    }
-                }, {
-                    key: "isDrivable",
-                    value: function() {
-                        return this._segment.isDrivable()
-                    }
-                }]),
-                e
-        }();
-    t.default = l,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    t.NONE = "NONE",
-        t.TURN_LEFT = "TURN_LEFT",
-        t.TURN_RIGHT = "TURN_RIGHT",
-        t.KEEP_LEFT = "KEEP_LEFT",
-        t.KEEP_RIGHT = "KEEP_RIGHT",
-        t.CONTINUE = "CONTINUE",
-        t.EXIT_LEFT = "EXIT_LEFT",
-        t.EXIT_RIGHT = "EXIT_RIGHT",
-        t.UTURN = "UTURN"
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(7),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(35),
-        c = n(d),
-        h = i(113),
-        f = n(h),
-        p = i(30),
-        g = n(p),
-        m = function() {
-            function e(t, i) {
-                (0,
-                    o.default)(this, e),
-                this._nodeRepository = t,
-                    this._segmentRepository = i
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "getConnectedVertices",
-                    value: function(e) {
-                        var t = this.getVertexNodeID(e),
-                            i = null;
-                        return null !== t && (i = this._nodeRepository.get(t)),
-                            null === i ? [] : this._getNodeConnectedVertices(i).filter(function(t) {
-                                return !t.equals(e)
-                            })
-                    }
-                }, {
-                    key: "_getNodeConnectedVertices",
-                    value: function(e) {
-                        var t = this,
-                            i = [],
-                            n = e.getID();
-                        return e.attributes.segIDs.forEach(function(e) {
-                                var s = t._segmentRepository.get(e);
-                                s && (s.attributes.fromNodeID === n && i.push(c.default.forwardOf(e)),
-                                    s.attributes.toNodeID === n && i.push(c.default.reverseOf(e)))
-                            }),
-                            i
-                    }
-                }, {
-                    key: "getVertexNodeID",
-                    value: function(e) {
-                        var t = this._segmentRepository.get(e.getSegmentID());
-                        return e.isForward() ? t.attributes.toNodeID : t.attributes.fromNodeID
-                    }
-                }, {
-                    key: "toJSON",
-                    value: function() {
-                        var e = this,
-                            t = {};
-                        return this._nodeRepository.getObjectArray().forEach(function(i) {
-                                i.isDeleted() || (t[i.getID()] = e._getNodeConnectedVertices(i).map(function(e) {
-                                    return e.getOpposite().toString()
-                                }))
-                            }),
-                            t
-                    }
-                }, {
-                    key: "isTurnLegal",
-                    value: function(e, t) {
-                        var i = this._segmentRepository.getDirectedSegment(e),
-                            n = this._segmentRepository.getDirectedSegment(t);
-                        return i.isDirectionAllowed() && n.isDirectionAllowed() && n.isDrivable()
-                    }
-                }, {
-                    key: "areVerticesConnected",
-                    value: function(e, t) {
-                        var i = this._segmentRepository.getDirectedSegment(e),
-                            n = this._segmentRepository.getDirectedSegment(t.getOpposite());
-                        return i.getNodeID() === n.getNodeID()
-                    }
-                }, {
-                    key: "fromJSON",
-                    value: function(e) {
-                        var t = this,
-                            i = (0,
-                                r.default)(e).map(function(e) {
-                                return new f.default({
-                                    id: parseInt(e, 10),
-                                    segIDs: []
-                                })
-                            });
-                        this._nodeRepository.put(i),
-                            (0,
-                                r.default)(e).forEach(function(i) {
-                                i = parseInt(i, 10),
-                                    e[i].map(function(e) {
-                                        return c.default.fromID(e)
-                                    }).forEach(function(e) {
-                                        var n = t._nodeRepository.get(i),
-                                            s = t._segmentRepository.get(e.getSegmentID());
-                                        s || (s = new g.default({
-                                                id: e.getSegmentID()
-                                            })),
-                                            t._segmentRepository.put(s),
-                                            e.isForward() ? s.attributes.toNodeID = i : s.attributes.fromNodeID = i,
-                                            _.contains(n.attributes.segIDs, s.getID()) || n.attributes.segIDs.push(s.getID())
-                                    })
-                            })
-                    }
-                }]),
-                e
-        }();
-    t.default = m,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(7),
-        r = n(s),
-        a = i(749),
-        o = n(a),
-        l = i(0),
-        u = n(l),
-        d = i(1),
-        c = n(d),
-        h = i(112),
-        f = n(h),
-        p = i(60),
-        g = n(p),
-        m = i(35),
-        v = n(m),
-        y = i(160),
-        b = n(y),
-        w = function() {
-            function e(t) {
-                (0,
-                    u.default)(this, e),
-                this._roadGraph = t,
-                    this._adjacencyList = new o.default,
-                    this._reverseAdjacencyList = new o.default
-            }
-            return (0,
-                    c.default)(e, [{
-                    key: "getTurn",
-                    value: function(e, t) {
-                        var i = null,
-                            n = this._adjacencyList.get(e.getID());
-                        return n && (i = n[t.getID()]),
-                            i || (i = g.default.createUnknown()),
-                            new f.default(e, t, i)
-                    }
-                }, {
-                    key: "_putTurnInList",
-                    value: function(e, t, i, n) {
-                        var s = e.get(t);
-                        s || (s = {},
-                                e.set(t, s)),
-                            s[i] = n
-                    }
-                }, {
-                    key: "_removeTurnFromList",
-                    value: function(e, t, i) {
-                        var n = e.get(t);
-                        n && (delete n[i],
-                            0 === (0,
-                                r.default)(n).length && e.delete(t))
-                    }
-                }, {
-                    key: "putTurn",
-                    value: function(e) {
-                        var t = e.getTurnData();
-                        if (null === t || t.isUnknown())
-                            return void this._deleteTurn(e);
-                        this._putTurnInList(this._adjacencyList, e.getFromVertex().getID(), e.getToVertex().getID(), t),
-                            this._putTurnInList(this._reverseAdjacencyList, e.getToVertex().getID(), e.getFromVertex().getID(), t),
-                            this.trigger("change", e)
-                    }
-                }, {
-                    key: "_deleteTurn",
-                    value: function(e) {
-                        this._removeTurnFromList(this._adjacencyList, e.getFromVertex().getID(), e.getToVertex().getID()),
-                            this._removeTurnFromList(this._reverseAdjacencyList, e.getToVertex().getID(), e.getFromVertex().getID()),
-                            this.trigger("change", e)
-                    }
-                }, {
-                    key: "getTurnThroughNode",
-                    value: function(e, t, i) {
-                        var n = v.default.for(t, e),
-                            s = v.default.for(i, e).getOpposite();
-                        return this.getTurn(n, s)
-                    }
-                }, {
-                    key: "_getVerticesForPrimaryIndex",
-                    value: function(e, t) {
-                        var i = e.get(t);
-                        return i ? (0,
-                            r.default)(i).map(function(e) {
-                            return v.default.fromID(e)
-                        }) : []
-                    }
-                }, {
-                    key: "getTurnsFrom",
-                    value: function(e) {
-                        var t = this;
-                        return this._getVerticesForPrimaryIndex(this._adjacencyList, e.getID()).map(function(i) {
-                            return t.getTurn(e, i)
-                        }).filter(function(e) {
-                            return !e.getTurnData().isUnknown()
-                        })
-                    }
-                }, {
-                    key: "getLegalTrivialTurnsFrom",
-                    value: function(e) {
-                        var t = this;
-                        return this._roadGraph.getConnectedVertices(e).filter(function(i) {
-                            return t._roadGraph.isTurnLegal(e, i)
-                        }).map(function(i) {
-                            return t.getTurn(e, i)
-                        })
-                    }
-                }, {
-                    key: "getTurnsTo",
-                    value: function(e) {
-                        var t = this;
-                        return this._getVerticesForPrimaryIndex(this._reverseAdjacencyList, e.getID()).map(function(i) {
-                            return t.getTurn(i, e)
-                        }).filter(function(e) {
-                            return !e.getTurnData().isUnknown()
-                        })
-                    }
-                }, {
-                    key: "clear",
-                    value: function() {
-                        this._adjacencyList.clear(),
-                            this._reverseAdjacencyList.clear()
-                    }
-                }, {
-                    key: "fromDescartes",
-                    value: function(e) {
-                        var t = this;
-                        (0,
-                            r.default)(e).forEach(function(i) {
-                                (0,
-                                    r.default)(e[i]).forEach(function(n) {
-                                    var s = e[i][n],
-                                        r = void 0;
-                                    if ("boolean" == typeof s)
-                                        r = s ? g.default.createAllowed() : g.default.createDisallowed();
-                                    else {
-                                        var a = void 0;
-                                        a = s.navigable ? g.default.State.ALLOWED : g.default.State.DISALLOWED;
-                                        var o = s.restrictions.map(function(e) {
-                                            return new b.default(e)
-                                        });
-                                        r = g.default.create(a, o, s.instructionOpCode, s.segmentPath)
-                                    }
-                                    t._putTurnInList(t._adjacencyList, i, n, r),
-                                        t._putTurnInList(t._reverseAdjacencyList, n, i, r)
-                                })
-                            }),
-                            this.trigger("change")
-                    }
-                }, {
-                    key: "deleteNewSegments",
-                    value: function(e) {
-                        var t = this;
-                        e.forEach(function(e) {
-                            t._adjacencyList.delete(v.default.forwardOf(e).getID()),
-                                t._adjacencyList.delete(v.default.reverseOf(e).getID()),
-                                t._reverseAdjacencyList.delete(v.default.forwardOf(e).getID()),
-                                t._reverseAdjacencyList.delete(v.default.reverseOf(e).getID())
-                        })
-                    }
-                }, {
-                    key: "toJSON",
-                    value: function() {
-                        var e = {};
-                        return this._adjacencyList.forEach(function(t, i) {
-                                var n = (0,
-                                    r.default)(t).filter(function(e) {
-                                    return null !== t[e]
-                                }).map(function(e) {
-                                    return t[e].isAllowed() || (e += "!"),
-                                        e
-                                });
-                                n.length > 0 && (e[i] = n)
-                            }),
-                            e
-                    }
-                }, {
-                    key: "fromJSON",
-                    value: function(e) {
-                        var t = this;
-                        (0,
-                            r.default)(e).forEach(function(i) {
-                                e[i].forEach(function(e) {
-                                    var n = g.default.createAllowed();
-                                    "!" === e.slice(-1) && (n = g.default.createDisallowed(),
-                                            e = e.slice(0, -1)),
-                                        t.putTurn(new f.default(v.default.fromID(i), v.default.fromID(e), n))
-                                })
-                            }),
-                            this.trigger("change")
-                    }
-                }]),
-                e
-        }();
-    _.extend(w.prototype, Backbone.Events),
-        t.default = w,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(27),
-        r = n(s),
-        a = i(222),
+        a = i(220),
         o = n(a),
         l = i(52),
         u = n(l),
-        d = i(236),
+        d = i(729),
         c = n(d),
-        h = i(248),
+        h = i(730),
         f = n(h),
-        p = i(239),
+        p = i(731),
         g = n(p),
         m = i(65),
         v = n(m),
@@ -18221,388 +16704,6 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = i(65),
-        s = function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }(n),
-        r = Backbone.Collection.extend({
-            model: s.default,
-            findOpposite: function(e) {
-                return this.find(function(t) {
-                    return t.isOppositeTo(e)
-                })
-            }
-        });
-    t.default = r,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(7),
-        r = n(s),
-        a = i(22),
-        o = n(a),
-        l = i(65),
-        u = n(l),
-        d = i(261),
-        c = n(d),
-        h = {
-            getSharedClosures: function(e) {
-                var t = this,
-                    i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                    n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
-                    s = _.indexBy(e, function(e) {
-                        return e.getID()
-                    });
-                n || (n = this._getClosuresForSegments(s));
-                var a = _(n).groupBy(function(e) {
-                        return t._getClosureKey(e, i)
-                    }),
-                    l = new c.default,
-                    d = !0,
-                    h = !1,
-                    f = void 0;
-                try {
-                    for (var p, g = (0,
-                            o.default)((0,
-                            r.default)(a)); !(d = (p = g.next()).done); d = !0) {
-                        var m = p.value,
-                            v = a[m],
-                            y = _.chain(v).map(function(e) {
-                                return s[e.segID]
-                            }).uniq().value(),
-                            b = new u.default({
-                                closures: v,
-                                segments: y,
-                                partial: y.length !== e.length,
-                                reverseSegments: this._getClosureReverseSegments(y, i)
-                            }),
-                            w = l.findOpposite(b);
-                        null != w ? w.mergeWithOpposite(b) : l.push(b)
-                    }
-                } catch (e) {
-                    h = !0,
-                        f = e
-                } finally {
-                    try {
-                        !d && g.return && g.return()
-                    } finally {
-                        if (h)
-                            throw f
-                    }
-                }
-                return l
-            },
-            _getClosuresForSegments: function(e) {
-                return W.model.roadClosures.getObjectArray(function(t) {
-                    return null != e[t.segID]
-                })
-            },
-            _getClosureReverseSegments: function(e, t) {
-                var i = _(e).invoke("getID");
-                return _(t).pick(i)
-            },
-            _getClosureKey: function(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                    i = e.forward || !1;
-                return !0 === t[e.segID] && (i = !i), [e.startDate, e.endDate, e.reason, e.location, i, e.createdBy, e.eventId].join(":")
-            }
-        };
-    t.default = h,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(109),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = i(12),
-        c = n(d),
-        h = i(38),
-        f = n(h),
-        p = i(163),
-        g = n(p),
-        m = i(114),
-        v = i(96),
-        y = function(e) {
-            var t = "";
-            t = e.isForward() ? I18n.t("segment.direction.1") : I18n.t("segment.direction.2");
-            var i = "";
-            return i = e.isAllowed() ? I18n.t("restrictions.editing.pickup.allowed") : e.isNotAllowed() ? I18n.t("restrictions.editing.pickup.not_allowed") : I18n.t("restrictions.editing.pickup.unknown"),
-                t + ": " + i
-        },
-        b = function(e) {
-            var t = new v.TimeFrameViewHelpers({
-                timeFrame: e.getTimeFrame()
-            });
-            return t.formatWeekdays() + " " + t.formatHours()
-        },
-        w = function(e, t) {
-            return function(i) {
-                return i.map(function(t) {
-                    return new e(t)
-                }).map(t)
-            }
-        },
-        E = function() {
-            function e(t) {
-                (0,
-                    o.default)(this, e),
-                this.dataModel = t
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "FORMATTERS",
-                    get: function() {
-                        var e = this;
-                        return {
-                            default: {
-                                lockRank: function(e) {
-                                    return c.default.formatRank(e)
-                                },
-                                streetID: function(t) {
-                                    var i = e.dataModel.streets.get(t),
-                                        n = "",
-                                        s = void 0,
-                                        r = void 0;
-                                    return null != i && (n = i.name,
-                                            i.isEmpty || (s = e.dataModel.cities.get(i.cityID),
-                                                r = s.attributes.name)),
-                                        _.compact([n, r]).join(", ")
-                                }
-                            },
-                            segment: {
-                                level: function(e) {
-                                    return 0 === e ? I18n.t("edit.segment.levels.0") : e
-                                },
-                                roadType: function(e) {
-                                    return I18n.t("segment.road_types." + e)
-                                },
-                                routingRoadType: function(e) {
-                                    return I18n.t("segment.road_types." + e)
-                                },
-                                primaryStreetID: function(t) {
-                                    return e.FORMATTERS.default.streetID(t)
-                                },
-                                streetIDs: function(t) {
-                                    return t.map(function(t) {
-                                        return e.FORMATTERS.default.streetID(t)
-                                    })
-                                },
-                                fwdMaxSpeed: function(e) {
-                                    return c.default.speedString(e)
-                                },
-                                revMaxSpeed: function(e) {
-                                    return c.default.speedString(e)
-                                },
-                                restrictions: w(f.default, b),
-                                pickupRestrictions: w(g.default, y)
-                            },
-                            venue: {
-                                services: function(e) {
-                                    return e.map(function(e) {
-                                        return I18n.t("venues.services." + e)
-                                    })
-                                },
-                                categories: function(e) {
-                                    return e.map(function(e) {
-                                        return I18n.t("venues.categories." + e)
-                                    })
-                                },
-                                openingHours: function(e) {
-                                    return e.map(function(e) {
-                                        return new m.OpeningHour(e)
-                                    }).map(c.default.formatOpeningHour)
-                                }
-                            },
-                            venueCategoryAttributes: {
-                                estimatedNumberOfSpots: function(e) {
-                                    return I18n.t("edit.landmark.parking.types.estimatedNumberOfSpots." + e)
-                                },
-                                paymentType: function(e) {
-                                    return e.map(function(e) {
-                                        return I18n.t("edit.landmark.parking.types.paymentType." + e)
-                                    })
-                                },
-                                costType: function(e) {
-                                    return I18n.t("edit.landmark.parking.types.costType." + e)
-                                },
-                                parkingType: function(e) {
-                                    return I18n.t("edit.landmark.parking.types.parkingType." + e)
-                                },
-                                lotType: function(e) {
-                                    return I18n.t("edit.landmark.parking.types.lotType." + e)
-                                }
-                            }
-                        }
-                    }
-                }]),
-                (0,
-                    u.default)(e, [{
-                    key: "formatObjectName",
-                    value: function(e) {
-                        var t = "objects." + e + ".name";
-                        return I18n.lookup(t) ? I18n.t(t) : e
-                    }
-                }, {
-                    key: "formatFieldName",
-                    value: function(e, t) {
-                        var i = "objects." + e + ".fields." + t,
-                            n = "objects.common.fields." + t;
-                        return I18n.lookup(i) ? I18n.t(i) : I18n.lookup(n) ? I18n.t(n) : t
-                    }
-                }, {
-                    key: "formatFlagName",
-                    value: function(e, t) {
-                        var i = "objects." + e + ".flag_fields." + t;
-                        return I18n.lookup(i) ? I18n.t(i) : t
-                    }
-                }, {
-                    key: "formatCategoryAttributeName",
-                    value: function(e) {
-                        var t = "objects.venue.category_fields." + e;
-                        return I18n.lookup(t) ? I18n.t(t) : e
-                    }
-                }, {
-                    key: "formatCategoryAttributeValue",
-                    value: function(e, t) {
-                        return this.formatFieldValue("venueCategoryAttributes", e, t)
-                    }
-                }, {
-                    key: "formatFieldValue",
-                    value: function(e, t, i) {
-                        var n = this.FORMATTERS.default[t],
-                            s = this.FORMATTERS[e],
-                            a = i;
-                        return s && s[t] ? a = s[t](i) : null != n && (a = n(i)),
-                            _.isString(a) ? a : Array.isArray(a) ? a.join(", ") : (0,
-                                r.default)(a)
-                    }
-                }, {
-                    key: "userProfile",
-                    value: function(e) {
-                        return c.default.userProfile(e, this.dataModel)
-                    }
-                }]),
-                e
-        }();
-    t.default = E,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(13),
-        r = n(s),
-        a = i(0),
-        o = n(a),
-        l = i(1),
-        u = n(l),
-        d = function() {
-            function e() {
-                (0,
-                    o.default)(this, e)
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "getWeekdaysGist",
-                    value: function() {
-                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
-                            t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "*",
-                            i = [],
-                            n = e.length;
-                        if (0 === n)
-                            return i;
-                        for (var s = 0, r = 0; s < n;) {
-                            var a = e[s];
-                            if (0 === s)
-                                i.push(a);
-                            else if (s === n - 1) {
-                                var o = e[s - 1];
-                                a === o + 1 && r > 0 && i.push(t),
-                                    i.push(a)
-                            } else {
-                                var l = e[s - 1],
-                                    u = e[s + 1];
-                                a !== l + 1 ? i.push(a) : a === u - 1 ? r++ : (r > 0 && i.push(t),
-                                    i.push(a),
-                                    r = 0)
-                            }
-                            s++
-                        }
-                        return i
-                    }
-                }, {
-                    key: "isValidTime",
-                    value: function(e) {
-                        if (!_.isString(e))
-                            return !1;
-                        var t = e.split(":");
-                        if (2 !== t.length)
-                            return !1;
-                        var i = (0,
-                                r.default)(t, 2),
-                            n = i[0],
-                            s = i[1];
-                        return !(!/([01]?[0-9]|2[0-3])/.test(n) || !/[0-5]\d/.test(s))
-                    }
-                }, {
-                    key: "_parseTimeStr",
-                    value: function(e) {
-                        if (this.isValidTime(e)) {
-                            var t = e.split(":");
-                            return {
-                                hour: parseInt(t[0], 10),
-                                minute: parseInt(t[1], 10)
-                            }
-                        }
-                        return {}
-                    }
-                }, {
-                    key: "compareTimes",
-                    value: function(e, t) {
-                        var i = this._parseTimeStr(e),
-                            n = this._parseTimeStr(t);
-                        return i.hour === n.hour ? i.minute > n.minute ? 1 : i.minute < n.minute ? -1 : 0 : i.hour > n.hour ? 1 : i.hour < n.hour ? -1 : 0
-                    }
-                }]),
-                e
-        }();
-    t.default = d,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -18613,13 +16714,13 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.InvalidLoginError = void 0;
-    var s = i(108),
+    var s = i(110),
         r = n(s),
-        a = i(107),
+        a = i(109),
         o = n(a),
-        l = i(88),
+        l = i(86),
         u = n(l),
-        d = i(157),
+        d = i(151),
         c = n(d),
         h = i(6),
         f = n(h),
@@ -18635,12 +16736,12 @@ webpackJsonp([0], [function(e, t, i) {
         k = n(E),
         M = i(4),
         S = n(M),
-        T = i(74),
-        C = i(767),
+        T = i(73),
+        C = i(744),
         I = n(C),
         A = i(57),
         R = n(A),
-        O = i(23),
+        O = i(24),
         D = "_csrf_token",
         L = /^(post|delete)$/,
         P = function(e) {
@@ -18793,8 +16894,9 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "login",
                     value: function(e, t) {
-                        var i = this;
-                        return this.expired && e !== this.user.userName && !1 === this.events.triggerEvent("beforeloginchanged") ? g.default.resolve() : this._doLogin(e, t).then(function(e) {
+                        var i = this,
+                            n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
+                        return this.expired && e !== this.user.userName && !1 === this.events.triggerEvent("beforeloginchanged") ? g.default.resolve() : this._doLogin(e, t, n).then(function(e) {
                             var t = new I.default(e, {
                                 parse: !0
                             });
@@ -18820,11 +16922,13 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_doLogin",
                     value: function(e, t) {
+                        var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
                         return this._getCsrfToken().then(function() {
                             return (0,
                                 O.httpPost)(W.Config.login.paths.create, {
                                 user_id: e,
-                                password: t
+                                password: t,
+                                recaptcha_response: i
                             })
                         }).then(function(e) {
                             if (!e.reply || !e.reply.login)
@@ -18896,7 +17000,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(158),
+    var n = i(152),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -18937,21 +17041,21 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(1),
         f = n(h),
-        p = i(72),
+        p = i(71),
         g = n(p),
-        m = i(776),
+        m = i(755),
         v = n(m),
-        y = i(777),
+        y = i(756),
         b = n(y),
-        w = i(778),
+        w = i(757),
         E = n(w),
-        k = i(779),
+        k = i(759),
         M = n(k),
-        S = i(780),
+        S = i(760),
         T = n(S),
-        C = i(250),
+        C = i(761),
         I = n(C),
-        A = i(11),
+        A = i(12),
         R = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -18964,18 +17068,18 @@ webpackJsonp([0], [function(e, t, i) {
         }(A),
         O = i(64),
         D = n(O),
-        L = i(126),
+        L = i(123),
         P = n(L),
-        N = i(173),
+        N = i(168),
         x = n(N),
         V = i(52),
         F = n(V),
-        j = i(34),
-        U = n(j),
-        B = i(259),
-        z = n(B),
-        G = i(258),
-        H = n(G),
+        U = i(34),
+        j = n(U),
+        B = i(96),
+        G = n(B),
+        z = i(762),
+        H = n(z),
         $ = void 0,
         Y = function() {
             function e(t) {
@@ -19088,11 +17192,11 @@ webpackJsonp([0], [function(e, t, i) {
                     this.addRepository("managedAreas", "managedArea"),
                     this.addRepository("majorTrafficEvents", R.MTE),
                     this.addRepository("restrictedAreas", R.RESTRICTED_AREA, {}, T.default),
-                    U.default.getRepositories().forEach(function(e) {
+                    j.default.getRepositories().forEach(function(e) {
                         i.addRepository(e.repositoryName, e.featureType, e.repositoryConfig, e.repositoryClass)
                     }),
                     this._roadGraph = new H.default(this.nodes, this.segments),
-                    this._turnGraph = new z.default(this._roadGraph),
+                    this._turnGraph = new G.default(this._roadGraph),
                     W.prefs.on("change:isImperial", function(e, t) {
                         null !== t && (this.isImperial = t)
                     }, this),
@@ -19380,6 +17484,112 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(10),
+        v = n(m),
+        _ = i(123),
+        y = n(_),
+        b = i(19),
+        w = n(b),
+        E = i(17),
+        k = n(E),
+        M = function(e) {
+            function t(e, i, n) {
+                var s = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
+                (0,
+                    o.default)(this, t);
+                var a = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, s));
+                return a._fromVenues = e,
+                    a._toVenue = i,
+                    a.newAttributes = n,
+                    a
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this;
+                        this._fromVenues.map(function(e) {
+                                return e.getID()
+                            }).join(" "),
+                            this._toVenue.getID(),
+                            this._toVenue.setPendingMerge(!0),
+                            this._fromVenues.forEach(function(t) {
+                                e.doSubAction(new y.default(t, {
+                                    dontSerialize: !0
+                                }))
+                            }),
+                            this.doSubAction(new w.default(this._toVenue, this.newAttributes, {
+                                dontSerialize: !0
+                            }))
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        (0,
+                            f.default)(t.prototype.__proto__ || (0,
+                            r.default)(t.prototype), "undoAction", this).call(this),
+                            this._triggerMainChanged()
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this._toVenue.setPendingMerge(!0),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "redoAction", this).call(this),
+                            this._triggerMainChanged()
+                    }
+                }, {
+                    key: "_triggerMainChanged",
+                    value: function() {
+                        this.model.getRepository(this._toVenue.type).changed(this._toVenue)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return {
+                            _objectType: this._toVenue.type,
+                            action: k.default.TYPE.MERGE,
+                            attributes: {
+                                mergedFromVenueIds: this._fromVenues.map(function(e) {
+                                    return e.getID()
+                                }),
+                                mainVenue: this.newAttributes
+                            }
+                        }
+                    }
+                }]),
+                t
+        }(v.default);
+    t.default = M,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
@@ -19602,7 +17812,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(786),
+    var n = i(768),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -19627,7 +17837,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(272),
+    var n = i(249),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -19668,9 +17878,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(44),
         r = n(s),
-        a = i(109),
+        a = i(111),
         o = n(a),
-        l = i(13),
+        l = i(11),
         u = n(l),
         d = i(70),
         c = n(d),
@@ -20281,9 +18491,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(26),
         r = n(s),
-        a = i(162),
+        a = i(205),
         o = n(a),
         l = {
             open: "open",
@@ -20422,13 +18632,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(866),
+    var s = i(849),
         r = n(s),
-        a = i(247),
+        a = i(853),
         o = n(a),
-        l = i(282),
+        l = i(259),
         u = n(l),
-        d = i(12),
+        d = i(13),
         c = n(d),
         h = Marionette.View.extend({
             APPROVE_ACTION_NAMES: {
@@ -20571,8 +18781,11 @@ webpackJsonp([0], [function(e, t, i) {
                 getRejectActionName: function() {
                     return I18n.t("venues.update_requests.panel.action.reject")
                 },
-                getReopenActionName: function() {
-                    return I18n.t("venues.update_requests.panel.action.reopen")
+                getRejectedLabel: function() {
+                    return I18n.t("venues.update_requests.panel.rejected")
+                },
+                getApprovedLabel: function() {
+                    return I18n.t("venues.update_requests.panel.approved")
                 },
                 getNoPermissionsMessage: function() {
                     if (this.model.get("isInEditArea")) {
@@ -20595,6 +18808,15 @@ webpackJsonp([0], [function(e, t, i) {
                 },
                 getCarouselUniqueId: function() {
                     return "place-update-carousel-" + this.model.get("id").replace(/[^\d\w]/g, "")
+                },
+                isOpened: function() {
+                    return null === this.model.get("approved")
+                },
+                isApproved: function() {
+                    return !0 === this.model.get("approved")
+                },
+                isRejected: function() {
+                    return !1 === this.model.get("approved")
                 }
             }
         });
@@ -20611,11 +18833,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(12),
+    var s = i(13),
         r = n(s),
-        a = i(867),
+        a = i(850),
         o = n(a),
-        l = i(281),
+        l = i(258),
         u = n(l),
         d = Marionette.View.extend({
             tagName: "li",
@@ -20735,9 +18957,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(178),
+    var s = i(171),
         r = n(s),
-        a = i(25),
+        a = i(26),
         o = n(a),
         l = Marionette.Behavior.extend({
             defaults: {
@@ -20787,7 +19009,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(76),
+    var n = i(74),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -20907,13 +19129,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(22),
         o = n(a),
-        l = i(285),
+        l = i(262),
         u = n(l),
-        d = i(889),
+        d = i(873),
         c = n(d),
-        h = i(890),
+        h = i(874),
         f = n(h),
-        p = i(892),
+        p = i(876),
         g = n(p),
         m = Marionette.Object.extend({
             ignoredErrors: {
@@ -20948,6 +19170,7 @@ webpackJsonp([0], [function(e, t, i) {
             fail: function(e) {
                 var t = this;
                 return this.ignoredErrors[e[0].get("code")] ? void this.overlayRenderer.destroy() : (1 === e.length && this._showErrorPoint(e[0]),
+                    this._reportErrors(e),
                     e = this._collateErrors(e),
                     this.errorCollection = new c.default(e),
                     this.errorListView = new f.default({
@@ -20961,6 +19184,12 @@ webpackJsonp([0], [function(e, t, i) {
                     this.listenTo(this.errorListView, "click:focus", this._showErrorPoint),
                     W.accelerators.events.register("save", this, this._onSaveClicked),
                     this.options.popoverRegion.show(this.errorListView))
+            },
+            _reportErrors: function() {
+                (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : []).forEach(function(e) {
+                    var t = e.get("code");
+                    W.Report.saveError(t)
+                })
             },
             _collateErrors: function(e) {
                 var t = [],
@@ -21048,7 +19277,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(53),
         u = n(l),
-        d = i(887),
+        d = i(871),
         c = n(d),
         h = {
             fillColor: "black",
@@ -21244,7 +19473,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(267),
+    var n = i(243),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -21312,23 +19541,23 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(0),
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(25),
+        d = i(26),
         c = n(d),
         h = i(35),
         f = n(h),
-        p = i(907),
+        p = i(891),
         g = n(p),
-        m = i(918),
+        m = i(903),
         v = n(m),
-        _ = i(292),
+        _ = i(271),
         y = n(_),
-        b = i(919),
+        b = i(904),
         w = n(b),
         E = function() {
             function e(t, i, n) {
@@ -21455,7 +19684,156 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(10),
+        g = n(p),
+        m = i(36),
+        v = n(m),
+        _ = function(e) {
+            function t(e) {
+                (0,
+                    o.default)(this, t);
+                var i = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this));
+                return i._turn = e,
+                    i
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        if (this.model.segments.getDirectedSegment(this._turn.getFromVertex()).areTurnsLocked()) {
+                            var e = this._turn,
+                                t = this._turn.getTurnData();
+                            t = t.withToggledState(!t.isAllowed()),
+                                e = e.withTurnData(t);
+                            var i = this.model.getTurnGraph(),
+                                n = new v.default(i, e);
+                            this.doSubAction(n)
+                        } else {
+                            var s = this.model.segments.get(this._turn.getFromVertex().getSegmentID()),
+                                r = this.model.nodes.get(this.model.getRoadGraph().getVertexNodeID(this._turn.getFromVertex()));
+                            this.doSubAction(s.lockTurns(r, !0))
+                        }
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = _,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(11),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = function() {
+            function e() {
+                (0,
+                    o.default)(this, e)
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "getWeekdaysGist",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
+                            t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "*",
+                            i = [],
+                            n = e.length;
+                        if (0 === n)
+                            return i;
+                        for (var s = 0, r = 0; s < n;) {
+                            var a = e[s];
+                            if (0 === s)
+                                i.push(a);
+                            else if (s === n - 1) {
+                                var o = e[s - 1];
+                                a === o + 1 && r > 0 && i.push(t),
+                                    i.push(a)
+                            } else {
+                                var l = e[s - 1],
+                                    u = e[s + 1];
+                                a !== l + 1 ? i.push(a) : a === u - 1 ? r++ : (r > 0 && i.push(t),
+                                    i.push(a),
+                                    r = 0)
+                            }
+                            s++
+                        }
+                        return i
+                    }
+                }, {
+                    key: "isValidTime",
+                    value: function(e) {
+                        if (!_.isString(e))
+                            return !1;
+                        var t = e.split(":");
+                        if (2 !== t.length)
+                            return !1;
+                        var i = (0,
+                                r.default)(t, 2),
+                            n = i[0],
+                            s = i[1];
+                        return !(!/([01]?[0-9]|2[0-3])/.test(n) || !/[0-5]\d/.test(s))
+                    }
+                }, {
+                    key: "_parseTimeStr",
+                    value: function(e) {
+                        if (this.isValidTime(e)) {
+                            var t = e.split(":");
+                            return {
+                                hour: parseInt(t[0], 10),
+                                minute: parseInt(t[1], 10)
+                            }
+                        }
+                        return {}
+                    }
+                }, {
+                    key: "compareTimes",
+                    value: function(e, t) {
+                        var i = this._parseTimeStr(e),
+                            n = this._parseTimeStr(t);
+                        return i.hour === n.hour ? i.minute > n.minute ? 1 : i.minute < n.minute ? -1 : 0 : i.hour > n.hour ? 1 : i.hour < n.hour ? -1 : 0
+                    }
+                }]),
+                e
+        }();
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(23),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -21470,17 +19848,17 @@ webpackJsonp([0], [function(e, t, i) {
         m = i(4),
         v = n(m),
         _ = i(48),
-        y = i(910),
+        y = i(895),
         b = n(y),
-        w = i(911),
+        w = i(896),
         E = n(w),
-        k = i(912),
+        k = i(897),
         M = n(k),
-        S = i(913),
+        S = i(898),
         T = n(S),
-        C = i(914),
+        C = i(899),
         I = n(C),
-        A = i(915),
+        A = i(900),
         R = n(A),
         O = i(38),
         D = n(O),
@@ -21807,9 +20185,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(96),
+        p = i(98),
         g = i(48),
-        m = i(111),
+        m = i(112),
         v = i(38),
         y = n(v),
         b = function(e) {
@@ -22156,7 +20534,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(35),
         u = n(l),
-        d = i(10),
+        d = i(9),
         c = n(d),
         h = function() {
             function e(t, i, n, s, a) {
@@ -22319,20 +20697,20 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(133),
+    var s = i(128),
         r = n(s),
-        a = i(117),
-        o = i(12),
+        a = i(115),
+        o = i(13),
         l = n(o),
-        u = i(933),
+        u = i(918),
         d = n(u),
-        c = i(934),
+        c = i(919),
         h = n(c),
-        f = i(935),
+        f = i(920),
         p = n(f),
-        g = i(936),
+        g = i(921),
         m = n(g),
-        v = i(937),
+        v = i(922),
         y = n(v),
         b = I18n.t("internal.wiki_best_practices_link"),
         w = I18n.t("internal.wiki_area_manager"),
@@ -22450,7 +20828,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(133),
+    var n = i(128),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -22600,7 +20978,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -22612,11 +20990,11 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(976),
+        m = i(969),
         v = n(m),
-        y = i(159),
+        y = i(153),
         b = n(y),
-        w = i(268),
+        w = i(244),
         E = n(w),
         k = function(e) {
             function t() {
@@ -22914,13 +21292,13 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(65),
         u = n(l),
-        d = i(262),
+        d = i(984),
         c = n(d),
-        h = i(260),
+        h = i(240),
         f = n(h),
-        p = i(990),
+        p = i(986),
         g = n(p),
-        m = i(992),
+        m = i(988),
         v = n(m),
         y = i(97),
         b = Marionette.Object.extend({
@@ -23327,7 +21705,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        a = i(17),
+        a = i(16),
         o = n(a),
         l = i(0),
         u = n(l),
@@ -23337,7 +21715,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(138),
+        m = i(132),
         v = n(m),
         y = function(e) {
             function t(e) {
@@ -23455,7 +21833,7 @@ webpackJsonp([0], [function(e, t, i) {
         t.LandmarkMerger = t.MAIN_CATEGORY = t.CUSTOM_DESCRIPTION = t.PARKING_FIELDS = t.VENUE_FIELDS = void 0;
     var s = i(58),
         r = n(s),
-        a = i(27),
+        a = i(23),
         o = n(a),
         l = i(0),
         u = n(l),
@@ -23463,12 +21841,12 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(44),
         f = n(h),
-        p = i(12),
+        p = i(13),
         g = n(p),
-        m = i(114),
-        v = i(115),
+        m = i(113),
+        v = i(162),
         y = n(v),
-        b = i(61),
+        b = i(62),
         w = {
             NAME: "name",
             ALIASES: "aliases",
@@ -23892,12 +22270,12 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(10),
+        p = i(9),
         g = n(p),
-        m = i(23),
-        v = i(1023),
+        m = i(24),
+        v = i(1019),
         _ = n(v),
-        y = i(1024),
+        y = i(1020),
         b = n(y),
         w = new RegExp(/^\s?(-?\d+(?:\.\d+)?)\s*[,\s]{1}\s*(-?\d+(?:\.\d+)?)\s*$/),
         E = [{
@@ -24208,11 +22586,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(17),
+    var s = i(16),
         r = n(s),
-        a = i(1025),
+        a = i(1021),
         o = n(a),
-        l = i(1026),
+        l = i(1022),
         u = n(l),
         d = Marionette.Object.extend({
             initialize: function(e) {
@@ -24353,10 +22731,93 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(1042),
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(10),
+        g = n(p),
+        m = i(19),
+        v = n(m),
+        y = function(e) {
+            function t(e, i, n, s) {
+                (0,
+                    o.default)(this, t);
+                var a = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, s));
+                return a.bigJunctionID = e,
+                    a.segments = i,
+                    a.action = n,
+                    a.connectedSegments = null,
+                    a
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this._updateConnectedSegments(this.segments, "from"),
+                            t = this._updateConnectedSegments(this.segments, "to");
+                        this.connectedSegments = e.concat(t)
+                    }
+                }, {
+                    key: "_updateConnectedSegments",
+                    value: function(e, i) {
+                        for (var n = [], s = 0; s < e.length; s++) {
+                            var r = e[s],
+                                a = r.attributes[i + "NodeID"],
+                                o = r.getConnectedSegmentsByDirection(i);
+                            n.concat(o);
+                            for (var l = 0; l < o.length; l++) {
+                                var u = o[l];
+                                if (u.isDrivable()) {
+                                    var d = void 0;
+                                    d = u.attributes.fromNodeID === a ? "from" : "to";
+                                    var c = {},
+                                        h = d + "Crossroads",
+                                        f = _.clone(u.attributes[h]);
+                                    t.ADD_JUNCTION_TO_SEGMENT === this.action ? _.contains(f, this.bigJunctionID) || f.push(this.bigJunctionID) : f = _.without(f, this.bigJunctionID),
+                                        c[h] = f,
+                                        this.doSubAction(new v.default(u, c, {
+                                            dontSerialize: !0
+                                        }))
+                                }
+                            }
+                        }
+                        return n
+                    }
+                }]),
+                t
+        }(g.default);
+    _.extend(y, {
+            ADD_JUNCTION_TO_SEGMENT: "add",
+            REMOVE_JUNCTION_FROM_SEGMENT: "remove"
+        }),
+        t.default = y,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(1040),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -24517,23 +22978,23 @@ webpackJsonp([0], [function(e, t, i) {
     t.default = n,
         e.exports = t.default
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
-    i(441),
-        e.exports = i(1071)
+    i(421),
+        e.exports = i(1069)
 }, function(e, t, i) {
     "use strict";
-    i(442),
+    i(422),
         i(32),
-        i(731),
+        i(723),
+        i(726),
+        i(732),
+        i(733),
         i(734),
-        i(755),
-        i(756),
-        i(757),
-        i(758),
-        i(759);
-    var n = i(760),
-        s = i(1069);
-    i(12),
-        i(1070),
+        i(735),
+        i(736);
+    var n = i(737),
+        s = i(1067);
+    i(13),
+        i(1068),
         $(document).ready(function() {
             W.app = new n,
                 W.prefs = new s,
@@ -24699,15 +23160,15 @@ webpackJsonp([0], [function(e, t, i) {
         }
 }, function(e, t, i) {
     e.exports = {
-        default: i(444),
+        default: i(424),
         __esModule: !0
     }
 }, function(e, t, i) {
     i(66),
         i(56),
-        e.exports = i(452)
+        e.exports = i(432)
 }, , , , , , , , function(e, t, i) {
-    var n = i(101),
+    var n = i(103),
         s = i(28)("iterator"),
         r = i(67);
     e.exports = i(14).isIterable = function(e) {
@@ -24717,10 +23178,10 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     i(66),
         i(56),
-        e.exports = i(454)
+        e.exports = i(434)
 }, function(e, t, i) {
     var n = i(33),
-        s = i(149);
+        s = i(143);
     e.exports = i(14).getIterator = function(e) {
         var t = s(e);
         if ("function" != typeof t)
@@ -24728,11 +23189,11 @@ webpackJsonp([0], [function(e, t, i) {
         return n(t.call(e))
     }
 }, function(e, t, i) {
-    i(456),
+    i(436),
         e.exports = i(14).Object.entries
 }, function(e, t, i) {
     var n = i(21),
-        s = i(193)(!0);
+        s = i(188)(!0);
     n(n.S, "Object", {
         entries: function(e) {
             return s(e)
@@ -24740,24 +23201,24 @@ webpackJsonp([0], [function(e, t, i) {
     })
 }, function(e, t, i) {
     e.exports = {
-        default: i(458),
+        default: i(438),
         __esModule: !0
     }
 }, function(e, t, i) {
-    i(459),
+    i(439),
         e.exports = i(14).Object.assign
 }, function(e, t, i) {
     var n = i(21);
     n(n.S + n.F, "Object", {
-        assign: i(460)
+        assign: i(440)
     })
 }, function(e, t, i) {
     "use strict";
     var n = i(68),
-        s = i(102),
-        r = i(86),
+        s = i(104),
+        r = i(84),
         a = i(69),
-        o = i(140),
+        o = i(134),
         l = Object.assign;
     e.exports = !l || i(46)(function() {
             var e = {},
@@ -24777,18 +23238,18 @@ webpackJsonp([0], [function(e, t, i) {
         } :
         l
 }, function(e, t, i) {
-    i(462),
+    i(442),
         e.exports = i(14).Object.getPrototypeOf
 }, function(e, t, i) {
     var n = i(69),
-        s = i(192);
-    i(103)("getPrototypeOf", function() {
+        s = i(187);
+    i(105)("getPrototypeOf", function() {
         return function(e) {
             return s(n(e))
         }
     })
 }, function(e, t, i) {
-    i(464);
+    i(444);
     var n = i(14).Object;
     e.exports = function(e, t, i) {
         return n.defineProperty(e, t, i)
@@ -24799,15 +23260,15 @@ webpackJsonp([0], [function(e, t, i) {
         defineProperty: i(37).f
     })
 }, , , , , , , , , , function(e, t, i) {
-    i(475),
+    i(455),
         e.exports = i(14).Object.setPrototypeOf
 }, function(e, t, i) {
     var n = i(21);
     n(n.S, "Object", {
-        setPrototypeOf: i(476).set
+        setPrototypeOf: i(456).set
     })
 }, function(e, t, i) {
-    var n = i(31),
+    var n = i(30),
         s = i(33),
         r = function(e, t) {
             if (s(e), !n(t) && null !== t)
@@ -24816,7 +23277,7 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = {
         set: Object.setPrototypeOf || ("__proto__" in {} ? function(e, t, n) {
             try {
-                n = i(43)(Function.call, i(105).f(Object.prototype, "__proto__").set, 2),
+                n = i(43)(Function.call, i(107).f(Object.prototype, "__proto__").set, 2),
                     n(e, []),
                     t = !(e instanceof Array)
             } catch (e) {
@@ -24831,7 +23292,7 @@ webpackJsonp([0], [function(e, t, i) {
         check: r
     }
 }, function(e, t, i) {
-    i(478);
+    i(458);
     var n = i(14).Object;
     e.exports = function(e, t) {
         return n.create(e, t)
@@ -24839,33 +23300,33 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     var n = i(21);
     n(n.S, "Object", {
-        create: i(84)
+        create: i(82)
     })
 }, function(e, t, i) {
-    i(106),
+    i(108),
         i(56),
         i(66),
-        i(480),
-        i(482),
-        i(483),
+        i(460),
+        i(462),
+        i(463),
         e.exports = i(14).Promise
 }, function(e, t, i) {
     "use strict";
-    var n, s, r, a, o = i(98),
-        l = i(24),
+    var n, s, r, a, o = i(100),
+        l = i(25),
         u = i(43),
-        d = i(101),
+        d = i(103),
         c = i(21),
-        h = i(31),
+        h = i(30),
         f = i(54),
-        p = i(154),
-        g = i(87),
-        m = i(197),
-        v = i(198).set,
-        _ = i(481)(),
-        y = i(155),
-        b = i(200),
-        w = i(201),
+        p = i(148),
+        g = i(85),
+        m = i(192),
+        v = i(193).set,
+        _ = i(461)(),
+        y = i(149),
+        b = i(195),
+        w = i(196),
         E = l.TypeError,
         k = l.process,
         M = l.Promise,
@@ -25003,7 +23464,7 @@ webpackJsonp([0], [function(e, t, i) {
                     this._h = 0,
                     this._n = !1
             },
-            n.prototype = i(156)(M.prototype, {
+            n.prototype = i(150)(M.prototype, {
                 then: function(e, t) {
                     var i = C(m(this, M));
                     return i.ok = "function" != typeof e || e,
@@ -25031,8 +23492,8 @@ webpackJsonp([0], [function(e, t, i) {
         c(c.G + c.W + c.F * !I, {
             Promise: M
         }),
-        i(85)(M, "Promise"),
-        i(202)("Promise"),
+        i(83)(M, "Promise"),
+        i(197)("Promise"),
         a = i(14).Promise,
         c(c.S + c.F * !I, "Promise", {
             reject: function(e) {
@@ -25047,7 +23508,7 @@ webpackJsonp([0], [function(e, t, i) {
                 return w(o && this === a ? M : this, e)
             }
         }),
-        c(c.S + c.F * !(I && i(203)(function(e) {
+        c(c.S + c.F * !(I && i(198)(function(e) {
             M.all(e).catch(T)
         })), "Promise", {
             all: function(e) {
@@ -25089,12 +23550,12 @@ webpackJsonp([0], [function(e, t, i) {
             }
         })
 }, function(e, t, i) {
-    var n = i(24),
-        s = i(198).set,
+    var n = i(25),
+        s = i(193).set,
         r = n.MutationObserver || n.WebKitMutationObserver,
         a = n.process,
         o = n.Promise,
-        l = "process" == i(82)(a);
+        l = "process" == i(80)(a);
     e.exports = function() {
         var e, t, i, u = function() {
             var n, s;
@@ -25148,9 +23609,9 @@ webpackJsonp([0], [function(e, t, i) {
     "use strict";
     var n = i(21),
         s = i(14),
-        r = i(24),
-        a = i(197),
-        o = i(201);
+        r = i(25),
+        a = i(192),
+        o = i(196);
     n(n.P + n.R, "Promise", {
         finally: function(e) {
             var t = a(this, s.Promise || r.Promise),
@@ -25171,8 +23632,8 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(21),
-        s = i(155),
-        r = i(200);
+        s = i(149),
+        r = i(195);
     n(n.S, "Promise", {
         try: function(e) {
             var t = s.f(this),
@@ -25191,19 +23652,19 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     i(56),
-        i(486),
+        i(466),
         e.exports = i(14).Array.from
 }, function(e, t, i) {
     "use strict";
     var n = i(43),
         s = i(21),
         r = i(69),
-        a = i(195),
-        o = i(196),
-        l = i(99),
-        u = i(204),
-        d = i(149);
-    s(s.S + s.F * !i(203)(function(e) {
+        a = i(190),
+        o = i(191),
+        l = i(101),
+        u = i(199),
+        d = i(143);
+    s(s.S + s.F * !i(198)(function(e) {
         Array.from(e)
     }), "Array", {
         from: function(e) {
@@ -25228,17 +23689,17 @@ webpackJsonp([0], [function(e, t, i) {
         }
     })
 }, function(e, t, i) {
-    i(488),
+    i(468),
         e.exports = i(14).Reflect.construct
 }, function(e, t, i) {
     var n = i(21),
-        s = i(84),
+        s = i(82),
         r = i(54),
         a = i(33),
-        o = i(31),
+        o = i(30),
         l = i(46),
-        u = i(489),
-        d = (i(24).Reflect || {}).construct,
+        u = i(469),
+        d = (i(25).Reflect || {}).construct,
         c = l(function() {
             function e() {}
             return !(d(function() {}, [], e) instanceof e)
@@ -25279,8 +23740,8 @@ webpackJsonp([0], [function(e, t, i) {
 }, function(e, t, i) {
     "use strict";
     var n = i(54),
-        s = i(31),
-        r = i(199),
+        s = i(30),
+        r = i(194),
         a = [].slice,
         o = {},
         l = function(e, t, i) {
@@ -25302,12 +23763,12 @@ webpackJsonp([0], [function(e, t, i) {
             o
     }
 }, function(e, t, i) {
-    i(491),
+    i(471),
         e.exports = i(14).Object.keys
 }, function(e, t, i) {
     var n = i(69),
         s = i(68);
-    i(103)("keys", function() {
+    i(105)("keys", function() {
         return function(e) {
             return s(n(e))
         }
@@ -25324,200 +23785,198 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./Waze/Modules/BigJunction/templates/junction-entry-item.hamlc": 493,
-        "./Waze/Modules/BigJunction/templates/junction-entry-layout.hamlc": 494,
-        "./Waze/Modules/Chat/View/chat.hamlc": 495,
-        "./Waze/Modules/Chat/View/chat_message.hamlc": 496,
-        "./Waze/Modules/Chat/View/chat_user.hamlc": 497,
-        "./Waze/Modules/Cities/templates/feature_editor.hamlc": 498,
-        "./Waze/Modules/Cities/templates/layer_switcher.hamlc": 499,
-        "./Waze/Modules/Closures/templates/edit.hamlc": 500,
-        "./Waze/Modules/Closures/templates/item.hamlc": 501,
-        "./Waze/Modules/Closures/templates/layout.hamlc": 502,
-        "./Waze/Modules/Closures/templates/list.hamlc": 503,
-        "./Waze/Modules/Comments/templates/feature_editor.hamlc": 504,
-        "./Waze/Modules/Comments/templates/name_editor.hamlc": 505,
-        "./Waze/Modules/Conversation/templates/item.hamlc": 506,
-        "./Waze/Modules/Conversation/templates/list.hamlc": 507,
-        "./Waze/Modules/Conversation/templates/text.hamlc": 508,
-        "./Waze/Modules/ElementHistory/templates/history_main.hamlc": 509,
-        "./Waze/Modules/ElementHistory/templates/tx_item.hamlc": 510,
-        "./Waze/Modules/ElementHistory/templates/tx_object_main.hamlc": 511,
-        "./Waze/Modules/ElementHistory/templates/tx_object_related.hamlc": 512,
-        "./Waze/Modules/Feed/templates/feed.hamlc": 513,
-        "./Waze/Modules/Feed/templates/feed_group.hamlc": 514,
-        "./Waze/Modules/Feed/templates/issue_item.hamlc": 515,
-        "./Waze/Modules/Feed/templates/message_item.hamlc": 516,
-        "./Waze/Modules/Feed/templates/notification_detail.hamlc": 517,
-        "./Waze/Modules/Feed/templates/notification_item.hamlc": 518,
-        "./Waze/Modules/GeoLocation/templates/pan_button.hamlc": 519,
-        "./Waze/Modules/LayerSwitcher/templates/checkbox.hamlc": 520,
-        "./Waze/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 521,
-        "./Waze/Modules/LayerSwitcher/templates/layout.hamlc": 522,
-        "./Waze/Modules/LayerSwitcher/templates/module-togglers.hamlc": 523,
-        "./Waze/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 574,
-        "./Waze/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 575,
-        "./Waze/Modules/Login/templates/email_verification.hamlc": 576,
-        "./Waze/Modules/Login/templates/login_main.hamlc": 577,
-        "./Waze/Modules/Login/templates/login_view.hamlc": 578,
-        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 579,
-        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 580,
-        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 581,
-        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 582,
-        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 583,
-        "./Waze/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 584,
-        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 585,
-        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 586,
-        "./Waze/Modules/MTE/templates/mte_list.hamlc": 587,
-        "./Waze/Modules/MTE/templates/sidebar.hamlc": 588,
-        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 589,
-        "./Waze/Modules/MTE/templates/topbar.hamlc": 590,
-        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 591,
-        "./Waze/Modules/MapControls/templates/overlay-buttons.hamlc": 592,
-        "./Waze/Modules/MapControls/templates/permalink.hamlc": 593,
-        "./Waze/Modules/MapControls/templates/zoombar.hamlc": 594,
-        "./Waze/Modules/MergeLandmark/templates/description_selection_view.hamlc": 595,
-        "./Waze/Modules/MergeLandmark/templates/external_providers_view.hamlc": 596,
-        "./Waze/Modules/MergeLandmark/templates/image_item_view.hamlc": 597,
-        "./Waze/Modules/MergeLandmark/templates/images_selection_view.hamlc": 598,
-        "./Waze/Modules/MergeLandmark/templates/layout.hamlc": 599,
-        "./Waze/Modules/MergeLandmark/templates/main_selection_view.hamlc": 600,
-        "./Waze/Modules/MergeLandmark/templates/multi_selection_view.hamlc": 601,
-        "./Waze/Modules/MergeLandmark/templates/single_selection_view.hamlc": 602,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 603,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/item.hamlc": 604,
-        "./Waze/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 605,
-        "./Waze/Modules/Problems/templates/_navigation.hamlc": 606,
-        "./Waze/Modules/Problems/templates/closure_description.hamlc": 607,
-        "./Waze/Modules/Problems/templates/edit.hamlc": 608,
-        "./Waze/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 609,
-        "./Waze/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 610,
-        "./Waze/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 611,
-        "./Waze/Modules/Restrictions/templates/restriction_edit.hamlc": 612,
-        "./Waze/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 613,
-        "./Waze/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 614,
-        "./Waze/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 615,
-        "./Waze/Modules/Restrictions/templates/restrictions_list_item.hamlc": 616,
-        "./Waze/Modules/Restrictions/templates/restrictions_main.hamlc": 617,
-        "./Waze/Modules/Restrictions/templates/restrictions_pickup.hamlc": 618,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 619,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 620,
-        "./Waze/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 621,
-        "./Waze/Modules/Restrictions/templates/timeframe_edit.hamlc": 622,
-        "./Waze/Modules/Save/templates/error_item.hamlc": 623,
-        "./Waze/Modules/Save/templates/error_list.hamlc": 624,
-        "./Waze/Modules/Save/templates/success.hamlc": 625,
-        "./Waze/Modules/StreetView/templates/street-view-button.hamlc": 626,
-        "./Waze/Modules/StreetView/templates/street-view.hamlc": 627,
-        "./Waze/Modules/Toolbar/templates/search-empty-view.hamlc": 628,
-        "./Waze/Modules/Toolbar/templates/search-result-item.hamlc": 629,
-        "./Waze/Modules/Toolbar/templates/search.hamlc": 630,
-        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 631,
-        "./Waze/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 632,
-        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 633,
-        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 634,
-        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 635,
-        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 636,
-        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 637,
-        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 638,
-        "./Waze/Modules/Topbar/templates/layout.hamlc": 639,
-        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 640,
-        "./Waze/Modules/Topbar/templates/location-info.hamlc": 641,
-        "./templates/add_update_details.hamlc": 642,
-        "./templates/additional_details.hamlc": 643,
-        "./templates/address/alt-street.hamlc": 644,
-        "./templates/address/edit-alt-street.hamlc": 645,
-        "./templates/address/edit.hamlc": 646,
-        "./templates/archive-panel.hamlc": 647,
-        "./templates/archive-sessions.hamlc": 648,
-        "./templates/big-junction-edit.hamlc": 649,
-        "./templates/camera-edit.hamlc": 650,
-        "./templates/chrome_autofill_off.hamlc": 651,
-        "./templates/editable-areas.hamlc": 652,
-        "./templates/focus-buttons.hamlc": 653,
-        "./templates/house-number.hamlc": 654,
-        "./templates/house-numbers-lightbox.hamlc": 655,
-        "./templates/instruction-override.hamlc": 656,
-        "./templates/keyboard_shortcuts/list.hamlc": 657,
-        "./templates/keyboard_shortcuts/modal.hamlc": 658,
-        "./templates/location-message.hamlc": 659,
-        "./templates/location-switcher.hamlc": 660,
-        "./templates/login/sandbox-message.hamlc": 661,
-        "./templates/map.hamlc": 662,
-        "./templates/merge_venues/feature_editor/landmark-item-view.hamlc": 663,
-        "./templates/merge_venues/feature_editor/merge-venues.hamlc": 664,
-        "./templates/node-edit.hamlc": 665,
-        "./templates/opening_hours/add.hamlc": 666,
-        "./templates/opening_hours/item.hamlc": 667,
-        "./templates/opening_hours/layout.hamlc": 668,
-        "./templates/place_updates/actions.hamlc": 669,
-        "./templates/place_updates/add_details.hamlc": 670,
-        "./templates/place_updates/add_image.hamlc": 671,
-        "./templates/place_updates/add_venue.hamlc": 672,
-        "./templates/place_updates/changed_field.hamlc": 673,
-        "./templates/place_updates/changed_field_item.hamlc": 674,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 675,
-        "./templates/place_updates/delete_venue.hamlc": 676,
-        "./templates/place_updates/external_provider/item.hamlc": 677,
-        "./templates/place_updates/external_provider/list.hamlc": 678,
-        "./templates/place_updates/flag.hamlc": 679,
-        "./templates/place_updates/image.hamlc": 680,
-        "./templates/place_updates/image_dialog.hamlc": 681,
-        "./templates/place_updates/item.hamlc": 682,
-        "./templates/place_updates/layout.hamlc": 683,
-        "./templates/place_updates/panel_header.hamlc": 684,
-        "./templates/place_updates/place_details.hamlc": 685,
-        "./templates/place_updates/update_venue.hamlc": 686,
-        "./templates/prefs-panel.hamlc": 687,
-        "./templates/segment/attribute-elevation.hamlc": 688,
-        "./templates/segment/attribute-lock-level.hamlc": 689,
-        "./templates/segment/average-speed-camera.hamlc": 690,
-        "./templates/segment/edit-panel-attributes-form.hamlc": 691,
-        "./templates/segment/edit-panel.hamlc": 692,
-        "./templates/segment/flag-attribute.hamlc": 693,
-        "./templates/segment/junction-exit-layout.hamlc": 694,
-        "./templates/segment/junction-exit.hamlc": 695,
-        "./templates/segment/routing.hamlc": 696,
-        "./templates/segment/speed-limit.hamlc": 697,
-        "./templates/segment/tts-playback-popover.hamlc": 698,
-        "./templates/segment/tts-playback.hamlc": 699,
-        "./templates/sidebar/advanced-tools.hamlc": 700,
-        "./templates/sidebar/links.hamlc": 701,
-        "./templates/sidebar/sidebar.hamlc": 702,
-        "./templates/sidebar/user-details.hamlc": 703,
-        "./templates/sidebar/user-info.hamlc": 704,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 705,
-        "./templates/sidebar/user-sandbox.hamlc": 706,
-        "./templates/snapshot-message.hamlc": 707,
-        "./templates/snapshot-toggler.hamlc": 708,
-        "./templates/tips/watch-tutorial.hamlc": 709,
-        "./templates/turn-arrow-tooltip-timeframes.hamlc": 711,
-        "./templates/turn-arrow-tooltip.hamlc": 712,
-        "./templates/turn-arrow.hamlc": 713,
-        "./templates/tutorial-lightbox.hamlc": 714,
-        "./templates/user-greeting.hamlc": 715,
-        "./templates/util/day-checkboxes.hamlc": 716,
-        "./templates/util/toggle-checkboxes.hamlc": 717,
-        "./templates/venue/alias.hamlc": 718,
-        "./templates/venue/aliases-layout.hamlc": 719,
-        "./templates/venue/category-tag.hamlc": 720,
-        "./templates/venue/external-provider/item.hamlc": 721,
-        "./templates/venue/external-provider/list.hamlc": 722,
-        "./templates/venue/suggested-categories.hamlc": 723,
-        "./templates/venue/venue-categories.hamlc": 724,
-        "./templates/venue/venue-edit-general.hamlc": 725,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 726,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 727,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 728,
-        "./templates/venue/venue-edit-more-info.hamlc": 729,
-        "./templates/venue/venue-edit.hamlc": 730
+        "./Waze/Modules/BigJunction/templates/junction-entry-item.hamlc": 473,
+        "./Waze/Modules/BigJunction/templates/junction-entry-layout.hamlc": 474,
+        "./Waze/Modules/Chat/View/chat.hamlc": 475,
+        "./Waze/Modules/Chat/View/chat_message.hamlc": 476,
+        "./Waze/Modules/Chat/View/chat_user.hamlc": 477,
+        "./Waze/Modules/Cities/templates/feature_editor.hamlc": 478,
+        "./Waze/Modules/Cities/templates/layer_switcher.hamlc": 479,
+        "./Waze/Modules/Closures/templates/edit.hamlc": 480,
+        "./Waze/Modules/Closures/templates/item.hamlc": 481,
+        "./Waze/Modules/Closures/templates/layout.hamlc": 482,
+        "./Waze/Modules/Closures/templates/list.hamlc": 483,
+        "./Waze/Modules/Comments/templates/feature_editor.hamlc": 484,
+        "./Waze/Modules/Comments/templates/name_editor.hamlc": 485,
+        "./Waze/Modules/Conversation/templates/item.hamlc": 486,
+        "./Waze/Modules/Conversation/templates/list.hamlc": 487,
+        "./Waze/Modules/Conversation/templates/text.hamlc": 488,
+        "./Waze/Modules/ElementHistory/templates/history_main.hamlc": 489,
+        "./Waze/Modules/ElementHistory/templates/tx_item.hamlc": 490,
+        "./Waze/Modules/ElementHistory/templates/tx_object_main.hamlc": 491,
+        "./Waze/Modules/ElementHistory/templates/tx_object_related.hamlc": 492,
+        "./Waze/Modules/Feed/templates/feed.hamlc": 493,
+        "./Waze/Modules/Feed/templates/feed_group.hamlc": 494,
+        "./Waze/Modules/Feed/templates/issue_item.hamlc": 495,
+        "./Waze/Modules/Feed/templates/message_item.hamlc": 496,
+        "./Waze/Modules/Feed/templates/notification_detail.hamlc": 497,
+        "./Waze/Modules/Feed/templates/notification_item.hamlc": 498,
+        "./Waze/Modules/GeoLocation/templates/pan_button.hamlc": 499,
+        "./Waze/Modules/LayerSwitcher/templates/checkbox.hamlc": 500,
+        "./Waze/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 501,
+        "./Waze/Modules/LayerSwitcher/templates/layout.hamlc": 502,
+        "./Waze/Modules/LayerSwitcher/templates/module-togglers.hamlc": 503,
+        "./Waze/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 568,
+        "./Waze/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 569,
+        "./Waze/Modules/Login/templates/email_verification.hamlc": 570,
+        "./Waze/Modules/Login/templates/login_main.hamlc": 571,
+        "./Waze/Modules/Login/templates/login_view.hamlc": 572,
+        "./Waze/Modules/MTE/templates/contributors/item.hamlc": 573,
+        "./Waze/Modules/MTE/templates/contributors/list.hamlc": 574,
+        "./Waze/Modules/MTE/templates/item_edit/closures.hamlc": 575,
+        "./Waze/Modules/MTE/templates/item_edit/loading.hamlc": 576,
+        "./Waze/Modules/MTE/templates/item_edit/names.hamlc": 577,
+        "./Waze/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 578,
+        "./Waze/Modules/MTE/templates/mte_edit_view.hamlc": 579,
+        "./Waze/Modules/MTE/templates/mte_item_view.hamlc": 580,
+        "./Waze/Modules/MTE/templates/mte_list.hamlc": 581,
+        "./Waze/Modules/MTE/templates/sidebar.hamlc": 582,
+        "./Waze/Modules/MTE/templates/toolbar_buttons.hamlc": 583,
+        "./Waze/Modules/MTE/templates/topbar.hamlc": 584,
+        "./Waze/Modules/MapControls/templates/mouse_position.hamlc": 585,
+        "./Waze/Modules/MapControls/templates/overlay-buttons.hamlc": 586,
+        "./Waze/Modules/MapControls/templates/permalink.hamlc": 587,
+        "./Waze/Modules/MapControls/templates/zoombar.hamlc": 588,
+        "./Waze/Modules/MergeLandmark/templates/description_selection_view.hamlc": 589,
+        "./Waze/Modules/MergeLandmark/templates/external_providers_view.hamlc": 590,
+        "./Waze/Modules/MergeLandmark/templates/image_item_view.hamlc": 591,
+        "./Waze/Modules/MergeLandmark/templates/images_selection_view.hamlc": 592,
+        "./Waze/Modules/MergeLandmark/templates/layout.hamlc": 593,
+        "./Waze/Modules/MergeLandmark/templates/main_selection_view.hamlc": 594,
+        "./Waze/Modules/MergeLandmark/templates/multi_selection_view.hamlc": 595,
+        "./Waze/Modules/MergeLandmark/templates/single_selection_view.hamlc": 596,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 597,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/item.hamlc": 598,
+        "./Waze/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 599,
+        "./Waze/Modules/Problems/templates/_navigation.hamlc": 600,
+        "./Waze/Modules/Problems/templates/closure_description.hamlc": 601,
+        "./Waze/Modules/Problems/templates/edit.hamlc": 602,
+        "./Waze/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 603,
+        "./Waze/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 604,
+        "./Waze/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 605,
+        "./Waze/Modules/Restrictions/templates/restriction_edit.hamlc": 606,
+        "./Waze/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 607,
+        "./Waze/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 608,
+        "./Waze/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 609,
+        "./Waze/Modules/Restrictions/templates/restrictions_list_item.hamlc": 610,
+        "./Waze/Modules/Restrictions/templates/restrictions_main.hamlc": 611,
+        "./Waze/Modules/Restrictions/templates/restrictions_pickup.hamlc": 612,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 613,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 614,
+        "./Waze/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 615,
+        "./Waze/Modules/Restrictions/templates/timeframe_edit.hamlc": 616,
+        "./Waze/Modules/Save/templates/error_item.hamlc": 617,
+        "./Waze/Modules/Save/templates/error_list.hamlc": 618,
+        "./Waze/Modules/Save/templates/success.hamlc": 619,
+        "./Waze/Modules/StreetView/templates/street-view-button.hamlc": 620,
+        "./Waze/Modules/StreetView/templates/street-view.hamlc": 621,
+        "./Waze/Modules/Toolbar/templates/search-empty-view.hamlc": 622,
+        "./Waze/Modules/Toolbar/templates/search-result-item.hamlc": 623,
+        "./Waze/Modules/Toolbar/templates/search.hamlc": 624,
+        "./Waze/Modules/Toolbar/templates/toolbar-item-group.hamlc": 625,
+        "./Waze/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 626,
+        "./Waze/Modules/Toolbar/templates/toolbar-item.hamlc": 627,
+        "./Waze/Modules/Toolbar/templates/toolbar.hamlc": 628,
+        "./Waze/Modules/Topbar/templates/area-managers/item.hamlc": 629,
+        "./Waze/Modules/Topbar/templates/area-managers/layout.hamlc": 630,
+        "./Waze/Modules/Topbar/templates/area-managers/main-list.hamlc": 631,
+        "./Waze/Modules/Topbar/templates/area-managers/rest-list.hamlc": 632,
+        "./Waze/Modules/Topbar/templates/layout.hamlc": 633,
+        "./Waze/Modules/Topbar/templates/loading-indicator.hamlc": 634,
+        "./Waze/Modules/Topbar/templates/location-info.hamlc": 635,
+        "./templates/add_update_details.hamlc": 636,
+        "./templates/additional_details.hamlc": 637,
+        "./templates/address/alt-street.hamlc": 638,
+        "./templates/address/edit-alt-street.hamlc": 639,
+        "./templates/address/edit.hamlc": 640,
+        "./templates/archive-panel.hamlc": 641,
+        "./templates/archive-sessions.hamlc": 642,
+        "./templates/big-junction-edit.hamlc": 643,
+        "./templates/camera-edit.hamlc": 644,
+        "./templates/chrome_autofill_off.hamlc": 645,
+        "./templates/editable-areas.hamlc": 646,
+        "./templates/focus-buttons.hamlc": 647,
+        "./templates/house-number.hamlc": 648,
+        "./templates/house-numbers-lightbox.hamlc": 649,
+        "./templates/instruction-override.hamlc": 650,
+        "./templates/keyboard_shortcuts/list.hamlc": 651,
+        "./templates/keyboard_shortcuts/modal.hamlc": 652,
+        "./templates/location-message.hamlc": 653,
+        "./templates/location-switcher.hamlc": 654,
+        "./templates/login/sandbox-message.hamlc": 655,
+        "./templates/map.hamlc": 656,
+        "./templates/merge_venues/feature_editor/landmark-item-view.hamlc": 657,
+        "./templates/merge_venues/feature_editor/merge-venues.hamlc": 658,
+        "./templates/node-edit.hamlc": 659,
+        "./templates/opening_hours/add.hamlc": 660,
+        "./templates/opening_hours/item.hamlc": 661,
+        "./templates/opening_hours/layout.hamlc": 662,
+        "./templates/place_updates/actions.hamlc": 663,
+        "./templates/place_updates/add_details.hamlc": 664,
+        "./templates/place_updates/add_image.hamlc": 665,
+        "./templates/place_updates/add_venue.hamlc": 666,
+        "./templates/place_updates/changed_field.hamlc": 667,
+        "./templates/place_updates/changed_field_item.hamlc": 668,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 669,
+        "./templates/place_updates/delete_venue.hamlc": 670,
+        "./templates/place_updates/external_provider/item.hamlc": 671,
+        "./templates/place_updates/external_provider/list.hamlc": 672,
+        "./templates/place_updates/flag.hamlc": 673,
+        "./templates/place_updates/image.hamlc": 674,
+        "./templates/place_updates/image_dialog.hamlc": 675,
+        "./templates/place_updates/item.hamlc": 676,
+        "./templates/place_updates/layout.hamlc": 677,
+        "./templates/place_updates/panel_header.hamlc": 678,
+        "./templates/place_updates/place_details.hamlc": 679,
+        "./templates/place_updates/update_venue.hamlc": 680,
+        "./templates/prefs-panel.hamlc": 681,
+        "./templates/segment/average-speed-camera.hamlc": 682,
+        "./templates/segment/edit-panel-attributes-form.hamlc": 683,
+        "./templates/segment/edit-panel.hamlc": 684,
+        "./templates/segment/flag-attribute.hamlc": 685,
+        "./templates/segment/junction-exit-layout.hamlc": 686,
+        "./templates/segment/junction-exit.hamlc": 687,
+        "./templates/segment/routing.hamlc": 688,
+        "./templates/segment/speed-limit.hamlc": 689,
+        "./templates/segment/tts-playback-popover.hamlc": 690,
+        "./templates/segment/tts-playback.hamlc": 691,
+        "./templates/sidebar/advanced-tools.hamlc": 692,
+        "./templates/sidebar/links.hamlc": 693,
+        "./templates/sidebar/sidebar.hamlc": 694,
+        "./templates/sidebar/user-details.hamlc": 695,
+        "./templates/sidebar/user-info.hamlc": 696,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 697,
+        "./templates/sidebar/user-sandbox.hamlc": 698,
+        "./templates/snapshot-message.hamlc": 699,
+        "./templates/snapshot-toggler.hamlc": 700,
+        "./templates/tips/watch-tutorial.hamlc": 701,
+        "./templates/turn-arrow-tooltip-timeframes.hamlc": 703,
+        "./templates/turn-arrow-tooltip.hamlc": 704,
+        "./templates/turn-arrow.hamlc": 705,
+        "./templates/tutorial-lightbox.hamlc": 706,
+        "./templates/user-greeting.hamlc": 707,
+        "./templates/util/day-checkboxes.hamlc": 708,
+        "./templates/util/toggle-checkboxes.hamlc": 709,
+        "./templates/venue/alias.hamlc": 710,
+        "./templates/venue/aliases-layout.hamlc": 711,
+        "./templates/venue/category-tag.hamlc": 712,
+        "./templates/venue/external-provider/item.hamlc": 713,
+        "./templates/venue/external-provider/list.hamlc": 714,
+        "./templates/venue/suggested-categories.hamlc": 715,
+        "./templates/venue/venue-categories.hamlc": 716,
+        "./templates/venue/venue-edit-general.hamlc": 717,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 718,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 719,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 720,
+        "./templates/venue/venue-edit-more-info.hamlc": 721,
+        "./templates/venue/venue-edit.hamlc": 722
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 492
+        n.id = 472
 }, function(e, t) {
     e.exports = function() {
             return function(e) {
@@ -26223,15 +24682,15 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./Cities/Manifest": 525,
-        "./Comments/Manifest": 569
+        "./Cities/Manifest": 505,
+        "./Comments/Manifest": 563
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 524
+        n.id = 504
 }, function(e, t, i) {
     "use strict";
 
@@ -26243,26 +24702,26 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r, a = i(17),
+    var s, r, a = i(16),
         o = n(a),
-        l = i(205),
-        u = i(526),
+        l = i(200),
+        u = i(506),
         d = n(u),
-        c = i(206),
+        c = i(201),
         h = n(c),
-        f = i(527),
+        f = i(507),
         p = n(f),
-        g = i(567),
+        g = i(561),
         m = n(g),
         v = i(34),
         _ = n(v),
-        y = i(568),
+        y = i(562),
         b = n(y),
-        w = i(226),
+        w = i(224),
         E = n(w),
-        k = i(120),
+        k = i(118),
         M = n(k),
-        S = i(165),
+        S = i(164),
         T = n(S),
         C = _.default.LAYER_TYPE,
         I = {
@@ -26349,7 +24808,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(25),
+    var n = i(26),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -26401,9 +24860,9 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(72),
+        _ = i(71),
         y = n(_),
-        b = i(159),
+        b = i(153),
         w = n(b),
         E = function(e) {
             function t() {
@@ -26456,29 +24915,29 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     e.exports = {
-        default: i(529),
+        default: i(509),
         __esModule: !0
     }
 }, function(e, t, i) {
-    i(530);
+    i(510);
     var n = i(14).Object;
     e.exports = function(e, t) {
         return n.getOwnPropertyDescriptor(e, t)
     }
 }, function(e, t, i) {
     var n = i(42),
-        s = i(105).f;
-    i(103)("getOwnPropertyDescriptor", function() {
+        s = i(107).f;
+    i(105)("getOwnPropertyDescriptor", function() {
         return function(e, t) {
             return s(n(e), t)
         }
     })
 }, function(e, t, i) {
-    i(532),
+    i(512),
         e.exports = i(14).Object.values
 }, function(e, t, i) {
     var n = i(21),
-        s = i(193)(!1);
+        s = i(188)(!1);
     n(n.S, "Object", {
         values: function(e) {
             return s(e)
@@ -26547,48 +25006,48 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.TYPE_TO_CLASS = t.TYPE_TO_FACTORY = void 0;
-    var s = i(110),
-        r = i(541),
+    var s = i(154),
+        r = i(521),
         a = n(r),
-        o = i(211),
+        o = i(528),
         l = n(o),
-        u = i(214),
+        u = i(531),
         d = n(u),
-        c = i(30),
+        c = i(29),
         h = n(c),
-        f = i(113),
+        f = i(159),
         p = n(f),
-        g = i(553),
+        g = i(538),
         m = n(g),
-        v = i(554),
+        v = i(539),
         _ = n(v),
-        y = i(555),
+        y = i(540),
         b = n(y),
-        w = i(91),
+        w = i(90),
         E = n(w),
         k = i(57),
         M = n(k),
-        S = i(116),
+        S = i(163),
         T = n(S),
-        C = i(220),
+        C = i(218),
         I = n(C),
-        A = i(559),
+        A = i(553),
         R = n(A),
-        O = i(222),
+        O = i(220),
         D = n(O),
-        L = i(223),
+        L = i(221),
         P = n(L),
-        N = i(560),
+        N = i(554),
         x = n(N),
-        V = i(561),
+        V = i(555),
         F = n(V),
-        j = i(117),
-        U = n(j),
-        B = i(118),
-        W = n(B),
-        z = i(224),
-        G = n(z),
-        H = i(119),
+        U = i(115),
+        j = n(U),
+        B = i(116),
+        G = n(B),
+        W = i(222),
+        z = n(W),
+        H = i(117),
         $ = n(H);
     t.TYPE_TO_FACTORY = {
             issues: a.default,
@@ -26611,9 +25070,9 @@ webpackJsonp([0], [function(e, t, i) {
             junctions: P.default,
             managedAreas: x.default,
             userAreas: F.default,
-            notifications: U.default,
-            majorTrafficEvents: W.default,
-            restrictedAreas: G.default,
+            notifications: j.default,
+            majorTrafficEvents: G.default,
+            restrictedAreas: z.default,
             transactions: $.default
         }
 }, function(e, t, i) {
@@ -26633,7 +25092,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(536),
+        d = i(516),
         c = n(d),
         h = i(35),
         f = n(h),
@@ -26737,15 +25196,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(0),
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(60),
+        d = i(61),
         c = n(d),
-        h = i(112),
+        h = i(157),
         f = n(h),
         p = function() {
             function e(t) {
@@ -26839,12 +25298,12 @@ webpackJsonp([0], [function(e, t, i) {
     t.default = p,
         e.exports = t.default
 }, function(e, t, i) {
-    i(538),
+    i(518),
         e.exports = i(14).Object.freeze
 }, function(e, t, i) {
-    var n = i(31),
-        s = i(104).onFreeze;
-    i(103)("freeze", function(e) {
+    var n = i(30),
+        s = i(106).onFreeze;
+    i(105)("freeze", function(e) {
         return function(t) {
             return e && n(t) ? e(s(t)) : t
         }
@@ -26867,7 +25326,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(111),
+        d = i(112),
         c = n(d);
     t.RestrictionDriveProfileList = function() {
         function e() {
@@ -26955,15 +25414,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(17),
+    var s, r = i(16),
         a = n(r),
         o = i(50),
         l = n(o),
-        u = i(542),
+        u = i(522),
         d = n(u),
-        c = i(545),
+        c = i(525),
         h = n(c),
-        f = i(546),
+        f = i(526),
         p = n(f),
         g = l.default.prototype.TYPE,
         m = {
@@ -26995,7 +25454,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(50),
         r = n(s),
-        a = i(73),
+        a = i(72),
         o = n(a),
         l = r.default.extend({
             _isModified: function() {
@@ -27156,7 +25615,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(50),
         r = n(s),
-        a = i(210),
+        a = i(206),
         o = n(a),
         l = r.default.extend({
             initialized: function() {
@@ -27249,6 +25708,157 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s, r = i(16),
+        a = n(r),
+        o = i(88),
+        l = n(o),
+        u = i(529),
+        d = n(u),
+        c = i(530),
+        h = n(c),
+        f = l.default.prototype.TYPE,
+        p = {
+            TYPE_TO_CLASS: (s = {},
+                (0,
+                    a.default)(s, f.DISCONNECTION, l.default),
+                (0,
+                    a.default)(s, f.TURN, d.default),
+                (0,
+                    a.default)(s, f.DATA, l.default),
+                (0,
+                    a.default)(s, f.ROAD_CLOSURE, h.default),
+                s),
+            create: function(e) {
+                return new(0,
+                    this.TYPE_TO_CLASS[e.problemType])(e, {
+                    parse: !0
+                })
+            }
+        };
+    t.default = p,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(88),
+        r = n(s),
+        a = i(31),
+        o = n(a),
+        l = OpenLayers.Class(r.default, {
+            initialize: function(e, t) {
+                o.default.prototype.initialize.apply(this, arguments),
+                    this.editable = this.attributes.open,
+                    this.attributes.reroutePercent = this.reroutePercent(),
+                    this.setSeverity(this.attributes.priority)
+            },
+            reroutePercent: function() {
+                return (this.attributes.reroutesCounter / (this.attributes.reroutesCounter + this.attributes.routesCounter) * 100).toFixed(0)
+            },
+            setSeverity: function(e) {
+                var t = "high";
+                t = -1 === e ? "low" : this.attributes.reroutePercent >= 90 ? "high" : "medium",
+                    this.attributes.severity = t
+            },
+            CLASS_NAME: "Waze.Feature.Vector.TurnProblem"
+        });
+    t.default = l,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(88),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = OL.Class(s.default, {
+            _location: null,
+            nested: {
+                geometry: OL.Geometry,
+                bounds: OL.Geometry,
+                endPoint: OL.Geometry
+            },
+            initialize: function() {
+                s.default.prototype.initialize.apply(this, arguments),
+                    this._calcLocation()
+            },
+            _calcLocation: function() {
+                this.hasEndPoint() ? this._location = this._getMiddlePoint() : this._location = this.attributes.geometry
+            },
+            _getMiddlePoint: function() {
+                return this.attributes.geometry.clone().resize(.5, this.attributes.endPoint)
+            },
+            hasEndPoint: function() {
+                return null != this.attributes.endPoint
+            },
+            getLocation: function() {
+                return this._location
+            }
+        });
+    t.default = r,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s, r = i(16),
+        a = n(r),
+        o = i(532),
+        l = n(o),
+        u = i(534),
+        d = n(u),
+        c = i(536),
+        h = n(c),
+        f = i(88),
+        p = n(f),
+        g = p.default.prototype.TYPE,
+        m = {
+            TYPE_TO_CLASS: (s = {},
+                (0,
+                    a.default)(s, g.DISCONNECTION, l.default),
+                (0,
+                    a.default)(s, g.TURN, d.default),
+                (0,
+                    a.default)(s, g.DATA, h.default),
+                s),
+            create: function(e) {
+                return new(0,
+                    this.TYPE_TO_CLASS[e.problemType])(e, {
+                    parse: !0
+                })
+            }
+        };
+    t.default = m,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(6),
         r = n(s),
         a = i(2),
@@ -27259,7 +25869,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(549),
+        p = i(533),
         g = n(p),
         m = i(15),
         v = n(m),
@@ -27350,7 +25960,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(551),
+        p = i(535),
         g = n(p),
         m = i(15),
         v = n(m),
@@ -27466,6 +26076,26 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = {
+            SPEED_CAMERA: 1
+        },
+        s = {
+            TUNNEL: 1,
+            BRIDGE: 2,
+            PRIVATE: 4,
+            FERRY: 8,
+            UNPAVED: 16,
+            HEADLIGHTS: 32,
+            NEARBY_HOV: 128
+        };
+    t.FLAGS = s,
+        t.FWD = n,
+        t.REV = n
+}, function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -27489,7 +26119,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(15),
         v = n(m),
-        _ = i(23),
+        _ = i(24),
         y = function(e) {
             function t() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
@@ -27675,7 +26305,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(15),
         v = n(m),
-        _ = i(556),
+        _ = i(541),
         y = n(_),
         b = function(e) {
             function t() {
@@ -27770,6 +26400,101 @@ webpackJsonp([0], [function(e, t, i) {
     t.default = _,
         e.exports = t.default
 }, function(e, t, i) {
+    i(108),
+        i(56),
+        i(66),
+        i(543),
+        i(547),
+        i(549),
+        i(550),
+        e.exports = i(14).Map
+}, function(e, t, i) {
+    "use strict";
+    var n = i(209),
+        s = i(161);
+    e.exports = i(210)("Map", function(e) {
+        return function() {
+            return e(this, arguments.length > 0 ? arguments[0] : void 0)
+        }
+    }, {
+        get: function(e) {
+            var t = n.getEntry(s(this, "Map"), e);
+            return t && t.v
+        },
+        set: function(e, t) {
+            return n.def(s(this, "Map"), 0 === e ? 0 : e, t)
+        }
+    }, n, !0)
+}, function(e, t, i) {
+    var n = i(43),
+        s = i(134),
+        r = i(69),
+        a = i(101),
+        o = i(545);
+    e.exports = function(e, t) {
+        var i = 1 == e,
+            l = 2 == e,
+            u = 3 == e,
+            d = 4 == e,
+            c = 6 == e,
+            h = 5 == e || c,
+            f = t || o;
+        return function(t, o, p) {
+            for (var g, m, v = r(t), _ = s(v), y = n(o, p, 3), b = a(_.length), w = 0, E = i ? f(t, b) : l ? f(t, 0) : void 0; b > w; w++)
+                if ((h || w in _) && (g = _[w],
+                        m = y(g, w, v),
+                        e))
+                    if (i)
+                        E[w] = m;
+                    else if (m)
+                switch (e) {
+                    case 3:
+                        return !0;
+                    case 5:
+                        return g;
+                    case 6:
+                        return w;
+                    case 2:
+                        E.push(g)
+                }
+            else if (d)
+                return !1;
+            return c ? -1 : u || d ? d : E
+        }
+    }
+}, function(e, t, i) {
+    var n = i(546);
+    e.exports = function(e, t) {
+        return new(n(e))(t)
+    }
+}, function(e, t, i) {
+    var n = i(30),
+        s = i(189),
+        r = i(28)("species");
+    e.exports = function(e) {
+        var t;
+        return s(e) && (t = e.constructor,
+                "function" != typeof t || t !== Array && !s(t.prototype) || (t = void 0),
+                n(t) && null === (t = t[r]) && (t = void 0)),
+            void 0 === t ? Array : t
+    }
+}, function(e, t, i) {
+    var n = i(21);
+    n(n.P + n.R, "Map", {
+        toJSON: i(211)("Map")
+    })
+}, function(e, t, i) {
+    var n = i(85);
+    e.exports = function(e, t) {
+        var i = [];
+        return n(e, !1, i.push, i, t),
+            i
+    }
+}, function(e, t, i) {
+    i(212)("Map")
+}, function(e, t, i) {
+    i(213)("Map")
+}, function(e, t, i) {
     "use strict";
 
     function n(e) {
@@ -27786,13 +26511,13 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(216),
+        d = i(214),
         c = n(d),
-        h = i(558),
+        h = i(552),
         f = n(h),
-        p = i(217),
+        p = i(215),
         g = n(p),
-        m = i(218),
+        m = i(216),
         v = n(m),
         y = function() {
             function e(t) {
@@ -27881,7 +26606,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(216),
+    var n = i(214),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -27943,7 +26668,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(221),
+        _ = i(219),
         y = n(_),
         b = i(15),
         w = n(b),
@@ -28100,18 +26825,18 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     e.exports = {
-        default: i(563),
+        default: i(557),
         __esModule: !0
     }
 }, function(e, t, i) {
-    i(564),
+    i(558),
         e.exports = i(14).Object.getOwnPropertyDescriptors
 }, function(e, t, i) {
     var n = i(21),
-        s = i(565),
+        s = i(559),
         r = i(42),
-        a = i(105),
-        o = i(204);
+        a = i(107),
+        o = i(199);
     n(n.S, "Object", {
         getOwnPropertyDescriptors: function(e) {
             for (var t, i, n = r(e), l = a.f, u = s(n), d = {}, c = 0; u.length > c;)
@@ -28120,10 +26845,10 @@ webpackJsonp([0], [function(e, t, i) {
         }
     })
 }, function(e, t, i) {
-    var n = i(153),
-        s = i(102),
+    var n = i(147),
+        s = i(104),
         r = i(33),
-        a = i(24).Reflect;
+        a = i(25).Reflect;
     e.exports = a && a.ownKeys || function(e) {
         var t = n.f(r(e)),
             i = s.f;
@@ -28150,8 +26875,8 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(11),
-        g = i(119),
+        p = i(12),
+        g = i(117),
         m = n(g),
         v = function(e) {
             function t() {
@@ -28233,7 +26958,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(62),
+        y = i(91),
         b = n(y),
         w = i(19),
         E = n(w),
@@ -28401,7 +27126,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(205),
+    var n = i(200),
         s = {
             init: function(e) {
                 var t = e.map;
@@ -28448,19 +27173,19 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(121),
+    var s = i(119),
         r = n(s),
-        a = i(570),
+        a = i(564),
         o = n(a),
-        l = i(571),
+        l = i(565),
         u = n(l),
         d = i(63),
         c = n(d),
         h = i(34),
         f = n(h),
-        p = i(120),
+        p = i(118),
         g = n(p),
-        m = i(165),
+        m = i(164),
         v = n(m),
         _ = f.default.LAYER_TYPE,
         y = {
@@ -28541,7 +27266,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(227),
+    var n = i(225),
         s = "#ffffff",
         r = {
             strokeColor: s,
@@ -28680,19 +27405,19 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(62),
+        m = i(91),
         v = n(m),
-        _ = i(572),
+        _ = i(566),
         y = n(_),
-        b = i(228),
+        b = i(226),
         w = n(b),
-        E = i(93),
+        E = i(92),
         k = n(E),
-        M = i(166),
+        M = i(165),
         S = n(M),
-        T = i(77),
+        T = i(75),
         C = n(T),
-        I = i(121),
+        I = i(119),
         A = n(I),
         R = function(e) {
             function t() {
@@ -28846,9 +27571,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(166),
+    var s = i(165),
         r = n(s),
-        a = i(121),
+        a = i(119),
         o = n(a),
         l = Marionette.View.extend({
             template: "Waze/Modules/Comments/templates/name_editor",
@@ -28950,7 +27675,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(12),
+        p = i(13),
         g = n(p),
         m = /(https?:\/\/(?:-\.)?(?:[^\s\/?.#-]+\.?)+(?:\/[^\s]*)?)/i,
         v = function(e) {
@@ -29311,7 +28036,7 @@ webpackJsonp([0], [function(e, t, i) {
                             i.push("" + t(e(this.t("welcome.content")))),
                             i.push("</p>\n</div>\n<div class='login-popup-content'>\n<div class='login-form'>\n<div class='login-title'>"),
                             i.push("" + t(e(this.t("login.title")))),
-                            i.push("</div>\n<div class='form-title'>\n<div class='expired-warning text-warning'>" + t(e(this.t("session.expired.title"))) + "</div>\n<span class='title-text'></span>\n</div>\n<form action='#' method='post'>\n<input class='form-control input-border username' name='username' required='" + t(e(!0)) + "' type='text' placeholder='" + t(e(this.t("login.form.username"))) + "'>\n<input class='form-control input-border password' name='password' required='" + t(e(!0)) + "' type='password' placeholder='" + t(e(this.t("login.form.password"))) + "'>\n<div class='error-message text-danger'></div>\n<div class='form-action'>\n<button class='submit waze-btn waze-btn-blue' type='submit'>\n<span class='loading'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
+                            i.push("</div>\n<div class='form-title'>\n<div class='expired-warning text-warning'>" + t(e(this.t("session.expired.title"))) + "</div>\n<span class='title-text'></span>\n</div>\n<form action='#' method='post'>\n<input class='form-control input-border username' autofocus='true' name='username' required='" + t(e(!0)) + "' type='text' placeholder='" + t(e(this.t("login.form.username"))) + "'>\n<input class='form-control input-border password' name='password' required='" + t(e(!0)) + "' type='password' placeholder='" + t(e(this.t("login.form.password"))) + "'>\n<div class='recaptcha-container'>\n<div class='g-recaptcha' data-size='invisible' data-badge='inline'></div>\n</div>\n<div class='error-message text-danger'></div>\n<div class='form-action'>\n<button class='submit waze-btn waze-btn-blue' type='submit'>\n<span class='loading'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
                             i.push("" + t(e(this.t("login.form.action")))),
                             i.push("</button>\n</div>\n<a class='forgot-password waze-gray-link' href='/forgot_password'>" + t(e(this.t("login.forgot_password"))) + "</a>\n</form>\n</div>\n<div class='login-popup-links'>\n<a class='btn btn-default tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.tutorial.description"))) + "</div>\n</a>\n<a class='btn btn-default wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.wiki.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.wiki.description"))) + "</div>\n</a>\n<a class='btn btn-default forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.forum.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.forum.description"))) + "</div>\n</a>\n<a class='btn btn-default playmode' href='#'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.play_mode.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.play_mode.description"))) + "</div>\n</a>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -30798,13 +29523,15 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i;
+                        var e, t, i, n;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
                             i.push("<div class='alt-street-form-template new-alt-street'>\n<div class='alt-street-block'>"),
                             i.push("" + e(this.renderPartial("templates/chrome_autofill_off"))),
-                            i.push("<div class='city-block form-group toggleable-input'>\n<label class='control-label'>" + t(e(this.t("edit.address.city"))) + "</label>\n<div class='controls-container'>\n<input class='alt-address empty-city' id='alt-city' type='checkbox'>\n<label for='alt-city'>" + t(e(this.t("edit.address.none"))) + "</label>\n</div>\n<div class='city-container'>\n<label></label>\n<input class='city-name form-control' type='text' autocomplete='off' title='" + t(e(this.t("edit.address.city"))) + "' maxlength='100'>\n</div>\n</div>\n<div class='form-group street-block toggleable-input'>\n<label class='control-label'>" + t(e(this.t("edit.address.street"))) + "</label>\n<input class='form-control street-name' type='text' autocomplete='off' title='" + t(e(this.t("edit.address.street"))) + "' maxlength='100'>\n</div>\n<a class='alt-street-delete' href='#'></a>\n</div>\n</div>"),
+                            i.push("<div class='city-block form-group toggleable-input'>\n<label class='control-label'>" + t(e(this.t("edit.address.city"))) + "</label>\n<div class='controls-container'>"),
+                            n = _.uniqueId("alt_street_empty_city"),
+                            i.push("<input class='alt-address empty-city' id='" + t(e(n)) + "' type='checkbox'>\n<label for='" + t(e(n)) + "'>" + t(e(this.t("edit.address.none"))) + "</label>\n</div>\n<div class='city-container'>\n<label></label>\n<input class='city-name form-control' type='text' autocomplete='off' title='" + t(e(this.t("edit.address.city"))) + "' maxlength='100'>\n</div>\n</div>\n<div class='form-group street-block toggleable-input'>\n<label class='control-label'>" + t(e(this.t("edit.address.street"))) + "</label>\n<input class='form-control street-name' type='text' autocomplete='off' title='" + t(e(this.t("edit.address.street"))) + "' maxlength='100'>\n</div>\n<a class='alt-street-delete' href='#'></a>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -30945,9 +29672,9 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='camera separator-line sidebar-column'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.camera.title"))) + "</span>\n</div>\n<div class='tab-content'>\n<div class='active tab-pane' id='camera-edit-general'></div>\n<form class='attributes-form side-panel-section'>\n<div class='form-group'>\n<div class='controls'>\n<select class='form-control' data-type='numeric' name='type'></select>\n</div>\n</div>\n<div class='controls-container form-group'>\n<label class='control-label'>" + t(e(this.t("edit.camera.fields.speed")))),
+                            i.push("<div class='camera separator-line sidebar-column'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.camera.title"))) + "</span>\n</div>\n<div class='tab-content'>\n<div class='active tab-pane' id='camera-edit-general'></div>\n<form class='attributes-form side-panel-section'>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.camera.fields.type_label"))) + "</label>\n<div class='controls'>\n<select class='form-control' data-type='numeric' name='type'></select>\n</div>\n</div>\n<div class='controls-container form-group'>\n<label class='control-label'>" + t(e(this.t("edit.camera.fields.speed")))),
                             i.push("" + t(e(this.h.speedString()))),
-                            i.push("</label>\n<div class='controls'>\n<input class='form-control' type='number' name='speed' maxlength='4'>\n<input id='validated-camera-checkbox' type='checkbox' name='validated'>\n<label class='checkbox' for='validated-camera-checkbox'>" + t(e(this.t("edit.camera.fields.approved"))) + "</label>\n</div>\n</div>\n</form>\n<ul class='additional-attributes list-unstyled side-panel-section'>"),
+                            i.push("</label>\n<div class='controls'>\n<input class='form-control' type='number' name='speed' maxlength='4'>\n</div>\n</div>\n</form>\n<ul class='additional-attributes list-unstyled side-panel-section'>"),
                             i.push("" + e(this.renderPartial("templates/add_update_details", this))),
                             i.push("<li>" + t(e(this.t("edit.id", {
                                 num: this.id
@@ -30979,7 +29706,7 @@ webpackJsonp([0], [function(e, t, i) {
                         if (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(229),
+                            s = i(227),
                             _.isEmpty(this.areas))
                             n.push("<p class='message'>" + t(e(this.t("user.areas.no_areas"))) + "</p>");
                         else {
@@ -31257,16 +29984,10 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='node separator-line sidebar-column'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.node.title"))) + "</span>\n</div>\n<div class='tab-content'>\n<div class='active tab-pane' id='node-edit-general'>\n<div class='form-group side-panel-section'>"),
-                            this.isConnectedToBigJunction() ? (i.push("<span class='error'>" + t(e(this.t("edit.node.permissions.big_junction.title"))) + "</span>"),
-                                i.push("" + t(e(this.t("edit.node.permissions.big_junction.description"))))) : this.connectionsExist() && (i.push("<p class='connectionStatus'>"),
-                                this.areAllConnectionsEnabled() && i.push("" + t(e(this.t("edit.node.turns.all_allowed")))),
-                                this.areAllConnectionsDisabled() && i.push("" + t(e(this.t("edit.node.turns.all_disallowed")))),
-                                i.push("</p>"),
-                                this.areAllConnectionsEnabled() || i.push("<button class='allow-connections btn btn-default' disabled='" + t(e(!this.areConnectionsEditable())) + "'>" + t(e(this.t("edit.node.turns.allow_all"))) + "</button>"),
-                                this.areAllConnectionsDisabled() || i.push("<button class='btn btn-default disallow-connections' disabled='" + t(e(!this.areConnectionsEditable())) + "'>" + t(e(this.t("edit.node.turns.disallow_all"))) + "</button>")),
-                            i.push("</div>\n<ul class='additional-attributes list-unstyled side-panel-section'>\n<li>" + t(e(this.t("edit.id", {
-                                num: this.getID()
+                            i.push("<div class='node separator-line sidebar-column'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.node.title"))) + "</span>\n</div>\n<div class='tab-content'>\n<div class='active tab-pane' id='node-edit-general'>\n<div class='form-group side-panel-section'>\n<div class='big-junction-error'>\n<span class='error'>" + t(e(this.t("edit.node.permissions.big_junction.title"))) + "</span>"),
+                            i.push("" + t(e(this.t("edit.node.permissions.big_junction.description")))),
+                            i.push("</div>\n<div class='connections-edit'>\n<p class='connectionStatus'></p>\n<button class='allow-connections btn btn-default'>" + t(e(this.t("edit.node.turns.allow_all"))) + "</button>\n<button class='btn btn-default disallow-connections'>" + t(e(this.t("edit.node.turns.disallow_all"))) + "</button>\n</div>\n</div>\n<ul class='additional-attributes list-unstyled side-panel-section'>\n<li>" + t(e(this.t("edit.id", {
+                                num: this.id
                             }))) + "</li>\n</ul>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -31342,7 +30063,7 @@ webpackJsonp([0], [function(e, t, i) {
                             i = [],
                             i.push("<div class='" + ["actions", "approve-intent-" + t(e(this.getApproveActionIntent())) + " " + t(e(this.model.get("updateType")))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "'>"),
                             this.model.isPlaceAdLocked() ? i.push("<div class='alert alert-danger'>" + t(e(I18n.t("venues.update_requests.panel.needs_staff_approval"))) + "</div>") : this.model.isEditableByUser() ? (i.push("<form class='controls-container'>"),
-                                null === this.model.get("approved") ? (i.push("" + e(this.h.radio({
+                                this.isOpened() ? (i.push("" + e(this.h.radio({
                                         label: this.getRejectActionName(),
                                         name: "approved",
                                         dataType: "boolean",
@@ -31357,14 +30078,11 @@ webpackJsonp([0], [function(e, t, i) {
                                         value: !0,
                                         currentValue: this.model.get("approved"),
                                         className: "approve"
-                                    })))) : i.push("" + e(this.h.radio({
-                                    label: this.getReopenActionName(),
-                                    name: "approved",
-                                    dataType: "boolean",
-                                    value: null,
-                                    currentValue: this.model.get("approved"),
-                                    className: "reopen"
-                                }))),
+                                    })))) : this.isApproved() ? (i.push("<div class='approved status'>"),
+                                    i.push("" + e(this.getApprovedLabel())),
+                                    i.push("</div>")) : this.isRejected() && (i.push("<div class='rejected status'>"),
+                                    i.push("" + e(this.getRejectedLabel())),
+                                    i.push("</div>")),
                                 i.push("</form>")) : i.push("<div class='alert alert-danger'>" + t(e(this.getNoPermissionsMessage())) + "</div>"),
                             i.push("</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -31476,7 +30194,7 @@ webpackJsonp([0], [function(e, t, i) {
                             n.push("" + t(e(this.t("venues.update_requests.panel.change.suggested")))),
                             n.push("<i class='fa fa-crosshairs'></i>\n</div>");
                         else if ("images" === this.fieldName) {
-                            for (s = i(76).SIZE,
+                            for (s = i(74).SIZE,
                                 n.push("<div class='removed-title'>" + t(e(this.t("venues.update_requests.panel.change.removed"))) + "</div>\n<div class='remove-images'>"),
                                 l = this.getRemovedImages(),
                                 r = 0,
@@ -31648,7 +30366,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(76).SIZE,
+                            s = i(74).SIZE,
                             this.image ? n.push("<a>\n<img class='image-preview' src='" + t(e(this.image.getUrl(s.MOBILE))) + "' data-image-id='" + t(e(this.image.id)) + "'>\n</a>") : n.push("<div class='missing-image'></div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -31828,49 +30546,6 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i, n, s, r, a;
-                        for (t = this.__htmlEscape,
-                            e = this.__cleanValue,
-                            i = [],
-                            i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.level"))) + "</label>\n<div class='controls'>\n<select class='form-control' data-type='numeric' name='level' disabled='" + t(e(!this.hasConsistentDrivability)) + "'>\n<option value=''>" + t(e(this.segment.mixed.level ? this.t("edit.multiple_values") : void 0)) + "</option>"),
-                            s = n = r = this.segment.MaxLevel,
-                            a = this.segment.MinLevel; r <= a ? n <= a : n >= a; s = r <= a ? ++n : --n)
-                            i.push("" + e(this.h.option(this.t("edit.segment.levels")[s] || s, s, this.segment.attributes.level)));
-                        return i.push("</select>\n</div>\n</div>"),
-                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
-                        var e, t, i, n, s, r;
-                        if (t = this.__htmlEscape,
-                            e = this.__cleanValue,
-                            i = [],
-                            i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.lock"))) + "</label>\n<div class='controls'>\n<div class='form-control waze-radio-container'>"),
-                            this.segment.mixed.lockRank && i.push("" + e(this.h.segmentRankOption(this.segment, ""))),
-                            this.editable)
-                            for (i.push("" + e(this.h.segmentRankOption(this.segment, null, this.allowDefaultRank))),
-                                s = n = 0,
-                                r = this.userRank; 0 <= r ? n <= r : n >= r; s = 0 <= r ? ++n : --n)
-                                i.push("" + e(this.h.segmentRankOption(this.segment, s)));
-                        else
-                            i.push("" + e(this.h.segmentRankOption(this.segment, this.segment.attributes.lockRank)));
-                        return i.push("</div>\n</div>\n</div>"),
-                            i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
-                    }
-                    .call(e)
-            }
-        }
-        .call(this)
-}, function(e, t) {
-    e.exports = function() {
-            return function(e) {
-                return function() {
                         var e, t, i;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
@@ -31897,77 +30572,66 @@ webpackJsonp([0], [function(e, t, i) {
             return function(e) {
                 return function() {
                         var e, t, i, n, s, r;
-                        return t = this.__htmlEscape,
+                        for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='form-group'>\n<div class='controls'>"),
-                            this.view.shouldShowRoutingRoadTypeMessage() && i.push("<div class='hint'>" + e(this.view.getRoutingRoadTypeMessage()) + "</div>"),
-                            i.push("<div class='controls-container'>"),
+                            i.push("<div class='hide-walking-trail'>\n<div class='form-group'>\n<div class='hint routing-road-type-message'></div>\n<div class='controls'>\n<div class='controls-container'>"),
                             i.push("" + e(this.renderPartial("templates/segment/flag-attribute", {
-                                segment: this.segment,
                                 attribute: "unpaved"
                             }))),
                             i.push("</div>\n<div class='controls-container'>"),
                             i.push("" + e(this.renderPartial("templates/segment/flag-attribute", {
-                                segment: this.segment,
                                 attribute: "tunnel"
                             }))),
-                            i.push("</div>"),
-                            this.shouldShowHeadlightsReminder && (i.push("<div class='controls-container'>"),
-                                i.push("" + e(this.renderPartial("templates/segment/flag-attribute", {
-                                    segment: this.segment,
-                                    attribute: "headlights",
-                                    disabled: !this.allowHeadlightsReminder,
-                                    disabledTooltip: this.t("objects.common.rank_too_low")
-                                }))),
-                                i.push("</div>")),
-                            i.push("<div class='controls-container'>"),
+                            i.push("</div>\n<div class='controls-container headlights-reminder'>"),
                             i.push("" + e(this.renderPartial("templates/segment/flag-attribute", {
-                                segment: this.segment,
+                                attribute: "headlights",
+                                disabledTooltip: this.t("objects.common.rank_too_low")
+                            }))),
+                            i.push("</div>\n<div class='controls-container'>"),
+                            i.push("" + e(this.renderPartial("templates/segment/flag-attribute", {
                                 attribute: "nearbyHOV"
                             }))),
-                            i.push("<i class='waze-tooltip' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("edit.segment.tooltips.nearbyHOV"))) + "'></i>\n</div>\n</div>\n</div>"),
-                            this.view.shouldShowRoutingSelect() && i.push("" + e(this.renderPartial("templates/segment/routing", this))),
-                            this.segment.isTollRoad() && i.push("<div class='form-group'>\n<i class='waze-tooltip'></i>\n<span>" + t(e(this.t("edit.segment.fields.toll"))) + "</span>\n</div>"),
-                            this.showRestrictionEditing && (i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.restriction"))) + "</label>"),
-                                s = this.segment.getDrivingRestrictionCount(),
-                                r = this.segment.getPickupRestrictionCount(),
-                                i.push("<div class='restriction-list'>"),
-                                s > 0 && i.push("<a class='restriction-count' href='#' data-restriction-type='driving'>\n<span class='number'>" + t(e(s)) + "</span>\n<span class='title'>" + t(e(this.t("edit.segment.restrictions.driving_restrictions"))) + "</span>\n</a>"),
-                                this.segment.supportsPickupRestrictions() && r > 0 && i.push("<a class='restriction-count' href='#' data-restriction-type='pickup'>\n<span class='number'>" + t(e(r)) + "</span>\n<span class='title'>" + t(e(this.t("edit.segment.restrictions.pickup_restrictions"))) + "</span>\n</a>"),
-                                i.push("</div>\n<button class='edit-restrictions waze-btn waze-btn-small waze-btn-white'>"),
-                                this.allowRestrictionEditing ? this.hasRestrictions ? i.push("" + t(e(this.t("edit.segment.actions.restrictions.edit")))) : i.push("" + t(e(this.t("edit.segment.actions.restrictions.add")))) : i.push("" + t(e(this.t("edit.segment.actions.restrictions.view")))),
-                                i.push("</button>\n</div>")),
-                            i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.direction"))) + "</label>\n<div class='controls waze-radio-container'>"),
-                            this.segment.mixed.direction && i.push("" + e(this.h.directionRadio(this.segment, -1))),
-                            i.push("" + e(this.h.directionRadio(this.segment, 3))),
-                            i.push("" + e(this.h.directionRadio(this.segment, 1))),
-                            i.push("" + e(this.h.directionRadio(this.segment, 2))), !this.segment.mixed.allowNoDirection && this.segment.attributes.allowNoDirection && i.push("" + e(this.h.directionRadio(this.segment, 0))),
-                            i.push("</div>\n</div>"),
-                            this.segment.isDrivable() && this.allowSpeedLimit && (i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.speed_limit"))) + "</label>\n<div class='clearfix controls speed-limit'>"),
-                                (this.segment.mixed.fwdDirection || this.segment.attributes.fwdDirection) && (n = "fwdMaxSpeed",
-                                    i.push("" + e(this.renderPartial("templates/segment/speed-limit", {
-                                        segment: this.segment,
-                                        shouldShowAverageSpeedCamera: this.shouldShowAverageSpeedCamera,
-                                        value: this.view.getSpeedLimitValue(n),
-                                        disabled: !this.segment.canEditFwdSpeedLimit(),
-                                        unverifiedAttribute: "fwdMaxSpeedUnverified",
-                                        avgSpeedCameraAttribute: "fwdSpeedCamera",
-                                        attribute: n
-                                    })))),
-                                (this.segment.mixed.revDirection || this.segment.attributes.revDirection) && (n = "revMaxSpeed",
-                                    i.push("" + e(this.renderPartial("templates/segment/speed-limit", {
-                                        segment: this.segment,
-                                        shouldShowAverageSpeedCamera: this.shouldShowAverageSpeedCamera,
-                                        value: this.view.getSpeedLimitValue(n),
-                                        disabled: !this.segment.canEditRevSpeedLimit(),
-                                        unverifiedAttribute: "revMaxSpeedUnverified",
-                                        avgSpeedCameraAttribute: "revSpeedCamera",
-                                        attribute: n
-                                    })))),
-                                i.push("</div>\n</div>")),
-                            i.push("" + e(this.renderPartial("templates/segment/attribute-lock-level", this))),
-                            i.push("" + e(this.renderPartial("templates/segment/attribute-elevation", this))),
+                            i.push("<i class='waze-tooltip' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("edit.segment.tooltips.nearbyHOV"))) + "'></i>\n</div>\n</div>\n</div>\n<div class='form-group routing-road-type-select'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.routing"))) + "</label>\n<div class='controls'>\n<select class='form-control' name='routingRoadType'></select>\n</div>\n</div>\n<div class='form-group toll-road-message'>\n<i class='waze-tooltip'></i>\n<span>" + t(e(this.t("edit.segment.fields.toll"))) + "</span>\n</div>\n<div class='form-group restriction-editing'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.restriction"))) + "</label>\n<div class='restriction-list'>\n<div>\n<a class='restriction-count' href='#' data-restriction-type='driving'>\n<span class='number'></span>\n<span class='title'>" + t(e(this.t("edit.segment.restrictions.driving_restrictions"))) + "</span>\n</a>\n</div>\n<div>\n<a class='restriction-count' href='#' data-restriction-type='pickup'>\n<span class='number'></span>\n<span class='title'>" + t(e(this.t("edit.segment.restrictions.pickup_restrictions"))) + "</span>\n</a>\n</div>\n</div>\n<button class='edit-restrictions waze-btn waze-btn-small waze-btn-white'></button>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.direction"))) + "</label>\n<div class='controls waze-radio-container'>"),
+                            i.push("" + e(this.h.directionRadio(-1))),
+                            i.push("" + e(this.h.directionRadio(3))),
+                            i.push("" + e(this.h.directionRadio(1))),
+                            i.push("" + e(this.h.directionRadio(2))),
+                            i.push("" + e(this.h.directionRadio(0))),
+                            i.push("</div>\n</div>\n<div class='form-group speed-limits'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.speed_limit"))) + "</label>\n<div class='clearfix controls speed-limit'>"),
+                            i.push("" + e(this.renderPartial("templates/segment/speed-limit", {
+                                direction: "fwd"
+                            }))),
+                            i.push("" + e(this.renderPartial("templates/segment/speed-limit", {
+                                direction: "rev"
+                            }))),
+                            i.push("</div>\n</div>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.lock"))) + "</label>\n<div class='controls'>\n<div class='form-control lock-level-displayer waze-radio-container'>"),
+                            i.push("" + e(this.h.radio({
+                                label: " ",
+                                name: "lockRankDisplay",
+                                disabled: !0,
+                                forceChecked: !0
+                            }))),
+                            i.push("</div>\n<div class='form-control lock-level-selector waze-radio-container'>"),
+                            i.push("" + e(this.h.radio({
+                                label: this.t("edit.multiple_values"),
+                                value: "MIXED",
+                                name: "lockRank"
+                            }))),
+                            i.push("" + e(this.h.radio({
+                                label: " ",
+                                className: "automatic",
+                                value: "AUTO",
+                                name: "lockRank"
+                            }))),
+                            s = n = 0,
+                            r = this.userRank; 0 <= r ? n <= r : n >= r; s = 0 <= r ? ++n : --n)
+                            i.push("" + e(this.h.radio({
+                                label: this.h.formatRank(s),
+                                value: s,
+                                name: "lockRank"
+                            })));
+                        return i.push("</div>\n</div>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.level"))) + "</label>\n<div class='controls'>\n<select class='form-control' name='level'></select>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -31978,121 +30642,64 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i, n, s, r, a, o, l, u, d, c, h, f, p, g, m, v, _, y, b, w;
+                        var e, t, i, n, s, r, a, o, l, u;
                         if (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div class='" + ["segment", "sidebar-column", "separator-line", "" + t(e(this.isEntireRoundabout ? "roundabout" : void 0))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.segment.title", {
+                            i.push("<div class='segment separator-line sidebar-column'>\n<div class='selection selection-icon'>\n<span class='text'>" + t(e(this.t("edit.segment.title", {
                                 count: this.numSegments
-                            }))) + "</span>\n</div>"),
-                            this.view.consistentDirection || (i.push("<div class='segment-alert'>\n<i class='fa fa-info-circle'></i>"),
-                                i.push("" + t(e(this.t("edit.segment.alerts.op_direction")))),
-                                i.push("</div>")),
-                            this.canEditDrivingAttributes || (i.push("<div class='segment-alert'>\n<i class='fa fa-info-circle'></i>"),
-                                i.push("" + t(e(this.t("edit.segment.alerts.different_driving_types")))),
-                                i.push("</div>")),
-                            this.editable && !this.isInBigJunction || (i.push("<div class='segment-details'>"),
-                                this.editable || (this.editingMultiple ? (i.push("<span class='error'>" + t(e(this.t("edit.segment.permissions.multiple.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.multiple.description"))))) : this.segment.hasClosures() ? (i.push("<span class='error'>" + t(e(this.t("edit.segment.permissions.has_closures.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.has_closures.description"))))) : this.isLockedForUser && this.canEditClosures ? (i.push("<span class='error'>" + t(e(this.t("edit.segment.permissions.locked_except_closures.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.locked_except_closures.description", {
-                                        lockLevel: this.h.formatRank(this.segment.getLockRank())
-                                    }))))) : this.isLockedForUser ? (i.push("<span class='error'>" + t(e(this.t("edit.segment.permissions.locked.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.locked.description", {
-                                        lockLevel: this.h.formatRank(this.segment.getLockRank())
-                                    }))))) : (i.push("<span class='error'>" + t(e(this.t("edit.segment.permissions.area.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.area.description")))))),
-                                this.isInBigJunction && (i.push("<div class='junction-box-message'>\n<span class='title'>" + t(e(this.t("edit.segment.permissions.big_junction.title"))) + "</span>"),
-                                    i.push("" + t(e(this.t("edit.segment.permissions.big_junction.description")))),
-                                    i.push("</div>")),
-                                i.push("</div>")),
-                            i.push("<section class='tabs-container'>\n<ul class='nav nav-tabs'>\n<li class='active'>\n<a data-toggle='tab' href='#segment-edit-general'>" + t(e(this.t("edit.segment.tabs.general"))) + "</a>\n</li>\n<li>"),
-                            this.isClosuresSupported ? (i.push("<a data-toggle='tab' href='#segment-edit-closures'>"),
-                                i.push("" + t(e(this.t("edit.segment.tabs.closures")))),
-                                i.push("</a>")) : (i.push("<a disabled>"),
-                                i.push("" + t(e(this.t("edit.segment.tabs.closures")))),
-                                i.push("</a>")),
-                            i.push("</li>\n</ul>\n<div class='tab-scroll-gradient'></div>\n</section>\n<div class='tab-content'>\n<div class='active tab-pane' id='segment-edit-general'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.address"))) + "</label>\n<div class='address-edit'></div>\n<form class='attributes-form side-panel-section'>\n<div class='junction-exit-list-region'></div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.road_type"))) + "</label>\n<div class='controls'>\n<select class='form-control' data-type='numeric' name='roadType' disabled='" + t(e(!this.hasConsistentDrivability)) + "'>"),
-                            this.segment.mixed.roadType && (i.push("<option value='' selected='" + t(e(this.segment.mixed.roadType)) + "'>"),
-                                i.push("" + t(e(this.t("edit.multiple_values")))),
-                                i.push("</option>")),
-                            this.segment.isWalkingRoadType())
-                            for (p = this.WALKING_ROAD_TYPES,
+                            }))) + "</span>\n</div>\n<div class='inconsistent-direction segment-alert'>\n<i class='fa fa-info-circle'></i>"),
+                            i.push("" + t(e(this.t("edit.segment.alerts.op_direction")))),
+                            i.push("</div>\n<div class='inconsistent-driving-types segment-alert'>\n<i class='fa fa-info-circle'></i>"),
+                            i.push("" + t(e(this.t("edit.segment.alerts.different_driving_types")))),
+                            i.push("</div>\n<div class='segment-details'>\n<span class='error'>" + t(e(this.segmentErrorTitle)) + "</span>"),
+                            i.push("" + t(e(this.segmentErrorDescription))),
+                            i.push("</div>\n<section class='tabs-container'>\n<ul class='nav nav-tabs'>\n<li class='active'>\n<a data-toggle='tab' href='#segment-edit-general'>" + t(e(this.t("edit.segment.tabs.general"))) + "</a>\n</li>\n<li>\n<a class='closures-tab' data-toggle='tab' href='#segment-edit-closures'>"),
+                            i.push("" + t(e(this.t("edit.segment.tabs.closures")))),
+                            i.push("</a>\n</li>\n</ul>\n<div class='tab-scroll-gradient'></div>\n</section>\n<div class='tab-content'>\n<div class='active tab-pane' id='segment-edit-general'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.address"))) + "</label>\n<div class='address-edit'></div>\n<form class='attributes-form side-panel-section'>\n<div class='junction-exit-list-region'></div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.segment.fields.road_type"))) + "</label>\n<div class='controls'>\n<select class='form-control' data-type='numeric' name='roadType'></select>\n</div>\n</div>"),
+                            i.push("" + e(this.renderPartial("templates/segment/edit-panel-attributes-form", this))),
+                            i.push("</form>\n<div class='form-group more-actions'>\n<button class='action-button select-entire-roundabout waze-btn waze-btn-white'>"),
+                            i.push("" + t(e(this.t("edit.segment.actions.select_entire_roundabout")))),
+                            i.push("</button>\n<button class='action-button select-entire-street waze-btn waze-btn-white'>"),
+                            i.push("" + t(e(this.t("edit.segment.actions.select_entire_street")))),
+                            i.push("</button>\n<div class='edit-house-numbers-btn-wrapper waze-tooltip' data-toggle='tooltip'>\n<button class='action-button edit-house-numbers waze-btn waze-btn-white'></button>\n</div>\n</div>\n<ul class='additional-attributes list-unstyled side-panel-section'>\n<li class='length-attribute'>\n<span class='name'>" + t(e(this.t("edit.segment.fields.length") + ":")) + "</span>\n<span class='value'></span>\n</li>"),
+                            null != this.updatedOn)
+                            if (1 === this.numSegments)
+                                i.push("<li>" + e(this.safe_t("edit.updated", {
+                                    time: this.h.dateOnlyString(this.updatedOn),
+                                    user: this.h.userProfile(this.updatedBy)
+                                })) + "\n&lrm;\n</li>");
+                            else if (this.mixedUpdatedBy) {
+                            for (i.push("<li>"),
+                                i.push("" + t(e(this.t("edit.segment.fields.updated_by") + ":"))),
+                                i.push("<ul class='list-unstyled updated-by-list'>"),
+                                o = this.updatedBy,
+                                n = 0,
+                                r = o.length; n < r; n++)
+                                u = o[n],
+                                i.push("<li>" + e(this.h.userProfile(u)) + "\n&lrm;\n</li>");
+                            i.push("</ul>\n</li>")
+                        } else
+                            i.push("<li>\n<span class='name'>" + t(e(this.t("edit.segment.fields.updated_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.updatedBy)) + "</span>\n</li>");
+                        if (1 === this.numSegments)
+                            null != this.createdBy && i.push("<li>" + e(this.safe_t("edit.created", {
+                                time: this.h.dateOnlyString(this.createdOn),
+                                user: this.h.userProfile(this.createdBy)
+                            })) + "\n&lrm;\n</li>");
+                        else if (this.mixedCreatedBy) {
+                            for (i.push("<li>"),
+                                i.push("" + t(e(this.t("edit.segment.fields.created_by") + ":"))),
+                                i.push("<ul class='created-by-list list-unstyled'>"),
+                                l = this.createdBy,
                                 s = 0,
-                                l = p.length; s < l; s++)
-                                b = p[s],
-                                i.push("<option value='" + t(e(b)) + "' selected='" + t(e(this.segmentRoadType === b)) + "'>"),
-                                i.push("" + t(e(this.t("segment.road_types." + b)))),
-                                i.push("</option>");
-                        else
-                            for (g = this.roadTypeGroupsOrdering,
-                                r = 0,
-                                u = g.length; r < u; r++) {
-                                for (n = g[r],
-                                    i.push("<optgroup label='" + t(e(this.t("segment.categories." + n))) + "'>"),
-                                    m = this.roadTypeGroups[n],
-                                    a = 0,
-                                    d = m.length; a < d; a++)
-                                    y = m[a],
-                                    i.push("<option value='" + t(e(y)) + "' selected='" + t(e(this.segmentRoadType === y)) + "'>"),
-                                    i.push("" + t(e(this.t("segment.road_types." + y)))),
-                                    i.push("</option>");
-                                i.push("</optgroup>")
-                            }
-                        if (i.push("</select>\n</div>\n</div>"),
-                            this.segment.isWalkingRoadType() ? (i.push("" + e(this.renderPartial("templates/segment/attribute-lock-level", this))),
-                                i.push("" + e(this.renderPartial("templates/segment/attribute-elevation", this)))) : i.push("" + e(this.renderPartial("templates/segment/edit-panel-attributes-form", this))),
-                            i.push("</form>\n<div class='form-group more-actions'>"),
-                            this.isInRoundabout && !this.isEntireRoundabout && (i.push("<button class='action-button select-entire-roundabout waze-btn waze-btn-white'>"),
-                                i.push("" + t(e(this.t("edit.segment.actions.select_entire_roundabout")))),
-                                i.push("</button>")),
-                            this.showSelectEntireStreetButton && (i.push("<button class='action-button select-entire-street waze-btn waze-btn-white'>"),
-                                i.push("" + t(e(this.t("edit.segment.actions.select_entire_street")))),
-                                i.push("</button>")),
-                            this.showHouseNumbersButton && (i.push("<div class='edit-house-numbers-btn-wrapper waze-tooltip' title='" + t(e(this.houseNumberTitle)) + "' data-toggle='tooltip'>\n<button class='action-button edit-house-numbers waze-btn waze-btn-white' disabled='" + t(e(this.disableHouseNumbersButton)) + "'>"),
-                                this.segment.canEditHouseNumbers() ? i.push("" + t(e(this.t("edit.segment.actions.edit_house_numbers")))) : i.push("" + t(e(this.t("edit.segment.actions.view_house_numbers")))),
-                                i.push("</button>\n</div>")),
-                            i.push("</div>\n<ul class='additional-attributes list-unstyled side-panel-section'>"),
-                            null != this.segment.attributes.length && i.push("<li>\n<span class='name'>" + t(e(this.t("edit.segment.fields.length") + ":")) + "</span>\n<span class='value'>" + t(e(this.h.lengthString(this.segment.attributes.length))) + "</span>\n</li>"),
-                            null != this.segment.attributes.updatedOn)
-                            if (this.editingMultiple)
-                                if (this.segment.mixed.updatedBy) {
-                                    for (i.push("<li>"),
-                                        i.push("" + t(e(this.t("edit.segment.fields.updated_by") + ":"))),
-                                        i.push("<ul class='list-unstyled updated-by-list'>"),
-                                        v = this.segment.attributes.updatedBy,
-                                        o = 0,
-                                        c = v.length; o < c; o++)
-                                        w = v[o],
-                                        i.push("<li>" + e(this.h.userProfile(w)) + "\n&lrm;\n</li>");
-                                    i.push("</ul>\n</li>")
-                                } else
-                                    i.push("<li>\n<span class='name'>" + t(e(this.t("edit.segment.fields.updated_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.segment.attributes.updatedBy)) + "</span>\n</li>");
-                        else
-                            i.push("<li>" + e(this.safe_t("edit.updated", {
-                                time: this.h.dateOnlyString(this.segment.attributes.updatedOn),
-                                user: this.h.userProfile(this.segment.attributes.updatedBy)
-                            })) + "\n&lrm;\n</li>");
-                        if (this.editingMultiple)
-                            if (this.segment.mixed.createdBy) {
-                                for (i.push("<li>"),
-                                    i.push("" + t(e(this.t("edit.segment.fields.created_by") + ":"))),
-                                    i.push("<ul class='created-by-list list-unstyled'>"),
-                                    _ = this.segment.attributes.createdBy,
-                                    f = 0,
-                                    h = _.length; f < h; f++)
-                                    w = _[f],
-                                    i.push("<li>" + e(this.h.userProfile(w)) + "\n&lrm;\n</li>");
-                                i.push("</ul>\n</li>")
-                            } else
-                                i.push("<li>\n<span>" + t(e(this.t("edit.segment.fields.created_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.segment.attributes.createdBy)) + "</span>\n</li>");
-                        else
-                            null != this.segment.attributes.createdBy && i.push("<li>" + e(this.safe_t("edit.created", {
-                                time: this.h.dateOnlyString(this.segment.attributes.createdOn),
-                                user: this.h.userProfile(this.segment.attributes.createdBy)
-                            })) + "\n&lrm;\n</li>");
+                                a = l.length; s < a; s++)
+                                u = l[s],
+                                i.push("<li>" + e(this.h.userProfile(u)) + "\n&lrm;\n</li>");
+                            i.push("</ul>\n</li>")
+                        } else
+                            i.push("<li>\n<span>" + t(e(this.t("edit.segment.fields.created_by") + ":")) + "</span>\n<span class='value'>" + e(this.h.userProfile(this.createdBy)) + "</span>\n</li>");
                         return i.push("<li>" + t(e(this.t("edit.id", {
-                                num: this.segmentId
+                                num: this.id
                             }))) + "</li>\n</ul>\n<div class='element-history-region'></div>\n</div>\n<div class='tab-pane' id='segment-edit-closures'>\n<div class='closures'></div>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -32104,16 +30711,13 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i, n, s, r;
+                        var e, t, i, n;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            s = this.attribute + "Checkbox",
-                            r = !!this.segment.mixed[this.attribute],
-                            n = this.segment.getFlagAttribute(this.attribute) && !r,
-                            i.push("<input id='" + t(e(s)) + "' name='" + t(e(this.attribute)) + "' type='checkbox' checked='" + t(e(n)) + "' mixed='" + t(e(r)) + "' disabled='" + t(e(!0 === this.disabled)) + "'>\n<label for='" + t(e(s)) + "' disabled='" + t(e(!0 === this.disabled)) + "'>"),
-                            i.push("" + t(e(this.t("edit.segment.fields." + this.attribute)))),
-                            i.push("</label>"), !0 === this.disabled && this.disabledTooltip && i.push("<div class='waze-lock-tooltip' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("objects.common.rank_too_low"))) + "'></div>"),
+                            n = this.attribute + "Checkbox",
+                            i.push("<input id='" + t(e(n)) + "' name='" + t(e(this.attribute)) + "' type='checkbox'>\n<label for='" + t(e(n)) + "'>" + t(e(this.t("edit.segment.fields." + this.attribute))) + "</label>"),
+                            this.disabledTooltip && i.push("<div class='waze-flag-locked-toolip waze-lock-tooltip' data-toggle='tooltip' data-placement='bottom' title='" + t(e(this.t("objects.common.rank_too_low"))) + "'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -32174,24 +30778,13 @@ webpackJsonp([0], [function(e, t, i) {
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e, t, i, n;
+                        var e, t, i;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            i.push("<div>\n<label class='speed-limit'>"),
-                            this.segment.mixed[this.attribute] && this.t("edit.multiple_values"),
-                            i.push("<div class='direction-label'>" + t(e(this.t("edit.segment.speed_limit." + this.attribute))) + "</div>\n<input class='form-control' type='number' name='" + t(e(this.attribute)) + "' maxlength='4' value='" + t(e(this.value)) + "' disabled='" + t(e(this.disabled)) + "' data-type='numeric' data-nullable='true' data-units='" + t(e(this.segment.UNITS.speed)) + "'>"),
-                            this.segment.isSpeedUnverified(this.unverifiedAttribute) && i.push("<i class='auto-speed-tooltip waze-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("edit.segment.speed_limit.added_automatically"))) + "'></i>"),
-                            i.push("<div class='unit-label'>"),
+                            i.push("<div class='speed-limit-" + this.direction + "'>\n<div class='speed-limit'>\n<div class='direction-label'>" + t(e(this.t("edit.segment.speed_limit." + this.direction + "MaxSpeed"))) + "</div>\n<input class='form-control' type='number' name='" + t(e(this.direction)) + "MaxSpeed' maxlength='4'>\n<i class='auto-speed-tooltip waze-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("edit.segment.speed_limit.added_automatically"))) + "'></i>\n<div class='unit-label'>"),
                             i.push("" + t(e(this.h.speedString()))),
-                            i.push("</div>"),
-                            this.shouldShowAverageSpeedCamera && (n = !this.segment.canEditAverageSpeedCamera(),
-                                i.push("<div class='" + ["controls-container", "average-speed-camera", "" + t(e(n ? "locked" : void 0))].sort().join(" ").replace(/^\s+|\s+$/g, "") + "'>\n<input id='speedCamera" + this.attribute + "' name='" + t(e(this.avgSpeedCameraAttribute)) + "' type='checkbox' checked='" + t(e(this.segment.getFlagAttribute(this.avgSpeedCameraAttribute))) + "' disabled='" + t(e(n)) + "'>\n<label for='speedCamera" + t(e(this.attribute)) + "' disabled='" + t(e(n)) + "'>" + e("&nbsp;") + "</label>\n<div class='camera-icon waze-no-info-tooltip waze-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("edit.segment.fields.average_speed_camera"))) + "'></div>"),
-                                n && i.push("<div class='waze-lock-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("objects.common.rank_too_low"))) + "'></div>"),
-                                i.push("</div>")),
-                            i.push("</label>"),
-                            this.segment.canChangeMaxSpeedUnverified(this.unverifiedAttribute) && i.push("<div class='verify-buttons' data-attribute='" + t(e(this.attribute)) + "' data-unverified-attribute='" + t(e(this.unverifiedAttribute)) + "'>\n<button class='verify-btn waze-btn waze-btn-green waze-btn-small'>" + t(e(this.t("edit.segment.speed_limit.verify_speed_limit"))) + "</button>\n<button class='edit-btn waze-btn waze-btn-small waze-btn-white'>" + t(e(this.t("edit.segment.speed_limit.edit"))) + "</button>\n</div>"),
-                            i.push("</div>"),
+                            i.push("</div>\n<div class='average-speed-camera controls-container'>\n<input id='speedCamera" + this.direction + "' name='" + t(e(this.direction)) + "SpeedCamera' type='checkbox'>\n<label for='speedCamera" + t(e(this.direction)) + "'>" + e("&nbsp;") + "</label>\n<div class='camera-icon waze-no-info-tooltip waze-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("edit.segment.fields.average_speed_camera"))) + "'></div>\n<div class='waze-camera-tooltip waze-lock-tooltip' data-toggle='tooltip' data-placement='top' title='" + t(e(this.t("objects.common.rank_too_low"))) + "'></div>\n</div>\n</div>\n<div class='verify-buttons' data-direction='" + t(e(this.direction)) + "'>\n<button class='verify-btn waze-btn waze-btn-green waze-btn-small'>" + t(e(this.t("edit.segment.speed_limit.verify_speed_limit"))) + "</button>\n<button class='edit-btn waze-btn waze-btn-small waze-btn-white'>" + t(e(this.t("edit.segment.speed_limit.edit"))) + "</button>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -32347,7 +30940,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(71).UNIT,
+                            s = i(59).UNIT,
                             W.Config.user_editing_enabled ? (n.push("" + t(e(this.t("user.info.edit_area.title", {
                                     distance: this.h.lengthString(this.editableMiles, {
                                         units: s.MILE,
@@ -32418,7 +31011,7 @@ webpackJsonp([0], [function(e, t, i) {
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(710))) + "'>"),
+                            n.push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(702))) + "'>"),
                             n.push("" + t(e(this.t("tutorial.title")))),
                             n.push("</a>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -32776,7 +31369,7 @@ webpackJsonp([0], [function(e, t, i) {
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
                             n = [],
-                            s = i(92),
+                            s = i(114),
                             n.push("<form class='attributes-form'>\n<fieldset class='controls-container'>\n<div class='side-panel-section'>\n<div class='form-group'>\n<template class='hidden parkingType-tooltip-template'>\n<ul class='list-unstyled parkingType-tooltip-content'>"),
                             f = s.PARKING_TYPE,
                             r = 0,
@@ -32909,7 +31502,7 @@ webpackJsonp([0], [function(e, t, i) {
                             this.landmark.attributes.residential || n.push("<div class='more-info tab-pane' id='landmark-edit-more-info'></div>"),
                             n.push("<div class='tab-pane' id='landmark-edit-photos'>\n<div class='image-view'>"),
                             this.hasImages || n.push("<em>" + t(e(this.t("edit.landmark.no_photos"))) + "</em>"),
-                            s = i(76).SIZE,
+                            s = i(74).SIZE,
                             l = this.images,
                             r = 0,
                             o = l.length; r < o; r++)
@@ -32934,8 +31527,8 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(7),
         o = n(a),
-        l = i(732),
-        u = i(733);
+        l = i(724),
+        u = i(725);
     W.Config = l.beta,
         W.Config.raster_layers = u.beta,
         W.Config.init = function(e) {
@@ -32954,7 +31547,7 @@ webpackJsonp([0], [function(e, t, i) {
         }
 }, function(e, t, i) {
     "use strict";
-    var n = i(230),
+    var n = i(228),
         s = {
             default_locale: "en",
             api_base: "/Descartes/app",
@@ -33155,7 +31748,7 @@ webpackJsonp([0], [function(e, t, i) {
                     PARKING_LOT: [],
                     TRANSPORTATION: ["AIRPORT", "BUS_STATION", "FERRY_PIER", "SEAPORT_MARINA_HARBOR", "SUBWAY_STATION", "TRAIN_STATION", "BRIDGE", "TUNNEL", "TAXI_STATION", "JUNCTION_INTERCHANGE", "REST_AREAS"],
                     PROFESSIONAL_AND_PUBLIC: ["COLLEGE_UNIVERSITY", "SCHOOL", "CONVENTIONS_EVENT_CENTER", "GOVERNMENT", "LIBRARY", "CITY_HALL", "ORGANIZATION_OR_ASSOCIATION", "PRISON_CORRECTIONAL_FACILITY", "COURTHOUSE", "CEMETERY", "FIRE_DEPARTMENT", "POLICE_STATION", "MILITARY", "HOSPITAL_URGENT_CARE", "DOCTOR_CLINIC", "OFFICES", "POST_OFFICE", "RELIGIOUS_CENTER", "KINDERGARDEN", "FACTORY_INDUSTRIAL", "EMBASSY_CONSULATE", "INFORMATION_POINT", "EMERGENCY_SHELTER", "TRASH_AND_RECYCLING_FACILITIES"],
-                    SHOPPING_AND_SERVICES: ["ARTS_AND_CRAFTS", "BANK_FINANCIAL", "SPORTING_GOODS", "BOOKSTORE", "PHOTOGRAPHY", "CAR_DEALERSHIP", "FASHION_AND_CLOTHING", "CONVENIENCE_STORE", "PERSONAL_CARE", "DEPARTMENT_STORE", "PHARMACY", "ELECTRONICS", "FLOWERS", "FURNITURE_HOME_STORE", "GIFTS", "GYM_FITNESS", "SWIMMING_POOL", "HARDWARE_STORE", "MARKET", "SUPERMARKET_GROCERY", "JEWELRY", "LAUNDRY_DRY_CLEAN", "SHOPPING_CENTER", "MUSIC_STORE", "PET_STORE_VETERINARIAN_SERVICES", "TOY_STORE", "TRAVEL_AGENCY", "ATM", "CURRENCY_EXCHANGE", "CAR_RENTAL"],
+                    SHOPPING_AND_SERVICES: ["ARTS_AND_CRAFTS", "BANK_FINANCIAL", "SPORTING_GOODS", "BOOKSTORE", "PHOTOGRAPHY", "CAR_DEALERSHIP", "FASHION_AND_CLOTHING", "CONVENIENCE_STORE", "PERSONAL_CARE", "DEPARTMENT_STORE", "PHARMACY", "ELECTRONICS", "FLOWERS", "FURNITURE_HOME_STORE", "GIFTS", "GYM_FITNESS", "SWIMMING_POOL", "HARDWARE_STORE", "MARKET", "SUPERMARKET_GROCERY", "JEWELRY", "LAUNDRY_DRY_CLEAN", "SHOPPING_CENTER", "MUSIC_STORE", "PET_STORE_VETERINARIAN_SERVICES", "TOY_STORE", "TRAVEL_AGENCY", "ATM", "CURRENCY_EXCHANGE", "CAR_RENTAL", "TELECOM"],
                     FOOD_AND_DRINK: ["RESTAURANT", "BAKERY", "DESSERT", "CAFE", "FAST_FOOD", "FOOD_COURT", "BAR", "ICE_CREAM"],
                     CULTURE_AND_ENTERTAINEMENT: ["ART_GALLERY", "CASINO", "CLUB", "TOURIST_ATTRACTION_HISTORIC_SITE", "MOVIE_THEATER", "MUSEUM", "MUSIC_VENUE", "PERFORMING_ARTS_VENUE", "GAME_CLUB", "STADIUM_ARENA", "THEME_PARK", "ZOO_AQUARIUM", "RACING_TRACK", "THEATER"],
                     OTHER: ["CONSTRUCTION_SITE"],
@@ -33237,7 +31830,7 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    var n = i(230),
+    var n = i(228),
         s = {
             options: {
                 alpha: !0,
@@ -33351,114 +31944,286 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    var n = i(735);
-    window.require = function(e) {
-        return e = "./" + e + ".js",
-            n(e)
-    };
-    window.Waze = new Proxy(window.W, {
-        get: function(e, t) {
-            return console.warn("window.Waze is deprecated and will be removed soon, use window.W instead"),
-                e[t]
-        }
-    })
-}, function(e, t, i) {
-    function n(e) {
-        return i(s(e))
-    }
 
-    function s(e) {
-        var t = r[e];
-        if (!(t + 1))
-            throw new Error("Cannot find module '" + e + "'.");
-        return t
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
     }
-    var r = {
-        "./Waze/Action.js": 16,
-        "./Waze/Action/AddAlternateStreet.js": 231,
-        "./Waze/Action/AddBigJunction.js": 232,
-        "./Waze/Action/AddIntersection.js": 233,
-        "./Waze/Action/AddLandmark.js": 235,
-        "./Waze/Action/AddNode.js": 125,
-        "./Waze/Action/AddOrGetCity.js": 94,
-        "./Waze/Action/AddOrGetStreet.js": 122,
-        "./Waze/Action/AddRoadClosure.js": 236,
-        "./Waze/Action/AddSegment.js": 95,
-        "./Waze/Action/CompositeAction.js": 9,
-        "./Waze/Action/ConnectSegment.js": 51,
-        "./Waze/Action/ConvertNodeToRegular.js": 123,
-        "./Waze/Action/ConvertSegmentNodesToRegular.js": 736,
-        "./Waze/Action/CreateObject.js": 63,
-        "./Waze/Action/CreateRoundabout.js": 237,
-        "./Waze/Action/DeleteBigJunction.js": 238,
-        "./Waze/Action/DeleteNode.js": 168,
-        "./Waze/Action/DeleteObject.js": 126,
-        "./Waze/Action/DeleteRoadClosure.js": 239,
-        "./Waze/Action/DeleteSegment.js": 64,
-        "./Waze/Action/DisconnectSegment.js": 79,
-        "./Waze/Action/HouseNumber.js": 240,
-        "./Waze/Action/IncrementSegmentStreetChangeCount.js": 241,
-        "./Waze/Action/MergeLandmarks.js": 172,
-        "./Waze/Action/MergeNode.js": 242,
-        "./Waze/Action/MergeSegments.js": 173,
-        "./Waze/Action/ModifyAllConnections.js": 170,
-        "./Waze/Action/MoveNode.js": 243,
-        "./Waze/Action/MultiAction.js": 52,
-        "./Waze/Action/SegmentAction.js": 169,
-        "./Waze/Action/SplitSegments.js": 78,
-        "./Waze/Action/UpdateBigJunctionConnectedSegments.js": 167,
-        "./Waze/Action/UpdateFeatureAddress.js": 244,
-        "./Waze/Action/UpdateFeatureGeometry.js": 77,
-        "./Waze/Action/UpdateHouseNumber.js": 171,
-        "./Waze/Action/UpdateHouseNumberGeometry.js": 245,
-        "./Waze/Action/UpdateLandmarkResidential.js": 246,
-        "./Waze/Action/UpdateObject.js": 19,
-        "./Waze/Action/UpdatePlaceUpdate.js": 247,
-        "./Waze/Action/UpdateRoadClosure.js": 248,
-        "./Waze/Action/UpdateSegmentGeometry.js": 124,
-        "./Waze/Action/Visitor/TreeSerializor.js": 249,
-        "./Waze/ActionManager.js": 250,
-        "./Waze/DivIcon.js": 25,
-        "./Waze/Feature/Vector.js": 29,
-        "./Waze/Feature/Vector/BigJunction.js": 110,
-        "./Waze/Feature/Vector/ClosureProblem.js": 213,
-        "./Waze/Feature/Vector/CompositeSegment.js": 127,
-        "./Waze/Feature/Vector/Factory/MapProblem.js": 211,
-        "./Waze/Feature/Vector/Factory/MapProblemDetails.js": 214,
-        "./Waze/Feature/Vector/Landmark.js": 91,
-        "./Waze/Feature/Vector/Landmark/ParkingAttributes.js": 115,
-        "./Waze/Feature/Vector/Landmark/ParkingEnum.js": 92,
-        "./Waze/Feature/Vector/MapProblem.js": 75,
-        "./Waze/Feature/Vector/Node.js": 113,
-        "./Waze/Feature/Vector/ProblemResolution.js": 162,
-        "./Waze/Feature/Vector/Segment.js": 30,
-        "./Waze/Feature/Vector/SegmentFlags.js": 215,
-        "./Waze/Feature/Vector/SpeedCamera.js": 116,
-        "./Waze/Feature/Vector/TurnProblem.js": 212,
-        "./Waze/Feature/Vector/UpdateRequest.js": 220,
-        "./Waze/Model/Graph/Actions/SetTurn.js": 36,
-        "./Waze/Model/Graph/Actions/SplitTurns.js": 234,
-        "./Waze/Model/Graph/Actions/ToggleTurn.js": 175,
-        "./Waze/Model/Graph/DirectedSegment.js": 256,
-        "./Waze/Model/Graph/InstructionOpcode.js": 257,
-        "./Waze/Model/Graph/RoadGraph.js": 258,
-        "./Waze/Model/Graph/Turn.js": 112,
-        "./Waze/Model/Graph/TurnData.js": 60,
-        "./Waze/Model/Graph/TurnGraph.js": 259,
-        "./Waze/Model/Graph/Vertex.js": 35,
-        "./Waze/Modules/Closures/Models/ClosureActionBuilder.js": 260,
-        "./Waze/Modules/Closures/Models/SharedClosure.js": 65,
-        "./Waze/Modules/Closures/Models/SharedClosures.js": 261,
-        "./Waze/Modules/Closures/Models/SharedClosuresBuilder.js": 262,
-        "./Waze/ViewHelpers/Core.js": 12,
-        "./Waze/ViewHelpers/ModelViewHelpers.js": 263
-    };
-    n.keys = function() {
-            return Object.keys(r)
-        },
-        n.resolve = s,
-        e.exports = n,
-        n.id = 735
+    var s = i(229),
+        r = n(s),
+        a = i(230),
+        o = n(a),
+        l = i(234),
+        u = n(l),
+        d = i(122),
+        c = n(d),
+        h = i(93),
+        f = n(h),
+        p = i(120),
+        g = n(p),
+        m = i(94),
+        v = n(m),
+        _ = i(51),
+        y = n(_),
+        b = i(63),
+        w = n(b),
+        E = i(235),
+        k = n(E),
+        M = i(123),
+        S = n(M),
+        T = i(64),
+        C = n(T),
+        I = i(77),
+        A = n(I),
+        R = i(236),
+        O = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var i in e)
+                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
+            return t.default = e,
+                t
+        }(R),
+        D = i(168),
+        L = n(D),
+        P = i(166),
+        N = n(P),
+        x = i(237),
+        V = n(x),
+        F = i(52),
+        U = n(F),
+        j = i(76),
+        B = n(j),
+        G = i(238),
+        W = n(G),
+        z = i(75),
+        H = n(z),
+        $ = i(167),
+        Y = n($),
+        q = i(239),
+        K = n(q),
+        J = i(19),
+        Z = n(J),
+        X = i(121),
+        Q = n(X),
+        ee = i(26),
+        te = n(ee),
+        ie = i(90),
+        ne = n(ie),
+        se = i(29),
+        re = n(se),
+        ae = i(218),
+        oe = n(ae),
+        le = i(95),
+        ue = n(le),
+        de = i(36),
+        ce = n(de),
+        he = i(61),
+        fe = n(he),
+        pe = i(96),
+        ge = n(pe),
+        me = i(35),
+        ve = n(me),
+        _e = i(240),
+        ye = n(_e),
+        be = i(65),
+        we = n(be);
+    window.Waze = new Proxy(window.W, {
+            get: function(e, t) {
+                return console.warn("window.Waze is deprecated and will be removed soon, use window.W instead"),
+                    e[t]
+            }
+        }),
+        window.require = function(e) {
+            var t = {
+                    "Waze/Action/AddAlternateStreet": r.default,
+                    "Waze/Action/AddIntersection": o.default,
+                    "Waze/Action/AddLandmark": u.default,
+                    "Waze/Action/AddNode": c.default,
+                    "Waze/Action/AddOrGetCity": f.default,
+                    "Waze/Action/AddOrGetStreet": g.default,
+                    "Waze/Action/AddSegment": v.default,
+                    "Waze/Action/ConnectSegment": y.default,
+                    "Waze/Action/CreateObject": w.default,
+                    "Waze/Action/CreateRoundabout": k.default,
+                    "Waze/Action/DeleteObject": S.default,
+                    "Waze/Action/DeleteSegment": C.default,
+                    "Waze/Action/DisconnectSegment": A.default,
+                    "Waze/Action/HouseNumber": O,
+                    "Waze/Action/MergeSegments": L.default,
+                    "Waze/Action/ModifyAllConnections": N.default,
+                    "Waze/Action/MoveNode": V.default,
+                    "Waze/Action/MultiAction": U.default,
+                    "Waze/Action/SplitSegments": B.default,
+                    "Waze/Action/UpdateFeatureAddress": W.default,
+                    "Waze/Action/UpdateFeatureGeometry": H.default,
+                    "Waze/Action/UpdateHouseNumber": Y.default,
+                    "Waze/Action/UpdateHouseNumberGeometry": K.default,
+                    "Waze/Action/UpdateObject": Z.default,
+                    "Waze/Action/UpdateSegmentGeometry": Q.default,
+                    "Waze/DivIcon": te.default,
+                    "Waze/Feature/Vector/Landmark": ne.default,
+                    "Waze/Feature/Vector/Segment": re.default,
+                    "Waze/Feature/Vector/UpdateRequest": oe.default,
+                    "Waze/Handler/DragElement": ue.default,
+                    "Waze/Model/Graph/Actions/SetTurn": ce.default,
+                    "Waze/Model/Graph/TurnData": fe.default,
+                    "Waze/Model/Graph/TurnGraph": ge.default,
+                    "Waze/Model/Graph/Vertex": ve.default,
+                    "Waze/Modules/Closures/Models/ClosureActionBuilder": ye.default,
+                    "Waze/Modules/Closures/Models/SharedClosure": we.default
+                },
+                i = t[e];
+            if (null != i)
+                return i;
+            throw new Error("Cannot find module " + e)
+        }
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
+        r = n(s),
+        a = i(2),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(3),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(10),
+        v = n(m),
+        _ = i(36),
+        y = n(_),
+        b = i(35),
+        w = n(b),
+        E = function(e) {
+            function t(e, i, n, s) {
+                (0,
+                    u.default)(this, t);
+                var r = (0,
+                    f.default)(this, (t.__proto__ || (0,
+                    o.default)(t)).call(this, s));
+                return r._forwardVertex = w.default.forwardOf(e),
+                    r._reverseVertex = w.default.reverseOf(e),
+                    r._firstSplitID = n,
+                    r._lastSplitID = i,
+                    r
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this.model.getTurnGraph();
+                        e.getTurnsTo(this._forwardVertex).forEach(function(t) {
+                                t = t.withToVertex(w.default.forwardOf(this._firstSplitID)),
+                                    this.doSubAction(new y.default(e, t, {
+                                        dontSerialize: !0
+                                    }))
+                            }, this),
+                            e.getTurnsFrom(this._forwardVertex).forEach(function(t) {
+                                t = t.withFromVertex(w.default.forwardOf(this._lastSplitID)),
+                                    this.doSubAction(new y.default(e, t, {
+                                        dontSerialize: !0
+                                    }))
+                            }, this),
+                            e.getTurnsFrom(this._reverseVertex).forEach(function(t) {
+                                t = t.withFromVertex(w.default.reverseOf(this._firstSplitID)),
+                                    this.doSubAction(new y.default(e, t, {
+                                        dontSerialize: !0
+                                    }))
+                            }, this),
+                            e.getTurnsTo(this._reverseVertex).forEach(function(t) {
+                                t = t.withToVertex(w.default.reverseOf(this._lastSplitID)),
+                                    this.doSubAction(new y.default(e, t, {
+                                        dontSerialize: !0
+                                    }))
+                            }, this)
+                    }
+                }]),
+                t
+        }(v.default);
+    (0,
+        r.default)(E.prototype, {
+        CLASS_NAME: "Waze.Model.Graph.Actions.SplitTurns"
+    }),
+    t.default = E,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
+        r = n(s),
+        a = i(2),
+        o = n(a),
+        l = i(0),
+        u = n(l),
+        d = i(1),
+        c = n(d),
+        h = i(3),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(17),
+        v = n(m),
+        _ = function(e) {
+            function t() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                return (0,
+                        u.default)(this, t),
+                    (0,
+                        f.default)(this, (t.__proto__ || (0,
+                        o.default)(t)).call(this, (0,
+                        r.default)({
+                        dontSerialize: !0
+                    }, e)))
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    c.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        this.model.loginManager.user.incrementSegmentStreetChangeCount()
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        this.model.loginManager.user.decrementSegmentStreetChangeCount()
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.model.loginManager.user.incrementSegmentStreetChangeCount()
+                    }
+                }]),
+                t
+        }(v.default);
+    t.default = _,
+        e.exports = t.default
 }, function(e, t, i) {
     "use strict";
 
@@ -33480,72 +32245,61 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(17),
         g = n(p),
-        m = i(123),
-        v = n(m),
-        _ = function(e) {
-            function t(e, i) {
+        m = i(12),
+        v = function(e) {
+            function t(e, i, n) {
                 (0,
                     o.default)(this, t);
-                var n = (0,
+                var s = (0,
                     c.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).call(this, i));
-                return n._segment = e,
-                    n
+                    r.default)(t)).call(this, n));
+                return s.closure = e,
+                    s.segment = i,
+                    s
             }
             return (0,
                     f.default)(t, e),
                 (0,
                     u.default)(t, [{
-                    key: "doAction",
+                    key: "serialize",
                     value: function() {
-                        return !!this._convertNodeById(this._segment.attributes.fromNodeID) || this._convertNodeById(this._segment.attributes.toNodeID)
+                        return {
+                            _objectType: m.ROAD_CLOSURE,
+                            action: g.default.TYPE.ADD,
+                            attributes: {
+                                reason: this.closure.reason,
+                                location: this.closure.location,
+                                segID: this.closure.segID,
+                                id: this.closure.getID(),
+                                startDate: this.closure.startDate,
+                                endDate: this.closure.endDate,
+                                forward: this.closure.forward,
+                                permanent: this.closure.permanent,
+                                eventId: this.closure.eventId
+                            }
+                        }
                     }
                 }, {
-                    key: "_convertNodeById",
-                    value: function(e) {
-                        var t = this.model.nodes.get(e);
-                        return !(null == t || !t.isVirtual()) && (this.doSubAction(new v.default(t)), !0)
+                    key: "doAction",
+                    value: function() {
+                        W.model.repos.roadClosures.put(this.closure)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.doAction()
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        W.model.repos.roadClosures.remove(this.closure)
                     }
                 }]),
                 t
         }(g.default);
-    t.default = _,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var n = {
-        sum: function(e, t) {
-            return (e || 0) + (t || 0)
-        },
-        max: function(e, t) {
-            return Math.max(e, t)
-        },
-        logical: {
-            and: function(e, t) {
-                return e && t
-            },
-            or: function(e, t) {
-                return e || t
-            }
-        },
-        bitwise: {
-            and: function(e, t) {
-                return e & t
-            },
-            or: function(e, t) {
-                return e | t
-            },
-            xor: function(e, t) {
-                return e ^ t
-            }
-        }
-    };
-    t.default = n,
+    t.default = v,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -33560,279 +32314,127 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
-        a = i(88),
+        a = i(0),
         o = n(a),
-        l = i(739),
+        l = i(1),
         u = n(l),
-        d = i(0),
+        d = i(3),
         c = n(d),
-        h = i(1),
+        h = i(4),
         f = n(h),
-        p = i(3),
+        p = i(17),
         g = n(p),
-        m = i(4),
-        v = n(m),
-        _ = i(49),
-        y = n(_),
-        b = function(e) {
-            function t() {
-                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
-                    i = arguments[1];
+        m = i(12),
+        v = function(e) {
+            function t(e, i) {
                 (0,
-                    c.default)(this, t);
-                var n = new u.default,
-                    s = new u.default,
-                    a = new u.default,
-                    l = new u.default,
-                    d = [],
-                    h = new u.default;
-                e.forEach(function(e) {
-                    e.isEmpty() || (n.add(e.getStreet().id),
-                        s.add(e.getCity().attributes.id),
-                        a.add(e.getState().id),
-                        l.add(e.getCountry().id),
-                        e.attributes.altStreets.forEach(function(e) {
-                            var t = e.getStreet().id;
-                            h.has(t) || (d.push(e),
-                                h.add(t))
-                        }))
-                });
-                var f = (0,
-                        o.default)(n).map(function(e) {
-                        return i.streets.get(e)
-                    }),
-                    p = (0,
-                        o.default)(s).map(function(e) {
-                        return i.cities.get(e)
-                    }),
-                    m = (0,
-                        o.default)(a).map(function(e) {
-                        return i.states.get(e)
-                    }),
-                    v = (0,
-                        o.default)(l).map(function(e) {
-                        return i.countries.get(e)
-                    }),
-                    _ = (0,
-                        g.default)(this, (t.__proto__ || (0,
-                        r.default)(t)).call(this, {
-                        isEmpty: 0 === f.length,
-                        street: f.length > 1 ? null : f[0],
-                        city: p.length > 1 ? null : p[0],
-                        state: m.length > 1 ? null : m[0],
-                        country: v.length > 1 ? null : v[0],
-                        altStreets: d
-                    }));
-                return _.streets = f,
-                    _.cities = p,
-                    _.states = m,
-                    _.countries = v,
-                    _.addresses = e,
-                    _
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.closure = e,
+                    n
             }
             return (0,
-                    v.default)(t, e),
+                    f.default)(t, e),
                 (0,
-                    f.default)(t, [{
-                    key: "hasMixedStreets",
+                    u.default)(t, [{
+                    key: "serialize",
                     value: function() {
-                        return this.streets.length > 1
+                        return {
+                            _objectType: m.ROAD_CLOSURE,
+                            action: g.default.TYPE.UPDATE,
+                            attributes: {
+                                reason: this.closure.reason,
+                                location: this.closure.location,
+                                segID: this.closure.segID,
+                                id: this.closure.id,
+                                startDate: this.closure.startDate,
+                                endDate: this.closure.endDate,
+                                forward: this.closure.forward,
+                                permanent: this.closure.permanent,
+                                eventId: this.closure.eventId
+                            }
+                        }
                     }
                 }, {
-                    key: "hasMixedCities",
+                    key: "doAction",
+                    value: function() {}
+                }]),
+                t
+        }(g.default);
+    t.default = v,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(17),
+        g = n(p),
+        m = i(12),
+        v = function(e) {
+            function t(e, i, n) {
+                (0,
+                    o.default)(this, t);
+                var s = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, n));
+                return s.closure = e,
+                    s.segment = i,
+                    s
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "serialize",
                     value: function() {
-                        return this.cities.length > 1
+                        return {
+                            _objectType: m.ROAD_CLOSURE,
+                            action: g.default.TYPE.DELETE,
+                            attributes: {
+                                id: this.closure.getID(),
+                                segID: this.closure.segID
+                            }
+                        }
                     }
                 }, {
-                    key: "hasMixedStates",
+                    key: "doAction",
                     value: function() {
-                        return this.states.length > 1
+                        W.model.repos.roadClosures.remove(this.closure)
                     }
                 }, {
-                    key: "hasMixedCountries",
+                    key: "redoAction",
                     value: function() {
-                        return this.countries.length > 1
+                        this.doAction()
                     }
                 }, {
-                    key: "getStreetName",
-                    value: function(e) {
-                        return this.hasMixedStreets() ? null : this.addresses[0].getStreetName(e)
-                    }
-                }, {
-                    key: "isEmptyStreet",
+                    key: "undoAction",
                     value: function() {
-                        return !this.hasMixedStreets() && this.addresses[0].isEmptyStreet()
-                    }
-                }, {
-                    key: "getCityName",
-                    value: function(e) {
-                        return this.hasMixedCities() ? null : this.addresses[0].getCityName(e)
-                    }
-                }, {
-                    key: "getStateName",
-                    value: function() {
-                        return this.hasMixedStates() ? null : this.addresses[0].getStateName()
-                    }
-                }, {
-                    key: "getCountryName",
-                    value: function() {
-                        return this.hasMixedCountries() ? null : this.addresses[0].getCountryName()
-                    }
-                }, {
-                    key: "format",
-                    value: function() {
-                        if (this.isEmpty())
-                            return I18n.t("edit.landmark.no_address");
-                        var e = this.hasMixedStates() ? I18n.t("edit.segment.no_common.state") : this.getStateName(),
-                            t = this.hasMixedCountries() ? I18n.t("edit.segment.no_common.country") : this.getCountryName();
-                        return [this.hasMixedStreets() ? I18n.t("edit.segment.no_common.street") : this.getStreetName(), this.hasMixedCities() ? I18n.t("edit.segment.no_common.city") : this.getCityName(), this.hasState() ? e : t].join(", ")
-                    }
-                }, {
-                    key: "hasSingleNonEmptyStreet",
-                    value: function() {
-                        return 1 === this.streets.length && !this.isEmptyStreet()
+                        W.model.repos.roadClosures.put(this.closure)
                     }
                 }]),
                 t
-        }(y.default);
-    t.default = b,
+        }(g.default);
+    t.default = v,
         e.exports = t.default
-}, function(e, t, i) {
-    e.exports = {
-        default: i(740),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    i(106),
-        i(56),
-        i(66),
-        i(741),
-        i(745),
-        i(747),
-        i(748),
-        e.exports = i(14).Set
-}, function(e, t, i) {
-    "use strict";
-    var n = i(251),
-        s = i(174);
-    e.exports = i(252)("Set", function(e) {
-        return function() {
-            return e(this, arguments.length > 0 ? arguments[0] : void 0)
-        }
-    }, {
-        add: function(e) {
-            return n.def(s(this, "Set"), e = 0 === e ? 0 : e, e)
-        }
-    }, n)
-}, function(e, t, i) {
-    var n = i(43),
-        s = i(140),
-        r = i(69),
-        a = i(99),
-        o = i(743);
-    e.exports = function(e, t) {
-        var i = 1 == e,
-            l = 2 == e,
-            u = 3 == e,
-            d = 4 == e,
-            c = 6 == e,
-            h = 5 == e || c,
-            f = t || o;
-        return function(t, o, p) {
-            for (var g, m, v = r(t), _ = s(v), y = n(o, p, 3), b = a(_.length), w = 0, E = i ? f(t, b) : l ? f(t, 0) : void 0; b > w; w++)
-                if ((h || w in _) && (g = _[w],
-                        m = y(g, w, v),
-                        e))
-                    if (i)
-                        E[w] = m;
-                    else if (m)
-                switch (e) {
-                    case 3:
-                        return !0;
-                    case 5:
-                        return g;
-                    case 6:
-                        return w;
-                    case 2:
-                        E.push(g)
-                }
-            else if (d)
-                return !1;
-            return c ? -1 : u || d ? d : E
-        }
-    }
-}, function(e, t, i) {
-    var n = i(744);
-    e.exports = function(e, t) {
-        return new(n(e))(t)
-    }
-}, function(e, t, i) {
-    var n = i(31),
-        s = i(194),
-        r = i(28)("species");
-    e.exports = function(e) {
-        var t;
-        return s(e) && (t = e.constructor,
-                "function" != typeof t || t !== Array && !s(t.prototype) || (t = void 0),
-                n(t) && null === (t = t[r]) && (t = void 0)),
-            void 0 === t ? Array : t
-    }
-}, function(e, t, i) {
-    var n = i(21);
-    n(n.P + n.R, "Set", {
-        toJSON: i(253)("Set")
-    })
-}, function(e, t, i) {
-    var n = i(87);
-    e.exports = function(e, t) {
-        var i = [];
-        return n(e, !1, i.push, i, t),
-            i
-    }
-}, function(e, t, i) {
-    i(254)("Set")
-}, function(e, t, i) {
-    i(255)("Set")
-}, function(e, t, i) {
-    e.exports = {
-        default: i(750),
-        __esModule: !0
-    }
-}, function(e, t, i) {
-    i(106),
-        i(56),
-        i(66),
-        i(751),
-        i(752),
-        i(753),
-        i(754),
-        e.exports = i(14).Map
-}, function(e, t, i) {
-    "use strict";
-    var n = i(251),
-        s = i(174);
-    e.exports = i(252)("Map", function(e) {
-        return function() {
-            return e(this, arguments.length > 0 ? arguments[0] : void 0)
-        }
-    }, {
-        get: function(e) {
-            var t = n.getEntry(s(this, "Map"), e);
-            return t && t.v
-        },
-        set: function(e, t) {
-            return n.def(s(this, "Map"), 0 === e ? 0 : e, t)
-        }
-    }, n, !0)
-}, function(e, t, i) {
-    var n = i(21);
-    n(n.P + n.R, "Map", {
-        toJSON: i(253)("Map")
-    })
-}, function(e, t, i) {
-    i(254)("Map")
-}, function(e, t, i) {
-    i(255)("Map")
 }, function(e, t, i) {
     "use strict";
     $.fn.booleanVal = function() {
@@ -33847,7 +32449,7 @@ webpackJsonp([0], [function(e, t, i) {
                 default: e
             }
         }(n),
-        r = i(23);
+        r = i(24);
     Backbone.ajax = function(e) {
         !e.method && e.type && (e = (0,
             s.default)({}, e, {
@@ -33954,6 +32556,9 @@ webpackJsonp([0], [function(e, t, i) {
         },
         searchAction: function(e, t, i) {
             s("wme_search", e, t, i)
+        },
+        saveError: function(e) {
+            s("save_error", e)
         }
     }
 }, function(e, t, i) {
@@ -33969,20 +32574,20 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(128),
-        o = i(761),
+        a = i(124),
+        o = i(738),
         l = n(o),
-        u = i(266),
+        u = i(242),
         d = n(u),
-        c = i(769),
+        c = i(747),
         h = n(c),
-        f = i(225),
+        f = i(223),
         p = n(f),
-        g = i(922),
+        g = i(907),
         m = n(g),
-        v = i(159),
+        v = i(153),
         y = n(v),
-        b = i(74),
+        b = i(73),
         w = Backbone.Model.extend({
             defaults: {
                 loading: !0,
@@ -34176,13 +32781,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(176),
-        r = i(762),
+    var s = i(169),
+        r = i(739),
         a = n(r),
-        o = i(763),
+        o = i(740),
         l = n(o),
-        u = i(765),
-        d = i(23);
+        u = i(742),
+        d = i(24);
     t.default = Marionette.View.extend({
             el: "body",
             template: !1,
@@ -34373,7 +32978,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(764),
+        p = i(741),
         g = n(p),
         m = function(e) {
             function t(e) {
@@ -34517,9 +33122,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(766),
+        p = i(743),
         g = n(p),
-        m = i(768),
+        m = i(746),
         v = n(m);
     t.LoginMainView = function(e) {
         function t() {
@@ -34613,8 +33218,10 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(265),
-        g = function(e) {
+        p = i(241),
+        g = i(745),
+        m = n(g),
+        v = function(e) {
             function t() {
                 return (0,
                         o.default)(this, t),
@@ -34635,6 +33242,14 @@ webpackJsonp([0], [function(e, t, i) {
                         }
                     }
                 }, {
+                    key: "ui",
+                    value: function() {
+                        return {
+                            form: "form",
+                            grecaptcha: ".g-recaptcha"
+                        }
+                    }
+                }, {
                     key: "initialize",
                     value: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
@@ -34642,7 +33257,8 @@ webpackJsonp([0], [function(e, t, i) {
                             loginManager: null
                         };
                         this._app = e.app,
-                            this._loginManager = e.loginManager;
+                            this._loginManager = e.loginManager,
+                            this._recaptchaClient = new m.default;
                         var t = W.loginManager.expired;
                         this._viewModel = new Backbone.Model({
                             username: "",
@@ -34674,31 +33290,50 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.stickit(this._viewModel)
+                        this.stickit(this._viewModel),
+                            this._renderRecaptcha()
+                    }
+                }, {
+                    key: "_renderRecaptcha",
+                    value: function() {
+                        this._recaptchaClient.render(this.ui.grecaptcha[0], {
+                            callback: this._submitLoginForm.bind(this)
+                        })
                     }
                 }, {
                     key: "_onSubmit",
                     value: function(e) {
-                        var t = this;
                         e.preventDefault(),
-                            this._viewModel.set({
-                                loading: !0,
-                                errorMessage: ""
-                            });
-                        var i = this._viewModel.get("username"),
-                            n = this._viewModel.get("password");
-                        this._loginManager.login(i, n).then(function() {
-                                t.triggerMethod("login:form:success")
-                            }).catch(function(e) {
-                                var i = void 0;
-                                i = e instanceof p.InvalidLoginError ? I18n.t("login.form.error") : I18n.t("login.form.server_error"),
-                                    t._viewModel.set("errorMessage", i)
+                            this._recaptchaClient.execute()
+                    }
+                }, {
+                    key: "_submitLoginForm",
+                    value: function() {
+                        var e = this;
+                        this._viewModel.set({
+                            loading: !0,
+                            errorMessage: ""
+                        });
+                        var t = this._viewModel.get("username"),
+                            i = this._viewModel.get("password"),
+                            n = this._recaptchaClient.getResponse();
+                        this._loginManager.login(t, i, n).then(function() {
+                                e.triggerMethod("login:form:success")
+                            }).catch(function(t) {
+                                var i = e._getLoginErrorMessage(t);
+                                e._viewModel.set("errorMessage", i)
                             }).finally(function() {
-                                t._viewModel.set({
-                                    loading: !1
-                                })
+                                e._viewModel.set({
+                                        loading: !1
+                                    }),
+                                    e._recaptchaClient.reset()
                             }),
                             W.Report.loginAction("login_tap")
+                    }
+                }, {
+                    key: "_getLoginErrorMessage",
+                    value: function(e) {
+                        return e instanceof p.InvalidLoginError ? I18n.t("login.form.error") : I18n.t("login.form.server_error")
                     }
                 }, {
                     key: "_onPlaymodeClicked",
@@ -34721,7 +33356,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View);
-    t.default = g,
+    t.default = v,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -34750,10 +33385,10 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         y = i(57),
         b = n(y),
-        w = i(229),
+        w = i(227),
         E = n(w),
-        k = i(30),
-        M = i(74),
+        k = i(29),
+        M = i(73),
         S = {
             1: 1,
             2: 2,
@@ -34914,6 +33549,68 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(6),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = function() {
+            function e() {
+                (0,
+                    o.default)(this, e),
+                this._widgetID = null
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "render",
+                    value: function(e) {
+                        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                            i = (0,
+                                r.default)({
+                                sitekey: "6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42",
+                                callback: function() {},
+                                "error-callback": function() {
+                                    console.error("RecaptchaClient: error")
+                                },
+                                "expired-callback": function() {
+                                    console.error("RecaptchaClient: expired")
+                                }
+                            }, t);
+                        null == this._widgetID && (this._widgetID = grecaptcha.render(e, i))
+                    }
+                }, {
+                    key: "execute",
+                    value: function() {
+                        return grecaptcha.execute(this._widgetID)
+                    }
+                }, {
+                    key: "reset",
+                    value: function() {
+                        if (null != this._widgetID)
+                            return grecaptcha.reset(this._widgetID)
+                    }
+                }, {
+                    key: "getResponse",
+                    value: function() {
+                        return null != this._widgetID ? grecaptcha.getResponse(this._widgetID) : null
+                    }
+                }]),
+                e
+        }();
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(2),
         r = n(s),
         a = i(0),
@@ -34924,7 +33621,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(23),
+        p = i(24),
         g = function(e) {
             function t() {
                 return (0,
@@ -35065,54 +33762,54 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(770),
-        c = i(773),
+        d = i(748),
+        c = i(751),
         h = n(c),
         f = i(97),
         p = n(f),
-        g = i(268),
+        g = i(244),
         m = n(g),
-        v = i(781),
+        v = i(763),
         _ = n(v),
-        y = i(782),
+        y = i(764),
         b = n(y),
-        w = i(791),
+        w = i(774),
         E = n(w),
-        k = i(273),
+        k = i(250),
         M = n(k),
-        S = i(792),
+        S = i(775),
         T = n(S),
-        C = i(793),
+        C = i(776),
         I = n(C),
-        A = i(794),
+        A = i(777),
         R = n(A),
-        O = i(265),
+        O = i(241),
         D = n(O),
-        L = i(796),
+        L = i(779),
         P = n(L),
-        N = i(861),
+        N = i(844),
         x = n(N),
-        V = i(862),
+        V = i(845),
         F = n(V),
-        j = i(872),
-        U = n(j),
-        B = i(886),
-        z = n(B),
-        G = i(893),
-        H = n(G),
-        Y = i(894),
+        U = i(856),
+        j = n(U),
+        B = i(870),
+        G = n(B),
+        z = i(877),
+        H = n(z),
+        Y = i(878),
         q = n(Y),
-        K = i(895),
+        K = i(879),
         J = n(K),
-        Z = i(900),
+        Z = i(884),
         X = n(Z),
         Q = i(34),
         ee = n(Q),
-        te = i(901),
+        te = i(885),
         ie = n(te),
-        ne = i(903),
+        ne = i(887),
         se = n(ne),
-        re = i(921),
+        re = i(906),
         ae = n(re),
         oe = function() {
             function e() {
@@ -35151,7 +33848,7 @@ webpackJsonp([0], [function(e, t, i) {
                             selectionManager: W.selectionManager
                         });
                         return W.streetViewController = a,
-                            new U.default({
+                            new j.default({
                                 mediator: W.editingMediator,
                                 mapLayers: [W.map.problemLayer, W.map.updateRequestLayer],
                                 streetViewController: W.streetViewController
@@ -35184,7 +33881,7 @@ webpackJsonp([0], [function(e, t, i) {
                             W.controller = new p.default({
                                 snapshotManager: W.snapshotManager
                             }),
-                            new z.default({
+                            new G.default({
                                 controller: W.controller,
                                 mediator: W.editingMediator
                             }),
@@ -35274,9 +33971,9 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(771),
+        m = i(749),
         v = n(m),
-        y = i(772),
+        y = i(750),
         b = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -35884,9 +34581,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(774),
+        p = i(752),
         g = n(p),
-        m = i(775),
+        m = i(753),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -36334,6 +35031,98 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(58),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(20),
+        c = n(d),
+        h = i(9),
+        f = n(h),
+        p = function() {
+            function e() {
+                (0,
+                    o.default)(this, e),
+                this.currentContainer = {},
+                    this.currentContainer._subActions = [],
+                    this.root = this.currentContainer,
+                    this.previousContainers = []
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "visit",
+                    value: function(e) {
+                        this.addAction(e)
+                    }
+                }, {
+                    key: "beforeEnter",
+                    value: function(e) {
+                        if (!e.dontSerialize) {
+                            var t = {};
+                            this.previousContainers.push(this.currentContainer),
+                                this.currentContainer._subActions.push(t),
+                                this.currentContainer = t,
+                                t.name = e.constructor.name,
+                                t._subActions = []
+                        }
+                        return !e.dontSerialize
+                    }
+                }, {
+                    key: "afterLeave",
+                    value: function(e) {
+                        e.dontSerialize || (this.currentContainer = this.previousContainers.pop())
+                    }
+                }, {
+                    key: "addAction",
+                    value: function(e) {
+                        var t = void 0;
+                        e.dontSerialize || (t = e.serialize(),
+                            null !== (t = c.default.deepClone(t)) && (t instanceof Array ? (t = this.serializeGeometries(t),
+                                this.currentContainer._subActions = this.currentContainer._subActions.concat(t)) : (t = this.serializeGeometries(t),
+                                this.currentContainer._subActions.push(t))))
+                    }
+                }, {
+                    key: "serializeGeometries",
+                    value: function(e) {
+                        if ("object" === (void 0 === e ? "undefined" : (0,
+                                r.default)(e)) && null !== e) {
+                            if (Array.isArray(e)) {
+                                for (var t = 0; t < e.length; t++)
+                                    e[t] = this.serializeGeometries(e[t]);
+                                return e
+                            }
+                            if (e instanceof OL.Geometry)
+                                return e = f.default.unproject(e),
+                                    f.default.toGeoJSON(e);
+                            for (var i in e)
+                                e.hasOwnProperty(i) && (e[i] = this.serializeGeometries(e[i]));
+                            return e
+                        }
+                        return e
+                    }
+                }, {
+                    key: "getResult",
+                    value: function() {
+                        return this.root._subActions[0]
+                    }
+                }]),
+                e
+        }();
+    t.default = p,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(7),
         r = n(s),
         a = i(0),
@@ -36411,11 +35200,11 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(6),
         o = n(a),
-        l = i(72),
+        l = i(71),
         u = n(l),
-        d = i(59),
+        d = i(60),
         c = n(d),
-        h = i(23),
+        h = i(24),
         f = OpenLayers.Class(u.default, {
             serializer: null,
             initialize: function(e, t) {
@@ -36467,9 +35256,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(72),
+        a = i(71),
         o = n(a),
-        l = i(256),
+        l = i(758),
         u = n(l),
         d = OpenLayers.Class(o.default, {
             zoomToRoadType: null,
@@ -36537,10 +35326,104 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(72),
+    var s = i(0),
+        r = n(s),
+        a = i(1),
+        o = n(a),
+        l = function() {
+            function e(t, i) {
+                (0,
+                    r.default)(this, e),
+                this._vertex = t,
+                    this._segment = i
+            }
+            return (0,
+                    o.default)(e, [{
+                    key: "getVertex",
+                    value: function() {
+                        return this._vertex
+                    }
+                }, {
+                    key: "getSegment",
+                    value: function() {
+                        return this._segment
+                    }
+                }, {
+                    key: "getNode",
+                    value: function() {
+                        return this._segment.model.nodes.get(this.getNodeID())
+                    }
+                }, {
+                    key: "_getDirectedAttribute",
+                    value: function(e) {
+                        var t = this._vertex.isForward() ? "fwd" : "rev";
+                        return this._segment.attributes[t + e]
+                    }
+                }, {
+                    key: "_getEdgeAttribute",
+                    value: function(e) {
+                        var t = this._vertex.isForward() ? "to" : "from";
+                        return this._segment.attributes[t + e]
+                    }
+                }, {
+                    key: "isDirectionAllowed",
+                    value: function() {
+                        return this._getDirectedAttribute("Direction")
+                    }
+                }, {
+                    key: "getDrivingRestrictions",
+                    value: function() {
+                        var e = this._segment.getBidiDrivingRestrictions(),
+                            t = void 0;
+                        return t = this._vertex.isForward() ? this._segment.getForwardDrivingRestrictions() : this._segment.getReverseDrivingRestrictions(),
+                            t.concat(e)
+                    }
+                }, {
+                    key: "getNodeID",
+                    value: function() {
+                        return this._getEdgeAttribute("NodeID")
+                    }
+                }, {
+                    key: "hasBigJunction",
+                    value: function() {
+                        return this._getEdgeAttribute("Crossroads").length > 0
+                    }
+                }, {
+                    key: "getBigJunction",
+                    value: function() {
+                        var e = this._getEdgeAttribute("Crossroads")[0];
+                        return null == e ? null : this._segment.model.bigJunctions.get(e)
+                    }
+                }, {
+                    key: "areTurnsLocked",
+                    value: function() {
+                        return this._getDirectedAttribute("TurnsLocked")
+                    }
+                }, {
+                    key: "isDrivable",
+                    value: function() {
+                        return this._segment.isDrivable()
+                    }
+                }]),
+                e
+        }();
+    t.default = l,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(71),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -36597,9 +35480,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(72),
+    var s = i(71),
         r = n(s),
-        a = i(224),
+        a = i(222),
         o = n(a),
         l = OL.Class(r.default, {
             MIN_CONVERAGE: .9,
@@ -36612,6 +35495,305 @@ webpackJsonp([0], [function(e, t, i) {
             }
         });
     t.default = l,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(6),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(20),
+        c = n(d),
+        h = i(10),
+        f = n(h),
+        p = i(245),
+        g = n(p),
+        m = function() {
+            function e(t, i) {
+                (0,
+                    o.default)(this, e),
+                this.index = -1,
+                    this._savingEnabled = !0,
+                    (0,
+                        r.default)(this, i),
+                    this.model = t,
+                    this.actions = [],
+                    this.events = new OpenLayers.Events(this)
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "add",
+                    value: function(e) {
+                        if ((e.undoSupported() || !1 !== this.events.triggerEvent("beforeclearactions")) && !1 !== this.events.triggerEvent("beforeaction", {
+                                action: e
+                            })) {
+                            var t = this.unsavedActionsNum(),
+                                i = void 0,
+                                n = void 0;
+                            if (e.undoSupported()) {
+                                for (this.index++,
+                                    i = this.index,
+                                    n = this.actions.length; i < n; i++)
+                                    this.actions[i].destroy();
+                                this.actions.splice(this.index, this.actions.length - this.index, e)
+                            } else {
+                                for (i = 0,
+                                    n = this.actions.length; i < n; i++)
+                                    this.actions[i].destroy();
+                                this.actions = [],
+                                    this.index = -1,
+                                    this.events.triggerEvent("afterclearactions", {
+                                        action: e
+                                    })
+                            }
+                            e.setModel(this.model), !1 === e.doAction() && (this.actions.pop(),
+                                    this.index > -1 && this.index--),
+                                0 === t && this.events.triggerEvent("hasActions"),
+                                this.events.triggerEvent("afteraction", {
+                                    action: e
+                                })
+                        }
+                    }
+                }, {
+                    key: "canUndo",
+                    value: function() {
+                        return this.index >= 0
+                    }
+                }, {
+                    key: "canSave",
+                    value: function() {
+                        return this.canUndo() && this.isAllowedToSave()
+                    }
+                }, {
+                    key: "canRedo",
+                    value: function() {
+                        return this.index < this.actions.length - 1
+                    }
+                }, {
+                    key: "unsavedActionsNum",
+                    value: function() {
+                        return this.index + 1
+                    }
+                }, {
+                    key: "undo",
+                    value: function() {
+                        return !!this.canUndo() && (!1 !== this.events.triggerEvent("beforeundoaction", {
+                            action: this.actions[this.index]
+                        }) && (c.default.protect("undoing " + this.actions[this.index].CLASS_NAME, function() {
+                                this.actions[this.index].undoAction()
+                            }, this),
+                            this.index--,
+                            this.events.triggerEvent("afterundoaction", {
+                                action: this.actions[this.index]
+                            }),
+                            0 === this.unsavedActionsNum() && this.events.triggerEvent("noActions"),
+                            W.Report.generalAction("undo_clicked"), !0))
+                    }
+                }, {
+                    key: "redo",
+                    value: function() {
+                        if (!this.canRedo())
+                            return !1;
+                        if (!1 === this.events.triggerEvent("beforeaction", {
+                                action: this.actions[this.index + 1]
+                            }))
+                            return !1;
+                        var e = this.unsavedActionsNum();
+                        return this.index++,
+                            c.default.protect("redoing " + this.actions[this.index].CLASS_NAME, function() {
+                                this.actions[this.index].redoAction()
+                            }, this),
+                            this.events.triggerEvent("afteraction", {
+                                action: this.actions[this.index]
+                            }),
+                            0 === e && this.events.triggerEvent("hasActions"), !0
+                    }
+                }, {
+                    key: "clear",
+                    value: function() {
+                        for (var e = 0, t = this.actions.legnth; e < t; e++)
+                            this.actions[e].destroy();
+                        this.actions = [],
+                            this.index = -1,
+                            this.events.triggerEvent("afterclearactions"),
+                            this.events.triggerEvent("noActions")
+                    }
+                }, {
+                    key: "getChangesBounds",
+                    value: function() {
+                        var e = new f.default;
+                        return e.subActions = this.actions.slice(0, this.index + 1),
+                            e.getBounds()
+                    }
+                }, {
+                    key: "getActions",
+                    value: function() {
+                        return this.actions.slice(0, this.index + 1)
+                    }
+                }, {
+                    key: "toggleSavingEnabled",
+                    value: function(e) {
+                        this._savingEnabled = e
+                    }
+                }, {
+                    key: "isAllowedToSave",
+                    value: function() {
+                        return this.model.loginManager.isLoggedIn() && this._savingEnabled
+                    }
+                }, {
+                    key: "getFlatActions",
+                    value: function() {
+                        return _.flatten(this.getActions().map(function(e) {
+                            return e.flat()
+                        }))
+                    }
+                }, {
+                    key: "hasPendingMerge",
+                    value: function(e) {
+                        var t = this.getFlatActions();
+                        return _.some(t, function(t) {
+                            return t instanceof g.default && t._toVenue.getID() === e
+                        })
+                    }
+                }]),
+                e
+        }();
+    (0,
+        r.default)(m.prototype, {
+        CLASS_NAME: "Waze.ActionManager"
+    }),
+    t.default = m,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(7),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(35),
+        c = n(d),
+        h = i(159),
+        f = n(h),
+        p = i(29),
+        g = n(p),
+        m = function() {
+            function e(t, i) {
+                (0,
+                    o.default)(this, e),
+                this._nodeRepository = t,
+                    this._segmentRepository = i
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "getConnectedVertices",
+                    value: function(e) {
+                        var t = this.getVertexNodeID(e),
+                            i = null;
+                        return null !== t && (i = this._nodeRepository.get(t)),
+                            null === i ? [] : this._getNodeConnectedVertices(i).filter(function(t) {
+                                return !t.equals(e)
+                            })
+                    }
+                }, {
+                    key: "_getNodeConnectedVertices",
+                    value: function(e) {
+                        var t = this,
+                            i = [],
+                            n = e.getID();
+                        return e.attributes.segIDs.forEach(function(e) {
+                                var s = t._segmentRepository.get(e);
+                                s && (s.attributes.fromNodeID === n && i.push(c.default.forwardOf(e)),
+                                    s.attributes.toNodeID === n && i.push(c.default.reverseOf(e)))
+                            }),
+                            i
+                    }
+                }, {
+                    key: "getVertexNodeID",
+                    value: function(e) {
+                        var t = this._segmentRepository.get(e.getSegmentID());
+                        return e.isForward() ? t.attributes.toNodeID : t.attributes.fromNodeID
+                    }
+                }, {
+                    key: "toJSON",
+                    value: function() {
+                        var e = this,
+                            t = {};
+                        return this._nodeRepository.getObjectArray().forEach(function(i) {
+                                i.isDeleted() || (t[i.getID()] = e._getNodeConnectedVertices(i).map(function(e) {
+                                    return e.getOpposite().toString()
+                                }))
+                            }),
+                            t
+                    }
+                }, {
+                    key: "isTurnLegal",
+                    value: function(e, t) {
+                        var i = this._segmentRepository.getDirectedSegment(e),
+                            n = this._segmentRepository.getDirectedSegment(t);
+                        return i.isDirectionAllowed() && n.isDirectionAllowed() && n.isDrivable()
+                    }
+                }, {
+                    key: "areVerticesConnected",
+                    value: function(e, t) {
+                        var i = this._segmentRepository.getDirectedSegment(e),
+                            n = this._segmentRepository.getDirectedSegment(t.getOpposite());
+                        return i.getNodeID() === n.getNodeID()
+                    }
+                }, {
+                    key: "fromJSON",
+                    value: function(e) {
+                        var t = this,
+                            i = (0,
+                                r.default)(e).map(function(e) {
+                                return new f.default({
+                                    id: parseInt(e, 10),
+                                    segIDs: []
+                                })
+                            });
+                        this._nodeRepository.put(i),
+                            (0,
+                                r.default)(e).forEach(function(i) {
+                                i = parseInt(i, 10),
+                                    e[i].map(function(e) {
+                                        return c.default.fromID(e)
+                                    }).forEach(function(e) {
+                                        var n = t._nodeRepository.get(i),
+                                            s = t._segmentRepository.get(e.getSegmentID());
+                                        s || (s = new g.default({
+                                                id: e.getSegmentID()
+                                            })),
+                                            t._segmentRepository.put(s),
+                                            e.isForward() ? s.attributes.toNodeID = i : s.attributes.fromNodeID = i,
+                                            _.contains(n.attributes.segIDs, s.getID()) || n.attributes.segIDs.push(s.getID())
+                                    })
+                            })
+                    }
+                }]),
+                e
+        }();
+    t.default = m,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -36726,7 +35908,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(17),
+    var s, r = i(16),
         a = n(r),
         o = i(6),
         l = n(o),
@@ -36736,17 +35918,17 @@ webpackJsonp([0], [function(e, t, i) {
         h = n(c),
         f = i(20),
         p = n(f),
-        g = i(783),
+        g = i(765),
         m = n(g),
-        v = i(271),
+        v = i(248),
         y = n(v),
-        b = i(789),
+        b = i(772),
         w = n(b),
-        E = i(790),
+        E = i(773),
         k = n(E),
-        M = i(177),
+        M = i(170),
         S = n(M),
-        T = i(11),
+        T = i(12),
         C = i(34),
         I = n(C),
         A = function() {
@@ -36869,24 +36051,24 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(7),
         o = n(a),
-        l = i(784),
+        l = i(766),
         u = n(l),
-        d = i(26),
-        c = i(90),
-        h = i(11),
-        f = i(124),
+        d = i(27),
+        c = i(89),
+        h = i(12),
+        f = i(121),
         p = n(f),
         g = i(52),
         m = n(g),
-        v = i(243),
+        v = i(237),
         y = n(v),
-        b = i(242),
+        b = i(771),
         w = n(b),
-        E = i(270),
+        E = i(247),
         k = n(E),
         M = i(20),
         S = n(M),
-        T = i(10),
+        T = i(9),
         C = n(T),
         I = OpenLayers.Class(u.default, {
             model: null,
@@ -37162,15 +36344,15 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(39),
         u = n(l),
-        d = i(785),
+        d = i(767),
         c = n(d),
-        h = i(269),
+        h = i(246),
         f = n(h),
-        p = i(270),
+        p = i(247),
         g = n(p),
-        m = i(787),
+        m = i(769),
         v = n(m),
-        _ = i(788),
+        _ = i(770),
         y = n(_),
         b = OpenLayers.Class(OpenLayers.Control, u.default, {
             geometryTypes: null,
@@ -37746,11 +36928,11 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(233),
+        l = i(230),
         u = n(l),
-        d = i(25),
+        d = i(26),
         c = n(d),
-        h = i(90),
+        h = i(89),
         f = function() {
             function e(t, i, n) {
                 (0,
@@ -37818,11 +37000,11 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(173),
+        l = i(168),
         u = n(l),
-        d = i(25),
+        d = i(26),
         c = n(d),
-        h = i(90),
+        h = i(89),
         f = function() {
             function e(t, i, n) {
                 (0,
@@ -37885,6 +37067,113 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(2),
         r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(10),
+        g = n(p),
+        m = i(232),
+        v = n(m),
+        _ = i(64),
+        y = n(_),
+        b = i(77),
+        w = n(b),
+        E = i(51),
+        k = n(E),
+        M = i(12),
+        S = i(231),
+        T = n(S),
+        C = i(17),
+        I = n(C),
+        A = function(e) {
+            function t(e, i, n) {
+                (0,
+                    o.default)(this, t);
+                var s = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, n));
+                return s.node = e,
+                    s.mergeNode = i,
+                    s
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "considerMerging",
+                    value: function() {
+                        return !(!this.mergeNode || !this.mergeNode.geometry.equals(this.node.geometry)) && (this.node.isVirtual() && this.doSubAction(new T.default(this.node)),
+                            this.mergeNode.isVirtual() && this.doSubAction(new T.default(this.mergeNode)),
+                            this.node.attributes.segIDs.every(function(e) {
+                                var t = this.model.segments.get(e);
+                                return !this.mergeNode.isConnectedToSegment(t) || t.isPoint()
+                            }, this))
+                    }
+                }, {
+                    key: "moveSegments",
+                    value: function() {
+                        this.node.attributes.segIDs.concat().forEach(function(e) {
+                            var t = this.model.segments.get(e);
+                            t.isPoint() ? this.doSubAction(new y.default(t, {
+                                dontSerialize: !0
+                            })) : (this.doSubAction(new w.default(t, this.node, {
+                                    deleteNode: !1,
+                                    dontSerialize: !0,
+                                    keepTurns: !0
+                                })),
+                                this.doSubAction(new k.default(this.mergeNode, t, {
+                                    dontSerialize: !0
+                                })))
+                        }, this)
+                    }
+                }, {
+                    key: "doAction",
+                    value: function() {
+                        if (!this.considerMerging())
+                            return !1;
+                        this.node.getID(),
+                            this.mergeNode.getID(),
+                            this.moveSegments(),
+                            this.doSubAction(new v.default(this.node))
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        var e = {
+                            sourceNodeID: this.node.getID(),
+                            sourceNodeVersion: this.node.attributes.version,
+                            destNodeID: this.mergeNode.getID(),
+                            destNodeVersion: this.node.attributes.version
+                        };
+                        return {
+                            _objectType: M.MERGED_NODE,
+                            action: I.default.TYPE.ADD,
+                            attributes: e
+                        }
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = A,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
         a = i(6),
         o = n(a),
         l = i(0),
@@ -37897,11 +37186,11 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(177),
+        _ = i(170),
         y = n(_),
         b = i(19),
         w = n(b),
-        E = i(10),
+        E = i(9),
         k = n(E),
         M = function(e) {
             function t(e, i) {
@@ -38081,7 +37370,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(177),
+        m = i(170),
         v = n(m),
         _ = function(e) {
             function t(e, i) {
@@ -38128,7 +37417,7 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(1),
         c = n(d),
-        h = i(273),
+        h = i(250),
         f = n(h),
         p = i(32),
         g = function() {
@@ -38597,7 +37886,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(795),
+        l = i(778),
         u = n(l),
         d = function() {
             function e(t) {
@@ -38648,7 +37937,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(25),
+    var n = i(26),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -38701,26 +37990,26 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(129),
+    var s = i(125),
         r = n(s),
-        a = i(846),
+        a = i(829),
         o = n(a),
-        l = i(847),
+        l = i(830),
         u = n(l),
-        d = i(849),
+        d = i(832),
         c = n(d),
-        h = i(850),
+        h = i(833),
         f = n(h),
-        p = i(851),
+        p = i(834),
         g = n(p),
-        m = i(852),
+        m = i(835),
         v = n(m),
-        _ = i(853),
+        _ = i(836),
         y = n(_),
-        b = i(854),
+        b = i(837),
         w = n(b),
         E = i(32),
-        k = i(855),
+        k = i(838),
         M = n(k),
         S = OpenLayers.Class(OL.Map, r.default, {
             DefaultPanInPixel: 20,
@@ -39078,7 +38367,7 @@ webpackJsonp([0], [function(e, t, i) {
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return i(800)("./camera" + t.attributes.type + t.attributes.validated + ".png")
+                            return i(783)("./camera" + t.attributes.type + t.attributes.validated + ".png")
                     }
                 }
             })
@@ -39116,19 +38405,19 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./camera2false.png": 801,
-        "./camera2true.png": 802,
-        "./camera3false.png": 803,
-        "./camera3true.png": 804,
-        "./camera4false.png": 805,
-        "./camera4true.png": 806
+        "./camera2false.png": 784,
+        "./camera2true.png": 785,
+        "./camera3false.png": 786,
+        "./camera3true.png": 787,
+        "./camera4false.png": 788,
+        "./camera4true.png": 789
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 800
+        n.id = 783
 }, function(e, t, i) {
     e.exports = i.p + "img/camera2falsea81daea9d3458f341a839f7951a51b0f.png"
 }, function(e, t, i) {
@@ -39225,11 +38514,11 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(275),
+        a = i(252),
         o = n(a),
-        l = i(809),
+        l = i(792),
         u = n(l),
-        d = i(810),
+        d = i(793),
         c = n(d),
         h = {
             dragPoint: {
@@ -39360,7 +38649,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(130),
+    var n = i(126),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -39393,7 +38682,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(6),
         r = n(s),
-        a = i(130),
+        a = i(126),
         o = n(a),
         l = OpenLayers.Class(o.default, {
             nodeDisplayMaxScale: 1e4,
@@ -39433,9 +38722,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(53),
         r = n(s),
-        a = i(179),
+        a = i(172),
         o = n(a),
-        l = i(180),
+        l = i(173),
         u = n(l),
         d = OpenLayers.Class(OpenLayers.Layer.Vector, {
             rendererOptions: {
@@ -39517,31 +38806,31 @@ webpackJsonp([0], [function(e, t, i) {
         return t
     }
     var r = {
-        "./big_direction_end.png": 819,
-        "./big_direction_exit_left.png": 820,
-        "./big_direction_exit_right.png": 821,
-        "./big_direction_forward.png": 822,
-        "./big_direction_left.png": 823,
-        "./big_direction_right.png": 824,
-        "./big_direction_u.png": 825,
-        "./big_directions_roundabout.png": 826,
-        "./big_directions_roundabout_UK.png": 827,
-        "./big_directions_roundabout_UK_l.png": 828,
-        "./big_directions_roundabout_UK_s.png": 829,
-        "./big_directions_roundabout_l.png": 830,
-        "./big_directions_roundabout_r.png": 831,
-        "./big_directions_roundabout_r_UK.png": 832,
-        "./big_directions_roundabout_s.png": 833,
-        "./big_directions_roundabout_u.png": 834,
-        "./big_directions_roundabout_u_UK.png": 835,
-        "./unknown.png": 836
+        "./big_direction_end.png": 802,
+        "./big_direction_exit_left.png": 803,
+        "./big_direction_exit_right.png": 804,
+        "./big_direction_forward.png": 805,
+        "./big_direction_left.png": 806,
+        "./big_direction_right.png": 807,
+        "./big_direction_u.png": 808,
+        "./big_directions_roundabout.png": 809,
+        "./big_directions_roundabout_UK.png": 810,
+        "./big_directions_roundabout_UK_l.png": 811,
+        "./big_directions_roundabout_UK_s.png": 812,
+        "./big_directions_roundabout_l.png": 813,
+        "./big_directions_roundabout_r.png": 814,
+        "./big_directions_roundabout_r_UK.png": 815,
+        "./big_directions_roundabout_s.png": 816,
+        "./big_directions_roundabout_u.png": 817,
+        "./big_directions_roundabout_u_UK.png": 818,
+        "./unknown.png": 819
     };
     n.keys = function() {
             return Object.keys(r)
         },
         n.resolve = s,
         e.exports = n,
-        n.id = 818
+        n.id = 801
 }, function(e, t, i) {
     e.exports = i.p + "img/big_direction_end25226c71aed0efd3a2db41978066febc.png"
 }, function(e, t, i) {
@@ -39589,7 +38878,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(130),
+    var s = i(126),
         r = n(s),
         a = i(53),
         o = n(a),
@@ -39669,7 +38958,7 @@ webpackJsonp([0], [function(e, t, i) {
                 default: e
             }
         }(n),
-        r = i(23),
+        r = i(24),
         a = OpenLayers.Class(OpenLayers.Layer.XYZ, {
             key: null,
             tileUrl: "https://www.googleapis.com/tile/v1/tiles/${z}/${x}/${y}?session=${session}&key=${key}",
@@ -39804,7 +39093,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(277),
+    var n = i(254),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -39828,7 +39117,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(25),
+    var n = i(26),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -39891,9 +39180,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(26),
         r = n(s),
-        a = i(10),
+        a = i(9),
         o = n(a),
         l = OL.Class(OL.Marker, {
             model: null,
@@ -40207,7 +39496,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(272),
+    var n = i(249),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -40284,11 +39573,11 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(271),
+        y = i(248),
         b = n(y),
         w = i(20),
         E = n(w),
-        k = i(848),
+        k = i(831),
         M = n(k),
         S = function(e) {
             function t() {
@@ -40620,11 +39909,11 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(1),
         f = n(h),
-        p = i(17),
+        p = i(16),
         g = n(p),
-        m = i(129),
+        m = i(125),
         v = n(m),
-        _ = i(181),
+        _ = i(174),
         y = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -40635,7 +39924,7 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(_),
-        b = i(89),
+        b = i(87),
         w = n(b),
         E = v.default.LAYER_UNIQUE_NAMES,
         k = (s = {},
@@ -40730,7 +40019,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(26),
+        p = i(27),
         g = function(e) {
             function t() {
                 return (0,
@@ -40842,8 +40131,8 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(128),
-        s = i(278),
+    var n = i(124),
+        s = i(255),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -40987,9 +40276,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(278),
+    var s = i(255),
         r = n(s),
-        a = i(10),
+        a = i(9),
         o = n(a),
         l = Marionette.View.extend({
             granularity: 10,
@@ -41278,13 +40567,13 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(856),
+        p = i(839),
         g = n(p),
-        m = i(857),
+        m = i(840),
         v = n(m),
-        _ = i(858),
+        _ = i(841),
         y = n(_),
-        b = i(859),
+        b = i(842),
         w = n(b),
         E = function(e) {
             function t() {
@@ -41399,7 +40688,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(10),
+        p = i(9),
         g = n(p),
         m = function(e) {
             function t() {
@@ -41615,9 +40904,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(860),
+        p = i(843),
         g = n(p),
-        m = i(10),
+        m = i(9),
         v = n(m),
         y = function(e) {
             function t() {
@@ -41832,9 +41121,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(26),
         r = n(s),
-        a = i(131),
+        a = i(95),
         o = n(a),
         l = OL.Class(OL.Marker, {
             DRAG_POINT_RADIUS: 7,
@@ -41991,13 +41280,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(863),
+        l = i(846),
         u = n(l),
-        d = i(864),
+        d = i(847),
         c = n(d),
-        h = i(871),
+        h = i(855),
         f = n(h),
-        p = i(283),
+        p = i(260),
         g = n(p),
         m = function() {
             function e(t) {
@@ -42124,7 +41413,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(865),
+    var n = i(848),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -42210,11 +41499,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(279),
+    var s = i(256),
         r = n(s),
-        a = i(870),
+        a = i(854),
         o = n(a),
-        l = i(26),
+        l = i(27),
         u = Marionette.View.extend({
             template: "templates/place_updates/layout",
             regions: {
@@ -42328,11 +41617,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(218),
+    var s = i(216),
         r = n(s),
-        a = i(280),
+        a = i(257),
         o = n(a),
-        l = i(869),
+        l = i(852),
         u = n(l),
         d = Marionette.CollectionView.extend({
             childView: function(e) {
@@ -42346,7 +41635,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(868),
+    var n = i(851),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -42377,9 +41666,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(10),
+    var s = i(9),
         r = n(s),
-        a = i(281),
+        a = i(258),
         o = n(a),
         l = Marionette.View.extend({
             template: "templates/place_updates/external_provider/item",
@@ -42438,9 +41727,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(280),
+    var s = i(257),
         r = n(s),
-        a = i(12),
+        a = i(13),
         o = n(a),
         l = function(e, t) {
             var i = t.attributes.categoryAttributes;
@@ -42481,10 +41770,92 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(279),
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(17),
+        g = n(p),
+        m = function(e) {
+            function t(e, i, n, s) {
+                (0,
+                    o.default)(this, t);
+                var a = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, s));
+                return a.venue = e,
+                    a.request = i,
+                    a.approved = n,
+                    a.prevApproved = null,
+                    a
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        return this.prevApproved = this.request.get("approved"),
+                            this.request.set({
+                                approved: this.approved
+                            }),
+                            this.model.venues.changed(this.venue)
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        return this.request.set({
+                                approved: this.prevApproved
+                            }),
+                            this.model.venues.changed(this.venue)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        return this.request.set({
+                                approved: this.approved
+                            }),
+                            this.model.venues.changed(this.venue)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return {
+                            _objectType: "venueUpdateRequest",
+                            action: "UPDATE",
+                            attributes: {
+                                venueID: this.venue.getID(),
+                                id: this.request.id,
+                                approve: this.approved
+                            }
+                        }
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = m,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(256),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -42537,8 +41908,11 @@ webpackJsonp([0], [function(e, t, i) {
                 getRejectActionName: function() {
                     return I18n.t("venues.update_requests.panel.action.reject_flag")
                 },
-                getReopenActionName: function() {
-                    return I18n.t("venues.update_requests.panel.action.reopen_flag")
+                getRejectedLabel: function() {
+                    return I18n.t("venues.update_requests.panel.ignored")
+                },
+                getApprovedLabel: function() {
+                    return I18n.t("venues.update_requests.panel.solved")
                 }
             })
         });
@@ -42611,11 +41985,11 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(283),
+        l = i(260),
         u = n(l),
-        d = i(873),
+        d = i(857),
         c = n(d),
-        h = i(874),
+        h = i(858),
         f = n(h),
         p = function() {
             function e(t) {
@@ -42770,14 +42144,14 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(875),
+    var s = i(859),
         r = n(s),
-        a = i(876),
+        a = i(860),
         o = n(a),
-        l = i(883),
+        l = i(867),
         u = n(l),
-        d = i(26),
-        c = i(885),
+        d = i(27),
+        c = i(869),
         h = n(c),
         f = Marionette.Object.extend({
             initialize: function() {
@@ -42852,11 +42226,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(228),
+    var s = i(226),
         r = n(s),
-        a = i(12),
+        a = i(13),
         o = n(a),
-        l = i(11),
+        l = i(12),
         u = Marionette.View.extend({
             maxHeight: null,
             template: "Waze/Modules/Problems/templates/edit",
@@ -43028,20 +42402,20 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(17),
+    var s, r = i(16),
         a = n(r),
-        o = i(73),
+        o = i(72),
         l = n(o),
-        u = i(877),
+        u = i(861),
         d = n(u),
-        c = i(879),
+        c = i(863),
         h = n(c),
-        f = i(881),
+        f = i(865),
         p = n(f),
-        g = i(210),
+        g = i(206),
         m = n(g),
-        v = i(11),
-        _ = i(75),
+        v = i(12),
+        _ = i(88),
         y = n(_),
         b = {},
         w = y.default.prototype.TYPE,
@@ -43073,9 +42447,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(878),
+        a = i(862),
         o = n(a),
-        l = i(73),
+        l = i(72),
         u = n(l),
         d = u.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -43155,9 +42529,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(880),
+        a = i(864),
         o = n(a),
-        l = i(73),
+        l = i(72),
         u = n(l),
         d = u.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -43240,9 +42614,9 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(18),
         r = n(s),
-        a = i(73),
+        a = i(72),
         o = n(a),
-        l = i(882),
+        l = i(866),
         u = n(l),
         d = o.default.extend({
             MORE_INFO_DEFAULTS: [],
@@ -43323,7 +42697,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(884),
+    var n = i(868),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43413,11 +42787,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(180),
+    var s = i(173),
         r = n(s),
         a = i(53),
         o = n(a),
-        l = i(179),
+        l = i(172),
         u = n(l),
         d = OL.Class(OL.Layer.Vector, {
             rendererOptions: {
@@ -43486,9 +42860,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(284),
+    var s = i(261),
         r = n(s),
-        a = i(287),
+        a = i(264),
         o = n(a),
         l = i(97),
         u = Marionette.Object.extend({
@@ -43539,7 +42913,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(888),
+    var n = i(872),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43571,7 +42945,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(286),
+    var n = i(263),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43592,7 +42966,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(891),
+    var n = i(875),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43639,7 +43013,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(286),
+    var n = i(263),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43656,24 +43030,36 @@ webpackJsonp([0], [function(e, t, i) {
                 return this.trigger("click:focus")
             },
             serializeData: function() {
-                var e = Marionette.View.prototype.serializeData.apply(this, arguments),
-                    t = this._getTranslations();
-                e.title = t.title,
-                    e.solution = t.solution || I18n.t("save.default_solution"),
+                var e = Marionette.View.prototype.serializeData.apply(this, arguments);
+                e.title = this._getTranslatedTitle() || this._getServerTitle() || this._getDefaultTitle(),
+                    e.solution = this._getSolution(),
                     e.showPanButton = null !== this.model.get("geometry");
-                var i = this.model.get("collatedCount");
-                return null != i && i > 1 && (e.collated = I18n.t("save.error.collated", {
-                        count: i
+                var t = this.model.get("collatedCount");
+                return null != t && t > 1 && (e.collated = I18n.t("save.error.collated", {
+                        count: t
                     })),
                     e
             },
-            _getTranslations: function() {
-                var e = I18n.t("save.error_types"),
-                    t = e[this.model.get("code")];
-                if (null == t) {
-                    t = e[s.default.prototype.defaults.code]
-                }
-                return t
+            _getTranslationsByCode: function(e) {
+                return I18n.t("save.error_types")[e]
+            },
+            _getDefaultTitle: function() {
+                var e = s.default.prototype.defaults.code,
+                    t = this._getTranslationsByCode(e);
+                if (t)
+                    return t.title
+            },
+            _getServerTitle: function() {
+                return this.model.get("details")
+            },
+            _getTranslatedTitle: function() {
+                var e = this._getTranslationsByCode(this.model.get("code"));
+                if (e)
+                    return e.title
+            },
+            _getSolution: function() {
+                var e = this._getTranslationsByCode(this.model.get("code"));
+                return e && e.solution ? e.solution : I18n.t("save.default_solution")
             }
         });
     t.default = r,
@@ -43683,7 +43069,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(12),
+    var n = i(13),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -43735,14 +43121,14 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(0),
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(11),
-        c = i(182),
+        d = i(12),
+        c = i(175),
         h = n(c),
         f = function() {
             function e(t, i, n) {
@@ -44171,15 +43557,15 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(896),
+        p = i(880),
         g = n(p),
-        m = i(897),
+        m = i(881),
         v = n(m),
-        y = i(898),
+        y = i(882),
         b = n(y),
-        w = i(10),
+        w = i(9),
         E = n(w),
-        k = i(899),
+        k = i(883),
         M = n(k),
         S = function(e) {
             function t(e) {
@@ -44407,7 +43793,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(10),
+        p = i(9),
         g = n(p),
         m = function(e) {
             function t() {
@@ -44478,7 +43864,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(10),
+        p = i(9),
         g = n(p),
         m = function(e) {
             function t() {
@@ -44652,7 +44038,7 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(10),
+        d = i(9),
         c = n(d),
         h = function() {
             function e() {
@@ -44882,9 +44268,9 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(902),
+        d = i(886),
         c = n(d),
-        h = i(26),
+        h = i(27),
         f = function() {
             function e(t, i) {
                 (0,
@@ -45033,25 +44419,25 @@ webpackJsonp([0], [function(e, t, i) {
         d = n(u),
         c = i(1),
         h = n(c),
-        f = i(17),
+        f = i(16),
         p = n(f),
         g = i(34),
         m = n(g),
-        v = i(129),
+        v = i(125),
         _ = n(v),
         y = i(20),
         b = n(y),
-        w = i(120),
+        w = i(118),
         E = n(w),
-        k = i(226),
+        k = i(224),
         M = n(k),
-        S = i(904),
+        S = i(888),
         T = n(S),
-        C = i(165),
+        C = i(164),
         I = n(C),
-        A = i(905),
+        A = i(889),
         R = n(A),
-        O = i(181),
+        O = i(174),
         D = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -45062,7 +44448,7 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(O),
-        L = i(920),
+        L = i(905),
         P = n(L),
         N = (s = {},
             (0,
@@ -45291,7 +44677,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(906),
+        l = i(890),
         u = n(l),
         d = function() {
             function e(t, i, n) {
@@ -45323,15 +44709,16 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(0),
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(288),
+        d = i(265),
         c = n(d),
-        h = function() {
+        h = i(96),
+        f = function() {
             function e(t, i, n) {
                 (0,
                     o.default)(this, e),
@@ -45345,7 +44732,7 @@ webpackJsonp([0], [function(e, t, i) {
                     }),
                     this._drawingContext.on("zoomend", this.draw, this),
                     this._appPreferences.on("change:spreadTurnArrows change:showTransparentTurnArrows", this.draw, this),
-                    this._dataModel.getTurnGraph().on("change", this.draw, this)
+                    this._dataModel.getTurnGraph().on(h.CHANGE_EVENT, this.draw, this)
             }
             return (0,
                     u.default)(e, [{
@@ -45375,12 +44762,12 @@ webpackJsonp([0], [function(e, t, i) {
                         this._drawingContext.off("zoomend", this.draw, this),
                             this._drawingContext.destroy(),
                             this._appPreferences.off("change:spreadTurnArrows change:showTransparentTurnArrows", this.draw, this),
-                            this._dataModel.getTurnGraph().off("change", this.draw, this)
+                            this._dataModel.getTurnGraph().off(h.CHANGE_EVENT, this.draw, this)
                     }
                 }]),
                 e
         }();
-    t.default = h,
+    t.default = f,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -45405,20 +44792,20 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(25),
+        m = i(26),
         v = n(m),
         _ = i(36),
         y = n(_),
-        b = i(175),
+        b = i(266),
         w = n(b),
-        E = i(908),
+        E = i(892),
         k = n(E),
-        M = i(917),
+        M = i(902),
         S = n(M),
-        T = i(291),
-        C = i(292),
+        T = i(270),
+        C = i(271),
         I = n(C),
-        A = i(10),
+        A = i(9),
         R = n(A),
         O = function(e) {
             function t(e) {
@@ -45656,7 +45043,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(13),
+        a = i(11),
         o = n(a),
         l = i(2),
         u = n(l),
@@ -45668,7 +45055,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(257),
+        _ = i(893),
         y = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -45679,11 +45066,11 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(_),
-        b = i(909),
+        b = i(894),
         w = n(b),
         E = i(36),
         k = n(E),
-        M = i(96),
+        M = i(98),
         S = i(32),
         T = function(e) {
             function t(e) {
@@ -45978,6 +45365,20 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    t.NONE = "NONE",
+        t.TURN_LEFT = "TURN_LEFT",
+        t.TURN_RIGHT = "TURN_RIGHT",
+        t.KEEP_LEFT = "KEEP_LEFT",
+        t.KEEP_RIGHT = "KEEP_RIGHT",
+        t.CONTINUE = "CONTINUE",
+        t.EXIT_LEFT = "EXIT_LEFT",
+        t.EXIT_RIGHT = "EXIT_RIGHT",
+        t.UTURN = "UTURN"
+}, function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -46000,16 +45401,16 @@ webpackJsonp([0], [function(e, t, i) {
         p = i(36),
         g = n(p),
         m = i(48),
-        v = i(160),
+        v = i(155),
         _ = n(v),
         y = i(38),
         b = n(y),
-        w = i(96),
-        E = i(289),
+        w = i(98),
+        E = i(268),
         k = n(E),
-        M = i(916),
+        M = i(901),
         S = n(M),
-        T = i(176),
+        T = i(169),
         C = function(e) {
             function t() {
                 return (0,
@@ -46487,11 +45888,11 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.ViewModel = void 0;
-    var s = i(17),
+    var s = i(16),
         r = n(s),
         a = i(7),
         o = n(a),
-        l = i(13),
+        l = i(11),
         u = n(l),
         d = i(2),
         c = n(d),
@@ -46504,7 +45905,7 @@ webpackJsonp([0], [function(e, t, i) {
         _ = i(4),
         y = n(_),
         b = i(48),
-        w = i(111),
+        w = i(112),
         E = n(w),
         k = function(e) {
             function t() {
@@ -46709,15 +46110,15 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.DriveProfileItemViewModel = void 0;
-    var s = i(17),
+    var s = i(16),
         r = n(s),
-        a = i(13),
+        a = i(11),
         o = n(a),
         l = i(7),
         u = n(l),
         d = i(6),
         c = n(d),
-        h = i(27),
+        h = i(23),
         f = n(h),
         p = i(2),
         g = n(p),
@@ -46730,7 +46131,7 @@ webpackJsonp([0], [function(e, t, i) {
         k = i(4),
         M = n(k),
         S = i(48),
-        T = i(111),
+        T = i(112),
         C = T.VEHICLE_TYPES.PRIVATE,
         I = function(e) {
             function t() {
@@ -47297,7 +46698,7 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.ViewModel = void 0;
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(7),
         o = n(a),
@@ -47311,12 +46712,12 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(264),
+        _ = i(267),
         y = n(_),
-        b = i(161),
-        w = i(93),
+        b = i(156),
+        w = i(92),
         E = n(w),
-        k = i(12),
+        k = i(13),
         M = n(k),
         S = moment(),
         T = moment().add(1, "month"),
@@ -47628,7 +47029,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(290),
+        p = i(269),
         g = n(p),
         m = function(e) {
             function t() {
@@ -47764,7 +47165,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(6),
         r = n(s),
-        a = i(17),
+        a = i(16),
         o = n(a),
         l = i(2),
         u = n(l),
@@ -47776,7 +47177,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(291),
+        _ = i(270),
         y = n(_),
         b = _.BIG_TOOLTIP_VERT_PLACEMENTS.TOP,
         w = function(e) {
@@ -48151,11 +47552,11 @@ webpackJsonp([0], [function(e, t, i) {
         d = n(u),
         c = i(1),
         h = n(c),
-        f = i(17),
+        f = i(16),
         p = n(f),
         g = i(34),
         m = n(g),
-        v = i(181),
+        v = i(174),
         _ = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -48591,14 +47992,14 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(17),
+    var s, r = i(16),
         a = n(r),
-        o = i(266),
+        o = i(242),
         l = n(o),
-        u = i(128),
-        d = i(923),
+        u = i(124),
+        d = i(908),
         c = n(d),
-        h = i(1049),
+        h = i(1047),
         f = n(h),
         p = Marionette.Object.extend({
             MODE_TO_CLASS: (s = {},
@@ -48663,13 +48064,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(924),
+    var s = i(909),
         r = n(s),
-        a = i(950),
+        a = i(935),
         o = n(a),
-        l = i(1022),
+        l = i(1018),
         u = n(l),
-        d = i(1043),
+        d = i(1041),
         c = n(d),
         h = Marionette.Object.extend({
             sidebarLayout: null,
@@ -48756,21 +48157,21 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(925),
+    var s = i(910),
         r = n(s),
-        a = i(931),
+        a = i(916),
         o = n(a),
-        l = i(932),
+        l = i(917),
         u = n(l),
-        d = i(294),
+        d = i(273),
         c = n(d),
-        h = i(939),
+        h = i(924),
         f = n(h),
-        p = i(941),
+        p = i(926),
         g = n(p),
-        m = i(945),
+        m = i(930),
         v = n(m),
-        y = i(948),
+        y = i(933),
         b = n(y),
         w = Marionette.Object.extend({
             browser: null,
@@ -48885,25 +48286,25 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(18),
         o = n(a),
-        l = i(59),
+        l = i(60),
         u = n(l),
-        d = i(132),
+        d = i(127),
         c = n(d),
-        h = i(926),
+        h = i(911),
         f = n(h),
-        p = i(927),
+        p = i(912),
         g = n(p),
-        m = i(928),
+        m = i(913),
         v = n(m),
-        y = i(929),
+        y = i(914),
         b = n(y),
-        w = i(930),
+        w = i(915),
         E = n(w),
-        k = i(23),
+        k = i(24),
         M = Backbone.Model.extend({
             defaults: {
                 empty: !0,
@@ -49038,7 +48439,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(132),
+    var n = i(127),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -49075,7 +48476,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(132),
+        p = i(127),
         g = n(p),
         m = function(e) {
             function t() {
@@ -49122,7 +48523,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(132),
+        p = i(127),
         g = n(p),
         m = function(e) {
             function t() {
@@ -49161,11 +48562,11 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(59),
+        a = i(60),
         o = n(a),
         l = i(50),
         u = n(l),
-        d = i(26),
+        d = i(27),
         c = u.default.prototype.TYPE,
         h = Backbone.Collection.extend({
             model: u.default,
@@ -49410,7 +48811,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(13),
+    var n = i(11),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -49493,11 +48894,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(117),
+    var s = i(115),
         r = n(s),
-        a = i(293),
+        a = i(272),
         o = n(a),
-        l = i(938),
+        l = i(923),
         u = n(l),
         d = i(50),
         c = n(d),
@@ -49627,7 +49028,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(293),
+    var n = i(272),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -49656,9 +49057,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(294),
+    var s = i(273),
         r = n(s),
-        a = i(940),
+        a = i(925),
         o = n(a),
         l = r.default.extend({
             childView: o.default,
@@ -49672,7 +49073,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(183),
+    var n = i(176),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -49701,17 +49102,17 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s, r = i(17),
+    var s, r = i(16),
         a = n(r),
         o = i(50),
         l = n(o),
-        u = i(134),
+        u = i(129),
         d = n(u),
-        c = i(942),
+        c = i(927),
         h = n(c),
-        f = i(943),
+        f = i(928),
         p = n(f),
-        g = i(944),
+        g = i(929),
         m = n(g),
         v = l.default.prototype.TYPE,
         _ = Marionette.CollectionView.extend({
@@ -49760,7 +49161,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(134),
+        m = i(129),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -49814,7 +49215,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(134),
+        m = i(129),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -49867,7 +49268,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(134),
+        m = i(129),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -49916,9 +49317,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(946),
+    var s = i(931),
         r = n(s),
-        a = i(947),
+        a = i(932),
         o = n(a),
         l = Marionette.CollectionView.extend({
             className: "feed-group list-unstyled",
@@ -49976,11 +49377,11 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(133),
+        m = i(128),
         v = n(m),
-        y = i(10),
+        y = i(9),
         b = n(y),
-        w = i(285),
+        w = i(262),
         E = n(w),
         k = I18n.t("internal.editing_local_forum_link"),
         M = I18n.t("internal.wiki_link"),
@@ -50187,7 +49588,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(949),
+    var n = i(934),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -50225,7 +49626,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(133),
+        m = i(128),
         v = n(m),
         _ = function(e) {
             function t() {
@@ -50261,11 +49662,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(951),
+    var s = i(936),
         r = n(s),
-        a = i(1013),
+        a = i(1009),
         o = n(a),
-        l = i(1021),
+        l = i(1017),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/sidebar/sidebar",
@@ -50370,24 +49771,24 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(17),
+    var s = i(16),
         r = n(s),
         a = i(0),
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(952),
+        d = i(937),
         c = n(d),
-        h = i(963),
+        h = i(956),
         f = n(h),
-        p = i(965),
+        p = i(957),
         g = n(p),
-        m = i(988),
+        m = i(982),
         v = n(m),
-        y = i(11),
-        b = i(989),
+        y = i(12),
+        b = i(983),
         w = n(b),
-        E = i(1004),
+        E = i(1e3),
         k = n(E),
         M = i(34),
         S = n(M),
@@ -50510,15 +49911,15 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(8),
         v = n(m),
-        _ = i(62),
+        _ = i(91),
         y = n(_),
         b = i(57),
         w = n(b),
-        E = i(953),
+        E = i(938),
         k = n(E),
-        M = i(135),
+        M = i(130),
         S = n(M),
-        T = i(110),
+        T = i(154),
         C = function(e) {
             function t() {
                 (0,
@@ -50624,7 +50025,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(954),
+        p = i(939),
         g = n(p),
         m = function(e) {
             function t() {
@@ -50727,7 +50128,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(25),
+        p = i(26),
         g = n(p),
         m = function(e) {
             function t() {
@@ -50992,6 +50393,226 @@ webpackJsonp([0], [function(e, t, i) {
         t.getAndConfirmCityChange = n
 }, function(e, t, i) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = {
+        sum: function(e, t) {
+            return (e || 0) + (t || 0)
+        },
+        max: function(e, t) {
+            return Math.max(e, t)
+        },
+        logical: {
+            and: function(e, t) {
+                return e && t
+            },
+            or: function(e, t) {
+                return e || t
+            }
+        },
+        bitwise: {
+            and: function(e, t) {
+                return e & t
+            },
+            or: function(e, t) {
+                return e | t
+            },
+            xor: function(e, t) {
+                return e ^ t
+            }
+        }
+    };
+    t.default = n,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(86),
+        o = n(a),
+        l = i(944),
+        u = n(l),
+        d = i(0),
+        c = n(d),
+        h = i(1),
+        f = n(h),
+        p = i(3),
+        g = n(p),
+        m = i(4),
+        v = n(m),
+        _ = i(49),
+        y = n(_),
+        b = function(e) {
+            function t() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
+                    i = arguments[1];
+                (0,
+                    c.default)(this, t);
+                var n = new u.default,
+                    s = new u.default,
+                    a = new u.default,
+                    l = new u.default,
+                    d = [],
+                    h = new u.default;
+                e.forEach(function(e) {
+                    e.isEmpty() || (n.add(e.getStreet().id),
+                        s.add(e.getCity().attributes.id),
+                        a.add(e.getState().id),
+                        l.add(e.getCountry().id),
+                        e.attributes.altStreets.forEach(function(e) {
+                            var t = e.getStreet().id;
+                            h.has(t) || (d.push(e),
+                                h.add(t))
+                        }))
+                });
+                var f = (0,
+                        o.default)(n).map(function(e) {
+                        return i.streets.get(e)
+                    }),
+                    p = (0,
+                        o.default)(s).map(function(e) {
+                        return i.cities.get(e)
+                    }),
+                    m = (0,
+                        o.default)(a).map(function(e) {
+                        return i.states.get(e)
+                    }),
+                    v = (0,
+                        o.default)(l).map(function(e) {
+                        return i.countries.get(e)
+                    }),
+                    _ = (0,
+                        g.default)(this, (t.__proto__ || (0,
+                        r.default)(t)).call(this, {
+                        isEmpty: 0 === f.length,
+                        street: f.length > 1 ? null : f[0],
+                        city: p.length > 1 ? null : p[0],
+                        state: m.length > 1 ? null : m[0],
+                        country: v.length > 1 ? null : v[0],
+                        altStreets: d
+                    }));
+                return _.streets = f,
+                    _.cities = p,
+                    _.states = m,
+                    _.countries = v,
+                    _.addresses = e,
+                    _
+            }
+            return (0,
+                    v.default)(t, e),
+                (0,
+                    f.default)(t, [{
+                    key: "hasMixedStreets",
+                    value: function() {
+                        return this.streets.length > 1
+                    }
+                }, {
+                    key: "hasMixedCities",
+                    value: function() {
+                        return this.cities.length > 1
+                    }
+                }, {
+                    key: "hasMixedStates",
+                    value: function() {
+                        return this.states.length > 1
+                    }
+                }, {
+                    key: "hasMixedCountries",
+                    value: function() {
+                        return this.countries.length > 1
+                    }
+                }, {
+                    key: "getStreetName",
+                    value: function(e) {
+                        return this.hasMixedStreets() ? null : this.addresses[0].getStreetName(e)
+                    }
+                }, {
+                    key: "isEmptyStreet",
+                    value: function() {
+                        return !this.hasMixedStreets() && this.addresses[0].isEmptyStreet()
+                    }
+                }, {
+                    key: "getCityName",
+                    value: function(e) {
+                        return this.hasMixedCities() ? null : this.addresses[0].getCityName(e)
+                    }
+                }, {
+                    key: "getStateName",
+                    value: function() {
+                        return this.hasMixedStates() ? null : this.addresses[0].getStateName()
+                    }
+                }, {
+                    key: "getCountryName",
+                    value: function() {
+                        return this.hasMixedCountries() ? null : this.addresses[0].getCountryName()
+                    }
+                }, {
+                    key: "format",
+                    value: function() {
+                        if (this.isEmpty())
+                            return I18n.t("edit.landmark.no_address");
+                        var e = this.hasMixedStates() ? I18n.t("edit.segment.no_common.state") : this.getStateName(),
+                            t = this.hasMixedCountries() ? I18n.t("edit.segment.no_common.country") : this.getCountryName();
+                        return [this.hasMixedStreets() ? I18n.t("edit.segment.no_common.street") : this.getStreetName(), this.hasMixedCities() ? I18n.t("edit.segment.no_common.city") : this.getCityName(), this.hasState() ? e : t].join(", ")
+                    }
+                }, {
+                    key: "hasSingleNonEmptyStreet",
+                    value: function() {
+                        return 1 === this.streets.length && !this.isEmptyStreet()
+                    }
+                }]),
+                t
+        }(y.default);
+    t.default = b,
+        e.exports = t.default
+}, function(e, t, i) {
+    e.exports = {
+        default: i(945),
+        __esModule: !0
+    }
+}, function(e, t, i) {
+    i(108),
+        i(56),
+        i(66),
+        i(946),
+        i(947),
+        i(948),
+        i(949),
+        e.exports = i(14).Set
+}, function(e, t, i) {
+    "use strict";
+    var n = i(209),
+        s = i(161);
+    e.exports = i(210)("Set", function(e) {
+        return function() {
+            return e(this, arguments.length > 0 ? arguments[0] : void 0)
+        }
+    }, {
+        add: function(e) {
+            return n.def(s(this, "Set"), e = 0 === e ? 0 : e, e)
+        }
+    }, n)
+}, function(e, t, i) {
+    var n = i(21);
+    n(n.P + n.R, "Set", {
+        toJSON: i(211)("Set")
+    })
+}, function(e, t, i) {
+    i(212)("Set")
+}, function(e, t, i) {
+    i(213)("Set")
+}, function(e, t, i) {
+    "use strict";
 
     function n(e) {
         return e && e.__esModule ? e : {
@@ -51011,7 +50632,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(958),
+        p = i(951),
         g = n(p),
         m = function(e) {
             function t() {
@@ -51114,7 +50735,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(960),
+        p = i(953),
         g = n(p),
         m = function(e) {
             function t() {
@@ -51165,9 +50786,9 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(136),
+        p = i(99),
         g = n(p),
-        m = i(26),
+        m = i(27),
         v = function(e) {
             function t() {
                 return (0,
@@ -51293,7 +50914,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(962),
+        p = i(955),
         g = n(p),
         m = i(32),
         v = function(e) {
@@ -51393,7 +51014,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(10),
+        l = i(9),
         u = n(l),
         d = function() {
             function e() {
@@ -51460,13 +51081,13 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         _ = i(4),
         y = n(_),
-        b = i(964),
+        b = i(178),
         w = n(b),
-        E = i(116),
+        E = i(163),
         k = n(E),
-        M = i(12),
+        M = i(13),
         S = n(M),
-        T = i(71),
+        T = i(59),
         C = n(T),
         I = function(e) {
             function t() {
@@ -51503,9 +51124,6 @@ webpackJsonp([0], [function(e, t, i) {
                             "[name=speed]": {
                                 observe: "speed",
                                 events: ["blur"]
-                            },
-                            "[name=validated]": {
-                                observe: "validated"
                             }
                         })
                     }
@@ -51516,8 +51134,7 @@ webpackJsonp([0], [function(e, t, i) {
                             speed: function(e, t) {
                                 t.speed = C.default.getOriginalValue(e, k.default.prototype.UNITS.speed)
                             },
-                            type: this.simpleAttribute("type"),
-                            validated: this.simpleAttribute("validated")
+                            type: this.simpleAttribute("type")
                         }
                     }
                 }, {
@@ -51525,8 +51142,7 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function(e) {
                         return {
                             speed: S.default.getDisplayUnitValue(e.attributes.speed, k.default.prototype.UNITS.speed, !0),
-                            type: e.attributes.type,
-                            validated: e.attributes.validated
+                            type: e.attributes.type
                         }
                     }
                 }, {
@@ -51538,167 +51154,6 @@ webpackJsonp([0], [function(e, t, i) {
                 t
         }(w.default);
     t.default = I,
-        e.exports = t.default
-}, function(e, t, i) {
-    "use strict";
-
-    function n(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var s = i(7),
-        r = n(s),
-        a = i(6),
-        o = n(a),
-        l = i(17),
-        u = n(l),
-        d = i(2),
-        c = n(d),
-        h = i(207),
-        f = n(h),
-        p = i(0),
-        g = n(p),
-        m = i(3),
-        v = n(m),
-        y = i(1),
-        b = n(y),
-        w = i(4),
-        E = n(w),
-        k = i(19),
-        M = n(k),
-        S = i(26),
-        T = function(e) {
-            function t(e) {
-                var i = e.dataModel,
-                    n = void 0 === i ? null : i,
-                    s = e.selection,
-                    r = void 0 === s ? [] : s,
-                    a = (0,
-                        f.default)(e, ["dataModel", "selection"]);
-                (0,
-                    g.default)(this, t);
-                var o = (0,
-                    v.default)(this, (t.__proto__ || (0,
-                    c.default)(t)).call(this, a));
-                o._dataModel = n;
-                var l = r[0];
-                o.featureID = l.getID();
-                var u = new Backbone.Model(o._makeViewModelAttributes(l));
-                return o.viewModel = u,
-                    o.repository = o._dataModel.getRepository(l.type),
-                    o.listenTo(o.repository, S.CHANGED, o.onFeaturesChanged),
-                    o.listenTo(o.viewModel, "change", o._onViewModelChanged),
-                    o
-            }
-            return (0,
-                    E.default)(t, e),
-                (0,
-                    b.default)(t, [{
-                    key: "events",
-                    value: function() {
-                        return {
-                            "submit .attributes-form": "_onAttributesFormSubmitted"
-                        }
-                    }
-                }]),
-                (0,
-                    b.default)(t, [{
-                    key: "bindings",
-                    value: function() {
-                        return (0,
-                            u.default)({}, ".attributes-form input .attributes-form textarea .attributes-form select .attributes-form label", {
-                            attributes: [{
-                                name: "disabled",
-                                observe: "propertiesEditable",
-                                onGet: _.negate(_.identity)
-                            }]
-                        })
-                    }
-                }, {
-                    key: "templateContext",
-                    value: function() {
-                        return _.pick(this.viewModel.attributes, "id", "createdBy", "updatedBy")
-                    }
-                }, {
-                    key: "_makeViewModelAttributes",
-                    value: function(e) {
-                        return (0,
-                            o.default)({
-                            id: e.getID(),
-                            createdBy: e.attributes.createdBy,
-                            updatedBy: e.attributes.updatedBy,
-                            propertiesEditable: e.arePropertiesEditable()
-                        }, this.featureToViewModel(e))
-                    }
-                }, {
-                    key: "_makeModelAttributes",
-                    value: function(e) {
-                        var t = {},
-                            i = this.viewModelToFeature();
-                        return (0,
-                                r.default)(e.changedAttributes()).forEach(function(n) {
-                                "function" == typeof i[n] && i[n](e.get(n), t)
-                            }),
-                            t
-                    }
-                }, {
-                    key: "toggleEnabled",
-                    value: function(e) {
-                        e ? this.triggerMethod("editingEnabled") : this.triggerMethod("editingDisabled")
-                    }
-                }, {
-                    key: "simpleAttribute",
-                    value: function(e) {
-                        return function(t, i) {
-                            i[e] = t
-                        }
-                    }
-                }, {
-                    key: "featureToViewModel",
-                    value: function(e) {
-                        return {}
-                    }
-                }, {
-                    key: "viewModelToFeature",
-                    value: function(e) {
-                        return {}
-                    }
-                }, {
-                    key: "_onAttributesFormSubmitted",
-                    value: function() {
-                        return !1
-                    }
-                }, {
-                    key: "onFeaturesChanged",
-                    value: function(e) {
-                        this.hasEditedModelChanged(e) && this.viewModel.set(this._makeViewModelAttributes(e[0]))
-                    }
-                }, {
-                    key: "_onViewModelChanged",
-                    value: function(e, t) {
-                        if (t.stickitChange) {
-                            var i = this.repository.get(this.featureID);
-                            i ? this._dataModel.actionManager.add(new M.default(i, this._makeModelAttributes(e))) : console.error("Cannot update a non-existing object with id " + this.featureID + " and type " + this.repository.objectType)
-                        }
-                    }
-                }, {
-                    key: "hasEditedModelChanged",
-                    value: function(e) {
-                        return 1 === e.length && e[0].getID() === this.featureID
-                    }
-                }, {
-                    key: "onRender",
-                    value: function() {
-                        this.stickit(this.viewModel, this.bindings())
-                    }
-                }]),
-                t
-        }(Marionette.View);
-    t.default = T,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -51723,38 +51178,38 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(8),
         g = n(p),
-        m = i(62),
+        m = i(91),
         v = n(m),
-        y = i(966),
+        y = i(958),
         b = n(y),
-        w = i(967),
+        w = i(959),
         E = n(w),
         k = i(19),
         M = n(k),
-        S = i(77),
+        S = i(75),
         T = n(S),
-        C = i(246),
+        C = i(962),
         I = n(C),
-        A = i(91),
+        A = i(90),
         R = n(A),
-        O = i(282),
+        O = i(259),
         D = n(O),
-        L = i(295),
-        P = i(970),
+        L = i(274),
+        P = i(963),
         N = n(P),
-        x = i(972),
+        x = i(965),
         V = n(x),
-        F = i(296),
-        j = n(F),
-        U = i(135),
-        B = n(U),
-        z = i(297),
-        G = n(z),
-        H = i(975),
+        F = i(275),
+        U = n(F),
+        j = i(130),
+        B = n(j),
+        G = i(276),
+        z = n(G),
+        H = i(968),
         Y = n(H),
-        q = i(298),
+        q = i(277),
         K = n(q),
-        J = i(61),
+        J = i(62),
         Z = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -51765,9 +51220,9 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(J),
-        X = i(982),
+        X = i(976),
         Q = n(X),
-        ee = i(12),
+        ee = i(13),
         te = n(ee),
         ie = function(e) {
             function t(e) {
@@ -51793,7 +51248,7 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function() {
                         return {
                             restoreLastTab: {
-                                behaviorClass: j.default
+                                behaviorClass: U.default
                             }
                         }
                     }
@@ -52115,7 +51570,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_initMoreInfoTab",
                     value: function() {
-                        var e = this.model.isParkingLot() ? Y.default : G.default;
+                        var e = this.model.isParkingLot() ? Y.default : z.default;
                         return this.moreInfoView = new e({
                                 model: this.model,
                                 serviceTypes: this._getServiceTypes(),
@@ -52218,7 +51673,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(61),
+    var n = i(62),
         s = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -52335,9 +51790,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(968),
+    var s = i(960),
         r = n(s),
-        a = i(969),
+        a = i(961),
         o = n(a),
         l = Marionette.CompositeView.extend({
             template: "templates/opening_hours/layout",
@@ -52397,8 +51852,8 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(114),
-        s = i(93),
+    var n = i(113),
+        s = i(92),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -52508,11 +51963,71 @@ webpackJsonp([0], [function(e, t, i) {
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(295),
-        s = i(971),
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(4),
+        f = n(h),
+        p = i(10),
+        g = n(p),
+        m = i(19),
+        v = n(m),
+        _ = i(75),
+        y = n(_),
+        b = function(e) {
+            function t(e, i) {
+                var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+                (0,
+                    o.default)(this, t);
+                var s = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, n));
+                return s._venue = e,
+                    s._toResidential = i,
+                    s
+            }
+            return (0,
+                    f.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this._venue;
+                        if (this._toResidential && !e.isPoint()) {
+                            var t = e.getPointGeometry(),
+                                i = new y.default(e, e.model.venues, e.geometry, t);
+                            this.doSubAction(i)
+                        }
+                        return this.doSubAction(new v.default(this._venue, {
+                            residential: this._toResidential
+                        })), !0
+                    }
+                }]),
+                t
+        }(g.default);
+    t.default = b,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(274),
+        s = i(964),
         r = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -52597,11 +52112,11 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(973),
+        p = i(966),
         g = n(p),
-        m = i(974),
+        m = i(967),
         v = n(m),
-        _ = i(164),
+        _ = i(160),
         y = n(_),
         b = function(e) {
             function t() {
@@ -52649,7 +52164,9 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "initialize",
                     value: function() {
                         this.venue = this.options.venue,
-                            this.collection = new Backbone.Collection(this.venue.attributes.externalProviderIDs),
+                            this.collection = new Backbone.Collection(this.venue.attributes.externalProviderIDs.map(function(e) {
+                                return e.clone()
+                            })),
                             this.viewModel = new v.default(null, {
                                 collection: this.collection
                             })
@@ -52717,7 +52234,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(10),
+        p = i(9),
         g = n(p),
         m = {
             MIN_INPUT_LENGTH: 3,
@@ -52904,12 +52421,12 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(297),
+    var s = i(276),
         r = n(s),
-        a = i(136),
+        a = i(99),
         o = n(a),
-        l = i(92),
-        u = i(115),
+        l = i(114),
+        u = i(162),
         d = n(u),
         c = r.default.extend({
             template: "templates/venue/venue-edit-more-info-parking-lot",
@@ -52995,7 +52512,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(977),
+        p = i(970),
         g = n(p),
         m = function(e) {
             function t() {
@@ -53044,7 +52561,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -53056,18 +52573,18 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(263),
+        m = i(971),
         v = n(m),
-        _ = i(11),
-        y = i(119),
+        _ = i(12),
+        y = i(117),
         b = n(y),
-        w = i(184),
+        w = i(179),
         E = n(w),
-        k = i(978),
+        k = i(972),
         M = n(k),
-        S = i(979),
+        S = i(973),
         T = n(S),
-        C = i(980),
+        C = i(974),
         I = n(C),
         A = function(e) {
             function t() {
@@ -53094,7 +52611,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "events",
                     value: function() {
                         return {
-                            "click .tx-toggle-closed": "_toggleClosed"
+                            "click .tx-header": "_toggleClosed"
                         }
                     }
                 }, {
@@ -53255,6 +52772,195 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(111),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(13),
+        c = n(d),
+        h = i(38),
+        f = n(h),
+        p = i(158),
+        g = n(p),
+        m = i(113),
+        v = i(98),
+        y = function(e) {
+            var t = "";
+            t = e.isForward() ? I18n.t("segment.direction.1") : I18n.t("segment.direction.2");
+            var i = "";
+            return i = e.isAllowed() ? I18n.t("restrictions.editing.pickup.allowed") : e.isNotAllowed() ? I18n.t("restrictions.editing.pickup.not_allowed") : I18n.t("restrictions.editing.pickup.unknown"),
+                t + ": " + i
+        },
+        b = function(e) {
+            var t = new v.TimeFrameViewHelpers({
+                timeFrame: e.getTimeFrame()
+            });
+            return t.formatWeekdays() + " " + t.formatHours()
+        },
+        w = function(e, t) {
+            return function(i) {
+                return i.map(function(t) {
+                    return new e(t)
+                }).map(t)
+            }
+        },
+        E = function() {
+            function e(t) {
+                (0,
+                    o.default)(this, e),
+                this.dataModel = t
+            }
+            return (0,
+                    u.default)(e, [{
+                    key: "FORMATTERS",
+                    get: function() {
+                        var e = this;
+                        return {
+                            default: {
+                                lockRank: function(e) {
+                                    return c.default.formatRank(e)
+                                },
+                                streetID: function(t) {
+                                    var i = e.dataModel.streets.get(t),
+                                        n = "",
+                                        s = void 0,
+                                        r = void 0;
+                                    return null != i && (n = i.name,
+                                            i.isEmpty || (s = e.dataModel.cities.get(i.cityID),
+                                                r = s.attributes.name)),
+                                        _.compact([n, r]).join(", ")
+                                }
+                            },
+                            segment: {
+                                level: function(e) {
+                                    return 0 === e ? I18n.t("edit.segment.levels.0") : e
+                                },
+                                roadType: function(e) {
+                                    return I18n.t("segment.road_types." + e)
+                                },
+                                routingRoadType: function(e) {
+                                    return I18n.t("segment.road_types." + e)
+                                },
+                                primaryStreetID: function(t) {
+                                    return e.FORMATTERS.default.streetID(t)
+                                },
+                                streetIDs: function(t) {
+                                    return t.map(function(t) {
+                                        return e.FORMATTERS.default.streetID(t)
+                                    })
+                                },
+                                fwdMaxSpeed: function(e) {
+                                    return c.default.speedString(e)
+                                },
+                                revMaxSpeed: function(e) {
+                                    return c.default.speedString(e)
+                                },
+                                restrictions: w(f.default, b),
+                                pickupRestrictions: w(g.default, y)
+                            },
+                            venue: {
+                                services: function(e) {
+                                    return e.map(function(e) {
+                                        return I18n.t("venues.services." + e)
+                                    })
+                                },
+                                categories: function(e) {
+                                    return e.map(function(e) {
+                                        return I18n.t("venues.categories." + e)
+                                    })
+                                },
+                                openingHours: function(e) {
+                                    return e.map(function(e) {
+                                        return new m.OpeningHour(e)
+                                    }).map(c.default.formatOpeningHour)
+                                }
+                            },
+                            venueCategoryAttributes: {
+                                estimatedNumberOfSpots: function(e) {
+                                    return I18n.t("edit.landmark.parking.types.estimatedNumberOfSpots." + e)
+                                },
+                                paymentType: function(e) {
+                                    return e.map(function(e) {
+                                        return I18n.t("edit.landmark.parking.types.paymentType." + e)
+                                    })
+                                },
+                                costType: function(e) {
+                                    return I18n.t("edit.landmark.parking.types.costType." + e)
+                                },
+                                parkingType: function(e) {
+                                    return I18n.t("edit.landmark.parking.types.parkingType." + e)
+                                },
+                                lotType: function(e) {
+                                    return I18n.t("edit.landmark.parking.types.lotType." + e)
+                                }
+                            }
+                        }
+                    }
+                }]),
+                (0,
+                    u.default)(e, [{
+                    key: "formatObjectName",
+                    value: function(e) {
+                        var t = "objects." + e + ".name";
+                        return I18n.lookup(t) ? I18n.t(t) : e
+                    }
+                }, {
+                    key: "formatFieldName",
+                    value: function(e, t) {
+                        var i = "objects." + e + ".fields." + t,
+                            n = "objects.common.fields." + t;
+                        return I18n.lookup(i) ? I18n.t(i) : I18n.lookup(n) ? I18n.t(n) : t
+                    }
+                }, {
+                    key: "formatFlagName",
+                    value: function(e, t) {
+                        var i = "objects." + e + ".flag_fields." + t;
+                        return I18n.lookup(i) ? I18n.t(i) : t
+                    }
+                }, {
+                    key: "formatCategoryAttributeName",
+                    value: function(e) {
+                        var t = "objects.venue.category_fields." + e;
+                        return I18n.lookup(t) ? I18n.t(t) : e
+                    }
+                }, {
+                    key: "formatCategoryAttributeValue",
+                    value: function(e, t) {
+                        return this.formatFieldValue("venueCategoryAttributes", e, t)
+                    }
+                }, {
+                    key: "formatFieldValue",
+                    value: function(e, t, i) {
+                        var n = this.FORMATTERS.default[t],
+                            s = this.FORMATTERS[e],
+                            a = i;
+                        return s && s[t] ? a = s[t](i) : null != n && (a = n(i)),
+                            _.isString(a) ? a : Array.isArray(a) ? a.join(", ") : (0,
+                                r.default)(a)
+                    }
+                }, {
+                    key: "userProfile",
+                    value: function(e) {
+                        return c.default.userProfile(e, this.dataModel)
+                    }
+                }]),
+                e
+        }();
+    t.default = E,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(7),
         r = n(s),
         a = i(2),
@@ -53269,11 +52975,11 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(184),
+        y = i(179),
         b = n(y),
-        w = i(30),
+        w = i(29),
         E = n(w),
-        k = i(12),
+        k = i(13),
         M = n(k),
         S = {
             fwdMaxSpeedUnverified: function(e) {
@@ -53392,11 +53098,11 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         y = i(4),
         b = n(y),
-        w = i(10),
+        w = i(9),
         E = n(w),
-        k = i(184),
+        k = i(179),
         M = n(k),
-        S = i(12),
+        S = i(13),
         T = n(S),
         C = function(e) {
             function t() {
@@ -53529,10 +53235,10 @@ webpackJsonp([0], [function(e, t, i) {
         h = n(c),
         f = i(4),
         p = n(f),
-        g = i(17),
+        g = i(16),
         m = n(g),
-        v = i(11),
-        _ = i(981),
+        v = i(12),
+        _ = i(975),
         y = (s = {},
             (0,
                 m.default)(s, v.HOUSE_NUMBER, _.HouseNumberChangeView),
@@ -53599,7 +53305,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(119),
+        _ = i(117),
         y = n(_),
         b = function(e) {
             function t() {
@@ -53737,14 +53443,14 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(983),
+        p = i(977),
         g = n(p),
-        m = i(986),
+        m = i(980),
         v = n(m),
-        y = i(299),
-        b = i(219),
+        y = i(278),
+        b = i(217),
         w = n(b),
-        E = i(987),
+        E = i(981),
         k = function(e) {
             function t() {
                 return (0,
@@ -53934,7 +53640,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(984),
+        p = i(978),
         g = n(p),
         m = function(e) {
             function t() {
@@ -54000,7 +53706,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(985),
+        p = i(979),
         g = n(p),
         m = function(e) {
             function t() {
@@ -54137,7 +53843,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(299),
+        p = i(278),
         g = function(e) {
             function t() {
                 return (0,
@@ -54244,9 +53950,9 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(131),
+        _ = i(95),
         y = n(_),
-        b = i(25),
+        b = i(26),
         w = n(b),
         E = function(e) {
             function t(e, i) {
@@ -54422,7 +54128,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(9),
+        p = i(10),
         g = n(p),
         m = i(19),
         v = n(m),
@@ -54529,45 +54235,55 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(2),
+    var s = i(11),
         r = n(s),
-        a = i(0),
+        a = i(2),
         o = n(a),
-        l = i(3),
+        l = i(6),
         u = n(l),
-        d = i(8),
+        d = i(0),
         c = n(d),
-        h = i(1),
+        h = i(3),
         f = n(h),
-        p = i(4),
+        p = i(1),
         g = n(p),
-        m = i(62),
+        m = i(4),
         v = n(m),
-        _ = i(170),
-        y = n(_),
-        b = i(137),
-        w = n(b),
-        E = i(11),
-        k = i(26),
-        M = function(e) {
-            function t() {
+        y = i(8),
+        b = n(y),
+        w = i(178),
+        E = n(w),
+        k = i(166),
+        M = n(k),
+        S = i(131),
+        T = n(S),
+        C = i(27),
+        I = i(96),
+        A = function(e) {
+            function t(e) {
+                var i = e.dataModel,
+                    n = void 0 === i ? null : i;
+                e.selection;
                 (0,
-                    o.default)(this, t);
-                var e = (0,
-                    u.default)(this, (t.__proto__ || (0,
-                    r.default)(t)).apply(this, arguments));
-                return e.listenTo(e.dataModel.segments, k.CHANGED, e.onFeaturesChanged),
-                    e
+                    c.default)(this, t);
+                var s = (0,
+                    f.default)(this, (t.__proto__ || (0,
+                    o.default)(t)).apply(this, arguments));
+                s.dataModel = n,
+                    s.listenTo(s.dataModel.segments, C.CHANGED, s.onSegmentsChanged);
+                var r = s.dataModel.getTurnGraph();
+                return s.listenTo(r, I.CHANGE_EVENT, s.onTurnGraphChanged),
+                    s
             }
             return (0,
-                    g.default)(t, e),
+                    v.default)(t, e),
                 (0,
-                    f.default)(t, [{
+                    g.default)(t, [{
                     key: "behaviors",
                     value: function() {
                         return {
                             accelerators: {
-                                behaviorClass: w.default
+                                behaviorClass: T.default
                             }
                         }
                     }
@@ -54588,51 +54304,126 @@ webpackJsonp([0], [function(e, t, i) {
                         }
                     }
                 }, {
+                    key: "bindings",
+                    value: function() {
+                        return (0,
+                            u.default)({}, (0,
+                            b.default)(t.prototype.__proto__ || (0,
+                            o.default)(t.prototype), "bindings", this).call(this), {
+                            ".big-junction-error": {
+                                observe: "isInBigJunction",
+                                visible: !0
+                            },
+                            ".connections-edit": {
+                                observe: ["isConnectedToBigJunction", "connectionsExist"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            r.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return !i && n
+                                },
+                                visible: !0
+                            },
+                            ".connectionStatus": {
+                                observe: ["areAllConnectionsEnabled", "areAllConnectionsDisabled"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            r.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return i ? I18n.t("edit.node.turns.all_allowed") : n ? I18n.t("edit.node.turns.all_disallowed") : void 0
+                                }
+                            },
+                            "button.allow-connections": {
+                                observe: "areAllConnectionsEnabled",
+                                visible: !0,
+                                onGet: _.negate(_.identity),
+                                attributes: [{
+                                    attributes: {
+                                        name: "disabled",
+                                        observe: "areConnectionsEditable",
+                                        onGet: _.negate(_.identity)
+                                    }
+                                }]
+                            },
+                            "button.disallow-connections": {
+                                observe: "areAllConnectionsDisabled",
+                                visible: !0,
+                                onGet: _.negate(_.identity),
+                                attributes: [{
+                                    attributes: {
+                                        name: "disabled",
+                                        observe: "areConnectionsEditable",
+                                        onGet: _.negate(_.identity)
+                                    }
+                                }]
+                            }
+                        })
+                    }
+                }, {
+                    key: "featureToViewModel",
+                    value: function(e) {
+                        return {
+                            isConnectedToBigJunction: e.isConnectedToBigJunction(),
+                            connectionsExist: e.connectionsExist(),
+                            areAllConnectionsEnabled: e.areAllConnectionsEnabled(),
+                            areAllConnectionsDisabled: e.areAllConnectionsDisabled()
+                        }
+                    }
+                }, {
                     key: "template",
                     get: function() {
                         return "templates/node-edit"
                     }
                 }]),
                 (0,
-                    f.default)(t, [{
-                    key: "isModelEditable",
-                    value: function() {
-                        return this.dataModel.segments.getByIds(this.model.attributes.segIDs).every(function(e) {
-                            return e.canEditFromConnections() && e.canEditToConnections()
-                        })
+                    g.default)(t, [{
+                    key: "onTurnGraphChanged",
+                    value: function(e) {
+                        if (e) {
+                            var t = this.getFeature(),
+                                i = t.attributes.segIDs;
+                            (i.includes(e.getFromVertex().getSegmentID()) || i.includes(e.getToVertex().getSegmentID())) && this.onFeaturesChanged([t])
+                        }
+                    }
+                }, {
+                    key: "onSegmentsChanged",
+                    value: function(e) {
+                        var t = this.getFeature();
+                        e.some(function(e) {
+                            return t.isConnectedToSegment(e)
+                        }) && this.onFeaturesChanged([t])
                     }
                 }, {
                     key: "_setAllConnections",
-                    value: function(e) {
-                        this.model.areConnectionsEditable() && (this.dataModel.actionManager.add(new y.default(this.model, e)),
-                            this.render())
+                    value: function(e, t) {
+                        e.areConnectionsEditable() && this.dataModel.actionManager.add(new M.default(e, t))
                     }
                 }, {
                     key: "hasEditedModelChanged",
                     value: function(e) {
                         if ((0,
-                                c.default)(t.prototype.__proto__ || (0,
-                                r.default)(t.prototype), "hasEditedModelChanged", this).apply(this, arguments))
-                            return !0;
-                        var i = this.model.attributes.segIDs;
-                        return e.some(function(e) {
-                            return e.type === E.SEGMENT && i.includes(e.getID())
-                        })
+                                b.default)(t.prototype.__proto__ || (0,
+                                o.default)(t.prototype), "hasEditedModelChanged", this).apply(this, arguments))
+                            return !0
                     }
                 }, {
                     key: "_allowAllConnections",
                     value: function() {
-                        this.model.areAllConnectionsEnabled() || this._setAllConnections(!0)
+                        var e = this.getFeature();
+                        e.areAllConnectionsEnabled() || this._setAllConnections(e, !0)
                     }
                 }, {
                     key: "_disallowAllConnections",
                     value: function() {
-                        this.model.areAllConnectionsEnabled() && this._setAllConnections(!1)
+                        var e = this.getFeature();
+                        e.areAllConnectionsDisabled() || this._setAllConnections(e, !1)
                     }
                 }]),
                 t
-        }(v.default);
-    t.default = M,
+        }(E.default);
+    t.default = A,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -54647,80 +54438,96 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(2),
+        a = i(23),
         o = n(a),
-        l = i(6),
+        l = i(11),
         u = n(l),
-        d = i(0),
+        d = i(16),
         c = n(d),
-        h = i(3),
+        h = i(2),
         f = n(h),
-        p = i(1),
+        p = i(6),
         g = n(p),
-        m = i(4),
+        m = i(0),
         v = n(m),
-        y = i(8),
+        y = i(3),
         b = n(y),
-        w = i(62),
+        w = i(1),
         E = n(w),
-        k = i(127),
+        k = i(4),
         M = n(k),
-        S = i(52),
+        S = i(8),
         T = n(S),
-        C = i(19),
+        C = i(178),
         I = n(C),
-        A = i(30),
+        A = i(177),
         R = n(A),
-        O = i(12),
+        O = i(52),
         D = n(O),
-        L = i(300),
+        L = i(19),
         P = n(L),
-        N = i(296),
+        N = i(29),
         x = n(N),
-        V = i(137),
+        V = i(13),
         F = n(V),
-        j = i(993),
-        U = n(j),
-        B = i(995),
-        z = n(B),
-        G = i(302),
-        H = n(G),
-        Y = i(303),
+        U = i(279),
+        j = n(U),
+        B = i(275),
+        G = n(B),
+        z = i(131),
+        H = n(z),
+        Y = i(989),
         q = n(Y),
-        K = i(89),
+        K = i(991),
         J = n(K),
-        Z = i(298),
+        Z = i(281),
         X = n(Z),
-        Q = i(999),
+        Q = i(282),
         ee = n(Q),
-        te = i(135),
+        te = i(87),
         ie = n(te),
-        ne = function(e) {
-            function t() {
+        ne = i(277),
+        se = n(ne),
+        re = i(995),
+        ae = n(re),
+        oe = i(130),
+        le = n(oe),
+        ue = i(99),
+        de = n(ue),
+        ce = i(59),
+        he = n(ce),
+        fe = ["highways", "streets", "other_drivable", "non_drivable"],
+        pe = {
+            highways: N.HIGHWAY_ROAD_TYPES,
+            streets: [N.ROAD_TYPES.PRIMARY_STREET, N.ROAD_TYPES.STREET, N.ROAD_TYPES.ALLEY],
+            other_drivable: [N.ROAD_TYPES.OFF_ROAD, N.ROAD_TYPES.PARKING_LOT_ROAD, N.ROAD_TYPES.PRIVATE_ROAD, N.ROAD_TYPES.FERRY],
+            non_drivable: [N.ROAD_TYPES.RAILROAD, N.ROAD_TYPES.RUNWAY_TAXIWAY]
+        },
+        ge = function(e) {
+            function t(e) {
+                e.dataModel,
+                    e.selection;
                 (0,
-                    c.default)(this, t);
-                var e = (0,
-                    f.default)(this, (t.__proto__ || (0,
-                    o.default)(t)).apply(this, arguments));
-                return e._toggleEvents(!0),
-                    e.model = new M.default(e.options.selection, e.options.dataModel, e.options.reversedSegments),
-                    e.selectionManager = e.options.selectionManager,
-                    e.reverseSegments = e.options.reversedSegments,
-                    e.consistentDirection = 0 === e.reverseSegments.numReversed && !e.reverseSegments.multipleConnectedComponents,
-                    e
+                    v.default)(this, t);
+                var i = (0,
+                    b.default)(this, (t.__proto__ || (0,
+                    f.default)(t)).apply(this, arguments));
+                return i._toggleEvents(!0),
+                    i.selectionManager = i.options.selectionManager,
+                    i
             }
             return (0,
-                    v.default)(t, e),
+                    M.default)(t, e),
                 (0,
-                    g.default)(t, [{
+                    E.default)(t, [{
                     key: "behaviors",
                     value: function() {
                         return {
                             restoreLastTab: {
-                                behaviorClass: x.default
+                                behaviorClass: G.default
                             },
                             accelerators: {
-                                behaviorClass: F.default
+                                behaviorClass: H.default
                             }
                         }
                     }
@@ -54728,15 +54535,14 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "events",
                     value: function() {
                         return (0,
-                            u.default)({}, (0,
-                            b.default)(t.prototype.__proto__ || (0,
-                            o.default)(t.prototype), "events", this).call(this), {
+                            g.default)({}, (0,
+                            T.default)(t.prototype.__proto__ || (0,
+                            f.default)(t.prototype), "events", this).call(this), {
                             "click .segment .select-entire-street": "selectEntireStreetClicked",
                             "click .segment .select-entire-roundabout": "selectEntireRoundaboutClicked",
                             "click .segment .edit-house-numbers": "editHouseNumbersClicked",
                             "click .segment .edit-restrictions": "editRestrictionsClicked",
                             "click .segment .restriction-count": "editRestrictionTypeClicked",
-                            "click .segment input[type='checkbox'][mixed]": "mixedCheckboxClicked",
                             "click .verify-buttons .verify-btn": "verifySpeedButtonClicked",
                             "click .verify-buttons .edit-btn": "editSpeedButtonClicked"
                         })
@@ -54769,9 +54575,722 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "ui",
                     value: function() {
                         return {
-                            directionSelect: "[name=direction]",
                             closuresTab: "a[href='#segment-edit-closures']"
                         }
+                    }
+                }, {
+                    key: "_getRegularRoadTypeOptions",
+                    value: function() {
+                        var e = fe.map(function(e) {
+                                return I18n.t("segment.categories." + e)
+                            }),
+                            t = fe.reduce(function(e, t) {
+                                var i = I18n.t("segment.categories." + t);
+                                return (0,
+                                    g.default)({}, e, (0,
+                                    c.default)({}, i, pe[t].map(function(e) {
+                                    return {
+                                        label: I18n.t("segment.road_types." + e),
+                                        value: e
+                                    }
+                                })))
+                            }, {
+                                opt_labels: e
+                            });
+                        return this.viewModel.attributes.mixedRoadType && (t[I18n.t("edit.multiple_values")] = [{
+                                    label: I18n.t("edit.multiple_values"),
+                                    value: -1
+                                }],
+                                t.opt_labels.unshift(I18n.t("edit.multiple_values"))),
+                            t
+                    }
+                }, {
+                    key: "_getWalkingRoadTypeOptions",
+                    value: function() {
+                        var e = N.WALKING_ROAD_TYPES.map(function(e) {
+                            return {
+                                label: I18n.t("segment.road_types." + e),
+                                value: e
+                            }
+                        });
+                        return this.viewModel.attributes.mixedRoadType && e.push([{
+                                label: I18n.t("edit.multiple_values"),
+                                value: -1
+                            }]),
+                            e
+                    }
+                }, {
+                    key: "_getRoadTypeOptions",
+                    value: function() {
+                        return this.viewModel.attributes.isWalkingRoadType ? this._getWalkingRoadTypeOptions() : this._getRegularRoadTypeOptions()
+                    }
+                }, {
+                    key: "bindings",
+                    value: function() {
+                        var e = this;
+                        return (0,
+                            g.default)({}, (0,
+                            T.default)(t.prototype.__proto__ || (0,
+                            f.default)(t.prototype), "bindings", this).call(this), {
+                            ".segment": {
+                                classes: {
+                                    roundabout: "isEntireRoundabout"
+                                }
+                            },
+                            ".inconsistent-direction": {
+                                observe: "consistentDirection",
+                                visible: !0,
+                                onGet: _.negate(_.identity)
+                            },
+                            ".inconsistent-driving-types": {
+                                observe: "consistentDrivability",
+                                visible: !0,
+                                onGet: _.negate(_.identity)
+                            },
+                            ".segment-details": {
+                                visible: !0,
+                                observe: ["segmentErrorTitle", "segmentErrorDescription"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return Boolean(i) || Boolean(n)
+                                },
+                                classes: {
+                                    "junction-box-message": "isInBigJunction"
+                                }
+                            },
+                            ".closures-tab": {
+                                classes: {
+                                    disabled: {
+                                        observe: "isClosuresSupported",
+                                        onGet: _.negate(_.identity)
+                                    }
+                                }
+                            },
+                            "select[name=roadType]": {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: ["consistentDrivability", "propertiesEditable"],
+                                    onGet: function(e) {
+                                        var t = (0,
+                                                u.default)(e, 2),
+                                            i = t[0],
+                                            n = t[1];
+                                        return !i || !n
+                                    }
+                                }],
+                                observe: "roadType",
+                                selectOptions: {
+                                    collection: this._getRoadTypeOptions
+                                }
+                            },
+                            "button.select-entire-roundabout": {
+                                observe: ["isInRoundabout", "isEntireRoundabout"],
+                                visible: !0,
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return i && !n
+                                }
+                            },
+                            "button.select-entire-street": {
+                                observe: "showSelectEntireStreetButton",
+                                visible: !0
+                            },
+                            ".edit-house-numbers-btn-wrapper": {
+                                observe: "showHouseNumbersButton",
+                                visible: !0,
+                                attributes: [{
+                                    name: "title",
+                                    observe: "houseNumberTitle"
+                                }]
+                            },
+                            "button.edit-house-numbers": {
+                                observe: "canEditHouseNumbers",
+                                onGet: function(e) {
+                                    return e ? I18n.t("edit.segment.actions.edit_house_numbers") : I18n.t("edit.segment.actions.view_house_numbers")
+                                },
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "canEditHouseNumbers",
+                                    onGet: _.negate(_.identity)
+                                }]
+                            },
+                            ".length-attribute": {
+                                visible: !0,
+                                observe: "length"
+                            },
+                            ".length-attribute .value": {
+                                observe: "length",
+                                onGet: function(e) {
+                                    return F.default.lengthString(e)
+                                }
+                            },
+                            ".routing-road-type-message": (0,
+                                g.default)({}, de.default.contentsAndVisiblity("routingRoadTypeMessage", "shouldShowRoutingRoadTypeMessage"), {
+                                updateMethod: "html"
+                            }),
+                            ".hide-walking-trail": {
+                                observe: "isWalkingRoadType",
+                                onGet: _.negate(_.identity),
+                                visible: !0
+                            }
+                        }, this._checkboxBinding("unpaved", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: "canEditDrivingAttributes",
+                                onGet: _.negate(_.identity)
+                            }]
+                        }), this._checkboxBinding("tunnel", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: "canEditDrivingAttributes",
+                                onGet: _.negate(_.identity)
+                            }]
+                        }), {
+                            ".headlights-reminder": {
+                                observe: "shouldShowHeadlightsReminder",
+                                visible: !0
+                            }
+                        }, this._checkboxBinding("headlights", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: ["allowHeadlightsReminder", "canEditDrivingAttributes"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return !i || !n
+                                }
+                            }]
+                        }), this._checkboxBinding("nearbyHOV", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: "canEditDrivingAttributes",
+                                onGet: _.negate(_.identity)
+                            }]
+                        }), {
+                            ".routing-road-type-select": {
+                                observe: "shouldShowRoutingSelect",
+                                visible: !0
+                            },
+                            "select[name=routingRoadType]": {
+                                observe: "routingRoadType",
+                                selectOptions: {
+                                    collection: function() {
+                                        var t = e.viewModel.get("routingRoadTypes"),
+                                            i = [{
+                                                label: I18n.t("edit.segment.routing.road_type.prev"),
+                                                value: t.prev,
+                                                disabled: null === t.prev
+                                            }, {
+                                                label: I18n.t("edit.segment.routing.road_type.current"),
+                                                value: -1
+                                            }, {
+                                                label: I18n.t("edit.segment.routing.road_type.next"),
+                                                value: t.next,
+                                                disabled: null === t.next
+                                            }];
+                                        return e.viewModel.get("routingRoadTypeMixed") && i.unshift({
+                                                label: I18n.t("edit.multiple_values"),
+                                                value: ""
+                                            }),
+                                            i
+                                    }
+                                }
+                            },
+                            ".toll-road-message": {
+                                observe: "isTollRoad",
+                                visible: !0
+                            },
+                            ".restriction-editing": {
+                                observe: "showRestrictionEditing",
+                                visible: !0
+                            },
+                            "button.edit-restrictions": {
+                                observe: ["allowRestrictionEditing", "restrictionCounts"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return i ? n.driving + n.pickup > 0 ? I18n.t("edit.segment.actions.restrictions.edit") : I18n.t("edit.segment.actions.restrictions.add") : I18n.t("edit.segment.actions.restrictions.view")
+                                }
+                            },
+                            ".restriction-list": {
+                                visible: !0,
+                                observe: "restrictionCounts",
+                                onGet: function(e) {
+                                    return e.driving + e.pickup > 0
+                                }
+                            },
+                            "a.restriction-count[data-restriction-type='driving']": {
+                                observe: "restrictionCounts",
+                                onGet: function(e) {
+                                    return e.driving > 0
+                                },
+                                visible: !0
+                            },
+                            "a.restriction-count[data-restriction-type='driving'] .number": {
+                                observe: "restrictionCounts",
+                                onGet: function(e) {
+                                    return e.driving
+                                }
+                            },
+                            "a.restriction-count[data-restriction-type='pickup']": {
+                                observe: ["restrictionCounts", "supportsPickupRestrictions"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0];
+                                    return t[1] && i.pickup > 0
+                                },
+                                visible: !0
+                            },
+                            "a.restriction-count[data-restriction-type='pickup'] .number": {
+                                observe: "restrictionCounts",
+                                onGet: function(e) {
+                                    return e.pickup
+                                }
+                            },
+                            "input[name='direction']": {
+                                observe: ["direction", "directionMixed"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0];
+                                    return t[1] ? -1 : i
+                                },
+                                onSet: function(e) {
+                                    return [e, !1]
+                                },
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: ["isInBigJunction", "canEditDrivingAttributes"],
+                                    onGet: function(e) {
+                                        var t = (0,
+                                                u.default)(e, 2),
+                                            i = t[0],
+                                            n = t[1];
+                                        return i || !n
+                                    }
+                                }]
+                            },
+                            "input[name='direction'][value='-1'] + label": {
+                                observe: "directionMixed",
+                                visible: !0
+                            },
+                            "input[name='direction'][value='0'] + label": {
+                                observe: ["allowNoDirection", "allowNoDirectionMixed"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return i && !n
+                                },
+                                visible: !0
+                            },
+                            ".speed-limits": {
+                                observe: "allowSpeedLimit",
+                                visible: !0
+                            }
+                        }, this._speedBindings("fwd"), this._speedBindings("rev"), {
+                            ".lock-level-displayer": {
+                                observe: "propertiesEditable",
+                                visible: !0,
+                                onGet: _.negate(_.identity)
+                            },
+                            ".lock-level-displayer label": {
+                                observe: ["lockRank", "rank"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return null != i ? F.default.formatRank(i) : I18n.t("edit.segment.lock_levels.automatic", {
+                                        rank: F.default.formatRank(n)
+                                    })
+                                }
+                            },
+                            ".lock-level-selector": {
+                                observe: "propertiesEditable",
+                                visible: !0
+                            },
+                            ".lock-level-selector input[name='lockRank']": {
+                                observe: ["lockRank", "lockRankMixed"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0];
+                                    return t[1] ? "MIXED" : null != i ? i : "AUTO"
+                                },
+                                onSet: function(e) {
+                                    return "AUTO" === e ? [null, !1] : "MIXED" === e ? [null, !0] : [e, !1]
+                                }
+                            },
+                            ".lock-level-selector input[name=lockRank][value='MIXED'] + label": {
+                                observe: "lockRankMixed",
+                                visible: !0
+                            },
+                            ".lock-level-selector input[name=lockRank][value='AUTO']": {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "allowDefaultRank",
+                                    onGet: _.negate(_.identity)
+                                }]
+                            },
+                            ".lock-level-selector label[for|='lockRank'].automatic": {
+                                observe: "rank",
+                                onGet: function(e) {
+                                    return I18n.t("edit.segment.lock_levels.automatic", {
+                                        rank: F.default.formatRank(e)
+                                    })
+                                }
+                            },
+                            "select[name=level]": {
+                                observe: "level",
+                                selectOptions: {
+                                    collection: function() {
+                                        var t = _.range(x.default.prototype.MaxLevel, x.default.prototype.MinLevel, -1).map(function(e) {
+                                            return {
+                                                label: I18n.t("edit.segment.levels")[e] || e,
+                                                value: e
+                                            }
+                                        });
+                                        return e.viewModel.attributes.levelMixed && t.unshift({
+                                                label: I18n.t("edit.multiple_values"),
+                                                value: null
+                                            }),
+                                            t
+                                    }
+                                }
+                            }
+                        })
+                    }
+                }, {
+                    key: "_speedBindings",
+                    value: function(e) {
+                        var t, i, n = "fwd" === e ? "Fwd" : "Rev";
+                        return (0,
+                            g.default)((t = {},
+                            (0,
+                                c.default)(t, ".speed-limit-" + e, {
+                                observe: [e + "Direction", e + "DirectionMixed"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return i || n
+                                },
+                                visible: !0
+                            }),
+                            (0,
+                                c.default)(t, "input[name=" + e + "MaxSpeed]", {
+                                observe: e + "MaxSpeed",
+                                events: ["blur"],
+                                onSet: function(e) {
+                                    return Number(e)
+                                },
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: [e + "MaxSpeedUnverified", "canEditDrivingAttributes"],
+                                    onGet: function(e) {
+                                        var t = (0,
+                                                u.default)(e, 2),
+                                            i = t[0],
+                                            n = t[1];
+                                        return i || !n
+                                    }
+                                }]
+                            }),
+                            (0,
+                                c.default)(t, ".speed-limit-" + e + " .auto-speed-tooltip", {
+                                observe: e + "MaxSpeedUnverified",
+                                visible: !0
+                            }),
+                            (0,
+                                c.default)(t, ".speed-limit-" + e + " .verify-buttons", {
+                                observe: "canChange" + n + "MaxSpeedUnverified",
+                                visible: !0
+                            }),
+                            (0,
+                                c.default)(t, ".speed-limit-" + e + " .average-speed-camera", {
+                                observe: "shouldShowAverageSpeedCamera",
+                                visible: !0,
+                                visibleFn: function(e, t) {
+                                    e.css("display", t ? "inline-block" : "none")
+                                },
+                                classes: {
+                                    locked: {
+                                        observe: ["canEditAverageSpeedCamera", "canEditDrivingAttributes"],
+                                        onGet: function(e) {
+                                            var t = (0,
+                                                    u.default)(e, 2),
+                                                i = t[0],
+                                                n = t[1];
+                                            return !i || !n
+                                        }
+                                    }
+                                }
+                            }),
+                            t), this._checkboxBinding(e + "SpeedCamera", {
+                            attributes: [{
+                                name: "disabled",
+                                observe: ["canEditAverageSpeedCamera", "canEditDrivingAttributes"],
+                                onGet: function(e) {
+                                    var t = (0,
+                                            u.default)(e, 2),
+                                        i = t[0],
+                                        n = t[1];
+                                    return !i || !n
+                                }
+                            }]
+                        }), (i = {},
+                            (0,
+                                c.default)(i, "input[name=" + e + "SpeedCamera] + label", {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: ["canEditAverageSpeedCamera", "canEditDrivingAttributes"],
+                                    onGet: function(e) {
+                                        var t = (0,
+                                                u.default)(e, 2),
+                                            i = t[0],
+                                            n = t[1];
+                                        return !i || !n
+                                    }
+                                }]
+                            }),
+                            (0,
+                                c.default)(i, ".speed-limit-" + e + " .waze-camera-tooltip", {
+                                observe: "canEditAverageSpeedCamera",
+                                visible: !0,
+                                visibleFn: function(e, t) {
+                                    e.css("display", t ? "inline-block" : "none")
+                                },
+                                onGet: _.negate(_.identity)
+                            }),
+                            i))
+                    }
+                }, {
+                    key: "_checkboxBinding",
+                    value: function(e) {
+                        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                            i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : e + "Mixed";
+                        return (0,
+                            c.default)({}, "input[name='" + e + "']", (0,
+                            g.default)({
+                            observe: [e, i],
+                            onGet: function(e) {
+                                var t = (0,
+                                        u.default)(e, 2),
+                                    i = t[0],
+                                    n = t[1];
+                                return i && !n
+                            },
+                            onSet: function(e) {
+                                return [e, !1]
+                            },
+                            attributes: [{
+                                name: "mixed",
+                                observe: i
+                            }].concat((0,
+                                o.default)(t.attributes || []))
+                        }, _.without(t, "attributes")))
+                    }
+                }, {
+                    key: "_getSegmentError",
+                    value: function(e) {
+                        var t = void 0,
+                            i = void 0;
+                        return e.arePropertiesEditable() ? e.isInBigJunction() && (t = I18n.t("edit.segment.permissions.big_junction.title"),
+                            i = I18n.t("edit.segment.permissions.big_junction.description")) : e.children.length > 1 ? (t = I18n.t("edit.segment.permissions.multiple.title"),
+                            i = I18n.t("edit.segment.permissions.multiple.description")) : e.hasClosures() ? (t = I18n.t("edit.segment.permissions.has_closures.title"),
+                            i = I18n.t("edit.segment.permissions.has_closures.description")) : e.isLockedByHigherRank() && e.canEditClosures() ? (t = I18n.t("edit.segment.permissions.locked_except_closures.title"),
+                            i = I18n.t("edit.segment.permissions.locked_except_closures.description", {
+                                lockLevel: F.default.formatRank(e.getLockRank())
+                            })) : e.isLockedByHigherRank() ? (t = I18n.t("edit.segment.permissions.locked.title"),
+                            i = I18n.t("edit.segment.permissions.locked.description", {
+                                lockLevel: F.default.formatRank(e.getLockRank())
+                            })) : (t = I18n.t("edit.segment.permissions.area.title"),
+                            i = I18n.t("edit.segment.permissions.area.description")), {
+                            segmentErrorTitle: t,
+                            segmentErrorDescription: i
+                        }
+                    }
+                }, {
+                    key: "_getSegmentFlags",
+                    value: function(e) {
+                        return (0,
+                            r.default)(e.FLAG_ATTRIBUTES).reduce(function(t, i) {
+                            var n;
+                            return (0,
+                                g.default)({}, t, (n = {},
+                                (0,
+                                    c.default)(n, i + "Mixed", e.mixed[i]),
+                                (0,
+                                    c.default)(n, i, e.getFlagAttribute(i)),
+                                n))
+                        }, {})
+                    }
+                }, {
+                    key: "featureToViewModel",
+                    value: function(e) {
+                        var t = e.mixed.roadType,
+                            i = W.model.loginManager.getUserRank();
+                        return (0,
+                            g.default)({
+                            numSegments: e.children.length,
+                            consistentDirection: 0 === this.options.reversedSegments.numReversed && !this.options.reversedSegments.multipleConnectedComponents,
+                            canEditDrivingAttributes: e.isDrivable(),
+                            consistentDrivability: e.hasConsistentDrivability(),
+                            isInBigJunction: e.isInBigJunction(),
+                            isClosuresSupported: e.isClosuresSupported(),
+                            isWalkingRoadType: e.isWalkingRoadType(),
+                            mixedRoadType: e.mixed.roadType,
+                            roadType: t ? -1 : e.getRoadType(),
+                            isInRoundabout: e.isInRoundabout(),
+                            isEntireRoundabout: e.isEntireRoundabout(),
+                            showSelectEntireStreetButton: this.shouldShowSelectEntireStreetButton(e),
+                            showHouseNumbersButton: this.shouldShowHouseNumbersButton(e),
+                            canEditHouseNumbers: this.canEditHouseNumbers(e),
+                            houseNumberTitle: this.getHouseNumberTitle(),
+                            length: e.attributes.length,
+                            mixedUpdatedBy: e.mixed.updatedBy,
+                            mixedCreatedBy: e.mixed.createdBy,
+                            shouldShowRoutingRoadTypeMessage: this._shouldShowRoutingRoadTypeMessage(e),
+                            routingRoadTypeMessage: this.getRoutingRoadTypeMessage(e),
+                            shouldShowHeadlightsReminder: this.shouldShowHeadlightsReminder(e),
+                            allowHeadlightsReminder: e.canEditHeadlightsReminder(),
+                            shouldShowRoutingSelect: this.shouldShowRoutingSelect(e),
+                            routingRoadTypes: e.getRoutingRoadTypes(),
+                            routingRoadType: e.attributes.routingRoadType || -1,
+                            routingRoadTypeMixed: e.mixed.routingRoadType,
+                            isTollRoad: e.isTollRoad(),
+                            showRestrictionEditing: this._shouldShowRestrictionEditing(),
+                            allowRestrictionEditing: this._shouldAllowRestrictionEditing(e) && e.isDrivable(),
+                            restrictionCounts: {
+                                driving: e.getDrivingRestrictionCount(),
+                                pickup: e.getPickupRestrictionCount()
+                            },
+                            supportsPickupRestrictions: e.supportsPickupRestrictions(),
+                            direction: e.attributes.direction,
+                            directionMixed: e.mixed.direction,
+                            fwdDirection: e.attributes.fwdDirection,
+                            revDirection: e.attributes.revDirection,
+                            fwdDirectionMixed: e.mixed.fwdDirection,
+                            revDirectionMixed: e.mixed.revDirection,
+                            allowNoDirection: e.attributes.allowNoDirection,
+                            allowNoDirectionMixed: e.mixed.allowNoDirection,
+                            allowSpeedLimit: W.Config.speed_limit.enable,
+                            fwdMaxSpeed: F.default.getDisplayUnitValue(e.attributes.fwdMaxSpeed, R.default.prototype.UNITS.speed, !0),
+                            revMaxSpeed: F.default.getDisplayUnitValue(e.attributes.revMaxSpeed, R.default.prototype.UNITS.speed, !0),
+                            fwdMaxSpeedUnverified: e.isSpeedUnverified("fwdMaxSpeedUnverified"),
+                            revMaxSpeedUnverified: e.isSpeedUnverified("revMaxSpeedUnverified"),
+                            canChangeFwdMaxSpeedUnverified: e.canChangeMaxSpeedUnverified("fwdMaxSpeedUnverified"),
+                            canChangeRevMaxSpeedUnverified: e.canChangeMaxSpeedUnverified("revMaxSpeedUnverified"),
+                            shouldShowAverageSpeedCamera: this.shouldShowAverageSpeedCamera(e),
+                            canEditAverageSpeedCamera: e.canEditAverageSpeedCamera(),
+                            userRank: i,
+                            rank: e.attributes.rank,
+                            lockRank: e.attributes.lockRank,
+                            lockRankMixed: e.mixed.lockRank,
+                            allowDefaultRank: e.canUserSetDefaultRank(i),
+                            levelMixed: e.mixed.level,
+                            level: e.attributes.level
+                        }, this._getSegmentFlags(e), this._getSegmentError(e))
+                    }
+                }, {
+                    key: "_flagsViewModelToFeature",
+                    value: function() {
+                        var e = this;
+                        return (0,
+                            r.default)(x.default.prototype.FLAG_ATTRIBUTES).reduce(function(t, i) {
+                            var n;
+                            return (0,
+                                g.default)({}, t, (n = {},
+                                (0,
+                                    c.default)(n, i, function(t, n) {
+                                    _.extend(n, e._getSegmentChangedFlagAttributes((0,
+                                        c.default)({}, i, t)))
+                                }),
+                                (0,
+                                    c.default)(n, i + "Mixed", function(t, n) {
+                                    !1 === t && _.extend(n, e._getSegmentChangedFlagAttributes((0,
+                                        c.default)({}, i, t)))
+                                }),
+                                n))
+                        }, {})
+                    }
+                }, {
+                    key: "viewModelToFeature",
+                    value: function() {
+                        return (0,
+                            g.default)({
+                            roadType: function(e, t) {
+                                -1 !== e && (t.roadType = e,
+                                    t.routingRoadType = null)
+                            }
+                        }, this._flagsViewModelToFeature(), {
+                            routingRoadType: function(e, t) {
+                                t.routingRoadType = -1 === e ? null : e
+                            },
+                            isTollRoad: function(e, t) {
+                                t.fwdToll = e,
+                                    t.revToll = e
+                            },
+                            direction: function(e, t) {
+                                e >= 0 && (t.fwdDirection = 0 != (1 & e),
+                                    t.revDirection = 0 != (2 & e))
+                            },
+                            fwdMaxSpeed: function(e, t) {
+                                t.fwdMaxSpeed = he.default.getOriginalValue(e, R.default.prototype.UNITS.speed)
+                            },
+                            revMaxSpeed: function(e, t) {
+                                t.revMaxSpeed = he.default.getOriginalValue(e, R.default.prototype.UNITS.speed)
+                            },
+                            fwdMaxSpeedUnverified: this.simpleAttribute("fwdMaxSpeedUnverified"),
+                            revMaxSpeedUnverified: this.simpleAttribute("revMaxSpeedUnverified"),
+                            lockRank: this.simpleAttribute("lockRank"),
+                            level: this.simpleAttribute("level")
+                        })
+                    }
+                }, {
+                    key: "getFeature",
+                    value: function() {
+                        var e = this.repository.getByIds(this.segmentIDs);
+                        return new R.default(e, this._dataModel, this.options.reversedSegments)
+                    }
+                }, {
+                    key: "getUpdateAction",
+                    value: function(e) {
+                        var t = this.repository.getByIds(this.segmentIDs),
+                            i = function() {
+                                return !0
+                            };
+                        return e.hasOwnProperty("fwdMaxSpeedUnverified") ? i = function(e) {
+                                return e.canChangeMaxSpeedUnverified("fwdMaxSpeedUnverified")
+                            } :
+                            e.hasOwnProperty("revMaxSpeedUnverified") && (i = function(e) {
+                                return e.canChangeMaxSpeedUnverified("revMaxSpeedUnverified")
+                            }),
+                            new D.default(t.filter(i).map(function(t) {
+                                return new P.default(t, e)
+                            }))
+                    }
+                }, {
+                    key: "templateContext",
+                    value: function() {
+                        return (0,
+                            g.default)({}, (0,
+                            T.default)(t.prototype.__proto__ || (0,
+                            f.default)(t.prototype), "templateContext", this).call(this), _.pick(this.viewModel.attributes, "segmentErrorTitle", "segmentErrorDescription", "numSegments", "length", "mixedUpdatedBy", "mixedCreatedBy", "userRank"))
                     }
                 }, {
                     key: "template",
@@ -54780,18 +55299,19 @@ webpackJsonp([0], [function(e, t, i) {
                     }
                 }]),
                 (0,
-                    g.default)(t, [{
+                    E.default)(t, [{
                     key: "_shouldShowBigJunctionExits",
                     value: function() {
-                        return !(this.model.children.length > 1) && this.model.children[0].isJunctionEntry()
+                        var e = this.getFeature();
+                        return !(e.children.length > 1) && e.children[0].isJunctionEntry()
                     }
                 }, {
                     key: "_toggleEvents",
                     value: function(e) {
                         var t = e ? "on" : "off",
                             i = e ? "on" : "un";
-                        this.dataModel.roadClosures[t]("change:active", this.renderOnceLater, this),
-                            this.dataModel.actionManager.events[i]({
+                        this._dataModel.roadClosures[t]("change:active", this.renderOnceLater, this),
+                            this._dataModel.actionManager.events[i]({
                                 hasActions: this.onActionsChanged,
                                 noActions: this.onActionsChanged,
                                 scope: this
@@ -54811,12 +55331,12 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "selectEntireStreet",
                     value: function() {
-                        this.selectionManager.setSelectedModels(this.model.children[0].getEntireStreet(this.dataModel))
+                        this.selectionManager.setSelectedModels(this.getFeature().children[0].getEntireStreet(this._dataModel))
                     }
                 }, {
                     key: "isEntireStreetSelected",
-                    value: function() {
-                        return this.model.children[0].getEntireStreet(this.dataModel).every(function(e) {
+                    value: function(e) {
+                        return e.children[0].getEntireStreet(this._dataModel).every(function(e) {
                             return e.selected
                         })
                     }
@@ -54829,182 +55349,90 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "_selectEntireRoundabout",
                     value: function() {
-                        var e = this.model.children[0].getRoundabout();
+                        var e = this.getFeature().children[0].getRoundabout();
                         null !== e && this.selectionManager.setSelectedModels(e.getAllSegments())
                     }
                 }, {
                     key: "shouldShowHeadlightsReminder",
-                    value: function() {
-                        return null != (this.model.getAddress().getCountry() || {}).allowHeadlightsReminderRank
+                    value: function(e) {
+                        return null != (e.getAddress().getCountry() || {}).allowHeadlightsReminderRank
                     }
                 }, {
                     key: "shouldShowAverageSpeedCamera",
-                    value: function() {
-                        return null != (this.model.getAddress().getCountry() || {}).allowAverageSpeedCamerasRank
+                    value: function(e) {
+                        return null != (e.getAddress().getCountry() || {}).allowAverageSpeedCamerasRank
                     }
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.renderAddressEdit(),
-                            this._initClosureEditing(),
-                            this._renderElementHistory(),
-                            this._renderTurnView(),
+                        (0,
+                            T.default)(t.prototype.__proto__ || (0,
+                            f.default)(t.prototype), "onRender", this).apply(this, arguments);
+                        var e = this.getFeature();
+                        this._renderAddressEdit(e),
+                            this._initClosureEditing(e),
+                            this._renderElementHistory(e),
+                            this._renderTurnView(e),
                             this.$(".waze-tooltip, .waze-lock-tooltip").tooltip({
                                 container: "body"
-                            }),
-                            this.model.isInBigJunction() && this.ui.directionSelect.prop("disabled", !0),
-                            this.model.arePropertiesEditable() || this._toggleFormControls(!1)
+                            })
                     }
                 }, {
                     key: "_renderTurnView",
-                    value: function() {
-                        var e = new U.default({
-                            selection: this.options.selection,
+                    value: function(e) {
+                        var t = new q.default({
+                            selection: e.children,
                             map: this.options.map,
-                            dataModel: this.dataModel,
+                            dataModel: this._dataModel,
                             showExitList: this._shouldShowBigJunctionExits()
                         });
-                        this.showChildView("junctionExitListRegion", e)
+                        this.showChildView("junctionExitListRegion", t)
                     }
                 }, {
                     key: "_renderElementHistory",
-                    value: function() {
-                        this.showChildView("historyRegion", new X.default({
+                    value: function(e) {
+                        this.showChildView("historyRegion", new se.default({
                             map: this.options.map,
-                            model: this.options.selection[0]
+                            model: e.children[0]
                         }))
                     }
                 }, {
                     key: "_initClosureEditing",
-                    value: function() {
-                        new P.default({
+                    value: function(e) {
+                        new j.default({
                             region: this.getRegion("closuresRegion"),
                             pannable: W.map.getPannable(),
-                            compositeSegment: this.model,
-                            repoActive: this.dataModel.roadClosures.active,
-                            canSaveClosures: !this.dataModel.actionManager.canSave(),
+                            compositeSegment: e,
+                            repoActive: this._dataModel.roadClosures.active,
+                            canSaveClosures: !this._dataModel.actionManager.canSave(),
                             canAdd: !0,
-                            dataModel: this.dataModel,
-                            editViewConfig: H.default.SEGMENT,
-                            listViewConfig: q.default.SEGMENT
+                            dataModel: this._dataModel,
+                            editViewConfig: X.default.SEGMENT,
+                            listViewConfig: ee.default.SEGMENT
                         }).showClosures()
                     }
                 }, {
-                    key: "renderAddressEdit",
-                    value: function() {
-                        var e = new ie.default({
-                            addressModel: this.model.getAddress(),
-                            dataModel: this.dataModel,
-                            feature: this.model,
-                            editable: this.model.arePropertiesEditable(),
+                    key: "_renderAddressEdit",
+                    value: function(e) {
+                        var t = new le.default({
+                            addressModel: e.getAddress(),
+                            dataModel: this._dataModel,
+                            feature: e,
+                            editable: e.arePropertiesEditable(),
                             editStreet: !0,
                             streetIDField: "primaryStreetID",
                             editAltStreets: !0,
-                            disableEmptyStreet: this.shouldDisableEmptyStreet(),
-                            disableEmptyCity: this.shouldDisableEmptyCity(),
+                            disableEmptyStreet: this.shouldDisableEmptyStreet(e),
+                            disableEmptyCity: this.shouldDisableEmptyCity(e),
                             enableTTS: !0,
-                            emptyCityForAltStreets: this.model.isHighway()
+                            emptyCityForAltStreets: e.isHighway()
                         });
-                        this.showChildView("addressEditRegion", e)
+                        this.showChildView("addressEditRegion", t)
                     }
                 }, {
                     key: "shouldShowSelectEntireStreetButton",
-                    value: function() {
-                        return this.model.hasSingleNonEmptyStreet() && !this.isEntireStreetSelected()
-                    }
-                }, {
-                    key: "serializeData",
-                    value: function() {
-                        var e = this.dataModel.loginManager.getUserRank(),
-                            t = this.model.getRoutingRoadTypes();
-                        return {
-                            WALKING_ROAD_TYPES: A.WALKING_ROAD_TYPES,
-                            roadTypeGroupsOrdering: ["highways", "streets", "other_drivable", "non_drivable"],
-                            roadTypeGroups: {
-                                highways: A.HIGHWAY_ROAD_TYPES,
-                                streets: [A.ROAD_TYPES.PRIMARY_STREET, A.ROAD_TYPES.STREET, A.ROAD_TYPES.ALLEY],
-                                other_drivable: [A.ROAD_TYPES.OFF_ROAD, A.ROAD_TYPES.PARKING_LOT_ROAD, A.ROAD_TYPES.PRIVATE_ROAD, A.ROAD_TYPES.FERRY],
-                                non_drivable: [A.ROAD_TYPES.RAILROAD, A.ROAD_TYPES.RUNWAY_TAXIWAY]
-                            },
-                            segment: this.model,
-                            segmentId: this.model.getID(),
-                            segmentRoadType: this.model.getRoadType(),
-                            isLockedForUser: this.model.isLockedByHigherRank(),
-                            isClosuresSupported: this.model.isClosuresSupported(),
-                            canEditClosures: this.model.canEditClosures(),
-                            canEditDrivingAttributes: this.model.canEditDrivingAttributes(),
-                            hasConsistentDrivability: this.model.hasConsistentDrivability(),
-                            allowRestrictionEditing: this._shouldAllowRestrictionEditing(),
-                            showRestrictionEditing: this._shouldShowRestrictionEditing(),
-                            isInBigJunction: this.model.isInBigJunction(),
-                            userRank: e,
-                            editable: this.model.arePropertiesEditable(),
-                            isHighway: this.model.isHighway(),
-                            isInRoundabout: this.model.isInRoundabout(),
-                            isEntireRoundabout: this.model.isEntireRoundabout(),
-                            isImperial: W.model.isImperial,
-                            hasStates: this.dataModel.hasStates(),
-                            hasRestrictions: this.model.hasRestrictions(),
-                            editingMultiple: this.model.children.length > 1,
-                            showSelectEntireStreetButton: this.shouldShowSelectEntireStreetButton(),
-                            showHouseNumbersButton: this.shouldShowHouseNumbersButton(),
-                            houseNumberTitle: this.getHouseNumberTitle(),
-                            disableHouseNumbersButton: this.shouldDisableHouseNumbersButton(),
-                            allowDefaultRank: this.model.canUserSetDefaultRank(e),
-                            allowSpeedLimit: W.Config.speed_limit.enable,
-                            shouldShowHeadlightsReminder: this.shouldShowHeadlightsReminder(),
-                            shouldShowAverageSpeedCamera: this.shouldShowAverageSpeedCamera(),
-                            allowHeadlightsReminder: this.model.canEditHeadlightsReminder(),
-                            allowAverageSpeedCameras: this.model.canEditAverageSpeedCamera(),
-                            numSegments: this.model.children.length,
-                            prevRouteRankDisabled: null === t.prev,
-                            nextRouteRankDisabled: null === t.next,
-                            routingRoadTypes: t,
-                            dataModel: this.dataModel,
-                            view: this
-                        }
-                    }
-                }, {
-                    key: "getSpeedLimitValue",
                     value: function(e) {
-                        var t = this.model,
-                            i = t.attributes[e];
-                        return null !== t.attributes[e] ? D.default.getDisplayUnitValue(i, t.UNITS.speed, !0) : ""
-                    }
-                }, {
-                    key: "directionChanged",
-                    value: function(e) {
-                        if (e >= 0) {
-                            var t = 0 != (1 & e),
-                                i = 0 != (2 & e);
-                            this.changed({
-                                fwdDirection: t,
-                                revDirection: i
-                            })
-                        }
-                    }
-                }, {
-                    key: "tollRoadChanged",
-                    value: function(e) {
-                        this.changed({
-                            fwdToll: e,
-                            revToll: e
-                        })
-                    }
-                }, {
-                    key: "roadTypeChanged",
-                    value: function(e) {
-                        this.changed({
-                            roadType: e,
-                            routingRoadType: null
-                        })
-                    }
-                }, {
-                    key: "routingRoadTypeChanged",
-                    value: function(e) {
-                        this.changed({
-                            routingRoadType: e
-                        })
+                        return e.hasSingleNonEmptyStreet() && !this.isEntireStreetSelected(e)
                     }
                 }, {
                     key: "_maxSpeedChanged",
@@ -55012,21 +55440,19 @@ webpackJsonp([0], [function(e, t, i) {
                         var i = {};
                         i[e] = t,
                             i[e + "Unverified"] = !1,
-                            this.changed(i)
+                            this.viewModel.set(i)
                     }
                 }, {
                     key: "_maxSpeedUnverfiedChanged",
                     value: function(e, t) {
-                        var i = {};
-                        i[e] = t,
-                            this.changed(i, function(t) {
-                                return t.canChangeMaxSpeedUnverified(e)
-                            })
+                        var i = e + "MaxSpeedUnverified";
+                        this.viewModel.set((0,
+                            c.default)({}, i, t))
                     }
                 }, {
                     key: "verifySpeedButtonClicked",
                     value: function(e) {
-                        var t = $(e.target).parent().data("unverified-attribute");
+                        var t = $(e.target).parent().data("direction");
                         this._maxSpeedUnverfiedChanged(t, !1),
                             e.preventDefault()
                     }
@@ -55034,130 +55460,122 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "editSpeedButtonClicked",
                     value: function(e) {
                         var t = $(e.target).parent(),
-                            i = t.data("attribute");
-                        this._maxSpeedChanged(i, null),
+                            i = t.data("direction"),
+                            n = i + "MaxSpeed";
+                        this._maxSpeedChanged(n, null),
                             e.preventDefault()
                     }
                 }, {
-                    key: "shouldShowRoutingRoadTypeMessage",
-                    value: function() {
-                        if (this.model.mixed.routingRoadType)
+                    key: "_shouldShowRoutingRoadTypeMessage",
+                    value: function(e) {
+                        if (e.mixed.routingRoadType)
                             return !1;
-                        var e = this.model.attributes.routingRoadType,
-                            t = this.model.attributes.roadType;
-                        return null !== e && t !== e
+                        var t = e.attributes.routingRoadType,
+                            i = e.attributes.roadType;
+                        return null !== t && i !== t
                     }
                 }, {
                     key: "getRoutingRoadTypeMessage",
-                    value: function() {
-                        var e = this.model.attributes.routingRoadType,
-                            t = D.default.contentTag("strong", I18n.t("segment.road_types." + e));
-                        return D.default.safe_t("edit.segment.routing.info", {
-                            roadType: t
+                    value: function(e) {
+                        var t = e.attributes.routingRoadType,
+                            i = F.default.contentTag("strong", I18n.t("segment.road_types." + t));
+                        return F.default.safe_t("edit.segment.routing.info", {
+                            roadType: i
                         })
                     }
                 }, {
                     key: "shouldDisableEmptyCity",
-                    value: function() {
-                        var e = this.model.getAddress(),
-                            t = null == e.getCity() || e.getCity().isEmpty();
-                        return this.model.attributes.hasHNs && !t
+                    value: function(e) {
+                        var t = e.getAddress(),
+                            i = null == t.getCity() || t.getCity().isEmpty();
+                        return e.attributes.hasHNs && !i
                     }
                 }, {
                     key: "shouldDisableEmptyStreet",
-                    value: function() {
-                        var e = this.model.getAddress(),
-                            t = e.isEmptyStreet();
-                        return this.model.attributes.hasHNs && !t
+                    value: function(e) {
+                        var t = e.getAddress(),
+                            i = t.isEmptyStreet();
+                        return e.attributes.hasHNs && !i
                     }
                 }, {
                     key: "shouldShowRoutingSelect",
-                    value: function() {
-                        var e = this.model;
+                    value: function(e) {
                         return !e.mixed.roadType && e.isRoutable() && e.canEditRoutingRoadTypes()
                     }
                 }, {
                     key: "shouldShowHouseNumbersButton",
-                    value: function() {
-                        return W.Config.houseNumbers.allowEditing && (1 === this.model.children.length || this.model.hasSingleNonEmptyStreet()) && this.model.supportsHouseNumbers()
+                    value: function(e) {
+                        return W.Config.houseNumbers.allowEditing && (1 === e.children.length || e.hasSingleNonEmptyStreet()) && e.supportsHouseNumbers()
                     }
                 }, {
-                    key: "shouldDisableHouseNumbersButton",
+                    key: "canEditHouseNumbers",
+                    value: function(e) {
+                        return e.canEditHouseNumbers() && !this.shouldDisableHouseNumbersButtonDueToActions()
+                    }
+                }, {
+                    key: "shouldDisableHouseNumbersButtonDueToActions",
                     value: function() {
-                        return this.dataModel.actionManager.canSave()
+                        return this._dataModel.actionManager.canSave()
                     }
                 }, {
                     key: "getHouseNumberTitle",
                     value: function() {
-                        return this.shouldDisableHouseNumbersButton() ? I18n.t("segment.house_number_disable_message") : ""
-                    }
-                }, {
-                    key: "changed",
-                    value: function(e) {
-                        var t = this,
-                            i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : function(e) {
-                                return !0
-                            },
-                            n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
-                            s = {};
-                        this.$(".waze-tooltip, .waze-lock-tooltip").tooltip("hide");
-                        var r = this.model.children.filter(i).map(function(i) {
-                            var r = {};
-                            null != n && (r = t._getSegmentChangedFlagAttributes(i, n));
-                            var a = (0,
-                                u.default)({}, e, r);
-                            return t.reverseSegments[i.getID()] ? (s = t.reverseAttributes(a),
-                                new I.default(i, s)) : new I.default(i, a)
-                        });
-                        this.dataModel.actionManager.add(new T.default(r))
+                        return this.shouldDisableHouseNumbersButtonDueToActions() ? I18n.t("segment.house_number_disable_message") : ""
                     }
                 }, {
                     key: "_getSegmentChangedFlagAttributes",
-                    value: function(e, t) {
-                        var i = this,
-                            n = {},
-                            s = (0,
-                                r.default)(t),
-                            a = s.reduce(function(e, n) {
-                                var s = i.model.FLAG_ATTRIBUTES[n];
-                                return e[s.mask] || (e[s.mask] = []),
-                                    e[s.mask].push([s.flag, t[n]]),
-                                    e
+                    value: function(e) {
+                        var t = this.getFeature(),
+                            i = {},
+                            n = (0,
+                                r.default)(e),
+                            s = n.reduce(function(i, n) {
+                                var s = t.FLAG_ATTRIBUTES[n];
+                                return i[s.mask] || (i[s.mask] = []),
+                                    i[s.mask].push([s.flag, e[n]]),
+                                    i
                             }, {});
                         return (0,
-                                r.default)(a).forEach(function(t) {
-                                var i = a[t],
-                                    s = e.attributes[t],
-                                    r = new J.default(s);
-                                r.setBits(i),
-                                    n[t] = r.value
+                                r.default)(s).forEach(function(e) {
+                                var n = s[e],
+                                    r = t.attributes[e],
+                                    a = new ie.default(r);
+                                a.setBits(n),
+                                    i[e] = a.value
                             }),
-                            n
+                            i
                     }
                 }, {
                     key: "reverseAttributes",
                     value: function(e) {
                         var t = {};
                         return _.each(e, function(e, i) {
-                                var n = M.default.prototype.reversableAttributes[i];
+                                var n = R.default.prototype.reversableAttributes[i];
                                 n ? t[n] = e : t[i] = e
                             }),
                             t
                     }
                 }, {
-                    key: "onFeaturesChanged",
+                    key: "hasEditedModelIdChanged",
                     value: function(e) {
-                        this.hasEditedModelChanged(e) && this.model.calcAttributes(),
-                            (0,
-                                b.default)(t.prototype.__proto__ || (0,
-                                o.default)(t.prototype), "onFeaturesChanged", this).apply(this, arguments)
+                        var t = this;
+                        return e.some(function(e) {
+                            return t.segmentIDs.includes(e._prevID)
+                        })
+                    }
+                }, {
+                    key: "setEditedId",
+                    value: function(e) {
+                        this.segmentIDs = e.map(function(e) {
+                            return e.getID()
+                        })
                     }
                 }, {
                     key: "hasEditedModelChanged",
                     value: function(e) {
-                        var t = this;
+                        var t = this.getFeature();
                         return e.some(function(e) {
-                            return t.model.children.some(function(t) {
+                            return t.children.some(function(t) {
                                 return t.equals(e)
                             })
                         })
@@ -55175,10 +55593,10 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "changeSegmentLevelBy",
                     value: function(e) {
-                        if (!this.model.mixed.level && this.model.arePropertiesEditable()) {
-                            var t = this.model.attributes.level || 0;
+                        if (!this.viewModel.attributes.levelMixed && this.viewModel.attributes.propertiesEditable) {
+                            var t = this.viewModel.attributes.level || 0;
                             t += e,
-                                t >= R.default.prototype.MinLevel && t <= R.default.prototype.MaxLevel && this.changed({
+                                t >= x.default.prototype.MinLevel && t <= x.default.prototype.MaxLevel && this.viewModel.set({
                                     level: t
                                 })
                         }
@@ -55186,10 +55604,12 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "toggleDirection",
                     value: function() {
-                        if (!this.model.mixed.direction && this.model.arePropertiesEditable()) {
-                            var e = (this.model.attributes.direction + 1) % 4;
+                        if (!this.viewModel.attributes.directionMixed && !this.viewModel.attributes.isInBigJunction && this.viewModel.attributes.propertiesEditable) {
+                            var e = (this.viewModel.attributes.direction + 1) % 4;
                             0 === e && e++,
-                                this.directionChanged(e)
+                                this.viewModel.set({
+                                    direction: e
+                                })
                         }
                     }
                 }, {
@@ -55200,7 +55620,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "editHouseNumbersShortcutClicked",
                     value: function() {
-                        this.shouldShowHouseNumbersButton() && !this.shouldDisableHouseNumbersButton() && this.editHouseNumbers()
+                        this.viewModel.attributes.showHouseNumbersButton && this.viewModel.attributes.canEditHouseNumbers && this.editHouseNumbers()
                     }
                 }, {
                     key: "editHouseNumbersClicked",
@@ -55211,10 +55631,10 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "editHouseNumbers",
                     value: function() {
-                        var e = this.model.children[0],
-                            t = e.getEntireStreet(this.dataModel);
-                        new z.default({
-                            model: this.dataModel,
+                        var e = this.getFeature().children[0],
+                            t = e.getEntireStreet(this._dataModel);
+                        new J.default({
+                            model: this._dataModel,
                             map: W.map,
                             editable: e.canEditHouseNumbers(),
                             segments: t
@@ -55245,18 +55665,23 @@ webpackJsonp([0], [function(e, t, i) {
                     value: function(e) {
                         var t = this,
                             i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "driving",
-                            n = new ee.default({
-                                dataModel: this.dataModel,
-                                compositeSegment: this.model,
-                                isTollRoad: this.model.isTollRoad(),
-                                isTollRoadMixed: this.model.isTollRoadMixed(),
+                            n = this.getFeature(),
+                            s = n.isTollRoad(),
+                            r = n.isTollRoadMixed(),
+                            a = new ae.default({
+                                dataModel: this._dataModel,
+                                compositeSegment: n,
+                                isTollRoad: s,
+                                isTollRoadMixed: r,
                                 showRestrictionType: i
                             });
-                        n.on("restriction:summary:apply", function(e) {
+                        a.on("restriction:summary:apply", function(e) {
                                 var i = e.isTollRoad;
-                                (t.model.isTollRoadMixed() || t.model.isTollRoad() !== i) && t.tollRoadChanged(i)
+                                (r || s !== i) && t.viewModel.set({
+                                    isTollRoad: i
+                                })
                             }),
-                            W.app.layout.getRegion("dialogRegion").show(n)
+                            W.app.layout.getRegion("dialogRegion").show(a)
                     }
                 }, {
                     key: "editClosures",
@@ -55266,28 +55691,24 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "onActionsChanged",
                     value: function() {
-                        this.model.calcAttributes(),
-                            this.$("button.edit-house-numbers").prop("disabled", this.shouldDisableHouseNumbersButton())
+                        this.viewModel.set({
+                            canEditHouseNumbers: this.canEditHouseNumbers(this.getFeature())
+                        })
                     }
                 }, {
                     key: "_shouldAllowRestrictionEditing",
-                    value: function() {
-                        return W.Config.restrictions.allowEditing && this.model.arePropertiesEditable() && !this.model.isInBigJunction()
+                    value: function(e) {
+                        return W.Config.restrictions.allowEditing && e.arePropertiesEditable() && !e.isInBigJunction()
                     }
                 }, {
                     key: "_shouldShowRestrictionEditing",
                     value: function() {
                         return W.Config.restrictions.allowEditing
                     }
-                }, {
-                    key: "mixedCheckboxClicked",
-                    value: function(e) {
-                        e.target.removeAttribute("mixed")
-                    }
                 }]),
                 t
-        }(E.default);
-    t.default = ne,
+        }(I.default);
+    t.default = ge,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -55300,9 +55721,113 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(991),
+    var s = i(7),
         r = n(s),
-        a = i(301),
+        a = i(22),
+        o = n(a),
+        l = i(65),
+        u = n(l),
+        d = i(985),
+        c = n(d),
+        h = {
+            getSharedClosures: function(e) {
+                var t = this,
+                    i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                    n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
+                    s = _.indexBy(e, function(e) {
+                        return e.getID()
+                    });
+                n || (n = this._getClosuresForSegments(s));
+                var a = _(n).groupBy(function(e) {
+                        return t._getClosureKey(e, i)
+                    }),
+                    l = new c.default,
+                    d = !0,
+                    h = !1,
+                    f = void 0;
+                try {
+                    for (var p, g = (0,
+                            o.default)((0,
+                            r.default)(a)); !(d = (p = g.next()).done); d = !0) {
+                        var m = p.value,
+                            v = a[m],
+                            y = _.chain(v).map(function(e) {
+                                return s[e.segID]
+                            }).uniq().value(),
+                            b = new u.default({
+                                closures: v,
+                                segments: y,
+                                partial: y.length !== e.length,
+                                reverseSegments: this._getClosureReverseSegments(y, i)
+                            }),
+                            w = l.findOpposite(b);
+                        null != w ? w.mergeWithOpposite(b) : l.push(b)
+                    }
+                } catch (e) {
+                    h = !0,
+                        f = e
+                } finally {
+                    try {
+                        !d && g.return && g.return()
+                    } finally {
+                        if (h)
+                            throw f
+                    }
+                }
+                return l
+            },
+            _getClosuresForSegments: function(e) {
+                return W.model.roadClosures.getObjectArray(function(t) {
+                    return null != e[t.segID]
+                })
+            },
+            _getClosureReverseSegments: function(e, t) {
+                var i = _(e).invoke("getID");
+                return _(t).pick(i)
+            },
+            _getClosureKey: function(e) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                    i = e.forward || !1;
+                return !0 === t[e.segID] && (i = !i), [e.startDate, e.endDate, e.reason, e.location, i, e.createdBy, e.eventId].join(":")
+            }
+        };
+    t.default = h,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var n = i(65),
+        s = function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }(n),
+        r = Backbone.Collection.extend({
+            model: s.default,
+            findOpposite: function(e) {
+                return this.find(function(t) {
+                    return t.isOppositeTo(e)
+                })
+            }
+        });
+    t.default = r,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(987),
+        r = n(s),
+        a = i(280),
         o = n(a),
         l = Marionette.CompositeView.extend({
             template: "Waze/Modules/Closures/templates/list",
@@ -55434,11 +55959,11 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(136),
+        a = i(99),
         o = n(a),
-        l = i(93),
+        l = i(92),
         u = n(l),
-        d = i(301),
+        d = i(280),
         c = n(d),
         h = i(65),
         f = Marionette.View.extend({
@@ -55583,13 +56108,14 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(994),
+        p = i(990),
         g = n(p),
-        m = i(180),
+        m = i(173),
         v = n(m),
-        y = i(175),
+        y = i(266),
         b = n(y),
-        w = function(e) {
+        w = i(96),
+        E = function(e) {
             function t() {
                 return (0,
                         o.default)(this, t),
@@ -55632,7 +56158,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View),
-        E = function(e) {
+        k = function(e) {
             function t() {
                 return (0,
                         o.default)(this, t),
@@ -55658,7 +56184,7 @@ webpackJsonp([0], [function(e, t, i) {
                             this._selection = e.selection,
                             W.editingMediator.get("editingHouseNumbers") || this._createTurnEditor(),
                             W.editingMediator.on("change:editingHouseNumbers", this._onEditingHouseNumbersChanged, this),
-                            this._dataModel.getTurnGraph().on("change", this.render, this)
+                            this._dataModel.getTurnGraph().on(w.CHANGE_EVENT, this.render, this)
                     }
                 }, {
                     key: "_createTurnEditor",
@@ -55691,7 +56217,7 @@ webpackJsonp([0], [function(e, t, i) {
                             this._showExitList && this.showChildView("list", new Marionette.CollectionView({
                                 collection: this._createTurnCollection(this._createTurnCollection()),
                                 className: "junction-exit-view",
-                                childView: w,
+                                childView: E,
                                 onChildviewOver: function(t) {
                                     e._highlightArrow(t.model.get("turn"))
                                 },
@@ -55742,7 +56268,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 t
         }(Marionette.View);
-    t.default = E,
+    t.default = k,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -55761,8 +56287,8 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = i(11),
-        c = i(288),
+        d = i(12),
+        c = i(265),
         h = n(c),
         f = function() {
             function e(t, i, n, s, r) {
@@ -55898,15 +56424,15 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(22),
         u = n(l),
-        d = i(996),
+        d = i(992),
         c = n(d),
-        h = i(221),
+        h = i(219),
         f = n(h),
-        p = i(245),
+        p = i(239),
         g = n(p),
-        m = i(171),
+        m = i(167),
         v = n(m),
-        y = i(240),
+        y = i(236),
         b = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -55919,11 +56445,11 @@ webpackJsonp([0], [function(e, t, i) {
         }(y),
         w = i(52),
         E = n(w),
-        k = i(997),
+        k = i(993),
         M = n(k),
         S = i(53),
         T = n(S),
-        C = i(998),
+        C = i(994),
         I = n(C),
         A = i(97),
         R = Marionette.Object.extend({
@@ -56468,9 +56994,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(26),
         r = n(s),
-        a = i(131),
+        a = i(95),
         o = n(a),
         l = i(32),
         u = OL.Class(OL.Marker, {
@@ -56611,7 +57137,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(12),
+        p = i(13),
         g = n(p),
         m = function(e) {
             function t() {
@@ -56803,9 +57329,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(25),
+    var s = i(26),
         r = n(s),
-        a = i(131),
+        a = i(95),
         o = n(a),
         l = OL.Class(OL.Marker, {
             dragging: null,
@@ -56879,14 +57405,14 @@ webpackJsonp([0], [function(e, t, i) {
         v = n(m),
         _ = i(38),
         y = n(_),
-        b = i(1e3),
+        b = i(996),
         w = n(b),
-        E = i(289),
+        E = i(268),
         k = n(E),
-        M = i(1001),
+        M = i(997),
         S = n(M),
-        T = i(96),
-        C = i(176),
+        T = i(98),
+        C = i(169),
         I = function(e) {
             function t() {
                 return (0,
@@ -57106,7 +57632,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(27),
+    var s = i(23),
         r = n(s),
         a = i(7),
         o = n(a),
@@ -57114,9 +57640,20 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(1),
         c = n(d),
-        h = i(182),
+        h = i(175),
         f = n(h),
-        p = function() {
+        p = i(207),
+        g = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var i in e)
+                    Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
+            return t.default = e,
+                t
+        }(p),
+        m = function() {
             function e() {
                 var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     i = t.segments,
@@ -57236,7 +57773,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 r.default)(this._segmentIDs.map(function(e) {
                                 return t._getForwardRestrictions(e)
                             })));
-                        return this._dedupRestrictions(i)
+                        return g.dedupRestrictions(i)
                     }
                 }, {
                     key: "getReverseRestrictions",
@@ -57246,7 +57783,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 r.default)(this._segmentIDs.map(function(e) {
                                 return t._getReverseRestrictions(e)
                             })));
-                        return this._dedupRestrictions(i)
+                        return g.dedupRestrictions(i)
                     }
                 }, {
                     key: "getBidiRestrictions",
@@ -57256,7 +57793,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 r.default)(this._segmentIDs.map(function(e) {
                                 return t._getBidiRestrictions(e)
                             })));
-                        return this._dedupRestrictions(i)
+                        return g.dedupRestrictions(i)
                     }
                 }, {
                     key: "_getForwardRestrictions",
@@ -57286,16 +57823,6 @@ webpackJsonp([0], [function(e, t, i) {
                         })
                     }
                 }, {
-                    key: "_dedupRestrictions",
-                    value: function(e) {
-                        return e.reduce(function(e, t) {
-                            return !1 === e.some(function(e) {
-                                    return e.equals(t)
-                                }) && e.push(t),
-                                e
-                        }, [])
-                    }
-                }, {
                     key: "_isReversed",
                     value: function(e) {
                         return !0 === this._reversedSegmentsIDs[e]
@@ -57308,7 +57835,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }]),
                 e
         }();
-    t.default = p,
+    t.default = m,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -57321,7 +57848,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(6),
         o = n(a),
@@ -57335,8 +57862,8 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(1002),
-        b = i(1003),
+        y = i(998),
+        b = i(999),
         w = function(e) {
             function t() {
                 return (0,
@@ -57546,7 +58073,7 @@ webpackJsonp([0], [function(e, t, i) {
             value: !0
         }),
         t.SegmentRestrictionDrivingView = void 0;
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(2),
         o = n(a),
@@ -57558,7 +58085,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(290),
+        m = i(269),
         v = n(m),
         y = i(38),
         b = function(e) {
@@ -57823,7 +58350,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(163),
+        _ = i(158),
         y = n(_),
         b = i(38),
         w = {
@@ -57976,14 +58503,14 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(1005),
+        p = i(1001),
         g = n(p),
-        m = i(62),
+        m = i(91),
         v = n(m),
-        y = i(1007),
+        y = i(1003),
         b = n(y),
-        w = i(178),
-        E = i(172),
+        w = i(171),
+        E = i(245),
         k = n(E),
         M = function(e) {
             function t(e) {
@@ -58207,7 +58734,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(1006),
+        p = i(1002),
         g = n(p),
         m = function(e) {
             function t() {
@@ -58271,7 +58798,7 @@ webpackJsonp([0], [function(e, t, i) {
         c = n(d),
         h = i(4),
         f = n(h),
-        p = i(12),
+        p = i(13),
         g = n(p),
         m = function(e) {
             function t(e) {
@@ -58442,7 +58969,7 @@ webpackJsonp([0], [function(e, t, i) {
     });
     var s = i(7),
         r = n(s),
-        a = i(17),
+        a = i(16),
         o = n(a),
         l = i(2),
         u = n(l),
@@ -58454,28 +58981,28 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        y = i(185),
+        y = i(180),
         b = n(y),
-        w = i(138),
+        w = i(132),
         E = n(w),
-        k = i(1008),
+        k = i(1004),
         M = n(k),
-        S = i(1009),
+        S = i(1005),
         T = n(S),
-        C = i(1010),
+        C = i(1006),
         I = n(C),
-        A = i(1011),
+        A = i(1007),
         R = n(A),
-        O = i(1012),
+        O = i(1008),
         D = n(O),
-        L = i(305),
-        P = i(12),
+        L = i(284),
+        P = i(13),
         N = n(P),
-        x = i(76),
+        x = i(74),
         V = n(x),
         F = i(49),
-        j = n(F),
-        U = i(61),
+        U = n(F),
+        j = i(62),
         B = function(e) {
             function t() {
                 return (0,
@@ -58508,25 +59035,25 @@ webpackJsonp([0], [function(e, t, i) {
                             ".parking-attributes": {
                                 observe: L.VENUE_FIELDS.CATEGORIES,
                                 visible: function(e) {
-                                    return e.indexOf(U.PARKING_LOT) > -1
+                                    return e.indexOf(j.PARKING_LOT) > -1
                                 }
                             },
                             ".parking-message": {
                                 observe: L.VENUE_FIELDS.CATEGORIES,
                                 visible: function(t) {
-                                    return e._hasParkingLot() && -1 === t.indexOf(U.PARKING_LOT)
+                                    return e._hasParkingLot() && -1 === t.indexOf(j.PARKING_LOT)
                                 }
                             },
                             ".brand-region": {
                                 observe: L.VENUE_FIELDS.CATEGORIES,
                                 visible: function(e) {
-                                    return e.indexOf(U.GAS_STATION) > -1
+                                    return e.indexOf(j.GAS_STATION) > -1
                                 }
                             },
                             ".brand-message": {
                                 observe: L.VENUE_FIELDS.CATEGORIES,
                                 visible: function(t) {
-                                    return e._hasGasStation() && -1 === t.indexOf(U.GAS_STATION)
+                                    return e._hasGasStation() && -1 === t.indexOf(j.GAS_STATION)
                                 }
                             }
                         }
@@ -58616,7 +59143,7 @@ webpackJsonp([0], [function(e, t, i) {
                                         return t.map(function(e) {
                                             if (!e)
                                                 return I18n.t("merge_places.empty");
-                                            var t = j.default.fromStreetID(e, s.dataModel);
+                                            var t = U.default.fromStreetID(e, s.dataModel);
                                             return N.default.formatAddress(t)
                                         })
                                     }
@@ -58921,9 +59448,9 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(304),
+        m = i(283),
         v = n(m),
-        y = i(61),
+        y = i(62),
         b = function(e) {
             function t() {
                 return (0,
@@ -58984,7 +59511,7 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(4),
         v = n(m),
-        _ = i(138),
+        _ = i(132),
         y = n(_),
         b = function(e) {
             function t(e) {
@@ -59052,9 +59579,9 @@ webpackJsonp([0], [function(e, t, i) {
         g = n(p),
         m = i(8),
         v = n(m),
-        y = i(185),
+        y = i(180),
         b = n(y),
-        w = i(305),
+        w = i(284),
         E = function(e) {
             function t(e) {
                 (0,
@@ -59138,9 +59665,9 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(138),
+        m = i(132),
         v = n(m),
-        _ = i(164),
+        _ = i(160),
         y = n(_),
         b = function(e) {
             function t(e) {
@@ -59236,7 +59763,7 @@ webpackJsonp([0], [function(e, t, i) {
         u = n(l),
         d = i(4),
         c = n(d),
-        h = i(304),
+        h = i(283),
         f = n(h),
         p = function(e) {
             function t(e) {
@@ -59265,11 +59792,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(1014),
+    var s = i(1010),
         r = n(s),
-        a = i(1018),
+        a = i(1014),
         o = n(a),
-        l = i(1019),
+        l = i(1015),
         u = n(l),
         d = Marionette.View.extend({
             template: "templates/sidebar/user-info",
@@ -59331,17 +59858,17 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
         a = i(18),
         o = n(a),
         l = i(39),
         u = n(l),
-        d = i(1015),
+        d = i(1011),
         c = n(d),
-        h = i(1016),
+        h = i(1012),
         f = n(h),
-        p = i(1017),
+        p = i(1013),
         g = n(p),
         m = OpenLayers.Class(OpenLayers.Control, u.default, {
             sidePanelView: null,
@@ -59799,9 +60326,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(1020),
+    var s = i(1016),
         r = n(s),
-        a = i(137),
+        a = i(131),
         o = n(a),
         l = Backbone.Marionette.View.extend({
             template: "templates/prefs-panel",
@@ -59906,17 +60433,17 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(306),
+    var s = i(285),
         r = n(s),
-        a = i(307),
+        a = i(286),
         o = n(a),
-        l = i(308),
+        l = i(287),
         u = n(l),
-        d = i(1027),
+        d = i(1023),
         c = n(d),
-        h = i(1029),
+        h = i(1025),
         f = n(h),
-        p = i(1030),
+        p = i(1026),
         g = n(p),
         m = Marionette.Object.extend({
             initialize: function(e) {
@@ -60213,7 +60740,7 @@ webpackJsonp([0], [function(e, t, i) {
         f = n(h),
         p = i(4),
         g = n(p),
-        m = i(137),
+        m = i(131),
         v = n(m),
         y = function(e) {
             function t() {
@@ -60419,9 +60946,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(186),
+    var s = i(181),
         r = n(s),
-        a = i(1028),
+        a = i(1024),
         o = n(a),
         l = Marionette.CollectionView.extend({
             childView: r.default,
@@ -60450,7 +60977,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(186),
+    var n = i(181),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -60538,7 +61065,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(186),
+    var n = i(181),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -60589,40 +61116,40 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(1),
         o = n(a),
-        l = i(1031),
+        l = i(1027),
         u = n(l),
-        d = i(1032),
+        d = i(1028),
         c = n(d),
-        h = i(1033),
+        h = i(1029),
         f = n(h),
-        p = i(309),
+        p = i(288),
         g = n(p),
-        m = i(1034),
+        m = i(1030),
         v = n(m),
-        y = i(1035),
+        y = i(1031),
         b = n(y),
-        w = i(1036),
+        w = i(1032),
         E = n(w),
-        k = i(1037),
+        k = i(1033),
         M = n(k),
-        S = i(12),
+        S = i(13),
         T = n(S),
-        C = i(235),
+        C = i(234),
         I = n(C),
-        A = i(232),
+        A = i(1036),
         R = n(A),
-        O = i(1039),
+        O = i(1037),
         D = n(O),
-        L = i(1040),
+        L = i(1038),
         P = n(L),
-        N = i(237),
+        N = i(235),
         x = n(N),
         V = i(63),
         F = n(V),
-        j = i(91),
-        U = n(j),
-        B = i(61),
-        z = function(e) {
+        U = i(90),
+        j = n(U),
+        B = i(62),
+        G = function(e) {
             if (e && e.__esModule)
                 return e;
             var t = {};
@@ -60632,18 +61159,18 @@ webpackJsonp([0], [function(e, t, i) {
             return t.default = e,
                 t
         }(B),
-        G = i(116),
-        H = n(G),
-        $ = i(110),
-        Y = i(95),
+        z = i(163),
+        H = n(z),
+        $ = i(154),
+        Y = i(94),
         q = n(Y),
         K = i(34),
         J = n(K),
-        Z = i(129),
+        Z = i(125),
         X = n(Z),
-        Q = i(310),
+        Q = i(290),
         ee = n(Q),
-        te = i(30),
+        te = i(29),
         ie = function() {
             function e(t) {
                 var i = this;
@@ -60847,7 +61374,7 @@ webpackJsonp([0], [function(e, t, i) {
                     key: "_generateVenueMenuItem",
                     value: function(e) {
                         var t = function(t, i) {
-                                var n = new U.default({
+                                var n = new j.default({
                                     geometry: t,
                                     categories: [e]
                                 });
@@ -60863,7 +61390,7 @@ webpackJsonp([0], [function(e, t, i) {
                                 layerUniqueName: X.default.LAYER_UNIQUE_NAMES.LANDMARKS,
                                 createFeature: t
                             };
-                        return e === z.PARKING_LOT && (i.primaryShape = "polygon",
+                        return e === G.PARKING_LOT && (i.primaryShape = "polygon",
                                 i.secondaryShape = null),
                             i
                     }
@@ -61127,7 +61654,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(309),
+    var n = i(288),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -61155,13 +61682,13 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(57),
         o = n(a),
-        l = i(30),
-        u = i(1038),
+        l = i(29),
+        u = i(1034),
         d = n(u),
-        c = i(11),
-        h = i(238),
+        c = i(12),
+        h = i(1035),
         f = n(h),
-        p = i(74),
+        p = i(73),
         g = new OpenLayers.Class(OpenLayers.Control.Button, r.default, {
             keyboardCodes: null,
             keyboardHandler: null,
@@ -61299,13 +61826,258 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(10),
+        v = n(m),
+        _ = i(17),
+        y = n(_),
+        b = i(12),
+        w = i(19),
+        E = n(w),
+        k = i(289),
+        M = n(k),
+        S = function(e) {
+            function t(e, i) {
+                (0,
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.bigJunction = e,
+                    n.prevJunctionState = null,
+                    n
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this;
+                        if (this.bigJunction.state === OpenLayers.State.DELETE)
+                            return !1;
+                        var t = this.bigJunction.attributes.segIDs.map(function(t) {
+                            return e.model.segments.get(t)
+                        });
+                        t.forEach(function(t) {
+                                e.doSubAction(new E.default(t, {
+                                    crossroadID: null
+                                }, {
+                                    dontSerialize: !0
+                                }))
+                            }),
+                            this.doSubAction(new M.default(this.bigJunction.getID(), t, M.default.REMOVE_JUNCTION_FROM_SEGMENT)),
+                            this.prevJunctionState = this.bigJunction.state,
+                            this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
+                                this.model.bigJunctions.changed(this.bigJunction))
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        this.bigJunction.getID(),
+                            this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.put(this.bigJunction) : (this.bigJunction.state = this.prevJunctionState,
+                                this.model.bigJunctions.changed(this.bigJunction)),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "undoAction", this).call(this)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
+                                this.model.bigJunctions.changed(this.bigJunction)),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "redoAction", this).call(this)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        return {
+                            _objectType: b.BIG_JUNCTION,
+                            action: y.default.TYPE.DELETE,
+                            attributes: {
+                                id: this.bigJunction.getID()
+                            }
+                        }
+                    }
+                }]),
+                t
+        }(v.default);
+    t.default = S,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var s = i(2),
+        r = n(s),
+        a = i(0),
+        o = n(a),
+        l = i(1),
+        u = n(l),
+        d = i(3),
+        c = n(d),
+        h = i(8),
+        f = n(h),
+        p = i(4),
+        g = n(p),
+        m = i(17),
+        v = n(m),
+        y = i(10),
+        b = n(y),
+        w = i(12),
+        E = i(93),
+        k = n(E),
+        M = i(19),
+        S = n(M),
+        T = i(289),
+        C = n(T),
+        I = i(36),
+        A = n(I),
+        R = function(e) {
+            function t(e, i) {
+                (0,
+                    o.default)(this, t);
+                var n = (0,
+                    c.default)(this, (t.__proto__ || (0,
+                    r.default)(t)).call(this, i));
+                return n.bigJunction = e,
+                    n.attributes = {},
+                    n
+            }
+            return (0,
+                    g.default)(t, e),
+                (0,
+                    u.default)(t, [{
+                    key: "doAction",
+                    value: function() {
+                        var e = this;
+                        this.initialGeometry = this.bigJunction.geometry.clone();
+                        var t = void 0;
+                        this.bigJunction.getID() || (t = this.model.bigJunctions.generateUniqueID()),
+                            this.bigJunction.setID(t),
+                            this.bigJunction.state = OpenLayers.State.INSERT,
+                            this.model.bigJunctions.put(this.bigJunction);
+                        var i = this._findShortSegments();
+                        i.forEach(function(i) {
+                            e.doSubAction(new S.default(i, {
+                                crossroadID: t
+                            }, {
+                                dontSerialize: !0
+                            }))
+                        });
+                        var n = new C.default(t, i, C.default.ADD_JUNCTION_TO_SEGMENT);
+                        this.doSubAction(n);
+                        var s = n.connectedSegments,
+                            r = this._findMaxRankInSegmentArray(i.concat(s)),
+                            a = _.invoke(i, "getID"),
+                            o = {
+                                segIDs: a,
+                                rank: r
+                            };
+                        _.extend(this.attributes, o),
+                            _.extend(this.bigJunction.attributes, o);
+                        var l = null;
+                        if (this.model.segments.topCityID && (l = this.model.cities.get(this.model.segments.topCityID)),
+                            null === l && null != this.model.countries.top) {
+                            var u = new k.default(this.model.states.top, this.model.countries.top, "", !0);
+                            this.doSubAction(u),
+                                l = u.city
+                        }
+                        return null !== l && (this.attributes.cityID = l.getID(),
+                                this.bigJunction.attributes.cityID = l.getID()),
+                            this.bigJunction.getShortestTurns().forEach(function(t) {
+                                return e.doSubAction(new A.default(e.model.getTurnGraph(), t))
+                            }), !0
+                    }
+                }, {
+                    key: "_findShortSegments",
+                    value: function() {
+                        var e = this;
+                        return this.model.segments.getObjectArray(function(t) {
+                            var i = t.geometry.components;
+                            return !t.isDeleted() && t.isDrivable() && e.initialGeometry.containsPoint(_.first(i)) && e.initialGeometry.containsPoint(_.last(i))
+                        })
+                    }
+                }, {
+                    key: "_findMaxRankInSegmentArray",
+                    value: function(e) {
+                        for (var t = 0, i = 0; i < e.length; i++) {
+                            var n = e[i],
+                                s = n.getLockRank();
+                            s > t && (t = s)
+                        }
+                        return t
+                    }
+                }, {
+                    key: "undoAction",
+                    value: function() {
+                        return (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "undoAction", this).call(this),
+                            this.model.bigJunctions.remove(this.bigJunction)
+                    }
+                }, {
+                    key: "redoAction",
+                    value: function() {
+                        this.model.bigJunctions.put(this.bigJunction),
+                            (0,
+                                f.default)(t.prototype.__proto__ || (0,
+                                r.default)(t.prototype), "redoAction", this).call(this)
+                    }
+                }, {
+                    key: "serialize",
+                    value: function() {
+                        var e = this.attributes;
+                        return e.id = this.bigJunction.getID(),
+                            e.geometry = this.initialGeometry, {
+                                _objectType: w.BIG_JUNCTION,
+                                action: v.default.TYPE.ADD,
+                                attributes: e
+                            }
+                    }
+                }]),
+                t
+        }(b.default);
+    t.default = R,
+        e.exports = t.default
+}, function(e, t, i) {
+    "use strict";
+
+    function n(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
     var s = i(6),
         r = n(s),
         a = i(39),
         o = n(a),
-        l = i(269),
+        l = i(246),
         u = n(l),
-        d = i(30),
+        d = i(29),
         c = n(d),
         h = OpenLayers.Class(OpenLayers.Control.DrawFeature, o.default, {
             keyHandler: null,
@@ -61439,7 +62211,7 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(39),
         o = n(a),
-        l = i(1041),
+        l = i(1039),
         u = n(l),
         d = OpenLayers.Class(OpenLayers.Control, o.default, {
             keyHandler: null,
@@ -61729,7 +62501,7 @@ webpackJsonp([0], [function(e, t, i) {
             secondaryControl: null
         },
         initialize: function() {
-            var e = i(310),
+            var e = i(290),
                 t = this.get("children");
             if (null != t)
                 return this.children = new e(t),
@@ -61749,13 +62521,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(311),
+    var s = i(291),
         r = n(s),
-        a = i(312),
+        a = i(292),
         o = n(a),
-        l = i(1044),
+        l = i(1042),
         u = n(l),
-        d = i(1048),
+        d = i(1046),
         c = n(d),
         h = Marionette.Object.extend({
             initialize: function() {
@@ -61794,11 +62566,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(1045),
+    var s = i(1043),
         r = n(s),
-        a = i(1046),
+        a = i(1044),
         o = n(a),
-        l = i(1047),
+        l = i(1045),
         u = n(l),
         d = Marionette.View.extend({
             MAIN_LIST_NUM_ITEMS: 3,
@@ -61862,7 +62634,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(313),
+    var n = i(293),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -61902,7 +62674,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(313),
+    var n = i(293),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -61939,7 +62711,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(276),
+    var n = i(253),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -62008,15 +62780,15 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(128),
-        r = i(26),
-        a = i(1050),
+    var s = i(124),
+        r = i(27),
+        a = i(1048),
         o = n(a),
-        l = i(1052),
+        l = i(1050),
         u = n(l),
-        d = i(1053),
+        d = i(1051),
         c = n(d),
-        h = i(1054),
+        h = i(1052),
         f = n(h),
         p = Backbone.Model.extend({
             defaults: {
@@ -62123,13 +62895,13 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(308),
+    var s = i(287),
         r = n(s),
-        a = i(307),
+        a = i(286),
         o = n(a),
-        l = i(1051),
+        l = i(1049),
         u = n(l),
-        d = i(306),
+        d = i(285),
         c = n(d),
         h = Marionette.Object.extend({
             initialize: function(e) {
@@ -62189,7 +62961,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(13),
+    var n = i(11),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -62298,9 +63070,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(311),
+    var s = i(291),
         r = n(s),
-        a = i(312),
+        a = i(292),
         o = n(a),
         l = Marionette.View.extend({
             template: "Waze/Modules/MTE/templates/topbar",
@@ -62331,20 +63103,20 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(1055),
+    var s = i(1053),
         r = n(s),
-        a = i(126),
+        a = i(123),
         o = n(a),
-        l = i(26),
-        u = i(1057),
+        l = i(27),
+        u = i(1055),
         d = n(u),
-        c = i(1059),
+        c = i(1057),
         h = n(c),
-        f = i(118),
+        f = i(116),
         p = n(f),
-        g = i(287),
+        g = i(264),
         m = n(g),
-        v = i(284),
+        v = i(261),
         _ = n(v),
         y = i(97),
         b = Marionette.Object.extend({
@@ -62480,9 +63252,9 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
-        a = i(1056),
+        a = i(1054),
         o = n(a),
         l = {
             THIS_WEEK: {
@@ -62605,7 +63377,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(12),
+    var n = i(13),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -62638,7 +63410,7 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = i(1058),
+    var n = i(1056),
         s = function(e) {
             return e && e.__esModule ? e : {
                 default: e
@@ -62679,32 +63451,32 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(22),
         o = n(a),
-        l = i(13),
+        l = i(11),
         u = n(l),
-        d = i(135),
+        d = i(130),
         c = n(d),
         h = i(63),
         f = n(h),
-        p = i(93),
+        p = i(92),
         g = n(p),
-        m = i(1060),
+        m = i(1058),
         v = n(m),
-        y = i(118),
-        b = i(1062),
+        y = i(116),
+        b = i(1060),
         w = n(b),
-        E = i(1063),
+        E = i(1061),
         k = n(E),
         M = i(19),
         S = n(M),
-        T = i(12),
+        T = i(13),
         C = n(T),
-        I = i(1064),
+        I = i(1062),
         A = n(I),
-        R = i(1065),
+        R = i(1063),
         O = n(R),
-        D = i(1067),
+        D = i(1065),
         L = n(D),
-        P = i(23),
+        P = i(24),
         N = Marionette.View.extend({
             className: "mte-edit-view",
             template: "Waze/Modules/MTE/templates/mte_edit_view",
@@ -63091,11 +63863,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(1061),
+    var s = i(1059),
         r = n(s),
-        a = i(59),
+        a = i(60),
         o = n(a),
-        l = i(23),
+        l = i(24),
         u = Marionette.Object.extend({
             initialize: function(e) {
                 this.dataModel = e.dataModel
@@ -63195,7 +63967,7 @@ webpackJsonp([0], [function(e, t, i) {
                 default: e
             }
         }(n),
-        r = i(118),
+        r = i(116),
         a = Backbone.Model.extend({
             defaults: {
                 englishName: "",
@@ -63417,11 +64189,11 @@ webpackJsonp([0], [function(e, t, i) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(13),
+    var s = i(11),
         r = n(s),
-        a = i(1066),
+        a = i(1064),
         o = n(a),
-        l = i(12),
+        l = i(13),
         u = n(l),
         d = Marionette.CompositeView.extend({
             template: "Waze/Modules/MTE/templates/contributors/list",
@@ -63585,17 +64357,17 @@ webpackJsonp([0], [function(e, t, i) {
         r = n(s),
         a = i(22),
         o = n(a),
-        l = i(300),
+        l = i(279),
         u = n(l),
-        d = i(302),
+        d = i(281),
         c = n(d),
-        h = i(303),
+        h = i(282),
         f = n(h),
-        p = i(127),
+        p = i(177),
         g = n(p),
-        m = i(182),
+        m = i(175),
         v = n(m),
-        y = i(1068),
+        y = i(1066),
         b = n(y),
         w = Marionette.View.extend({
             template: function() {
@@ -63756,7 +64528,9 @@ webpackJsonp([0], [function(e, t, i) {
     }
 }, function(e, t, i) {
     "use strict";
-    i(1072),
+    i(1070),
+        i(1071),
+        i(1072),
         i(1073),
         i(1074),
         i(1075),
@@ -63795,7 +64569,5 @@ webpackJsonp([0], [function(e, t, i) {
         i(1108),
         i(1109),
         i(1110),
-        i(1111),
-        i(1112),
-        i(1113)
-}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}], [440]);
+        i(1111)
+}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}, function(e, t) {}], [420]);

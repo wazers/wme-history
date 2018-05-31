@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-96a5910c96f79a5414a3500d96d98ac5.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-100a19676d1a73cb3027ccb454fd44a2.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.14-53-gef17b12
+                                <div class="version">v2.16-43-gd099c0d
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -80,11 +80,12 @@
                 apiKeys: {
                     "googleMapsApiKey": "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
                 },
-                version: "v2.14-53-gef17b12\n"
+                version: "v2.16-43-gd099c0d\n"
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-ff992c23526bfe7ac2f7.js"></script>
+        <script async defer src="//www.google.com/recaptcha/api.js?render=explicit&amp;hl=en"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-5b587dfcb12af94dca17.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -436,6 +437,9 @@
                         "707": {
                             "title": "The highlighted roundabouts cannot intersect each other"
                         },
+                        "708": {
+                            "title": "Failed to merge segments, they're in different junctions"
+                        },
                         "709": {
                             "title": "The highlighted roundabout does not form a circle"
                         },
@@ -455,11 +459,26 @@
                             "title": "The highlighted road is too far from the country it was added to",
                             "solution": "Check the country and try again"
                         },
+                        "714": {
+                            "title": "Missing primary street name"
+                        },
+                        "715": {
+                            "title": "Invalid brand name"
+                        },
                         "716": {
                             "title": "The highlighted place has an invalid house number"
                         },
+                        "717": {
+                            "title": "Failed to create place"
+                        },
                         "718": {
                             "title": "Duplicate place"
+                        },
+                        "719": {
+                            "title": "Failed to update place"
+                        },
+                        "720": {
+                            "tilte": "Failed to delete place"
                         },
                         "721": {
                             "title": "The navigation point for the place is too far",
@@ -469,6 +488,12 @@
                             "title": "Cannot save a place without any categories",
                             "solution": "Add at least one category and try again"
                         },
+                        "723": {
+                            "title": "Failed to update place"
+                        },
+                        "724": {
+                            "title": "You can't changed the place type for a residential place"
+                        },
                         "725": {
                             "title": "The highlighted segment is too long",
                             "solution": "Make it shorter or split it into several segments and try again"
@@ -476,6 +501,9 @@
                         "726": {
                             "title": "The highlighted segment is too complex",
                             "solution": "Remove geometry points or split it and try again"
+                        },
+                        "727": {
+                            "title": "Operation not supported"
                         },
                         "730": {
                             "title": "The size of the highlighted Junction box cannot exceed 1 kilometer"
@@ -489,33 +517,93 @@
                         "733": {
                             "title": "The highlighted Junction box must have only one connection for every entry/exit pair"
                         },
+                        "734": {
+                            "title": "Segments or turns that don't enter/exit the junction box can't have restrictions"
+                        },
                         "735": {
                             "title": "The highlighted node cannot have more than 16 connections"
                         },
                         "736": {
                             "title": "Speed cameras cannot be edited in this country"
                         },
+                        "737": {
+                            "title": "Junction box can't overlap"
+                        },
                         "738": {
                             "title": "Invalid speed limit"
                         },
                         "739": {
-                            "title": "Unverified max speed entered"
+                            "title": "Can't update unverified max speed"
+                        },
+                        "740": {
+                            "title": "Failed to create closure"
+                        },
+                        "741": {
+                            "title": "Failed to update closure"
+                        },
+                        "742": {
+                            "title": "Failed to delete closure"
+                        },
+                        "743": {
+                            "title": "Connection is not navigable"
                         },
                         "744": {
                             "title": "The highlighted segment has been modified recently and will be rebuilt.",
                             "solution": "Limit the closure time to less than 2 days."
                         },
+                        "745": {
+                            "title": "Invalid road type"
+                        },
+                        "746": {
+                            "title": "Failed to create event"
+                        },
+                        "747": {
+                            "title": "Failed to update event"
+                        },
+                        "748": {
+                            "title": "Failed to delete event"
+                        },
+                        "749": {
+                            "title": "Invalid event geometry"
+                        },
+                        "750": {
+                            "title": "Failed to publish event"
+                        },
+                        "751": {
+                            "title": "Failed to set event as ready"
+                        },
                         "752": {
                             "title": "You have to be an MTE manager to mark a crisis event as submitted"
+                        },
+                        "753": {
+                            "title": "Missing end time"
+                        },
+                        "754": {
+                            "title": "End time is in the past"
                         },
                         "755": {
                             "title": "End time is too far in the future"
                         },
+                        "756": {
+                            "title": "Start time is after end time"
+                        },
                         "757": {
                             "title": "Duration is too long"
                         },
+                        "758": {
+                            "title": "Missing entry/exit name"
+                        },
+                        "759": {
+                            "title": "City name already exists"
+                        },
+                        "762": {
+                            "title": "Map comment has invalid geometry"
+                        },
                         "763": {
                             "title": "Map comment expiration date cannot be in the past"
+                        },
+                        "764": {
+                            "title": "Missing map comment subject"
                         },
                         "765": {
                             "title": "Map comment expiration date is invalid"
@@ -582,8 +670,17 @@
                             "title": "A segment with house numbers was deleted",
                             "solution": "Make sure no segments with house numbers were accidentally deleted"
                         },
+                        "7001": {
+                            "title": "Invalid place update"
+                        },
                         "7002": {
                             "title": "The highlighted place has an invalid house number"
+                        },
+                        "7003": {
+                            "title": "Missing category field for place"
+                        },
+                        "7004": {
+                            "title": "Invalid category"
                         },
                         "7007": {
                             "title": "The highlighted place is out of the country bounds",
@@ -592,8 +689,14 @@
                         "7008": {
                             "title": "The highlighted place has an invalid website address"
                         },
+                        "7009": {
+                            "title": "Invalid entry/exit point"
+                        },
                         "7010": {
                             "title": "Invalid opening hours"
+                        },
+                        "7011": {
+                            "title": "Invalid service name"
                         },
                         "7016": {
                             "title": "The highlighted place has an invalid phone number"
@@ -602,8 +705,26 @@
                             "title": "The highlighted place does not have a house number",
                             "solution": "Add the house number and try again"
                         },
+                        "7018": {
+                            "title": "Invalid opening hours, opening and closing times are the same"
+                        },
                         "7019": {
                             "title": "Invalid place opening hours - overlapping times"
+                        },
+                        "7024": {
+                            "title": "Invalid parking lot geometry"
+                        },
+                        "7025": {
+                            "title": "Parking lot place can't have other categories"
+                        },
+                        "7026": {
+                            "title": "Place can't have multiple primary exit points"
+                        },
+                        "7027": {
+                            "title": "Place can't have multiple exit points with the same name"
+                        },
+                        "7028": {
+                            "title": "Residential place can't be a polygon"
                         },
                         "9013": {
                             "title": "Cannot mark event with no closures as ready"
@@ -928,10 +1049,11 @@
                         "name_exists": "A city named %{name} already exists"
                     },
                     "camera": {
-                        "title": "One speed camera selected",
+                        "title": "One camera selected",
                         "fields": {
-                            "speed": "Max speed",
+                            "speed": "Excess speed",
                             "approved": "Approved",
+                            "type_label": "Camera Type",
                             "type": {
                                 "2": "Speed camera",
                                 "3": "Dummy",
@@ -1183,6 +1305,10 @@
                                 "current_location": "Current location",
                                 "suggested_location": "Suggested location"
                             },
+                            "approved": "Approved",
+                            "rejected": "Rejected",
+                            "ignored": "Ignored",
+                            "solved": "Solved",
                             "next": "Next",
                             "done": "Done",
                             "next_venue": "Next place",
@@ -1337,7 +1463,8 @@
                         "DAM": "Dam",
                         "EMERGENCY_SHELTER": "Emergency Shelter",
                         "REST_AREAS": "Rest area",
-                        "TRASH_AND_RECYCLING_FACILITIES": "Trash & recycling facility"
+                        "TRASH_AND_RECYCLING_FACILITIES": "Trash & recycling facility",
+                        "TELECOM": "Telecom"
                     }
                 },
                 "tts": {
@@ -2625,7 +2752,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-7a04998bf63c6368ef46.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-a0081b063301eeb35f41.js"></script>
     </body>
 
 </html>

@@ -3876,7 +3876,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 13px;
     line-height: 1.42857;
-    color: #3d3d3d;
+    color: #354148;
     background-color: #fff;
 }
 
@@ -5835,7 +5835,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
-    color: #7d7d7d;
+    color: #6b8391;
 }
 
 @media (min-width: 768px) {
@@ -10387,7 +10387,7 @@ kbd.shiftKey::before {
     text-align: center;
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-    color: #24002c;
+    color: #354148;
     font-weight: normal;
     transition: all 150ms;
     cursor: pointer;
@@ -11845,14 +11845,15 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #login-popup .login-form {
     min-width: 310px;
-    padding: 30px;
+    padding: 12px 20px;
     border-radius: 8px;
     height: 341px;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-#login-popup .login-form input, #login-popup .login-form .submit {
+#login-popup .login-form .username, #login-popup .login-form .password {
+    width: 257px;
     margin-bottom: 10px;
 }
 
@@ -11860,17 +11861,13 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     font-size: 13px;
     color: #3d3d3d;
     line-height: 20px;
-    margin-bottom: 20px;
-}
-
-#login-popup .login-form .submit {
-    letter-spacing: 0.4px;
+    margin-bottom: 12px;
 }
 
 #login-popup .login-form .forgot-password {
     font-size: 13px;
     text-decoration: underline;
-    margin-top: 10px;
+    margin-top: 8px;
     display: block;
     transition: all 150ms;
 }
@@ -11880,25 +11877,30 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     background-color: transparent;
 }
 
-#login-popup .login-form .error-message {
-    margin-bottom: 10px;
+#login-popup .login-form .recaptcha-container {
+    width: 257px;
+    margin: 12px 0;
 }
 
 #login-popup .login-form .submit {
+    letter-spacing: 0.4px;
     height: 34px;
-    width: 100%;
-    margin-top: 18px;
+    width: 257px;
 }
 
 #login-popup .login-form .username {
     margin-bottom: 14px;
 }
 
+#login-popup .login-form .error-message {
+    height: 18px;
+}
+
 #login-popup .login-form .login-title {
     font-size: 17px;
     color: #3d3d3d;
     line-height: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
@@ -15192,11 +15194,11 @@ body[dir="rtl"] .olControlScaleLine {
     padding-right: 10px;
 }
 
-#sidebar .nav-tabs li a[disabled] {
+#sidebar .nav-tabs li a[disabled], #sidebar .nav-tabs li a.disabled {
     opacity: 0.5;
 }
 
-#sidebar .nav-tabs li a[disabled]:hover {
+#sidebar .nav-tabs li a[disabled]:hover, #sidebar .nav-tabs li a.disabled:hover {
     background: none;
     border: none;
     cursor: default;
@@ -15252,6 +15254,10 @@ body[dir="rtl"] .olControlScaleLine {
 
 #sidebar .controls-container {
     padding: 7px 0 0;
+}
+
+#sidebar .controls-container:first-child {
+    padding-top: 0px;
 }
 
 .address-form #sidebar .controls-container {
@@ -16538,6 +16544,7 @@ body[dir="rtl"] .olControlScaleLine {
     background-color: #ff9e00;
     padding: 10px;
     border-radius: 5px;
+    margin: 0 15px 15px 15px;
 }
 
 #edit-panel .segment .junction-box-message .title, .edit-panel .segment .junction-box-message .title {
@@ -16612,7 +16619,6 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 #edit-panel .segment .speed-limit, .edit-panel .segment .speed-limit {
-    margin-top: 5px;
     margin-bottom: 5px;
 }
 
@@ -16654,9 +16660,9 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 #edit-panel .segment .speed-limit .direction-label, .edit-panel .segment .speed-limit .direction-label {
-    font-weight: 700;
     margin-right: 0.5em;
     display: inline-block;
+    color: #354148;
 }
 
 #edit-panel .segment .speed-limit .average-speed-camera, .edit-panel .segment .speed-limit .average-speed-camera {
@@ -16699,7 +16705,6 @@ body[dir="rtl"] .olControlScaleLine {
 
 #edit-panel .segment .speed-limit .verify-buttons, .edit-panel .segment .speed-limit .verify-buttons {
     margin-top: 2px;
-    margin-bottom: 10px;
 }
 
 #edit-panel .segment .speed-limit .verify-buttons .edit-btn, .edit-panel .segment .speed-limit .verify-buttons .edit-btn {
@@ -16757,6 +16762,14 @@ body[dir="rtl"] .olControlScaleLine {
     border-radius: 8px 0px 0px 8px;
 }
 
+#edit-panel .segment .waze-lock-tooltip, .edit-panel .segment .waze-lock-tooltip {
+    display: none;
+}
+
+#edit-panel .segment input:disabled ~ .waze-lock-tooltip, .edit-panel .segment input:disabled ~ .waze-lock-tooltip {
+    display: inline-block;
+}
+
 #edit-panel .contents, .edit-panel .contents {
     overflow: auto;
 }
@@ -16765,6 +16778,7 @@ body[dir="rtl"] .olControlScaleLine {
     font-size: 11px;
     line-height: 15px;
     color: #777;
+    margin-bottom: 10px;
 }
 
 #edit-panel .alt-street-list, .edit-panel .alt-street-list {
@@ -17295,9 +17309,13 @@ body[dir="rtl"] .olControlScaleLine {
     padding-left: 3px;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.23);
-    position: static;
+    position: absolute;
     background: none;
+    background-size: initial;
     cursor: pointer;
+    left: inherit;
+    top: 0px;
+    right: 5px;
 }
 
 #edit-panel .categories .select2-search-choice-close:not(.remove-choice), .edit-panel .categories .select2-search-choice-close:not(.remove-choice) {
@@ -17336,7 +17354,7 @@ body[dir="rtl"] .olControlScaleLine {
 #edit-panel .categories .select2-search-choice .category, .edit-panel .categories .select2-search-choice .category {
     position: relative;
     margin: 3px 0 3px 5px;
-    padding: 0 10px;
+    padding: 0 16px 0px 10px;
     background: #b2b9bc;
     border-radius: 8px;
     color: white;
@@ -17829,6 +17847,7 @@ body[dir="rtl"] .olControlScaleLine {
     background-position: -83px -15px;
     width: 13px;
     height: 13px;
+    margin-right: 3px;
 }
 
 #edit-panel .restriction-list, .edit-panel .restriction-list {
@@ -18108,6 +18127,24 @@ body[dir="rtl"] .olControlScaleLine {
     font-weight: bold;
     font-weight: 700;
     font-size: 12px;
+}
+
+.panel.place-update-edit .actions .status {
+    box-shadow: 0 2px 4px 0 rgba(192, 192, 192, 0.2);
+    border-radius: 8px;
+    line-height: 35px;
+    color: white;
+    padding: 0px 15px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.panel.place-update-edit .actions .status.rejected, .panel.place-update-edit .actions .status.approved {
+    background: #636f76;
 }
 
 .panel.place-update-edit .actions label[for|="approved"] {
@@ -20966,6 +21003,7 @@ body[dir="rtl"] .olControlScaleLine {
     line-height: 14px;
     background: white;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .element-history-item .tx-header .tx-author-date {
@@ -20997,7 +21035,6 @@ body[dir="rtl"] .olControlScaleLine {
 .element-history-item .tx-toggle-closed {
     width: 30px;
     height: 30px;
-    cursor: pointer;
     text-align: center;
 }
 
