@@ -33561,50 +33561,64 @@ webpackJsonp([0], [function(e, t, i) {
         o = n(a),
         l = i(1),
         u = n(l),
-        d = function() {
-            function e() {
-                (0,
-                    o.default)(this, e),
-                this._widgetID = null
-            }
-            return (0,
-                    u.default)(e, [{
-                    key: "render",
-                    value: function(e) {
-                        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                            i = (0,
-                                r.default)({
-                                sitekey: "6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42",
-                                callback: function() {},
-                                "error-callback": function() {
-                                    console.error("RecaptchaClient: error")
-                                },
-                                "expired-callback": function() {
-                                    console.error("RecaptchaClient: expired")
-                                }
-                            }, t);
-                        null == this._widgetID && (this._widgetID = grecaptcha.render(e, i))
-                    }
-                }, {
-                    key: "execute",
-                    value: function() {
-                        return grecaptcha.execute(this._widgetID)
-                    }
-                }, {
-                    key: "reset",
-                    value: function() {
-                        if (null != this._widgetID)
-                            return grecaptcha.reset(this._widgetID)
-                    }
-                }, {
-                    key: "getResponse",
-                    value: function() {
-                        return null != this._widgetID ? grecaptcha.getResponse(this._widgetID) : null
-                    }
-                }]),
-                e
-        }();
-    t.default = d,
+        d = "//www.google.com/recaptcha/api.js?render=explicit&hl=" + I18n.locale + "&onload=onRecaptchaLoad";
+    $.getScript(d);
+    var c = function() {
+        function e() {
+            (0,
+                o.default)(this, e),
+            this._widgetID = null
+        }
+        return (0,
+                u.default)(e, [{
+                key: "render",
+                value: function(t) {
+                    var i = this,
+                        n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                        s = (0,
+                            r.default)({
+                            sitekey: "6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42",
+                            callback: function() {},
+                            "error-callback": function() {
+                                console.error("RecaptchaClient: error")
+                            },
+                            "expired-callback": function() {
+                                console.error("RecaptchaClient: expired")
+                            }
+                        }, n);
+                    null == this._widgetID && e.loadDeferred.then(function() {
+                        i._widgetID = grecaptcha.render(t, s)
+                    })
+                }
+            }, {
+                key: "execute",
+                value: function() {
+                    return grecaptcha.execute(this._widgetID)
+                }
+            }, {
+                key: "reset",
+                value: function() {
+                    if (null != this._widgetID)
+                        return grecaptcha.reset(this._widgetID)
+                }
+            }, {
+                key: "getResponse",
+                value: function() {
+                    return null != this._widgetID ? grecaptcha.getResponse(this._widgetID) : null
+                }
+            }], [{
+                key: "load",
+                value: function() {
+                    e.loadDeferred.resolve()
+                }
+            }]),
+            e
+    }();
+    c.loadDeferred = $.Deferred(),
+        window.onRecaptchaLoad = function() {
+            c.load()
+        },
+        t.default = c,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -54733,7 +54747,7 @@ webpackJsonp([0], [function(e, t, i) {
                             ".length-attribute .value": {
                                 observe: "length",
                                 onGet: function(e) {
-                                    return F.default.lengthString(e)
+                                    return null != e && F.default.lengthString(e)
                                 }
                             },
                             ".routing-road-type-message": (0,
