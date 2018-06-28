@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-100a19676d1a73cb3027ccb454fd44a2.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-da5e06dbd0b23c0c9b2f298a1ac03176.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.16-48-gdfbdb15
+                                <div class="version">v2.17-47-g145269e
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -80,11 +80,11 @@
                 apiKeys: {
                     "googleMapsApiKey": "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
                 },
-                version: "v2.16-48-gdfbdb15\n"
+                version: "v2.17-47-g145269e\n"
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-b6a52a381828b7611951.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-738049ae9c454cb51d75.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -403,6 +403,144 @@
                     },
                     "action": "Please fix and save again",
                     "default_solution": "Check and try again",
+                    "changes_log": {
+                        "title": "%{count} changes:",
+                        "failed_title": "%{count} changes failed to save:",
+                        "empty_name": "No name",
+                        "unknown_action": "Action",
+                        "ignore": "Ignore and Save",
+                        "undo_all": "Undo All",
+                        "redo_all": "Restore Changes",
+                        "redo_item": "Restore change",
+                        "undo_item": "Remove change",
+                        "actions": {
+                            "AddAlternateStreet": "Added alternate street name %{altStreeName} to segment: %{streetName}",
+                            "AddBigJunction": "Added big junction",
+                            "AddIntersection": "Added intersection",
+                            "AddLandmark": "Added new place",
+                            "AddNode": "Added new node",
+                            "AddOrGetCity": {
+                                "add": "Added new city: %{name}"
+                            },
+                            "AddOrGetStreet": {
+                                "add": "Added new street: %{streetName}"
+                            },
+                            "AddRoadClosure": {
+                                "has_street": "Added closure to: %{streetName}",
+                                "default": "Added closure"
+                            },
+                            "AddSegment": "Added new segment",
+                            "ConnectSegment": {
+                                "has_street": "Connected segment to node on: %{streetName}",
+                                "default": "Connected segment to node"
+                            },
+                            "ConvertNodeToRegular": "Changed node from walking trail to regular",
+                            "ConvertSegmentNodesToRegular": {
+                                "has_street": "Changed nodes on %{streetName} segment to regular nodes",
+                                "default": "Changed nodes to regular nodes"
+                            },
+                            "CreateObject": "Added new: %{type}",
+                            "CreateRoundabout": {
+                                "has_street": "Added new roundabout on %{streetName}",
+                                "default": "Added new roundabout"
+                            },
+                            "DeleteBigjunction": {
+                                "has_name": "Deleted big junction: %{name}",
+                                "has_city": "Deleted big junction on: %{cityName}",
+                                "default": "Deleted big junction"
+                            },
+                            "DeleteNode": "Deleted node",
+                            "DeleteObject": "Delete object of type: %{type}",
+                            "DeleteRoadClosure": "Deleted road closure",
+                            "DeleteSegment": {
+                                "has_street": "Deleted segment on: %{streetName}",
+                                "default": "Deleted segment"
+                            },
+                            "DisconnectSegment": {
+                                "has_street": "Disconnected segment on: %{streetName}",
+                                "default": "Disconnected segment"
+                            },
+                            "AddHouseNumber": "Added house number %{houseNumber} to %{streetName}",
+                            "DeleteHouseNumber": "Deleted house number %{houseNumber} from %{streetName}",
+                            "ReplaceHouseNumberSegment": "Moved house number %{houseNumber} to segment %{segmentId}",
+                            "UpdateFractionPoint": "Moved navigation point for house number %{houseNumber}",
+                            "UpdateHouseNumber": "Updated house number %{houseNumber} on %{streetName}",
+                            "UpdateHouseNumberGeometry": "Moved house number %{houseNumber} on %{streetName}",
+                            "MergeLandmarks": {
+                                "has_name": "Merged %{count} places to: %{mainVenueName}",
+                                "default": "Merged %{count} places to: %{placeId}"
+                            },
+                            "MergeNode": "Merged node",
+                            "MergeSegments": {
+                                "has_street": "Merged segments on %{streetName}",
+                                "default": "Merged segments"
+                            },
+                            "ModifyAllConnections": {
+                                "allow": "Allow all connections",
+                                "disallow": "Disallow all connections"
+                            },
+                            "MoveNode": "Moved node",
+                            "SplitSegments": {
+                                "has_street": "Split segment on %{streetName}",
+                                "default": "Split segment"
+                            },
+                            "UpdateBigJunctionConnectedSegments": "Updated segments connected to big junction",
+                            "UpdateFeatureAddress": "Updated %{objectType} address",
+                            "UpdateFeatureGeometry": "Updated %{objectType} geometry",
+                            "UpdateLandmarkResidential": {
+                                "true": "Changed place to residential",
+                                "false": "Changed place from residential"
+                            },
+                            "UpdateObject": {
+                                "single": "Changed %{propertyName} on %{objectsString} to: %{value}",
+                                "added": "Added %{propertyName} %{value} to %{objectsString}",
+                                "removed": "Removed %{propertyName} %{value} from: %{objectsString}",
+                                "deleted": "Deleted %{propertyName} from: %{objectsString}",
+                                "multiple": "Multiple changes to %{objectsString}"
+                            },
+                            "UpdatePlaceUpdate": {
+                                "approved": "Approved place update request",
+                                "rejected": "Rejected place update request",
+                                "reopened": "Reopened place update request"
+                            },
+                            "UpdateRoadClosure": "",
+                            "UpdateSegmentGeometry": {
+                                "has_street": "Changed segment geometry on %{streetName}",
+                                "default": "Changed segment geometry"
+                            },
+                            "SetTurn": {
+                                "allow": "Allowed turn",
+                                "disallow": "Disallowed turn",
+                                "update": "Updated turn"
+                            },
+                            "DeleteSegments": "Deleted %{count} segments",
+                            "MultiUpdateFeatureAddress": "Updated %{count} %{objectType}s addresses",
+                            "UpdateSegmentsRestrictions": {
+                                "multi_segments": "Changed restrictions of %{count} segments"
+                            },
+                            "UpdateMapProblem": {
+                                "open": "Opened map problem",
+                                "solved": "Solved map problem",
+                                "not_identified": "Marked map problem as not identified"
+                            },
+                            "UpdateNavigationPoint": {
+                                "moved": {
+                                    "has_name": "Moved navigation point of place: %{venueName}",
+                                    "default": "Moved navigation point of place"
+                                },
+                                "single": "Changed navigation point %{propertyName} to %{value}",
+                                "multiple": "Multiple changes to navigation point of place"
+                            },
+                            "AddNavigationPoint": {
+                                "has_name": "Added new navigation point to place: %{venueName}",
+                                "default": "Added new navigation point to place"
+                            },
+                            "DeleteNavigationPoint": {
+                                "has_name": "Deleted navigation point from place: %{venueName}",
+                                "default": "Deleted navigation point from place"
+                            }
+                        }
+                    },
                     "error_types": {
                         "101": {
                             "title": "You have no permissions to make some of the changes"
@@ -930,7 +1068,8 @@
                         },
                         "tabs": {
                             "general": "General",
-                            "closures": "Closures"
+                            "closures": "Closures",
+                            "lanes": "Lanes"
                         },
                         "speed_limit": {
                             "fwdMaxSpeed": "A → B",
@@ -2107,6 +2246,15 @@
                         "TRUCK": "Truck"
                     }
                 },
+                "lanes": {
+                    "title": "Lane Instructions",
+                    "instruction": "Drive %{heading} on",
+                    "reach_intersection": "Reach intersection",
+                    "add_lanes": "Add lane guidance",
+                    "edit_lanes": "Edit lane guidance",
+                    "lane_count": "Number of Lanes",
+                    "turns": "Turns"
+                },
                 "closures": {
                     "add": "Add a closure",
                     "apply_to_all": "Apply to all",
@@ -2202,7 +2350,7 @@
                         "18": "Railroad",
                         "19": "Runway/Taxiway",
                         "20": "Parking Lot Road",
-                        "22": "Narrow Street"
+                        "22": "Alley"
                     },
                     "address": {
                         "none": "Unnamed segment"
@@ -2392,7 +2540,7 @@
                                 "shortMessage": "An editor you’re mentoring just joined the community!",
                                 "message": "Nice work, your mentoring is paying off. %{username} joined the community"
                             },
-                            "MENTEE_RETURNED": {
+                            "MENTEE_RETURNED_TO_WME": {
                                 "title": "%{username} edited the map",
                                 "shortMessage": "An editor you’re mentoring edited the map!",
                                 "message": "Way to go! An editor you’re mentoring, %{username}, edited the map.",
@@ -2404,7 +2552,7 @@
                                 "message": "When you help a new editor, you help improve map quality in your area. Show new editors the best way to edit the map",
                                 "buttonText": "Start mentoring"
                             },
-                            "FIRST_EDIT": {
+                            "USER_FIRST_EDIT": {
                                 "title": "You made your first edit!",
                                 "shortMessage": "Well done, your edit is now live!",
                                 "message": "Congrats on your first edit! Want to learn more? There’s a few ways to learn: mentoring, wikis and the forum.",
@@ -2416,6 +2564,9 @@
                                 "shortMessage": "Take a minute to rate your mentor",
                                 "message": "Help improve the mentoring program, it’ll only take a minute.",
                                 "buttonText": "Leave feedback"
+                            },
+                            "MENTOR_PRIVATE_MESSAGE": {
+                                "title": "%{username}, wants to mentor you"
                             }
                         }
                     },
@@ -2535,7 +2686,8 @@
                             "geometry": "Geometry",
                             "rank": "Level",
                             "lockRank": "Lock level",
-                            "permissions": "Permissions"
+                            "permissions": "Permissions",
+                            "name": "Name"
                         },
                         "rank_too_low": "Editing this option unlocks at a higher level"
                     },
@@ -2556,6 +2708,7 @@
                     },
                     "segment": {
                         "name": "Segment",
+                        "multi": "%{count} Segments",
                         "fields": {
                             "type": "Type",
                             "address": "Address",
@@ -2596,7 +2749,7 @@
                         "fields": {
                             "name": "Name",
                             "description": "Description",
-                            "url": "URL",
+                            "url": "Website",
                             "phone": "Phone",
                             "brand": "Brand",
                             "residential": "Residential Place",
@@ -2640,6 +2793,19 @@
                             "validated": "Validated",
                             "speed": "Speed",
                             "azymuth": "Azymuth"
+                        }
+                    },
+                    "entryExitPoints": {
+                        "name": "Entry point",
+                        "fields": {
+                            "name": "Name",
+                            "point": "Geometry"
+                        }
+                    },
+                    "mapComment": {
+                        "name": "Map Comment",
+                        "fields": {
+                            "endDate": "Expiration date"
                         }
                     }
                 },
@@ -2751,7 +2917,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-eaa5ad6970e625957d0a.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-7acf29a641f6a0ab68cf.js"></script>
     </body>
 
 </html>
