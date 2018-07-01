@@ -10247,7 +10247,7 @@ webpackJsonp([0], [function(e, t, i) {
                 }, {
                     key: "templateContext",
                     value: function() {
-                        return _.pick(this.viewModel.attributes, "createdBy", "updatedBy", "updatedOn", "userRank")
+                        return _.pick(this.viewModel.attributes, "createdBy", "createdOn", "updatedBy", "updatedOn", "userRank")
                     }
                 }, {
                     key: "getFeature",
@@ -10261,6 +10261,7 @@ webpackJsonp([0], [function(e, t, i) {
                             u.default)({
                             id: e.getID(),
                             createdBy: e.attributes.createdBy,
+                            createdOn: e.attributes.createdOn,
                             updatedBy: e.attributes.updatedBy,
                             updatedOn: e.attributes.updatedOn,
                             propertiesEditable: e.arePropertiesEditable(),

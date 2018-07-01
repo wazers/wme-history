@@ -9134,42 +9134,6 @@ select.form-control:focus {
     background-color: #aaa;
 }
 
-.text-checkbox input[type="checkbox"]:not(:checked), .text-checkbox input[type="checkbox"]:checked {
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-}
-
-.text-checkbox input[type="checkbox"]:not(:checked) + label, .text-checkbox input[type="checkbox"]:checked + label {
-    margin-bottom: 0;
-    position: relative;
-    color: #dbdbdb;
-    cursor: pointer;
-    font-weight: normal;
-    white-space: nowrap;
-}
-
-.text-checkbox input[type="checkbox"]:hover + label {
-    opacity: 0.8;
-}
-
-.text-checkbox input[type="checkbox"]:checked + label {
-    color: #08e07d;
-}
-
-.text-checkbox input[type="checkbox"]:disabled + label {
-    opacity: 0.3;
-    cursor: default;
-}
-
-.text-checkbox input[type="checkbox"]:not([disabled]):active:checked + label {
-    color: #06af62;
-}
-
-.text-checkbox input[type="checkbox"]:not([disabled]):active:not(:checked) + label {
-    color: #c2c2c2;
-}
-
 @font-face {
     font-family: "WazeFont";
     src: url(//editor-assets.waze.com/beta/font/9555ec58bf7655b40f7e9d1da5e9bf83.eot);
@@ -13456,8 +13420,43 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .layer-switcher .scrollable {
+    width: 100%;
     height: calc(100% - 36px);
     overflow-y: auto;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"] + label {
+    margin-bottom: 0;
+    position: relative;
+    color: #dbdbdb;
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"]:hover + label {
+    opacity: 0.8;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"]:checked + label {
+    color: #08e07d;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"]:not([disabled]):active:checked + label {
+    color: #06af62;
+}
+
+.layer-switcher .text-checkbox input[type="checkbox"]:not([disabled]):active:not(:checked) + label {
+    color: #c2c2c2;
 }
 
 .layer-switcher .more-options-toggle {
@@ -13533,6 +13532,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .layer-switcher .togglers .text-checkboxes .title {
     color: #9a9a9a;
     font-style: italic;
+}
+
+.layer-switcher .togglers .text-checkboxes .checkboxes {
+    text-align: right;
 }
 
 .layer-switcher .togglers .text-checkboxes .text-checkbox {
