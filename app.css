@@ -8975,6 +8975,19 @@ select.form-control:focus {
     opacity: 0;
 }
 
+.controls-container input[type="checkbox"]:not(:checked).checkbox-white + label:after, .controls-container input[type="checkbox"]:checked.checkbox-white + label:after, .controls-container input[type="radio"]:not(:checked).checkbox-white + label:after, .controls-container input[type="radio"]:checked.checkbox-white + label:after {
+    color: #26bae8;
+}
+
+.controls-container input[type="checkbox"]:not(:checked).checkbox-white + label:before, .controls-container input[type="checkbox"]:checked.checkbox-white + label:before, .controls-container input[type="radio"]:not(:checked).checkbox-white + label:before, .controls-container input[type="radio"]:checked.checkbox-white + label:before {
+    border: none;
+}
+
+.controls-container input[type="checkbox"]:not(:checked).checkbox-large + label:before, .controls-container input[type="checkbox"]:checked.checkbox-large + label:before, .controls-container input[type="radio"]:not(:checked).checkbox-large + label:before, .controls-container input[type="radio"]:checked.checkbox-large + label:before {
+    width: 16px;
+    height: 16px;
+}
+
 .controls-container input[type="checkbox"]:checked + label:after, .controls-container input[type="radio"]:checked + label:after {
     opacity: 1;
 }
@@ -9008,6 +9021,11 @@ select.form-control:focus {
     line-height: 13px;
 }
 
+.controls-container input[type="checkbox"]:not(:checked).checkbox-large + label:after, .controls-container input[type="checkbox"]:checked.checkbox-large + label:after {
+    font-size: 15px;
+    line-height: 15px;
+}
+
 .controls-container input[type="checkbox"]:not(:checked)[mixed] + label:after {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -9032,12 +9050,22 @@ select.form-control:focus {
     background-color: #26bae8;
 }
 
+.controls-container input[type="checkbox"].checkbox-white + label:before {
+    background-color: #ffffff;
+}
+
 .controls-container input[type="checkbox"]:hover:checked + label:before, .controls-container input[type="checkbox"]:hover:not(:checked) + label:before {
     border: 1px solid #c2c2c2;
 }
 
 .controls-container input[type="checkbox"]:hover:not(:checked) + label:before {
     background-color: #f3f3f3;
+}
+
+.controls-container input[type="checkbox"]:hover.checkbox-white:checked + label:before, .controls-container input[type="checkbox"]:hover.checkbox-white:not(:checked) + label:before {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
 }
 
 .controls-container input[type="checkbox"]:hover:checked + label:before {
@@ -9049,6 +9077,10 @@ select.form-control:focus {
     background: #22a2cb;
     box-shadow: none;
     border: none;
+}
+
+.controls-container input[type="checkbox"]:active.checkbox-white:checked + label:before, .controls-container input[type="checkbox"]:active.checkbox-white:not(:checked) + label:before {
+    background: none;
 }
 
 .controls-container input[type="checkbox"]:disabled + label {
@@ -12640,6 +12672,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .direction-lanes .lane-instruction .instruction .edit-lane-guidance {
     color: #26bae8;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .direction-lanes .lane-instruction:first-child .instruction {
@@ -12671,11 +12704,92 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-right: 2px;
     text-align: center;
     vertical-align: top;
-    font-size: 8px;
+}
+
+.lane-arrow .arrow-line {
+    stroke: #fff;
+}
+
+.lane-arrow .arrow-tip {
+    fill: #fff;
 }
 
 .lane-arrow:last-child {
     margin-right: 0px;
+}
+
+.lane-arrow.small-arrow {
+    transform: scale(0.75);
+    background: transparent;
+    box-shadow: none;
+}
+
+.lane-arrow.small-arrow .arrow-line {
+    stroke: #000;
+}
+
+.lane-arrow.small-arrow .arrow-tip {
+    fill: #000;
+}
+
+.direction-lanes-edit {
+    background: #ededed;
+    border-radius: 8px;
+    padding: 27px 18px 15px;
+}
+
+.direction-lanes-edit input[name="laneCount"] {
+    width: 60px;
+}
+
+.direction-lanes-edit hr {
+    margin-top: 30px;
+    margin-bottom: 14px;
+    background-color: #dadada;
+    height: 1px;
+}
+
+.direction-lanes-edit .button-container {
+    text-align: right;
+}
+
+.direction-lanes-edit .button-container .apply-button, .direction-lanes-edit .button-container .cancel-button {
+    padding: 6px 20px;
+}
+
+.direction-lanes-edit .button-container .cancel-button {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.direction-lanes-edit .turn-lane-edit {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.direction-lanes-edit .turn-lane-edit .left-turn-lanes-part {
+    display: inline-block;
+    width: 20px;
+    height: 26px;
+}
+
+.direction-lanes-edit .turn-lane-edit .right-turn-lanes-part {
+    display: inline-block;
+    flex: 1;
+}
+
+.direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .street-name {
+    font-weight: normal;
+}
+
+.direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .turn-lane-checkbox {
+    display: inline-block;
+}
+
+.direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .turn-lane-checkbox label {
+    display: inline;
+    padding-left: 20px !important;
 }
 
 @charset "UTF-8"; .live-user-marker {
