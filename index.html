@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
     <head>
@@ -8,7 +8,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-f208f9429aa2d35bc9dacf683405565c.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-46e37d2bfc9b8e20a48f08c355ccf46e.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -49,7 +49,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.18-51-ge349da2
+                                <div class="version">v2.19-52-g98f8aca
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -80,11 +80,11 @@
                 apiKeys: {
                     "googleMapsApiKey": "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
                 },
-                version: "v2.18-51-ge349da2\n"
+                version: "v2.19-52-g98f8aca\n"
             };
         </script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"></script>
-        <script src="//editor-assets.waze.com/beta/js/vendor-bcd1147b4189027166fb.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/vendor-11b793e8ba4ee6b16a3a.js"></script>
         <script type="text/javascript">
             I18n.locale = "en";
 
@@ -538,6 +538,14 @@
                             "DeleteNavigationPoint": {
                                 "has_name": "Deleted navigation point from place: %{venueName}",
                                 "default": "Deleted navigation point from place"
+                            },
+                            "AddLanes": {
+                                "has_street": "Added Lane Guidance on %{streetName}",
+                                "default": "Added Lane Guidance"
+                            },
+                            "UpdateLanes": {
+                                "has_street": "Changed Lane Guidance on %{streetName}",
+                                "default": "Changed Lane Guidance"
                             }
                         }
                     },
@@ -2255,6 +2263,8 @@
                     "edit_lanes": "Edit lane guidance",
                     "lane_count": "Number of Lanes",
                     "turns": "Turns",
+                    "incomplete_lanes": "Lane guidance in this junction is incomplete.",
+                    "conflicting_lanes": "Invalid Input: Some turns are conflicting",
                     "buttons": {
                         "cancel": "Cancel",
                         "apply": "Apply"
@@ -2922,7 +2932,7 @@
             I18n.missingBehaviour = "guess";
             I18n.missingTranslationPrefix = "'";
         </script>
-        <script src="//editor-assets.waze.com/beta/js/app-f048c862f4a040dbbec4.js"></script>
+        <script src="//editor-assets.waze.com/beta/js/app-0974940a288d46fd83f1.js"></script>
     </body>
 
 </html>

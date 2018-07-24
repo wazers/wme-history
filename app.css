@@ -1,4 +1,4 @@
-@charset "UTF-8"; /*!
+﻿@charset "UTF-8"; /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -8851,6 +8851,12 @@ select.form-control:focus {
     box-shadow: 0 4px 10px 0 #c1f1ff;
 }
 
+.waze-btn.waze-btn-blue.disabled, .waze-btn.waze-btn-blue:disabled {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.025);
+    cursor: default;
+    opacity: 0.5;
+}
+
 .waze-btn.waze-btn-red {
     background: #ff5f5f;
     box-shadow: 0 2px 4px 0 rgba(192, 192, 192, 0.2);
@@ -9468,6 +9474,10 @@ h4 {
 .alert {
     border-radius: 5px;
     padding: 10px 15px;
+}
+
+.alert:empty {
+    display: none;
 }
 
 .alert-danger {
@@ -12658,6 +12668,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     z-index: 1;
 }
 
+.direction-lanes .lane-instruction .drawing .incomplete-badge {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes91109f93a21ef3322bc3960e3fbaee18.png);
+    background-position: 0px 0px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 3;
+    left: -8px;
+}
+
 .direction-lanes .lane-instruction .instruction {
     flex: 1;
     padding-top: 15px;
@@ -12730,6 +12750,11 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .lane-arrow.small-arrow .arrow-tip {
     fill: #000;
+}
+
+.lane-arrow.grey-arrow {
+    background-color: #c2c2c2;
+    box-shadow: none;
 }
 
 .direction-lanes-edit {
@@ -14000,12 +14025,21 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .unlocked-badge {
-    /*rtl:ignore*/
     margin-left: 1px;
     margin-top: -18px;
     pointer-events: none;
     background-image: url(//editor-assets.waze.com/beta/img/turns-ui677e75c5b5f9e6816bf8e69107e0254e.png);
     background-position: 0px -15px;
+    width: 15px;
+    height: 15px;
+}
+
+.incomplete-lanes-badge {
+    margin-left: 0px;
+    margin-top: 3px;
+    pointer-events: none;
+    background-image: url(//editor-assets.waze.com/beta/img/lanes91109f93a21ef3322bc3960e3fbaee18.png);
+    background-position: 0px 0px;
     width: 15px;
     height: 15px;
 }
