@@ -171,7 +171,8 @@
                 r = void 0;
             try {
                 for (var a, l = (0,
-                        o.default)(e); !(n = (a = l.next()).done) && (i.push(a.value), !t || i.length !== t); n = !0)
+                        o.default)(e); !(n = (a = l.next()).done) && (i.push(a.value),
+                        !t || i.length !== t); n = !0)
                 ;
             } catch (e) {
                 s = !0,
@@ -244,7 +245,8 @@
             for (s.defined(i) ? (o = i,
                     u = r.getPointEdge(n, i)) : o = n[u]; u < n.length - 1;) {
                 if (l = n[u + 1],
-                    c = o.distanceTo(l), !(a - c > 0)) {
+                    c = o.distanceTo(l),
+                    !(a - c > 0)) {
                     d = a / c,
                         o = new OpenLayers.Geometry.Point((1 - d) * o.x + d * l.x, (1 - d) * o.y + d * l.y),
                         h = Math.atan2(o.y - l.y, o.x - l.x);
@@ -288,7 +290,8 @@
             for (u; u < l - 1 && !(o[u].equals(a) && o[u + 1].equals(r) || o[u].equals(r) && o[u + 1].equals(a)); u++)
             ;
             var d = [n.clone()].concat(o.splice(u + 1));
-            return o.push(n.clone()), [new OL.Geometry.LineString(o), new OL.Geometry.LineString(d)]
+            return o.push(n.clone()),
+                [new OL.Geometry.LineString(o), new OL.Geometry.LineString(d)]
         },
         r.getPointEdge = function(e, t) {
             for (var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 0, n = Number.POSITIVE_INFINITY, s = 0, r = 0; r < e.length - 1; r++) {
@@ -472,7 +475,8 @@
                     key: "accept",
                     value: function(e) {
                         var t = e.beforeEnter(this);
-                        e.visit(this), !1 !== t && this.subActions.forEach(function(t) {
+                        e.visit(this),
+                            !1 !== t && this.subActions.forEach(function(t) {
                                 t.accept(e)
                             }),
                             e.afterLeave(this)
@@ -839,7 +843,8 @@
                 e = f.escape(e);
             var d = i + "-" + n + "-" + p++,
                 c = "<input type='" + e + "' name='" + i + "' value='" + n + "' id='" + d + "'";
-            return (String(n) === String(s) || u) && (c += " checked "), !1 === r && (c += " disabled "),
+            return (String(n) === String(s) || u) && (c += " checked "),
+                !1 === r && (c += " disabled "),
                 a && (c += " data-type='" + a + "'"),
                 l && (c += " data-nullable='true'"),
                 c += "/><label for='" + d + "' class='" + (o || "") + "'>" + t + "</label>"
@@ -1349,7 +1354,8 @@
                         }
                         return !!this.changed && (this.object.state || (this.object.state = OL.State.UPDATE,
                                 this.stateChanged = !0),
-                            this.repository.changed(this.object), !0)
+                            this.repository.changed(this.object),
+                            !0)
                     }
                 }, {
                     key: "_keepOriginal",
@@ -1476,7 +1482,8 @@
                     type: t.name,
                     message: t.message,
                     trace: t.stack
-                }), !n)
+                }),
+                !n)
                 throw t
         }
     }
@@ -1545,7 +1552,8 @@
                 try {
                     return t = (0,
                             b.default)(t),
-                        window.localStorage.setItem(e, t), !0
+                        window.localStorage.setItem(e, t),
+                        !0
                 } catch (e) {
                     return !1
                 }
@@ -2330,7 +2338,8 @@
                     y = 2 * (d * l + c * u),
                     b = d * d + c * c - o * o,
                     w = y * y - 4 * v * b;
-                return !(w < 0) && (w = Math.sqrt(w), [(-y + w) / (2 * v), (-y - w) / (2 * v)].sort().forEach(function(i) {
+                return !(w < 0) && (w = Math.sqrt(w),
+                    [(-y + w) / (2 * v), (-y - w) / (2 * v)].sort().forEach(function(i) {
                         if (i >= 0 && i <= 1) {
                             var n = new OpenLayers.Geometry.Point(e[0].x + i * l / r, e[0].y + i * u / a);
                             m.push({
@@ -2843,8 +2852,9 @@
                 d = "save.changes_log.actions.UpdateObject.single",
                 c = a;
             return null === c ? d = "save.changes_log.actions.UpdateObject.deleted" : (l && !u && (d = "save.changes_log.actions.UpdateObject.added",
-                    c = l), !l && u && (d = "save.changes_log.actions.UpdateObject.removed",
-                    c = u)),
+                        c = l),
+                    !l && u && (d = "save.changes_log.actions.UpdateObject.removed",
+                        c = u)),
                 I18n.t(d, {
                     featuresCount: i,
                     value: c,
@@ -3865,7 +3875,8 @@
                 s = void 0,
                 a = void 0;
             return n && (s = t.states.getObjectById(n.attributes.stateID)),
-                s && (a = t.countries.getObjectById(n.attributes.countryID)), [n, s, a].some(function(e) {
+                s && (a = t.countries.getObjectById(n.attributes.countryID)),
+                [n, s, a].some(function(e) {
                     return null == e
                 }) ? E : new w((0,
                     r.default)({}, i, {
@@ -4161,7 +4172,8 @@
                         return this.segment.getID(),
                             this.node.getID(),
                             this.doSubAction(new y.default(this.segment, e)),
-                            this._updateNodeSegmentList(), !0
+                            this._updateNodeSegmentList(),
+                            !0
                     }
                 }, {
                     key: "_updateSegmentGeometry",
@@ -5219,7 +5231,8 @@
                         return this.object.setID(this.repository.generateUniqueID()),
                             this.object.version = 1,
                             this.object.state = OL.State.INSERT,
-                            this.repository.put(this.object), !0
+                            this.repository.put(this.object),
+                            !0
                     }
                 }, {
                     key: "undoAction",
@@ -5323,7 +5336,8 @@
                     value: function() {
                         var e = this;
                         this.segment.getID(),
-                            this.origState = this.segment.state, ["fromNodeID", "toNodeID"].forEach(function(e) {
+                            this.origState = this.segment.state,
+                            ["fromNodeID", "toNodeID"].forEach(function(e) {
                                 if (this.segment.attributes[e]) {
                                     var t = this.model.nodes.getObjectById(this.segment.attributes[e]);
                                     t && t.isConnectedToSegment(this.segment) && this.doSubAction(new k.default(this.segment, t, {
@@ -6181,7 +6195,8 @@
                         return s.components[0].equals(e) || s.components.unshift(e.clone()),
                             this.splits = [n, s].map(function(e) {
                                 return this.createSplitSegmentPart(this.segment, e)
-                            }, this), !0
+                            }, this),
+                            !0
                     }
                 }, {
                     key: "_getSplitEdge",
@@ -6304,7 +6319,8 @@
                             var o = this.model.segments.getObjectById(this.node.attributes.segIDs[0]);
                             this.doSubAction(new t(o, this.node))
                         }
-                        return this.node.isDisconnected() && this.deleteNode && this.doSubAction(new y.default(this.node)), !0
+                        return this.node.isDisconnected() && this.deleteNode && this.doSubAction(new y.default(this.node)),
+                            !0
                     }
                 }, {
                     key: "_updateTurns",
@@ -6312,11 +6328,12 @@
                         var e = this,
                             t = this.model.getTurnGraph();
                         return this.keepTurns || (t.getTurnsFrom(this.vertex).forEach(function(i) {
-                                return e.doSubAction(new w.default(t, i.withUnknownTurnData()))
-                            }),
-                            t.getTurnsTo(this.vertex.getOpposite()).forEach(function(i) {
-                                return e.doSubAction(new w.default(t, i.withUnknownTurnData()))
-                            })), !0
+                                    return e.doSubAction(new w.default(t, i.withUnknownTurnData()))
+                                }),
+                                t.getTurnsTo(this.vertex.getOpposite()).forEach(function(i) {
+                                    return e.doSubAction(new w.default(t, i.withUnknownTurnData()))
+                                })),
+                            !0
                     }
                 }, {
                     key: "generateDescription",
@@ -7310,7 +7327,8 @@
                 if (this._isValidDate(e)) {
                     var i = t.view[this.options.modelAttribute].get(t.observe),
                         n = this._getTime(i);
-                    return null == n && (n = "00:00"), [e, this._padTime(n)].join(" ")
+                    return null == n && (n = "00:00"),
+                        [e, this._padTime(n)].join(" ")
                 }
                 return null
             },
@@ -7383,7 +7401,8 @@
                             i = !1;
                         if (this.state || (this.state = this.model.states.getByAttributes({
                                 isDefault: !0
-                            })[0]), !(e = this.isEmpty ? this.model.cities.getByAttributes({
+                            })[0]),
+                            !(e = this.isEmpty ? this.model.cities.getByAttributes({
                                 countryID: this.country.getID(),
                                 stateID: this.state.getID(),
                                 isEmpty: !0
@@ -7642,7 +7661,8 @@
                     key: "dragmove",
                     value: function(e) {
                         return this.map.viewPortDiv.offsets && (e.xy = new OL.Pixel(e.clientX - this.map.viewPortDiv.offsets[0], e.clientY - this.map.viewPortDiv.offsets[1])),
-                            this.lastMoveEvt = e, !this.started || this.timeoutId || e.xy.x === this.last.x && e.xy.y === this.last.y || (this.interval > 0 && (this.timeoutId = window.setTimeout(this.removeTimeout.bind(this), this.interval)),
+                            this.lastMoveEvt = e,
+                            !this.started || this.timeoutId || e.xy.x === this.last.x && e.xy.y === this.last.y || (this.interval > 0 && (this.timeoutId = window.setTimeout(this.removeTimeout.bind(this), this.interval)),
                                 this.dragging = !0,
                                 this.move(e),
                                 this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart,
@@ -7650,7 +7670,8 @@
                                         return !1
                                     }
                                 ),
-                                this.last = e.xy), !0
+                                this.last = e.xy),
+                            !0
                     }
                 }, {
                     key: "dragend",
@@ -7730,7 +7751,8 @@
                 }, {
                     key: "touchend",
                     value: function(e) {
-                        if (e.xy = this.last, !this.forced)
+                        if (e.xy = this.last,
+                            !this.forced)
                             return this.dragend(e)
                     }
                 }, {
@@ -9737,12 +9759,13 @@
                     value: function() {
                         var e = [this.node.getUniqueID()];
                         return this.segments && e.push.apply(e, (0,
-                            r.default)(this.segments.map(function(e) {
-                            return e.getUniqueID()
-                        }))), [].concat(e, (0,
-                            r.default)((0,
-                            v.default)(t.prototype.__proto__ || (0,
-                            u.default)(t.prototype), "getAffectedUniqueIds", this).call(this)))
+                                r.default)(this.segments.map(function(e) {
+                                return e.getUniqueID()
+                            }))),
+                            [].concat(e, (0,
+                                r.default)((0,
+                                v.default)(t.prototype.__proto__ || (0,
+                                u.default)(t.prototype), "getAffectedUniqueIds", this).call(this)))
                     }
                 }]),
                 t
@@ -9796,8 +9819,10 @@
                     key: "doAction",
                     value: function() {
                         return this.repo = this.model.getRepository(this.object.type),
-                            null === this.repo ? (console.error("Error deleting object: could not find an object repository for type " + this.object.type), !1) : (this.origState = this.object.state,
-                                this.removeObjct(), !0)
+                            null === this.repo ? (console.error("Error deleting object: could not find an object repository for type " + this.object.type),
+                                !1) : (this.origState = this.object.state,
+                                this.removeObjct(),
+                                !0)
                     }
                 }, {
                     key: "removeObjct",
@@ -12696,7 +12721,8 @@
                         for (var n = 0; n < i.length; n++) {
                             var s = i[n],
                                 r = s.from === s.to;
-                            if (s.from.areTurnsLocked(this.node) || this.doSubAction(s.from.lockTurns(this.node, !0)), !this.navigable || !r) {
+                            if (s.from.areTurnsLocked(this.node) || this.doSubAction(s.from.lockTurns(this.node, !0)),
+                                !this.navigable || !r) {
                                 var a = this.forSegment;
                                 if (a && a !== s.from && a !== s.to)
                                     continue;
@@ -13034,8 +13060,10 @@
                                 this.segments = this.node.attributes.segIDs.map(function(e) {
                                     return this.model.segments.getObjectById(e)
                                 }, this)),
-                            _(this.segments).invoke("getID").join(), !this.node.areSegmentsBridgable(this.segments))
-                            return console.warn("Segments " + _(this.segments).invoke("getID").join() + " are not bridgable."), !1;
+                            _(this.segments).invoke("getID").join(),
+                            !this.node.areSegmentsBridgable(this.segments))
+                            return console.warn("Segments " + _(this.segments).invoke("getID").join() + " are not bridgable."),
+                                !1;
                         var e = this.createMergedSegment(this.segments, this.node),
                             i = e.mergedSegment,
                             n = e.fromNodeID,
@@ -13246,7 +13274,8 @@
                         return this.options.updateHouseNumber && this.doSubAction(new v.default(this.feature, {
                                 houseNumber: this.attributes.houseNumber
                             })),
-                            this.doSubAction(new v.default(this.feature, s)), !0
+                            this.doSubAction(new v.default(this.feature, s)),
+                            !0
                     }
                 }, {
                     key: "getFocusFeatures",
@@ -14094,7 +14123,8 @@
                             o = t[r.getID()],
                             l = a ? !o : o;
                         return t[e.getID()] = l,
-                            l && t.numReversed++, !1
+                            l && t.numReversed++,
+                            !1
                     }),
                     n = (0,
                         o.default)(i, 2),
@@ -14274,16 +14304,17 @@
                     i = {},
                     n = {};
                 return e.forEach(function(e) {
-                    var s = null,
-                        r = t.attributeToReducer[e],
-                        a = _.unique(t.children.map(function(i) {
-                            return t._getChildAttribute(i, e)
-                        }));
-                    1 === a.length ? (s = a[0],
-                            n[e] = !1) : (n[e] = !0,
-                            s = r ? a.reduce(r) : a),
-                        i[e] = s
-                }), [i, n]
+                        var s = null,
+                            r = t.attributeToReducer[e],
+                            a = _.unique(t.children.map(function(i) {
+                                return t._getChildAttribute(i, e)
+                            }));
+                        1 === a.length ? (s = a[0],
+                                n[e] = !1) : (n[e] = !0,
+                                s = r ? a.reduce(r) : a),
+                            i[e] = s
+                    }),
+                    [i, n]
             },
             calcVirtualAttributes: function() {
                 this.mixed.fwdToll || this.mixed.revToll ? this.mixed.toll = !0 : this.attributes.toll = this.isTollRoad(),
@@ -14835,7 +14866,8 @@
                             this.model.get("active") ? e.deactivate() : e.activate();
                             break;
                         default:
-                            return e.activate(), !1
+                            return e.activate(),
+                                !1
                     }
                     this.trigger("controlTriggered")
                 }
@@ -15379,7 +15411,8 @@
                 p("add,clear,delete,forEach,get,has,set,keys,values,entries,toJSON".split(","), function(e) {
                     var t = "add" == e || "set" == e;
                     e in E && (!_ || "clear" != e) && o(b.prototype, e, function(i, n) {
-                        if (d(this, b, e), !t && _ && !c(i))
+                        if (d(this, b, e),
+                            !t && _ && !c(i))
                             return "get" == e && void 0;
                         var s = this._c[e](0 === i ? 0 : i, n);
                         return t ? this : s
@@ -17117,7 +17150,8 @@
                             this.doSubAction(new k.default(t, {
                                 splitNode: this._node,
                                 splitAtPoint: this._node.attributes.geometry
-                            })), !0
+                            })),
+                            !0
                     }
                 }, {
                     key: "generateDescription",
@@ -17514,7 +17548,8 @@
                                 this.doSubAction(e),
                                 n = e.street,
                                 this.attributes.streetID = n.getID(),
-                                this.landmark.attributes.streetID = n.getID()), !0)
+                                this.landmark.attributes.streetID = n.getID()),
+                            !0)
                     }
                 }, {
                     key: "undoAction",
@@ -17889,7 +17924,8 @@
                     value: function() {
                         return this.houseNumber.id = this.model.houseNumbers.generateUniqueID(),
                             this.houseNumberSet.numbers.push(this.houseNumber),
-                            this.model.houseNumbers.changed(this.houseNumberSet), !0
+                            this.model.houseNumbers.changed(this.houseNumberSet),
+                            !0
                     }
                 }, {
                     key: "undoAction",
@@ -17957,7 +17993,8 @@
                     key: "doAction",
                     value: function() {
                         return this.houseNumberSet.numbers = _.without(this.houseNumberSet.numbers, this.houseNumber),
-                            this.model.houseNumbers.changed(this.houseNumberSet), !0
+                            this.model.houseNumbers.changed(this.houseNumberSet),
+                            !0
                     }
                 }, {
                     key: "undoAction",
@@ -18028,7 +18065,8 @@
                             this.oldParent = this.newHouseNumber.parent,
                             this.newHouseNumber.parent = this.newSet,
                             this.doSubAction(new S(this.houseNumber.parent, this.houseNumber)),
-                            this.doSubAction(new M(this.newSet, this.newHouseNumber)), !0
+                            this.doSubAction(new M(this.newSet, this.newHouseNumber)),
+                            !0
                     }
                 }, {
                     key: "undoAction",
@@ -19262,7 +19300,8 @@
                     key: "getValue",
                     value: function(e, t) {
                         var i = e.clone();
-                        return i.transform(this.inputProjection, this.projection), !t && this.isPointInCacheRange(i) || this.calculateLat(e, i),
+                        return i.transform(this.inputProjection, this.projection),
+                            !t && this.isPointInCacheRange(i) || this.calculateLat(e, i),
                             this.currentDistance
                     }
                 }, {
@@ -19871,8 +19910,9 @@
                             var i = new y(e),
                                 n = this.shortcutToAction[i];
                             return n && !0 === n.enabled ? (this.events.triggerEvent(n.id, {
-                                action: n
-                            }), !1) : void 0
+                                    action: n
+                                }),
+                                !1) : void 0
                         }
                     }
                 }, {
@@ -20046,13 +20086,14 @@
                             return !1
                         }
                         return (0,
-                            c.default)(t).forEach(function(t) {
-                            var i = (0,
-                                    u.default)(t, 2),
-                                n = i[0],
-                                s = i[1];
-                            null != e.Actions[n] ? e.registerShortcut(s, n, !0) : e._futureShortcutsByAction[n] = s
-                        }), !0
+                                c.default)(t).forEach(function(t) {
+                                var i = (0,
+                                        u.default)(t, 2),
+                                    n = i[0],
+                                    s = i[1];
+                                null != e.Actions[n] ? e.registerShortcut(s, n, !0) : e._futureShortcutsByAction[n] = s
+                            }),
+                            !0
                     }
                 }, {
                     key: "serialize",
@@ -20427,7 +20468,8 @@
                     value: function(e) {
                         var t = this;
                         if (this.copied = !1,
-                            this.value && (e.ctrlKey || e.metaKey) && (67 === e.keyCode && (this.copied = !0), !$(e.target).is("input:visible,textarea:visible")))
+                            this.value && (e.ctrlKey || e.metaKey) && (67 === e.keyCode && (this.copied = !0),
+                                !$(e.target).is("input:visible,textarea:visible")))
                             return _.defer(function() {
                                 null == t.$clipboardContainer && (t.$clipboardContainer = $("<div class='clipboard-container'></div>")),
                                     t.$clipboardContainer.appendTo($(document.body)),
@@ -21336,7 +21378,8 @@
         initialize: function() {
             var e = this,
                 t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-            if (this.saveButtonSelector = t.saveButtonSelector, !this.saveButtonSelector)
+            if (this.saveButtonSelector = t.saveButtonSelector,
+                !this.saveButtonSelector)
                 throw new Error("Popover region initialized without the saveButtonSelector options");
             return this.$container.on("click", ".close-popover", function() {
                 return e.empty()
@@ -24500,7 +24543,8 @@
                                 break;
                             case 13:
                                 e.preventDefault(),
-                                    e.stopPropagation(), -1 === this._getCurrentSelectionIndex() ? this._doSearch(this.model.get("searchQuery")) : this._goToSelection()
+                                    e.stopPropagation(),
+                                    -1 === this._getCurrentSelectionIndex() ? this._doSearch(this.model.get("searchQuery")) : this._goToSelection()
                         }
                         this.model.get("showResults") && t && e.preventDefault()
                     }
@@ -24580,7 +24624,8 @@
                         for (var t = E, i = 0; i < t.length; i++) {
                             var n = t[i];
                             if (n.test.call(this, e))
-                                return n.search.call(this, e), !0
+                                return n.search.call(this, e),
+                                    !0
                         }
                         return !1
                     }
@@ -25237,10 +25282,11 @@
             return r
         },
         OL.Geometry.Collection.prototype.distanceTo = function(e, t) {
-            for (var i = !(t && !1 === t.edge), n = i && t && t.details, s = void 0, r = void 0, a = void 0, o = Number.POSITIVE_INFINITY, l = 0, u = this.components.length; l < u && (s = this.components[l].distanceTo(e, t), !((a = n ? s.distance : s) < o && (o = a,
-                    r = s,
-                    n && (r.model = this.components[l].model),
-                    0 === o))); ++l)
+            for (var i = !(t && !1 === t.edge), n = i && t && t.details, s = void 0, r = void 0, a = void 0, o = Number.POSITIVE_INFINITY, l = 0, u = this.components.length; l < u && (s = this.components[l].distanceTo(e, t),
+                    !((a = n ? s.distance : s) < o && (o = a,
+                        r = s,
+                        n && (r.model = this.components[l].model),
+                        0 === o))); ++l)
             ;
             return r
         },
@@ -25401,7 +25447,8 @@
     var n = i(30),
         s = i(36),
         r = function(e, t) {
-            if (s(e), !n(t) && null !== t)
+            if (s(e),
+                !n(t) && null !== t)
                 throw TypeError(t + ": can't set as prototype!")
         };
     e.exports = {
@@ -25492,7 +25539,8 @@
                                 d = t.domain;
                             try {
                                 o ? (s || (2 == e._h && N(e),
-                                        e._h = 1), !0 === o ? i = n : (d && d.enter(),
+                                        e._h = 1),
+                                    !0 === o ? i = n : (d && d.enter(),
                                         i = o(n),
                                         d && (d.exit(),
                                             a = !0)),
@@ -30157,7 +30205,8 @@
                     this.trigger("changed", {
                         subject: this.model.get("subject"),
                         body: this.model.get("body")
-                    }), !1
+                    }),
+                    !1
             }
         });
     t.default = l,
@@ -31340,9 +31389,11 @@
                                 this.isExhaustive || (i.push("<div class='btn-group'>\n<span class='drive-profile-item-action dropdown-toggle' data-toggle='dropdown'>\n<i class='fa fa-plus'></i>\n</span>\n<ul class='dropdown-menu'>"),
                                     this.hasVehicleType || (i.push("<li>\n<a class='do-init-vehicle-type' data-target='#'>"),
                                         i.push("" + t(e(this.t("restrictions.editing.driving.dropdowns.vehicle_type")))),
-                                        i.push("</a>\n</li>")), !this.hasNumPassengers && this.supportsNumPassengers && (i.push("<li>\n<a class='do-init-num-passengers' data-target='#'>"),
+                                        i.push("</a>\n</li>")),
+                                    !this.hasNumPassengers && this.supportsNumPassengers && (i.push("<li>\n<a class='do-init-num-passengers' data-target='#'>"),
                                         i.push("" + t(e(this.t("restrictions.editing.driving.dropdowns.num_passengers")))),
-                                        i.push("</a>\n</li>")), !this.hasSubscription && this.supportsSubscriptions && this.subscriptionsAvailable && (i.push("<li>\n<a class='do-init-subscription' data-target='#'>"),
+                                        i.push("</a>\n</li>")),
+                                    !this.hasSubscription && this.supportsSubscriptions && this.subscriptionsAvailable && (i.push("<li>\n<a class='do-init-subscription' data-target='#'>"),
                                         i.push("" + t(e(this.t("restrictions.editing.driving.dropdowns.subscription")))),
                                         i.push("</a>\n</li>")),
                                     i.push("</ul>\n</div>")),
@@ -32641,7 +32692,8 @@
                             this.dateAdded && t.push("<div class='date small'>" + e(this.safe_t("venues.update_requests.panel.added_on", {
                                 added_on_title: this.t("venues.update_requests.panel." + this.type),
                                 date: I18n.l("date.formats.long", this.dateAdded)
-                            })) + "</div>"), !this.hideUserDetails && this.createdBy && t.push("<div class='small user'>" + e(this.safe_t("venues.update_requests.panel.added_by", {
+                            })) + "</div>"),
+                            !this.hideUserDetails && this.createdBy && t.push("<div class='small user'>" + e(this.safe_t("venues.update_requests.panel.added_by", {
                                 added_by_title: this.t("venues.update_requests.panel.added_by_title"),
                                 username: this.h.userProfile(this.createdBy)
                             })) + "</div>"),
@@ -33811,7 +33863,8 @@
                             i = [],
                             i.push("<form class='attributes-form side-panel-section'>"),
                             this.landmark.attributes.residential || i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.fields.name"))) + "</label>\n<div class='controls'>\n<input class='form-control' autocomplete='off' maxlength='100' name='name' type='text' value='" + t(e(this.landmark.attributes.name)) + "'>\n<div class='aliases-view'></div>\n</div>\n</div>\n<div class='form-group'>\n<label class='control-label control-label-inline'>" + t(e(this.t("edit.landmark.fields.categories"))) + "</label>\n<i class='categories-tooltip waze-tooltip' data-toggle='tooltip'></i>\n<div class='categories controls'></div>\n</div>\n<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.fields.description"))) + "</label>\n<div class='controls'>\n<textarea class='form-control' name='description' maxlength='" + t(e(300)) + "'>" + n(t(e(this.landmark.attributes.description))) + "</textarea>\n</div>\n</div>"),
-                            i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.fields.navigation_points"))) + "</label>\n<div class='controls'>\n<div class='navigation-point-region'></div>\n</div>\n</div>"), !this.landmark.attributes.residential) {
+                            i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.fields.navigation_points"))) + "</label>\n<div class='controls'>\n<div class='navigation-point-region'></div>\n</div>\n</div>"),
+                            !this.landmark.attributes.residential) {
                             if (i.push("<div class='form-group'>\n<label class='control-label'>" + t(e(this.t("edit.landmark.fields.lock"))) + "</label>\n<div class='controls'>\n<div class='form-control waze-radio-container'>"),
                                 this.landmark.arePropertiesEditable())
                                 for (d = this.lockRankRange,
@@ -35394,7 +35447,8 @@
                         "not-shown": {
                             observe: "editing",
                             onGet: function(e) {
-                                return this._resizeMap(), !e
+                                return this._resizeMap(),
+                                    !e
                             }
                         }
                     }
@@ -37345,7 +37399,8 @@
                         if (13 === e.keyCode) {
                             var t = $.trim(this.ui.messageInput.val());
                             return null != this.model.get("room") && "" !== t && (this.model.sendMessage(t),
-                                this.ui.messageInput.val("")), !1
+                                    this.ui.messageInput.val("")),
+                                !1
                         }
                     }
                 }, {
@@ -37356,7 +37411,8 @@
                         });
                         t.render();
                         var i = this._isScrolledToBottomMessage();
-                        if (this.ui.messages.append(t.$el), !e.isSystem())
+                        if (this.ui.messages.append(t.$el),
+                            !e.isSystem())
                             return this._afterContentAdded(i)
                     }
                 }, {
@@ -38322,7 +38378,8 @@
                             return !1;
                         var e = this._undoStack[this._undoStack.length - 1];
                         return this._undoAction(e),
-                            W.Report.generalAction("undo_clicked"), !0
+                            W.Report.generalAction("undo_clicked"),
+                            !0
                     }
                 }, {
                     key: "_canUndoAction",
@@ -38350,7 +38407,8 @@
                         if (!this.canRedo())
                             return !1;
                         var e = this._redoStack[this._redoStack.length - 1];
-                        return this._redoAction(e), !0
+                        return this._redoAction(e),
+                            !0
                     }
                 }, {
                     key: "_canRedoAction",
@@ -39201,7 +39259,8 @@
                 var n = void 0,
                     s = void 0;
                 e.isOneWay() ? (s = t ? "arrowOneWayRestricted" : "arrowOneWayStandard",
-                    n = 360 - S.default.radToDeg(_.last(i)), !0 === e.attributes.revDirection && (n -= 180)) : s = "arrowTwoWayRestricted";
+                    n = 360 - S.default.radToDeg(_.last(i)),
+                    !0 === e.attributes.revDirection && (n -= 180)) : s = "arrowTwoWayRestricted";
                 var r = new OpenLayers.Feature.Vector(i[0], {
                     angle: n
                 });
@@ -39503,7 +39562,8 @@
                     click: function(e) {
                         var t = e.parent;
                         if (!this.dragControl.handlers.drag.started && (e._highlightPlaceHolder || e._fromNodeDragPoint || e._toNodeDragPoint) && this.features.includes(t))
-                            return this.selectionManager.unselectFeature(t), !1
+                            return this.selectionManager.unselectFeature(t),
+                                !1
                     }
                 });
                 var r = {
@@ -39867,7 +39927,8 @@
                 this.layer = t
         },
         mousemove: function(e) {
-            return !this.callbacks.over && !this.callbacks.out || (this.handle(e), !0)
+            return !this.callbacks.over && !this.callbacks.out || (this.handle(e),
+                !0)
         },
         click: function(e) {
             return !this.handle(e) || !this.stopClick
@@ -40647,7 +40708,8 @@
                                     this.currentAction.removeClass("selected"),
                                     W.accelerators.persist(),
                                     this.currentAction = null,
-                                    this.renderList()), !1
+                                    this.renderList()),
+                                !1
                     }
                 }, {
                     key: "onKeyUp",
@@ -42613,7 +42675,8 @@
             },
             _onDivClick: function(e) {
                 if (e.target.classList.contains("map-marker"))
-                    return this.events.triggerEvent("markerclick", e), !1
+                    return this.events.triggerEvent("markerclick", e),
+                        !1
             },
             CLASS_NAME: "W.Layer.Markers"
         });
@@ -42827,7 +42890,8 @@
                                 this.locationsPerEnv[e] = i,
                                 this._setLocalStorage(t.LOCAL_STORAGE_MAP_LOCATION, this.locationsPerEnv),
                                 this.isMapLocationChanged = !0,
-                                this._triggerStateChanged(), !0
+                                this._triggerStateChanged(),
+                                !0
                     }
                 }, {
                     key: "_getSelectedFeaturesByType",
@@ -42846,7 +42910,8 @@
                 }, {
                     key: "_onSelectionChanged",
                     value: function(e) {
-                        return this._updateMapSelection(), !0
+                        return this._updateMapSelection(),
+                            !0
                     }
                 }, {
                     key: "_onProblemShown",
@@ -43380,7 +43445,8 @@
                     this.clipboard.events.on({
                         copied: this._onClipboardCopied,
                         scope: this
-                    }), !0
+                    }),
+                    !0
             },
             _onPermalinkClick: function(e) {
                 return e.stopPropagation(),
@@ -43452,7 +43518,8 @@
                     this.clipboard.events.on({
                         copied: this._onClipboardCopied,
                         scope: this
-                    }), !0
+                    }),
+                    !0
             },
             onDestroy: function() {
                 return this.map.events.unregister("mousemove", this, this._onMapMouseMove),
@@ -44217,7 +44284,8 @@
                     value: function() {
                         return this.pin.setCrosshairLonlat(new OL.LonLat(0, 0)),
                             this.pin.setPanoAvailable(!1),
-                            this.pin.dragging.forceStart(!0), !1
+                            this.pin.dragging.forceStart(!0),
+                            !1
                     }
                 }, {
                     key: "_getAvailabilityRadius",
@@ -46446,7 +46514,8 @@
                     key: "selectFeature",
                     value: function(e) {
                         return !(!e || this.isSelected(e)) && (this._selectedFeatures.push(e),
-                            e.model && e.model.setSelected(!0), !0)
+                            e.model && e.model.setSelected(!0),
+                            !0)
                     }
                 }, {
                     key: "unselectFeature",
@@ -48634,7 +48703,8 @@
                     value: function(e) {
                         if (this.getChildView("contentRegion") instanceof k.default)
                             return e.preventDefault(),
-                                this._showSummaryView(), !1
+                                this._showSummaryView(),
+                                !1
                     }
                 }, {
                     key: "initialize",
@@ -49978,7 +50048,8 @@
                     value: function() {
                         var e = this.attributes,
                             t = [];
-                        return 0 === e.weekdays.length && t.push(I18n.t("restrictions.editing.validation.weekdays")), !1 === e.isAllDay && (I.isValidTime(e.fromTime) || t.push(I18n.t("restrictions.editing.validation.fromTime")),
+                        return 0 === e.weekdays.length && t.push(I18n.t("restrictions.editing.validation.weekdays")),
+                            !1 === e.isAllDay && (I.isValidTime(e.fromTime) || t.push(I18n.t("restrictions.editing.validation.fromTime")),
                                 I.isValidTime(e.toTime) || t.push(I18n.t("restrictions.editing.validation.toTime"))),
                             e.isDuringDates && (M.default.isBlank(e.startDate) ? t.push(I18n.t("restrictions.editing.validation.startDate")) : e.startDate.isBefore(moment(), "day") && t.push(I18n.t("restrictions.editing.validation.startDate_in_past")),
                                 M.default.isBlank(e.endDate) && t.push(I18n.t("restrictions.editing.validation.endDate"))),
@@ -50486,7 +50557,8 @@
                                 if (l.screenPosition = {
                                         top: o.top + a.height() / 2,
                                         left: o.left + a.width() / 2
-                                    }, !this._isOutOfBounds(n)) {
+                                    },
+                                    !this._isOutOfBounds(n)) {
                                     var u = [],
                                         d = this._calcVerticalPlacement(n),
                                         c = this._calcHorizontalPlacement(n);
@@ -51993,7 +52065,8 @@
                 }, {
                     key: "checkAndStopIfFinished",
                     value: function() {
-                        return !!this.repeatUntil(this._lastTaskResult) && (this._resolve(!0), !0)
+                        return !!this.repeatUntil(this._lastTaskResult) && (this._resolve(!0),
+                            !0)
                     }
                 }]),
                 e
@@ -54807,7 +54880,8 @@
                     key: "_onDeleteImageClicked",
                     value: function(e) {
                         var t = $(e.target).parent(".image-preview-container").data("id");
-                        return this._deleteImageById(t), !1
+                        return this._deleteImageById(t),
+                            !1
                     }
                 }, {
                     key: "_deleteImageById",
@@ -55350,8 +55424,9 @@
                             this.doSubAction(i)
                         }
                         return this.doSubAction(new v.default(this._venue, {
-                            residential: this._toResidential
-                        })), !0
+                                residential: this._toResidential
+                            })),
+                            !0
                     }
                 }, {
                     key: "getFocusFeatures",
@@ -56892,7 +56967,8 @@
                                     var t = !0,
                                         i = !0;
                                     return e === p.NAVIGATION_POINT_TYPE.EXIT && (t = !1),
-                                        e === p.NAVIGATION_POINT_TYPE.ENTRY && (i = !1), [t, i]
+                                        e === p.NAVIGATION_POINT_TYPE.ENTRY && (i = !1),
+                                        [t, i]
                                 }
                             }
                         }
@@ -56990,7 +57066,8 @@
                         fillOpacity: 0,
                         strokeDashstyle: "dash",
                         pointerEvents: "none"
-                    }), !0 === r && h._makeTransparent(),
+                    }),
+                    !0 === r && h._makeTransparent(),
                     h._drawingContext.addMarkers([h]),
                     h._drawingContext.addFeatures([h._lineToCentroid]),
                     h
@@ -58849,7 +58926,8 @@
             _getClosureKey: function(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                     i = e.forward || !1;
-                return !0 === t[e.segID] && (i = !i), [e.startDate, e.endDate, e.reason, e.location, i, e.createdBy, e.eventId].join(":")
+                return !0 === t[e.segID] && (i = !i),
+                    [e.startDate, e.endDate, e.reason, e.location, i, e.createdBy, e.eventId].join(":")
             }
         };
     t.default = h,
@@ -59382,7 +59460,8 @@
                     key: "draw",
                     value: function() {
                         if (this._drawingContext.clear(),
-                            this._driveRenderer.clear(), !(this._segments.length > 1)) {
+                            this._driveRenderer.clear(),
+                            !(this._segments.length > 1)) {
                             var e = this._segments[0];
                             e.type === d.SEGMENT && e.isDrivable() && (this._destroyTurnArrowViews(),
                                 this._drawTurnArrowsForSegment(e))
@@ -60077,7 +60156,8 @@
                     this.input = this.icon.$div.find("input"),
                     this.inputWrapper = this.icon.$div.find(".input-wrapper"),
                     this.icon.$div.find(".input-wrapper, .drag-handle").on("click", function(e) {
-                        return n.events.triggerEvent("click:input"), !1
+                        return n.events.triggerEvent("click:input"),
+                            !1
                     }),
                     this.input.on("click", function() {
                         return n.input.focus()
@@ -60501,7 +60581,8 @@
                     value: function(e) {
                         if (this.getChildView("contentRegion") instanceof w.default)
                             return e.preventDefault(),
-                                this._showSummaryView(), !1
+                                this._showSummaryView(),
+                                !1
                     }
                 }, {
                     key: "initialize",
@@ -60780,7 +60861,8 @@
                                 return t.equals(n._withCorrectDirection(i, e))
                             }),
                             a = this._withCorrectDirection(i, t);
-                        return r > -1 && (s.splice(r, 1, a), !0)
+                        return r > -1 && (s.splice(r, 1, a),
+                            !0)
                     }
                 }, {
                     key: "addRestriction",
@@ -62121,7 +62203,8 @@
             b.svgjs = "http://svgjs.com/svgjs",
             b.supported = function() {
                 return !!t.createElementNS && !!t.createElementNS(b.ns, "svg").createSVGRect
-            }(), !b.supported)
+            }(),
+            !b.supported)
             return !1;
         b.did = 1e3,
             b.eid = function(e) {
@@ -62410,7 +62493,8 @@
                 move: function(e, t) {
                     var i = this.bbox();
                     if (e -= i.x,
-                        t -= i.y, !isNaN(e) && !isNaN(t))
+                        t -= i.y,
+                        !isNaN(e) && !isNaN(t))
                         for (var n = this.value.length - 1; n >= 0; n--)
                             this.value[n] = [this.value[n][0] + e, this.value[n][1] + t];
                     return this
@@ -62430,41 +62514,51 @@
         for (var w = {
                 M: function(e, t, i) {
                     return t.x = i.x = e[0],
-                        t.y = i.y = e[1], ["M", t.x, t.y]
+                        t.y = i.y = e[1],
+                        ["M", t.x, t.y]
                 },
                 L: function(e, t) {
                     return t.x = e[0],
-                        t.y = e[1], ["L", e[0], e[1]]
+                        t.y = e[1],
+                        ["L", e[0], e[1]]
                 },
                 H: function(e, t) {
-                    return t.x = e[0], ["H", e[0]]
+                    return t.x = e[0],
+                        ["H", e[0]]
                 },
                 V: function(e, t) {
-                    return t.y = e[0], ["V", e[0]]
+                    return t.y = e[0],
+                        ["V", e[0]]
                 },
                 C: function(e, t) {
                     return t.x = e[4],
-                        t.y = e[5], ["C", e[0], e[1], e[2], e[3], e[4], e[5]]
+                        t.y = e[5],
+                        ["C", e[0], e[1], e[2], e[3], e[4], e[5]]
                 },
                 S: function(e, t) {
                     return t.x = e[2],
-                        t.y = e[3], ["S", e[0], e[1], e[2], e[3]]
+                        t.y = e[3],
+                        ["S", e[0], e[1], e[2], e[3]]
                 },
                 Q: function(e, t) {
                     return t.x = e[2],
-                        t.y = e[3], ["Q", e[0], e[1], e[2], e[3]]
+                        t.y = e[3],
+                        ["Q", e[0], e[1], e[2], e[3]]
                 },
                 T: function(e, t) {
                     return t.x = e[0],
-                        t.y = e[1], ["T", e[0], e[1]]
+                        t.y = e[1],
+                        ["T", e[0], e[1]]
                 },
                 Z: function(e, t, i) {
                     return t.x = i.x,
-                        t.y = i.y, ["Z"]
+                        t.y = i.y,
+                        ["Z"]
                 },
                 A: function(e, t) {
                     return t.x = e[5],
-                        t.y = e[6], ["A", e[0], e[1], e[2], e[3], e[4], e[5], e[6]]
+                        t.y = e[6],
+                        ["A", e[0], e[1], e[2], e[3], e[4], e[5], e[6]]
                 }
             }, E = "mlhvqtcsaz".split(""), k = 0, M = E.length; k < M; ++k)
             w[E[k]] = function(e) {
@@ -62496,7 +62590,8 @@
                 move: function(e, t) {
                     var i = this.bbox();
                     if (e -= i.x,
-                        t -= i.y, !isNaN(e) && !isNaN(t))
+                        t -= i.y,
+                        !isNaN(e) && !isNaN(t))
                         for (var n, s = this.value.length - 1; s >= 0; s--)
                             n = this.value[s][0],
                             "M" == n || "L" == n || "T" == n ? (this.value[s][1] += e,
@@ -62751,7 +62846,8 @@
                         var i = this;
                         if (!i.node.parentNode)
                             return null;
-                        if (i = b.adopt(i.node.parentNode), !t)
+                        if (i = b.adopt(i.node.parentNode),
+                            !t)
                             return i;
                         for (; i && i.node instanceof e.SVGElement;) {
                             if ("string" == typeof t ? i.matches(t) : i instanceof t)
@@ -63064,10 +63160,12 @@
                             this._callStart()
                     },
                     step: function(e) {
-                        if (e || (this.absPos = this.timeToAbsPos(+new Date)), !1 !== this.situation.loops) {
+                        if (e || (this.absPos = this.timeToAbsPos(+new Date)),
+                            !1 !== this.situation.loops) {
                             var t, i, n;
                             t = Math.max(this.absPos, 0),
-                                i = Math.floor(t), !0 === this.situation.loops || i < this.situation.loops ? (this.pos = t - i,
+                                i = Math.floor(t),
+                                !0 === this.situation.loops || i < this.situation.loops ? (this.pos = t - i,
                                     n = this.situation.loop,
                                     this.situation.loop = i) : (this.absPos = this.situation.loops,
                                     this.pos = 1,
@@ -63581,7 +63679,8 @@
                                     this.add(t)
                                 }))),
                             "number" == typeof t ? t = new b.Number(t) : b.Color.isColor(t) ? t = new b.Color(t) : Array.isArray(t) && (t = new b.Array(t)),
-                            "leading" == e ? this.leading && this.leading(t) : "string" == typeof i ? this.node.setAttributeNS(i, e, t.toString()) : this.node.setAttribute(e, t.toString()), !this.rebuild || "font-size" != e && "x" != e || this.rebuild(e, t)
+                            "leading" == e ? this.leading && this.leading(t) : "string" == typeof i ? this.node.setAttributeNS(i, e, t.toString()) : this.node.setAttribute(e, t.toString()),
+                            !this.rebuild || "font-size" != e && "x" != e || this.rebuild(e, t)
                     }
                     return this
                 }
@@ -63602,7 +63701,8 @@
                     else if (null != e.scale || null != e.scaleX || null != e.scaleY) {
                         if (p(e, s),
                             e.scaleX = null != e.scale ? e.scale : null != e.scaleX ? e.scaleX : 1,
-                            e.scaleY = null != e.scale ? e.scale : null != e.scaleY ? e.scaleY : 1, !t) {
+                            e.scaleY = null != e.scale ? e.scale : null != e.scaleY ? e.scaleY : 1,
+                            !t) {
                             var r = i.extract();
                             e.scaleX = 1 * e.scaleX / r.scaleX,
                                 e.scaleY = 1 * e.scaleY / r.scaleY
@@ -63611,7 +63711,8 @@
                     } else if (null != e.skew || null != e.skewX || null != e.skewY) {
                         if (p(e, s),
                             e.skewX = null != e.skew ? e.skew : null != e.skewX ? e.skewX : 0,
-                            e.skewY = null != e.skew ? e.skew : null != e.skewY ? e.skewY : 0, !t) {
+                            e.skewY = null != e.skew ? e.skew : null != e.skewY ? e.skewY : 0,
+                            !t) {
                             var r = i.extract();
                             i = i.multiply((new b.Matrix).skew(r.skewX, r.skewY, e.cx, e.cy).inverse())
                         }
@@ -63682,7 +63783,8 @@
                     else if ("object" == typeof e)
                         for (var i = 0, n = this.arguments.length; i < n; ++i)
                             this[this.arguments[i]] = e[this.arguments[i]];
-                    this.inversed = !1, !0 === t && (this.inversed = !0)
+                    this.inversed = !1,
+                        !0 === t && (this.inversed = !0)
                 },
                 extend: {
                     arguments: [],
@@ -63919,7 +64021,8 @@
                         return 0 == arguments.length ? new b.ViewBox(this) : this.attr("viewBox", new b.ViewBox(e, t, i, n))
                     }
                 }
-            }), ["click", "dblclick", "mousedown", "mouseup", "mouseover", "mouseout", "mousemove", "touchstart", "touchmove", "touchleave", "touchend", "touchcancel"].forEach(function(e) {
+            }),
+            ["click", "dblclick", "mousedown", "mouseup", "mouseover", "mouseout", "mousemove", "touchstart", "touchmove", "touchleave", "touchend", "touchcancel"].forEach(function(e) {
                 b.Element.prototype[e] = function(t) {
                     return b.on(this.node, e, t),
                         this
@@ -63947,7 +64050,8 @@
                     a = "";
                 if (-1 != n)
                     if (i) {
-                        if ("function" == typeof i && (i = i._svgjsListenerId), !i)
+                        if ("function" == typeof i && (i = i._svgjsListenerId),
+                            !i)
                             return;
                         b.listeners[n][s] && b.listeners[n][s][r || "*"] && (e.removeEventListener(s, b.listeners[n][s][r || "*"][i], !1),
                             delete b.listeners[n][s][r || "*"][i])
@@ -68779,25 +68883,26 @@
                                 })
                             }];
                         return W.Config.big_junctions.enable && (this.drawBigJunction = {
-                                title: I18n.t("drawing.big_junction"),
-                                iconClass: "junction-box",
-                                control: new R.default(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
-                                    accelerator: "drawBigJunction",
-                                    featureAdded: function(t) {
-                                        var i = new z.BigJunction({
-                                            geometry: t.geometry
-                                        });
-                                        e.actionManager.add(new O.default(i)),
-                                            _.defer(function() {
-                                                e.selectionManager.setSelectedModels([i])
-                                            })
-                                    }
-                                })
-                            },
-                            t.push(this.drawBigJunction)), [{
-                            name: "drawing",
-                            children: t
-                        }]
+                                    title: I18n.t("drawing.big_junction"),
+                                    iconClass: "junction-box",
+                                    control: new R.default(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
+                                        accelerator: "drawBigJunction",
+                                        featureAdded: function(t) {
+                                            var i = new z.BigJunction({
+                                                geometry: t.geometry
+                                            });
+                                            e.actionManager.add(new O.default(i)),
+                                                _.defer(function() {
+                                                    e.selectionManager.setSelectedModels([i])
+                                                })
+                                        }
+                                    })
+                                },
+                                t.push(this.drawBigJunction)),
+                            [{
+                                name: "drawing",
+                                children: t
+                            }]
                     }
                 }, {
                     key: "_generateVenueMenu",
@@ -69182,10 +69287,12 @@
                     i = t.minRankForDeletingSegment,
                     n = t.maxAllowedSegmentDeletions;
                 return e === l.SEGMENT_DELETION_REJECTION.USER_QUOTA_EXCEEDED ? (this.setTooltip(I18n.t("toolbar.delete_quota_exceeded", {
-                    quota: n
-                })), !0) : e === l.SEGMENT_DELETION_REJECTION.USER_RANK_TOO_LOW && (this.setTooltip(I18n.t("toolbar.delete_rank_not_allowed", {
-                    min_rank: o.default.normalizeLevel(i)
-                })), !0)
+                        quota: n
+                    })),
+                    !0) : e === l.SEGMENT_DELETION_REJECTION.USER_RANK_TOO_LOW && (this.setTooltip(I18n.t("toolbar.delete_rank_not_allowed", {
+                        min_rank: o.default.normalizeLevel(i)
+                    })),
+                    !0)
             },
             setEnabledByFeatures: function(e) {
                 if (!e || _.isEmpty(e))
@@ -69457,7 +69564,8 @@
                                 this.bigJunction.attributes.cityID = l.getID()),
                             this.bigJunction.getShortestTurns().forEach(function(t) {
                                 return e.doSubAction(new D.default(e.model.getTurnGraph(), t))
-                            }), !0
+                            }),
+                            !0
                     }
                 }, {
                     key: "_findShortSegments",
@@ -69820,7 +69928,8 @@
                     this.map.events.on({
                         zoomend: this.onZoom,
                         scope: this
-                    }), !0
+                    }),
+                    !0
             },
             deactivate: function() {
                 return !!OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.drawing && this.cancel(),
@@ -69829,28 +69938,34 @@
                     this.map.events.un({
                         zoomend: this.zoomend
                     }),
-                    this.layer = null, !0)
+                    this.layer = null,
+                    !0)
             },
             onZoom: function() {
                 this.drawing && this.cancel()
             },
             dblclick: function(e) {
-                return OpenLayers.Event.stop(e), !1
+                return OpenLayers.Event.stop(e),
+                    !1
             },
             mouseup: function(e) {
                 if (this.drawing && this.dragging)
-                    return this.finalize(), !1
+                    return this.finalize(),
+                        !1
             },
             mousedown: function(e) {
-                return this.drawing ? (this.finalize(), !1) : (this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart ? document.onselectstart : function() {
+                return this.drawing ? (this.finalize(),
+                    !1) : (this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart ? document.onselectstart : function() {
                         return !0
                     }),
                     document.onselectstart = function() {
                         return !1
-                    }, !this.checkModifiers(e) || (!(!this.lastDown || !this.lastDown.equals(e.xy)) || (this.drawing = !0,
+                    },
+                    !this.checkModifiers(e) || (!(!this.lastDown || !this.lastDown.equals(e.xy)) || (this.drawing = !0,
                         this.geodesicPixelSize = this.map.getGeodesicPixelSize().w,
                         null === this.lastDown && this.createFeature(e.xy),
-                        this.lastDown = e.xy, !1)))
+                        this.lastDown = e.xy,
+                        !1)))
             },
             createFeature: function(e) {
                 var t = this.map.getLonLatFromPixel(e),
@@ -69942,12 +70057,13 @@
             },
             mousemove: function(e) {
                 return this.drawing && (this.dragging = !0,
-                    this.modifyFeature(e.xy, e),
-                    this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart,
-                        document.onselectstart = function() {
-                            return !1
-                        }
-                    )), !1
+                        this.modifyFeature(e.xy, e),
+                        this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart,
+                            document.onselectstart = function() {
+                                return !1
+                            }
+                        )),
+                    !1
             },
             CLASS_NAME: "Waze.Handler.Ellipse"
         });
@@ -70121,7 +70237,8 @@
                         pannable: this.options.pannable,
                         managedAreasLayer: this.options.managedAreasLayer,
                         drawingContext: this.options.drawingContext
-                    }), [this.mainListView, this.restListView].map(function(t) {
+                    }),
+                    [this.mainListView, this.restListView].map(function(t) {
                         return e.listenTo(t, "onAreaMouseEnter", function(t) {
                                 return e.mapView.highlightArea(t.attributes.externalModel)
                             }),
@@ -70698,7 +70815,8 @@
                             pendingChanges: !1
                         })
                 }).catch(function(n) {
-                    if (t._rollbackChanges(e), !(n instanceof y.SaveError))
+                    if (t._rollbackChanges(e),
+                        !(n instanceof y.SaveError))
                         throw n;
                     i.fail(n.errors)
                 }).finally(function() {
@@ -71265,7 +71383,8 @@
                 return this.ui.formInputs.prop("disabled", !e)
             },
             validate: function() {
-                return !!this._isMTEValid() || (this._showValidationErrors(), !1)
+                return !!this._isMTEValid() || (this._showValidationErrors(),
+                    !1)
             },
             _isMTEValid: function() {
                 var e = this.ui.attributesForm.get(0).checkValidity();
@@ -71941,14 +72060,15 @@
             _drawClosures: function() {
                 var e = this,
                     t = void 0;
-                return this.drawingContext.setStyleMap(b.default), ["outline", "fill", "dash"].map(function(i) {
-                    return t = e.segments.map(function(e) {
-                            return new OL.Feature.Vector(e.geometry.clone(), {
-                                type: i
-                            })
-                        }),
-                        e.drawingContext.addFeatures(t)
-                })
+                return this.drawingContext.setStyleMap(b.default),
+                    ["outline", "fill", "dash"].map(function(i) {
+                        return t = e.segments.map(function(e) {
+                                return new OL.Feature.Vector(e.geometry.clone(), {
+                                    type: i
+                                })
+                            }),
+                            e.drawingContext.addFeatures(t)
+                    })
             },
             _toggleMarkers: function(e) {
                 var t = _.pluck(this.closures, "id"),
@@ -72039,7 +72159,8 @@
         },
         I18n.pluralization.oneRule = function(e) {
             return ["other"]
-        }, ["ko", "ja", "ms", "zh", "zh", "zh-TW"].forEach(function(e) {
+        },
+        ["ko", "ja", "ms", "zh", "zh", "zh-TW"].forEach(function(e) {
             I18n.pluralization[e] = I18n.pluralization.oneRule
         });
     var n = I18n.pluralization.get;

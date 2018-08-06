@@ -189,7 +189,8 @@
             function f(e) {
                 M(this, e),
                     this._d = new Date(null != e._d ? e._d.getTime() : NaN),
-                    this.isValid() || (this._d = new Date(NaN)), !1 === Is && (Is = !0,
+                    this.isValid() || (this._d = new Date(NaN)),
+                    !1 === Is && (Is = !0,
                         t.updateOffset(this),
                         Is = !1)
             }
@@ -514,7 +515,11 @@
                         i = y([2e3, s]),
                         this._shortMonthsParse[s] = this.monthsShort(i, "").toLocaleLowerCase(),
                         this._longMonthsParse[s] = this.months(i, "").toLocaleLowerCase();
-                return n ? "MMM" === t ? (r = fr.call(this._shortMonthsParse, a), -1 !== r ? r : null) : (r = fr.call(this._longMonthsParse, a), -1 !== r ? r : null) : "MMM" === t ? -1 !== (r = fr.call(this._shortMonthsParse, a)) ? r : (r = fr.call(this._longMonthsParse, a), -1 !== r ? r : null) : -1 !== (r = fr.call(this._longMonthsParse, a)) ? r : (r = fr.call(this._shortMonthsParse, a), -1 !== r ? r : null)
+                return n ? "MMM" === t ? (r = fr.call(this._shortMonthsParse, a),
+                    -1 !== r ? r : null) : (r = fr.call(this._longMonthsParse, a),
+                    -1 !== r ? r : null) : "MMM" === t ? -1 !== (r = fr.call(this._shortMonthsParse, a)) ? r : (r = fr.call(this._longMonthsParse, a),
+                    -1 !== r ? r : null) : -1 !== (r = fr.call(this._longMonthsParse, a)) ? r : (r = fr.call(this._shortMonthsParse, a),
+                    -1 !== r ? r : null)
             }
 
             function me(e, t, n) {
@@ -546,7 +551,8 @@
                 if ("string" == typeof t)
                     if (/^\d+$/.test(t))
                         t = _(t);
-                    else if (t = e.localeData().monthsParse(t), !o(t))
+                    else if (t = e.localeData().monthsParse(t),
+                    !o(t))
                     return e;
                 return n = Math.min(e.date(), ue(e.year(), t)),
                     e._d["set" + (e._isUTC ? "UTC" : "") + "Month"](t, n),
@@ -704,7 +710,13 @@
                         this._minWeekdaysParse[s] = this.weekdaysMin(i, "").toLocaleLowerCase(),
                         this._shortWeekdaysParse[s] = this.weekdaysShort(i, "").toLocaleLowerCase(),
                         this._weekdaysParse[s] = this.weekdays(i, "").toLocaleLowerCase();
-                return n ? "dddd" === t ? (r = fr.call(this._weekdaysParse, a), -1 !== r ? r : null) : "ddd" === t ? (r = fr.call(this._shortWeekdaysParse, a), -1 !== r ? r : null) : (r = fr.call(this._minWeekdaysParse, a), -1 !== r ? r : null) : "dddd" === t ? -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : -1 !== (r = fr.call(this._shortWeekdaysParse, a)) ? r : (r = fr.call(this._minWeekdaysParse, a), -1 !== r ? r : null) : "ddd" === t ? -1 !== (r = fr.call(this._shortWeekdaysParse, a)) ? r : -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : (r = fr.call(this._minWeekdaysParse, a), -1 !== r ? r : null) : -1 !== (r = fr.call(this._minWeekdaysParse, a)) ? r : -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : (r = fr.call(this._shortWeekdaysParse, a), -1 !== r ? r : null)
+                return n ? "dddd" === t ? (r = fr.call(this._weekdaysParse, a),
+                    -1 !== r ? r : null) : "ddd" === t ? (r = fr.call(this._shortWeekdaysParse, a),
+                    -1 !== r ? r : null) : (r = fr.call(this._minWeekdaysParse, a),
+                    -1 !== r ? r : null) : "dddd" === t ? -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : -1 !== (r = fr.call(this._shortWeekdaysParse, a)) ? r : (r = fr.call(this._minWeekdaysParse, a),
+                    -1 !== r ? r : null) : "ddd" === t ? -1 !== (r = fr.call(this._shortWeekdaysParse, a)) ? r : -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : (r = fr.call(this._minWeekdaysParse, a),
+                    -1 !== r ? r : null) : -1 !== (r = fr.call(this._minWeekdaysParse, a)) ? r : -1 !== (r = fr.call(this._weekdaysParse, a)) ? r : (r = fr.call(this._shortWeekdaysParse, a),
+                    -1 !== r ? r : null)
             }
 
             function Fe(e, t, n) {
@@ -924,7 +936,8 @@
 
             function st(e) {
                 var t;
-                if (e && e._locale && e._locale._abbr && (e = e._locale._abbr), !e)
+                if (e && e._locale && e._locale._abbr && (e = e._locale._abbr),
+                    !e)
                     return kr;
                 if (!s(e)) {
                     if (t = Qe(e))
@@ -1060,7 +1073,8 @@
                 if (e) {
                     if (Lr.indexOf(e) !== new Date(t[0], t[1], t[2]).getDay())
                         return T(n).weekdayMismatch = !0,
-                            n._isValid = !1, !1
+                            n._isValid = !1,
+                            !1
                 }
                 return !0
             }
@@ -1094,9 +1108,11 @@
                 var n = Jr.exec(e._i);
                 if (null !== n)
                     return void(e._d = new Date(+n[1]));
-                lt(e), !1 === e._isValid && (delete e._isValid,
-                    pt(e), !1 === e._isValid && (delete e._isValid,
-                        t.createFromInputFallback(e)))
+                lt(e),
+                    !1 === e._isValid && (delete e._isValid,
+                        pt(e),
+                        !1 === e._isValid && (delete e._isValid,
+                            t.createFromInputFallback(e)))
             }
 
             function ft(e) {
@@ -1213,7 +1229,8 @@
 
             function Lt(e, t) {
                 var n, r;
-                if (1 === t.length && s(t[0]) && (t = t[0]), !t.length)
+                if (1 === t.length && s(t[0]) && (t = t[0]),
+                    !t.length)
                     return Ct();
                 for (n = t[0],
                     r = 1; r < t.length; ++r)
@@ -1536,7 +1553,8 @@
                 var s, r, i;
                 if (!this.isValid())
                     return NaN;
-                if (s = jt(e, this), !s.isValid())
+                if (s = jt(e, this),
+                    !s.isValid())
                     return NaN;
                 switch (r = 6e4 * (s.utcOffset() - this.utcOffset()),
                     t = F(t)) {
@@ -1574,8 +1592,9 @@
                 var n, s, r = 12 * (t.year() - e.year()) + (t.month() - e.month()),
                     i = e.clone().add(r, "months");
                 return t - i < 0 ? (n = e.clone().add(r - 1, "months"),
-                    s = (t - i) / (i - n)) : (n = e.clone().add(r + 1, "months"),
-                    s = (t - i) / (n - i)), -(r + s) || 0
+                        s = (t - i) / (i - n)) : (n = e.clone().add(r + 1, "months"),
+                        s = (t - i) / (n - i)),
+                    -(r + s) || 0
             }
 
             function cn() {
@@ -2000,12 +2019,14 @@
             }
 
             function vs(e) {
-                return void 0 === e ? Ai : "function" == typeof e && (Ai = e, !0)
+                return void 0 === e ? Ai : "function" == typeof e && (Ai = e,
+                    !0)
             }
 
             function Ds(e, t) {
                 return void 0 !== Ci[e] && (void 0 === t ? Ci[e] : (Ci[e] = t,
-                    "s" === e && (Ci.ss = t - 1), !0))
+                    "s" === e && (Ci.ss = t - 1),
+                    !0))
             }
 
             function As(e) {
@@ -3783,11 +3804,13 @@
                             f.keys(t).length !== d)
                             return !1;
                         for (; d--;)
-                            if (l = h[d], !A(t, l) || !W(e[l], t[l], n, s))
+                            if (l = h[d],
+                                !A(t, l) || !W(e[l], t[l], n, s))
                                 return !1
                     }
                     return n.pop(),
-                        s.pop(), !0
+                        s.pop(),
+                        !0
                 },
                 f.isEqual = function(e, t) {
                     return W(e, t)
@@ -4310,7 +4333,8 @@
                         var r;
                         if ("object" == typeof e ? (r = e,
                                 s = t) : (r = {})[e] = t,
-                            s || (s = {}), !this._validate(r, s))
+                            s || (s = {}),
+                            !this._validate(r, s))
                             return !1;
                         var i = s.unset,
                             a = s.silent,
@@ -4327,7 +4351,8 @@
                             n.isEqual(u[y], t) || o.push(y),
                             n.isEqual(h[y], t) ? delete l[y] : l[y] = t,
                             i ? delete u[y] : u[y] = t;
-                        if (this.idAttribute in r && (this.id = this.get(this.idAttribute)), !a) {
+                        if (this.idAttribute in r && (this.id = this.get(this.idAttribute)),
+                            !a) {
                             o.length && (this._pending = s);
                             for (var m = 0; m < o.length; m++)
                                 this.trigger("change:" + o[m], this, u[o[m]], s)
@@ -4473,8 +4498,9 @@
                         e = n.extend({}, this.attributes, e);
                         var s = this.validationError = this.validate(e, t) || null;
                         return !s || (this.trigger("invalid", this, s, n.extend(t, {
-                            validationError: s
-                        })), !1)
+                                validationError: s
+                            })),
+                            !1)
                     }
                 }),
                 o(S, {
@@ -4605,7 +4631,8 @@
                                     this.length = this.models.length),
                                 c && this.sort({
                                     silent: !0
-                                }), !t.silent) {
+                                }),
+                                !t.silent) {
                                 for (a = 0; a < d.length; a++)
                                     null != r && (t.index = r + a),
                                     i = d[a],
@@ -4739,7 +4766,8 @@
                         t = t ? n.clone(t) : {},
                             t.collection = this;
                         var s = new this.model(e, t);
-                        return s.validationError ? (this.trigger("invalid", this, s.validationError, t), !1) : s
+                        return s.validationError ? (this.trigger("invalid", this, s.validationError, t),
+                            !1) : s
                     },
                     _removeModels: function(e, t) {
                         for (var n = [], s = 0; s < e.length; s++) {
@@ -4877,7 +4905,8 @@
                             this.el = this.$el[0]
                     },
                     delegateEvents: function(e) {
-                        if (e || (e = n.result(this, "events")), !e)
+                        if (e || (e = n.result(this, "events")),
+                            !e)
                             return this;
                         this.undelegateEvents();
                         for (var t in e) {
@@ -5077,7 +5106,8 @@
                             this._wantsHashChange && this._wantsPushState) {
                             if (!this._hasPushState && !this.atRoot()) {
                                 var t = this.root.slice(0, -1) || "/";
-                                return this.location.replace(t + "#" + this.getPath()), !0
+                                return this.location.replace(t + "#" + this.getPath()),
+                                    !0
                             }
                             this._hasPushState && this.atRoot() && this.navigate(this.getHash(), {
                                 replace: !0
@@ -5097,7 +5127,8 @@
                         var i = window.addEventListener || function(e, t) {
                             return attachEvent("on" + e, t)
                         };
-                        if (this._usePushState ? i("popstate", this.checkUrl, !1) : this._useHashChange && !this.iframe ? i("hashchange", this.checkUrl, !1) : this._wantsHashChange && (this._checkUrlInterval = setInterval(this.checkUrl, this.interval)), !this.options.silent)
+                        if (this._usePushState ? i("popstate", this.checkUrl, !1) : this._useHashChange && !this.iframe ? i("hashchange", this.checkUrl, !1) : this._wantsHashChange && (this._checkUrlInterval = setInterval(this.checkUrl, this.interval)),
+                            !this.options.silent)
                             return this.loadUrl()
                     },
                     stop: function() {
@@ -5128,7 +5159,8 @@
                         return !!this.matchRoot() && (e = this.fragment = this.getFragment(e),
                             n.some(this.handlers, function(t) {
                                 if (t.route.test(e))
-                                    return t.callback(e), !0
+                                    return t.callback(e),
+                                        !0
                             }))
                     },
                     navigate: function(e, t) {
@@ -5519,7 +5551,8 @@
                     s = n = void 0) : null == r && ("string" == typeof n ? (r = s,
                     s = void 0) : (r = s,
                     s = n,
-                    n = void 0)), !1 === r)
+                    n = void 0)),
+                !1 === r)
                 r = f;
             else if (!r)
                 return e;
@@ -5836,7 +5869,8 @@
                     for (var t = at || j(), n = Math.max(0, u.startTime + u.duration - t), s = n / u.duration || 0, i = 1 - s, a = 0, d = u.tweens.length; a < d; a++)
                         u.tweens[a].run(i);
                     return o.notifyWith(e, [u, i, n]),
-                        i < 1 && d ? n : (o.resolveWith(e, [u]), !1)
+                        i < 1 && d ? n : (o.resolveWith(e, [u]),
+                            !1)
                 },
                 u = o.promise({
                     elem: e,
@@ -5906,7 +5940,8 @@
                     de.each(e[o] || [], function(e, o) {
                         var u = o(t, n, s);
                         return "string" != typeof u || a || i[u] ? a ? !(d = u) : void 0 : (t.dataTypes.unshift(u),
-                            r(u), !1)
+                            r(u),
+                            !1)
                     }),
                     d
             }
@@ -5958,7 +5993,8 @@
                 for (a in e.converters)
                     u[a.toLowerCase()] = e.converters[a];
             for (i = l.shift(); i;)
-                if (e.responseFields[i] && (n[e.responseFields[i]] = t), !d && s && e.dataFilter && (t = e.dataFilter(t, e.dataType)),
+                if (e.responseFields[i] && (n[e.responseFields[i]] = t),
+                    !d && s && e.dataFilter && (t = e.dataFilter(t, e.dataType)),
                     d = i,
                     i = l.shift())
                     if ("*" === i)
@@ -6579,14 +6615,17 @@
                             k = !b(H),
                             (n = H.defaultView) && n.top !== n && (n.addEventListener ? n.addEventListener("unload", ge, !1) : n.attachEvent && n.attachEvent("onunload", ge)),
                             S.attributes = r(function(e) {
-                                return e.className = "i", !e.getAttribute("className")
+                                return e.className = "i",
+                                    !e.getAttribute("className")
                             }),
                             S.getElementsByTagName = r(function(e) {
-                                return e.appendChild(H.createComment("")), !e.getElementsByTagName("*").length
+                                return e.appendChild(H.createComment("")),
+                                    !e.getElementsByTagName("*").length
                             }),
                             S.getElementsByClassName = Te.test(H.getElementsByClassName),
                             S.getById = r(function(e) {
-                                return I.appendChild(e).id = F, !H.getElementsByName || !H.getElementsByName(F).length
+                                return I.appendChild(e).id = F,
+                                    !H.getElementsByName || !H.getElementsByName(F).length
                             }),
                             S.getById ? (g.find.ID = function(e, t) {
                                     if (void 0 !== t.getElementById && k) {
@@ -6864,7 +6903,8 @@
                                                     l = h[y.uniqueID] || (h[y.uniqueID] = {}),
                                                     u = l[e] || [],
                                                     m = u[0] === Y && u[1],
-                                                    S = m), !1 === S)
+                                                    S = m),
+                                                !1 === S)
                                                 for (;
                                                     (y = ++m && y && y[c] || (S = m = 0) || T.pop()) && ((o ? y.nodeName.toLowerCase() !== M : 1 !== y.nodeType) || !++S || (f && (h = y[F] || (y[F] = {}),
                                                             l = h[y.uniqueID] || (h[y.uniqueID] = {}),
@@ -6899,7 +6939,8 @@
                                 }) : function(e, s, i) {
                                     return t[0] = e,
                                         r(t, null, i, n),
-                                        t[0] = null, !n.pop()
+                                        t[0] = null,
+                                        !n.pop()
                                 }
                             }),
                             has: s(function(e) {
@@ -6946,7 +6987,8 @@
                                 return "input" === t && !!e.checked || "option" === t && !!e.selected
                             },
                             selected: function(e) {
-                                return e.parentNode && e.parentNode.selectedIndex, !0 === e.selected
+                                return e.parentNode && e.parentNode.selectedIndex,
+                                    !0 === e.selected
                             },
                             empty: function(e) {
                                 for (e = e.firstChild; e; e = e.nextSibling)
@@ -7082,9 +7124,11 @@
                                 h && (t = t.parentNode),
                                     e = e.slice(i.shift().value.length)
                             }
-                            for (r = he.needsContext.test(e) ? 0 : i.length; r-- && (a = i[r], !g.relative[o = a.type]);)
+                            for (r = he.needsContext.test(e) ? 0 : i.length; r-- && (a = i[r],
+                                    !g.relative[o = a.type]);)
                                 if ((u = g.find[o]) && (s = u(a.matches[0].replace(fe, Se), pe.test(i[0].type) && d(t.parentNode) || t))) {
-                                    if (i.splice(r, 1), !(e = s.length && l(i)))
+                                    if (i.splice(r, 1),
+                                        !(e = s.length && l(i)))
                                         return $.apply(n, s),
                                             n;
                                     break
@@ -7460,9 +7504,10 @@
                     e ? de.readyWait++ : de.ready(!0)
                 },
                 ready: function(e) {
-                    (!0 === e ? --de.readyWait : de.isReady) || (de.isReady = !0, !0 !== e && --de.readyWait > 0 || (De.resolveWith(Q, [de]),
-                        de.fn.triggerHandler && (de(Q).triggerHandler("ready"),
-                            de(Q).off("ready"))))
+                    (!0 === e ? --de.readyWait : de.isReady) || (de.isReady = !0,
+                        !0 !== e && --de.readyWait > 0 || (De.resolveWith(Q, [de]),
+                            de.fn.triggerHandler && (de(Q).triggerHandler("ready"),
+                                de(Q).off("ready"))))
                 }
             }),
             de.ready.promise = function(e) {
@@ -7642,7 +7687,8 @@
                             s--),
                         r && ("fx" === t && n.unshift("inprogress"),
                             delete i.stop,
-                            r.call(e, a, i)), !s && i && i.empty.fire()
+                            r.call(e, a, i)),
+                        !s && i && i.empty.fire()
                 },
                 _queueHooks: function(e, t) {
                     var n = t + "queueHooks";
@@ -7780,7 +7826,8 @@
                                     y = d[m] || [],
                                     o = o[2] && new RegExp("(^|\\.)" + T.join("\\.(?:.*\\.|)") + "(\\.|$)"),
                                     a = i = y.length; i--;)
-                                    l = y[i], !r && c !== l.origType || n && n.guid !== l.guid || o && !o.test(l.namespace) || s && s !== l.selector && ("**" !== s || !l.selector) || (y.splice(i, 1),
+                                    l = y[i],
+                                    !r && c !== l.origType || n && n.guid !== l.guid || o && !o.test(l.namespace) || s && s !== l.selector && ("**" !== s || !l.selector) || (y.splice(i, 1),
                                         l.selector && y.delegateCount--,
                                         h.remove && h.remove.call(e, l));
                                 a && !y.length && (h.teardown && !1 !== h.teardown.call(e, T, p.handle) || de.removeEvent(e, m, p.handle),
@@ -7798,7 +7845,8 @@
                         d = (Le.get(this, "events") || {})[e.type] || [],
                         u = de.event.special[e.type] || {};
                     if (o[0] = e,
-                        e.delegateTarget = this, !u.preDispatch || !1 !== u.preDispatch.call(this, e)) {
+                        e.delegateTarget = this,
+                        !u.preDispatch || !1 !== u.preDispatch.call(this, e)) {
                         for (a = de.event.handlers.call(this, e, d),
                             t = 0;
                             (r = a[t++]) && !e.isPropagationStopped();)
@@ -7882,21 +7930,24 @@
                     focus: {
                         trigger: function() {
                             if (this !== S() && this.focus)
-                                return this.focus(), !1
+                                return this.focus(),
+                                    !1
                         },
                         delegateType: "focusin"
                     },
                     blur: {
                         trigger: function() {
                             if (this === S() && this.blur)
-                                return this.blur(), !1
+                                return this.blur(),
+                                    !1
                         },
                         delegateType: "focusout"
                     },
                     click: {
                         trigger: function() {
                             if ("checkbox" === this.type && this.click && de.nodeName(this, "input"))
-                                return this.click(), !1
+                                return this.click(),
+                                    !1
                         },
                         _default: function(e) {
                             return de.nodeName(e.target, "a")
@@ -7984,7 +8035,8 @@
                         return this
                     }
                     return !1 !== t && "function" != typeof t || (n = t,
-                            t = void 0), !1 === n && (n = f),
+                            t = void 0),
+                        !1 === n && (n = f),
                         this.each(function() {
                             de.event.remove(this, e, n, t)
                         })
@@ -8267,7 +8319,8 @@
                         a && "get" in a && (r = a.get(e, !0, n)),
                         void 0 === r && (r = H(e, t, s)),
                         "normal" === r && t in st && (r = st[t]),
-                        "" === n || n ? (i = parseFloat(r), !0 === n || isFinite(i) ? i || 0 : r) : r
+                        "" === n || n ? (i = parseFloat(r),
+                            !0 === n || isFinite(i) ? i || 0 : r) : r
                 }
             }),
             de.each(["height", "width"], function(e, t) {
@@ -8836,7 +8889,8 @@
                             e.type = i > 1 ? d : h.bindType || m,
                             l = (Le.get(a, "events") || {})[e.type] && Le.get(a, "handle"),
                             l && l.apply(a, t),
-                            (l = u && a[u]) && l.apply && Ce(a) && (e.result = l.apply(a, t), !1 === e.result && e.preventDefault());
+                            (l = u && a[u]) && l.apply && Ce(a) && (e.result = l.apply(a, t),
+                                !1 === e.result && e.preventDefault());
                         return e.type = m,
                             r || e.isDefaultPrevented() || h._default && !1 !== h._default.apply(y.pop(), t) || !Ce(s) || u && de.isFunction(s[m]) && !de.isWindow(s) && (o = s[u],
                                 o && (s[u] = null),
@@ -8991,8 +9045,9 @@
                                 204 === e || "HEAD" === y.type ? v = "nocontent" : 304 === e ? v = "notmodified" : (v = S.state,
                                     h = S.data,
                                     f = S.error,
-                                    u = !f)) : (f = v, !e && v || (v = "error",
-                                e < 0 && (e = 0))),
+                                    u = !f)) : (f = v,
+                                !e && v || (v = "error",
+                                    e < 0 && (e = 0))),
                             b.status = e,
                             b.statusText = (t || v) + "",
                             u ? c.resolveWith(m, [h, v, b]) : c.rejectWith(m, [b, v, f]),
@@ -9084,7 +9139,8 @@
                         y.hasContent = !At.test(y.type),
                         i = y.url,
                         y.hasContent || (y.data && (i = y.url += (gt.test(i) ? "&" : "?") + y.data,
-                            delete y.data), !1 === y.cache && (y.url = bt.test(i) ? i.replace(bt, "$1_=" + St++) : i + (gt.test(i) ? "&" : "?") + "_=" + St++)),
+                                delete y.data),
+                            !1 === y.cache && (y.url = bt.test(i) ? i.replace(bt, "$1_=" + St++) : i + (gt.test(i) ? "&" : "?") + "_=" + St++)),
                         y.ifModified && (de.lastModified[i] && b.setRequestHeader("If-Modified-Since", de.lastModified[i]),
                             de.etag[i] && b.setRequestHeader("If-None-Match", de.etag[i])),
                         (y.data && y.hasContent && !1 !== y.contentType || t.contentType) && b.setRequestHeader("Content-Type", y.contentType),
@@ -19463,7 +19519,8 @@
                 if (n = t = s[1],
                     (S(t) || void 0 !== e) && !z(e))
                     return M(t) || (t = function(e, t) {
-                            if ("function" == typeof n && (t = n.call(this, e, t)), !z(t))
+                            if ("function" == typeof n && (t = n.call(this, e, t)),
+                                !z(t))
                                 return t
                         }),
                         s[1] = t,
@@ -19664,8 +19721,9 @@
         o.defaults = {},
             e.removeCookie = function(t, n) {
                 return void 0 !== e.cookie(t) && (e.cookie(t, "", e.extend({}, n, {
-                    expires: -1
-                })), !e.cookie(t))
+                        expires: -1
+                    })),
+                    !e.cookie(t))
             }
     })
 }, function(e, t, n) {
@@ -19723,7 +19781,9 @@
                                 port: a.port || ("https" == a.protocol ? 443 : 80),
                                 query: a.query || ""
                             };
-                            return n.util.merge(o, s), !o["force new connection"] && n.sockets[r] || (i = new n.Socket(o)), !o["force new connection"] && i && (n.sockets[r] = i),
+                            return n.util.merge(o, s),
+                                !o["force new connection"] && n.sockets[r] || (i = new n.Socket(o)),
+                                !o["force new connection"] && i && (n.sockets[r] = i),
                                 i = i || n.sockets[r],
                                 i.of(a.path.length > 1 ? a.path : "")
                         }
@@ -20285,7 +20345,8 @@
                                     this.isXDomain() && (u.withCredentials = !0),
                                     u.onreadystatechange = function() {
                                         4 == u.readyState && (u.onreadystatechange = r,
-                                            200 == u.status ? n(u.responseText) : 403 == u.status ? s.onError(u.responseText) : (s.connecting = !1, !s.reconnecting && s.onError(u.responseText)))
+                                            200 == u.status ? n(u.responseText) : 403 == u.status ? s.onError(u.responseText) : (s.connecting = !1,
+                                                !s.reconnecting && s.onError(u.responseText)))
                                     },
                                     u.send(null)
                             }
@@ -20304,7 +20365,8 @@
                                 this.handshake(function(s, r, i, a) {
                                     function o(e) {
                                         if (n.transport && n.transport.clearTimeouts(),
-                                            n.transport = n.getTransport(e), !n.transport)
+                                            n.transport = n.getTransport(e),
+                                            !n.transport)
                                             return n.publish("connect_failed");
                                         n.transport.ready(n, function() {
                                             n.connecting = !0,
@@ -20334,7 +20396,8 @@
                                 this
                         },
                         s.prototype.setHeartbeatTimeout = function() {
-                            if (clearTimeout(this.heartbeatTimeoutTimer), !this.transport || this.transport.heartbeats()) {
+                            if (clearTimeout(this.heartbeatTimeoutTimer),
+                                !this.transport || this.transport.heartbeats()) {
                                 var e = this;
                                 this.heartbeatTimeoutTimer = setTimeout(function() {
                                     e.transport.onClose()
@@ -20346,7 +20409,8 @@
                                 this
                         },
                         s.prototype.setBuffer = function(e) {
-                            this.doBuffer = e, !e && this.connected && this.buffer.length && (this.options.manualFlush || this.flushBuffer())
+                            this.doBuffer = e,
+                                !e && this.connected && this.buffer.length && (this.options.manualFlush || this.flushBuffer())
                         },
                         s.prototype.flushBuffer = function() {
                             this.transport.payload(this.buffer),
@@ -20936,7 +21000,8 @@
                             if (r) {
                                 var i = n && "string" == typeof n ? n : "screen";
                                 if (s && (C = null,
-                                        L = null), !C || L != i) {
+                                        L = null),
+                                    !C || L != i) {
                                     var a = p("style");
                                     a.setAttribute("type", "text/css"),
                                         a.setAttribute("media", i),
@@ -21159,7 +21224,8 @@
                     if (e && e.log && e.error || (e = {
                             log: function() {},
                             error: function() {}
-                        }), !swfobject.hasFlashPlayerVersion("10.0.0"))
+                        }),
+                        !swfobject.hasFlashPlayerVersion("10.0.0"))
                         return void e.error("Flash Player >= 10.0.0 is required.");
                     "file:" == location.protocol && e.error("WARNING: web-socket-js doesn't work in file:///... URL unless you set Flash Security Settings properly. Open the page via Web server i.e. http://..."),
                         WebSocket = function(e, t, n, s, r) {
@@ -21180,7 +21246,8 @@
                             if (this.readyState == WebSocket.CONNECTING)
                                 throw "INVALID_STATE_ERR: Web Socket connection has not been established";
                             var t = WebSocket.__flash.send(this.__id, encodeURIComponent(e));
-                            return t < 0 || (this.bufferedAmount += t, !1)
+                            return t < 0 || (this.bufferedAmount += t,
+                                !1)
                         },
                         WebSocket.prototype.close = function() {
                             this.readyState != WebSocket.CLOSED && this.readyState != WebSocket.CLOSING && (this.readyState = WebSocket.CLOSING,
@@ -21260,7 +21327,8 @@
                         },
                         WebSocket.__initialize = function() {
                             if (!WebSocket.__flash) {
-                                if (WebSocket.__swfLocation && (window.WEB_SOCKET_SWF_LOCATION = WebSocket.__swfLocation), !window.WEB_SOCKET_SWF_LOCATION)
+                                if (WebSocket.__swfLocation && (window.WEB_SOCKET_SWF_LOCATION = WebSocket.__swfLocation),
+                                    !window.WEB_SOCKET_SWF_LOCATION)
                                     return void e.error("[WebSocket] set WEB_SOCKET_SWF_LOCATION to location of WebSocketMain.swf");
                                 var t = document.createElement("div");
                                 t.id = "webSocketContainer",
@@ -21293,13 +21361,14 @@
                         },
                         WebSocket.__onFlashEvent = function() {
                             return setTimeout(function() {
-                                try {
-                                    for (var t = WebSocket.__flash.receiveEvents(), n = 0; n < t.length; ++n)
-                                        WebSocket.__instances[t[n].webSocketId].__handleEvent(t[n])
-                                } catch (t) {
-                                    e.error(t)
-                                }
-                            }, 0), !0
+                                    try {
+                                        for (var t = WebSocket.__flash.receiveEvents(), n = 0; n < t.length; ++n)
+                                            WebSocket.__instances[t[n].webSocketId].__handleEvent(t[n])
+                                    } catch (t) {
+                                        e.error(t)
+                                    }
+                                }, 0),
+                                !0
                         },
                         WebSocket.__log = function(t) {
                             e.log(decodeURIComponent(t))
@@ -21472,7 +21541,8 @@
                     },
                     s.prototype.open = function() {
                         var e = this;
-                        return t.Transport.XHR.prototype.open.call(e), !1
+                        return t.Transport.XHR.prototype.open.call(e),
+                            !1
                     },
                     s.prototype.get = function() {
                         function e() {
@@ -21490,7 +21560,8 @@
                         }
 
                         function s() {
-                            i.retryCounter++, !i.retryCounter || i.retryCounter > 3 ? i.onClose() : i.get()
+                            i.retryCounter++,
+                                !i.retryCounter || i.retryCounter > 3 ? i.onClose() : i.get()
                         }
                         if (this.isOpen) {
                             var i = this;
@@ -21718,10 +21789,12 @@
                         r(e)
                     },
                     this.prevPage = function() {
-                        return a > 0 && (r(a - 1), !0)
+                        return a > 0 && (r(a - 1),
+                            !0)
                     },
                     this.nextPage = function() {
-                        return a < n() - 1 && (r(a + 1), !0)
+                        return a < n() - 1 && (r(a + 1),
+                            !0)
                     },
                     i()
             })
@@ -21791,7 +21864,8 @@
                     n = t.closest("ul:not(.dropdown-menu)"),
                     s = t.data("target");
                 if (s || (s = t.attr("href"),
-                        s = s && s.replace(/.*(?=#[^\s]*$)/, "")), !t.parent("li").hasClass("active")) {
+                        s = s && s.replace(/.*(?=#[^\s]*$)/, "")),
+                    !t.parent("li").hasClass("active")) {
                     var r = n.find(".active:last a"),
                         i = e.Event("hide.bs.tab", {
                             relatedTarget: t[0]
@@ -21800,7 +21874,8 @@
                             relatedTarget: r[0]
                         });
                     if (r.trigger(i),
-                        t.trigger(a), !a.isDefaultPrevented() && !i.isDefaultPrevented()) {
+                        t.trigger(a),
+                        !a.isDefaultPrevented() && !i.isDefaultPrevented()) {
                         var o = e(s);
                         this.activate(t.closest("li"), n),
                             this.activate(o, o.parent(), function() {
@@ -21888,7 +21963,8 @@
                 if (!r.is(".disabled, :disabled")) {
                     var i = t(r),
                         a = i.hasClass("open");
-                    if (n(), !a) {
+                    if (n(),
+                        !a) {
                         "ontouchstart" in document.documentElement && !i.closest(".navbar-nav").length && e(document.createElement("div")).addClass("dropdown-backdrop").insertAfter(e(this)).on("click", n);
                         var o = {
                             relatedTarget: this
@@ -21906,7 +21982,8 @@
                 if (/(38|40|27|32)/.test(n.which) && !/input|textarea/i.test(n.target.tagName)) {
                     var s = e(this);
                     if (n.preventDefault(),
-                        n.stopPropagation(), !s.is(".disabled, :disabled")) {
+                        n.stopPropagation(),
+                        !s.is(".disabled, :disabled")) {
                         var r = t(s),
                             a = r.hasClass("open");
                         if (!a && 27 != n.which || a && 27 == n.which)
@@ -21916,7 +21993,8 @@
                         if (o.length) {
                             var d = o.index(n.target);
                             38 == n.which && d > 0 && d--,
-                                40 == n.which && d < o.length - 1 && d++, ~d || (d = 0),
+                                40 == n.which && d < o.length - 1 && d++,
+                                ~d || (d = 0),
                                 o.eq(d).trigger("focus")
                         }
                     }
@@ -22042,9 +22120,11 @@
                 var n = t instanceof this.constructor ? t : e(t.currentTarget).data("bs." + this.type);
                 if (n || (n = new this.constructor(t.currentTarget, this.getDelegateOptions()),
                         e(t.currentTarget).data("bs." + this.type, n)),
-                    t instanceof e.Event && (n.inState["focusout" == t.type ? "focus" : "hover"] = !1), !n.isInStateTrue()) {
+                    t instanceof e.Event && (n.inState["focusout" == t.type ? "focus" : "hover"] = !1),
+                    !n.isInStateTrue()) {
                     if (clearTimeout(n.timeout),
-                        n.hoverState = "out", !n.options.delay || !n.options.delay.hide)
+                        n.hoverState = "out",
+                        !n.options.delay || !n.options.delay.hide)
                         return n.hide();
                     n.timeout = setTimeout(function() {
                         "out" == n.hoverState && n.hide()
@@ -22144,7 +22224,8 @@
                 var r = this,
                     i = e(this.$tip),
                     a = e.Event("hide.bs." + this.type);
-                if (this.$element.trigger(a), !a.isDefaultPrevented())
+                if (this.$element.trigger(a),
+                    !a.isDefaultPrevented())
                     return i.removeClass("in"),
                         e.support.transition && i.hasClass("fade") ? i.one("bsTransitionEnd", s).emulateTransitionEnd(n.TRANSITION_DURATION) : s(),
                         this.hoverState = null,
@@ -22320,8 +22401,9 @@
             },
             lookup: function(t) {
                 var n;
-                return this.query = this.$element.val(), !this.query || this.query.length < this.options.minLength ? this.shown ? this.hide() : this : (n = e.isFunction(this.source) ? this.source(this.query, e.proxy(this.process, this)) : this.source,
-                    n ? this.process(n) : this)
+                return this.query = this.$element.val(),
+                    !this.query || this.query.length < this.options.minLength ? this.shown ? this.hide() : this : (n = e.isFunction(this.source) ? this.source(this.query, e.proxy(this.process, this)) : this.source,
+                        n ? this.process(n) : this)
             },
             process: function(t) {
                 var n = this;
@@ -22434,7 +22516,8 @@
                 this.focused = !0
             },
             blur: function(e) {
-                this.focused = !1, !this.mousedover && this.shown && this.hide()
+                this.focused = !1,
+                    !this.mousedover && this.shown && this.hide()
             },
             click: function(e) {
                 e.stopPropagation(),
@@ -22448,7 +22531,8 @@
                     e(t.currentTarget).addClass("active")
             },
             mouseleave: function(e) {
-                this.mousedover = !1, !this.focused && this.shown && this.hide()
+                this.mousedover = !1,
+                    !this.focused && this.shown && this.hide()
             }
         };
         var n = e.fn.typeahead;
@@ -22682,7 +22766,8 @@
                             e.target === e.currentTarget && ("static" == this.options.backdrop ? this.$element[0].focus() : this.hide())
                         }, this)),
                         i && this.$backdrop[0].offsetWidth,
-                        this.$backdrop.addClass("in"), !t)
+                        this.$backdrop.addClass("in"),
+                        !t)
                         return;
                     i ? this.$backdrop.one("bsTransitionEnd", t).emulateTransitionEnd(n.BACKDROP_TRANSITION_DURATION) : t()
                 } else if (!this.isShown && this.$backdrop) {
@@ -22799,7 +22884,8 @@
                     var t, r = this.$parent && this.$parent.children(".panel").children(".in, .collapsing");
                     if (!(r && r.length && (t = r.data("bs.collapse")) && t.transitioning)) {
                         var i = e.Event("show.bs.collapse");
-                        if (this.$element.trigger(i), !i.isDefaultPrevented()) {
+                        if (this.$element.trigger(i),
+                            !i.isDefaultPrevented()) {
                             r && r.length && (n.call(r, "hide"),
                                 t || r.data("bs.collapse", null));
                             var a = this.dimension();
@@ -22822,7 +22908,8 @@
             s.prototype.hide = function() {
                 if (!this.transitioning && this.$element.hasClass("in")) {
                     var t = e.Event("hide.bs.collapse");
-                    if (this.$element.trigger(t), !t.isDefaultPrevented()) {
+                    if (this.$element.trigger(t),
+                        !t.isDefaultPrevented()) {
                         var n = this.dimension();
                         this.$element[n](this.$element[n]())[0].offsetHeight,
                             this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded", !1),
@@ -23029,7 +23116,8 @@
                         relatedTarget: u,
                         direction: o
                     });
-                if (this.$element.trigger(l), !l.isDefaultPrevented()) {
+                if (this.$element.trigger(l),
+                    !l.isDefaultPrevented()) {
                     if (this.sliding = !0,
                         a && this.pause(),
                         this.$indicators.length) {
@@ -23412,7 +23500,8 @@
                             }
                     else {
                         if (!Date.Config || !Date.Config.i18n)
-                            return Date.console.error("The DateJS IETF language tag '" + r + "' is not available and has not been loaded."), !1;
+                            return Date.console.error("The DateJS IETF language tag '" + r + "' is not available and has not been loaded."),
+                                !1;
                         o = !0,
                             d(r).done(function() {
                                 s = r,
@@ -23425,7 +23514,8 @@
                             })
                     }
                     e.Parsing.Normalizer.buildReplaceData(),
-                        e.Grammar && e.Grammar.buildGrammarFormats(), !o && a && setTimeout(a, 0)
+                        e.Grammar && e.Grammar.buildGrammarFormats(),
+                        !o && a && setTimeout(a, 0)
                 },
                 getLoggedKeys: function() {
                     return r
@@ -50508,7 +50598,8 @@
             },
             e.getDaysInMonth = function(t, n) {
                 return !n && e.validateMonth(t) && (n = t,
-                    t = Date.today().getFullYear()), [31, e.isLeapYear(t) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][n]
+                        t = Date.today().getFullYear()),
+                    [31, e.isLeapYear(t) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][n]
             },
             t.getDaysInMonth = function() {
                 return e.getDaysInMonth(this.getFullYear(), this.getMonth())
@@ -50535,7 +50626,8 @@
                         return r[s[n]].offset
             },
             e.getQuarter = function(e) {
-                return e = e || new Date, [1, 2, 3, 4][Math.floor(e.getMonth() / 3)]
+                return e = e || new Date,
+                    [1, 2, 3, 4][Math.floor(e.getMonth() / 3)]
             },
             e.getDaysLeftInQuarter = function(e) {
                 e = e || new Date;
@@ -51185,7 +51277,8 @@
                 return this.same().day()
             },
             t.weekday = function() {
-                return this._nth ? u("Weekday").call(this) : this._move ? this.addWeekdays(this._orient) : !!this._is && (this._is = !1, !this.is().sat() && !this.is().sun())
+                return this._nth ? u("Weekday").call(this) : this._move ? this.addWeekdays(this._orient) : !!this._is && (this._is = !1,
+                    !this.is().sat() && !this.is().sun())
             },
             t.weekend = function() {
                 return !!this._is && (this._is = !1,
@@ -51658,7 +51751,8 @@
                 ignore: function(e) {
                     return e ? function(t) {
                             var n = null;
-                            return n = e.call(this, t), [null, n[1]]
+                            return n = e.call(this, t),
+                                [null, n[1]]
                         } :
                         null
                 },
@@ -51806,7 +51900,8 @@
                                     }
                                 else
                                     h = !0;
-                                if (h || 0 !== d[1].length || (h = !0), !h) {
+                                if (h || 0 !== d[1].length || (h = !0),
+                                    !h) {
                                     for (var m = [], T = 0; T < n.length; T++)
                                         y !== T && m.push(n[T]);
                                     o = t.set(m, s).call(this, d[1]),
@@ -52048,11 +52143,13 @@
                     o = "past" === this.orient || "subtract" === this.operator ? -1 : 1,
                     this.month && "week" === this.unit && (this.value = this.month + 1,
                         delete this.month,
-                        delete this.day), !this.month && 0 !== this.month || -1 === "year day hour minute second".indexOf(this.unit) || (this.value || (this.value = this.month + 1),
+                        delete this.day),
+                    !this.month && 0 !== this.month || -1 === "year day hour minute second".indexOf(this.unit) || (this.value || (this.value = this.month + 1),
                         this.month = null,
                         a = !0),
                     a || !this.weekday || this.day || this.days || r.setDMYFromWeekday.call(this),
-                    a && this.weekday && "month" !== this.unit && "week" !== this.unit && r.setDaysFromWeekday.call(this, i, o), !this.weekday || "week" === this.unit || this.day || this.days || (d = Date[this.weekday](),
+                    a && this.weekday && "month" !== this.unit && "week" !== this.unit && r.setDaysFromWeekday.call(this, i, o),
+                    !this.weekday || "week" === this.unit || this.day || this.days || (d = Date[this.weekday](),
                         this.day = d.getDate(),
                         d.getMonth() !== i.getMonth() && (this.month = d.getMonth())),
                     this.month && "day" === this.unit && this.operator && (this.value || (this.value = this.month + 1),
@@ -52067,7 +52164,9 @@
                     a && (this.month || 0 === this.month) && "year" !== this.unit && r.setMonthsFromMonth.call(this, i, o),
                     this.unit || (this.unit = "day"),
                     r.setUnitValue.call(this, o),
-                    n.call(this), !this.month && 0 !== this.month || this.day || (this.day = 1), !this.orient && !this.operator && "week" === this.unit && this.value && !this.day && !this.month)
+                    n.call(this),
+                    !this.month && 0 !== this.month || this.day || (this.day = 1),
+                    !this.orient && !this.operator && "week" === this.unit && this.value && !this.day && !this.month)
                     return Date.today().setWeek(this.value);
                 if ("week" === this.unit && this.weeks && !this.day && !this.month)
                     return r.generateDateFromWeeks.call(this);
@@ -53175,13 +53274,14 @@
                     return "" + e.text
                 };
             e.isArray(r) && (s = r,
-                r = {
-                    results: s
-                }), !1 === e.isFunction(r) && (s = r,
-                r = function() {
-                    return s
-                }
-            );
+                    r = {
+                        results: s
+                    }),
+                !1 === e.isFunction(r) && (s = r,
+                    r = function() {
+                        return s
+                    }
+                );
             var a = r();
             return a.text && (i = a.text,
                     e.isFunction(i) || (n = a.text,
@@ -53272,7 +53372,8 @@
             for (;;) {
                 for (o = -1,
                     d = 0,
-                    u = r.tokenSeparators.length; d < u && (l = r.tokenSeparators[d], !((o = e.indexOf(l)) >= 0)); d++)
+                    u = r.tokenSeparators.length; d < u && (l = r.tokenSeparators[d],
+                        !((o = e.indexOf(l)) >= 0)); d++)
                 ;
                 if (o < 0)
                     break;
@@ -54471,7 +54572,8 @@
                                             e.isFunction(s) && (s = s()),
                                                 e(s).each(function() {
                                                     if (a(this.id, t.id))
-                                                        return t = this, !1
+                                                        return t = this,
+                                                            !1
                                                 }),
                                                 r.push(t)
                                         }),
@@ -54528,7 +54630,8 @@
                             object: t,
                             choice: t
                         });
-                        return this.opts.element.trigger(n), !n.isDefaultPrevented()
+                        return this.opts.element.trigger(n),
+                            !n.isDefaultPrevented()
                     },
                     triggerChange: function(t) {
                         t = t || {},
@@ -54550,7 +54653,8 @@
                             t = !e;
                         return e !== this.enabledInterface && (this.container.toggleClass("select2-container-disabled", t),
                             this.close(),
-                            this.enabledInterface = e, !0)
+                            this.enabledInterface = e,
+                            !0)
                     },
                     enable: function(e) {
                         e === t && (e = !0),
@@ -54588,9 +54692,11 @@
                             g = d.top - h >= y.scrollTop(),
                             _ = a.outerWidth(!1),
                             b = a.hasClass("select2-drop-above");
-                        b ? (n = !0, !g && S && (s = !0,
-                                n = !1)) : (n = !1, !S && g && (s = !0,
-                                n = !0)),
+                        b ? (n = !0,
+                                !g && S && (s = !0,
+                                    n = !1)) : (n = !1,
+                                !S && g && (s = !0,
+                                    n = !0)),
                             s && (a.hide(),
                                 d = this.container.offset(),
                                 u = this.container.outerHeight(!1),
@@ -54611,7 +54717,8 @@
                                 h = a.outerHeight(!1)) : this.container.removeClass("select2-drop-auto-width"),
                             "static" !== this.body.css("position") && (t = this.body.offset(),
                                 M -= t.top,
-                                f -= t.left), ! function() {
+                                f -= t.left),
+                            ! function() {
                                 return f + _ <= c
                             }() && function() {
                                 return d.left + c + o.outerWidth(!1) > _
@@ -54634,7 +54741,8 @@
                     shouldOpen: function() {
                         var t;
                         return !this.opened() && (!1 !== this._enabled && !0 !== this._readonly && (t = e.Event("select2-opening"),
-                            this.opts.element.trigger(t), !t.isDefaultPrevented()))
+                            this.opts.element.trigger(t),
+                            !t.isDefaultPrevented()))
                     },
                     clearDropdownAlignmentPreference: function() {
                         this.container.removeClass("select2-drop-above"),
@@ -54645,7 +54753,8 @@
                             x.on("mousemove.select2Event", function(e) {
                                 F.x = e.pageX,
                                     F.y = e.pageY
-                            }), !0)
+                            }),
+                            !0)
                     },
                     opening: function() {
                         var t, s = this.containerEventName,
@@ -54719,7 +54828,8 @@
                             return !1;
                         var e = this.opts.nextSearchTerm(this.data(), this.lastSearchTerm);
                         return e !== t && (this.search.val(e),
-                            this.search.select(), !0)
+                            this.search.select(),
+                            !0)
                     },
                     getMaximumSelectionSize: function() {
                         return A(this.opts.maximumSelectionSize, this.opts.element)
@@ -54812,7 +54922,8 @@
                                             page: n,
                                             context: i
                                         }),
-                                        s.postprocessResults(a, !1, !1), !0 === a.more ? (t.detach().appendTo(e).html(s.opts.escapeMarkup(A(s.opts.formatLoadMore, s.opts.element, n + 1))),
+                                        s.postprocessResults(a, !1, !1),
+                                        !0 === a.more ? (t.detach().appendTo(e).html(s.opts.escapeMarkup(A(s.opts.formatLoadMore, s.opts.element, n + 1))),
                                             window.setTimeout(function() {
                                                 s.loadMoreIfNeeded()
                                             }, 10)) : t.remove(),
@@ -54844,7 +54955,8 @@
                             y = this,
                             m = u.val(),
                             T = e.data(this.container, "select2-last-term");
-                        if ((!0 === n || !T || !a(m, T)) && (e.data(this.container, "select2-last-term", m), !0 === n || !1 !== this.showSearchInput && this.opened())) {
+                        if ((!0 === n || !T || !a(m, T)) && (e.data(this.container, "select2-last-term", m),
+                                !0 === n || !1 !== this.showSearchInput && this.opened())) {
                             d = ++this.queryCount;
                             var c = this.getMaximumSelectionSize();
                             if (c >= 1 && (i = this.data(),
@@ -54886,7 +54998,8 @@
                                                     term: u.val(),
                                                     page: this.resultsPage,
                                                     context: null
-                                                }), !0 === i.more && D(h.formatLoadMore, "formatLoadMore") && (l.append("<li class='select2-more-results'>" + h.escapeMarkup(A(h.formatLoadMore, h.element, this.resultsPage)) + "</li>"),
+                                                }),
+                                                !0 === i.more && D(h.formatLoadMore, "formatLoadMore") && (l.append("<li class='select2-more-results'>" + h.escapeMarkup(A(h.formatLoadMore, h.element, this.resultsPage)) + "</li>"),
                                                     window.setTimeout(function() {
                                                         y.loadMoreIfNeeded()
                                                     }, 10)),
@@ -54975,7 +55088,8 @@
                     opening: function() {
                         var t, n, s;
                         this.opts.minimumResultsForSearch >= 0 && this.showSearch(!0),
-                            this.parent.opening.apply(this, arguments), !1 !== this.showSearchInput && this.search.val(this.focusser.val()),
+                            this.parent.opening.apply(this, arguments),
+                            !1 !== this.showSearchInput && this.search.val(this.focusser.val()),
                             this.opts.shouldFocusInput(this) && (this.search.focus(),
                                 t = this.search.get(0),
                                 t.createTextRange ? (n = t.createTextRange(),
@@ -55125,7 +55239,8 @@
                             this.opts.element.val(r ? r.val() : ""),
                                 this.selection.find(".select2-chosen").empty(),
                                 this.selection.removeData("select2-data"),
-                                this.setPlaceholder(), !1 !== t && (this.opts.element.trigger({
+                                this.setPlaceholder(),
+                                !1 !== t && (this.opts.element.trigger({
                                         type: "select2-removed",
                                         val: this.id(n),
                                         choice: n
@@ -55198,8 +55313,11 @@
                             r = this;
                         if (this.findHighlightableChoices().each2(function(e, t) {
                                 if (a(r.id(t.data("select2-data")), r.opts.element.val()))
-                                    return s = e, !1
-                            }), !1 !== n && (!0 === t && s >= 0 ? this.highlight(s) : this.highlight(0)), !0 === t) {
+                                    return s = e,
+                                        !1
+                            }),
+                            !1 !== n && (!0 === t && s >= 0 ? this.highlight(s) : this.highlight(0)),
+                            !0 === t) {
                             var i = this.opts.minimumResultsForSearch;
                             i >= 0 && this.showSearch(C(e.results) >= i)
                         }
@@ -55258,7 +55376,8 @@
                             this.select.val(e).find("option").filter(function() {
                                 return this.selected
                             }).each2(function(e, t) {
-                                return s = r.optionToData(t), !1
+                                return s = r.optionToData(t),
+                                    !1
                             }),
                             this.updateSelection(s),
                             this.setPlaceholder(),
@@ -55534,7 +55653,8 @@
                             }),
                             this.lastSearchTerm = this.search.val(),
                             this.clearSearch(),
-                            this.updateResults(), !this.select && this.opts.closeOnSelect || this.postprocessResults(e, !1, !0 === this.opts.closeOnSelect),
+                            this.updateResults(),
+                            !this.select && this.opts.closeOnSelect || this.postprocessResults(e, !1, !0 === this.opts.closeOnSelect),
                             this.opts.closeOnSelect ? (this.close(),
                                 this.search.width(10)) : this.countSelectableResults() > 0 ? (this.search.width(10),
                                 this.resizeSearch(),
@@ -55607,7 +55727,8 @@
                                 }),
                                 this.triggerChange({
                                     removed: n
-                                }), !0
+                                }),
+                                !0
                         }
                     },
                     postprocessResults: function(e, t, n) {
@@ -55621,7 +55742,9 @@
                             }),
                             a.each2(function(e, t) {
                                 t.is(".select2-result-selectable") || 0 !== t.find(".select2-result-selectable:not(.select2-selected)").length || t.addClass("select2-selected")
-                            }), -1 == this.highlight() && !1 !== n && !0 === this.opts.closeOnSelect && o.highlight(0), !this.opts.createSearchChoice && !i.filter(".select2-result:not(.select2-selected)").length > 0 && (!e || e && !e.more && 0 === this.results.find(".select2-no-results").length) && D(o.opts.formatNoMatches, "formatNoMatches") && this.results.append("<li class='select2-no-results'>" + A(o.opts.formatNoMatches, o.opts.element, o.search.val()) + "</li>")
+                            }),
+                            -1 == this.highlight() && !1 !== n && !0 === this.opts.closeOnSelect && o.highlight(0),
+                            !this.opts.createSearchChoice && !i.filter(".select2-result:not(.select2-selected)").length > 0 && (!e || e && !e.more && 0 === this.results.find(".select2-no-results").length) && D(o.opts.formatNoMatches, "formatNoMatches") && this.results.append("<li class='select2-no-results'>" + A(o.opts.formatNoMatches, o.opts.element, o.search.val()) + "</li>")
                     },
                     getMaxSearchWidth: function() {
                         return this.selection.width() - d(this.search)
@@ -55676,7 +55799,8 @@
                         if (0 === arguments.length)
                             return this.getVal();
                         if (r = this.data(),
-                            r.length || (r = []), !n && 0 !== n)
+                            r.length || (r = []),
+                            !n && 0 !== n)
                             return this.opts.element.val(""),
                                 this.updateSelection([]),
                                 this.clearSearch(),
@@ -56029,7 +56153,8 @@
                         this.minDate && d.isBefore(this.minDate) && (d = this.minDate.clone());
                     var m = this.maxDate;
                     if (this.dateLimit && m && d.clone().add(this.dateLimit).isAfter(m) && (m = d.clone().add(this.dateLimit)),
-                        m && u.isAfter(m) && (u = m.clone()), !(this.minDate && u.isBefore(this.minDate, this.timepicker ? "minute" : "day") || m && d.isAfter(m, this.timepicker ? "minute" : "day"))) {
+                        m && u.isAfter(m) && (u = m.clone()),
+                        !(this.minDate && u.isBefore(this.minDate, this.timepicker ? "minute" : "day") || m && d.isAfter(m, this.timepicker ? "minute" : "day"))) {
                         var i = document.createElement("textarea");
                         i.innerHTML = l;
                         var a = i.value;
@@ -56137,14 +56262,16 @@
                         if (this.endDate) {
                             if (e = parseInt(this.container.find(".left .hourselect").val(), 10),
                                 t = parseInt(this.container.find(".left .minuteselect").val(), 10),
-                                n = this.timePickerSeconds ? parseInt(this.container.find(".left .secondselect").val(), 10) : 0, !this.timePicker24Hour) {
+                                n = this.timePickerSeconds ? parseInt(this.container.find(".left .secondselect").val(), 10) : 0,
+                                !this.timePicker24Hour) {
                                 var s = this.container.find(".left .ampmselect").val();
                                 "PM" === s && e < 12 && (e += 12),
                                     "AM" === s && 12 === e && (e = 0)
                             }
                         } else if (e = parseInt(this.container.find(".right .hourselect").val(), 10),
                             t = parseInt(this.container.find(".right .minuteselect").val(), 10),
-                            n = this.timePickerSeconds ? parseInt(this.container.find(".right .secondselect").val(), 10) : 0, !this.timePicker24Hour) {
+                            n = this.timePickerSeconds ? parseInt(this.container.find(".right .secondselect").val(), 10) : 0,
+                            !this.timePicker24Hour) {
                             var s = this.container.find(".right .ampmselect").val();
                             "PM" === s && e < 12 && (e += 12),
                                 "AM" === s && 12 === e && (e = 0)
@@ -56270,7 +56397,8 @@
                             var i = this.container.find(".calendar.right .calendar-time div");
                             if ("" != i.html() && (n.hour(i.find(".hourselect option:selected").val() || n.hour()),
                                     n.minute(i.find(".minuteselect option:selected").val() || n.minute()),
-                                    n.second(i.find(".secondselect option:selected").val() || n.second()), !this.timePicker24Hour)) {
+                                    n.second(i.find(".secondselect option:selected").val() || n.second()),
+                                    !this.timePicker24Hour)) {
                                 var a = i.find(".ampmselect option:selected").val();
                                 "PM" === a && n.hour() < 12 && n.hour(n.hour() + 12),
                                     "AM" === a && 12 === n.hour() && n.hour(0)
@@ -56730,7 +56858,8 @@
                             "keydown.timepicker": e.proxy(this.elementKeydown, this),
                             "blur.timepicker": e.proxy(this.blurElement, this),
                             "mousewheel.timepicker DOMMouseScroll.timepicker": e.proxy(this.mousewheel, this)
-                        }), !1 !== this.template ? this.$widget = e(this.getTemplate()).on("click", e.proxy(this.widgetClick, this)) : this.$widget = !1,
+                        }),
+                        !1 !== this.template ? this.$widget = e(this.getTemplate()).on("click", e.proxy(this.widgetClick, this)) : this.$widget = !1,
                         this.showInputs && !1 !== this.$widget && this.$widget.find("input").each(function() {
                             e(this).on({
                                 "click.timepicker": function() {
@@ -57402,10 +57531,12 @@
             t.locales.default = function(e) {
                 var n, s = [],
                     r = [];
-                return e && s.push(e), !e && t.locale && s.push(t.locale),
+                return e && s.push(e),
+                    !e && t.locale && s.push(t.locale),
                     t.fallbacks && t.defaultLocale && s.push(t.defaultLocale),
                     s.forEach(function(e) {
-                        n = e.split("-")[0], ~r.indexOf(e) || r.push(e),
+                        n = e.split("-")[0],
+                            ~r.indexOf(e) || r.push(e),
                             t.fallbacks && n && n !== e && !~r.indexOf(n) && r.push(n)
                     }),
                     s.length || s.push("en"),
@@ -57837,7 +57968,8 @@
         }
 
         function d(e) {
-            return !!o(e) && (e._isAttached = !0, !0)
+            return !!o(e) && (e._isAttached = !0,
+                !0)
         }
 
         function u(e) {
@@ -57845,7 +57977,8 @@
         }
 
         function l(e) {
-            return !!u(e) && (e._isAttached = !1, !0)
+            return !!u(e) && (e._isAttached = !1,
+                !0)
         }
 
         function h(e) {
@@ -58558,7 +58691,8 @@
                     if (this._setOptions(t),
                         this.mergeOptions(t, pe),
                         this._initEl = this.el = this.getOption("el"),
-                        this.el = this.el instanceof e.$ ? this.el[0] : this.el, !this.el)
+                        this.el = this.el instanceof e.$ ? this.el[0] : this.el,
+                        !this.el)
                         throw new $({
                             name: "NoElError",
                             message: 'An "el" must be specified for a region.'
@@ -58604,7 +58738,8 @@
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                     if (t.isObject(this.el) || (this.$el = this.getEl(this.el),
                             this.el = this.$el[0],
-                            this.$el = this.Dom.getEl(this.el)), !this.$el || 0 === this.$el.length) {
+                            this.$el = this.Dom.getEl(this.el)),
+                        !this.$el || 0 === this.$el.length) {
                         if (void 0 === e.allowMissingEl ? !!t.result(this, "allowMissingEl") : !!e.allowMissingEl)
                             return !1;
                         throw new $('An "el" must exist in DOM for this region ' + this.cid)
@@ -58975,7 +59110,8 @@
                     return e.model && delete this._indexByModel[e.model.cid],
                         t.some(this._indexByCustom, t.bind(function(e, t) {
                             if (e === n)
-                                return delete this._indexByCustom[t], !0
+                                return delete this._indexByCustom[t],
+                                    !0
                         }, this)),
                         delete this._views[n],
                         this
@@ -59325,8 +59461,10 @@
                 _insertBefore: function(e, n) {
                     var s = void 0;
                     return this.sort && n < this.children.length - 1 && (s = t.find(this.children._views, function(e) {
-                        return e._index === n + 1
-                    })), !!s && (this.beforeEl(s.el, e.el), !0)
+                            return e._index === n + 1
+                        })),
+                        !!s && (this.beforeEl(s.el, e.el),
+                            !0)
                 },
                 beforeEl: function(e, t) {
                     this.$(e).before(t)
@@ -59639,7 +59777,8 @@
                     var e = this,
                         n = this._getFilter(),
                         s = this._addedViews;
-                    if (delete this._addedViews, !n)
+                    if (delete this._addedViews,
+                        !n)
                         return s || this.children._views;
                     this.triggerMethod("before:filter", this);
                     var r = [],
@@ -59785,7 +59924,8 @@
                         delete this._addedViews
                 },
                 _destroyChildren: function() {
-                    this.children && this.children.length && (this.triggerMethod("before:destroy:children", this), !1 === this.monitorViewEvents && this.Dom.detachContents(this.el, this.$el),
+                    this.children && this.children.length && (this.triggerMethod("before:destroy:children", this),
+                        !1 === this.monitorViewEvents && this.Dom.detachContents(this.el, this.$el),
                         t.each(this.children._views, t.bind(this._removeChildView, this)),
                         this.triggerMethod("destroy:children", this))
                 }
@@ -60077,7 +60217,8 @@
         function n(e, t, n, s) {
             var r = e[t];
             if (!(n && n !== r.callback && n !== r.callback._callback || s && s !== r.context))
-                return delete e[t], !0
+                return delete e[t],
+                    !0
         }
 
         function s(t, s, r, i) {
@@ -60283,7 +60424,8 @@
                             if (!(t && e.model !== t || n && e.config.selector != n))
                                 return e.model.off(e.event, e.fn),
                                     r.push(e.config._destroy),
-                                    s.push(e.model), !0
+                                    s.push(e.model),
+                                    !0
                         }),
                         e.invoke(e.uniq(s), "trigger", "stickit:unstuck", this.cid),
                         e.each(e.uniq(r), function(e) {
@@ -60604,7 +60746,8 @@
                                     u.text(t),
                                         h = n,
                                         u.data("stickit-bind-val", h),
-                                        e.isArray(h) || e.isObject(h) || u.val(h), !0 === s && u.prop("disabled", "disabled")
+                                        e.isArray(h) || e.isObject(h) || u.val(h),
+                                        !0 === s && u.prop("disabled", "disabled")
                                 }(a, o, d);
                             ! function() {
                                 return !y && null != h && null != i && h === i || !(!e.isObject(i) || !e.isEqual(h, i))
@@ -61792,7 +61935,8 @@
             return !0
         },
         OpenLayers.Util.createUrlObject = function(e, t) {
-            if (t = t || {}, !/^\w+:\/\//.test(e)) {
+            if (t = t || {},
+                !/^\w+:\/\//.test(e)) {
                 var n = window.location,
                     s = n.port ? ":" + n.port : "",
                     r = n.protocol + "//" + n.host.split(":").shift() + s;
@@ -62063,7 +62207,8 @@
                 var r = OpenLayers.Util.getElement(e);
                 if (s = s || !1,
                     "keypress" == t && (navigator.appVersion.match(/Konqueror|Safari|KHTML/) || r.attachEvent) && (t = "keydown"),
-                    this.observers || (this.observers = {}), !r._eventCacheID) {
+                    this.observers || (this.observers = {}),
+                    !r._eventCacheID) {
                     var i = "eventCacheID_";
                     r.id && (i = r.id + "_" + i),
                         r._eventCacheID = OpenLayers.Util.createUniqueID(i)
@@ -62263,7 +62408,8 @@
             },
             getMousePosition: function(e) {
                 if (this.includeXY ? this.element.hasScrollEvent || (OpenLayers.Event.observe(window, "scroll", this.clearMouseListener),
-                        this.element.hasScrollEvent = !0) : this.clearMouseCache(), !this.element.scrolls) {
+                        this.element.hasScrollEvent = !0) : this.clearMouseCache(),
+                    !this.element.scrolls) {
                     var t = OpenLayers.Util.getViewportElement();
                     this.element.scrolls = [window.pageXOffset || t.scrollLeft, window.pageYOffset || t.scrollTop]
                 }
@@ -62491,7 +62637,8 @@
                     delete this.startEvt;
                     for (var n, s, r = {}, i = 0, a = t.length; i < a && (n = t[i],
                             s = n.layer,
-                            r[s.id] = !0, !1 !== this.triggerEvent("featureclick", {
+                            r[s.id] = !0,
+                            !1 !== this.triggerEvent("featureclick", {
                                 feature: n
                             })); ++i)
                     ;
@@ -62514,13 +62661,15 @@
                     t.layer && t.layer.map ? s[t.id] || o.push(t) : delete this.cache[d];
                 for (i = 0,
                     a = r.length; i < a && (t = r[i],
-                        this.cache[t.id] = t, !1 !== this.triggerEvent("featureover", {
+                        this.cache[t.id] = t,
+                        !1 !== this.triggerEvent("featureover", {
                             feature: t
                         })); ++i)
                 ;
                 for (i = 0,
                     a = o.length; i < a && (t = o[i],
-                        delete this.cache[t.id], !1 !== this.triggerEvent("featureout", {
+                        delete this.cache[t.id],
+                        !1 !== this.triggerEvent("featureout", {
                             feature: t
                         })); ++i)
                 ;
@@ -62770,7 +62919,11 @@
                     this.options = OpenLayers.Util.extend({}, t),
                     OpenLayers.Util.extend(this, t);
                 var n = this.projection instanceof OpenLayers.Projection ? this.projection.projCode : this.projection;
-                OpenLayers.Util.applyDefaults(this, OpenLayers.Projection.defaults[n]), !this.maxExtent || this.maxExtent instanceof OpenLayers.Bounds || (this.maxExtent = new OpenLayers.Bounds(this.maxExtent)), !this.minExtent || this.minExtent instanceof OpenLayers.Bounds || (this.minExtent = new OpenLayers.Bounds(this.minExtent)), !this.restrictedExtent || this.restrictedExtent instanceof OpenLayers.Bounds || (this.restrictedExtent = new OpenLayers.Bounds(this.restrictedExtent)), !this.center || this.center instanceof OpenLayers.LonLat || (this.center = new OpenLayers.LonLat(this.center)),
+                OpenLayers.Util.applyDefaults(this, OpenLayers.Projection.defaults[n]),
+                    !this.maxExtent || this.maxExtent instanceof OpenLayers.Bounds || (this.maxExtent = new OpenLayers.Bounds(this.maxExtent)),
+                    !this.minExtent || this.minExtent instanceof OpenLayers.Bounds || (this.minExtent = new OpenLayers.Bounds(this.minExtent)),
+                    !this.restrictedExtent || this.restrictedExtent instanceof OpenLayers.Bounds || (this.restrictedExtent = new OpenLayers.Bounds(this.restrictedExtent)),
+                    !this.center || this.center instanceof OpenLayers.LonLat || (this.center = new OpenLayers.LonLat(this.center)),
                     this.layers = [],
                     this.id = OpenLayers.Util.createUniqueID("OpenLayers.Map_"),
                     this.div = OpenLayers.Util.getElement(e),
@@ -62799,7 +62952,8 @@
                     this.applyTransform(),
                     this.viewPortDiv.appendChild(this.layerContainerDiv),
                     this.updateSize(),
-                    this.eventListeners instanceof Object && this.events.on(this.eventListeners), !0 === this.autoUpdateSize && (this.updateSizeDestroy = OpenLayers.Function.bind(this.updateSize, this),
+                    this.eventListeners instanceof Object && this.events.on(this.eventListeners),
+                    !0 === this.autoUpdateSize && (this.updateSizeDestroy = OpenLayers.Function.bind(this.updateSize, this),
                         OpenLayers.Event.observe(window, "resize", this.updateSizeDestroy)),
                     this.theme) {
                     for (var r = !0, i = document.getElementsByTagName("link"), a = 0, o = i.length; a < o; ++a)
@@ -62946,7 +63100,8 @@
                         map: this,
                         layer: e
                     }),
-                    e.afterAdd(), !0)
+                    e.afterAdd(),
+                    !0)
             },
             addLayers: function(e) {
                 for (var t = 0, n = e.length; t < n; t++)
@@ -63011,7 +63166,8 @@
                         n = OpenLayers.Util.getResolutionFromScale(this.getScale(), e.units);
                     if (null == this.baseLayer || this.allOverlays || this.baseLayer.setVisibility(!1),
                         this.baseLayer = e,
-                        this.allOverlays && !this.baseLayer.visibility || (this.baseLayer.setVisibility(!0), !1 === this.baseLayer.inRange && this.baseLayer.redraw()),
+                        this.allOverlays && !this.baseLayer.visibility || (this.baseLayer.setVisibility(!0),
+                            !1 === this.baseLayer.inRange && this.baseLayer.redraw()),
                         null != t) {
                         var s = this.getZoomForResolution(n || this.resolution, !0);
                         this.setCenter(t, s, !1, !0)
@@ -63083,7 +63239,8 @@
                 if (e && !isNaN(e.h) && !isNaN(e.w)) {
                     this.events.clearMouseCache();
                     var t = this.getSize();
-                    if (null == t && (this.size = t = e), !e.equals(t)) {
+                    if (null == t && (this.size = t = e),
+                        !e.equals(t)) {
                         this.size = e;
                         for (var n = 0, s = this.layers.length; n < s; n++)
                             this.layers[n].onMapResize();
@@ -63806,7 +63963,9 @@
         addOptions: function(e, t) {
             if (null == this.options && (this.options = {}),
                 e && ("string" == typeof e.projection && (e.projection = new OpenLayers.Projection(e.projection)),
-                    e.projection && OpenLayers.Util.applyDefaults(e, OpenLayers.Projection.defaults[e.projection.getCode()]), !e.maxExtent || e.maxExtent instanceof OpenLayers.Bounds || (e.maxExtent = new OpenLayers.Bounds(e.maxExtent)), !e.minExtent || e.minExtent instanceof OpenLayers.Bounds || (e.minExtent = new OpenLayers.Bounds(e.minExtent))),
+                    e.projection && OpenLayers.Util.applyDefaults(e, OpenLayers.Projection.defaults[e.projection.getCode()]),
+                    !e.maxExtent || e.maxExtent instanceof OpenLayers.Bounds || (e.maxExtent = new OpenLayers.Bounds(e.maxExtent)),
+                    !e.minExtent || e.minExtent instanceof OpenLayers.Bounds || (e.minExtent = new OpenLayers.Bounds(e.minExtent))),
                 OpenLayers.Util.extend(this.options, e),
                 OpenLayers.Util.extend(this, e),
                 this.projection && this.projection.getUnits() && (this.units = this.projection.getUnits()),
@@ -63854,7 +64013,8 @@
                     this.projection = this.projection || this.map.projection,
                     "string" == typeof this.projection && (this.projection = new OpenLayers.Projection(this.projection)),
                     this.units = this.projection.getUnits() || this.units || this.map.units,
-                    this.initResolutions(), !this.isBaseLayer) {
+                    this.initResolutions(),
+                    !this.isBaseLayer) {
                     this.inRange = this.calculateInRange();
                     var t = this.visibility && this.inRange;
                     this.div.style.display = t ? "" : "none"
@@ -63932,7 +64092,8 @@
                 s.resolutions && (s.resolutions.sort(function(e, t) {
                         return t - e
                     }),
-                    i || (i = s.resolutions[0]), !a)) {
+                    i || (i = s.resolutions[0]),
+                    !a)) {
                 var o = s.resolutions.length - 1;
                 a = s.resolutions[o]
             }
@@ -64544,7 +64705,8 @@
                 if (e) {
                     var t = this.getTile();
                     t.parentNode === this.layer.div && this.layer.div.removeChild(t),
-                        this.setImgSrc(), !0 === this.layerAlphaHack && (e.style.filter = ""),
+                        this.setImgSrc(),
+                        !0 === this.layerAlphaHack && (e.style.filter = ""),
                         OpenLayers.Element.removeClass(e, "olImageLoadError")
                 }
                 this.canvasContext = null
@@ -64620,7 +64782,8 @@
                     e.style.opacity = this.layer.opacity,
                     this.isLoading = !1,
                     this.canvasContext = null,
-                    this.events.triggerEvent("loadend"), !0 === this.layerAlphaHack && (e.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + e.src + "', sizingMethod='scale')")
+                    this.events.triggerEvent("loadend"),
+                    !0 === this.layerAlphaHack && (e.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + e.src + "', sizingMethod='scale')")
             },
             onImageError: function() {
                 var e = this.imgDiv;
@@ -64793,7 +64956,8 @@
             if (e = e || this.map.getResolution(),
                 this.serverResolutions && -1 === OpenLayers.Util.indexOf(this.serverResolutions, e)) {
                 var n, s, r, i;
-                for (n = this.serverResolutions.length - 1; n >= 0 && (r = this.serverResolutions[n], !((s = Math.abs(r - e)) > t)); n--)
+                for (n = this.serverResolutions.length - 1; n >= 0 && (r = this.serverResolutions[n],
+                        !((s = Math.abs(r - e)) > t)); n--)
                     t = s,
                     i = r;
                 e = i
@@ -65018,7 +65182,8 @@
                         this.events.triggerEvent("tileloadstart", {
                             tile: e
                         }),
-                        this.numLoadingTiles++, !this.singleTile && this.backBuffer && this.gridResolution === this.backBufferResolution && OpenLayers.Element.addClass(e.getTile(), "olTileReplacing")
+                        this.numLoadingTiles++,
+                        !this.singleTile && this.backBuffer && this.gridResolution === this.backBufferResolution && OpenLayers.Element.addClass(e.getTile(), "olTileReplacing")
                 },
                 e.onLoadEnd = function(t) {
                     this.numLoadingTiles--;
@@ -65026,7 +65191,8 @@
                     if (this.events.triggerEvent("tileloaded", {
                             tile: e,
                             aborted: n
-                        }), !this.singleTile && !n && this.backBuffer && this.gridResolution === this.backBufferResolution) {
+                        }),
+                        !this.singleTile && !n && this.backBuffer && this.gridResolution === this.backBufferResolution) {
                         var s = e.getTile();
                         if ("none" === OpenLayers.Element.getStyle(s, "display")) {
                             var r = document.getElementById(e.id + "_bb");
@@ -65223,7 +65389,8 @@
                 parseFloat(n.VERSION) >= 1.3 && !n.EXCEPTIONS && (n.EXCEPTIONS = "INIMAGE"),
                 r.push(e, t, n, s),
                 OpenLayers.Layer.Grid.prototype.initialize.apply(this, r),
-                OpenLayers.Util.applyDefaults(this.params, OpenLayers.Util.upperCaseObject(this.DEFAULT_PARAMS)), !this.noMagic && this.params.TRANSPARENT && "true" == this.params.TRANSPARENT.toString().toLowerCase() && (null != s && s.isBaseLayer || (this.isBaseLayer = !1),
+                OpenLayers.Util.applyDefaults(this.params, OpenLayers.Util.upperCaseObject(this.DEFAULT_PARAMS)),
+                !this.noMagic && this.params.TRANSPARENT && "true" == this.params.TRANSPARENT.toString().toLowerCase() && (null != s && s.isBaseLayer || (this.isBaseLayer = !1),
                     "image/jpeg" == this.params.FORMAT && (this.params.FORMAT = OpenLayers.Util.alphaHack() ? "image/gif" : "image/png"))
         },
         clone: function(e) {
@@ -65911,13 +66078,15 @@
                 return !this.active && (this.handler && this.handler.activate(),
                     this.active = !0,
                     this.map && OpenLayers.Element.addClass(this.map.viewPortDiv, this.displayClass.replace(/ /g, "") + "Active"),
-                    this.events.triggerEvent("activate"), !0)
+                    this.events.triggerEvent("activate"),
+                    !0)
             },
             deactivate: function() {
                 return !!this.active && (this.handler && this.handler.deactivate(),
                     this.active = !1,
                     this.map && OpenLayers.Element.removeClass(this.map.viewPortDiv, this.displayClass.replace(/ /g, "") + "Active"),
-                    this.events.triggerEvent("deactivate"), !0)
+                    this.events.triggerEvent("deactivate"),
+                    !0)
             },
             CLASS_NAME: "OpenLayers.Control"
         }),
@@ -65952,7 +66121,8 @@
                     return !1;
                 for (var e = OpenLayers.Events.prototype.BROWSER_EVENTS, t = 0, n = e.length; t < n; t++)
                     this[e[t]] && this.register(e[t], this[e[t]]);
-                return this.active = !0, !0
+                return this.active = !0,
+                    !0
             },
             deactivate: function() {
                 if (!this.active)
@@ -65960,7 +66130,8 @@
                 for (var e = OpenLayers.Events.prototype.BROWSER_EVENTS, t = 0, n = e.length; t < n; t++)
                     this[e[t]] && this.unregister(e[t], this[e[t]]);
                 return this.touch = !1,
-                    this.active = !1, !0
+                    this.active = !1,
+                    !0
             },
             startTouch: function() {
                 if (!this.touch) {
@@ -65981,7 +66152,8 @@
                     this.map.events.unregister(e, this, this.setEvent)
             },
             setEvent: function(e) {
-                return this.evt = e, !0
+                return this.evt = e,
+                    !0
             },
             destroy: function() {
                 this.deactivate(),
@@ -66008,7 +66180,8 @@
         documentDrag: !1,
         documentEvents: null,
         initialize: function(e, t, n) {
-            if (OpenLayers.Handler.prototype.initialize.apply(this, arguments), !0 === this.documentDrag) {
+            if (OpenLayers.Handler.prototype.initialize.apply(this, arguments),
+                !0 === this.documentDrag) {
                 var s = this;
                 this._docMove = function(e) {
                         s.mousemove({
@@ -66047,15 +66220,17 @@
                 t
         },
         dragmove: function(e) {
-            return this.lastMoveEvt = e, !this.started || this.timeoutId || e.xy.x == this.last.x && e.xy.y == this.last.y || (!0 === this.documentDrag && this.documentEvents && (e.element === document ? (this.adjustXY(e),
-                    this.setEvent(e)) : this.removeDocumentEvents()),
-                this.interval > 0 && (this.timeoutId = setTimeout(OpenLayers.Function.bind(this.removeTimeout, this), this.interval)),
-                this.dragging = !0,
-                this.move(e),
-                this.callback("move", [e.xy]),
-                this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart,
-                    document.onselectstart = OpenLayers.Function.False),
-                this.last = e.xy), !0
+            return this.lastMoveEvt = e,
+                !this.started || this.timeoutId || e.xy.x == this.last.x && e.xy.y == this.last.y || (!0 === this.documentDrag && this.documentEvents && (e.element === document ? (this.adjustXY(e),
+                        this.setEvent(e)) : this.removeDocumentEvents()),
+                    this.interval > 0 && (this.timeoutId = setTimeout(OpenLayers.Function.bind(this.removeTimeout, this), this.interval)),
+                    this.dragging = !0,
+                    this.move(e),
+                    this.callback("move", [e.xy]),
+                    this.oldOnselectstart || (this.oldOnselectstart = document.onselectstart,
+                        document.onselectstart = OpenLayers.Function.False),
+                    this.last = e.xy),
+                !0
         },
         dragend: function(e) {
             if (this.started) {
@@ -66224,7 +66399,8 @@
                 var t = this.wheelListener;
                 return OpenLayers.Event.observe(window, "DOMMouseScroll", t),
                     OpenLayers.Event.observe(window, "mousewheel", t),
-                    OpenLayers.Event.observe(document, "mousewheel", t), !0
+                    OpenLayers.Event.observe(document, "mousewheel", t),
+                    !0
             }
             return !1
         },
@@ -66233,7 +66409,8 @@
                 var t = this.wheelListener;
                 return OpenLayers.Event.stopObserving(window, "DOMMouseScroll", t),
                     OpenLayers.Event.stopObserving(window, "mousewheel", t),
-                    OpenLayers.Event.stopObserving(document, "mousewheel", t), !0
+                    OpenLayers.Event.stopObserving(document, "mousewheel", t),
+                    !0
             }
             return !1
         },
@@ -66268,7 +66445,8 @@
                 wrapDateLine: this.citeCompliant
             }, this.layerOptions);
             return this.layer = new OpenLayers.Layer.Vector(this.CLASS_NAME, e),
-                this.map.addLayer(this.layer), !0
+                this.map.addLayer(this.layer),
+                !0
         },
         createFeature: function(e) {
             var t = this.layer.getLonLatFromViewPortPx(e),
@@ -66284,7 +66462,8 @@
             return !!OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.cancel(),
                 null != this.layer.map && (this.destroyFeature(!0),
                     this.layer.destroy(!1)),
-                this.layer = null, !0)
+                this.layer = null,
+                !0)
         },
         destroyFeature: function(e) {
             !this.layer || !e && this.persist || this.layer.destroyFeatures(),
@@ -66307,10 +66486,12 @@
             this.finalize(!0)
         },
         click: function(e) {
-            return OpenLayers.Event.stop(e), !1
+            return OpenLayers.Event.stop(e),
+                !1
         },
         dblclick: function(e) {
-            return OpenLayers.Event.stop(e), !1
+            return OpenLayers.Event.stop(e),
+                !1
         },
         modifyFeature: function(e) {
             this.point || this.createFeature(e);
@@ -66359,17 +66540,21 @@
             return this.mouseDown = !0,
                 this.lastDown = e.xy,
                 this.touch || this.modifyFeature(e.xy),
-                this.stoppedDown = this.stopDown, !this.stopDown
+                this.stoppedDown = this.stopDown,
+                !this.stopDown
         },
         move: function(e) {
-            return this.touch || this.mouseDown && !this.stoppedDown || this.modifyFeature(e.xy), !0
+            return this.touch || this.mouseDown && !this.stoppedDown || this.modifyFeature(e.xy),
+                !0
         },
         up: function(e) {
             return this.mouseDown = !1,
-                this.stoppedDown = this.stopDown, !this.checkModifiers(e) || (!(!this.lastUp || !this.lastUp.equals(e.xy)) || (!this.lastDown || !this.passesTolerance(this.lastDown, e.xy, this.pixelTolerance) || (this.touch && this.modifyFeature(e.xy),
+                this.stoppedDown = this.stopDown,
+                !this.checkModifiers(e) || (!(!this.lastUp || !this.lastUp.equals(e.xy)) || (!this.lastDown || !this.passesTolerance(this.lastDown, e.xy, this.pixelTolerance) || (this.touch && this.modifyFeature(e.xy),
                     this.persist && this.destroyPersistedFeature(),
                     this.lastUp = e.xy,
-                    this.finalize(), !this.stopUp)))
+                    this.finalize(),
+                    !this.stopUp)))
         },
         mouseout: function(e) {
             OpenLayers.Util.mouseLeft(e, this.map.viewPortDiv) && (this.stoppedDown = this.stopDown,
@@ -66478,7 +66663,8 @@
         redo: function() {
             var e = this.redoStack && this.redoStack.pop();
             return e && (this.line.geometry.addComponent(e, this.getCurrentPointIndex()),
-                this.drawFeature()), !!e
+                    this.drawFeature()),
+                !!e
         },
         freehandMode: function(e) {
             return this.freehandToggle && e[this.freehandToggle] ? !this.freehand : this.freehand
@@ -66507,7 +66693,8 @@
         touchstart: function(e) {
             return this.timerId && this.passesTolerance(this.lastTouchPx, e.xy, this.doubleTouchTolerance) ? (this.finishGeometry(),
                 window.clearTimeout(this.timerId),
-                this.timerId = null, !1) : (this.timerId && (window.clearTimeout(this.timerId),
+                this.timerId = null,
+                !1) : (this.timerId && (window.clearTimeout(this.timerId),
                     this.timerId = null),
                 this.timerId = window.setTimeout(OpenLayers.Function.bind(function() {
                     this.timerId = null
@@ -66522,12 +66709,15 @@
                 this.touch || this.lastDown && this.passesTolerance(this.lastDown, e.xy, this.pixelTolerance) || this.modifyFeature(e.xy, !!this.lastUp),
                 this.mouseDown = !0,
                 this.lastDown = e.xy,
-                this.stoppedDown = t, !t
+                this.stoppedDown = t,
+                !t
         },
         move: function(e) {
             return this.stoppedDown && this.freehandMode(e) ? (this.persist && this.destroyPersistedFeature(),
                 this.maxVertices && this.line && this.line.geometry.components.length === this.maxVertices ? (this.removePoint(),
-                    this.finalize()) : this.addPoint(e.xy), !1) : (this.touch || this.mouseDown && !this.stoppedDown || this.modifyFeature(e.xy, !!this.lastUp), !0)
+                    this.finalize()) : this.addPoint(e.xy),
+                !1) : (this.touch || this.mouseDown && !this.stoppedDown || this.modifyFeature(e.xy, !!this.lastUp),
+                !0)
         },
         up: function(e) {
             return !this.mouseDown || this.lastUp && this.lastUp.equals(e.xy) || (this.stoppedDown && this.freehandMode(e) ? (this.persist && this.destroyPersistedFeature(),
@@ -66538,7 +66728,8 @@
                     this.lastUp = e.xy,
                     this.line.geometry.components.length === this.maxVertices + 1 && this.finishGeometry())),
                 this.stoppedDown = this.stopDown,
-                this.mouseDown = !1, !this.stopUp
+                this.mouseDown = !1,
+                !this.stopUp
         },
         finishGeometry: function() {
             var e = this.line.geometry.components.length - 1;
@@ -66547,7 +66738,8 @@
                 this.finalize()
         },
         dblclick: function(e) {
-            return this.freehandMode(e) || this.finishGeometry(), !1
+            return this.freehandMode(e) || this.finishGeometry(),
+                !1
         },
         CLASS_NAME: "OpenLayers.Handler.Path"
     })
@@ -66622,7 +66814,8 @@
                 }
             }
             return t ? this.polygon.state !== OpenLayers.State.INSERT && (this.polygon.state = OpenLayers.State.UPDATE) : this.polygon.geometry.removeComponent(e),
-                this.restoreFeature(), !1
+                this.restoreFeature(),
+                !1
         },
         cancel: function() {
             return this.drawingHole && (this.polygon.geometry.removeComponent(this.line.geometry),
@@ -66992,7 +67185,8 @@
                         e = e.scale(1 / n);
                     this.extent = e.wrapDateLine(this.map.getMaxExtent()).scale(n)
                 }
-                return t && (this.resolution = null), !0
+                return t && (this.resolution = null),
+                    !0
             },
             setSize: function(e) {
                 this.size = e.clone(),
@@ -67061,7 +67255,8 @@
             applyDefaultSymbolizer: function(e) {
                 var t = OpenLayers.Util.extend({}, OpenLayers.Renderer.defaultSymbolizer);
                 return !1 === e.stroke && (delete t.strokeWidth,
-                        delete t.strokeColor), !1 === e.fill && delete t.fillColor,
+                        delete t.strokeColor),
+                    !1 === e.fill && delete t.fillColor,
                     OpenLayers.Util.extend(t, e),
                     t
             },
@@ -67151,10 +67346,12 @@
                 OpenLayers.Element.removeClass(this.map.viewPortDiv, "olDrawBox")
         },
         activate: function() {
-            return !!OpenLayers.Handler.prototype.activate.apply(this, arguments) && (this.dragHandler.activate(), !0)
+            return !!OpenLayers.Handler.prototype.activate.apply(this, arguments) && (this.dragHandler.activate(),
+                !0)
         },
         deactivate: function() {
-            return !!OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.dragHandler.deactivate() && this.zoomBox && this.removeBox(), !0)
+            return !!OpenLayers.Handler.prototype.deactivate.apply(this, arguments) && (this.dragHandler.deactivate() && this.zoomBox && this.removeBox(),
+                !0)
         },
         getBoxOffsets: function() {
             if (!this.boxOffsets) {
@@ -67468,7 +67665,8 @@
         },
         removeComponent: function(e) {
             return OpenLayers.Util.removeItem(this.components, e),
-                this.clearBounds(), !0
+                this.clearBounds(),
+                !0
         },
         getLength: function() {
             for (var e = 0, t = 0, n = this.components.length; t < n; t++)
@@ -67536,9 +67734,10 @@
             return this
         },
         distanceTo: function(e, t) {
-            for (var n, s, r, i = !(t && !1 === t.edge), a = i && t && t.details, o = Number.POSITIVE_INFINITY, d = 0, u = this.components.length; d < u && (n = this.components[d].distanceTo(e, t), !((r = a ? n.distance : n) < o && (o = r,
-                    s = n,
-                    0 == o))); ++d)
+            for (var n, s, r, i = !(t && !1 === t.edge), a = i && t && t.details, o = Number.POSITIVE_INFINITY, d = 0, u = this.components.length; d < u && (n = this.components[d].distanceTo(e, t),
+                    !((r = a ? n.distance : n) < o && (o = r,
+                        s = n,
+                        0 == o))); ++d)
             ;
             return s
         },
@@ -67731,9 +67930,11 @@
                         o = i.x2,
                         d = i.y1,
                         u = i.y2;
-                    for (var c = 0, p = s.length; c < p && (l = s[c], !(l.x1 > o)); ++c)
+                    for (var c = 0, p = s.length; c < p && (l = s[c],
+                            !(l.x1 > o)); ++c)
                         if (!(l.x2 < a) && (h = l.y1,
-                                y = l.y2, !(Math.min(h, y) > Math.max(d, u)) && !(Math.max(h, y) < Math.min(d, u)) && OpenLayers.Geometry.segmentsIntersect(i, l))) {
+                                y = l.y2,
+                                !(Math.min(h, y) > Math.max(d, u)) && !(Math.max(h, y) < Math.min(d, u)) && OpenLayers.Geometry.segmentsIntersect(i, l))) {
                             t = !0;
                             break e
                         }
@@ -68200,20 +68401,24 @@
         touchstart: function(e) {
             return this.startTouch(),
                 this.down = this.getEventInfo(e),
-                this.last = this.getEventInfo(e), !0
+                this.last = this.getEventInfo(e),
+                !0
         },
         touchmove: function(e) {
-            return this.last = this.getEventInfo(e), !0
+            return this.last = this.getEventInfo(e),
+                !0
         },
         touchend: function(e) {
             return this.down && (e.xy = this.last.xy,
-                e.lastTouches = this.last.touches,
-                this.handleSingle(e),
-                this.down = null), !0
+                    e.lastTouches = this.last.touches,
+                    this.handleSingle(e),
+                    this.down = null),
+                !0
         },
         mousedown: function(e) {
             return this.down = this.getEventInfo(e),
-                this.last = this.getEventInfo(e), !0
+                this.last = this.getEventInfo(e),
+                !0
         },
         mouseup: function(e) {
             var t = !0;
@@ -68224,7 +68429,8 @@
             if (this.passesTolerance(e)) {
                 if (null != this.rightclickTimerId)
                     return this.clearTimer(),
-                        this.callback("dblrightclick", [e]), !this.stopDouble;
+                        this.callback("dblrightclick", [e]),
+                        !this.stopDouble;
                 var t = this.double ? OpenLayers.Util.extend({}, e) : this.callback("rightclick", [e]),
                     n = OpenLayers.Function.bind(this.delayedRightCall, this, t);
                 this.rightclickTimerId = window.setTimeout(n, this.delay)
@@ -68237,10 +68443,12 @@
         },
         click: function(e) {
             return this.last || (this.last = this.getEventInfo(e)),
-                this.handleSingle(e), !this.stopSingle
+                this.handleSingle(e),
+                !this.stopSingle
         },
         dblclick: function(e) {
-            return this.handleDouble(e), !this.stopDouble
+            return this.handleDouble(e),
+                !this.stopDouble
         },
         handleDouble: function(e) {
             this.passesDblclickTolerance(e) && (this.double && this.callback("dblclick", [e]),
@@ -68523,22 +68731,26 @@
                 this.layer = t
         },
         touchstart: function(e) {
-            return this.startTouch(), !!OpenLayers.Event.isMultiTouch(e) || this.mousedown(e)
+            return this.startTouch(),
+                !!OpenLayers.Event.isMultiTouch(e) || this.mousedown(e)
         },
         touchmove: function(e) {
             OpenLayers.Event.preventDefault(e)
         },
         mousedown: function(e) {
-            return (OpenLayers.Event.isLeftClick(e) || OpenLayers.Event.isSingleTouch(e)) && (this.down = e.xy), !this.handle(e) || !this.stopDown
+            return (OpenLayers.Event.isLeftClick(e) || OpenLayers.Event.isSingleTouch(e)) && (this.down = e.xy),
+                !this.handle(e) || !this.stopDown
         },
         mouseup: function(e) {
-            return this.up = e.xy, !this.handle(e) || !this.stopUp
+            return this.up = e.xy,
+                !this.handle(e) || !this.stopUp
         },
         click: function(e) {
             return !this.handle(e) || !this.stopClick
         },
         mousemove: function(e) {
-            return !this.callbacks.over && !this.callbacks.out || (this.handle(e), !0)
+            return !this.callbacks.over && !this.callbacks.out || (this.handle(e),
+                !0)
         },
         dblclick: function(e) {
             return !this.handle(e)
@@ -68947,26 +69159,29 @@
                 if (!0 === this.defaultsPerSymbolizer) {
                     var i = this.defaultStyle;
                     OpenLayers.Util.applyDefaults(r, {
-                        pointRadius: i.pointRadius
-                    }), !0 !== r.stroke && !0 !== r.graphic || OpenLayers.Util.applyDefaults(r, {
-                        strokeWidth: i.strokeWidth,
-                        strokeColor: i.strokeColor,
-                        strokeOpacity: i.strokeOpacity,
-                        strokeDashstyle: i.strokeDashstyle,
-                        strokeLinecap: i.strokeLinecap
-                    }), !0 !== r.fill && !0 !== r.graphic || OpenLayers.Util.applyDefaults(r, {
-                        fillColor: i.fillColor,
-                        fillOpacity: i.fillOpacity
-                    }), !0 === r.graphic && OpenLayers.Util.applyDefaults(r, {
-                        pointRadius: this.defaultStyle.pointRadius,
-                        externalGraphic: this.defaultStyle.externalGraphic,
-                        graphicName: this.defaultStyle.graphicName,
-                        graphicOpacity: this.defaultStyle.graphicOpacity,
-                        graphicWidth: this.defaultStyle.graphicWidth,
-                        graphicHeight: this.defaultStyle.graphicHeight,
-                        graphicXOffset: this.defaultStyle.graphicXOffset,
-                        graphicYOffset: this.defaultStyle.graphicYOffset
-                    })
+                            pointRadius: i.pointRadius
+                        }),
+                        !0 !== r.stroke && !0 !== r.graphic || OpenLayers.Util.applyDefaults(r, {
+                            strokeWidth: i.strokeWidth,
+                            strokeColor: i.strokeColor,
+                            strokeOpacity: i.strokeOpacity,
+                            strokeDashstyle: i.strokeDashstyle,
+                            strokeLinecap: i.strokeLinecap
+                        }),
+                        !0 !== r.fill && !0 !== r.graphic || OpenLayers.Util.applyDefaults(r, {
+                            fillColor: i.fillColor,
+                            fillOpacity: i.fillOpacity
+                        }),
+                        !0 === r.graphic && OpenLayers.Util.applyDefaults(r, {
+                            pointRadius: this.defaultStyle.pointRadius,
+                            externalGraphic: this.defaultStyle.externalGraphic,
+                            graphicName: this.defaultStyle.graphicName,
+                            graphicOpacity: this.defaultStyle.graphicOpacity,
+                            graphicWidth: this.defaultStyle.graphicWidth,
+                            graphicHeight: this.defaultStyle.graphicHeight,
+                            graphicXOffset: this.defaultStyle.graphicXOffset,
+                            graphicYOffset: this.defaultStyle.graphicYOffset
+                        })
                 }
                 return this.createLiterals(OpenLayers.Util.extend(t, r), n)
             },
@@ -69538,7 +69753,9 @@
                     this.div.style.top = d + "px";
                 var u = this.map.getExtent().scale(this.ratio);
                 if (s = this.renderer.setExtent(u, t),
-                    this.renderer.root.style.visibility = "visible", !0 === OpenLayers.IS_GECKO && (this.div.scrollLeft = this.div.scrollLeft), !t && s)
+                    this.renderer.root.style.visibility = "visible",
+                    !0 === OpenLayers.IS_GECKO && (this.div.scrollLeft = this.div.scrollLeft),
+                    !t && s)
                     for (var l in this.unrenderedFeatures) {
                         var h = this.unrenderedFeatures[l];
                         this.drawFeature(h)
@@ -69573,7 +69790,8 @@
                 var o = e[i];
                 if (this.geometryType && !(o.geometry instanceof this.geometryType))
                     throw new TypeError("addFeatures: component should be an " + this.geometryType.prototype.CLASS_NAME);
-                if (o.layer = this, !o.style && this.style && (o.style = OpenLayers.Util.extend({}, this.style)),
+                if (o.layer = this,
+                    !o.style && this.style && (o.style = OpenLayers.Util.extend({}, this.style)),
                     n) {
                     if (!1 === this.events.triggerEvent("beforefeatureadded", {
                             feature: o
@@ -69612,7 +69830,8 @@
                         }),
                         this.features = OpenLayers.Util.removeItem(this.features, r),
                         r.layer = null,
-                        r.geometry && this.renderer.eraseFeatures(r), -1 != OpenLayers.Util.indexOf(this.selectedFeatures, r) && OpenLayers.Util.removeItem(this.selectedFeatures, r),
+                        r.geometry && this.renderer.eraseFeatures(r),
+                        -1 != OpenLayers.Util.indexOf(this.selectedFeatures, r) && OpenLayers.Util.removeItem(this.selectedFeatures, r),
                         n && this.events.triggerEvent("featureremoved", {
                             feature: r
                         })
@@ -69732,7 +69951,8 @@
         },
         collectRoots: function() {
             for (var e, t = 0; t < this.map.layers.length; ++t)
-                e = this.map.layers[t], -1 != OpenLayers.Util.indexOf(this.layers, e) && e.renderer.moveRoot(this.renderer)
+                e = this.map.layers[t],
+                -1 != OpenLayers.Util.indexOf(this.layers, e) && e.renderer.moveRoot(this.renderer)
         },
         resetRoots: function() {
             for (var e, t = 0; t < this.layers.length; ++t)
@@ -70900,7 +71120,8 @@
                         this.top = i;
                     var a = "0 0 " + this.size.w + " " + this.size.h;
                     return this.rendererRoot.setAttributeNS(null, "viewBox", a),
-                        this.translate(this.xOffset, 0), !0
+                        this.translate(this.xOffset, 0),
+                        !0
                 }
                 var o = this.translate(r - this.left + this.xOffset, i - this.top);
                 return o || this.setExtent(e, !0),
@@ -70914,7 +71135,8 @@
                         this.translationParameters = {
                             x: e,
                             y: t
-                        }, !0
+                        },
+                        !0
                 }
                 return !1
             },
@@ -70962,7 +71184,8 @@
                 var a, o = parseFloat(e.getAttributeNS(null, "r")),
                     d = 1;
                 if ("OpenLayers.Geometry.Point" == e._geometryClass && o) {
-                    if (e.style.visibility = "", !1 === t.graphic)
+                    if (e.style.visibility = "",
+                        !1 === t.graphic)
                         e.style.visibility = "hidden";
                     else if (t.externalGraphic) {
                         a = this.getPosition(e),
@@ -71093,9 +71316,10 @@
                     s = n.path,
                     s ? (r += " " + s,
                         a = n.complete && a) : i = !1;
-                return r += " z", !!i && (e.setAttributeNS(null, "d", r),
-                    e.setAttributeNS(null, "fill-rule", "evenodd"),
-                    a ? e : null)
+                return r += " z",
+                    !!i && (e.setAttributeNS(null, "d", r),
+                        e.setAttributeNS(null, "fill-rule", "evenodd"),
+                        a ? e : null)
             },
             drawRectangle: function(e, t) {
                 var n = this.getResolution(),
@@ -71132,17 +71356,20 @@
                     t.fontFamily && u.setAttributeNS(null, "font-family", t.fontFamily),
                     t.fontSize && u.setAttributeNS(null, "font-size", t.fontSize),
                     t.fontWeight && u.setAttributeNS(null, "font-weight", t.fontWeight),
-                    t.fontStyle && u.setAttributeNS(null, "font-style", t.fontStyle), !0 === t.labelSelect ? (u.setAttributeNS(null, "pointer-events", "visible"),
+                    t.fontStyle && u.setAttributeNS(null, "font-style", t.fontStyle),
+                    !0 === t.labelSelect ? (u.setAttributeNS(null, "pointer-events", "visible"),
                         u._featureId = e) : u.setAttributeNS(null, "pointer-events", "none");
                 var l = t.labelAlign || OpenLayers.Renderer.defaultSymbolizer.labelAlign;
-                u.setAttributeNS(null, "text-anchor", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[0]] || "middle"), !0 === OpenLayers.IS_GECKO && u.setAttributeNS(null, "dominant-baseline", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[1]] || "central");
+                u.setAttributeNS(null, "text-anchor", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[0]] || "middle"),
+                    !0 === OpenLayers.IS_GECKO && u.setAttributeNS(null, "dominant-baseline", OpenLayers.Renderer.SVG.LABEL_ALIGN[l[1]] || "central");
                 for (var h = t.label.split("\n"), y = h.length; u.childNodes.length > y;)
                     u.removeChild(u.lastChild);
                 for (var m = 0; m < y; m++) {
                     var T = this.nodeFactory(e + d + "_tspan_" + m, "tspan");
                     if (!0 === t.labelSelect && (T._featureId = e,
                             T._geometry = n,
-                            T._geometryClass = n.CLASS_NAME), !1 === OpenLayers.IS_GECKO && T.setAttributeNS(null, "baseline-shift", OpenLayers.Renderer.SVG.LABEL_VSHIFT[l[1]] || "-35%"),
+                            T._geometryClass = n.CLASS_NAME),
+                        !1 === OpenLayers.IS_GECKO && T.setAttributeNS(null, "baseline-shift", OpenLayers.Renderer.SVG.LABEL_VSHIFT[l[1]] || "-35%"),
                         T.setAttribute("x", a),
                         0 == m) {
                         var c = OpenLayers.Renderer.SVG.LABEL_VFACTOR[l[1]];
@@ -71272,7 +71499,8 @@
                         this.hitContext = this.hitCanvas.getContext("2d"))
             },
             setExtent: function() {
-                return OpenLayers.Renderer.prototype.setExtent.apply(this, arguments), !1
+                return OpenLayers.Renderer.prototype.setExtent.apply(this, arguments),
+                    !1
             },
             eraseGeometry: function(e, t) {
                 this.eraseFeatures(this.features[t][0])
@@ -71401,7 +71629,8 @@
                             this.canvas.translate(-i, -a),
                             this.hitDetection && this.hitContext.translate(-i, -a),
                             h = t.strokeWidth,
-                            t.strokeWidth = h / u, !1 !== t.fill) {
+                            t.strokeWidth = h / u,
+                            !1 !== t.fill) {
                             for (this.setCanvasStyle("fill", t),
                                 this.canvas.beginPath(),
                                 o = 0; o < m.length; o += 2)
@@ -71489,21 +71718,22 @@
                         var a = 2 * Math.PI,
                             o = t.pointRadius;
                         !1 !== t.fill && (this.setCanvasStyle("fill", t),
-                            this.canvas.beginPath(),
-                            this.canvas.arc(r, i, o, 0, a, !0),
-                            this.canvas.fill(),
-                            this.hitDetection && (this.setHitContextStyle("fill", n, t),
-                                this.hitContext.beginPath(),
-                                this.hitContext.arc(r, i, o, 0, a, !0),
-                                this.hitContext.fill())), !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
-                            this.canvas.beginPath(),
-                            this.canvas.arc(r, i, o, 0, a, !0),
-                            this.canvas.stroke(),
-                            this.hitDetection && (this.setHitContextStyle("stroke", n, t),
-                                this.hitContext.beginPath(),
-                                this.hitContext.arc(r, i, o, 0, a, !0),
-                                this.hitContext.stroke()),
-                            this.setCanvasStyle("reset"))
+                                this.canvas.beginPath(),
+                                this.canvas.arc(r, i, o, 0, a, !0),
+                                this.canvas.fill(),
+                                this.hitDetection && (this.setHitContextStyle("fill", n, t),
+                                    this.hitContext.beginPath(),
+                                    this.hitContext.arc(r, i, o, 0, a, !0),
+                                    this.hitContext.fill())),
+                            !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
+                                this.canvas.beginPath(),
+                                this.canvas.arc(r, i, o, 0, a, !0),
+                                this.canvas.stroke(),
+                                this.hitDetection && (this.setHitContextStyle("stroke", n, t),
+                                    this.hitContext.beginPath(),
+                                    this.hitContext.arc(r, i, o, 0, a, !0),
+                                    this.hitContext.stroke()),
+                                this.setCanvasStyle("reset"))
                     }
                 }
             },
@@ -71517,7 +71747,8 @@
                 !1 !== t.fill && (this.setCanvasStyle("fill", t),
                         this.renderPath(this.canvas, e, t, n, "fill"),
                         this.hitDetection && (this.setHitContextStyle("fill", n, t),
-                            this.renderPath(this.hitContext, e, t, n, "fill"))), !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
+                            this.renderPath(this.hitContext, e, t, n, "fill"))),
+                    !1 !== t.stroke && (this.setCanvasStyle("stroke", t),
                         this.renderPath(this.canvas, e, t, n, "stroke"),
                         this.hitDetection && (this.setHitContextStyle("stroke", n, t),
                             this.renderPath(this.hitContext, e, t, n, "stroke"))),
@@ -72381,12 +72612,14 @@
         activate: function() {
             return !!OpenLayers.Control.prototype.activate.apply(this, arguments) && (this.map.events.register("mousemove", this, this.redraw),
                 this.map.events.register("mouseout", this, this.reset),
-                this.redraw(), !0)
+                this.redraw(),
+                !0)
         },
         deactivate: function() {
             return !!OpenLayers.Control.prototype.deactivate.apply(this, arguments) && (this.map.events.unregister("mousemove", this, this.redraw),
                 this.map.events.unregister("mouseout", this, this.reset),
-                this.element.innerHTML = "", !0)
+                this.element.innerHTML = "",
+                !0)
         },
         draw: function() {
             return OpenLayers.Control.prototype.draw.apply(this, arguments),
@@ -72428,7 +72661,8 @@
         eBottom: null,
         geodesic: !1,
         draw: function() {
-            if (OpenLayers.Control.prototype.draw.apply(this, arguments), !this.eTop) {
+            if (OpenLayers.Control.prototype.draw.apply(this, arguments),
+                !this.eTop) {
                 this.eTop = document.createElement("div"),
                     this.eTop.className = this.displayClass + "Top";
                 this.topInUnits.length;
@@ -72573,7 +72807,8 @@
             var e = this.anchor ? "#" : "?",
                 t = this.base,
                 n = null; -
-            1 != t.indexOf("#") && 0 == this.anchor && (n = t.substring(t.indexOf("#"), t.length)), -1 != t.indexOf(e) && (t = t.substring(0, t.indexOf(e))),
+            1 != t.indexOf("#") && 0 == this.anchor && (n = t.substring(t.indexOf("#"), t.length)),
+                -1 != t.indexOf(e) && (t = t.substring(0, t.indexOf(e))),
                 t = t.split("#")[0] + e + OpenLayers.Util.getParameterString(this.createParams()),
                 n && (t += n),
                 this.anchor && !this.element ? window.location.href = t : this.element.href = t
@@ -72630,7 +72865,8 @@
                 this.points.length > this.nbPoints && this.points.pop()
         },
         end: function(e) {
-            for (var t, n, s = (new Date).getTime(), r = 0, i = this.points.length; r < i && (n = this.points[r], !(s - n.tick > this.delay)); r++)
+            for (var t, n, s = (new Date).getTime(), r = 0, i = this.points.length; r < i && (n = this.points[r],
+                    !(s - n.tick > this.delay)); r++)
                 t = n;
             if (t) {
                 var a = (new Date).getTime() - t.tick,
