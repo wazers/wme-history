@@ -10242,7 +10242,7 @@
                 Z.default.project(t);
                 var i = new L.default({
                     name: I18n.t("layers.name.satellite_imagery"),
-                    key: W.apiKeys.googleMapsApiKey,
+                    key: "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI",
                     type: "satellite",
                     zoomOffset: 12,
                     numZoomLevels: 11,
