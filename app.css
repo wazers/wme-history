@@ -2933,670 +2933,6 @@
     clip: auto;
 }
 
-/*
-Version: @@ver@@ Timestamp: @@timestamp@@
-*/
-.select2-container {
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.select2-container, .select2-drop, .select2-search, .select2-search input {
-    /*
-    Force border-box so that % widths fit the parent
-    container without overlap because of margin/padding.
-    More Info : http://www.quirksmode.org/css/box.html
-  */
-    -webkit-box-sizing: border-box;
-    /* webkit */
-    -moz-box-sizing: border-box;
-    /* firefox */
-    box-sizing: border-box;
-    /* css3 */
-}
-
-.select2-container .select2-choice {
-    display: block;
-    height: 26px;
-    padding: 0 0 0 8px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #aaa;
-    white-space: nowrap;
-    line-height: 26px;
-    color: #444;
-    text-decoration: none;
-    border-radius: 4px;
-    background-clip: padding-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #fff;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(0.5, #fff));
-    background-image: -webkit-linear-gradient(center bottom, #eee 0%, #fff 50%);
-    background-image: -moz-linear-gradient(center bottom, #eee 0%, #fff 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#eeeeee', GradientType = 0);
-    background-image: linear-gradient(to top, #eee 0%, #fff 50%);
-}
-
-html[dir="rtl"] .select2-container .select2-choice {
-    padding: 0 8px 0 0;
-}
-
-.select2-container.select2-drop-above .select2-choice {
-    border-bottom-color: #aaa;
-    border-radius: 0 0 4px 4px;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(0.9, #fff));
-    background-image: -webkit-linear-gradient(center bottom, #eee 0%, #fff 90%);
-    background-image: -moz-linear-gradient(center bottom, #eee 0%, #fff 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
-    background-image: linear-gradient(to bottom, #eee 0%, #fff 90%);
-}
-
-.select2-container.select2-allowclear .select2-choice .select2-chosen {
-    margin-right: 42px;
-}
-
-.select2-container .select2-choice > .select2-chosen {
-    margin-right: 26px;
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    float: none;
-    width: auto;
-}
-
-html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
-    margin-left: 26px;
-    margin-right: 0;
-}
-
-.select2-container .select2-choice abbr {
-    display: none;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    right: 24px;
-    top: 8px;
-    font-size: 1px;
-    text-decoration: none;
-    border: 0;
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) right top no-repeat;
-    cursor: pointer;
-    outline: 0;
-}
-
-.select2-container.select2-allowclear .select2-choice abbr {
-    display: inline-block;
-}
-
-.select2-container .select2-choice abbr:hover {
-    background-position: right -11px;
-    cursor: pointer;
-}
-
-.select2-drop-mask {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    min-height: 100%;
-    min-width: 100%;
-    height: auto;
-    width: auto;
-    opacity: 0;
-    z-index: 9998;
-    /* styles required for IE to work */
-    background-color: #fff;
-    filter: alpha(opacity=0);
-}
-
-.select2-drop {
-    width: 100%;
-    margin-top: -1px;
-    position: absolute;
-    z-index: 9999;
-    top: 100%;
-    background: #fff;
-    color: #000;
-    border: 1px solid #aaa;
-    border-top: 0;
-    border-radius: 0 0 4px 4px;
-    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
-}
-
-.select2-drop.select2-drop-above {
-    margin-top: 1px;
-    border-top: 1px solid #aaa;
-    border-bottom: 0;
-    border-radius: 4px 4px 0 0;
-    -webkit-box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
-    box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
-}
-
-.select2-drop-active {
-    border: 1px solid #5897fb;
-    border-top: none;
-}
-
-.select2-drop.select2-drop-above.select2-drop-active {
-    border-top: 1px solid #5897fb;
-}
-
-.select2-drop-auto-width {
-    border-top: 1px solid #aaa;
-    width: auto;
-}
-
-.select2-container .select2-choice .select2-arrow {
-    display: inline-block;
-    width: 18px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    border-left: 1px solid #aaa;
-    border-radius: 0 4px 4px 0;
-    background-clip: padding-box;
-    background: #ccc;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
-    background-image: -webkit-linear-gradient(center bottom, #ccc 0%, #eee 60%);
-    background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#cccccc', GradientType = 0);
-    background-image: linear-gradient(to top, #ccc 0%, #eee 60%);
-}
-
-html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
-    left: 0;
-    right: auto;
-    border-left: none;
-    border-right: 1px solid #aaa;
-    border-radius: 4px 0 0 4px;
-}
-
-.select2-container .select2-choice .select2-arrow b {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 0 1px;
-}
-
-html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
-    background-position: 2px 1px;
-}
-
-.select2-search {
-    display: inline-block;
-    width: 100%;
-    min-height: 26px;
-    margin: 0;
-    padding: 4px 4px 0 4px;
-    position: relative;
-    z-index: 10000;
-    white-space: nowrap;
-}
-
-.select2-search input {
-    width: 100%;
-    height: auto !important;
-    min-height: 26px;
-    padding: 4px 20px 4px 5px;
-    margin: 0;
-    outline: 0;
-    font-family: sans-serif;
-    font-size: 1em;
-    border: 1px solid #aaa;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background: #fff url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 100% -22px;
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
-}
-
-html[dir="rtl"] .select2-search input {
-    padding: 4px 5px 4px 20px;
-    background: #fff url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat -37px -22px;
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat -37px -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat -37px -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat -37px -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) no-repeat -37px -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
-}
-
-.select2-search input.select2-active {
-    background: #fff url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%;
-    background: url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
-    background: url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
-    background: url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
-}
-
-.select2-container-active .select2-choice, .select2-container-active .select2-choices {
-    border: 1px solid #5897fb;
-    outline: none;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-}
-
-.select2-dropdown-open .select2-choice {
-    border-bottom-color: transparent;
-    -webkit-box-shadow: 0 1px 0 #fff inset;
-    box-shadow: 0 1px 0 #fff inset;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #eee;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(0.5, #eee));
-    background-image: -webkit-linear-gradient(center bottom, #fff 0%, #eee 50%);
-    background-image: -moz-linear-gradient(center bottom, #fff 0%, #eee 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0);
-    background-image: linear-gradient(to top, #fff 0%, #eee 50%);
-}
-
-.select2-dropdown-open.select2-drop-above .select2-choice, .select2-dropdown-open.select2-drop-above .select2-choices {
-    border: 1px solid #5897fb;
-    border-top-color: transparent;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.5, #eee));
-    background-image: -webkit-linear-gradient(center top, #fff 0%, #eee 50%);
-    background-image: -moz-linear-gradient(center top, #fff 0%, #eee 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0);
-    background-image: linear-gradient(to bottom, #fff 0%, #eee 50%);
-}
-
-.select2-dropdown-open .select2-choice .select2-arrow {
-    background: transparent;
-    border-left: none;
-    filter: none;
-}
-
-html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow {
-    border-right: none;
-}
-
-.select2-dropdown-open .select2-choice .select2-arrow b {
-    background-position: -18px 1px;
-}
-
-html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
-    background-position: -16px 1px;
-}
-
-.select2-hidden-accessible {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/* results */
-.select2-results {
-    max-height: 200px;
-    padding: 0 0 0 4px;
-    margin: 4px 4px 4px 0;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-html[dir="rtl"] .select2-results {
-    padding: 0 4px 0 0;
-    margin: 4px 0 4px 4px;
-}
-
-.select2-results ul.select2-result-sub {
-    margin: 0;
-    padding-left: 0;
-}
-
-.select2-results li {
-    list-style: none;
-    display: list-item;
-    background-image: none;
-}
-
-.select2-results li.select2-result-with-children > .select2-result-label {
-    font-weight: bold;
-}
-
-.select2-results .select2-result-label {
-    padding: 3px 7px 4px;
-    margin: 0;
-    cursor: pointer;
-    min-height: 1em;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.select2-results-dept-1 .select2-result-label {
-    padding-left: 20px
-}
-
-.select2-results-dept-2 .select2-result-label {
-    padding-left: 40px
-}
-
-.select2-results-dept-3 .select2-result-label {
-    padding-left: 60px
-}
-
-.select2-results-dept-4 .select2-result-label {
-    padding-left: 80px
-}
-
-.select2-results-dept-5 .select2-result-label {
-    padding-left: 100px
-}
-
-.select2-results-dept-6 .select2-result-label {
-    padding-left: 110px
-}
-
-.select2-results-dept-7 .select2-result-label {
-    padding-left: 120px
-}
-
-.select2-results .select2-highlighted {
-    background: #3875d7;
-    color: #fff;
-}
-
-.select2-results li em {
-    background: #feffde;
-    font-style: normal;
-}
-
-.select2-results .select2-highlighted em {
-    background: transparent;
-}
-
-.select2-results .select2-highlighted ul {
-    background: #fff;
-    color: #000;
-}
-
-.select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-ajax-error, .select2-results .select2-selection-limit {
-    background: #f4f4f4;
-    display: list-item;
-    padding-left: 5px;
-}
-
-/*
-disabled look for disabled choices in the results dropdown
-*/
-.select2-results .select2-disabled.select2-highlighted {
-    color: #666;
-    background: #f4f4f4;
-    display: list-item;
-    cursor: default;
-}
-
-.select2-results .select2-disabled {
-    background: #f4f4f4;
-    display: list-item;
-    cursor: default;
-}
-
-.select2-results .select2-selected {
-    display: none;
-}
-
-.select2-more-results.select2-active {
-    background: #f4f4f4 url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100%;
-}
-
-.select2-results .select2-ajax-error {
-    background: rgba(255, 50, 50, .2);
-}
-
-.select2-more-results {
-    background: #f4f4f4;
-    display: list-item;
-}
-
-/* disabled styles */
-.select2-container.select2-container-disabled .select2-choice {
-    background-color: #f4f4f4;
-    background-image: none;
-    border: 1px solid #ddd;
-    cursor: default;
-}
-
-.select2-container.select2-container-disabled .select2-choice .select2-arrow {
-    background-color: #f4f4f4;
-    background-image: none;
-    border-left: 0;
-}
-
-.select2-container.select2-container-disabled .select2-choice abbr {
-    display: none;
-}
-
-/* multiselect */
-.select2-container-multi .select2-choices {
-    height: auto !important;
-    height: 1%;
-    margin: 0;
-    padding: 0 5px 0 0;
-    position: relative;
-    border: 1px solid #aaa;
-    cursor: text;
-    overflow: hidden;
-    background-color: #fff;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eee), color-stop(15%, #fff));
-    background-image: -webkit-linear-gradient(top, #eee 1%, #fff 15%);
-    background-image: -moz-linear-gradient(top, #eee 1%, #fff 15%);
-    background-image: linear-gradient(to bottom, #eee 1%, #fff 15%);
-}
-
-html[dir="rtl"] .select2-container-multi .select2-choices {
-    padding: 0 0 0 5px;
-}
-
-.select2-locked {
-    padding: 3px 5px 3px 5px !important;
-}
-
-.select2-container-multi .select2-choices {
-    min-height: 26px;
-}
-
-.select2-container-multi.select2-container-active .select2-choices {
-    border: 1px solid #5897fb;
-    outline: none;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-}
-
-.select2-container-multi .select2-choices li {
-    float: left;
-    list-style: none;
-}
-
-html[dir="rtl"] .select2-container-multi .select2-choices li {
-    float: right;
-}
-
-.select2-container-multi .select2-choices .select2-search-field {
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-}
-
-.select2-container-multi .select2-choices .select2-search-field input {
-    padding: 5px;
-    margin: 1px 0;
-    font-family: sans-serif;
-    font-size: 100%;
-    color: #666;
-    outline: 0;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background: transparent !important;
-}
-
-.select2-container-multi .select2-choices .select2-search-field input.select2-active {
-    background: #fff url(//editor-assets.waze.com/beta/img/select2-spinner7b9776076d5fceef4993b55c9383dedd.gif) no-repeat 100% !important;
-}
-
-.select2-default {
-    color: #999 !important;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice {
-    padding: 3px 5px 3px 18px;
-    margin: 3px 0 3px 5px;
-    position: relative;
-    line-height: 13px;
-    color: #333;
-    cursor: default;
-    border: 1px solid #aaaaaa;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-    background-clip: padding-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #e4e4e4;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#f4f4f4', GradientType=0);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eee));
-    background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
-    background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
-    background-image: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
-}
-
-html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice {
-    margin: 3px 5px 3px 0;
-    padding: 3px 18px 3px 5px;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
-    cursor: default;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice-focus {
-    background: #d4d4d4;
-}
-
-.select2-search-choice-close {
-    display: block;
-    width: 12px;
-    height: 13px;
-    position: absolute;
-    right: 3px;
-    top: 4px;
-    font-size: 1px;
-    outline: none;
-    background: url(//editor-assets.waze.com/beta/img/select22ca61b76e22053571dd8611e5aac4900.png) right top no-repeat;
-}
-
-html[dir="rtl"] .select2-search-choice-close {
-    right: auto;
-    left: 3px;
-}
-
-.select2-container-multi .select2-search-choice-close {
-    left: 3px;
-}
-
-html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
-    left: auto;
-    right: 2px;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
-    background-position: right -11px;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
-    background-position: right -11px;
-}
-
-/* disabled styles */
-.select2-container-multi.select2-container-disabled .select2-choices {
-    background-color: #f4f4f4;
-    background-image: none;
-    border: 1px solid #ddd;
-    cursor: default;
-}
-
-.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
-    padding: 3px 5px 3px 5px;
-    border: 1px solid #ddd;
-    background-image: none;
-    background-color: #f4f4f4;
-}
-
-.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
-    display: none;
-    background: none;
-}
-
-/* end multiselect */
-.select2-result-selectable .select2-match, .select2-result-unselectable .select2-match {
-    text-decoration: underline;
-}
-
-.select2-offscreen, .select2-offscreen:focus {
-    clip: rect(0 0 0 0) !important;
-    width: 1px !important;
-    height: 1px !important;
-    border: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    outline: 0 !important;
-    left: 0px !important;
-    top: 0px !important;
-}
-
-.select2-display-none {
-    display: none;
-}
-
-.select2-measure-scrollbar {
-    position: absolute;
-    top: -10000px;
-    left: -10000px;
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-}
-
-/* Retina-ize icons */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
-    .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
-        background-image: url(//editor-assets.waze.com/beta/img/select2x249e3f006018662f60f1db2aec0b2cca9.png) !important;
-        background-repeat: no-repeat !important;
-        background-size: 60px 40px !important;
-    }
-
-    .select2-search input {
-        background-position: 100% -21px !important;
-    }
-}
-
 @charset "UTF-8"; /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
     font-family: sans-serif;
@@ -9567,7 +8903,7 @@ h4 {
 @charset "UTF-8"; .waze-tooltip {
     display: inline-block;
     cursor: default;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .waze-tooltip::before {
@@ -9582,6 +8918,10 @@ h4 {
 
 .waze-no-info-tooltip::before {
     display: none;
+}
+
+body > .tooltip[role="tooltip"] {
+    pointer-events: none;
 }
 
 .tooltip {
@@ -9655,22 +8995,22 @@ input, button, select, textarea {
 
 input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: #92999d !important;
+    color: #8c8c8c !important;
 }
 
 input::-moz-placeholder {
     /* Firefox 19+ */
-    color: #92999d !important;
+    color: #8c8c8c !important;
 }
 
 input:-ms-input-placeholder {
     /* IE 10+ */
-    color: #92999d !important;
+    color: #8c8c8c !important;
 }
 
 input:-moz-placeholder {
     /* Firefox 18- */
-    color: #92999d !important;
+    color: #8c8c8c !important;
 }
 
 .not-shown {
@@ -10462,12 +9802,12 @@ a.waze-link:hover, .btn-link:hover {
 }
 
 a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disabled {
-    color: #92999d;
+    color: #8c8c8c;
     pointer-events: none;
 }
 
 .waze-gray-link {
-    color: #92999d;
+    color: #8c8c8c;
     text-decoration: underline;
     transition: all 150ms;
 }
@@ -10840,20 +10180,96 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     box-shadow: 0 4px 4px 0 rgba(38, 186, 232, 0.19);
     border-radius: 8px;
     color: white;
+    width: auto;
+    transition: all 300ms;
+}
+
+.toolbar .toolbar-button.waze-icon-save .menu-title {
+    transition: opacity 300ms;
+}
+
+.toolbar .toolbar-button.waze-icon-save.loading .menu-title {
+    opacity: 0;
+}
+
+.toolbar .toolbar-button.waze-icon-save.loading .loader {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+.toolbar .toolbar-button.waze-icon-save.success {
+    background: #19cd91 !important;
+    box-shadow: 0 4px 4px 0 rgba(38, 186, 38, 0.19) !important;
+}
+
+.toolbar .toolbar-button.waze-icon-save.success .menu-title {
+    opacity: 0;
+}
+
+.toolbar .toolbar-button.waze-icon-save.success .v-sign {
+    margin-top: -7px;
+    opacity: 1;
+    animation: v-anim 1.5s;
+}
+
+.toolbar .toolbar-button.waze-icon-save .loader {
+    display: none;
+}
+
+.toolbar .toolbar-button.waze-icon-save .v-sign {
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -14px;
+    transition: all 250ms ease-in;
+    background-image: url(//editor-assets.waze.com/beta/img/saveaf38a8a7b9c613346b11249ff92a10b1.png);
+    background-position: 0px 0px;
+    width: 17px;
+    height: 15px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .toolbar .toolbar-button.waze-icon-save .v-sign {
+        background-image: url(//editor-assets.waze.com/beta/img/save@2xc75a0a21c42e8522003824a1544e38f9.png);
+        background-size: 32px 29px;
+    }
+}
+
+.toolbar .toolbar-button.waze-icon-save:before {
+    display: none;
 }
 
 .toolbar .toolbar-button.waze-icon-save.ItemDisabled {
     opacity: 1;
-    background-color: #d7dadc !important;
-    box-shadow: none !important;
+    background: #d7dadc;
+    box-shadow: none;
     cursor: default !important;
     color: white !important;
+}
+
+.toolbar .toolbar-button.waze-icon-save.ItemDisabled:hover {
+    background: #d7dadc;
+    box-shadow: none;
 }
 
 .toolbar .toolbar-button.waze-icon-save:hover {
     box-shadow: #c1f1ff 0px 4px 20px 0px;
     background: #1fadd9;
     color: white;
+}
+
+.toolbar .toolbar-button.waze-icon-save.has-error .counter {
+    color: red;
+    background-color: white;
 }
 
 .toolbar .toolbar-button.waze-icon-save .counter {
@@ -11515,6 +10931,482 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     }
 }
 
+@keyframes v-anim {
+    0% {
+        margin-top: 7px;
+        opacity: 0;
+    }
+
+    25% {
+        margin-top: -7px;
+        opacity: 1;
+    }
+
+    100% {
+        margin-top: -7px;
+        opacity: 1;
+    }
+}
+
+.changes-log-region {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 300px;
+    height: auto;
+    color: #3d3d3d;
+    cursor: default;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    user-select: text;
+}
+
+.changes-log-region .changes-log-container {
+    margin-top: 15px;
+    background: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    border-radius: 4px;
+    position: relative;
+}
+
+.changes-log-region .changes-log-container:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: white;
+    right: 15px;
+    top: -6px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 4px;
+}
+
+.changes-log-region .header {
+    font-size: 13px;
+    line-height: 13px;
+    color: #8c8c8c;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dadada;
+}
+
+.changes-log-region .groups-list-region {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.changes-log-region .actions-group-container {
+    border-bottom: 1px solid #dadada;
+    position: relative;
+}
+
+.changes-log-region .actions-group-container:last-child {
+    border-bottom: none;
+}
+
+.changes-log-region .actions-group-container.saving {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.changes-log-region .actions-group-container.saving .error-list-container .error-actions .save-and-ignore {
+    pointer-events: none;
+}
+
+.changes-log-region .actions-group-container.saving .error-list-container .error-actions .save-and-ignore .loading {
+    display: block;
+}
+
+.changes-log-region .actions-group-container.saving .error-list-container .error-actions .save-and-ignore .button-text {
+    opacity: 0;
+}
+
+.changes-log-region .actions-group-container:hover .actions {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.changes-log-region .actions-group-container.has-error .error-item:before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 1px;
+    background-image: url(//editor-assets.waze.com/beta/img/saveaf38a8a7b9c613346b11249ff92a10b1.png);
+    background-position: 0px -15px;
+    width: 14px;
+    height: 14px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .changes-log-region .actions-group-container.has-error .error-item:before {
+        background-image: url(//editor-assets.waze.com/beta/img/save@2xc75a0a21c42e8522003824a1544e38f9.png);
+        background-size: 32px 29px;
+    }
+}
+
+.changes-log-region .actions-group-container.has-error .action-item:not(.reverted) .left-side .dot {
+    background: #ff5f5f;
+}
+
+.changes-log-region .actions-group-container.has-error .action-item:not(.reverted) .left-side .dot:after {
+    background: #ff5f5f;
+}
+
+.changes-log-region .actions-group-container.has-error .action-item:not(.reverted) .left-side .line {
+    background: #ff5f5f;
+}
+
+.changes-log-region .actions-group-container.has-error .action-item.going_to_disable .left-side .line, .changes-log-region .actions-group-container.has-error .action-item.going_to_enable .left-side .line {
+    background: #ffcece;
+}
+
+.changes-log-region .actions-group-container.has-error .action-item.going_to_disable .left-side .dot-container .dot, .changes-log-region .actions-group-container.has-error .action-item.going_to_enable .left-side .dot-container .dot {
+    background: #ffcece;
+}
+
+.changes-log-region .actions-group-container.has-error .error-list-container {
+    background: rgba(255, 95, 95, 0.05);
+    border: 1px solid rgba(255, 95, 95, 0.4);
+}
+
+.changes-log-region .actions-group-container.has-warning .error-item:before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 1px;
+    background-image: url(//editor-assets.waze.com/beta/img/saveaf38a8a7b9c613346b11249ff92a10b1.png);
+    background-position: -17px 0px;
+    width: 15px;
+    height: 15px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .changes-log-region .actions-group-container.has-warning .error-item:before {
+        background-image: url(//editor-assets.waze.com/beta/img/save@2xc75a0a21c42e8522003824a1544e38f9.png);
+        background-size: 32px 29px;
+    }
+}
+
+.changes-log-region .actions-group-container.has-warning .action-item:not(.reverted) .left-side .dot {
+    background: #ffc65f;
+}
+
+.changes-log-region .actions-group-container.has-warning .action-item:not(.reverted) .left-side .dot:after {
+    background: #ffc65f;
+}
+
+.changes-log-region .actions-group-container.has-warning .action-item:not(.reverted) .left-side .line {
+    background: #ffc65f;
+}
+
+.changes-log-region .actions-group-container.has-warning .action-item.going_to_disable .left-side .line, .changes-log-region .actions-group-container.has-warning .action-item.going_to_enable .left-side .line {
+    background: #ffedce;
+}
+
+.changes-log-region .actions-group-container.has-warning .action-item.going_to_disable .left-side .dot-container .dot, .changes-log-region .actions-group-container.has-warning .action-item.going_to_enable .left-side .dot-container .dot {
+    background: #ffedce;
+}
+
+.changes-log-region .actions-group-container.has-warning .error-list-container {
+    background: rgba(255, 198, 95, 0.08);
+    border: 1px solid rgba(255, 198, 95, 0.6);
+}
+
+.changes-log-region .actions-group-container .actions {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms ease-in;
+    height: 20px;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.changes-log-region .actions-group-container .actions .undo-all:after {
+    content: "";
+    display: block;
+    background-image: url(//editor-assets.waze.com/beta/img/saveaf38a8a7b9c613346b11249ff92a10b1.png);
+    background-position: -25px -15px;
+    width: 7px;
+    height: 7px;
+    left: 7px;
+    top: 7px;
+    position: absolute;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .changes-log-region .actions-group-container .actions .undo-all:after {
+        background-image: url(//editor-assets.waze.com/beta/img/save@2xc75a0a21c42e8522003824a1544e38f9.png);
+        background-size: 32px 29px;
+    }
+}
+
+.changes-log-region .actions-group-container .actions .redo-all:after {
+    content: "";
+    background-image: url(//editor-assets.waze.com/beta/img/saveaf38a8a7b9c613346b11249ff92a10b1.png);
+    background-position: -14px -15px;
+    width: 11px;
+    height: 11px;
+    left: 5px;
+    top: 5px;
+    position: absolute;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .changes-log-region .actions-group-container .actions .redo-all:after {
+        background-image: url(//editor-assets.waze.com/beta/img/save@2xc75a0a21c42e8522003824a1544e38f9.png);
+        background-size: 32px 29px;
+    }
+}
+
+.changes-log-region .actions-group-container .actions .action-button {
+    position: relative;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.changes-log-region .actions-group-container .actions .action-button.disable {
+    pointer-events: none;
+}
+
+.changes-log-region .actions-group-container .actions .save {
+    width: 20px;
+    height: 20px;
+    background: black;
+}
+
+.changes-log-region .action-item {
+    padding: 9px 22px;
+    position: relative;
+}
+
+.changes-log-region .action-item:last-child .left-side .line {
+    display: none;
+}
+
+.changes-log-region .action-item.going_to_disable .left-side .line, .changes-log-region .action-item.going_to_enable .left-side .line {
+    background: #b5e5fc;
+    transform: scaleX(2);
+}
+
+.changes-log-region .action-item.going_to_disable .left-side .dot-container .dot, .changes-log-region .action-item.going_to_enable .left-side .dot-container .dot {
+    background: #b5e5fc;
+}
+
+.changes-log-region .action-item .left-side {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 100%;
+}
+
+.changes-log-region .action-item .left-side .dot-container {
+    position: absolute;
+    top: 9px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.changes-log-region .action-item .left-side .dot-container:hover .dot:after {
+    opacity: 1;
+}
+
+.changes-log-region .action-item .left-side .dot-container .dot {
+    background: #0babf8;
+    border-radius: 3px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: background 250ms ease-in;
+}
+
+.changes-log-region .action-item .left-side .dot-container .dot:after {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    line-height: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #0babf8;
+    font-size: 8px;
+    content: "x";
+    text-align: center;
+    display: block;
+    opacity: 0;
+    color: white;
+    transition: opacity 150ms ease-in;
+    z-index: 1;
+}
+
+.changes-log-region .action-item .left-side .line {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 23px;
+    bottom: -17px;
+    background: #0babf8;
+    width: 2px;
+    min-height: 30px;
+    transition: all 250ms ease-in;
+}
+
+.changes-log-region .action-item .right-side {
+    margin-left: 18px;
+    line-height: 16px;
+}
+
+.changes-log-region .action-item .right-side .title {
+    font-size: 13px;
+    line-height: 15px;
+    color: #354148;
+    cursor: text;
+}
+
+.changes-log-region .action-item .right-side .ids-region {
+    line-height: 16px;
+    margin-left: -3px;
+    display: inline-block;
+}
+
+.changes-log-region .action-item .right-side .timestamp {
+    display: inline-block;
+    color: #8c8c8c;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+.changes-log-region .action-item .right-side .feature-id {
+    font-size: 11px;
+    color: #8c8c8c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.changes-log-region .action-item .right-side .feature-id:hover {
+    text-decoration: underline;
+}
+
+.changes-log-region .action-item .right-side .feature-id:after {
+    content: ",";
+    display: inline-block;
+}
+
+.changes-log-region .action-item .tooltip-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.changes-log-region .action-item.reverted .title {
+    text-decoration: line-through;
+    color: #bebebe;
+}
+
+.changes-log-region .action-item.reverted .left-side .dot-container .dot {
+    background: rgba(183, 183, 183, 0.5);
+}
+
+.changes-log-region .action-item.reverted .left-side .dot-container .dot:after {
+    content: "";
+    background: #b7b7b7;
+}
+
+.changes-log-region .action-item.reverted .left-side .line {
+    background: rgba(183, 183, 183, 0.5);
+}
+
+.changes-log-region .action-item.reverted .right-side .feature-id, .changes-log-region .action-item.reverted .right-side .timestamp {
+    color: #bebebe;
+}
+
+.changes-log-region .error-list-container {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    padding-top: 5px;
+}
+
+.changes-log-region .error-list-container .error-item {
+    position: relative;
+}
+
+.changes-log-region .error-list-container .error-item .title-container {
+    font-size: 13px;
+    color: #354148;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    line-height: 15px;
+    display: inline-block;
+}
+
+.changes-log-region .error-list-container .error-item .title-container .title {
+    display: inline;
+}
+
+.changes-log-region .error-list-container .error-item .title-container .focus {
+    cursor: pointer;
+    display: inline;
+}
+
+.changes-log-region .error-list-container .error-item .solution {
+    font-size: 13px;
+    color: #354148;
+    line-height: 15px;
+}
+
+.changes-log-region .error-list-container .error-item:after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+}
+
+.changes-log-region .error-list-container .error-item:last-child:after {
+    display: none;
+}
+
+.changes-log-region .error-list-container .error-actions {
+    position: relative;
+    width: 100%;
+}
+
+.changes-log-region .error-list-container .error-actions .save-and-ignore {
+    margin-top: 10px;
+    right: 0px;
+}
+
+.changes-log-region .error-list-container .error-actions .save-and-ignore .loading {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+}
+
 #search {
     padding-top: 6px;
     position: relative;
@@ -11806,7 +11698,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #login-popup .language-select .dropdown-toggle {
-    color: #92999d;
+    color: #8c8c8c;
     text-decoration: underline;
     transition: all 150ms;
 }
@@ -13190,7 +13082,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 #chat .messages .message-list .message.system-message .body {
     font-size: 12px;
-    color: #92999d;
+    color: #8c8c8c;
     text-align: center;
 }
 
@@ -13231,7 +13123,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #chat .messages .message-list .message.normal-message .from {
-    color: #92999d;
+    color: #8c8c8c;
     font-size: 13px;
     font-weight: normal;
 }
@@ -14747,7 +14639,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-top: 5px;
     font-size: 14px;
     opacity: 1;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #WazeMap .map-message .map-message-icon {
@@ -14760,7 +14652,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 #WazeMap .map-message .return-to-edit-mode {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .WazeMapFooter {
@@ -14852,16 +14744,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .olControlAttribution span {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .olControlAttribution a.waze-black-link {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .olControlAttribution a:after {
     display: inline-block;
-    color: #92999d;
+    color: #8c8c8c;
     content: " | ";
     padding: 0 10px;
 }
@@ -15145,7 +15037,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .panel .header .reported {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .panel .header .title {
@@ -15154,7 +15046,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .panel .header .id {
-    color: #92999d;
+    color: #8c8c8c;
     font-weight: normal;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -15890,7 +15782,7 @@ body[dir="rtl"] .olControlScaleLine {
     display: inline-block;
     font-weight: 400;
     font-size: 11px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #sidebar #user-details .user-stats .stat, #sidebar #user-details .user-stats .separator {
@@ -16355,7 +16247,7 @@ body[dir="rtl"] .olControlScaleLine {
     display: inline-block;
     font-weight: 400;
     font-size: 11px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #user-details .user-stats .stat, #user-details .user-stats .separator {
@@ -16741,7 +16633,7 @@ body[dir="rtl"] .olControlScaleLine {
     right: 10px;
     bottom: 4px;
     font-weight: normal;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #edit-panel .map-comment-feature-editor .new-comment-form .input-max-length, .edit-panel .map-comment-feature-editor .new-comment-form .input-max-length {
@@ -17652,11 +17544,11 @@ body[dir="rtl"] .olControlScaleLine {
 #edit-panel .residential-tooltip, .edit-panel .residential-tooltip {
     pointer-events: auto;
     display: inline-block;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #edit-panel .residential-tooltip:hover, .edit-panel .residential-tooltip:hover {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #edit-panel .merge-landmarks .tab-content, .edit-panel .merge-landmarks .tab-content {
@@ -17694,7 +17586,7 @@ body[dir="rtl"] .olControlScaleLine {
     top: 23px;
 }
 
-#edit-panel .merge-landmarks .merge-item .error-badge.purs:before, #edit-panel .merge-landmarks .merge-item .error-badge.lock:before, .edit-panel .merge-landmarks .merge-item .error-badge.purs:before, .edit-panel .merge-landmarks .merge-item .error-badge.lock:before {
+#edit-panel .merge-landmarks .merge-item .error-badge.purs:before, #edit-panel .merge-landmarks .merge-item .error-badge.lock:before, #edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before, .edit-panel .merge-landmarks .merge-item .error-badge.purs:before, .edit-panel .merge-landmarks .merge-item .error-badge.lock:before, .edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before {
     left: 5px;
     top: 50%;
     transform: translateY(-50%);
@@ -17707,7 +17599,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #edit-panel .merge-landmarks .merge-item .error-badge.purs:before, #edit-panel .merge-landmarks .merge-item .error-badge.lock:before, .edit-panel .merge-landmarks .merge-item .error-badge.purs:before, .edit-panel .merge-landmarks .merge-item .error-badge.lock:before {
+    #edit-panel .merge-landmarks .merge-item .error-badge.purs:before, #edit-panel .merge-landmarks .merge-item .error-badge.lock:before, #edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before, .edit-panel .merge-landmarks .merge-item .error-badge.purs:before, .edit-panel .merge-landmarks .merge-item .error-badge.lock:before, .edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before {
         background-image: url(//editor-assets.waze.com/beta/img/buttons@2x73bafb4edeaaa8b4e576273004fa37b4.png);
         background-size: 96px 81px;
     }
@@ -17722,6 +17614,20 @@ body[dir="rtl"] .olControlScaleLine {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     #edit-panel .merge-landmarks .merge-item .error-badge.lock:before, .edit-panel .merge-landmarks .merge-item .error-badge.lock:before {
+        background-image: url(//editor-assets.waze.com/beta/img/locks@2x3100950831996c477193750dd3d6a323.png);
+        background-size: 22px 11px;
+    }
+}
+
+#edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before, .edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before {
+    background-image: url(//editor-assets.waze.com/beta/img/locksa471b918fa6a6352b81bf66755d0941f.png);
+    background-position: 0px 0px;
+    width: 11px;
+    height: 11px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before, .edit-panel .merge-landmarks .merge-item .error-badge.new-badge:before {
         background-image: url(//editor-assets.waze.com/beta/img/locks@2x3100950831996c477193750dd3d6a323.png);
         background-size: 22px 11px;
     }
@@ -18153,7 +18059,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .panel.place-update-edit .add-details, .panel.place-update-edit .reported-by {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .panel.place-update-edit .request-details, .panel.place-update-edit .changes, .panel.place-update-edit .navigation {
@@ -18480,7 +18386,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .venue-image-dialog .details {
     margin-top: 10px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .venue-image-dialog .close {
@@ -19077,7 +18983,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .conversation-view .comment .comment-title .date {
-    color: #92999d;
+    color: #8c8c8c;
     font-weight: normal;
 }
 
@@ -19165,11 +19071,11 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .problem-edit[data-state="not-identified"] .header .main-title {
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .problem-edit[data-state="not-identified"] .header .dot {
-    background-color: #92999d;
+    background-color: #8c8c8c;
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -19296,7 +19202,7 @@ body[dir="rtl"] .olControlScaleLine {
     position: absolute;
     right: 10px;
     bottom: 30px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .problem-edit .conversation.loading .comment-count-badge {
@@ -19693,7 +19599,7 @@ body[dir="rtl"] .olControlScaleLine {
     text-align: center;
     margin-top: 19px;
     margin-bottom: 30px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .feed-empty-image {
@@ -19794,7 +19700,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .feed-item .content .timestamp {
     font-size: 11px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .feed-item .delete {
@@ -19963,7 +19869,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .feed-issue .content .subtext, [class*="feed-issue-"] .content .subtext {
     font-size: 11px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 .feed-issue-ur.feed-issue-open.severity-low .icon {
@@ -21109,7 +21015,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .map-comment-name-editor .reported-date {
     font-size: 11px;
-    color: #92999d;
+    color: #8c8c8c;
 }
 
 #edit-panel .city-feature-editor .feature-editor-header {
@@ -21193,7 +21099,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .toggleHistory {
     padding: 11px;
-    color: #92999d;
+    color: #8c8c8c;
     text-align: left;
     cursor: pointer;
     font-weight: bold;
@@ -22399,601 +22305,6 @@ body[dir="rtl"] .olControlScaleLine {
     .street-view-control::after {
         background-image: url(//editor-assets.waze.com/beta/img/buttons@2x73bafb4edeaaa8b4e576273004fa37b4.png);
         background-size: 96px 81px;
-    }
-}
-
-/*!
- * Timepicker Component for Twitter Bootstrap
- *
- * Copyright 2013 Joris de Wit
- *
- * Contributors https://github.com/jdewit/bootstrap-timepicker/graphs/contributors
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-.bootstrap-timepicker {
-    position: relative;
-}
-
-.bootstrap-timepicker.pull-right .bootstrap-timepicker-widget.dropdown-menu {
-    left: auto;
-    right: 0;
-}
-
-.bootstrap-timepicker.pull-right .bootstrap-timepicker-widget.dropdown-menu:before {
-    left: auto;
-    right: 12px;
-}
-
-.bootstrap-timepicker.pull-right .bootstrap-timepicker-widget.dropdown-menu:after {
-    left: auto;
-    right: 13px;
-}
-
-.bootstrap-timepicker .input-group-addon {
-    cursor: pointer;
-}
-
-.bootstrap-timepicker .input-group-addon i {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-}
-
-.bootstrap-timepicker-widget.dropdown-menu {
-    padding: 4px;
-}
-
-.bootstrap-timepicker-widget.dropdown-menu.open {
-    display: inline-block;
-}
-
-.bootstrap-timepicker-widget.dropdown-menu:before {
-    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    content: "";
-    display: inline-block;
-    position: absolute;
-}
-
-.bootstrap-timepicker-widget.dropdown-menu:after {
-    border-bottom: 6px solid #FFFFFF;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    content: "";
-    display: inline-block;
-    position: absolute;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-left:before {
-    left: 6px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-left:after {
-    left: 7px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-right:before {
-    right: 6px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-right:after {
-    right: 7px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-top:before {
-    top: -7px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-top:after {
-    top: -6px;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-bottom:before {
-    bottom: -7px;
-    border-bottom: 0;
-    border-top: 7px solid #999;
-}
-
-.bootstrap-timepicker-widget.timepicker-orient-bottom:after {
-    bottom: -6px;
-    border-bottom: 0;
-    border-top: 6px solid #ffffff;
-}
-
-.bootstrap-timepicker-widget a.btn, .bootstrap-timepicker-widget input {
-    border-radius: 4px;
-}
-
-.bootstrap-timepicker-widget table {
-    width: 100%;
-    margin: 0;
-}
-
-.bootstrap-timepicker-widget table td {
-    text-align: center;
-    height: 30px;
-    margin: 0;
-    padding: 2px;
-}
-
-.bootstrap-timepicker-widget table td:not(.separator) {
-    min-width: 30px;
-}
-
-.bootstrap-timepicker-widget table td span {
-    width: 100%;
-}
-
-.bootstrap-timepicker-widget table td a {
-    border: 1px transparent solid;
-    width: 100%;
-    display: inline-block;
-    margin: 0;
-    padding: 8px 0;
-    outline: 0;
-    color: #333;
-}
-
-.bootstrap-timepicker-widget table td a:hover {
-    text-decoration: none;
-    background-color: #eee;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    border-color: #ddd;
-}
-
-.bootstrap-timepicker-widget table td a i {
-    margin-top: 2px;
-    font-size: 18px;
-}
-
-.bootstrap-timepicker-widget table td input {
-    width: 25px;
-    margin: 0;
-    text-align: center;
-}
-
-.bootstrap-timepicker-widget .modal-content {
-    padding: 4px;
-}
-
-@media (min-width: 767px) {
-    .bootstrap-timepicker-widget.modal {
-        width: 200px;
-        margin-left: -100px;
-    }
-}
-
-@media (max-width: 767px) {
-    .bootstrap-timepicker {
-        width: 100%;
-    }
-
-    .bootstrap-timepicker .dropdown-menu {
-        width: 100%;
-    }
-}
-
-.daterangepicker {
-    position: absolute;
-    color: inherit;
-    background-color: #fff;
-    border-radius: 4px;
-    width: 278px;
-    padding: 4px;
-    margin-top: 1px;
-    top: 100px;
-    left: 20px;
-    /* Calendars */
-}
-
-.daterangepicker:before, .daterangepicker:after {
-    position: absolute;
-    display: inline-block;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
-}
-
-.daterangepicker:before {
-    top: -7px;
-    border-right: 7px solid transparent;
-    border-left: 7px solid transparent;
-    border-bottom: 7px solid #ccc;
-}
-
-.daterangepicker:after {
-    top: -6px;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-}
-
-.daterangepicker.opensleft:before {
-    right: 9px;
-}
-
-.daterangepicker.opensleft:after {
-    right: 10px;
-}
-
-.daterangepicker.openscenter:before {
-    left: 0;
-    right: 0;
-    width: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.daterangepicker.openscenter:after {
-    left: 0;
-    right: 0;
-    width: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.daterangepicker.opensright:before {
-    left: 9px;
-}
-
-.daterangepicker.opensright:after {
-    left: 10px;
-}
-
-.daterangepicker.dropup {
-    margin-top: -5px;
-}
-
-.daterangepicker.dropup:before {
-    top: initial;
-    bottom: -7px;
-    border-bottom: initial;
-    border-top: 7px solid #ccc;
-}
-
-.daterangepicker.dropup:after {
-    top: initial;
-    bottom: -6px;
-    border-bottom: initial;
-    border-top: 6px solid #fff;
-}
-
-.daterangepicker.dropdown-menu {
-    max-width: none;
-    z-index: 3001;
-}
-
-.daterangepicker.single .ranges, .daterangepicker.single .calendar {
-    float: none;
-}
-
-.daterangepicker.show-calendar .calendar {
-    display: block;
-}
-
-.daterangepicker .calendar {
-    display: none;
-    max-width: 270px;
-    margin: 4px;
-}
-
-.daterangepicker .calendar.single .calendar-table {
-    border: none;
-}
-
-.daterangepicker .calendar th, .daterangepicker .calendar td {
-    white-space: nowrap;
-    text-align: center;
-    min-width: 32px;
-}
-
-.daterangepicker .calendar-table {
-    border: 1px solid #fff;
-    padding: 4px;
-    border-radius: 4px;
-    background-color: #fff;
-}
-
-.daterangepicker table {
-    width: 100%;
-    margin: 0;
-}
-
-.daterangepicker td, .daterangepicker th {
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.daterangepicker td.available:hover, .daterangepicker th.available:hover {
-    background-color: #eee;
-    border-color: transparent;
-    color: inherit;
-}
-
-.daterangepicker td.week, .daterangepicker th.week {
-    font-size: 80%;
-    color: #ccc;
-}
-
-.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
-    background-color: #fff;
-    border-color: transparent;
-    color: #999;
-}
-
-.daterangepicker td.in-range {
-    background-color: #ebf4f8;
-    border-color: transparent;
-    color: #000;
-    border-radius: 0;
-}
-
-.daterangepicker td.start-date {
-    border-radius: 4px 0 0 4px;
-}
-
-.daterangepicker td.end-date {
-    border-radius: 0 4px 4px 0;
-}
-
-.daterangepicker td.start-date.end-date {
-    border-radius: 4px;
-}
-
-.daterangepicker td.active, .daterangepicker td.active:hover {
-    background-color: #357ebd;
-    border-color: transparent;
-    color: #fff;
-}
-
-.daterangepicker th.month {
-    width: auto;
-}
-
-.daterangepicker td.disabled, .daterangepicker option.disabled {
-    color: #999;
-    cursor: not-allowed;
-    text-decoration: line-through;
-}
-
-.daterangepicker select.monthselect, .daterangepicker select.yearselect {
-    font-size: 12px;
-    padding: 1px;
-    height: auto;
-    margin: 0;
-    cursor: default;
-}
-
-.daterangepicker select.monthselect {
-    margin-right: 2%;
-    width: 56%;
-}
-
-.daterangepicker select.yearselect {
-    width: 40%;
-}
-
-.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
-    width: 50px;
-    margin-bottom: 0;
-}
-
-.daterangepicker .input-mini {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #555;
-    height: 30px;
-    line-height: 30px;
-    display: block;
-    vertical-align: middle;
-    margin: 0 0 5px 0;
-    padding: 0 6px 0 28px;
-    width: 100%;
-}
-
-.daterangepicker .input-mini.active {
-    border: 1px solid #08c;
-    border-radius: 4px;
-}
-
-.daterangepicker .daterangepicker_input {
-    position: relative;
-}
-
-.daterangepicker .daterangepicker_input i {
-    position: absolute;
-    left: 8px;
-    top: 8px;
-}
-
-.daterangepicker.rtl .input-mini {
-    padding-right: 28px;
-    padding-left: 6px;
-}
-
-.daterangepicker.rtl .daterangepicker_input i {
-    left: auto;
-    right: 8px;
-}
-
-.daterangepicker .calendar-time {
-    text-align: center;
-    margin: 5px auto;
-    line-height: 30px;
-    position: relative;
-    padding-left: 28px;
-}
-
-.daterangepicker .calendar-time select.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-.ranges {
-    font-size: 11px;
-    float: none;
-    margin: 4px;
-    text-align: left;
-}
-
-.ranges ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-}
-
-.ranges li {
-    font-size: 13px;
-    background-color: #f5f5f5;
-    border: 1px solid #f5f5f5;
-    border-radius: 4px;
-    color: #08c;
-    padding: 3px 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-}
-
-.ranges li:hover {
-    background-color: #08c;
-    border: 1px solid #08c;
-    color: #fff;
-}
-
-.ranges li.active {
-    background-color: #08c;
-    border: 1px solid #08c;
-    color: #fff;
-}
-
-/*  Larger Screen Styling */
-@media (min-width: 564px) {
-    .daterangepicker {
-        width: auto;
-    }
-
-    .daterangepicker .ranges ul {
-        width: 160px;
-    }
-
-    .daterangepicker.single .ranges ul {
-        width: 100%;
-    }
-
-    .daterangepicker.single .calendar.left {
-        clear: none;
-    }
-
-    .daterangepicker.single.ltr .ranges, .daterangepicker.single.ltr .calendar {
-        float: left;
-    }
-
-    .daterangepicker.single.rtl .ranges, .daterangepicker.single.rtl .calendar {
-        float: right;
-    }
-
-    .daterangepicker.ltr {
-        direction: ltr;
-        text-align: left;
-    }
-
-    .daterangepicker.ltr .calendar.left {
-        clear: left;
-        margin-right: 0;
-    }
-
-    .daterangepicker.ltr .calendar.left .calendar-table {
-        border-right: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .daterangepicker.ltr .calendar.right {
-        margin-left: 0;
-    }
-
-    .daterangepicker.ltr .calendar.right .calendar-table {
-        border-left: none;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-
-    .daterangepicker.ltr .left .daterangepicker_input {
-        padding-right: 12px;
-    }
-
-    .daterangepicker.ltr .calendar.left .calendar-table {
-        padding-right: 12px;
-    }
-
-    .daterangepicker.ltr .ranges, .daterangepicker.ltr .calendar {
-        float: left;
-    }
-
-    .daterangepicker.rtl {
-        direction: rtl;
-        text-align: right;
-    }
-
-    .daterangepicker.rtl .calendar.left {
-        clear: right;
-        margin-left: 0;
-    }
-
-    .daterangepicker.rtl .calendar.left .calendar-table {
-        border-left: none;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-
-    .daterangepicker.rtl .calendar.right {
-        margin-right: 0;
-    }
-
-    .daterangepicker.rtl .calendar.right .calendar-table {
-        border-right: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .daterangepicker.rtl .left .daterangepicker_input {
-        padding-left: 12px;
-    }
-
-    .daterangepicker.rtl .calendar.left .calendar-table {
-        padding-left: 12px;
-    }
-
-    .daterangepicker.rtl .ranges, .daterangepicker.rtl .calendar {
-        text-align: right;
-        float: right;
-    }
-}
-
-@media (min-width: 730px) {
-    .daterangepicker .ranges {
-        width: auto;
-    }
-
-    .daterangepicker.ltr .ranges {
-        float: left;
-    }
-
-    .daterangepicker.rtl .ranges {
-        float: right;
-    }
-
-    .daterangepicker .calendar.left {
-        clear: none !important;
     }
 }
 
