@@ -12629,15 +12629,15 @@
             ordinal: function(e, t) {
                 switch (t) {
                     default:
-                        case "M":
-                        case "Q":
-                        case "D":
-                        case "DDD":
-                        case "d":
+                    case "M":
+                    case "Q":
+                    case "D":
+                    case "DDD":
+                    case "d":
                         return e + (1 === e ? "er" : "e");
                     case "w":
-                            case "W":
-                            return e + (1 === e ? "re" : "e")
+                    case "W":
+                        return e + (1 === e ? "re" : "e")
                 }
             }
         })
@@ -12689,15 +12689,15 @@
             ordinal: function(e, t) {
                 switch (t) {
                     default:
-                        case "M":
-                        case "Q":
-                        case "D":
-                        case "DDD":
-                        case "d":
+                    case "M":
+                    case "Q":
+                    case "D":
+                    case "DDD":
+                    case "d":
                         return e + (1 === e ? "er" : "e");
                     case "w":
-                            case "W":
-                            return e + (1 === e ? "re" : "e")
+                    case "W":
+                        return e + (1 === e ? "re" : "e")
                 }
             },
             week: {
