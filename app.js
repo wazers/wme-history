@@ -27846,7 +27846,7 @@
                     minRank: 3
                 }
             },
-            version: "v2.21-58-g3df942a\n",
+            version: "v2.21-59-g901c0d3\n",
             apiKeys: {
                 googleMapsApiKey: "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
             }
@@ -45237,7 +45237,7 @@
             }, {
                 key: "template",
                 get: function() {
-                    return "MapEditor/UI/Map/templates/location-message"
+                    return "Waze/MapEditor/UI/Map/templates/location-message"
                 }
             }]),
             t

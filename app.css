@@ -12527,13 +12527,11 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .direction-lanes .lane-instruction {
     display: flex;
     flex-direction: row;
+    margin-top: 15px;
 }
 
 .direction-lanes .lane-instruction .drawing {
     min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     margin-right: 21px;
 }
@@ -12553,14 +12551,15 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .direction-lanes .lane-instruction .drawing .line {
     position: absolute;
-    bottom: 0px;
+    top: 25px;
     width: 4px;
     background-color: #00fff3;
-    height: 50%;
+    height: calc(100% - 25px + 15px);
     z-index: 1;
+    left: 10px;
 }
 
-.direction-lanes .lane-instruction .drawing .incomplete-badge {
+.direction-lanes .lane-instruction .drawing .uncovered-turn-badge {
     background-image: url(//editor-assets.waze.com/beta/img/lanes91109f93a21ef3322bc3960e3fbaee18.png);
     background-position: 0px 0px;
     width: 15px;
@@ -12568,16 +12567,19 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     position: absolute;
     z-index: 3;
     left: -8px;
+    top: 5px;
 }
 
 .direction-lanes .lane-instruction .instruction {
     flex: 1;
-    padding-top: 15px;
-    padding-bottom: 15px;
     border-bottom: solid 1px #dadada;
 }
 
-.direction-lanes .lane-instruction .instruction .street-name {
+.direction-lanes .lane-instruction .instruction .instruction-text {
+    line-height: 25px;
+}
+
+.direction-lanes .lane-instruction .instruction .instruction-text .street-name {
     font-weight: bold;
 }
 
@@ -12587,16 +12589,15 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     cursor: pointer;
 }
 
-.direction-lanes .lane-instruction:first-child .instruction {
-    padding-top: 0px;
+.direction-lanes .lane-instruction .instruction .lane-edit {
+    margin-top: 2px;
 }
 
-.direction-lanes .lane-instruction:last-child .drawing .line {
-    top: 0px;
+.direction-lanes .lane-instruction:first-child {
+    margin-top: 0px;
 }
 
 .direction-lanes .lane-instruction:last-child .instruction {
-    padding-bottom: 0px;
     border-bottom: none;
 }
 
@@ -12607,7 +12608,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .lane-arrow {
     width: 26px;
-    height: 34px;
+    height: 38px;
     display: inline-block;
     color: #fff;
     background-color: #26bae8;
@@ -12616,6 +12617,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-right: 2px;
     text-align: center;
     vertical-align: top;
+    position: relative;
 }
 
 .lane-arrow .arrow-line {
@@ -12649,10 +12651,23 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     box-shadow: none;
 }
 
+.lane-arrow .empty-badge {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes91109f93a21ef3322bc3960e3fbaee18.png);
+    background-position: 0px 0px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-7px, -8px);
+    transform-style: flat;
+}
+
 .direction-lanes-edit {
     background: #ededed;
     border-radius: 8px;
     padding: 27px 18px 15px;
+    margin-top: 7px;
 }
 
 .direction-lanes-edit input[name="laneCount"] {
@@ -12660,10 +12675,19 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .direction-lanes-edit hr {
-    margin-top: 30px;
+    margin-top: 14px;
     margin-bottom: 14px;
     background-color: #dadada;
     height: 1px;
+}
+
+.direction-lanes-edit .warning {
+    margin-top: 22px;
+    margin-bottom: 26px;
+}
+
+.direction-lanes-edit .controls-container {
+    padding-top: 0px;
 }
 
 .direction-lanes-edit .button-container {
@@ -12680,7 +12704,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .direction-lanes-edit .turn-lane-edit {
-    margin-bottom: 5px;
+    margin-bottom: 16px;
     display: flex;
     align-items: flex-start;
 }
@@ -12694,6 +12718,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .direction-lanes-edit .turn-lane-edit .right-turn-lanes-part {
     display: inline-block;
     flex: 1;
+    margin-left: 9px;
 }
 
 .direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .street-name {
@@ -17696,6 +17721,40 @@ body[dir="rtl"] .olControlScaleLine {
     opacity: 0.5;
 }
 
+#edit-panel .merge-landmarks .merge-item .polygon-icon, .edit-panel .merge-landmarks .merge-item .polygon-icon {
+    position: absolute;
+    bottom: 33px;
+    left: 22px;
+    background-image: url(//editor-assets.waze.com/beta/img/toolbare2f6b31c61eee7e973d28d1373a7b8ce.png);
+    background-position: 0px 0px;
+    width: 17px;
+    height: 21px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #edit-panel .merge-landmarks .merge-item .polygon-icon, .edit-panel .merge-landmarks .merge-item .polygon-icon {
+        background-image: url(//editor-assets.waze.com/beta/img/toolbar@2x3b27ea4cfe55be3b3c16b66a74c151a4.png);
+        background-size: 105px 95px;
+    }
+}
+
+#edit-panel .merge-landmarks .merge-item .point-icon, .edit-panel .merge-landmarks .merge-item .point-icon {
+    position: absolute;
+    bottom: 35px;
+    left: 22px;
+    background-image: url(//editor-assets.waze.com/beta/img/toolbare2f6b31c61eee7e973d28d1373a7b8ce.png);
+    background-position: -50px -16px;
+    width: 16px;
+    height: 16px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #edit-panel .merge-landmarks .merge-item .point-icon, .edit-panel .merge-landmarks .merge-item .point-icon {
+        background-image: url(//editor-assets.waze.com/beta/img/toolbar@2x3b27ea4cfe55be3b3c16b66a74c151a4.png);
+        background-size: 105px 95px;
+    }
+}
+
 #edit-panel .merge-landmarks .merge-item .icon-container, .edit-panel .merge-landmarks .merge-item .icon-container {
     position: relative;
 }
@@ -21953,7 +22012,12 @@ body[dir="rtl"] .olControlScaleLine {
     margin-bottom: 10px;
 }
 
-.merge-landmark-modal .option-container label.main-label {
+.merge-landmark-modal .option-container label {
+    vertical-align: middle;
+    min-height: 16px;
+}
+
+.merge-landmark-modal .option-container label .main-label {
     display: none;
 }
 
@@ -22382,3 +22446,4 @@ body[dir="rtl"] .input-group-addon:last-child {
 }
 
 /*rtl:end:ignore*/
+	
