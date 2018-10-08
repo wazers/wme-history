@@ -63,7 +63,7 @@
             return Object.prototype.hasOwnProperty.call(e, t)
         },
         n.p = "//editor-assets.waze.com/beta/",
-        n(n.s = 760)
+        n(n.s = 761)
 }([function(e, t, n) {
     "use strict";
     t.__esModule = !0,
@@ -97,7 +97,7 @@
     }()
 }, function(e, t, n) {
     e.exports = {
-        default: n(774),
+        default: n(775),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -144,7 +144,7 @@
 }, , function(e, t, n) {
     "use strict";
     t.__esModule = !0;
-    var i, r = n(770),
+    var i, r = n(771),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -158,14 +158,14 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(795),
+        default: n(796),
         __esModule: !0
     }
 }, function(e, t, n) {
     "use strict";
     t.__esModule = !0;
     var i = s(n(2)),
-        r = s(n(864));
+        r = s(n(865));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -205,7 +205,7 @@
 }, function(e, t, n) {
     "use strict";
     t.__esModule = !0;
-    var i = s(n(763)),
+    var i = s(n(764)),
         r = s(n(25));
 
     function s(e) {
@@ -1174,7 +1174,7 @@
     "number" == typeof __g && (__g = n)
 }, function(e, t, n) {
     e.exports = {
-        default: n(783),
+        default: n(784),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -1624,7 +1624,7 @@
         }
 }, function(e, t, n) {
     e.exports = {
-        default: n(766),
+        default: n(767),
         __esModule: !0
     }
 }, function(e, t) {
@@ -2060,7 +2060,7 @@
         p = A(n(45)),
         g = A(n(13)),
         v = n(119),
-        m = n(867),
+        m = n(868),
         y = A(n(22)),
         b = C(n(24)),
         w = A(n(47)),
@@ -3445,7 +3445,7 @@
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
-    var a = n(797);
+    var a = n(798);
     a.keys().map(a);
     var o = {
         t: I18n.t.bind(I18n),
@@ -3475,7 +3475,7 @@
         _getManifestsWith: function(e) {
             return W.Config.enabled_modules.map(function(t) {
                 try {
-                    return n(845)("./" + t + "/Manifest")[e]
+                    return n(846)("./" + t + "/Manifest")[e]
                 } catch (e) {
                     throw new Error("Error loading module " + t + ":\nManifest file does not exist.")
                 }
@@ -3869,7 +3869,7 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(849),
+        default: n(850),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -3881,7 +3881,7 @@
     var i = l(n(9)),
         r = l(n(34)),
         s = n(71),
-        a = l(n(869)),
+        a = l(n(870)),
         o = n(72);
 
     function l(e) {
@@ -5004,12 +5004,12 @@
     }).call(this, n(38), n(111)(e))
 }, function(e, t, n) {
     e.exports = {
-        default: n(768),
+        default: n(769),
         __esModule: !0
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(790),
+        default: n(791),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -5083,7 +5083,7 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(855),
+        default: n(856),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -5097,7 +5097,7 @@
         s = u(n(0)),
         a = u(n(1)),
         o = n(189),
-        l = n(857);
+        l = n(858);
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -5378,7 +5378,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(868),
+    var i, r = n(869),
         s = n(54);
     ! function(e) {
         e[e.FWD = 0] = "FWD",
@@ -5899,7 +5899,7 @@
         l = p(n(1)),
         u = p(n(3)),
         d = p(n(4)),
-        c = p(n(851)),
+        c = p(n(852)),
         h = n(32),
         f = function(e) {
             if (e && e.__esModule)
@@ -6194,7 +6194,7 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(852));
+        }(n(853));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -6592,7 +6592,7 @@
                     }
                 }]),
                 t
-        }(d(n(858)).default),
+        }(d(n(859)).default),
         h = new c({
             isEmpty: !0
         });
@@ -7270,10 +7270,10 @@
     var i = d(n(19)),
         r = d(n(371)),
         s = d(n(191)),
-        a = d(n(861)),
-        o = d(n(862)),
+        a = d(n(862)),
+        o = d(n(863)),
         l = d(n(103)),
-        u = d(n(863));
+        u = d(n(864));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -7576,7 +7576,7 @@
             return t.default = e,
                 t
         }(n(24)),
-        g = E(n(1068)),
+        g = E(n(1069)),
         v = E(n(41)),
         m = E(n(88)),
         y = E(n(190)),
@@ -8144,8 +8144,8 @@
                 t
         }(n(24)),
         y = M(n(87)),
-        b = M(n(208)),
-        w = M(n(1097)),
+        b = M(n(209)),
+        w = M(n(1098)),
         k = M(n(11)),
         E = n(30);
 
@@ -8846,7 +8846,7 @@
         }
 }, function(e, t, n) {
     e.exports = {
-        default: n(871),
+        default: n(872),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -9599,25 +9599,25 @@
             value: !0
         }),
         t.LAYER_UNIQUE_NAMES = t.MapLayers = void 0;
-    var i = O(n(210)),
-        r = O(n(1127)),
-        s = O(n(211)),
-        a = O(n(1128)),
-        o = O(n(1133)),
-        l = O(n(1134)),
-        u = O(n(415)),
-        d = O(n(1137)),
-        c = O(n(1138)),
+    var i = O(n(211)),
+        r = O(n(1128)),
+        s = O(n(212)),
+        a = O(n(1129)),
+        o = O(n(1134)),
+        l = O(n(1135)),
+        u = O(n(416)),
+        d = O(n(1138)),
+        c = O(n(1139)),
         h = O(n(155)),
-        f = O(n(1139)),
-        p = O(n(1163)),
-        g = O(n(1164)),
-        v = O(n(1165)),
-        m = O(n(416)),
-        y = O(n(1166)),
-        b = O(n(1167)),
-        w = O(n(1168)),
-        k = O(n(1169)),
+        f = O(n(1140)),
+        p = O(n(1164)),
+        g = O(n(1165)),
+        v = O(n(1166)),
+        m = O(n(417)),
+        y = O(n(1167)),
+        b = O(n(1168)),
+        w = O(n(1169)),
+        k = O(n(1170)),
         E = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -9629,10 +9629,10 @@
                 t
         }(n(14)),
         M = O(n(13)),
-        S = O(n(1170)),
+        S = O(n(1171)),
         T = O(n(75)),
-        I = O(n(212)),
-        C = O(n(1171)),
+        I = O(n(213)),
+        C = O(n(1172)),
         A = O(n(44));
 
     function O(e) {
@@ -10155,17 +10155,17 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(778),
+        default: n(779),
         __esModule: !0
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(781),
+        default: n(782),
         __esModule: !0
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(789),
+        default: n(790),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -10525,7 +10525,7 @@
         p = M(n(105)),
         g = n(90),
         v = M(n(196)),
-        m = M(n(896)),
+        m = M(n(897)),
         y = M(n(383)),
         b = M(n(89)),
         w = M(n(13)),
@@ -10888,7 +10888,7 @@
     var i = b(n(6)),
         r = b(n(180)),
         s = b(n(10)),
-        a = b(n(901)),
+        a = b(n(902)),
         o = b(n(61)),
         l = b(n(25)),
         u = b(n(2)),
@@ -11102,7 +11102,7 @@
         a = d(n(3)),
         o = d(n(4)),
         l = d(n(185)),
-        u = d(n(905));
+        u = d(n(906));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -11419,7 +11419,7 @@
         d = m(n(20)),
         c = m(n(92)),
         h = m(n(397)),
-        f = m(n(1066)),
+        f = m(n(1067)),
         p = n(14),
         g = n(40),
         v = function(e) {
@@ -11817,7 +11817,7 @@
         value: !0
     });
     var i = n(126),
-        r = n(207);
+        r = n(208);
 
     function s(e) {
         return e === i.ROOT_PATH_LOCALE_CODE ? "/editor" + window.location.search : "/" + e + "/editor" + window.location.search
@@ -13377,7 +13377,7 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(776),
+        default: n(777),
         __esModule: !0
     }
 }, function(e, t) {
@@ -13412,7 +13412,7 @@
     }
 }, function(e, t, n) {
     e.exports = {
-        default: n(792),
+        default: n(793),
         __esModule: !0
     }
 }, function(e, t, n) {
@@ -13594,7 +13594,7 @@
         l = g(n(4)),
         u = g(n(17)),
         d = g(n(45)),
-        c = g(n(853)),
+        c = g(n(854)),
         h = g(n(89)),
         f = g(n(13)),
         p = g(n(88));
@@ -15139,7 +15139,7 @@
         c = v(n(22)),
         h = v(n(123)),
         f = v(n(149)),
-        p = v(n(1069)),
+        p = v(n(1070)),
         g = n(14);
 
     function v(e) {
@@ -15230,6 +15230,80 @@
                 t
         }(d.default);
     t.default = y,
+        e.exports = t.default
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = a(n(7)),
+        r = a(n(10)),
+        s = a(n(63));
+
+    function a(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var o = {
+        bfs: function(e, t, n) {
+            var i = [e],
+                r = {};
+            r[e.getID()] = e.getID();
+            for (var a = function() {
+                    for (var e = i.shift(), s = ["from", "to"], a = 0; a < s.length; a++)
+                        for (var o = s[a], l = e.attributes[o + "NodeID"], u = e.getConnectedSegments(o).filter(function(n) {
+                                return n.getID() !== e.getID() && t(n)
+                            }).map(function(e) {
+                                return e
+                            }), d = 0; d < u.length; d++) {
+                            var c = u[d];
+                            if (!r[c.getID()]) {
+                                if (r[c.getID()] = e.getID(),
+                                    n(c, l, o, u, e))
+                                    return {
+                                        v: [c, r]
+                                    };
+                                i.push(c)
+                            }
+                        }
+                }; !_.isEmpty(i);) {
+                var o = a();
+                if ("object" === (void 0 === o ? "undefined" : (0,
+                        s.default)(o)))
+                    return o.v
+            }
+            return [null, r]
+        },
+        getReversedSegments: function(e) {
+            var t = {
+                multipleConnectedComponents: !1,
+                numReversed: 0
+            };
+            if (_.isEmpty(e))
+                return t;
+            t[e[0].getID()] = !1;
+            var n = this.bfs(e[0], function(t) {
+                    return e.includes(t)
+                }, function(e, n, i, r, s) {
+                    var a = "from" === i && e.attributes.toNodeID !== n || "to" === i && e.attributes.fromNodeID !== n,
+                        o = t[s.getID()],
+                        l = a ? !o : o;
+                    return t[e.getID()] = l,
+                        l && t.numReversed++,
+                        !1
+                }),
+                s = (0,
+                    r.default)(n, 2)[1];
+            return (0,
+                    i.default)(s).length < e.length && (t = {
+                    multipleConnectedComponents: !0,
+                    numReversed: 0
+                }),
+                t
+        }
+    };
+    t.default = o,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -15487,7 +15561,7 @@
             value: !0
         }),
         t.MergeHGighlightStyleMap = void 0;
-    var i, r = n(1126),
+    var i, r = n(1127),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -15727,11 +15801,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = l(n(1140)),
-        r = l(n(414)),
-        s = l(n(1141)),
-        a = l(n(1142)),
-        o = l(n(1143));
+    var i = l(n(1141)),
+        r = l(n(415)),
+        s = l(n(1142)),
+        a = l(n(1143)),
+        o = l(n(1144));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -15768,7 +15842,7 @@
             }, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return n(1144)("./" + u[e.attributes.code] + ".png")
+                        return n(1145)("./" + u[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -16107,7 +16181,7 @@
     var i = o(n(0)),
         r = o(n(1)),
         s = o(n(75)),
-        a = o(n(1214));
+        a = o(n(1215));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -16308,7 +16382,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(208),
+    var i, r = n(209),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -16317,80 +16391,6 @@
             collatedCount: null
         }, s.default.prototype.defaults),
         t.default = a,
-        e.exports = t.default
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var i = a(n(7)),
-        r = a(n(10)),
-        s = a(n(63));
-
-    function a(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var o = {
-        bfs: function(e, t, n) {
-            var i = [e],
-                r = {};
-            r[e.getID()] = e.getID();
-            for (var a = function() {
-                    for (var e = i.shift(), s = ["from", "to"], a = 0; a < s.length; a++)
-                        for (var o = s[a], l = e.attributes[o + "NodeID"], u = e.getConnectedSegments(o).filter(function(n) {
-                                return n.getID() !== e.getID() && t(n)
-                            }).map(function(e) {
-                                return e
-                            }), d = 0; d < u.length; d++) {
-                            var c = u[d];
-                            if (!r[c.getID()]) {
-                                if (r[c.getID()] = e.getID(),
-                                    n(c, l, o, u, e))
-                                    return {
-                                        v: [c, r]
-                                    };
-                                i.push(c)
-                            }
-                        }
-                }; !_.isEmpty(i);) {
-                var o = a();
-                if ("object" === (void 0 === o ? "undefined" : (0,
-                        s.default)(o)))
-                    return o.v
-            }
-            return [null, r]
-        },
-        getReversedSegments: function(e) {
-            var t = {
-                multipleConnectedComponents: !1,
-                numReversed: 0
-            };
-            if (_.isEmpty(e))
-                return t;
-            t[e[0].getID()] = !1;
-            var n = this.bfs(e[0], function(t) {
-                    return e.includes(t)
-                }, function(e, n, i, r, s) {
-                    var a = "from" === i && e.attributes.toNodeID !== n || "to" === i && e.attributes.fromNodeID !== n,
-                        o = t[s.getID()],
-                        l = a ? !o : o;
-                    return t[e.getID()] = l,
-                        l && t.numReversed++,
-                        !1
-                }),
-                s = (0,
-                    r.default)(n, 2)[1];
-            return (0,
-                    i.default)(s).length < e.length && (t = {
-                    multipleConnectedComponents: !0,
-                    numReversed: 0
-                }),
-                t
-        }
-    };
-    t.default = o,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -16405,7 +16405,7 @@
         o = w(n(7)),
         l = w(n(25)),
         u = w(n(62)),
-        d = w(n(432)),
+        d = w(n(433)),
         c = w(n(120)),
         h = w(n(2)),
         f = w(n(0)),
@@ -16413,7 +16413,7 @@
         g = w(n(3)),
         v = w(n(4)),
         m = n(110),
-        y = w(n(208)),
+        y = w(n(209)),
         b = w(n(1255));
 
     function w(e) {
@@ -18315,7 +18315,7 @@
         c = n(26),
         h = n(58),
         f = n(27).f,
-        p = n(873)(0),
+        p = n(874)(0),
         g = n(29);
     e.exports = function(e, t, n, v, m, _) {
         var y = i[e],
@@ -18355,7 +18355,7 @@
     }
 }, function(e, t, n) {
     var i = n(134),
-        r = n(877);
+        r = n(878);
     e.exports = function(e) {
         return function() {
             if (i(this) != e)
@@ -18403,7 +18403,7 @@
     });
     var i = l(n(19)),
         r = l(n(371)),
-        s = l(n(882)),
+        s = l(n(883)),
         a = l(n(104)),
         o = n(72);
 
@@ -19492,7 +19492,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(912)),
+    var i = a(n(913)),
         r = a(n(148)),
         s = a(n(200));
 
@@ -21166,9 +21166,9 @@
     var i = c(n(9)),
         r = c(n(386)),
         s = c(n(74)),
-        a = c(n(1070)),
-        o = c(n(1071)),
-        l = c(n(1072)),
+        a = c(n(1071)),
+        o = c(n(1072)),
+        l = c(n(1073)),
         u = n(93),
         d = c(u);
 
@@ -21275,6 +21275,391 @@
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = u(n(10)),
+        r = u(n(0)),
+        s = u(n(1)),
+        a = n(14),
+        o = u(n(206)),
+        l = n(72);
+
+    function u(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var d = function() {
+        function e(t, n, i) {
+            var s = this;
+            (0,
+                r.default)(this, e),
+            this.model = t,
+                this.events = new OpenLayers.Events(this),
+                this._selectedFeatures = [],
+                this._requireDeselect = W.prefs.get("requireFeatureDeselect"),
+                this._layers = n,
+                this._objectTypeToLayer = {},
+                this._deselectOnToggle = !0,
+                this._mouseInFeature = null,
+                this._layers.forEach(function(e) {
+                    return s._objectTypeToLayer[e.featureType] = e
+                }),
+                this._enabled = !0,
+                this.selectionMediator = i,
+                this._bindEvents()
+        }
+        return (0,
+                s.default)(e, [{
+                key: "_bindEvents",
+                value: function() {
+                    var e = this;
+                    this._layers.forEach(function(t) {
+                            t.events.on({
+                                visibilitychanged: e._layerVisibilityChanged,
+                                scope: e
+                            })
+                        }),
+                        W.prefs.on("change:requireFeatureDeselect", function(e, t) {
+                            this._requireDeselect = t
+                        }, this),
+                        this._bindSelectionMediatorEvents()
+                }
+            }, {
+                key: "_bindSelectionMediatorEvents",
+                value: function() {
+                    this._toggleMediatorEvents(!0)
+                }
+            }, {
+                key: "_unbindSelectionMediatorEvents",
+                value: function() {
+                    this._toggleMediatorEvents(!1)
+                }
+            }, {
+                key: "_toggleMediatorEvents",
+                value: function(e) {
+                    var t = e ? "on" : "off";
+                    this.selectionMediator[t]("map:selection:pathSelect", this._onSelectPath, this),
+                        this.selectionMediator[t]("map:selection:featureClick", this._onFeatureClicked, this),
+                        this.selectionMediator[t]("map:selection:featureIn", this._onFeatureIn, this),
+                        this.selectionMediator[t]("map:selection:featureOut", this._onFeatureOut, this),
+                        this.selectionMediator[t]("map:selection:clickOut", this._onClickOut, this),
+                        this.selectionMediator[t]("map:selection:featureBoxSelection", this._onFeatureBoxSelection, this),
+                        this.selectionMediator[t]("map:selection:deselectKey", this._onDeselectKey, this)
+                }
+            }, {
+                key: "_onDeselectKey",
+                value: function() {
+                    this.unselectAll()
+                }
+            }, {
+                key: "_onFeatureClicked",
+                value: function(e) {
+                    var t = e.feature;
+                    if (t.model && !t.model.isDeleted() && t) {
+                        if (this.isSelected(t) && this._deselectOnToggle)
+                            return void(e.addSelection && this._selectedFeatures.length > 1 ? this.unselectFeatures(t, !1) : this.unselectAll());
+                        if (!e.addSelection || !this._canAddSelection(t)) {
+                            if (this._requireDeselect && this._selectedFeatures.length > 0)
+                                return;
+                            this.unselectAll(!1)
+                        }
+                        this.selectFeatures(t, !1)
+                    }
+                }
+            }, {
+                key: "_onFeatureIn",
+                value: function(e) {
+                    this._mouseInFeature = e,
+                        this.highlight(e)
+                }
+            }, {
+                key: "_onFeatureOut",
+                value: function(e) {
+                    this._mouseInFeature = null,
+                        this.unhighlight(e)
+                }
+            }, {
+                key: "highlight",
+                value: function(e) {
+                    this._isFeatureHighlightable(e) && this.selectionMediator.highlight(e, this.isSelected(e), e.model.isDeleted())
+                }
+            }, {
+                key: "unhighlight",
+                value: function(e) {
+                    this._isFeatureHighlightable(e) && this.selectionMediator.unhighlight(e, this.isSelected(e), e.model.isDeleted())
+                }
+            }, {
+                key: "_isFeatureHighlightable",
+                value: function(e) {
+                    return Boolean(e.model)
+                }
+            }, {
+                key: "recalculateStyle",
+                value: function(e) {
+                    e === this._mouseInFeature ? this.highlight(e) : this.unhighlight(e)
+                }
+            }, {
+                key: "_onClickOut",
+                value: function() {
+                    this.unselectAll(!1)
+                }
+            }, {
+                key: "_onFeatureBoxSelection",
+                value: function(e) {
+                    e && e.length > 0 && (this._canAddSelection(e[0]) || this.unselectAll(!1),
+                        this.selectFeatures(e, !1))
+                }
+            }, {
+                key: "_layerVisibilityChanged",
+                value: function(e) {
+                    var t = e.object;
+                    t.getVisibility() || this._selectedFeatures.filter(function(e) {
+                        return e.layer === t
+                    }).forEach(this.unselectFeature.bind(this))
+                }
+            }, {
+                key: "isSelected",
+                value: function(e) {
+                    return this._selectedFeatures.includes(e)
+                }
+            }, {
+                key: "selectFeature",
+                value: function(e) {
+                    return !(!e || this.isSelected(e)) && (this._selectedFeatures.push(e),
+                        e.model && e.model.setSelected(!0),
+                        !0)
+                }
+            }, {
+                key: "unselectFeature",
+                value: function(e, t) {
+                    if (e && this.isSelected(e)) {
+                        var n = this._selectedFeatures.indexOf(e);
+                        this._selectedFeatures.splice(n, 1),
+                            e.model && e.model.setSelected(!1),
+                            this._triggerUnSelected([e], t),
+                            this._triggerSelectionChanged(t)
+                    }
+                }
+            }, {
+                key: "unselectAll",
+                value: function(e) {
+                    if (this._selectedFeatures.length > 0) {
+                        var t = this._selectedFeatures;
+                        t.forEach(function(e) {
+                                e.model.setSelected(!1)
+                            }),
+                            this._selectedFeatures = [],
+                            this._triggerUnSelected(t, e),
+                            this._triggerSelectionChanged(e)
+                    }
+                }
+            }, {
+                key: "selectFeatures",
+                value: function(e, t) {
+                    if (Array.isArray(e) || (e = [e]),
+                        0 !== e.length) {
+                        for (var n = [], i = 0; i < e.length; i++) {
+                            var r = e[i];
+                            this.selectFeature(r) && n.push(r)
+                        }
+                        n.length > 0 && (this._triggerSelected(n, t),
+                            this._triggerSelectionChanged(t))
+                    }
+                }
+            }, {
+                key: "setSelectedModels",
+                value: function(e, t) {
+                    var n = this;
+                    this.unselectAll(),
+                        Array.isArray(e) || (e = [e]);
+                    var i = e.map(function(e) {
+                        return n._objectTypeToLayer[e.type].getVector(e)
+                    });
+                    i = _.compact(i),
+                        this.selectFeatures(i, t)
+                }
+            }, {
+                key: "setSelection",
+                value: function(e, t) {
+                    for (var n = !1, i = this._selectedFeatures.length - 1; i >= 0; i--) {
+                        var r = this._selectedFeatures[i];
+                        e.contains(r) || (this.unselectFeature(r, !0),
+                            n = !0)
+                    }
+                    for (var s = 0; s < e.length; s++) {
+                        var a = e[s];
+                        this._selectedFeatures.contains(a) || (this.selectFeature(a, !0),
+                            n = !0)
+                    }
+                    n && this._triggerSelectionChanged(t)
+                }
+            }, {
+                key: "_triggerSelectionChanged",
+                value: function(e) {
+                    e || this.events.triggerEvent("selectionchanged", {
+                        selected: this._selectedFeatures
+                    })
+                }
+            }, {
+                key: "_triggerSelected",
+                value: function(e, t) {
+                    e.forEach(this.recalculateStyle.bind(this)),
+                        t || this.events.triggerEvent("app:selection:featureselected", {
+                            selection: this._selectedFeatures,
+                            features: e
+                        })
+                }
+            }, {
+                key: "_triggerUnSelected",
+                value: function(e, t) {
+                    t || this.events.triggerEvent("app:selection:featureunselected", {
+                            selection: this._selectedFeatures,
+                            features: e
+                        }),
+                        e.forEach(this.recalculateStyle.bind(this))
+                }
+            }, {
+                key: "destroy",
+                value: function() {
+                    var e = this;
+                    this._layers.forEach(function(t) {
+                        return t.events.un({
+                            visibilitychanged: e._layerVisibilityChanged,
+                            scope: e
+                        })
+                    })
+                }
+            }, {
+                key: "_onSelectPath",
+                value: function(e) {
+                    var t = e.feature;
+                    if (0 !== this._selectedFeatures.length) {
+                        var n = this._selectedFeatures[0].model,
+                            r = t.model;
+                        if (!(this._selectedFeatures.length > 1 || n.type !== a.SEGMENT)) {
+                            var s = function(e) {
+                                    return e.getID() === r.getID()
+                                },
+                                l = o.default.bfs(n, function(e) {
+                                    return e.attributes.primaryStreetID === n.attributes.primaryStreetID
+                                }, s),
+                                u = (0,
+                                    i.default)(l, 2),
+                                d = u[0],
+                                c = u[1];
+                            if (null === d) {
+                                var h = o.default.bfs(n, function() {
+                                    return !0
+                                }, s);
+                                c = (0,
+                                    i.default)(h, 2)[1]
+                            }
+                            var f = this._getPathFromVisitedSegments(c, n, r);
+                            return f.length <= 25 ? this.setSelectedModels(f) : void 0
+                        }
+                    } else
+                        this.selectFeature(t)
+                }
+            }, {
+                key: "_getPathFromVisitedSegments",
+                value: function(e, t, n) {
+                    for (var i = n.getID(), r = t.getID(), s = []; i !== r && null != i;)
+                        s.push(i),
+                        i = e[i];
+                    return s.push(t.getID()),
+                        s.map(function(e) {
+                            return W.model.segments.getObjectById(e)
+                        })
+                }
+            }, {
+                key: "_getSelectionCountByType",
+                value: function() {
+                    var e = this._selectedFeatures.map(function(e) {
+                        return e.model.type
+                    });
+                    return _.countBy(e, _.identity)
+                }
+            }, {
+                key: "unselectFeatures",
+                value: function(e, t, n) {
+                    if (Array.isArray(e) || (e = [e]),
+                        0 !== e.length) {
+                        for (var i = !1, r = [], s = e.length - 1; s >= 0; s--) {
+                            var a = e[s];
+                            _.contains(this._selectedFeatures, a) && (this.unselectFeature(a, !0),
+                                r.push(a),
+                                i = !0)
+                        }
+                        r.length > 0 && this._triggerUnSelected(r, n),
+                            i && this._triggerSelectionChanged(t, n)
+                    }
+                }
+            }, {
+                key: "_canAddSelection",
+                value: function(e) {
+                    var t = e.model.type,
+                        n = this._selectedFeatures[0] && this._selectedFeatures[0].model.type !== t,
+                        i = e.model.isResidential && e.model.isResidential() || this._selectedFeatures[0] && this._selectedFeatures[0].model.isResidential && this._selectedFeatures[0].model.isResidential(),
+                        r = t === a.SEGMENT || t === a.VENUE && (0,
+                            l.isFeatureFlagEnabled)(l.FEATURE_FLAGS.MERGE_PLACES);
+                    return !(i || n || !r)
+                }
+            }, {
+                key: "hasSelectedFeatures",
+                value: function() {
+                    return !_.isEmpty(this._selectedFeatures)
+                }
+            }, {
+                key: "getReversedSegments",
+                value: function() {
+                    var e = _(this._selectedFeatures.filter(function(e) {
+                        return e.model.type === a.SEGMENT
+                    })).pluck("model");
+                    return o.default.getReversedSegments(e)
+                }
+            }, {
+                key: "toggleMultipleSelection",
+                value: function() {
+                    this.selectionMediator.toggleMultipleSelection()
+                }
+            }, {
+                key: "getSelectableRepos",
+                value: function() {
+                    return this._layers.map(function(e) {
+                        return e.repo
+                    }).filter(function(e) {
+                        return void 0 !== e
+                    }).map(function(e) {
+                        return e[0]
+                    })
+                }
+            }, {
+                key: "getSelectedFeatures",
+                value: function() {
+                    return this._selectedFeatures.concat()
+                }
+            }, {
+                key: "disable",
+                value: function() {
+                    this._enabled && (this.selectionMediator.resetState(),
+                        this._unbindSelectionMediatorEvents(),
+                        this._enabled = !1)
+                }
+            }, {
+                key: "enable",
+                value: function() {
+                    this._enabled || (this._bindSelectionMediatorEvents(),
+                        this._enabled = !0)
+                }
+            }]),
+            e
+    }();
+    t.default = d,
+        e.exports = t.default
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
             value: !0
         }),
         t.InvalidLoginError = void 0;
@@ -21290,7 +21675,7 @@
         h = _(n(3)),
         f = _(n(4)),
         p = n(72),
-        g = _(n(1088)),
+        g = _(n(1089)),
         v = _(n(103)),
         m = n(30);
 
@@ -21564,12 +21949,12 @@
         o = S(n(0)),
         l = S(n(1)),
         u = S(n(86)),
-        d = S(n(1098)),
-        c = S(n(1099)),
-        h = S(n(1100)),
-        f = S(n(1102)),
-        p = S(n(1103)),
-        g = S(n(1104)),
+        d = S(n(1099)),
+        c = S(n(1100)),
+        h = S(n(1101)),
+        f = S(n(1103)),
+        p = S(n(1104)),
+        g = S(n(1105)),
         v = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -21585,8 +21970,8 @@
         b = S(n(204)),
         w = S(n(44)),
         k = S(n(109)),
-        E = S(n(1106)),
-        M = S(n(1107));
+        E = S(n(1107)),
+        M = S(n(1108));
 
     function S(e) {
         return e && e.__esModule ? e : {
@@ -22337,7 +22722,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1113),
+    var i, r = n(1114),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -22360,7 +22745,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(412),
+    var i, r = n(413),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -23068,9 +23453,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(1192)),
-        r = o(n(1196)),
-        s = o(n(421)),
+    var i = o(n(1193)),
+        r = o(n(1197)),
+        s = o(n(422)),
         a = o(n(16));
 
     function o(e) {
@@ -23266,8 +23651,8 @@
         value: !0
     });
     var i = a(n(16)),
-        r = a(n(1193)),
-        s = a(n(420));
+        r = a(n(1194)),
+        s = a(n(421));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -23386,7 +23771,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(210)),
+    var i = s(n(211)),
         r = s(n(31));
 
     function s(e) {
@@ -23547,10 +23932,10 @@
     });
     var i = u(n(7)),
         r = u(n(25)),
-        s = u(n(215)),
-        a = u(n(1216)),
-        o = u(n(1217)),
-        l = u(n(1219));
+        s = u(n(216)),
+        a = u(n(1217)),
+        o = u(n(1218)),
+        l = u(n(1220));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -23738,7 +24123,7 @@
         o = h(n(34)),
         l = h(n(1234)),
         u = h(n(1246)),
-        d = h(n(430)),
+        d = h(n(431)),
         c = h(n(1247));
 
     function h(e) {
@@ -25064,7 +25449,7 @@
         l = h(n(4)),
         u = h(n(1329)),
         d = h(n(186)),
-        c = h(n(407));
+        c = h(n(408));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -25276,7 +25661,7 @@
         a = d(n(3)),
         o = d(n(4)),
         l = d(n(13)),
-        u = d(n(211));
+        u = d(n(212));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -27608,7 +27993,7 @@
     t.default = i,
         e.exports = t.default
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
-    n(761),
+    n(762),
         e.exports = n(1439)
 }, function(e, t, n) {
     "use strict";
@@ -27846,7 +28231,7 @@
                     minRank: 3
                 }
             },
-            version: "v2.21-59-g901c0d3\n",
+            version: "v2.21-60-gf2edb10\n",
             apiKeys: {
                 googleMapsApiKey: "AIzaSyDf-q2MCay0AE7RF6oIMrDPrjBwxVtsUuI"
             }
@@ -27929,17 +28314,17 @@
                 }
             }
         },
-        n(762),
+        n(763),
         n(43),
-        n(1065),
-        n(1073),
+        n(1066),
         n(1074),
         n(1075),
         n(1076),
         n(1077),
-        n(16),
         n(1078),
-        n(1079)
+        n(16),
+        n(1079),
+        n(1080)
 }, function(e, t, n) {
     "use strict";
     OL.Map.prototype.Z_INDEX_BASE.MarkerOverlay = 850,
@@ -28094,13 +28479,13 @@
         }
 }, function(e, t, n) {
     e.exports = {
-        default: n(764),
+        default: n(765),
         __esModule: !0
     }
 }, function(e, t, n) {
     n(67),
         n(55),
-        e.exports = n(765)
+        e.exports = n(766)
 }, function(e, t, n) {
     var i = n(134),
         r = n(23)("iterator"),
@@ -28112,7 +28497,7 @@
 }, function(e, t, n) {
     n(67),
         n(55),
-        e.exports = n(767)
+        e.exports = n(768)
 }, function(e, t, n) {
     var i = n(28),
         r = n(179);
@@ -28123,7 +28508,7 @@
         return i(t.call(e))
     }
 }, function(e, t, n) {
-    n(769),
+    n(770),
         e.exports = n(12).Object.entries
 }, function(e, t, n) {
     var i = n(21),
@@ -28135,16 +28520,16 @@
     })
 }, function(e, t, n) {
     e.exports = {
-        default: n(771),
+        default: n(772),
         __esModule: !0
     }
 }, function(e, t, n) {
-    n(772),
+    n(773),
         e.exports = n(12).Object.assign
 }, function(e, t, n) {
     var i = n(21);
     i(i.S + i.F, "Object", {
-        assign: n(773)
+        assign: n(774)
     })
 }, function(e, t, n) {
     "use strict";
@@ -28172,7 +28557,7 @@
         } :
         l
 }, function(e, t, n) {
-    n(775),
+    n(776),
         e.exports = n(12).Object.getPrototypeOf
 }, function(e, t, n) {
     var i = n(66),
@@ -28183,7 +28568,7 @@
         }
     })
 }, function(e, t, n) {
-    n(777);
+    n(778);
     var i = n(12).Object;
     e.exports = function(e, t, n) {
         return i.defineProperty(e, t, n)
@@ -28194,12 +28579,12 @@
         defineProperty: n(27).f
     })
 }, function(e, t, n) {
-    n(779),
+    n(780),
         e.exports = n(12).Object.setPrototypeOf
 }, function(e, t, n) {
     var i = n(21);
     i(i.S, "Object", {
-        setPrototypeOf: n(780).set
+        setPrototypeOf: n(781).set
     })
 }, function(e, t, n) {
     var i = n(26),
@@ -28226,7 +28611,7 @@
         check: s
     }
 }, function(e, t, n) {
-    n(782);
+    n(783);
     var i = n(12).Object;
     e.exports = function(e, t) {
         return i.create(e, t)
@@ -28240,9 +28625,9 @@
     n(101),
         n(55),
         n(67),
-        n(784),
-        n(787),
+        n(785),
         n(788),
+        n(789),
         e.exports = n(12).Promise
 }, function(e, t, n) {
     "use strict";
@@ -28257,10 +28642,10 @@
         g = n(116),
         v = n(359),
         m = n(360).set,
-        _ = n(785)(),
+        _ = n(786)(),
         y = n(182),
         b = n(362),
-        w = n(786),
+        w = n(787),
         k = n(363),
         E = l.TypeError,
         M = l.process,
@@ -28589,7 +28974,7 @@
     }
 }, function(e, t, n) {
     n(55),
-        n(791),
+        n(792),
         e.exports = n(12).Array.from
 }, function(e, t, n) {
     "use strict";
@@ -28625,7 +29010,7 @@
         }
     })
 }, function(e, t, n) {
-    n(793),
+    n(794),
         e.exports = n(12).Reflect.construct
 }, function(e, t, n) {
     var i = n(21),
@@ -28634,7 +29019,7 @@
         a = n(28),
         o = n(26),
         l = n(39),
-        u = n(794),
+        u = n(795),
         d = (n(18).Reflect || {}).construct,
         c = l(function() {
             function e() {}
@@ -28698,7 +29083,7 @@
             l
     }
 }, function(e, t, n) {
-    n(796),
+    n(797),
         e.exports = n(12).Object.keys
 }, function(e, t, n) {
     var i = n(66),
@@ -28710,204 +29095,204 @@
     })
 }, function(e, t, n) {
     var i = {
-        "./Waze/MapEditor/UI/Map/MapControls/templates/mouse_position.hamlc": 798,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/overlay-buttons.hamlc": 799,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/permalink.hamlc": 800,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/zoombar.hamlc": 801,
-        "./Waze/MapEditor/UI/Map/templates/location-message.hamlc": 802,
-        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-item.hamlc": 803,
-        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-layout.hamlc": 804,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/action-view.hamlc": 805,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/changes-log-view.hamlc": 806,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/group-view.hamlc": 807,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-list-view.hamlc": 808,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-view.hamlc": 809,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat.hamlc": 810,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat_message.hamlc": 811,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat_user.hamlc": 812,
-        "./Waze/MapEditor/UI/Modules/Cities/templates/feature_editor.hamlc": 813,
-        "./Waze/MapEditor/UI/Modules/Cities/templates/layer_switcher.hamlc": 814,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/edit.hamlc": 815,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/item.hamlc": 816,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/layout.hamlc": 817,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/list.hamlc": 818,
-        "./Waze/MapEditor/UI/Modules/Comments/templates/feature_editor.hamlc": 819,
-        "./Waze/MapEditor/UI/Modules/Comments/templates/name_editor.hamlc": 820,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/item.hamlc": 821,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/list.hamlc": 822,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/text.hamlc": 823,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/history_main.hamlc": 824,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_item.hamlc": 825,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_main.hamlc": 826,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_related.hamlc": 827,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/feed.hamlc": 828,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/feed_group.hamlc": 829,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/issue_item.hamlc": 830,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/message_item.hamlc": 831,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_detail.hamlc": 832,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_item.hamlc": 833,
-        "./Waze/MapEditor/UI/Modules/GeoLocation/templates/pan_button.hamlc": 834,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes.hamlc": 835,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes_edit.hamlc": 836,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/lane_arrow.hamlc": 837,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/segment_lanes.hamlc": 838,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lane_checkbox.hamlc": 839,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lanes_edit.hamlc": 840,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/checkbox.hamlc": 841,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 842,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layout.hamlc": 843,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/module-togglers.hamlc": 844,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 913,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 914,
-        "./Waze/MapEditor/UI/Modules/Login/templates/email_verification.hamlc": 915,
-        "./Waze/MapEditor/UI/Modules/Login/templates/login_main.hamlc": 916,
-        "./Waze/MapEditor/UI/Modules/Login/templates/login_view.hamlc": 917,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 918,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 919,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 920,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 921,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 922,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 923,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 924,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 925,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 926,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 927,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 928,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 929,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 930,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 931,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 932,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 933,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 934,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 935,
-        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 936,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 937,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 938,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 939,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 940,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 941,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 942,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 943,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 944,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 945,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 946,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 947,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 948,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 949,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 950,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 951,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 952,
-        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 953,
-        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 954,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 955,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 956,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 957,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 958,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 959,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 960,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 961,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 962,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 963,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 964,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 965,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 966,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 967,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 968,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 969,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 970,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 971,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 972,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 973,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 974,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 975,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 976,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 977,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 978,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 979,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 980,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 981,
-        "./templates/add_update_details.hamlc": 982,
-        "./templates/additional_details.hamlc": 983,
-        "./templates/address/alt-street.hamlc": 984,
-        "./templates/address/edit-alt-street.hamlc": 985,
-        "./templates/address/edit.hamlc": 986,
-        "./templates/archive-panel.hamlc": 987,
-        "./templates/archive-sessions.hamlc": 988,
-        "./templates/big-junction-edit.hamlc": 989,
-        "./templates/camera-edit.hamlc": 990,
-        "./templates/chrome_autofill_off.hamlc": 991,
-        "./templates/editable-areas.hamlc": 992,
-        "./templates/focus-buttons.hamlc": 993,
-        "./templates/house-number.hamlc": 994,
-        "./templates/house-numbers-lightbox.hamlc": 995,
-        "./templates/instruction-override.hamlc": 996,
-        "./templates/keyboard_shortcuts/list.hamlc": 997,
-        "./templates/keyboard_shortcuts/modal.hamlc": 998,
-        "./templates/lock/edit.hamlc": 999,
-        "./templates/login/sandbox-message.hamlc": 1e3,
-        "./templates/map.hamlc": 1001,
-        "./templates/node-edit.hamlc": 1002,
-        "./templates/opening_hours/add.hamlc": 1003,
-        "./templates/opening_hours/item.hamlc": 1004,
-        "./templates/opening_hours/layout.hamlc": 1005,
-        "./templates/place_updates/actions.hamlc": 1006,
-        "./templates/place_updates/add_details.hamlc": 1007,
-        "./templates/place_updates/add_image.hamlc": 1008,
-        "./templates/place_updates/add_venue.hamlc": 1009,
-        "./templates/place_updates/changed_field.hamlc": 1010,
-        "./templates/place_updates/changed_field_item.hamlc": 1011,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 1012,
-        "./templates/place_updates/delete_venue.hamlc": 1013,
-        "./templates/place_updates/external_provider/item.hamlc": 1014,
-        "./templates/place_updates/external_provider/list.hamlc": 1015,
-        "./templates/place_updates/flag.hamlc": 1016,
-        "./templates/place_updates/image.hamlc": 1017,
-        "./templates/place_updates/image_dialog.hamlc": 1018,
-        "./templates/place_updates/item.hamlc": 1019,
-        "./templates/place_updates/layout.hamlc": 1020,
-        "./templates/place_updates/panel_header.hamlc": 1021,
-        "./templates/place_updates/place_details.hamlc": 1022,
-        "./templates/place_updates/update_venue.hamlc": 1023,
-        "./templates/prefs-panel.hamlc": 1024,
-        "./templates/segment/average-speed-camera.hamlc": 1025,
-        "./templates/segment/edit-panel-attributes-form.hamlc": 1026,
-        "./templates/segment/edit-panel.hamlc": 1027,
-        "./templates/segment/flag-attribute.hamlc": 1028,
-        "./templates/segment/junction-exit-layout.hamlc": 1029,
-        "./templates/segment/junction-exit.hamlc": 1030,
-        "./templates/segment/routing.hamlc": 1031,
-        "./templates/segment/speed-limit.hamlc": 1032,
-        "./templates/segment/tts-playback-popover.hamlc": 1033,
-        "./templates/segment/tts-playback.hamlc": 1034,
-        "./templates/sidebar/links.hamlc": 1035,
-        "./templates/sidebar/sidebar.hamlc": 1036,
-        "./templates/sidebar/user-details.hamlc": 1037,
-        "./templates/sidebar/user-info.hamlc": 1038,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 1039,
-        "./templates/sidebar/user-sandbox.hamlc": 1040,
-        "./templates/snapshot-message.hamlc": 1041,
-        "./templates/snapshot-toggler.hamlc": 1042,
-        "./templates/tips/watch-tutorial.hamlc": 1043,
-        "./templates/turn-arrow-tooltip-timeframes.hamlc": 1045,
-        "./templates/turn-arrow-tooltip.hamlc": 1046,
-        "./templates/turn-arrow.hamlc": 1047,
-        "./templates/tutorial-lightbox.hamlc": 1048,
-        "./templates/user-greeting.hamlc": 1049,
-        "./templates/util/day-checkboxes.hamlc": 1050,
-        "./templates/util/toggle-checkboxes.hamlc": 1051,
-        "./templates/venue/alias.hamlc": 1052,
-        "./templates/venue/aliases-layout.hamlc": 1053,
-        "./templates/venue/category-tag.hamlc": 1054,
-        "./templates/venue/external-provider/item.hamlc": 1055,
-        "./templates/venue/external-provider/list.hamlc": 1056,
-        "./templates/venue/suggested-categories.hamlc": 1057,
-        "./templates/venue/venue-categories.hamlc": 1058,
-        "./templates/venue/venue-edit-general.hamlc": 1059,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 1060,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 1061,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 1062,
-        "./templates/venue/venue-edit-more-info.hamlc": 1063,
-        "./templates/venue/venue-edit.hamlc": 1064
+        "./Waze/MapEditor/UI/Map/MapControls/templates/mouse_position.hamlc": 799,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/overlay-buttons.hamlc": 800,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/permalink.hamlc": 801,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/zoombar.hamlc": 802,
+        "./Waze/MapEditor/UI/Map/templates/location-message.hamlc": 803,
+        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-item.hamlc": 804,
+        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-layout.hamlc": 805,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/action-view.hamlc": 806,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/changes-log-view.hamlc": 807,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/group-view.hamlc": 808,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-list-view.hamlc": 809,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-view.hamlc": 810,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat.hamlc": 811,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat_message.hamlc": 812,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat_user.hamlc": 813,
+        "./Waze/MapEditor/UI/Modules/Cities/templates/feature_editor.hamlc": 814,
+        "./Waze/MapEditor/UI/Modules/Cities/templates/layer_switcher.hamlc": 815,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/edit.hamlc": 816,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/item.hamlc": 817,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/layout.hamlc": 818,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/list.hamlc": 819,
+        "./Waze/MapEditor/UI/Modules/Comments/templates/feature_editor.hamlc": 820,
+        "./Waze/MapEditor/UI/Modules/Comments/templates/name_editor.hamlc": 821,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/item.hamlc": 822,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/list.hamlc": 823,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/text.hamlc": 824,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/history_main.hamlc": 825,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_item.hamlc": 826,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_main.hamlc": 827,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_related.hamlc": 828,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/feed.hamlc": 829,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/feed_group.hamlc": 830,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/issue_item.hamlc": 831,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/message_item.hamlc": 832,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_detail.hamlc": 833,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_item.hamlc": 834,
+        "./Waze/MapEditor/UI/Modules/GeoLocation/templates/pan_button.hamlc": 835,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes.hamlc": 836,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes_edit.hamlc": 837,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/lane_arrow.hamlc": 838,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/segment_lanes.hamlc": 839,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lane_checkbox.hamlc": 840,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lanes_edit.hamlc": 841,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/checkbox.hamlc": 842,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 843,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layout.hamlc": 844,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/module-togglers.hamlc": 845,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 914,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 915,
+        "./Waze/MapEditor/UI/Modules/Login/templates/email_verification.hamlc": 916,
+        "./Waze/MapEditor/UI/Modules/Login/templates/login_main.hamlc": 917,
+        "./Waze/MapEditor/UI/Modules/Login/templates/login_view.hamlc": 918,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 919,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 920,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 921,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 922,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 923,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 924,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 925,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 926,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 927,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 928,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 929,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 930,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 931,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 932,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 933,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 934,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 935,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 936,
+        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 937,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 938,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 939,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 940,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 941,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 942,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 943,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 944,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 945,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 946,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 947,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 948,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 949,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 950,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 951,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 952,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 953,
+        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 954,
+        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 955,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 956,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 957,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 958,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 959,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 960,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 961,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 962,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 963,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 964,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 965,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 966,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 967,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 968,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 969,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 970,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 971,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 972,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 973,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 974,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 975,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 976,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 977,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 978,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 979,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 980,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 981,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 982,
+        "./templates/add_update_details.hamlc": 983,
+        "./templates/additional_details.hamlc": 984,
+        "./templates/address/alt-street.hamlc": 985,
+        "./templates/address/edit-alt-street.hamlc": 986,
+        "./templates/address/edit.hamlc": 987,
+        "./templates/archive-panel.hamlc": 988,
+        "./templates/archive-sessions.hamlc": 989,
+        "./templates/big-junction-edit.hamlc": 990,
+        "./templates/camera-edit.hamlc": 991,
+        "./templates/chrome_autofill_off.hamlc": 992,
+        "./templates/editable-areas.hamlc": 993,
+        "./templates/focus-buttons.hamlc": 994,
+        "./templates/house-number.hamlc": 995,
+        "./templates/house-numbers-lightbox.hamlc": 996,
+        "./templates/instruction-override.hamlc": 997,
+        "./templates/keyboard_shortcuts/list.hamlc": 998,
+        "./templates/keyboard_shortcuts/modal.hamlc": 999,
+        "./templates/lock/edit.hamlc": 1e3,
+        "./templates/login/sandbox-message.hamlc": 1001,
+        "./templates/map.hamlc": 1002,
+        "./templates/node-edit.hamlc": 1003,
+        "./templates/opening_hours/add.hamlc": 1004,
+        "./templates/opening_hours/item.hamlc": 1005,
+        "./templates/opening_hours/layout.hamlc": 1006,
+        "./templates/place_updates/actions.hamlc": 1007,
+        "./templates/place_updates/add_details.hamlc": 1008,
+        "./templates/place_updates/add_image.hamlc": 1009,
+        "./templates/place_updates/add_venue.hamlc": 1010,
+        "./templates/place_updates/changed_field.hamlc": 1011,
+        "./templates/place_updates/changed_field_item.hamlc": 1012,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 1013,
+        "./templates/place_updates/delete_venue.hamlc": 1014,
+        "./templates/place_updates/external_provider/item.hamlc": 1015,
+        "./templates/place_updates/external_provider/list.hamlc": 1016,
+        "./templates/place_updates/flag.hamlc": 1017,
+        "./templates/place_updates/image.hamlc": 1018,
+        "./templates/place_updates/image_dialog.hamlc": 1019,
+        "./templates/place_updates/item.hamlc": 1020,
+        "./templates/place_updates/layout.hamlc": 1021,
+        "./templates/place_updates/panel_header.hamlc": 1022,
+        "./templates/place_updates/place_details.hamlc": 1023,
+        "./templates/place_updates/update_venue.hamlc": 1024,
+        "./templates/prefs-panel.hamlc": 1025,
+        "./templates/segment/average-speed-camera.hamlc": 1026,
+        "./templates/segment/edit-panel-attributes-form.hamlc": 1027,
+        "./templates/segment/edit-panel.hamlc": 1028,
+        "./templates/segment/flag-attribute.hamlc": 1029,
+        "./templates/segment/junction-exit-layout.hamlc": 1030,
+        "./templates/segment/junction-exit.hamlc": 1031,
+        "./templates/segment/routing.hamlc": 1032,
+        "./templates/segment/speed-limit.hamlc": 1033,
+        "./templates/segment/tts-playback-popover.hamlc": 1034,
+        "./templates/segment/tts-playback.hamlc": 1035,
+        "./templates/sidebar/links.hamlc": 1036,
+        "./templates/sidebar/sidebar.hamlc": 1037,
+        "./templates/sidebar/user-details.hamlc": 1038,
+        "./templates/sidebar/user-info.hamlc": 1039,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 1040,
+        "./templates/sidebar/user-sandbox.hamlc": 1041,
+        "./templates/snapshot-message.hamlc": 1042,
+        "./templates/snapshot-toggler.hamlc": 1043,
+        "./templates/tips/watch-tutorial.hamlc": 1044,
+        "./templates/turn-arrow-tooltip-timeframes.hamlc": 1046,
+        "./templates/turn-arrow-tooltip.hamlc": 1047,
+        "./templates/turn-arrow.hamlc": 1048,
+        "./templates/tutorial-lightbox.hamlc": 1049,
+        "./templates/user-greeting.hamlc": 1050,
+        "./templates/util/day-checkboxes.hamlc": 1051,
+        "./templates/util/toggle-checkboxes.hamlc": 1052,
+        "./templates/venue/alias.hamlc": 1053,
+        "./templates/venue/aliases-layout.hamlc": 1054,
+        "./templates/venue/category-tag.hamlc": 1055,
+        "./templates/venue/external-provider/item.hamlc": 1056,
+        "./templates/venue/external-provider/list.hamlc": 1057,
+        "./templates/venue/suggested-categories.hamlc": 1058,
+        "./templates/venue/venue-categories.hamlc": 1059,
+        "./templates/venue/venue-edit-general.hamlc": 1060,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 1061,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 1062,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 1063,
+        "./templates/venue/venue-edit-more-info.hamlc": 1064,
+        "./templates/venue/venue-edit.hamlc": 1065
     };
 
     function r(e) {
@@ -28929,7 +29314,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 797
+        r.id = 798
 }, function(e, t) {
     e.exports = function() {
             return function(e) {
@@ -29809,8 +30194,8 @@
         .call(this)
 }, function(e, t, n) {
     var i = {
-        "./Cities/Manifest": 846,
-        "./Comments/Manifest": 908
+        "./Cities/Manifest": 847,
+        "./Comments/Manifest": 909
     };
 
     function r(e) {
@@ -29832,7 +30217,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 845
+        r.id = 846
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -29840,12 +30225,12 @@
     });
     var i, r, s = v(n(15)),
         a = n(367),
-        o = v(n(847)),
+        o = v(n(848)),
         l = v(n(368)),
-        u = v(n(848)),
-        d = v(n(906)),
+        u = v(n(849)),
+        d = v(n(907)),
         c = v(n(44)),
-        h = v(n(907)),
+        h = v(n(908)),
         f = v(n(389)),
         p = v(n(147)),
         g = v(n(199));
@@ -30028,7 +30413,7 @@
     t.default = h,
         e.exports = t.default
 }, function(e, t, n) {
-    n(850),
+    n(851),
         e.exports = n(12).Object.values
 }, function(e, t, n) {
     var i = n(21),
@@ -30093,23 +30478,23 @@
         }),
         t.TYPE_TO_CLASS = t.TYPE_TO_FACTORY = void 0;
     var i = n(187),
-        r = S(n(859)),
-        s = S(n(883)),
-        a = S(n(886)),
+        r = S(n(860)),
+        s = S(n(884)),
+        a = S(n(887)),
         o = S(n(37)),
         l = S(n(379)),
-        u = S(n(892)),
-        d = S(n(893)),
-        c = S(n(894)),
+        u = S(n(893)),
+        d = S(n(894)),
+        c = S(n(895)),
         h = S(n(143)),
         f = S(n(103)),
         p = S(n(197)),
         g = S(n(384)),
-        v = S(n(898)),
+        v = S(n(899)),
         m = S(n(386)),
         _ = S(n(387)),
-        y = S(n(899)),
-        b = S(n(900)),
+        y = S(n(900)),
+        b = S(n(901)),
         w = S(n(144)),
         k = S(n(145)),
         E = S(n(388)),
@@ -30154,7 +30539,7 @@
     var i = l(n(6)),
         r = l(n(0)),
         s = l(n(1)),
-        a = l(n(854)),
+        a = l(n(855)),
         o = l(n(34));
 
     function l(e) {
@@ -30357,7 +30742,7 @@
     t.default = u,
         e.exports = t.default
 }, function(e, t, n) {
-    n(856),
+    n(857),
         e.exports = n(12).Object.freeze
 }, function(e, t, n) {
     var i = n(26),
@@ -30463,9 +30848,9 @@
     });
     var i, r = u(n(15)),
         s = u(n(70)),
-        a = u(n(860)),
-        o = u(n(880)),
-        l = u(n(881));
+        a = u(n(861)),
+        o = u(n(881)),
+        l = u(n(882));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -30652,11 +31037,11 @@
         e.exports = t.default
 }, function(e, t, n) {
     e.exports = {
-        default: n(865),
+        default: n(866),
         __esModule: !0
     }
 }, function(e, t, n) {
-    n(866);
+    n(867);
     var i = n(12).Object;
     e.exports = function(e, t) {
         return i.getOwnPropertyDescriptor(e, t)
@@ -30724,7 +31109,7 @@
     });
     var i = d(n(62)),
         r = d(n(6)),
-        s = d(n(870)),
+        s = d(n(871)),
         a = d(n(120)),
         o = d(n(0)),
         l = d(n(1)),
@@ -30874,10 +31259,10 @@
     n(101),
         n(55),
         n(67),
-        n(872),
-        n(876),
-        n(878),
+        n(873),
+        n(877),
         n(879),
+        n(880),
         e.exports = n(12).Map
 }, function(e, t, n) {
     "use strict";
@@ -30901,7 +31286,7 @@
         r = n(115),
         s = n(66),
         a = n(97),
-        o = n(874);
+        o = n(875);
     e.exports = function(e, t) {
         var n = 1 == e,
             l = 2 == e,
@@ -30933,7 +31318,7 @@
         }
     }
 }, function(e, t, n) {
-    var i = n(875);
+    var i = n(876);
     e.exports = function(e, t) {
         return new(i(e))(t)
     }
@@ -31094,8 +31479,8 @@
     });
     var i, r = l(n(15)),
         s = l(n(121)),
-        a = l(n(884)),
-        o = l(n(885));
+        a = l(n(885)),
+        o = l(n(886));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -31246,9 +31631,9 @@
         value: !0
     });
     var i, r = l(n(15)),
-        s = l(n(887)),
-        a = l(n(889)),
-        o = l(n(891));
+        s = l(n(888)),
+        a = l(n(890)),
+        o = l(n(892));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -31284,7 +31669,7 @@
         s = u(n(0)),
         a = u(n(3)),
         o = u(n(4)),
-        l = u(n(888));
+        l = u(n(889));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -31360,7 +31745,7 @@
         s = u(n(0)),
         a = u(n(3)),
         o = u(n(4)),
-        l = u(n(890));
+        l = u(n(891));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -31648,7 +32033,7 @@
         o = c(n(3)),
         l = c(n(4)),
         u = c(n(17)),
-        d = c(n(895));
+        d = c(n(896));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -31750,7 +32135,7 @@
         r = d(n(0)),
         s = d(n(1)),
         a = d(n(380)),
-        o = d(n(897)),
+        o = d(n(898)),
         l = d(n(381)),
         u = d(n(382));
 
@@ -32035,15 +32420,15 @@
         e.exports = t.default
 }, function(e, t, n) {
     e.exports = {
-        default: n(902),
+        default: n(903),
         __esModule: !0
     }
 }, function(e, t, n) {
-    n(903),
+    n(904),
         e.exports = n(12).Object.getOwnPropertyDescriptors
 }, function(e, t, n) {
     var i = n(21),
-        r = n(904),
+        r = n(905),
         s = n(33),
         a = n(100),
         o = n(366);
@@ -32362,8 +32747,8 @@
         value: !0
     });
     var i = d(n(148)),
-        r = d(n(909)),
-        s = d(n(910)),
+        r = d(n(910)),
+        s = d(n(911)),
         a = d(n(91)),
         o = d(n(44)),
         l = d(n(147)),
@@ -32581,7 +32966,7 @@
         o = v(n(1)),
         l = v(n(4)),
         u = v(n(198)),
-        d = v(n(911)),
+        d = v(n(912)),
         c = v(n(391)),
         h = v(n(122)),
         f = v(n(200)),
@@ -36087,7 +36472,7 @@
                         var e, t, i;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (i = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(n(1044))) + "'>"),
+                            (i = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(n(1045))) + "'>"),
                             i.push("" + t(e(this.t("tutorial.title")))),
                             i.push("</a>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -36563,19 +36948,19 @@
         .call(this)
 }, function(e, t, n) {
     "use strict";
-    var i = F(n(393)),
-        r = F(n(394)),
-        s = F(n(399)),
-        a = F(n(151)),
-        o = F(n(123)),
-        l = F(n(149)),
-        u = F(n(124)),
-        d = F(n(73)),
-        c = F(n(91)),
-        h = F(n(400)),
-        f = F(n(152)),
-        p = F(n(92)),
-        g = F(n(108)),
+    var i = B(n(393)),
+        r = B(n(394)),
+        s = B(n(399)),
+        a = B(n(151)),
+        o = B(n(123)),
+        l = B(n(149)),
+        u = B(n(124)),
+        d = B(n(73)),
+        c = B(n(91)),
+        h = B(n(400)),
+        f = B(n(152)),
+        p = B(n(92)),
+        g = B(n(108)),
         v = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -36586,31 +36971,32 @@
             return t.default = e,
                 t
         }(n(401)),
-        m = F(n(204)),
-        _ = F(n(202)),
-        y = F(n(402)),
-        b = F(n(74)),
-        w = F(n(107)),
-        k = F(n(205)),
-        E = F(n(106)),
-        M = F(n(203)),
-        S = F(n(403)),
-        T = F(n(22)),
-        I = F(n(150)),
-        C = F(n(31)),
-        A = F(n(143)),
-        O = F(n(37)),
-        x = F(n(384)),
-        D = F(n(125)),
-        R = F(n(41)),
-        L = F(n(88)),
-        P = F(n(109)),
-        N = F(n(34)),
-        V = F(n(404)),
-        U = F(n(93)),
-        j = F(n(86));
+        m = B(n(204)),
+        _ = B(n(202)),
+        y = B(n(402)),
+        b = B(n(74)),
+        w = B(n(107)),
+        k = B(n(205)),
+        E = B(n(106)),
+        M = B(n(203)),
+        S = B(n(403)),
+        T = B(n(22)),
+        I = B(n(150)),
+        C = B(n(31)),
+        A = B(n(143)),
+        O = B(n(37)),
+        x = B(n(384)),
+        D = B(n(125)),
+        R = B(n(41)),
+        L = B(n(88)),
+        P = B(n(109)),
+        N = B(n(34)),
+        V = B(n(404)),
+        U = B(n(93)),
+        j = B(n(86)),
+        F = B(n(405));
 
-    function F(e) {
+    function B(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -36622,8 +37008,12 @@
         }
     });
     j.default.prototype.get = function(e) {
-            return console.warn("repository get method is deprecated and will be removed soon, use getObjectById instead"),
-                this.getObjectById(e)
+        return console.warn("repository get method is deprecated and will be removed soon, use getObjectById instead"),
+            this.getObjectById(e)
+    };
+    F.default.prototype.hasSelectedItems = function() {
+            return console.warn("hasSelectedItems method is deprecated and will be removed soon, use hasSelectedFeatures instead"),
+                this.hasSelectedFeatures()
         },
         window.require = function(e) {
             var t = {
@@ -36679,7 +37069,7 @@
         a = c(n(3)),
         o = c(n(4)),
         l = c(n(11)),
-        u = c(n(1067)),
+        u = c(n(1068)),
         d = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -37340,7 +37730,7 @@
     }
 }, function(e, t, n) {
     "use strict";
-    var i = d(n(1080)),
+    var i = d(n(1081)),
         r = d(n(186)),
         s = d(n(1434)),
         a = n(1435),
@@ -37403,12 +37793,12 @@
     });
     var i = c(n(19)),
         r = n(153),
-        s = c(n(1081)),
-        a = c(n(406)),
-        o = c(n(1090)),
+        s = c(n(1082)),
+        a = c(n(407)),
+        o = c(n(1091)),
         l = c(n(1270)),
         u = n(154),
-        d = n(207);
+        d = n(208);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -37595,10 +37985,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(206),
-        r = l(n(1082)),
-        s = l(n(1083)),
-        a = n(1085),
+    var i = n(207),
+        r = l(n(1083)),
+        s = l(n(1084)),
+        a = n(1086),
         o = n(30);
 
     function l(e) {
@@ -37781,7 +38171,7 @@
         s = d(n(3)),
         a = d(n(1)),
         o = d(n(4)),
-        l = d(n(1084)),
+        l = d(n(1085)),
         u = n(154);
 
     function d(e) {
@@ -37924,8 +38314,8 @@
         s = d(n(1)),
         a = d(n(3)),
         o = d(n(4)),
-        l = d(n(1086)),
-        u = d(n(1089));
+        l = d(n(1087)),
+        u = d(n(1090));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -38013,8 +38403,8 @@
         s = c(n(1)),
         a = c(n(3)),
         o = c(n(4)),
-        l = c(n(1087)),
-        u = n(405),
+        l = c(n(1088)),
+        u = n(406),
         d = n(154);
 
     function c(e) {
@@ -38554,24 +38944,24 @@
     var i = R(n(19)),
         r = R(n(0)),
         s = R(n(1)),
-        a = n(1091),
-        o = R(n(1094)),
+        a = n(1092),
+        o = R(n(1095)),
         l = R(n(110)),
-        u = R(n(407)),
-        d = R(n(1108)),
-        c = R(n(1109)),
-        h = R(n(1120)),
-        f = R(n(413)),
-        p = R(n(1121)),
-        g = R(n(1122)),
-        v = R(n(1123)),
-        m = R(n(405)),
-        _ = R(n(1125)),
-        y = R(n(1187)),
-        b = R(n(1188)),
-        w = R(n(1199)),
-        k = R(n(1213)),
-        E = R(n(1220)),
+        u = R(n(408)),
+        d = R(n(1109)),
+        c = R(n(1110)),
+        h = R(n(1121)),
+        f = R(n(414)),
+        p = R(n(1122)),
+        g = R(n(1123)),
+        v = R(n(1124)),
+        m = R(n(406)),
+        _ = R(n(1126)),
+        y = R(n(1188)),
+        b = R(n(1189)),
+        w = R(n(1200)),
+        k = R(n(1214)),
+        E = R(n(405)),
         M = R(n(1221)),
         S = R(n(1222)),
         T = R(n(1227)),
@@ -38749,8 +39139,8 @@
         a = f(n(1)),
         o = f(n(3)),
         l = f(n(4)),
-        u = f(n(1092)),
-        d = h(n(1093)),
+        u = f(n(1093)),
+        d = h(n(1094)),
         c = h(n(24));
 
     function h(e) {
@@ -39342,8 +39732,8 @@
         s = d(n(1)),
         a = d(n(3)),
         o = d(n(4)),
-        l = d(n(1095)),
-        u = d(n(1096));
+        l = d(n(1096)),
+        u = d(n(1097));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -40033,7 +40423,7 @@
         l = h(n(3)),
         u = h(n(4)),
         d = h(n(86)),
-        c = h(n(1101));
+        c = h(n(1102));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -40360,8 +40750,8 @@
                 t
         }(n(24)),
         u = h(n(11)),
-        d = h(n(408)),
-        c = h(n(1105));
+        d = h(n(409)),
+        c = h(n(1106));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -41087,11 +41477,11 @@
             return t.default = e,
                 t
         }(n(24)),
-        u = v(n(1110)),
-        d = v(n(411)),
-        c = v(n(1118)),
-        h = v(n(1119)),
-        f = v(n(209)),
+        u = v(n(1111)),
+        d = v(n(412)),
+        c = v(n(1119)),
+        h = v(n(1120)),
+        f = v(n(210)),
         p = n(14),
         g = v(n(44));
 
@@ -41212,14 +41602,14 @@
     });
     var i = v(n(6)),
         r = v(n(7)),
-        s = v(n(1111)),
+        s = v(n(1112)),
         a = n(32),
         o = n(119),
         l = n(14),
         u = v(n(150)),
         d = v(n(402)),
-        c = v(n(1116)),
-        h = v(n(410)),
+        c = v(n(1117)),
+        h = v(n(411)),
         f = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -41231,7 +41621,7 @@
                 t
         }(n(24)),
         p = v(n(13)),
-        g = v(n(1117));
+        g = v(n(1118));
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -41503,11 +41893,11 @@
     var i = c(n(7)),
         r = c(n(53)),
         s = c(n(48)),
-        a = c(n(1112)),
-        o = c(n(409)),
-        l = c(n(410)),
-        u = c(n(1114)),
-        d = c(n(1115));
+        a = c(n(1113)),
+        o = c(n(410)),
+        l = c(n(411)),
+        u = c(n(1115)),
+        d = c(n(1116));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -42370,7 +42760,7 @@
         o = f(n(3)),
         l = f(n(8)),
         u = f(n(4)),
-        d = f(n(209)),
+        d = f(n(210)),
         c = f(n(22)),
         h = f(n(13));
 
@@ -42574,7 +42964,7 @@
                 }
             }]),
             t
-    }(u(n(209)).default);
+    }(u(n(210)).default);
     t.default = d,
         e.exports = t.default
 }, function(e, t, n) {
@@ -42586,7 +42976,7 @@
         r = u(n(7)),
         s = u(n(0)),
         a = u(n(1)),
-        o = u(n(413)),
+        o = u(n(414)),
         l = n(43);
 
     function u(e) {
@@ -43044,7 +43434,7 @@
     });
     var i = a(n(0)),
         r = a(n(1)),
-        s = a(n(1124));
+        s = a(n(1125));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -43146,16 +43536,16 @@
         value: !0
     });
     var i = n(127),
-        r = p(n(1172)),
-        s = p(n(1173)),
-        a = p(n(1175)),
-        o = p(n(1176)),
-        l = p(n(1177)),
-        u = p(n(1178)),
-        d = p(n(1179)),
-        c = p(n(1180)),
+        r = p(n(1173)),
+        s = p(n(1174)),
+        a = p(n(1176)),
+        o = p(n(1177)),
+        l = p(n(1178)),
+        u = p(n(1179)),
+        d = p(n(1180)),
+        c = p(n(1181)),
         h = n(43),
-        f = p(n(1181));
+        f = p(n(1182));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -43518,7 +43908,7 @@
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return n(1129)("./camera" + t.attributes.type + ".png")
+                            return n(1130)("./camera" + t.attributes.type + ".png")
                     }
                 }
             })
@@ -43546,9 +43936,9 @@
         e.exports = t.default
 }, function(e, t, n) {
     var i = {
-        "./camera2.png": 1130,
-        "./camera3.png": 1131,
-        "./camera4.png": 1132
+        "./camera2.png": 1131,
+        "./camera3.png": 1132,
+        "./camera4.png": 1133
     };
 
     function r(e) {
@@ -43570,7 +43960,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 1129
+        r.id = 1130
 }, function(e, t, n) {
     e.exports = n.p + "img/camera2afd04923e745ff85f9b132ce1d08e73c.png"
 }, function(e, t, n) {
@@ -43654,9 +44044,9 @@
         value: !0
     });
     var i = o(n(7)),
-        r = o(n(414)),
-        s = o(n(1135)),
-        a = o(n(1136));
+        r = o(n(415)),
+        s = o(n(1136)),
+        a = o(n(1137));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -43854,8 +44244,8 @@
         value: !0
     });
     var i = a(n(75)),
-        r = a(n(212)),
-        s = a(n(213));
+        r = a(n(213)),
+        s = a(n(214));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -43932,24 +44322,24 @@
     e.exports = n.p + "img/one-way-routed9aa340910f8fc7a0fd2285fa0aab968.png"
 }, function(e, t, n) {
     var i = {
-        "./big_direction_end.png": 1145,
-        "./big_direction_exit_left.png": 1146,
-        "./big_direction_exit_right.png": 1147,
-        "./big_direction_forward.png": 1148,
-        "./big_direction_left.png": 1149,
-        "./big_direction_right.png": 1150,
-        "./big_direction_u.png": 1151,
-        "./big_directions_roundabout.png": 1152,
-        "./big_directions_roundabout_UK.png": 1153,
-        "./big_directions_roundabout_UK_l.png": 1154,
-        "./big_directions_roundabout_UK_s.png": 1155,
-        "./big_directions_roundabout_l.png": 1156,
-        "./big_directions_roundabout_r.png": 1157,
-        "./big_directions_roundabout_r_UK.png": 1158,
-        "./big_directions_roundabout_s.png": 1159,
-        "./big_directions_roundabout_u.png": 1160,
-        "./big_directions_roundabout_u_UK.png": 1161,
-        "./unknown.png": 1162
+        "./big_direction_end.png": 1146,
+        "./big_direction_exit_left.png": 1147,
+        "./big_direction_exit_right.png": 1148,
+        "./big_direction_forward.png": 1149,
+        "./big_direction_left.png": 1150,
+        "./big_direction_right.png": 1151,
+        "./big_direction_u.png": 1152,
+        "./big_directions_roundabout.png": 1153,
+        "./big_directions_roundabout_UK.png": 1154,
+        "./big_directions_roundabout_UK_l.png": 1155,
+        "./big_directions_roundabout_UK_s.png": 1156,
+        "./big_directions_roundabout_l.png": 1157,
+        "./big_directions_roundabout_r.png": 1158,
+        "./big_directions_roundabout_r_UK.png": 1159,
+        "./big_directions_roundabout_s.png": 1160,
+        "./big_directions_roundabout_u.png": 1161,
+        "./big_directions_roundabout_u_UK.png": 1162,
+        "./unknown.png": 1163
     };
 
     function r(e) {
@@ -43971,7 +44361,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 1144
+        r.id = 1145
 }, function(e, t, n) {
     e.exports = n.p + "img/big_direction_end25226c71aed0efd3a2db41978066febc.png"
 }, function(e, t, n) {
@@ -44229,7 +44619,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(416),
+    var i, r = n(417),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -44625,7 +45015,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(412),
+    var i, r = n(413),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -44687,7 +45077,7 @@
         o = f(n(1)),
         l = f(n(3)),
         u = f(n(4)),
-        d = f(n(411)),
+        d = f(n(412)),
         c = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -44698,7 +45088,7 @@
             return t.default = e,
                 t
         }(n(24)),
-        h = f(n(1174));
+        h = f(n(1175));
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -45039,7 +45429,7 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(214)),
+        }(n(215)),
         f = p(n(117));
 
     function p(e) {
@@ -45274,7 +45664,7 @@
         value: !0
     });
     var i, r = n(153),
-        s = n(417),
+        s = n(418),
         a = (i = s) && i.__esModule ? i : {
             default: i
         };
@@ -45402,7 +45792,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(417)),
+    var i = s(n(418)),
         r = s(n(13));
 
     function s(e) {
@@ -45698,10 +46088,10 @@
         s = h(n(1)),
         a = h(n(3)),
         o = h(n(4)),
-        l = h(n(1182)),
-        u = h(n(1183)),
-        d = h(n(1184)),
-        c = h(n(1185));
+        l = h(n(1183)),
+        u = h(n(1184)),
+        d = h(n(1185)),
+        c = h(n(1186));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -46017,7 +46407,7 @@
         s = d(n(1)),
         a = d(n(3)),
         o = d(n(4)),
-        l = d(n(1186)),
+        l = d(n(1187)),
         u = d(n(13));
 
     function d(e) {
@@ -46386,10 +46776,10 @@
     });
     var i = u(n(0)),
         r = u(n(1)),
-        s = u(n(1189)),
-        a = u(n(1190)),
-        o = u(n(1198)),
-        l = u(n(422));
+        s = u(n(1190)),
+        a = u(n(1191)),
+        o = u(n(1199)),
+        l = u(n(423));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -46521,7 +46911,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1191),
+    var i, r = n(1192),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -46599,8 +46989,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(418)),
-        r = a(n(1197)),
+    var i = a(n(419)),
+        r = a(n(1198)),
         s = n(32);
 
     function a(e) {
@@ -46716,8 +47106,8 @@
         value: !0
     });
     var i = a(n(382)),
-        r = a(n(419)),
-        s = a(n(1195));
+        r = a(n(420)),
+        s = a(n(1196));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -46736,7 +47126,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1194),
+    var i, r = n(1195),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -46760,7 +47150,7 @@
         value: !0
     });
     var i = s(n(13)),
-        r = s(n(420));
+        r = s(n(421));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -46818,7 +47208,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(419)),
+    var i = s(n(420)),
         r = s(n(16));
 
     function s(e) {
@@ -46958,7 +47348,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(418),
+    var i, r = n(419),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -47076,9 +47466,9 @@
     });
     var i = l(n(0)),
         r = l(n(1)),
-        s = l(n(422)),
-        a = l(n(1200)),
-        o = l(n(1201));
+        s = l(n(423)),
+        a = l(n(1201)),
+        o = l(n(1202));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -47230,11 +47620,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = l(n(1202)),
-        r = l(n(1203)),
-        s = l(n(1210)),
+    var i = l(n(1203)),
+        r = l(n(1204)),
+        s = l(n(1211)),
         a = n(32),
-        o = l(n(1212));
+        o = l(n(1213));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -47484,9 +47874,9 @@
     });
     var i, r = c(n(15)),
         s = c(n(104)),
-        a = c(n(1204)),
-        o = c(n(1206)),
-        l = c(n(1208)),
+        a = c(n(1205)),
+        o = c(n(1207)),
+        l = c(n(1209)),
         u = c(n(378)),
         d = n(14);
 
@@ -47518,7 +47908,7 @@
         value: !0
     });
     var i = s(n(19)),
-        r = s(n(1205));
+        r = s(n(1206));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -47594,7 +47984,7 @@
         value: !0
     });
     var i = s(n(19)),
-        r = s(n(1207));
+        r = s(n(1208));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -47674,7 +48064,7 @@
     });
     var i = a(n(19)),
         r = a(n(104)),
-        s = a(n(1209));
+        s = a(n(1210));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -47758,7 +48148,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1211),
+    var i, r = n(1212),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -47840,9 +48230,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(213)),
+    var i = a(n(214)),
         r = a(n(75)),
-        s = a(n(212));
+        s = a(n(213));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -47910,8 +48300,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(423)),
-        r = a(n(424)),
+    var i = a(n(424)),
+        r = a(n(425)),
         s = n(110);
 
     function a(e) {
@@ -47967,7 +48357,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1215),
+    var i, r = n(1216),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -47996,7 +48386,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(216),
+    var i, r = n(217),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -48015,7 +48405,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1218),
+    var i, r = n(1219),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -48060,7 +48450,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(216),
+    var i, r = n(217),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -48152,391 +48542,6 @@
         }
     });
     t.default = a,
-        e.exports = t.default
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var i = u(n(10)),
-        r = u(n(0)),
-        s = u(n(1)),
-        a = n(14),
-        o = u(n(217)),
-        l = n(72);
-
-    function u(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var d = function() {
-        function e(t, n, i) {
-            var s = this;
-            (0,
-                r.default)(this, e),
-            this.model = t,
-                this.events = new OpenLayers.Events(this),
-                this._selectedFeatures = [],
-                this._requireDeselect = W.prefs.get("requireFeatureDeselect"),
-                this._layers = n,
-                this._objectTypeToLayer = {},
-                this._deselectOnToggle = !0,
-                this._mouseInFeature = null,
-                this._layers.forEach(function(e) {
-                    return s._objectTypeToLayer[e.featureType] = e
-                }),
-                this._enabled = !0,
-                this.selectionMediator = i,
-                this._bindEvents()
-        }
-        return (0,
-                s.default)(e, [{
-                key: "_bindEvents",
-                value: function() {
-                    var e = this;
-                    this._layers.forEach(function(t) {
-                            t.events.on({
-                                visibilitychanged: e._layerVisibilityChanged,
-                                scope: e
-                            })
-                        }),
-                        W.prefs.on("change:requireFeatureDeselect", function(e, t) {
-                            this._requireDeselect = t
-                        }, this),
-                        this._bindSelectionMediatorEvents()
-                }
-            }, {
-                key: "_bindSelectionMediatorEvents",
-                value: function() {
-                    this._toggleMediatorEvents(!0)
-                }
-            }, {
-                key: "_unbindSelectionMediatorEvents",
-                value: function() {
-                    this._toggleMediatorEvents(!1)
-                }
-            }, {
-                key: "_toggleMediatorEvents",
-                value: function(e) {
-                    var t = e ? "on" : "off";
-                    this.selectionMediator[t]("map:selection:pathSelect", this._onSelectPath, this),
-                        this.selectionMediator[t]("map:selection:featureClick", this._onFeatureClicked, this),
-                        this.selectionMediator[t]("map:selection:featureIn", this._onFeatureIn, this),
-                        this.selectionMediator[t]("map:selection:featureOut", this._onFeatureOut, this),
-                        this.selectionMediator[t]("map:selection:clickOut", this._onClickOut, this),
-                        this.selectionMediator[t]("map:selection:featureBoxSelection", this._onFeatureBoxSelection, this),
-                        this.selectionMediator[t]("map:selection:deselectKey", this._onDeselectKey, this)
-                }
-            }, {
-                key: "_onDeselectKey",
-                value: function() {
-                    this.unselectAll()
-                }
-            }, {
-                key: "_onFeatureClicked",
-                value: function(e) {
-                    var t = e.feature;
-                    if (t.model && !t.model.isDeleted() && t) {
-                        if (this.isSelected(t) && this._deselectOnToggle)
-                            return void(e.addSelection && this._selectedFeatures.length > 1 ? this.unselectFeatures(t, !1) : this.unselectAll());
-                        if (!e.addSelection || !this._canAddSelection(t)) {
-                            if (this._requireDeselect && this._selectedFeatures.length > 0)
-                                return;
-                            this.unselectAll(!1)
-                        }
-                        this.selectFeatures(t, !1)
-                    }
-                }
-            }, {
-                key: "_onFeatureIn",
-                value: function(e) {
-                    this._mouseInFeature = e,
-                        this.highlight(e)
-                }
-            }, {
-                key: "_onFeatureOut",
-                value: function(e) {
-                    this._mouseInFeature = null,
-                        this.unhighlight(e)
-                }
-            }, {
-                key: "highlight",
-                value: function(e) {
-                    this._isFeatureHighlightable(e) && this.selectionMediator.highlight(e, this.isSelected(e), e.model.isDeleted())
-                }
-            }, {
-                key: "unhighlight",
-                value: function(e) {
-                    this._isFeatureHighlightable(e) && this.selectionMediator.unhighlight(e, this.isSelected(e), e.model.isDeleted())
-                }
-            }, {
-                key: "_isFeatureHighlightable",
-                value: function(e) {
-                    return Boolean(e.model)
-                }
-            }, {
-                key: "recalculateStyle",
-                value: function(e) {
-                    e === this._mouseInFeature ? this.highlight(e) : this.unhighlight(e)
-                }
-            }, {
-                key: "_onClickOut",
-                value: function() {
-                    this.unselectAll(!1)
-                }
-            }, {
-                key: "_onFeatureBoxSelection",
-                value: function(e) {
-                    e && e.length > 0 && (this._canAddSelection(e[0]) || this.unselectAll(!1),
-                        this.selectFeatures(e, !1))
-                }
-            }, {
-                key: "_layerVisibilityChanged",
-                value: function(e) {
-                    var t = e.object;
-                    t.getVisibility() || this._selectedFeatures.filter(function(e) {
-                        return e.layer === t
-                    }).forEach(this.unselectFeature.bind(this))
-                }
-            }, {
-                key: "isSelected",
-                value: function(e) {
-                    return this._selectedFeatures.includes(e)
-                }
-            }, {
-                key: "selectFeature",
-                value: function(e) {
-                    return !(!e || this.isSelected(e)) && (this._selectedFeatures.push(e),
-                        e.model && e.model.setSelected(!0),
-                        !0)
-                }
-            }, {
-                key: "unselectFeature",
-                value: function(e, t) {
-                    if (e && this.isSelected(e)) {
-                        var n = this._selectedFeatures.indexOf(e);
-                        this._selectedFeatures.splice(n, 1),
-                            e.model && e.model.setSelected(!1),
-                            this._triggerUnSelected([e], t),
-                            this._triggerSelectionChanged(t)
-                    }
-                }
-            }, {
-                key: "unselectAll",
-                value: function(e) {
-                    if (this._selectedFeatures.length > 0) {
-                        var t = this._selectedFeatures;
-                        t.forEach(function(e) {
-                                e.model.setSelected(!1)
-                            }),
-                            this._selectedFeatures = [],
-                            this._triggerUnSelected(t, e),
-                            this._triggerSelectionChanged(e)
-                    }
-                }
-            }, {
-                key: "selectFeatures",
-                value: function(e, t) {
-                    if (Array.isArray(e) || (e = [e]),
-                        0 !== e.length) {
-                        for (var n = [], i = 0; i < e.length; i++) {
-                            var r = e[i];
-                            this.selectFeature(r) && n.push(r)
-                        }
-                        n.length > 0 && (this._triggerSelected(n, t),
-                            this._triggerSelectionChanged(t))
-                    }
-                }
-            }, {
-                key: "setSelectedModels",
-                value: function(e, t) {
-                    var n = this;
-                    this.unselectAll(),
-                        Array.isArray(e) || (e = [e]);
-                    var i = e.map(function(e) {
-                        return n._objectTypeToLayer[e.type].getVector(e)
-                    });
-                    i = _.compact(i),
-                        this.selectFeatures(i, t)
-                }
-            }, {
-                key: "setSelection",
-                value: function(e, t) {
-                    for (var n = !1, i = this._selectedFeatures.length - 1; i >= 0; i--) {
-                        var r = this._selectedFeatures[i];
-                        e.contains(r) || (this.unselectFeature(r, !0),
-                            n = !0)
-                    }
-                    for (var s = 0; s < e.length; s++) {
-                        var a = e[s];
-                        this._selectedFeatures.contains(a) || (this.selectFeature(a, !0),
-                            n = !0)
-                    }
-                    n && this._triggerSelectionChanged(t)
-                }
-            }, {
-                key: "_triggerSelectionChanged",
-                value: function(e) {
-                    e || this.events.triggerEvent("selectionchanged", {
-                        selected: this._selectedFeatures
-                    })
-                }
-            }, {
-                key: "_triggerSelected",
-                value: function(e, t) {
-                    e.forEach(this.recalculateStyle.bind(this)),
-                        t || this.events.triggerEvent("app:selection:featureselected", {
-                            selection: this._selectedFeatures,
-                            features: e
-                        })
-                }
-            }, {
-                key: "_triggerUnSelected",
-                value: function(e, t) {
-                    t || this.events.triggerEvent("app:selection:featureunselected", {
-                            selection: this._selectedFeatures,
-                            features: e
-                        }),
-                        e.forEach(this.recalculateStyle.bind(this))
-                }
-            }, {
-                key: "destroy",
-                value: function() {
-                    var e = this;
-                    this._layers.forEach(function(t) {
-                        return t.events.un({
-                            visibilitychanged: e._layerVisibilityChanged,
-                            scope: e
-                        })
-                    })
-                }
-            }, {
-                key: "_onSelectPath",
-                value: function(e) {
-                    var t = e.feature;
-                    if (0 !== this._selectedFeatures.length) {
-                        var n = this._selectedFeatures[0].model,
-                            r = t.model;
-                        if (!(this._selectedFeatures.length > 1 || n.type !== a.SEGMENT)) {
-                            var s = function(e) {
-                                    return e.getID() === r.getID()
-                                },
-                                l = o.default.bfs(n, function(e) {
-                                    return e.attributes.primaryStreetID === n.attributes.primaryStreetID
-                                }, s),
-                                u = (0,
-                                    i.default)(l, 2),
-                                d = u[0],
-                                c = u[1];
-                            if (null === d) {
-                                var h = o.default.bfs(n, function() {
-                                    return !0
-                                }, s);
-                                c = (0,
-                                    i.default)(h, 2)[1]
-                            }
-                            var f = this._getPathFromVisitedSegments(c, n, r);
-                            return f.length <= 25 ? this.setSelectedModels(f) : void 0
-                        }
-                    } else
-                        this.selectFeature(t)
-                }
-            }, {
-                key: "_getPathFromVisitedSegments",
-                value: function(e, t, n) {
-                    for (var i = n.getID(), r = t.getID(), s = []; i !== r && null != i;)
-                        s.push(i),
-                        i = e[i];
-                    return s.push(t.getID()),
-                        s.map(function(e) {
-                            return W.model.segments.getObjectById(e)
-                        })
-                }
-            }, {
-                key: "_getSelectionCountByType",
-                value: function() {
-                    var e = this._selectedFeatures.map(function(e) {
-                        return e.model.type
-                    });
-                    return _.countBy(e, _.identity)
-                }
-            }, {
-                key: "unselectFeatures",
-                value: function(e, t, n) {
-                    if (Array.isArray(e) || (e = [e]),
-                        0 !== e.length) {
-                        for (var i = !1, r = [], s = e.length - 1; s >= 0; s--) {
-                            var a = e[s];
-                            _.contains(this._selectedFeatures, a) && (this.unselectFeature(a, !0),
-                                r.push(a),
-                                i = !0)
-                        }
-                        r.length > 0 && this._triggerUnSelected(r, n),
-                            i && this._triggerSelectionChanged(t, n)
-                    }
-                }
-            }, {
-                key: "_canAddSelection",
-                value: function(e) {
-                    var t = e.model.type,
-                        n = this._selectedFeatures[0] && this._selectedFeatures[0].model.type !== t,
-                        i = e.model.isResidential && e.model.isResidential() || this._selectedFeatures[0] && this._selectedFeatures[0].model.isResidential && this._selectedFeatures[0].model.isResidential(),
-                        r = t === a.SEGMENT || t === a.VENUE && (0,
-                            l.isFeatureFlagEnabled)(l.FEATURE_FLAGS.MERGE_PLACES);
-                    return !(i || n || !r)
-                }
-            }, {
-                key: "hasSelectedFeatures",
-                value: function() {
-                    return !_.isEmpty(this._selectedFeatures)
-                }
-            }, {
-                key: "getReversedSegments",
-                value: function() {
-                    var e = _(this._selectedFeatures.filter(function(e) {
-                        return e.model.type === a.SEGMENT
-                    })).pluck("model");
-                    return o.default.getReversedSegments(e)
-                }
-            }, {
-                key: "toggleMultipleSelection",
-                value: function() {
-                    this.selectionMediator.toggleMultipleSelection()
-                }
-            }, {
-                key: "getSelectableRepos",
-                value: function() {
-                    return this._layers.map(function(e) {
-                        return e.repo
-                    }).filter(function(e) {
-                        return void 0 !== e
-                    }).map(function(e) {
-                        return e[0]
-                    })
-                }
-            }, {
-                key: "getSelectedFeatures",
-                value: function() {
-                    return this._selectedFeatures.concat()
-                }
-            }, {
-                key: "disable",
-                value: function() {
-                    this._enabled && (this.selectionMediator.resetState(),
-                        this._unbindSelectionMediatorEvents(),
-                        this._enabled = !1)
-                }
-            }, {
-                key: "enable",
-                value: function() {
-                    this._enabled || (this._bindSelectionMediatorEvents(),
-                        this._enabled = !0)
-                }
-            }]),
-            e
-    }();
-    t.default = d,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -49433,7 +49438,7 @@
         p = b(n(1231)),
         g = b(n(199)),
         v = b(n(1232)),
-        m = y(n(214)),
+        m = y(n(215)),
         _ = b(n(1248));
 
     function y(e) {
@@ -49703,7 +49708,7 @@
     var i = l(n(9)),
         r = l(n(0)),
         s = l(n(1)),
-        a = l(n(425)),
+        a = l(n(426)),
         o = n(109);
 
     function l(e) {
@@ -49775,11 +49780,11 @@
         l = m(n(4)),
         u = m(n(31)),
         d = m(n(41)),
-        c = m(n(426)),
+        c = m(n(427)),
         h = m(n(1235)),
         f = m(n(1245)),
-        p = n(429),
-        g = m(n(430)),
+        p = n(430),
+        g = m(n(431)),
         v = m(n(13));
 
     function m(e) {
@@ -50357,9 +50362,9 @@
         d = v(n(188)),
         c = v(n(47)),
         h = n(118),
-        f = v(n(427)),
+        f = v(n(428)),
         p = v(n(1244)),
-        g = n(206);
+        g = n(207);
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -51926,7 +51931,7 @@
         s = u(n(1)),
         a = u(n(3)),
         o = u(n(4)),
-        l = u(n(428));
+        l = u(n(429));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -52066,7 +52071,7 @@
         o = h(n(1)),
         l = h(n(3)),
         u = h(n(4)),
-        d = n(429),
+        d = n(430),
         c = h(d);
 
     function h(e) {
@@ -52445,7 +52450,7 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(214));
+        }(n(215));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -52559,7 +52564,7 @@
         a = d(n(1)),
         o = d(n(3)),
         l = d(n(4)),
-        u = d(n(431));
+        u = d(n(432));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -52989,7 +52994,7 @@
         o = f(n(4)),
         l = f(n(1257)),
         u = n(218),
-        d = f(n(215)),
+        d = f(n(216)),
         c = n(1263),
         h = f(n(1269));
 
@@ -54493,7 +54498,7 @@
         s = u(n(1)),
         a = u(n(3)),
         o = u(n(4)),
-        l = u(n(216));
+        l = u(n(217));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -54601,7 +54606,7 @@
     });
     var i = a(n(0)),
         r = a(n(1)),
-        s = a(n(211));
+        s = a(n(212));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -54650,7 +54655,7 @@
         value: !0
     });
     var i, r = u(n(15)),
-        s = u(n(406)),
+        s = u(n(407)),
         a = n(153),
         o = u(n(1271)),
         l = u(n(1414));
@@ -54810,7 +54815,7 @@
     var i = c(n(1273)),
         r = c(n(1279)),
         s = c(n(1280)),
-        a = c(n(434)),
+        a = c(n(435)),
         o = c(n(1287)),
         l = c(n(1289)),
         u = c(n(1293)),
@@ -55500,7 +55505,7 @@
         value: !0
     });
     var i = o(n(144)),
-        r = o(n(433)),
+        r = o(n(434)),
         s = o(n(1286)),
         a = o(n(70));
 
@@ -55631,7 +55636,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(433),
+    var i, r = n(434),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -55652,7 +55657,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(434)),
+    var i = s(n(435)),
         r = s(n(1288));
 
     function s(e) {
@@ -55932,7 +55937,7 @@
         l = h(n(4)),
         u = h(n(157)),
         d = h(n(13)),
-        c = h(n(215));
+        c = h(n(216));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -57017,7 +57022,7 @@
     });
     var i = d(n(2)),
         r = d(n(62)),
-        s = d(n(432)),
+        s = d(n(433)),
         a = d(n(0)),
         o = d(n(1)),
         l = d(n(3)),
@@ -57746,15 +57751,15 @@
         f = A(n(106)),
         p = A(n(1321)),
         g = A(n(1322)),
-        v = A(n(421)),
-        m = n(435),
+        v = A(n(422)),
+        m = n(436),
         y = A(n(1323)),
         b = A(n(1325)),
-        w = A(n(436)),
+        w = A(n(437)),
         k = A(n(160)),
-        E = A(n(437)),
+        E = A(n(438)),
         M = A(n(1328)),
-        S = A(n(438)),
+        S = A(n(439)),
         T = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -58583,7 +58588,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(435),
+    var i, r = n(436),
         s = n(1324),
         a = (i = s) && i.__esModule ? i : {
             default: i
@@ -58954,7 +58959,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(437)),
+    var i = o(n(438)),
         r = o(n(128)),
         s = n(142),
         a = o(n(141));
@@ -59096,7 +59101,7 @@
         d = n(40),
         c = n(14),
         h = v(n(146)),
-        f = v(n(439)),
+        f = v(n(440)),
         p = v(n(1332)),
         g = v(n(1333));
 
@@ -59330,7 +59335,7 @@
         o = c(n(3)),
         l = c(n(4)),
         u = c(n(13)),
-        d = c(n(439));
+        d = c(n(440));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -59592,7 +59597,7 @@
         o = f(n(4)),
         l = f(n(1336)),
         u = f(n(1339)),
-        d = n(440),
+        d = n(441),
         c = f(n(383)),
         h = n(1340);
 
@@ -59970,7 +59975,7 @@
         s = u(n(1)),
         a = u(n(3)),
         o = u(n(4)),
-        l = n(440);
+        l = n(441);
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -60617,15 +60622,15 @@
         v = n(37),
         m = V(v),
         y = V(n(16)),
-        b = V(n(441)),
-        w = V(n(436)),
+        b = V(n(442)),
+        w = V(n(437)),
         k = V(n(161)),
         E = V(n(1348)),
         M = V(n(1350)),
-        S = V(n(443)),
-        T = V(n(444)),
+        S = V(n(444)),
+        T = V(n(445)),
         I = V(n(117)),
-        C = V(n(438)),
+        C = V(n(439)),
         A = V(n(1354)),
         O = V(n(160)),
         x = V(n(128)),
@@ -61942,7 +61947,7 @@
         value: !0
     });
     var i = s(n(1346)),
-        r = s(n(442));
+        r = s(n(443));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -62074,7 +62079,7 @@
     var i = l(n(7)),
         r = l(n(128)),
         s = l(n(122)),
-        a = l(n(442)),
+        a = l(n(443)),
         o = n(93);
 
     function l(e) {
@@ -62213,8 +62218,8 @@
         a = h(n(3)),
         o = h(n(4)),
         l = h(n(1349)),
-        u = h(n(213)),
-        d = h(n(426)),
+        u = h(n(214)),
+        d = h(n(427)),
         c = n(109);
 
     function h(e) {
@@ -62384,7 +62389,7 @@
         r = l(n(0)),
         s = l(n(1)),
         a = n(14),
-        o = l(n(425));
+        o = l(n(426));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -63469,10 +63474,10 @@
         u = n(47),
         d = m(u),
         c = m(n(1355)),
-        h = m(n(427)),
+        h = m(n(428)),
         f = m(n(1356)),
         p = n(118),
-        g = n(206),
+        g = n(207),
         v = m(n(1359));
 
     function m(e) {
@@ -63698,7 +63703,7 @@
         r = u(n(7)),
         s = u(n(0)),
         a = u(n(1)),
-        o = u(n(217)),
+        o = u(n(206)),
         l = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -64128,7 +64133,7 @@
         a = c(n(1)),
         o = c(n(3)),
         l = c(n(4)),
-        u = c(n(428)),
+        u = c(n(429)),
         d = n(47);
 
     function c(e) {
@@ -64655,7 +64660,7 @@
         a = v(n(1)),
         o = v(n(3)),
         l = v(n(4)),
-        u = v(n(445)),
+        u = v(n(446)),
         d = v(n(1363)),
         c = n(32),
         h = n(71),
@@ -68445,7 +68450,7 @@
         o = p(n(1)),
         l = p(n(3)),
         u = p(n(4)),
-        d = p(n(445)),
+        d = p(n(446)),
         c = p(n(1366)),
         h = p(n(201)),
         f = p(n(34));
@@ -68702,8 +68707,8 @@
         o = h(n(4)),
         l = h(n(1368)),
         u = h(n(1370)),
-        d = n(210),
-        c = h(n(408));
+        d = n(211),
+        c = h(n(409));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -69207,7 +69212,7 @@
         p = k(n(1373)),
         g = k(n(1374)),
         v = k(n(1375)),
-        m = n(447),
+        m = n(448),
         y = k(n(16)),
         b = k(n(105)),
         w = n(90);
@@ -69642,7 +69647,7 @@
         a = c(n(3)),
         o = c(n(8)),
         l = c(n(4)),
-        u = c(n(446)),
+        u = c(n(447)),
         d = n(90);
 
     function c(e) {
@@ -69756,7 +69761,7 @@
         l = h(n(4)),
         u = h(n(8)),
         d = h(n(222)),
-        c = n(447);
+        c = n(448);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -69951,7 +69956,7 @@
         return (0,
                 a.default)(t, e),
             t
-    }(o(n(446)).default);
+    }(o(n(447)).default);
     t.default = l,
         e.exports = t.default
 }, function(e, t, n) {
@@ -70639,9 +70644,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = u(n(448)),
-        r = u(n(449)),
-        s = u(n(450)),
+    var i = u(n(449)),
+        r = u(n(450)),
+        s = u(n(451)),
         a = u(n(1390)),
         o = u(n(1392)),
         l = u(n(1393));
@@ -71134,7 +71139,7 @@
     var i = o(n(6)),
         r = o(n(223)),
         s = o(n(1391)),
-        a = o(n(451));
+        a = o(n(452));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -71257,7 +71262,7 @@
     });
     var i = a(n(6)),
         r = a(n(223)),
-        s = a(n(451));
+        s = a(n(452));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -71307,7 +71312,7 @@
         s = A(n(1394)),
         a = A(n(1395)),
         o = A(n(1396)),
-        l = A(n(452)),
+        l = A(n(453)),
         u = A(n(1397)),
         d = A(n(1398)),
         c = A(n(1399)),
@@ -71334,7 +71339,7 @@
         M = A(n(124)),
         S = A(n(44)),
         T = n(127),
-        I = A(n(454)),
+        I = A(n(455)),
         C = n(37);
 
     function A(e) {
@@ -71824,7 +71829,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(452),
+    var i, r = n(453),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -71843,7 +71848,7 @@
     var i = d(n(48)),
         r = d(n(103)),
         s = n(37),
-        a = d(n(431)),
+        a = d(n(432)),
         o = n(14),
         l = d(n(1401)),
         u = n(72);
@@ -71979,7 +71984,7 @@
         c = g(n(20)),
         h = n(14),
         f = g(n(22)),
-        p = g(n(453));
+        p = g(n(454));
 
     function g(e) {
         return e && e.__esModule ? e : {
@@ -72100,7 +72105,7 @@
         h = n(14),
         f = m(n(123)),
         p = m(n(22)),
-        g = m(n(453)),
+        g = m(n(454)),
         v = m(n(41));
 
     function m(e) {
@@ -72239,7 +72244,7 @@
     });
     var i = o(n(6)),
         r = o(n(48)),
-        s = o(n(409)),
+        s = o(n(410)),
         a = o(n(37));
 
     function o(e) {
@@ -72719,7 +72724,7 @@
             secondaryControl: null
         },
         initialize: function() {
-            var e = n(454),
+            var e = n(455),
                 t = this.get("children");
             if (null != t)
                 return this.children = new e(t),
@@ -72733,8 +72738,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(455)),
-        r = o(n(456)),
+    var i = o(n(456)),
+        r = o(n(457)),
         s = o(n(1409)),
         a = o(n(1413));
 
@@ -72846,7 +72851,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(457),
+    var i, r = n(458),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -72884,7 +72889,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(457),
+    var i, r = n(458),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -72919,7 +72924,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(415),
+    var i, r = n(416),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -73088,10 +73093,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(450)),
-        r = o(n(449)),
+    var i = o(n(451)),
+        r = o(n(450)),
         s = o(n(1416)),
-        a = o(n(448));
+        a = o(n(449));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -73256,8 +73261,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(455)),
-        r = s(n(456));
+    var i = s(n(456)),
+        r = s(n(457));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -73293,8 +73298,8 @@
         a = h(n(1422)),
         o = h(n(1424)),
         l = h(n(145)),
-        u = h(n(424)),
-        d = h(n(423)),
+        u = h(n(425)),
+        d = h(n(424)),
         c = n(110);
 
     function h(e) {
@@ -74548,11 +74553,11 @@
     });
     var i = c(n(7)),
         r = c(n(25)),
-        s = c(n(441)),
-        a = c(n(443)),
-        o = c(n(444)),
+        s = c(n(442)),
+        a = c(n(444)),
+        o = c(n(445)),
         l = c(n(220)),
-        u = c(n(217)),
+        u = c(n(206)),
         d = c(n(1433));
 
     function c(e) {
@@ -74732,7 +74737,7 @@
         t.isValidLocaleCode = t.getAndSetRegionAndLocaleCodes = void 0;
     var i = u(n(19)),
         r = l(n(126)),
-        s = l(n(207)),
+        s = l(n(208)),
         a = l(n(1437)),
         o = u(n(1438));
 
