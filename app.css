@@ -10093,8 +10093,6 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: #354148;
     float: right;
     height: 32px;
-    padding-left: 15px;
-    padding-right: 15px;
     font-size: 13px;
     line-height: 32px;
     margin-top: 7px;
@@ -10105,6 +10103,13 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     display: none;
 }
 
+.toolbar .toolbar-button .item-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 100%;
+}
+
 .toolbar .toolbar-button .item-icon {
     display: none;
 }
@@ -10113,7 +10118,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     cursor: pointer;
 }
 
-.toolbar .toolbar-button.ItemDisabled, .toolbar .toolbar-button:disabled {
+.toolbar .toolbar-button.ItemDisabled .item-container, .toolbar .toolbar-button:disabled .item-container {
     opacity: 0.4;
     cursor: default;
 }
@@ -10182,6 +10187,8 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: white;
     width: auto;
     transition: all 300ms;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .toolbar .toolbar-button.waze-icon-save .menu-title {
@@ -10447,16 +10454,6 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     cursor: default;
 }
 
-#edit-buttons .toolbar-group .toolbar-group-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px;
-    padding-left: 40px;
-    font-size: 13px;
-    height: 32px;
-    position: relative;
-}
-
 #edit-buttons .toolbar-group .toolbar-group-item:hover {
     background-color: #eff4f4;
 }
@@ -10487,6 +10484,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     white-space: nowrap;
     overflow: hidden;
     user-select: none;
+}
+
+#edit-buttons .toolbar-group .toolbar-group-item .item-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding-left: 40px;
+    font-size: 13px;
+    height: 32px;
+    position: relative;
 }
 
 #edit-buttons .toolbar-group .toolbar-group-item .item-icon {
@@ -12559,7 +12566,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     left: 10px;
 }
 
-.direction-lanes .lane-instruction .drawing .uncovered-turn-badge {
+.direction-lanes .lane-instruction .drawing .lanes-not-enabled-badge {
     background-image: url(//editor-assets.waze.com/beta/img/lanes91109f93a21ef3322bc3960e3fbaee18.png);
     background-position: 0px 0px;
     width: 15px;
@@ -14620,14 +14627,6 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     border-radius: 0px 0px 0px 5px;
     box-shadow: -10px 4px 0px 0px #ededed;
     z-index: 999;
-}
-
-.satellite-overlay {
-    background: rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    pointer-events: none;
 }
 
 .olMapViewport {
@@ -21870,8 +21869,16 @@ body[dir="rtl"] .olControlScaleLine {
     padding-left: 20px;
 }
 
+.restrictions-summary .restrictions-table td:first-child:empty, .restrictions-summary .restrictions-table th:first-child:empty {
+    padding-left: 0px;
+}
+
 .restrictions-summary .restrictions-table td:last-child, .restrictions-summary .restrictions-table th:last-child {
     padding-right: 20px;
+}
+
+.restrictions-summary .restrictions-table td:last-child:empty, .restrictions-summary .restrictions-table th:last-child:empty {
+    padding-right: 0px;
 }
 
 .restrictions-summary .restrictions-table th {
@@ -21889,6 +21896,18 @@ body[dir="rtl"] .olControlScaleLine {
 
 .restrictions-summary .restriction-list-item:hover td {
     background: #e9e9e9;
+}
+
+.restrictions-summary .restriction-list-item td.restriction-item-icon {
+    max-width: 28px;
+}
+
+.restrictions-summary .restriction-list-item .restriction-expired {
+    display: inline-block;
+    background-image: url(//editor-assets.waze.com/beta/img/buttons61b7404c02a9063e5bf880438c7f7f64.png);
+    background-position: -83px -15px;
+    width: 13px;
+    height: 13px;
 }
 
 .restrictions-summary .restriction-list-item td.restriction-item-summary {
@@ -22056,6 +22075,17 @@ body[dir="rtl"] .olControlScaleLine {
     margin-left: 5px;
     border-radius: 5px;
     padding: 0px 4px 0px 4px;
+}
+
+.merge-landmark-modal input[type="radio"]:active:checked + label.main-label:after, .merge-landmark-modal input[type="radio"]:active:not(:checked) + label.main-label:after {
+    background: none;
+    box-shadow: none;
+    border: 1px solid gray;
+    transform: translate3d(0, 1px, 0);
+}
+
+.merge-landmark-modal input[type="radio"]:active:checked + label.main-label:after {
+    border: 1px solid #26bae8;
 }
 
 .merge-landmark-modal input[type="radio"]:checked + label.main-label {
