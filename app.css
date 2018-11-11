@@ -17589,6 +17589,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 #edit-panel .merge-landmarks .merge-item .content, .edit-panel .merge-landmarks .merge-item .content {
+    min-height: 30px;
     padding-left: 50px;
 }
 

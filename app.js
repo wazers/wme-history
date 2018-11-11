@@ -26011,7 +26011,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.22-64-g735ed4f\n",
+                version: "v2.22-66-g89e47c9\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -63775,13 +63775,12 @@
                             (0,
                                 r.default)(i, y.VENUE_FIELDS.URL, {
                                 view: c.default,
-                                minLength: 2,
-                                style: "single-line"
+                                style: "single-line",
+                                allowNull: !0
                             }),
                             (0,
                                 r.default)(i, y.VENUE_FIELDS.PHONE, {
                                 view: c.default,
-                                minLength: 2,
                                 style: "single-line",
                                 allowNull: !0
                             }),
@@ -63854,6 +63853,7 @@
                             }),
                             (0,
                                 r.default)(n, y.PARKING_FIELDS.COST_TYPE, {
+                                allowNull: !0,
                                 style: "single-line"
                             }),
                             (0,
