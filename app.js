@@ -24728,16 +24728,18 @@
                             e._isAttributeChanged(i) && (t[i] = e.getAttributeValue(i))
                         });
                         var i = this.getAttributeValue(f.CATEGORIES);
-                        if (i[0] === c.PARKING_LOT) {
-                            t.categoryAttributes = {
-                                PARKING_LOT: {}
-                            };
-                            var n = t.categoryAttributes.PARKING_LOT;
+                        if (i[0] === c.PARKING_LOT && v.some(function(t) {
+                                return e._isAttributeChanged(t)
+                            })) {
+                            var n = {};
                             v.forEach(function(t) {
-                                e._isAttributeChanged(t) && (n[t] = e.getAttributeValue(t))
-                            })
+                                    n[t] = e.getAttributeValue(t)
+                                }),
+                                t.categoryAttributes = {
+                                    PARKING_LOT: n
+                                }
                         }
-                        return t.brand && -1 === i.indexOf(c.GAS_STATION) && delete t.brand,
+                        return t.brand && -1 === i.indexOf(c.GAS_STATION) && -1 === i.indexOf(c.PARKING_LOT) && delete t.brand,
                             this._handleAddressChange(t),
                             t.id = this.mainVenue.attributes.id,
                             t
@@ -26011,7 +26013,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.22-66-g89e47c9\n",
+                version: "v2.22-68-ge115451\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -63638,7 +63640,7 @@
                         ".brand-region": {
                             observe: y.VENUE_FIELDS.CATEGORIES,
                             visible: function(e) {
-                                return e.indexOf(k.GAS_STATION) > -1
+                                return e.indexOf(k.GAS_STATION) > -1 || e.indexOf(k.PARKING_LOT) > -1
                             }
                         },
                         ".brand-message": {
