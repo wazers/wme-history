@@ -12169,6 +12169,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-right: 10px;
 }
 
+#map-lightbox .content .force-action {
+    display: inline;
+}
+
 #map-lightbox .content .last-edited {
     position: absolute;
     top: 40px;
@@ -22051,6 +22055,10 @@ body[dir="rtl"] .olControlScaleLine {
 
 .merge-landmark-modal .option-container:hover input[type="radio"] + label.main-label:after {
     opacity: 1;
+}
+
+.merge-landmark-modal .alert {
+    margin-bottom: 10px;
 }
 
 .merge-landmark-modal input[type="radio"] + label.main-label {
