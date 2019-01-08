@@ -39647,12 +39647,15 @@
     });
     var n = OpenLayers.Class(OpenLayers.Handler, {
         EVENTMAP: {
-            mousemove: { in: "over",
+            mousemove: {
+                in: "over",
                 out: "out"
             },
-            click: { in: "click"
+            click: {
+                in: "click"
             },
-            dblclick: { in: "dblclick",
+            dblclick: {
+                in: "dblclick",
                 out: null
             }
         },

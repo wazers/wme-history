@@ -18950,7 +18950,8 @@
         "use strict";
         var s = n(24);
         e.exports = function(e) {
-            s(s.S, e, { of: function() {
+            s(s.S, e, {
+                of: function() {
                     for (var e = arguments.length, t = new Array(e); e--;)
                         t[e] = arguments[e];
                     return new this(t)
@@ -72705,22 +72706,28 @@
     }, function(e, t) {
         OpenLayers.Handler.Feature = OpenLayers.Class(OpenLayers.Handler, {
             EVENTMAP: {
-                click: { in: "click",
+                click: {
+                    in: "click",
                     out: "clickout"
                 },
-                mousemove: { in: "over",
+                mousemove: {
+                    in: "over",
                     out: "out"
                 },
-                dblclick: { in: "dblclick",
+                dblclick: {
+                    in: "dblclick",
                     out: null
                 },
-                mousedown: { in: null,
+                mousedown: {
+                    in: null,
                     out: null
                 },
-                mouseup: { in: null,
+                mouseup: {
+                    in: null,
                     out: null
                 },
-                touchstart: { in: "click",
+                touchstart: {
+                    in: "click",
                     out: "clickout"
                 }
             },
