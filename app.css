@@ -14637,6 +14637,25 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     background: #354148 !important;
 }
 
+.house-number-marker {
+    margin-left: -10px;
+    margin-top: -6px;
+    font-size: 10px;
+    background: white;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.house-number-marker.forced {
+    border: 1px solid red;
+}
+
+.lightboxShown .house-number-marker {
+    opacity: 0;
+}
+
 #WazeMap .map-message {
     position: absolute;
     background: #354148;
@@ -15171,6 +15190,43 @@ body[dir="rtl"] .olControlScaleLine {
 .big-tooltip .form-control[disabled] {
     background: white;
     opacity: 0.5;
+}
+
+.tippy-tooltip.light-border-theme {
+    background-color: #ededed;
+    box-shadow: 0 0 107px 0 rgba(0, 0, 0, 0.6), 0 0 85px 0 rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    text-align: left;
+}
+
+.map-balloon-confirm {
+    padding: 20px;
+    font-size: 10pt;
+    width: 280px;
+}
+
+.map-balloon-confirm .title {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.map-balloon-confirm p.content {
+    margin-bottom: 10px;
+}
+
+.map-balloon-confirm .controls-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map-balloon-confirm .controls-container input[type="checkbox"] + label.dont-show-again-label {
+    white-space: normal;
+}
+
+.map-balloon-confirm .controls-container .apply-button {
+    margin-left: auto;
+    align-self: flex-end;
 }
 
 #sidebar {
@@ -17337,17 +17393,18 @@ body[dir="rtl"] .olControlScaleLine {
     display: flex;
 }
 
-#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button {
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button, #edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button {
     color: #2f799b;
     cursor: pointer;
+    margin-right: 7px;
 }
 
-#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover {
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover, #edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:hover, .edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button:hover {
     color: #61accf;
 }
 
-#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button {
-    margin-right: 7px;
+#edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:last-child, #edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:last-child, #edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button:last-child, .edit-panel .navigation-point-view .navigation-point-list-item .preview .edit-button:last-child, .edit-panel .navigation-point-view .navigation-point-list-item .preview .delete-button:last-child, .edit-panel .navigation-point-view .navigation-point-list-item .preview .focus-button:last-child {
+    margin-right: 0px;
 }
 
 #edit-panel .image-preview-container, .edit-panel .image-preview-container {
@@ -18448,8 +18505,10 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .venue-image-dialog .details {
-    margin-top: 10px;
+    margin-top: 12px;
     color: #8c8c8c;
+    height: auto;
+    overflow: auto;
 }
 
 .venue-image-dialog .close {
@@ -21585,6 +21644,10 @@ body[dir="rtl"] .olControlScaleLine {
 
 .restriction-editing-region .timeframe-editing-region .timeframe-section-dates .datepicker {
     width: 190px;
+}
+
+.restriction-editing-region .timeframe-editing-region .date-parity-section {
+    margin-top: 12px;
 }
 
 .restriction-editing-region .driving-modality-editing-region .restriction-editing-title, .restriction-editing-region .driving-modality-editing-region .restriction-validation-region .restriction-validation-title, .restriction-editing-region .restriction-validation-region .driving-modality-editing-region .restriction-validation-title {
