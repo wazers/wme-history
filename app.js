@@ -98,7 +98,7 @@
     for (var u = 0; u < a.length; u++)
         t(a[u]);
     var d = l;
-    r.push([472, 1]),
+    r.push([473, 1]),
         i()
 }([, , , , , , , , , function(e, t, i) {
     "use strict";
@@ -898,10 +898,9 @@
                     endYear: a
                 })
         },
-        u.formatOpeningHour = function(e) {
-            var t = u.formatDays(e.get("days"));
-            return e.isAllDay() ? t += " " + I18n.t("edit.landmark.opening_hours.time_span.all_day") : t += " " + e.get("fromHour") + "-" + e.get("toHour"),
-                t
+        u.formatOpeningHour = function(e, t, i, n) {
+            var s = u.formatDays(e);
+            return s += t ? " " + I18n.t("edit.landmark.opening_hours.time_span.all_day") : " " + i + "-" + n
         },
         u._groupDays = function(e) {
             var t = [],
@@ -1848,7 +1847,7 @@
         p = D(i(84)),
         g = D(i(43)),
         v = O(i(12)),
-        m = i(606),
+        m = i(607),
         y = D(i(21)),
         b = O(i(22)),
         E = D(i(46)),
@@ -2719,10 +2718,10 @@
         s = c(i(17)),
         r = c(i(46)),
         o = c(i(184)),
-        a = i(136),
-        l = i(105),
-        u = c(i(15)),
-        d = i(31);
+        a = i(105),
+        l = c(i(15)),
+        u = i(31),
+        d = i(136);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -2787,7 +2786,7 @@
                 return !e
             },
             restrictions: f(r.default, function(e) {
-                var t = new l.TimeFrameViewHelpers({
+                var t = new a.TimeFrameViewHelpers({
                     timeFrame: e.getTimeFrame()
                 });
                 return t.formatWeekdays() + " " + t.formatHours()
@@ -2809,8 +2808,10 @@
             },
             openingHours: function(e) {
                 return e.map(function(e) {
-                    return new a.OpeningHour(e)
-                }).map(s.default.formatOpeningHour)
+                    return new d.OpeningHour(e)
+                }).map(function(e) {
+                    return s.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
+                })
             },
             images: function(e) {
                 return e.map(function(e) {
@@ -2861,7 +2862,7 @@
             var i = "objects." + e + ".fields." + t,
                 n = "objects.common.fields." + t;
             return e === h && (i = "objects.venue.category_fields." + t),
-                e === u.default.SEGMENT && d.FLAG_ATTRIBUTES[t] && (i = "objects." + e + ".flag_fields." + t),
+                e === l.default.SEGMENT && u.FLAG_ATTRIBUTES[t] && (i = "objects." + e + ".flag_fields." + t),
                 I18n.lookup(i) ? I18n.t(i) : I18n.lookup(n) ? I18n.t(n) : t
         },
         t.formatValue = function(e, t, i, r) {
@@ -3188,7 +3189,7 @@
         _getManifestsWith: function(e) {
             return W.Config.enabled_modules.map(function(t) {
                 try {
-                    return i(576)("./" + t + "/Manifest")[e]
+                    return i(577)("./" + t + "/Manifest")[e]
                 } catch (e) {
                     throw new Error("Error loading module " + t + ":\nManifest file does not exist.")
                 }
@@ -3365,7 +3366,7 @@
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
-    var o = i(525);
+    var o = i(526);
     o.keys().map(o);
     var a = {
         t: I18n.t.bind(I18n),
@@ -3587,7 +3588,7 @@
         l = p(i(1)),
         u = p(i(3)),
         d = p(i(4)),
-        c = p(i(582)),
+        c = p(i(583)),
         h = i(28),
         f = function(e) {
             if (e && e.__esModule)
@@ -3924,7 +3925,7 @@
     });
     var o = r(i(34)),
         a = i(73),
-        l = r(i(608));
+        l = r(i(609));
 
     function u(e, t, i) {
         var n = t.getID(),
@@ -4019,7 +4020,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o, a, l = i(586),
+    var o, a, l = i(587),
         u = i(178);
     t.RESTRICTION_DESCRIPTION_CHAR_LIMIT = 1e3,
         function(e) {
@@ -4992,7 +4993,7 @@
         value: !0
     });
     var r = n(i(18)),
-        o = s(i(583)),
+        o = s(i(584)),
         a = n(i(42)),
         l = function() {
             function e() {
@@ -5327,7 +5328,7 @@
                     }
                 }]),
                 t
-        }(d(i(589)).default),
+        }(d(i(590)).default),
         h = new c({
             isEmpty: !0
         });
@@ -5415,7 +5416,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a, l = r(i(607)),
+    var a, l = r(i(608)),
         u = o(i(54));
     ! function(e) {
         e[e.FWD = 0] = "FWD",
@@ -5947,10 +5948,10 @@
     var n = c(i(23)),
         s = c(i(364)),
         r = c(i(183)),
-        o = c(i(603)),
-        a = c(i(604)),
+        o = c(i(604)),
+        a = c(i(605)),
         l = c(i(68)),
-        u = c(i(605)),
+        u = c(i(606)),
         d = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -6473,7 +6474,7 @@
         h = A(i(145)),
         f = C(i(12)),
         p = C(i(22)),
-        g = A(i(804)),
+        g = A(i(805)),
         v = A(i(39)),
         m = A(i(71)),
         y = A(i(181)),
@@ -6483,7 +6484,7 @@
         k = C(i(9)),
         M = C(i(24)),
         S = C(i(19)),
-        I = A(i(805)),
+        I = A(i(806)),
         T = i(38);
 
     function C(e) {
@@ -6917,7 +6918,7 @@
         }(i(22)),
         m = k(i(70)),
         y = k(i(203)),
-        b = k(i(835)),
+        b = k(i(836)),
         E = k(i(13)),
         w = i(30);
 
@@ -7072,7 +7073,7 @@
                                 this.descartesClient.getFeatures(this.map.calculateBounds(), e).then(function(e) {
                                     i.serializer.read(e);
                                     var n = W.editingMediator.getObjectsInUseGroupedByRepository();
-                                    return i.model.mergeObjects(t, e, i.keepObjects, n)
+                                    return i.model.mergeGetResponse(t, e, i.keepObjects, n)
                                 }).catch(function(e) {
                                     "abort" !== e.reason && console.error("Error getting features", e)
                                 }).finally(function() {
@@ -7594,17 +7595,17 @@
         h = i(107),
         f = C(i(43)),
         p = C(i(18)),
-        g = i(136),
-        v = C(i(86)),
-        m = i(74),
-        y = C(i(189)),
-        b = C(i(624)),
-        E = C(i(376)),
-        w = C(i(72)),
-        k = T(i(12)),
-        M = i(138),
-        S = C(i(137)),
-        I = T(i(9));
+        g = C(i(86)),
+        v = i(74),
+        m = C(i(189)),
+        y = C(i(625)),
+        b = C(i(376)),
+        E = C(i(72)),
+        w = T(i(12)),
+        k = i(138),
+        M = C(i(137)),
+        S = T(i(9)),
+        I = i(136);
 
     function T(e) {
         if (e && e.__esModule)
@@ -7666,9 +7667,9 @@
                 value: function() {
                     var e = {};
                     if (this.isParkingLot()) {
-                        var t = _.result(S.default.prototype, "defaults");
-                        this.isNew() && (t.parkingType = M.PARKING_TYPE_PUBLIC),
-                            e[m.PARKING_LOT] = t
+                        var t = _.result(M.default.prototype, "defaults");
+                        this.isNew() && (t.parkingType = k.PARKING_TYPE_PUBLIC),
+                            e[v.PARKING_LOT] = t
                     }
                     return e
                 }
@@ -7692,7 +7693,7 @@
                 value: function(e) {
                     if (e.venueUpdateRequests) {
                         var t = p.default.prototype.arePropertiesEditable.apply(this),
-                            i = new b.default({
+                            i = new y.default({
                                 isInEditArea: t,
                                 isAdLockedEditable: W.loginManager.canEditAdLockedPlaceUpdates(),
                                 isEditable: this.areUpdateRequestsEditable()
@@ -7749,14 +7750,14 @@
             }, {
                 key: "getAddress",
                 value: function() {
-                    return w.default.fromStreetID(this.attributes.streetID, this.model, {
+                    return E.default.fromStreetID(this.attributes.streetID, this.model, {
                         houseNumber: this.attributes.houseNumber
                     })
                 }
             }, {
                 key: "is2D",
                 value: function() {
-                    return I.is2D(this.geometry)
+                    return S.is2D(this.geometry)
                 }
             }, {
                 key: "isPoint",
@@ -7771,12 +7772,12 @@
             }, {
                 key: "getPolygonGeometry",
                 value: function() {
-                    return this.isPoint() ? k.pointToSquarePolygon(this.geometry, 20) : I.cloneGeometry(this.geometry)
+                    return this.isPoint() ? w.pointToSquarePolygon(this.geometry, 20) : S.cloneGeometry(this.geometry)
                 }
             }, {
                 key: "getPointGeometry",
                 value: function() {
-                    return this.isPoint() ? I.cloneGeometry(this.geometry) : k.polygonToPoint(this.geometry)
+                    return this.isPoint() ? S.cloneGeometry(this.geometry) : w.polygonToPoint(this.geometry)
                 }
             }, {
                 key: "getLockRank",
@@ -7860,7 +7861,7 @@
                 key: "isParkingLot",
                 value: function() {
                     var e = this.attributes.categories;
-                    return Array.isArray(e) && e[0] === m.PARKING_LOT
+                    return Array.isArray(e) && e[0] === v.PARKING_LOT
                 }
             }, {
                 key: "isResidential",
@@ -7874,10 +7875,10 @@
         n.default)(A.prototype, {
         nested: {
             geometry: OL.Geometry,
-            images: v.default,
-            entryExitPoints: E.default,
-            externalProviderIDs: y.default,
-            openingHours: g.OpeningHour
+            images: g.default,
+            entryExitPoints: b.default,
+            externalProviderIDs: m.default,
+            openingHours: I.OpeningHour
         },
         PERMISSIONS: {
             EDIT_GEOMETRY: 1,
@@ -8171,7 +8172,7 @@
         value: !0
     });
     var o, a = r(i(170)),
-        l = r(i(628));
+        l = r(i(629));
     ! function(e) {
         e.ADD = "ADD",
             e.UPDATE = "UPDATE",
@@ -9101,32 +9102,32 @@
         }),
         t.LAYER_UNIQUE_NAMES = t.MapLayers = void 0;
     var n = L(i(206)),
-        s = L(i(877)),
+        s = L(i(878)),
         r = L(i(207)),
-        o = L(i(878)),
-        a = L(i(883)),
-        l = L(i(884)),
+        o = L(i(879)),
+        a = L(i(884)),
+        l = L(i(885)),
         u = L(i(415)),
-        d = L(i(887)),
-        c = L(i(888)),
+        d = L(i(888)),
+        c = L(i(889)),
         h = L(i(150)),
-        f = L(i(889)),
-        p = L(i(913)),
-        g = L(i(914)),
-        v = L(i(915)),
+        f = L(i(890)),
+        p = L(i(914)),
+        g = L(i(915)),
+        v = L(i(916)),
         m = L(i(418)),
-        y = L(i(922)),
-        b = L(i(923)),
-        E = L(i(924)),
+        y = L(i(923)),
+        b = L(i(924)),
+        E = L(i(925)),
         w = L(i(416)),
         k = L(i(15)),
         M = R(i(12)),
-        S = L(i(925)),
+        S = L(i(926)),
         I = L(i(64)),
         T = L(i(208)),
-        C = L(i(926)),
+        C = L(i(927)),
         A = L(i(42)),
-        O = L(i(927)),
+        O = L(i(928)),
         D = R(i(24));
 
     function R(e) {
@@ -9772,7 +9773,7 @@
         u = b(i(4)),
         d = b(i(18)),
         c = b(i(43)),
-        h = b(i(584)),
+        h = b(i(585)),
         f = b(i(72)),
         p = y(i(12)),
         g = i(71),
@@ -10061,7 +10062,7 @@
     });
     var s = n(i(5));
     t.moment = s.default;
-    var r = i(588);
+    var r = i(589);
     t.DateRange = r.DateRange,
         r.extendMoment(s.default)
 }, function(e, t, i) {
@@ -10221,55 +10222,30 @@
         t.buildChanges = m
 }, function(e, t, i) {
     "use strict";
-    var n, s = this && this.__extends || (n = function(e, t) {
-            return (n = Object.setPrototypeOf || {
-                    __proto__: []
-                }
-                instanceof Array && function(e, t) {
-                    e.__proto__ = t
-                } ||
-                function(e, t) {
-                    for (var i in t)
-                        t.hasOwnProperty(i) && (e[i] = t[i])
-                }
-            )(e, t)
-        },
-        function(e, t) {
-            function i() {
-                this.constructor = e
-            }
-            n(e, t),
-                e.prototype = null === t ? Object.create(t) : (i.prototype = t.prototype,
-                    new i)
-        }
-    );
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = [1, 2, 3, 4, 5];
-    t.DEFAULT_DAYS = r;
-    var o = function(e) {
-        function t() {
-            return null !== e && e.apply(this, arguments) || this
+    t.ALL_DAY_FROM = "00:00";
+    t.ALL_DAY_TO = "00:00";
+    var n = function() {
+        function e(e) {
+            this.fromHour = e.fromHour,
+                this.toHour = e.toHour,
+                this.days = e.days
         }
-        return s(t, e),
-            t.prototype.defaults = function() {
-                return {
-                    fromHour: "09:00",
-                    toHour: "17:00",
-                    days: r.concat()
-                }
+        return e.createAllDay = function(t) {
+                return new e({
+                    fromHour: "00:00",
+                    toHour: "00:00",
+                    days: t
+                })
             },
-            t.prototype.isAllDay = function() {
-                return "00:00" === this.get("fromHour") && "00:00" === this.get("toHour")
+            e.prototype.isAllDay = function() {
+                return "00:00" === this.fromHour && "00:00" === this.toHour
             },
-            t.prototype.setAllDay = function() {
-                return this.set("fromHour", "00:00"),
-                    this.set("toHour", "00:00")
-            },
-            t
-    }(Backbone.Model);
-    t.OpeningHour = o
+            e
+    }();
+    t.OpeningHour = n
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -10421,7 +10397,7 @@
     var n = b(i(6)),
         s = b(i(159)),
         r = b(i(11)),
-        o = b(i(631)),
+        o = b(i(632)),
         a = b(i(49)),
         l = b(i(26)),
         u = b(i(2)),
@@ -11195,7 +11171,7 @@
         v = i(35),
         m = w(i(9)),
         y = w(i(19)),
-        b = k(i(806)),
+        b = k(i(807)),
         E = i(38);
 
     function w(e) {
@@ -11874,22 +11850,22 @@
         l = A(i(3)),
         u = A(i(8)),
         d = A(i(4)),
-        c = i(1052),
+        c = i(1053),
         h = A(c),
         f = i(28),
         p = A(i(119)),
         g = A(i(199)),
         v = A(i(385)),
-        m = C(i(1054)),
+        m = C(i(1055)),
         y = A(i(215)),
-        b = A(i(1057)),
-        E = A(i(1059)),
+        b = A(i(1058)),
+        E = A(i(1060)),
         w = A(i(21)),
-        k = A(i(1063)),
-        M = A(i(1065)),
+        k = A(i(1064)),
+        M = A(i(1066)),
         S = C(i(19)),
         I = A(i(437)),
-        T = A(i(1066));
+        T = A(i(1067));
 
     function C(e) {
         if (e && e.__esModule)
@@ -13684,7 +13660,7 @@
         c = v(i(21)),
         h = v(i(112)),
         f = v(i(143)),
-        p = v(i(807)),
+        p = v(i(808)),
         g = v(i(15));
 
     function v(e) {
@@ -14029,9 +14005,9 @@
         a = f(i(3)),
         l = f(i(8)),
         u = f(i(4)),
-        d = f(i(857)),
-        c = f(i(858)),
-        h = i(865);
+        d = f(i(858)),
+        c = f(i(859)),
+        h = i(866);
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -14235,7 +14211,7 @@
             value: !0
         }),
         t.MergeHGighlightStyleMap = void 0;
-    var n, s = i(876),
+    var n, s = i(877),
         r = (n = s) && n.__esModule ? n : {
             default: n
         },
@@ -14475,11 +14451,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = l(i(890)),
+    var n = l(i(891)),
         s = l(i(414)),
-        r = l(i(891)),
-        o = l(i(892)),
-        a = l(i(893));
+        r = l(i(892)),
+        o = l(i(893)),
+        a = l(i(894));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -14516,7 +14492,7 @@
             }, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return i(894)("./" + u[e.attributes.code] + ".png")
+                        return i(895)("./" + u[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -14883,7 +14859,7 @@
     var n = l(i(0)),
         s = l(i(1)),
         r = l(i(64)),
-        o = l(i(969)),
+        o = l(i(970)),
         a = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -15126,7 +15102,7 @@
         v = w(i(4)),
         m = i(92),
         y = w(i(203)),
-        b = w(i(1004)),
+        b = w(i(1005)),
         E = i(63);
 
     function w(e) {
@@ -15586,10 +15562,10 @@
     var n = d(i(10)),
         s = d(i(11)),
         r = d(i(7)),
-        o = d(i(1055)),
+        o = d(i(1056)),
         a = d(i(31)),
         l = i(83),
-        u = d(i(1056));
+        u = d(i(1057));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -16484,7 +16460,7 @@
     });
     var n = l(i(23)),
         s = l(i(364)),
-        r = l(i(611)),
+        r = l(i(612)),
         o = l(i(85)),
         a = i(38);
 
@@ -17264,7 +17240,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(644)),
+    var n = o(i(645)),
         s = o(i(142)),
         r = o(i(192));
 
@@ -17957,7 +17933,7 @@
         o = h(i(3)),
         a = h(i(4)),
         l = h(i(13)),
-        u = h(i(803)),
+        u = h(i(804)),
         d = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -19381,9 +19357,9 @@
     var n = h(i(10)),
         s = h(i(378)),
         r = h(i(60)),
-        o = h(i(808)),
-        a = h(i(809)),
-        l = h(i(810)),
+        o = h(i(809)),
+        a = h(i(810)),
+        l = h(i(811)),
         u = i(76),
         d = h(u),
         c = function(e) {
@@ -19514,7 +19490,7 @@
         h = m(i(3)),
         f = m(i(4)),
         p = i(38),
-        g = m(i(826)),
+        g = m(i(827)),
         v = m(i(68)),
         _ = i(30);
 
@@ -19799,20 +19775,20 @@
         a = C(i(0)),
         l = C(i(1)),
         u = C(i(53)),
-        d = C(i(836)),
-        c = C(i(837)),
-        h = C(i(838)),
-        f = C(i(840)),
-        p = C(i(841)),
-        g = C(i(842)),
-        v = C(i(843)),
+        d = C(i(837)),
+        c = C(i(838)),
+        h = C(i(839)),
+        f = C(i(841)),
+        p = C(i(842)),
+        g = C(i(843)),
+        v = C(i(844)),
         m = C(i(15)),
         y = C(i(62)),
         b = C(i(114)),
         E = C(i(146)),
         w = C(i(42)),
         k = C(i(88)),
-        M = C(i(845)),
+        M = C(i(846)),
         S = C(i(405)),
         I = function(e) {
             if (e && e.__esModule)
@@ -19824,7 +19800,7 @@
             return t.default = e,
                 t
         }(i(9)),
-        T = C(i(846));
+        T = C(i(847));
 
     function C(e) {
         return e && e.__esModule ? e : {
@@ -20000,6 +19976,17 @@
                         return e && this.reposByObjectType[e] || null
                     }
                 }, {
+                    key: "mergeGetResponse",
+                    value: function(e, t, i) {
+                        var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
+                        this.events.triggerEvent("mergestart"),
+                            this.mergeObjects(e, t, i, n),
+                            this.setMeasurementSystem(),
+                            this.setDrivingDirection(),
+                            this.processTopCountryAndState(t),
+                            this.events.triggerEvent("mergeend")
+                    }
+                }, {
                     key: "mergeObjects",
                     value: function(e, t, i) {
                         var n = this,
@@ -20007,7 +19994,6 @@
                             o = t.segments,
                             a = t.connections;
                         o || (i = !0),
-                            this.events.triggerEvent("mergestart"),
                             _.without((0,
                                 s.default)(t), "segments", "connections").forEach(function(s) {
                                 var o = n[s],
@@ -20026,11 +20012,7 @@
                                 }),
                                 this.segments.mergeObjects(o, null, e, this.scale, t),
                                 a && (this._turnGraph.clear(),
-                                    this._turnGraph.fromDescartes(a))),
-                            this.setMeasurementSystem(),
-                            this.setDrivingDirection(),
-                            this.setTopCountry(t),
-                            this.events.triggerEvent("mergeend")
+                                    this._turnGraph.fromDescartes(a)))
                     }
                 }, {
                     key: "putPersistent",
@@ -20046,13 +20028,23 @@
                         })
                     }
                 }, {
-                    key: "setTopCountry",
+                    key: "processTopCountryAndState",
                     value: function(e) {
                         var t = e.countries,
                             i = e.states;
-                        t && t.mainObjectID ? (this.countries.top = this.countries.objects[t.mainObjectID],
-                            i && (this.states.top = this.states.objects[i.mainObjectID])) : (this.countries.top = null,
-                            this.states.top = null)
+                        t && t.mainObjectID ? this._setTopCountryAndState(t, i) : this._clearTopCountryAndState()
+                    }
+                }, {
+                    key: "_setTopCountryAndState",
+                    value: function(e, t) {
+                        this.countries.top = this.countries.objects[e.mainObjectID],
+                            t && (this.states.top = this.states.objects[t.mainObjectID])
+                    }
+                }, {
+                    key: "_clearTopCountryAndState",
+                    value: function() {
+                        this.countries.top = null,
+                            this.states.top = null
                     }
                 }, {
                     key: "setMeasurementSystem",
@@ -20556,7 +20548,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(853),
+    var n, s = i(854),
         r = (n = s) && n.__esModule ? n : {
             default: n
         },
@@ -20666,15 +20658,15 @@
         o = d(i(1)),
         a = d(i(3)),
         l = d(i(4)),
-        u = d(i(859));
+        u = d(i(860));
 
     function d(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    i(860),
-        i(863);
+    i(861),
+        i(864);
     var c = function(e) {
         function t(e, i) {
             var o = e.map,
@@ -21642,11 +21634,11 @@
         a = T(i(1)),
         l = T(i(3)),
         u = T(i(4)),
-        d = T(i(918)),
+        d = T(i(919)),
         c = T(i(186)),
-        h = T(i(919)),
+        h = T(i(920)),
         f = T(i(64)),
-        p = T(i(920)),
+        p = T(i(921)),
         g = i(92),
         v = i(28),
         m = I(i(12)),
@@ -21655,7 +21647,7 @@
         E = I(i(24)),
         w = I(i(19)),
         k = T(i(131)),
-        M = T(i(921)),
+        M = T(i(922)),
         S = i(406);
 
     function I(e) {
@@ -22419,7 +22411,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = a(i(948)),
+    var n = a(i(949)),
         s = a(i(398)),
         r = a(i(424)),
         o = a(i(17));
@@ -22621,7 +22613,7 @@
         value: !0
     });
     var n = a(i(17)),
-        s = a(i(949)),
+        s = a(i(950)),
         r = a(i(422)),
         o = function(e) {
             if (e && e.__esModule)
@@ -23009,9 +23001,9 @@
     var n = u(i(7)),
         s = u(i(26)),
         r = u(i(211)),
-        o = u(i(971)),
-        a = u(i(972)),
-        l = u(i(974));
+        o = u(i(972)),
+        a = u(i(973)),
+        l = u(i(975));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -23197,10 +23189,10 @@
         r = g(i(1)),
         o = g(i(27)),
         a = g(i(34)),
-        l = g(i(988)),
-        u = g(i(1e3)),
+        l = g(i(989)),
+        u = g(i(1001)),
         d = g(i(432)),
-        c = g(i(1001)),
+        c = g(i(1002)),
         h = p(i(32)),
         f = p(i(19));
 
@@ -23347,12 +23339,12 @@
         l = m(i(3)),
         u = m(i(4)),
         d = i(57),
-        c = m(i(992)),
-        h = m(i(993)),
-        f = m(i(994)),
-        p = m(i(995)),
-        g = m(i(996)),
-        v = m(i(997)),
+        c = m(i(993)),
+        h = m(i(994)),
+        f = m(i(995)),
+        p = m(i(996)),
+        g = m(i(997)),
+        v = m(i(998)),
         _ = m(i(46));
 
     function m(e) {
@@ -24287,11 +24279,11 @@
     var n = c(i(153)),
         s = i(139),
         r = c(i(17)),
-        o = c(i(1030)),
-        a = c(i(1031)),
-        l = c(i(1032)),
-        u = c(i(1033)),
-        d = c(i(1034));
+        o = c(i(1031)),
+        a = c(i(1032)),
+        l = c(i(1033)),
+        u = c(i(1034)),
+        d = c(i(1035));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -24518,7 +24510,7 @@
         value: !0
     });
     var r = i(28),
-        o = i(1061),
+        o = i(1062),
         a = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -24798,10 +24790,10 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(1079)),
-        u = h(i(1080)),
+        l = h(i(1080)),
+        u = h(i(1081)),
         d = h(i(216)),
-        c = h(i(1081));
+        c = h(i(1082));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -24878,6 +24870,65 @@
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
+    var n, s = this && this.__extends || (n = function(e, t) {
+            return (n = Object.setPrototypeOf || {
+                    __proto__: []
+                }
+                instanceof Array && function(e, t) {
+                    e.__proto__ = t
+                } ||
+                function(e, t) {
+                    for (var i in t)
+                        t.hasOwnProperty(i) && (e[i] = t[i])
+                }
+            )(e, t)
+        },
+        function(e, t) {
+            function i() {
+                this.constructor = e
+            }
+            n(e, t),
+                e.prototype = null === t ? Object.create(t) : (i.prototype = t.prototype,
+                    new i)
+        }
+    );
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var r = [1, 2, 3, 4, 5],
+        o = function(e) {
+            function t() {
+                return null !== e && e.apply(this, arguments) || this
+            }
+            return s(t, e),
+                t.prototype.defaults = function() {
+                    return {
+                        fromHour: "09:00",
+                        toHour: "17:00",
+                        days: r.concat(),
+                        isAllDay: !1
+                    }
+                },
+                t.prototype.validate = function(e) {
+                    var t = [],
+                        i = e.fromHour,
+                        n = e.toHour,
+                        s = e.days,
+                        r = e.isAllDay;
+                    0 === s.length && t.push(I18n.t("edit.landmark.opening_hours.errors.days"));
+                    var o = Date.parseExact(i, "H:mm"),
+                        a = Date.parseExact(n, "H:mm");
+                    if (r || (null == o && t.push(I18n.t("edit.landmark.opening_hours.errors.fromHour")),
+                            null == a && t.push(I18n.t("edit.landmark.opening_hours.errors.toHour")),
+                            Number(o) === Number(a) && t.push(I18n.t("edit.landmark.opening_hours.errors.same"))),
+                        t.length > 0)
+                        return t
+                },
+                t
+        }(Backbone.Model);
+    t.OpeningHourViewModel = o
+}, function(e, t, i) {
+    "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
@@ -24887,7 +24938,7 @@
         o = h(i(1)),
         a = h(i(3)),
         l = h(i(4)),
-        u = h(i(1086)),
+        u = h(i(1087)),
         d = h(i(131)),
         c = h(i(404));
 
@@ -25314,7 +25365,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(i(446));
+    var s = n(i(447));
     t.hasPendingMerge = function(e, t) {
         return e.getFlatActions().some(function(e) {
             return e instanceof s.default && e.getMergedToVenue().getID() === t.getID()
@@ -25455,10 +25506,10 @@
     var n = h(i(33)),
         s = h(i(6)),
         r = h(i(76)),
-        o = h(i(1104)),
+        o = h(i(1105)),
         a = h(i(400)),
-        l = h(i(1106)),
-        u = h(i(1108)),
+        l = h(i(1107)),
+        u = h(i(1109)),
         d = i(92),
         c = function(e) {
             if (e && e.__esModule)
@@ -25871,7 +25922,7 @@
         l = h(i(1)),
         u = h(i(4)),
         d = i(54),
-        c = h(i(1120));
+        c = h(i(1121));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -26492,17 +26543,23 @@
                         }))
                     }
                 }, {
+                    key: "_formatOpeningHours",
+                    value: function(e) {
+                        return l.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
+                    }
+                }, {
                     key: "_getOpeningHours",
                     value: function() {
-                        var e = this.venues.map(function(e) {
-                            return e.attributes.openingHours.map(l.default.formatOpeningHour)
-                        });
-                        return _.uniq(_.flatten(e))
+                        var e = this,
+                            t = this.venues.map(function(t) {
+                                return t.attributes.openingHours.map(e._formatOpeningHours)
+                            });
+                        return _.uniq(_.flatten(t))
                     }
                 }, {
                     key: "_getSuggestedOpeningHours",
                     value: function() {
-                        var e = this.mainVenue.attributes.openingHours.map(l.default.formatOpeningHour);
+                        var e = this.mainVenue.attributes.openingHours.map(this._formatOpeningHours);
                         return _.uniq(_.flatten(e))
                     }
                 }, {
@@ -26595,17 +26652,16 @@
                 }, {
                     key: "_openingHoursToObjects",
                     value: function(e) {
-                        var t = [];
-                        return this.venues.forEach(function(i) {
-                                i.attributes.openingHours.length > 0 && i.attributes.openingHours.forEach(function(i) {
-                                    e.indexOf(l.default.formatOpeningHour(i)) > -1 && t.push(i)
+                        var t = this,
+                            i = [];
+                        return this.venues.forEach(function(n) {
+                                n.attributes.openingHours.length > 0 && n.attributes.openingHours.forEach(function(n) {
+                                    e.indexOf(t._formatOpeningHours(n)) > -1 && i.push(n)
                                 })
                             }),
-                            t = _.flatten(t),
-                            (t = _.uniq(t, !1, function(e) {
-                                return l.default.formatOpeningHour(e)
-                            })).map(function(e) {
-                                return e.toJSON()
+                            i = _.flatten(i),
+                            i = _.uniq(i, !1, function(e) {
+                                return t._formatOpeningHours(e)
                             })
                     }
                 }, {
@@ -26755,8 +26811,8 @@
         l = i(118),
         u = p(i(12)),
         d = i(30),
-        c = g(i(1146)),
-        h = g(i(1147)),
+        c = g(i(1147)),
+        h = g(i(1148)),
         f = p(i(32));
 
     function p(e) {
@@ -27078,8 +27134,8 @@
     });
     var n = u(i(14)),
         s = u(i(33)),
-        r = u(i(1148)),
-        o = u(i(1149)),
+        r = u(i(1149)),
+        o = u(i(1150)),
         a = i(151),
         l = i(38);
 
@@ -27575,14 +27631,14 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(i(459)),
+    var s = n(i(460)),
         r = n(i(106)),
         o = n(i(108)),
         a = n(i(31)),
         l = i(38),
-        u = i(1163),
+        u = i(1164),
         d = n(i(409)),
-        c = i(445),
+        c = i(446),
         h = function() {
             function e(e, t) {
                 this._dataModel = e,
@@ -27672,7 +27728,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(1171),
+    var n, s = i(1172),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -27826,8 +27882,8 @@
     t.default = n,
         e.exports = t.default
 }, , , , , , , function(e, t, i) {
-    i(473),
-        e.exports = i(1499)
+    i(474),
+        e.exports = i(1500)
 }, function(e, t, i) {
     "use strict";
     var n, s = i(14),
@@ -27839,7 +27895,7 @@
         var e = document.getElementById("localeStrings").textContent;
         return JSON.parse(e)
     }! function() {
-        i(1204);
+        i(1205);
         var e, t = document.documentElement.lang;
         o(),
             function(e, t, i) {
@@ -28062,7 +28118,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.25-75-g6f5ffb5d\n",
+                version: "v2.25-77-g5dd26d86\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -28145,17 +28201,17 @@
                     }
                 }
             },
-            i(476),
+            i(477),
             i(45),
-            i(797),
-            i(811),
+            i(798),
             i(812),
             i(813),
             i(814),
             i(815),
-            i(17),
             i(816),
-            i(817)
+            i(17),
+            i(817),
+            i(818)
     }()
 }, , , function(e, t, i) {
     "use strict";
@@ -28311,207 +28367,207 @@
         }
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
     var n = {
-        "./Waze/MapEditor/UI/Map/Balloons/templates/map-balloon-confirm.hamlc": 526,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/mouse_position.hamlc": 527,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/overlay-buttons.hamlc": 528,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/permalink.hamlc": 529,
-        "./Waze/MapEditor/UI/Map/MapControls/templates/zoombar.hamlc": 530,
-        "./Waze/MapEditor/UI/Map/templates/location-message.hamlc": 531,
-        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-item.hamlc": 532,
-        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-layout.hamlc": 533,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/action-view.hamlc": 534,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/changes-log-view.hamlc": 535,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/group-view.hamlc": 536,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-list-view.hamlc": 537,
-        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-view.hamlc": 538,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat.hamlc": 539,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat_message.hamlc": 540,
-        "./Waze/MapEditor/UI/Modules/Chat/View/chat_user.hamlc": 541,
-        "./Waze/MapEditor/UI/Modules/Cities/templates/feature_editor.hamlc": 542,
-        "./Waze/MapEditor/UI/Modules/Cities/templates/layer_switcher.hamlc": 543,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/edit.hamlc": 544,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/item.hamlc": 545,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/layout.hamlc": 546,
-        "./Waze/MapEditor/UI/Modules/Closures/templates/list.hamlc": 547,
-        "./Waze/MapEditor/UI/Modules/Comments/templates/feature_editor.hamlc": 548,
-        "./Waze/MapEditor/UI/Modules/Comments/templates/name_editor.hamlc": 549,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/item.hamlc": 550,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/list.hamlc": 551,
-        "./Waze/MapEditor/UI/Modules/Conversation/templates/text.hamlc": 552,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/history_main.hamlc": 553,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_item.hamlc": 554,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_main.hamlc": 555,
-        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_related.hamlc": 556,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/feed.hamlc": 557,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/feed_group.hamlc": 558,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/issue_item.hamlc": 559,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/message_item.hamlc": 560,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_detail.hamlc": 561,
-        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_item.hamlc": 562,
-        "./Waze/MapEditor/UI/Modules/GeoLocation/templates/pan_button.hamlc": 563,
-        "./Waze/MapEditor/UI/Modules/HouseNumbers/templates/house-numbers-lightbox.hamlc": 564,
-        "./Waze/MapEditor/UI/Modules/HouseNumbers/templates/house-numbers-marker-tooltip.hamlc": 565,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes.hamlc": 566,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes_edit.hamlc": 567,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/lane_arrow.hamlc": 568,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/segment_lanes.hamlc": 569,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lane_checkbox.hamlc": 570,
-        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lanes_edit.hamlc": 571,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/checkbox.hamlc": 572,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 573,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layout.hamlc": 574,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/module-togglers.hamlc": 575,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 645,
-        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 646,
-        "./Waze/MapEditor/UI/Modules/Login/templates/email_verification.hamlc": 647,
-        "./Waze/MapEditor/UI/Modules/Login/templates/login_main.hamlc": 648,
-        "./Waze/MapEditor/UI/Modules/Login/templates/login_view.hamlc": 649,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 650,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 651,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 652,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 653,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 654,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 655,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 656,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 657,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 658,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 659,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 660,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 661,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 662,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 663,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 664,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 665,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 666,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 667,
-        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 668,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 669,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 670,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 671,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 672,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 673,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 674,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 675,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 676,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 677,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 678,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 679,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 680,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 681,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 682,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 683,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 684,
-        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 685,
-        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 686,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 687,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 688,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 689,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 690,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 691,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 692,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 693,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 694,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 695,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 696,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 697,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 698,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 699,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 700,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 701,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 702,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 703,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 704,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 705,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 706,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 707,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 708,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 709,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 710,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 711,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 712,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 713,
-        "./templates/add_update_details.hamlc": 714,
-        "./templates/additional_details.hamlc": 715,
-        "./templates/address/alt-street.hamlc": 716,
-        "./templates/address/edit-alt-street.hamlc": 717,
-        "./templates/address/edit.hamlc": 718,
-        "./templates/archive-panel.hamlc": 719,
-        "./templates/archive-sessions.hamlc": 720,
-        "./templates/big-junction-edit.hamlc": 721,
-        "./templates/camera-edit.hamlc": 722,
-        "./templates/chrome_autofill_off.hamlc": 723,
-        "./templates/editable-areas.hamlc": 724,
-        "./templates/focus-buttons.hamlc": 725,
-        "./templates/house-number.hamlc": 726,
-        "./templates/instruction-override.hamlc": 727,
-        "./templates/keyboard_shortcuts/list.hamlc": 728,
-        "./templates/keyboard_shortcuts/modal.hamlc": 729,
-        "./templates/lock/edit.hamlc": 730,
-        "./templates/login/sandbox-message.hamlc": 731,
-        "./templates/map.hamlc": 732,
-        "./templates/node-edit.hamlc": 733,
-        "./templates/opening_hours/add.hamlc": 734,
-        "./templates/opening_hours/item.hamlc": 735,
-        "./templates/opening_hours/layout.hamlc": 736,
-        "./templates/place_updates/actions.hamlc": 737,
-        "./templates/place_updates/add_details.hamlc": 738,
-        "./templates/place_updates/add_image.hamlc": 739,
-        "./templates/place_updates/add_venue.hamlc": 740,
-        "./templates/place_updates/changed_field.hamlc": 741,
-        "./templates/place_updates/changed_field_item.hamlc": 742,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 743,
-        "./templates/place_updates/delete_venue.hamlc": 744,
-        "./templates/place_updates/external_provider/item.hamlc": 745,
-        "./templates/place_updates/external_provider/list.hamlc": 746,
-        "./templates/place_updates/flag.hamlc": 747,
-        "./templates/place_updates/image.hamlc": 748,
-        "./templates/place_updates/image_dialog.hamlc": 749,
-        "./templates/place_updates/item.hamlc": 750,
-        "./templates/place_updates/layout.hamlc": 751,
-        "./templates/place_updates/panel_header.hamlc": 752,
-        "./templates/place_updates/place_details.hamlc": 753,
-        "./templates/place_updates/update_venue.hamlc": 754,
-        "./templates/prefs-panel.hamlc": 755,
-        "./templates/segment/average-speed-camera.hamlc": 756,
-        "./templates/segment/edit-panel-attributes-form.hamlc": 757,
-        "./templates/segment/edit-panel.hamlc": 758,
-        "./templates/segment/flag-attribute.hamlc": 759,
-        "./templates/segment/junction-exit-layout.hamlc": 760,
-        "./templates/segment/junction-exit.hamlc": 761,
-        "./templates/segment/routing.hamlc": 762,
-        "./templates/segment/speed-limit.hamlc": 763,
-        "./templates/segment/tts-playback-popover.hamlc": 764,
-        "./templates/segment/tts-playback.hamlc": 765,
-        "./templates/sidebar/links.hamlc": 766,
-        "./templates/sidebar/sidebar.hamlc": 767,
-        "./templates/sidebar/user-details.hamlc": 768,
-        "./templates/sidebar/user-info.hamlc": 769,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 770,
-        "./templates/sidebar/user-sandbox.hamlc": 771,
-        "./templates/snapshot-message.hamlc": 772,
-        "./templates/snapshot-toggler.hamlc": 773,
-        "./templates/tips/watch-tutorial.hamlc": 774,
-        "./templates/turn-arrow-tooltip-timeframes.hamlc": 776,
-        "./templates/turn-arrow-tooltip.hamlc": 777,
-        "./templates/turn-arrow.hamlc": 778,
-        "./templates/tutorial-lightbox.hamlc": 779,
-        "./templates/user-greeting.hamlc": 780,
-        "./templates/util/day-checkboxes.hamlc": 781,
-        "./templates/util/toggle-checkboxes.hamlc": 782,
-        "./templates/venue/alias.hamlc": 783,
-        "./templates/venue/aliases-layout.hamlc": 784,
-        "./templates/venue/category-tag.hamlc": 785,
-        "./templates/venue/external-provider/item.hamlc": 786,
-        "./templates/venue/external-provider/list.hamlc": 787,
-        "./templates/venue/venue-categories.hamlc": 788,
-        "./templates/venue/venue-edit-general.hamlc": 789,
-        "./templates/venue/venue-edit-image.hamlc": 790,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 791,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 792,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 793,
-        "./templates/venue/venue-edit-more-info.hamlc": 794,
-        "./templates/venue/venue-edit-no-images.hamlc": 795,
-        "./templates/venue/venue-edit.hamlc": 796
+        "./Waze/MapEditor/UI/Map/Balloons/templates/map-balloon-confirm.hamlc": 527,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/mouse_position.hamlc": 528,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/overlay-buttons.hamlc": 529,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/permalink.hamlc": 530,
+        "./Waze/MapEditor/UI/Map/MapControls/templates/zoombar.hamlc": 531,
+        "./Waze/MapEditor/UI/Map/templates/location-message.hamlc": 532,
+        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-item.hamlc": 533,
+        "./Waze/MapEditor/UI/Modules/BigJunction/templates/junction-entry-layout.hamlc": 534,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/action-view.hamlc": 535,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/changes-log-view.hamlc": 536,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/group-view.hamlc": 537,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-list-view.hamlc": 538,
+        "./Waze/MapEditor/UI/Modules/ChangesLog/templates/save-error-view.hamlc": 539,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat.hamlc": 540,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat_message.hamlc": 541,
+        "./Waze/MapEditor/UI/Modules/Chat/View/chat_user.hamlc": 542,
+        "./Waze/MapEditor/UI/Modules/Cities/templates/feature_editor.hamlc": 543,
+        "./Waze/MapEditor/UI/Modules/Cities/templates/layer_switcher.hamlc": 544,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/edit.hamlc": 545,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/item.hamlc": 546,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/layout.hamlc": 547,
+        "./Waze/MapEditor/UI/Modules/Closures/templates/list.hamlc": 548,
+        "./Waze/MapEditor/UI/Modules/Comments/templates/feature_editor.hamlc": 549,
+        "./Waze/MapEditor/UI/Modules/Comments/templates/name_editor.hamlc": 550,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/item.hamlc": 551,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/list.hamlc": 552,
+        "./Waze/MapEditor/UI/Modules/Conversation/templates/text.hamlc": 553,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/history_main.hamlc": 554,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_item.hamlc": 555,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_main.hamlc": 556,
+        "./Waze/MapEditor/UI/Modules/ElementHistory/templates/tx_object_related.hamlc": 557,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/feed.hamlc": 558,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/feed_group.hamlc": 559,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/issue_item.hamlc": 560,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/message_item.hamlc": 561,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_detail.hamlc": 562,
+        "./Waze/MapEditor/UI/Modules/Feed/templates/notification_item.hamlc": 563,
+        "./Waze/MapEditor/UI/Modules/GeoLocation/templates/pan_button.hamlc": 564,
+        "./Waze/MapEditor/UI/Modules/HouseNumbers/templates/house-numbers-lightbox.hamlc": 565,
+        "./Waze/MapEditor/UI/Modules/HouseNumbers/templates/house-numbers-marker-tooltip.hamlc": 566,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes.hamlc": 567,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/direction_lanes_edit.hamlc": 568,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/lane_arrow.hamlc": 569,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/segment_lanes.hamlc": 570,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lane_checkbox.hamlc": 571,
+        "./Waze/MapEditor/UI/Modules/Lanes/templates/turn_lanes_edit.hamlc": 572,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/checkbox.hamlc": 573,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layer-switcher.hamlc": 574,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/layout.hamlc": 575,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/module-togglers.hamlc": 576,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/text-checkboxes.hamlc": 646,
+        "./Waze/MapEditor/UI/Modules/LayerSwitcher/templates/togglers-tree.hamlc": 647,
+        "./Waze/MapEditor/UI/Modules/Login/templates/email_verification.hamlc": 648,
+        "./Waze/MapEditor/UI/Modules/Login/templates/login_main.hamlc": 649,
+        "./Waze/MapEditor/UI/Modules/Login/templates/login_view.hamlc": 650,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 651,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 652,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 653,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 654,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 655,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 656,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 657,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 658,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 659,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 660,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 661,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 662,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 663,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 664,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 665,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 666,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 667,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 668,
+        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 669,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 670,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 671,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 672,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 673,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 674,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 675,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 676,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 677,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 678,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 679,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 680,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 681,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 682,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 683,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 684,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 685,
+        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 686,
+        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 687,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 688,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 689,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 690,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 691,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 692,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 693,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 694,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 695,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 696,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 697,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 698,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 699,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 700,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 701,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 702,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 703,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 704,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 705,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 706,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 707,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 708,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 709,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 710,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 711,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 712,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 713,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 714,
+        "./templates/add_update_details.hamlc": 715,
+        "./templates/additional_details.hamlc": 716,
+        "./templates/address/alt-street.hamlc": 717,
+        "./templates/address/edit-alt-street.hamlc": 718,
+        "./templates/address/edit.hamlc": 719,
+        "./templates/archive-panel.hamlc": 720,
+        "./templates/archive-sessions.hamlc": 721,
+        "./templates/big-junction-edit.hamlc": 722,
+        "./templates/camera-edit.hamlc": 723,
+        "./templates/chrome_autofill_off.hamlc": 724,
+        "./templates/editable-areas.hamlc": 725,
+        "./templates/focus-buttons.hamlc": 726,
+        "./templates/house-number.hamlc": 727,
+        "./templates/instruction-override.hamlc": 728,
+        "./templates/keyboard_shortcuts/list.hamlc": 729,
+        "./templates/keyboard_shortcuts/modal.hamlc": 730,
+        "./templates/lock/edit.hamlc": 731,
+        "./templates/login/sandbox-message.hamlc": 732,
+        "./templates/map.hamlc": 733,
+        "./templates/node-edit.hamlc": 734,
+        "./templates/opening_hours/add.hamlc": 735,
+        "./templates/opening_hours/item.hamlc": 736,
+        "./templates/opening_hours/layout.hamlc": 737,
+        "./templates/place_updates/actions.hamlc": 738,
+        "./templates/place_updates/add_details.hamlc": 739,
+        "./templates/place_updates/add_image.hamlc": 740,
+        "./templates/place_updates/add_venue.hamlc": 741,
+        "./templates/place_updates/changed_field.hamlc": 742,
+        "./templates/place_updates/changed_field_item.hamlc": 743,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 744,
+        "./templates/place_updates/delete_venue.hamlc": 745,
+        "./templates/place_updates/external_provider/item.hamlc": 746,
+        "./templates/place_updates/external_provider/list.hamlc": 747,
+        "./templates/place_updates/flag.hamlc": 748,
+        "./templates/place_updates/image.hamlc": 749,
+        "./templates/place_updates/image_dialog.hamlc": 750,
+        "./templates/place_updates/item.hamlc": 751,
+        "./templates/place_updates/layout.hamlc": 752,
+        "./templates/place_updates/panel_header.hamlc": 753,
+        "./templates/place_updates/place_details.hamlc": 754,
+        "./templates/place_updates/update_venue.hamlc": 755,
+        "./templates/prefs-panel.hamlc": 756,
+        "./templates/segment/average-speed-camera.hamlc": 757,
+        "./templates/segment/edit-panel-attributes-form.hamlc": 758,
+        "./templates/segment/edit-panel.hamlc": 759,
+        "./templates/segment/flag-attribute.hamlc": 760,
+        "./templates/segment/junction-exit-layout.hamlc": 761,
+        "./templates/segment/junction-exit.hamlc": 762,
+        "./templates/segment/routing.hamlc": 763,
+        "./templates/segment/speed-limit.hamlc": 764,
+        "./templates/segment/tts-playback-popover.hamlc": 765,
+        "./templates/segment/tts-playback.hamlc": 766,
+        "./templates/sidebar/links.hamlc": 767,
+        "./templates/sidebar/sidebar.hamlc": 768,
+        "./templates/sidebar/user-details.hamlc": 769,
+        "./templates/sidebar/user-info.hamlc": 770,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 771,
+        "./templates/sidebar/user-sandbox.hamlc": 772,
+        "./templates/snapshot-message.hamlc": 773,
+        "./templates/snapshot-toggler.hamlc": 774,
+        "./templates/tips/watch-tutorial.hamlc": 775,
+        "./templates/turn-arrow-tooltip-timeframes.hamlc": 777,
+        "./templates/turn-arrow-tooltip.hamlc": 778,
+        "./templates/turn-arrow.hamlc": 779,
+        "./templates/tutorial-lightbox.hamlc": 780,
+        "./templates/user-greeting.hamlc": 781,
+        "./templates/util/day-checkboxes.hamlc": 782,
+        "./templates/util/toggle-checkboxes.hamlc": 783,
+        "./templates/venue/alias.hamlc": 784,
+        "./templates/venue/aliases-layout.hamlc": 785,
+        "./templates/venue/category-tag.hamlc": 786,
+        "./templates/venue/external-provider/item.hamlc": 787,
+        "./templates/venue/external-provider/list.hamlc": 788,
+        "./templates/venue/venue-categories.hamlc": 789,
+        "./templates/venue/venue-edit-general.hamlc": 790,
+        "./templates/venue/venue-edit-image.hamlc": 791,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 792,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 793,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 794,
+        "./templates/venue/venue-edit-more-info.hamlc": 795,
+        "./templates/venue/venue-edit-no-images.hamlc": 796,
+        "./templates/venue/venue-edit.hamlc": 797
     };
 
     function s(e) {
@@ -28533,7 +28589,7 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 525
+        s.id = 526
 }, function(e, t) {
     e.exports = function() {
             return function(e) {
@@ -29445,8 +29501,8 @@
         .call(this)
 }, function(e, t, i) {
     var n = {
-        "./Cities/Manifest": 577,
-        "./Comments/Manifest": 640
+        "./Cities/Manifest": 578,
+        "./Comments/Manifest": 641
     };
 
     function s(e) {
@@ -29468,7 +29524,7 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 576
+        s.id = 577
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -29476,12 +29532,12 @@
     });
     var n, s, r = v(i(14)),
         o = i(237),
-        a = v(i(578)),
+        a = v(i(579)),
         l = v(i(238)),
-        u = v(i(579)),
-        d = v(i(638)),
+        u = v(i(580)),
+        d = v(i(639)),
         c = v(i(42)),
-        h = v(i(639)),
+        h = v(i(640)),
         f = v(i(381)),
         p = v(i(141)),
         g = v(i(191));
@@ -29722,26 +29778,26 @@
         value: !0
     });
     var s = i(132),
-        r = n(i(592)),
-        o = n(i(595)),
-        a = n(i(601)),
-        l = n(i(612)),
-        u = n(i(613)),
+        r = n(i(593)),
+        o = n(i(596)),
+        a = n(i(602)),
+        l = n(i(613)),
+        u = n(i(614)),
         d = n(i(186)),
         c = n(i(367)),
         h = n(i(106)),
-        f = n(i(626)),
+        f = n(i(627)),
         p = n(i(108)),
         g = n(i(377)),
         v = n(i(378)),
         _ = n(i(31)),
         m = n(i(190)),
-        y = n(i(627)),
+        y = n(i(628)),
         b = n(i(109)),
         E = n(i(379)),
-        w = n(i(629)),
+        w = n(i(630)),
         k = n(i(68)),
-        M = n(i(630)),
+        M = n(i(631)),
         S = n(i(139)),
         I = n(i(140));
     t.TYPE_TO_FACTORY = {
@@ -29779,7 +29835,7 @@
     var n = l(i(6)),
         s = l(i(0)),
         r = l(i(1)),
-        o = l(i(585)),
+        o = l(i(586)),
         a = l(i(34));
 
     function l(e) {
@@ -30299,7 +30355,7 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 587
+        s.id = 588
 }, , function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -30329,8 +30385,8 @@
     });
     var n, s = l(i(14)),
         r = l(i(104)),
-        o = l(i(593)),
-        a = l(i(594));
+        o = l(i(594)),
+        a = l(i(595));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -30481,9 +30537,9 @@
         value: !0
     });
     var n, s = l(i(14)),
-        r = l(i(596)),
-        o = l(i(598)),
-        a = l(i(600));
+        r = l(i(597)),
+        o = l(i(599)),
+        a = l(i(601));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -30519,7 +30575,7 @@
         r = u(i(0)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(597));
+        l = u(i(598));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -30595,7 +30651,7 @@
         r = u(i(0)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(599));
+        l = u(i(600));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -30705,9 +30761,9 @@
     });
     var n, s = u(i(14)),
         r = u(i(58)),
-        o = u(i(602)),
-        a = u(i(609)),
-        l = u(i(610));
+        o = u(i(603)),
+        a = u(i(610)),
+        l = u(i(611));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -31316,7 +31372,7 @@
         a = c(i(3)),
         l = c(i(4)),
         u = c(i(18)),
-        d = c(i(614));
+        d = c(i(615));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -31418,7 +31474,7 @@
         s = d(i(0)),
         r = d(i(1)),
         o = d(i(373)),
-        a = d(i(625)),
+        a = d(i(626)),
         l = d(i(374)),
         u = d(i(375));
 
@@ -32138,8 +32194,8 @@
         value: !0
     });
     var n = d(i(142)),
-        s = d(i(641)),
-        r = d(i(642)),
+        s = d(i(642)),
+        r = d(i(643)),
         o = d(i(75)),
         a = d(i(42)),
         l = d(i(141)),
@@ -32367,7 +32423,7 @@
         a = y(i(3)),
         l = y(i(8)),
         u = y(i(4)),
-        d = y(i(643)),
+        d = y(i(644)),
         c = y(i(383)),
         h = y(i(110)),
         f = y(i(192)),
@@ -35022,17 +35078,15 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             (i = []).push("<div class='modal-content'>\n<div class='modal-header'>\n<h3 class='modal-title'>" + t(e(this.t("edit.landmark.opening_hours.add_title"))) + "</h3>\n</div>\n<div class='modal-body'>\n<div class='content'>\n<form class='add-opening-hour' action='#' method='post'>\n<div class='days section'>"),
-                            i.push("" + e(this.renderPartial("templates/util/day-checkboxes", {
-                                cb: this.dayCallback
-                            }))),
+                            i.push("" + e(this.renderPartial("templates/util/day-checkboxes"))),
                             i.push("" + e(this.renderPartial("templates/util/toggle-checkboxes"))),
                             i.push("</div>\n<div class='hours section'>\n<div class='clearfix'>\n<div class='labels'>\n<div class='col-xs-2'>\n<label class='radio'>\n<input type='radio' name='allDay' value='on' checked='" + t(e(!1)) + "'>"),
                             i.push("" + t(e(this.t("edit.landmark.opening_hours.time_span.all_day")))),
                             i.push("</label>\n</div>\n<div class='col-xs-2'>\n<label class='radio'>\n<input type='radio' name='allDay' value='off' checked='" + t(e(!0)) + "'>"),
                             i.push("" + t(e(this.t("edit.landmark.opening_hours.time_span.from") + ":"))),
-                            i.push("</label>\n</div>\n</div>\n<div class='inputs'>\n<div class='col-xs-4'>\n<div class='bootstrap-timepicker input-append input-group' dir='ltr'>\n<input class='form-control from-time time-selector' type='text' name='fromTime' value='" + t(e(this.defaultFromTime)) + "'>\n<span class='add-on input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n</div>\n<div class='col-xs-4'>\n<div class='pull-left to-label'>"),
+                            i.push("</label>\n</div>\n</div>\n<div class='inputs'>\n<div class='col-xs-4'>\n<div class='bootstrap-timepicker input-append input-group' dir='ltr'>\n<input class='form-control from-time time-selector' type='text' name='fromTime'>\n<span class='add-on input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n</div>\n<div class='col-xs-4'>\n<div class='pull-left to-label'>"),
                             i.push("" + t(e(this.t("edit.landmark.opening_hours.time_span.to") + ":"))),
-                            i.push("</div>\n<div class='bootstrap-timepicker input-append input-group' dir='ltr'>\n<input class='form-control time-selector to-time' type='text' name='toTime' value='" + t(e(this.defaultToTime)) + "'>\n<span class='add-on input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class='validation-errors'></div>\n<div class='bottom'>\n<button class='waze-btn waze-btn-blue waze-btn-smaller'>" + t(e(this.t("edit.add"))) + "</button>\n<button class='cancel-button waze-btn waze-btn-smaller waze-btn-transparent'>" + t(e(this.t("edit.cancel"))) + "</button>\n</div>\n</form>\n</div>\n</div>\n</div>"),
+                            i.push("</div>\n<div class='bootstrap-timepicker input-append input-group' dir='ltr'>\n<input class='form-control time-selector to-time' type='text' name='toTime'>\n<span class='add-on input-group-addon'>\n<i class='fa fa-clock-o'></i>\n</span>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class='validation-errors'></div>\n<div class='bottom'>\n<button class='waze-btn waze-btn-blue waze-btn-smaller'>" + t(e(this.t("edit.add"))) + "</button>\n<button class='cancel-button waze-btn waze-btn-smaller waze-btn-transparent'>" + t(e(this.t("edit.cancel"))) + "</button>\n</div>\n</form>\n</div>\n</div>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -35046,7 +35100,7 @@
                         var e, t, i;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (i = []).push("" + t(e(this.h.formatOpeningHour(this.model)))),
+                            (i = []).push("" + t(e(this.openingHourFormatted))),
                             this.isEditable && i.push("<a class='delete' href='#'>\n<i class='fa fa-remove'></i>\n</a>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -36035,7 +36089,7 @@
                         var e, t, n;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (n = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(775))) + "'>"),
+                            (n = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(i(776))) + "'>"),
                             n.push("" + t(e(this.t("tutorial.title")))),
                             n.push("</a>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -36153,7 +36207,7 @@
                             s = 0,
                             o = (a = W.Config.week_days_order).length; s < o; s++)
                             r = "day-checkbox-" + (n = a[s]),
-                            i.push("<input id='" + t(e(r)) + "' type='checkbox' name='days' value='" + t(e(n)) + "' checked='" + t(e(this.cb(n))) + "'>\n<label class='checkbox-inline' for='" + t(e(r)) + "'>" + t(e(this.t("date.abbr_day_names")[n])) + "</label>");
+                            i.push("<input id='" + t(e(r)) + "' type='checkbox' name='days' value='" + t(e(n)) + "'>\n<label class='checkbox-inline' for='" + t(e(r)) + "'>" + t(e(this.t("date.abbr_day_names")[n])) + "</label>");
                         return i.push("</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -36489,12 +36543,13 @@
         j = n(i(21)),
         U = n(i(398)),
         F = n(i(144)),
-        B = i(107),
-        G = n(i(399)),
-        z = n(i(27)),
-        H = n(i(115)),
-        q = n(i(400)),
-        $ = n(i(76));
+        B = i(136),
+        G = i(107),
+        z = n(i(399)),
+        H = n(i(27)),
+        q = n(i(115)),
+        $ = n(i(400)),
+        Y = n(i(76));
     window.Waze = new Proxy(W, {
         get: function(e, t) {
             var i = t;
@@ -36506,7 +36561,7 @@
         return console.warn("repository get method is deprecated and will be removed soon, use getObjectById instead"),
             this.getObjectById(e)
     };
-    G.default.prototype.hasSelectedItems = function() {
+    z.default.prototype.hasSelectedItems = function() {
             return console.warn("hasSelectedItems method is deprecated and will be removed soon, use hasSelectedFeatures instead"),
                 this.hasSelectedFeatures()
         },
@@ -36541,24 +36596,25 @@
                 "Waze/Action/UpdateObject": j.default,
                 "Waze/Action/UpdatePlaceUpdate": U.default,
                 "Waze/Action/UpdateSegmentGeometry": F.default,
-                "Waze/DivIcon": z.default,
+                "Waze/DivIcon": H.default,
                 "Waze/Feature/Vector/Landmark": a.default,
                 "Waze/Feature/Vector/Segment": l.default,
                 "Waze/Feature/Vector/UpdateRequest": u.default,
-                "Waze/Handler/DragElement": H.default,
+                "Waze/Handler/DragElement": q.default,
                 "Waze/Model/Graph/Actions/SetTurn": L.default,
                 "Waze/Model/Graph/TurnData": s.default,
                 "Waze/Model/Graph/TurnGraph": r.default,
                 "Waze/Model/Graph/Vertex": o.default,
-                "Waze/Modules/Closures/Models/ClosureActionBuilder": q.default,
-                "Waze/Modules/Closures/Models/SharedClosure": $.default
+                "Waze/Model/Objects/OpeningHour": B.OpeningHour,
+                "Waze/Modules/Closures/Models/ClosureActionBuilder": $.default,
+                "Waze/Modules/Closures/Models/SharedClosure": Y.default
             } [e];
             if (null != t)
                 return t;
             throw new Error("Cannot find module " + e)
         },
-        W.Config.venues.categories = B.VENUE_CATEGORIES,
-        W.Config.venues.subcategories = B.VENUE_SUBCATEGORIES
+        W.Config.venues.categories = G.VENUE_CATEGORIES,
+        W.Config.venues.subcategories = G.VENUE_SUBCATEGORIES
 }, , , , , , function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -37283,12 +37339,12 @@
     }
 }, function(e, t, i) {
     "use strict";
-    var n = d(i(818)),
+    var n = d(i(819)),
         s = d(i(131)),
-        r = d(i(1199)),
-        o = i(1200),
+        r = d(i(1200)),
+        o = i(1201),
         a = i(38),
-        l = i(1201),
+        l = i(1202),
         u = i(149);
 
     function d(e) {
@@ -37348,13 +37404,13 @@
     });
     var n = h(i(23)),
         s = i(148),
-        r = h(i(819)),
+        r = h(i(820)),
         o = h(i(403)),
-        a = h(i(828)),
-        l = h(i(1019)),
+        a = h(i(829)),
+        l = h(i(1020)),
         u = i(149),
         d = i(202),
-        c = i(1198);
+        c = i(1199);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -37555,9 +37611,9 @@
         value: !0
     });
     var n = i(201),
-        s = l(i(820)),
-        r = l(i(821)),
-        o = i(823),
+        s = l(i(821)),
+        r = l(i(822)),
+        o = i(824),
         a = i(30);
 
     function l(e) {
@@ -37735,7 +37791,7 @@
         r = d(i(3)),
         o = d(i(1)),
         a = d(i(4)),
-        l = d(i(822)),
+        l = d(i(823)),
         u = i(149);
 
     function d(e) {
@@ -37878,8 +37934,8 @@
         r = c(i(1)),
         o = c(i(3)),
         a = c(i(4)),
-        l = c(i(824)),
-        u = c(i(827)),
+        l = c(i(825)),
+        u = c(i(828)),
         d = i(402);
 
     function c(e) {
@@ -37963,7 +38019,7 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(825)),
+        l = h(i(826)),
         u = i(401),
         d = i(149),
         c = i(30);
@@ -38564,33 +38620,33 @@
     var n = L(i(23)),
         s = L(i(0)),
         r = L(i(1)),
-        o = i(829),
-        a = L(i(832)),
+        o = i(830),
+        a = L(i(833)),
         l = L(i(92)),
         u = L(i(404)),
-        d = L(i(847)),
-        c = L(i(849)),
-        h = L(i(870)),
+        d = L(i(848)),
+        c = L(i(850)),
+        h = L(i(871)),
         f = L(i(413)),
-        p = L(i(871)),
-        g = L(i(872)),
-        v = L(i(873)),
+        p = L(i(872)),
+        g = L(i(873)),
+        v = L(i(874)),
         _ = L(i(401)),
-        m = L(i(875)),
-        y = L(i(943)),
-        b = L(i(944)),
-        E = L(i(954)),
-        w = L(i(968)),
+        m = L(i(876)),
+        y = L(i(944)),
+        b = L(i(945)),
+        E = L(i(955)),
+        w = L(i(969)),
         k = L(i(399)),
-        M = L(i(975)),
-        S = L(i(976)),
-        I = L(i(981)),
+        M = L(i(976)),
+        S = L(i(977)),
+        I = L(i(982)),
         T = L(i(42)),
-        C = L(i(982)),
-        A = L(i(984)),
-        O = L(i(1003)),
+        C = L(i(983)),
+        A = L(i(985)),
+        O = L(i(1004)),
         D = L(i(213)),
-        R = L(i(1005));
+        R = L(i(1006));
 
     function L(e) {
         return e && e.__esModule ? e : {
@@ -38758,8 +38814,8 @@
         o = f(i(1)),
         a = f(i(3)),
         l = f(i(4)),
-        u = f(i(830)),
-        d = h(i(831)),
+        u = f(i(831)),
+        d = h(i(832)),
         c = h(i(22));
 
     function h(e) {
@@ -39347,8 +39403,8 @@
         r = d(i(1)),
         o = d(i(3)),
         a = d(i(4)),
-        l = d(i(833)),
-        u = d(i(834));
+        l = d(i(834)),
+        u = d(i(835));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -40040,7 +40096,7 @@
         l = h(i(3)),
         u = h(i(4)),
         d = h(i(53)),
-        c = h(i(839));
+        c = h(i(840));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -40412,7 +40468,7 @@
                 t
         }(i(22)),
         u = c(i(13)),
-        d = c(i(844));
+        d = c(i(845));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -41045,7 +41101,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(848));
+        l = u(i(849));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -41252,10 +41308,10 @@
             return t.default = e,
                 t
         }(i(22)),
-        u = v(i(850)),
+        u = v(i(851)),
         d = v(i(411)),
-        c = v(i(868)),
-        h = v(i(869)),
+        c = v(i(869)),
+        h = v(i(870)),
         f = v(i(205)),
         p = v(i(15)),
         g = v(i(42));
@@ -41377,17 +41433,17 @@
     });
     var n = b(i(6)),
         s = b(i(7)),
-        r = b(i(851)),
+        r = b(i(852)),
         o = i(28),
         a = i(102),
         l = b(i(15)),
         u = b(i(144)),
         d = b(i(397)),
-        c = b(i(866)),
+        c = b(i(867)),
         h = b(i(408)),
         f = y(i(22)),
         p = y(i(12)),
-        g = b(i(867)),
+        g = b(i(868)),
         v = y(i(9)),
         m = y(i(19));
 
@@ -41672,11 +41728,11 @@
     var n = c(i(7)),
         s = c(i(33)),
         r = c(i(47)),
-        o = c(i(852)),
+        o = c(i(853)),
         a = c(i(407)),
         l = c(i(408)),
-        u = c(i(854)),
-        d = c(i(855));
+        u = c(i(855)),
+        d = c(i(856));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -42344,7 +42400,7 @@
             return t.default = e,
                 t
         }(i(32)),
-        a = u(i(856)),
+        a = u(i(857)),
         l = u(i(204));
 
     function u(e) {
@@ -43606,7 +43662,7 @@
     });
     var n = o(i(0)),
         s = o(i(1)),
-        r = o(i(874));
+        r = o(i(875));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -43708,16 +43764,16 @@
         value: !0
     });
     var n = i(118),
-        s = p(i(928)),
-        r = p(i(929)),
-        o = p(i(931)),
-        a = p(i(932)),
-        l = p(i(933)),
-        u = p(i(934)),
-        d = p(i(935)),
-        c = p(i(936)),
+        s = p(i(929)),
+        r = p(i(930)),
+        o = p(i(932)),
+        a = p(i(933)),
+        l = p(i(934)),
+        u = p(i(935)),
+        d = p(i(936)),
+        c = p(i(937)),
         h = i(45),
-        f = p(i(937));
+        f = p(i(938));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -44081,7 +44137,7 @@
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return i(879)("./camera" + t.attributes.type + ".png")
+                            return i(880)("./camera" + t.attributes.type + ".png")
                     }
                 }
             })
@@ -44109,9 +44165,9 @@
         e.exports = t.default
 }, function(e, t, i) {
     var n = {
-        "./camera2.png": 880,
-        "./camera3.png": 881,
-        "./camera4.png": 882
+        "./camera2.png": 881,
+        "./camera3.png": 882,
+        "./camera4.png": 883
     };
 
     function s(e) {
@@ -44133,7 +44189,7 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 879
+        s.id = 880
 }, function(e, t, i) {
     e.exports = i.p + "img/camera2afd04923e745ff85f9b132ce1d08e73c.png"
 }, function(e, t, i) {
@@ -44218,8 +44274,8 @@
     });
     var n = a(i(7)),
         s = a(i(414)),
-        r = a(i(885)),
-        o = a(i(886));
+        r = a(i(886)),
+        o = a(i(887));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -44495,24 +44551,24 @@
     e.exports = i.p + "img/one-way-routed9aa340910f8fc7a0fd2285fa0aab968.png"
 }, function(e, t, i) {
     var n = {
-        "./big_direction_end.png": 895,
-        "./big_direction_exit_left.png": 896,
-        "./big_direction_exit_right.png": 897,
-        "./big_direction_forward.png": 898,
-        "./big_direction_left.png": 899,
-        "./big_direction_right.png": 900,
-        "./big_direction_u.png": 901,
-        "./big_directions_roundabout.png": 902,
-        "./big_directions_roundabout_UK.png": 903,
-        "./big_directions_roundabout_UK_l.png": 904,
-        "./big_directions_roundabout_UK_s.png": 905,
-        "./big_directions_roundabout_l.png": 906,
-        "./big_directions_roundabout_r.png": 907,
-        "./big_directions_roundabout_r_UK.png": 908,
-        "./big_directions_roundabout_s.png": 909,
-        "./big_directions_roundabout_u.png": 910,
-        "./big_directions_roundabout_u_UK.png": 911,
-        "./unknown.png": 912
+        "./big_direction_end.png": 896,
+        "./big_direction_exit_left.png": 897,
+        "./big_direction_exit_right.png": 898,
+        "./big_direction_forward.png": 899,
+        "./big_direction_left.png": 900,
+        "./big_direction_right.png": 901,
+        "./big_direction_u.png": 902,
+        "./big_directions_roundabout.png": 903,
+        "./big_directions_roundabout_UK.png": 904,
+        "./big_directions_roundabout_UK_l.png": 905,
+        "./big_directions_roundabout_UK_s.png": 906,
+        "./big_directions_roundabout_l.png": 907,
+        "./big_directions_roundabout_r.png": 908,
+        "./big_directions_roundabout_r_UK.png": 909,
+        "./big_directions_roundabout_s.png": 910,
+        "./big_directions_roundabout_u.png": 911,
+        "./big_directions_roundabout_u_UK.png": 912,
+        "./unknown.png": 913
     };
 
     function s(e) {
@@ -44534,7 +44590,7 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 894
+        s.id = 895
 }, function(e, t, i) {
     e.exports = i.p + "img/big_direction_end25226c71aed0efd3a2db41978066febc.png"
 }, function(e, t, i) {
@@ -44792,8 +44848,8 @@
         a = h(i(8)),
         l = h(i(4)),
         u = h(i(416)),
-        d = h(i(916)),
-        c = h(i(917));
+        d = h(i(917)),
+        c = h(i(918));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -45919,7 +45975,7 @@
         u = v(i(4)),
         d = v(i(411)),
         c = g(i(22)),
-        h = v(i(930)),
+        h = v(i(931)),
         f = g(i(32)),
         p = g(i(24));
 
@@ -46914,10 +46970,10 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(938)),
-        u = h(i(939)),
-        d = h(i(940)),
-        c = h(i(941));
+        l = h(i(939)),
+        u = h(i(940)),
+        d = h(i(941)),
+        c = h(i(942));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -47252,7 +47308,7 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(942)),
+        l = h(i(943)),
         u = c(i(12)),
         d = c(i(24));
 
@@ -47633,9 +47689,9 @@
     });
     var n = u(i(0)),
         s = u(i(1)),
-        r = u(i(945)),
-        o = u(i(946)),
-        a = u(i(953)),
+        r = u(i(946)),
+        o = u(i(947)),
+        a = u(i(954)),
         l = u(i(425));
 
     function u(e) {
@@ -47768,7 +47824,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(947),
+    var n, s = i(948),
         r = (n = s) && n.__esModule ? n : {
             default: n
         },
@@ -47857,7 +47913,7 @@
         value: !0
     });
     var n = o(i(420)),
-        s = o(i(952)),
+        s = o(i(953)),
         r = i(28);
 
     function o(e) {
@@ -47974,7 +48030,7 @@
     });
     var n = o(i(375)),
         s = o(i(421)),
-        r = o(i(951));
+        r = o(i(952));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -47993,7 +48049,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(950),
+    var n, s = i(951),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -48265,8 +48321,8 @@
     var n = l(i(0)),
         s = l(i(1)),
         r = l(i(425)),
-        o = l(i(955)),
-        a = l(i(956));
+        o = l(i(956)),
+        a = l(i(957));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -48418,11 +48474,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = l(i(957)),
-        s = l(i(958)),
-        r = l(i(965)),
+    var n = l(i(958)),
+        s = l(i(959)),
+        r = l(i(966)),
         o = i(28),
-        a = l(i(967));
+        a = l(i(968));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -48672,9 +48728,9 @@
     });
     var n, s = c(i(14)),
         r = c(i(85)),
-        o = c(i(959)),
-        a = c(i(961)),
-        l = c(i(963)),
+        o = c(i(960)),
+        a = c(i(962)),
+        l = c(i(964)),
         u = c(i(366)),
         d = c(i(15));
 
@@ -48706,7 +48762,7 @@
         value: !0
     });
     var n = r(i(23)),
-        s = r(i(960));
+        s = r(i(961));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -48782,7 +48838,7 @@
         value: !0
     });
     var n = r(i(23)),
-        s = r(i(962));
+        s = r(i(963));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -48862,7 +48918,7 @@
     });
     var n = o(i(23)),
         s = o(i(85)),
-        r = o(i(964));
+        r = o(i(965));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -48946,7 +49002,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(966),
+    var n, s = i(967),
         r = (n = s) && n.__esModule ? n : {
             default: n
         },
@@ -49165,7 +49221,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(970),
+    var n, s = i(971),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -49213,7 +49269,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(973),
+    var n, s = i(974),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -49417,9 +49473,9 @@
         r = f(i(1)),
         o = f(i(3)),
         a = f(i(4)),
-        l = f(i(977)),
-        u = f(i(978)),
-        d = f(i(979)),
+        l = f(i(978)),
+        u = f(i(979)),
+        d = f(i(980)),
         c = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -49430,7 +49486,7 @@
             return t.default = e,
                 t
         }(i(12)),
-        h = f(i(980));
+        h = f(i(981));
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -50140,7 +50196,7 @@
     var n = l(i(6)),
         s = l(i(0)),
         r = l(i(1)),
-        o = l(i(983)),
+        o = l(i(984)),
         a = i(28);
 
     function l(e) {
@@ -50290,11 +50346,11 @@
         c = y(i(22)),
         h = b(i(141)),
         f = b(i(381)),
-        p = b(i(985)),
+        p = b(i(986)),
         g = b(i(191)),
-        v = b(i(986)),
+        v = b(i(987)),
         _ = y(i(151)),
-        m = b(i(1002));
+        m = b(i(1003));
 
     function y(e) {
         if (e && e.__esModule)
@@ -50531,7 +50587,7 @@
     });
     var n = o(i(0)),
         s = o(i(1)),
-        r = o(i(987));
+        r = o(i(988));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -50637,8 +50693,8 @@
         l = y(i(4)),
         u = y(i(27)),
         d = y(i(39)),
-        c = y(i(989)),
-        h = y(i(999)),
+        c = y(i(990)),
+        h = y(i(1e3)),
         f = i(431),
         p = y(i(432)),
         g = function(e) {
@@ -50915,8 +50971,8 @@
                     Object.prototype.hasOwnProperty.call(e, i) && (t[i] = e[i]);
             return t.default = e,
                 t
-        }(i(990)),
-        c = g(i(991)),
+        }(i(991)),
+        c = g(i(992)),
         h = g(i(39)),
         f = i(105),
         p = i(45);
@@ -51243,7 +51299,7 @@
         c = v(i(46)),
         h = i(105),
         f = v(i(429)),
-        p = v(i(998)),
+        p = v(i(999)),
         g = i(201);
 
     function v(e) {
@@ -53973,11 +54029,11 @@
         r = f(i(1)),
         o = f(i(3)),
         a = f(i(4)),
-        l = f(i(1006)),
+        l = f(i(1007)),
         u = i(213),
         d = f(i(211)),
-        c = i(1012),
-        h = f(i(1018));
+        c = i(1013),
+        h = f(i(1019));
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -54306,7 +54362,7 @@
         r = u(i(3)),
         o = u(i(1)),
         a = u(i(4)),
-        l = u(i(1007));
+        l = u(i(1008));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -54411,8 +54467,8 @@
         r = d(i(3)),
         o = d(i(1)),
         a = d(i(4)),
-        l = d(i(1008)),
-        u = d(i(1010));
+        l = d(i(1009)),
+        u = d(i(1011));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -54598,7 +54654,7 @@
         r = d(i(1)),
         o = d(i(3)),
         a = d(i(4)),
-        l = d(i(1009)),
+        l = d(i(1010)),
         u = d(i(17));
 
     function d(e) {
@@ -54848,7 +54904,7 @@
         r = u(i(3)),
         o = u(i(1)),
         a = u(i(4)),
-        l = u(i(1011));
+        l = u(i(1012));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -55015,7 +55071,7 @@
     var n = a(i(11)),
         s = a(i(49)),
         r = a(i(69)),
-        o = a(i(1013));
+        o = a(i(1014));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -55074,7 +55130,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1014));
+        l = u(i(1015));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -55217,8 +55273,8 @@
         r = d(i(1)),
         o = d(i(3)),
         a = d(i(4)),
-        l = d(i(1015)),
-        u = d(i(1016));
+        l = d(i(1016)),
+        u = d(i(1017));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -55389,7 +55445,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1017));
+        l = u(i(1018));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -55638,8 +55694,8 @@
     var n, s = u(i(14)),
         r = u(i(403)),
         o = i(148),
-        a = u(i(1020)),
-        l = u(i(1178));
+        a = u(i(1021)),
+        l = u(i(1179));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -55703,10 +55759,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = a(i(1021)),
-        s = a(i(1047)),
-        r = a(i(1145)),
-        o = a(i(1172));
+    var n = a(i(1022)),
+        s = a(i(1048)),
+        r = a(i(1146)),
+        o = a(i(1173));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -55793,14 +55849,14 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = c(i(1022)),
-        s = c(i(1028)),
-        r = c(i(1029)),
+    var n = c(i(1023)),
+        s = c(i(1029)),
+        r = c(i(1030)),
         o = c(i(436)),
-        a = c(i(1036)),
-        l = c(i(1038)),
-        u = c(i(1042)),
-        d = c(i(1045));
+        a = c(i(1037)),
+        l = c(i(1039)),
+        u = c(i(1043)),
+        d = c(i(1046));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -55917,11 +55973,11 @@
         s = f(i(23)),
         r = f(i(70)),
         o = f(i(152)),
-        a = f(i(1023)),
-        l = f(i(1024)),
-        u = f(i(1025)),
-        d = f(i(1026)),
-        c = f(i(1027)),
+        a = f(i(1024)),
+        l = f(i(1025)),
+        u = f(i(1026)),
+        d = f(i(1027)),
+        c = f(i(1028)),
         h = i(30);
 
     function f(e) {
@@ -56486,7 +56542,7 @@
     });
     var n = a(i(139)),
         s = a(i(435)),
-        r = a(i(1035)),
+        r = a(i(1036)),
         o = a(i(58));
 
     function a(e) {
@@ -56638,7 +56694,7 @@
         value: !0
     });
     var n = r(i(436)),
-        s = r(i(1037));
+        s = r(i(1038));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -56681,9 +56737,9 @@
     var n, s = d(i(14)),
         r = d(i(58)),
         o = d(i(154)),
-        a = d(i(1039)),
-        l = d(i(1040)),
-        u = d(i(1041));
+        a = d(i(1040)),
+        l = d(i(1041)),
+        u = d(i(1042));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -56863,8 +56919,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = r(i(1043)),
-        s = r(i(1044));
+    var n = r(i(1044)),
+        s = r(i(1045));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -57138,7 +57194,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(1046),
+    var n, s = i(1047),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -57196,9 +57252,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(1048)),
-        s = o(i(1136)),
-        r = o(i(1144));
+    var n = o(i(1049)),
+        s = o(i(1137)),
+        r = o(i(1145));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -57305,13 +57361,13 @@
     var n = p(i(14)),
         s = p(i(0)),
         r = p(i(1)),
-        o = p(i(1049)),
-        a = p(i(1067)),
-        l = p(i(1068)),
-        u = p(i(1102)),
+        o = p(i(1050)),
+        a = p(i(1068)),
+        l = p(i(1069)),
+        u = p(i(1103)),
         d = p(i(15)),
-        c = p(i(1103)),
-        h = p(i(1126)),
+        c = p(i(1104)),
+        h = p(i(1127)),
         f = p(i(42));
 
     function p(e) {
@@ -57426,7 +57482,7 @@
         l = g(i(4)),
         u = g(i(8)),
         d = g(i(59)),
-        c = g(i(1050)),
+        c = g(i(1051)),
         h = g(i(155)),
         f = g(i(111)),
         p = i(132);
@@ -57575,7 +57631,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1051));
+        l = u(i(1052));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -57790,7 +57846,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1053));
+        l = u(i(1054));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -58205,7 +58261,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1058));
+        l = u(i(1059));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -58297,7 +58353,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1060));
+        l = u(i(1061));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -58433,7 +58489,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(i(1062));
+    var s = n(i(1063));
     t.generateCityOptions = function(e) {
             var t = new s.default(e);
             return t.getCities().map(function(e) {
@@ -58538,7 +58594,7 @@
         r = d(i(1)),
         o = d(i(3)),
         a = d(i(4)),
-        l = d(i(1064)),
+        l = d(i(1065)),
         u = i(45);
 
     function d(e) {
@@ -58883,28 +58939,28 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = D(i(10)),
-        s = D(i(11)),
-        r = D(i(2)),
-        o = D(i(0)),
-        a = D(i(3)),
-        l = D(i(1)),
-        u = D(i(4)),
-        d = D(i(8)),
-        c = D(i(59)),
-        h = D(i(1069)),
-        f = D(i(87)),
-        p = D(i(1072)),
+    var n = R(i(10)),
+        s = R(i(11)),
+        r = R(i(2)),
+        o = R(i(0)),
+        a = R(i(3)),
+        l = R(i(1)),
+        u = R(i(4)),
+        d = R(i(8)),
+        c = R(i(59)),
+        h = R(i(1070)),
+        f = R(i(87)),
+        p = R(i(1073)),
         g = i(439),
-        v = D(i(1073)),
-        m = D(i(1076)),
-        y = D(i(440)),
-        b = D(i(155)),
-        E = D(i(441)),
-        w = D(i(1085)),
-        k = D(i(442)),
-        M = D(i(1094)),
-        S = D(i(17)),
+        v = R(i(1074)),
+        m = R(i(1077)),
+        y = R(i(440)),
+        b = R(i(155)),
+        E = R(i(441)),
+        w = R(i(1086)),
+        k = R(i(443)),
+        M = R(i(1095)),
+        S = R(i(17)),
         I = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -58915,17 +58971,18 @@
             return t.default = e,
                 t
         }(i(9)),
-        T = i(445),
-        C = D(i(111)),
-        A = D(i(1100)),
-        O = D(i(21));
+        T = i(446),
+        C = R(i(111)),
+        A = R(i(1101)),
+        O = R(i(21)),
+        D = i(442);
 
-    function D(e) {
+    function R(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var R = function(e) {
+    var L = function(e) {
         function t(e) {
             (0,
                 o.default)(this, t);
@@ -59198,9 +59255,21 @@
                         url: e.attributes.url,
                         phone: e.attributes.phone,
                         categoryAttributes: e.attributes.categoryAttributes,
-                        openingHours: e.attributes.openingHours,
+                        openingHours: this._createOpeningHourViewModels(e),
                         aliases: this._getAliases(e)
                     }
+                }
+            }, {
+                key: "_createOpeningHourViewModels",
+                value: function(e) {
+                    return e.attributes.openingHours.map(function(e) {
+                        return new D.OpeningHourViewModel({
+                            fromHour: e.fromHour,
+                            toHour: e.toHour,
+                            days: e.days,
+                            isAllDay: e.isAllDay()
+                        })
+                    })
                 }
             }, {
                 key: "viewModelToFeature",
@@ -59468,7 +59537,7 @@
             }]),
             t
     }(c.default);
-    t.default = R,
+    t.default = L,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -59492,9 +59561,9 @@
             return t.default = e,
                 t
         }(i(74)),
-        c = p(i(1070)),
+        c = p(i(1071)),
         h = p(i(438)),
-        f = p(i(1071));
+        f = p(i(1072));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -59870,7 +59939,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(1074),
+    var n, s = i(1075),
         r = (n = s) && n.__esModule ? n : {
             default: n
         },
@@ -59920,7 +59989,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(1075),
+    var n, s = i(1076),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -60036,8 +60105,8 @@
         r = c(i(1)),
         o = c(i(3)),
         a = c(i(4)),
-        l = c(i(1077)),
-        u = c(i(1078)),
+        l = c(i(1078)),
+        u = c(i(1079)),
         d = c(i(189));
 
     function c(e) {
@@ -60466,16 +60535,17 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(1082)),
-        s = o(i(1083)),
-        r = o(i(1084));
+    var n = a(i(1083)),
+        s = a(i(1084)),
+        r = a(i(1085)),
+        o = i(136);
 
-    function o(e) {
+    function a(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var a = Marionette.CompositeView.extend({
+    var l = Marionette.CompositeView.extend({
         template: "templates/opening_hours/layout",
         childView: n.default,
         childViewContainer: ".list",
@@ -60492,8 +60562,9 @@
                 this.showAddDialog()
         },
         onChildviewDelete: function(e) {
-            var t = e.model;
-            new r.default(W.model, this.options.landmarkId).deleteOpeningHour(t)
+            var t = e.model,
+                i = this.collection.indexOf(t);
+            new r.default(W.model, this.options.landmarkId).deleteOpeningHour(i)
         },
         showAddDialog: function() {
             var e = this,
@@ -60501,7 +60572,11 @@
                     collection: this.collection
                 });
             return t.once("addOpeningHours", function(t) {
-                    new r.default(W.model, e.options.landmarkId).addOpeningHour(t)
+                    new r.default(W.model, e.options.landmarkId).addOpeningHour(t.get("isAllDay") ? o.OpeningHour.createAllDay(t.get("days")) : new o.OpeningHour({
+                        fromHour: t.get("fromHour"),
+                        toHour: t.get("toHour"),
+                        days: t.get("days")
+                    }))
                 }),
                 W.app.layout.getRegion("dialogRegion").show(t)
         },
@@ -60511,139 +60586,186 @@
             }
         }
     });
-    t.default = a,
+    t.default = l,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = Marionette.View.extend({
+    var n, s = i(17),
+        r = (n = s) && n.__esModule ? n : {
+            default: n
+        };
+    var o = Marionette.View.extend({
         tagName: "li",
         template: "templates/opening_hours/item",
         triggers: {
             "click .delete": "delete"
         },
         templateContext: function() {
+            var e = this.model.attributes,
+                t = e.days,
+                i = e.isAllDay,
+                n = e.fromHour,
+                s = e.toHour;
             return {
-                model: this.model,
+                openingHourFormatted: r.default.formatOpeningHour(t, i, n, s),
                 isEditable: this.options.editable
             }
         }
     });
-    t.default = n,
+    t.default = o,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(136),
-        r = i(110),
-        o = (n = r) && n.__esModule ? n : {
-            default: n
-        };
-    var a = Marionette.View.extend({
-        template: "templates/opening_hours/add",
-        ui: {
-            form: "form",
-            timeSelectors: ".time-selector",
-            fromTime: "input[name=fromTime]",
-            toTime: "input[name=toTime]",
-            dayCheckboxes: "input[name=days]",
-            validationErrors: ".validation-errors"
-        },
-        events: {
-            submit: "onSubmit",
-            "click .select-all": "selectAllDays",
-            "click .select-none": "deselectAllDays",
-            "change input[name=allDay]": "onTimeToggled"
-        },
-        HOUR_FORMAT: "H:mm",
-        selectAllDays: function(e) {
-            return e.preventDefault(),
-                this.toggleDayCheckboxes(!0)
-        },
-        deselectAllDays: function(e) {
-            return e.preventDefault(),
-                this.toggleDayCheckboxes(!1)
-        },
-        onTimeToggled: function() {
-            return this.toggleTimeSelectors(!this.isAllDaySelected())
-        },
-        isAllDaySelected: function() {
-            return "on" === this.$("input[name=allDay]:checked").val()
-        },
-        toggleTimeSelectors: function(e) {
-            return this.ui.timeSelectors.prop({
-                disabled: !e,
-                required: e
-            })
-        },
-        toggleDayCheckboxes: function(e) {
-            return this.ui.dayCheckboxes.prop("checked", e)
-        },
-        onRender: function() {
-            return this.ui.timeSelectors.timepicker(o.default.prototype.timepickerOptions)
-        },
-        onBeforeDestroy: function() {
-            return this.$el.remove(),
-                this.ui.timeSelectors.timepicker("remove")
-        },
-        serializeData: function() {
-            var e = s.OpeningHour.prototype.defaults();
-            return {
-                dayCallback: this.isDayCheckedByDefault,
-                defaultFromTime: e.fromHour,
-                defaultToTime: e.toHour
-            }
-        },
-        isDayCheckedByDefault: function(e) {
-            return s.DEFAULT_DAYS.includes(e)
-        },
-        onSubmit: function(e) {
-            e.preventDefault();
-            var t = this.ui.fromTime.val(),
-                i = this.ui.toTime.val(),
-                n = this.readDays();
-            if (this._clearValidationErrors(),
-                this._vaildate(t, i, n)) {
-                var r = new s.OpeningHour({
-                    days: n,
-                    fromHour: t,
-                    toHour: i
-                });
-                return this.isAllDaySelected() && r.setAllDay(),
-                    this.triggerMethod("addOpeningHours", r),
-                    this.destroy()
-            }
-        },
-        _vaildate: function(e, t, i) {
-            var n = [];
-            if (0 === i.length && n.push(I18n.t("edit.landmark.opening_hours.errors.days")),
-                e = Date.parseExact(e, this.HOUR_FORMAT),
-                t = Date.parseExact(t, this.HOUR_FORMAT),
-                this.isAllDaySelected() || (null === e && n.push(I18n.t("edit.landmark.opening_hours.errors.fromHour")),
-                    null === t && n.push(I18n.t("edit.landmark.opening_hours.errors.toHour")),
-                    Number(e) === Number(t) && n.push(I18n.t("edit.landmark.opening_hours.errors.same"))),
-                n.length > 0) {
-                var s = n.map(function(e) {
-                    return $("<div/>").text(e)
-                });
-                this.ui.validationErrors.append(s)
-            }
-            return 0 === n.length
-        },
-        _clearValidationErrors: function() {
-            return this.ui.validationErrors.empty()
-        },
-        readDays: function() {
-            return this.ui.form.find("input[name=days]:checked").toArray().map(function(e) {
-                return parseInt($(e).val(), 10)
-            })
+    var n = c(i(6)),
+        s = c(i(2)),
+        r = c(i(0)),
+        o = c(i(1)),
+        a = c(i(3)),
+        l = c(i(4)),
+        u = c(i(110)),
+        d = i(442);
+
+    function c(e) {
+        return e && e.__esModule ? e : {
+            default: e
         }
-    });
-    t.default = a,
+    }
+    var h = [0, 1, 2, 3, 4, 5, 6],
+        f = [],
+        p = function(e) {
+            function t(e) {
+                (0,
+                    r.default)(this, t);
+                var i = (0,
+                    a.default)(this, (t.__proto__ || (0,
+                    s.default)(t)).call(this, (0,
+                    n.default)({}, e, {
+                    model: new d.OpeningHourViewModel
+                })));
+                return i.errorsModel = new Backbone.Model({
+                        validationErrors: []
+                    }),
+                    i
+            }
+            return (0,
+                    l.default)(t, e),
+                (0,
+                    o.default)(t, [{
+                    key: "ui",
+                    value: function() {
+                        return {
+                            timeSelectors: ".time-selector"
+                        }
+                    }
+                }, {
+                    key: "events",
+                    value: function() {
+                        return {
+                            submit: "onSubmit",
+                            "click .select-all": "selectAllDays",
+                            "click .select-none": "deselectAllDays"
+                        }
+                    }
+                }, {
+                    key: "bindings",
+                    value: function() {
+                        return {
+                            "input[name=fromTime]": "fromHour",
+                            "input[name=toTime]": "toHour",
+                            "input[name=days]": {
+                                observe: "days",
+                                onGet: function(e) {
+                                    return e.map(function(e) {
+                                        return "" + e
+                                    })
+                                },
+                                onSet: function(e) {
+                                    return e.map(function(e) {
+                                        return parseInt(e, 10)
+                                    })
+                                }
+                            },
+                            "input[name=allDay]": {
+                                observe: "isAllDay",
+                                onGet: function(e) {
+                                    return e ? "on" : "off"
+                                },
+                                onSet: function(e) {
+                                    return "on" === e
+                                }
+                            },
+                            ".time-selector": {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "isAllDay"
+                                }]
+                            }
+                        }
+                    }
+                }, {
+                    key: "errorsBindings",
+                    value: function() {
+                        return {
+                            ".validation-errors": {
+                                observe: "validationErrors",
+                                onGet: function(e) {
+                                    return null == e ? "" : e.join(", ")
+                                }
+                            }
+                        }
+                    }
+                }, {
+                    key: "selectAllDays",
+                    value: function(e) {
+                        e.preventDefault(),
+                            this.model.set({
+                                days: h
+                            })
+                    }
+                }, {
+                    key: "deselectAllDays",
+                    value: function(e) {
+                        e.preventDefault(),
+                            this.model.set({
+                                days: f
+                            })
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this.stickit(),
+                            this.stickit(this.errorsModel, this.errorsBindings()),
+                            this.ui.timeSelectors.timepicker(u.default.prototype.timepickerOptions)
+                    }
+                }, {
+                    key: "onBeforeDestroy",
+                    value: function() {
+                        return this.ui.timeSelectors.timepicker("remove")
+                    }
+                }, {
+                    key: "onSubmit",
+                    value: function(e) {
+                        e.preventDefault(),
+                            this.model.isValid() ? (this.triggerMethod("addOpeningHours", this.model),
+                                this.destroy()) : this.errorsModel.set({
+                                validationErrors: this.model.validationError
+                            })
+                    }
+                }, {
+                    key: "template",
+                    get: function() {
+                        return "templates/opening_hours/add"
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = p,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -60690,11 +60812,11 @@
                 this.dataModel = e,
                     this.landmarkId = t;
                 var i = e.venues.getObjectById(t);
-                this.currentOpeningHours = i.attributes.openingHours
+                this.currentOpeningHours = s(i.attributes.openingHours)
             }
             return e.prototype.deleteOpeningHour = function(e) {
-                    this.setOpeningHours(this.currentOpeningHours.filter(function(t) {
-                        return t !== e
+                    this.setOpeningHours(this.currentOpeningHours.filter(function(t, i) {
+                        return i !== e
                     }))
                 },
                 e.prototype.addOpeningHour = function(e) {
@@ -60860,7 +60982,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1087));
+        l = u(i(1088));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -60914,13 +61036,13 @@
         o = v(i(1)),
         a = v(i(3)),
         l = v(i(4)),
-        u = v(i(1088)),
+        u = v(i(1089)),
         d = i(35),
         c = v(i(15)),
         h = v(i(109)),
-        f = v(i(443)),
-        p = v(i(1089)),
-        g = v(i(1090));
+        f = v(i(444)),
+        p = v(i(1090)),
+        g = v(i(1091));
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -61161,7 +61283,7 @@
             return t.default = e,
                 t
         }(i(12)),
-        d = c(i(443));
+        d = c(i(444));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -61228,9 +61350,9 @@
         u = g(i(14)),
         d = g(i(15)),
         c = g(i(156)),
-        h = g(i(1091)),
-        f = g(i(1092)),
-        p = g(i(1093));
+        h = g(i(1092)),
+        f = g(i(1093)),
+        p = g(i(1094));
 
     function g(e) {
         return e && e.__esModule ? e : {
@@ -61459,11 +61581,11 @@
         r = g(i(1)),
         o = g(i(3)),
         a = g(i(4)),
-        l = g(i(1095)),
-        u = g(i(1098)),
-        d = i(444),
+        l = g(i(1096)),
+        u = g(i(1099)),
+        d = i(445),
         c = g(i(376)),
-        h = i(1099),
+        h = i(1100),
         f = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -61681,7 +61803,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1096));
+        l = u(i(1097));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -61742,7 +61864,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1097));
+        l = u(i(1098));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -61880,7 +62002,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = i(444);
+        l = i(445);
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -62338,7 +62460,7 @@
         r = d(i(1)),
         o = d(i(3)),
         a = d(i(4)),
-        l = d(i(1101)),
+        l = d(i(1102)),
         u = d(i(424));
 
     function d(e) {
@@ -62702,23 +62824,23 @@
         v = i(31),
         m = V(v),
         y = V(i(17)),
-        b = V(i(447)),
+        b = V(i(448)),
         E = V(i(440)),
         w = V(i(157)),
-        k = V(i(1109)),
+        k = V(i(1110)),
         M = V(i(417)),
-        S = V(i(449)),
-        I = V(i(450)),
+        S = V(i(450)),
+        I = V(i(451)),
         T = V(i(84)),
-        C = V(i(442)),
-        A = V(i(1111)),
+        C = V(i(443)),
+        A = V(i(1112)),
         O = V(i(155)),
         D = V(i(119)),
         R = V(i(83)),
         L = V(i(111)),
-        P = V(i(1118)),
+        P = V(i(1119)),
         N = V(i(91)),
-        x = i(1125);
+        x = i(1126);
 
     function V(e) {
         return e && e.__esModule ? e : {
@@ -63947,7 +64069,7 @@
     var n = a(i(7)),
         s = a(i(26)),
         r = a(i(76)),
-        o = a(i(1105));
+        o = a(i(1106));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -64042,8 +64164,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = r(i(1107)),
-        s = r(i(448));
+    var n = r(i(1108)),
+        s = r(i(449));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -64175,7 +64297,7 @@
     var n = l(i(7)),
         s = l(i(119)),
         r = l(i(110)),
-        o = l(i(448)),
+        o = l(i(449)),
         a = i(76);
 
     function l(e) {
@@ -64313,7 +64435,7 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(1110)),
+        l = h(i(1111)),
         u = h(i(209)),
         d = i(88),
         c = h(i(433));
@@ -64623,13 +64745,13 @@
         l = m(i(21)),
         u = i(46),
         d = m(u),
-        c = m(i(1112)),
+        c = m(i(1113)),
         h = m(i(429)),
-        f = m(i(1113)),
+        f = m(i(1114)),
         p = i(105),
         g = i(201),
-        v = m(i(1116)),
-        _ = m(i(1117));
+        v = m(i(1117)),
+        _ = m(i(1118));
 
     function m(e) {
         return e && e.__esModule ? e : {
@@ -65073,8 +65195,8 @@
         a = h(i(1)),
         l = h(i(3)),
         u = h(i(4)),
-        d = i(1114),
-        c = i(1115);
+        d = i(1115),
+        c = i(1116);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -65781,7 +65903,7 @@
         r = h(i(1)),
         o = h(i(3)),
         a = h(i(4)),
-        l = h(i(1119)),
+        l = h(i(1120)),
         u = i(73),
         d = i(28),
         c = h(i(91));
@@ -65890,8 +66012,8 @@
         o = v(i(1)),
         a = v(i(3)),
         l = v(i(4)),
-        u = v(i(451)),
-        d = v(i(1121)),
+        u = v(i(452)),
+        d = v(i(1122)),
         c = i(28),
         h = i(73),
         f = v(h),
@@ -66243,8 +66365,8 @@
             return t.default = e,
                 t
         }(i(54)),
-        c = v(i(1122)),
-        h = v(i(1123)),
+        c = v(i(1123)),
+        h = v(i(1124)),
         f = i(73),
         p = v(i(34)),
         g = v(i(391));
@@ -66600,8 +66722,8 @@
         a = p(i(1)),
         l = p(i(3)),
         u = p(i(4)),
-        d = p(i(451)),
-        c = p(i(1124)),
+        d = p(i(452)),
+        c = p(i(1125)),
         h = p(i(194)),
         f = p(i(34));
 
@@ -66898,10 +67020,10 @@
         l = m(i(8)),
         u = m(i(1)),
         d = m(i(4)),
-        c = m(i(1127)),
-        h = m(i(1129)),
+        c = m(i(1128)),
+        h = m(i(1130)),
         f = i(206),
-        p = m(i(446)),
+        p = m(i(447)),
         g = m(i(59)),
         v = function(e) {
             if (e && e.__esModule)
@@ -67245,7 +67367,7 @@
         r = u(i(1)),
         o = u(i(3)),
         a = u(i(4)),
-        l = u(i(1128));
+        l = u(i(1129));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -67486,35 +67608,34 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = I(i(6)),
-        s = I(i(7)),
-        r = I(i(14)),
-        o = I(i(11)),
-        a = I(i(2)),
-        l = I(i(0)),
-        u = I(i(1)),
-        d = I(i(3)),
-        c = I(i(4)),
-        h = I(i(217)),
-        f = I(i(158)),
-        p = I(i(1130)),
-        g = I(i(1131)),
-        v = I(i(1132)),
-        m = I(i(1133)),
-        y = I(i(1134)),
-        b = i(453),
-        E = I(i(17)),
-        w = I(i(86)),
-        k = i(136),
-        M = i(1135),
-        S = i(74);
+    var n = S(i(6)),
+        s = S(i(7)),
+        r = S(i(14)),
+        o = S(i(11)),
+        a = S(i(2)),
+        l = S(i(0)),
+        u = S(i(1)),
+        d = S(i(3)),
+        c = S(i(4)),
+        h = S(i(217)),
+        f = S(i(158)),
+        p = S(i(1131)),
+        g = S(i(1132)),
+        v = S(i(1133)),
+        m = S(i(1134)),
+        y = S(i(1135)),
+        b = i(454),
+        E = S(i(17)),
+        w = S(i(86)),
+        k = i(1136),
+        M = i(74);
 
-    function I(e) {
+    function S(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var T = function(e) {
+    var I = function(e) {
         function t() {
             return (0,
                     l.default)(this, t),
@@ -67553,25 +67674,25 @@
                         ".parking-attributes": {
                             observe: b.VENUE_FIELDS.CATEGORIES,
                             visible: function(e) {
-                                return e.indexOf(S.PARKING_LOT) > -1
+                                return e.indexOf(M.PARKING_LOT) > -1
                             }
                         },
                         ".parking-message": {
                             observe: b.VENUE_FIELDS.CATEGORIES,
                             visible: function(t) {
-                                return e._hasParkingLot() && -1 === t.indexOf(S.PARKING_LOT)
+                                return e._hasParkingLot() && -1 === t.indexOf(M.PARKING_LOT)
                             }
                         },
                         ".brand-region": {
                             observe: b.VENUE_FIELDS.CATEGORIES,
                             visible: function(e) {
-                                return e.indexOf(S.GAS_STATION) > -1 || e.indexOf(S.PARKING_LOT) > -1
+                                return e.indexOf(M.GAS_STATION) > -1 || e.indexOf(M.PARKING_LOT) > -1
                             }
                         },
                         ".brand-message": {
                             observe: b.VENUE_FIELDS.CATEGORIES,
                             visible: function(t) {
-                                return e._hasGasStation() && -1 === t.indexOf(S.GAS_STATION)
+                                return e._hasGasStation() && -1 === t.indexOf(M.GAS_STATION)
                             }
                         },
                         ".brand-invalid-error": {
@@ -67905,10 +68026,9 @@
             }, {
                 key: "_doOpeningHoursOverlap",
                 value: function() {
-                    var e = this.merger.getAttributeValue(b.VENUE_FIELDS.OPENING_HOURS),
-                        t = new k.Collection(e);
+                    var e = this.merger.getAttributeValue(b.VENUE_FIELDS.OPENING_HOURS);
                     return (0,
-                        M.containsOverlappingOpeningHours)(t.models)
+                        k.containsOverlappingOpeningHours)(e)
                 }
             }, {
                 key: "_rebuildServicesView",
@@ -67994,7 +68114,7 @@
             }]),
             t
     }(Marionette.View);
-    t.default = T,
+    t.default = I,
         e.exports = t.default
 }, function(e, t, i) {
     "use strict";
@@ -68008,7 +68128,7 @@
         a = h(i(8)),
         l = h(i(1)),
         u = h(i(4)),
-        d = h(i(452)),
+        d = h(i(453)),
         c = i(74);
 
     function h(e) {
@@ -68163,7 +68283,7 @@
         l = h(i(4)),
         u = h(i(8)),
         d = h(i(217)),
-        c = i(453);
+        c = i(454);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -68360,7 +68480,7 @@
         return (0,
                 o.default)(t, e),
             t
-    }(a(i(452)).default);
+    }(a(i(453)).default);
     t.default = l,
         e.exports = t.default
 }, function(e, t, i) {
@@ -68371,8 +68491,8 @@
     var n = i(134);
 
     function s(e) {
-        var t = e.get("fromHour"),
-            i = e.get("toHour"),
+        var t = e.fromHour,
+            i = e.toHour,
             s = n.moment(t, n.moment.HTML5_FMT.TIME),
             r = n.moment(i, n.moment.HTML5_FMT.TIME);
         return (r.isBefore(s) || 0 === r.hours() && 0 === r.minutes()) && r.add(1, "day"),
@@ -68380,7 +68500,7 @@
     }
 
     function r(e, t) {
-        return _.intersection(e.get("days"), t.get("days")).length > 0 && function(e, t) {
+        return _.intersection(e.days, t.days).length > 0 && function(e, t) {
             var i = s(e),
                 n = s(t);
             return i.overlaps(n)
@@ -68398,9 +68518,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(1137)),
-        s = o(i(1141)),
-        r = o(i(1142));
+    var n = o(i(1138)),
+        s = o(i(1142)),
+        r = o(i(1143));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -68464,9 +68584,9 @@
     var n = d(i(11)),
         s = d(i(23)),
         r = d(i(47)),
-        o = d(i(1138)),
-        a = d(i(1139)),
-        l = d(i(1140)),
+        o = d(i(1139)),
+        a = d(i(1140)),
+        l = d(i(1141)),
         u = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -68928,7 +69048,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = r(i(1143)),
+    var n = r(i(1144)),
         s = r(i(157));
 
     function r(e) {
@@ -69089,12 +69209,12 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = u(i(454)),
-        s = u(i(455)),
-        r = u(i(456)),
-        o = u(i(1150)),
-        a = u(i(1152)),
-        l = u(i(1153));
+    var n = u(i(455)),
+        s = u(i(456)),
+        r = u(i(457)),
+        o = u(i(1151)),
+        a = u(i(1153)),
+        l = u(i(1154));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -69583,8 +69703,8 @@
     });
     var n = a(i(6)),
         s = a(i(218)),
-        r = a(i(1151)),
-        o = a(i(457));
+        r = a(i(1152)),
+        o = a(i(458));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -69707,7 +69827,7 @@
     });
     var n = o(i(6)),
         s = o(i(218)),
-        r = o(i(457));
+        r = o(i(458));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -69755,21 +69875,21 @@
     var n = O(i(0)),
         s = O(i(1)),
         r = i(107),
-        o = O(i(1154)),
-        a = O(i(1155)),
-        l = O(i(1156)),
-        u = O(i(458)),
-        d = O(i(1157)),
-        c = O(i(1158)),
-        h = O(i(1159)),
-        f = O(i(1160)),
+        o = O(i(1155)),
+        a = O(i(1156)),
+        l = O(i(1157)),
+        u = O(i(459)),
+        d = O(i(1158)),
+        c = O(i(1159)),
+        h = O(i(1160)),
+        f = O(i(1161)),
         p = O(i(17)),
         g = O(i(393)),
-        v = O(i(1166)),
-        m = O(i(1167)),
-        y = O(i(1168)),
+        v = O(i(1167)),
+        m = O(i(1168)),
+        y = O(i(1169)),
         b = O(i(394)),
-        E = O(i(1170)),
+        E = O(i(1171)),
         w = O(i(106)),
         k = function(e) {
             if (e && e.__esModule)
@@ -69785,7 +69905,7 @@
         S = O(i(113)),
         I = O(i(42)),
         T = i(118),
-        C = O(i(462)),
+        C = O(i(463)),
         A = i(31);
 
     function O(e) {
@@ -70275,7 +70395,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(458),
+    var n, s = i(459),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -70295,12 +70415,12 @@
         s = v(i(14)),
         r = v(i(47)),
         o = v(i(68)),
-        a = v(i(459)),
+        a = v(i(460)),
         l = v(i(434)),
         u = i(38),
-        d = v(i(1161)),
-        c = v(i(461)),
-        h = i(1165),
+        d = v(i(1162)),
+        c = v(i(462)),
+        h = i(1166),
         f = v(h),
         p = v(i(204)),
         g = function(e) {
@@ -70483,15 +70603,15 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(i(1162)),
+    var s = n(i(1163)),
         r = n(i(114)),
         o = n(i(62)),
         a = n(i(405)),
         l = i(132),
         u = n(i(108)),
         d = n(i(31)),
-        c = n(i(461)),
-        h = n(i(1164)),
+        c = n(i(462)),
+        h = n(i(1165)),
         f = function() {
             function e(e, t) {
                 this._dataModel = e,
@@ -70549,7 +70669,7 @@
         c = v(i(20)),
         h = v(i(15)),
         f = v(i(21)),
-        p = v(i(460)),
+        p = v(i(461)),
         g = v(i(39));
 
     function v(e) {
@@ -70799,7 +70919,7 @@
         h = E(i(15)),
         f = E(i(112)),
         p = E(i(21)),
-        g = E(i(460)),
+        g = E(i(461)),
         v = E(i(39)),
         m = b(i(9)),
         y = b(i(19));
@@ -71095,7 +71215,7 @@
     });
     var n = o(i(6)),
         s = o(i(47)),
-        r = o(i(1169));
+        r = o(i(1170));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -71457,7 +71577,7 @@
             secondaryControl: null
         },
         initialize: function() {
-            var e = i(462),
+            var e = i(463),
                 t = this.get("children");
             if (null != t)
                 return this.children = new e(t),
@@ -71471,10 +71591,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = a(i(463)),
-        s = a(i(464)),
-        r = a(i(1173)),
-        o = a(i(1177));
+    var n = a(i(464)),
+        s = a(i(465)),
+        r = a(i(1174)),
+        o = a(i(1178));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -71512,9 +71632,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(1174)),
-        s = o(i(1175)),
-        r = o(i(1176));
+    var n = o(i(1175)),
+        s = o(i(1176)),
+        r = o(i(1177));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -71584,7 +71704,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(465),
+    var n, s = i(466),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -71622,7 +71742,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(465),
+    var n, s = i(466),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -71728,10 +71848,10 @@
     });
     var n = i(148),
         s = i(28),
-        r = u(i(1179)),
-        o = u(i(1181)),
-        a = u(i(1182)),
-        l = u(i(1183));
+        r = u(i(1180)),
+        o = u(i(1182)),
+        a = u(i(1183)),
+        l = u(i(1184));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -71836,10 +71956,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = a(i(456)),
-        s = a(i(455)),
-        r = a(i(1180)),
-        o = a(i(454));
+    var n = a(i(457)),
+        s = a(i(456)),
+        r = a(i(1181)),
+        o = a(i(455));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -72004,8 +72124,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = r(i(463)),
-        s = r(i(464));
+    var n = r(i(464)),
+        s = r(i(465));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -72035,11 +72155,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = h(i(1184)),
+    var n = h(i(1185)),
         s = h(i(114)),
         r = i(28),
-        o = h(i(1186)),
-        a = h(i(1188)),
+        o = h(i(1187)),
+        a = h(i(1189)),
         l = h(i(140)),
         u = h(i(427)),
         d = h(i(426)),
@@ -72179,7 +72299,7 @@
         value: !0
     });
     var n = r(i(11)),
-        s = r(i(1185));
+        s = r(i(1186));
 
     function r(e) {
         return e && e.__esModule ? e : {
@@ -72338,7 +72458,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n, s = i(1187),
+    var n, s = i(1188),
         r = (n = s) && n.__esModule ? n : {
             default: n
         };
@@ -72373,15 +72493,15 @@
         o = b(i(155)),
         a = b(i(75)),
         l = b(i(110)),
-        u = b(i(1189)),
+        u = b(i(1190)),
         d = i(140),
-        c = b(i(1191)),
-        h = b(i(1192)),
+        c = b(i(1192)),
+        h = b(i(1193)),
         f = b(i(21)),
         p = b(i(17)),
-        g = b(i(1193)),
-        v = b(i(1194)),
-        m = b(i(1196)),
+        g = b(i(1194)),
+        v = b(i(1195)),
+        m = b(i(1197)),
         y = i(30);
 
     function b(e) {
@@ -72770,7 +72890,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var n = o(i(1190)),
+    var n = o(i(1191)),
         s = o(i(70)),
         r = i(30);
 
@@ -73135,7 +73255,7 @@
         value: !0
     });
     var n = o(i(11)),
-        s = o(i(1195)),
+        s = o(i(1196)),
         r = o(i(17));
 
     function o(e) {
@@ -73297,12 +73417,12 @@
     });
     var n = h(i(7)),
         s = h(i(26)),
-        r = h(i(447)),
-        o = h(i(449)),
-        a = h(i(450)),
+        r = h(i(448)),
+        o = h(i(450)),
+        a = h(i(451)),
         l = h(i(215)),
         u = h(i(200)),
-        d = h(i(1197)),
+        d = h(i(1198)),
         c = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -73519,8 +73639,8 @@
     var n = u(i(23)),
         s = l(i(63)),
         r = l(i(202)),
-        o = l(i(1202)),
-        a = u(i(1203));
+        o = l(i(1203)),
+        a = u(i(1204));
 
     function l(e) {
         if (e && e.__esModule)
@@ -73742,162 +73862,162 @@
         })
 }, , , , , , , , , , , , , , , , function(e, t, i) {
     var n = {
-        "./af-ZA.js": 1226,
-        "./ar-AE.js": 1227,
-        "./ar-BH.js": 1228,
-        "./ar-DZ.js": 1229,
-        "./ar-EG.js": 1230,
-        "./ar-IQ.js": 1231,
-        "./ar-JO.js": 1232,
-        "./ar-KW.js": 1233,
-        "./ar-LB.js": 1234,
-        "./ar-LY.js": 1235,
-        "./ar-MA.js": 1236,
-        "./ar-OM.js": 1237,
-        "./ar-QA.js": 1238,
-        "./ar-SA.js": 1239,
-        "./ar-SY.js": 1240,
-        "./ar-TN.js": 1241,
-        "./ar-YE.js": 1242,
-        "./az-Cyrl-AZ.js": 1243,
-        "./az-Latn-AZ.js": 1244,
-        "./be-BY.js": 1245,
-        "./bg-BG.js": 1246,
-        "./bs-Latn-BA.js": 1247,
-        "./ca-ES.js": 1248,
-        "./cs-CZ.js": 1249,
-        "./cy-GB.js": 1250,
-        "./da-DK.js": 1251,
-        "./de-AT.js": 1252,
-        "./de-CH.js": 1253,
-        "./de-DE.js": 1254,
-        "./de-LI.js": 1255,
-        "./de-LU.js": 1256,
-        "./dv-MV.js": 1257,
-        "./el-GR.js": 1258,
-        "./en-029.js": 1259,
-        "./en-AU.js": 1260,
-        "./en-BZ.js": 1261,
-        "./en-CA.js": 1262,
-        "./en-GB.js": 1263,
-        "./en-IE.js": 1264,
-        "./en-JM.js": 1265,
-        "./en-NZ.js": 1266,
-        "./en-PH.js": 1267,
-        "./en-TT.js": 1268,
-        "./en-ZA.js": 1269,
-        "./en-ZW.js": 1270,
-        "./es-AR.js": 1271,
-        "./es-BO.js": 1272,
-        "./es-CL.js": 1273,
-        "./es-CO.js": 1274,
-        "./es-CR.js": 1275,
-        "./es-DO.js": 1276,
-        "./es-EC.js": 1277,
-        "./es-ES.js": 1278,
-        "./es-GT.js": 1279,
-        "./es-HN.js": 1280,
-        "./es-MX.js": 1281,
-        "./es-NI.js": 1282,
-        "./es-PA.js": 1283,
-        "./es-PE.js": 1284,
-        "./es-PR.js": 1285,
-        "./es-PY.js": 1286,
-        "./es-SV.js": 1287,
-        "./es-UY.js": 1288,
-        "./es-VE.js": 1289,
-        "./et-EE.js": 1290,
-        "./eu-ES.js": 1291,
-        "./fa-IR.js": 1292,
-        "./fi-FI.js": 1293,
-        "./fo-FO.js": 1294,
-        "./fr-BE.js": 1295,
-        "./fr-CA.js": 1296,
-        "./fr-CH.js": 1297,
-        "./fr-FR.js": 1298,
-        "./fr-LU.js": 1299,
-        "./fr-MC.js": 1300,
-        "./gl-ES.js": 1301,
-        "./gu-IN.js": 1302,
-        "./he-IL.js": 1303,
-        "./hi-IN.js": 1304,
-        "./hr-BA.js": 1305,
-        "./hr-HR.js": 1306,
-        "./hu-HU.js": 1307,
-        "./hy-AM.js": 1308,
-        "./id-ID.js": 1309,
-        "./is-IS.js": 1310,
-        "./it-CH.js": 1311,
-        "./it-IT.js": 1312,
-        "./ja-JP.js": 1313,
-        "./ka-GE.js": 1314,
-        "./kk-KZ.js": 1315,
-        "./kn-IN.js": 1316,
-        "./ko-KR.js": 1317,
-        "./kok-IN.js": 1318,
-        "./ky-KG.js": 1319,
-        "./lt-LT.js": 1320,
-        "./lv-LV.js": 1321,
-        "./mi-NZ.js": 1322,
-        "./mk-MK.js": 1323,
-        "./mn-MN.js": 1324,
-        "./mr-IN.js": 1325,
-        "./ms-BN.js": 1326,
-        "./ms-MY.js": 1327,
-        "./mt-MT.js": 1328,
-        "./nb-NO.js": 1329,
-        "./nl-BE.js": 1330,
-        "./nl-NL.js": 1331,
-        "./nn-NO.js": 1332,
-        "./ns-ZA.js": 1333,
-        "./pa-IN.js": 1334,
-        "./pl-PL.js": 1335,
-        "./pt-BR.js": 1336,
-        "./pt-PT.js": 1337,
-        "./quz-BO.js": 1338,
-        "./quz-EC.js": 1339,
-        "./quz-PE.js": 1340,
-        "./ro-RO.js": 1341,
-        "./ru-RU.js": 1342,
-        "./sa-IN.js": 1343,
-        "./se-FI.js": 1344,
-        "./se-NO.js": 1345,
-        "./se-SE.js": 1346,
-        "./sk-SK.js": 1347,
-        "./sl-SI.js": 1348,
-        "./sma-NO.js": 1349,
-        "./sma-SE.js": 1350,
-        "./smj-NO.js": 1351,
-        "./smj-SE.js": 1352,
-        "./smn-FI.js": 1353,
-        "./sms-FI.js": 1354,
-        "./sq-AL.js": 1355,
-        "./sr-Cyrl-BA.js": 1356,
-        "./sr-Cyrl-CS.js": 1357,
-        "./sr-Latn-BA.js": 1358,
-        "./sr-Latn-CS.js": 1359,
-        "./sv-FI.js": 1360,
-        "./sv-SE.js": 1361,
-        "./sw-KE.js": 1362,
-        "./syr-SY.js": 1363,
-        "./ta-IN.js": 1364,
-        "./te-IN.js": 1365,
-        "./th-TH.js": 1366,
-        "./tn-ZA.js": 1367,
-        "./tr-TR.js": 1368,
-        "./tt-RU.js": 1369,
-        "./uk-UA.js": 1370,
-        "./ur-PK.js": 1371,
-        "./uz-Cyrl-UZ.js": 1372,
-        "./uz-Latn-UZ.js": 1373,
-        "./vi-VN.js": 1374,
-        "./xh-ZA.js": 1375,
-        "./zh-CN.js": 1376,
-        "./zh-HK.js": 1377,
-        "./zh-MO.js": 1378,
-        "./zh-SG.js": 1379,
-        "./zh-TW.js": 1380,
-        "./zu-ZA.js": 1381
+        "./af-ZA.js": 1227,
+        "./ar-AE.js": 1228,
+        "./ar-BH.js": 1229,
+        "./ar-DZ.js": 1230,
+        "./ar-EG.js": 1231,
+        "./ar-IQ.js": 1232,
+        "./ar-JO.js": 1233,
+        "./ar-KW.js": 1234,
+        "./ar-LB.js": 1235,
+        "./ar-LY.js": 1236,
+        "./ar-MA.js": 1237,
+        "./ar-OM.js": 1238,
+        "./ar-QA.js": 1239,
+        "./ar-SA.js": 1240,
+        "./ar-SY.js": 1241,
+        "./ar-TN.js": 1242,
+        "./ar-YE.js": 1243,
+        "./az-Cyrl-AZ.js": 1244,
+        "./az-Latn-AZ.js": 1245,
+        "./be-BY.js": 1246,
+        "./bg-BG.js": 1247,
+        "./bs-Latn-BA.js": 1248,
+        "./ca-ES.js": 1249,
+        "./cs-CZ.js": 1250,
+        "./cy-GB.js": 1251,
+        "./da-DK.js": 1252,
+        "./de-AT.js": 1253,
+        "./de-CH.js": 1254,
+        "./de-DE.js": 1255,
+        "./de-LI.js": 1256,
+        "./de-LU.js": 1257,
+        "./dv-MV.js": 1258,
+        "./el-GR.js": 1259,
+        "./en-029.js": 1260,
+        "./en-AU.js": 1261,
+        "./en-BZ.js": 1262,
+        "./en-CA.js": 1263,
+        "./en-GB.js": 1264,
+        "./en-IE.js": 1265,
+        "./en-JM.js": 1266,
+        "./en-NZ.js": 1267,
+        "./en-PH.js": 1268,
+        "./en-TT.js": 1269,
+        "./en-ZA.js": 1270,
+        "./en-ZW.js": 1271,
+        "./es-AR.js": 1272,
+        "./es-BO.js": 1273,
+        "./es-CL.js": 1274,
+        "./es-CO.js": 1275,
+        "./es-CR.js": 1276,
+        "./es-DO.js": 1277,
+        "./es-EC.js": 1278,
+        "./es-ES.js": 1279,
+        "./es-GT.js": 1280,
+        "./es-HN.js": 1281,
+        "./es-MX.js": 1282,
+        "./es-NI.js": 1283,
+        "./es-PA.js": 1284,
+        "./es-PE.js": 1285,
+        "./es-PR.js": 1286,
+        "./es-PY.js": 1287,
+        "./es-SV.js": 1288,
+        "./es-UY.js": 1289,
+        "./es-VE.js": 1290,
+        "./et-EE.js": 1291,
+        "./eu-ES.js": 1292,
+        "./fa-IR.js": 1293,
+        "./fi-FI.js": 1294,
+        "./fo-FO.js": 1295,
+        "./fr-BE.js": 1296,
+        "./fr-CA.js": 1297,
+        "./fr-CH.js": 1298,
+        "./fr-FR.js": 1299,
+        "./fr-LU.js": 1300,
+        "./fr-MC.js": 1301,
+        "./gl-ES.js": 1302,
+        "./gu-IN.js": 1303,
+        "./he-IL.js": 1304,
+        "./hi-IN.js": 1305,
+        "./hr-BA.js": 1306,
+        "./hr-HR.js": 1307,
+        "./hu-HU.js": 1308,
+        "./hy-AM.js": 1309,
+        "./id-ID.js": 1310,
+        "./is-IS.js": 1311,
+        "./it-CH.js": 1312,
+        "./it-IT.js": 1313,
+        "./ja-JP.js": 1314,
+        "./ka-GE.js": 1315,
+        "./kk-KZ.js": 1316,
+        "./kn-IN.js": 1317,
+        "./ko-KR.js": 1318,
+        "./kok-IN.js": 1319,
+        "./ky-KG.js": 1320,
+        "./lt-LT.js": 1321,
+        "./lv-LV.js": 1322,
+        "./mi-NZ.js": 1323,
+        "./mk-MK.js": 1324,
+        "./mn-MN.js": 1325,
+        "./mr-IN.js": 1326,
+        "./ms-BN.js": 1327,
+        "./ms-MY.js": 1328,
+        "./mt-MT.js": 1329,
+        "./nb-NO.js": 1330,
+        "./nl-BE.js": 1331,
+        "./nl-NL.js": 1332,
+        "./nn-NO.js": 1333,
+        "./ns-ZA.js": 1334,
+        "./pa-IN.js": 1335,
+        "./pl-PL.js": 1336,
+        "./pt-BR.js": 1337,
+        "./pt-PT.js": 1338,
+        "./quz-BO.js": 1339,
+        "./quz-EC.js": 1340,
+        "./quz-PE.js": 1341,
+        "./ro-RO.js": 1342,
+        "./ru-RU.js": 1343,
+        "./sa-IN.js": 1344,
+        "./se-FI.js": 1345,
+        "./se-NO.js": 1346,
+        "./se-SE.js": 1347,
+        "./sk-SK.js": 1348,
+        "./sl-SI.js": 1349,
+        "./sma-NO.js": 1350,
+        "./sma-SE.js": 1351,
+        "./smj-NO.js": 1352,
+        "./smj-SE.js": 1353,
+        "./smn-FI.js": 1354,
+        "./sms-FI.js": 1355,
+        "./sq-AL.js": 1356,
+        "./sr-Cyrl-BA.js": 1357,
+        "./sr-Cyrl-CS.js": 1358,
+        "./sr-Latn-BA.js": 1359,
+        "./sr-Latn-CS.js": 1360,
+        "./sv-FI.js": 1361,
+        "./sv-SE.js": 1362,
+        "./sw-KE.js": 1363,
+        "./syr-SY.js": 1364,
+        "./ta-IN.js": 1365,
+        "./te-IN.js": 1366,
+        "./th-TH.js": 1367,
+        "./tn-ZA.js": 1368,
+        "./tr-TR.js": 1369,
+        "./tt-RU.js": 1370,
+        "./uk-UA.js": 1371,
+        "./ur-PK.js": 1372,
+        "./uz-Cyrl-UZ.js": 1373,
+        "./uz-Latn-UZ.js": 1374,
+        "./vi-VN.js": 1375,
+        "./xh-ZA.js": 1376,
+        "./zh-CN.js": 1377,
+        "./zh-HK.js": 1378,
+        "./zh-MO.js": 1379,
+        "./zh-SG.js": 1380,
+        "./zh-TW.js": 1381,
+        "./zu-ZA.js": 1382
     };
 
     function s(e) {
@@ -73919,52 +74039,52 @@
         },
         s.resolve = r,
         e.exports = s,
-        s.id = 1225
+        s.id = 1226
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, i) {
     "use strict";
-    i(1500),
-        i(1502),
-        i(1506),
-        i(1508),
-        i(1510),
-        i(1512),
-        i(1514),
-        i(1516),
-        i(1518),
-        i(1520),
-        i(1522),
-        i(1524),
-        i(1526),
-        i(1528),
-        i(1530),
-        i(1532),
-        i(1534),
-        i(1536),
-        i(1538),
-        i(1540),
-        i(1542),
-        i(1544),
-        i(1546),
-        i(1548),
-        i(1550),
-        i(1552),
-        i(1554),
-        i(1556),
-        i(1558),
-        i(1560),
-        i(1562),
-        i(1564),
-        i(1566),
-        i(1568),
-        i(1570),
-        i(1572),
-        i(1574),
-        i(1576),
-        i(1578),
-        i(1580),
-        i(1582),
-        i(1584),
-        i(1586),
-        i(1588),
-        i(1590)
+    i(1501),
+        i(1503),
+        i(1507),
+        i(1509),
+        i(1511),
+        i(1513),
+        i(1515),
+        i(1517),
+        i(1519),
+        i(1521),
+        i(1523),
+        i(1525),
+        i(1527),
+        i(1529),
+        i(1531),
+        i(1533),
+        i(1535),
+        i(1537),
+        i(1539),
+        i(1541),
+        i(1543),
+        i(1545),
+        i(1547),
+        i(1549),
+        i(1551),
+        i(1553),
+        i(1555),
+        i(1557),
+        i(1559),
+        i(1561),
+        i(1563),
+        i(1565),
+        i(1567),
+        i(1569),
+        i(1571),
+        i(1573),
+        i(1575),
+        i(1577),
+        i(1579),
+        i(1581),
+        i(1583),
+        i(1585),
+        i(1587),
+        i(1589),
+        i(1591)
 }, function(e, t, i) {}, , , , , , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , function(e, t, i) {}, , , , , , function(e, t, i) {}, , function(e, t, i) {}]);
