@@ -720,6 +720,16 @@
                         "781": {
                             "title": "Venue merge error"
                         },
+                        "785": {
+                            "title": "Excess speed can't be a negative number"
+                        },
+                        "786": {
+                            "title": "Invalid camera type"
+                        },
+                        "787": {
+                            "title": "Toll road mismatch between driving directions",
+                            "solution": "Uncheck toll road checkbox and then check it again"
+                        },
                         "1000": {
                             "title": "Connectivity problem",
                             "solution": "Check that all segments are properly connected and their turns are properly defined"
@@ -1142,6 +1152,10 @@
                             "multiple": {
                                 "title": "You cannot edit these segments.",
                                 "description": "One or more segments may be locked or out of your editing area."
+                            },
+                            "snapshot_mode": {
+                                "title": "You cannot edit these segments.",
+                                "description": "Exit snapshot mode to edit these segments."
                             }
                         },
                         "restrictions": {
@@ -1195,6 +1209,10 @@
                     },
                     "landmark": {
                         "title": "One place selected",
+                        "clipboard": {
+                            "copy_geometry": "Copy geometry to clipboard (WKT)",
+                            "copy_confirmation": "Copied"
+                        },
                         "unnamed": "Unnamed",
                         "tabs": {
                             "general": "General",
@@ -1283,7 +1301,7 @@
                             "images": "Photos",
                             "lockRank": "Lock",
                             "externalProviderIDs": "External providers",
-                            "navigation_points": "Entry/Exit points"
+                            "navigation_points": "Entry points"
                         },
                         "add_operator": {
                             "text": "Add an operator to the list"
@@ -2769,7 +2787,9 @@
                             "toCrossroads": "To cross roads",
                             "streetIDs": "Alternative street names",
                             "fwdRestrictions": "A →B time-based restrictions",
-                            "revRestrictions": "B →A time-based restrictions"
+                            "revRestrictions": "B →A time-based restrictions",
+                            "fwdLaneCount": "A →B Lane count",
+                            "revLaneCount": "B →A Lane count"
                         },
                         "flag_fields": {
                             "tunnel": "Tunnel",
@@ -2912,7 +2932,7 @@
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-d2ac91af023a241f905b.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-836fa783fac20d407389.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -2929,7 +2949,7 @@
             ga('create', 'UA-6698700-1', 'auto');
             ga('send', 'pageview');
         </script>
-        <link href="//editor-assets.waze.com/beta/css/app-d2ac91af023a241f905b.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-836fa783fac20d407389.css" rel="stylesheet">
     </head>
 
     <body>
@@ -2953,7 +2973,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.25-77-g5dd26d86
+                                <div class="version">v2.26-108-g60a9d1d2
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -2980,8 +3000,8 @@
             <div class="modal fade" id="keyboard-dialog" tabindex="-1"></div>
         </div>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0&amp;libraries=places"></script>
-        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/vendor-6c25756ea84dad3e7f2f.js"></script>
-        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/app-3c4e5b31ffb03b962e21.js"></script>
+        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/vendor-2468fb91ad44e63a878c.js"></script>
+        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/app-a73598f94835b4d2a7d1.js"></script>
     </body>
 
 </html>

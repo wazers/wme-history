@@ -8118,6 +8118,10 @@ input.form-control:focus, textarea.form-control:focus {
     border: 1px solid #93c4d3;
 }
 
+input.form-control.invalid, input.form-control.invalid:focus, textarea.form-control.invalid, textarea.form-control.invalid:focus {
+    border: 1px solid #ff9999;
+}
+
 select.form-control {
     -webkit-box-shadow: compact(none, false, false, false, false, false, false, false, false, false);
     -moz-box-shadow: compact(none, false, false, false, false, false, false, false, false, false);
@@ -8768,6 +8772,10 @@ select.form-control:focus {
 
 .waze-icon-visible:before {
     content: "\F138";
+}
+
+.w-clickable {
+    cursor: pointer;
 }
 
 .flex-parent {
@@ -9894,6 +9902,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .app[data-development][data-deployment="beta"] .waze-icon-save, .app[data-development][data-deployment="production"] .waze-icon-save {
     background: red !important;
+}
+
+.app[data-deployment="dev"] #app-head, .app[data-deployment="staging"] #app-head {
+    background: linear-gradient(to right, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0) 330px, rgba(255, 255, 0, 0.43) 430px, rgba(255, 255, 0, 0.43) 100%);
 }
 
 #tutorial-dialog .header {
