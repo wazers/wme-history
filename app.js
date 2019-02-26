@@ -28732,7 +28732,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.26-108-g60a9d1d2\n",
+                version: "v2.26-110-g72fd8439\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -62153,7 +62153,7 @@
                                 transparent: !1,
                                 highlight: !1
                             };
-                            null !== e && (e.getIndex() === i ? s.highlight = !0 : s.transparent = !0),
+                            null !== e && (e === n ? s.highlight = !0 : s.transparent = !0),
                                 new u.default(n, t._drawingContext, s).on("navigationPointDragged", t._onNavigationPointChanged, t)
                         })
                 }
