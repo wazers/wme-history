@@ -13841,6 +13841,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     background-color: white;
 }
 
+.house-numbers-layer .house-number.save-error .content .input-wrapper {
+    border: 3px solid #bd3b3b;
+}
+
 .house-numbers-layer .house-number .content {
     position: relative;
     z-index: 1;
@@ -14794,6 +14798,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     padding-left: 20px;
     background-color: #ededed;
     z-index: 10001 !important;
+    display: flex;
 }
 
 .footer-messages {
@@ -14858,12 +14863,11 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: #354148;
     font-size: 12px;
     margin-left: 10px;
+    white-space: nowrap;
 }
 
 .olControlAttribution {
-    position: absolute;
-    left: 20px;
-    right: 250px;
+    flex-grow: 1;
     margin-left: 0px;
     white-space: nowrap;
     overflow: hidden;
@@ -14887,12 +14891,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     padding: 0 10px;
 }
 
-.WazeControlMousePosition {
-    float: right;
-}
-
 .WazeControlPermalink {
-    float: right;
     margin-top: 0px;
 }
 
@@ -14986,12 +14985,12 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .olControlScaleLine {
-    float: right;
     display: block;
     font-size: 11px;
     line-height: 14px;
     margin-top: 6px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .olControlScaleLine .olControlScaleLineBottom, .olControlScaleLine .olControlScaleLineTop {
@@ -21215,6 +21214,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .map-comment-name-editor .body-preview {
     padding-top: 5px;
+    word-break: break-word;
 }
 
 .map-comment-name-editor .reported-date {
