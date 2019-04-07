@@ -21803,6 +21803,7 @@ body[dir="rtl"] .olControlScaleLine {
     display: flex;
     align-items: center;
     flex-flow: wrap;
+    line-height: 33px;
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .is-blank {
@@ -21825,7 +21826,8 @@ body[dir="rtl"] .olControlScaleLine {
     display: flex;
     align-items: center;
     border-radius: 15px;
-    padding: 5px 7px 5px 12px;
+    padding: 0 7px 0 12px;
+    max-height: 27px;
 }
 
 .restriction-editing-region .drive-profile-editing-region .drive-profile-edit-free .drive-profile-item .restriction-chip[data-toggle="dropdown"] {
