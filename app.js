@@ -6570,7 +6570,7 @@
                         n = e.minDistance,
                         i = e.offset,
                         r = e.count;
-                    return this._sendFeaturesRequest(W.Config.paths.archives, {
+                    return this._sendFeaturesRequest(W.Config.paths.archive, {
                         username: t,
                         minDistance: n,
                         offset: i,
@@ -6580,7 +6580,7 @@
             }, {
                 key: "getArchiveById",
                 value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.archives, {
+                    return this._sendFeaturesRequest(W.Config.paths.archive, {
                         id: e
                     })
                 }
@@ -28664,7 +28664,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.30-130-gd0cfb9ec\n",
+                version: "v2.30-131-g4dcb0300\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
