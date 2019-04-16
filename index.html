@@ -109,50 +109,34 @@
                     "link_copied": "Link copied",
                     "coords_copied": "Coordinates copied"
                 },
-                "login": {
-                    "greeting": "Hey there, %{stranger}",
-                    "stranger": "stranger",
-                    "title": "Login",
-                    "subtitle": "Please login to start mapping",
-                    "forgot_password": "I don't know my username or password",
-                    "form": {
-                        "username": "Username",
-                        "password": "Password",
-                        "action": "Log In",
-                        "error": "invalid user name or password",
-                        "server_error": "Login failed, please try again later",
-                        "banned_error": "This account has been blocked. See this message for, ",
-                        "banned_link_text": "more information"
+                "email_verification": {
+                    "back": "Back",
+                    "missing": {
+                        "title": "Add your email to continue editing",
+                        "message": "To continue editing the map, Waze is asking all editors to add an email address to their account.",
+                        "add_email": "Add email address"
                     },
-                    "email_verification": {
-                        "back_to_login": "Back to login",
-                        "missing": {
-                            "title": "Add your email to continue editing",
-                            "message": "To continue editing the map, Waze is asking all editors to add an email address to their account.",
-                            "add_email": "Add email address"
-                        },
-                        "manage": {
-                            "section_top_title": "Manage your email address",
-                            "section_top_text": "To log in to the Waze Map Editor, you need a verified email address.",
-                            "section_middle_title": "To add or update your email address:",
-                            "section_middle_item_1": "Open the Waze app on your phone",
-                            "section_middle_item_2": "Go to Settings",
-                            "section_middle_item_3": "Tap Account & login",
-                            "section_middle_item_4": "Enter your email address",
-                            "section_bottom_text": "Once your email is updated, come back here to log in to the Waze Map Editor."
-                        },
-                        "verify": {
-                            "title": "Verify your email address",
-                            "message": "To continue editing the map, Waze is asking all editors to verify their email. An email will be sent to: %{recipient}",
-                            "error": "The email was not sent. Please check that your email address is correct and try again.",
-                            "send_email": "Send email",
-                            "change_email": "Change email address"
-                        },
-                        "sent": {
-                            "title": "Check your inbox!",
-                            "alert": "A verification email has been sent to %{recipient}",
-                            "message": "Follow the instructions in the email to verify your email address."
-                        }
+                    "manage": {
+                        "section_top_title": "Manage your email address",
+                        "section_top_text": "To log in to the Waze Map Editor, you need a verified email address.",
+                        "section_middle_title": "To add or update your email address:",
+                        "section_middle_item_1": "Open the Waze app on your phone",
+                        "section_middle_item_2": "Go to Settings",
+                        "section_middle_item_3": "Tap Account & login",
+                        "section_middle_item_4": "Enter your email address",
+                        "section_bottom_text": "Once your email is updated, come back here to log in to the Waze Map Editor."
+                    },
+                    "verify": {
+                        "title": "Verify your email address",
+                        "message": "To continue editing the map, Waze is asking all editors to verify their email. An email will be sent to: %{recipient}",
+                        "error": "The email was not sent. Please check that your email address is correct and try again.",
+                        "send_email": "Send email",
+                        "change_email": "Change email address"
+                    },
+                    "sent": {
+                        "title": "Check your inbox!",
+                        "alert": "A verification email has been sent to %{recipient}",
+                        "message": "Follow the instructions in the email to verify your email address."
                     }
                 },
                 "layer_switcher": {
@@ -335,6 +319,7 @@
                     "default_solution": "Check and try again",
                     "changes_log": {
                         "title": "%{count} changes:",
+                        "sandbox_notice": "Log in to save edits",
                         "failed_title": "%{count} changes failed to save:",
                         "empty_name": "No name",
                         "unknown_action": "Action",
@@ -1728,11 +1713,23 @@
                     "title": "You’re in practice mode",
                     "description": "Get to know the Waze Editor. Once you’re ready make real edits",
                     "sidebar": {
-                        "subtitle": "You’re now in practice mode.",
-                        "help": "Find your login info",
-                        "join": "Join the map editing community and your changes can improve the map and routing in your area.",
-                        "hey": "Be an editor,",
-                        "login_link": "Sign In"
+                        "hey": "Ready to update the map?",
+                        "join": "Become a Map Editor by logging in",
+                        "login_link": "Log in",
+                        "links": {
+                            "tutorial": {
+                                "title": "Video Tutorials",
+                                "description": "Step-by-step instructions to help you get started"
+                            },
+                            "wiki": {
+                                "title": "Community Wiki",
+                                "description": "Everything you need to know about the Map Editor"
+                            },
+                            "forum": {
+                                "title": "Forums",
+                                "description": "Need advice? Get help from experienced editors"
+                            }
+                        }
                     }
                 },
                 "problems": {
@@ -1993,8 +1990,9 @@
                 },
                 "session": {
                     "expired": {
-                        "title": "Your session has expired.",
-                        "description": "Please log in again to continue editing"
+                        "title": "Your session has expired",
+                        "description": "To save your edits, log in again",
+                        "log_in": "Log in"
                     }
                 },
                 "tutorial": {
@@ -2037,22 +2035,17 @@
                 },
                 "welcome": {
                     "title": "Welcome to the Waze Map Editor",
-                    "content": "Become a Map Editor and improve traffic and routing in your area. Try it out in practice mode.",
+                    "content": "A community of local experts who keep the Waze map up to date",
+                    "practice": "Try practice mode",
+                    "login": "Log in",
                     "tutorial": {
-                        "title": "Get started",
-                        "description": "Learn the basics with these video tutorials"
-                    },
-                    "play_mode": {
-                        "title": "Practice mode",
-                        "description": "Try the editor and get your bearings"
+                        "title": "Tutorials"
                     },
                     "wiki": {
-                        "title": "Community Wiki",
-                        "description": "Everything you need to know about the map editor"
+                        "title": "Community Wiki"
                     },
                     "forum": {
-                        "title": "Forums",
-                        "description": "Need advice? Get help from experienced editors"
+                        "title": "Forums"
                     }
                 },
                 "turn_tooltip": {
@@ -2945,9 +2938,9 @@
             }
         </script>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-        <link href="//fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-        <link href="//editor-assets.waze.com/beta/css/app-a52cb31e375b479c6c57.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-7cc3294b0159f99c0aab.css" rel="stylesheet">
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -2964,7 +2957,7 @@
             ga('create', 'UA-6698700-1', 'auto');
             ga('send', 'pageview');
         </script>
-        <link href="//editor-assets.waze.com/beta/css/app-a52cb31e375b479c6c57.css" rel="stylesheet">
+        <link href="//editor-assets.waze.com/beta/css/app-7cc3294b0159f99c0aab.css" rel="stylesheet">
     </head>
 
     <body>
@@ -2988,7 +2981,7 @@
                         <div id="brand">
                             <a class="waze-logo" href="/"></a>
                             <div id="debug">
-                                <div class="version">v2.30-131-g4dcb0300
+                                <div class="version">v2.31-142-g513254f6
                                 </div>
                                 <div class="version descrates"></div>
                             </div>
@@ -3015,8 +3008,8 @@
             <div class="modal fade" id="keyboard-dialog" tabindex="-1"></div>
         </div>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0&amp;libraries=places"></script>
-        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/vendor-169051500e6967517917.js"></script>
-        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/app-8a1d3c11eb48170fcca0.js"></script>
+        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/vendor-e2c13894f243591d7892.js"></script>
+        <script type="text/javascript" src="//editor-assets.waze.com/beta/js/app-a194f0f96d87b9a423b1.js"></script>
     </body>
 
 </html>

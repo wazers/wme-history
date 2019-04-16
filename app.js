@@ -571,9 +571,9 @@
     var i = u(n(11)),
         r = u(n(61)),
         s = u(n(76)),
-        o = n(113),
+        o = n(91),
         a = u(o),
-        l = n(91);
+        l = n(92);
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -1972,9 +1972,9 @@
         t.reportError = t.isSequential = t.printMap = t.runLater = t.deepClone = t.protect = t.localStorage = t.defined = t.isDefined = t.isUndefined = void 0;
     var i = l(n(61)),
         r = l(n(25)),
-        s = l(n(112)),
+        s = l(n(113)),
         o = l(n(142)),
-        a = n(32);
+        a = n(35);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -2179,163 +2179,6 @@
     t.default = a,
         e.exports = t.default
 }, , , function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.FetchError = t.addHttpResponseMiddleware = t.addHttpRequestMiddleware = t.httpRequest = t.httpPost = t.httpGet = void 0;
-    var i = p(n(143)),
-        r = p(n(144)),
-        s = p(n(90)),
-        o = p(n(191)),
-        a = p(n(6)),
-        l = p(n(2)),
-        u = p(n(0)),
-        d = p(n(3)),
-        c = p(n(4)),
-        h = p(n(9)),
-        f = p(n(142));
-
-    function p(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var g = [],
-        v = [],
-        m = /(application|text)\/(x-)?json/;
-
-    function _(e) {
-        if (204 === e.status)
-            return !1;
-        var t = e.headers.get("content-type");
-        return t && m.test(t)
-    }
-    var y = function(e) {
-        function t(e) {
-            (0,
-                u.default)(this, t);
-            var n = _(e) ? (0,
-                    f.default)(e.parsedJSON) : e.statusText,
-                i = (0,
-                    d.default)(this, (t.__proto__ || (0,
-                    l.default)(t)).call(this, "Server Response Error: " + n));
-            return Error.captureStackTrace && Error.captureStackTrace(i, t),
-                i.response = _(e) ? e.parsedJSON : e.statusText,
-                i.status = e.status,
-                i
-        }
-        return (0,
-                c.default)(t, e),
-            t
-    }(function(e) {
-        function t() {
-            var t = (0,
-                o.default)(e, (0,
-                s.default)(arguments));
-            return (0,
-                    r.default)(t, (0,
-                    l.default)(this)),
-                t
-        }
-        return t.prototype = (0,
-                i.default)(e.prototype, {
-                constructor: {
-                    value: e,
-                    enumerable: !1,
-                    writable: !0,
-                    configurable: !0
-                }
-            }),
-            r.default ? (0,
-                r.default)(t, e) : t.__proto__ = e,
-            t
-    }(Error));
-
-    function b(e, t) {
-        var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-            i = n.method,
-            r = void 0 === i ? "GET" : i,
-            s = n.dataType,
-            o = void 0 === s ? "form" : s,
-            a = n.signal,
-            l = void 0 === a ? null : a,
-            u = new Headers,
-            d = function(e, t, n, i, r) {
-                var s = void 0;
-                return null != t && ("GET" !== i && "HEAD" !== i ? "json" === n ? (s = (0,
-                        f.default)(t),
-                    r.append("Content-Type", "application/json; charset=utf-8")) : s = new URLSearchParams(t) : (e = new URL(e, location.origin),
-                    (0,
-                        h.default)(t).forEach(function(n) {
-                        return e.searchParams.append(n, t[n] || "")
-                    }))), {
-                    url: e,
-                    body: s
-                }
-            }(e, t, o, r, u),
-            c = d.url,
-            p = d.body,
-            m = new Request(c, {
-                body: p,
-                method: r,
-                headers: u,
-                credentials: "same-origin"
-            });
-        return g.forEach(function(e) {
-                e.call(void 0, m)
-            }),
-            fetch(m, {
-                signal: l
-            }).then(function(e) {
-                var t = void 0;
-                return t = _(e) ? e.json().then(function(t) {
-                        return e.parsedJSON = t,
-                            e
-                    }).catch(function() {
-                        return e.parsedJSON = {},
-                            e
-                    }) : e.text().then(function(t) {
-                        return e.bodyText = t,
-                            e
-                    }).catch(function() {
-                        e.bodyText = ""
-                    }),
-                    v.forEach(function(n) {
-                        t = t.then(function() {
-                            return n.call(void 0, e)
-                        })
-                    }),
-                    e.ok ? t.then(function() {
-                        return e
-                    }) : t.then(function() {
-                        throw new y(e)
-                    })
-            }).then(function(e) {
-                return _(e) ? e.parsedJSON : e.bodyText
-            })
-    }
-    t.httpGet = function(e, t, n) {
-            return b(e, t, (0,
-                a.default)({
-                method: "GET"
-            }, n))
-        },
-        t.httpPost = function(e, t, n) {
-            return b(e, t, (0,
-                a.default)({
-                method: "POST"
-            }, n))
-        },
-        t.httpRequest = b,
-        t.addHttpRequestMiddleware = function(e) {
-            g.push(e)
-        },
-        t.addHttpResponseMiddleware = function(e) {
-            v.push(e)
-        },
-        t.FetchError = y
-}, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -2622,6 +2465,163 @@
 }, , function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.FetchError = t.addHttpResponseMiddleware = t.addHttpRequestMiddleware = t.httpRequest = t.httpPost = t.httpGet = void 0;
+    var i = p(n(143)),
+        r = p(n(144)),
+        s = p(n(90)),
+        o = p(n(191)),
+        a = p(n(6)),
+        l = p(n(2)),
+        u = p(n(0)),
+        d = p(n(3)),
+        c = p(n(4)),
+        h = p(n(9)),
+        f = p(n(142));
+
+    function p(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var g = [],
+        v = [],
+        m = /(application|text)\/(x-)?json/;
+
+    function _(e) {
+        if (204 === e.status)
+            return !1;
+        var t = e.headers.get("content-type");
+        return t && m.test(t)
+    }
+    var y = function(e) {
+        function t(e) {
+            (0,
+                u.default)(this, t);
+            var n = _(e) ? (0,
+                    f.default)(e.parsedJSON) : e.statusText,
+                i = (0,
+                    d.default)(this, (t.__proto__ || (0,
+                    l.default)(t)).call(this, "Server Response Error: " + n));
+            return Error.captureStackTrace && Error.captureStackTrace(i, t),
+                i.response = _(e) ? e.parsedJSON : e.statusText,
+                i.status = e.status,
+                i
+        }
+        return (0,
+                c.default)(t, e),
+            t
+    }(function(e) {
+        function t() {
+            var t = (0,
+                o.default)(e, (0,
+                s.default)(arguments));
+            return (0,
+                    r.default)(t, (0,
+                    l.default)(this)),
+                t
+        }
+        return t.prototype = (0,
+                i.default)(e.prototype, {
+                constructor: {
+                    value: e,
+                    enumerable: !1,
+                    writable: !0,
+                    configurable: !0
+                }
+            }),
+            r.default ? (0,
+                r.default)(t, e) : t.__proto__ = e,
+            t
+    }(Error));
+
+    function b(e, t) {
+        var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
+            i = n.method,
+            r = void 0 === i ? "GET" : i,
+            s = n.dataType,
+            o = void 0 === s ? "form" : s,
+            a = n.signal,
+            l = void 0 === a ? null : a,
+            u = new window.Headers,
+            d = function(e, t, n, i, r) {
+                var s = void 0;
+                return null != t && ("GET" !== i && "HEAD" !== i ? "json" === n ? (s = (0,
+                        f.default)(t),
+                    r.append("Content-Type", "application/json; charset=utf-8")) : s = new window.URLSearchParams(t) : (e = new window.URL(e, window.location.origin),
+                    (0,
+                        h.default)(t).forEach(function(n) {
+                        return e.searchParams.append(n, t[n] || "")
+                    }))), {
+                    url: e,
+                    body: s
+                }
+            }(e, t, o, r, u),
+            c = d.url,
+            p = d.body,
+            m = new window.Request(c, {
+                body: p,
+                method: r,
+                headers: u,
+                credentials: "same-origin"
+            });
+        return g.forEach(function(e) {
+                e.call(void 0, m)
+            }),
+            window.fetch(m, {
+                signal: l
+            }).then(function(e) {
+                var t = void 0;
+                return t = _(e) ? e.json().then(function(t) {
+                        return e.parsedJSON = t,
+                            e
+                    }).catch(function() {
+                        return e.parsedJSON = {},
+                            e
+                    }) : e.text().then(function(t) {
+                        return e.bodyText = t,
+                            e
+                    }).catch(function() {
+                        e.bodyText = ""
+                    }),
+                    v.forEach(function(n) {
+                        t = t.then(function() {
+                            return n.call(void 0, e)
+                        })
+                    }),
+                    e.ok ? t.then(function() {
+                        return e
+                    }) : t.then(function() {
+                        throw new y(e)
+                    })
+            }).then(function(e) {
+                return _(e) ? e.parsedJSON : e.bodyText
+            })
+    }
+    t.httpGet = function(e, t, n) {
+            return b(e, t, (0,
+                a.default)({
+                method: "GET"
+            }, n))
+        },
+        t.httpPost = function(e, t, n) {
+            return b(e, t, (0,
+                a.default)({
+                method: "POST"
+            }, n))
+        },
+        t.httpRequest = b,
+        t.addHttpRequestMiddleware = function(e) {
+            g.push(e)
+        },
+        t.addHttpResponseMiddleware = function(e) {
+            v.push(e)
+        },
+        t.FetchError = y
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
         value: !0
     });
     t.FEATURE_FLAGS = {
@@ -2903,7 +2903,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = s(n(33)),
+    var o = s(n(32)),
         a = s(n(23)),
         l = function() {
             function e(e, t) {
@@ -3693,7 +3693,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = s(n(33)),
+    var o = s(n(32)),
         a = n(79),
         l = s(n(607));
 
@@ -3849,7 +3849,7 @@
         c = _(n(395)),
         h = _(n(162)),
         f = m(n(13)),
-        p = n(34),
+        p = n(33),
         g = m(n(7)),
         v = m(n(20));
 
@@ -4949,9 +4949,9 @@
         u = g(n(4)),
         d = g(n(22)),
         c = g(n(10)),
-        h = g(n(98)),
+        h = g(n(99)),
         f = g(n(15)),
-        p = n(34);
+        p = n(33);
 
     function g(e) {
         return e && e.__esModule ? e : {
@@ -5074,7 +5074,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(808)),
+    var r = i(n(809)),
         s = i(n(23)),
         o = n(56),
         a = n(82),
@@ -5923,16 +5923,16 @@
         h = A(n(58)),
         f = A(n(70)),
         p = A(n(38)),
-        g = A(n(805)),
-        v = A(n(806)),
+        g = A(n(806)),
+        v = A(n(807)),
         m = A(n(196)),
         y = A(n(77)),
-        b = A(n(33)),
+        b = A(n(32)),
         E = C(n(17)),
         w = C(n(7)),
         S = C(n(20)),
         k = n(36),
-        M = n(34),
+        M = n(33),
         I = C(n(13)),
         T = C(n(27));
 
@@ -6363,6 +6363,86 @@
         t.DIRECTION = o
 }, , , , , , , function(e, t, n) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+            value: !0
+        }),
+        t.UNIT = void 0;
+    var i = s(n(9)),
+        r = s(n(31));
+
+    function s(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var o, a = {},
+        l = {},
+        u = {
+            KILOMETER: "km",
+            MILE: "mi",
+            METER: "m",
+            FEET: "ft"
+        },
+        d = {};
+    d[u.KILOMETER] = u.MILE,
+        d[u.METER] = u.FEET;
+    var c = {},
+        h = !0,
+        f = !1,
+        p = void 0;
+    try {
+        for (var g, v = (0,
+                r.default)((0,
+                i.default)(d)); !(h = (g = v.next()).done); h = !0) {
+            var m = g.value,
+                _ = d[m];
+            c[_] = m,
+                a[m] = !0,
+                l[_] = !0
+        }
+    } catch (e) {
+        f = !0,
+            p = e
+    } finally {
+        try {
+            !h && v.return && v.return()
+        } finally {
+            if (f)
+                throw p
+        }
+    }
+    var y = OpenLayers.INCHES_PER_UNIT;
+    o = {
+            convert: function(e, t, n) {
+                return e * y[t] / y[n]
+            },
+            localizeUnit: function(e) {
+                return a[e] && W.model.isImperial ? e = d[e] : l[e] && !W.model.isImperial && (e = c[e]),
+                    e
+            },
+            getLocalizedValue: function(e, t) {
+                if (null == e)
+                    return e;
+                var n = this.localizeUnit(t);
+                return this.convert(e, t, n)
+            },
+            getLocalizedDisplayValue: function(e, t, n) {
+                if (null == e)
+                    return e;
+                var i = this.convert(e, t, n);
+                return this.getLocalizedValue(i, n)
+            },
+            getOriginalValue: function(e, t) {
+                if (null == e)
+                    return e;
+                var n = this.localizeUnit(t);
+                return this.convert(e, n, t)
+            }
+        },
+        t.UNIT = u,
+        t.default = o
+}, function(e, t, n) {
+    "use strict";
     var i = this && this.__importStar || function(e) {
         if (e && e.__esModule)
             return e;
@@ -6377,33 +6457,63 @@
         value: !0
     });
     var r = i(n(62)),
-        s = i(n(192));
+        s = i(n(192)),
+        o = !1;
 
-    function o(e) {
+    function a(e) {
+        o || (o = !0,
+            window.location.href = e)
+    }
+
+    function l(e) {
         return e === r.ROOT_PATH_LOCALE_CODE ? "/editor" + window.location.search : "/" + e + "/editor" + window.location.search
     }
 
-    function a(e) {
-        window.location.href = o(e)
+    function u(e) {
+        a(l(e))
+    }
+
+    function d(e) {
+        return window.open(e.url, e.name, "width=" + e.width + ",height=" + e.height + ",left=" + e.left + ",top=" + e.top)
     }
     t.documentLocaleMatches = function(e) {
             return I18n.locale === e
         },
-        t.getURLForLocale = o,
-        t.redirectToLocalePage = a,
+        t.getURLForLocale = l,
+        t.redirectToLocalePage = u,
         t.redirectToErrorPage = function() {
-            window.location.href = "/500.html"
+            a("/500.html")
         },
         t.setLocaleAndRedirect = function(e) {
             s.setLocaleCode(e),
-                a(e)
+                u(e)
         },
         t.setRegionCodeAndReload = function(e) {
             s.setRegionCode(e),
-                window.location.href = window.location.pathname
+                a(window.location.pathname)
         },
         t.isMac = function() {
             return $.browser.mac
+        },
+        t.securePopup = function(e) {
+            var t = d(e);
+            return null != t && (t.opener = null),
+                t
+        },
+        t.popupWithCloseMessage = function(e) {
+            return new Promise(function(t, n) {
+                var i = d(e);
+                if (null == i)
+                    n(new Error("Opening popup failed"));
+                else {
+                    var r = function(e) {
+                        e.source === i && e.origin === window.location.origin && (null != i && i.close(),
+                            window.removeEventListener("message", r),
+                            t(e.data))
+                    };
+                    window.addEventListener("message", r, !1)
+                }
+            })
         }
 }, function(e, t, n) {
     "use strict";
@@ -6414,8 +6524,8 @@
         r = d(n(6)),
         s = d(n(0)),
         o = d(n(1)),
-        a = d(n(93)),
-        l = n(32),
+        a = d(n(94)),
+        l = n(35),
         u = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -6682,7 +6792,7 @@
             return t.default = e,
                 t
         }(n(7)),
-        c = h(n(92));
+        c = h(n(93));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -7188,8 +7298,8 @@
         u = p(n(21)),
         d = p(n(396)),
         c = p(n(38)),
-        h = p(n(33)),
-        f = n(34);
+        h = p(n(32)),
+        f = n(33);
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -7390,7 +7500,7 @@
         l = n(77),
         u = f(l),
         d = f(n(207)),
-        c = f(n(33)),
+        c = f(n(32)),
         h = f(n(195));
 
     function f(e) {
@@ -7607,9 +7717,9 @@
         v = n(114),
         m = k(n(216)),
         y = n(421),
-        b = k(n(93)),
-        E = n(32),
-        w = k(n(853)),
+        b = k(n(94)),
+        E = n(35),
+        w = k(n(854)),
         S = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -7725,7 +7835,7 @@
                                     return e.active
                                 }).forEach(function(e) {
                                     (0,
-                                        u.default)(n, e.updateDataExtent(i, t.map.getScale(), t.map.getZoom(), s[name]))
+                                        u.default)(n, e.updateDataExtent(i, t.map.getScale(), t.map.getZoom(), s[e.getRepositoryName()]))
                                 }),
                                 _.isEmpty((0,
                                     l.default)(n)) || (this.app.isSandboxMode() && (n.sandbox = !0),
@@ -7997,86 +8107,6 @@
     t.default = C,
         t.SaveError = T
 }, , , , , , , , , , , , function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-            value: !0
-        }),
-        t.UNIT = void 0;
-    var i = s(n(9)),
-        r = s(n(31));
-
-    function s(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var o, a = {},
-        l = {},
-        u = {
-            KILOMETER: "km",
-            MILE: "mi",
-            METER: "m",
-            FEET: "ft"
-        },
-        d = {};
-    d[u.KILOMETER] = u.MILE,
-        d[u.METER] = u.FEET;
-    var c = {},
-        h = !0,
-        f = !1,
-        p = void 0;
-    try {
-        for (var g, v = (0,
-                r.default)((0,
-                i.default)(d)); !(h = (g = v.next()).done); h = !0) {
-            var m = g.value,
-                _ = d[m];
-            c[_] = m,
-                a[m] = !0,
-                l[_] = !0
-        }
-    } catch (e) {
-        f = !0,
-            p = e
-    } finally {
-        try {
-            !h && v.return && v.return()
-        } finally {
-            if (f)
-                throw p
-        }
-    }
-    var y = OpenLayers.INCHES_PER_UNIT;
-    o = {
-            convert: function(e, t, n) {
-                return e * y[t] / y[n]
-            },
-            localizeUnit: function(e) {
-                return a[e] && W.model.isImperial ? e = d[e] : l[e] && !W.model.isImperial && (e = c[e]),
-                    e
-            },
-            getLocalizedValue: function(e, t) {
-                if (null == e)
-                    return e;
-                var n = this.localizeUnit(t);
-                return this.convert(e, t, n)
-            },
-            getLocalizedDisplayValue: function(e, t, n) {
-                if (null == e)
-                    return e;
-                var i = this.convert(e, t, n);
-                return this.getLocalizedValue(i, n)
-            },
-            getOriginalValue: function(e, t) {
-                if (null == e)
-                    return e;
-                var n = this.localizeUnit(t);
-                return this.convert(e, n, t)
-            }
-        },
-        t.UNIT = u,
-        t.default = o
-}, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -8533,7 +8563,7 @@
         h = a(n(19)),
         f = a(n(45)),
         p = a(n(201)),
-        g = a(n(95)),
+        g = a(n(96)),
         v = a(n(151)),
         m = n(152),
         y = n(150),
@@ -9681,32 +9711,32 @@
         }),
         t.LAYER_UNIQUE_NAMES = t.MapLayers = void 0;
     var i = L(n(219)),
-        r = L(n(896)),
+        r = L(n(897)),
         s = L(n(221)),
-        o = L(n(897)),
-        a = L(n(902)),
-        l = L(n(903)),
+        o = L(n(898)),
+        a = L(n(903)),
+        l = L(n(904)),
         u = L(n(438)),
-        d = L(n(906)),
-        c = L(n(907)),
+        d = L(n(907)),
+        c = L(n(908)),
         h = L(n(166)),
-        f = L(n(908)),
-        p = L(n(932)),
-        g = L(n(933)),
-        v = L(n(934)),
+        f = L(n(909)),
+        p = L(n(933)),
+        g = L(n(934)),
+        v = L(n(935)),
         m = L(n(442)),
-        y = L(n(941)),
-        b = L(n(942)),
-        E = L(n(943)),
+        y = L(n(942)),
+        b = L(n(943)),
+        E = L(n(944)),
         w = L(n(439)),
         S = L(n(15)),
         k = D(n(13)),
-        M = L(n(944)),
+        M = L(n(945)),
         I = L(n(72)),
         T = L(n(222)),
-        C = L(n(945)),
+        C = L(n(946)),
         A = L(n(44)),
-        O = L(n(946)),
+        O = L(n(947)),
         R = D(n(17));
 
     function D(e) {
@@ -10622,7 +10652,7 @@
     var i = c(n(6)),
         r = c(n(12)),
         s = c(n(9)),
-        o = n(34),
+        o = n(33),
         a = c(n(15)),
         l = c(n(151)),
         u = c(n(23)),
@@ -11007,7 +11037,7 @@
         l = s(n(19)),
         u = s(n(45)),
         d = {
-            speed: n(113).UNIT.KILOMETER
+            speed: n(91).UNIT.KILOMETER
         };
     t.UNITS = d;
     var c = function(e) {
@@ -11381,7 +11411,7 @@
         u = v(n(45)),
         d = v(n(19)),
         c = g(n(13)),
-        h = n(32),
+        h = n(35),
         f = g(n(7)),
         p = n(51);
 
@@ -11579,7 +11609,7 @@
         h = v(n(58)),
         f = v(n(10)),
         p = v(n(15)),
-        g = v(n(96));
+        g = v(n(97));
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -11704,7 +11734,7 @@
         h = E(n(397)),
         f = E(n(398)),
         p = E(n(15)),
-        g = n(34),
+        g = n(33),
         v = b(n(7)),
         m = b(n(20)),
         y = E(n(400));
@@ -11877,13 +11907,13 @@
         c = k(n(70)),
         h = k(n(124)),
         f = k(n(23)),
-        p = k(n(33)),
+        p = k(n(32)),
         g = k(n(38)),
-        v = n(34),
+        v = n(33),
         m = S(n(7)),
         y = S(n(20)),
         b = S(n(17)),
-        E = k(n(807)),
+        E = k(n(808)),
         w = n(36);
 
     function S(e) {
@@ -12414,7 +12444,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(93)),
+    var i = s(n(94)),
         r = s(n(156));
 
     function s(e) {
@@ -12587,22 +12617,22 @@
         l = A(n(3)),
         u = A(n(8)),
         d = A(n(4)),
-        c = n(1077),
+        c = n(1078),
         h = A(c),
         f = n(78),
         p = n(28),
         g = A(n(132)),
         v = A(n(211)),
         m = A(n(393)),
-        y = C(n(1079)),
-        b = A(n(1080)),
-        E = A(n(1082)),
+        y = C(n(1080)),
+        b = A(n(1081)),
+        E = A(n(1083)),
         w = A(n(21)),
-        S = A(n(1086)),
-        k = A(n(1088)),
+        S = A(n(1087)),
+        k = A(n(1089)),
         M = C(n(20)),
         I = A(n(454)),
-        T = A(n(1089));
+        T = A(n(1090));
 
     function C(e) {
         if (e && e.__esModule)
@@ -13037,7 +13067,7 @@
         o = d(n(3)),
         a = d(n(4)),
         l = d(n(120)),
-        u = n(34);
+        u = n(33);
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -13894,7 +13924,7 @@
         s = h(n(1)),
         o = h(n(3)),
         a = h(n(4)),
-        l = n(34),
+        l = n(33),
         u = h(n(22)),
         d = h(n(10)),
         c = h(n(69));
@@ -14111,9 +14141,9 @@
         s = c(n(1)),
         o = c(n(3)),
         a = c(n(4)),
-        l = c(n(99)),
+        l = c(n(100)),
         u = c(n(22)),
-        d = n(34);
+        d = n(33);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -14272,7 +14302,7 @@
         c = v(n(21)),
         h = v(n(123)),
         f = v(n(160)),
-        p = v(n(809)),
+        p = v(n(810)),
         g = v(n(15));
 
     function v(e) {
@@ -14577,9 +14607,9 @@
         a = f(n(3)),
         l = f(n(8)),
         u = f(n(4)),
-        d = f(n(871)),
-        c = f(n(872)),
-        h = n(879);
+        d = f(n(872)),
+        c = f(n(873)),
+        h = n(880);
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -14680,7 +14710,7 @@
     });
     var i = a(n(6)),
         r = n(28),
-        s = a(n(97)),
+        s = a(n(98)),
         o = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -14783,7 +14813,7 @@
             value: !0
         }),
         t.MergeHGighlightStyleMap = void 0;
-    var i, r = n(891),
+    var i, r = n(892),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -15071,11 +15101,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = l(n(909)),
+    var i = l(n(910)),
         r = l(n(437)),
-        s = l(n(910)),
-        o = l(n(911)),
-        a = l(n(912));
+        s = l(n(911)),
+        o = l(n(912)),
+        a = l(n(913));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -15112,7 +15142,7 @@
             }, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return n(913)("./" + u[e.attributes.code] + ".png")
+                        return n(914)("./" + u[e.attributes.code] + ".png")
                     }
                 }
             })
@@ -15517,16 +15547,16 @@
         a = w(n(9)),
         l = w(n(31)),
         u = w(n(90)),
-        d = w(n(969)),
+        d = w(n(970)),
         c = w(n(212)),
         h = w(n(2)),
         f = w(n(0)),
         p = w(n(1)),
         g = w(n(3)),
         v = w(n(4)),
-        m = n(101),
+        m = n(102),
         y = w(n(216)),
-        b = w(n(975)),
+        b = w(n(976)),
         E = n(62);
 
     function w(e) {
@@ -15933,7 +15963,7 @@
     var i = l(n(0)),
         r = l(n(1)),
         s = l(n(72)),
-        o = l(n(976)),
+        o = l(n(977)),
         a = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -16915,7 +16945,7 @@
     var i = l(n(25)),
         r = l(n(379)),
         s = l(n(624)),
-        o = l(n(94)),
+        o = l(n(95)),
         a = n(36);
 
     function l(e) {
@@ -17924,7 +17954,7 @@
         l = f(n(8)),
         u = f(n(4)),
         d = f(n(10)),
-        c = f(n(98)),
+        c = f(n(99)),
         h = f(n(83));
 
     function f(e) {
@@ -18004,7 +18034,7 @@
         d = p(n(10)),
         c = p(n(22)),
         h = p(n(15)),
-        f = p(n(98));
+        f = p(n(99));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -18116,7 +18146,7 @@
         d = m(n(83)),
         c = m(n(161)),
         h = m(n(58)),
-        f = m(n(98)),
+        f = m(n(99)),
         p = m(n(10)),
         g = m(n(15)),
         v = function(e) {
@@ -18287,7 +18317,7 @@
         o = h(n(3)),
         a = h(n(4)),
         l = h(n(10)),
-        u = h(n(804)),
+        u = h(n(805)),
         d = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -18367,9 +18397,9 @@
         c = m(n(10)),
         h = m(n(21)),
         f = m(n(38)),
-        p = m(n(33)),
+        p = m(n(32)),
         g = n(79),
-        v = n(34);
+        v = n(33);
 
     function m(e) {
         return e && e.__esModule ? e : {
@@ -18642,7 +18672,7 @@
         v = C(n(69)),
         m = C(n(21)),
         y = C(n(23)),
-        b = C(n(33)),
+        b = C(n(32)),
         E = n(77),
         w = C(n(200)),
         S = T(n(7)),
@@ -19021,7 +19051,7 @@
         l = s(n(210)),
         u = s(n(164)),
         d = o(n(7)),
-        c = n(34),
+        c = n(33),
         h = function(e) {
             function t(t, n, i, r) {
                 var s = e.call(this, r) || this;
@@ -19077,7 +19107,7 @@
         d = y(n(15)),
         c = y(n(58)),
         h = y(n(83)),
-        f = y(n(97)),
+        f = y(n(98)),
         p = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -19750,9 +19780,9 @@
     var i = h(n(12)),
         r = h(n(386)),
         s = h(n(68)),
-        o = h(n(819)),
-        a = h(n(820)),
-        l = h(n(821)),
+        o = h(n(820)),
+        a = h(n(821)),
+        l = h(n(822)),
         u = n(84),
         d = h(u),
         c = function(e) {
@@ -19868,33 +19898,77 @@
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = n(36),
+        r = function() {
+            function e(e) {
+                this.loginManager = e;
+                var t = e.user;
+                if (null == t)
+                    throw new TypeError("User is null");
+                this.user = t
+            }
+            return e.prototype.needsEmailVerification = function() {
+                    if (i.getServerConfig().enforceEmailVerification) {
+                        var e = !this.user.isVerifiedEmail();
+                        return this.loginManager.isAuthenticated() && e
+                    }
+                    return !1
+                },
+                e.prototype.isUserEmailAddressMissing = function() {
+                    return this.user.isEmailAddressMissing()
+                },
+                e.prototype.getEmailAddressToVerify = function() {
+                    return this.user.getUnverifiedEmail()
+                },
+                e
+        }();
+    t.EmailVerificationUseCase = r
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
             value: !0
         }),
-        t.InvalidLoginError = void 0;
-    var i = _(n(143)),
-        r = _(n(144)),
-        s = _(n(90)),
-        o = _(n(191)),
-        a = _(n(6)),
-        l = _(n(25)),
-        u = _(n(1)),
-        d = _(n(2)),
-        c = _(n(0)),
-        h = _(n(3)),
-        f = _(n(4)),
+        t.LOGIN_RESULT = t.InvalidLoginError = void 0;
+    var i = y(n(143)),
+        r = y(n(144)),
+        s = y(n(90)),
+        o = y(n(191)),
+        a = y(n(6)),
+        l = y(n(25)),
+        u = y(n(1)),
+        d = y(n(2)),
+        c = y(n(0)),
+        h = y(n(3)),
+        f = y(n(4)),
         p = n(36),
-        g = _(n(837)),
-        v = _(n(76)),
-        m = n(32);
+        g = y(n(839)),
+        v = y(n(76)),
+        m = n(35),
+        _ = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var n in e)
+                    Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
+            return t.default = e,
+                t
+        }(n(92));
 
-    function _(e) {
+    function y(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var y = "_csrf_token",
-        b = /^(post|delete)$/,
-        E = function(e) {
+    var b = "_csrf_token",
+        E = /^(post|delete)$/,
+        w = {
+            REDIRECT: "redirect",
+            LOGGED_IN: "logged_in"
+        },
+        S = function(e) {
             function t() {
                 (0,
                     c.default)(this, t);
@@ -19930,7 +20004,7 @@
                     r.default)(t, e) : t.__proto__ = e,
                 t
         }(Error)),
-        w = function() {
+        k = function() {
             function e() {
                 (0,
                     c.default)(this, e),
@@ -19943,7 +20017,7 @@
                     (0,
                         m.addHttpRequestMiddleware)(function(e) {
                         var t = e.method;
-                        b.test(t.toLowerCase()) && e.headers.append("X-CSRF-Token", $.cookie(y))
+                        E.test(t.toLowerCase()) && e.headers.append("X-CSRF-Token", $.cookie(b))
                     })
             }
             return (0,
@@ -20017,6 +20091,11 @@
                         return !!this.isLoggedIn() && this.user.isStaff
                     }
                 }, {
+                    key: "isExpired",
+                    value: function() {
+                        return this.expired
+                    }
+                }, {
                     key: "canEditAdLockedPlaceUpdates",
                     value: function() {
                         return this._isAdOperator()
@@ -20028,48 +20107,84 @@
                     }
                 }, {
                     key: "login",
-                    value: function(e, t) {
-                        var n = this,
-                            i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
-                        return this.expired && e !== this.user.userName && !1 === this.events.triggerEvent("beforeloginchanged") ? l.default.resolve() : this._doLogin(e, t, i).then(function(e) {
-                            var t = new g.default(e, {
+                    value: function() {
+                        var e = this;
+                        return this._doLogin().then(function(t) {
+                            if (t.redirect)
+                                return {
+                                    result: w.REDIRECT
+                                };
+                            var n = new g.default(t, {
                                 parse: !0
                             });
-                            n.returningUser = n._hasUser() && n.user.userName === t.userName,
-                                n.user = t,
-                                n.expired = !1,
-                                n.events.triggerEvent("login", {
-                                    user: n.user
-                                })
+                            return e.returningUser = e._hasUser() && e.user.userName === n.userName,
+                                e.user = n,
+                                e.expired = !1,
+                                e.events.triggerEvent("login", {
+                                    user: e.user
+                                }), {
+                                    result: w.LOGGED_IN
+                                }
                         })
                     }
                 }, {
                     key: "_getCsrfToken",
                     value: function() {
-                        var e = $.cookie(y);
+                        var e = $.cookie(b);
                         return null !== e && void 0 !== e ? l.default.resolve(e) : (0,
                             m.httpGet)(W.Config.login.paths.get)
                     }
                 }, {
+                    key: "_getPopupLoginHref",
+                    value: function() {
+                        return "/signin?redirect=/editor/login_success.html&locale=" + I18n.currentLocale()
+                    }
+                }, {
+                    key: "_getLoginPopupDimensions",
+                    value: function() {
+                        var e = window.screenTop + window.innerHeight / 2 - 400;
+                        return {
+                            width: 1024,
+                            height: 800,
+                            left: window.screenLeft + window.innerWidth / 2 - 512,
+                            top: e
+                        }
+                    }
+                }, {
+                    key: "_getFullPageLoginHref",
+                    value: function() {
+                        return "/signin?redirect=" + encodeURIComponent("/editor" + window.location.search) + "&locale=" + I18n.currentLocale()
+                    }
+                }, {
                     key: "_doLogin",
-                    value: function(e, t) {
-                        var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
+                    value: function() {
+                        var e = this;
                         return this._getCsrfToken().then(function() {
-                            return (0,
-                                m.httpPost)(W.Config.login.paths.create, {
-                                user_id: e,
-                                password: t,
-                                recaptcha_response: n
+                            return _.popupWithCloseMessage((0,
+                                a.default)({
+                                url: e._getPopupLoginHref(),
+                                name: "login"
+                            }, e._getLoginPopupDimensions())).catch(function() {
+                                return e._redirectToLogin()
+                            }).then(function(e) {
+                                if (!e.redirect) {
+                                    if (null != e && null != e.login && !0 === e.login.success)
+                                        return W.Report.loginAction("login_success"),
+                                            (0,
+                                                m.httpGet)(W.Config.paths.auth);
+                                    throw W.Report.loginAction("login_invalid"),
+                                        new S
+                                }
                             })
-                        }).then(function(e) {
-                            if (!e.reply || !e.reply.login)
-                                throw W.Report.loginAction("login_invalid"),
-                                    new E;
-                            W.Report.loginAction("login_success")
-                        }).then(function() {
-                            return (0,
-                                m.httpGet)(W.Config.paths.auth)
                         })
+                    }
+                }, {
+                    key: "_redirectToLogin",
+                    value: function() {
+                        return _.redirectPageTo(this._getFullPageLoginHref()),
+                            l.default.resolve({
+                                redirect: !0
+                            })
                     }
                 }, {
                     key: "logout",
@@ -20080,7 +20195,7 @@
                             $.cookie("_web_session", null, {
                                 path: "/"
                             }),
-                            $.cookie(y, null, {
+                            $.cookie(b, null, {
                                 path: "/"
                             }),
                             this.events.triggerEvent("logout", {
@@ -20102,11 +20217,12 @@
                 e
         }();
     (0,
-        a.default)(w.prototype, {
+        a.default)(k.prototype, {
         CLASS_NAME: "Waze.LoginManager"
     }),
-    t.default = w,
-        t.InvalidLoginError = E
+    t.default = k,
+        t.InvalidLoginError = S,
+        t.LOGIN_RESULT = w
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -20116,36 +20232,6 @@
         MANAGED: "managed",
         DRIVE: "drive"
     }
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var i = n(36),
-        r = function() {
-            function e(e) {
-                this.loginManager = e;
-                var t = e.user;
-                if (null == t)
-                    throw new TypeError("User is null");
-                this.user = t
-            }
-            return e.prototype.needsEmailVerification = function() {
-                    if (i.getServerConfig().enforceEmailVerification) {
-                        var e = !this.user.isVerifiedEmail();
-                        return this.loginManager.isAuthenticated() && e
-                    }
-                    return !1
-                },
-                e.prototype.isUserEmailAddressMissing = function() {
-                    return this.user.isEmailAddressMissing()
-                },
-                e.prototype.getEmailAddressToVerify = function() {
-                    return this.user.getUnverifiedEmail()
-                },
-                e
-        }();
-    t.EmailVerificationUseCase = r
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -20175,25 +20261,25 @@
         s = O(n(6)),
         o = O(n(0)),
         a = O(n(1)),
-        l = O(n(99)),
+        l = O(n(100)),
         u = O(n(70)),
         d = O(n(420)),
         c = O(n(163)),
         h = O(n(15)),
         f = n(114),
-        p = O(n(843)),
-        g = O(n(100)),
-        v = O(n(844)),
-        m = O(n(845)),
+        p = O(n(844)),
+        g = O(n(101)),
+        v = O(n(845)),
+        m = O(n(846)),
         y = O(n(63)),
-        b = O(n(846)),
-        E = O(n(847)),
-        w = O(n(848)),
-        S = O(n(850)),
+        b = O(n(847)),
+        E = O(n(848)),
+        w = O(n(849)),
+        S = O(n(851)),
         k = n(421),
         M = A(n(17)),
         I = A(n(7)),
-        T = O(n(851)),
+        T = O(n(852)),
         C = O(n(44));
 
     function A(e) {
@@ -20957,7 +21043,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(865),
+    var i, r = n(866),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -21081,15 +21167,15 @@
         o = d(n(1)),
         a = d(n(3)),
         l = d(n(4)),
-        u = d(n(873));
+        u = d(n(874));
 
     function d(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    n(874),
-        n(877);
+    n(875),
+        n(878);
     var c = function(e) {
         function t(e, n) {
             var o = e.map,
@@ -21789,7 +21875,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(888)),
+    var i = a(n(889)),
         r = a(n(406)),
         s = a(n(435)),
         o = a(n(16));
@@ -21991,7 +22077,7 @@
         value: !0
     });
     var i = a(n(16)),
-        r = a(n(889)),
+        r = a(n(890)),
         s = a(n(433)),
         o = function(e) {
             if (e && e.__esModule)
@@ -22225,7 +22311,7 @@
         s = u(n(3)),
         o = u(n(1)),
         a = u(n(4)),
-        l = u(n(95));
+        l = u(n(96));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -22691,20 +22777,20 @@
         a = C(n(1)),
         l = C(n(3)),
         u = C(n(4)),
-        d = C(n(937)),
+        d = C(n(938)),
         c = C(n(199)),
-        h = C(n(938)),
+        h = C(n(939)),
         f = C(n(72)),
-        p = C(n(939)),
-        g = n(101),
+        p = C(n(940)),
+        g = n(102),
         v = n(28),
         m = T(n(13)),
         y = T(n(7)),
         b = T(n(24)),
         E = T(n(17)),
         w = T(n(20)),
-        S = C(n(92)),
-        k = C(n(940)),
+        S = C(n(93)),
+        k = C(n(941)),
         M = n(224),
         I = n(422);
 
@@ -23173,7 +23259,7 @@
                     value: function() {
                         if (!this._active) {
                             if (this._model.actionManager.canRedo()) {
-                                if (!confirm(I18n.t("edit.house_numbers.confirm_clear_redo")))
+                                if (!window.confirm(I18n.t("edit.house_numbers.confirm_clear_redo")))
                                     return;
                                 this._model.actionManager.clear()
                             }
@@ -23568,11 +23654,11 @@
         r = g(n(0)),
         s = g(n(1)),
         o = g(n(29)),
-        a = g(n(33)),
-        l = g(n(1003)),
-        u = g(n(1015)),
+        a = g(n(32)),
+        l = g(n(1004)),
+        u = g(n(1016)),
         d = g(n(448)),
-        c = g(n(1016)),
+        c = g(n(1017)),
         h = p(n(24)),
         f = p(n(20));
 
@@ -23719,12 +23805,12 @@
         l = _(n(3)),
         u = _(n(4)),
         d = n(64),
-        c = _(n(1007)),
-        h = _(n(1008)),
-        f = _(n(1009)),
-        p = _(n(1010)),
-        g = _(n(1011)),
-        v = _(n(1012)),
+        c = _(n(1008)),
+        h = _(n(1009)),
+        f = _(n(1010)),
+        p = _(n(1011)),
+        g = _(n(1012)),
+        v = _(n(1013)),
         m = _(n(48));
 
     function _(e) {
@@ -24415,7 +24501,7 @@
     });
     var i = h(n(0)),
         r = h(n(1)),
-        s = h(n(33)),
+        s = h(n(32)),
         o = c(n(13)),
         a = c(n(17)),
         l = c(n(7)),
@@ -24641,9 +24727,9 @@
     var i = u(n(9)),
         r = u(n(31)),
         s = u(n(226)),
-        o = u(n(1034)),
-        a = u(n(1035)),
-        l = u(n(1037));
+        o = u(n(1035)),
+        a = u(n(1036)),
+        l = u(n(1038));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -24827,11 +24913,11 @@
     var i = c(n(169)),
         r = n(156),
         s = c(n(16)),
-        o = c(n(1055)),
-        a = c(n(1056)),
-        l = c(n(1057)),
-        u = c(n(1058)),
-        d = c(n(1059));
+        o = c(n(1056)),
+        a = c(n(1057)),
+        l = c(n(1058)),
+        u = c(n(1059)),
+        d = c(n(1060));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -25058,7 +25144,7 @@
         value: !0
     });
     var s = n(28),
-        o = n(1084),
+        o = n(1085),
         a = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -25182,8 +25268,8 @@
         o = h(n(1)),
         a = h(n(3)),
         l = h(n(4)),
-        u = h(n(1096)),
-        d = h(n(92)),
+        u = h(n(1097)),
+        d = h(n(93)),
         c = h(n(419));
 
     function h(e) {
@@ -25615,10 +25701,10 @@
         s = h(n(1)),
         o = h(n(3)),
         a = h(n(4)),
-        l = h(n(1110)),
-        u = h(n(1111)),
+        l = h(n(1111)),
+        u = h(n(1112)),
         d = h(n(229)),
-        c = h(n(1112));
+        c = h(n(1113));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -25928,7 +26014,7 @@
         l = p(n(8)),
         u = p(n(4)),
         d = p(n(10)),
-        c = p(n(99)),
+        c = p(n(100)),
         h = p(n(21)),
         f = p(n(22));
 
@@ -26051,11 +26137,11 @@
         r = m(n(14)),
         s = m(n(6)),
         o = m(n(84)),
-        a = m(n(1131)),
+        a = m(n(1132)),
         l = m(n(414)),
-        u = m(n(1133)),
-        d = m(n(1135)),
-        c = n(101),
+        u = m(n(1134)),
+        d = m(n(1136)),
+        c = n(102),
         h = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -26516,7 +26602,7 @@
         l = h(n(1)),
         u = h(n(4)),
         d = n(55),
-        c = h(n(1140));
+        c = h(n(1141));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -26942,7 +27028,7 @@
         }),
         t.LandmarkMerger = t.MAIN_CATEGORY = t.ADDRESS_FIELD = t.CUSTOM_DESCRIPTION = t.PARKING_FIELDS = t.VENUE_FIELDS = void 0;
     var i = f(n(14)),
-        r = f(n(112)),
+        r = f(n(113)),
         s = f(n(12)),
         o = f(n(0)),
         a = f(n(1)),
@@ -27438,7 +27524,7 @@
         _onModeItemClick: function(e) {
             var t = $(e.target).data("mode");
             this.model.requestModeChange(t).catch(function(e) {
-                alert(e)
+                window.alert(e)
             })
         },
         setHouseNumbersState: function(e) {
@@ -27459,9 +27545,9 @@
         a = g(n(4)),
         l = p(n(24)),
         u = n(130),
-        d = g(n(1181)),
-        c = g(n(1182)),
-        h = n(32),
+        d = g(n(1182)),
+        c = g(n(1183)),
+        h = n(35),
         f = p(n(13));
 
     function p(e) {
@@ -27929,7 +28015,7 @@
             }, {
                 key: "_doAfterAnimation",
                 value: function(e) {
-                    setTimeout(e, 1500)
+                    window.setTimeout(e, 1500)
                 }
             }, {
                 key: "_updateHasErrors",
@@ -28178,10 +28264,10 @@
     });
     var r = i(n(478)),
         s = i(n(119)),
-        o = i(n(96)),
+        o = i(n(97)),
         a = i(n(23)),
         l = n(36),
-        u = n(1196),
+        u = n(1197),
         d = i(n(426)),
         c = n(463),
         h = n(39),
@@ -28274,7 +28360,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1204),
+    var i, r = n(1206),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -28429,7 +28515,7 @@
         e.exports = t.default
 }, , , , , , , function(e, t, n) {
     n(492),
-        e.exports = n(1535)
+        e.exports = n(1537)
 }, function(e, t, n) {
     "use strict";
     var i, r = n(14),
@@ -28441,7 +28527,7 @@
         var e = document.getElementById("localeStrings").textContent;
         return JSON.parse(e)
     }! function() {
-        n(1240);
+        n(1242);
         var e, t = document.documentElement.lang;
         o(),
             function(e, t, n) {
@@ -28664,7 +28750,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.30-131-g4dcb0300\n",
+                version: "v2.31-142-g513254f6\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -28749,15 +28835,15 @@
             },
             n(495),
             n(47),
-            n(803),
-            n(822),
+            n(804),
             n(823),
             n(824),
             n(825),
             n(826),
-            n(16),
             n(827),
-            n(828)
+            n(16),
+            n(828),
+            n(829)
     }()
 }, , , function(e, t, n) {
     "use strict";
@@ -28820,152 +28906,153 @@
         "./Waze/MapEditor/UI/Modules/Login/templates/email_verification.hamlc": 653,
         "./Waze/MapEditor/UI/Modules/Login/templates/login_main.hamlc": 654,
         "./Waze/MapEditor/UI/Modules/Login/templates/login_view.hamlc": 655,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 656,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 657,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 658,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 659,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 660,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 661,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 662,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 663,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 664,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 665,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 666,
-        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 667,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 668,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 669,
-        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 670,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 671,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 672,
-        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 673,
-        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 674,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 675,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 676,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 677,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 678,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 679,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 680,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 681,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 682,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 683,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 684,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 685,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 686,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 687,
-        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 688,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 689,
-        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 690,
-        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 691,
-        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 692,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 693,
-        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 694,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 695,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 696,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 697,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 698,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 699,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 700,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 701,
-        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 702,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 703,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 704,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 705,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 706,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 707,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 708,
-        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 709,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 710,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 711,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 712,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 713,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 714,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 715,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 716,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 717,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 718,
-        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 719,
-        "./templates/add_update_details.hamlc": 720,
-        "./templates/additional_details.hamlc": 721,
-        "./templates/address/alt-street.hamlc": 722,
-        "./templates/address/edit-alt-street.hamlc": 723,
-        "./templates/address/edit.hamlc": 724,
-        "./templates/archive-panel.hamlc": 725,
-        "./templates/archive-sessions.hamlc": 726,
-        "./templates/big-junction-edit.hamlc": 727,
-        "./templates/camera-edit.hamlc": 728,
-        "./templates/chrome_autofill_off.hamlc": 729,
-        "./templates/editable-areas.hamlc": 730,
-        "./templates/focus-buttons.hamlc": 731,
-        "./templates/house-number.hamlc": 732,
-        "./templates/instruction-override.hamlc": 733,
-        "./templates/keyboard_shortcuts/list.hamlc": 734,
-        "./templates/keyboard_shortcuts/modal.hamlc": 735,
-        "./templates/lock/edit.hamlc": 736,
-        "./templates/login/sandbox-message.hamlc": 737,
-        "./templates/map.hamlc": 738,
-        "./templates/node-edit.hamlc": 739,
-        "./templates/opening_hours/add.hamlc": 740,
-        "./templates/opening_hours/item.hamlc": 741,
-        "./templates/opening_hours/layout.hamlc": 742,
-        "./templates/place_updates/actions.hamlc": 743,
-        "./templates/place_updates/add_details.hamlc": 744,
-        "./templates/place_updates/add_image.hamlc": 745,
-        "./templates/place_updates/add_venue.hamlc": 746,
-        "./templates/place_updates/changed_field.hamlc": 747,
-        "./templates/place_updates/changed_field_item.hamlc": 748,
-        "./templates/place_updates/changed_field_parking_lot.hamlc": 749,
-        "./templates/place_updates/delete_venue.hamlc": 750,
-        "./templates/place_updates/external_provider/item.hamlc": 751,
-        "./templates/place_updates/external_provider/list.hamlc": 752,
-        "./templates/place_updates/flag.hamlc": 753,
-        "./templates/place_updates/image.hamlc": 754,
-        "./templates/place_updates/image_dialog.hamlc": 755,
-        "./templates/place_updates/item.hamlc": 756,
-        "./templates/place_updates/layout.hamlc": 757,
-        "./templates/place_updates/panel_header.hamlc": 758,
-        "./templates/place_updates/place_details.hamlc": 759,
-        "./templates/place_updates/update_venue.hamlc": 760,
-        "./templates/prefs-panel.hamlc": 761,
-        "./templates/segment/average-speed-camera.hamlc": 762,
-        "./templates/segment/edit-panel-attributes-form.hamlc": 763,
-        "./templates/segment/edit-panel.hamlc": 764,
-        "./templates/segment/flag-attribute.hamlc": 765,
-        "./templates/segment/junction-exit-layout.hamlc": 766,
-        "./templates/segment/junction-exit.hamlc": 767,
-        "./templates/segment/routing.hamlc": 768,
-        "./templates/segment/speed-limit.hamlc": 769,
-        "./templates/segment/tts-playback-popover.hamlc": 770,
-        "./templates/segment/tts-playback.hamlc": 771,
-        "./templates/sidebar/links.hamlc": 772,
-        "./templates/sidebar/sidebar.hamlc": 773,
-        "./templates/sidebar/user-details.hamlc": 774,
-        "./templates/sidebar/user-info.hamlc": 775,
-        "./templates/sidebar/user-permissions-tooltip.hamlc": 776,
-        "./templates/sidebar/user-sandbox.hamlc": 777,
-        "./templates/snapshot-message.hamlc": 778,
-        "./templates/snapshot-toggler.hamlc": 779,
-        "./templates/tips/watch-tutorial.hamlc": 780,
-        "./templates/turn-arrow-tooltip-timeframes.hamlc": 782,
-        "./templates/turn-arrow-tooltip.hamlc": 783,
-        "./templates/turn-arrow.hamlc": 784,
-        "./templates/tutorial-lightbox.hamlc": 785,
-        "./templates/user-greeting.hamlc": 786,
-        "./templates/util/day-checkboxes.hamlc": 787,
-        "./templates/util/toggle-checkboxes.hamlc": 788,
-        "./templates/venue/alias.hamlc": 789,
-        "./templates/venue/aliases-layout.hamlc": 790,
-        "./templates/venue/category-tag.hamlc": 791,
-        "./templates/venue/external-provider/item.hamlc": 792,
-        "./templates/venue/external-provider/list.hamlc": 793,
-        "./templates/venue/venue-categories.hamlc": 794,
-        "./templates/venue/venue-edit-general.hamlc": 795,
-        "./templates/venue/venue-edit-image.hamlc": 796,
-        "./templates/venue/venue-edit-more-info-contact.hamlc": 797,
-        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 798,
-        "./templates/venue/venue-edit-more-info-services.hamlc": 799,
-        "./templates/venue/venue-edit-more-info.hamlc": 800,
-        "./templates/venue/venue-edit-no-images.hamlc": 801,
-        "./templates/venue/venue-edit.hamlc": 802
+        "./Waze/MapEditor/UI/Modules/Login/templates/session_expired.hamlc": 656,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/item.hamlc": 657,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/contributors/list.hamlc": 658,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures.hamlc": 659,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading.hamlc": 660,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names.hamlc": 661,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/item_edit/twitter_urls.hamlc": 662,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view.hamlc": 663,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view.hamlc": 664,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/mte_list.hamlc": 665,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/sidebar.hamlc": 666,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons.hamlc": 667,
+        "./Waze/MapEditor/UI/Modules/MTE/templates/topbar.hamlc": 668,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/edit.hamlc": 669,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/item.hamlc": 670,
+        "./Waze/MapEditor/UI/Modules/NavigationPoint/FeatureEditor/layout.hamlc": 671,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/_navigation.hamlc": 672,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/closure_description.hamlc": 673,
+        "./Waze/MapEditor/UI/Modules/Problems/templates/edit.hamlc": 674,
+        "./Waze/MapEditor/UI/Modules/RegionSwitcher/templates/region-switcher.hamlc": 675,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_blocked_edit.hamlc": 676,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_edit.hamlc": 677,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/drive_profile_free_item.hamlc": 678,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit.hamlc": 679,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_segment.hamlc": 680,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restriction_edit_validation.hamlc": 681,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_driving_segments.hamlc": 682,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_list_item.hamlc": 683,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_main.hamlc": 684,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_pickup.hamlc": 685,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_segments.hamlc": 686,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_table.hamlc": 687,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/restrictions_summary_turn.hamlc": 688,
+        "./Waze/MapEditor/UI/Modules/Restrictions/templates/timeframe_edit.hamlc": 689,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_item.hamlc": 690,
+        "./Waze/MapEditor/UI/Modules/Save/templates/error_list.hamlc": 691,
+        "./Waze/MapEditor/UI/Modules/Save/templates/success.hamlc": 692,
+        "./Waze/MapEditor/UI/Modules/Sidebar/templates/advanced-tools.hamlc": 693,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view-button.hamlc": 694,
+        "./Waze/MapEditor/UI/Modules/StreetView/templates/street-view.hamlc": 695,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/save.hamlc": 696,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-empty-view.hamlc": 697,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search-result-item.hamlc": 698,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/search.hamlc": 699,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group.hamlc": 700,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip.hamlc": 701,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item.hamlc": 702,
+        "./Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar.hamlc": 703,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item.hamlc": 704,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout.hamlc": 705,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/main-list.hamlc": 706,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list.hamlc": 707,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/layout.hamlc": 708,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator.hamlc": 709,
+        "./Waze/MapEditor/UI/Modules/Topbar/templates/location-info.hamlc": 710,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/description_selection_view.hamlc": 711,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/external_providers_view.hamlc": 712,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/image_item_view.hamlc": 713,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/images_selection_view.hamlc": 714,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/layout.hamlc": 715,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/main_selection_view.hamlc": 716,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/multi_selection_view.hamlc": 717,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Dialog/templates/single_selection_view.hamlc": 718,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/landmark-item-view.hamlc": 719,
+        "./Waze/MapEditor/UI/Modules/Venues/MergeLandmark/Sidebar/templates/merge-venues.hamlc": 720,
+        "./templates/add_update_details.hamlc": 721,
+        "./templates/additional_details.hamlc": 722,
+        "./templates/address/alt-street.hamlc": 723,
+        "./templates/address/edit-alt-street.hamlc": 724,
+        "./templates/address/edit.hamlc": 725,
+        "./templates/archive-panel.hamlc": 726,
+        "./templates/archive-sessions.hamlc": 727,
+        "./templates/big-junction-edit.hamlc": 728,
+        "./templates/camera-edit.hamlc": 729,
+        "./templates/chrome_autofill_off.hamlc": 730,
+        "./templates/editable-areas.hamlc": 731,
+        "./templates/focus-buttons.hamlc": 732,
+        "./templates/house-number.hamlc": 733,
+        "./templates/instruction-override.hamlc": 734,
+        "./templates/keyboard_shortcuts/list.hamlc": 735,
+        "./templates/keyboard_shortcuts/modal.hamlc": 736,
+        "./templates/lock/edit.hamlc": 737,
+        "./templates/login/sandbox-message.hamlc": 738,
+        "./templates/map.hamlc": 739,
+        "./templates/node-edit.hamlc": 740,
+        "./templates/opening_hours/add.hamlc": 741,
+        "./templates/opening_hours/item.hamlc": 742,
+        "./templates/opening_hours/layout.hamlc": 743,
+        "./templates/place_updates/actions.hamlc": 744,
+        "./templates/place_updates/add_details.hamlc": 745,
+        "./templates/place_updates/add_image.hamlc": 746,
+        "./templates/place_updates/add_venue.hamlc": 747,
+        "./templates/place_updates/changed_field.hamlc": 748,
+        "./templates/place_updates/changed_field_item.hamlc": 749,
+        "./templates/place_updates/changed_field_parking_lot.hamlc": 750,
+        "./templates/place_updates/delete_venue.hamlc": 751,
+        "./templates/place_updates/external_provider/item.hamlc": 752,
+        "./templates/place_updates/external_provider/list.hamlc": 753,
+        "./templates/place_updates/flag.hamlc": 754,
+        "./templates/place_updates/image.hamlc": 755,
+        "./templates/place_updates/image_dialog.hamlc": 756,
+        "./templates/place_updates/item.hamlc": 757,
+        "./templates/place_updates/layout.hamlc": 758,
+        "./templates/place_updates/panel_header.hamlc": 759,
+        "./templates/place_updates/place_details.hamlc": 760,
+        "./templates/place_updates/update_venue.hamlc": 761,
+        "./templates/prefs-panel.hamlc": 762,
+        "./templates/segment/average-speed-camera.hamlc": 763,
+        "./templates/segment/edit-panel-attributes-form.hamlc": 764,
+        "./templates/segment/edit-panel.hamlc": 765,
+        "./templates/segment/flag-attribute.hamlc": 766,
+        "./templates/segment/junction-exit-layout.hamlc": 767,
+        "./templates/segment/junction-exit.hamlc": 768,
+        "./templates/segment/routing.hamlc": 769,
+        "./templates/segment/speed-limit.hamlc": 770,
+        "./templates/segment/tts-playback-popover.hamlc": 771,
+        "./templates/segment/tts-playback.hamlc": 772,
+        "./templates/sidebar/links.hamlc": 773,
+        "./templates/sidebar/sidebar.hamlc": 774,
+        "./templates/sidebar/user-details.hamlc": 775,
+        "./templates/sidebar/user-info.hamlc": 776,
+        "./templates/sidebar/user-permissions-tooltip.hamlc": 777,
+        "./templates/sidebar/user-sandbox.hamlc": 778,
+        "./templates/snapshot-message.hamlc": 779,
+        "./templates/snapshot-toggler.hamlc": 780,
+        "./templates/tips/watch-tutorial.hamlc": 781,
+        "./templates/turn-arrow-tooltip-timeframes.hamlc": 783,
+        "./templates/turn-arrow-tooltip.hamlc": 784,
+        "./templates/turn-arrow.hamlc": 785,
+        "./templates/tutorial-lightbox.hamlc": 786,
+        "./templates/user-greeting.hamlc": 787,
+        "./templates/util/day-checkboxes.hamlc": 788,
+        "./templates/util/toggle-checkboxes.hamlc": 789,
+        "./templates/venue/alias.hamlc": 790,
+        "./templates/venue/aliases-layout.hamlc": 791,
+        "./templates/venue/category-tag.hamlc": 792,
+        "./templates/venue/external-provider/item.hamlc": 793,
+        "./templates/venue/external-provider/list.hamlc": 794,
+        "./templates/venue/venue-categories.hamlc": 795,
+        "./templates/venue/venue-edit-general.hamlc": 796,
+        "./templates/venue/venue-edit-image.hamlc": 797,
+        "./templates/venue/venue-edit-more-info-contact.hamlc": 798,
+        "./templates/venue/venue-edit-more-info-parking-lot.hamlc": 799,
+        "./templates/venue/venue-edit-more-info-services.hamlc": 800,
+        "./templates/venue/venue-edit-more-info.hamlc": 801,
+        "./templates/venue/venue-edit-no-images.hamlc": 802,
+        "./templates/venue/venue-edit.hamlc": 803
     };
 
     function r(e) {
@@ -29119,9 +29206,13 @@
     e.exports = function() {
             return function(e) {
                 return function() {
-                        var e;
-                        return (e = []).push("<div class='header'>\n<div class='title'></div>\n</div>\n<div class='groups-list-region'></div>"),
-                            e.join("\n").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                        var e, t, n;
+                        return t = this.__htmlEscape,
+                            e = this.__cleanValue,
+                            (n = []).push("<div class='header'>\n<div class='title'></div>\n</div>\n<div class='sandbox-mode-notice'>\n<i class='fa fa-lock'></i>"),
+                            n.push("" + t(e(this.t("save.changes_log.sandbox_notice")))),
+                            n.push("</div>\n<div class='groups-list-region'></div>"),
+                            n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
             }
@@ -30031,7 +30122,7 @@
         a = c(n(3)),
         l = c(n(4)),
         u = c(n(63)),
-        d = c(n(92));
+        d = c(n(93));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -30150,7 +30241,7 @@
         h = i(n(200)),
         f = i(n(119)),
         p = i(n(631)),
-        g = i(n(96)),
+        g = i(n(97)),
         v = i(n(385)),
         m = i(n(386)),
         _ = i(n(23)),
@@ -30560,7 +30651,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(33)),
+    var r = i(n(32)),
         s = i(n(605)),
         o = n(39),
         a = function() {
@@ -31377,7 +31468,7 @@
         value: !0
     });
     var i = s(n(66)),
-        r = s(n(94));
+        r = s(n(95));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -32193,7 +32284,7 @@
         a = h(n(3)),
         l = h(n(4)),
         u = h(n(19)),
-        d = n(32),
+        d = n(35),
         c = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -32594,7 +32685,7 @@
             }, {
                 key: "_applyChanges",
                 value: function() {
-                    this.formModel.attributes.name !== this.viewModel.attributes.name ? this._checkExistance().then(this._commitChanges.bind(this), alert) : this._toggleEditing(!1)
+                    this.formModel.attributes.name !== this.viewModel.attributes.name ? this._checkExistance().then(this._commitChanges.bind(this), window.alert) : this._toggleEditing(!1)
                 }
             }, {
                 key: "_checkExistance",
@@ -32871,7 +32962,7 @@
         a = y(n(3)),
         l = y(n(8)),
         u = y(n(4)),
-        d = y(n(97)),
+        d = y(n(98)),
         c = y(n(159)),
         h = y(n(649)),
         f = y(n(392)),
@@ -33554,43 +33645,43 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             (n = []).push("<div class='login-verification-view'>\n<div class='step-email-missing'>\n<div class='verification-image verification-image-verify'></div>\n<div class='login-title verification-title'>"),
-                            n.push("" + t(e(this.t("login.email_verification.missing.title")))),
+                            n.push("" + t(e(this.t("email_verification.missing.title")))),
                             n.push("</div>\n<div class='verification-messages'>"),
-                            n.push("" + t(e(this.t("login.email_verification.missing.message")))),
+                            n.push("" + t(e(this.t("email_verification.missing.message")))),
                             n.push("</div>\n<div class='verification-actions'>\n<div class='btn-wrapper'>\n<button class='do-manage-email waze-btn waze-btn-blue waze-btn-small'>"),
-                            n.push("" + t(e(this.t("login.email_verification.missing.add_email")))),
+                            n.push("" + t(e(this.t("email_verification.missing.add_email")))),
                             n.push("</button>\n</div>\n</div>\n</div>\n<div class='step-manage-email'>\n<div class='manage-email-content'>\n<div class='manage-email-column-image'></div>\n<div class='manage-email-column-text'>\n<div class='manage-email-text-section-top'>\n<div class='manage-email-text-h1'>"),
-                            n.push("" + t(e(this.t("login.email_verification.manage.section_top_title")))),
+                            n.push("" + t(e(this.t("email_verification.manage.section_top_title")))),
                             n.push("</div>\n<div class='manage-email-text-normal'>"),
-                            n.push("" + t(e(this.t("login.email_verification.manage.section_top_text")))),
+                            n.push("" + t(e(this.t("email_verification.manage.section_top_text")))),
                             n.push("</div>\n</div>\n<div class='manage-email-text-section-middle'>\n<div class='manage-email-text-h2'>"),
-                            n.push("" + t(e(this.t("login.email_verification.manage.section_middle_title")))),
-                            n.push("<ol class='manage-email-text-normal'>\n<li>" + t(e(this.t("login.email_verification.manage.section_middle_item_1"))) + "</li>\n<li>" + t(e(this.t("login.email_verification.manage.section_middle_item_2"))) + "</li>\n<li>" + t(e(this.t("login.email_verification.manage.section_middle_item_3"))) + "</li>\n<li>" + t(e(this.t("login.email_verification.manage.section_middle_item_4"))) + "</li>\n</ol>\n</div>\n</div>\n<div class='manage-email-text-section-bottom'>\n<div class='manage-email-text-normal'>"),
-                            n.push("" + t(e(this.t("login.email_verification.manage.section_bottom_text")))),
-                            n.push("</div>\n<a class='do-back-to-login waze-link'>\n&lt;"),
-                            n.push("" + t(e(this.t("login.email_verification.back_to_login")))),
+                            n.push("" + t(e(this.t("email_verification.manage.section_middle_title")))),
+                            n.push("<ol class='manage-email-text-normal'>\n<li>" + t(e(this.t("email_verification.manage.section_middle_item_1"))) + "</li>\n<li>" + t(e(this.t("email_verification.manage.section_middle_item_2"))) + "</li>\n<li>" + t(e(this.t("email_verification.manage.section_middle_item_3"))) + "</li>\n<li>" + t(e(this.t("email_verification.manage.section_middle_item_4"))) + "</li>\n</ol>\n</div>\n</div>\n<div class='manage-email-text-section-bottom'>\n<div class='manage-email-text-normal'>"),
+                            n.push("" + t(e(this.t("email_verification.manage.section_bottom_text")))),
+                            n.push("</div>\n<a class='do-back waze-link'>\n&lt;"),
+                            n.push("" + t(e(this.t("email_verification.back")))),
                             n.push("</a>\n</div>\n</div>\n</div>\n</div>\n<div class='step-verification'>\n<div class='verification-image verification-image-verify'></div>\n<div class='login-title verification-title'>"),
-                            n.push("" + t(e(this.t("login.email_verification.verify.title")))),
+                            n.push("" + t(e(this.t("email_verification.verify.title")))),
                             n.push("</div>\n<div class='alert-danger verification-alert'>"),
-                            n.push("" + t(e(this.t("login.email_verification.verify.error")))),
+                            n.push("" + t(e(this.t("email_verification.verify.error")))),
                             n.push("</div>\n<div class='verification-messages'>"),
-                            n.push("" + t(e(this.t("login.email_verification.verify.message", {
+                            n.push("" + t(e(this.t("email_verification.verify.message", {
                                 recipient: this.recipient
                             })))),
                             n.push("</div>\n<div class='verification-actions'>\n<div class='btn-wrapper'>\n<button class='do-send-verification-email waze-btn waze-btn-blue waze-btn-small'>\n<span class='emailSending'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
-                            n.push("" + t(e(this.t("login.email_verification.verify.send_email")))),
+                            n.push("" + t(e(this.t("email_verification.verify.send_email")))),
                             n.push("</button>\n</div>\n<div class='btn-wrapper'>\n<button class='do-manage-email waze-btn waze-btn-small waze-btn-white'>"),
-                            n.push("" + t(e(this.t("login.email_verification.verify.change_email")))),
-                            n.push("</button>\n</div>\n</div>\n</div>\n<div class='step-verification-done'>\n<div class='verification-image verification-image-sent'></div>\n<div class='login-title verification-title'>"),
-                            n.push("" + t(e(this.t("login.email_verification.sent.title")))),
+                            n.push("" + t(e(this.t("email_verification.verify.change_email")))),
+                            n.push("</button>\n</div>\n</div>\n</div>\n<div class='step-verification-sent'>\n<div class='verification-image verification-image-sent'></div>\n<div class='login-title verification-title'>"),
+                            n.push("" + t(e(this.t("email_verification.sent.title")))),
                             n.push("</div>\n<div class='alert-success verification-alert'>"),
-                            n.push("" + t(e(this.t("login.email_verification.sent.alert", {
+                            n.push("" + t(e(this.t("email_verification.sent.alert", {
                                 recipient: this.recipient
                             })))),
                             n.push("</div>\n<div class='verification-messages'>"),
-                            n.push("" + t(e(this.t("login.email_verification.sent.message")))),
-                            n.push("</div>\n</div>\n<div class='login-verification-footer'>\n<a class='do-back-to-login waze-link'>\n&lt;"),
-                            n.push("" + t(e(this.t("login.email_verification.back_to_login")))),
+                            n.push("" + t(e(this.t("email_verification.sent.message")))),
+                            n.push("</div>\n</div>\n<div class='login-verification-footer'>\n<a class='do-back waze-link'>\n&lt;"),
+                            n.push("" + t(e(this.t("email_verification.back")))),
                             n.push("</a>\n</div>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -33617,14 +33708,11 @@
                         var e, t, n, i, r, s;
                         for (t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (n = []).push("<div id='login-popup'>\n<div class='language-select'>\n<a class='dropdown-toggle waze-gray-link' data-toggle='dropdown' href='#'>"),
-                            n.push("" + t(e(I18n.t("language_name")))),
-                            n.push("<i class='fa fa-angle-down'></i>\n</a>\n<ul class='dropdown-menu' role='menu'>"),
+                            (n = []).push("<div id='login-popup'>\n<div class='login-popup-content'>\n<div class='welcome-image'></div>\n<div class='welcome-message'>\n<h2>" + t(e(this.t("welcome.title"))) + "</h2>\n<p>" + t(e(this.t("welcome.content"))) + "</p>\n</div>\n<a class='btn login waze-btn waze-btn-big waze-btn-blue' href='#'>" + t(e(this.t("welcome.login"))) + "</a>\n<p class='playmode'>\n<a href='#'>" + t(e(this.t("welcome.practice"))) + "</a>\n</p>\n</div>\n<div class='login-popup-footer'>\n<div class='language-select-container'>\n<div class='translate-icon'></div>\n<div class='language-select'>\n<select>"),
                             i = 0,
                             s = ["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"].length; i < s; i++)
                             r = ["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"][i],
-                            n.push("<li>\n<a class='change-language' href='" + t(e(this.getURLForLocale(r))) + "' data-locale='" + t(e(r)) + "'>"),
-                            n.push("" + t(e({
+                            n.push("<option value='" + t(e(r)) + "' selected='" + t(e(I18n.locale === r)) + "'>" + t(e({
                                 en: "English",
                                 "en-US": "US English",
                                 "en-GB": "English (UK)",
@@ -33666,21 +33754,22 @@
                                 ar: "العربية",
                                 uk: "Українська",
                                 th: "ไทย"
-                            } [r]))),
-                            n.push("</a>\n</li>");
-                        return n.push("</ul>\n</div>\n<div class='welcome-message'>\n<h2 class='login-title'>"),
-                            n.push("" + t(e(this.t("welcome.title")))),
-                            n.push("</h2>\n<p>"),
-                            n.push("" + t(e(this.t("welcome.content")))),
-                            n.push("</p>\n</div>\n<div class='login-popup-content'>\n<div class='login-form'>\n<div class='login-title'>"),
-                            n.push("" + t(e(this.t("login.title")))),
-                            n.push("</div>\n<div class='form-title'>\n<div class='expired-warning text-warning'>" + t(e(this.t("session.expired.title"))) + "</div>\n<span class='title-text'></span>\n</div>\n<form action='#' method='post'>\n<input class='form-control input-border username' autofocus='true' name='username' required='" + t(e(!0)) + "' type='text' placeholder='" + t(e(this.t("login.form.username"))) + "'>\n<input class='form-control input-border password' name='password' required='" + t(e(!0)) + "' type='password' placeholder='" + t(e(this.t("login.form.password"))) + "'>\n<div class='recaptcha-container'>\n<div class='g-recaptcha' data-size='invisible' data-badge='inline'></div>\n</div>\n<div class='error-message text-danger'></div>\n<div class='banned-message text-danger'>"),
-                            n.push("" + t(e(this.t("login.form.banned_error")))),
-                            n.push("<a class='banned-link' href='" + t(e(this.t("internal.banned_url"))) + "'>"),
-                            n.push("" + t(e(this.t("login.form.banned_link_text")))),
-                            n.push("</a>\n</div>\n<div class='form-action'>\n<button class='submit waze-btn waze-btn-blue' type='submit'>\n<span class='loading'>\n<i class='fa fa-spin fa-spinner'></i>\n</span>"),
-                            n.push("" + t(e(this.t("login.form.action")))),
-                            n.push("</button>\n</div>\n<a class='forgot-password waze-gray-link' href='/forgot_password'>" + t(e(this.t("login.forgot_password"))) + "</a>\n</form>\n</div>\n<div class='login-popup-links'>\n<a class='btn btn-default tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.tutorial.description"))) + "</div>\n</a>\n<a class='btn btn-default wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.wiki.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.wiki.description"))) + "</div>\n</a>\n<a class='btn btn-default forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.forum.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.forum.description"))) + "</div>\n</a>\n<a class='btn btn-default playmode' href='#'>\n<div class='banner'></div>\n<div class='title'>" + t(e(this.t("welcome.play_mode.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.play_mode.description"))) + "</div>\n</a>\n</div>\n</div>\n</div>"),
+                            } [r])) + "</option>");
+                        return n.push("</select>\n</div>\n</div>\n<div class='login-links'>\n<a class='tutorial' data-toggle='modal' href='#tutorial-dialog'>" + t(e(this.t("welcome.tutorial.title"))) + "</a>\n<a class='wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>" + t(e(this.t("welcome.wiki.title"))) + "</a>\n<a class='forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>" + t(e(this.t("welcome.forum.title"))) + "</a>\n</div>\n</div>\n</div>"),
+                            n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
+                    }
+                    .call(e)
+            }
+        }
+        .call(this)
+}, function(e, t) {
+    e.exports = function() {
+            return function(e) {
+                return function() {
+                        var e, t, n;
+                        return t = this.__htmlEscape,
+                            e = this.__cleanValue,
+                            (n = []).push("<div class='session-expired'>\n<div class='icon'></div>\n<h1 class='title'>" + t(e(this.t("session.expired.title"))) + "</h1>\n<p class='description'>" + t(e(this.t("session.expired.description"))) + "</p>\n<a class='btn login waze-btn waze-btn-big waze-btn-blue' href='#'>" + t(e(this.t("session.expired.log_in"))) + "</a>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -35706,7 +35795,7 @@
                             i.push("" + t(e(this.t("venues.update_requests.panel.change.suggested")))),
                             i.push("<i class='fa fa-crosshairs'></i>\n</div>");
                         else if ("images" === this.fieldName) {
-                            for (r = n(95).SIZE,
+                            for (r = n(96).SIZE,
                                 i.push("<div class='removed-title'>" + t(e(this.t("venues.update_requests.panel.change.removed"))) + "</div>\n<div class='remove-images'>"),
                                 s = 0,
                                 a = (l = this.getRemovedImages()).length; s < a; s++)
@@ -35871,7 +35960,7 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            r = n(95).SIZE,
+                            r = n(96).SIZE,
                             this.image ? i.push("<a>\n<img class='image-preview' src='" + t(e(this.image.getUrl(r.MOBILE))) + "' data-image-id='" + t(e(this.image.id)) + "'>\n</a>") : i.push("<div class='missing-image'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -36467,7 +36556,7 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            r = n(113).UNIT,
+                            r = n(91).UNIT,
                             W.Config.user_editing_enabled ? (i.push("" + t(e(this.t("user.info.edit_area.title", {
                                     distance: this.h.lengthString(this.editableMiles, {
                                         units: r.MILE,
@@ -36490,9 +36579,7 @@
                         var e, t, n;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (n = []).push("<div class='sandbox'>\n<div class='welcome-container'>\n<div class='sandbox-logo'></div>\n<h2>"),
-                            n.push("" + e(this.t("play_mode.sidebar.hey"))),
-                            n.push("</h2>\n<div class='welcome-text'>" + t(e(this.t("play_mode.sidebar.join"))) + "</div>\n<div class='sign-in-button waze-btn waze-btn-blue waze-btn-medium' href=''>" + t(e(this.t("play_mode.sidebar.login_link"))) + "</div>\n<a class='help-link' href='/forgot_password' target='_blank'>" + t(e(this.t("play_mode.sidebar.help"))) + "</a>\n</div>\n<div class='links'>\n<a class='tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='title'>" + t(e(this.t("welcome.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("welcome.tutorial.description"))) + "</div>\n</a>\n<a class='wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='title'>" + t(e(this.t("welcome.wiki.title"))) + "</div>\n</a>\n<a class='forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='title'>" + t(e(this.t("welcome.forum.title"))) + "</div>\n</a>\n</div>\n</div>"),
+                            (n = []).push("<div class='sandbox'>\n<div class='welcome-container'>\n<div class='sandbox-logo'></div>\n<h2>" + t(e(this.t("play_mode.sidebar.hey"))) + "</h2>\n<div class='welcome-text'>" + t(e(this.t("play_mode.sidebar.join"))) + "</div>\n<a class='sign-in-button waze-btn waze-btn-blue waze-btn-medium' href='" + t(e(this.loginHref)) + "'>" + t(e(this.t("play_mode.sidebar.login_link"))) + "</a>\n</div>\n<div class='links'>\n<a class='tutorial' data-toggle='modal' href='#tutorial-dialog'>\n<div class='icon'></div>\n<div class='title'>" + t(e(this.t("play_mode.sidebar.links.tutorial.title"))) + "</div>\n<div class='description'>" + t(e(this.t("play_mode.sidebar.links.tutorial.description"))) + "</div>\n</a>\n<a class='wiki' href='" + t(e(this.t("internal.wiki_link"))) + "' target='_blank'>\n<div class='icon'></div>\n<div class='title'>" + t(e(this.t("play_mode.sidebar.links.wiki.title"))) + "</div>\n<div class='description'>" + t(e(this.t("play_mode.sidebar.links.wiki.description"))) + "</div>\n</a>\n<a class='forum' href='" + t(e(this.t("internal.editing_forum_link"))) + "' target='_blank'>\n<div class='icon'></div>\n<div class='title'>" + t(e(this.t("play_mode.sidebar.links.forum.title"))) + "</div>\n<div class='description'>" + t(e(this.t("play_mode.sidebar.links.forum.description"))) + "</div>\n</a>\n</div>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
                     .call(e)
@@ -36535,7 +36622,7 @@
                         var e, t, i;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (i = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(n(781))) + "'>"),
+                            (i = []).push("<div class='clearfix hidable-message' id='show-tutorial-lightbox'>\n<div class='fa fa-times-circle hide-message' data-hide-message='tips/watch-tutorial'></div>\n<a data-toggle='modal' href='#tutorial-dialog'>\n<img src='" + t(e(n(782))) + "'>"),
                             i.push("" + t(e(this.t("tutorial.title")))),
                             i.push("</a>\n</div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -36964,9 +37051,9 @@
         f = i(n(69)),
         p = i(n(402)),
         g = i(n(209)),
-        v = i(n(99)),
+        v = i(n(100)),
         m = i(n(70)),
-        _ = i(n(98)),
+        _ = i(n(99)),
         y = i(n(163)),
         b = i(n(208)),
         E = i(n(403)),
@@ -36977,7 +37064,7 @@
         I = i(n(38)),
         T = i(n(83)),
         C = i(n(211)),
-        A = i(n(97)),
+        A = i(n(98)),
         O = i(n(164)),
         R = i(n(21)),
         D = i(n(406)),
@@ -36985,11 +37072,11 @@
         P = n(65),
         N = n(57),
         x = i(n(77)),
-        V = i(n(100)),
-        U = i(n(33)),
+        V = i(n(101)),
+        U = i(n(32)),
         j = i(n(200)),
         F = i(n(119)),
-        B = i(n(96)),
+        B = i(n(97)),
         G = n(150),
         H = i(n(23)),
         z = i(n(387)),
@@ -37274,7 +37361,7 @@
         l = h(n(4)),
         u = h(n(10)),
         d = h(n(38)),
-        c = h(n(33));
+        c = h(n(32));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -37588,7 +37675,7 @@
         a = c(n(4)),
         l = c(n(22)),
         u = c(n(15)),
-        d = n(34);
+        d = n(33);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -37823,7 +37910,7 @@
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
-        o = n(32);
+        o = n(35);
     Backbone.ajax = function(e) {
         !e.method && e.type && (e = (0,
             s.default)({}, e, {
@@ -37962,13 +38049,13 @@
     }
 }, function(e, t, n) {
     "use strict";
-    var i = d(n(829)),
-        r = d(n(92)),
-        s = d(n(1232)),
-        o = n(1233),
+    var i = d(n(830)),
+        r = d(n(93)),
+        s = d(n(1234)),
+        o = n(1235),
         a = n(36),
-        l = n(1237),
-        u = n(91);
+        l = n(1239),
+        u = n(92);
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -38027,13 +38114,13 @@
     });
     var i = h(n(25)),
         r = n(165),
-        s = h(n(830)),
+        s = h(n(831)),
         o = h(n(418)),
-        a = h(n(842)),
-        l = h(n(1044)),
-        u = n(91),
+        a = h(n(843)),
+        l = h(n(1045)),
+        u = n(92),
         d = n(192),
-        c = n(1231);
+        c = n(1233);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -38234,10 +38321,10 @@
         value: !0
     });
     var i = n(215),
-        r = l(n(831)),
-        s = l(n(832)),
-        o = n(834),
-        a = n(32);
+        r = l(n(832)),
+        s = l(n(833)),
+        o = n(835),
+        a = n(35);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -38414,8 +38501,8 @@
         s = d(n(3)),
         o = d(n(1)),
         a = d(n(4)),
-        l = d(n(833)),
-        u = n(91);
+        l = d(n(834)),
+        u = n(92);
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -38552,16 +38639,18 @@
             value: !0
         }),
         t.LoginMainView = void 0;
-    var i = c(n(2)),
-        r = c(n(0)),
-        s = c(n(1)),
-        o = c(n(3)),
-        a = c(n(4)),
-        l = c(n(835)),
-        u = c(n(839)),
-        d = n(417);
+    var i = f(n(2)),
+        r = f(n(0)),
+        s = f(n(1)),
+        o = f(n(3)),
+        a = f(n(4)),
+        l = f(n(836)),
+        u = f(n(837)),
+        d = f(n(838)),
+        c = n(415),
+        h = n(416);
 
-    function c(e) {
+    function f(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -38597,12 +38686,15 @@
             }, {
                 key: "onRender",
                 value: function() {
-                    this._showLoginView()
+                    this._shouldShowEmailVerification() ? this._showEmailVerificationView() : this._loginManager.isExpired() ? this._showSessionExpiredView() : this._showLoginView()
                 }
             }, {
-                key: "onChildviewLoginFormSuccess",
+                key: "onChildviewLoginAttempt",
                 value: function() {
-                    new d.EmailVerificationUseCase(this._loginManager).needsEmailVerification() && this._showEmailVerificationView()
+                    var e = this;
+                    this._app.loginManager.login().then(function(t) {
+                        t.result === h.LOGIN_RESULT.LOGGED_IN && e._shouldShowEmailVerification() && e._showEmailVerificationView()
+                    })
                 }
             }, {
                 key: "onChildviewLoginVerificationBack",
@@ -38613,8 +38705,7 @@
                 key: "_showLoginView",
                 value: function() {
                     this.showChildView("contentRegion", new l.default({
-                        app: this._app,
-                        loginManager: this._loginManager
+                        app: this._app
                     }))
                 }
             }, {
@@ -38623,6 +38714,18 @@
                     this.showChildView("contentRegion", new u.default({
                         loginManager: this._loginManager
                     }))
+                }
+            }, {
+                key: "_showSessionExpiredView",
+                value: function() {
+                    this.showChildView("contentRegion", new d.default)
+                }
+            }, {
+                key: "_shouldShowEmailVerification",
+                value: function() {
+                    if (this._loginManager.isAuthenticated() && new c.EmailVerificationUseCase(this._loginManager).needsEmailVerification())
+                        return !0;
+                    return !1
                 }
             }, {
                 key: "template",
@@ -38637,22 +38740,18 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = h(n(2)),
-        r = h(n(0)),
-        s = h(n(1)),
-        o = h(n(3)),
-        a = h(n(4)),
-        l = h(n(836)),
-        u = n(415),
-        d = n(91),
-        c = n(32);
+    var i = l(n(2)),
+        r = l(n(0)),
+        s = l(n(1)),
+        o = l(n(3)),
+        a = l(n(4));
 
-    function h(e) {
+    function l(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var f = function(e) {
+    var u = function(e) {
         function t() {
             return (0,
                     r.default)(this, t),
@@ -38668,135 +38767,17 @@
                 value: function() {
                     return {
                         "click .playmode": "_onPlaymodeClicked",
-                        "click .change-language": "_onChangeLanguageClicked",
-                        "submit form": "_onSubmit"
-                    }
-                }
-            }, {
-                key: "ui",
-                value: function() {
-                    return {
-                        form: "form",
-                        grecaptcha: ".g-recaptcha"
+                        "click .login": "_onLogin",
+                        "change .language-select select": "_onChangeLanguage"
                     }
                 }
             }, {
                 key: "initialize",
                 value: function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
-                        app: null,
-                        loginManager: null
+                        app: null
                     };
-                    this._app = e.app,
-                        this._loginManager = e.loginManager,
-                        this._recaptchaClient = new l.default;
-                    var t = W.loginManager.expired;
-                    this._viewModel = new Backbone.Model({
-                        username: "",
-                        password: "",
-                        loading: !1,
-                        errorMessage: "",
-                        banned: !1,
-                        expired: t,
-                        title: t ? I18n.t("session.expired.description") : I18n.t("login.subtitle")
-                    })
-                }
-            }, {
-                key: "bindings",
-                value: function() {
-                    return {
-                        "input[name=username]": "username",
-                        "input[name=password]": "password",
-                        ".error-message": {
-                            observe: "errorMessage",
-                            visible: !0,
-                            updateView: !0
-                        },
-                        ".title-text": "title",
-                        ".loading": {
-                            observe: "loading",
-                            visible: !0
-                        },
-                        ".expired-warning": {
-                            observe: "expired",
-                            visible: !0
-                        },
-                        ".banned-message": {
-                            observe: "banned",
-                            visible: !0
-                        }
-                    }
-                }
-            }, {
-                key: "onRender",
-                value: function() {
-                    this.stickit(this._viewModel),
-                        this._renderRecaptcha()
-                }
-            }, {
-                key: "templateContext",
-                value: function() {
-                    return {
-                        getURLForLocale: d.getURLForLocale
-                    }
-                }
-            }, {
-                key: "_renderRecaptcha",
-                value: function() {
-                    this._recaptchaClient.render(this.ui.grecaptcha[0], {
-                        callback: this._submitLoginForm.bind(this)
-                    })
-                }
-            }, {
-                key: "_onSubmit",
-                value: function(e) {
-                    e.preventDefault(),
-                        this._recaptchaClient.execute()
-                }
-            }, {
-                key: "_submitLoginForm",
-                value: function() {
-                    var e = this;
-                    this._viewModel.set({
-                        loading: !0,
-                        errorMessage: ""
-                    });
-                    var t = this._viewModel.get("username"),
-                        n = this._viewModel.get("password"),
-                        i = this._recaptchaClient.getResponse();
-                    this._loginManager.login(t, n, i).then(function() {
-                            e.triggerMethod("login:form:success")
-                        }).catch(function(t) {
-                            e._handleLoginError(t)
-                        }).finally(function() {
-                            e._viewModel.set({
-                                    loading: !1
-                                }),
-                                e._recaptchaClient.reset()
-                        }),
-                        W.Report.loginAction("login_tap")
-                }
-            }, {
-                key: "_handleLoginError",
-                value: function(e) {
-                    if (e instanceof u.InvalidLoginError)
-                        this._viewModel.set("errorMessage", I18n.t("login.form.error"));
-                    else if (e instanceof c.FetchError) {
-                        var t = e.response.errorList;
-                        (t ? t[0].code : void 0) && this._handleDescartesError(t[0])
-                    } else
-                        this._viewModel.set("errorMessage", I18n.t("login.form.server_error"))
-                }
-            }, {
-                key: "_handleDescartesError",
-                value: function(e) {
-                    switch (e.code) {
-                        case 104:
-                            this._viewModel.set({
-                                banned: !0,
-                                errorMessage: ""
-                            })
-                    }
+                    this._app = e.app
                 }
             }, {
                 key: "_onPlaymodeClicked",
@@ -38805,11 +38786,16 @@
                         this._app.activateSandboxMode()
                 }
             }, {
-                key: "_onChangeLanguageClicked",
+                key: "_onChangeLanguage",
                 value: function(e) {
-                    e.preventDefault();
-                    var t = $(e.target).data("locale");
+                    var t = $(e.target).val();
                     this._app.changeAppLocale(t)
+                }
+            }, {
+                key: "_onLogin",
+                value: function() {
+                    this.triggerMethod("login:attempt"),
+                        W.Report.loginAction("login_tap")
                 }
             }, {
                 key: "template",
@@ -38819,80 +38805,262 @@
             }]),
             t
     }(Marionette.View);
-    t.default = f,
+    t.default = u,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(6)),
-        r = o(n(0)),
-        s = o(n(1));
+    var i = d(n(2)),
+        r = d(n(0)),
+        s = d(n(1)),
+        o = d(n(3)),
+        a = d(n(4)),
+        l = n(35),
+        u = n(415);
 
-    function o(e) {
+    function d(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var a = "//www.google.com/recaptcha/api.js?render=explicit&hl=" + I18n.locale + "&onload=onRecaptchaLoad";
-    $.getScript(a);
-    var l = function() {
-        function e() {
-            (0,
-                r.default)(this, e),
-            this._widgetID = null
+    var c = "EMAIL_MISSING",
+        h = "EMAIL_MANAGE",
+        f = "VERIFICATION_START",
+        p = "VERIFICATION_SENT",
+        g = function(e) {
+            function t() {
+                return (0,
+                        r.default)(this, t),
+                    (0,
+                        o.default)(this, (t.__proto__ || (0,
+                        i.default)(t)).apply(this, arguments))
+            }
+            return (0,
+                    a.default)(t, e),
+                (0,
+                    s.default)(t, [{
+                    key: "bindings",
+                    value: function() {
+                        return {
+                            ".step-email-missing": {
+                                observe: "currentStep",
+                                onGet: function(e) {
+                                    return e === c
+                                },
+                                visible: !0
+                            },
+                            ".step-manage-email": {
+                                observe: "currentStep",
+                                onGet: function(e) {
+                                    return e === h
+                                },
+                                visible: !0
+                            },
+                            ".login-verification-footer": {
+                                observe: "currentStep",
+                                onGet: function(e) {
+                                    return e === h
+                                },
+                                visible: _.negate(_.identity)
+                            },
+                            ".step-verification": {
+                                observe: "currentStep",
+                                onGet: function(e) {
+                                    return e === f
+                                },
+                                visible: !0
+                            },
+                            ".step-verification-sent": {
+                                observe: "currentStep",
+                                onGet: function(e) {
+                                    return e === p
+                                },
+                                visible: !0
+                            },
+                            ".step-verification .verification-alert": {
+                                observe: "emailFailed",
+                                visible: !0
+                            },
+                            ".emailSending": {
+                                observe: "emailSending",
+                                visible: !0
+                            },
+                            ".do-send-verification-email": {
+                                attributes: [{
+                                    name: "disabled",
+                                    observe: "emailSending"
+                                }]
+                            }
+                        }
+                    }
+                }, {
+                    key: "events",
+                    value: function() {
+                        return {
+                            "click .do-send-verification-email": "_doSendVerificationEmail",
+                            "click .do-manage-email": "showManageEmail",
+                            "click .do-back": "goBack"
+                        }
+                    }
+                }, {
+                    key: "initialize",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
+                            loginManager: null
+                        };
+                        this._useCase = new u.EmailVerificationUseCase(e.loginManager),
+                            this.model = new Backbone.Model({
+                                currentStep: null,
+                                emailFailed: !1,
+                                emailSending: !1
+                            })
+                    }
+                }, {
+                    key: "onRender",
+                    value: function() {
+                        this.stickit(),
+                            this._useCase.isUserEmailAddressMissing() ? this.showMissingEmail() : this.showStartVerification()
+                    }
+                }, {
+                    key: "showMissingEmail",
+                    value: function() {
+                        this.model.set({
+                            currentStep: c
+                        })
+                    }
+                }, {
+                    key: "showManageEmail",
+                    value: function() {
+                        this.model.set({
+                            currentStep: h
+                        })
+                    }
+                }, {
+                    key: "showStartVerification",
+                    value: function() {
+                        this.model.set({
+                            currentStep: f
+                        })
+                    }
+                }, {
+                    key: "showDoneVerification",
+                    value: function() {
+                        this.model.set({
+                            currentStep: p
+                        })
+                    }
+                }, {
+                    key: "goBackToLogin",
+                    value: function() {
+                        this.triggerMethod("login:verification:back")
+                    }
+                }, {
+                    key: "goBack",
+                    value: function() {
+                        switch (this.model.attributes.currentStep) {
+                            case c:
+                            case f:
+                                this.goBackToLogin();
+                                break;
+                            case p:
+                                this.showStartVerification();
+                                break;
+                            case h:
+                                this._useCase.isUserEmailAddressMissing() ? this.showMissingEmail() : this.showStartVerification()
+                        }
+                    }
+                }, {
+                    key: "templateContext",
+                    value: function() {
+                        return {
+                            recipient: this._useCase.getEmailAddressToVerify()
+                        }
+                    }
+                }, {
+                    key: "_doSendVerificationEmail",
+                    value: function() {
+                        var e = this;
+                        return this.model.set({
+                                emailFailed: !1,
+                                emailSending: !0
+                            }),
+                            (0,
+                                l.httpPost)(W.Config.login.paths.email_verification, {
+                                locale: I18n.currentLocale(),
+                                channel: "waze_map_editor"
+                            }).then(function() {
+                                e.showDoneVerification()
+                            }).catch(function() {
+                                e.model.set({
+                                    emailFailed: !0
+                                })
+                            }).finally(function() {
+                                e.model.set({
+                                    emailSending: !1
+                                })
+                            })
+                    }
+                }, {
+                    key: "template",
+                    get: function() {
+                        return "Waze/MapEditor/UI/Modules/Login/templates/email_verification"
+                    }
+                }]),
+                t
+        }(Marionette.View);
+    t.default = g,
+        e.exports = t.default
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = l(n(2)),
+        r = l(n(0)),
+        s = l(n(1)),
+        o = l(n(3)),
+        a = l(n(4));
+
+    function l(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var u = function(e) {
+        function t() {
+            return (0,
+                    r.default)(this, t),
+                (0,
+                    o.default)(this, (t.__proto__ || (0,
+                    i.default)(t)).apply(this, arguments))
         }
         return (0,
-                s.default)(e, [{
-                key: "render",
-                value: function(t) {
-                    var n = this,
-                        r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                        s = (0,
-                            i.default)({
-                            sitekey: "6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42",
-                            callback: function() {},
-                            "error-callback": function() {
-                                console.error("RecaptchaClient: error")
-                            },
-                            "expired-callback": function() {
-                                console.error("RecaptchaClient: expired")
-                            }
-                        }, r);
-                    null == this._widgetID && e.loadDeferred.then(function() {
-                        n._widgetID = grecaptcha.render(t, s)
-                    })
+                a.default)(t, e),
+            (0,
+                s.default)(t, [{
+                key: "events",
+                value: function() {
+                    return {
+                        "click .login": "_onLogin"
+                    }
                 }
             }, {
-                key: "execute",
+                key: "_onLogin",
                 value: function() {
-                    return grecaptcha.execute(this._widgetID)
+                    this.triggerMethod("login:attempt"),
+                        W.Report.loginAction("expired_login_tap")
                 }
             }, {
-                key: "reset",
-                value: function() {
-                    if (null != this._widgetID)
-                        return grecaptcha.reset(this._widgetID)
-                }
-            }, {
-                key: "getResponse",
-                value: function() {
-                    return null != this._widgetID ? grecaptcha.getResponse(this._widgetID) : null
-                }
-            }], [{
-                key: "load",
-                value: function() {
-                    e.loadDeferred.resolve()
+                key: "template",
+                get: function() {
+                    return "Waze/MapEditor/UI/Modules/Login/templates/session_expired"
                 }
             }]),
-            e
-    }();
-    l.loadDeferred = $.Deferred(),
-        window.onRecaptchaLoad = function() {
-            l.load()
-        },
-        t.default = l,
+            t
+    }(Marionette.View);
+    t.default = u,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -38926,9 +39094,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(416),
+    var o = n(417),
         a = s(n(19)),
-        l = s(n(838)),
+        l = s(n(840)),
         u = s(n(76));
     var d = 1,
         c = function(e) {
@@ -39072,197 +39240,6 @@
             }
         }, r.default),
         t.default = s
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var i = d(n(2)),
-        r = d(n(0)),
-        s = d(n(1)),
-        o = d(n(3)),
-        a = d(n(4)),
-        l = n(32),
-        u = n(417);
-
-    function d(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
-    }
-    var c = "EMAIL_MISSING",
-        h = "EMAIL_MANAGE",
-        f = "VERIFICATION_START",
-        p = "VERIFICATION_DONE",
-        g = function(e) {
-            function t() {
-                return (0,
-                        r.default)(this, t),
-                    (0,
-                        o.default)(this, (t.__proto__ || (0,
-                        i.default)(t)).apply(this, arguments))
-            }
-            return (0,
-                    a.default)(t, e),
-                (0,
-                    s.default)(t, [{
-                    key: "bindings",
-                    value: function() {
-                        return {
-                            ".step-email-missing": {
-                                observe: "currentStep",
-                                onGet: function(e) {
-                                    return e === c
-                                },
-                                visible: !0
-                            },
-                            ".step-manage-email": {
-                                observe: "currentStep",
-                                onGet: function(e) {
-                                    return e === h
-                                },
-                                visible: !0
-                            },
-                            ".login-verification-footer": {
-                                observe: "currentStep",
-                                onGet: function(e) {
-                                    return e === h
-                                },
-                                visible: _.negate(_.identity)
-                            },
-                            ".step-verification": {
-                                observe: "currentStep",
-                                onGet: function(e) {
-                                    return e === f
-                                },
-                                visible: !0
-                            },
-                            ".step-verification-done": {
-                                observe: "currentStep",
-                                onGet: function(e) {
-                                    return e === p
-                                },
-                                visible: !0
-                            },
-                            ".step-verification .verification-alert": {
-                                observe: "emailFailed",
-                                visible: !0
-                            },
-                            ".emailSending": {
-                                observe: "emailSending",
-                                visible: !0
-                            },
-                            ".do-send-verification-email": {
-                                attributes: [{
-                                    name: "disabled",
-                                    observe: "emailSending"
-                                }]
-                            }
-                        }
-                    }
-                }, {
-                    key: "triggers",
-                    value: function() {
-                        return {
-                            "click .do-back-to-login": "login:verification:back"
-                        }
-                    }
-                }, {
-                    key: "events",
-                    value: function() {
-                        return {
-                            "click .do-send-verification-email": "_doSendVerificationEmail",
-                            "click .do-manage-email": "showManageEmail"
-                        }
-                    }
-                }, {
-                    key: "initialize",
-                    value: function() {
-                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
-                            loginManager: null
-                        };
-                        this._useCase = new u.EmailVerificationUseCase(e.loginManager),
-                            this.model = new Backbone.Model({
-                                currentStep: null,
-                                emailFailed: !1,
-                                emailSending: !1
-                            })
-                    }
-                }, {
-                    key: "onRender",
-                    value: function() {
-                        this.stickit(),
-                            this._useCase.isUserEmailAddressMissing() ? this.showMissingEmail() : this.showStartVerification()
-                    }
-                }, {
-                    key: "showMissingEmail",
-                    value: function() {
-                        this.model.set({
-                            currentStep: c
-                        })
-                    }
-                }, {
-                    key: "showManageEmail",
-                    value: function() {
-                        this.model.set({
-                            currentStep: h
-                        })
-                    }
-                }, {
-                    key: "showStartVerification",
-                    value: function() {
-                        this.model.set({
-                            currentStep: f
-                        })
-                    }
-                }, {
-                    key: "showDoneVerification",
-                    value: function() {
-                        this.model.set({
-                            currentStep: p
-                        })
-                    }
-                }, {
-                    key: "templateContext",
-                    value: function() {
-                        return {
-                            recipient: this._useCase.getEmailAddressToVerify()
-                        }
-                    }
-                }, {
-                    key: "_doSendVerificationEmail",
-                    value: function() {
-                        var e = this;
-                        return this.model.set({
-                                emailFailed: !1,
-                                emailSending: !0
-                            }),
-                            (0,
-                                l.httpPost)(W.Config.login.paths.email_verification, {
-                                locale: I18n.currentLocale(),
-                                channel: "waze_map_editor"
-                            }).then(function() {
-                                e.showDoneVerification()
-                            }).catch(function() {
-                                e.model.set({
-                                    emailFailed: !0
-                                })
-                            }).finally(function() {
-                                e.model.set({
-                                    emailSending: !1
-                                })
-                            })
-                    }
-                }, {
-                    key: "template",
-                    get: function() {
-                        return "Waze/MapEditor/UI/Modules/Login/templates/email_verification"
-                    }
-                }]),
-                t
-        }(Marionette.View);
-    t.default = g,
-        e.exports = t.default
 }, , , function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -39272,33 +39249,33 @@
         r = P(n(0)),
         s = P(n(1)),
         o = P(n(419)),
-        a = P(n(101)),
-        l = P(n(854)),
-        u = P(n(856)),
+        a = P(n(102)),
+        l = P(n(855)),
+        u = P(n(857)),
         d = P(n(412)),
-        c = P(n(857)),
-        h = P(n(858)),
-        f = P(n(860)),
+        c = P(n(858)),
+        h = P(n(859)),
+        f = P(n(861)),
         p = P(n(44)),
-        g = P(n(861)),
+        g = P(n(862)),
         v = P(n(430)),
-        m = P(n(884)),
-        _ = P(n(895)),
-        y = P(n(962)),
-        b = n(985),
-        E = P(n(988)),
-        w = P(n(989)),
-        S = P(n(990)),
-        k = P(n(992)),
-        M = P(n(995)),
-        I = P(n(996)),
-        T = P(n(999)),
-        C = P(n(415)),
-        A = P(n(1019)),
-        O = P(n(1033)),
+        m = P(n(885)),
+        _ = P(n(896)),
+        y = P(n(963)),
+        b = n(986),
+        E = P(n(989)),
+        w = P(n(990)),
+        S = P(n(991)),
+        k = P(n(993)),
+        M = P(n(996)),
+        I = P(n(997)),
+        T = P(n(1e3)),
+        C = P(n(416)),
+        A = P(n(1020)),
+        O = P(n(1034)),
         R = P(n(225)),
-        D = P(n(1038)),
-        L = P(n(1043));
+        D = P(n(1039)),
+        L = P(n(1044));
 
     function P(e) {
         return e && e.__esModule ? e : {
@@ -39474,7 +39451,7 @@
     });
     var i = o(n(0)),
         r = o(n(1)),
-        s = o(n(33));
+        s = o(n(32));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -39814,7 +39791,7 @@
         a = h(n(1)),
         l = h(n(3)),
         u = h(n(4)),
-        d = h(n(849)),
+        d = h(n(850)),
         c = h(n(63));
 
     function h(e) {
@@ -40059,7 +40036,7 @@
                 t
         }(n(27)),
         u = c(n(10)),
-        d = c(n(852));
+        d = c(n(853));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -40550,7 +40527,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = u(n(112)),
+    var i = u(n(113)),
         r = u(n(0)),
         s = u(n(1)),
         o = l(n(27)),
@@ -40653,7 +40630,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(855));
+        l = u(n(856));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -40907,7 +40884,7 @@
         a = c(n(3)),
         l = c(n(4)),
         u = c(n(423)),
-        d = n(91);
+        d = n(92);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -41213,7 +41190,7 @@
     var i = l(n(6)),
         r = l(n(0)),
         s = l(n(1)),
-        o = l(n(859)),
+        o = l(n(860)),
         a = n(28);
 
     function l(e) {
@@ -41423,10 +41400,10 @@
             return t.default = e,
                 t
         }(n(27)),
-        u = v(n(862)),
+        u = v(n(863)),
         d = v(n(428)),
-        c = v(n(882)),
-        h = v(n(883)),
+        c = v(n(883)),
+        h = v(n(884)),
         f = v(n(218)),
         p = v(n(15)),
         g = v(n(44));
@@ -41548,17 +41525,17 @@
     });
     var i = b(n(6)),
         r = b(n(9)),
-        s = b(n(863)),
+        s = b(n(864)),
         o = n(28),
         a = n(51),
         l = b(n(15)),
         u = b(n(162)),
         d = b(n(405)),
-        c = b(n(880)),
+        c = b(n(881)),
         h = b(n(425)),
         f = y(n(27)),
         p = y(n(13)),
-        g = b(n(881)),
+        g = b(n(882)),
         v = y(n(7)),
         m = y(n(20));
 
@@ -41842,11 +41819,11 @@
     var i = f(n(9)),
         r = f(n(41)),
         s = f(n(49)),
-        o = f(n(864)),
+        o = f(n(865)),
         a = f(n(424)),
         l = f(n(425)),
-        u = f(n(866)),
-        d = f(n(869)),
+        u = f(n(867)),
+        d = f(n(870)),
         c = n(127),
         h = f(n(23));
 
@@ -42439,7 +42416,7 @@
     });
     var s = i(n(29)),
         o = n(127),
-        a = r(n(867)),
+        a = r(n(868)),
         l = function() {
             function e(e, t, n) {
                 this.segments = e,
@@ -42510,7 +42487,7 @@
         value: !0
     });
     var o = r(n(394)),
-        a = n(868),
+        a = n(869),
         l = s(n(7)),
         u = s(n(20)),
         d = s(n(24));
@@ -42683,7 +42660,7 @@
             return t.default = e,
                 t
         }(n(24)),
-        a = u(n(870)),
+        a = u(n(871)),
         l = u(n(217));
 
     function u(e) {
@@ -43076,7 +43053,7 @@
         d = y(n(10)),
         c = y(n(396)),
         h = y(n(70)),
-        f = y(n(98)),
+        f = y(n(99)),
         p = y(n(58)),
         g = y(n(15)),
         v = y(n(395)),
@@ -43479,9 +43456,9 @@
     });
     var i = u(n(0)),
         r = u(n(1)),
-        s = u(n(885)),
-        o = u(n(886)),
-        a = u(n(894)),
+        s = u(n(886)),
+        o = u(n(887)),
+        a = u(n(895)),
         l = u(n(436));
 
     function u(e) {
@@ -43614,7 +43591,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(887),
+    var i, r = n(888),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -43703,7 +43680,7 @@
         value: !0
     });
     var i = o(n(431)),
-        r = o(n(893)),
+        r = o(n(894)),
         s = n(28);
 
     function o(e) {
@@ -43820,7 +43797,7 @@
     });
     var i = o(n(383)),
         r = o(n(432)),
-        s = o(n(892));
+        s = o(n(893));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -43839,7 +43816,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(890),
+    var i, r = n(891),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -44182,16 +44159,16 @@
         value: !0
     });
     var i = n(130),
-        r = p(n(947)),
-        s = p(n(948)),
-        o = p(n(950)),
-        a = p(n(951)),
-        l = p(n(952)),
-        u = p(n(953)),
-        d = p(n(954)),
-        c = p(n(955)),
+        r = p(n(948)),
+        s = p(n(949)),
+        o = p(n(951)),
+        a = p(n(952)),
+        l = p(n(953)),
+        u = p(n(954)),
+        d = p(n(955)),
+        c = p(n(956)),
         h = n(47),
-        f = p(n(956));
+        f = p(n(957));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -44482,7 +44459,7 @@
                     getImageURL: function(e) {
                         var t = e.model;
                         if (t)
-                            return n(898)("./camera" + t.attributes.type + ".png")
+                            return n(899)("./camera" + t.attributes.type + ".png")
                     }
                 }
             })
@@ -44510,9 +44487,9 @@
         e.exports = t.default
 }, function(e, t, n) {
     var i = {
-        "./camera2.png": 899,
-        "./camera3.png": 900,
-        "./camera4.png": 901
+        "./camera2.png": 900,
+        "./camera3.png": 901,
+        "./camera4.png": 902
     };
 
     function r(e) {
@@ -44534,7 +44511,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 898
+        r.id = 899
 }, function(e, t, n) {
     e.exports = n.p + "img/camera2afd04923e745ff85f9b132ce1d08e73c.png"
 }, function(e, t, n) {
@@ -44619,8 +44596,8 @@
     });
     var i = a(n(9)),
         r = a(n(437)),
-        s = a(n(904)),
-        o = a(n(905));
+        s = a(n(905)),
+        o = a(n(906));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -44896,24 +44873,24 @@
     e.exports = n.p + "img/one-way-routed9aa340910f8fc7a0fd2285fa0aab968.png"
 }, function(e, t, n) {
     var i = {
-        "./big_direction_end.png": 914,
-        "./big_direction_exit_left.png": 915,
-        "./big_direction_exit_right.png": 916,
-        "./big_direction_forward.png": 917,
-        "./big_direction_left.png": 918,
-        "./big_direction_right.png": 919,
-        "./big_direction_u.png": 920,
-        "./big_directions_roundabout.png": 921,
-        "./big_directions_roundabout_UK.png": 922,
-        "./big_directions_roundabout_UK_l.png": 923,
-        "./big_directions_roundabout_UK_s.png": 924,
-        "./big_directions_roundabout_l.png": 925,
-        "./big_directions_roundabout_r.png": 926,
-        "./big_directions_roundabout_r_UK.png": 927,
-        "./big_directions_roundabout_s.png": 928,
-        "./big_directions_roundabout_u.png": 929,
-        "./big_directions_roundabout_u_UK.png": 930,
-        "./unknown.png": 931
+        "./big_direction_end.png": 915,
+        "./big_direction_exit_left.png": 916,
+        "./big_direction_exit_right.png": 917,
+        "./big_direction_forward.png": 918,
+        "./big_direction_left.png": 919,
+        "./big_direction_right.png": 920,
+        "./big_direction_u.png": 921,
+        "./big_directions_roundabout.png": 922,
+        "./big_directions_roundabout_UK.png": 923,
+        "./big_directions_roundabout_UK_l.png": 924,
+        "./big_directions_roundabout_UK_s.png": 925,
+        "./big_directions_roundabout_l.png": 926,
+        "./big_directions_roundabout_r.png": 927,
+        "./big_directions_roundabout_r_UK.png": 928,
+        "./big_directions_roundabout_s.png": 929,
+        "./big_directions_roundabout_u.png": 930,
+        "./big_directions_roundabout_u_UK.png": 931,
+        "./unknown.png": 932
     };
 
     function r(e) {
@@ -44935,7 +44912,7 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 913
+        r.id = 914
 }, function(e, t, n) {
     e.exports = n.p + "img/big_direction_end25226c71aed0efd3a2db41978066febc.png"
 }, function(e, t, n) {
@@ -45069,7 +45046,7 @@
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
-        o = n(32);
+        o = n(35);
     var a = OpenLayers.Class(OpenLayers.Layer.XYZ, {
         key: null,
         tileUrl: "https://www.googleapis.com/tile/v1/tiles/${z}/${x}/${y}?session=${session}&key=${key}",
@@ -45193,8 +45170,8 @@
         a = f(n(8)),
         l = f(n(4)),
         u = f(n(439)),
-        d = f(n(935)),
-        c = f(n(936)),
+        d = f(n(936)),
+        c = f(n(937)),
         h = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -46441,7 +46418,7 @@
         u = v(n(4)),
         d = v(n(428)),
         c = g(n(27)),
-        h = v(n(949)),
+        h = v(n(950)),
         f = g(n(24)),
         p = g(n(17));
 
@@ -47436,10 +47413,10 @@
         s = h(n(1)),
         o = h(n(3)),
         a = h(n(4)),
-        l = h(n(957)),
-        u = h(n(958)),
-        d = h(n(959)),
-        c = h(n(960));
+        l = h(n(958)),
+        u = h(n(959)),
+        d = h(n(960)),
+        c = h(n(961));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -47775,7 +47752,7 @@
         o = h(n(3)),
         a = h(n(4)),
         l = c(n(17)),
-        u = h(n(961)),
+        u = h(n(962)),
         d = c(n(13));
 
     function c(e) {
@@ -48104,11 +48081,11 @@
         s = f(n(1)),
         o = f(n(3)),
         a = f(n(4)),
-        l = f(n(963)),
+        l = f(n(964)),
         u = n(225),
         d = f(n(226)),
-        c = n(978),
-        h = f(n(984));
+        c = n(979),
+        h = f(n(985));
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -48400,7 +48377,7 @@
                         this._overlayRenderer.drawOverlay(),
                         this._overlayRenderer.drawAndFocusSpotlightAtPoint(n),
                         W.Report.changesLogAction("focus_on_error"),
-                        setTimeout(function() {
+                        window.setTimeout(function() {
                             t._overlayRenderer && (t._overlayRenderer.destroy(),
                                 t._overlayRenderer = null)
                         }, 800)
@@ -48437,7 +48414,7 @@
         s = u(n(3)),
         o = u(n(1)),
         a = u(n(4)),
-        l = u(n(964));
+        l = u(n(965));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -48468,9 +48445,18 @@
                 key: "bindings",
                 value: function() {
                     return {
+                        ".sandbox-mode-notice": {
+                            observe: "isSandbox",
+                            visible: !0
+                        },
                         ".save-loading": {
                             observe: "saving",
                             visible: !0
+                        },
+                        ".groups-list-region": {
+                            classes: {
+                                "in-sandbox": "isSandbox"
+                            }
                         },
                         ".title": "title"
                     }
@@ -48542,8 +48528,8 @@
         s = d(n(3)),
         o = d(n(1)),
         a = d(n(4)),
-        l = d(n(965)),
-        u = d(n(967));
+        l = d(n(966)),
+        u = d(n(968));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -48729,7 +48715,7 @@
         s = d(n(1)),
         o = d(n(3)),
         a = d(n(4)),
-        l = d(n(966)),
+        l = d(n(967)),
         u = d(n(16));
 
     function d(e) {
@@ -48979,7 +48965,7 @@
         s = u(n(3)),
         o = u(n(1)),
         a = u(n(4)),
-        l = u(n(968));
+        l = u(n(969));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -49237,7 +49223,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(977),
+    var i, r = n(978),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -49270,7 +49256,7 @@
     var i = a(n(11)),
         r = a(n(61)),
         s = a(n(90)),
-        o = a(n(979));
+        o = a(n(980));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -49329,7 +49315,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(980));
+        l = u(n(981));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -49360,6 +49346,7 @@
             }, {
                 key: "initialize",
                 value: function(e) {
+                    var t = this;
                     this._groupsCollection = new Backbone.Collection([], {
                             model: l.default,
                             comparator: function(e, t) {
@@ -49367,7 +49354,15 @@
                             }
                         }),
                         this.setGroupsCollectionData(e.groupsCollectionData),
-                        this._initializeTitle()
+                        this._initializeTitle(),
+                        this.set({
+                            isSandbox: W.app.isSandboxMode()
+                        }),
+                        this.listenTo(W.app, "change:sandbox", function(e, n) {
+                            t.set({
+                                isSandbox: n
+                            })
+                        })
                 }
             }, {
                 key: "_initializeTitle",
@@ -49472,8 +49467,8 @@
         s = d(n(1)),
         o = d(n(3)),
         a = d(n(4)),
-        l = d(n(981)),
-        u = d(n(982));
+        l = d(n(982)),
+        u = d(n(983));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -49644,7 +49639,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(983));
+        l = u(n(984));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -49897,8 +49892,8 @@
         o = f(n(1)),
         a = f(n(3)),
         l = f(n(4)),
-        u = f(n(986)),
-        d = h(n(987)),
+        u = f(n(987)),
+        d = h(n(988)),
         c = h(n(27));
 
     function h(e) {
@@ -50816,7 +50811,7 @@
     });
     var i = o(n(0)),
         r = o(n(1)),
-        s = o(n(991));
+        s = o(n(992));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -50922,8 +50917,8 @@
         s = d(n(1)),
         o = d(n(3)),
         a = d(n(4)),
-        l = d(n(993)),
-        u = d(n(994));
+        l = d(n(994)),
+        u = d(n(995));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -51497,7 +51492,7 @@
         value: !0
     });
     var i = a(n(41)),
-        r = a(n(997)),
+        r = a(n(998)),
         s = n(131),
         o = n(36);
 
@@ -51602,7 +51597,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(998),
+    var i, r = n(999),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -51865,11 +51860,11 @@
         c = y(n(27)),
         h = b(n(158)),
         f = b(n(390)),
-        p = b(n(1e3)),
+        p = b(n(1001)),
         g = b(n(204)),
-        v = b(n(1001)),
+        v = b(n(1002)),
         m = y(n(131)),
-        _ = n(1017);
+        _ = n(1018);
 
     function y(e) {
         if (e && e.__esModule)
@@ -52116,7 +52111,7 @@
     });
     var i = o(n(0)),
         r = o(n(1)),
-        s = o(n(1002));
+        s = o(n(1003));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -52151,7 +52146,7 @@
         r = l(n(0)),
         s = l(n(1)),
         o = l(n(444)),
-        a = n(100);
+        a = n(101);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -52222,8 +52217,8 @@
         l = y(n(4)),
         u = y(n(29)),
         d = y(n(38)),
-        c = y(n(1004)),
-        h = y(n(1014)),
+        c = y(n(1005)),
+        h = y(n(1015)),
         f = n(447),
         p = y(n(448)),
         g = function(e) {
@@ -52510,8 +52505,8 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(1005)),
-        c = g(n(1006)),
+        }(n(1006)),
+        c = g(n(1007)),
         h = g(n(38)),
         f = n(116),
         p = n(47);
@@ -52838,7 +52833,7 @@
         c = v(n(48)),
         h = n(116),
         f = v(n(445)),
-        p = v(n(1013)),
+        p = v(n(1014)),
         g = n(215);
 
     function v(e) {
@@ -54733,8 +54728,8 @@
                 }, {
                     key: "_clearAllTimers",
                     value: function() {
-                        clearTimeout(this._showTimeoutHandle),
-                            clearTimeout(this._hideTimeoutHandle)
+                        window.clearTimeout(this._showTimeoutHandle),
+                            window.clearTimeout(this._hideTimeoutHandle)
                     }
                 }, {
                     key: "_calcVerticalPlacement",
@@ -54818,7 +54813,7 @@
                     key: "_onHoverElementEnter",
                     value: function() {
                         var e = this;
-                        this._showTimeoutHandle = setTimeout(function() {
+                        this._showTimeoutHandle = window.setTimeout(function() {
                             e._actuallyShow(e.position, e.size),
                                 e._showTimeoutHandle = null
                         }, 250)
@@ -54826,14 +54821,14 @@
                 }, {
                     key: "_onHoverElementExit",
                     value: function() {
-                        null != this._showTimeoutHandle && (clearTimeout(this._showTimeoutHandle),
+                        null != this._showTimeoutHandle && (window.clearTimeout(this._showTimeoutHandle),
                                 this._showTimeoutHandle = null),
                             this._hide()
                     }
                 }, {
                     key: "_onElementEnter",
                     value: function() {
-                        this._hideTimeoutHandle && (clearTimeout(this._hideTimeoutHandle),
+                        this._hideTimeoutHandle && (window.clearTimeout(this._hideTimeoutHandle),
                                 this._hideTimeoutHandle = null),
                             this.view.triggerMethod("tooltip:enter")
                     }
@@ -54847,7 +54842,7 @@
                     key: "_hide",
                     value: function() {
                         var e = this;
-                        this._shown && (this._hideTimeoutHandle = setTimeout(function() {
+                        this._shown && (this._hideTimeoutHandle = window.setTimeout(function() {
                             e._actuallyHide(),
                                 e.hideTimeoutHandle = null
                         }, 150))
@@ -55067,7 +55062,7 @@
     });
     var o = r(n(44)),
         a = s(n(131)),
-        l = n(1018),
+        l = n(1019),
         u = ((i = {})[a.GROUP_ISSUES] = 0,
             i[a.GROUP_MAP_ISSUES] = 1,
             i[a.ITEM_MAP_PROBLEMS] = 2,
@@ -55166,8 +55161,8 @@
     var i = l(n(0)),
         r = l(n(1)),
         s = l(n(436)),
-        o = l(n(1020)),
-        a = l(n(1021));
+        o = l(n(1021)),
+        a = l(n(1022));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -55319,11 +55314,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = l(n(1022)),
-        r = l(n(1023)),
-        s = l(n(1030)),
+    var i = l(n(1023)),
+        r = l(n(1024)),
+        s = l(n(1031)),
         o = n(28),
-        a = l(n(1032));
+        a = l(n(1033));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -55572,10 +55567,10 @@
         value: !0
     });
     var i, r = c(n(14)),
-        s = c(n(94)),
-        o = c(n(1024)),
-        a = c(n(1026)),
-        l = c(n(1028)),
+        s = c(n(95)),
+        o = c(n(1025)),
+        a = c(n(1027)),
+        l = c(n(1029)),
         u = c(n(380)),
         d = c(n(15));
 
@@ -55607,14 +55602,14 @@
         value: !0
     });
     var i = s(n(25)),
-        r = s(n(1025));
+        r = s(n(1026));
 
     function s(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var o = s(n(94)).default.extend({
+    var o = s(n(95)).default.extend({
         MORE_INFO_DEFAULTS: [],
         createMoreInfoRenderer: function(e, t, n) {
             return new r.default(e, t, n)
@@ -55683,14 +55678,14 @@
         value: !0
     });
     var i = s(n(25)),
-        r = s(n(1027));
+        r = s(n(1028));
 
     function s(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var o = s(n(94)).default.extend({
+    var o = s(n(95)).default.extend({
         MORE_INFO_DEFAULTS: [],
         createMoreInfoRenderer: function(e, t, n) {
             return new r.default(e, t, n)
@@ -55762,8 +55757,8 @@
         value: !0
     });
     var i = o(n(25)),
-        r = o(n(94)),
-        s = o(n(1029));
+        r = o(n(95)),
+        s = o(n(1030));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -55847,7 +55842,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1031),
+    var i, r = n(1032),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -56011,7 +56006,7 @@
     });
     var i = o(n(450)),
         r = o(n(451)),
-        s = n(101);
+        s = n(102);
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -56085,7 +56080,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1036),
+    var i, r = n(1037),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -56234,10 +56229,10 @@
         o = g(n(3)),
         a = g(n(4)),
         l = p(n(24)),
-        u = g(n(1039)),
-        d = g(n(1040)),
-        c = g(n(1041)),
-        h = g(n(1042)),
+        u = g(n(1040)),
+        d = g(n(1041)),
+        c = g(n(1042)),
+        h = g(n(1043)),
         f = p(n(13));
 
     function p(e) {
@@ -56958,8 +56953,8 @@
     var i, r = u(n(14)),
         s = u(n(418)),
         o = n(165),
-        a = u(n(1045)),
-        l = u(n(1211));
+        a = u(n(1046)),
+        l = u(n(1213));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -57023,10 +57018,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(1046)),
-        r = a(n(1072)),
-        s = a(n(1180)),
-        o = a(n(1205));
+    var i = a(n(1047)),
+        r = a(n(1073)),
+        s = a(n(1181)),
+        o = a(n(1207));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -57114,14 +57109,14 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = c(n(1047)),
-        r = c(n(1053)),
-        s = c(n(1054)),
+    var i = c(n(1048)),
+        r = c(n(1054)),
+        s = c(n(1055)),
         o = c(n(453)),
-        a = c(n(1061)),
-        l = c(n(1063)),
-        u = c(n(1067)),
-        d = c(n(1070));
+        a = c(n(1062)),
+        l = c(n(1064)),
+        u = c(n(1068)),
+        d = c(n(1071));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -57236,14 +57231,14 @@
     });
     var i = f(n(11)),
         r = f(n(25)),
-        s = f(n(93)),
+        s = f(n(94)),
         o = f(n(168)),
-        a = f(n(1048)),
-        l = f(n(1049)),
-        u = f(n(1050)),
-        d = f(n(1051)),
-        c = f(n(1052)),
-        h = n(32);
+        a = f(n(1049)),
+        l = f(n(1050)),
+        u = f(n(1051)),
+        d = f(n(1052)),
+        c = f(n(1053)),
+        h = n(35);
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -57483,7 +57478,7 @@
         value: !0
     });
     var i = a(n(9)),
-        r = a(n(93)),
+        r = a(n(94)),
         s = a(n(66)),
         o = n(28);
 
@@ -57807,7 +57802,7 @@
     });
     var i = a(n(156)),
         r = a(n(452)),
-        s = a(n(1060)),
+        s = a(n(1061)),
         o = a(n(66));
 
     function a(e) {
@@ -57959,7 +57954,7 @@
         value: !0
     });
     var i = s(n(453)),
-        r = s(n(1062));
+        r = s(n(1063));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -58002,9 +57997,9 @@
     var i, r = d(n(14)),
         s = d(n(66)),
         o = d(n(170)),
-        a = d(n(1064)),
-        l = d(n(1065)),
-        u = d(n(1066));
+        a = d(n(1065)),
+        l = d(n(1066)),
+        u = d(n(1067));
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -58184,8 +58179,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(1068)),
-        r = s(n(1069));
+    var i = s(n(1069)),
+        r = s(n(1070));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -58459,7 +58454,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1071),
+    var i, r = n(1072),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -58517,9 +58512,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(1073)),
-        r = o(n(1171)),
-        s = o(n(1179));
+    var i = o(n(1074)),
+        r = o(n(1172)),
+        s = o(n(1180));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -58626,13 +58621,13 @@
     var i = p(n(14)),
         r = p(n(0)),
         s = p(n(1)),
-        o = p(n(1074)),
-        a = p(n(1090)),
-        l = p(n(1092)),
-        u = p(n(1129)),
+        o = p(n(1075)),
+        a = p(n(1091)),
+        l = p(n(1093)),
+        u = p(n(1130)),
         d = p(n(15)),
-        c = p(n(1130)),
-        h = p(n(1161)),
+        c = p(n(1131)),
+        h = p(n(1162)),
         f = p(n(44));
 
     function p(e) {
@@ -58747,7 +58742,7 @@
         l = g(n(4)),
         u = g(n(8)),
         d = g(n(67)),
-        c = g(n(1075)),
+        c = g(n(1076)),
         h = g(n(171)),
         f = g(n(122)),
         p = n(146);
@@ -58898,7 +58893,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1076));
+        l = u(n(1077));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -59113,7 +59108,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1078));
+        l = u(n(1079));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -59353,7 +59348,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1081));
+        l = u(n(1082));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -59445,7 +59440,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1083));
+        l = u(n(1084));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -59581,7 +59576,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(1085));
+    var r = i(n(1086));
     t.generateCityOptions = function(e) {
             var t = new r.default(e);
             return t.getCities().map(function(e) {
@@ -59686,7 +59681,7 @@
         s = c(n(1)),
         o = c(n(3)),
         a = c(n(4)),
-        l = c(n(1087)),
+        l = c(n(1088)),
         u = n(47),
         d = function(e) {
             if (e && e.__esModule)
@@ -59935,8 +59930,8 @@
         f = y(n(16)),
         p = y(n(67)),
         g = y(n(122)),
-        v = n(1091),
-        m = y(n(113));
+        v = n(1092),
+        m = y(n(91));
 
     function y(e) {
         return e && e.__esModule ? e : {
@@ -60102,26 +60097,26 @@
         l = x(n(1)),
         u = x(n(4)),
         d = x(n(8)),
-        c = x(n(97)),
-        h = x(n(1093)),
+        c = x(n(98)),
+        h = x(n(1094)),
         f = x(n(21)),
         p = N(n(7)),
         g = N(n(24)),
         v = x(n(16)),
-        m = n(1094),
+        m = n(1095),
         y = x(n(455)),
         b = x(n(171)),
         E = x(n(67)),
-        w = x(n(1104)),
-        S = x(n(1108)),
+        w = x(n(1105)),
+        S = x(n(1109)),
         k = x(n(458)),
-        M = x(n(1116)),
+        M = x(n(1117)),
         I = x(n(122)),
         T = x(n(460)),
-        C = x(n(1117)),
+        C = x(n(1118)),
         A = n(462),
-        O = x(n(1123)),
-        R = x(n(1126)),
+        O = x(n(1124)),
+        R = x(n(1127)),
         D = n(459),
         L = n(463),
         P = n(13);
@@ -60740,7 +60735,7 @@
         a = c(n(4)),
         l = c(n(10)),
         u = c(n(21)),
-        d = c(n(97));
+        d = c(n(98));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -60823,7 +60818,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = s(n(1095)),
+    var o = s(n(1096)),
         a = function(e) {
             function t(t) {
                 var n = e.call(this) || this;
@@ -60897,7 +60892,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1097));
+        l = u(n(1098));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -60951,13 +60946,13 @@
         o = v(n(1)),
         a = v(n(3)),
         l = v(n(4)),
-        u = v(n(1098)),
-        d = n(34),
+        u = v(n(1099)),
+        d = n(33),
         c = v(n(15)),
         h = v(n(120)),
         f = v(n(456)),
-        p = v(n(1099)),
-        g = v(n(1100));
+        p = v(n(1100)),
+        g = v(n(1101));
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -61145,7 +61140,7 @@
     });
     var i = a(n(0)),
         r = a(n(1)),
-        s = n(34),
+        s = n(33),
         o = n(149);
 
     function a(e) {
@@ -61265,9 +61260,9 @@
         u = g(n(14)),
         d = g(n(15)),
         c = g(n(172)),
-        h = g(n(1101)),
-        f = g(n(1102)),
-        p = g(n(1103));
+        h = g(n(1102)),
+        f = g(n(1103)),
+        p = g(n(1104));
 
     function g(e) {
         return e && e.__esModule ? e : {
@@ -61422,7 +61417,7 @@
         a = c(n(8)),
         l = c(n(4)),
         u = c(n(172)),
-        d = n(34);
+        d = n(33);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -61507,10 +61502,10 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(1105)),
-        c = p(n(1106)),
+        }(n(1106)),
+        c = p(n(1107)),
         h = p(n(457)),
-        f = p(n(1107));
+        f = p(n(1108));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -61838,7 +61833,7 @@
         s = d(n(1)),
         o = d(n(3)),
         a = d(n(4)),
-        l = d(n(1109)),
+        l = d(n(1110)),
         u = d(n(435));
 
     function d(e) {
@@ -61923,7 +61918,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(95));
+        l = u(n(96));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -62108,9 +62103,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = a(n(1113)),
-        r = a(n(1114)),
-        s = a(n(1115)),
+    var i = a(n(1114)),
+        r = a(n(1115)),
+        s = a(n(1116)),
         o = n(150);
 
     function a(e) {
@@ -62558,11 +62553,11 @@
         s = g(n(1)),
         o = g(n(3)),
         a = g(n(4)),
-        l = g(n(1118)),
-        u = g(n(1121)),
+        l = g(n(1119)),
+        u = g(n(1122)),
         d = n(461),
         c = g(n(384)),
-        h = n(1122),
+        h = n(1123),
         f = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -62781,7 +62776,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1119));
+        l = u(n(1120));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -62844,7 +62839,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1120));
+        l = u(n(1121));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -63447,7 +63442,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1124),
+    var i, r = n(1125),
         s = (i = r) && i.__esModule ? i : {
             default: i
         },
@@ -63497,7 +63492,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1125),
+    var i, r = n(1126),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -63613,8 +63608,8 @@
         s = c(n(1)),
         o = c(n(3)),
         a = c(n(4)),
-        l = c(n(1127)),
-        u = c(n(1128)),
+        l = c(n(1128)),
+        u = c(n(1129)),
         d = c(n(201));
 
     function c(e) {
@@ -63943,7 +63938,7 @@
         h = m(n(208)),
         f = m(n(167)),
         p = n(28),
-        g = n(100),
+        g = n(101),
         v = n(154);
 
     function m(e) {
@@ -64147,32 +64142,32 @@
         M = ne(n(67)),
         I = ne(n(122)),
         T = ne(n(460)),
-        C = ne(n(1136)),
+        C = ne(n(1137)),
         A = ne(n(440)),
-        O = ne(n(1138)),
-        R = ne(n(1145)),
+        O = ne(n(1139)),
+        R = ne(n(1146)),
         D = n(81),
         L = n(39),
         P = n(117),
         N = n(467),
-        x = n(1152),
+        x = n(1153),
         V = n(441),
-        U = n(1153),
-        j = n(1154),
+        U = n(1154),
+        j = n(1155),
         F = n(126),
         B = n(471),
         G = n(56),
-        H = n(1155),
-        z = n(1156),
-        q = n(1157),
+        H = n(1156),
+        z = n(1157),
+        q = n(1158),
         Y = n(71),
         K = ne(n(80)),
         J = n(133),
         Z = n(40),
-        X = n(1158),
-        Q = n(113),
+        X = n(1159),
+        Q = n(91),
         ee = ne(Q),
-        te = n(1160);
+        te = n(1161);
 
     function ne(e) {
         return e && e.__esModule ? e : {
@@ -65367,7 +65362,7 @@
     var i = a(n(9)),
         r = a(n(31)),
         s = a(n(84)),
-        o = a(n(1132));
+        o = a(n(1133));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -65462,7 +65457,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(1134)),
+    var i = s(n(1135)),
         r = s(n(466));
 
     function s(e) {
@@ -65733,9 +65728,9 @@
         s = f(n(1)),
         o = f(n(3)),
         a = f(n(4)),
-        l = f(n(1137)),
+        l = f(n(1138)),
         u = f(n(223)),
-        d = n(100),
+        d = n(101),
         c = f(n(449)),
         h = n(39);
 
@@ -65861,7 +65856,7 @@
                 }, {
                     key: "_toggleTurn",
                     value: function(e) {
-                        new c.default(this._dataModel).toggleTurn(e)
+                        new c.default(this._dataModel, e).toggleTurn()
                     }
                 }, {
                     key: "highlightArrow",
@@ -66041,7 +66036,7 @@
         s = h(n(1)),
         o = h(n(3)),
         a = h(n(4)),
-        l = h(n(1139)),
+        l = h(n(1140)),
         u = n(79),
         d = n(28),
         c = h(n(80));
@@ -66151,11 +66146,11 @@
         a = v(n(3)),
         l = v(n(4)),
         u = v(n(470)),
-        d = v(n(1141)),
+        d = v(n(1142)),
         c = n(28),
         h = n(79),
         f = v(h),
-        p = n(100),
+        p = n(101),
         g = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -66503,10 +66498,10 @@
             return t.default = e,
                 t
         }(n(55)),
-        c = v(n(1142)),
-        h = v(n(1143)),
+        c = v(n(1143)),
+        h = v(n(1144)),
         f = n(79),
-        p = v(n(33)),
+        p = v(n(32)),
         g = v(n(399));
 
     function v(e) {
@@ -66861,9 +66856,9 @@
         l = p(n(3)),
         u = p(n(4)),
         d = p(n(470)),
-        c = p(n(1144)),
+        c = p(n(1145)),
         h = p(n(207)),
-        f = p(n(33));
+        f = p(n(32));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -67143,13 +67138,13 @@
         l = y(n(21)),
         u = n(48),
         d = y(u),
-        c = y(n(1146)),
+        c = y(n(1147)),
         h = y(n(445)),
-        f = y(n(1147)),
+        f = y(n(1148)),
         p = n(116),
         g = n(215),
-        v = y(n(1150)),
-        m = y(n(1151)),
+        v = y(n(1151)),
+        m = y(n(1152)),
         _ = n(471);
 
     function y(e) {
@@ -67585,8 +67580,8 @@
         a = h(n(1)),
         l = h(n(3)),
         u = h(n(4)),
-        d = n(1148),
-        c = n(1149);
+        d = n(1149),
+        c = n(1150);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -68535,7 +68530,7 @@
     });
     var s = r(n(203)),
         o = r(n(21)),
-        a = n(1159),
+        a = n(1160),
         l = function() {
             function e(e, t) {
                 this.selection = t,
@@ -68687,8 +68682,8 @@
         l = m(n(8)),
         u = m(n(1)),
         d = m(n(4)),
-        c = m(n(1162)),
-        h = m(n(1164)),
+        c = m(n(1163)),
+        h = m(n(1165)),
         f = n(219),
         p = m(n(464)),
         g = m(n(67)),
@@ -69034,7 +69029,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(1163));
+        l = u(n(1164));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -69286,15 +69281,15 @@
         c = M(n(4)),
         h = M(n(230)),
         f = M(n(173)),
-        p = M(n(1165)),
-        g = M(n(1166)),
-        v = M(n(1167)),
-        m = M(n(1168)),
-        y = M(n(1169)),
+        p = M(n(1166)),
+        g = M(n(1167)),
+        v = M(n(1168)),
+        m = M(n(1169)),
+        y = M(n(1170)),
         b = n(473),
         E = M(n(16)),
-        w = M(n(95)),
-        S = n(1170),
+        w = M(n(96)),
+        S = n(1171),
         k = n(57);
 
     function M(e) {
@@ -70185,9 +70180,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(1172)),
-        r = o(n(1176)),
-        s = o(n(1177));
+    var i = o(n(1173)),
+        r = o(n(1177)),
+        s = o(n(1178));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -70251,9 +70246,9 @@
     var i = c(n(11)),
         r = c(n(25)),
         s = c(n(49)),
-        o = c(n(1173)),
-        a = c(n(1174)),
-        l = c(n(1175)),
+        o = c(n(1174)),
+        a = c(n(1175)),
+        l = c(n(1176)),
         u = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -70264,7 +70259,7 @@
             return t.default = e,
                 t
         }(n(7)),
-        d = c(n(92));
+        d = c(n(93));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -70399,10 +70394,14 @@
         onSessionClicked: function(e) {
             var t = this,
                 n = this;
-            this._getFullArchiveDataById(e.id).then(function(e, n) {
-                return t.model.mergeResponse(e),
-                    t.model.mergeResponse(n),
-                    [e.archives.objects[0], e.archiveSessions.objects[0]]
+            this._getFullArchiveDataById(e.id).then(function(e) {
+                var n = (0,
+                        i.default)(e, 2),
+                    r = n[0],
+                    s = n[1];
+                return t.model.mergeResponse(r),
+                    t.model.mergeResponse(s),
+                    [r.archives.objects[0], s.archiveSessions.objects[0]]
             }).then(function(t) {
                 var r = (0,
                         i.default)(t, 2),
@@ -70606,7 +70605,7 @@
         r = l(n(0)),
         s = l(n(1)),
         o = n(47),
-        a = n(416);
+        a = n(417);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -70731,7 +70730,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(1178)),
+    var i = s(n(1179)),
         r = s(n(167));
 
     function s(e) {
@@ -70875,14 +70874,17 @@
     });
     var i = Marionette.View.extend({
         template: "templates/sidebar/user-sandbox",
-        events: {
-            "click .sign-in-button": "_onLoginButtonClick"
-        },
         initialize: function(e) {
             this.app = e.app
         },
-        _onLoginButtonClick: function() {
-            this.app.disableSandboxMode(!1)
+        events: function() {
+            return {
+                "click .sign-in-button": "_onLoginButtonClick"
+            }
+        },
+        _onLoginButtonClick: function(e) {
+            e.preventDefault(),
+                this.app.loginManager.login()
         }
     });
     t.default = i,
@@ -70894,9 +70896,9 @@
     });
     var i = l(n(474)),
         r = l(n(475)),
-        s = l(n(1183)),
-        o = l(n(1185)),
-        a = l(n(1186));
+        s = l(n(1184)),
+        o = l(n(1186)),
+        a = l(n(1187));
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -71155,7 +71157,7 @@
     });
     var i = a(n(6)),
         r = a(n(231)),
-        s = a(n(1184)),
+        s = a(n(1185)),
         o = a(n(476));
 
     function a(e) {
@@ -71327,21 +71329,21 @@
     var i = A(n(0)),
         r = A(n(1)),
         s = n(57),
-        o = A(n(1187)),
-        a = A(n(1188)),
-        l = A(n(1189)),
+        o = A(n(1188)),
+        a = A(n(1189)),
+        l = A(n(1190)),
         u = A(n(477)),
-        d = A(n(1190)),
-        c = A(n(1191)),
-        h = A(n(1192)),
-        f = A(n(1193)),
+        d = A(n(1191)),
+        c = A(n(1192)),
+        h = A(n(1193)),
+        f = A(n(1194)),
         p = A(n(16)),
         g = A(n(401)),
-        v = A(n(1199)),
-        m = A(n(1200)),
-        y = A(n(1201)),
+        v = A(n(1200)),
+        m = A(n(1201)),
+        y = A(n(1202)),
         b = A(n(402)),
-        E = A(n(1203)),
+        E = A(n(1205)),
         w = A(n(119)),
         S = n(146),
         k = A(n(124)),
@@ -71860,9 +71862,9 @@
         a = v(n(478)),
         l = v(n(423)),
         u = n(36),
-        d = v(n(1194)),
+        d = v(n(1195)),
         c = v(n(480)),
-        h = n(1198),
+        h = n(1199),
         f = v(h),
         p = v(n(217)),
         g = function(e) {
@@ -72045,15 +72047,15 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(1195)),
-        s = i(n(99)),
+    var r = i(n(1196)),
+        s = i(n(100)),
         o = i(n(70)),
         a = i(n(420)),
         l = n(146),
-        u = i(n(96)),
+        u = i(n(97)),
         d = i(n(23)),
         c = i(n(480)),
-        h = i(n(1197)),
+        h = i(n(1198)),
         f = function() {
             function e(e, t) {
                 this._dataModel = e,
@@ -72294,7 +72296,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(96)),
+    var r = i(n(97)),
         s = i(n(23)),
         o = {
             MULTIPLE_SEGMENTS: 1,
@@ -72661,7 +72663,7 @@
     });
     var i = o(n(6)),
         r = o(n(49)),
-        s = o(n(1202));
+        s = o(n(1203));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -72754,13 +72756,16 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = u(n(6)),
-        r = u(n(72)),
-        s = l(n(17)),
-        o = l(n(7)),
-        a = l(n(20));
+    var i = h(n(6)),
+        r = h(n(72)),
+        s = c(n(17)),
+        o = c(n(7)),
+        a = c(n(20)),
+        l = n(91),
+        u = h(l),
+        d = n(1204);
 
-    function l(e) {
+    function c(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -72771,12 +72776,12 @@
             t
     }
 
-    function u(e) {
+    function h(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var d = OpenLayers.Class(OpenLayers.Handler, {
+    var f = OpenLayers.Class(OpenLayers.Handler, {
         drawing: !1,
         dragging: !1,
         layer: null,
@@ -72790,8 +72795,6 @@
         ry: 0,
         regular: !1,
         geodesicPixelSize: null,
-        MinEllipseSize: 15,
-        MaxEllipseSizeMeters: 100,
         oldOnselectstart: null,
         initialize: function(e, t, n) {
             n && n.layerOptions && n.layerOptions.styleMap || (this.style = (0,
@@ -72858,14 +72861,22 @@
                     this.lastDown = e.xy,
                     !1)))
         },
+        _metersToPixels: function(e) {
+            return e / (1e3 * this.geodesicPixelSize)
+        },
+        _pixelsToMeters: function(e) {
+            return e * this.geodesicPixelSize * 1e3
+        },
         createFeature: function(e) {
             var t = this.map.getLonLatFromPixel(e),
                 n = s.createLineString(),
                 r = void 0;
-            (r = this.style ? (0,
+            r = this.style ? (0,
                 i.default)({}, this.style) : (0,
-                i.default)({}, this.layerOptions.styleMap.styles.default.defaultStyle)).rx = this.MinEllipseSize,
-                r.ry = this.MinEllipseSize,
+                i.default)({}, this.layerOptions.styleMap.styles.default.defaultStyle);
+            var l = this._metersToPixels(d.MIN_ROUNDABOUT_RADIUS_IN_METERS);
+            r.rx = l,
+                r.ry = l,
                 this.point = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(t.lon, t.lat), {}, r),
                 a.addPoint(n, o.cloneGeometry(this.point.geometry)),
                 a.addPoint(n, o.cloneGeometry(this.point.geometry)),
@@ -72885,7 +72896,7 @@
                 this.dragging = !1,
                 this.regular = !1,
                 this.destroyFeature(),
-                Math.min(this.rx, this.ry) > this.MinEllipseSize && this.callback(t, [{
+                Math.min(this.rx, this.ry) >= this._metersToPixels(d.MIN_ROUNDABOUT_RADIUS_IN_METERS) && this.callback(t, [{
                     x: n.lon,
                     y: n.lat,
                     rx: this.rx,
@@ -72911,24 +72922,24 @@
             this.lastMove = e;
             var l = this.map.getPixelFromLonLat(r),
                 u = e.y - l.y,
-                d = e.x - l.x;
-            Math.atan2(u, d),
-                this.rx = Math.abs(d),
-                this.ry = Math.abs(u),
-                this.rx < this.MinEllipseSize && (this.rx = this.MinEllipseSize),
-                this.ry < this.MinEllipseSize && (this.ry = this.MinEllipseSize);
-            var c = Math.floor(this.geodesicPixelSize * this.rx * 1e3),
-                h = Math.floor(this.geodesicPixelSize * this.ry * 1e3);
-            c > this.MaxEllipseSizeMeters && (this.rx = 1 / (10 * this.geodesicPixelSize)),
-                h > this.MaxEllipseSizeMeters && (this.ry = 1 / (10 * this.geodesicPixelSize));
-            var f = Math.max(this.rx, this.ry),
-                p = Math.ceil(this.geodesicPixelSize * f * 1e3);
-            t.shiftKey || (this.rx = f,
-                    this.ry = f),
+                c = e.x - l.x;
+            Math.atan2(u, c),
+                this.rx = Math.abs(c),
+                this.ry = Math.abs(u);
+            var h = this._metersToPixels(d.MIN_ROUNDABOUT_RADIUS_IN_METERS);
+            this.rx < h && (this.rx = h),
+                this.ry < h && (this.ry = h);
+            var f = this._metersToPixels(d.MAX_ROUNDABOUT_RADIUS_IN_METERS);
+            this.rx > f && (this.rx = f),
+                this.ry > f && (this.ry = f);
+            var p = Math.max(this.rx, this.ry),
+                g = this._pixelsToMeters(p);
+            t.shiftKey || (this.rx = p,
+                    this.ry = p),
                 this.ry > this.rx ? (s = this.rx / this.ry,
                     o = 1) : (o = this.ry / this.rx,
                     s = 1),
-                n = Math.atan2(u / o, d / s),
+                n = Math.atan2(u / o, c / s),
                 this.callback("modify", [this.point.geometry, this.point]),
                 i.x = r.lon + this.rx * Math.cos(n) * this.map.getResolution(),
                 i.y = r.lat - this.ry * Math.sin(n) * this.map.getResolution(),
@@ -72937,8 +72948,16 @@
                 this.point.geometry.clearBounds(),
                 this.point.style.rx = this.rx,
                 this.point.style.ry = this.ry,
-                this.point.style.label = p + "m",
+                this.point.style.label = this._getRadiusLabel(g),
                 this.drawCircle()
+        },
+        _getRadiusLabel: function(e) {
+            var t = u.default.localizeUnit(l.UNIT.METER),
+                n = u.default.getLocalizedValue(e, l.UNIT.METER),
+                i = Math.floor(n);
+            return I18n.t("measurements.length." + t, {
+                count: i
+            })
         },
         drawCircle: function() {
             this.layer.drawFeature(this.point),
@@ -72956,8 +72975,15 @@
         },
         CLASS_NAME: "Waze.Handler.Ellipse"
     });
-    t.default = d,
+    t.default = f,
         e.exports = t.default
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    t.MIN_ROUNDABOUT_RADIUS_IN_METERS = 4;
+    t.MAX_ROUNDABOUT_RADIUS_IN_METERS = 100
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -73039,8 +73065,8 @@
     });
     var i = a(n(482)),
         r = a(n(483)),
-        s = a(n(1206)),
-        o = a(n(1210));
+        s = a(n(1208)),
+        o = a(n(1212));
 
     function a(e) {
         return e && e.__esModule ? e : {
@@ -73078,9 +73104,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(1207)),
-        r = o(n(1208)),
-        s = o(n(1209));
+    var i = o(n(1209)),
+        r = o(n(1210)),
+        s = o(n(1211));
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -73294,10 +73320,10 @@
     });
     var i = n(165),
         r = n(28),
-        s = d(n(1212)),
-        o = d(n(1214)),
-        a = d(n(1215)),
-        l = d(n(1216)),
+        s = d(n(1214)),
+        o = d(n(1216)),
+        a = d(n(1217)),
+        l = d(n(1218)),
         u = n(131);
 
     function d(e) {
@@ -73414,7 +73440,7 @@
         value: !0
     });
     var i = o(n(475)),
-        r = o(n(1213)),
+        r = o(n(1215)),
         s = o(n(474));
 
     function o(e) {
@@ -73605,15 +73631,15 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = h(n(1217)),
-        r = h(n(99)),
+    var i = h(n(1219)),
+        r = h(n(100)),
         s = n(28),
-        o = h(n(1219)),
-        a = h(n(1221)),
+        o = h(n(1221)),
+        a = h(n(1223)),
         l = h(n(157)),
         u = h(n(451)),
         d = h(n(450)),
-        c = n(101);
+        c = n(102);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -73749,7 +73775,7 @@
         value: !0
     });
     var i = s(n(11)),
-        r = s(n(1218));
+        r = s(n(1220));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -73908,7 +73934,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(1220),
+    var i, r = n(1222),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -73943,16 +73969,16 @@
         o = b(n(171)),
         a = b(n(69)),
         l = b(n(121)),
-        u = b(n(1222)),
+        u = b(n(1224)),
         d = n(157),
-        c = b(n(1224)),
-        h = b(n(1225)),
+        c = b(n(1226)),
+        h = b(n(1227)),
         f = b(n(21)),
         p = b(n(16)),
-        g = b(n(1226)),
-        v = b(n(1227)),
-        m = b(n(1229)),
-        y = n(32);
+        g = b(n(1228)),
+        v = b(n(1229)),
+        m = b(n(1231)),
+        y = n(35);
 
     function b(e) {
         return e && e.__esModule ? e : {
@@ -74308,7 +74334,7 @@
                             throw e;
                         var t = e.response.errorList,
                             n = t ? t[0].code : void 0;
-                        alert(p.default.getSaveErrorTitle(n, "mte.edit.submit_failed"))
+                        window.alert(p.default.getSaveErrorTitle(n, "mte.edit.submit_failed"))
                     }).finally(function() {
                         e.submitViewModel.set({
                             submitting: !1
@@ -74330,7 +74356,7 @@
                         throw e;
                     var t = e.response.errorList,
                         n = t ? t[0].code : void 0;
-                    alert(p.default.getSaveErrorTitle(n, "mte.edit.publish_failed"))
+                    window.alert(p.default.getSaveErrorTitle(n, "mte.edit.publish_failed"))
                 })
         },
         _onFormSubmitted: function(e) {
@@ -74344,9 +74370,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = o(n(1223)),
-        r = o(n(93)),
-        s = n(32);
+    var i = o(n(1225)),
+        r = o(n(94)),
+        s = n(35);
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -74709,7 +74735,7 @@
         value: !0
     });
     var i = o(n(11)),
-        r = o(n(1228)),
+        r = o(n(1230)),
         s = o(n(16));
 
     function o(e) {
@@ -74874,7 +74900,7 @@
         s = c(n(465)),
         o = c(n(468)),
         a = c(n(469)),
-        l = c(n(1230)),
+        l = c(n(1232)),
         u = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -75061,7 +75087,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(1234)),
+    var i = s(n(1236)),
         r = s(n(9));
 
     function s(e) {
@@ -75093,8 +75119,8 @@
     var i = u(n(25)),
         r = l(n(62)),
         s = l(n(192)),
-        o = l(n(1238)),
-        a = u(n(1239));
+        o = l(n(1240)),
+        a = u(n(1241));
 
     function l(e) {
         if (e && e.__esModule)
@@ -75206,7 +75232,7 @@
             return t.default = e,
                 t
         }(n(62)),
-        a = n(32);
+        a = n(35);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -75316,162 +75342,162 @@
         })
 }, , , , , , , , , , , , , , , , function(e, t, n) {
     var i = {
-        "./af-ZA.js": 1262,
-        "./ar-AE.js": 1263,
-        "./ar-BH.js": 1264,
-        "./ar-DZ.js": 1265,
-        "./ar-EG.js": 1266,
-        "./ar-IQ.js": 1267,
-        "./ar-JO.js": 1268,
-        "./ar-KW.js": 1269,
-        "./ar-LB.js": 1270,
-        "./ar-LY.js": 1271,
-        "./ar-MA.js": 1272,
-        "./ar-OM.js": 1273,
-        "./ar-QA.js": 1274,
-        "./ar-SA.js": 1275,
-        "./ar-SY.js": 1276,
-        "./ar-TN.js": 1277,
-        "./ar-YE.js": 1278,
-        "./az-Cyrl-AZ.js": 1279,
-        "./az-Latn-AZ.js": 1280,
-        "./be-BY.js": 1281,
-        "./bg-BG.js": 1282,
-        "./bs-Latn-BA.js": 1283,
-        "./ca-ES.js": 1284,
-        "./cs-CZ.js": 1285,
-        "./cy-GB.js": 1286,
-        "./da-DK.js": 1287,
-        "./de-AT.js": 1288,
-        "./de-CH.js": 1289,
-        "./de-DE.js": 1290,
-        "./de-LI.js": 1291,
-        "./de-LU.js": 1292,
-        "./dv-MV.js": 1293,
-        "./el-GR.js": 1294,
-        "./en-029.js": 1295,
-        "./en-AU.js": 1296,
-        "./en-BZ.js": 1297,
-        "./en-CA.js": 1298,
-        "./en-GB.js": 1299,
-        "./en-IE.js": 1300,
-        "./en-JM.js": 1301,
-        "./en-NZ.js": 1302,
-        "./en-PH.js": 1303,
-        "./en-TT.js": 1304,
-        "./en-ZA.js": 1305,
-        "./en-ZW.js": 1306,
-        "./es-AR.js": 1307,
-        "./es-BO.js": 1308,
-        "./es-CL.js": 1309,
-        "./es-CO.js": 1310,
-        "./es-CR.js": 1311,
-        "./es-DO.js": 1312,
-        "./es-EC.js": 1313,
-        "./es-ES.js": 1314,
-        "./es-GT.js": 1315,
-        "./es-HN.js": 1316,
-        "./es-MX.js": 1317,
-        "./es-NI.js": 1318,
-        "./es-PA.js": 1319,
-        "./es-PE.js": 1320,
-        "./es-PR.js": 1321,
-        "./es-PY.js": 1322,
-        "./es-SV.js": 1323,
-        "./es-UY.js": 1324,
-        "./es-VE.js": 1325,
-        "./et-EE.js": 1326,
-        "./eu-ES.js": 1327,
-        "./fa-IR.js": 1328,
-        "./fi-FI.js": 1329,
-        "./fo-FO.js": 1330,
-        "./fr-BE.js": 1331,
-        "./fr-CA.js": 1332,
-        "./fr-CH.js": 1333,
-        "./fr-FR.js": 1334,
-        "./fr-LU.js": 1335,
-        "./fr-MC.js": 1336,
-        "./gl-ES.js": 1337,
-        "./gu-IN.js": 1338,
-        "./he-IL.js": 1339,
-        "./hi-IN.js": 1340,
-        "./hr-BA.js": 1341,
-        "./hr-HR.js": 1342,
-        "./hu-HU.js": 1343,
-        "./hy-AM.js": 1344,
-        "./id-ID.js": 1345,
-        "./is-IS.js": 1346,
-        "./it-CH.js": 1347,
-        "./it-IT.js": 1348,
-        "./ja-JP.js": 1349,
-        "./ka-GE.js": 1350,
-        "./kk-KZ.js": 1351,
-        "./kn-IN.js": 1352,
-        "./ko-KR.js": 1353,
-        "./kok-IN.js": 1354,
-        "./ky-KG.js": 1355,
-        "./lt-LT.js": 1356,
-        "./lv-LV.js": 1357,
-        "./mi-NZ.js": 1358,
-        "./mk-MK.js": 1359,
-        "./mn-MN.js": 1360,
-        "./mr-IN.js": 1361,
-        "./ms-BN.js": 1362,
-        "./ms-MY.js": 1363,
-        "./mt-MT.js": 1364,
-        "./nb-NO.js": 1365,
-        "./nl-BE.js": 1366,
-        "./nl-NL.js": 1367,
-        "./nn-NO.js": 1368,
-        "./ns-ZA.js": 1369,
-        "./pa-IN.js": 1370,
-        "./pl-PL.js": 1371,
-        "./pt-BR.js": 1372,
-        "./pt-PT.js": 1373,
-        "./quz-BO.js": 1374,
-        "./quz-EC.js": 1375,
-        "./quz-PE.js": 1376,
-        "./ro-RO.js": 1377,
-        "./ru-RU.js": 1378,
-        "./sa-IN.js": 1379,
-        "./se-FI.js": 1380,
-        "./se-NO.js": 1381,
-        "./se-SE.js": 1382,
-        "./sk-SK.js": 1383,
-        "./sl-SI.js": 1384,
-        "./sma-NO.js": 1385,
-        "./sma-SE.js": 1386,
-        "./smj-NO.js": 1387,
-        "./smj-SE.js": 1388,
-        "./smn-FI.js": 1389,
-        "./sms-FI.js": 1390,
-        "./sq-AL.js": 1391,
-        "./sr-Cyrl-BA.js": 1392,
-        "./sr-Cyrl-CS.js": 1393,
-        "./sr-Latn-BA.js": 1394,
-        "./sr-Latn-CS.js": 1395,
-        "./sv-FI.js": 1396,
-        "./sv-SE.js": 1397,
-        "./sw-KE.js": 1398,
-        "./syr-SY.js": 1399,
-        "./ta-IN.js": 1400,
-        "./te-IN.js": 1401,
-        "./th-TH.js": 1402,
-        "./tn-ZA.js": 1403,
-        "./tr-TR.js": 1404,
-        "./tt-RU.js": 1405,
-        "./uk-UA.js": 1406,
-        "./ur-PK.js": 1407,
-        "./uz-Cyrl-UZ.js": 1408,
-        "./uz-Latn-UZ.js": 1409,
-        "./vi-VN.js": 1410,
-        "./xh-ZA.js": 1411,
-        "./zh-CN.js": 1412,
-        "./zh-HK.js": 1413,
-        "./zh-MO.js": 1414,
-        "./zh-SG.js": 1415,
-        "./zh-TW.js": 1416,
-        "./zu-ZA.js": 1417
+        "./af-ZA.js": 1264,
+        "./ar-AE.js": 1265,
+        "./ar-BH.js": 1266,
+        "./ar-DZ.js": 1267,
+        "./ar-EG.js": 1268,
+        "./ar-IQ.js": 1269,
+        "./ar-JO.js": 1270,
+        "./ar-KW.js": 1271,
+        "./ar-LB.js": 1272,
+        "./ar-LY.js": 1273,
+        "./ar-MA.js": 1274,
+        "./ar-OM.js": 1275,
+        "./ar-QA.js": 1276,
+        "./ar-SA.js": 1277,
+        "./ar-SY.js": 1278,
+        "./ar-TN.js": 1279,
+        "./ar-YE.js": 1280,
+        "./az-Cyrl-AZ.js": 1281,
+        "./az-Latn-AZ.js": 1282,
+        "./be-BY.js": 1283,
+        "./bg-BG.js": 1284,
+        "./bs-Latn-BA.js": 1285,
+        "./ca-ES.js": 1286,
+        "./cs-CZ.js": 1287,
+        "./cy-GB.js": 1288,
+        "./da-DK.js": 1289,
+        "./de-AT.js": 1290,
+        "./de-CH.js": 1291,
+        "./de-DE.js": 1292,
+        "./de-LI.js": 1293,
+        "./de-LU.js": 1294,
+        "./dv-MV.js": 1295,
+        "./el-GR.js": 1296,
+        "./en-029.js": 1297,
+        "./en-AU.js": 1298,
+        "./en-BZ.js": 1299,
+        "./en-CA.js": 1300,
+        "./en-GB.js": 1301,
+        "./en-IE.js": 1302,
+        "./en-JM.js": 1303,
+        "./en-NZ.js": 1304,
+        "./en-PH.js": 1305,
+        "./en-TT.js": 1306,
+        "./en-ZA.js": 1307,
+        "./en-ZW.js": 1308,
+        "./es-AR.js": 1309,
+        "./es-BO.js": 1310,
+        "./es-CL.js": 1311,
+        "./es-CO.js": 1312,
+        "./es-CR.js": 1313,
+        "./es-DO.js": 1314,
+        "./es-EC.js": 1315,
+        "./es-ES.js": 1316,
+        "./es-GT.js": 1317,
+        "./es-HN.js": 1318,
+        "./es-MX.js": 1319,
+        "./es-NI.js": 1320,
+        "./es-PA.js": 1321,
+        "./es-PE.js": 1322,
+        "./es-PR.js": 1323,
+        "./es-PY.js": 1324,
+        "./es-SV.js": 1325,
+        "./es-UY.js": 1326,
+        "./es-VE.js": 1327,
+        "./et-EE.js": 1328,
+        "./eu-ES.js": 1329,
+        "./fa-IR.js": 1330,
+        "./fi-FI.js": 1331,
+        "./fo-FO.js": 1332,
+        "./fr-BE.js": 1333,
+        "./fr-CA.js": 1334,
+        "./fr-CH.js": 1335,
+        "./fr-FR.js": 1336,
+        "./fr-LU.js": 1337,
+        "./fr-MC.js": 1338,
+        "./gl-ES.js": 1339,
+        "./gu-IN.js": 1340,
+        "./he-IL.js": 1341,
+        "./hi-IN.js": 1342,
+        "./hr-BA.js": 1343,
+        "./hr-HR.js": 1344,
+        "./hu-HU.js": 1345,
+        "./hy-AM.js": 1346,
+        "./id-ID.js": 1347,
+        "./is-IS.js": 1348,
+        "./it-CH.js": 1349,
+        "./it-IT.js": 1350,
+        "./ja-JP.js": 1351,
+        "./ka-GE.js": 1352,
+        "./kk-KZ.js": 1353,
+        "./kn-IN.js": 1354,
+        "./ko-KR.js": 1355,
+        "./kok-IN.js": 1356,
+        "./ky-KG.js": 1357,
+        "./lt-LT.js": 1358,
+        "./lv-LV.js": 1359,
+        "./mi-NZ.js": 1360,
+        "./mk-MK.js": 1361,
+        "./mn-MN.js": 1362,
+        "./mr-IN.js": 1363,
+        "./ms-BN.js": 1364,
+        "./ms-MY.js": 1365,
+        "./mt-MT.js": 1366,
+        "./nb-NO.js": 1367,
+        "./nl-BE.js": 1368,
+        "./nl-NL.js": 1369,
+        "./nn-NO.js": 1370,
+        "./ns-ZA.js": 1371,
+        "./pa-IN.js": 1372,
+        "./pl-PL.js": 1373,
+        "./pt-BR.js": 1374,
+        "./pt-PT.js": 1375,
+        "./quz-BO.js": 1376,
+        "./quz-EC.js": 1377,
+        "./quz-PE.js": 1378,
+        "./ro-RO.js": 1379,
+        "./ru-RU.js": 1380,
+        "./sa-IN.js": 1381,
+        "./se-FI.js": 1382,
+        "./se-NO.js": 1383,
+        "./se-SE.js": 1384,
+        "./sk-SK.js": 1385,
+        "./sl-SI.js": 1386,
+        "./sma-NO.js": 1387,
+        "./sma-SE.js": 1388,
+        "./smj-NO.js": 1389,
+        "./smj-SE.js": 1390,
+        "./smn-FI.js": 1391,
+        "./sms-FI.js": 1392,
+        "./sq-AL.js": 1393,
+        "./sr-Cyrl-BA.js": 1394,
+        "./sr-Cyrl-CS.js": 1395,
+        "./sr-Latn-BA.js": 1396,
+        "./sr-Latn-CS.js": 1397,
+        "./sv-FI.js": 1398,
+        "./sv-SE.js": 1399,
+        "./sw-KE.js": 1400,
+        "./syr-SY.js": 1401,
+        "./ta-IN.js": 1402,
+        "./te-IN.js": 1403,
+        "./th-TH.js": 1404,
+        "./tn-ZA.js": 1405,
+        "./tr-TR.js": 1406,
+        "./tt-RU.js": 1407,
+        "./uk-UA.js": 1408,
+        "./ur-PK.js": 1409,
+        "./uz-Cyrl-UZ.js": 1410,
+        "./uz-Latn-UZ.js": 1411,
+        "./vi-VN.js": 1412,
+        "./xh-ZA.js": 1413,
+        "./zh-CN.js": 1414,
+        "./zh-HK.js": 1415,
+        "./zh-MO.js": 1416,
+        "./zh-SG.js": 1417,
+        "./zh-TW.js": 1418,
+        "./zu-ZA.js": 1419
     };
 
     function r(e) {
@@ -75493,12 +75519,11 @@
         },
         r.resolve = s,
         e.exports = r,
-        r.id = 1261
+        r.id = 1263
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     "use strict";
-    n(1536),
-        n(1538),
-        n(1542),
+    n(1538),
+        n(1540),
         n(1544),
         n(1546),
         n(1548),
@@ -75541,5 +75566,6 @@
         n(1622),
         n(1624),
         n(1626),
-        n(1628)
+        n(1628),
+        n(1630)
 }, function(e, t, n) {}, , , , , , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , function(e, t, n) {}, , , , , , function(e, t, n) {}, , function(e, t, n) {}]);

@@ -8258,8 +8258,9 @@ select.form-control:focus {
 
 .waze-btn.waze-btn-big {
     padding: 15px 30px 15px 30px;
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 50px;
 }
 
 .waze-btn.waze-btn-disabled {
@@ -10067,7 +10068,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 #tutorial-dialog .modal-content {
     border: none;
     width: 1024px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 23px -9px rgba(91, 91, 91, 0.5);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -11005,12 +11006,31 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     line-height: 13px;
     color: #8c8c8c;
     padding: 15px 20px;
-    border-bottom: 1px solid #dadada;
+}
+
+.changes-log-region .sandbox-mode-notice {
+    display: none;
+    color: #0aabf7;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    vertical-align: middle;
+    line-height: 16px;
+    padding: 12px 16px 11px;
+    background-color: #ebf9ff;
+}
+
+.changes-log-region .sandbox-mode-notice i {
+    margin-right: 8px;
 }
 
 .changes-log-region .groups-list-region {
+    border-top: 1px solid #dadada;
     max-height: 80vh;
     overflow-y: auto;
+}
+
+.changes-log-region .groups-list-region.in-sandbox {
+    border-top: none;
 }
 
 .changes-log-region .actions-group-container {
@@ -11663,333 +11683,162 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     left: 0;
     bottom: 0;
     right: 0;
-    width: 860px;
 }
 
 .modal-dialog-login .modal-content {
-    width: 860px;
+    display: inline-block;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 22px 84px 0 rgba(87, 99, 125, 0.05);
+    box-shadow: 0 4px 23px -9px rgba(91, 91, 91, 0.5);
     border: none;
-    background-color: #f8f8f8;
+    background-color: #fbfbfb;
+    border-radius: 10px;
     background-clip: border-box;
 }
 
-.modal-dialog-login .login-title {
-    font-family: Poppins;
-    font-weight: bold;
-    color: #3d3d3d;
-    line-height: 20px;
-    font-size: 20px;
-}
-
-.modal-dialog-login .waze-btn {
-    letter-spacing: 0.4px;
-    height: 34px;
-}
-
 #login-popup {
-    width: 860px;
-    border-radius: 8px;
-    padding: 55px;
+    width: 560px;
+    border-radius: 10px;
+    padding: 15px 20px 17px;
     overflow: visible;
-    background-color: #fbfbfb;
-}
-
-#login-popup .welcome-message {
-    margin-bottom: 22px;
-}
-
-#login-popup .welcome-message h2 {
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-#login-popup .welcome-message p {
-    font-size: 13px;
-    color: #3d3d3d;
-    line-height: 20px;
-}
-
-#login-popup .language-select {
-    position: absolute;
-    right: 35px;
-    padding: 0px 20px;
-    cursor: pointer;
-}
-
-#login-popup .language-select .dropdown-toggle {
-    color: #8c8c8c;
-    text-decoration: underline;
-    transition: all 150ms;
-}
-
-#login-popup .language-select .dropdown-toggle:hover {
-    color: #354148;
-}
-
-#login-popup .language-select .dropdown-menu {
-    right: 20px;
-    left: auto;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    border: none;
-    transform-origin: 0px 0px;
-    transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
-    top: 15px;
-    opacity: 0;
-    display: block !important;
-    pointer-events: none;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -ms-column-count: 2;
-    -o-column-count: 2;
-    column-count: 2;
-}
-
-#login-popup .language-select .dropdown-menu > li > a:hover, #login-popup .language-select .dropdown-menu > li > a:focus {
-    text-decoration: none;
-    color: #262626;
-    background-color: #eff4f4;
-}
-
-#login-popup .language-select.open .dropdown-menu {
-    top: 20px;
-    opacity: 1;
-    pointer-events: auto;
+    background-color: #ffffff;
 }
 
 #login-popup .login-popup-content {
-    display: flex;
+    margin: 38px 70px 71px;
 }
 
-#login-popup .login-form {
-    min-width: 310px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    height: 341px;
-    background: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-}
-
-#login-popup .login-form .username, #login-popup .login-form .password {
-    width: 257px;
-    margin-bottom: 10px;
-}
-
-#login-popup .login-form .form-title {
-    font-size: 13px;
-    color: #3d3d3d;
-    line-height: 20px;
-    margin-bottom: 12px;
-}
-
-#login-popup .login-form .forgot-password {
-    font-size: 13px;
-    text-decoration: underline;
-    margin-top: 8px;
-    display: block;
-    transition: all 150ms;
-}
-
-#login-popup .login-form .forgot-password:hover {
-    color: #354148;
-    background-color: transparent;
-}
-
-#login-popup .login-form .recaptcha-container {
-    width: 257px;
-    margin: 12px 0;
-}
-
-#login-popup .login-form .submit {
-    width: 257px;
-}
-
-#login-popup .login-form .username {
-    margin-bottom: 14px;
-}
-
-#login-popup .login-form .error-message {
-    height: 18px;
-}
-
-#login-popup .login-form .login-title {
-    font-size: 17px;
-    color: #3d3d3d;
-    line-height: 20px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-#login-popup .login-form .input-border {
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-#login-popup .login-form .input-border:active, #login-popup .login-form .input-border:focus {
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-#login-popup .login-popup-links .description {
-    font-size: 13px;
-    white-space: normal;
-    margin-top: 2px;
-    font-weight: normal;
-    text-align: center;
-    line-height: 16px;
-}
-
-#login-popup .login-popup-links .title {
-    font-size: 13px;
-    line-height: 20px;
-    color: #354148;
-    text-align: center;
-}
-
-#login-popup .login-popup-links a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 198px;
-    height: 161px;
-    color: #3d3d3d;
-    text-decoration: none;
-    padding: 77px 10px 10px 10px;
-    position: relative;
-    margin-bottom: 19px;
-    margin-left: 22px;
-    float: left;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-    background: white;
-    transition: all 300ms;
-    border-radius: 8px;
-}
-
-#login-popup .login-popup-links a .banner {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 198px;
-    height: 67px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-#login-popup .login-popup-links a .banner::before {
-    content: "";
-    display: block;
-    position: absolute;
-}
-
-#login-popup .login-popup-links a.forum, #login-popup .login-popup-links a.playmode {
+#login-popup .welcome-image {
+    background-image: url(//editor-assets.waze.com/beta/img/login81502ab3141acf8d2ea181bec6e7ba14.png);
+    background-position: 0px 0px;
+    width: 236px;
+    height: 180px;
+    margin: 0 auto;
     margin-bottom: 0px;
 }
 
-#login-popup .login-popup-links a:hover {
-    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.09);
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #login-popup .welcome-image {
+        background-image: url(//editor-assets.waze.com/beta/img/login@2x49c3ad3a99bfe383ae6e67cc975672c6.png);
+        background-size: 319px 200px;
+    }
 }
 
-#login-popup .login-popup-links a.tutorial .banner {
-    background-color: #ff7272;
+#login-popup .welcome-message {
+    margin-bottom: 42px;
+    text-align: center;
 }
 
-#login-popup .login-popup-links a.tutorial .banner:after {
-    content: "";
+#login-popup .welcome-message h2 {
+    font-family: Poppins;
+    margin-top: 0;
+    font-weight: bold;
+    color: #3d3d3d;
+    line-height: 28px;
+    font-size: 24px;
+    letter-spacing: -0.74px;
+    color: #484848;
+}
+
+#login-popup .welcome-message p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+    letter-spacing: 0.1px;
+    color: #4c4c4c;
+}
+
+#login-popup a.login {
+    text-decoration: none;
+    width: 380px;
+}
+
+#login-popup .playmode {
+    text-align: center;
+    margin-top: 13px;
+}
+
+#login-popup .playmode a {
+    color: #26bae8;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#login-popup .login-popup-footer {
+    border-top: solid 1px rgba(211, 218, 224, 0.61);
+    padding-top: 15px;
+    display: flex;
+}
+
+#login-popup .login-popup-footer .login-links a {
+    color: #859ba6;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+#login-popup .login-popup-footer .login-links a:hover {
+    text-decoration: underline;
+}
+
+#login-popup .login-popup-footer .language-select-container {
+    flex-grow: 1;
+}
+
+#login-popup .translate-icon {
+    display: inline-block;
+    background-image: url(//editor-assets.waze.com/beta/img/login81502ab3141acf8d2ea181bec6e7ba14.png);
+    background-position: 0px -180px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    left: 156px;
-    top: 10px;
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: -83px -58px;
-    width: 32px;
-    height: 32px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #login-popup .login-popup-links a.tutorial .banner:after {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
+    #login-popup .translate-icon {
+        background-image: url(//editor-assets.waze.com/beta/img/login@2x49c3ad3a99bfe383ae6e67cc975672c6.png);
+        background-size: 319px 200px;
     }
 }
 
-#login-popup .login-popup-links a.tutorial .banner::before {
-    left: 69px;
-    top: 6px;
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: 0px -119px;
-    width: 64px;
-    height: 65px;
+#login-popup .language-select {
+    position: relative;
+    display: inline-block;
+    color: #859ba6;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #login-popup .login-popup-links a.tutorial .banner::before {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
-    }
+#login-popup .language-select select {
+    background: transparent;
+    border: none;
+    color: #859ba6;
+    cursor: pointer;
+    outline: none;
+    height: auto;
+    padding-left: 26px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
-#login-popup .login-popup-links a.wiki .banner {
-    background-color: #20da9c;
+#login-popup .language-select select:hover {
+    text-decoration: underline;
 }
 
-#login-popup .login-popup-links a.wiki .banner::before {
-    left: 71px;
-    top: 14px;
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: -121px -61px;
-    width: 68px;
-    height: 57px;
+#login-popup .language-select select::-ms-expand {
+    display: none;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #login-popup .login-popup-links a.wiki .banner::before {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
-    }
-}
-
-#login-popup .login-popup-links a.forum .banner {
-    background-color: #26bae8;
-}
-
-#login-popup .login-popup-links a.forum .banner::before {
-    left: 40px;
-    top: 16px;
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: 0px 0px;
-    width: 121px;
-    height: 58px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #login-popup .login-popup-links a.forum .banner::before {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
-    }
-}
-
-#login-popup .login-popup-links a.playmode .banner {
-    background-color: #aa6dff;
-}
-
-#login-popup .login-popup-links a.playmode .banner::before {
-    left: 67px;
-    top: 21px;
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: -64px -119px;
-    width: 59px;
-    height: 49px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    #login-popup .login-popup-links a.playmode .banner::before {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
-    }
+#login-popup .language-select select + i {
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    line-height: 18px;
+    pointer-events: none;
 }
 
 .login-verification-view {
+    width: 860px;
     height: 540px;
     display: flex;
     flex-direction: column;
@@ -11998,6 +11847,19 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     text-align: center;
     padding: 80px;
     margin: auto;
+}
+
+.login-verification-view .waze-btn {
+    letter-spacing: 0.4px;
+    height: 34px;
+}
+
+.login-verification-view .login-title {
+    font-family: Poppins;
+    font-weight: bold;
+    color: #3d3d3d;
+    line-height: 20px;
+    font-size: 20px;
 }
 
 .login-verification-view a.waze-btn {
@@ -12042,30 +11904,30 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .login-verification-view .verification-image-verify {
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: -121px 0px;
+    background-image: url(//editor-assets.waze.com/beta/img/login81502ab3141acf8d2ea181bec6e7ba14.png);
+    background-position: -236px -61px;
     width: 83px;
     height: 61px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .login-verification-view .verification-image-verify {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
+        background-image: url(//editor-assets.waze.com/beta/img/login@2x49c3ad3a99bfe383ae6e67cc975672c6.png);
+        background-size: 319px 200px;
     }
 }
 
 .login-verification-view .verification-image-sent {
-    background-image: url(//editor-assets.waze.com/beta/img/login2b653128c78fba09bb8bf5a74d110ba2.png);
-    background-position: 0px -58px;
+    background-image: url(//editor-assets.waze.com/beta/img/login81502ab3141acf8d2ea181bec6e7ba14.png);
+    background-position: -236px 0px;
     width: 83px;
     height: 61px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .login-verification-view .verification-image-sent {
-        background-image: url(//editor-assets.waze.com/beta/img/login@2xe1fcee566159d086cdda174654fc1eb1.png);
-        background-size: 204px 184px;
+        background-image: url(//editor-assets.waze.com/beta/img/login@2x49c3ad3a99bfe383ae6e67cc975672c6.png);
+        background-size: 319px 200px;
     }
 }
 
@@ -12102,6 +11964,46 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .login-verification-view .step-manage-email ol {
     padding-left: 20px;
+}
+
+.session-expired {
+    padding: 72px 135px 135px;
+}
+
+.session-expired .icon {
+    margin: 0 auto;
+    background-image: url(//editor-assets.waze.com/beta/img/login81502ab3141acf8d2ea181bec6e7ba14.png);
+    background-position: -236px -122px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 38px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .session-expired .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/login@2x49c3ad3a99bfe383ae6e67cc975672c6.png);
+        background-size: 319px 200px;
+    }
+}
+
+.session-expired h1.title {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -0.74px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+.session-expired p.description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.session-expired a.login {
+    text-decoration: none;
+    width: 100%;
 }
 
 .slider {
@@ -15978,16 +15880,17 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 #sidebar .sandbox .welcome-container {
-    padding-right: 33px;
-    padding-left: 33px;
-    padding-bottom: 30px;
-    padding-top: 150px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    padding-top: 160px;
     line-height: 20px;
     background: white;
     border-radius: 8px;
     position: Relative;
     overflow: hidden;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 #sidebar .sandbox .welcome-container .sandbox-logo {
@@ -16009,67 +15912,86 @@ body[dir="rtl"] .olControlScaleLine {
 
 #sidebar .sandbox .welcome-container .sign-in-button {
     margin-top: 15px;
-    margin-bottom: 10px;
     display: inline-block;
-}
-
-#sidebar .sandbox .welcome-container .help-link {
-    display: block;
-    color: #26bae8;
-    text-decoration: none !important;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #sidebar .sandbox .welcome-container .welcome-text {
-    line-height: 18px;
+    line-height: 20px;
+    font-size: 14px;
 }
 
 #sidebar .sandbox .links {
-    margin-top: 30px;
+    margin-top: 49px;
 }
 
 #sidebar .sandbox .links a {
-    position: relative;
+    text-align: center;
+    text-decoration: none;
     display: block;
-    font-weight: bold;
-    color: #354148;
-    line-height: 41px;
-    vertical-align: middle;
     min-height: 35px;
-    padding-left: 25px;
-    padding-right: 25px;
-    text-decoration: none !important;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 58px;
+    color: #4c4c4c;
 }
 
-#sidebar .sandbox .links a:hover, #sidebar .sandbox .links a:active, #sidebar .sandbox .links a:visited {
-    color: #354148;
-    user-select: none;
+#sidebar .sandbox .links a .icon {
+    margin: 0 auto 5px;
 }
 
-#sidebar .sandbox .links a:after {
-    content: "";
-    width: 300px;
-    display: block;
-    position: absolute;
-    height: 1px;
-    left: 0px;
-    bottom: -1px;
-    background: #bebebe;
+#sidebar .sandbox .links a.tutorial .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: -40px 0px;
+    width: 40px;
+    height: 40px;
 }
 
-#sidebar .sandbox .links a:last-child:after {
-    display: none;
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #sidebar .sandbox .links a.tutorial .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
 }
 
-#sidebar .sandbox .links a.tutorial .title {
-    line-height: 25px;
+#sidebar .sandbox .links a.wiki .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: 0px -40px;
+    width: 40px;
+    height: 40px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #sidebar .sandbox .links a.wiki .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
+}
+
+#sidebar .sandbox .links a.forum .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: 0px 0px;
+    width: 40px;
+    height: 40px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #sidebar .sandbox .links a.forum .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
+}
+
+#sidebar .sandbox .links a .title {
+    font-family: Poppins;
+    font-weight: 600;
 }
 
 #sidebar .sandbox .links a .description {
-    font-size: 13px;
     font-weight: normal;
-    line-height: 18px;
-    color: #171d1e;
-    padding-bottom: 13px;
 }
 
 #sidebar .settings .units-group label {
@@ -16191,16 +16113,17 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .sandbox .welcome-container {
-    padding-right: 33px;
-    padding-left: 33px;
-    padding-bottom: 30px;
-    padding-top: 150px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    padding-top: 160px;
     line-height: 20px;
     background: white;
     border-radius: 8px;
     position: Relative;
     overflow: hidden;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 .sandbox .welcome-container .sandbox-logo {
@@ -16222,67 +16145,86 @@ body[dir="rtl"] .olControlScaleLine {
 
 .sandbox .welcome-container .sign-in-button {
     margin-top: 15px;
-    margin-bottom: 10px;
     display: inline-block;
-}
-
-.sandbox .welcome-container .help-link {
-    display: block;
-    color: #26bae8;
-    text-decoration: none !important;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .sandbox .welcome-container .welcome-text {
-    line-height: 18px;
+    line-height: 20px;
+    font-size: 14px;
 }
 
 .sandbox .links {
-    margin-top: 30px;
+    margin-top: 49px;
 }
 
 .sandbox .links a {
-    position: relative;
+    text-align: center;
+    text-decoration: none;
     display: block;
-    font-weight: bold;
-    color: #354148;
-    line-height: 41px;
-    vertical-align: middle;
     min-height: 35px;
-    padding-left: 25px;
-    padding-right: 25px;
-    text-decoration: none !important;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 58px;
+    color: #4c4c4c;
 }
 
-.sandbox .links a:hover, .sandbox .links a:active, .sandbox .links a:visited {
-    color: #354148;
-    user-select: none;
+.sandbox .links a .icon {
+    margin: 0 auto 5px;
 }
 
-.sandbox .links a:after {
-    content: "";
-    width: 300px;
-    display: block;
-    position: absolute;
-    height: 1px;
-    left: 0px;
-    bottom: -1px;
-    background: #bebebe;
+.sandbox .links a.tutorial .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: -40px 0px;
+    width: 40px;
+    height: 40px;
 }
 
-.sandbox .links a:last-child:after {
-    display: none;
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .sandbox .links a.tutorial .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
 }
 
-.sandbox .links a.tutorial .title {
-    line-height: 25px;
+.sandbox .links a.wiki .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: 0px -40px;
+    width: 40px;
+    height: 40px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .sandbox .links a.wiki .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
+}
+
+.sandbox .links a.forum .icon {
+    background-image: url(//editor-assets.waze.com/beta/img/sandbox57c3a5e74d2c1af215ed0d7853bd1327.png);
+    background-position: 0px 0px;
+    width: 40px;
+    height: 40px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .sandbox .links a.forum .icon {
+        background-image: url(//editor-assets.waze.com/beta/img/sandbox@2x03b299242be1a6a56904ebb88ac5c159.png);
+        background-size: 80px 80px;
+    }
+}
+
+.sandbox .links a .title {
+    font-family: Poppins;
+    font-weight: 600;
 }
 
 .sandbox .links a .description {
-    font-size: 13px;
     font-weight: normal;
-    line-height: 18px;
-    color: #171d1e;
-    padding-bottom: 13px;
 }
 
 #sidebar .tab-content {
