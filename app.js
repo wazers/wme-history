@@ -571,9 +571,9 @@
     var i = u(n(11)),
         r = u(n(61)),
         s = u(n(76)),
-        o = n(91),
+        o = n(92),
         a = u(o),
-        l = n(92);
+        l = n(93);
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -1531,10 +1531,10 @@
     var l = o(n(21)),
         u = n(51),
         d = n(65),
-        c = o(n(78)),
+        c = o(n(79)),
         h = o(n(19)),
         f = o(n(45)),
-        p = a(n(79)),
+        p = a(n(80)),
         g = o(n(197)),
         v = a(n(153)),
         m = o(n(48)),
@@ -1972,7 +1972,7 @@
         t.reportError = t.isSequential = t.printMap = t.runLater = t.deepClone = t.protect = t.localStorage = t.defined = t.isDefined = t.isUndefined = void 0;
     var i = l(n(61)),
         r = l(n(25)),
-        s = l(n(113)),
+        s = l(n(114)),
         o = l(n(142)),
         a = n(35);
 
@@ -2470,7 +2470,7 @@
         t.FetchError = t.addHttpResponseMiddleware = t.addHttpRequestMiddleware = t.httpRequest = t.httpPost = t.httpGet = void 0;
     var i = p(n(143)),
         r = p(n(144)),
-        s = p(n(90)),
+        s = p(n(91)),
         o = p(n(191)),
         a = p(n(6)),
         l = p(n(2)),
@@ -2664,7 +2664,7 @@
         c = v(n(55)),
         h = v(n(153)),
         f = m(n(207)),
-        p = m(n(80)),
+        p = m(n(81)),
         g = n(39);
 
     function v(e) {
@@ -3694,7 +3694,7 @@
         value: !0
     });
     var o = s(n(32)),
-        a = n(79),
+        a = n(80),
         l = s(n(607));
 
     function u(e, t, n) {
@@ -3753,7 +3753,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(82),
+    var i = n(83),
         r = n(40),
         s = function() {
             function e(e) {
@@ -4949,7 +4949,7 @@
         u = g(n(4)),
         d = g(n(22)),
         c = g(n(10)),
-        h = g(n(99)),
+        h = g(n(100)),
         f = g(n(15)),
         p = n(33);
 
@@ -5077,7 +5077,7 @@
     var r = i(n(809)),
         s = i(n(23)),
         o = n(56),
-        a = n(82),
+        a = n(83),
         l = n(40),
         u = function() {
             function e(e, t) {
@@ -5293,6 +5293,197 @@
             t
     }(s(n(19)).default);
     t.default = a
+}, function(e, t, n) {
+    "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var i = d(n(25)),
+        r = d(n(6)),
+        s = d(n(0)),
+        o = d(n(1)),
+        a = d(n(95)),
+        l = n(35),
+        u = function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var n in e)
+                    Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
+            return t.default = e,
+                t
+        }(n(13));
+
+    function d(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        }
+    }
+    var c = function() {
+        function e() {
+            (0,
+                s.default)(this, e),
+            this.serializer = new a.default,
+                this.getFeaturesjqXHR = null,
+                this.abortController = null
+        }
+        return (0,
+                o.default)(e, [{
+                key: "_toUnprojectedBBOX",
+                value: function(e) {
+                    return u.getUnprojectedGeometry(e).toBBOX()
+                }
+            }, {
+                key: "_newRequestParams",
+                value: function(e) {
+                    return {
+                        language: I18n.locale,
+                        bbox: this._toUnprojectedBBOX(e)
+                    }
+                }
+            }, {
+                key: "getExpandedDataBounds",
+                value: function(e) {
+                    return u.getBoundsWithRatio(e, 1.7)
+                }
+            }, {
+                key: "getFeatures",
+                value: function(e, t, n) {
+                    e = this.getExpandedDataBounds(e);
+                    var s = (0,
+                            r.default)(this._newRequestParams(e), t),
+                        o = null;
+                    return this._supportAbortController() ? (this.abortController && this.abortController.abort(),
+                            this.abortController = new AbortController,
+                            n = (0,
+                                r.default)({}, n, {
+                                signal: this.abortController.signal
+                            }),
+                            o = (0,
+                                l.httpGet)(W.Config.paths.features, s, n)) : (this.getFeaturesjqXHR && this.getFeaturesjqXHR.abort(),
+                            this.getFeaturesjqXHR = $.get(W.Config.paths.features, s, n),
+                            o = this.getFeaturesjqXHR),
+                        i.default.resolve(o).catch(function(e) {
+                            throw "abort" !== e.statusText && "AbortError" !== e.name || (e.reason = "abort"),
+                                e
+                        })
+                }
+            }, {
+                key: "_supportAbortController",
+                value: function() {
+                    return "function" == typeof AbortController
+                }
+            }, {
+                key: "postFeatures",
+                value: function(e, t, n) {
+                    var i = (0,
+                        r.default)(this._newRequestParams(t), {
+                        ignoreWarnings: n
+                    });
+                    return (0,
+                        l.httpPost)(W.Config.paths.features + "?" + $.param(i), e, {
+                        dataType: "json"
+                    })
+                }
+            }, {
+                key: "getCityExists",
+                value: function(e, t, n, i) {
+                    var r = parseInt(t, 10),
+                        s = parseInt(n, 10);
+                    return (0,
+                        l.httpGet)(W.Config.paths.cityExists, {
+                        cityName: e,
+                        countryID: isNaN(r) ? void 0 : r,
+                        stateID: isNaN(s) ? void 0 : s,
+                        box: this._toUnprojectedBBOX(i)
+                    })
+                }
+            }, {
+                key: "getElementHistory",
+                value: function(e, t) {
+                    var n = this,
+                        i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
+                        r = {
+                            objectType: e,
+                            objectID: t
+                        };
+                    return null != i && (r.till = i),
+                        (0,
+                            l.httpGet)(W.Config.paths.elementHistory, r).then(function(e) {
+                            return n.serializer.read(e)
+                        })
+                }
+            }, {
+                key: "_sendFeaturesRequest",
+                value: function(e, t) {
+                    var n = this;
+                    return (0,
+                        l.httpGet)(e, t).then(function(e) {
+                        return n.serializer.read(e),
+                            e
+                    })
+                }
+            }, {
+                key: "getHouseNumbers",
+                value: function(e) {
+                    return this._sendFeaturesRequest(W.Config.paths.houseNumbers, {
+                        ids: e
+                    })
+                }
+            }, {
+                key: "getConfigurationInfo",
+                value: function() {
+                    return (0,
+                        l.httpGet)(W.Config.paths.configurationInfo)
+                }
+            }, {
+                key: "getProblemDetailsByIds",
+                value: function(e) {
+                    return this._sendFeaturesRequest(W.Config.paths.problemDetails, {
+                        ids: e
+                    })
+                }
+            }, {
+                key: "getUpdateRequestSessionsByIds",
+                value: function(e) {
+                    return this._sendFeaturesRequest(W.Config.paths.updateRequestSessions, {
+                        ids: e
+                    })
+                }
+            }, {
+                key: "getArchives",
+                value: function(e) {
+                    var t = e.username,
+                        n = e.minDistance,
+                        i = e.offset,
+                        r = e.count;
+                    return this._sendFeaturesRequest(W.Config.paths.archive, {
+                        username: t,
+                        minDistance: n,
+                        offset: i,
+                        count: r
+                    })
+                }
+            }, {
+                key: "getArchiveById",
+                value: function(e) {
+                    return this._sendFeaturesRequest(W.Config.paths.archive, {
+                        id: e
+                    })
+                }
+            }, {
+                key: "getArchiveSessionById",
+                value: function(e) {
+                    return this._sendFeaturesRequest(W.Config.paths.archiveSessions, {
+                        id: e
+                    })
+                }
+            }]),
+            e
+    }();
+    t.default = c,
+        e.exports = t.default
 }, function(e, t, n) {
     "use strict";
     var i = this && this.__importDefault || function(e) {
@@ -5669,7 +5860,7 @@
     });
     var a = s(n(606)),
         l = o(n(55)),
-        u = s(n(80)),
+        u = s(n(81)),
         d = {
             FWD: 0,
             REV: 1
@@ -5788,9 +5979,9 @@
         value: !0
     });
     var r = n(65),
-        s = n(79),
+        s = n(80),
         o = n(36),
-        a = n(81),
+        a = n(82),
         l = n(39),
         u = function() {
             function e(e, t) {
@@ -5854,7 +6045,7 @@
         value: !0
     });
     var i = n(117),
-        r = n(82),
+        r = n(83),
         s = n(40),
         o = function() {
             function e(e) {
@@ -5926,7 +6117,7 @@
         g = A(n(806)),
         v = A(n(807)),
         m = A(n(196)),
-        y = A(n(77)),
+        y = A(n(78)),
         b = A(n(32)),
         E = C(n(17)),
         w = C(n(7)),
@@ -6476,7 +6667,8 @@
     function d(e) {
         return window.open(e.url, e.name, "width=" + e.width + ",height=" + e.height + ",left=" + e.left + ",top=" + e.top)
     }
-    t.documentLocaleMatches = function(e) {
+    t.redirectPageTo = a,
+        t.documentLocaleMatches = function(e) {
             return I18n.locale === e
         },
         t.getURLForLocale = l,
@@ -6520,192 +6712,32 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = d(n(25)),
-        r = d(n(6)),
-        s = d(n(0)),
-        o = d(n(1)),
-        a = d(n(94)),
-        l = n(35),
-        u = function(e) {
-            if (e && e.__esModule)
-                return e;
-            var t = {};
-            if (null != e)
-                for (var n in e)
-                    Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
-            return t.default = e,
-                t
-        }(n(13));
-
-    function d(e) {
-        return e && e.__esModule ? e : {
-            default: e
-        }
+    t.RepositoryName = {
+        ARCHIVE_SESSIONS: "archiveSessions",
+        ARCHIVES: "archives",
+        BIG_JUNCTIONS: "bigJunctions",
+        CAMERAS: "cameras",
+        CITIES: "cities",
+        COUNTRIES: "countries",
+        JUNCTIONS: "junctions",
+        MAJOR_TRAFFIC_EVENTS: "majorTrafficEvents",
+        MANAGED_AREAS: "managedAreas",
+        MAP_COMMENTS: "mapComments",
+        MAP_UPDATE_REQUESTS: "mapUpdateRequests",
+        NODES: "nodes",
+        PROBLEM_DETAILS: "problemDetails",
+        PROBLEMS: "problems",
+        RESTRICTED_AREAS: "restrictedAreas",
+        ROAD_CLOSURES: "roadClosures",
+        SEGMENT_HOUSE_NUMBERS: "segmentHouseNumbers",
+        SEGMENTS: "segments",
+        STATES: "states",
+        STREETS: "streets",
+        UPDATE_REQUEST_SESSIONS: "updateRequestSessions",
+        USER_AREAS: "userAreas",
+        USERS: "users",
+        VENUES: "venues"
     }
-    var c = function() {
-        function e() {
-            (0,
-                s.default)(this, e),
-            this.serializer = new a.default,
-                this.getFeaturesjqXHR = null,
-                this.abortController = null
-        }
-        return (0,
-                o.default)(e, [{
-                key: "_toUnprojectedBBOX",
-                value: function(e) {
-                    return u.getUnprojectedGeometry(e).toBBOX()
-                }
-            }, {
-                key: "_newRequestParams",
-                value: function(e) {
-                    return {
-                        language: I18n.locale,
-                        bbox: this._toUnprojectedBBOX(e)
-                    }
-                }
-            }, {
-                key: "getExpandedDataBounds",
-                value: function(e) {
-                    return u.getBoundsWithRatio(e, 1.7)
-                }
-            }, {
-                key: "getFeatures",
-                value: function(e, t, n) {
-                    e = this.getExpandedDataBounds(e);
-                    var s = (0,
-                            r.default)(this._newRequestParams(e), t),
-                        o = null;
-                    return this._supportAbortController() ? (this.abortController && this.abortController.abort(),
-                            this.abortController = new AbortController,
-                            n = (0,
-                                r.default)({}, n, {
-                                signal: this.abortController.signal
-                            }),
-                            o = (0,
-                                l.httpGet)(W.Config.paths.features, s, n)) : (this.getFeaturesjqXHR && this.getFeaturesjqXHR.abort(),
-                            this.getFeaturesjqXHR = $.get(W.Config.paths.features, s, n),
-                            o = this.getFeaturesjqXHR),
-                        i.default.resolve(o).catch(function(e) {
-                            throw "abort" !== e.statusText && "AbortError" !== e.name || (e.reason = "abort"),
-                                e
-                        })
-                }
-            }, {
-                key: "_supportAbortController",
-                value: function() {
-                    return "function" == typeof AbortController
-                }
-            }, {
-                key: "postFeatures",
-                value: function(e, t, n) {
-                    var i = (0,
-                        r.default)(this._newRequestParams(t), {
-                        ignoreWarnings: n
-                    });
-                    return (0,
-                        l.httpPost)(W.Config.paths.features + "?" + $.param(i), e, {
-                        dataType: "json"
-                    })
-                }
-            }, {
-                key: "getCityExists",
-                value: function(e, t, n, i) {
-                    var r = parseInt(t, 10),
-                        s = parseInt(n, 10);
-                    return (0,
-                        l.httpGet)(W.Config.paths.cityExists, {
-                        cityName: e,
-                        countryID: isNaN(r) ? void 0 : r,
-                        stateID: isNaN(s) ? void 0 : s,
-                        box: this._toUnprojectedBBOX(i)
-                    })
-                }
-            }, {
-                key: "getElementHistory",
-                value: function(e, t) {
-                    var n = this,
-                        i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
-                        r = {
-                            objectType: e,
-                            objectID: t
-                        };
-                    return null != i && (r.till = i),
-                        (0,
-                            l.httpGet)(W.Config.paths.elementHistory, r).then(function(e) {
-                            return n.serializer.read(e)
-                        })
-                }
-            }, {
-                key: "_sendFeaturesRequest",
-                value: function(e, t) {
-                    var n = this;
-                    return (0,
-                        l.httpGet)(e, t).then(function(e) {
-                        return n.serializer.read(e),
-                            e
-                    })
-                }
-            }, {
-                key: "getHouseNumbers",
-                value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.houseNumbers, {
-                        ids: e
-                    })
-                }
-            }, {
-                key: "getConfigurationInfo",
-                value: function() {
-                    return (0,
-                        l.httpGet)(W.Config.paths.configurationInfo)
-                }
-            }, {
-                key: "getProblemDetailsByIds",
-                value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.problemDetails, {
-                        ids: e
-                    })
-                }
-            }, {
-                key: "getUpdateRequestSessionsByIds",
-                value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.updateRequestSessions, {
-                        ids: e
-                    })
-                }
-            }, {
-                key: "getArchives",
-                value: function(e) {
-                    var t = e.username,
-                        n = e.minDistance,
-                        i = e.offset,
-                        r = e.count;
-                    return this._sendFeaturesRequest(W.Config.paths.archive, {
-                        username: t,
-                        minDistance: n,
-                        offset: i,
-                        count: r
-                    })
-                }
-            }, {
-                key: "getArchiveById",
-                value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.archive, {
-                        id: e
-                    })
-                }
-            }, {
-                key: "getArchiveSessionById",
-                value: function(e) {
-                    return this._sendFeaturesRequest(W.Config.paths.archiveSessions, {
-                        id: e
-                    })
-                }
-            }]),
-            e
-    }();
-    t.default = c,
-        e.exports = t.default
 }, function(e, t, n) {
     "use strict";
     var i = this && this.__importDefault || function(e) {
@@ -6792,7 +6824,7 @@
             return t.default = e,
                 t
         }(n(7)),
-        c = h(n(93));
+        c = h(n(77));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -7497,7 +7529,7 @@
         s = f(n(0)),
         o = f(n(1)),
         a = f(n(196)),
-        l = n(77),
+        l = n(78),
         u = f(l),
         d = f(n(207)),
         c = f(n(32)),
@@ -7703,7 +7735,7 @@
         t.SaveError = void 0;
     var i = k(n(143)),
         r = k(n(144)),
-        s = k(n(90)),
+        s = k(n(91)),
         o = k(n(191)),
         a = k(n(14)),
         l = k(n(9)),
@@ -7714,10 +7746,10 @@
         f = k(n(3)),
         p = k(n(4)),
         g = k(n(10)),
-        v = n(114),
+        v = n(94),
         m = k(n(216)),
         y = n(421),
-        b = k(n(94)),
+        b = k(n(95)),
         E = n(35),
         w = k(n(854)),
         S = function(e) {
@@ -8111,37 +8143,6 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    t.RepositoryName = {
-        ARCHIVE_SESSIONS: "archiveSessions",
-        ARCHIVES: "archives",
-        BIG_JUNCTIONS: "bigJunctions",
-        CAMERAS: "cameras",
-        CITIES: "cities",
-        COUNTRIES: "countries",
-        JUNCTIONS: "junctions",
-        MAJOR_TRAFFIC_EVENTS: "majorTrafficEvents",
-        MANAGED_AREAS: "managedAreas",
-        MAP_COMMENTS: "mapComments",
-        MAP_UPDATE_REQUESTS: "mapUpdateRequests",
-        NODES: "nodes",
-        PROBLEM_DETAILS: "problemDetails",
-        PROBLEMS: "problems",
-        RESTRICTED_AREAS: "restrictedAreas",
-        ROAD_CLOSURES: "roadClosures",
-        SEGMENT_HOUSE_NUMBERS: "segmentHouseNumbers",
-        SEGMENTS: "segments",
-        STATES: "states",
-        STREETS: "streets",
-        UPDATE_REQUEST_SESSIONS: "updateRequestSessions",
-        USER_AREAS: "userAreas",
-        USERS: "users",
-        VENUES: "venues"
-    }
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
     var i = s(n(0)),
         r = s(n(1));
 
@@ -8376,7 +8377,7 @@
     });
     var r = i(n(23)),
         s = n(56),
-        o = n(82),
+        o = n(83),
         a = n(40),
         l = function() {
             function e(e) {
@@ -8559,11 +8560,11 @@
     });
     var u = n(51),
         d = n(57),
-        c = a(n(78)),
+        c = a(n(79)),
         h = a(n(19)),
         f = a(n(45)),
         p = a(n(201)),
-        g = a(n(96)),
+        g = a(n(97)),
         v = a(n(151)),
         m = n(152),
         y = n(150),
@@ -9275,7 +9276,7 @@
             return t.default = e,
                 t
         }(n(7)),
-        p = v(n(80)),
+        p = v(n(81)),
         g = n(65);
 
     function v(e) {
@@ -9627,7 +9628,7 @@
         value: !0
     });
     var r = i(n(23)),
-        s = n(82),
+        s = n(83),
         o = n(40),
         a = function() {
             function e(e, t) {
@@ -10414,8 +10415,8 @@
         value: !0
     });
     var l = n(51),
-        u = n(77),
-        d = o(n(78)),
+        u = n(78),
+        d = o(n(79)),
         c = o(n(19)),
         h = o(n(45)),
         f = a(n(17)),
@@ -11037,7 +11038,7 @@
         l = s(n(19)),
         u = s(n(45)),
         d = {
-            speed: n(91).UNIT.KILOMETER
+            speed: n(92).UNIT.KILOMETER
         };
     t.UNITS = d;
     var c = function(e) {
@@ -11142,7 +11143,7 @@
         g = b(n(19)),
         v = b(n(15)),
         m = b(n(45)),
-        y = b(n(78));
+        y = b(n(79));
 
     function b(e) {
         return e && e.__esModule ? e : {
@@ -11609,7 +11610,7 @@
         h = v(n(58)),
         f = v(n(10)),
         p = v(n(15)),
-        g = v(n(97));
+        g = v(n(98));
 
     function v(e) {
         return e && e.__esModule ? e : {
@@ -12444,7 +12445,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = s(n(94)),
+    var i = s(n(95)),
         r = s(n(156));
 
     function s(e) {
@@ -12619,7 +12620,7 @@
         d = A(n(4)),
         c = n(1078),
         h = A(c),
-        f = n(78),
+        f = n(79),
         p = n(28),
         g = A(n(132)),
         v = A(n(211)),
@@ -13510,7 +13511,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(77)),
+    var r = i(n(78)),
         s = function() {
             function e(e, t, n) {
                 this.fromVertex = e,
@@ -14141,7 +14142,7 @@
         s = c(n(1)),
         o = c(n(3)),
         a = c(n(4)),
-        l = c(n(100)),
+        l = c(n(101)),
         u = c(n(22)),
         d = n(33);
 
@@ -14710,7 +14711,7 @@
     });
     var i = a(n(6)),
         r = n(28),
-        s = a(n(98)),
+        s = a(n(99)),
         o = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -15546,7 +15547,7 @@
         o = w(n(6)),
         a = w(n(9)),
         l = w(n(31)),
-        u = w(n(90)),
+        u = w(n(91)),
         d = w(n(970)),
         c = w(n(212)),
         h = w(n(2)),
@@ -15554,7 +15555,7 @@
         p = w(n(1)),
         g = w(n(3)),
         v = w(n(4)),
-        m = n(102),
+        m = n(103),
         y = w(n(216)),
         b = w(n(976)),
         E = n(62);
@@ -16945,7 +16946,7 @@
     var i = l(n(25)),
         r = l(n(379)),
         s = l(n(624)),
-        o = l(n(95)),
+        o = l(n(96)),
         a = n(36);
 
     function l(e) {
@@ -17863,7 +17864,7 @@
         l = f(n(8)),
         u = f(n(4)),
         d = f(n(10)),
-        c = f(n(83)),
+        c = f(n(84)),
         h = f(n(23));
 
     function f(e) {
@@ -17954,8 +17955,8 @@
         l = f(n(8)),
         u = f(n(4)),
         d = f(n(10)),
-        c = f(n(99)),
-        h = f(n(83));
+        c = f(n(100)),
+        h = f(n(84));
 
     function f(e) {
         return e && e.__esModule ? e : {
@@ -18034,7 +18035,7 @@
         d = p(n(10)),
         c = p(n(22)),
         h = p(n(15)),
-        f = p(n(99));
+        f = p(n(100));
 
     function p(e) {
         return e && e.__esModule ? e : {
@@ -18143,10 +18144,10 @@
         a = m(n(3)),
         l = m(n(8)),
         u = m(n(4)),
-        d = m(n(83)),
+        d = m(n(84)),
         c = m(n(161)),
         h = m(n(58)),
-        f = m(n(99)),
+        f = m(n(100)),
         p = m(n(10)),
         g = m(n(15)),
         v = function(e) {
@@ -18328,7 +18329,7 @@
             return t.default = e,
                 t
         }(n(55)),
-        c = h(n(80));
+        c = h(n(81));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -18398,7 +18399,7 @@
         h = m(n(21)),
         f = m(n(38)),
         p = m(n(32)),
-        g = n(79),
+        g = n(80),
         v = n(33);
 
     function m(e) {
@@ -18501,7 +18502,7 @@
         value: !0
     });
     var s = i(n(55)),
-        o = r(n(80)),
+        o = r(n(81)),
         a = function() {
             function e(e, t) {
                 this.dataModel = e,
@@ -18663,7 +18664,7 @@
         a = C(n(4)),
         l = C(n(10)),
         u = C(n(162)),
-        d = C(n(83)),
+        d = C(n(84)),
         c = C(n(161)),
         h = C(n(124)),
         f = C(n(38)),
@@ -18673,7 +18674,7 @@
         m = C(n(21)),
         y = C(n(23)),
         b = C(n(32)),
-        E = n(77),
+        E = n(78),
         w = C(n(200)),
         S = T(n(7)),
         k = T(n(17)),
@@ -19106,8 +19107,8 @@
         u = y(n(10)),
         d = y(n(15)),
         c = y(n(58)),
-        h = y(n(83)),
-        f = y(n(98)),
+        h = y(n(84)),
+        f = y(n(99)),
         p = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -19783,7 +19784,7 @@
         o = h(n(820)),
         a = h(n(821)),
         l = h(n(822)),
-        u = n(84),
+        u = n(85),
         d = h(u),
         c = function(e) {
             if (e && e.__esModule)
@@ -19933,7 +19934,7 @@
         t.LOGIN_RESULT = t.InvalidLoginError = void 0;
     var i = y(n(143)),
         r = y(n(144)),
-        s = y(n(90)),
+        s = y(n(91)),
         o = y(n(191)),
         a = y(n(6)),
         l = y(n(25)),
@@ -19955,7 +19956,7 @@
                     Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        }(n(92));
+        }(n(93));
 
     function y(e) {
         return e && e.__esModule ? e : {
@@ -20261,14 +20262,14 @@
         s = O(n(6)),
         o = O(n(0)),
         a = O(n(1)),
-        l = O(n(100)),
+        l = O(n(101)),
         u = O(n(70)),
         d = O(n(420)),
         c = O(n(163)),
         h = O(n(15)),
-        f = n(114),
+        f = n(94),
         p = O(n(844)),
-        g = O(n(101)),
+        g = O(n(102)),
         v = O(n(845)),
         m = O(n(846)),
         y = O(n(63)),
@@ -20732,7 +20733,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(114),
+    var i = n(94),
         r = [i.RepositoryName.USERS, i.RepositoryName.COUNTRIES, i.RepositoryName.STATES, i.RepositoryName.CITIES, i.RepositoryName.STREETS, i.RepositoryName.NODES, i.RepositoryName.JUNCTIONS, i.RepositoryName.BIG_JUNCTIONS, i.RepositoryName.SEGMENTS, i.RepositoryName.SEGMENT_HOUSE_NUMBERS, i.RepositoryName.VENUES, i.RepositoryName.UPDATE_REQUEST_SESSIONS, i.RepositoryName.ARCHIVES, i.RepositoryName.ARCHIVE_SESSIONS, i.RepositoryName.CAMERAS, i.RepositoryName.MAP_UPDATE_REQUESTS, i.RepositoryName.PROBLEMS, i.RepositoryName.MAJOR_TRAFFIC_EVENTS, i.RepositoryName.ROAD_CLOSURES, i.RepositoryName.MANAGED_AREAS, i.RepositoryName.USER_AREAS, i.RepositoryName.MAP_COMMENTS, "notifications", i.RepositoryName.RESTRICTED_AREAS, "transactions"];
     t.sortRepositoriesByProcessOrder = function(e) {
         return e.filter(function(e) {
@@ -22311,7 +22312,7 @@
         s = u(n(3)),
         o = u(n(1)),
         a = u(n(4)),
-        l = u(n(96));
+        l = u(n(97));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -22782,14 +22783,14 @@
         h = C(n(939)),
         f = C(n(72)),
         p = C(n(940)),
-        g = n(102),
+        g = n(103),
         v = n(28),
         m = T(n(13)),
         y = T(n(7)),
         b = T(n(24)),
         E = T(n(17)),
         w = T(n(20)),
-        S = C(n(93)),
+        S = C(n(77)),
         k = C(n(941)),
         M = n(224),
         I = n(422);
@@ -25269,7 +25270,7 @@
         a = h(n(3)),
         l = h(n(4)),
         u = h(n(1097)),
-        d = h(n(93)),
+        d = h(n(77)),
         c = h(n(419));
 
     function h(e) {
@@ -26014,7 +26015,7 @@
         l = p(n(8)),
         u = p(n(4)),
         d = p(n(10)),
-        c = p(n(100)),
+        c = p(n(101)),
         h = p(n(21)),
         f = p(n(22));
 
@@ -26136,12 +26137,12 @@
     var i = m(n(41)),
         r = m(n(14)),
         s = m(n(6)),
-        o = m(n(84)),
+        o = m(n(85)),
         a = m(n(1132)),
         l = m(n(414)),
         u = m(n(1134)),
         d = m(n(1136)),
-        c = n(102),
+        c = n(103),
         h = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -26514,7 +26515,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         r = n(39),
         s = n(56),
         o = n(133),
@@ -26849,7 +26850,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         r = n(39),
         s = n(56),
         o = n(133),
@@ -27028,7 +27029,7 @@
         }),
         t.LandmarkMerger = t.MAIN_CATEGORY = t.ADDRESS_FIELD = t.CUSTOM_DESCRIPTION = t.PARKING_FIELDS = t.VENUE_FIELDS = void 0;
     var i = f(n(14)),
-        r = f(n(113)),
+        r = f(n(114)),
         s = f(n(12)),
         o = f(n(0)),
         a = f(n(1)),
@@ -28264,7 +28265,7 @@
     });
     var r = i(n(478)),
         s = i(n(119)),
-        o = i(n(97)),
+        o = i(n(98)),
         a = i(n(23)),
         l = n(36),
         u = n(1197),
@@ -28417,7 +28418,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(78),
+    var i, r = n(79),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -28750,7 +28751,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.31-142-g513254f6\n",
+                version: "v2.31-145-gc16e26a4\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -30014,7 +30015,7 @@
         value: !0
     });
     var i, r, s = m(n(14)),
-        o = n(114),
+        o = n(94),
         a = m(n(251)),
         l = m(n(597)),
         u = m(n(44)),
@@ -30122,7 +30123,7 @@
         a = c(n(3)),
         l = c(n(4)),
         u = c(n(63)),
-        d = c(n(93));
+        d = c(n(77));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -30241,7 +30242,7 @@
         h = i(n(200)),
         f = i(n(119)),
         p = i(n(631)),
-        g = i(n(97)),
+        g = i(n(98)),
         v = i(n(385)),
         m = i(n(386)),
         _ = i(n(23)),
@@ -30776,7 +30777,7 @@
         value: !0
     });
     var a = s(n(196)),
-        l = o(n(77)),
+        l = o(n(78)),
         u = function() {
             function e(e) {
                 this.dataModel = e,
@@ -31468,7 +31469,7 @@
         value: !0
     });
     var i = s(n(66)),
-        r = s(n(95));
+        r = s(n(96));
 
     function s(e) {
         return e && e.__esModule ? e : {
@@ -32732,7 +32733,7 @@
         value: !0
     });
     var i = c(n(69)),
-        r = n(114),
+        r = n(94),
         s = c(n(44)),
         o = c(n(159)),
         a = c(n(647)),
@@ -32962,7 +32963,7 @@
         a = y(n(3)),
         l = y(n(8)),
         u = y(n(4)),
-        d = y(n(98)),
+        d = y(n(99)),
         c = y(n(159)),
         h = y(n(649)),
         f = y(n(392)),
@@ -35795,7 +35796,7 @@
                             i.push("" + t(e(this.t("venues.update_requests.panel.change.suggested")))),
                             i.push("<i class='fa fa-crosshairs'></i>\n</div>");
                         else if ("images" === this.fieldName) {
-                            for (r = n(96).SIZE,
+                            for (r = n(97).SIZE,
                                 i.push("<div class='removed-title'>" + t(e(this.t("venues.update_requests.panel.change.removed"))) + "</div>\n<div class='remove-images'>"),
                                 s = 0,
                                 a = (l = this.getRemovedImages()).length; s < a; s++)
@@ -35960,7 +35961,7 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            r = n(96).SIZE,
+                            r = n(97).SIZE,
                             this.image ? i.push("<a>\n<img class='image-preview' src='" + t(e(this.image.getUrl(r.MOBILE))) + "' data-image-id='" + t(e(this.image.id)) + "'>\n</a>") : i.push("<div class='missing-image'></div>"),
                             i.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -36556,7 +36557,7 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            r = n(91).UNIT,
+                            r = n(92).UNIT,
                             W.Config.user_editing_enabled ? (i.push("" + t(e(this.t("user.info.edit_area.title", {
                                     distance: this.h.lengthString(this.editableMiles, {
                                         units: r.MILE,
@@ -37051,9 +37052,9 @@
         f = i(n(69)),
         p = i(n(402)),
         g = i(n(209)),
-        v = i(n(100)),
+        v = i(n(101)),
         m = i(n(70)),
-        _ = i(n(99)),
+        _ = i(n(100)),
         y = i(n(163)),
         b = i(n(208)),
         E = i(n(403)),
@@ -37062,33 +37063,35 @@
         k = i(n(68)),
         M = i(n(210)),
         I = i(n(38)),
-        T = i(n(83)),
+        T = i(n(84)),
         C = i(n(211)),
-        A = i(n(98)),
+        A = i(n(99)),
         O = i(n(164)),
         R = i(n(21)),
         D = i(n(406)),
         L = i(n(162)),
-        P = n(65),
-        N = n(57),
-        x = i(n(77)),
-        V = i(n(101)),
-        U = i(n(32)),
-        j = i(n(200)),
-        F = i(n(119)),
-        B = i(n(97)),
-        G = n(150),
-        H = i(n(23)),
-        z = i(n(387)),
-        q = i(n(63)),
-        $ = i(n(412)),
-        Y = i(n(29)),
-        K = i(n(125)),
-        J = i(n(414)),
-        Z = i(n(84)),
-        X = n(39),
-        Q = n(126),
-        ee = n(154);
+        P = n(94),
+        N = n(65),
+        x = n(57),
+        V = i(n(78)),
+        U = i(n(102)),
+        j = i(n(32)),
+        F = i(n(200)),
+        B = i(n(119)),
+        G = i(n(98)),
+        H = n(150),
+        z = i(n(23)),
+        q = i(n(387)),
+        $ = i(n(63)),
+        Y = i(n(77)),
+        K = i(n(412)),
+        J = i(n(29)),
+        Z = i(n(125)),
+        X = i(n(414)),
+        Q = i(n(85)),
+        ee = n(39),
+        te = n(126),
+        ne = n(154);
     window.Waze = new Proxy(W, {
         get: function(e, t) {
             var n = t;
@@ -37096,19 +37099,19 @@
                 e[n]
         }
     });
-    q.default.prototype.get = function(e) {
+    $.default.prototype.get = function(e) {
         return console.warn("repository get method is deprecated and will be removed soon, use getObjectById instead"),
             this.getObjectById(e)
     };
-    j.default.prototype.getAllSegments = function() {
+    F.default.prototype.getAllSegments = function() {
         return console.warn("Junction getAllSegments method is deprecated and will be removed soon, use W.model.segments.getByIds(Junction.getSegmentsIds()) instead"),
             this.model.segments.getByIds(this.attributes.segIDs)
     };
-    $.default.prototype.hasSelectedItems = function() {
+    K.default.prototype.hasSelectedItems = function() {
             return console.warn("hasSelectedItems method is deprecated and will be removed soon, use hasSelectedFeatures instead"),
                 this.hasSelectedFeatures()
         },
-        $.default.prototype.getReversedSegments = function() {
+        K.default.prototype.getReversedSegments = function() {
             var e = this.getSegmentSelection(),
                 t = {
                     multipleConnectedComponents: e.hasMultipleConnectedComponents(),
@@ -37120,32 +37123,40 @@
                 }),
                 t
         },
-        H.default.prototype.isLockedByHigherRank = function() {
-            return new Q.SegmentsPermissionsUseCase(this.model, this).isLockedByHigherRank()
+        z.default.prototype.isLockedByHigherRank = function() {
+            return new te.SegmentsPermissionsUseCase(this.model, this).isLockedByHigherRank()
         },
-        H.default.prototype.isWalkingRoadType = function() {
+        z.default.prototype.isWalkingRoadType = function() {
             return this.isWalkingTrail()
         },
-        H.default.prototype.isRoutable = function() {
-            return P.isRoutingRoadType(this.attributes.roadType)
+        z.default.prototype.isRoutable = function() {
+            return N.isRoutingRoadType(this.attributes.roadType)
         },
-        H.default.prototype.isInBigJunction = function() {
-            return new X.SegmentsBigJunctionUseCase(this.model, this).isInBigJunction()
+        z.default.prototype.isInBigJunction = function() {
+            return new ee.SegmentsBigJunctionUseCase(this.model, this).isInBigJunction()
         },
-        H.default.prototype.isBigJunctionShort = function() {
-            return new X.SegmentsBigJunctionUseCase(this.model, this).isBigJunctionShort()
+        z.default.prototype.isBigJunctionShort = function() {
+            return new ee.SegmentsBigJunctionUseCase(this.model, this).isBigJunctionShort()
         },
-        H.default.prototype.hasFromBigJunction = function(e) {
-            return new X.SegmentsBigJunctionUseCase(this.model, this).hasFromBigJunction(e)
+        z.default.prototype.hasFromBigJunction = function(e) {
+            return new ee.SegmentsBigJunctionUseCase(this.model, this).hasFromBigJunction(e)
         },
-        H.default.prototype.hasToBigJunction = function(e) {
-            return new X.SegmentsBigJunctionUseCase(this.model, this).hasToBigJunction(e)
+        z.default.prototype.hasToBigJunction = function(e) {
+            return new ee.SegmentsBigJunctionUseCase(this.model, this).hasToBigJunction(e)
         },
-        H.default.prototype.getRoundabout = function() {
+        z.default.prototype.getRoundabout = function() {
             return this.isInRoundabout() ? this.model.junctions.getObjectById(this.attributes.junctionID) : null
         },
-        B.default.prototype.areConnectionsEditable = function() {
-            return new ee.CanEditTurnsUseCase(this.model).canEditNodeTurns(this)
+        G.default.prototype.areConnectionsEditable = function() {
+            return new ne.CanEditTurnsUseCase(this.model).canEditNodeTurns(this)
+        },
+        $.default.prototype.getAsync = function(e) {
+            var t = this;
+            return this.getRepositoryName() === P.RepositoryName.UPDATE_REQUEST_SESSIONS ? (console.warn("getAsync() is deprecated and will be removed soon"),
+                (new Y.default).getUpdateRequestSessionsByIds(e).then(function(e) {
+                    return t.model.mergeResponse(e),
+                        e.updateRequestSessions.objects
+                })) : Promise.reject(new Error("getAsync is valid only for updateRequestSessions"))
         },
         window.require = function(e) {
             var t = {
@@ -37178,25 +37189,25 @@
                 "Waze/Action/UpdateObject": R.default,
                 "Waze/Action/UpdatePlaceUpdate": D.default,
                 "Waze/Action/UpdateSegmentGeometry": L.default,
-                "Waze/DivIcon": Y.default,
-                "Waze/Feature/Vector/Landmark": F.default,
-                "Waze/Feature/Vector/Segment": H.default,
-                "Waze/Feature/Vector/UpdateRequest": z.default,
-                "Waze/Handler/DragElement": K.default,
+                "Waze/DivIcon": J.default,
+                "Waze/Feature/Vector/Landmark": B.default,
+                "Waze/Feature/Vector/Segment": z.default,
+                "Waze/Feature/Vector/UpdateRequest": q.default,
+                "Waze/Handler/DragElement": Z.default,
                 "Waze/Model/Graph/Actions/SetTurn": I.default,
-                "Waze/Model/Graph/TurnData": x.default,
-                "Waze/Model/Graph/TurnGraph": V.default,
-                "Waze/Model/Graph/Vertex": U.default,
-                "Waze/Model/Objects/OpeningHour": G.OpeningHour,
-                "Waze/Modules/Closures/Models/ClosureActionBuilder": J.default,
-                "Waze/Modules/Closures/Models/SharedClosure": Z.default
+                "Waze/Model/Graph/TurnData": V.default,
+                "Waze/Model/Graph/TurnGraph": U.default,
+                "Waze/Model/Graph/Vertex": j.default,
+                "Waze/Model/Objects/OpeningHour": H.OpeningHour,
+                "Waze/Modules/Closures/Models/ClosureActionBuilder": X.default,
+                "Waze/Modules/Closures/Models/SharedClosure": Q.default
             } [e];
             if (null != t)
                 return t;
             throw new Error("Cannot find module " + e)
         },
-        W.Config.venues.categories = N.VENUE_CATEGORIES,
-        W.Config.venues.subcategories = N.VENUE_SUBCATEGORIES
+        W.Config.venues.categories = x.VENUE_CATEGORIES,
+        W.Config.venues.subcategories = x.VENUE_SUBCATEGORIES
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -37609,7 +37620,7 @@
                 return 1 === this.streets.length && !this.isEmptyStreet()
             },
             t
-    }(s(n(78)).default);
+    }(s(n(79)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -38050,12 +38061,12 @@
 }, function(e, t, n) {
     "use strict";
     var i = d(n(830)),
-        r = d(n(93)),
+        r = d(n(77)),
         s = d(n(1234)),
         o = n(1235),
         a = n(36),
         l = n(1239),
-        u = n(92);
+        u = n(93);
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -38118,7 +38129,7 @@
         o = h(n(418)),
         a = h(n(843)),
         l = h(n(1045)),
-        u = n(92),
+        u = n(93),
         d = n(192),
         c = n(1233);
 
@@ -38502,7 +38513,7 @@
         o = d(n(1)),
         a = d(n(4)),
         l = d(n(834)),
-        u = n(92);
+        u = n(93);
 
     function d(e) {
         return e && e.__esModule ? e : {
@@ -39249,7 +39260,7 @@
         r = P(n(0)),
         s = P(n(1)),
         o = P(n(419)),
-        a = P(n(102)),
+        a = P(n(103)),
         l = P(n(855)),
         u = P(n(857)),
         d = P(n(412)),
@@ -40527,7 +40538,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = u(n(113)),
+    var i = u(n(114)),
         r = u(n(0)),
         s = u(n(1)),
         o = l(n(27)),
@@ -40884,7 +40895,7 @@
         a = c(n(3)),
         l = c(n(4)),
         u = c(n(423)),
-        d = n(92);
+        d = n(93);
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -42601,7 +42612,7 @@
     });
     var l = a(n(10)),
         u = a(n(58)),
-        d = a(n(83)),
+        d = a(n(84)),
         c = a(n(23)),
         h = function(e) {
             function t(t, n, i) {
@@ -43053,7 +43064,7 @@
         d = y(n(10)),
         c = y(n(396)),
         h = y(n(70)),
-        f = y(n(99)),
+        f = y(n(100)),
         p = y(n(58)),
         g = y(n(15)),
         v = y(n(395)),
@@ -49255,7 +49266,7 @@
         t.createGroupsData = t.createChangesLogViewModel = void 0;
     var i = a(n(11)),
         r = a(n(61)),
-        s = a(n(90)),
+        s = a(n(91)),
         o = a(n(980));
 
     function a(e) {
@@ -52146,7 +52157,7 @@
         r = l(n(0)),
         s = l(n(1)),
         o = l(n(444)),
-        a = n(101);
+        a = n(102);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -55567,7 +55578,7 @@
         value: !0
     });
     var i, r = c(n(14)),
-        s = c(n(95)),
+        s = c(n(96)),
         o = c(n(1025)),
         a = c(n(1027)),
         l = c(n(1029)),
@@ -55609,7 +55620,7 @@
             default: e
         }
     }
-    var o = s(n(95)).default.extend({
+    var o = s(n(96)).default.extend({
         MORE_INFO_DEFAULTS: [],
         createMoreInfoRenderer: function(e, t, n) {
             return new r.default(e, t, n)
@@ -55685,7 +55696,7 @@
             default: e
         }
     }
-    var o = s(n(95)).default.extend({
+    var o = s(n(96)).default.extend({
         MORE_INFO_DEFAULTS: [],
         createMoreInfoRenderer: function(e, t, n) {
             return new r.default(e, t, n)
@@ -55757,7 +55768,7 @@
         value: !0
     });
     var i = o(n(25)),
-        r = o(n(95)),
+        r = o(n(96)),
         s = o(n(1030));
 
     function o(e) {
@@ -56006,7 +56017,7 @@
     });
     var i = o(n(450)),
         r = o(n(451)),
-        s = n(102);
+        s = n(103);
 
     function o(e) {
         return e && e.__esModule ? e : {
@@ -57231,7 +57242,7 @@
     });
     var i = f(n(11)),
         r = f(n(25)),
-        s = f(n(94)),
+        s = f(n(95)),
         o = f(n(168)),
         a = f(n(1049)),
         l = f(n(1050)),
@@ -57478,7 +57489,7 @@
         value: !0
     });
     var i = a(n(9)),
-        r = a(n(94)),
+        r = a(n(95)),
         s = a(n(66)),
         o = n(28);
 
@@ -59931,7 +59942,7 @@
         p = y(n(67)),
         g = y(n(122)),
         v = n(1092),
-        m = y(n(91));
+        m = y(n(92));
 
     function y(e) {
         return e && e.__esModule ? e : {
@@ -60097,7 +60108,7 @@
         l = x(n(1)),
         u = x(n(4)),
         d = x(n(8)),
-        c = x(n(98)),
+        c = x(n(99)),
         h = x(n(1094)),
         f = x(n(21)),
         p = N(n(7)),
@@ -60735,7 +60746,7 @@
         a = c(n(4)),
         l = c(n(10)),
         u = c(n(21)),
-        d = c(n(98));
+        d = c(n(99));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -61918,7 +61929,7 @@
         s = u(n(1)),
         o = u(n(3)),
         a = u(n(4)),
-        l = u(n(96));
+        l = u(n(97));
 
     function u(e) {
         return e && e.__esModule ? e : {
@@ -63938,7 +63949,7 @@
         h = m(n(208)),
         f = m(n(167)),
         p = n(28),
-        g = n(101),
+        g = n(102),
         v = n(154);
 
     function m(e) {
@@ -64146,7 +64157,7 @@
         A = ne(n(440)),
         O = ne(n(1139)),
         R = ne(n(1146)),
-        D = n(81),
+        D = n(82),
         L = n(39),
         P = n(117),
         N = n(467),
@@ -64161,11 +64172,11 @@
         z = n(1157),
         q = n(1158),
         Y = n(71),
-        K = ne(n(80)),
+        K = ne(n(81)),
         J = n(133),
         Z = n(40),
         X = n(1159),
-        Q = n(91),
+        Q = n(92),
         ee = ne(Q),
         te = n(1161);
 
@@ -65361,7 +65372,7 @@
     });
     var i = a(n(9)),
         r = a(n(31)),
-        s = a(n(84)),
+        s = a(n(85)),
         o = a(n(1133));
 
     function a(e) {
@@ -65438,7 +65449,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i, r = n(84),
+    var i, r = n(85),
         s = (i = r) && i.__esModule ? i : {
             default: i
         };
@@ -65538,7 +65549,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(84),
+    var i = n(85),
         r = Marionette.View.extend({
             template: "Waze/MapEditor/UI/Modules/Closures/templates/item",
             className: "closure-item",
@@ -65591,7 +65602,7 @@
         r = l(n(132)),
         s = l(n(121)),
         o = l(n(466)),
-        a = n(84);
+        a = n(85);
 
     function l(e) {
         return e && e.__esModule ? e : {
@@ -65730,7 +65741,7 @@
         a = f(n(4)),
         l = f(n(1138)),
         u = f(n(223)),
-        d = n(101),
+        d = n(102),
         c = f(n(449)),
         h = n(39);
 
@@ -66037,9 +66048,9 @@
         o = h(n(3)),
         a = h(n(4)),
         l = h(n(1140)),
-        u = n(79),
+        u = n(80),
         d = n(28),
-        c = h(n(80));
+        c = h(n(81));
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -66148,9 +66159,9 @@
         u = v(n(470)),
         d = v(n(1142)),
         c = n(28),
-        h = n(79),
+        h = n(80),
         f = v(h),
-        p = n(101),
+        p = n(102),
         g = function(e) {
             if (e && e.__esModule)
                 return e;
@@ -66500,7 +66511,7 @@
         }(n(55)),
         c = v(n(1143)),
         h = v(n(1144)),
-        f = n(79),
+        f = n(80),
         p = v(n(32)),
         g = v(n(399));
 
@@ -68283,7 +68294,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         r = n(56),
         s = n(71),
         o = function() {
@@ -68333,7 +68344,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(82),
+    var i = n(83),
         r = n(40),
         s = function() {
             function e(e) {
@@ -68352,7 +68363,7 @@
         value: !0
     });
     var i = n(23),
-        r = n(82),
+        r = n(83),
         s = n(40),
         o = function() {
             function e(e) {
@@ -68467,7 +68478,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         r = n(56),
         s = n(71),
         o = n(133),
@@ -68647,7 +68658,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         r = n(39),
         s = n(117),
         o = n(126),
@@ -69288,7 +69299,7 @@
         y = M(n(1170)),
         b = n(473),
         E = M(n(16)),
-        w = M(n(96)),
+        w = M(n(97)),
         S = n(1171),
         k = n(57);
 
@@ -70259,7 +70270,7 @@
             return t.default = e,
                 t
         }(n(7)),
-        d = c(n(93));
+        d = c(n(77));
 
     function c(e) {
         return e && e.__esModule ? e : {
@@ -72048,11 +72059,11 @@
         value: !0
     });
     var r = i(n(1196)),
-        s = i(n(100)),
+        s = i(n(101)),
         o = i(n(70)),
         a = i(n(420)),
         l = n(146),
-        u = i(n(97)),
+        u = i(n(98)),
         d = i(n(23)),
         c = i(n(480)),
         h = i(n(1198)),
@@ -72296,7 +72307,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(97)),
+    var r = i(n(98)),
         s = i(n(23)),
         o = {
             MULTIPLE_SEGMENTS: 1,
@@ -72761,7 +72772,7 @@
         s = c(n(17)),
         o = c(n(7)),
         a = c(n(20)),
-        l = n(91),
+        l = n(92),
         u = h(l),
         d = n(1204);
 
@@ -73632,14 +73643,14 @@
         value: !0
     });
     var i = h(n(1219)),
-        r = h(n(100)),
+        r = h(n(101)),
         s = n(28),
         o = h(n(1221)),
         a = h(n(1223)),
         l = h(n(157)),
         u = h(n(451)),
         d = h(n(450)),
-        c = n(102);
+        c = n(103);
 
     function h(e) {
         return e && e.__esModule ? e : {
@@ -74371,7 +74382,7 @@
         value: !0
     });
     var i = o(n(1225)),
-        r = o(n(94)),
+        r = o(n(95)),
         s = n(35);
 
     function o(e) {
