@@ -1553,12 +1553,12 @@
         k = a(n(27));
     t.MIN_LEVEL = -9;
     t.MAX_LEVEL = 9;
-    var I = {
+    var T = {
         FROM: "from",
         TO: "to"
     };
-    t.NodeName = I;
-    var T = {
+    t.NodeName = T;
+    var I = {
         tunnel: {
             mask: "flags",
             flag: y.FLAGS.TUNNEL
@@ -1596,8 +1596,8 @@
             flag: y.REV.LANES_ENABLED
         }
     };
-    t.FLAG_ATTRIBUTES = T;
-    var C = function(e) {
+    t.FLAG_ATTRIBUTES = I;
+    var A = function(e) {
         function t(n, i) {
             return void 0 === i && (i = {
                     parse: !1
@@ -1659,7 +1659,7 @@
                 }
             },
             t.prototype.getFlagAttribute = function(e) {
-                var t = T[e],
+                var t = I[e],
                     n = this.attributes[t.mask];
                 return new S.default(n).isEnabled(t.flag)
             },
@@ -1759,7 +1759,7 @@
             },
             t.prototype.getConnectedSegments = function(e) {
                 var t = this,
-                    n = e === I.FROM ? "fromNodeID" : "toNodeID",
+                    n = e === T.FROM ? "fromNodeID" : "toNodeID",
                     i = this.model.nodes.getObjectById(this.attributes[n]);
                 return i ? i.attributes.segIDs.map(function(e) {
                     return t.model.segments.getObjectById(e)
@@ -1813,7 +1813,7 @@
                 return this.hasToNode() ? this.model.nodes.getObjectById(this.attributes.toNodeID) : null
             },
             t.prototype.getNodeByDirection = function(e) {
-                var t = e === I.FROM ? "fromNodeID" : "toNodeID";
+                var t = e === T.FROM ? "fromNodeID" : "toNodeID";
                 return null != this.attributes[t] ? this.model.nodes.getObjectById(this.attributes[t]) : null
             },
             t.prototype.isToNode = function(e) {
@@ -1943,16 +1943,16 @@
             },
             t
     }(f.default);
-    Object.assign(C.prototype, {
+    Object.assign(A.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
                 restrictions: m.default,
                 pickupRestrictions: g.default
             },
-            FLAG_ATTRIBUTES: T,
+            FLAG_ATTRIBUTES: I,
             CLASS_NAME: "Waze.Feature.Vector.Segment"
         }),
-        t.default = C
+        t.default = A
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -2072,7 +2072,8 @@
         value: !0
     });
     t.ADDED = "objectsadded",
-        t.CHANGED = "objectschanged",
+        t.ATTR_CHANGED = "objectschanged",
+        t.STATE_DELETED = "objects-state-deleted",
         t.CHANGED_ID = "objectschanged-id",
         t.REMOVED = "objectsremoved",
         t.SYNCED = "objectssynced",
@@ -3761,14 +3762,14 @@
                                 u[l] = a
                         }
                     }
-                    n.length > 0 && this.trigger(o.CHANGED, n),
+                    n.length > 0 && this.trigger(o.ATTR_CHANGED, n),
                         i.length > 0 && this.trigger(o.ADDED, i),
                         (i.length > 0 || n.length > 0) && this.trigger(o.UPDATED)
                 },
                 t.prototype.changed = function(e) {
                     var t = e;
                     e instanceof Array || (t = [e]),
-                        this.trigger(o.CHANGED, t),
+                        this.trigger(o.ATTR_CHANGED, t),
                         this.trigger(o.UPDATED)
                 },
                 t.prototype._triggerChangedID = function(e, t) {
@@ -3792,6 +3793,12 @@
                     }
                     n.length > 0 && (this.trigger(o.REMOVED, n),
                         this.trigger(o.UPDATED))
+                },
+                t.prototype.stateDeleted = function(e) {
+                    var t = e;
+                    Array.isArray(e) || (t = [e]),
+                        this.trigger(o.STATE_DELETED, t),
+                        this.trigger(o.UPDATED)
                 },
                 t.prototype.mergeObjectAttributes = function(e, t) {
                     e.merge(t),
@@ -3835,18 +3842,18 @@
                         i && i.silent || n.length > 0 && (this.trigger(o.REMOVED, n),
                             this.trigger(o.UPDATED))
                 },
-                t.prototype.mergeObjects = function(e, t) {
+                t.prototype.mergeObjects = function(e) {
                     this.filtered = Boolean(e) && Boolean(e.filtered);
-                    for (var n = e && e.objects ? e.objects : [], i = [], r = 0, s = n.length; r < s; ++r) {
-                        var a = n[r].getID();
-                        a && (this.objects[a] ? delete this.objects[a].outOfScope : (this.objects[a] = n[r],
-                            i.push(n[r]),
-                            n[r].type = this.objectType,
-                            n[r].model = this.model))
+                    for (var t = e && e.objects ? e.objects : [], n = [], i = 0, r = t.length; i < r; ++i) {
+                        var s = t[i].getID();
+                        s && (this.objects[s] ? delete this.objects[s].outOfScope : (this.objects[s] = t[i],
+                            n.push(t[i]),
+                            t[i].type = this.objectType,
+                            t[i].model = this.model))
                     }
                     this.additionalInfo = _.omit(e, "objects"),
-                        i.length > 0 && this.trigger(o.ADDED, i),
-                        i.length > 0 && this.trigger(o.UPDATED)
+                        n.length > 0 && this.trigger(o.ADDED, n),
+                        n.length > 0 && this.trigger(o.UPDATED)
                 },
                 t.prototype.getModifiedObjects = function() {
                     var e, t = ((e = {})[OpenLayers.State.INSERT] = [],
@@ -4791,7 +4798,7 @@
                 h.repository = h._dataModel.getRepository(d[0].type),
                 h.featureID = d[0].getID(),
                 h.viewModel = new Backbone.Model,
-                h.listenTo(h.repository, p.CHANGED, h.onFeaturesChanged),
+                h.listenTo(h.repository, p.ATTR_CHANGED, h.onFeaturesChanged),
                 h.listenTo(h.repository, p.CHANGED_ID, h._onFeatureChangedIDs),
                 Marionette.bindEvents(h, h.viewModel, h.modelEvents),
                 h
@@ -4900,7 +4907,7 @@
             }, {
                 key: "onFeaturesChanged",
                 value: function(e) {
-                    !this.isDestroyed() && this.hasEditedModelChanged(e) && this._reflectRepositoryChanges()
+                    this.hasEditedModelChanged(e) && this._reflectRepositoryChanges()
                 }
             }, {
                 key: "_reflectRepositoryChanges",
@@ -5209,7 +5216,7 @@
                         this.hideSegment && (this.segment.hidden || (this.hidSegment = !0),
                             this.segment.hidden = !0),
                         this.segment.state === OpenLayers.State.INSERT ? this.model.segments.remove(this.segment) : (this.segment.state = OpenLayers.State.DELETE,
-                            this.model.segments.changed(this.segment)),
+                            this.model.segments.stateDeleted(this.segment)),
                         this.userInitiated && this.model.loginManager.user.incrementDeleteSegmentCount()
                 }
             }, {
@@ -5232,7 +5239,7 @@
                         r.default)(t.prototype), "redoAction", this).call(this),
                         this.hidSegment && (this.segment.hidden = !0),
                         this.segment.state === OpenLayers.State.INSERT ? this.model.segments.remove(this.segment) : (this.segment.state = OpenLayers.State.DELETE,
-                            this.model.segments.changed(this.segment)),
+                            this.model.segments.stateDeleted(this.segment)),
                         this.userInitiated && this.model.loginManager.user.incrementDeleteSegmentCount()
                 }
             }, {
@@ -6230,32 +6237,32 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = A(n(11)),
-        r = A(n(2)),
-        s = A(n(0)),
-        o = A(n(1)),
-        a = A(n(3)),
-        l = A(n(4)),
-        u = A(n(162)),
-        d = A(n(124)),
-        c = A(n(10)),
-        h = A(n(60)),
-        f = A(n(70)),
-        p = A(n(38)),
-        g = A(n(809)),
-        v = A(n(810)),
-        m = A(n(198)),
-        y = A(n(80)),
-        b = A(n(32)),
-        E = C(n(18)),
-        w = C(n(7)),
-        S = C(n(20)),
+    var i = C(n(11)),
+        r = C(n(2)),
+        s = C(n(0)),
+        o = C(n(1)),
+        a = C(n(3)),
+        l = C(n(4)),
+        u = C(n(162)),
+        d = C(n(124)),
+        c = C(n(10)),
+        h = C(n(60)),
+        f = C(n(70)),
+        p = C(n(38)),
+        g = C(n(809)),
+        v = C(n(810)),
+        m = C(n(198)),
+        y = C(n(80)),
+        b = C(n(32)),
+        E = A(n(18)),
+        w = A(n(7)),
+        S = A(n(20)),
         M = n(36),
         k = n(33),
-        I = C(n(13)),
-        T = C(n(27));
+        T = A(n(13)),
+        I = A(n(27));
 
-    function C(e) {
+    function A(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -6266,7 +6273,7 @@
             t
     }
 
-    function A(e) {
+    function C(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -6452,7 +6459,7 @@
                 key: "createSplitsFromPoint",
                 value: function(e) {
                     var t = void 0;
-                    if (T.defined(this.splittingPointIndex))
+                    if (I.defined(this.splittingPointIndex))
                         t = this.splittingPointIndex;
                     else if (-1 === (t = this._getSplitEdge(e)))
                         return !1;
@@ -6471,7 +6478,7 @@
             }, {
                 key: "_getSplitEdge",
                 value: function(e) {
-                    return I.getPointEdge(this.segment.geometry, e, this.splittingPointDistance)
+                    return T.getPointEdge(this.segment.geometry, e, this.splittingPointDistance)
                 }
             }, {
                 key: "createSplitSegmentPart",
@@ -7495,7 +7502,7 @@
                 key: "removeObjct",
                 value: function() {
                     this.object.state === OpenLayers.State.INSERT ? this.repo.remove(this.object) : (this.object.state = OpenLayers.State.DELETE,
-                        this.repo.changed(this.object))
+                        this.repo.stateDeleted(this.object))
                 }
             }, {
                 key: "undoAction",
@@ -7754,32 +7761,32 @@
             value: !0
         }),
         t.SaveError = void 0;
-    var i = A(n(143)),
-        r = A(n(144)),
-        s = A(n(93)),
-        o = A(n(193)),
-        a = A(n(14)),
-        l = A(n(6)),
-        u = A(n(9)),
-        d = A(n(1)),
-        c = A(n(2)),
-        h = A(n(0)),
-        f = A(n(3)),
-        p = A(n(4)),
-        g = A(n(10)),
+    var i = C(n(143)),
+        r = C(n(144)),
+        s = C(n(93)),
+        o = C(n(193)),
+        a = C(n(14)),
+        l = C(n(6)),
+        u = C(n(9)),
+        d = C(n(1)),
+        c = C(n(2)),
+        h = C(n(0)),
+        f = C(n(3)),
+        p = C(n(4)),
+        g = C(n(10)),
         v = n(79),
-        m = A(n(218)),
+        m = C(n(218)),
         y = n(424),
-        b = A(n(95)),
+        b = C(n(95)),
         E = n(36),
-        w = C(n(857)),
+        w = A(n(857)),
         S = n(425),
-        M = C(n(158)),
+        M = A(n(158)),
         k = n(35),
-        I = A(n(858)),
-        T = C(n(27));
+        T = C(n(858)),
+        I = A(n(27));
 
-    function C(e) {
+    function A(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -7790,7 +7797,7 @@
             t
     }
 
-    function A(e) {
+    function C(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -7981,7 +7988,7 @@
                     value: function() {
                         var e = this,
                             t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                        return T.protect("saving", function() {
+                        return I.protect("saving", function() {
                             var n = t.actions || e.model.actionManager.getActions(),
                                 i = {
                                     actions: e._serializeActions(n)
@@ -8010,7 +8017,7 @@
                 }, {
                     key: "_serializeActions",
                     value: function(e) {
-                        var t = new I.default,
+                        var t = new T.default,
                             n = new g.default;
                         return n.subActions = e,
                             n.accept(t),
@@ -8071,7 +8078,7 @@
                             r = void 0 === i ? [] : i,
                             s = n.clearAllActions,
                             o = void 0 === s || s;
-                        return T.protect("processing save results", function() {
+                        return I.protect("processing save results", function() {
                             var n = null != e.userLimits,
                                 i = null != e.connections,
                                 s = null != e.segmentsIdMapping;
@@ -9799,10 +9806,10 @@
         S = L(n(15)),
         M = D(n(13)),
         k = L(n(949)),
-        I = L(n(72)),
-        T = L(n(224)),
-        C = L(n(950)),
-        A = L(n(44)),
+        T = L(n(72)),
+        I = L(n(224)),
+        A = L(n(950)),
+        C = L(n(44)),
         O = L(n(951)),
         R = D(n(18));
 
@@ -9822,7 +9829,7 @@
             default: e
         }
     }
-    var P = A.default.LAYER_TYPE,
+    var P = C.default.LAYER_TYPE,
         N = "wms",
         x = "mapnik",
         V = {
@@ -9976,8 +9983,8 @@
                         rendererOptions: {
                             zIndexing: !0
                         },
-                        renderers: [I.default],
-                        styleMap: T.default,
+                        renderers: [T.default],
+                        styleMap: I.default,
                         selectable: !0
                     }),
                     this.camerasLayer = new h.default(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
@@ -10049,7 +10056,7 @@
                         className: "live-users"
                     }),
                     this.searchLayer = new OL.Layer.Vector("Search", {
-                        styleMap: C.default,
+                        styleMap: A.default,
                         uniqueName: V.SEARCH
                     }),
                     this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.houseNumbersLayer, this.camerasLayer, this.bigJunctionPathLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.liveUsersLayer, this.searchLayer]),
@@ -10061,7 +10068,7 @@
                     this.addUniqueLayer(this.closuresMarkerLayer)
             },
             _addModulesLayers: function(e) {
-                for (var t = A.default.getLayers().filter(function(t) {
+                for (var t = C.default.getLayers().filter(function(t) {
                         return t.type === e
                     }), n = 0; n < t.length; n++) {
                     var i = t[n];
@@ -11347,7 +11354,7 @@
                 t
         }(Backbone.Model);
 
-    function I(e, t) {
+    function T(e, t) {
         for (var n = arguments.length, i = Array(n > 2 ? n - 2 : 0), u = 2; u < n; u++)
             i[u - 2] = arguments[u];
         var d = !0,
@@ -11377,8 +11384,8 @@
             }
         }
     }
-    I(k.prototype, g.default.prototype, "clone", "initialize", "constructor"),
-        I(k.prototype, m.default.prototype, "clone", "initialize", "constructor"),
+    T(k.prototype, g.default.prototype, "clone", "initialize", "constructor"),
+        T(k.prototype, m.default.prototype, "clone", "initialize", "constructor"),
         (0,
             i.default)(k.prototype, {
             PERMISSIONS: S,
@@ -12373,7 +12380,8 @@
         value: !0
     });
     var i = n(28),
-        r = OL.Class(OL.Layer.Vector, {
+        r = [i.ATTR_CHANGED, i.STATE_DELETED].join(" "),
+        s = OL.Class(OL.Layer.Vector, {
             repo: null,
             _featureMap: null,
             model: null,
@@ -12390,12 +12398,12 @@
             },
             registerRepoEvents: function(e) {
                 e.on(i.ADDED, this.onFeaturesAdded, this),
-                    e.on(i.CHANGED, this.onFeaturesChanged, this),
+                    e.on(r, this.onFeaturesChanged, this),
                     e.on(i.REMOVED, this.onFeaturesRemoved, this)
             },
             unregisterRepoEvents: function(e) {
                 e.off(i.ADDED, this.onFeaturesAdded, this),
-                    e.off(i.CHANGED, this.onFeaturesChanged, this),
+                    e.off(r, this.onFeaturesChanged, this),
                     e.off(i.REMOVED, this.onFeaturesRemoved, this)
             },
             destroy: function() {
@@ -12475,7 +12483,7 @@
             },
             CLASS_NAME: "Waze.Layer.FeatureLayer"
         });
-    t.default = r,
+    t.default = s,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -12526,7 +12534,7 @@
             var e = this;
             return this.repo.map(function(t) {
                 return t.on(s.ADDED, e.onFeaturesAdded, e),
-                    t.on(s.CHANGED, e.onFeaturesChanged, e),
+                    t.on(s.ATTR_CHANGED, e.onFeaturesChanged, e),
                     t.on(s.REMOVED, e.onFeaturesRemoved, e),
                     t.on(s.CHANGED_ID, e.onFeaturesChangedID, e)
             })
@@ -12535,7 +12543,7 @@
             var e = this;
             return this.repo.map(function(t) {
                 return t.off(s.ADDED, e.onFeaturesAdded, e),
-                    t.off(s.CHANGED, e.onFeaturesChanged, e),
+                    t.off(s.ATTR_CHANGED, e.onFeaturesChanged, e),
                     t.off(s.REMOVED, e.onFeaturesRemoved, e),
                     t.off(s.CHANGED_ID, e.onFeaturesChangedID, e)
             })
@@ -13006,32 +13014,32 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = A(n(12)),
-        r = A(n(11)),
-        s = A(n(2)),
-        o = A(n(0)),
-        a = A(n(1)),
-        l = A(n(3)),
-        u = A(n(8)),
-        d = A(n(4)),
+    var i = C(n(12)),
+        r = C(n(11)),
+        s = C(n(2)),
+        o = C(n(0)),
+        a = C(n(1)),
+        l = C(n(3)),
+        u = C(n(8)),
+        d = C(n(4)),
         c = n(1082),
-        h = A(c),
+        h = C(c),
         f = n(81),
         p = n(28),
-        g = A(n(132)),
-        v = A(n(213)),
-        m = A(n(396)),
-        y = C(n(1084)),
-        b = A(n(1085)),
-        E = A(n(1087)),
-        w = A(n(21)),
-        S = A(n(1091)),
-        M = A(n(1093)),
-        k = C(n(20)),
-        I = A(n(457)),
-        T = A(n(1094));
+        g = C(n(132)),
+        v = C(n(213)),
+        m = C(n(396)),
+        y = A(n(1084)),
+        b = C(n(1085)),
+        E = C(n(1087)),
+        w = C(n(21)),
+        S = C(n(1091)),
+        M = C(n(1093)),
+        k = A(n(20)),
+        T = C(n(457)),
+        I = C(n(1094));
 
-    function C(e) {
+    function A(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -13042,7 +13050,7 @@
             t
     }
 
-    function A(e) {
+    function C(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -13229,7 +13237,7 @@
                                 formatStreet: this.options.editStreet
                             })
                         }),
-                        this._canChangeStreetNameUseCase = new T.default(this.dataModel.loginManager.user),
+                        this._canChangeStreetNameUseCase = new I.default(this.dataModel.loginManager.user),
                         this.showStatesSelection = this.dataModel.hasStates(),
                         this.showCitySelection = this.options.showCitySelection,
                         this._generateOptions(),
@@ -13450,7 +13458,7 @@
                 }
             }]),
             t
-    }(I.default);
+    }(T.default);
     t.default = O,
         e.exports = t.default
 }, function(e, t, n) {
@@ -15133,7 +15141,7 @@
                 standalone: !0
             }, t);
             OpenLayers.Control.ModifyFeature.prototype.initialize.call(this, e.layer, n),
-                this.repo.on(r.CHANGED, this._onFeaturesChanged, this),
+                this.repo.on(r.ATTR_CHANGED, this._onFeaturesChanged, this),
                 this.repo.on(r.REMOVED, this._onFeaturesRemoved, this),
                 this.map.events.register("zoomend", this, this.resetVertices),
                 this._originalGeometry = o.cloneGeometry(e.geometry),
@@ -15146,7 +15154,7 @@
             return Boolean(e._sketch) || e.model && e.model.isSelected() && ("function" != typeof e.model.isPoint || e.model.isPoint())
         },
         destroy: function() {
-            this.repo.off(r.CHANGED, this._onFeaturesChanged, this),
+            this.repo.off(r.ATTR_CHANGED, this._onFeaturesChanged, this),
                 this.repo.off(r.REMOVED, this._onFeaturesRemoved, this),
                 this.map.events.unregister("zoomend", this, this.resetVertices),
                 this.deactivate(),
@@ -18494,7 +18502,7 @@
                         this.node.hidden = !0,
                         this.prevNodeState = this.node.state,
                         this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
-                            this.model.nodes.changed(this.node))
+                            this.model.nodes.stateDeleted(this.node))
                 }
             }, {
                 key: "undoAction",
@@ -18512,7 +18520,7 @@
                 value: function() {
                     this.hidNode && (this.node.hidden = !0),
                         this.node.state === OpenLayers.State.INSERT ? this.model.nodes.remove(this.node) : (this.node.state = OpenLayers.State.DELETE,
-                            this.model.nodes.changed(this.node)),
+                            this.model.nodes.stateDeleted(this.node)),
                         (0,
                             l.default)(t.prototype.__proto__ || (0,
                             r.default)(t.prototype), "redoAction", this).call(this)
@@ -19063,31 +19071,31 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = C(n(2)),
-        r = C(n(0)),
-        s = C(n(1)),
-        o = C(n(3)),
-        a = C(n(4)),
-        l = C(n(10)),
-        u = C(n(163)),
-        d = C(n(86)),
-        c = C(n(162)),
-        h = C(n(124)),
-        f = C(n(38)),
-        p = C(n(60)),
-        g = C(n(70)),
-        v = C(n(69)),
-        m = C(n(21)),
-        y = C(n(23)),
-        b = C(n(32)),
+    var i = A(n(2)),
+        r = A(n(0)),
+        s = A(n(1)),
+        o = A(n(3)),
+        a = A(n(4)),
+        l = A(n(10)),
+        u = A(n(163)),
+        d = A(n(86)),
+        c = A(n(162)),
+        h = A(n(124)),
+        f = A(n(38)),
+        p = A(n(60)),
+        g = A(n(70)),
+        v = A(n(69)),
+        m = A(n(21)),
+        y = A(n(23)),
+        b = A(n(32)),
         E = n(80),
-        w = C(n(202)),
-        S = T(n(7)),
-        M = T(n(18)),
-        k = T(n(20)),
-        I = n(13);
+        w = A(n(202)),
+        S = I(n(7)),
+        M = I(n(18)),
+        k = I(n(20)),
+        T = n(13);
 
-    function T(e) {
+    function I(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -19098,12 +19106,12 @@
             t
     }
 
-    function C(e) {
+    function A(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var A = Math.PI / 180 * 10,
+    var C = Math.PI / 180 * 10,
         O = function(e) {
             function t(e) {
                 var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -19220,7 +19228,7 @@
                                 o = e[t + 1].angle,
                                 t === e.length - 2 && (o += 2 * Math.PI),
                                 k.addPoint(a, S.cloneGeometry(i)),
-                                n = s + A; n < o; n += A)
+                                n = s + C; n < o; n += C)
                                 k.addPoint(a, M.createPoint(this.ellipse.center.x + this.ellipse.rx * Math.cos(n), this.ellipse.center.y + this.ellipse.ry * Math.sin(n)));
                             n > o && k.addPoint(a, S.cloneGeometry(r)),
                                 this.isLeftHand && (l.attributes.fwdDirection = !1,
@@ -19307,7 +19315,7 @@
                                 return e.state !== OpenLayers.State.DELETE && n
                             }).reduce(function(n, i) {
                                 return (e = (0,
-                                        I.lineStringIntersectionWithEllipse)(i.geometry, t.ellipse.center, t.ellipse.rx, t.ellipse.ry)) instanceof Array ? 1 !== e.length && e[0].goingOut || (e.forEach(function(e) {
+                                        T.lineStringIntersectionWithEllipse)(i.geometry, t.ellipse.center, t.ellipse.rx, t.ellipse.ry)) instanceof Array ? 1 !== e.length && e[0].goingOut || (e.forEach(function(e) {
                                             e.segments = [i]
                                         }),
                                         n.push(e)) : e && t.containedSegments.push(i),
@@ -20658,26 +20666,26 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = C(n(9)),
-        r = C(n(41)),
-        s = C(n(6)),
-        o = C(n(0)),
-        a = C(n(1)),
-        l = C(n(101)),
-        u = C(n(70)),
-        d = C(n(423)),
-        c = C(n(164)),
-        h = C(n(15)),
+    var i = A(n(9)),
+        r = A(n(41)),
+        s = A(n(6)),
+        o = A(n(0)),
+        a = A(n(1)),
+        l = A(n(101)),
+        u = A(n(70)),
+        d = A(n(423)),
+        c = A(n(164)),
+        h = A(n(15)),
         f = n(79),
-        p = C(n(847)),
-        g = C(n(102)),
-        v = C(n(848)),
-        m = C(n(849)),
-        y = C(n(55)),
-        b = C(n(850)),
-        E = C(n(851)),
-        w = C(n(852)),
-        S = C(n(854)),
+        p = A(n(847)),
+        g = A(n(102)),
+        v = A(n(848)),
+        m = A(n(849)),
+        y = A(n(55)),
+        b = A(n(850)),
+        E = A(n(851)),
+        w = A(n(852)),
+        S = A(n(854)),
         M = n(424),
         k = function(e) {
             if (e && e.__esModule)
@@ -20689,15 +20697,15 @@
             return t.default = e,
                 t
         }(n(7)),
-        I = C(n(855)),
-        T = C(n(44));
+        T = A(n(855)),
+        I = A(n(44));
 
-    function C(e) {
+    function A(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var A = function() {
+    var C = function() {
         function e(t) {
             var n = this;
             (0,
@@ -20721,7 +20729,7 @@
                 (0,
                     s.default)(this, t),
                 this.events = new OpenLayers.Events(this),
-                this.actionManager = new I.default(this),
+                this.actionManager = new T.default(this),
                 this.repos = {},
                 this.reposByObjectType = {},
                 this.addRepository(f.RepositoryName.SEGMENTS, h.default.SEGMENT, {}, w.default),
@@ -20778,7 +20786,7 @@
                 this.addRepository(f.RepositoryName.MANAGED_AREAS, "managedArea"),
                 this.addRepository(f.RepositoryName.MAJOR_TRAFFIC_EVENTS, h.default.MTE),
                 this.addRepository(f.RepositoryName.RESTRICTED_AREAS, h.default.RESTRICTED_AREA, {}, E.default),
-                T.default.getRepositories().forEach(function(e) {
+                I.default.getRepositories().forEach(function(e) {
                     n.addRepository(e.repositoryName, e.featureType, e.repositoryConfig, e.repositoryClass)
                 }),
                 this._roadGraph = new p.default(this.nodes, this.segments),
@@ -21027,10 +21035,10 @@
             e
     }();
     (0,
-        s.default)(A.prototype, {
+        s.default)(C.prototype, {
         CLASS_NAME: "Waze.DataModel"
     }),
-    t.default = A,
+    t.default = C,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -22897,31 +22905,31 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = C(n(41)),
-        r = C(n(6)),
-        s = C(n(2)),
-        o = C(n(0)),
-        a = C(n(1)),
-        l = C(n(3)),
-        u = C(n(4)),
-        d = C(n(942)),
-        c = C(n(201)),
-        h = C(n(943)),
-        f = C(n(72)),
-        p = C(n(944)),
+    var i = A(n(41)),
+        r = A(n(6)),
+        s = A(n(2)),
+        o = A(n(0)),
+        a = A(n(1)),
+        l = A(n(3)),
+        u = A(n(4)),
+        d = A(n(942)),
+        c = A(n(201)),
+        h = A(n(943)),
+        f = A(n(72)),
+        p = A(n(944)),
         g = n(103),
         v = n(28),
-        m = T(n(13)),
-        y = T(n(7)),
-        b = T(n(24)),
-        E = T(n(18)),
-        w = T(n(20)),
-        S = C(n(56)),
-        M = C(n(945)),
+        m = I(n(13)),
+        y = I(n(7)),
+        b = I(n(24)),
+        E = I(n(18)),
+        w = I(n(20)),
+        S = A(n(56)),
+        M = A(n(945)),
         k = n(226),
-        I = n(426);
+        T = n(426);
 
-    function T(e) {
+    function I(e) {
         if (e && e.__esModule)
             return e;
         var t = {};
@@ -22932,12 +22940,12 @@
             t
     }
 
-    function C(e) {
+    function A(e) {
         return e && e.__esModule ? e : {
             default: e
         }
     }
-    var A = {
+    var C = {
             strokeColor: "#00ece3",
             strokeWidth: 7,
             graphicZIndex: 2
@@ -23084,14 +23092,14 @@
                     key: "_setHouseNumbersInUse",
                     value: function() {
                         this._getHouseNumbers().forEach(function(e) {
-                            return W.editingMediator.setInUse(e, I.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
+                            return W.editingMediator.setInUse(e, T.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
                         })
                     }
                 }, {
                     key: "_clearHouseNumbersInUse",
                     value: function() {
                         this._getHouseNumbers().forEach(function(e) {
-                            return W.editingMediator.clearInUse(e, I.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
+                            return W.editingMediator.clearInUse(e, T.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
                         })
                     }
                 }, {
@@ -23183,7 +23191,7 @@
                     key: "_drawSegments",
                     value: function() {
                         var e = this._segments.map(function(e) {
-                            return new OL.Feature.Vector(y.cloneGeometry(e.geometry), {}, A)
+                            return new OL.Feature.Vector(y.cloneGeometry(e.geometry), {}, C)
                         });
                         return this._layer.addFeatures(e)
                     }
@@ -23398,7 +23406,7 @@
                                 this._map.events.register("zoomend", this, this._onZoomChanged),
                                 this._onZoomChanged(),
                                 this._model.segmentHouseNumbers.on([v.ADDED, v.REMOVED].join(" "), this.render, this),
-                                this._model.segmentHouseNumbers.on(v.CHANGED, this._onHouseNumbersChange, this),
+                                this._model.segmentHouseNumbers.on(v.ATTR_CHANGED, this._onHouseNumbersChange, this),
                                 W.commands.execute("save:setHandler", this._saveChanges, this)
                         }
                     }
@@ -28853,7 +28861,7 @@
                         minRank: 3
                     }
                 },
-                version: "v2.32-144-g23f556dc\n",
+                version: "v2.33-144-g01279b3f\n",
                 apiKeys: {
                     googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
                 }
@@ -30349,8 +30357,8 @@
         S = i(n(637)),
         M = i(n(77)),
         k = i(n(638)),
-        I = i(n(156)),
-        T = i(n(157));
+        T = i(n(156)),
+        I = i(n(157));
     t.TYPE_TO_FACTORY = {
             issues: a.default,
             problems: s.default,
@@ -30374,8 +30382,8 @@
             junctions: h.default,
             managedAreas: p.default,
             userAreas: k.default,
-            notifications: I.default,
-            majorTrafficEvents: T.default,
+            notifications: T.default,
+            majorTrafficEvents: I.default,
             restrictedAreas: v.default,
             transactions: E.default
         }
@@ -37172,10 +37180,10 @@
         S = i(n(408)),
         M = i(n(68)),
         k = i(n(212)),
-        I = i(n(38)),
-        T = i(n(86)),
-        C = i(n(213)),
-        A = i(n(99)),
+        T = i(n(38)),
+        I = i(n(86)),
+        A = i(n(213)),
+        C = i(n(99)),
         O = i(n(165)),
         R = i(n(21)),
         D = i(n(409)),
@@ -37287,9 +37295,9 @@
                 "Waze/Action/ModifyAllConnections": b.default,
                 "Waze/Action/MoveNode": S.default,
                 "Waze/Action/MultiAction": M.default,
-                "Waze/Action/SplitSegments": T.default,
-                "Waze/Action/UpdateFeatureAddress": C.default,
-                "Waze/Action/UpdateFeatureGeometry": A.default,
+                "Waze/Action/SplitSegments": I.default,
+                "Waze/Action/UpdateFeatureAddress": A.default,
+                "Waze/Action/UpdateFeatureGeometry": C.default,
                 "Waze/Action/UpdateHouseNumber": O.default,
                 "Waze/Action/MoveHouseNumber": E.default,
                 "Waze/Actions/AddHouseNumber": s.default,
@@ -37304,7 +37312,7 @@
                 "Waze/Feature/Vector/Segment": z.default,
                 "Waze/Feature/Vector/UpdateRequest": q.default,
                 "Waze/Handler/DragElement": Z.default,
-                "Waze/Model/Graph/Actions/SetTurn": I.default,
+                "Waze/Model/Graph/Actions/SetTurn": T.default,
                 "Waze/Model/Graph/TurnData": V.default,
                 "Waze/Model/Graph/TurnGraph": U.default,
                 "Waze/Model/Graph/Vertex": j.default,
@@ -39389,10 +39397,10 @@
         S = P(n(995)),
         M = P(n(997)),
         k = P(n(1e3)),
-        I = P(n(1001)),
-        T = P(n(1004)),
-        C = P(n(419)),
-        A = P(n(1024)),
+        T = P(n(1001)),
+        I = P(n(1004)),
+        A = P(n(419)),
+        C = P(n(1024)),
         O = P(n(1038)),
         R = P(n(227)),
         D = P(n(1043)),
@@ -39418,7 +39426,7 @@
                         W.commands = new Backbone.Wreqr.Commands,
                         W.reqres = new Backbone.Wreqr.RequestResponse,
                         W.model = new o.default,
-                        W.model.loginManager = W.loginManager = new C.default,
+                        W.model.loginManager = W.loginManager = new A.default,
                         W.accelerators = new v.default,
                         this._initKeyboard();
                     var r = new l.default(W.model);
@@ -39428,7 +39436,7 @@
                     });
                     W.map = s,
                         W.map.registerAccelerators(W.accelerators),
-                        W.togglerTree = T.default.create();
+                        W.togglerTree = I.default.create();
                     var a = s.layers.filter(function(e) {
                             return e.selectable
                         }),
@@ -39442,7 +39450,7 @@
                         selectionManager: W.selectionManager
                     });
                     return W.streetViewController = f,
-                        new A.default({
+                        new C.default({
                             mediator: W.editingMediator,
                             mapLayers: [W.map.problemLayer, W.map.updateRequestLayer],
                             streetViewController: W.streetViewController
@@ -39457,7 +39465,7 @@
                         this._heftController(n),
                         this._heftMarx(),
                         this._heftModules(),
-                        W.layerSwitcherController = new I.default({
+                        W.layerSwitcherController = new T.default({
                             map: s,
                             actionManager: W.model.actionManager,
                             controller: W.controller,
@@ -41403,13 +41411,15 @@
             }, {
                 key: "activate",
                 value: function() {
-                    this.model.segments.on(a.CHANGED, this.onSegmentsChanged, this),
+                    this.model.segments.on(a.ATTR_CHANGED, this.onSegmentsChanged, this),
+                        this.model.segments.on(a.STATE_DELETED, this.onSegmentsChanged, this),
                         this.model.segments.on(a.ADDED, this.onSegmentsAdded, this)
                 }
             }, {
                 key: "deactivate",
                 value: function() {
-                    this.model.segments.off(a.CHANGED, this.onSegmentsChanged, this),
+                    this.model.segments.off(a.ATTR_CHANGED, this.onSegmentsChanged, this),
+                        this.model.segments.off(a.STATE_DELETED, this.onSegmentsChanged, this),
                         this.model.segments.off(a.ADDED, this.onSegmentsAdded, this)
                 }
             }, {
@@ -41763,14 +41773,14 @@
                 s.default.prototype.destroy.apply(this, arguments)
         },
         _registerEvents: function() {
-            this.model.segments.on(o.CHANGED, this.onFeatureUpdated, this),
-                this.model.nodes.on(o.CHANGED, this.onFeatureUpdated, this),
+            this.model.segments.on(o.ATTR_CHANGED, this.onFeatureUpdated, this),
+                this.model.nodes.on(o.ATTR_CHANGED, this.onFeatureUpdated, this),
                 this.model.events.register("mergeend", this, this.onFeaturesMerge)
         },
         _unregisterEvents: function() {
             this.model.events.unregister("mergeend", this, this.onFeaturesMerge),
-                this.model.segments.off(o.CHANGED, this.onFeatureUpdated, this),
-                this.model.nodes.off(o.CHANGED, this.onFeatureUpdated, this)
+                this.model.segments.off(o.ATTR_CHANGED, this.onFeatureUpdated, this),
+                this.model.nodes.off(o.ATTR_CHANGED, this.onFeatureUpdated, this)
         },
         onFeatureUpdated: function(e) {
             this.resetVertices()
@@ -43885,8 +43895,7 @@
         initialize: function() {
             return this.dataModel = this.model.model,
                 this._setUpdateRequests(),
-                this.listenTo(this.dataModel.venues, s.CHANGED, this._onVenuesChanged),
-                this.listenTo(this.dataModel.venues, s.REMOVED, this._onVenuesDeleted),
+                this.listenTo(this.dataModel.venues, [s.REMOVED, s.STATE_DELETED].join(" "), this._onVenuesDeleted),
                 this.model.setSelected(!0)
         },
         _setUpdateRequests: function() {
@@ -43894,13 +43903,6 @@
                 null == this.updateRequests && (this.updateRequests = _(this.model.attributes.venueUpdateRequests).sortBy(function(e) {
                     return e.get("dateAdded")
                 }))
-        },
-        _onVenuesChanged: function(e) {
-            var t = this;
-            if (e.some(function(e) {
-                    return e.getID() === t.model.getID() && e.isDeleted()
-                }))
-                return this.destroy()
         },
         _onVenuesDeleted: function(e) {
             var t = this;
@@ -55527,7 +55529,7 @@
                 }),
                 this.mapView.centerProblem(),
                 this.listenTo(this.viewModel, "change:problemState", this._onProblemStateChanged),
-                this.listenTo(this.adapter.getRepository(), o.CHANGED, this._repositoryChanged),
+                this.listenTo(this.adapter.getRepository(), o.ATTR_CHANGED, this._repositoryChanged),
                 this.listenTo(this.adapter.getRepository(), o.ADDED, this._onProblemsAdded),
                 this.editView = new i.default({
                     model: this.viewModel,
@@ -57737,7 +57739,7 @@
             _bindRepositoryEvents: function(e) {
                 var t = this,
                     n = {};
-                n[o.CHANGED] = this._makeTrigger("onModelChanged"),
+                n[o.ATTR_CHANGED] = this._makeTrigger("onModelChanged"),
                     n[o.REMOVED] = this._makeTrigger("onModelRemoved"),
                     n[o.SYNCED] = this._makeTrigger("onModelSynced"),
                     (0,
@@ -60303,10 +60305,10 @@
         S = x(n(1113)),
         M = x(n(461)),
         k = x(n(1121)),
-        I = x(n(122)),
-        T = x(n(463)),
-        C = x(n(1122)),
-        A = n(465),
+        T = x(n(122)),
+        I = x(n(463)),
+        A = x(n(1122)),
+        C = n(465),
         O = x(n(1128)),
         R = x(n(1131)),
         D = n(462),
@@ -60350,7 +60352,7 @@
                 value: function() {
                     return {
                         restoreLastTab: {
-                            behaviorClass: T.default
+                            behaviorClass: I.default
                         }
                     }
                 }
@@ -60716,14 +60718,12 @@
             }, {
                 key: "onFeaturesChanged",
                 value: function(e) {
-                    if ((0,
-                            d.default)(t.prototype.__proto__ || (0,
-                            s.default)(t.prototype), "onFeaturesChanged", this).call(this, e),
-                        !this.isDestroyed()) {
-                        var n = this.getFeature();
-                        this.hasEditedModelChanged(e) && !n.isPoint() && (this.previousGeometry = n.geometry),
-                            this._initOrUpdateSubviews(n)
-                    }
+                    (0,
+                        d.default)(t.prototype.__proto__ || (0,
+                        s.default)(t.prototype), "onFeaturesChanged", this).call(this, e);
+                    var n = this.getFeature();
+                    this.hasEditedModelChanged(e) && !n.isPoint() && (this.previousGeometry = n.geometry),
+                        this._initOrUpdateSubviews(n)
                 }
             }, {
                 key: "_onResidentialToggled",
@@ -60737,7 +60737,7 @@
                 key: "_initAliasesView",
                 value: function(e) {
                     this.aliasesLayout ? this.aliasesLayout.collection.reset(this._getAliases(e)) : (this.aliasesLayout = new O.default({
-                            collection: new A.Collection(this.viewModel.attributes.aliases),
+                            collection: new C.Collection(this.viewModel.attributes.aliases),
                             editable: e.arePropertiesEditable(),
                             landmarkId: this.featureID
                         }),
@@ -60760,7 +60760,7 @@
             }, {
                 key: "_initLockEditView",
                 value: function() {
-                    var e = new I.default({
+                    var e = new T.default({
                         model: this.viewModel
                     });
                     this.showChildView("lockEditRegion", e)
@@ -60876,7 +60876,7 @@
             }, {
                 key: "_renderNavigationPoints",
                 value: function(e) {
-                    var t = new C.default({
+                    var t = new A.default({
                         landmark: e,
                         drawingContext: this.options.map.getDrawingContext(),
                         pannable: this.options.map.getPannable(),
@@ -64149,7 +64149,7 @@
                 a.default)(this, (t.__proto__ || (0,
                 r.default)(t)).apply(this, arguments));
             s.dataModel = i,
-                s.listenTo(s.dataModel.segments, p.CHANGED, s.onSegmentsChanged);
+                s.listenTo(s.dataModel.segments, p.ATTR_CHANGED, s.onSegmentsChanged);
             var l = s.dataModel.getTurnGraph();
             return s.listenTo(l, g.CHANGE_EVENT, s.onTurnGraphChanged),
                 s
@@ -64332,10 +64332,10 @@
         S = ne(n(169)),
         M = ne(n(173)),
         k = ne(n(67)),
-        I = ne(n(122)),
-        T = ne(n(463)),
-        C = ne(n(1141)),
-        A = ne(n(443)),
+        T = ne(n(122)),
+        I = ne(n(463)),
+        A = ne(n(1141)),
+        C = ne(n(443)),
         O = ne(n(1143)),
         R = ne(n(1150)),
         D = n(84),
@@ -64399,7 +64399,7 @@
                     value: function() {
                         return {
                             restoreLastTab: {
-                                behaviorClass: T.default
+                                behaviorClass: I.default
                             },
                             accelerators: {
                                 behaviorClass: S.default
@@ -65268,7 +65268,7 @@
                 }, {
                     key: "_renderTurnView",
                     value: function() {
-                        this._turnView = new C.default({
+                        this._turnView = new A.default({
                                 segmentSelection: this.segmentSelection,
                                 map: this.options.map,
                                 dataModel: this._dataModel,
@@ -65344,7 +65344,7 @@
                 }, {
                     key: "_renderLockEdit",
                     value: function() {
-                        var e = new I.default({
+                        var e = new T.default({
                             model: this.viewModel
                         });
                         this.showChildView("lockEditRegion", e)
@@ -65475,7 +65475,7 @@
                     value: function() {
                         var e = new Y.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).getEntireStreet(this.segmentSelection.getFirstSegment()),
                             t = new V.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).canEditHouseNumbers();
-                        new A.default({
+                        new C.default({
                             model: this._dataModel,
                             map: W.map,
                             editable: t,
@@ -66249,7 +66249,7 @@
                 i.default)(t)).apply(this, arguments));
             return a._segmentId = s,
                 a._dataModel = n,
-                a.listenTo(a._dataModel.segments, d.CHANGED, a._onSegmentChanged),
+                a.listenTo(a._dataModel.segments, d.ATTR_CHANGED, a._onSegmentChanged),
                 a
         }
         return (0,
@@ -66382,7 +66382,7 @@
                 u.listenTo(u.model, "change:showLanesNotEnabledBadge", u._onIsEnabledChange);
             var f = n.getTurnGraph();
             return u.listenTo(f, p.CHANGE_EVENT, u._onTurnGraphChanged),
-                u.listenTo(n.segments, c.CHANGED, u._onSegmentChanged),
+                u.listenTo(n.segments, c.ATTR_CHANGED, u._onSegmentChanged),
                 u.listenTo(n.segments, c.CHANGED_ID, u._onSegmentChangedID),
                 u
         }
@@ -68507,7 +68507,7 @@
                     return W.loginManager.isStaff() && this.canEditBaseAttributes()
                 },
                 e.prototype.shouldShowBeacons = function() {
-                    return this.canEditBeacons() || this.selection.getSelectedSegments().some(function(e) {
+                    return W.loginManager.isStaff() || this.selection.getSelectedSegments().some(function(e) {
                         return e.hasBeacons()
                     })
                 },
@@ -69489,7 +69489,7 @@
             default: e
         }
     }
-    var I = function(e) {
+    var T = function(e) {
         function t() {
             return (0,
                     l.default)(this, t),
@@ -69968,7 +69968,7 @@
             }]),
             t
     }(Marionette.View);
-    t.default = I,
+    t.default = T,
         e.exports = t.default
 }, function(e, t, n) {
     "use strict";
@@ -71518,33 +71518,33 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = A(n(0)),
-        r = A(n(1)),
+    var i = C(n(0)),
+        r = C(n(1)),
         s = n(59),
-        o = A(n(1192)),
-        a = A(n(1193)),
-        l = A(n(1194)),
-        u = A(n(480)),
-        d = A(n(1195)),
-        c = A(n(1196)),
-        h = A(n(1197)),
-        f = A(n(1198)),
-        p = A(n(16)),
-        g = A(n(404)),
-        v = A(n(1204)),
-        m = A(n(1205)),
-        y = A(n(1206)),
-        b = A(n(405)),
-        E = A(n(1209)),
-        w = A(n(119)),
+        o = C(n(1192)),
+        a = C(n(1193)),
+        l = C(n(1194)),
+        u = C(n(480)),
+        d = C(n(1195)),
+        c = C(n(1196)),
+        h = C(n(1197)),
+        f = C(n(1198)),
+        p = C(n(16)),
+        g = C(n(404)),
+        v = C(n(1204)),
+        m = C(n(1205)),
+        y = C(n(1206)),
+        b = C(n(405)),
+        E = C(n(1209)),
+        w = C(n(119)),
         S = n(146),
-        M = A(n(124)),
-        k = A(n(44)),
-        I = n(130),
-        T = A(n(484)),
-        C = n(65);
+        M = C(n(124)),
+        k = C(n(44)),
+        T = n(130),
+        I = C(n(484)),
+        A = n(65);
 
-    function A(e) {
+    function C(e) {
         return e && e.__esModule ? e : {
             default: e
         }
@@ -71573,12 +71573,12 @@
                 value: function(e) {
                     var t = k.default.getMenus().map(this.createMenu.bind(this)),
                         n = [].concat(t, this._generateVenueMenu(), this._generateDrawingControls(), this._generateEditingControls().reverse());
-                    return new T.default(n)
+                    return new I.default(n)
                 }
             }, {
                 key: "getHouseNumbersToolbarButtons",
                 value: function(e) {
-                    return new T.default(this._generateEditingHouseNumbersControls().reverse())
+                    return new I.default(this._generateEditingHouseNumbersControls().reverse())
                 }
             }, {
                 key: "_enableControlsByRank",
@@ -71687,7 +71687,7 @@
                                 accelerator: "drawSegment",
                                 enableSnapping: !0,
                                 featureAdded: function(t, n, i) {
-                                    t.attributes.roadType = C.ROAD_TYPE.WALKING_TRAIL,
+                                    t.attributes.roadType = A.ROAD_TYPE.WALKING_TRAIL,
                                         e.actionManager.add(new M.default(t, {
                                             createNodes: !0,
                                             openAllTurns: !1,
@@ -71767,7 +71767,7 @@
                         title: I18n.t("venues.categories." + e),
                         featureName: I18n.t("drawing.venue"),
                         iconClass: p.default.categoryToClassName(e),
-                        layerUniqueName: I.LAYER_UNIQUE_NAMES.LANDMARKS,
+                        layerUniqueName: T.LAYER_UNIQUE_NAMES.LANDMARKS,
                         createFeature: function(t, n) {
                             var i = new w.default({
                                 geometry: t,
@@ -72366,7 +72366,7 @@
                         this.doSubAction(new p.default(this.bigJunction.getID(), t, p.default.REMOVE_JUNCTION_FROM_SEGMENT)),
                         this.prevJunctionState = this.bigJunction.state,
                         this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
-                            this.model.bigJunctions.changed(this.bigJunction))
+                            this.model.bigJunctions.stateDeleted(this.bigJunction))
                 }
             }, {
                 key: "undoAction",
@@ -72382,7 +72382,7 @@
                 key: "redoAction",
                 value: function() {
                     this.bigJunction.state === OpenLayers.State.INSERT ? this.model.bigJunctions.remove(this.bigJunction) : (this.bigJunction.state = OpenLayers.State.DELETE,
-                            this.model.bigJunctions.changed(this.bigJunction)),
+                            this.model.bigJunctions.stateDeleted(this.bigJunction)),
                         (0,
                             l.default)(t.prototype.__proto__ || (0,
                             r.default)(t.prototype), "redoAction", this).call(this)
