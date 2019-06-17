@@ -10800,12 +10800,24 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
         margin-right: 10px;
     }
 
-    #edit-buttons .toolbar-button {
-        padding-left: 10px;
-        padding-right: 10px;
+    #debug {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #edit-buttons .toolbar-button .item-container {
+        padding: 0 8px;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    #edit-buttons .toolbar-submenu {
+        width: 30px;
+        height: 100%;
     }
 
-    #debug {
+    #edit-buttons .toolbar-submenu .group-title {
         display: none;
     }
 }
@@ -11405,6 +11417,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: #475b6f;
     opacity: 1;
     font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    min-width: 168px;
 }
 
 .form-search .search-query::-webkit-input-placeholder {
