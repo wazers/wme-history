@@ -9126,7 +9126,7 @@ input:-moz-placeholder {
 .row-fluid #sidebar {
     position: relative;
     width: 330px;
-    z-index: 4;
+    z-index: 5;
     top: 0;
     left: auto;
 }
@@ -9154,12 +9154,16 @@ input:-moz-placeholder {
     box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.07);
 }
 
+#editor-container #waze-map-container {
+    position: relative;
+}
+
 #editor-container #map {
     position: relative;
     min-width: 600px;
 }
 
-#editor-container #map.street-view-mode #WazeMap {
+#editor-container #map.street-view-mode #waze-map-container {
     width: 50%;
     margin-right: 50%;
 }
@@ -9189,7 +9193,7 @@ input:-moz-placeholder {
     float: right;
     width: 50%;
     position: relative;
-    z-index: 1;
+    z-index: 3;
     display: none;
 }
 
@@ -9198,7 +9202,7 @@ input:-moz-placeholder {
 }
 
 .tooltip {
-    z-index: 2;
+    z-index: 3;
 }
 
 .hide {
@@ -9217,7 +9221,7 @@ input:-moz-placeholder {
 }
 
 #map-overlay, #popup-overlay {
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     height: 100%;
     display: none;
@@ -9488,12 +9492,16 @@ div.olLayerDiv {
     cursor: crosshair;
 }
 
-.layer-switcher-pinned:not(.street-view-mode) #overlay-buttons {
-    right: 244px;
+.layer-switcher-pinned #overlay-buttons {
+    right: 246px;
 }
 
 .layer-switcher-pinned #topbar-container {
     margin-right: 230px;
+}
+
+.layer-switcher-pinned .overlay-button.layers-switcher-button {
+    color: #00a4eb;
 }
 
 #map #topbar-container {
@@ -10096,7 +10104,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     height: 56px;
     width: 100%;
     min-width: 500px;
-    z-index: 5;
+    z-index: 6;
 }
 
 .toolbar #search {
@@ -10308,7 +10316,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     opacity: 0;
     pointer-events: none;
     height: auto;
-    z-index: 5;
+    z-index: 6;
     display: block;
     transform-origin: 0 0;
 }
@@ -10357,6 +10365,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     flex-grow: 3;
     margin: 0;
     min-width: 530px;
+    margin-right: 16px;
     /* places menu */
     /* road menu */
 }
@@ -11947,103 +11956,25 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     width: 100%;
 }
 
-.slider {
-    position: absolute;
-    background-color: white;
-    border-radius: 30px;
-    height: 100px;
-}
-
-.slider:hover {
-    background-color: #f3f3f3;
-}
-
-.slider-stops {
-    display: none;
-    width: 30px;
-    background-color: #f3f3f3;
-    background-image: linear-gradient(90deg, transparent 45%, #dedede 45%, #dedede 55%, transparent 55%), linear-gradient(#dedede 1px, transparent 1px);
-    background-size: 50% 8px;
-    background-repeat: repeat-y;
-    background-position: 7px;
-}
-
-.zoom-button {
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    left: 0;
-    cursor: pointer;
-}
-
-.zoom-button:hover {
-    background-color: #f3f3f3;
-}
-
-.zoom-button:active:after {
-    line-height: 34px;
-}
-
-.zoom-plus-button {
-    background-color: white;
-    border-radius: 30px;
-    position: relative;
-    top: 0px !important;
-}
-
-.zoom-plus-button:after {
-    background-image: url(//editor-assets.waze.com/beta/img/buttons756c103910d73f4d45328e08f6016871.png);
-    background-position: -68px -45px;
-    width: 14px;
-    height: 13px;
-    content: "";
-    display: block;
-    left: 5px;
-    top: 5px;
-    position: absolute;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .zoom-plus-button:after {
-        background-image: url(//editor-assets.waze.com/beta/img/buttons@2xe486884f6841e9520d047738a688f357.png);
-        background-size: 96px 81px;
-    }
-}
-
-.zoom-minus-button {
-    background-color: white;
-    border-radius: 30px;
-    position: relative;
-}
-
-.zoom-minus-button:after {
-    background-image: url(//editor-assets.waze.com/beta/img/buttons756c103910d73f4d45328e08f6016871.png);
-    background-position: -24px -18px;
-    width: 14px;
-    height: 4px;
-    content: "";
-    display: block;
-    left: 5px;
-    top: 10px;
-    position: absolute;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .zoom-minus-button:after {
-        background-image: url(//editor-assets.waze.com/beta/img/buttons@2xe486884f6841e9520d047738a688f357.png);
-        background-size: 96px 81px;
-    }
-}
-
 .zoom-bar-container {
-    background-color: #f0f2f2;
-    border-radius: 30px;
-    height: 52px;
-    width: 24px;
-    border: 3px solid #f0f2f2;
-    box-sizing: initial;
-    bottom: 90px;
-    right: 14px;
+    width: 40px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.zoom-bar-container .overlay-button {
+    height: 36px;
+    box-shadow: none;
+}
+
+.zoom-bar-container .overlay-button.zoom-plus-button {
+    border-radius: 50% 50% 0 0;
+    margin-bottom: 0;
+}
+
+.zoom-bar-container .overlay-button.zoom-minus-button {
+    border-radius: 0 0 50% 50%;
+    padding-top: 4px;
+    margin-bottom: 0;
 }
 
 #map-lightbox .content .success-message, #map-lightbox .content .error-message, #map-lightbox .content .force-message, #map-lightbox .content .save-error-message {
@@ -13415,10 +13346,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .layer-switcher .menu {
     width: 230px;
     font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
-    top: 56px;
     background-color: white;
     position: absolute;
+    z-index: 2;
     right: 0;
+    height: calc(100% - 26px);
+    transition: right 350ms;
+}
+
+.layer-switcher .menu.hide-layer-switcher {
+    right: -230px;
 }
 
 .layer-switcher .scrollable {
@@ -14836,7 +14773,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .google-permalink a {
     width: 74px;
-    height: 24px;
+    height: 26px;
     display: block;
     background-image: url("https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_light_color_74x24dp.png");
     background-repeat: no-repeat;
@@ -15181,7 +15118,7 @@ body[dir="rtl"] .olControlScaleLine {
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 14;
+    z-index: 15;
     opacity: 0;
     transition: all 0.5s;
     pointer-events: none;
@@ -18875,7 +18812,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .save-popover-container {
     position: absolute;
-    z-index: 5;
+    z-index: 6;
     transition: transform 0.4s cubic-bezier(0.26, 1.32, 0.32, 1.01);
     transform-origin: top right;
 }
@@ -19049,10 +18986,10 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .conversation-view .comment {
-    -webkit-transition: compact(compact(opacity 0.25s, false, false, false, false, false, false, false, false, false) false false...);
-    -moz-transition: compact(compact(opacity 0.25s, false, false, false, false, false, false, false, false, false) false false false...);
-    -o-transition: compact(compact(opacity 0.25s, false, false, false, false, false, false, false, false, false) false false false...);
-    transition: compact(opacity 0.25s, false, false, false, false, false, false, false, false, false);
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    transition: opacity 0.25s;
 }
 
 .conversation-view .comment .comment-content {
@@ -19418,66 +19355,6 @@ body[dir="rtl"] .olControlScaleLine {
 .problem-edit .actions .close-details .navigation .btn .badge {
     color: #e9e9e9;
     background-color: #3d3d3d;
-}
-
-.geolocation-control-container {
-    position: relative;
-    right: 0px;
-    width: 29px;
-    height: 29px;
-    background-color: white;
-    border-radius: 30px;
-}
-
-.geolocation-control-container button {
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    border: none;
-    background: none;
-    border-radius: 100%;
-    height: 100%;
-    width: 100%;
-    box-shadow: none;
-    cursor: pointer;
-    outline: none;
-}
-
-.geolocation-control-container button:hover, .geolocation-control-container button:active {
-    transform: none !important;
-}
-
-.geolocation-control-container button span {
-    background-image: url(//editor-assets.waze.com/beta/img/buttons756c103910d73f4d45328e08f6016871.png);
-    background-position: 0px -24px;
-    width: 19px;
-    height: 19px;
-    left: 5px;
-    top: 5px;
-    position: absolute;
-    display: block;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .geolocation-control-container button span {
-        background-image: url(//editor-assets.waze.com/beta/img/buttons@2xe486884f6841e9520d047738a688f357.png);
-        background-size: 96px 81px;
-    }
-}
-
-.geolocation-control-container .loading span {
-    left: 6px;
-    top: 6px;
-    width: 18px;
-    height: 18px;
-    background-image: url(//editor-assets.waze.com/beta/img/geo-pan42de70bb30400d76aac4aad68a7bd0b0.png);
-    background-position: 0px -20px;
-    width: 18px;
-    height: 18px;
-}
-
-.geolocation-control-container .btn-default[disabled] {
-    background-color: white;
 }
 
 .archive-panel .header {
@@ -22405,58 +22282,70 @@ body[dir="rtl"] .olControlScaleLine {
     cursor: pointer;
 }
 
+#overlay-buttons-region {
+    z-index: 1;
+}
+
 #overlay-buttons {
     position: absolute;
-    right: 12px;
-    bottom: 88px;
-    z-index: 8;
+    right: 16px;
+    z-index: 1;
+    height: calc(100% - 26px);
+    width: 40px;
+    pointer-events: none;
 }
 
-#overlay-buttons .street-view-region, #overlay-buttons .geo-location-region {
-    margin-bottom: 10px;
+#overlay-buttons .overlay-buttons-container {
+    position: absolute;
+    pointer-events: initial;
 }
 
-.street-view-mode #overlay-buttons {
-    right: 50%;
-    margin-right: 12px;
+#overlay-buttons .overlay-buttons-container > div {
+    margin-bottom: 12px;
 }
 
-.street-view-control-container {
-    position: relative;
-    right: 0px;
-    width: 29px;
-    height: 29px;
+#overlay-buttons .overlay-buttons-container > div.zoom-bar-region {
+    margin-bottom: 0;
 }
 
-.street-view-control {
+#overlay-buttons .overlay-buttons-container.top {
+    top: 46px;
+}
+
+#overlay-buttons .overlay-buttons-container.bottom {
+    bottom: 60px;
+}
+
+.overlay-button {
     background-color: white;
-    position: relative;
-    width: 29px;
-    height: 29px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 24px;
+    color: #4c4c4c;
+    padding: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.overlay-button:hover {
+    background-color: #edf3f6;
+}
+
+.overlay-button.overlay-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .street-view-control:hover {
     cursor: move;
 }
 
-.street-view-control::after {
-    content: "";
-    display: block;
-    background-image: url(//editor-assets.waze.com/beta/img/buttons756c103910d73f4d45328e08f6016871.png);
-    background-position: -24px 0px;
-    width: 27px;
-    height: 18px;
-    position: absolute;
-    top: 5px;
-    left: 1px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .street-view-control::after {
-        background-image: url(//editor-assets.waze.com/beta/img/buttons@2xe486884f6841e9520d047738a688f357.png);
-        background-size: 96px 81px;
-    }
+.overlay-button.geo-location-control .geo-located {
+    color: #00a4eb;
 }
 
 .input-group-addon {
