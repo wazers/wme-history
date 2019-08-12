@@ -15342,8 +15342,7 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .tippy-popper .tippy-tooltip.user-box-theme .user-box-container .user-box-numbers .number-box-inner {
-    display: block;
-    width: fit-content;
+    display: table;
     margin: auto;
     text-align: left;
 }
