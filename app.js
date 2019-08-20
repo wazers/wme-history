@@ -98,7 +98,7 @@
     for (var u = 0; u < a.length; u++)
         t(a[u]);
     var c = l;
-    r.push([396, 1]),
+    r.push([397, 1]),
         n()
 }([, , , , , , , , , , function(e, t, n) {
     "use strict";
@@ -214,17 +214,19 @@
         s = n.n(i),
         r = n(1),
         o = n.n(r),
-        a = n(64),
+        a = n(65),
         l = n.n(a),
         u = n(35),
         c = n(44),
-        d = new(n(159).a),
-        h = {},
-        p = 0;
-    h.isBlank = function(e) {
+        d = n(160),
+        h = n(56),
+        p = new d.a,
+        g = {},
+        f = 0;
+    g.isBlank = function(e) {
             return null == e || (o.a.isString(e) ? /^\s*$/.test(e) : o.a.isFunction(e.isEmpty) ? e.isEmpty() : !(!Array.isArray(e) && !o.a.isObject(e)) && o.a.isEmpty(e))
         },
-        h.getTimeFromSeconds = function(e) {
+        g.getTimeFromSeconds = function(e) {
             if (!(null != e && !isNaN(e)))
                 return null;
             e = Math.abs(Math.round(e));
@@ -249,7 +251,7 @@
                     seconds: n.seconds
                 })
         },
-        h.safe_t = function(e, t) {
+        g.safe_t = function(e, t) {
             var n, i = {};
             return t && Object.entries(t).forEach(function(e) {
                     var t = s()(e, 2),
@@ -257,33 +259,33 @@
                     t[1];
                     i[n] = "%{".concat(n, "}")
                 }),
-                n = h.escape(I18n.t(e, i)),
+                n = g.escape(I18n.t(e, i)),
                 t && Object.entries(t).forEach(function(e) {
                     var t = s()(e, 2),
                         i = t[0],
                         r = t[1];
-                    r.htmlSafe || (r = h.escape(r)),
+                    r.htmlSafe || (r = g.escape(r)),
                         n = n.replace(new RegExp("%\\{".concat(i, "\\}")), r)
                 }),
                 n
         },
-        h.safeString = function(e) {
+        g.safeString = function(e) {
             var t = new String(e);
             return t.htmlSafe = !0,
                 t
         },
-        h.contentTag = function(e, t) {
-            return t = h.escape(t),
+        g.contentTag = function(e, t) {
+            return t = g.escape(t),
                 this.safeString("<".concat(e, ">").concat(t, "</").concat(e, ">"))
         },
-        h.copyShortcut = function() {
+        g.copyShortcut = function() {
             return Object(c.isMac)() ? "⌘+C" : "Ctrl+C"
         },
-        h._formInput = function(e, t, n, i, s, r, o, a, l, u) {
-            t = h.escape(t),
-                n = h.escape(n),
-                e = h.escape(e);
-            var c = "".concat(n, "-").concat(i, "-").concat(p++),
+        g._formInput = function(e, t, n, i, s, r, o, a, l, u) {
+            t = g.escape(t),
+                n = g.escape(n),
+                e = g.escape(e);
+            var c = "".concat(n, "-").concat(i, "-").concat(f++),
                 d = "<input type='".concat(e, "' name='").concat(n, "' value='").concat(i, "' id='").concat(c, "'");
             return (String(i) === String(s) || u) && (d += " checked "),
                 !1 === r && (d += " disabled "),
@@ -291,7 +293,7 @@
                 l && (d += " data-nullable='true'"),
                 d += "/><label for='".concat(c, "' class='").concat(a || "", "'>").concat(t, "</label>")
         },
-        h.radio = function() {
+        g.radio = function() {
             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                 t = e.label,
                 n = void 0 === t ? "" : t,
@@ -304,50 +306,50 @@
                 u = e.currentValue,
                 c = void 0 === u ? null : u,
                 d = e.enable,
-                p = void 0 === d || d,
-                g = e.className,
-                f = void 0 === g ? "" : g,
+                h = void 0 === d || d,
+                p = e.className,
+                f = void 0 === p ? "" : p,
                 m = e.nullable,
                 v = void 0 !== m && m,
                 _ = e.forceChecked,
                 y = void 0 !== _ && _;
             if (n)
-                return h._formInput("radio", n, s, l, c, p, o, f, v, y)
+                return g._formInput("radio", n, s, l, c, h, o, f, v, y)
         },
-        h.checkbox = function(e, t, n, i, s) {
-            return h._formInput("checkbox", e, t, n, i, s)
+        g.checkbox = function(e, t, n, i, s) {
+            return g._formInput("checkbox", e, t, n, i, s)
         },
-        h.option = function(e, t, n, i, s) {
-            var r = "<option value='".concat(h.escape(t), "'");
+        g.option = function(e, t, n, i, s) {
+            var r = "<option value='".concat(g.escape(t), "'");
             return n instanceof Array || t !== n && (i || parseInt(t, 10) !== parseInt(n, 10)) || (r += " selected"),
                 s && (r += " disabled"),
-                r += ">".concat(h.escape(e), "</option>")
+                r += ">".concat(g.escape(e), "</option>")
         },
-        h.categoryOption = function(e, t) {
-            return h.option(I18n.t("venues.categories.".concat(t)), t, e[t] ? t : null, !0)
+        g.categoryOption = function(e, t) {
+            return g.option(I18n.t("venues.categories.".concat(t)), t, e[t] ? t : null, !0)
         },
-        h.directionRadio = function(e) {
-            return -1 === e ? h.radio({
+        g.directionRadio = function(e) {
+            return -1 === e ? g.radio({
                 label: I18n.t("edit.multiple_values"),
                 name: "direction",
                 dataType: "numeric",
                 value: e,
                 nullable: !0
-            }) : h.radio({
+            }) : g.radio({
                 label: I18n.t("segment.direction.".concat(e)),
                 name: "direction",
                 dataType: "numeric",
                 value: e
             })
         },
-        h.formatDate = function(e) {
+        g.formatDate = function(e) {
             return e ? new Date(e).toDateString() : ""
         },
-        h.durationString = function(e, t) {
+        g.durationString = function(e, t) {
             var n = (t - e) / 1e3;
             return this.getTimeFromSeconds(n)
         },
-        h.timeDistanceInWords = function(e, t) {
+        g.timeDistanceInWords = function(e, t) {
             null == t && (t = new Date),
                 e = new Date(e),
                 t = new Date(t);
@@ -400,13 +402,13 @@
                     count: s + 1
                 })
         },
-        h.dateOnlyString = function(e) {
+        g.dateOnlyString = function(e) {
             return e ? I18n.l("date.formats.long", e) : ""
         },
-        h.localizeDateString = function(e, t) {
+        g.localizeDateString = function(e, t) {
             return I18n.localize(e, t)
         },
-        h.lengthString = function(e, t) {
+        g.lengthString = function(e, t) {
             t = o.a.defaults(t || {}, {
                 units: u.UNIT.METER,
                 translationKey: "measurements.length"
@@ -421,7 +423,7 @@
                 count: i
             })
         },
-        h.speedString = function(e) {
+        g.speedString = function(e) {
             var t = u.default.localizeUnit(u.UNIT.KILOMETER),
                 n = "";
             return o.a.isUndefined(e) || (n = (n = u.default.getLocalizedValue(e, u.UNIT.KILOMETER)).toFixed(2)),
@@ -429,7 +431,7 @@
                     speed: n
                 })
         },
-        h.areaString = function(e) {
+        g.areaString = function(e) {
             var t = Math.sqrt(e),
                 n = u.default.getLocalizedDisplayValue(t, u.UNIT.METER, u.UNIT.KILOMETER),
                 i = u.default.localizeUnit(u.UNIT.KILOMETER);
@@ -438,10 +440,10 @@
                     area: n
                 })
         },
-        h.userProfileLink = function(e) {
-            return !e || e.temporary ? null : "".concat(W.Config.user_profile.url).concat(window.encodeURIComponent(e.userName))
+        g.userProfileLink = function(e) {
+            return !e || e.temporary ? null : "".concat(h.buildConfig.user_profile.url).concat(window.encodeURIComponent(e.userName))
         },
-        h.formatUserName = function(e, t) {
+        g.formatUserName = function(e, t) {
             null == t && (t = W.model);
             var n = t.users.getObjectById(e);
             return n ? function(e) {
@@ -450,19 +452,19 @@
                     "".concat(t, "(").concat(e.isStaffUser() ? "staff" : e.normalizedLevel, ")")
             }(n) : "".concat(e)
         },
-        h.userProfile = function(e, t) {
+        g.userProfile = function(e, t) {
             null == t && (t = W.model);
             var n = t.users.getObjectById(e),
                 i = this.userProfileLink(n),
                 s = this.escape(this.formatUserName(e, t));
-            return null == i || !W.Config.user_profile.enable ? s : this.safeString('<a target="_blank" href="'.concat(i, '" rel="noopener noreferrer">').concat(s, "</a>"))
+            return null == i || !h.buildConfig.user_profile.enable ? s : this.safeString('<a target="_blank" href="'.concat(i, '" rel="noopener noreferrer">').concat(s, "</a>"))
         },
-        h.formatRank = function(e) {
+        g.formatRank = function(e) {
             return e === l.a.StaffRank ? I18n.t("edit.segment.lock_levels.staff") : l.a.normalizeLevel(e)
         },
-        h.venueRankOption = function(e, t, n) {
-            var i = h.formatRank(t);
-            return h.radio({
+        g.venueRankOption = function(e, t, n) {
+            var i = g.formatRank(t);
+            return g.radio({
                 label: i,
                 name: "lockRank",
                 dataType: "numeric",
@@ -472,29 +474,29 @@
                 nullable: !0
             })
         },
-        h.getDisplayUnitValue = function(e, t, n) {
+        g.getDisplayUnitValue = function(e, t, n) {
             return null == (e = u.default.getLocalizedValue(e, t)) ? e : (n && (e = Math.round(e)),
                 e)
         },
-        h.shortcutMaskToKeys = function(e) {
+        g.shortcutMaskToKeys = function(e) {
             var t, n = "";
             return ["alt", "ctrl", "shift"].forEach(function(i) {
                     t = "".concat(i, "Key"),
-                        e[t] && (n += "<kbd class='".concat(h.escape(t), "'><span>").concat(h.escape(t), "</span></kbd> + "))
+                        e[t] && (n += "<kbd class='".concat(g.escape(t), "'><span>").concat(g.escape(t), "</span></kbd> + "))
                 }),
                 n
         },
-        h.getShortcutKey = function(e) {
+        g.getShortcutKey = function(e) {
             var t = W.accelerators.SpecialKeys[e.keyCode];
             return t || (t = String.fromCharCode(e.keyCode)),
                 t
         },
-        h.formatDays = function(e) {
-            return d.getWeekdaysGist(e, "*").map(function(e) {
+        g.formatDays = function(e) {
+            return p.getWeekdaysGist(e, "*").map(function(e) {
                 return "*" !== e ? I18n.t("date.abbr_day_names")[e] : e
             }).join(", ").replace(/, \*,/g, "-")
         },
-        h.formatMonthRange = function(e, t) {
+        g.formatMonthRange = function(e, t) {
             if (!e && !t)
                 return "";
             if (t < e)
@@ -517,37 +519,37 @@
                     endYear: l
                 })
         },
-        h.formatOpeningHour = function(e, t, n, i) {
-            var s = h.formatDays(e);
+        g.formatOpeningHour = function(e, t, n, i) {
+            var s = g.formatDays(e);
             return s += t ? " ".concat(I18n.t("edit.landmark.opening_hours.time_span.all_day")) : " ".concat(n, "-").concat(i)
         },
-        h.formatAddress = function(e) {
+        g.formatAddress = function(e) {
             return null == e ? I18n.t("edit.landmark.no_address") : e.format()
         },
-        h.formatVenueCategories = function(e) {
+        g.formatVenueCategories = function(e) {
             return (e = e.map(function(e) {
                 return I18n.t("venues.categories.".concat(e))
             })).sort().join(", ")
         },
-        h.formatVenueName = function(e) {
+        g.formatVenueName = function(e) {
             return e || I18n.t("edit.landmark.unnamed")
         },
-        h.formatVenueUpdateRequestId = function(e) {
+        g.formatVenueUpdateRequestId = function(e) {
             var t = String(e).split("/");
             return t[t.length - 1]
         },
-        h.getSaveErrorTitle = function(e) {
+        g.getSaveErrorTitle = function(e) {
             var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "save.error_types.default.title",
                 n = I18n.t("save.error_types")[e];
             return n && n.title || I18n.t(t)
         },
-        h.formatYesNo = function(e) {
+        g.formatYesNo = function(e) {
             return !0 === e ? I18n.t("formats.boolean.is_true") : I18n.t("formats.boolean.is_false")
         },
-        h.escape = function(e) {
+        g.escape = function(e) {
             return "".concat(e).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/\//g, "&#47;")
         },
-        h.cleanValue = function(e) {
+        g.cleanValue = function(e) {
             switch (e) {
                 case null:
                 case void 0:
@@ -559,10 +561,10 @@
                     return e
             }
         },
-        h.categoryToClassName = function(e) {
+        g.categoryToClassName = function(e) {
             return "string" == typeof e ? e.toLowerCase().replace(/[^a-z0-9]+/g, "-") : ""
         },
-        h.timeString = function(e) {
+        g.timeString = function(e) {
             var t = new Date(e),
                 n = t.getHours();
             n < 10 && (n = "0".concat(n));
@@ -570,7 +572,7 @@
             return i < 10 && (i = "0".concat(i)),
                 "".concat(n, ":").concat(i)
         },
-        t.default = h
+        t.default = g
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -1437,7 +1439,7 @@
         g = n.n(p),
         f = n(24),
         m = n.n(f),
-        v = n(100),
+        v = n(101),
         _ = function(e) {
             function t(e, n, i) {
                 var r;
@@ -1577,7 +1579,7 @@
         n.d(t, "reportError", function() {
             return h
         });
-    var i = n(94),
+    var i = n(95),
         s = n.n(i),
         r = n(1),
         o = n.n(r),
@@ -1695,7 +1697,7 @@
         c = n.n(u),
         d = n(5),
         h = n.n(d),
-        p = n(123),
+        p = n(124),
         g = [],
         f = [],
         m = /(application|text)\/(x-)?json/;
@@ -1821,10 +1823,10 @@
         m = n.n(f),
         v = n(24),
         _ = n.n(v),
-        y = n(101),
-        b = n(125),
+        y = n(102),
+        b = n(126),
         E = n.n(b),
-        w = n(65),
+        w = n(66),
         S = n.n(w),
         k = n(51),
         T = function(e) {
@@ -2040,7 +2042,7 @@
         value: !0
     });
     var o = n(616),
-        a = n(68);
+        a = n(69);
     t.RESTRICTION_DESCRIPTION_CHAR_LIMIT = 1e3;
     var l = {
         FREE: "FREE",
@@ -2242,13 +2244,13 @@
         a = n(16),
         l = n(32),
         u = n.n(l),
-        c = n(138),
+        c = n(139),
         d = n.n(c),
-        h = n(73),
+        h = n(74),
         p = n(13),
         g = n.n(p),
         f = n(34),
-        m = n(110),
+        m = n(111),
         v = "venueCategoryAttributes";
 
     function _(e, t) {
@@ -2619,9 +2621,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(87),
-        a = r(n(101)),
-        l = n(339);
+    var o = n(88),
+        a = r(n(102)),
+        l = n(340);
     t.MixedValue = Symbol();
     var u = function() {
         function e(e, t) {
@@ -2838,20 +2840,20 @@
     });
     var l = o(n(1)),
         u = o(n(25)),
-        c = n(69),
+        c = n(70),
         d = n(42),
-        h = o(n(80)),
-        p = o(n(57)),
+        h = o(n(81)),
+        p = o(n(54)),
         g = o(n(39)),
-        f = a(n(55)),
-        m = o(n(138)),
-        v = a(n(101)),
+        f = a(n(57)),
+        m = o(n(139)),
+        v = a(n(102)),
         _ = o(n(32)),
-        y = n(339),
+        y = n(340),
         b = a(n(17)),
         E = a(n(10)),
         w = a(n(18)),
-        S = o(n(108)),
+        S = o(n(109)),
         k = a(n(20)),
         T = a(n(27));
     t.MIN_LEVEL = -9;
@@ -3452,7 +3454,7 @@
         value: !0
     });
     var r = i(n(1)),
-        o = i(n(150)),
+        o = i(n(151)),
         a = s(n(27)),
         l = function() {
             function e(e, t, n) {
@@ -3526,19 +3528,19 @@
                     return Boolean(e) && 0 != (this.getPermissions() & e)
                 },
                 e.prototype.wasCreatedBy = function(e) {
-                    return this.getAttributes().createdBy === e.getID()
+                    return this.createdBy === e.getID()
                 },
                 e.prototype.getCreatedBy = function() {
-                    return this.getAttributes().createdBy
+                    return this.createdBy
                 },
                 e.prototype.getCreatedOn = function() {
-                    return this.getAttributes().createdOn
+                    return this.createdOn
                 },
                 e.prototype.getUpdatedBy = function() {
-                    return this.getAttributes().updatedBy
+                    return this.updatedBy
                 },
                 e.prototype.getUpdatedOn = function() {
-                    return this.getAttributes().updatedOn
+                    return this.updatedOn
                 },
                 e.prototype.isInUse = function(e) {
                     void 0 === e && (e = {
@@ -3565,9 +3567,6 @@
                     void 0 === e && (e = {}),
                         this.parse(e),
                         r.default.extend(this, e)
-                },
-                e.prototype.getAttributes = function() {
-                    return this
                 },
                 e.prototype.getType = function() {
                     return this.type
@@ -3741,8 +3740,8 @@
         g = n.n(p),
         f = n(19),
         m = n(25),
-        v = n(144),
-        _ = n(113),
+        v = n(145),
+        _ = n(114),
         y = n(20),
         b = n(31),
         E = n(10),
@@ -3837,7 +3836,7 @@
         value: !0
     });
     var s = i(n(45)),
-        r = i(n(124)),
+        r = i(n(125)),
         o = !1;
 
     function a(e) {
@@ -3932,7 +3931,7 @@
         s = n.n(i),
         r = n(1),
         o = n.n(r),
-        a = n(128),
+        a = n(129),
         l = a.a.extend({
             TYPE: {
                 MAP_PROBLEM: "MAP_PROBLEM",
@@ -4065,7 +4064,7 @@
         value: !0
     });
     var o = r(n(23)),
-        a = n(55),
+        a = n(57),
         l = r(n(621));
 
     function u(e, t, n) {
@@ -4422,8 +4421,8 @@
     });
     var s = i(n(623)),
         r = i(n(34)),
-        o = n(76),
-        a = n(105),
+        o = n(77),
+        a = n(106),
         l = n(33),
         u = function() {
             function e(e, t) {
@@ -4653,6 +4652,132 @@
     t.default = d
 }, function(e, t, n) {
     "use strict";
+    var i, s = this && this.__extends || (i = function(e, t) {
+                return (i = Object.setPrototypeOf || {
+                        __proto__: []
+                    }
+                    instanceof Array && function(e, t) {
+                        e.__proto__ = t
+                    } ||
+                    function(e, t) {
+                        for (var n in t)
+                            t.hasOwnProperty(n) && (e[n] = t[n])
+                    }
+                )(e, t)
+            },
+            function(e, t) {
+                function n() {
+                    this.constructor = e
+                }
+                i(e, t),
+                    e.prototype = null === t ? Object.create(t) : (n.prototype = t.prototype,
+                        new n)
+            }
+        ),
+        r = this && this.__importDefault || function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        },
+        o = this && this.__importStar || function(e) {
+            if (e && e.__esModule)
+                return e;
+            var t = {};
+            if (null != e)
+                for (var n in e)
+                    Object.hasOwnProperty.call(e, n) && (t[n] = e[n]);
+            return t.default = e,
+                t
+        };
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    var a = r(n(1)),
+        l = r(n(39)),
+        u = o(n(10)),
+        c = function(e) {
+            function t(t, n, i, s) {
+                void 0 === n && (n = {
+                        parse: !1
+                    }),
+                    void 0 === i && (i = {});
+                var r = e.call(this, {}, void 0, i) || this;
+                return r.fid = null,
+                    r.initializeAttributes(t, n, s),
+                    r
+            }
+            return s(t, e),
+                t.prototype.initializeAttributes = function(e, t, n) {
+                    void 0 === t && (t = {
+                            parse: !1
+                        }),
+                        this.attributes = e || {},
+                        t && t.parse && e && this.parse(e),
+                        e && (this.attributes = Object.assign(this.attributes, e)),
+                        a.default.defaults(this.attributes, n)
+                },
+                t.prototype.merge = function(e) {
+                    this.parse(e),
+                        Object.assign(this.attributes, e)
+                },
+                t.prototype.getID = function() {
+                    return this.attributes.id
+                },
+                t.prototype.setID = function(e) {
+                    this.attributes.id = e
+                },
+                t.prototype.changeID = function(t) {
+                    e.prototype.changeID.call(this, t),
+                        null != this.fid && (this.fid = t)
+                },
+                t.prototype.clone = function() {
+                    var e = new t({}),
+                        n = u.cloneGeometry(this.attributes.geometry);
+                    return e.attributes = a.default.extend({}, this.attributes, {
+                            geometry: n
+                        }),
+                        e.state = this.state,
+                        e
+                },
+                t.prototype.getPermissions = function() {
+                    return null != this.attributes.permissions ? this.attributes.permissions : 0
+                },
+                t.prototype.getFeatureAttributes = function() {
+                    return this.attributes
+                },
+                t.prototype.wasCreatedBy = function(e) {
+                    return this.attributes.createdBy === e.getID()
+                },
+                t.prototype.getCreatedBy = function() {
+                    return this.attributes.createdBy
+                },
+                t.prototype.getCreatedOn = function() {
+                    return this.attributes.createdOn
+                },
+                t.prototype.getUpdatedBy = function() {
+                    return this.attributes.updatedBy
+                },
+                t.prototype.getUpdatedOn = function() {
+                    return this.attributes.updatedOn
+                },
+                Object.defineProperty(t.prototype, "geometry", {
+                    get: function() {
+                        return this.attributes.geometry
+                    },
+                    set: function(e) {
+                        this.attributes.geometry = e
+                    },
+                    enumerable: !0,
+                    configurable: !0
+                }),
+                t
+        }(l.default);
+    Object.assign(c.prototype, {
+            CLASS_NAME: "Waze.Feature.Vector"
+        }),
+        t.default = c
+}, function(e, t, n) {
+    "use strict";
     n.r(t);
     var i = n(2),
         s = n.n(i),
@@ -4677,7 +4802,7 @@
                     (o = l()(this, c()(t).call(this, r))).attributes = null,
                     null === e ? (o.object = new _.a(i),
                         o.attributes = i) : (o.object = e,
-                        o.attributes = g.a.extend({}, o.object.getAttributes())),
+                        o.attributes = g.a.extend({}, o.object.getFeatureAttributes())),
                     o.object.writableAttributes && (o.attributes = g.a.pick(o.attributes, o.object.writableAttributes)),
                     o.repository = n,
                     o
@@ -4736,6 +4861,62 @@
     t.default = y
 }, function(e, t, n) {
     "use strict";
+    n.r(t),
+        n.d(t, "buildConfig", function() {
+            return i
+        });
+    var i = {
+        api_base: "/Descartes/app",
+        show_version_number: !0,
+        asset_bucket_host: "editor-assets.waze.com",
+        asset_bucket_name: "wme-frontend-assets",
+        gcp_project: "waze-prod",
+        api_keys: {
+            google_maps: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
+        },
+        area_manager_widget: {
+            enable: !0
+        },
+        log: {
+            enable: !0
+        },
+        marx: {
+            server: "https://marx-beta.waze.com:443"
+        },
+        mte: {
+            root_url: "/mte",
+            eventsUrl: "beta.waze.com/events"
+        },
+        regions: {
+            il: {
+                api_base: "/il-Descartes/app",
+                search: {
+                    server: "/il-SearchServer/mozi"
+                }
+            },
+            usa: {
+                api_base: "/Descartes/app",
+                search: {
+                    server: "/SearchServer/mozi"
+                }
+            },
+            row: {
+                api_base: "/row-Descartes/app",
+                search: {
+                    server: "/row-SearchServer/mozi"
+                }
+            }
+        },
+        reporting: {
+            enable: !0
+        },
+        user_profile: {
+            enable: !0,
+            url: "https://beta.waze.com/user/editor/"
+        }
+    }
+}, function(e, t, n) {
+    "use strict";
     var i = this && this.__read || function(e, t) {
             var n = "function" == typeof Symbol && e[Symbol.iterator];
             if (!n)
@@ -4785,7 +4966,7 @@
     });
     var a = r(n(620)),
         l = o(n(48)),
-        u = r(n(65)),
+        u = r(n(66)),
         c = {
             FWD: 0,
             REV: 1
@@ -4893,7 +5074,7 @@
         h = n.n(d),
         p = n(19),
         g = n(25),
-        f = n(160),
+        f = n(161),
         m = n(29),
         v = n(23),
         _ = n.n(v),
@@ -4978,117 +5159,6 @@
     t.default = b
 }, function(e, t, n) {
     "use strict";
-    var i, s = this && this.__extends || (i = function(e, t) {
-                return (i = Object.setPrototypeOf || {
-                        __proto__: []
-                    }
-                    instanceof Array && function(e, t) {
-                        e.__proto__ = t
-                    } ||
-                    function(e, t) {
-                        for (var n in t)
-                            t.hasOwnProperty(n) && (e[n] = t[n])
-                    }
-                )(e, t)
-            },
-            function(e, t) {
-                function n() {
-                    this.constructor = e
-                }
-                i(e, t),
-                    e.prototype = null === t ? Object.create(t) : (n.prototype = t.prototype,
-                        new n)
-            }
-        ),
-        r = this && this.__importDefault || function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        },
-        o = this && this.__importStar || function(e) {
-            if (e && e.__esModule)
-                return e;
-            var t = {};
-            if (null != e)
-                for (var n in e)
-                    Object.hasOwnProperty.call(e, n) && (t[n] = e[n]);
-            return t.default = e,
-                t
-        };
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    var a = r(n(1)),
-        l = r(n(39)),
-        u = o(n(10)),
-        c = function(e) {
-            function t(t, n, i, s) {
-                void 0 === n && (n = {
-                        parse: !1
-                    }),
-                    void 0 === i && (i = {});
-                var r = e.call(this, {}, void 0, i) || this;
-                return r.fid = null,
-                    r.initializeAttributes(t, n, s),
-                    r
-            }
-            return s(t, e),
-                t.prototype.initializeAttributes = function(e, t, n) {
-                    void 0 === t && (t = {
-                            parse: !1
-                        }),
-                        this.attributes = e || {},
-                        t && t.parse && e && this.parse(e),
-                        e && (this.attributes = Object.assign(this.attributes, e)),
-                        a.default.defaults(this.attributes, n)
-                },
-                t.prototype.merge = function(e) {
-                    this.parse(e),
-                        Object.assign(this.attributes, e)
-                },
-                t.prototype.getID = function() {
-                    return this.attributes.id
-                },
-                t.prototype.setID = function(e) {
-                    this.attributes.id = e
-                },
-                t.prototype.changeID = function(t) {
-                    e.prototype.changeID.call(this, t),
-                        null != this.fid && (this.fid = t)
-                },
-                t.prototype.clone = function() {
-                    var e = new t({}),
-                        n = u.cloneGeometry(this.attributes.geometry);
-                    return e.attributes = a.default.extend({}, this.attributes, {
-                            geometry: n
-                        }),
-                        e.state = this.state,
-                        e
-                },
-                t.prototype.getPermissions = function() {
-                    return null != this.attributes.permissions ? this.attributes.permissions : 0
-                },
-                t.prototype.getAttributes = function() {
-                    return this.attributes
-                },
-                Object.defineProperty(t.prototype, "geometry", {
-                    get: function() {
-                        return this.attributes.geometry
-                    },
-                    set: function(e) {
-                        this.attributes.geometry = e
-                    },
-                    enumerable: !0,
-                    configurable: !0
-                }),
-                t
-        }(l.default);
-    Object.assign(c.prototype, {
-            CLASS_NAME: "Waze.Feature.Vector"
-        }),
-        t.default = c
-}, function(e, t, n) {
-    "use strict";
     n.r(t);
     var i = n(8),
         s = n.n(i),
@@ -5098,11 +5168,11 @@
         l = n.n(a),
         u = n(9),
         c = n.n(u),
-        d = n(71),
+        d = n(72),
         h = n.n(d),
         p = n(28),
         g = n(20),
-        f = n(122);
+        f = n(123);
 
     function m(e, t) {
         var n = Object.keys(e);
@@ -5344,13 +5414,13 @@
         g = n.n(p),
         f = n(1),
         m = n.n(f),
-        v = n(95),
-        _ = n(83),
+        v = n(96),
+        _ = n(84),
         y = n(19),
         b = n(43),
-        E = n(66),
+        E = n(67),
         w = n(29),
-        S = n(354),
+        S = n(355),
         k = n.n(S),
         T = n(23),
         I = n.n(T),
@@ -5401,9 +5471,9 @@
         CLASS_NAME: "Waze.Model.Graph.Actions.SplitTurns"
     });
     var A = M,
-        C = n(140),
+        C = n(141),
         O = n.n(C),
-        R = n(82),
+        R = n(83),
         D = n.n(R),
         L = n(17),
         P = n(10),
@@ -6009,9 +6079,9 @@
         value: !0
     });
     var s = n(42),
-        r = n(55),
+        r = n(57),
         o = n(40),
-        a = n(81),
+        a = n(82),
         l = n(51),
         u = function() {
             function e(e, t) {
@@ -6092,7 +6162,7 @@
         v = n(24),
         _ = n.n(v),
         y = n(19),
-        b = n(56),
+        b = n(58),
         E = n(13),
         w = n.n(E),
         S = n(31),
@@ -6211,8 +6281,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = n(84),
-        o = s(n(108));
+    var r = n(85),
+        o = s(n(109));
     t.DATE_FORMAT = "YYYY-MM-DD";
     var a = {
         SUNDAY: "SUNDAY",
@@ -6583,8 +6653,8 @@
     "use strict";
     var i = n(7),
         s = n.n(i),
-        r = n(62),
-        o = n(86),
+        r = n(63),
+        o = n(87),
         a = n.n(o),
         l = n(2),
         u = n.n(l),
@@ -6657,7 +6727,7 @@
                 visible: !0
             }
         }),
-        f = n(64),
+        f = n(65),
         m = n.n(f),
         v = n(4),
         _ = n.n(v),
@@ -6680,7 +6750,7 @@
                 t
         }(n(25).default),
         k = n(10),
-        T = n(58),
+        T = n(59),
         I = s.a.Model.extend({
             MORE_INFO_DEFAULTS: [{
                 name: "averageSession",
@@ -6848,7 +6918,7 @@
         s = n.n(i),
         r = n(0),
         o = n.n(r),
-        a = n(68),
+        a = n(69),
         l = n(32),
         u = n(16),
         c = function() {
@@ -7031,15 +7101,15 @@
         value: !0
     });
     var a = r(n(7)),
-        l = r(n(57)),
-        u = r(n(39)),
-        c = o(n(20)),
-        d = n(28),
-        h = o(n(10)),
-        p = n(69),
+        l = n(70),
+        u = r(n(54)),
+        c = r(n(39)),
+        d = o(n(10)),
+        h = n(28),
+        p = o(n(20)),
         g = function(e) {
             function t(n, i) {
-                return e.call(this, n, i, p.CommentsPermissions, t.defaults()) || this
+                return e.call(this, n, i, l.CommentsPermissions, t.defaults()) || this
             }
             return s(t, e),
                 t.defaults = function() {
@@ -7055,18 +7125,18 @@
                         updatedBy: null,
                         updatedOn: null,
                         conversation: [],
-                        permissions: u.default.ALL_PERMISSIONS,
+                        permissions: c.default.ALL_PERMISSIONS,
                         id: null
                     }
                 },
                 t.prototype.isPoint = function() {
-                    return h.isPoint(this.geometry)
+                    return d.isPoint(this.geometry)
                 },
                 t.prototype.getPolygonGeometry = function() {
-                    return this.isPoint() ? c.pointToSquarePolygon(this.geometry, 50) : h.cloneGeometry(this.geometry)
+                    return this.isPoint() ? p.pointToSquarePolygon(this.geometry, 50) : d.cloneGeometry(this.geometry)
                 },
                 t.prototype.getPointGeometry = function() {
-                    return this.isPoint() ? h.cloneGeometry(this.geometry) : c.polygonToPoint(this.geometry)
+                    return this.isPoint() ? d.cloneGeometry(this.geometry) : p.polygonToPoint(this.geometry)
                 },
                 t.prototype.getComments = function() {
                     return new a.default.Collection(this.attributes.conversation)
@@ -7076,7 +7146,7 @@
                 },
                 t.prototype.setFollowing = function(e) {
                     var t = this;
-                    return d.httpPost(W.Config.paths.mapCommentFollow, {
+                    return h.httpPost(W.Config.paths.mapCommentFollow, {
                         mapCommentID: this.getID(),
                         follow: e
                     }).then(function() {
@@ -7085,7 +7155,7 @@
                 },
                 t.prototype.addComment = function(e) {
                     var t = this;
-                    return d.httpPost(W.Config.paths.mapCommentConversation, {
+                    return h.httpPost(W.Config.paths.mapCommentConversation, {
                         mapCommentID: this.getID(),
                         text: e
                     }).then(function(e) {
@@ -7095,7 +7165,7 @@
                     })
                 },
                 t
-        }(l.default);
+        }(u.default);
     Object.assign(g.prototype, {
             MAX_SUBJECT_LENGTH: 30,
             MAX_BODY_LENGTH: 2e3,
@@ -7148,9 +7218,9 @@
         I = n.n(T),
         M = n(13),
         A = n.n(M),
-        C = n(57),
+        C = n(54),
         O = n.n(C),
-        R = n(80),
+        R = n(81),
         D = n.n(R),
         L = {
             el: "ελληνικά"
@@ -7301,7 +7371,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(105),
+    var i = n(106),
         s = n(33),
         r = function() {
             function e(e) {
@@ -7389,12 +7459,12 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(140)),
-        l = o(n(82)),
+    var a = r(n(141)),
+        l = o(n(83)),
         u = r(n(23)),
-        c = r(n(125)),
-        d = r(n(153)),
-        h = r(n(189));
+        c = r(n(126)),
+        d = r(n(154)),
+        h = r(n(190));
     t.CHANGE_EVENT = "change";
     var p = function(e) {
         function t(t) {
@@ -7613,7 +7683,7 @@
     });
     var o = r(n(7)),
         a = r(n(1)),
-        l = r(n(150)),
+        l = r(n(151)),
         u = r(n(645)),
         c = {
             ADD: "ADD",
@@ -7834,8 +7904,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(109),
-        s = n(105),
+    var i = n(110),
+        s = n(106),
         r = n(33),
         o = function() {
             function e(e) {
@@ -7885,7 +7955,7 @@
         value: !0
     });
     var s = n(30),
-        r = i(n(153)),
+        r = i(n(154)),
         o = {
             DISALLOWED: 0,
             ALLOWED: 1,
@@ -8045,12 +8115,12 @@
         _ = n.n(v),
         y = n(24),
         b = n.n(y),
-        E = n(161),
-        w = n(139),
+        E = n(162),
+        w = n(140),
         S = n(13),
         k = n.n(S),
         T = n(10),
-        I = n(65),
+        I = n(66),
         M = n.n(I),
         A = n(42),
         C = function(e) {
@@ -8182,7 +8252,7 @@
             MENTOR_PRIVATE_MESSAGE: "MENTOR_PRIVATE_MESSAGE",
             MENTOR_DELETED: "MENTOR_DELETED"
         },
-        s = n(128).a.extend({
+        s = n(129).a.extend({
             TYPE: i,
             GROUPS: {
                 PRIVATE_FORUM_MESSAGE: [i.PRIVATE_FORUM_MESSAGE],
@@ -8249,7 +8319,7 @@
     });
     var s = i(n(693)),
         r = i(n(694)),
-        o = i(n(207)),
+        o = i(n(208)),
         a = i(n(695)),
         l = i(n(696)),
         u = i(n(697)),
@@ -8355,8 +8425,8 @@
         d = n(5),
         h = n.n(d),
         p = n(19),
-        g = n(54),
-        f = n(192),
+        g = n(55),
+        f = n(193),
         m = n.n(f),
         v = n(50),
         _ = n.n(v),
@@ -8444,8 +8514,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(69),
-        a = r(n(57)),
+    var o = n(70),
+        a = r(n(54)),
         l = {
             HIGH: "high",
             MEDIUM: "medium",
@@ -8742,7 +8812,7 @@
         value: !0
     });
     var s = i(n(34)),
-        r = n(105),
+        r = n(106),
         o = n(33),
         a = function() {
             function e(e, t) {
@@ -8791,9 +8861,9 @@
         value: !0
     });
     var s = i(n(34)),
-        r = n(115),
+        r = n(116),
         o = n(51),
-        a = n(109),
+        a = n(110),
         l = function() {
             function e(e) {
                 this.dataModel = e
@@ -8844,7 +8914,7 @@
         w = n(19),
         S = n(13),
         k = n.n(S),
-        T = n(107),
+        T = n(108),
         I = n.n(T),
         M = {
             permissions: 2147483647
@@ -9012,7 +9082,7 @@
     });
     var s = i(n(7)),
         r = i(n(1)),
-        o = i(n(150)),
+        o = i(n(151)),
         a = s.default.Model.extend({
             defaults: {
                 ignorable: !1,
@@ -9032,10 +9102,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         s = n(51),
-        r = n(109),
-        o = n(92),
+        r = n(110),
+        o = n(93),
         a = {
             MULTIPLE: "MULTIPLE",
             HAS_CLOSURES: "HAS_CLOSURES",
@@ -9158,7 +9228,7 @@
         d = n(31),
         h = n(13),
         p = n.n(h),
-        g = n(111),
+        g = n(112),
         f = n.n(g),
         m = n(34),
         v = n.n(m),
@@ -9552,11 +9622,11 @@
         value: !0
     });
     var u = a(n(1)),
-        c = n(69),
-        d = a(n(57)),
+        c = n(70),
+        d = a(n(54)),
         h = l(n(18)),
         p = n(51),
-        g = n(114),
+        g = n(115),
         f = l(n(20)),
         m = function(e) {
             function t(n, i) {
@@ -9744,8 +9814,8 @@
         value: !0
     });
     var s = i(n(34)),
-        r = n(76),
-        o = n(105),
+        r = n(77),
+        o = n(106),
         a = n(33),
         l = function() {
             function e(e) {
@@ -9849,7 +9919,7 @@
         value: !0
     });
     var a = o(n(7)),
-        l = n(96),
+        l = n(97),
         u = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -9908,7 +9978,7 @@
         d = n(5),
         h = n.n(d),
         p = n(19),
-        g = n(54),
+        g = n(55),
         f = n(50),
         m = n.n(f),
         v = function(e) {
@@ -9974,15 +10044,15 @@
         _ = n.n(v),
         y = n(24),
         b = n.n(y),
-        E = n(66),
-        w = n(161),
-        S = n(179),
+        E = n(67),
+        w = n(162),
+        S = n(180),
         k = n(13),
         T = n.n(k),
         I = n(31),
         M = n(10),
         A = n(18),
-        C = n(163),
+        C = n(164),
         O = n.n(C),
         R = function(e) {
             function t(e, n, i, s) {
@@ -10169,10 +10239,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(157),
-        a = n(69),
-        l = r(n(39)),
-        u = r(n(57)),
+    var o = n(158),
+        a = n(70),
+        l = r(n(54)),
+        u = r(n(39)),
         c = {
             speed: n(35).UNIT.KILOMETER
         };
@@ -10189,11 +10259,11 @@
                     speed: 0,
                     azymuth: 0,
                     rank: 0,
-                    permissions: l.default.ALL_PERMISSIONS
+                    permissions: u.default.ALL_PERMISSIONS
                 }
             },
             t
-    }(u.default);
+    }(l.default);
     t.SpeedCamera = d,
         Object.assign(d.prototype, {
             nested: {
@@ -10206,7 +10276,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(172),
+    var i = n(173),
         s = new Map;
     t.populateExternalProviderDetails = function(e, t) {
         void 0 === t && (t = void 0);
@@ -10406,27 +10476,27 @@
         value: !0
     });
     var u = a(n(1)),
-        c = n(69),
-        d = n(36);
-    t.CategoryAttributes = d.CategoryAttributes;
-    var h = a(n(80)),
-        p = a(n(39)),
-        g = a(n(57)),
-        f = a(n(141)),
-        m = a(n(624)),
-        v = a(n(111)),
-        _ = n(96),
-        y = n(110),
+        c = n(97),
+        d = n(70),
+        h = n(36);
+    t.CategoryAttributes = h.CategoryAttributes;
+    var p = a(n(81)),
+        g = a(n(54)),
+        f = a(n(39)),
+        m = a(n(142)),
+        v = a(n(624)),
+        _ = a(n(112)),
+        y = n(111),
         b = a(n(625)),
         E = l(n(10)),
-        w = a(n(198)),
+        w = a(n(199)),
         S = l(n(20)),
         k = function(e) {
             function t(n, i) {
                 void 0 === i && (i = {
                     parse: !1
                 });
-                var s = e.call(this, n, i, c.LandmarksPermissions, t.defaults()) || this;
+                var s = e.call(this, n, i, d.LandmarksPermissions, t.defaults()) || this;
                 return i && i.parse && s.parseUpdateRequests(n),
                     s.originalResidential = s.attributes.residential,
                     null == s.attributes.categoryAttributes && (s.attributes.categoryAttributes = s._defaultCategoryAttributes()),
@@ -10454,14 +10524,14 @@
                         approved: !0,
                         externalProviderIDs: [],
                         adLocked: !1,
-                        permissions: p.default.ALL_PERMISSIONS
+                        permissions: f.default.ALL_PERMISSIONS
                     }
                 },
                 t.generateCategoryToParentMap = function() {
                     var e = new Map;
-                    return d.VENUE_MAIN_CATEGORIES_LIST.forEach(function(t) {
+                    return h.VENUE_MAIN_CATEGORIES_LIST.forEach(function(t) {
                             e.set(t, t),
-                                d.VENUE_SUBCATEGORIES[t].forEach(function(n) {
+                                h.VENUE_SUBCATEGORIES[t].forEach(function(n) {
                                     e.set(n, t)
                                 })
                         }),
@@ -10470,9 +10540,9 @@
                 t.prototype._defaultCategoryAttributes = function() {
                     var e = {};
                     if (this.isParkingLot()) {
-                        var t = v.default.prototype.defaults();
-                        this.isNew() && (t.parkingType = _.PARKING_TYPE_PUBLIC),
-                            e[d.VENUE_PARKING_LOT] = t
+                        var t = _.default.prototype.defaults();
+                        this.isNew() && (t.parkingType = c.PARKING_TYPE_PUBLIC),
+                            e[h.VENUE_PARKING_LOT] = t
                     }
                     return e
                 },
@@ -10485,7 +10555,7 @@
                 t.prototype.parseUpdateRequests = function(e) {
                     var t = this;
                     if (e && e.venueUpdateRequests) {
-                        var n = p.default.prototype.arePropertiesEditable.apply(this),
+                        var n = f.default.prototype.arePropertiesEditable.apply(this),
                             i = new b.default({
                                 isInEditArea: n,
                                 isAdLockedEditable: W.loginManager.canEditAdLockedPlaceUpdates(),
@@ -10513,7 +10583,7 @@
                     return new Set(this.attributes.services)
                 },
                 t.prototype.getAddress = function() {
-                    return h.default.fromStreetID(this.attributes.streetID, this.model, {
+                    return p.default.fromStreetID(this.attributes.streetID, this.model, {
                         houseNumber: this.attributes.houseNumber
                     })
                 },
@@ -10569,10 +10639,10 @@
                     return e.prototype.arePropertiesEditable.call(this) && this.attributes.approved
                 },
                 t.prototype.areUpdateRequestsEditable = function() {
-                    return this.isAllowed(c.LandmarksPermissions.EDIT_UPDATE_REQUESTS)
+                    return this.isAllowed(d.LandmarksPermissions.EDIT_UPDATE_REQUESTS)
                 },
                 t.prototype.areExternalProvidersEditable = function() {
-                    return this.isAllowed(c.LandmarksPermissions.EDIT_EXTERNAL_PROVIDERS)
+                    return this.isAllowed(d.LandmarksPermissions.EDIT_EXTERNAL_PROVIDERS)
                 },
                 t.prototype.hasOpenUpdateRequests = function() {
                     return this.attributes.venueUpdateRequests.some(function(e) {
@@ -10584,7 +10654,7 @@
                 },
                 t.prototype.isParkingLot = function() {
                     var e = this.attributes.categories;
-                    return Array.isArray(e) && e[0] === d.VENUE_PARKING_LOT
+                    return Array.isArray(e) && e[0] === h.VENUE_PARKING_LOT
                 },
                 t.prototype.isResidential = function() {
                     return this.attributes.residential
@@ -10595,9 +10665,9 @@
     Object.assign(k.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
-                images: m.default,
+                images: v.default,
                 entryExitPoints: w.default,
-                externalProviderIDs: f.default,
+                externalProviderIDs: m.default,
                 openingHours: y.OpeningHour
             },
             CLASS_NAME: "Waze.Feature.Vector.Landmark"
@@ -10714,11 +10784,11 @@
         value: !0
     });
     var l = o(n(1)),
-        u = n(69),
-        c = n(82),
-        d = o(n(80)),
-        h = o(n(39)),
-        p = o(n(57)),
+        u = n(70),
+        c = n(83),
+        d = o(n(81)),
+        h = o(n(54)),
+        p = o(n(39)),
         g = a(n(17)),
         f = a(n(10)),
         m = o(n(628)),
@@ -10737,7 +10807,7 @@
                     name: "",
                     rank: 0,
                     segIDs: [],
-                    permissions: h.default.ALL_PERMISSIONS
+                    permissions: p.default.ALL_PERMISSIONS
                 }
             },
             t.prototype.merge = function(t) {
@@ -10829,7 +10899,7 @@
                 return e.getWidth() <= .01 && e.getHeight() <= .01
             },
             t
-    }(p.default);
+    }(h.default);
     t.BigJunction = _,
         Object.assign(_.prototype, {
             nested: {
@@ -10842,7 +10912,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(347);
+    var i = n(348);
     t.containsBounds = i.containsBounds;
     var s = {
         venueBounds: null,
@@ -11027,7 +11097,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(164),
+    var s = n(165),
         r = function() {
             function e(e) {
                 this.segments = e,
@@ -11275,8 +11345,8 @@
                     }
                 }]),
                 t
-        }(n(169).a),
-        k = n(210),
+        }(n(170).a),
+        k = n(211),
         T = 30,
         I = function(e) {
             function t(e) {
@@ -11365,10 +11435,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         s = n(51),
-        r = n(76),
-        o = n(120),
+        r = n(77),
+        o = n(121),
         a = n(33),
         l = function() {
             function e(e, t) {
@@ -11510,9 +11580,9 @@
         s = n.n(i),
         r = n(1),
         o = n.n(r),
-        a = n(142),
+        a = n(143),
         l = n.n(a),
-        u = n(59),
+        u = n(60),
         c = n(2),
         d = n.n(c),
         h = n(0),
@@ -11790,7 +11860,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(107)),
+    var s = i(n(108)),
         r = i(n(34)),
         o = {
             MULTIPLE_SEGMENTS: 1,
@@ -12074,7 +12144,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(82)),
+    var s = i(n(83)),
         r = function() {
             function e(e, t, n) {
                 this.fromVertex = e,
@@ -12237,8 +12307,8 @@
         _ = n.n(v),
         y = n(19),
         b = n(25),
-        E = n(89),
-        w = n(112),
+        E = n(90),
+        w = n(113),
         S = n(8),
         k = n.n(S),
         T = n(24);
@@ -12378,8 +12448,8 @@
         f = n(5),
         m = n.n(f),
         v = n(19),
-        _ = n(56),
-        y = n(60),
+        _ = n(58),
+        y = n(61),
         b = function(e) {
             function t(e) {
                 var n, i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -12536,10 +12606,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = n(78),
-        l = n(190),
-        u = n(203),
-        c = o(n(122)),
+    var a = n(79),
+        l = n(191),
+        u = n(204),
+        c = o(n(123)),
         d = "roadTypes",
         h = "venueLevel",
         p = [a.RepositoryName.CAMERAS, a.RepositoryName.MANAGED_AREAS, a.RepositoryName.MAP_COMMENTS, a.RepositoryName.MAP_UPDATE_REQUESTS, a.RepositoryName.PROBLEMS, a.RepositoryName.ROAD_CLOSURES, a.RepositoryName.SEGMENT_HOUSE_NUMBERS];
@@ -12760,7 +12830,7 @@
         g = n(24),
         f = n.n(g),
         m = n(19),
-        v = n(54),
+        v = n(55),
         _ = function(e) {
             function t(e, n) {
                 var i;
@@ -12913,7 +12983,7 @@
                 return this.attributes.segIDs.concat()
             },
             t
-    }(r(n(57)).default);
+    }(r(n(54)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -12928,7 +12998,7 @@
         c = n.n(u),
         d = n(5),
         h = n.n(d),
-        p = n(99),
+        p = n(100),
         g = n(24),
         f = n.n(g),
         m = n(31),
@@ -12994,7 +13064,12 @@
                         new n)
             }
         ),
-        r = this && this.__importStar || function(e) {
+        r = this && this.__importDefault || function(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        },
+        o = this && this.__importStar || function(e) {
             if (e && e.__esModule)
                 return e;
             var t = {};
@@ -13003,26 +13078,22 @@
                     Object.hasOwnProperty.call(e, n) && (t[n] = e[n]);
             return t.default = e,
                 t
-        },
-        o = this && this.__importDefault || function(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
         };
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(10)),
-        l = function(e) {
+    var a = r(n(54)),
+        l = o(n(10)),
+        u = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
             }
             return s(t, e),
                 t.prototype.clone = function() {
-                    var e = this.attributes.fractionPoint ? a.cloneGeometry(this.attributes.fractionPoint) : null;
+                    var e = this.attributes.fractionPoint ? l.cloneGeometry(this.attributes.fractionPoint) : null;
                     return new t(Object.assign({}, this.attributes, {
                         fractionPoint: e,
-                        geometry: a.cloneGeometry(this.getGeometry())
+                        geometry: l.cloneGeometry(this.getGeometry())
                     }))
                 },
                 t.prototype.getSide = function() {
@@ -13056,17 +13127,17 @@
                     return this.attributes.geometry
                 },
                 t.prototype.setGeometry = function(e) {
-                    this.attributes.geometry = a.cloneGeometry(e)
+                    this.attributes.geometry = l.cloneGeometry(e)
                 },
                 t
-        }(o(n(57)).default);
-    Object.assign(l.prototype, {
+        }(a.default);
+    Object.assign(u.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
                 fractionPoint: OpenLayers.Geometry
             }
         }),
-        t.default = l
+        t.default = u
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
@@ -13090,8 +13161,8 @@
         c = n.n(u),
         d = n(5),
         h = n.n(d),
-        p = n(59),
-        g = n(100),
+        p = n(60),
+        g = n(101),
         f = function(e) {
             function t() {
                 return s()(this, t),
@@ -13218,7 +13289,7 @@
         y = n.n(_),
         b = n(13),
         E = n.n(b),
-        w = n(56),
+        w = n(58),
         S = function(e) {
             function t(e) {
                 var n, i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -13313,10 +13384,10 @@
         m = n.n(f),
         v = n(1),
         _ = n.n(v),
-        y = n(60),
-        b = n(95),
+        y = n(61),
+        b = n(96),
         E = n(43),
-        w = n(56),
+        w = n(58),
         S = n(19),
         k = n(13),
         T = n.n(k),
@@ -13471,7 +13542,7 @@
         y = n(29),
         b = n(23),
         E = n.n(b),
-        w = n(55),
+        w = n(57),
         S = n(31),
         k = function(e) {
             function t(e, n) {
@@ -13557,7 +13628,7 @@
         value: !0
     });
     var r = i(n(48)),
-        o = s(n(65)),
+        o = s(n(66)),
         a = function() {
             function e(e, t) {
                 this.dataModel = e,
@@ -13659,16 +13730,16 @@
         value: !0
     });
     var r = i(n(1)),
-        o = n(78),
-        a = i(n(655)),
-        l = i(n(77)),
-        u = s(n(190)),
-        c = i(n(656)),
-        d = n(202),
-        h = s(n(10)),
-        p = i(n(1093)),
-        g = i(n(13)),
-        f = n(36),
+        o = i(n(13)),
+        a = n(79),
+        l = n(36),
+        u = i(n(655)),
+        c = i(n(78)),
+        d = s(n(191)),
+        h = i(n(656)),
+        p = n(203),
+        g = s(n(10)),
+        f = i(n(1094)),
         m = function() {
             function e() {
                 var e, t = this;
@@ -13679,126 +13750,126 @@
                     this.isLeftHand = !1,
                     this.lastTransactionID = null,
                     this.events = new OpenLayers.Events(this),
-                    this.actionManager = new p.default(this),
-                    this.segments = new u.default(g.default.SEGMENT, {
-                        name: o.RepositoryName.SEGMENTS,
+                    this.actionManager = new f.default(this),
+                    this.segments = new d.default(o.default.SEGMENT, {
+                        name: a.RepositoryName.SEGMENTS,
                         model: this,
                         minZoom: W.Config.segments.minDisplayZoom
                     }),
-                    this.nodes = new u.default(g.default.NODE, {
-                        name: o.RepositoryName.NODES,
+                    this.nodes = new d.default(o.default.NODE, {
+                        name: a.RepositoryName.NODES,
                         model: this,
                         minZoom: W.Config.segments.minDisplayZoom
                     }),
-                    this.users = new u.default(g.default.USER, {
-                        name: o.RepositoryName.USERS,
+                    this.users = new d.default(o.default.USER, {
+                        name: a.RepositoryName.USERS,
                         model: this
                     }),
-                    this.streets = new u.default(g.default.STREET, {
-                        name: o.RepositoryName.STREETS,
+                    this.streets = new d.default(o.default.STREET, {
+                        name: a.RepositoryName.STREETS,
                         model: this,
                         storePersistentSeparately: !0
                     }),
-                    this.countries = new u.default(g.default.COUNTRY, {
-                        name: o.RepositoryName.COUNTRIES,
+                    this.countries = new d.default(o.default.COUNTRY, {
+                        name: a.RepositoryName.COUNTRIES,
                         model: this,
                         storePersistentSeparately: !0
                     }),
-                    this.states = new u.default(g.default.STATE, {
-                        name: o.RepositoryName.STATES,
+                    this.states = new d.default(o.default.STATE, {
+                        name: a.RepositoryName.STATES,
                         model: this,
                         storePersistentSeparately: !0
                     }),
-                    this.cities = new u.default(g.default.CITY, {
-                        name: o.RepositoryName.CITIES,
+                    this.cities = new d.default(o.default.CITY, {
+                        name: a.RepositoryName.CITIES,
                         model: this,
                         storePersistentSeparately: !0
                     }),
-                    this.junctions = new u.default(g.default.JUNCTION, {
-                        name: o.RepositoryName.JUNCTIONS,
+                    this.junctions = new d.default(o.default.JUNCTION, {
+                        name: a.RepositoryName.JUNCTIONS,
                         model: this
                     }),
-                    this.bigJunctions = new u.default(g.default.BIG_JUNCTION, {
-                        name: o.RepositoryName.BIG_JUNCTIONS,
+                    this.bigJunctions = new d.default(o.default.BIG_JUNCTION, {
+                        name: a.RepositoryName.BIG_JUNCTIONS,
                         model: this
                     }),
-                    this.problems = new u.default(g.default.MAP_PROBLEM, {
-                        name: o.RepositoryName.PROBLEMS,
+                    this.problems = new d.default(o.default.MAP_PROBLEM, {
+                        name: a.RepositoryName.PROBLEMS,
                         model: this,
-                        filter: new c.default(o.RepositoryFilterName.PROBLEMS, ["ALL", "PARKING"], {
+                        filter: new h.default(a.RepositoryFilterName.PROBLEMS, ["ALL", "PARKING"], {
                             OPEN: 0,
                             CLOSED: 1
                         })
                     }),
-                    this.mapUpdateRequests = new u.default(g.default.UPDATE_REQUEST, {
-                        name: o.RepositoryName.MAP_UPDATE_REQUESTS,
+                    this.mapUpdateRequests = new d.default(o.default.UPDATE_REQUEST, {
+                        name: a.RepositoryName.MAP_UPDATE_REQUESTS,
                         model: this,
-                        filter: new c.default(o.RepositoryFilterName.MAP_UPDATE_REQUESTS, ["ALL", "PARKING"], {
+                        filter: new h.default(a.RepositoryFilterName.MAP_UPDATE_REQUESTS, ["ALL", "PARKING"], {
                             OPEN: 0,
                             CLOSED: 1
                         })
                     }),
-                    this.roadClosures = new u.default(g.default.ROAD_CLOSURE, {
-                        name: o.RepositoryName.ROAD_CLOSURES,
+                    this.roadClosures = new d.default(o.default.ROAD_CLOSURE, {
+                        name: a.RepositoryName.ROAD_CLOSURES,
                         model: this,
                         minZoom: W.Config.closures.minDisplayZoom,
                         active: W.Config.closures.shownByDefault
                     }),
-                    this.venues = new u.FilterableObjectRepository(g.default.VENUE, {
-                        name: o.RepositoryName.VENUES,
+                    this.venues = new d.FilterableObjectRepository(o.default.VENUE, {
+                        name: a.RepositoryName.VENUES,
                         model: this,
-                        filter: new c.default(o.RepositoryFilterName.VENUES, ["ALL", "RESIDENTIAL", "PARKING"], {
+                        filter: new h.default(a.RepositoryFilterName.VENUES, ["ALL", "RESIDENTIAL", "PARKING"], {
                             SHOW: 0,
                             UPDATE_REQUEST: 1
                         })
                     }),
-                    this.cameras = new u.default(g.default.SPEED_CAMERA, {
-                        name: o.RepositoryName.CAMERAS,
+                    this.cameras = new d.default(o.default.SPEED_CAMERA, {
+                        name: a.RepositoryName.CAMERAS,
                         model: this,
                         minZoom: W.Config.cameras.minDisplayZoom,
                         active: W.Config.cameras.shownByDefault
                     }),
-                    this.userAreas = new u.default(g.default.USER_AREA, {
-                        name: o.RepositoryName.USER_AREAS,
+                    this.userAreas = new d.default(o.default.USER_AREA, {
+                        name: a.RepositoryName.USER_AREAS,
                         model: this,
                         minZoom: W.Config.editable_areas.minDisplayZoom
                     }),
-                    this.problemDetails = new u.default(g.default.PROBLEM_DETAILS, {
+                    this.problemDetails = new d.default(o.default.PROBLEM_DETAILS, {
                         model: this,
-                        name: o.RepositoryName.PROBLEM_DETAILS
+                        name: a.RepositoryName.PROBLEM_DETAILS
                     }),
-                    this.segmentHouseNumbers = new u.default(g.default.HOUSE_NUMBER, {
-                        name: o.RepositoryName.SEGMENT_HOUSE_NUMBERS,
+                    this.segmentHouseNumbers = new d.default(o.default.HOUSE_NUMBER, {
+                        name: a.RepositoryName.SEGMENT_HOUSE_NUMBERS,
                         model: this,
                         minZoom: W.Config.houseNumbers.minDisplayZoom,
                         active: W.Config.houseNumbers.shownByDefault
                     }),
-                    this.updateRequestSessions = new u.default(g.default.UPDATE_REQUEST_SESSION, {
-                        name: o.RepositoryName.UPDATE_REQUEST_SESSIONS,
+                    this.updateRequestSessions = new d.default(o.default.UPDATE_REQUEST_SESSION, {
+                        name: a.RepositoryName.UPDATE_REQUEST_SESSIONS,
                         model: this
                     }),
-                    this.archives = new u.default(g.default.ARCHIVE_SESSION, {
-                        name: o.RepositoryName.ARCHIVES,
+                    this.archives = new d.default(o.default.ARCHIVE_SESSION, {
+                        name: a.RepositoryName.ARCHIVES,
                         model: this
                     }),
-                    this.archiveSessions = new u.default(g.default.ARCHIVE_SESSION_DATA, {
-                        name: o.RepositoryName.ARCHIVE_SESSIONS,
+                    this.archiveSessions = new d.default(o.default.ARCHIVE_SESSION_DATA, {
+                        name: a.RepositoryName.ARCHIVE_SESSIONS,
                         model: this
                     }),
-                    this.managedAreas = new u.default(g.default.MANAGED_AREA, {
-                        name: o.RepositoryName.MANAGED_AREAS,
+                    this.managedAreas = new d.default(o.default.MANAGED_AREA, {
+                        name: a.RepositoryName.MANAGED_AREAS,
                         model: this
                     }),
-                    this.majorTrafficEvents = new u.default(g.default.MTE, {
-                        name: o.RepositoryName.MAJOR_TRAFFIC_EVENTS,
+                    this.majorTrafficEvents = new d.default(o.default.MTE, {
+                        name: a.RepositoryName.MAJOR_TRAFFIC_EVENTS,
                         model: this
                     }),
-                    this.restrictedAreas = new u.default(g.default.RESTRICTED_AREA, {
-                        name: o.RepositoryName.RESTRICTED_AREAS,
+                    this.restrictedAreas = new d.default(o.default.RESTRICTED_AREA, {
+                        name: a.RepositoryName.RESTRICTED_AREAS,
                         model: this
                     }),
-                    this.mapComments = new u.default(g.default.MAP_COMMENT, {
-                        name: o.RepositoryName.MAP_COMMENTS,
+                    this.mapComments = new d.default(o.default.MAP_COMMENT, {
+                        name: a.RepositoryName.MAP_COMMENTS,
                         model: this
                     }),
                     this.repos = {
@@ -13827,35 +13898,35 @@
                         cities: this.cities,
                         mapComments: this.mapComments
                     },
-                    this.reposByObjectType = ((e = {})[g.default.ARCHIVE_SESSION] = this.archives,
-                        e[g.default.ARCHIVE_SESSION_DATA] = this.archiveSessions,
-                        e[g.default.BIG_JUNCTION] = this.bigJunctions,
-                        e[g.default.CITY] = this.cities,
-                        e[g.default.COUNTRY] = this.countries,
-                        e[g.default.HOUSE_NUMBER] = this.segmentHouseNumbers,
-                        e[g.default.JUNCTION] = this.junctions,
-                        e[g.default.MANAGED_AREA] = this.managedAreas,
-                        e[g.default.MAP_PROBLEM] = this.problems,
-                        e[g.default.MAP_COMMENT] = this.mapComments,
-                        e[g.default.MTE] = this.majorTrafficEvents,
-                        e[g.default.NODE] = this.nodes,
-                        e[g.default.PROBLEM_DETAILS] = this.problemDetails,
-                        e[g.default.RESTRICTED_AREA] = this.restrictedAreas,
-                        e[g.default.ROAD_CLOSURE] = this.roadClosures,
-                        e[g.default.SEGMENT] = this.segments,
-                        e[g.default.SPEED_CAMERA] = this.cameras,
-                        e[g.default.STATE] = this.states,
-                        e[g.default.STREET] = this.streets,
-                        e[g.default.UPDATE_REQUEST] = this.mapUpdateRequests,
-                        e[g.default.UPDATE_REQUEST_SESSION] = this.updateRequestSessions,
-                        e[g.default.USER] = this.users,
-                        e[g.default.USER_AREA] = this.userAreas,
-                        e[g.default.VENUE] = this.venues,
+                    this.reposByObjectType = ((e = {})[o.default.ARCHIVE_SESSION] = this.archives,
+                        e[o.default.ARCHIVE_SESSION_DATA] = this.archiveSessions,
+                        e[o.default.BIG_JUNCTION] = this.bigJunctions,
+                        e[o.default.CITY] = this.cities,
+                        e[o.default.COUNTRY] = this.countries,
+                        e[o.default.HOUSE_NUMBER] = this.segmentHouseNumbers,
+                        e[o.default.JUNCTION] = this.junctions,
+                        e[o.default.MANAGED_AREA] = this.managedAreas,
+                        e[o.default.MAP_PROBLEM] = this.problems,
+                        e[o.default.MAP_COMMENT] = this.mapComments,
+                        e[o.default.MTE] = this.majorTrafficEvents,
+                        e[o.default.NODE] = this.nodes,
+                        e[o.default.PROBLEM_DETAILS] = this.problemDetails,
+                        e[o.default.RESTRICTED_AREA] = this.restrictedAreas,
+                        e[o.default.ROAD_CLOSURE] = this.roadClosures,
+                        e[o.default.SEGMENT] = this.segments,
+                        e[o.default.SPEED_CAMERA] = this.cameras,
+                        e[o.default.STATE] = this.states,
+                        e[o.default.STREET] = this.streets,
+                        e[o.default.UPDATE_REQUEST] = this.mapUpdateRequests,
+                        e[o.default.UPDATE_REQUEST_SESSION] = this.updateRequestSessions,
+                        e[o.default.USER] = this.users,
+                        e[o.default.USER_AREA] = this.userAreas,
+                        e[o.default.VENUE] = this.venues,
                         e),
-                    this.roadGraph = new a.default({
+                    this.roadGraph = new u.default({
                         dataModel: this
                     }),
-                    this.turnGraph = new l.default(this.roadGraph),
+                    this.turnGraph = new c.default(this.roadGraph),
                     W.prefs.on("change:isImperial", function(e, n) {
                         null !== n && (t.isImperial = n)
                     }),
@@ -13898,7 +13969,7 @@
                     var s = this;
                     void 0 === i && (i = {});
                     var r = t.connections;
-                    if (d.sortRepositoriesByProcessOrder(Object.keys(t)).forEach(function(e) {
+                    if (p.sortRepositoriesByProcessOrder(Object.keys(t)).forEach(function(e) {
                             var r = s.repos[e],
                                 o = t[e];
                             r && (n || r.clear({
@@ -13920,8 +13991,8 @@
                 e.prototype.mergeResponse = function(e) {
                     var t = this;
                     e.users && this.users.mergeObjects(e.users),
-                        d.sortRepositoriesByProcessOrder(Object.keys(e)).filter(function(e) {
-                            return e !== o.RepositoryName.USERS
+                        p.sortRepositoriesByProcessOrder(Object.keys(e)).filter(function(e) {
+                            return e !== a.RepositoryName.USERS
                         }).forEach(function(n) {
                             var i = t.repos[n];
                             if (i) {
@@ -13970,10 +14041,10 @@
                     t && (this.categoryBrands = t.categoryBrands || {})
                 },
                 e.prototype.getGasStationBrands = function() {
-                    return this.categoryBrands[f.VENUE_GAS_STATION] || []
+                    return this.categoryBrands[l.VENUE_GAS_STATION] || []
                 },
                 e.prototype.getParkingLotBrands = function() {
-                    return this.categoryBrands[f.VENUE_PARKING_LOT] || []
+                    return this.categoryBrands[l.VENUE_PARKING_LOT] || []
                 },
                 e.prototype.getTopCountry = function() {
                     return this.topCountry
@@ -14022,7 +14093,7 @@
                     return [this.segments, this.nodes].forEach(function(t) {
                             Object.values(t.getModifiedObjects()).forEach(function(t) {
                                 t.forEach(function(t) {
-                                    e.extend(h.getBounds(t.geometry))
+                                    e.extend(g.getBounds(t.geometry))
                                 })
                             })
                         }),
@@ -14089,7 +14160,7 @@
         value: !0
     });
     var o = r(n(1)),
-        a = r(n(108));
+        a = r(n(109));
     t.IN_USE_REASONS_FLAGS = {
         SELECT: 1,
         HOUSE_NUMBERS: 2
@@ -14155,7 +14226,7 @@
         g = n.n(p),
         f = n(6),
         m = n.n(f),
-        v = n(170);
+        v = n(171);
     n(659),
         n(662);
 
@@ -14613,10 +14684,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
+    var i = n(82),
         s = n(51),
-        r = n(76),
-        o = n(120),
+        r = n(77),
+        o = n(121),
         a = n(33),
         l = function() {
             function e(e, t) {
@@ -14660,7 +14731,7 @@
         g = n(8),
         f = n.n(g),
         m = n(48),
-        v = n(162);
+        v = n(163);
 
     function _(e, t) {
         var n = Object.keys(e);
@@ -14730,7 +14801,7 @@
                 }]),
                 t
         }(p.default),
-        b = n(65),
+        b = n(66),
         E = n.n(b),
         w = function(e) {
             function t(e) {
@@ -14773,7 +14844,7 @@
     t.a = w
 }, function(e, t, n) {
     "use strict";
-    var i = n(62),
+    var i = n(63),
         s = n(2),
         r = n.n(s),
         o = n(0),
@@ -14816,7 +14887,7 @@
                 }]),
                 e
         }(),
-        c = n(72),
+        c = n(73),
         d = n(40),
         h = c.a.extend({
             MORE_INFO_DEFAULTS: [{
@@ -14937,7 +15008,7 @@
     });
     var a = r(n(37)),
         l = o(n(10)),
-        u = n(61),
+        u = n(62),
         c = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -14984,14 +15055,14 @@
                     return e.attributes.venueUpdateRequests[0].getSeverity()
                 },
                 t
-        }(n(136).FeatureMarker);
+        }(n(137).FeatureMarker);
     t.PlaceUpdateMarker = c
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(157);
+    var i = n(158);
     t.DEFAULT_SPEED = 0;
     var s = function() {
         function e() {}
@@ -15126,7 +15197,7 @@
         value: !0
     });
     var i = n(34),
-        s = n(105),
+        s = n(106),
         r = n(33),
         o = function() {
             function e(e) {
@@ -15173,8 +15244,8 @@
         _ = n.n(v),
         y = n(19),
         b = n(43),
-        E = n(66),
-        w = n(83),
+        E = n(67),
+        w = n(84),
         S = n(34),
         k = n.n(S),
         T = n(23),
@@ -15184,7 +15255,7 @@
         C = n(10),
         O = n(18),
         R = n(17),
-        D = n(355),
+        D = n(356),
         L = n.n(D),
         P = n(40),
         N = function(e) {
@@ -15409,8 +15480,8 @@
         p = n(5),
         g = n.n(p),
         f = n(19),
-        m = n(152),
-        v = n(155),
+        m = n(153),
+        v = n(156),
         _ = n(52),
         y = function(e) {
             function t(e, n, i) {
@@ -15513,8 +15584,8 @@
     });
     var o = r(n(1)),
         a = n(22),
-        l = r(n(189)),
-        u = r(n(199)),
+        l = r(n(190)),
+        u = r(n(200)),
         c = new OpenLayers.Projection("EPSG:4326"),
         d = -100,
         h = -1,
@@ -15737,8 +15808,8 @@
         h = n.n(d),
         p = n(19),
         g = n(25),
-        f = n(89),
-        m = n(112),
+        f = n(90),
+        m = n(113),
         v = function(e) {
             function t(e, n, i) {
                 var r;
@@ -15808,8 +15879,8 @@
         value: !0
     });
     var o = r(n(1)),
-        a = n(69),
-        l = r(n(57)),
+        a = n(70),
+        l = r(n(54)),
         u = r(n(39)),
         c = function(e) {
             function t(n, i) {
@@ -15879,8 +15950,8 @@
         _ = n.n(v),
         y = n(24),
         b = n.n(y),
-        E = n(89),
-        w = n(112),
+        E = n(90),
+        w = n(113),
         S = n(19),
         k = n(13),
         T = n.n(k),
@@ -15984,21 +16055,21 @@
         p = n(1),
         g = n.n(p),
         f = n(19),
-        m = n(113),
-        v = n(60),
-        _ = n(95),
-        y = n(83),
+        m = n(114),
+        v = n(61),
+        _ = n(96),
+        y = n(84),
         b = n(29),
         E = n(43),
-        w = n(66),
-        S = n(54),
+        w = n(67),
+        S = n(55),
         k = n(25),
         T = n(34),
         I = n.n(T),
         M = n(23),
         A = n.n(M),
-        C = n(82),
-        O = n(154),
+        C = n(83),
+        O = n(155),
         R = n.n(O),
         D = n(10),
         L = n(17),
@@ -16224,14 +16295,14 @@
         m = n(13),
         v = n.n(m),
         _ = n(43),
-        y = n(60),
-        b = n(70),
+        y = n(61),
+        b = n(71),
         E = n(10),
-        w = n(163),
+        w = n(164),
         S = n.n(w),
-        k = n(179),
+        k = n(180),
         T = n(18),
-        I = n(76),
+        I = n(77),
         M = function(e) {
             function t(e, n, i, s, r) {
                 var a;
@@ -16495,7 +16566,7 @@
                         }
                 },
                 t
-        }(o(n(344)).default);
+        }(o(n(345)).default);
     t.buildParkingLotChangedField = function(e, t) {
             var n, i, s = [];
             try {
@@ -16653,9 +16724,9 @@
         c = n.n(u),
         d = n(13),
         h = n.n(d),
-        p = n(164),
+        p = n(165),
         g = n(40),
-        f = n(126),
+        f = n(127),
         m = function() {
             function e(t, n, i) {
                 var s = this;
@@ -17032,7 +17103,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(78),
+    var i = n(79),
         s = [i.RepositoryName.USERS, i.RepositoryName.COUNTRIES, i.RepositoryName.STATES, i.RepositoryName.CITIES, i.RepositoryName.STREETS, i.RepositoryName.NODES, i.RepositoryName.JUNCTIONS, i.RepositoryName.BIG_JUNCTIONS, i.RepositoryName.SEGMENTS, i.RepositoryName.SEGMENT_HOUSE_NUMBERS, i.RepositoryName.VENUES, i.RepositoryName.UPDATE_REQUEST_SESSIONS, i.RepositoryName.ARCHIVES, i.RepositoryName.ARCHIVE_SESSIONS, i.RepositoryName.CAMERAS, i.RepositoryName.MAP_UPDATE_REQUESTS, i.RepositoryName.PROBLEMS, i.RepositoryName.MAJOR_TRAFFIC_EVENTS, i.RepositoryName.ROAD_CLOSURES, i.RepositoryName.MANAGED_AREAS, i.RepositoryName.USER_AREAS, i.RepositoryName.MAP_COMMENTS, "notifications", i.RepositoryName.RESTRICTED_AREAS, "transactions"];
     t.sortRepositoriesByProcessOrder = function(e) {
         return e.filter(function(e) {
@@ -17133,9 +17204,9 @@
         value: !0
     });
     var a = r(n(37)),
-        l = r(n(86)),
+        l = r(n(87)),
         u = o(n(17)),
-        c = n(61),
+        c = n(62),
         d = "open",
         h = "solved",
         p = "rejected",
@@ -17169,7 +17240,7 @@
                     return e.attributes.open ? d : e.attributes.resolution === l.default.FIXED ? h : p
                 },
                 t
-        }(n(136).FeatureMarker);
+        }(n(137).FeatureMarker);
     t.MapProblemMarker = g
 }, function(e, t, n) {
     "use strict";
@@ -17181,7 +17252,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(206));
+    var s = i(n(207));
     t.hasPendingMerge = function(e, t) {
         return e.getFlatActions().some(function(e) {
             return e instanceof s.default && e.getMergedToVenue().getID() === t.getID()
@@ -17205,7 +17276,7 @@
         f = n(5),
         m = n.n(f),
         v = n(19),
-        _ = n(99),
+        _ = n(100),
         y = n(25),
         b = n(24),
         E = n.n(b),
@@ -17346,14 +17417,14 @@
         value: !0
     });
     var s = i(n(1)),
-        r = i(n(104)),
-        o = i(n(119)),
-        a = i(n(107)),
+        r = i(n(105)),
+        o = i(n(120)),
+        a = i(n(108)),
         l = i(n(34)),
         u = n(40),
         c = n(701),
-        d = i(n(348)),
-        h = n(205),
+        d = i(n(349)),
+        h = n(206),
         p = n(51),
         g = function() {
             function e(e, t) {
@@ -17467,10 +17538,10 @@
         value: !0
     });
     var o = r(n(1)),
-        a = n(201),
+        a = n(202),
         l = r(n(39)),
         u = r(n(653)),
-        c = r(n(64));
+        c = r(n(65));
     var d = 1,
         h = function(e) {
             function t(t, n) {
@@ -17922,7 +17993,7 @@
         v = n(1),
         _ = n.n(v),
         y = n(19),
-        b = n(60),
+        b = n(61),
         E = n(34),
         w = n.n(E),
         S = function(e) {
@@ -18028,8 +18099,8 @@
         value: !0
     });
     var a = r(n(19)),
-        l = r(n(188)),
-        u = r(n(151)),
+        l = r(n(189)),
+        u = r(n(152)),
         c = o(n(10)),
         d = function(e) {
             function t(t, n, i, s, r) {
@@ -18129,8 +18200,8 @@
         value: !0
     });
     var a = r(n(19)),
-        l = r(n(188)),
-        u = r(n(151)),
+        l = r(n(189)),
+        u = r(n(152)),
         c = o(n(10)),
         d = n(31),
         h = function(e) {
@@ -18216,7 +18287,7 @@
         value: !0
     });
     var o = r(n(7)),
-        a = n(137),
+        a = n(138),
         l = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -18310,7 +18381,7 @@
     });
     var a = o(n(7)),
         l = o(n(1)),
-        u = o(n(119)),
+        u = o(n(120)),
         c = "ADDED",
         d = "REMOVED",
         h = "UNCHANGED",
@@ -18435,7 +18506,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(69),
+    var o = n(70),
         a = "high",
         l = "medium",
         u = "low",
@@ -18479,7 +18550,7 @@
                     return this.isAllowed(o.UpdateRequestsPermissions.EDIT)
                 },
                 t
-        }(r(n(57)).default);
+        }(r(n(54)).default);
     Object.assign(c.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
@@ -18520,7 +18591,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = r(n(57));
+    var o = r(n(54));
     t.TYPE = {
         INVALID_ENV: "INVALID_ENV",
         GENERAL: "GENERAL",
@@ -18593,8 +18664,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(93),
-        r = n(76),
+    var s = n(94),
+        r = n(77),
         o = function() {
             function e(e) {
                 this.dataModel = e
@@ -19050,7 +19121,7 @@
         value: !0
     });
     var o = r(n(1)),
-        a = r(n(167)),
+        a = r(n(168)),
         l = function() {
             function e(e) {
                 this._dataModel = e,
@@ -19116,7 +19187,7 @@
         value: !0
     });
     var r = i(n(37)),
-        o = n(93),
+        o = n(94),
         a = s(n(657)),
         l = function() {
             function e(e, t, n) {
@@ -19177,9 +19248,9 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = s(n(187)),
-        o = s(n(59)),
-        a = s(n(348)),
+    var r = s(n(188)),
+        o = s(n(60)),
+        a = s(n(349)),
         l = function() {
             function e(e, t) {
                 this._dataModel = e,
@@ -19265,15 +19336,15 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(152)),
-        o = i(n(155)),
-        a = i(n(341)),
-        l = i(n(342)),
-        u = i(n(158)),
-        c = i(n(151)),
-        d = i(n(156)),
+    var r = i(n(153)),
+        o = i(n(156)),
+        a = i(n(342)),
+        l = i(n(343)),
+        u = i(n(159)),
+        c = i(n(152)),
+        d = i(n(157)),
         h = s(n(26)),
-        p = n(102),
+        p = n(103),
         g = function() {
             function e(e) {
                 this.actionManager = e
@@ -19393,7 +19464,7 @@
                     return n.icon.$div.addClass("has-comments")
             },
             t
-    }(n(204).MapProblemMarker);
+    }(n(205).MapProblemMarker);
     t.UpdateRequestMarker = r
 }, function(e, t, n) {
     "use strict";
@@ -19441,8 +19512,8 @@
         l = o(n(20)),
         u = o(n(17)),
         c = o(n(18)),
-        d = n(136),
-        h = r(n(142)),
+        d = n(137),
+        h = r(n(143)),
         p = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -19546,7 +19617,7 @@
                         t
                 },
                 t
-        }(n(136).FeatureMarker);
+        }(n(137).FeatureMarker);
     t.HouseNumberLayerMarker = u
 }, function(e, t, n) {
     "use strict";
@@ -19608,16 +19679,16 @@
                         t.icon.$div.data("cityId", e.getID())
                 },
                 t
-        }(n(136).FeatureMarker);
+        }(n(137).FeatureMarker);
     t.CityMarker = u
 }, function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(122),
-        s = n(347),
-        r = n(346),
+    var i = n(123),
+        s = n(348),
+        r = n(347),
         o = n(45);
     t.getInvalidEnvironments = function(e) {
         var t = i.getLastDataBounds();
@@ -19921,8 +19992,8 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
-        s = n(76),
+    var i = n(82),
+        s = n(77),
         r = n(52),
         o = function() {
             function e(e, t) {
@@ -19971,7 +20042,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(105),
+    var i = n(106),
         s = n(33),
         r = function() {
             function e(e) {
@@ -19990,7 +20061,7 @@
         value: !0
     });
     var i = n(42),
-        s = n(120),
+        s = n(121),
         r = n(33),
         o = function() {
             function e(e) {
@@ -20035,10 +20106,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(81),
-        s = n(76),
+    var i = n(82),
+        s = n(77),
         r = n(52),
-        o = n(120),
+        o = n(121),
         a = n(33),
         l = function() {
             function e(e, t) {
@@ -20097,7 +20168,7 @@
         value: !0
     });
     var r = s(n(1)),
-        o = s(n(158)),
+        o = s(n(159)),
         a = s(n(25)),
         l = n(692),
         u = function() {
@@ -20192,7 +20263,7 @@
         value: !0
     });
     var s = i(n(1)),
-        r = n(84);
+        r = n(85);
 
     function o(e) {
         var t = e.fromHour,
@@ -20228,13 +20299,13 @@
         value: !0
     });
     var s = i(n(699)),
-        r = i(n(99)),
-        o = i(n(66)),
+        r = i(n(100)),
+        o = i(n(67)),
         a = i(n(700)),
-        l = n(121),
-        u = i(n(107)),
+        l = n(122),
+        u = i(n(108)),
         c = i(n(34)),
-        d = i(n(208)),
+        d = i(n(209)),
         h = i(n(702)),
         p = function() {
             function e(e, t) {
@@ -20342,288 +20413,8 @@
         }();
     t.default = r
 }, function(e, t, n) {
-    n(397),
+    n(1093),
         e.exports = n(990)
-}, function(e, t, n) {
-    var i;
-    n(703),
-        n(705),
-        (i = window).W = {
-            Config: {
-                api_base: "/Descartes/app",
-                regions: {
-                    il: {
-                        api_base: "/il-Descartes/app",
-                        search: {
-                            server: "/il-SearchServer/mozi"
-                        }
-                    },
-                    usa: {
-                        api_base: "/Descartes/app",
-                        search: {
-                            server: "/SearchServer/mozi"
-                        }
-                    },
-                    row: {
-                        api_base: "/row-Descartes/app",
-                        search: {
-                            server: "/row-SearchServer/mozi"
-                        }
-                    }
-                },
-                paths: {
-                    features: "Features",
-                    issues: "Feed/Issues",
-                    notifications: "Feed/Notifications",
-                    auth: "Session",
-                    problemDetails: "MapProblems/Details",
-                    updateRequestSessions: "MapProblems/UpdateRequests",
-                    updateRequestComments: "MapProblems/UpdateRequests/Comment",
-                    updateRequestFollow: "MapProblems/UpdateRequests/Notification",
-                    mapCommentConversation: "MapComments/Comment",
-                    mapCommentFollow: "MapComments/Notification",
-                    archive: "Archive/List",
-                    archiveSessions: "Archive/SessionGPS",
-                    houseNumbers: "HouseNumbers",
-                    cityExists: "CityExistence",
-                    mteDetails: "MajorTrafficEvents/Details",
-                    mtePublish: "MajorTrafficEvents/Publish",
-                    mteReady: "MajorTrafficEvents/Ready",
-                    logger: "ErrorReport",
-                    elementHistory: "ElementHistory",
-                    configurationInfo: "info/config",
-                    version: "info/version"
-                },
-                units: {
-                    lonLatPrecision: 5
-                },
-                reporting: {
-                    enable: !0
-                },
-                login: {
-                    paths: {
-                        get: "/login/get",
-                        create: "/login/create",
-                        email_verification: "/UsersProfile/email/verify"
-                    }
-                },
-                search: {
-                    server: "/SearchServer/mozi",
-                    resultZoom: 6,
-                    options: {
-                        origin: "editor"
-                    }
-                },
-                mte: {
-                    root_url: "/mte",
-                    eventsUrl: "waze.com/events"
-                },
-                map: {
-                    initialPosition: {
-                        il: {
-                            lon: 34.789,
-                            lat: 32.086,
-                            initialZoom: 1
-                        },
-                        usa: {
-                            lon: -73.99078,
-                            lat: 40.73565,
-                            initialZoom: 0
-                        },
-                        row: {
-                            lon: -.119,
-                            lat: 51.524,
-                            initialZoom: 0
-                        }
-                    },
-                    projection: {
-                        remote: "EPSG:4326",
-                        local: "EPSG:900913"
-                    }
-                },
-                tts: {
-                    url: "https://ttsgw.world.waze.com/TTSGateway/Text2SpeechServlet",
-                    default_locale: {
-                        tts: "en-US",
-                        locale: "en"
-                    },
-                    options: {
-                        version: 6,
-                        protocol: 2,
-                        sessionid: 12345654321,
-                        content_type: "audio/mpeg",
-                        type: "street",
-                        validate_data: "positive",
-                        skipCache: !0,
-                        lon: 0,
-                        lat: 0
-                    }
-                },
-                segments: {
-                    minDisplayZoom: 2
-                },
-                speed_limit: {
-                    enable: !0
-                },
-                place_updates: {
-                    focusZoom: 6
-                },
-                problems: {
-                    maxDetailsZoom: 7,
-                    minDetailsZoom: 5
-                },
-                houseNumbers: {
-                    allowEditing: !0,
-                    minEditZoom: 6,
-                    minDisplayZoom: 7,
-                    shownByDefault: !1
-                },
-                restrictions: {
-                    allowEditing: !0
-                },
-                closures: {
-                    minDisplayZoom: 0
-                },
-                cameras: {
-                    minDisplayZoom: 3,
-                    minDragZoom: 3
-                },
-                editable_areas: {
-                    minDisplayZoom: 0
-                },
-                user_drive: {
-                    gutterMinDisplayZoom: 6,
-                    arrowsMinDisplayZoom: 5,
-                    instructionsMinDisplayZoom: 5,
-                    weightMinDisplayZoom: 5,
-                    initialZoom: 7
-                },
-                user_editing_enabled: !0,
-                big_junctions: {
-                    minRank: 4,
-                    enable: !0
-                },
-                venues: {
-                    image_bucket_url: "https://venue-image.waze.com/"
-                },
-                marx: {
-                    server: "https://marx-beta.waze.com:443"
-                },
-                openlayers: {
-                    img_path: "images/"
-                },
-                log: {
-                    enable: !1
-                },
-                user_profile: {
-                    enable: !0,
-                    url: "https://beta.waze.com/user/editor/"
-                },
-                area_manager_widget: {
-                    enable: !0
-                },
-                livemap: {
-                    zoom_offset: 12,
-                    max_zoom: 17,
-                    url: "/livemap"
-                },
-                advanced_tools: {
-                    minRank: 3
-                }
-            },
-            version: "v2.38-216-g37a69740\n",
-            apiKeys: {
-                googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
-            }
-        },
-        i.W.Config.raster_layers = {
-            regions: {
-                usa: {
-                    wms: {
-                        servers: ["http://etiles5.waze.com/wms", "http://etiles6.waze.com/wms", "http://etiles7.waze.com/wms", "http://etiles8.waze.com/wms"]
-                    },
-                    mapnik: {
-                        servers: ["https://editor-tiles1.waze.com", "https://editor-tiles2.waze.com", "https://editor-tiles3.waze.com", "https://editor-tiles4.waze.com"]
-                    }
-                },
-                row: {
-                    wms: {
-                        servers: ["http://etiles1.waze.com/wms", "http://etiles2.waze.com/wms", "http://etiles3.waze.com/wms", "http://etiles4.waze.com/wms"],
-                        file_name: "wme_beta"
-                    },
-                    mapnik: {
-                        servers: ["https://world-editor-tiles1.waze.com", "https://world-editor-tiles2.waze.com", "https://world-editor-tiles3.waze.com", "https://world-editor-tiles4.waze.com"]
-                    }
-                },
-                il: {
-                    wms: {
-                        servers: ["http://etiles1.maps.waze.co.il/wms", "http://etiles2.maps.waze.co.il/wms", "http://etiles3.maps.waze.co.il/wms", "http://etiles4.maps.waze.co.il/wms"]
-                    },
-                    mapnik: {
-                        servers: ["https://il-editor-tiles1.waze.com", "https://il-editor-tiles2.waze.com", "https://il-editor-tiles3.waze.com", "https://il-editor-tiles4.waze.com"]
-                    }
-                }
-            },
-            options: {
-                alpha: !0,
-                buffer: 1,
-                tileWidth: 512,
-                tileHeight: 512,
-                gutter: 15,
-                transitionEffect: "resize",
-                displayInLayerSwitcher: !0,
-                draggable: !1
-            },
-            wms: {
-                servers: ["/wms"],
-                file_name: "wme",
-                params: {
-                    projection: "EPSG:900913",
-                    format: "image/png",
-                    transparent: !0
-                }
-            },
-            mapnik: {
-                servers: [],
-                file_name: "tiles/${z}/${x}/${y}.png"
-            },
-            roads: {
-                uniqueName: "roads",
-                visible: !0,
-                type: "mapnik",
-                options: {
-                    isBaseLayer: !1,
-                    zoomOffset: 12,
-                    draggable: !0,
-                    gutter: 0
-                }
-            },
-            gps_points: {
-                uniqueName: "gps_points",
-                visible: !1,
-                type: "mapnik",
-                options: {
-                    isBaseLayer: !1,
-                    zoomOffset: 12,
-                    opacity: 1,
-                    draggable: !0,
-                    gutter: 0
-                },
-                params: {
-                    clientLayer: "gps_points"
-                }
-            }
-        },
-        n(398),
-        n(47),
-        n(611),
-        n(648),
-        n(649),
-        n(650),
-        n(651),
-        n(16),
-        n(652),
-        n(1091)
 }, function(e, t) {
     OL.Map.prototype.Z_INDEX_BASE.MarkerOverlay = 850,
         OL.Map.prototype.Z_INDEX_BASE.TopLayer = 9999
@@ -20916,7 +20707,7 @@
                         var e, t, n;
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
-                            (n = []).push("<a class='livemap-link' href='/livemap/' target='_blank' rel='noopener noreferrer'>\n<div class='icon'></div>\n</a>\n<a class='permalink' data-toggle='tooltip' title='" + t(e(this.t("footer.copy_to_clipboard", {
+                            (n = []).push("<a class='livemap-link' target='_blank' rel='noopener noreferrer'>\n<div class='icon'></div>\n</a>\n<a class='permalink' data-toggle='tooltip' title='" + t(e(this.t("footer.copy_to_clipboard", {
                                 button: this.h.copyShortcut()
                             }))) + "'>\n<div class='icon'></div>\n</a>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
@@ -22281,10 +22072,10 @@
                             e = this.__cleanValue,
                             (n = []).push("<div class='add-button toolbar-button toolbar-button-with-icon toolbar-button-with-label' title='" + t(e(this.t("mte.edit.toolbar.add"))) + "'>\n<div class='item-container'>\n<i class='item-icon w-icon-calendar'></i>\n<span class='menu-title'>"),
                             n.push("" + t(e(this.t("mte.edit.toolbar.add")))),
-                            n.push("</span>\n</div>\n</div>\n<div class='save-button toolbar-button toolbar-button-with-label waze-icon-save' title='" + t(e(this.t("mte.edit.toolbar.save"))) + "'>\n<div class='item-container'>\n<span class='menu-title'>"),
-                            n.push("" + t(e(this.t("mte.edit.toolbar.save")))),
                             n.push("</span>\n</div>\n</div>\n<div class='delete-button toolbar-button toolbar-button-with-icon toolbar-button-with-label' title='" + t(e(this.t("mte.edit.toolbar.delete"))) + "'>\n<div class='item-container'>\n<i class='item-icon w-icon-trash'></i>\n<span class='menu-title'>"),
                             n.push("" + t(e(this.t("mte.edit.toolbar.delete")))),
+                            n.push("</span>\n</div>\n</div>\n<div class='save-button toolbar-button toolbar-button-with-label waze-icon-save' title='" + t(e(this.t("mte.edit.toolbar.save"))) + "'>\n<div class='item-container'>\n<span class='menu-title'>"),
+                            n.push("" + t(e(this.t("mte.edit.toolbar.save")))),
                             n.push("</span>\n</div>\n</div>"),
                             n.join("\n").replace(/\s([\w-]+)='true'/gm, " $1").replace(/\s([\w-]+)='false'/gm, "").replace(/\s(?:id|class)=(['"])(\1)/gm, "")
                     }
@@ -25365,59 +25156,61 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(191)),
-        r = i(n(152)),
-        o = i(n(340)),
-        a = i(n(193)),
-        l = i(n(95)),
-        u = i(n(89)),
-        c = i(n(112)),
-        d = i(n(83)),
-        h = i(n(43)),
-        p = i(n(54)),
-        g = i(n(194)),
-        f = i(n(155)),
-        m = i(n(99)),
-        v = i(n(66)),
-        _ = i(n(56)),
-        y = i(n(187)),
-        b = i(n(139)),
-        E = i(n(341)),
+    var s = n(56),
+        r = i(n(192)),
+        o = i(n(153)),
+        a = i(n(341)),
+        l = i(n(194)),
+        u = i(n(96)),
+        c = i(n(90)),
+        d = i(n(113)),
+        h = i(n(84)),
+        p = i(n(43)),
+        g = i(n(55)),
+        f = i(n(195)),
+        m = i(n(156)),
+        v = i(n(100)),
+        _ = i(n(67)),
+        y = i(n(58)),
+        b = i(n(188)),
+        E = i(n(140)),
         w = i(n(342)),
-        S = i(n(195)),
-        k = i(n(59)),
-        T = i(n(188)),
-        I = i(n(29)),
-        M = i(n(60)),
-        A = i(n(143)),
-        C = i(n(70)),
-        O = i(n(151)),
-        R = i(n(25)),
-        D = i(n(196)),
-        L = i(n(113)),
-        P = n(78),
-        N = n(42),
-        x = n(36),
-        V = i(n(82)),
-        j = i(n(77)),
-        U = i(n(23)),
-        F = i(n(154)),
-        B = i(n(119)),
-        G = i(n(107)),
-        H = n(110),
-        z = i(n(34)),
-        q = i(n(345)),
-        Y = i(n(190)),
-        $ = i(n(58)),
-        K = i(n(200)),
-        J = i(n(37)),
-        Z = i(n(91)),
-        X = i(n(131)),
-        Q = i(n(53)),
-        ee = n(51),
-        te = n(92),
-        ne = n(114),
-        ie = i(n(13));
+        S = i(n(343)),
+        k = i(n(196)),
+        T = i(n(60)),
+        I = i(n(189)),
+        M = i(n(29)),
+        A = i(n(61)),
+        C = i(n(144)),
+        O = i(n(71)),
+        R = i(n(152)),
+        D = i(n(25)),
+        L = i(n(197)),
+        P = i(n(114)),
+        N = i(n(13)),
+        x = n(79),
+        V = n(42),
+        j = n(36),
+        U = i(n(83)),
+        F = i(n(78)),
+        B = i(n(23)),
+        G = i(n(54)),
+        H = i(n(155)),
+        z = i(n(120)),
+        q = i(n(108)),
+        Y = n(111),
+        $ = i(n(34)),
+        K = i(n(346)),
+        J = i(n(191)),
+        Z = i(n(59)),
+        X = i(n(201)),
+        Q = i(n(37)),
+        ee = i(n(92)),
+        te = i(n(132)),
+        ne = i(n(53)),
+        ie = n(51),
+        se = n(93),
+        re = n(115);
     window.Waze = new Proxy(W, {
         get: function(e, t) {
             var n = t;
@@ -25425,28 +25218,28 @@
                 e[n]
         }
     });
-    Y.default.prototype.get = function(e) {
+    J.default.prototype.get = function(e) {
         return console.warn("repository get method is deprecated and will be removed soon, use getObjectById instead"),
             this.getObjectById(e)
     };
-    Y.default.prototype.getByAttributes = function(e) {
+    J.default.prototype.getByAttributes = function(e) {
         console.warn("repository getByAttributes method is deprecated and will be removed soon");
         var t = Object.keys(e);
         return 0 === t.length ? [] : this.getObjectArray().filter(function(n) {
             return t.every(function(t) {
-                return n.getAttributes()[t] === e[t]
+                return (n instanceof G.default ? n.getFeatureAttributes() : n)[t] === e[t]
             })
         })
     };
-    F.default.prototype.getAllSegments = function() {
+    H.default.prototype.getAllSegments = function() {
         return console.warn("Junction getAllSegments method is deprecated and will be removed soon, use W.model.segments.getByIds(Junction.getSegmentsIds()) instead"),
             this.model.segments.getByIds(this.attributes.segIDs)
     };
-    K.default.prototype.hasSelectedItems = function() {
+    X.default.prototype.hasSelectedItems = function() {
             return console.warn("hasSelectedItems method is deprecated and will be removed soon, use hasSelectedFeatures instead"),
                 this.hasSelectedFeatures()
         },
-        K.default.prototype.getReversedSegments = function() {
+        X.default.prototype.getReversedSegments = function() {
             var e = this.getSegmentSelection(),
                 t = {
                     multipleConnectedComponents: e.hasMultipleConnectedComponents(),
@@ -25458,96 +25251,98 @@
                 }),
                 t
         },
-        z.default.prototype.isLockedByHigherRank = function() {
-            return new te.SegmentsPermissionsUseCase(this.model, this).isLockedByHigherRank()
+        $.default.prototype.isLockedByHigherRank = function() {
+            return new se.SegmentsPermissionsUseCase(this.model, this).isLockedByHigherRank()
         },
-        z.default.prototype.isWalkingRoadType = function() {
+        $.default.prototype.isWalkingRoadType = function() {
             return this.isWalkingTrail()
         },
-        z.default.prototype.isRoutable = function() {
-            return N.isRoutingRoadType(this.attributes.roadType)
+        $.default.prototype.isRoutable = function() {
+            return V.isRoutingRoadType(this.attributes.roadType)
         },
-        z.default.prototype.isInBigJunction = function() {
-            return new ee.SegmentsBigJunctionUseCase(this.model, this).isInBigJunction()
+        $.default.prototype.isInBigJunction = function() {
+            return new ie.SegmentsBigJunctionUseCase(this.model, this).isInBigJunction()
         },
-        z.default.prototype.isBigJunctionShort = function() {
-            return new ee.SegmentsBigJunctionUseCase(this.model, this).isBigJunctionShort()
+        $.default.prototype.isBigJunctionShort = function() {
+            return new ie.SegmentsBigJunctionUseCase(this.model, this).isBigJunctionShort()
         },
-        z.default.prototype.hasFromBigJunction = function(e) {
-            return new ee.SegmentsBigJunctionUseCase(this.model, this).hasFromBigJunction(e)
+        $.default.prototype.hasFromBigJunction = function(e) {
+            return new ie.SegmentsBigJunctionUseCase(this.model, this).hasFromBigJunction(e)
         },
-        z.default.prototype.hasToBigJunction = function(e) {
-            return new ee.SegmentsBigJunctionUseCase(this.model, this).hasToBigJunction(e)
+        $.default.prototype.hasToBigJunction = function(e) {
+            return new ie.SegmentsBigJunctionUseCase(this.model, this).hasToBigJunction(e)
         },
-        z.default.prototype.getRoundabout = function() {
+        $.default.prototype.getRoundabout = function() {
             return this.isInRoundabout() ? this.model.junctions.getObjectById(this.attributes.junctionID) : null
         },
-        G.default.prototype.areConnectionsEditable = function() {
-            return new ne.CanEditTurnsUseCase(this.model).canEditNodeTurns(this)
+        q.default.prototype.areConnectionsEditable = function() {
+            return new re.CanEditTurnsUseCase(this.model).canEditNodeTurns(this)
         },
-        Y.default.prototype.getAsync = function(e) {
+        J.default.prototype.getAsync = function(e) {
             var t = this;
-            return this.getRepositoryName() === P.RepositoryName.UPDATE_REQUEST_SESSIONS ? (console.warn("getAsync() is deprecated and will be removed soon"),
-                (new $.default).getUpdateRequestSessionsByIds(e).then(function(e) {
+            return this.getRepositoryName() === x.RepositoryName.UPDATE_REQUEST_SESSIONS ? (console.warn("getAsync() is deprecated and will be removed soon"),
+                (new Z.default).getUpdateRequestSessionsByIds(e).then(function(e) {
                     return t.model.mergeResponse(e),
                         e.updateRequestSessions.objects
                 })) : Promise.reject(new Error("getAsync is valid only for updateRequestSessions"))
         },
-        Object.defineProperty(Y.default.prototype, "top", {
+        Object.defineProperty(J.default.prototype, "top", {
             get: function() {
-                return this.objectType === ie.default.COUNTRY ? this.model.getTopCountry() : this.objectType === ie.default.STATE ? this.model.getTopState() : void 0
+                return this.objectType === N.default.COUNTRY ? this.model.getTopCountry() : this.objectType === N.default.STATE ? this.model.getTopState() : void 0
             }
         }),
         window.require = function(e) {
             var t = {
-                "Waze/Action/AddAlternateStreet": s.default,
-                "Waze/Action/AddIntersection": o.default,
-                "Waze/Action/AddLandmark": a.default,
-                "Waze/Action/AddNode": l.default,
-                "Waze/Action/AddOrGetCity": u.default,
-                "Waze/Action/AddOrGetStreet": c.default,
-                "Waze/Action/AddSegment": d.default,
-                "Waze/Action/ConnectSegment": h.default,
-                "Waze/Action/CreateObject": p.default,
-                "Waze/Action/CreateRoundabout": g.default,
-                "Waze/Action/DeleteObject": m.default,
-                "Waze/Action/DeleteSegment": v.default,
-                "Waze/Action/DisconnectSegment": _.default,
-                "Waze/Action/MergeSegments": y.default,
-                "Waze/Action/ModifyAllConnections": b.default,
-                "Waze/Action/MoveNode": S.default,
-                "Waze/Action/MultiAction": k.default,
-                "Waze/Action/SplitSegments": M.default,
-                "Waze/Action/UpdateFeatureAddress": A.default,
-                "Waze/Action/UpdateFeatureGeometry": C.default,
-                "Waze/Action/UpdateHouseNumber": O.default,
-                "Waze/Action/MoveHouseNumber": E.default,
-                "Waze/Actions/AddHouseNumber": r.default,
-                "Waze/Actions/DeleteHouseNumber": f.default,
-                "Waze/Actions/ReplaceHouseNumberSegment": T.default,
-                "Waze/Actions/MoveHouseNumberFractionPoint": w.default,
-                "Waze/Action/UpdateObject": R.default,
-                "Waze/Action/UpdatePlaceUpdate": D.default,
-                "Waze/Action/UpdateSegmentGeometry": L.default,
-                "Waze/DivIcon": J.default,
-                "Waze/Feature/Vector/Landmark": B.default,
-                "Waze/Feature/Vector/Segment": z.default,
-                "Waze/Feature/Vector/UpdateRequest": q.default,
-                "Waze/Handler/DragElement": Z.default,
-                "Waze/Model/Graph/Actions/SetTurn": I.default,
-                "Waze/Model/Graph/TurnData": V.default,
-                "Waze/Model/Graph/TurnGraph": j.default,
-                "Waze/Model/Graph/Vertex": U.default,
-                "Waze/Model/Objects/OpeningHour": H.OpeningHour,
-                "Waze/Modules/Closures/Models/ClosureActionBuilder": X.default,
-                "Waze/Modules/Closures/Models/SharedClosure": Q.default
+                "Waze/Action/AddAlternateStreet": r.default,
+                "Waze/Action/AddIntersection": a.default,
+                "Waze/Action/AddLandmark": l.default,
+                "Waze/Action/AddNode": u.default,
+                "Waze/Action/AddOrGetCity": c.default,
+                "Waze/Action/AddOrGetStreet": d.default,
+                "Waze/Action/AddSegment": h.default,
+                "Waze/Action/ConnectSegment": p.default,
+                "Waze/Action/CreateObject": g.default,
+                "Waze/Action/CreateRoundabout": f.default,
+                "Waze/Action/DeleteObject": v.default,
+                "Waze/Action/DeleteSegment": _.default,
+                "Waze/Action/DisconnectSegment": y.default,
+                "Waze/Action/MergeSegments": b.default,
+                "Waze/Action/ModifyAllConnections": E.default,
+                "Waze/Action/MoveNode": k.default,
+                "Waze/Action/MultiAction": T.default,
+                "Waze/Action/SplitSegments": A.default,
+                "Waze/Action/UpdateFeatureAddress": C.default,
+                "Waze/Action/UpdateFeatureGeometry": O.default,
+                "Waze/Action/UpdateHouseNumber": R.default,
+                "Waze/Action/MoveHouseNumber": w.default,
+                "Waze/Actions/AddHouseNumber": o.default,
+                "Waze/Actions/DeleteHouseNumber": m.default,
+                "Waze/Actions/ReplaceHouseNumberSegment": I.default,
+                "Waze/Actions/MoveHouseNumberFractionPoint": S.default,
+                "Waze/Action/UpdateObject": D.default,
+                "Waze/Action/UpdatePlaceUpdate": L.default,
+                "Waze/Action/UpdateSegmentGeometry": P.default,
+                "Waze/DivIcon": Q.default,
+                "Waze/Feature/Vector/Landmark": z.default,
+                "Waze/Feature/Vector/Segment": $.default,
+                "Waze/Feature/Vector/UpdateRequest": K.default,
+                "Waze/Handler/DragElement": ee.default,
+                "Waze/Model/Graph/Actions/SetTurn": M.default,
+                "Waze/Model/Graph/TurnData": U.default,
+                "Waze/Model/Graph/TurnGraph": F.default,
+                "Waze/Model/Graph/Vertex": B.default,
+                "Waze/Model/Objects/OpeningHour": Y.OpeningHour,
+                "Waze/Modules/Closures/Models/ClosureActionBuilder": te.default,
+                "Waze/Modules/Closures/Models/SharedClosure": ne.default
             } [e];
             if (null != t)
                 return t;
             throw new Error("Cannot find module " + e)
         },
-        W.Config.venues.categories = x.VENUE_MAIN_CATEGORIES_LIST,
-        W.Config.venues.subcategories = x.VENUE_SUBCATEGORIES
+        W.Config.api_base = s.buildConfig.api_base,
+        W.Config.user_profile = s.buildConfig.user_profile,
+        W.Config.venues.categories = j.VENUE_MAIN_CATEGORIES_LIST,
+        W.Config.venues.subcategories = j.VENUE_SUBCATEGORIES
 }, , , , , function(e, t, n) {
     "use strict";
     var i = this && this.__importDefault || function(e) {
@@ -25598,252 +25393,252 @@
     t.RestrictionDriveProfileList = r
 }, function(e, t, n) {
     var i = {
-        "./af": 216,
-        "./af.js": 216,
-        "./ar": 217,
-        "./ar-dz": 218,
-        "./ar-dz.js": 218,
-        "./ar-kw": 219,
-        "./ar-kw.js": 219,
-        "./ar-ly": 220,
-        "./ar-ly.js": 220,
-        "./ar-ma": 221,
-        "./ar-ma.js": 221,
-        "./ar-sa": 222,
-        "./ar-sa.js": 222,
-        "./ar-tn": 223,
-        "./ar-tn.js": 223,
-        "./ar.js": 217,
-        "./az": 224,
-        "./az.js": 224,
-        "./be": 225,
-        "./be.js": 225,
-        "./bg": 226,
-        "./bg.js": 226,
-        "./bm": 227,
-        "./bm.js": 227,
-        "./bn": 228,
-        "./bn.js": 228,
-        "./bo": 229,
-        "./bo.js": 229,
-        "./br": 230,
-        "./br.js": 230,
-        "./bs": 231,
-        "./bs.js": 231,
-        "./ca": 232,
-        "./ca.js": 232,
-        "./cs": 233,
-        "./cs.js": 233,
-        "./cv": 234,
-        "./cv.js": 234,
-        "./cy": 235,
-        "./cy.js": 235,
-        "./da": 236,
-        "./da.js": 236,
-        "./de": 237,
-        "./de-at": 238,
-        "./de-at.js": 238,
-        "./de-ch": 239,
-        "./de-ch.js": 239,
-        "./de.js": 237,
-        "./dv": 240,
-        "./dv.js": 240,
-        "./el": 241,
-        "./el.js": 241,
-        "./en-au": 242,
-        "./en-au.js": 242,
-        "./en-ca": 243,
-        "./en-ca.js": 243,
-        "./en-gb": 244,
-        "./en-gb.js": 244,
-        "./en-ie": 245,
-        "./en-ie.js": 245,
-        "./en-il": 246,
-        "./en-il.js": 246,
-        "./en-nz": 247,
-        "./en-nz.js": 247,
-        "./eo": 248,
-        "./eo.js": 248,
-        "./es": 249,
-        "./es-do": 250,
-        "./es-do.js": 250,
-        "./es-us": 251,
-        "./es-us.js": 251,
-        "./es.js": 249,
-        "./et": 252,
-        "./et.js": 252,
-        "./eu": 253,
-        "./eu.js": 253,
-        "./fa": 254,
-        "./fa.js": 254,
-        "./fi": 255,
-        "./fi.js": 255,
-        "./fo": 256,
-        "./fo.js": 256,
-        "./fr": 257,
-        "./fr-ca": 258,
-        "./fr-ca.js": 258,
-        "./fr-ch": 259,
-        "./fr-ch.js": 259,
-        "./fr.js": 257,
-        "./fy": 260,
-        "./fy.js": 260,
-        "./gd": 261,
-        "./gd.js": 261,
-        "./gl": 262,
-        "./gl.js": 262,
-        "./gom-latn": 263,
-        "./gom-latn.js": 263,
-        "./gu": 264,
-        "./gu.js": 264,
-        "./he": 265,
-        "./he.js": 265,
-        "./hi": 266,
-        "./hi.js": 266,
-        "./hr": 267,
-        "./hr.js": 267,
-        "./hu": 268,
-        "./hu.js": 268,
-        "./hy-am": 269,
-        "./hy-am.js": 269,
-        "./id": 270,
-        "./id.js": 270,
-        "./is": 271,
-        "./is.js": 271,
-        "./it": 272,
-        "./it.js": 272,
-        "./ja": 273,
-        "./ja.js": 273,
-        "./jv": 274,
-        "./jv.js": 274,
-        "./ka": 275,
-        "./ka.js": 275,
-        "./kk": 276,
-        "./kk.js": 276,
-        "./km": 277,
-        "./km.js": 277,
-        "./kn": 278,
-        "./kn.js": 278,
-        "./ko": 279,
-        "./ko.js": 279,
-        "./ky": 280,
-        "./ky.js": 280,
-        "./lb": 281,
-        "./lb.js": 281,
-        "./lo": 282,
-        "./lo.js": 282,
-        "./lt": 283,
-        "./lt.js": 283,
-        "./lv": 284,
-        "./lv.js": 284,
-        "./me": 285,
-        "./me.js": 285,
-        "./mi": 286,
-        "./mi.js": 286,
-        "./mk": 287,
-        "./mk.js": 287,
-        "./ml": 288,
-        "./ml.js": 288,
-        "./mn": 289,
-        "./mn.js": 289,
-        "./mr": 290,
-        "./mr.js": 290,
-        "./ms": 291,
-        "./ms-my": 292,
-        "./ms-my.js": 292,
-        "./ms.js": 291,
-        "./mt": 293,
-        "./mt.js": 293,
-        "./my": 294,
-        "./my.js": 294,
-        "./nb": 295,
-        "./nb.js": 295,
-        "./ne": 296,
-        "./ne.js": 296,
-        "./nl": 297,
-        "./nl-be": 298,
-        "./nl-be.js": 298,
-        "./nl.js": 297,
-        "./nn": 299,
-        "./nn.js": 299,
-        "./pa-in": 300,
-        "./pa-in.js": 300,
-        "./pl": 301,
-        "./pl.js": 301,
-        "./pt": 302,
-        "./pt-br": 303,
-        "./pt-br.js": 303,
-        "./pt.js": 302,
-        "./ro": 304,
-        "./ro.js": 304,
-        "./ru": 305,
-        "./ru.js": 305,
-        "./sd": 306,
-        "./sd.js": 306,
-        "./se": 307,
-        "./se.js": 307,
-        "./si": 308,
-        "./si.js": 308,
-        "./sk": 309,
-        "./sk.js": 309,
-        "./sl": 310,
-        "./sl.js": 310,
-        "./sq": 311,
-        "./sq.js": 311,
-        "./sr": 312,
-        "./sr-cyrl": 313,
-        "./sr-cyrl.js": 313,
-        "./sr.js": 312,
-        "./ss": 314,
-        "./ss.js": 314,
-        "./sv": 315,
-        "./sv.js": 315,
-        "./sw": 316,
-        "./sw.js": 316,
-        "./ta": 317,
-        "./ta.js": 317,
-        "./te": 318,
-        "./te.js": 318,
-        "./tet": 319,
-        "./tet.js": 319,
-        "./tg": 320,
-        "./tg.js": 320,
-        "./th": 321,
-        "./th.js": 321,
-        "./tl-ph": 322,
-        "./tl-ph.js": 322,
-        "./tlh": 323,
-        "./tlh.js": 323,
-        "./tr": 324,
-        "./tr.js": 324,
-        "./tzl": 325,
-        "./tzl.js": 325,
-        "./tzm": 326,
-        "./tzm-latn": 327,
-        "./tzm-latn.js": 327,
-        "./tzm.js": 326,
-        "./ug-cn": 328,
-        "./ug-cn.js": 328,
-        "./uk": 329,
-        "./uk.js": 329,
-        "./ur": 330,
-        "./ur.js": 330,
-        "./uz": 331,
-        "./uz-latn": 332,
-        "./uz-latn.js": 332,
-        "./uz.js": 331,
-        "./vi": 333,
-        "./vi.js": 333,
-        "./x-pseudo": 334,
-        "./x-pseudo.js": 334,
-        "./yo": 335,
-        "./yo.js": 335,
-        "./zh-cn": 336,
-        "./zh-cn.js": 336,
-        "./zh-hk": 337,
-        "./zh-hk.js": 337,
-        "./zh-tw": 338,
-        "./zh-tw.js": 338
+        "./af": 217,
+        "./af.js": 217,
+        "./ar": 218,
+        "./ar-dz": 219,
+        "./ar-dz.js": 219,
+        "./ar-kw": 220,
+        "./ar-kw.js": 220,
+        "./ar-ly": 221,
+        "./ar-ly.js": 221,
+        "./ar-ma": 222,
+        "./ar-ma.js": 222,
+        "./ar-sa": 223,
+        "./ar-sa.js": 223,
+        "./ar-tn": 224,
+        "./ar-tn.js": 224,
+        "./ar.js": 218,
+        "./az": 225,
+        "./az.js": 225,
+        "./be": 226,
+        "./be.js": 226,
+        "./bg": 227,
+        "./bg.js": 227,
+        "./bm": 228,
+        "./bm.js": 228,
+        "./bn": 229,
+        "./bn.js": 229,
+        "./bo": 230,
+        "./bo.js": 230,
+        "./br": 231,
+        "./br.js": 231,
+        "./bs": 232,
+        "./bs.js": 232,
+        "./ca": 233,
+        "./ca.js": 233,
+        "./cs": 234,
+        "./cs.js": 234,
+        "./cv": 235,
+        "./cv.js": 235,
+        "./cy": 236,
+        "./cy.js": 236,
+        "./da": 237,
+        "./da.js": 237,
+        "./de": 238,
+        "./de-at": 239,
+        "./de-at.js": 239,
+        "./de-ch": 240,
+        "./de-ch.js": 240,
+        "./de.js": 238,
+        "./dv": 241,
+        "./dv.js": 241,
+        "./el": 242,
+        "./el.js": 242,
+        "./en-au": 243,
+        "./en-au.js": 243,
+        "./en-ca": 244,
+        "./en-ca.js": 244,
+        "./en-gb": 245,
+        "./en-gb.js": 245,
+        "./en-ie": 246,
+        "./en-ie.js": 246,
+        "./en-il": 247,
+        "./en-il.js": 247,
+        "./en-nz": 248,
+        "./en-nz.js": 248,
+        "./eo": 249,
+        "./eo.js": 249,
+        "./es": 250,
+        "./es-do": 251,
+        "./es-do.js": 251,
+        "./es-us": 252,
+        "./es-us.js": 252,
+        "./es.js": 250,
+        "./et": 253,
+        "./et.js": 253,
+        "./eu": 254,
+        "./eu.js": 254,
+        "./fa": 255,
+        "./fa.js": 255,
+        "./fi": 256,
+        "./fi.js": 256,
+        "./fo": 257,
+        "./fo.js": 257,
+        "./fr": 258,
+        "./fr-ca": 259,
+        "./fr-ca.js": 259,
+        "./fr-ch": 260,
+        "./fr-ch.js": 260,
+        "./fr.js": 258,
+        "./fy": 261,
+        "./fy.js": 261,
+        "./gd": 262,
+        "./gd.js": 262,
+        "./gl": 263,
+        "./gl.js": 263,
+        "./gom-latn": 264,
+        "./gom-latn.js": 264,
+        "./gu": 265,
+        "./gu.js": 265,
+        "./he": 266,
+        "./he.js": 266,
+        "./hi": 267,
+        "./hi.js": 267,
+        "./hr": 268,
+        "./hr.js": 268,
+        "./hu": 269,
+        "./hu.js": 269,
+        "./hy-am": 270,
+        "./hy-am.js": 270,
+        "./id": 271,
+        "./id.js": 271,
+        "./is": 272,
+        "./is.js": 272,
+        "./it": 273,
+        "./it.js": 273,
+        "./ja": 274,
+        "./ja.js": 274,
+        "./jv": 275,
+        "./jv.js": 275,
+        "./ka": 276,
+        "./ka.js": 276,
+        "./kk": 277,
+        "./kk.js": 277,
+        "./km": 278,
+        "./km.js": 278,
+        "./kn": 279,
+        "./kn.js": 279,
+        "./ko": 280,
+        "./ko.js": 280,
+        "./ky": 281,
+        "./ky.js": 281,
+        "./lb": 282,
+        "./lb.js": 282,
+        "./lo": 283,
+        "./lo.js": 283,
+        "./lt": 284,
+        "./lt.js": 284,
+        "./lv": 285,
+        "./lv.js": 285,
+        "./me": 286,
+        "./me.js": 286,
+        "./mi": 287,
+        "./mi.js": 287,
+        "./mk": 288,
+        "./mk.js": 288,
+        "./ml": 289,
+        "./ml.js": 289,
+        "./mn": 290,
+        "./mn.js": 290,
+        "./mr": 291,
+        "./mr.js": 291,
+        "./ms": 292,
+        "./ms-my": 293,
+        "./ms-my.js": 293,
+        "./ms.js": 292,
+        "./mt": 294,
+        "./mt.js": 294,
+        "./my": 295,
+        "./my.js": 295,
+        "./nb": 296,
+        "./nb.js": 296,
+        "./ne": 297,
+        "./ne.js": 297,
+        "./nl": 298,
+        "./nl-be": 299,
+        "./nl-be.js": 299,
+        "./nl.js": 298,
+        "./nn": 300,
+        "./nn.js": 300,
+        "./pa-in": 301,
+        "./pa-in.js": 301,
+        "./pl": 302,
+        "./pl.js": 302,
+        "./pt": 303,
+        "./pt-br": 304,
+        "./pt-br.js": 304,
+        "./pt.js": 303,
+        "./ro": 305,
+        "./ro.js": 305,
+        "./ru": 306,
+        "./ru.js": 306,
+        "./sd": 307,
+        "./sd.js": 307,
+        "./se": 308,
+        "./se.js": 308,
+        "./si": 309,
+        "./si.js": 309,
+        "./sk": 310,
+        "./sk.js": 310,
+        "./sl": 311,
+        "./sl.js": 311,
+        "./sq": 312,
+        "./sq.js": 312,
+        "./sr": 313,
+        "./sr-cyrl": 314,
+        "./sr-cyrl.js": 314,
+        "./sr.js": 313,
+        "./ss": 315,
+        "./ss.js": 315,
+        "./sv": 316,
+        "./sv.js": 316,
+        "./sw": 317,
+        "./sw.js": 317,
+        "./ta": 318,
+        "./ta.js": 318,
+        "./te": 319,
+        "./te.js": 319,
+        "./tet": 320,
+        "./tet.js": 320,
+        "./tg": 321,
+        "./tg.js": 321,
+        "./th": 322,
+        "./th.js": 322,
+        "./tl-ph": 323,
+        "./tl-ph.js": 323,
+        "./tlh": 324,
+        "./tlh.js": 324,
+        "./tr": 325,
+        "./tr.js": 325,
+        "./tzl": 326,
+        "./tzl.js": 326,
+        "./tzm": 327,
+        "./tzm-latn": 328,
+        "./tzm-latn.js": 328,
+        "./tzm.js": 327,
+        "./ug-cn": 329,
+        "./ug-cn.js": 329,
+        "./uk": 330,
+        "./uk.js": 330,
+        "./ur": 331,
+        "./ur.js": 331,
+        "./uz": 332,
+        "./uz-latn": 333,
+        "./uz-latn.js": 333,
+        "./uz.js": 332,
+        "./vi": 334,
+        "./vi.js": 334,
+        "./x-pseudo": 335,
+        "./x-pseudo.js": 335,
+        "./yo": 336,
+        "./yo.js": 336,
+        "./zh-cn": 337,
+        "./zh-cn.js": 337,
+        "./zh-hk": 338,
+        "./zh-hk.js": 338,
+        "./zh-tw": 339,
+        "./zh-tw.js": 339
     };
 
     function s(e) {
@@ -26299,7 +26094,7 @@
                 return 1 === this.streets.length && !this.isEmptyStreet()
             },
             t
-    }(r(n(80)).default);
+    }(r(n(81)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -26334,7 +26129,7 @@
         value: !0
     });
     var o = r(n(7)),
-        a = n(67),
+        a = n(68),
         l = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -26360,11 +26155,11 @@
         value: !0
     });
     var s = i(n(1)),
-        r = i(n(343)),
-        o = n(137),
+        r = i(n(344)),
+        o = n(138),
         a = i(n(626)),
-        l = n(344),
-        u = n(197),
+        l = n(345),
+        u = n(198),
         c = function() {
             function e(e) {
                 var t = e.isInEditArea,
@@ -26454,14 +26249,13 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = r(n(343)),
-        a = n(137),
-        l = function(e) {
+    var o = n(138),
+        a = function(e) {
             function t(t) {
                 var n = e.call(this, t) || this;
                 return n.set("updateType", "flag"),
                     n.isImage() && n.set("imageId", n.get("entityId")),
-                    n.isVenue() && n.get("type") === a.FLAG_TYPE.DUPLICATE && n.set("duplicateVenueId", n.get("entityId")),
+                    n.isVenue() && n.get("type") === o.FLAG_TYPE.DUPLICATE && n.set("duplicateVenueId", n.get("entityId")),
                     n
             }
             return s(t, e),
@@ -26476,8 +26270,8 @@
                     return this.get("imageId")
                 },
                 t
-        }(o.default);
-    t.default = l
+        }(r(n(344)).default);
+    t.default = a
 }, function(e, t, n) {
     "use strict";
     var i = this && this.__importStar || function(e) {
@@ -26498,32 +26292,32 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = n(121),
+    var r = n(122),
         o = i(n(630)),
         a = s(n(633)),
         l = s(n(1092)),
         u = s(n(639)),
         c = s(n(640)),
         d = s(n(642)),
-        h = s(n(192)),
-        p = s(n(156)),
-        g = s(n(154)),
-        f = s(n(119)),
+        h = s(n(193)),
+        p = s(n(157)),
+        g = s(n(155)),
+        f = s(n(120)),
         m = s(n(643)),
-        v = s(n(107)),
-        _ = s(n(346)),
-        y = s(n(142)),
+        v = s(n(108)),
+        _ = s(n(347)),
+        y = s(n(143)),
         b = s(n(34)),
-        E = n(115),
+        E = n(116),
         w = s(n(644)),
-        S = s(n(79)),
-        k = s(n(345)),
+        S = s(n(80)),
+        k = s(n(346)),
         T = s(n(646)),
-        I = s(n(64)),
+        I = s(n(65)),
         M = s(n(647)),
-        A = s(n(85)),
-        C = s(n(75)),
-        O = s(n(74));
+        A = s(n(86)),
+        C = s(n(76)),
+        O = s(n(75));
     t.TYPE_TO_FACTORY = {
             issues: l.default,
             problems: o,
@@ -26693,8 +26487,8 @@
     });
     var a = r(n(1)),
         l = r(n(50)),
-        u = r(n(140)),
-        c = o(n(82)),
+        u = r(n(141)),
+        c = o(n(83)),
         d = function() {
             function e(e) {
                 this.dataModel = e,
@@ -26786,7 +26580,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = s(n(90)),
+    var o = s(n(91)),
         a = r(n(631)),
         l = r(n(632)),
         u = ((i = {})[o.MAP_PROBLEM_TYPE.DISCONNECTION] = o.default,
@@ -26839,7 +26633,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = r(n(90)),
+    var o = r(n(91)),
         a = function(e) {
             function t(t, n) {
                 void 0 === n && (n = {
@@ -26921,7 +26715,7 @@
                 return this.location
             },
             t
-    }(r(n(90)).default);
+    }(r(n(91)).default);
     Object.assign(o.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
@@ -26943,7 +26737,7 @@
     var r = s(n(634)),
         o = s(n(636)),
         a = s(n(638)),
-        l = n(90),
+        l = n(91),
         u = {
             TYPE_TO_CLASS: (i = {},
                 i[l.MAP_PROBLEMS_TYPES_WITH_DETAILS.DISCONNECTION] = r.default,
@@ -27533,7 +27327,7 @@
     });
     var a = o(n(7)),
         l = o(n(13)),
-        u = o(n(79)),
+        u = o(n(80)),
         c = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -27797,57 +27591,60 @@
                     e.render()
             }))
     }
-}, function(e, t) {
-    var n = "dimension1",
-        i = function(e, t, n, i) {
+}, function(e, t, n) {
+    "use strict";
+    n.r(t);
+    var i = n(56),
+        s = "dimension1",
+        r = function(e, t, n, s) {
             e = "".concat("wme", "_").concat(e),
-                W.Config.reporting.enable && ga("send", "event", e, t, n, i)
+                i.buildConfig.reporting.enable && ga("send", "event", e, t, n, s)
         };
     W.Report = {
         feedAction: function(e, t) {
-            i("feed", e, t)
+            r("feed", e, t)
         },
         changesLogAction: function(e, t, n) {
-            i("changes_log", e, t, n)
+            r("changes_log", e, t, n)
         },
         loginAction: function(e, t) {
-            i("login", e, t)
+            r("login", e, t)
         },
         generalAction: function(e, t) {
-            i("general", e, t)
+            r("general", e, t)
         },
         mapProblemAction: function(e, t, n) {
-            i("map_problem", e, t, n)
+            r("map_problem", e, t, n)
         },
         updateRequestAction: function(e, t, n) {
-            i("update_request", e, t, n)
+            r("update_request", e, t, n)
         },
         placeUpdateRequestAction: function(e, t, n) {
-            i("place_update_request", e, t, n)
+            r("place_update_request", e, t, n)
         },
         chatAction: function(e, t) {
-            i("chat", e, t)
+            r("chat", e, t)
         },
         elementHistoryAction: function(e, t) {
-            i("element_history", e, t)
+            r("element_history", e, t)
         },
         focusAction: function(e, t, n) {
-            i("focus_on_item", e, t, n)
+            r("focus_on_item", e, t, n)
         },
         setUserRank: function(e) {
             if (null != e) {
                 var t = "".concat(e);
-                ga("set", n, t)
+                ga("set", s, t)
             }
         },
         searchAction: function(e, t, n) {
-            i("wme_search", e, t, n)
+            r("wme_search", e, t, n)
         },
         saveError: function(e) {
-            i("save_error", e)
+            r("save_error", e)
         },
         save: function(e, t, n) {
-            i("save", e, t, n)
+            r("save", e, t, n)
         }
     }
 }, function(e, t) {
@@ -27879,7 +27676,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(150)),
+    var s = i(n(151)),
         r = function() {
             return function(e, t) {
                 void 0 === t && (t = {
@@ -28041,7 +27838,7 @@
                 return this._attributes.map(this._attributesToBitField.bind(this)).join(",")
             },
             t
-    }(r(n(189)).default);
+    }(r(n(190)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -28087,7 +27884,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = s(n(340)),
+    var o = s(n(341)),
         a = n(658),
         l = r(n(10)),
         u = r(n(18)),
@@ -28202,7 +27999,7 @@
     });
     var l = a(n(19)),
         u = a(n(43)),
-        c = a(n(60)),
+        c = a(n(61)),
         d = a(n(34)),
         h = function(e) {
             function t(t, n, i) {
@@ -28643,7 +28440,7 @@
 }, function(e, t, n) {
     "use strict";
     n.r(t);
-    var i = n(207),
+    var i = n(208),
         s = OpenLayers.Class(i.default, {
             _save: function() {
                 this.enabled && W.commands.execute("save:start")
@@ -28660,19 +28457,19 @@
         a = n(1),
         l = n.n(a),
         u = n(41),
-        c = n(64),
+        c = n(65),
         d = n.n(c),
-        h = n(104),
+        h = n(105),
         p = n.n(h),
-        g = n(168),
+        g = n(169),
         f = n(40),
-        m = n(393),
+        m = n(394),
         v = n.n(m),
-        _ = n(208),
+        _ = n(209),
         y = n.n(_),
-        b = n(132),
+        b = n(133),
         E = n.n(b),
-        w = n(127),
+        w = n(128),
         S = n(10),
         k = new OpenLayers.Class(OpenLayers.Control.Button, u.a, {
             keyboardCodes: null,
@@ -28838,7 +28635,7 @@
         b = n(13),
         E = n.n(b),
         w = n(25),
-        S = n(130),
+        S = n(131),
         k = n(29),
         T = function(e) {
             function t(e, n) {
@@ -28959,7 +28756,7 @@
                     }
                 }]),
                 t
-        }(n(59).default);
+        }(n(60).default);
     t.default = p
 }, function(e, t, n) {
     "use strict";
@@ -28987,7 +28784,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(187)),
+    var s = i(n(188)),
         r = n(18),
         o = function() {
             function e(e) {
@@ -29573,7 +29370,7 @@
                 t
         }(c.a.View),
         A = n(28),
-        C = n(165),
+        C = n(166),
         O = "EMAIL_MISSING",
         R = "EMAIL_MANAGE",
         D = "VERIFICATION_START",
@@ -29784,11 +29581,11 @@
         V = n.n(x),
         j = n(38),
         U = n.n(j),
-        F = n(123),
+        F = n(124),
         B = n.n(F),
-        G = n(209),
+        G = n(210),
         H = n.n(G),
-        z = n(64),
+        z = n(65),
         q = n.n(z),
         Y = n(40);
 
@@ -30093,7 +29890,7 @@
                 }]),
                 t
         }(c.a.View),
-        ne = n(356),
+        ne = n(357),
         ie = n.n(ne),
         se = n(20),
         re = function(e) {
@@ -30257,8 +30054,8 @@
             }
         }),
         ce = n(37),
-        de = n(91),
-        he = n(103),
+        de = n(92),
+        he = n(104),
         pe = OL.Class(OL.Marker, {
             DRAG_POINT_RADIUS: 7,
             CROSSHAIR_RADIUS: 22,
@@ -30540,9 +30337,9 @@
                 }]),
                 t
         }(c.a.View),
-        fe = n(357),
+        fe = n(358),
         me = n.n(fe),
-        ve = n(358),
+        ve = n(359),
         _e = n.n(ve),
         ye = function(e) {
             function t() {
@@ -30867,21 +30664,21 @@
             }
         },
         Se = we,
-        ke = n(166),
+        ke = n(167),
         Te = n.n(ke),
         Ie = n(19),
-        Me = n(78),
-        Ae = n(97),
+        Me = n(79),
+        Ae = n(98),
         Ce = n.n(Ae),
-        Oe = n(199),
+        Oe = n(200),
         Re = n.n(Oe),
-        De = n(202),
-        Le = n(71),
+        De = n(203),
+        Le = n(72),
         Pe = n.n(Le),
-        Ne = n(146),
-        xe = n(203),
-        Ve = n(122),
-        je = n(94),
+        Ne = n(147),
+        xe = n(204),
+        Ve = n(123),
+        je = n(95),
         Ue = n.n(je),
         Fe = n(27),
         Be = function() {
@@ -31332,7 +31129,7 @@
         CLASS_NAME: "Waze.AppController"
     });
     var ze = He,
-        qe = n(359),
+        qe = n(360),
         Ye = n.n(qe),
         $e = function(e) {
             function t(e) {
@@ -31426,10 +31223,11 @@
                 }]),
                 t
         }(o.a.Model),
-        Ke = 0,
-        Je = 1,
-        Ze = 2,
-        Xe = o.a.Model.extend({
+        Ke = n(56),
+        Je = 0,
+        Ze = 1,
+        Xe = 2,
+        Qe = o.a.Model.extend({
             socket: null,
             displayProjection: new OpenLayers.Projection("EPSG:4326"),
             initialize: function(e) {
@@ -31439,7 +31237,7 @@
                     s = void 0 === i ? "" : i;
                 this._app = n,
                     this._authCookieName = s,
-                    this._mode = Ke,
+                    this._mode = Je,
                     this._app.on("change:loggedIn", this._onLoginChanged, this)
             },
             _onLoginChanged: function() {
@@ -31456,13 +31254,13 @@
                         console.error("Marx error reading cookie", e)
                     }
                     n.sessionId = t;
-                    var i = "".concat(W.Config.marx.server, "/chat?").concat(s.a.param(n));
+                    var i = "".concat(Ke.buildConfig.marx.server, "/chat?").concat(s.a.param(n));
                     return this.socket = io.connect(i, {
                             "try multiple transports": !1
                         }),
                         this.socket.on("connect", function() {
-                            return e._mode === Ke ? (e._mode = Je,
-                                e.trigger("firstConnect")) : (e._mode = Ze,
+                            return e._mode === Je ? (e._mode = Ze,
+                                e.trigger("firstConnect")) : (e._mode = Xe,
                                 e.trigger("reconnect"))
                         }),
                         this.socket.on("error", function(e) {
@@ -31475,10 +31273,10 @@
             },
             CLASS_NAME: "Waze.Model.Marx"
         }),
-        Qe = n(200),
-        et = n(168),
-        tt = 27,
-        nt = function(e) {
+        et = n(201),
+        tt = n(169),
+        nt = 27,
+        it = function(e) {
             function t(e, n, i) {
                 var s;
                 h()(this, t),
@@ -31494,7 +31292,7 @@
                     s._duringBoxSelection = !1,
                     s._keyboardShortcuts = null,
                     s._downKeys = [],
-                    s._deselectKey = tt,
+                    s._deselectKey = nt,
                     s._selectRenderIntent = "select",
                     s._highlightRenderIntent = "highlight",
                     s._highlightSelectedRenderIntent = "highlightselected",
@@ -31545,7 +31343,7 @@
                                 changelayer: this._handleMapEvents,
                                 scope: this
                             }),
-                            this._keyboardShortcuts = new et.a(this, {
+                            this._keyboardShortcuts = new tt.a(this, {
                                 keydown: this._onKeyDown
                             }),
                             this._keyboardShortcuts.activate()
@@ -31759,7 +31557,7 @@
                 }]),
                 t
         }(c.a.Object),
-        it = function() {
+        st = function() {
             function e(t) {
                 h()(this, e),
                     this.currentIntent = null,
@@ -31807,17 +31605,17 @@
                 }]),
                 e
         }();
-    Object.assign(it.prototype, {
+    Object.assign(st.prototype, {
         CLASS_NAME: "Waze.Service.FlashService"
     });
-    var st = it,
-        rt = n(22),
-        ot = function() {
+    var rt = st,
+        ot = n(22),
+        at = function() {
             function e(t, n) {
                 h()(this, e),
                     Object.assign(this, n),
                     this.model = t,
-                    this.flashService = new st
+                    this.flashService = new rt
             }
             return g()(e, [{
                     key: "destroy",
@@ -31827,16 +31625,16 @@
                 }, {
                     key: "activate",
                     value: function() {
-                        this.model.segments.on(rt.ATTR_CHANGED, this.onSegmentsChanged, this),
-                            this.model.segments.on(rt.STATE_DELETED, this.onSegmentsChanged, this),
-                            this.model.segments.on(rt.ADDED, this.onSegmentsAdded, this)
+                        this.model.segments.on(ot.ATTR_CHANGED, this.onSegmentsChanged, this),
+                            this.model.segments.on(ot.STATE_DELETED, this.onSegmentsChanged, this),
+                            this.model.segments.on(ot.ADDED, this.onSegmentsAdded, this)
                     }
                 }, {
                     key: "deactivate",
                     value: function() {
-                        this.model.segments.off(rt.ATTR_CHANGED, this.onSegmentsChanged, this),
-                            this.model.segments.off(rt.STATE_DELETED, this.onSegmentsChanged, this),
-                            this.model.segments.off(rt.ADDED, this.onSegmentsAdded, this)
+                        this.model.segments.off(ot.ATTR_CHANGED, this.onSegmentsChanged, this),
+                            this.model.segments.off(ot.STATE_DELETED, this.onSegmentsChanged, this),
+                            this.model.segments.off(ot.ADDED, this.onSegmentsAdded, this)
                     }
                 }, {
                     key: "flash",
@@ -31861,11 +31659,11 @@
                 }]),
                 e
         }();
-    Object.assign(ot.prototype, {
+    Object.assign(at.prototype, {
         CLASS_NAME: "Waze.Service.Services"
     });
-    var at = ot,
-        lt = function() {
+    var lt = at,
+        ut = function() {
             function e(t) {
                 h()(this, e),
                     this._snapshot = !1,
@@ -31903,10 +31701,10 @@
                 }]),
                 e
         }();
-    l.a.extend(lt.prototype, o.a.Events);
-    var ut = lt,
-        ct = n(41),
-        dt = OpenLayers.Class(OpenLayers.Handler, {
+    l.a.extend(ut.prototype, o.a.Events);
+    var ct = ut,
+        dt = n(41),
+        ht = OpenLayers.Class(OpenLayers.Handler, {
             EVENTMAP: {
                 mousemove: {
                     in: "over",
@@ -32001,7 +31799,7 @@
             },
             CLASS_NAME: "Waze.Handler.Feature"
         }),
-        ht = OpenLayers.Class(OpenLayers.Control, {
+        pt = OpenLayers.Class(OpenLayers.Control, {
             DEFAULTS: {
                 tolerance: 15,
                 node: !0,
@@ -32194,14 +31992,14 @@
             },
             CLASS_NAME: "Waze.Control.Snapping"
         }),
-        pt = OpenLayers.Class(OpenLayers.Geometry.Point, {
+        gt = OpenLayers.Class(OpenLayers.Geometry.Point, {
             points: null,
             initialize: function(e) {
                 OpenLayers.Geometry.Point.prototype.initialize.apply(this, [e[0].x, e[0].y]),
                     this.points = e
             },
             clone: function() {
-                return new pt(this.points)
+                return new gt(this.points)
             },
             calculateBounds: function() {
                 OpenLayers.Geometry.Point.prototype.calculateBounds.apply(this);
@@ -32239,34 +32037,34 @@
                     this.points[n].transform(e, t)
             }
         }),
-        gt = pt,
-        ft = n(10),
-        mt = OpenLayers.Class(OL.Feature.Vector, {
+        ft = gt,
+        mt = n(10),
+        vt = OpenLayers.Class(OL.Feature.Vector, {
             initialize: function(e, t, n) {
-                OL.Feature.Vector.prototype.initialize.apply(this, [new gt(e), t, n])
+                OL.Feature.Vector.prototype.initialize.apply(this, [new ft(e), t, n])
             },
             getID: function() {
                 return this.id
             },
             clone: function() {
-                return new mt(this.geometry ? ft.cloneGeometry(this.geometry) : null, this.attributes, this.style)
+                return new vt(this.geometry ? mt.cloneGeometry(this.geometry) : null, this.attributes, this.style)
             },
             CLASS_NAME: "Waze.Feature.AggregatePointVector"
         }),
-        vt = mt,
-        _t = n(360),
-        yt = n.n(_t),
-        bt = n(26),
-        Et = n(361),
-        wt = n.n(Et),
-        St = n(127),
-        kt = function() {
+        _t = vt,
+        yt = n(361),
+        bt = n.n(yt),
+        Et = n(26),
+        wt = n(362),
+        St = n.n(wt),
+        kt = n(128),
+        Tt = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this._segments = t,
                     this._drawingContext = n,
                     this._dataModel = i,
-                    this._useCase = new wt.a(this._dataModel, this._segments)
+                    this._useCase = new St.a(this._dataModel, this._segments)
             }
             return g()(e, [{
                     key: "destroy",
@@ -32286,12 +32084,12 @@
                     key: "_getLonLat",
                     value: function() {
                         var e = this._useCase.findConnectingNode();
-                        return bt.toLonLat(e.geometry)
+                        return Et.toLonLat(e.geometry)
                     }
                 }, {
                     key: "_confirmBridge",
                     value: function() {
-                        return St.a.showAsync({
+                        return kt.a.showAsync({
                             lonlat: this._getLonLat(),
                             title: I18n.t("edit.node.delete_confirm.bridge_node_title"),
                             content: I18n.t("edit.node.delete_confirm.bridge_node_content"),
@@ -32311,10 +32109,10 @@
                 }]),
                 e
         }(),
-        Tt = n(93),
-        It = n(34),
-        Mt = n.n(It),
-        At = OpenLayers.Class(OpenLayers.Control, ct.a, {
+        It = n(94),
+        Mt = n(34),
+        At = n.n(Mt),
+        Ct = OpenLayers.Class(OpenLayers.Control, dt.a, {
             geometryTypes: null,
             clickout: !0,
             toggle: !0,
@@ -32356,14 +32154,14 @@
                 var s = this.features.map(function(e) {
                     return e.model
                 }).filter(function(e) {
-                    return e instanceof Mt.a
+                    return e instanceof At.a
                 });
-                this.bridgeCreator = new kt(s, i.map.getDrawingContext(), this.model),
-                    this.nodeCreator = new yt.a(s, i.map.getDrawingContext(), this.model),
+                this.bridgeCreator = new Tt(s, i.map.getDrawingContext(), this.model),
+                    this.nodeCreator = new bt.a(s, i.map.getDrawingContext(), this.model),
                     W.accelerators.events.register("toggleMultipleSelection", this, this.toggleMultipleSelection),
                     W.accelerators.events.register("deleteVertex", this, this.deleteVertex);
                 var r = this;
-                this.featureHover = new dt(this, this.selectionManager.selectionMediator.getLayer(), {
+                this.featureHover = new ht(this, this.selectionManager.selectionMediator.getLayer(), {
                     over: function(e) {
                         var t = e.parent;
                         !this.dragControl.handlers.drag.started && (e._highlightPlaceHolder || e._fromNodeDragPoint || e._toNodeDragPoint) && this.features.includes(t) && (this.drawSegmentDraggingHandles(t),
@@ -32412,7 +32210,7 @@
                     this.dragControl.handlers.feature.geometryTypeMatches = function(e) {
                         return OpenLayers.Handler.Feature.prototype.geometryTypeMatches.apply(this, arguments) && !e.uneditable
                     },
-                    this.snapControl = new ht({
+                    this.snapControl = new pt({
                         layer: this.sketchLayer,
                         targets: [{
                             layer: this.nodeLayer,
@@ -32425,7 +32223,7 @@
                             layer: this.segmentLayer,
                             filter: {
                                 evaluate: function(e) {
-                                    return new Tt.CanEditGeometryUseCase(e.model.model).canEditSegmentGeometry(e.model)
+                                    return new It.CanEditGeometryUseCase(e.model.model).canEditSegmentGeometry(e.model)
                                 }
                             }
                         }]
@@ -32650,7 +32448,7 @@
             collectComponentVertices: function(e, t, n) {
                 var i, s, r, o, a = e.geometry;
                 if ("OpenLayers.Geometry.Point" === a.CLASS_NAME)
-                    (s = new vt([a], null, this.verticesStyle))._sketch = !0,
+                    (s = new _t([a], null, this.verticesStyle))._sketch = !0,
                     s.parent = e,
                     t.push(s);
                 else {
@@ -32698,23 +32496,23 @@
             onModificationComplete: function(e) {},
             CLASS_NAME: "Waze.Control.ModifyFeature"
         }),
-        Ct = n(69),
-        Ot = n(13),
-        Rt = n.n(Ot),
-        Dt = n(113),
-        Lt = n(195),
-        Pt = n(15),
-        Nt = n.n(Pt),
-        xt = n(11),
-        Vt = n.n(xt),
-        jt = n(160),
-        Ut = n(66),
-        Ft = n(56),
-        Bt = n(43),
-        Gt = n(144),
-        Wt = n(24),
-        Ht = n.n(Wt),
-        zt = function(e) {
+        Ot = n(70),
+        Rt = n(13),
+        Dt = n.n(Rt),
+        Lt = n(114),
+        Pt = n(196),
+        Nt = n(15),
+        xt = n.n(Nt),
+        Vt = n(11),
+        jt = n.n(Vt),
+        Ut = n(161),
+        Ft = n(67),
+        Bt = n(58),
+        Gt = n(43),
+        Wt = n(145),
+        Ht = n(24),
+        zt = n.n(Ht),
+        qt = function(e) {
             function t(e, n, i) {
                 var s;
                 return h()(this, t),
@@ -32726,8 +32524,8 @@
                 g()(t, [{
                     key: "considerMerging",
                     value: function() {
-                        return !(!this.mergeNode || !ft.equals(this.mergeNode.geometry, this.node.geometry)) && (this.node.isVirtual() && this.doSubAction(new Gt.a(this.node)),
-                            this.mergeNode.isVirtual() && this.doSubAction(new Gt.a(this.mergeNode)),
+                        return !(!this.mergeNode || !mt.equals(this.mergeNode.geometry, this.node.geometry)) && (this.node.isVirtual() && this.doSubAction(new Wt.a(this.node)),
+                            this.mergeNode.isVirtual() && this.doSubAction(new Wt.a(this.mergeNode)),
                             this.node.attributes.segIDs.every(function(e) {
                                 var t = this.model.segments.getObjectById(e);
                                 return !this.mergeNode.isConnectedToSegment(t) || t.isPoint()
@@ -32738,14 +32536,14 @@
                     value: function() {
                         this.node.attributes.segIDs.concat().forEach(function(e) {
                             var t = this.model.segments.getObjectById(e);
-                            t.isPoint() ? this.doSubAction(new Ut.default(t, {
+                            t.isPoint() ? this.doSubAction(new Ft.default(t, {
                                 dontSerialize: !0
-                            })) : (this.doSubAction(new Ft.default(t, this.node, {
+                            })) : (this.doSubAction(new Bt.default(t, this.node, {
                                     deleteNode: !1,
                                     dontSerialize: !0,
                                     keepTurns: !0
                                 })),
-                                this.doSubAction(new Bt.default(this.mergeNode, t, {
+                                this.doSubAction(new Gt.default(this.mergeNode, t, {
                                     dontSerialize: !0
                                 })))
                         }, this)
@@ -32762,7 +32560,7 @@
                             return !1;
                         "Merging node ".concat(this.node.getID(), " into node ").concat(this.mergeNode.getID()),
                             this.moveSegments(),
-                            this.doSubAction(new jt.a(this.node))
+                            this.doSubAction(new Ut.a(this.node))
                     }
                 }, {
                     key: "serialize",
@@ -32774,8 +32572,8 @@
                             destNodeVersion: this.node.attributes.version
                         };
                         return {
-                            _objectType: Rt.a.MERGED_NODE,
-                            action: Ht.a.TYPE.ADD,
+                            _objectType: Dt.a.MERGED_NODE,
+                            action: zt.a.TYPE.ADD,
                             attributes: e
                         }
                     }
@@ -32787,13 +32585,13 @@
                 }, {
                     key: "getAffectedUniqueIds",
                     value: function() {
-                        return [this.node.getUniqueID(), this.mergeNode.getUniqueID()].concat(Nt()(Vt()(_()(t.prototype), "getAffectedUniqueIds", this).call(this)))
+                        return [this.node.getUniqueID(), this.mergeNode.getUniqueID()].concat(xt()(jt()(_()(t.prototype), "getAffectedUniqueIds", this).call(this)))
                     }
                 }]),
                 t
         }(Ie.default),
-        qt = n(59),
-        Yt = function(e) {
+        Yt = n(60),
+        $t = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -32811,16 +32609,16 @@
                     }
                 }]),
                 t
-        }(qt.default),
-        $t = n(18),
-        Kt = OpenLayers.Class(At, {
+        }(Yt.default),
+        Kt = n(18),
+        Jt = OpenLayers.Class(Ct, {
             model: null,
             origGeometries: null,
             initialize: function(e, t, n, i, s, r, o) {
                 this.features = e.concat(),
                     this.segmentSelection = t,
                     this.model = n,
-                    At.prototype.initialize.apply(this, [i, s, r, o]),
+                    Ct.prototype.initialize.apply(this, [i, s, r, o]),
                     this.origGeometries = {},
                     this._registerEvents(),
                     this.map.addControl(this),
@@ -32831,27 +32629,27 @@
                 this._unregisterEvents(),
                     this.unselectFeature(),
                     this.deactivate(),
-                    At.prototype.destroy.apply(this, arguments)
+                    Ct.prototype.destroy.apply(this, arguments)
             },
             _registerEvents: function() {
-                this.model.segments.on(rt.ATTR_CHANGED, this.onFeatureUpdated, this),
-                    this.model.nodes.on(rt.ATTR_CHANGED, this.onFeatureUpdated, this),
+                this.model.segments.on(ot.ATTR_CHANGED, this.onFeatureUpdated, this),
+                    this.model.nodes.on(ot.ATTR_CHANGED, this.onFeatureUpdated, this),
                     this.model.events.register("mergeend", this, this.onFeaturesMerge)
             },
             _unregisterEvents: function() {
                 this.model.events.unregister("mergeend", this, this.onFeaturesMerge),
-                    this.model.segments.off(rt.ATTR_CHANGED, this.onFeatureUpdated, this),
-                    this.model.nodes.off(rt.ATTR_CHANGED, this.onFeatureUpdated, this)
+                    this.model.segments.off(ot.ATTR_CHANGED, this.onFeatureUpdated, this),
+                    this.model.nodes.off(ot.ATTR_CHANGED, this.onFeatureUpdated, this)
             },
             onFeatureUpdated: function(e) {
                 this.resetVertices()
             },
             clickOnDragPoint: function(e) {
                 var t = null;
-                if (e.parent && e.parent.model.type === Rt.a.NODE)
+                if (e.parent && e.parent.model.type === Dt.a.NODE)
                     t = e.parent;
-                else if (e.parent && e.parent.model.type === Rt.a.SEGMENT) {
-                    var n = $t.getVertices(e.parent.geometry, !0);
+                else if (e.parent && e.parent.model.type === Dt.a.SEGMENT) {
+                    var n = Kt.getVertices(e.parent.geometry, !0);
                     e.geometry.equals(n[0]) && e.parent.model.attributes.fromNodeID ? t = this.map.nodeLayer.getVector(this.model.nodes.getObjectById(e.parent.model.attributes.fromNodeID)) : e.geometry.equals(n[1]) && e.parent.model.attributes.toNodeID && (t = this.map.nodeLayer.getVector(this.model.nodes.getObjectById(e.parent.model.attributes.toNodeID)))
                 }
                 t && (this.selectionManager.unselectAll(),
@@ -32878,8 +32676,8 @@
                 Object.keys(r).forEach(function(e) {
                     var t = r[e],
                         n = s.model.nodes.getObjectById(e);
-                    if (t && t[0] && t[0].model.isAllowed(Ct.NodesPermissions.EDIT_GEOMETRY) && t.allPresent) {
-                        var o = new vt(s.getFeatureGeometries(t), null);
+                    if (t && t[0] && t[0].model.isAllowed(Ot.NodesPermissions.EDIT_GEOMETRY) && t.allPresent) {
+                        var o = new _t(s.getFeatureGeometries(t), null);
                         o._sketch = !0,
                             o._nodeDragPoint = !0,
                             n.isVirtual() ? o._virtualNodeDragPoint = !0 : o._regularNodeDragPoint = !0,
@@ -32892,7 +32690,7 @@
                 for (var o = 0; o < e.length; o++) {
                     var a = e[o],
                         u = e[o].model;
-                    if (u.type === Rt.a.SEGMENT) {
+                    if (u.type === Dt.a.SEGMENT) {
                         var c = u.getDrivingRestrictionCount();
                         (c || u.isOneWay()) && (this.directionArrows[u.getID()] = u.getArrowPoints(42 * this.map.getResolution(), 20 * this.map.getResolution(), 20 * this.map.getResolution()).map(l.a.partial(this._getArrowVector, u, c))),
                         this._createDragHandles(u, a, t, r, i, n)
@@ -32900,11 +32698,11 @@
                 }
             },
             _createDragHandles: function(e, t, n, i, s, r) {
-                var o = new OL.Feature.Vector(ft.cloneGeometry(e.geometry), null);
+                var o = new OL.Feature.Vector(mt.cloneGeometry(e.geometry), null);
                 o.parent = t,
                     o._highlightPlaceHolder = !0,
                     this.dragPointsPaddingVertices.push(o);
-                for (var a = e.isAllowed(Ct.SegmentsPermissions.EDIT_GEOMETRY) && !e.outOfScope, l = this.getFeaturesArray(n, e), u = this.getFeaturesArray(s, e), c = e.geometry, d = null, h = e.attributes.fromNodeID && i[e.attributes.fromNodeID] ? 1 : 0, p = c.components.length - (e.attributes.toNodeID && i[e.attributes.toNodeID] ? 1 : 0), g = h; g < p; ++g) {
+                for (var a = e.isAllowed(Ot.SegmentsPermissions.EDIT_GEOMETRY) && !e.outOfScope, l = this.getFeaturesArray(n, e), u = this.getFeaturesArray(s, e), c = e.geometry, d = null, h = e.attributes.fromNodeID && i[e.attributes.fromNodeID] ? 1 : 0, p = c.components.length - (e.attributes.toNodeID && i[e.attributes.toNodeID] ? 1 : 0), g = h; g < p; ++g) {
                     var f = c.components[g];
                     if ("OpenLayers.Geometry.Point" === f.CLASS_NAME) {
                         var m = new OL.Feature.Vector(f, null);
@@ -32973,7 +32771,7 @@
             calculateNodesToParents: function(e) {
                 for (var t = this, n = {}, i = {}, s = 0; s < e.length; s++) {
                     var r = e[s].model;
-                    if (r.type === Rt.a.SEGMENT) {
+                    if (r.type === Dt.a.SEGMENT) {
                         var o = r.attributes.fromNodeID,
                             a = r.attributes.toNodeID;
                         o && !n[o] && (i[o] ? (n[o] = this.getNodeIDParents(o),
@@ -32984,7 +32782,7 @@
                                 return n[e] = t.getNodeIDParents(e)
                             })
                     } else
-                        r.type === Rt.a.NODE && (n[r.getID()] || (n[r.getID()] = this.getNodeIDParents(r.getID())))
+                        r.type === Dt.a.NODE && (n[r.getID()] || (n[r.getID()] = this.getNodeIDParents(r.getID())))
                 }
                 return n
             },
@@ -33015,12 +32813,12 @@
                 if (i && !i.feature.model.outOfScope && (i.feature = i.feature.model,
                         n.snappedFeatures = i),
                     1 === e.parents.length) {
-                    if (e.parent.model.type === Rt.a.SEGMENT) {
+                    if (e.parent.model.type === Dt.a.SEGMENT) {
                         var s = e.parent.model.getID(),
                             r = e.parent.model;
                         t = this.origGeometries["segment".concat(s)],
                             n.createNodes = !0,
-                            t && this.model.actionManager.add(new Dt.default(r, t.clone(), e.parent.geometry, n))
+                            t && this.model.actionManager.add(new Lt.default(r, t.clone(), e.parent.geometry, n))
                     }
                 } else {
                     for (var o = {}, a = e.parent.model, l = 0; l < a.attributes.segIDs.length; l++) {
@@ -33037,21 +32835,21 @@
                 return null != this.snapControl.snappedFeature
             },
             _isSnappingNode: function() {
-                return this._isSnappingFeature() && this._getSnappedFeature().type === Rt.a.NODE
+                return this._isSnappingFeature() && this._getSnappedFeature().type === Dt.a.NODE
             },
             _getSnappedFeature: function() {
                 return this._isSnappingFeature() ? this.snapControl.snappedFeature.feature : null
             },
             _handleMoveNode: function(e, t, n, i) {
                 var s = this._isSnappingNode(),
-                    r = new Lt.default(e, this.origGeometries["node".concat(e.getID())].clone(), t.parent.geometry, n, Object.assign({}, i, {
+                    r = new Pt.default(e, this.origGeometries["node".concat(e.getID())].clone(), t.parent.geometry, n, Object.assign({}, i, {
                         dontSerialize: s
                     })),
                     o = [r];
                 if (s) {
-                    var a = new zt(e, this._getSnappedFeature());
+                    var a = new qt(e, this._getSnappedFeature());
                     o.push(a),
-                        this.model.actionManager.add(new Yt(o))
+                        this.model.actionManager.add(new $t(o))
                 } else
                     this.model.actionManager.add(r)
             },
@@ -33063,9 +32861,9 @@
             },
             CLASS_NAME: "Waze.Control.ModifyModelFeature"
         }),
-        Jt = n(171),
-        Zt = n.n(Jt),
-        Xt = {
+        Zt = n(172),
+        Xt = n.n(Zt),
+        Qt = {
             virtualVertices: {
                 strokeWidth: 2,
                 strokeColor: "#00ece3",
@@ -33077,14 +32875,14 @@
             },
             permalinkMarker: new OL.StyleMap({
                 default: new OL.Style({
-                    externalGraphic: Zt.a,
+                    externalGraphic: Xt.a,
                     graphicWidth: 50,
                     graphicHeight: 60
                 })
             })
         },
-        Qt = n(70),
-        en = OL.Class(OL.Control.ModifyFeature, {
+        en = n(71),
+        tn = OL.Class(OL.Control.ModifyFeature, {
             standalone: !0,
             initialize: function(e, t) {
                 var n = Object.assign({
@@ -33092,10 +32890,10 @@
                     standalone: !0
                 }, t);
                 OpenLayers.Control.ModifyFeature.prototype.initialize.call(this, e.layer, n),
-                    this.repo.on(rt.ATTR_CHANGED, this._onFeaturesChanged, this),
-                    this.repo.on(rt.REMOVED, this._onFeaturesRemoved, this),
+                    this.repo.on(ot.ATTR_CHANGED, this._onFeaturesChanged, this),
+                    this.repo.on(ot.REMOVED, this._onFeaturesRemoved, this),
                     this.map.events.register("zoomend", this, this.resetVertices),
-                    this._originalGeometry = ft.cloneGeometry(e.geometry),
+                    this._originalGeometry = mt.cloneGeometry(e.geometry),
                     this.map.addControl(this),
                     this.activate(),
                     this.selectFeature(e),
@@ -33105,8 +32903,8 @@
                 return Boolean(e._sketch) || e.model && e.model.isSelected() && ("function" != typeof e.model.isPoint || e.model.isPoint())
             },
             destroy: function() {
-                this.repo.off(rt.ATTR_CHANGED, this._onFeaturesChanged, this),
-                    this.repo.off(rt.REMOVED, this._onFeaturesRemoved, this),
+                this.repo.off(ot.ATTR_CHANGED, this._onFeaturesChanged, this),
+                    this.repo.off(ot.REMOVED, this._onFeaturesRemoved, this),
                     this.map.events.unregister("zoomend", this, this.resetVertices),
                     this.deactivate(),
                     OL.Control.ModifyFeature.prototype.destroy.apply(this, arguments)
@@ -33122,19 +32920,19 @@
             setFeatureState: function() {},
             _onFeaturesChanged: function() {
                 this.feature && (this.resetVertices(),
-                    this._originalGeometry = ft.cloneGeometry(this.feature.geometry))
+                    this._originalGeometry = mt.cloneGeometry(this.feature.geometry))
             },
             _onFeaturesRemoved: function(e) {
                 e.includes(this.feature) && this.unselectFeature(this.feature)
             },
             onModification: function() {
-                var e = new Qt.default(this.feature.model, this.repo, this._originalGeometry, this.feature.geometry);
+                var e = new en.default(this.feature.model, this.repo, this._originalGeometry, this.feature.geometry);
                 this.model.actionManager.add(e),
-                    this._originalGeometry = ft.cloneGeometry(this.feature.geometry)
+                    this._originalGeometry = mt.cloneGeometry(this.feature.geometry)
             },
             collectDragHandle: function() {
                 var e = this,
-                    t = l.a.maxBy(ft.getPolygonVertices(this.feature.geometry), function(e) {
+                    t = l.a.maxBy(mt.getPolygonVertices(this.feature.geometry), function(e) {
                         return e.y
                     }),
                     n = new OpenLayers.Geometry.Point(t.x, t.y + 30 * this.map.getResolution()),
@@ -33161,8 +32959,8 @@
                     W.selectionManager.unselectFeature(e)
             }
         }),
-        tn = n(25),
-        nn = function(e) {
+        nn = n(25),
+        sn = function(e) {
             function t(e, n) {
                 var i;
                 return h()(this, t),
@@ -33179,7 +32977,7 @@
                     value: function() {
                         this._removeDragBoundary(),
                             this._removeRadiusHandle(),
-                            Vt()(_()(t.prototype), "destroy", this).apply(this, arguments)
+                            jt()(_()(t.prototype), "destroy", this).apply(this, arguments)
                     }
                 }, {
                     key: "resetVertices",
@@ -33188,7 +32986,7 @@
                             this._removeDragBoundary(),
                             this._removeRadiusHandle(),
                             this.feature && (this._cameraDraggable() && this.collectDragHandle(),
-                                new Tt.CanEditGeometryUseCase(this.model).canEditCameraGeometry(this.feature.model) && this._collectRadiusHandle())
+                                new It.CanEditGeometryUseCase(this.model).canEditCameraGeometry(this.feature.model) && this._collectRadiusHandle())
                     }
                 }, {
                     key: "_removeDragBoundary",
@@ -33209,15 +33007,15 @@
                 }, {
                     key: "_cameraDraggable",
                     value: function() {
-                        return new Tt.CanEditGeometryUseCase(this.model).canEditCameraGeometry(this.feature.model) && this.map.getZoom() >= W.Config.cameras.minDragZoom
+                        return new It.CanEditGeometryUseCase(this.model).canEditCameraGeometry(this.feature.model) && this.map.getZoom() >= W.Config.cameras.minDragZoom
                     }
                 }, {
                     key: "collectDragHandle",
                     value: function() {
                         var e = this.feature.geometry,
                             t = this.map.getResolution(),
-                            n = ft.cloneGeometry(e);
-                        this.feature.model.attributes.originalPosition || (this.feature.model.attributes.originalPosition = ft.cloneGeometry(e));
+                            n = mt.cloneGeometry(e);
+                        this.feature.model.attributes.originalPosition || (this.feature.model.attributes.originalPosition = mt.cloneGeometry(e));
                         var i = this.feature.model.attributes.originalPosition;
                         this._removeDragBoundary(),
                             this.dragBoundary = new OL.Feature.Vector(i.clone(), {}, {
@@ -33253,10 +33051,10 @@
                             t = this.feature,
                             n = t.geometry,
                             i = se.degToRad(t.model.attributes.azymuth - 90),
-                            s = ft.cloneGeometry(n),
+                            s = mt.cloneGeometry(n),
                             r = oe.createPoint(n.x + 50 * e.getResolution() * Math.cos(i), n.y - 50 * e.getResolution() * Math.sin(i)),
                             o = new OL.Feature.Vector(r),
-                            a = ft.cloneGeometry(r);
+                            a = mt.cloneGeometry(r);
                         r.move = function(n, r) {
                                 a.x = this.x + n,
                                     a.y = this.y + r;
@@ -33293,7 +33091,7 @@
                             var t = this.feature.model.attributes.azymuth;
                             this.feature.model.attributes.azymuth = this.originalAngle,
                                 this.originalAngle = t,
-                                this.model.actionManager.add(new tn.default(this.feature.model, {
+                                this.model.actionManager.add(new nn.default(this.feature.model, {
                                     azymuth: t
                                 }))
                         } else
@@ -33302,12 +33100,12 @@
                     }
                 }]),
                 t
-        }(en);
-    Object.assign(nn.prototype, {
+        }(tn);
+    Object.assign(sn.prototype, {
         CLASS_NAME: "Waze.Control.GeometryEditing.Camera"
     });
-    var sn, rn = nn,
-        on = function(e) {
+    var rn, on = sn,
+        an = function(e) {
             function t(e, n) {
                 return h()(this, t),
                     n.mode = OL.Control.ModifyFeature.RESHAPE | OL.Control.ModifyFeature.DRAG,
@@ -33317,12 +33115,12 @@
                 g()(t, [{
                     key: "handleKeypress",
                     value: function(e) {
-                        return this.deleteCodes.includes(e.keyCode) ? this.feature.model.isPoint() || ft.countPolygonOuterRingVertices(this.feature.model.geometry) > 3 ? Vt()(_()(t.prototype), "handleKeypress", this).call(this, e) : void 0 : Vt()(_()(t.prototype), "handleKeypress", this).call(this, e)
+                        return this.deleteCodes.includes(e.keyCode) ? this.feature.model.isPoint() || mt.countPolygonOuterRingVertices(this.feature.model.geometry) > 3 ? jt()(_()(t.prototype), "handleKeypress", this).call(this, e) : void 0 : jt()(_()(t.prototype), "handleKeypress", this).call(this, e)
                     }
                 }]),
                 t
-        }(en),
-        an = function() {
+        }(tn),
+        ln = function() {
             function e(t, n, i, s) {
                 h()(this, e),
                     this.modifyControl = null,
@@ -33333,7 +33131,7 @@
                     this.map = i,
                     this.dataModel = s,
                     this._typeToEditorClass = l.a.clone(this.TYPE_TO_EDITOR_CLASS),
-                    this._typeToEditorOptions = V()({}, Rt.a.MAP_COMMENT, {
+                    this._typeToEditorOptions = V()({}, Dt.a.MAP_COMMENT, {
                         mode: OL.Control.ModifyFeature.DRAG | OL.Control.ModifyFeature.RESHAPE
                     }),
                     this.selectionManager.events.register("selectionchanged", this, this.onSelectionChanged),
@@ -33349,14 +33147,14 @@
                     key: "_createGeometryEditor",
                     value: function(e, t) {
                         var n = e[0].model.type;
-                        if (n === Rt.a.SEGMENT || n === Rt.a.NODE)
+                        if (n === Dt.a.SEGMENT || n === Dt.a.NODE)
                             return this._createSegmentGeometryEditor(e, t);
                         var i = this._typeToEditorClass[n];
                         if (!i)
                             return null;
                         var s = this.dataModel.getRepository(n);
                         return new i(e[0], Object.assign({
-                            virtualStyle: Xt.virtualVertices,
+                            virtualStyle: Qt.virtualVertices,
                             repo: s,
                             model: this.dataModel,
                             map: this.map
@@ -33365,9 +33163,9 @@
                 }, {
                     key: "_createSegmentGeometryEditor",
                     value: function(e, t) {
-                        return new Kt(e, t, this.dataModel, this.map.sketchLayer, this.map.segmentLayer, this.map.nodeLayer, {
+                        return new Jt(e, t, this.dataModel, this.map.sketchLayer, this.map.segmentLayer, this.map.nodeLayer, {
                             mode: OpenLayers.Control.ModifyFeature.RESHAPE,
-                            virtualStyle: Xt.virtualVertices,
+                            virtualStyle: Qt.virtualVertices,
                             standalone: !0,
                             selectionManager: this.selectionManager,
                             map: this.map
@@ -33409,23 +33207,23 @@
                 }]),
                 e
         }();
-    Object.assign(an.prototype, {
-        TYPE_TO_EDITOR_CLASS: (sn = {},
-            V()(sn, Rt.a.VENUE, on),
-            V()(sn, Rt.a.SPEED_CAMERA, rn),
-            V()(sn, Rt.a.MAP_COMMENT, en),
-            sn)
+    Object.assign(ln.prototype, {
+        TYPE_TO_EDITOR_CLASS: (rn = {},
+            V()(rn, Dt.a.VENUE, an),
+            V()(rn, Dt.a.SPEED_CAMERA, on),
+            V()(rn, Dt.a.MAP_COMMENT, tn),
+            rn)
     });
-    var ln, un = an,
-        cn = n(14),
-        dn = n.n(cn),
-        hn = {
+    var un, cn = ln,
+        dn = n(14),
+        hn = n.n(dn),
+        pn = {
             PLUS_KEY_CODE1: 107,
             PLUS_KEY_CODE2: 187,
             MINUS_KEY_CODE1: 109,
             MINUS_KEY_CODE2: 189
         },
-        pn = function() {
+        gn = function() {
             function e() {
                 var t = this;
                 h()(this, e),
@@ -33477,7 +33275,7 @@
                         if (null != this._futureShortcutsByAction[t] && (e = this._futureShortcutsByAction[t],
                                 n = !0,
                                 delete this._futureShortcutsByAction[t]),
-                            i = n ? ln.prototype.fromString(e) : ln.prototype.fromEmacsNotation(e),
+                            i = n ? un.prototype.fromString(e) : un.prototype.fromEmacsNotation(e),
                             t = this.Actions[t]) {
                             var s = this.shortcutToAction[i];
                             s && (delete this.shortcutToAction[s.shortcut],
@@ -33492,7 +33290,7 @@
                     value: function(e) {
                         var t = this;
                         return Object.entries(e).forEach(function(e) {
-                            var n = dn()(e, 2),
+                            var n = hn()(e, 2),
                                 i = n[0],
                                 s = n[1];
                             return t.registerShortcut(i, s)
@@ -33559,7 +33357,7 @@
                     value: function(e) {
                         var t = this._isEventOnInput(e),
                             n = W.streetViewController.isActive(),
-                            i = Object.values(hn).includes(e.keyCode);
+                            i = Object.values(pn).includes(e.keyCode);
                         t && n && i && (console.warn("Keydown event stopped"),
                             e.stopImmediatePropagation())
                     }
@@ -33567,7 +33365,7 @@
                     key: "onKeyDownBubble",
                     value: function(e) {
                         if (!this._isEventOnInput(e)) {
-                            var t = new ln(e),
+                            var t = new un(e),
                                 n = this.shortcutToAction[t];
                             n && !0 === n.enabled && (this.events.triggerEvent(n.id, {
                                     action: n
@@ -33759,7 +33557,7 @@
                             return !1
                         }
                         return Object.entries(t).forEach(function(t) {
-                                var n = dn()(t, 2),
+                                var n = hn()(t, 2),
                                     i = n[0],
                                     s = n[1];
                                 null != e.Actions[i] ? e.registerShortcut(s, i, !0) : e._futureShortcutsByAction[i] = s
@@ -33771,7 +33569,7 @@
                     value: function() {
                         var e = {};
                         return Object.values(this.Actions).forEach(function(t) {
-                                var n = t.shortcut || ln.getEmpty();
+                                var n = t.shortcut || un.getEmpty();
                                 e[t.id] = n.toString()
                             }),
                             e
@@ -33779,7 +33577,7 @@
                 }]),
                 e
         }();
-    Object.assign(pn.prototype, {
+    Object.assign(gn.prototype, {
             LocalStorageKey: "keyboardShortcuts",
             SpecialKeys: {
                 32: "Space",
@@ -33825,7 +33623,7 @@
             Actions: null,
             CLASS_NAME: "Waze.Control.KeyboardShortcuts"
         }),
-        (ln = function() {
+        (un = function() {
             function e(t) {
                 h()(this, e),
                     this.ctrlKey = !1,
@@ -33844,11 +33642,11 @@
                     value: function() {
                         var e = this,
                             t = 0;
-                        return Object.entries(pn.prototype.BrowserEventToModifier).forEach(function(n) {
-                                var i = dn()(n, 2),
+                        return Object.entries(gn.prototype.BrowserEventToModifier).forEach(function(n) {
+                                var i = hn()(n, 2),
                                     s = i[0],
                                     r = i[1];
-                                e[s] && (t |= pn.prototype.Modifiers[r])
+                                e[s] && (t |= gn.prototype.Modifiers[r])
                             }),
                             "".concat(t, ",").concat(this.keyCode)
                     }
@@ -33863,12 +33661,12 @@
                         var t = e.split(","),
                             n = t[0],
                             i = l.a.last(t),
-                            s = new ln;
-                        return Object.entries(pn.prototype.BrowserEventToModifier).forEach(function(e) {
-                                var t = dn()(e, 2),
+                            s = new un;
+                        return Object.entries(gn.prototype.BrowserEventToModifier).forEach(function(e) {
+                                var t = hn()(e, 2),
                                     i = t[0],
                                     r = t[1];
-                                pn.prototype.Modifiers[r] & n && (s[i] = !0)
+                                gn.prototype.Modifiers[r] & n && (s[i] = !0)
                             }),
                             s.keyCode = i,
                             s
@@ -33879,12 +33677,12 @@
                         var t = e.split("+"),
                             n = t[0],
                             i = l.a.last(t),
-                            s = new ln;
+                            s = new un;
                         return 1 === t.length && (n = ""),
                             1 === i.length && (i = i.toUpperCase().charCodeAt()),
                             s.keyCode = i,
                             n.split("").forEach(function(e) {
-                                var t = pn.prototype.ModifierToBrowserEvent[e];
+                                var t = gn.prototype.ModifierToBrowserEvent[e];
                                 s[t] = !0
                             }),
                             s
@@ -33892,27 +33690,27 @@
                 }]),
                 e
         }()).getEmpty = function() {
-            var e = new ln;
+            var e = new un;
             return e.keyCode = -1,
                 e
         },
-        pn.prototype.BitToModifier = {},
-        Object.entries(pn.prototype.Modifiers).forEach(function(e) {
-            var t = dn()(e, 2),
+        gn.prototype.BitToModifier = {},
+        Object.entries(gn.prototype.Modifiers).forEach(function(e) {
+            var t = hn()(e, 2),
                 n = t[0],
                 i = t[1];
-            pn.prototype.BitToModifier[i] = n
+            gn.prototype.BitToModifier[i] = n
         }),
-        pn.prototype.ModifierToBrowserEvent = {},
-        Object.entries(pn.prototype.BrowserEventToModifier).forEach(function(e) {
-            var t = dn()(e, 2),
+        gn.prototype.ModifierToBrowserEvent = {},
+        Object.entries(gn.prototype.BrowserEventToModifier).forEach(function(e) {
+            var t = hn()(e, 2),
                 n = t[0],
                 i = t[1];
-            pn.prototype.ModifierToBrowserEvent[i] = n
+            gn.prototype.ModifierToBrowserEvent[i] = n
         }),
-        pn.KeyStroke = ln;
-    var gn = pn,
-        fn = c.a.View.extend({
+        gn.KeyStroke = un;
+    var fn = gn,
+        mn = c.a.View.extend({
             initialize: function(e) {
                 this.mediator = e.mediator,
                     this.setElement(e.$el)
@@ -33943,17 +33741,17 @@
                     this.$el.find(".place-update").removeClass("selected")
             }
         }),
-        mn = n(197),
-        vn = n.n(mn),
-        _n = n(16),
-        yn = OL.Class(OL.Rule, {
+        vn = n(198),
+        _n = n.n(vn),
+        yn = n(16),
+        bn = OL.Class(OL.Rule, {
             getContext: function(e) {
                 return e
             },
             CLASS_NAME: "Waze.Rule"
         }),
-        bn = function(e, t, n) {
-            return new yn({
+        En = function(e, t, n) {
+            return new bn({
                 filter: new OL.Filter({
                     evaluate: function(n) {
                         null != n.model && (n = n.model);
@@ -33965,8 +33763,8 @@
                 symbolizer: n
             })
         },
-        En = function(e) {
-            return new yn({
+        wn = function(e) {
+            return new bn({
                 filter: new OL.Filter({
                     evaluate: function(e) {
                         return !0
@@ -33975,7 +33773,7 @@
                 symbolizer: e
             })
         },
-        wn = {
+        Sn = {
             fontFamily: "WazeFont",
             unicodeMap: {
                 ".waze-icon-area": 61696,
@@ -34041,7 +33839,7 @@
                 return String.fromCharCode(t)
             }
         },
-        Sn = {
+        kn = {
             stroke: !1,
             pointRadius: 12,
             fillColor: "white",
@@ -34054,12 +33852,12 @@
             fontFamily: "FontAwesome",
             label: ""
         },
-        kn = bn("dragPoint", !0, Sn),
-        Tn = bn("dragPoint", !0, l.a.defaults({
+        Tn = En("dragPoint", !0, kn),
+        In = En("dragPoint", !0, l.a.defaults({
             fillColor: "#25d7fd",
             fillOpacity: .3
-        }, Sn)),
-        In = {
+        }, kn)),
+        Mn = {
             strokeColor: "#ca9ace",
             fillColor: "#c290c6",
             strokeDashstyle: "solid",
@@ -34068,7 +33866,7 @@
             fillOpacity: .3,
             graphicZIndex: "${getZIndex}"
         },
-        Mn = {
+        An = {
             pointRadius: 6,
             strokeWidth: 2,
             strokeColor: "white",
@@ -34076,22 +33874,22 @@
             graphicZIndex: 0,
             fillOpacity: 1
         },
-        An = {
-            CAR_SERVICES: wn.toUnicode("waze-icon-place-car"),
-            CULTURE_AND_ENTERTAINEMENT: wn.toUnicode("waze-icon-place-culture"),
-            FOOD_AND_DRINK: wn.toUnicode("waze-icon-place-food-drink"),
-            LODGING: wn.toUnicode("waze-icon-place-lodging"),
-            NATURAL_FEATURES: wn.toUnicode("waze-icon-place-natural"),
-            OTHER: wn.toUnicode("waze-icon-place-other"),
-            OUTDOORS: wn.toUnicode("waze-icon-place-outdoors"),
-            PROFESSIONAL_AND_PUBLIC: wn.toUnicode("waze-icon-place-professional"),
-            SHOPPING_AND_SERVICES: wn.toUnicode("waze-icon-place-shopping"),
-            TRANSPORTATION: wn.toUnicode("waze-icon-place-transportation")
+        Cn = {
+            CAR_SERVICES: Sn.toUnicode("waze-icon-place-car"),
+            CULTURE_AND_ENTERTAINEMENT: Sn.toUnicode("waze-icon-place-culture"),
+            FOOD_AND_DRINK: Sn.toUnicode("waze-icon-place-food-drink"),
+            LODGING: Sn.toUnicode("waze-icon-place-lodging"),
+            NATURAL_FEATURES: Sn.toUnicode("waze-icon-place-natural"),
+            OTHER: Sn.toUnicode("waze-icon-place-other"),
+            OUTDOORS: Sn.toUnicode("waze-icon-place-outdoors"),
+            PROFESSIONAL_AND_PUBLIC: Sn.toUnicode("waze-icon-place-professional"),
+            SHOPPING_AND_SERVICES: Sn.toUnicode("waze-icon-place-shopping"),
+            TRANSPORTATION: Sn.toUnicode("waze-icon-place-transportation")
         },
-        Cn = function(e) {
-            var t = En({
-                Point: Mn,
-                Polygon: In
+        On = function(e) {
+            var t = wn({
+                Point: An,
+                Polygon: Mn
             });
             return new OL.Style(null, {
                 rules: [t].concat(e),
@@ -34103,12 +33901,12 @@
                     getCategoryIcon: function(e) {
                         var t;
                         return e.model && (t = e.model.getMainCategory()),
-                            An[t] || ""
+                            Cn[t] || ""
                     }
                 }
             })
         },
-        On = En({
+        Rn = wn({
             Point: {
                 fillColor: "#00ece3",
                 strokeColor: "#00ece3",
@@ -34122,7 +33920,7 @@
                 fillColor: "#00ece3"
             }
         }),
-        Rn = En({
+        Dn = wn({
             Point: {
                 fillColor: "#ff8383",
                 strokeDashstyle: "dot",
@@ -34134,7 +33932,7 @@
                 fillColor: "#ff8383"
             }
         }),
-        Dn = bn("isUnchanged", !1, {
+        Ln = En("isUnchanged", !1, {
             Point: {
                 fillColor: "#ff8383"
             },
@@ -34143,7 +33941,7 @@
                 strokeColor: "#ff8383"
             }
         }),
-        Ln = bn("isUnchanged", !1, {
+        Pn = En("isUnchanged", !1, {
             Point: {
                 fillColor: "#ff9292"
             },
@@ -34152,7 +33950,7 @@
                 strokeColor: "#ff9292"
             }
         }),
-        Pn = bn("isApproved", !1, {
+        Nn = En("isApproved", !1, {
             Point: {
                 pointRadius: 6,
                 fillColor: "#c290c6",
@@ -34165,7 +33963,7 @@
                 strokeDashstyle: "dash"
             }
         }),
-        Nn = bn("_sketch", !0, {
+        xn = En("_sketch", !0, {
             externalGraphic: null,
             strokeWidth: 3,
             strokeColor: "#00ece3",
@@ -34176,10 +33974,10 @@
             graphicZIndex: 0,
             cursor: "move"
         }),
-        xn = bn("isResidential", !0, {
+        Vn = En("isResidential", !0, {
             graphicName: "triangle"
         }),
-        Vn = {
+        jn = {
             Point: {
                 fillColor: "#00ece3",
                 strokeColor: "#00ece3",
@@ -34194,16 +33992,16 @@
                 strokeWidth: 3
             }
         },
-        jn = new OL.StyleMap({
+        Un = new OL.StyleMap({
             default: new OL.Style(null, {
-                rules: [En(Vn)]
+                rules: [wn(jn)]
             })
         }),
-        Un = new OL.StyleMap({
-            default: Cn([Nn, kn, Dn, Pn, xn]),
-            highlight: Cn([En({
+        Fn = new OL.StyleMap({
+            default: On([xn, Tn, Ln, Nn, Vn]),
+            highlight: On([wn({
                 Point: {
-                    fontFamily: wn.fontFamily,
+                    fontFamily: Sn.fontFamily,
                     label: "${getCategoryIcon}",
                     labelOutlineWidth: 0,
                     fontColor: "white",
@@ -34217,13 +34015,13 @@
                     strokeColor: "#ca9ace",
                     fillColor: "#ca9ace"
                 }
-            }), Nn, Tn, Ln, xn]),
-            select: Cn([On]),
-            highlightselected: Cn([On]),
-            delete: Cn([Rn]),
-            highlightdeleted: Cn([Rn])
+            }), xn, In, Pn, Vn]),
+            select: On([Rn]),
+            highlightselected: On([Rn]),
+            delete: On([Dn]),
+            highlightdeleted: On([Dn])
         }),
-        Fn = c.a.Behavior.extend({
+        Bn = c.a.Behavior.extend({
             defaults: {
                 layerClassName: ""
             },
@@ -34232,7 +34030,7 @@
             _currentLocationDrawn: !1,
             initialize: function() {
                 this._vectorLayer = new OL.Layer.Vector("", {
-                        styleMap: Un
+                        styleMap: Fn
                     }),
                     this._markerLayer = new OL.Layer.Markers(""),
                     W.map.addLayers([this._vectorLayer, this._markerLayer]),
@@ -34264,13 +34062,13 @@
                 this._destroyLayers()
             }
         }),
-        Bn = n(116),
-        Gn = c.a.View.extend({
+        Gn = n(117),
+        Wn = c.a.View.extend({
             template: "templates/place_updates/external_provider/item",
             tagName: "li",
             behaviors: {
                 ToolTip: {
-                    behaviorClass: Fn,
+                    behaviorClass: Bn,
                     layerClassName: "suggested-geometry-layer"
                 }
             },
@@ -34288,7 +34086,7 @@
                 }
             },
             onRender: function() {
-                Object(Bn.populateExternalProviderDetails)(this.model),
+                Object(Gn.populateExternalProviderDetails)(this.model),
                     this.stickit(this.model, this.bindings)
             },
             _onAnchorOver: function() {
@@ -34302,16 +34100,16 @@
                         strokeWidth: 3,
                         strokeColor: "#00ece3"
                     });
-                    this.triggerMethod("show:tooltip", bt.toLonLat(t), this.model.get("name"), "", n)
+                    this.triggerMethod("show:tooltip", Et.toLonLat(t), this.model.get("name"), "", n)
                 }
             },
             _onAnchorOut: function() {
                 this.triggerMethod("hide:tooltip")
             }
         }),
-        Wn = c.a.CompositeView.extend({
+        Hn = c.a.CompositeView.extend({
             template: "templates/place_updates/external_provider/list",
-            childView: Gn,
+            childView: Wn,
             childViewContainer: ".diff-list",
             initialize: function() {
                 this.venue = this.options.venue;
@@ -34321,8 +34119,8 @@
                 this.collection = new o.a.Collection(e)
             }
         }),
-        Hn = n(67),
-        zn = c.a.View.extend({
+        zn = n(68),
+        qn = c.a.View.extend({
             tagName: "li",
             template: "templates/place_updates/changed_field",
             events: {
@@ -34333,7 +34131,7 @@
             },
             behaviors: {
                 ToolTip: {
-                    behaviorClass: Fn,
+                    behaviorClass: Bn,
                     layerClassName: "suggested-geometry-layer"
                 }
             },
@@ -34344,19 +34142,19 @@
                 this.model.isExternalProvider() && this._showExternalProvidersView()
             },
             _showExternalProvidersView: function() {
-                var e = new Wn({
+                var e = new Hn({
                     venue: this.model.attributes.suggestedVenue
                 });
                 this.showChildView("externalProvidersRegion", e)
             },
             _onCurrentOver: function() {
-                var e = ft.getBoundsCenterLonLat(this._getValue(this.model.get("venue")));
+                var e = mt.getBoundsCenterLonLat(this._getValue(this.model.get("venue")));
                 this.triggerMethod("show:tooltip", e, I18n.t("venues.update_requests.panel.change.current_location"), "")
             },
             _onSuggestedOver: function() {
                 var e = this._getValue(this.model.get("suggestedVenue")),
                     t = new OL.Feature.Vector(e),
-                    n = ft.getBoundsCenterLonLat(e);
+                    n = mt.getBoundsCenterLonLat(e);
                 this.triggerMethod("show:tooltip", n, I18n.t("venues.update_requests.panel.change.suggested_location"), "suggested", t)
             },
             _onLocationOut: function() {
@@ -34393,14 +34191,14 @@
                         })
                     })
                 },
-                IMAGE_SIZE: Hn.IMAGE_SIZE
+                IMAGE_SIZE: zn.IMAGE_SIZE
             },
             valueGetters: {
                 lockRank: function(e) {
-                    return _n.default.formatRank(e.attributes.lockRank)
+                    return yn.default.formatRank(e.attributes.lockRank)
                 },
                 streetID: function(e) {
-                    return _n.default.formatAddress(e.getAddress())
+                    return yn.default.formatAddress(e.getAddress())
                 },
                 entryExitPoints: function(e) {
                     var t = e.getNavigationPoints()[0];
@@ -34408,7 +34206,7 @@
                 },
                 openingHours: function(e) {
                     return e.attributes.openingHours.map(function(e) {
-                        return _n.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
+                        return yn.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
                     }).join(", ")
                 },
                 services: function(e) {
@@ -34433,48 +34231,48 @@
                 return this.model._getChangeList(e, t)
             }
         }),
-        qn = function(e, t) {
+        Yn = function(e, t) {
             var n = t.attributes.categoryAttributes;
             if (n && n.PARKING_LOT)
                 return n.PARKING_LOT[e]
         },
-        Yn = function(e, t) {
-            var n = qn(e, t);
+        $n = function(e, t) {
+            var n = Yn(e, t);
             return null !== n && void 0 !== n ? Array.isArray(n) ? n.map(function(t) {
                 return I18n.t("edit.landmark.parking.types.".concat(e, ".").concat(t))
             }) : I18n.t("edit.landmark.parking.types.".concat(e, ".").concat(n)) : null
         },
-        $n = zn.extend({
+        Kn = qn.extend({
             template: "templates/place_updates/changed_field_parking_lot",
             _getValue: function(e) {
                 var t = this.model.get("fieldName");
-                return this.valueGetters[t] ? this.valueGetters[t](e) : qn(t, e)
+                return this.valueGetters[t] ? this.valueGetters[t](e) : Yn(t, e)
             },
             valueGetters: {
                 canExitWhileClosed: function(e) {
-                    return _n.default.formatYesNo(qn("canExitWhileClosed", e))
+                    return yn.default.formatYesNo(Yn("canExitWhileClosed", e))
                 },
                 estimatedNumberOfSpots: function(e) {
-                    return Yn("estimatedNumberOfSpots", e)
+                    return $n("estimatedNumberOfSpots", e)
                 },
                 costType: function(e) {
-                    return Yn("costType", e)
+                    return $n("costType", e)
                 },
                 lotType: function(e) {
-                    return Yn("lotType", e)
+                    return $n("lotType", e)
                 },
                 paymentType: function(e) {
-                    return Yn("paymentType", e)
+                    return $n("paymentType", e)
                 }
             }
         }),
-        Kn = c.a.CollectionView.extend({
+        Jn = c.a.CollectionView.extend({
             childView: function(e) {
-                return e instanceof vn.a ? $n : zn
+                return e instanceof _n.a ? Kn : qn
             }
         }),
-        Jn = n(196),
-        Zn = function(e) {
+        Zn = n(197),
+        Xn = function(e) {
             function t(e) {
                 var n;
                 h()(this, t),
@@ -34514,7 +34312,7 @@
                     key: "templateContext",
                     value: function() {
                         return {
-                            imageUrl: this.image.getUrl(Hn.IMAGE_SIZE.BIG),
+                            imageUrl: this.image.getUrl(zn.IMAGE_SIZE.BIG),
                             dateAdded: this.image.get("date"),
                             addingUserId: this.image.get("creatorUserId"),
                             venueName: this.venueName,
@@ -34571,7 +34369,7 @@
                 }]),
                 t
         }(c.a.View),
-        Xn = c.a.View.extend({
+        Qn = c.a.View.extend({
             APPROVE_ACTION_NAMES: {
                 default: I18n.t("venues.update_requests.panel.action.approve"),
                 ADD_VENUE: I18n.t("venues.update_requests.panel.action.add_to_map")
@@ -34638,7 +34436,7 @@
             },
             _onApproveChanged: function() {
                 var e = this.ui.approvedDropdown.filter(":checked").booleanVal(),
-                    t = new Jn.default(this.options.venue, this.model, e);
+                    t = new Zn.default(this.options.venue, this.model, e);
                 this.options.venue.model.actionManager.add(t);
                 var n = "".concat(this.model.get("updateType")),
                     i = null != e ? e ? 1 : -1 : null;
@@ -34646,7 +34444,7 @@
             },
             _onImagePreviewClicked: function(e) {
                 var t = s()(e.target).data("image-id"),
-                    n = new Zn({
+                    n = new Xn({
                         isUpdateRequest: !0,
                         imageId: t,
                         canDelete: !1,
@@ -34666,7 +34464,7 @@
             onRender: function() {
                 this.rendered = !0,
                     "UPDATE_VENUE" === this.model.get("updateType") && (this.fieldChangeView && this.fieldChangeView.destroy(),
-                        this.fieldChangeView = new Kn({
+                        this.fieldChangeView = new Jn({
                             collection: new o.a.Collection(this.model.get("changedFields"), {
                                 sort: !1
                             }),
@@ -34704,7 +34502,7 @@
                 },
                 getApproveActionName: function() {
                     var e = this.model.get("updateType"),
-                        t = Xn.prototype.APPROVE_ACTION_NAMES;
+                        t = Qn.prototype.APPROVE_ACTION_NAMES;
                     return t[e] || t.default
                 },
                 getChangesTemplate: function() {
@@ -34726,7 +34524,7 @@
                 getNoPermissionsMessage: function() {
                     if (this.model.get("isInEditArea")) {
                         var e = this.model.getRequiredEditRank(),
-                            t = _n.default.formatRank(e);
+                            t = yn.default.formatRank(e);
                         return I18n.t("venues.update_requests.panel.uneditable", {
                             level: t
                         })
@@ -34755,12 +34553,12 @@
                 isRejected: function() {
                     return !1 === this.model.get("approved")
                 },
-                IMAGE_SIZE: Hn.IMAGE_SIZE
+                IMAGE_SIZE: zn.IMAGE_SIZE
             }
         }),
-        Qn = Xn,
-        ei = n(137),
-        ti = Qn.extend({
+        ei = Qn,
+        ti = n(138),
+        ni = ei.extend({
             template: "templates/place_updates/flag",
             APPROVE_ACTION_NAMES: {
                 default: I18n.t("venues.update_requests.panel.action.solved"),
@@ -34785,24 +34583,24 @@
                     image: t,
                     showAddingUser: e,
                     showComment: this.COMMENT_TYPES[this.model.get("type")],
-                    showDuplicateVenue: this.model.get("type") === ei.FLAG_TYPE.DUPLICATE,
+                    showDuplicateVenue: this.model.get("type") === ti.FLAG_TYPE.DUPLICATE,
                     showDebug: this.options.showDebug
                 }
             },
-            templateContext: Object.assign({}, Qn.prototype.templateContext, {
+            templateContext: Object.assign({}, ei.prototype.templateContext, {
                 getTitle: function() {
                     var e = this.model.get("subject");
                     return I18n.t("venues.update_requests.panel.flag_title.".concat(e))
                 },
                 getApproveActionName: function() {
                     if (this.model.isVenue()) {
-                        var e = ti.prototype.APPROVE_ACTION_NAMES;
+                        var e = ni.prototype.APPROVE_ACTION_NAMES;
                         return e[this.model.get("type")] || e.default
                     }
                     return I18n.t("venues.update_requests.panel.action.delete_picture")
                 },
                 getApproveActionIntent: function() {
-                    return this.model.isImage() ? "danger" : ti.prototype.APPROVE_ACTION_INTENT[this.model.get("type")] || "default"
+                    return this.model.isImage() ? "danger" : ni.prototype.APPROVE_ACTION_INTENT[this.model.get("type")] || "default"
                 },
                 getRejectActionName: function() {
                     return I18n.t("venues.update_requests.panel.action.reject_flag")
@@ -34813,11 +34611,11 @@
                 getApprovedLabel: function() {
                     return I18n.t("venues.update_requests.panel.solved")
                 },
-                IMAGE_SIZE: Hn.IMAGE_SIZE
+                IMAGE_SIZE: zn.IMAGE_SIZE
             })
         }),
-        ni = ti,
-        ii = c.a.View.extend({
+        ii = ni,
+        si = c.a.View.extend({
             template: "templates/place_updates/layout",
             regions: {
                 placeUpdate: ".place-update"
@@ -34838,7 +34636,7 @@
             initialize: function() {
                 return this.dataModel = this.model.model,
                     this._setUpdateRequests(),
-                    this.listenTo(this.dataModel.venues, [rt.REMOVED, rt.STATE_DELETED].join(" "), this._onVenuesDeleted),
+                    this.listenTo(this.dataModel.venues, [ot.REMOVED, ot.STATE_DELETED].join(" "), this._onVenuesDeleted),
                     this.model.setSelected(!0)
             },
             _setUpdateRequests: function() {
@@ -34874,8 +34672,8 @@
             _showCurrentUpdateView: function() {
                 var e = this,
                     t = this.updateRequests[this.currentIndex],
-                    n = Qn;
-                "flag" === t.get("updateType") && (n = ni);
+                    n = ei;
+                "flag" === t.get("updateType") && (n = ii);
                 var i = new n({
                     model: t,
                     venue: this.model,
@@ -34909,7 +34707,7 @@
                     this.getChildView("placeUpdate").setMaxHeight(this.maxHeight - this.ui.navigation.outerHeight())
             }
         }),
-        si = c.a.Object.extend({
+        ri = c.a.Object.extend({
             _nextVenue: null,
             initialize: function(e) {
                 return this.venue = e.venue,
@@ -34925,7 +34723,7 @@
             show: function() {
                 var e = this;
                 this._getNextVenue();
-                var t = new ii({
+                var t = new si({
                     model: this.venue,
                     nextVenue: this._nextVenue,
                     updateRequests: this.options.updateRequests,
@@ -34968,7 +34766,7 @@
             },
             _focusVenue: function() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.pannable.getZoom();
-                this.pannable.panTo(ft.getBoundsCenterLonLat(this.venue.geometry), e),
+                this.pannable.panTo(mt.getBoundsCenterLonLat(this.venue.geometry), e),
                     W.Report.focusAction("locate", "pu_locate_clicked")
             },
             _streetViewVenue: function() {
@@ -34976,9 +34774,9 @@
                     W.Report.focusAction("streetview", "pu_streetview_clicked")
             }
         }),
-        ri = n(211),
-        oi = n.n(ri),
-        ai = function(e) {
+        oi = n(212),
+        ai = n.n(oi),
+        li = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -34992,7 +34790,7 @@
                 }]),
                 t
         }(c.a.Object),
-        li = function() {
+        ui = function() {
             function e(t) {
                 return h()(this, e),
                     this.mediator = t.mediator,
@@ -35000,7 +34798,7 @@
                     this.mapLayer = t.mapLayer,
                     this.streetViewController = t.streetViewController,
                     this.pannable = this.map.getPannable(),
-                    this.layer = new fn({
+                    this.layer = new mn({
                         $el: this.mapLayer.$div,
                         mediator: t.mediator
                     }),
@@ -35014,7 +34812,7 @@
                             venue: e,
                             venueIterator: function() {
                                 var t = e.model.venues.getObjectArray(),
-                                    n = new oi.a(t);
+                                    n = new ai.a(t);
                                 return n.sortByDistanceFrom(e),
                                     n
                             }
@@ -35031,13 +34829,13 @@
                             showNext: e.showNext,
                             nextButtonString: e.nextButtonString,
                             venueIterator: function() {
-                                return new oi.a([t])
+                                return new ai.a([t])
                             }
                         };
                         var n = this._createBrowser(e);
                         n.show(),
                             this._showLayers(t);
-                        var i = new ai;
+                        var i = new li;
                         return n.on("nextClicked", function() {
                                 return i.next()
                             }),
@@ -35052,7 +34850,7 @@
                             pannable: this.pannable,
                             streetViewController: this.streetViewController
                         });
-                        var n = new si(e);
+                        var n = new ri(e);
                         return n.on("close", function() {
                                 return t.layer.unhighlightAllMarkers()
                             }),
@@ -35070,40 +34868,40 @@
                 }]),
                 e
         }(),
-        ui = new OpenLayers.StyleMap({
+        ci = new OpenLayers.StyleMap({
             default: new OpenLayers.Style(null, {
-                rules: [En({
+                rules: [wn({
                     pointRadius: 7,
                     strokeWidth: 0,
                     fillOpacity: 0
-                }), bn("isUnchanged", !1, {
+                }), En("isUnchanged", !1, {
                     fillColor: "#ff8383",
                     fillOpacity: 1
                 })]
             }),
             highlight: new OpenLayers.Style(null, {
-                rules: [En({
+                rules: [wn({
                     pointRadius: 7,
                     strokeWidth: 0,
                     fillColor: "#00ece3",
                     fillOpacity: 1
-                }), bn("isUnchanged", !1, {
+                }), En("isUnchanged", !1, {
                     fillOpacity: 1,
                     fillColor: "#eb7171"
                 })]
             })
         }),
-        ci = new OpenLayers.Style({
+        di = new OpenLayers.Style({
             strokeOpacity: 1,
             strokeDashstyle: "dash",
             strokeColor: "#ff8383",
             strokeWidth: 2
         }),
-        di = {
+        hi = {
             strokeWidth: 6,
             strokeOpacity: 1
         },
-        hi = new OpenLayers.Rule({
+        pi = new OpenLayers.Rule({
             getContext: function(e) {
                 return e
             },
@@ -35119,42 +34917,42 @@
                 strokeLinecap: "butt"
             }
         }),
-        pi = function(e) {
-            var t = En({
-                Line: di
+        gi = function(e) {
+            var t = wn({
+                Line: hi
             });
             return new OL.Style(null, {
                 rules: [t].concat(e)
             })
         },
-        gi = new OpenLayers.StyleMap({
-            default: pi([bn("isUnchanged", !0, {
+        fi = new OpenLayers.StyleMap({
+            default: gi([En("isUnchanged", !0, {
                 strokeOpacity: 0
-            }), hi, bn("isUnchanged", !1, {
+            }), pi, En("isUnchanged", !1, {
                 strokeColor: "#ff8383"
             })]),
-            highlight: pi([En({
+            highlight: gi([wn({
                 strokeColor: "#00ece3"
-            }), bn("isUnchanged", !1, {
+            }), En("isUnchanged", !1, {
                 strokeColor: "#eb7171"
             })]),
-            select: pi(En({
+            select: gi(wn({
                 strokeColor: "#00ece3"
             })),
-            highlightselected: pi(En({
+            highlightselected: gi(wn({
                 strokeColor: "#00ece3"
             })),
-            delete: ci,
-            highlightdeleted: ci,
-            drag: pi(En({
+            delete: di,
+            highlightdeleted: di,
+            drag: gi(wn({
                 strokeColor: "#00ece3"
             })),
-            flash: pi(En({
+            flash: gi(wn({
                 strokeColor: "#000010",
                 strokeOpacity: .8
             }))
         }),
-        fi = [bn("_cameraRotator", !0, {
+        mi = [En("_cameraRotator", !0, {
             pointRadius: 7,
             strokeOpacity: 1,
             strokeColor: "#aaaaaa",
@@ -35163,10 +34961,10 @@
             strokeWidth: 2,
             externalGraphic: null,
             graphicZIndex: 1
-        }), bn("type", "camera", {})],
-        mi = function(e) {
+        }), En("type", "camera", {})],
+        vi = function(e) {
             return new OpenLayers.Style(e, {
-                rules: fi,
+                rules: mi,
                 context: {
                     getAzymuth: function(e) {
                         if (e.model)
@@ -35180,27 +34978,27 @@
                 }
             })
         },
-        vi = new OpenLayers.StyleMap({
-            default: mi({
+        _i = new OpenLayers.StyleMap({
+            default: vi({
                 externalGraphic: "${getImageURL}",
                 pointRadius: 18,
                 rotation: "${getAzymuth}",
                 graphicZIndex: 1
             }),
-            highlight: mi({
+            highlight: vi({
                 pointRadius: 22
             }),
-            select: mi({
+            select: vi({
                 pointRadius: 22
             }),
-            highlightselected: mi({
+            highlightselected: vi({
                 pointRadius: 22
             }),
-            drag: mi({
+            drag: vi({
                 pointRadius: 22
             })
         }),
-        _i = {
+        yi = {
             strokeColor: "#ffc62e",
             fillColor: "#ffc62e",
             strokeDashstyle: "solid",
@@ -35209,9 +35007,9 @@
             fillOpacity: .3,
             graphicZIndex: "${getZIndex}"
         },
-        yi = function(e) {
-            var t = En({
-                Polygon: _i
+        bi = function(e) {
+            var t = wn({
+                Polygon: yi
             });
             return new OL.Style(null, {
                 rules: [t].concat(e),
@@ -35223,26 +35021,26 @@
                 }
             })
         },
-        bi = En({
+        Ei = wn({
             Polygon: {
                 strokeColor: "#00ece3",
                 fillColor: "#00ece3"
             }
         }),
-        Ei = En({
+        wi = wn({
             Polygon: {
                 fill: !1,
                 strokeDashstyle: "dash",
                 strokeColor: "#ff8383"
             }
         }),
-        wi = bn("isUnchanged", !1, {
+        Si = En("isUnchanged", !1, {
             Polygon: {
                 fillColor: "#ff8383",
                 strokeColor: "#ff8383"
             }
         }),
-        Si = bn("_sketch", !0, {
+        ki = En("_sketch", !0, {
             externalGraphic: null,
             strokeWidth: 3,
             strokeColor: "#00ece3",
@@ -35252,26 +35050,26 @@
             fillOpacity: 1,
             graphicZIndex: 0
         }),
-        ki = new OL.StyleMap({
-            default: yi([Si, wi]),
-            highlight: yi([En({
+        Ti = new OL.StyleMap({
+            default: bi([ki, Si]),
+            highlight: bi([wn({
                 Polygon: {
                     strokeColor: "#fed15a",
                     fillColor: "#fed15a"
                 }
-            }), Si, wi]),
-            select: yi([bi]),
-            highlightselected: yi([bi]),
-            delete: yi([Ei]),
-            highlightdeleted: yi([Ei])
+            }), ki, Si]),
+            select: bi([Ei]),
+            highlightselected: bi([Ei]),
+            delete: bi([wi]),
+            highlightdeleted: bi([wi])
         }),
-        Ti = n(173),
-        Ii = n.n(Ti),
-        Mi = n(363),
-        Ai = n.n(Mi),
-        Ci = n(364),
-        Oi = n.n(Ci),
-        Ri = {
+        Ii = n(174),
+        Mi = n.n(Ii),
+        Ai = n(364),
+        Ci = n.n(Ai),
+        Oi = n(365),
+        Ri = n.n(Oi),
+        Di = {
             dragPoint: {
                 strokeWidth: 3,
                 strokeColor: "#00ece3",
@@ -35347,7 +35145,7 @@
                 graphicZIndex: 0
             },
             arrowOneWayStandard: {
-                externalGraphic: Ii.a,
+                externalGraphic: Mi.a,
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -35356,7 +35154,7 @@
                 pointerEvents: "none"
             },
             arrowOneWayRestricted: {
-                externalGraphic: Ai.a,
+                externalGraphic: Ci.a,
                 rotation: "${angle}",
                 graphicWidth: 9,
                 graphicHeight: 5,
@@ -35365,7 +35163,7 @@
                 pointerEvents: "none"
             },
             arrowTwoWayRestricted: {
-                externalGraphic: Oi.a,
+                externalGraphic: Ri.a,
                 rotation: "${angle}",
                 graphicWidth: 5,
                 graphicHeight: 5,
@@ -35374,55 +35172,55 @@
                 pointerEvents: "none"
             }
         },
-        Di = Object.keys(Ri).map(function(e) {
-            return bn("_".concat(e), !0, Ri[e])
+        Li = Object.keys(Di).map(function(e) {
+            return En("_".concat(e), !0, Di[e])
         });
-    Di.push(bn("uneditable", !0, {
+    Li.push(En("uneditable", !0, {
         fillColor: "#cecece",
         strokeColor: "#aeaeae"
     }));
-    var Li = new OpenLayers.StyleMap({
+    var Pi = new OpenLayers.StyleMap({
             default: new OpenLayers.Style(null, {
-                rules: Di
+                rules: Li
             }),
             highlight: new OpenLayers.Style(null, {
-                rules: Di
+                rules: Li
             })
         }),
-        Pi = "#ffffff",
-        Ni = {
-            strokeColor: Pi,
-            fillColor: Pi,
+        Ni = "#ffffff",
+        xi = {
+            strokeColor: Ni,
+            fillColor: Ni,
             strokeDashstyle: "dash",
             strokeOpacity: 1,
             strokeWidth: 2,
             fillOpacity: .3,
             graphicZIndex: "${getZIndex}"
         },
-        xi = {
+        Vi = {
             pointRadius: 6,
             strokeWidth: 2,
-            strokeColor: Pi,
-            fillColor: Pi,
+            strokeColor: Ni,
+            fillColor: Ni,
             graphicZIndex: 0,
             fillOpacity: 1
         },
-        Vi = function(e) {
-            var t = En({
-                Point: xi,
-                Polygon: Ni
+        ji = function(e) {
+            var t = wn({
+                Point: Vi,
+                Polygon: xi
             });
             return new OL.Style(null, {
                 rules: [t].concat(e),
                 context: {
                     getZIndex: function(e) {
-                        var t = ft.getBounds(e.geometry);
+                        var t = mt.getBounds(e.geometry);
                         return -Math.floor(t.getHeight() * t.getWidth())
                     }
                 }
             })
         },
-        ji = En({
+        Ui = wn({
             Point: {
                 fillColor: "#00ece3",
                 strokeColor: "#00ece3",
@@ -35441,7 +35239,7 @@
                 fillColor: "#00ece3"
             }
         }),
-        Ui = En({
+        Fi = wn({
             Point: {
                 fillColor: "#ff8383",
                 strokeDashstyle: "dot",
@@ -35453,7 +35251,7 @@
                 fillColor: "#ff8383"
             }
         }),
-        Fi = bn("isUnchanged", !1, {
+        Bi = En("isUnchanged", !1, {
             Point: {
                 fillColor: "#ff8383"
             },
@@ -35462,7 +35260,7 @@
                 strokeColor: "#ff8383"
             }
         }),
-        Bi = bn("isUnchanged", !1, {
+        Gi = En("isUnchanged", !1, {
             Point: {
                 fillColor: "#ff9292"
             },
@@ -35471,7 +35269,7 @@
                 strokeColor: "#ff9292"
             }
         }),
-        Gi = bn("_sketch", !0, {
+        Wi = En("_sketch", !0, {
             externalGraphic: null,
             strokeWidth: 3,
             strokeColor: "#00ece3",
@@ -35481,29 +35279,29 @@
             fillOpacity: 1,
             graphicZIndex: 0
         }),
-        Wi = new OL.StyleMap({
-            default: Vi([Gi, Fi, kn]),
-            highlight: Vi([En({
+        Hi = new OL.StyleMap({
+            default: ji([Wi, Bi, Tn]),
+            highlight: ji([wn({
                 Point: {
                     fontColor: "white",
                     fontSize: 16,
                     pointRadius: 12,
-                    fillColor: Pi,
+                    fillColor: Ni,
                     fillOpacity: .6,
                     strokeOpacity: 1
                 },
                 Polygon: {
                     fillOpacity: .6,
-                    strokeColor: Pi,
-                    fillColor: Pi
+                    strokeColor: Ni,
+                    fillColor: Ni
                 }
-            }), Gi, Bi, Tn]),
-            select: Vi([ji]),
-            highlightselected: Vi([ji]),
-            delete: Vi([Ui]),
-            highlightdeleted: Vi([Ui])
+            }), Wi, Gi, In]),
+            select: ji([Ui]),
+            highlightselected: ji([Ui]),
+            delete: ji([Fi]),
+            highlightdeleted: ji([Fi])
         }),
-        Hi = new OpenLayers.StyleMap({
+        zi = new OpenLayers.StyleMap({
             default: new OpenLayers.Style({
                 fillOpacity: .3,
                 strokeOpacity: .7,
@@ -35533,8 +35331,8 @@
                 fontSize: 18
             })
         }),
-        zi = [rt.ATTR_CHANGED, rt.STATE_DELETED].join(" "),
-        qi = OL.Class(OL.Layer.Vector, {
+        qi = [ot.ATTR_CHANGED, ot.STATE_DELETED].join(" "),
+        Yi = OL.Class(OL.Layer.Vector, {
             repo: null,
             _featureMap: null,
             model: null,
@@ -35550,14 +35348,14 @@
                 }
             },
             registerRepoEvents: function(e) {
-                e.on(rt.ADDED, this.onFeaturesAdded, this),
-                    e.on(zi, this.onFeaturesChanged, this),
-                    e.on(rt.REMOVED, this.onFeaturesRemoved, this)
+                e.on(ot.ADDED, this.onFeaturesAdded, this),
+                    e.on(qi, this.onFeaturesChanged, this),
+                    e.on(ot.REMOVED, this.onFeaturesRemoved, this)
             },
             unregisterRepoEvents: function(e) {
-                e.off(rt.ADDED, this.onFeaturesAdded, this),
-                    e.off(zi, this.onFeaturesChanged, this),
-                    e.off(rt.REMOVED, this.onFeaturesRemoved, this)
+                e.off(ot.ADDED, this.onFeaturesAdded, this),
+                    e.off(qi, this.onFeaturesChanged, this),
+                    e.off(ot.REMOVED, this.onFeaturesRemoved, this)
             },
             destroy: function() {
                 for (var e = 0; e < this.repo.length; e++) {
@@ -35636,10 +35434,10 @@
             },
             CLASS_NAME: "Waze.Layer.FeatureLayer"
         }),
-        Yi = OpenLayers.Class(qi, {
+        $i = OpenLayers.Class(Yi, {
             colorEmptyStreetSegments: !1,
             initialize: function() {
-                qi.prototype.initialize.apply(this, arguments),
+                Yi.prototype.initialize.apply(this, arguments),
                     W.accelerators.events.register("colorEmptyStreets", this, this.colorEmptyStreetsToggled)
             },
             colorEmptyStreetsToggled: function() {
@@ -35648,7 +35446,7 @@
             },
             CLASS_NAME: "Waze.Layer.SegmentLayer"
         }),
-        $i = OpenLayers.Class(qi, {
+        Ki = OpenLayers.Class(Yi, {
             nodeDisplayMaxScale: 1e4,
             shouldDisplayFeature: function(e) {
                 return !0
@@ -35666,11 +35464,11 @@
                 this.displayedNodes = e.scale <= this.nodeDisplayMaxScale
             },
             updateDisplayedFeatures: function(e) {
-                qi.prototype.updateDisplayedFeatures.apply(this, [Object.assign({}, e.nodes)])
+                Yi.prototype.updateDisplayedFeatures.apply(this, [Object.assign({}, e.nodes)])
             },
             CLASS_NAME: "Waze.Layer.NodeLayer"
         }),
-        Ki = OpenLayers.Class(OpenLayers.Renderer.SVG, {
+        Ji = OpenLayers.Class(OpenLayers.Renderer.SVG, {
             initialize: function() {
                 OpenLayers.Renderer.SVG.prototype.initialize.apply(this, arguments),
                     this.supportUse = !0
@@ -35742,15 +35540,15 @@
             },
             CLASS_NAME: "Waze.Renderer.ExtendedSVG"
         }),
-        Ji = n(365),
-        Zi = n.n(Ji),
-        Xi = n(366),
-        Qi = n.n(Xi),
-        es = n(367),
-        ts = n.n(es),
-        ns = n(368),
-        is = n.n(ns),
-        ss = {
+        Zi = n(366),
+        Xi = n.n(Zi),
+        Qi = n(367),
+        es = n.n(Qi),
+        ts = n(368),
+        ns = n.n(ts),
+        is = n(369),
+        ss = n.n(is),
+        rs = {
             0: "unknown",
             1: "big_direction_left",
             2: "big_direction_right",
@@ -35772,7 +35570,7 @@
             18: "big_direction_exit_right",
             20: "big_direction_u"
         },
-        rs = new OpenLayers.StyleMap({
+        os = new OpenLayers.StyleMap({
             default: new OpenLayers.Style({
                 pointerEvents: "none",
                 strokeLinecap: "square",
@@ -35780,12 +35578,12 @@
             }, {
                 context: {
                     getInstructionCodeImages: function(e) {
-                        return n(668)("./".concat(ss[e.attributes.code], ".png"))
+                        return n(668)("./".concat(rs[e.attributes.code], ".png"))
                     }
                 }
             })
         });
-    rs.addUniqueValueRules("default", "type", {
+    os.addUniqueValueRules("default", "type", {
         session: {
             strokeColor: "#7ddd7f",
             strokeWidth: 2,
@@ -35802,7 +35600,7 @@
             graphicZIndex: 2
         },
         driveArrow: {
-            externalGraphic: Zi.a,
+            externalGraphic: Xi.a,
             rotation: "${angle}",
             graphicWidth: 9,
             graphicHeight: 5,
@@ -35822,7 +35620,7 @@
             graphicZIndex: 2
         },
         matchedSegmentArrow: {
-            externalGraphic: Ii.a,
+            externalGraphic: Mi.a,
             rotation: "${angle}",
             fillOpacity: .7,
             graphicWidth: 9,
@@ -35835,14 +35633,14 @@
         },
         pinA: {
             pointerEvents: "visiblePainted",
-            externalGraphic: Qi.a,
+            externalGraphic: es.a,
             graphicWidth: 33,
             graphicHeight: 40,
             graphicYOffset: -35
         },
         pinB: {
             pointerEvents: "visiblePainted",
-            externalGraphic: ts.a,
+            externalGraphic: ns.a,
             graphicWidth: 33,
             graphicHeight: 40,
             graphicYOffset: -35
@@ -35853,7 +35651,7 @@
             graphicZIndex: 3
         },
         suggestedRouteArrow: {
-            externalGraphic: is.a,
+            externalGraphic: ss.a,
             rotation: "${angle}",
             graphicWidth: 9,
             graphicHeight: 5,
@@ -35888,8 +35686,8 @@
             fillOpacity: .3
         }
     });
-    var os = rs,
-        as = function() {
+    var as = os,
+        ls = function() {
             function e(t) {
                 h()(this, e),
                     this.layer = t
@@ -35898,7 +35696,7 @@
                     key: "drawUserDrive",
                     value: function(e) {
                         var t = [];
-                        return t.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        return t.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "drive"
                             })),
                             this.drawArrows(e, t, "driveArrow"),
@@ -35909,7 +35707,7 @@
                     key: "drawDisallowedPath",
                     value: function(e) {
                         var t = [];
-                        return t.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        return t.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "disallowedPath"
                             })),
                             this.drawArrows(e, t, "matchedSegmentArrow"),
@@ -35936,7 +35734,7 @@
                     key: "drawShortSegment",
                     value: function(e) {
                         var t = [];
-                        t.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        t.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "shortSegment"
                             })),
                             this.addFeatures(t)
@@ -35945,7 +35743,7 @@
                     key: "drawMatchedSegment",
                     value: function(e) {
                         var t = [];
-                        t.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        t.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "matchedSegment"
                             })),
                             this.drawArrows(e, t, "matchedSegmentArrow"),
@@ -35955,7 +35753,7 @@
                     key: "drawSuggestedRoute",
                     value: function(e) {
                         var t = [];
-                        return t.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        return t.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "suggestedRoute"
                             })),
                             this.drawArrows(e, t, "suggestedRouteArrow"),
@@ -35965,7 +35763,7 @@
                 }, {
                     key: "drawSession",
                     value: function(e) {
-                        this.addFeatures(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        this.addFeatures(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                             type: "session"
                         }))
                     }
@@ -35974,10 +35772,10 @@
                     value: function(e, t, n) {
                         if (this.layer.map.getZoom() >= W.Config.user_drive.arrowsMinDisplayZoom) {
                             var i = this.ARROW_DISTANCE * this.layer.map.getResolution();
-                            new Mt.a({
+                            new At.a({
                                 geometry: e
                             }).getArrowPoints(i).forEach(function(e) {
-                                var i = dn()(e, 2),
+                                var i = hn()(e, 2),
                                     s = i[0],
                                     r = i[1];
                                 t.push(new OpenLayers.Feature.Vector(s, {
@@ -35991,7 +35789,7 @@
                     key: "drawDisconnect",
                     value: function(e, t) {
                         var n = [];
-                        n.push(new OpenLayers.Feature.Vector(ft.cloneGeometry(e), {
+                        n.push(new OpenLayers.Feature.Vector(mt.cloneGeometry(e), {
                                 type: "disconnect"
                             })),
                             t && this.drawDisconnectGutters(e, n),
@@ -36030,7 +35828,7 @@
                 }, {
                     key: "drawVenue",
                     value: function(e) {
-                        var t = new OL.Feature.Vector(ft.cloneGeometry(e), {
+                        var t = new OL.Feature.Vector(mt.cloneGeometry(e), {
                             type: "venue"
                         });
                         this.addFeatures(t)
@@ -36050,22 +35848,22 @@
                 }]),
                 e
         }();
-    Object.assign(as.prototype, {
+    Object.assign(ls.prototype, {
         ARROW_DISTANCE: 70,
         DISCONNECT_GUTTER_SIZE: 5,
         WEIGHT_POINT_DISTANCE: 70,
         HIDDEN_INSTRUCTION_CODES: [0, 5]
     });
-    var ls = as,
-        us = OpenLayers.Class(OpenLayers.Layer.Vector, {
+    var us = ls,
+        cs = OpenLayers.Class(OpenLayers.Layer.Vector, {
             rendererOptions: {
                 zIndexing: !0
             },
-            renderers: [Ki],
-            styleMap: os,
+            renderers: [Ji],
+            styleMap: as,
             initialize: function(e, t) {
                 OpenLayers.Layer.Vector.prototype.initialize.apply(this, arguments),
-                    this.driveRenderer = new ls(this),
+                    this.driveRenderer = new us(this),
                     this.styleMap.styles.select = new OpenLayers.Style({
                         strokeColor: "black",
                         strokeWidth: 10,
@@ -36115,9 +35913,9 @@
             },
             CLASS_NAME: "Waze.Layer.ArchiveLayer"
         }),
-        cs = OL.Class(qi, {
+        ds = OL.Class(Yi, {
             fogOfWar: null,
-            renderers: [Ki],
+            renderers: [Ji],
             styleMap: new OL.StyleMap({
                 default: new OL.Style({
                     fillOpacity: .3,
@@ -36127,10 +35925,10 @@
                 })
             }),
             setMap: function() {
-                qi.prototype.setMap.apply(this, arguments)
+                Yi.prototype.setMap.apply(this, arguments)
             },
             setVisibility: function() {
-                qi.prototype.setVisibility.apply(this, arguments),
+                Yi.prototype.setVisibility.apply(this, arguments),
                     this.getVisibility() ? (this.map.events.register("moveend", this, this._refreshFogOfWar),
                         this._updateUserAreas()) : this.map.events.unregister("moveend", this, this._refreshFogOfWar)
             },
@@ -36161,7 +35959,7 @@
                         fillColor: "#000000",
                         fillOpacity: 1
                     })),
-                    e.push(new OL.Feature.Vector(ft.cloneGeometry(t), {}, {
+                    e.push(new OL.Feature.Vector(mt.cloneGeometry(t), {}, {
                         fillColor: "transparent",
                         fillOpacity: 0,
                         strokeColor: "gray",
@@ -36178,7 +35976,7 @@
             },
             CLASS_NAME: "Waze.Layer.UserLayer"
         }),
-        ds = OpenLayers.Class(OpenLayers.Layer.XYZ, {
+        hs = OpenLayers.Class(OpenLayers.Layer.XYZ, {
             key: null,
             tileUrl: "https://www.googleapis.com/tile/v1/tiles/${z}/${x}/${y}?session=${session}&key=${key}",
             type: "satellite",
@@ -36283,10 +36081,10 @@
             },
             CLASS_NAME: "OpenLayers.Layer.Google"
         }),
-        hs = n(61),
-        ps = n.n(hs);
+        ps = n(62),
+        gs = n.n(ps);
 
-    function gs(e, t) {
+    function fs(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -36294,7 +36092,7 @@
             })),
             n
     }
-    var fs = function(e) {
+    var ms = function(e) {
             function t(e) {
                 var n, i = e.map,
                     s = e.element,
@@ -36309,9 +36107,9 @@
                     }, function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? gs(n, !0).forEach(function(t) {
+                            t % 2 ? fs(n, !0).forEach(function(t) {
                                 V()(e, t, n[t])
-                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : gs(n).forEach(function(t) {
+                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : fs(n).forEach(function(t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             })
                         }
@@ -36353,7 +36151,7 @@
                 }, {
                     key: "onBeforeDestroy",
                     value: function() {
-                        Vt()(_()(t.prototype), "onBeforeDestroy", this).call(this),
+                        jt()(_()(t.prototype), "onBeforeDestroy", this).call(this),
                             this._destroyView()
                     }
                 }, {
@@ -36390,10 +36188,10 @@
                     }
                 }]),
                 t
-        }(n(169).a),
-        ms = n(47),
-        vs = 27,
-        _s = function(e) {
+        }(n(170).a),
+        vs = n(47),
+        _s = 27,
+        ys = function(e) {
             function t(e, n, i, s) {
                 var r;
                 h()(this, t);
@@ -36419,7 +36217,7 @@
                         return e.stopPropagation()
                     }),
                     r.input.on("keyup", function(e) {
-                        if (e.which === vs)
+                        if (e.which === _s)
                             return e.stopPropagation(),
                                 r.input.blur(),
                                 r.events.triggerEvent("unselect")
@@ -36499,7 +36297,7 @@
                 }, {
                     key: "render",
                     value: function() {
-                        return this.icon.$div.html(Object(ms.getHTML)("templates/house-number", this.model.getAttributes()))
+                        return this.icon.$div.html(Object(vs.getHTML)("templates/house-number", this.model.getFeatureAttributes()))
                     }
                 }, {
                     key: "setActive",
@@ -36549,11 +36347,11 @@
                 }]),
                 t
         }(OL.Marker),
-        ys = n(50),
-        bs = n.n(ys),
-        Es = n(156),
-        ws = n.n(Es),
-        Ss = function(e) {
+        bs = n(50),
+        Es = n.n(bs),
+        ws = n(157),
+        Ss = n.n(ws),
+        ks = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -36594,7 +36392,7 @@
                             ".force-action": {
                                 observe: ["canForceInvalid", "areHouseNumbersForced"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n && !i
@@ -36749,7 +36547,7 @@
                 }, {
                     key: "setLastEditedUser",
                     value: function(e) {
-                        e ? this.model.set("lastEditedUsername", _n.default.formatUserName(e, this._dataModel)) : this.model.set("lastEditedUsername", "")
+                        e ? this.model.set("lastEditedUsername", yn.default.formatUserName(e, this._dataModel)) : this.model.set("lastEditedUsername", "")
                     }
                 }, {
                     key: "disable",
@@ -36785,8 +36583,8 @@
                 }]),
                 t
         }(c.a.View),
-        ks = n(102),
-        Ts = OL.Class(OL.Marker, {
+        Ts = n(103),
+        Is = OL.Class(OL.Marker, {
             dragging: null,
             segments: [],
             closestSegment: null,
@@ -36807,7 +36605,7 @@
                 var l = this;
                 this.dragging.move = function(t) {
                         e = i.map.getLonLatFromViewPortPx(t.xy);
-                        var n = Object(ks.calculatePointProjectionToSegments)(l.segments, bt.fromLonLat(e)),
+                        var n = Object(Ts.calculatePointProjectionToSegments)(l.segments, Et.fromLonLat(e)),
                             s = n.projectionLonLat;
                         return i.lonlat = oe.createLonLat(s.lon, s.lat),
                             i.closestSegment = n.closestSegment,
@@ -36829,12 +36627,12 @@
                     })
             }
         }),
-        Is = n(58),
-        Ms = n(369),
-        As = n.n(Ms),
-        Cs = n(167);
+        Ms = n(59),
+        As = n(370),
+        Cs = n.n(As),
+        Os = n(168);
 
-    function Os(e, t) {
+    function Rs(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -36842,30 +36640,30 @@
             })),
             n
     }
-    var Rs, Ds, Ls, Ps = {
+    var Ds, Ls, Ps, Ns = {
             strokeColor: "#00ece3",
             strokeWidth: 7,
             graphicZIndex: 2
         },
-        Ns = {
+        xs = {
             maskID: "HNAreaMask",
             fillColor: "black",
             graphicZIndex: 1
         },
-        xs = {
+        Vs = {
             strokeWidth: 2,
             strokeColor: "white",
             strokeDashstyle: "dash",
             strokeDashArray: "8, 8"
         },
-        Vs = {
+        js = {
             strokeWidth: 4,
             strokeColor: "#000",
             strokeOpacity: .5,
             strokeDashstyle: "dash",
             strokeDashArray: "8, 8"
         },
-        js = function(e) {
+        Us = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -36890,8 +36688,8 @@
                     n._editable = n.options.editable,
                     n._enabled = n.options.editable,
                     n._segments = n.options.segments,
-                    n._descartes = new Is.default,
-                    n._manipulateHouseNumbers = new As.a(n._model.actionManager),
+                    n._descartes = new Ms.default,
+                    n._manipulateHouseNumbers = new Cs.a(n._model.actionManager),
                     n._createLightBoxView(),
                     n._listenToLightBoxEvents(),
                     n._initLayers(),
@@ -36902,7 +36700,7 @@
                 g()(t, [{
                     key: "_createLightBoxView",
                     value: function() {
-                        this._lightboxView = new Ss({
+                        this._lightboxView = new ks({
                                 dataModel: this._model,
                                 address: this._segments[0].getAddress(),
                                 canForceInvalid: this._canForcedInvalid(),
@@ -36932,7 +36730,7 @@
                     key: "_initLayers",
                     value: function() {
                         return this._layer = new OL.Layer.Vector("houseNumbers", {
-                                renderers: [Ki],
+                                renderers: [Ji],
                                 rendererOptions: {
                                     zIndexing: !0
                                 }
@@ -36947,7 +36745,7 @@
                     value: function() {
                         var e, t = this,
                             n = this._segments.map(function(t) {
-                                return (e = ft.cloneGeometry(t.geometry)).model = t,
+                                return (e = mt.cloneGeometry(t.geometry)).model = t,
                                     e
                             }),
                             i = this._segments.map(function(e) {
@@ -36983,14 +36781,14 @@
                     key: "_setHouseNumbersInUse",
                     value: function() {
                         this._getHouseNumbers().forEach(function(e) {
-                            return W.editingMediator.setInUse(e, Cs.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
+                            return W.editingMediator.setInUse(e, Os.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
                         })
                     }
                 }, {
                     key: "_clearHouseNumbersInUse",
                     value: function() {
                         this._getHouseNumbers().forEach(function(e) {
-                            return W.editingMediator.clearInUse(e, Cs.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
+                            return W.editingMediator.clearInUse(e, Os.IN_USE_REASONS_FLAGS.HOUSE_NUMBERS)
                         })
                     }
                 }, {
@@ -37000,9 +36798,9 @@
                             return function(e) {
                                 for (var t = 1; t < arguments.length; t++) {
                                     var n = null != arguments[t] ? arguments[t] : {};
-                                    t % 2 ? Os(n, !0).forEach(function(t) {
+                                    t % 2 ? Rs(n, !0).forEach(function(t) {
                                         V()(e, t, n[t])
-                                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Os(n).forEach(function(t) {
+                                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Rs(n).forEach(function(t) {
                                         Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                     })
                                 }
@@ -37015,9 +36813,9 @@
                 }, {
                     key: "_onDrag",
                     value: function(e) {
-                        var t = bt.fromLonLat(this._map.getLonLatFromViewPortPx(e.xy)),
-                            n = Object(ks.calculatePointProjectionToSegments)(this._segments, t);
-                        this._fractionPoint.lonlat = ft.cloneGeometry(n.projectionLonLat),
+                        var t = Et.fromLonLat(this._map.getLonLatFromViewPortPx(e.xy)),
+                            n = Object(Ts.calculatePointProjectionToSegments)(this._segments, t);
+                        this._fractionPoint.lonlat = mt.cloneGeometry(n.projectionLonLat),
                             this._selectedNumber.setSide(n.isLeft),
                             this._markerLayer.drawMarker(this._fractionPoint),
                             this._selectedNumber.icon.forceReflow(),
@@ -37028,10 +36826,10 @@
                 }, {
                     key: "_updateFractionPointLine",
                     value: function() {
-                        $t.setVertex(this._fractionLine.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
-                            $t.setVertex(this._fractionLine.geometry, 1, this._selectedNumber.lonlat.lon, this._selectedNumber.lonlat.lat),
-                            $t.setVertex(this._fractionLinePadding.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
-                            $t.setVertex(this._fractionLinePadding.geometry, 1, this._selectedNumber.lonlat.lon, this._selectedNumber.lonlat.lat)
+                        Kt.setVertex(this._fractionLine.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
+                            Kt.setVertex(this._fractionLine.geometry, 1, this._selectedNumber.lonlat.lon, this._selectedNumber.lonlat.lat),
+                            Kt.setVertex(this._fractionLinePadding.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
+                            Kt.setVertex(this._fractionLinePadding.geometry, 1, this._selectedNumber.lonlat.lon, this._selectedNumber.lonlat.lat)
                     }
                 }, {
                     key: "_onDragEnd",
@@ -37072,7 +36870,7 @@
                     value: function() {
                         var e = this;
                         return l.a.flatten(this._segments.map(function(t) {
-                            return bs.a.getHouseNumbersBySegmentId(e._model, t.attributes.id).filter(function(e) {
+                            return Es.a.getHouseNumbersBySegmentId(e._model, t.attributes.id).filter(function(e) {
                                 return !e.isDeleted()
                             })
                         }))
@@ -37089,7 +36887,7 @@
                     key: "_drawSegments",
                     value: function() {
                         var e = this._segments.map(function(e) {
-                            return new OL.Feature.Vector(ft.cloneGeometry(e.geometry), {}, Ps)
+                            return new OL.Feature.Vector(mt.cloneGeometry(e.geometry), {}, Ns)
                         });
                         return this._layer.addFeatures(e)
                     }
@@ -37097,15 +36895,15 @@
                     key: "_drawEditArea",
                     value: function() {
                         var e = this._editAreas.map(function(e) {
-                            return new OL.Feature.Vector(e.geometry, e, Ns)
+                            return new OL.Feature.Vector(e.geometry, e, xs)
                         });
                         this._layer.addFeatures(e)
                     }
                 }, {
                     key: "_createHouseNumberMarker",
                     value: function(e) {
-                        var t = Object(ks.calculatePointProjectionToSegments)(this._segments, e.getGeometry()),
-                            n = new _s(e, bt.toLonLat(e.getGeometry()), t.isLeft, this._map);
+                        var t = Object(Ts.calculatePointProjectionToSegments)(this._segments, e.getGeometry()),
+                            n = new ys(e, Et.toLonLat(e.getGeometry()), t.isLeft, this._map);
                         this._markerLayer.addMarker(n);
                         var i = this._getHouseNumberInvalidError(e.getID());
                         return i && n.setErrorCode(i.errorType),
@@ -37159,8 +36957,8 @@
                         if (this._enabled && this._selectedNumber !== e) {
                             this._unselectNumber(this._selectedNumber),
                                 this._selectedNumber = e;
-                            var t = ft.cloneGeometry(this._selectedNumber.model.getFractionPoint());
-                            return this._fractionPoint = new Ts(bt.toLonLat(t), this._segments, this._map),
+                            var t = mt.cloneGeometry(this._selectedNumber.model.getFractionPoint());
+                            return this._fractionPoint = new Is(Et.toLonLat(t), this._segments, this._map),
                                 this._markerLayer.addMarker(this._fractionPoint),
                                 this._fractionPoint.dragging.activate(this._fractionPoint.icon.$div),
                                 this._fractionPoint.layer = this._markerLayer,
@@ -37168,20 +36966,20 @@
                                 this._selectedNumber.focus(),
                                 this._selectedNumber.setActive(!0),
                                 this._selectedNumber.dragging.activate(this._selectedNumber.icon.$div.find(".drag-handle")),
-                                this._originalGeometry = ft.cloneGeometry(this._selectedNumber.model.getGeometry()),
+                                this._originalGeometry = mt.cloneGeometry(this._selectedNumber.model.getGeometry()),
                                 this._fractionPoint.events.register("dragEnd", this, this._onFractionPointDragEnd),
                                 this._fractionPoint.events.register("drag", this, this._onFractionPointDrag),
                                 this._lightboxView.setLastEditedUser(this._selectedNumber.model.getUpdatedBy()),
-                                this._fractionLine = new OL.Feature.Vector(oe.createLineString([ft.cloneGeometry(t), ft.cloneGeometry(this._originalGeometry)]), {}, xs),
-                                this._fractionLinePadding = new OL.Feature.Vector(oe.createLineString([ft.cloneGeometry(t), ft.cloneGeometry(this._originalGeometry)]), {}, Vs),
+                                this._fractionLine = new OL.Feature.Vector(oe.createLineString([mt.cloneGeometry(t), mt.cloneGeometry(this._originalGeometry)]), {}, Vs),
+                                this._fractionLinePadding = new OL.Feature.Vector(oe.createLineString([mt.cloneGeometry(t), mt.cloneGeometry(this._originalGeometry)]), {}, js),
                                 this._layer.addFeatures([this._fractionLinePadding, this._fractionLine])
                         }
                     }
                 }, {
                     key: "_onFractionPointDrag",
                     value: function() {
-                        return $t.setVertex(this._fractionLine.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
-                            $t.setVertex(this._fractionLinePadding.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
+                        return Kt.setVertex(this._fractionLine.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
+                            Kt.setVertex(this._fractionLinePadding.geometry, 0, this._fractionPoint.lonlat.lon, this._fractionPoint.lonlat.lat),
                             this._fractionPoint.icon.forceReflow(),
                             this._layer.drawFeature(this._fractionLinePadding),
                             this._layer.drawFeature(this._fractionLine)
@@ -37190,8 +36988,8 @@
                     key: "_onFractionPointDragEnd",
                     value: function() {
                         var e = this,
-                            t = ft.cloneGeometry(this._fractionPoint.lonlat);
-                        this._selectedNumber.isNew ? this._selectedNumber.model.setFractionPoint(bt.fromLonLat(t)) : this._ignoreUpdates(function() {
+                            t = mt.cloneGeometry(this._fractionPoint.lonlat);
+                        this._selectedNumber.isNew ? this._selectedNumber.model.setFractionPoint(Et.fromLonLat(t)) : this._ignoreUpdates(function() {
                             var n = e._manipulateHouseNumbers.moveHouseNumberFractionPoint(e._segments, e._selectedNumber.model, t);
                             e._selectedNumber.model = n,
                                 e._selectedNumber.setValid(!0),
@@ -37235,8 +37033,8 @@
                         if (!this._adding && this._enabled && !this._failedLoading) {
                             this._adding = !0;
                             var e = oe.createPoint(0, 0),
-                                t = Object(ks.calculatePointProjectionToSegments)(this._segments, e),
-                                n = new ws.a({
+                                t = Object(Ts.calculatePointProjectionToSegments)(this._segments, e),
+                                n = new Ss.a({
                                     number: "",
                                     geometry: e,
                                     fractionPoint: oe.createPoint(0, 0),
@@ -37263,15 +37061,15 @@
                     key: "_onAddEnd",
                     value: function(e) {
                         var t = e.object,
-                            n = bt.fromLonLat(t.lonlat);
+                            n = Et.fromLonLat(t.lonlat);
                         if (this._editAreas.some(function(e) {
                                 return e.geometry.containsPoint(n)
                             })) {
                             this._adding = !1,
                                 t.dragging.forceEnd();
-                            var i = Object(ks.calculatePointProjectionToSegments)(this._segments, n);
+                            var i = Object(Ts.calculatePointProjectionToSegments)(this._segments, n);
                             return t.model.setGeometry(n),
-                                t.model.setFractionPoint(bt.fromLonLat(i.projectionLonLat)),
+                                t.model.setFractionPoint(Et.fromLonLat(i.projectionLonLat)),
                                 t.model.setSegmentId(i.closestSegment.getID()),
                                 t.setNew(!1),
                                 t.events.unregister("click:input", this, this._onAddEnd),
@@ -37300,8 +37098,8 @@
                                 this._map.events.register("moveend", this, this._drawFogOfWar),
                                 this._map.events.register("zoomend", this, this._onZoomChanged),
                                 this._onZoomChanged(),
-                                this._model.segmentHouseNumbers.on([rt.ADDED, rt.REMOVED, rt.STATE_DELETED].join(" "), this.render, this),
-                                this._model.segmentHouseNumbers.on(rt.ATTR_CHANGED, this._onHouseNumbersChange, this),
+                                this._model.segmentHouseNumbers.on([ot.ADDED, ot.REMOVED, ot.STATE_DELETED].join(" "), this.render, this),
+                                this._model.segmentHouseNumbers.on(ot.ATTR_CHANGED, this._onHouseNumbersChange, this),
                                 W.commands.execute("save:setHandler", this._saveChanges, this)
                         }
                     }
@@ -37476,9 +37274,9 @@
                 }]),
                 t
         }(c.a.Object),
-        Us = n(118),
-        Fs = n(52),
-        Bs = function(e) {
+        Fs = n(119),
+        Bs = n(52),
+        Gs = function(e) {
             function t(e) {
                 var n;
                 h()(this, t),
@@ -37528,7 +37326,7 @@
                     key: "_canEnterHouseNumbersMode",
                     value: function() {
                         var e = this._getSegment();
-                        return new Us.SegmentsHouseNumbersUseCase(this._dataModel, e).canEnterHouseNumbersMode()
+                        return new Fs.SegmentsHouseNumbersUseCase(this._dataModel, e).canEnterHouseNumbersMode()
                     }
                 }, {
                     key: "_getFeature",
@@ -37559,8 +37357,8 @@
                     key: "_onEditButtonClick",
                     value: function() {
                         var e = this._getSegment(),
-                            t = new Fs.SegmentStreetsUseCase(this._dataModel, e).getEntireStreet(e);
-                        this._canEnterHouseNumbersMode() && new js({
+                            t = new Bs.SegmentStreetsUseCase(this._dataModel, e).getEntireStreet(e);
+                        this._canEnterHouseNumbersMode() && new Us({
                             model: this._dataModel,
                             map: this._map,
                             editable: !0,
@@ -37575,7 +37373,7 @@
                 }]),
                 t
         }(c.a.View),
-        Gs = function(e) {
+        Ws = function(e) {
             function t(e, n, i) {
                 var s;
                 return h()(this, t),
@@ -37588,7 +37386,7 @@
                 g()(t, [{
                     key: "setMap",
                     value: function(e) {
-                        Vt()(_()(t.prototype), "setMap", this).call(this, e),
+                        jt()(_()(t.prototype), "setMap", this).call(this, e),
                             this._createOrDestroyTooltip()
                     }
                 }, {
@@ -37604,20 +37402,20 @@
                 }, {
                     key: "updateMarkerFromFeature",
                     value: function(e, n) {
-                        e.marker.lonlat = bt.toLonLat(n.geometry),
-                            Vt()(_()(t.prototype), "updateMarkerFromFeature", this).call(this, e, n)
+                        e.marker.lonlat = Et.toLonLat(n.geometry),
+                            jt()(_()(t.prototype), "updateMarkerFromFeature", this).call(this, e, n)
                     }
                 }, {
                     key: "_createTooltip",
                     value: function() {
                         var e = this;
-                        this.tooltip || (this.tooltip = new fs({
+                        this.tooltip || (this.tooltip = new ms({
                             map: this.map,
                             element: this.getContainer(),
                             target: ".house-number-marker",
                             getView: function(t) {
                                 var n = t.dataset.id;
-                                return new Bs({
+                                return new Gs({
                                     featureId: n,
                                     actionManager: e.options.actionManager,
                                     dataModel: e.options.dataModel,
@@ -37634,30 +37432,30 @@
                     }
                 }]),
                 t
-        }(ps.a),
-        Ws = n(204),
-        Hs = n(370),
-        zs = n(181),
-        qs = n(371),
-        Ys = OL.Class(OL.Layer.XYZ, {
+        }(gs.a),
+        Hs = n(205),
+        zs = n(371),
+        qs = n(182),
+        Ys = n(372),
+        $s = OL.Class(OL.Layer.XYZ, {
             getURL: function(e) {
                 var t = OL.Layer.XYZ.prototype.getURL.apply(this, arguments),
                     n = OL.Util.getParameterString(this.params);
                 return OL.Util.urlAppend(t, n)
             }
         }),
-        $s = new OpenLayers.StyleMap({
+        Ks = new OpenLayers.StyleMap({
             default: new OL.Style({
-                externalGraphic: Zt.a,
+                externalGraphic: Xt.a,
                 graphicWidth: 50,
                 graphicHeight: 60
             })
         }),
-        Ks = n(372),
         Js = n(373),
-        Zs = "wms",
-        Xs = "mapnik",
-        Qs = {
+        Zs = n(374),
+        Xs = "wms",
+        Qs = "mapnik",
+        er = {
             ARCHIVE: "archive",
             AREA_MANAGERS: "area_managers",
             BIG_JUNCTIONS: "big_junctions",
@@ -37681,30 +37479,54 @@
             ROADS: "roads",
             HOUSE_NUMBERS: "house_numbers"
         },
-        er = {
+        tr = {
             initializeLayers: function(e) {
                 var t = e.regionCode,
                     n = void 0 === t ? null : t;
                 this._addAerials(n),
                     this._addRasterLayers(),
-                    this._addCitiesLayers(),
-                    this._addCommentsLayer(),
                     this._addVectorLayers(),
                     this._clearLayerContainerZIndex()
             },
             _addRasterLayers: function() {
-                return this._addRasterLayer(W.Config.raster_layers[Qs.ROADS]),
-                    this._addRasterLayer(W.Config.raster_layers[Qs.GPS_POINTS]),
-                    this.roadLayers = [this.getLayerByUniqueName(Qs.ROADS)],
+                this._addCitiesRasterLayer(),
+                    this._addRoadsRasterLayer(),
+                    this._addGPSRasterLayer(),
+                    this.roadLayers = [this.getLayerByUniqueName(er.ROADS)],
                     W.model.events.register("change:lastTransactionID", this, this._refreshRoadLayers),
                     this._setRoadLayerParams()
+            },
+            _addRoadsRasterLayer: function() {
+                this._addRasterLayer(W.Config.raster_layers[er.ROADS])
+            },
+            _addGPSRasterLayer: function() {
+                this._addRasterLayer(W.Config.raster_layers[er.GPS_POINTS])
+            },
+            _addCitiesRasterLayer: function() {
+                this._addRasterLayer({
+                    uniqueName: "cities",
+                    visible: !1,
+                    type: "mapnik",
+                    options: {
+                        alpha: !1,
+                        opacity: 1,
+                        transitionEffect: null,
+                        isBaseLayer: !1,
+                        zoomOffset: 12,
+                        draggable: !0,
+                        gutter: 0
+                    },
+                    params: {
+                        clientLayer: "cities"
+                    }
+                })
             },
             _clearLayerContainerZIndex: function() {
                 this.layerContainerDiv.style.zIndex = ""
             },
             _addRasterLayer: function(e) {
                 var t = {},
-                    n = e.type || Zs,
+                    n = e.type || Xs,
                     i = I18n.t("layers.name.".concat(e.uniqueName)),
                     r = e.file_name || W.Config.raster_layers[n].file_name,
                     o = W.Config.raster_layers[n].servers.map(function(e) {
@@ -37720,13 +37542,13 @@
                         layer_name: i
                     })
                 };
-                if (n === Zs) {
+                if (n === Xs) {
                     var c = {};
                     s.a.extend(c, W.Config.raster_layers.wms.params, e.params),
                         c.layers = e.layers,
                         a = new OL.Layer.WMS(i, o, c, t)
                 } else
-                    a = new Ys(i, o, t),
+                    a = new $s(i, o, t),
                     s.a.extend(a.params, e.params);
                 return a.type = n,
                     a.events.on({
@@ -37754,7 +37576,7 @@
                     waitFor: W.model.lastTransactionID
                 };
                 this.roadLayers.forEach(function(t) {
-                    t.type === Xs ? t.params.addToQuery = s.a.param(e) : l.a.extend(t.params, e)
+                    t.type === Qs ? t.params.addToQuery = s.a.param(e) : l.a.extend(t.params, e)
                 })
             },
             _refreshRoadLayers: function(e) {
@@ -37767,39 +37589,39 @@
                     })
             },
             _addVectorLayers: function() {
-                return this.segmentLayer = new Yi(I18n.t("layers.name.segments"), W.model, W.model.segments, {
-                        styleMap: gi,
-                        uniqueName: Qs.SEGMENTS,
+                this.segmentLayer = new $i(I18n.t("layers.name.segments"), W.model, W.model.segments, {
+                        styleMap: fi,
+                        uniqueName: er.SEGMENTS,
                         selectable: !0,
-                        featureType: Rt.a.SEGMENT
+                        featureType: Dt.a.SEGMENT
                     }),
-                    this.nodeLayer = new $i(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
-                        styleMap: ui,
-                        uniqueName: Qs.NODES,
+                    this.nodeLayer = new Ki(I18n.t("layers.name.nodes"), W.model, W.model.nodes, {
+                        styleMap: ci,
+                        uniqueName: er.NODES,
                         selectable: !0,
-                        featureType: Rt.a.NODE
+                        featureType: Dt.a.NODE
                     }),
-                    this.landmarkLayer = new qi(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
-                        styleMap: Un,
-                        uniqueName: Qs.LANDMARKS,
+                    this.landmarkLayer = new Yi(I18n.t("layers.name.landmarks"), W.model, W.model.venues, {
+                        styleMap: Fn,
+                        uniqueName: er.LANDMARKS,
                         rendererOptions: {
                             zIndexing: !0
                         },
                         selectable: !0,
-                        featureType: Rt.a.VENUE
+                        featureType: Dt.a.VENUE
                     }),
-                    this.bigJunctionLayer = new qi(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
-                        styleMap: ki,
-                        uniqueName: Qs.BIG_JUNCTIONS,
+                    this.bigJunctionLayer = new Yi(I18n.t("layers.name.big_junctions"), W.model, W.model.bigJunctions, {
+                        styleMap: Ti,
+                        uniqueName: er.BIG_JUNCTIONS,
                         rendererOptions: {
                             zIndexing: !0
                         },
                         selectable: !0,
-                        featureType: Rt.a.BIG_JUNCTION
+                        featureType: Dt.a.BIG_JUNCTION
                     }),
-                    this.houseNumbersLayer = new Gs(I18n.t("layers.name.house_numbers"), [W.model.segmentHouseNumbers], {
-                        markerClass: Ks.HouseNumberLayerMarker,
-                        uniqueName: Qs.HOUSE_NUMBERS,
+                    this.houseNumbersLayer = new Ws(I18n.t("layers.name.house_numbers"), [W.model.segmentHouseNumbers], {
+                        markerClass: Js.HouseNumberLayerMarker,
+                        uniqueName: er.HOUSE_NUMBERS,
                         className: "house-numbers",
                         toggleRepo: !0,
                         dataModel: W.model,
@@ -37810,68 +37632,68 @@
                         rendererOptions: {
                             zIndexing: !0
                         },
-                        renderers: [Ki],
-                        styleMap: os,
+                        renderers: [Ji],
+                        styleMap: as,
                         selectable: !0
                     }),
-                    this.camerasLayer = new qi(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
-                        styleMap: vi,
-                        uniqueName: Qs.SPEED_CAMERAS,
+                    this.camerasLayer = new Yi(I18n.t("layers.name.speed_cameras"), W.model, W.model.cameras, {
+                        styleMap: _i,
+                        uniqueName: er.SPEED_CAMERAS,
                         selectable: !0,
-                        featureType: Rt.a.SPEED_CAMERA,
+                        featureType: Dt.a.SPEED_CAMERA,
                         toggleRepo: !0,
                         rendererOptions: {
                             zIndexing: !0
                         }
                     }),
-                    this.problemLayer = new ps.a(I18n.t("layers.name.problems"), [W.model.problems], {
-                        markerClass: Ws.MapProblemMarker,
-                        uniqueName: Qs.PROBLEMS,
+                    this.problemLayer = new gs.a(I18n.t("layers.name.problems"), [W.model.problems], {
+                        markerClass: Hs.MapProblemMarker,
+                        uniqueName: er.PROBLEMS,
                         className: "map-problems"
                     }),
-                    this.updateRequestLayer = new ps.a(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
-                        markerClass: Hs.UpdateRequestMarker,
-                        uniqueName: Qs.UPDATE_REQUESTS,
+                    this.updateRequestLayer = new gs.a(I18n.t("layers.name.update_requests"), [W.model.mapUpdateRequests], {
+                        markerClass: zs.UpdateRequestMarker,
+                        uniqueName: er.UPDATE_REQUESTS,
                         className: "update-requests"
                     }),
-                    this.archiveLayer = new us(I18n.t("layers.name.archive"), {
+                    this.archiveLayer = new cs(I18n.t("layers.name.archive"), {
                         rendererOptions: {
                             zIndexing: !0
                         },
-                        uniqueName: Qs.ARCHIVE
+                        uniqueName: er.ARCHIVE
                     }),
-                    this.userLayer = new cs(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
-                        uniqueName: Qs.EDITABLE_AREAS
+                    this.userLayer = new ds(I18n.t("layers.name.editable_areas"), W.model, [W.model.userAreas], {
+                        uniqueName: er.EDITABLE_AREAS
                     }),
-                    this.managedAreasLayer = new qi(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
-                        styleMap: Hi,
-                        uniqueName: Qs.AREA_MANAGERS
+                    this.managedAreasLayer = new Yi(I18n.t("layers.name.area_managers"), W.model, W.model.managedAreas, {
+                        styleMap: zi,
+                        uniqueName: er.AREA_MANAGERS
                     }),
                     this.sketchLayer = new OpenLayers.Layer.Vector("sketch", {
-                        styleMap: Li,
+                        styleMap: Pi,
                         rendererOptions: {
                             zIndexing: !0
                         },
                         selectable: !0
                     }),
-                    this.placeUpdatesLayer = new ps.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: zs.PlaceUpdateMarker,
-                        uniqueName: Qs.PLACE_UPDATES,
+                    this.placeUpdatesLayer = new gs.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: qs.PlaceUpdateMarker,
+                        uniqueName: er.PLACE_UPDATES,
                         className: "place-updates",
                         filter: function(e) {
                             return e.hasUpdateRequests() && !e.isParkingLot() && !e.isResidential()
                         }
                     }),
-                    this.parkingPlaceUpdatesLayer = new ps.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: zs.PlaceUpdateMarker,
+                    this.parkingPlaceUpdatesLayer = new gs.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: qs.PlaceUpdateMarker,
                         uniqueName: "PARKING_PLACE_UPDATES",
                         className: "place-updates",
                         filter: function(e) {
                             return e.hasUpdateRequests() && e.isParkingLot()
                         }
                     }),
-                    this.residentialPlaceUpdatesLayer = new ps.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
-                        markerClass: zs.PlaceUpdateMarker,
+                    this.residentialPlaceUpdatesLayer = new gs.a(I18n.t("layers.name.place_updates"), [W.model.venues], {
+                        markerClass: qs.PlaceUpdateMarker,
                         uniqueName: "RESIDENTIAL_PLACE_UPDATES",
                         className: "place-updates",
                         filter: function(e) {
@@ -37879,69 +37701,54 @@
                         }
                     }),
                     this.liveUsersLayer = new OL.Layer.Markers(I18n.t("layers.name.live_users"), {
-                        uniqueName: Qs.LIVE_USERS,
+                        uniqueName: er.LIVE_USERS,
                         className: "live-users"
                     }),
                     this.searchLayer = new OL.Layer.Vector("Search", {
-                        styleMap: $s,
-                        uniqueName: Qs.SEARCH
+                        styleMap: Ks,
+                        uniqueName: er.SEARCH
                     }),
                     this.addUniqueLayers([this.archiveLayer, this.managedAreasLayer, this.landmarkLayer, this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer, this.bigJunctionLayer, this.segmentLayer, this.nodeLayer, this.houseNumbersLayer, this.camerasLayer, this.bigJunctionPathLayer, this.sketchLayer, this.problemLayer, this.updateRequestLayer, this.userLayer, this.liveUsersLayer, this.searchLayer]),
-                    this.closuresMarkerLayer = new ps.a(I18n.t("layers.name.closures"), [W.model.roadClosures], {
-                        markerClass: qs.RoadClosureMarker,
-                        uniqueName: Qs.CLOSURES,
+                    this.closuresMarkerLayer = new gs.a(I18n.t("layers.name.closures"), [W.model.roadClosures], {
+                        markerClass: Ys.RoadClosureMarker,
+                        uniqueName: er.CLOSURES,
                         toggleRepo: !0
                     }),
-                    this.addUniqueLayer(this.closuresMarkerLayer)
+                    this.addUniqueLayer(this.closuresMarkerLayer),
+                    this._addCitiesFeatureAndMarkerLayers(),
+                    this._addCommentsFeatureLayer()
             },
-            _addCitiesLayers: function() {
-                this._addRasterLayer({
-                        uniqueName: "cities",
-                        visible: !1,
-                        type: "mapnik",
+            _addCitiesFeatureAndMarkerLayers: function() {
+                this._addFeatureLayer({
+                        uniqueName: er.CITIES_FEATURES_LAYER_NAME,
                         options: {
-                            alpha: !1,
-                            opacity: 1,
-                            transitionEffect: null,
-                            isBaseLayer: !1,
-                            zoomOffset: 12,
-                            draggable: !0,
-                            gutter: 0
-                        },
-                        params: {
-                            clientLayer: "cities"
-                        }
-                    }),
-                    this._addFeatureLayer({
-                        uniqueName: Qs.CITIES_FEATURES_LAYER_NAME,
-                        options: {
-                            objectType: Rt.a.CITY,
+                            objectType: Dt.a.CITY,
                             selectable: !0,
                             visibleByDefault: !1
                         }
                     }),
                     this._addMarkerLayer({
-                        uniqueName: Qs.CITIES_MARKERS_LAYER_NAME,
+                        uniqueName: er.CITIES_MARKERS_LAYER_NAME,
                         options: {
                             name: I18n.t("layers.name.city_names"),
-                            objectType: Rt.a.CITY,
+                            objectType: Dt.a.CITY,
                             visibleByDefault: !1,
-                            markerClass: Js.CityMarker,
+                            markerClass: Zs.CityMarker,
                             filter: function(e) {
                                 return e.showMarker()
                             }
                         }
                     })
             },
-            _addCommentsLayer: function() {
+            _addCommentsFeatureLayer: function() {
                 this._addFeatureLayer({
-                    uniqueName: Qs.MAP_COMMENTS,
+                    uniqueName: er.MAP_COMMENTS,
                     options: {
                         name: I18n.t("layers.name.comments"),
-                        objectType: Rt.a.MAP_COMMENT,
+                        objectType: Dt.a.MAP_COMMENT,
                         selectable: !0,
                         visibleByDefault: !0,
-                        styleMap: Wi,
+                        styleMap: Hi,
                         enableZIndexing: !0
                     }
                 })
@@ -37952,7 +37759,7 @@
                 t = n.enableZIndexing ? {
                     zIndexing: !0
                 } : {};
-                var s = new qi(n.name, W.model, i, {
+                var s = new Yi(n.name, W.model, i, {
                     uniqueName: e.uniqueName,
                     visibility: n.visibleByDefault,
                     styleMap: n.styleMap,
@@ -37966,7 +37773,7 @@
             _addMarkerLayer: function(e) {
                 var t = e.options || {},
                     n = [W.model.getRepository(t.objectType)],
-                    i = new ps.a(t.name, n, {
+                    i = new gs.a(t.name, n, {
                         uniqueName: e.uniqueName,
                         markerClass: t.markerClass,
                         className: t.markerClassName,
@@ -37986,7 +37793,7 @@
                 var t = W.Config.map.initialPosition[e],
                     n = oe.createLonLat(t.lon, t.lat);
                 se.project(n);
-                var i = new ds({
+                var i = new hs({
                     name: I18n.t("layers.name.satellite_imagery"),
                     key: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0",
                     type: "satellite",
@@ -37996,7 +37803,7 @@
                     zoom: t.initialZoom,
                     minResolution: .037322767712175846,
                     center: n,
-                    uniqueName: Qs.SATELLITE_IMAGERY,
+                    uniqueName: er.SATELLITE_IMAGERY,
                     transitionEffect: "resize"
                 });
                 this.addUniqueLayer(i);
@@ -38058,7 +37865,7 @@
                 return [this.placeUpdatesLayer, this.parkingPlaceUpdatesLayer, this.residentialPlaceUpdatesLayer]
             }
         },
-        tr = OL.Class(OL.Control, {
+        nr = OL.Class(OL.Control, {
             googleAerialLayer: null,
             $div: null,
             $link: null,
@@ -38088,47 +37895,47 @@
                 return this.$div.toggle(t)
             }
         }),
-        nr = n(21),
-        ir = n(108),
-        sr = Qs,
-        rr = (Rs = {},
-            V()(Rs, Qs.SATELLITE_IMAGERY, 0),
-            V()(Rs, Qs.ROADS, 2),
-            V()(Rs, Qs.GPS_POINTS, 3),
-            V()(Rs, Qs.AREA_MANAGERS, 4),
-            V()(Rs, Qs.LANDMARKS, 5),
-            V()(Rs, Qs.SPEED_CAMERAS, 6),
-            V()(Rs, Qs.PROBLEMS, 7),
-            V()(Rs, Qs.UPDATE_REQUESTS, 8),
-            V()(Rs, Qs.EDITABLE_AREAS, 9),
-            V()(Rs, Qs.LIVE_USERS, 10),
-            V()(Rs, Qs.PLACE_UPDATES, 11),
-            V()(Rs, Qs.BIG_JUNCTIONS, 12),
-            V()(Rs, Qs.CLOSURES, 13),
-            Rs),
+        ir = n(21),
+        sr = n(109),
+        rr = er,
         or = (Ds = {},
-            V()(Ds, sr.SATELLITE_IMAGERY, nr.ITEM_SATELLITE_IMAGERY),
-            V()(Ds, sr.ROADS, nr.ITEM_ROAD),
-            V()(Ds, sr.GPS_POINTS, nr.ITEM_GPS_POINTS),
-            V()(Ds, sr.AREA_MANAGERS, nr.ITEM_AREA_MANAGERS),
-            V()(Ds, sr.LANDMARKS, nr.ITEM_VENUES),
-            V()(Ds, sr.SPEED_CAMERAS, nr.ITEM_SPEED_CAMERAS),
-            V()(Ds, sr.PROBLEMS, nr.ITEM_MAP_PROBLEMS),
-            V()(Ds, sr.UPDATE_REQUESTS, nr.ITEM_UPDATE_REQUESTS),
-            V()(Ds, sr.EDITABLE_AREAS, nr.ITEM_EDITABLE_AREAS),
-            V()(Ds, sr.LIVE_USERS, nr.ITEM_LIVE_USERS),
-            V()(Ds, sr.PLACE_UPDATES, nr.ITEM_PLACE_UPDATE_REQUESTS),
-            V()(Ds, sr.BIG_JUNCTIONS, nr.ITEM_JUNCTION_BOXES),
-            V()(Ds, sr.CLOSURES, nr.ITEM_CLOSURES),
+            V()(Ds, er.SATELLITE_IMAGERY, 0),
+            V()(Ds, er.ROADS, 2),
+            V()(Ds, er.GPS_POINTS, 3),
+            V()(Ds, er.AREA_MANAGERS, 4),
+            V()(Ds, er.LANDMARKS, 5),
+            V()(Ds, er.SPEED_CAMERAS, 6),
+            V()(Ds, er.PROBLEMS, 7),
+            V()(Ds, er.UPDATE_REQUESTS, 8),
+            V()(Ds, er.EDITABLE_AREAS, 9),
+            V()(Ds, er.LIVE_USERS, 10),
+            V()(Ds, er.PLACE_UPDATES, 11),
+            V()(Ds, er.BIG_JUNCTIONS, 12),
+            V()(Ds, er.CLOSURES, 13),
             Ds),
         ar = (Ls = {},
-            V()(Ls, nr.GROUP_ISSUES, !0),
-            V()(Ls, nr.GROUP_MAP_ISSUES, !0),
-            V()(Ls, nr.GROUP_PLACES, !0),
-            V()(Ls, nr.GROUP_ROAD, !0),
-            V()(Ls, nr.GROUP_DISPLAY, !0),
+            V()(Ls, rr.SATELLITE_IMAGERY, ir.ITEM_SATELLITE_IMAGERY),
+            V()(Ls, rr.ROADS, ir.ITEM_ROAD),
+            V()(Ls, rr.GPS_POINTS, ir.ITEM_GPS_POINTS),
+            V()(Ls, rr.AREA_MANAGERS, ir.ITEM_AREA_MANAGERS),
+            V()(Ls, rr.LANDMARKS, ir.ITEM_VENUES),
+            V()(Ls, rr.SPEED_CAMERAS, ir.ITEM_SPEED_CAMERAS),
+            V()(Ls, rr.PROBLEMS, ir.ITEM_MAP_PROBLEMS),
+            V()(Ls, rr.UPDATE_REQUESTS, ir.ITEM_UPDATE_REQUESTS),
+            V()(Ls, rr.EDITABLE_AREAS, ir.ITEM_EDITABLE_AREAS),
+            V()(Ls, rr.LIVE_USERS, ir.ITEM_LIVE_USERS),
+            V()(Ls, rr.PLACE_UPDATES, ir.ITEM_PLACE_UPDATE_REQUESTS),
+            V()(Ls, rr.BIG_JUNCTIONS, ir.ITEM_JUNCTION_BOXES),
+            V()(Ls, rr.CLOSURES, ir.ITEM_CLOSURES),
             Ls),
-        lr = function() {
+        lr = (Ps = {},
+            V()(Ps, ir.GROUP_ISSUES, !0),
+            V()(Ps, ir.GROUP_MAP_ISSUES, !0),
+            V()(Ps, ir.GROUP_PLACES, !0),
+            V()(Ps, ir.GROUP_ROAD, !0),
+            V()(Ps, ir.GROUP_DISPLAY, !0),
+            Ps),
+        ur = function() {
             function e(t) {
                 h()(this, e),
                     this._urlParams = t
@@ -38141,18 +37948,18 @@
                 }, {
                     key: "getTogglersState",
                     value: function() {
-                        var e = Object.assign({}, ar),
-                            t = new ir.default(this._urlParams.layers);
-                        return Object.keys(or).forEach(function(n) {
-                                var i = 1 << rr[n];
-                                e[or[n]] = t.isEnabled(i)
+                        var e = Object.assign({}, lr),
+                            t = new sr.default(this._urlParams.layers);
+                        return Object.keys(ar).forEach(function(n) {
+                                var i = 1 << or[n];
+                                e[ar[n]] = t.isEnabled(i)
                             }),
                             e
                     }
                 }]),
                 e
         }(),
-        ur = function(e) {
+        cr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -38290,7 +38097,7 @@
                 }, {
                     key: "_restoreLayerVisibility",
                     value: function() {
-                        var e = new lr(this.urlParams);
+                        var e = new ur(this.urlParams);
                         this._isTogglerTreeParamPresent() ? this.togglers.setStateFromBitfield(this.urlParams.s) : e.isLayerParamPresent() ? this.togglers.setState(e.getTogglersState()) : this.togglers.readFromLocalStorage(),
                             this.togglers.writeStateToApp({
                                 map: this.map,
@@ -38381,10 +38188,10 @@
                         if (this._setMapLocation(),
                             this.marker) {
                             var e, t = new OL.Layer.Vector("PermalinkMarker", {
-                                styleMap: Xt.permalinkMarker
+                                styleMap: Qt.permalinkMarker
                             });
                             e = this.mapLocation ? this.mapLocation.clone() : this.map.getCenter();
-                            var n = bt.fromLonLat(e),
+                            var n = Et.fromLonLat(e),
                                 i = new OL.Feature.Vector(n);
                             this.map.addLayer(t),
                                 t.addFeatures(i)
@@ -38413,12 +38220,12 @@
                 }]),
                 t
         }(o.a.Model);
-    l.a.extend(ur, {
+    l.a.extend(cr, {
         LOCAL_STORAGE_MAP_LOCATION: "mapLocation"
     });
-    var cr = ur,
-        dr = n(374),
-        hr = function(e) {
+    var dr = cr,
+        hr = n(375),
+        pr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -38439,14 +38246,14 @@
                             this._mapState = e.mapState,
                             this._regionCode = e.regionCode,
                             this._otherEnv = null,
-                            this._dataModel.restrictedAreas.on(rt.UPDATED, this._onRestrictedAreasChanged, this),
+                            this._dataModel.restrictedAreas.on(ot.UPDATED, this._onRestrictedAreasChanged, this),
                             this._onRestrictedAreasChanged()
                     }
                 }, {
                     key: "_onRestrictedAreasChanged",
                     value: function() {
                         var e = this,
-                            t = Object(dr.getInvalidEnvironments)(this._dataModel);
+                            t = Object(hr.getInvalidEnvironments)(this._dataModel);
                         (t = t.filter(function(t) {
                             return t.attributes.env !== e._regionCode
                         })).length > 0 ? (this._otherEnv = t[0].attributes.env,
@@ -38472,7 +38279,7 @@
                     key: "_onCloseClicked",
                     value: function() {
                         this.hide(),
-                            this._dataModel.restrictedAreas.off(rt.UPDATED, this.onRestrictedAreasChanged, this)
+                            this._dataModel.restrictedAreas.off(ot.UPDATED, this.onRestrictedAreasChanged, this)
                     }
                 }, {
                     key: "hide",
@@ -38492,7 +38299,7 @@
                 }]),
                 t
         }(c.a.View),
-        pr = c.a.View.extend({
+        gr = c.a.View.extend({
             className: "snapshot-message",
             template: "templates/snapshot-message",
             events: {
@@ -38509,7 +38316,7 @@
                 return this.snapshotManager.toggle(!1)
             }
         }),
-        gr = function() {
+        fr = function() {
             function e(t) {
                 return h()(this, e),
                     this.copied = null,
@@ -38583,7 +38390,7 @@
                 }]),
                 e
         }(),
-        fr = o.a.Model.extend({
+        mr = o.a.Model.extend({
             defaults: function() {
                 return {
                     env: null,
@@ -38638,7 +38445,7 @@
                 return "".concat(window.location.origin).concat(window.location.pathname, "?").concat(t)
             }
         }),
-        mr = c.a.View.extend({
+        vr = c.a.View.extend({
             template: "Waze/MapEditor/UI/Map/MapControls/templates/permalink",
             mapState: null,
             marker: null,
@@ -38655,13 +38462,13 @@
                 return c.a.View.prototype.initialize.apply(this, arguments),
                     this.mapState = e.mapState,
                     this.mapState.on("statechanged", this._setLivemapLink, this),
-                    this.permalinkModel = new fr({
+                    this.permalinkModel = new mr({
                         app: e.app,
                         mapState: e.mapState,
                         env: e.regionCode
                     }),
                     this.listenTo(this.permalinkModel, "change", this._setPermalinkLink),
-                    this.clipboard = new gr,
+                    this.clipboard = new fr,
                     this.clipboard.events.on({
                         copied: this._onClipboardCopied,
                         scope: this
@@ -38689,7 +38496,8 @@
                 var i = s.a.param({
                     lon: t.lon.toFixed(W.Config.units.lonLatPrecision),
                     lat: t.lat.toFixed(W.Config.units.lonLatPrecision),
-                    zoom: n
+                    zoom: n,
+                    overlay: !1
                 });
                 return this.ui.livemapLink.attr("href", "".concat(W.Config.livemap.url, "?").concat(i))
             },
@@ -38700,7 +38508,7 @@
                     this.clipboard.setEl(this.ui.permalink)
             }
         }),
-        vr = c.a.View.extend({
+        _r = c.a.View.extend({
             granularity: 10,
             numDigits: 5,
             lastXy: null,
@@ -38717,7 +38525,7 @@
             initialize: function(e) {
                 return this.map = e.map,
                     this.map.events.register("mousemove", this, this._onMapMouseMove),
-                    this.clipboard = new gr,
+                    this.clipboard = new fr,
                     this.clipboard.events.on({
                         copied: this._onClipboardCopied,
                         scope: this
@@ -38771,7 +38579,7 @@
                 }
             }
         }),
-        _r = c.a.Region.extend({
+        yr = c.a.Region.extend({
             el: "#panel-container",
             mapHeight: null,
             initialize: function(e) {
@@ -38806,7 +38614,7 @@
                 }
             }
         }),
-        yr = function() {
+        br = function() {
             function e(t) {
                 var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
                     extendedMode: !1
@@ -38915,7 +38723,7 @@
                         var e = {
                             styleMap: this._styleMap
                         };
-                        this._extendedMode && (e.renderers = [Ki]),
+                        this._extendedMode && (e.renderers = [Ji]),
                             this._vectorLayer = new OL.Layer.Vector(l.a.uniqueId("vector_drawing_context_"), e),
                             this._map.addLayer(this._vectorLayer)
                     }
@@ -38947,9 +38755,9 @@
                 }]),
                 e
         }();
-    l.a.extend(yr.prototype, o.a.Events);
-    var br = yr,
-        Er = OpenLayers.Class(OL.Map, er, {
+    l.a.extend(br.prototype, o.a.Events);
+    var Er = br,
+        wr = OpenLayers.Class(OL.Map, tr, {
             DefaultPanInPixel: 20,
             navigationControl: null,
             mapState: null,
@@ -38986,7 +38794,7 @@
                     e.displayProjection = new OpenLayers.Projection(W.Config.map.projection.remote),
                     e.theme = null,
                     OpenLayers.Map.prototype.initialize.apply(this, ["WazeMap", e]),
-                    this.panelRegion = new _r({
+                    this.panelRegion = new yr({
                         map: this
                     }),
                     s()(this.viewPortDiv).on("mouseup", function(e) {
@@ -39003,7 +38811,7 @@
                 })
             },
             initMapState: function(e, t, n) {
-                this.mapState = new cr(this, e, t, n),
+                this.mapState = new dr(this, e, t, n),
                     this._addFooterControls()
             },
             registerAccelerators: function(e) {
@@ -39026,20 +38834,20 @@
                         displayClass: "olControlScaleLine",
                         control: new OpenLayers.Control.ScaleLine
                     }),
-                    new vr({
+                    new _r({
                         map: this,
                         el: s()("<div/>").addClass("WazeControlMousePosition").appendTo(this.footerControl.div)
                     }).render(),
-                    new mr({
+                    new vr({
                         app: this.app,
                         regionCode: this.app.getAppRegionCode(),
                         mapState: this.mapState,
                         el: s()("<div/>").addClass("WazeControlPermalink").appendTo(this.footerControl.div)
                     }).render(),
-                    this.addControl(new tr({
+                    this.addControl(new nr({
                         div: s()("<div/>").appendTo(this.footerMessages.div)
                     })),
-                    new hr({
+                    new pr({
                         dataModel: W.model,
                         mapState: this.mapState,
                         regionCode: this.app.getAppRegionCode(),
@@ -39101,7 +38909,7 @@
                 var e = s()(this.div).find(".snapshot-message").css({
                     zIndex: this.Z_INDEX_BASE.Control
                 });
-                new pr({
+                new gr({
                     el: e,
                     snapshotManager: this.snapshotManager
                 }).render()
@@ -39138,7 +38946,7 @@
                 e.setZIndex(this.Z_INDEX_BASE.TopLayer)
             },
             setLayerZIndex: function(e, t) {
-                var n = e instanceof OpenLayers.Layer.Markers || e instanceof ps.a;
+                var n = e instanceof OpenLayers.Layer.Markers || e instanceof gs.a;
                 e.setZIndex(this.Z_INDEX_BASE[e.isBaseLayer ? "BaseLayer" : n ? "MarkerOverlay" : "Overlay"] + 5 * t)
             },
             getLayerVisibility: function(e) {
@@ -39161,18 +38969,18 @@
                 }
             },
             getDrawingContext: function() {
-                return new br(this, {
+                return new Er(this, {
                     extendedMode: !1
                 })
             },
             getSvgDrawingContext: function() {
-                return new br(this, {
+                return new Er(this, {
                     extendedMode: !0
                 })
             },
             CLASS_NAME: "Waze.Map"
         }),
-        wr = function(e) {
+        Sr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -39218,7 +39026,7 @@
                 }]),
                 t
         }(c.a.View),
-        Sr = function(e) {
+        kr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -39260,7 +39068,7 @@
                             ".timestamp": {
                                 observe: "timestamp",
                                 onGet: function(e) {
-                                    return _n.default.timeString(e)
+                                    return yn.default.timeString(e)
                                 }
                             }
                         }
@@ -39335,7 +39143,7 @@
                     value: function() {
                         var e = new c.a.CollectionView({
                             collection: this.model.getIdsCollection(),
-                            childView: wr
+                            childView: Sr
                         });
                         return this.listenTo(e, "childview:action:featureId:click", this._onItemFeatureIdClick.bind(this)),
                             this.listenTo(e, "childview:action:featureId:enter", this._onItemFeatureIdEnter.bind(this)),
@@ -39374,7 +39182,7 @@
                 }]),
                 t
         }(c.a.View),
-        kr = function(e) {
+        Tr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -39422,7 +39230,7 @@
                 }]),
                 t
         }(c.a.View),
-        Tr = function(e) {
+        Ir = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -39477,7 +39285,7 @@
                     value: function() {
                         this.showChildView("listRegion", new c.a.CollectionView({
                                 collection: this.collection,
-                                childView: kr,
+                                childView: Tr,
                                 childViewTriggers: function() {
                                     return {
                                         "error:focus:click": "error:focus:click"
@@ -39494,7 +39302,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ir = function(e) {
+        Mr = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -39617,7 +39425,7 @@
                     value: function() {
                         this.showChildView("actionsRegion", new c.a.CollectionView({
                             collection: this.model.getActionsCollection(),
-                            childView: Sr,
+                            childView: kr,
                             childViewTriggers: {
                                 "action:toggle": "action:toggle",
                                 "action:toggle:highlight": "action:toggle:highlight",
@@ -39632,7 +39440,7 @@
                     key: "_showErrors",
                     value: function() {
                         var e = this.model.getErrorsViewModel();
-                        this.showChildView("saveErrorActionRegion", new Tr({
+                        this.showChildView("saveErrorActionRegion", new Ir({
                             groupId: this.groupId,
                             model: e,
                             collection: e.getErrorsCollection(),
@@ -39655,7 +39463,7 @@
                 }]),
                 t
         }(c.a.View),
-        Mr = function(e) {
+        Ar = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -39714,7 +39522,7 @@
                     value: function() {
                         this.showChildView("changesList", new c.a.CollectionView({
                             collection: this.model.getGroupsCollection(),
-                            childView: Ir,
+                            childView: Mr,
                             childViewTriggers: {
                                 "action:toggle": "action:toggle",
                                 "action:toggle:highlight": "action:toggle:highlight",
@@ -39744,7 +39552,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ar = function() {
+        Cr = function() {
             function e() {
                 var t = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}).maxParallel,
                     n = void 0 === t ? 10 : t;
@@ -39763,7 +39571,7 @@
                             s = e.resolve,
                             r = e.reject;
                         try {
-                            return Promise.resolve(n.apply(void 0, Nt()(i || []))).then(function(e) {
+                            return Promise.resolve(n.apply(void 0, xt()(i || []))).then(function(e) {
                                 return e
                             }).catch(function(e) {
                                 throw e
@@ -39819,9 +39627,9 @@
                 }]),
                 e
         }(),
-        Cr = n(45);
+        Or = n(45);
 
-    function Or(e, t) {
+    function Rr(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -39830,29 +39638,29 @@
             n
     }
 
-    function Rr(e) {
+    function Dr(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? Or(n, !0).forEach(function(t) {
+            t % 2 ? Rr(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Or(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Rr(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var Dr = "save:start",
-        Lr = "save:end",
-        Pr = "save:success",
-        Nr = "save:fail",
-        xr = "save:progress",
-        Vr = "save:group:start",
-        jr = "save:group:end",
-        Ur = "save:group:success",
-        Fr = "save:group:fail",
-        Br = "group:set:errors",
-        Gr = "group:remove:errors",
-        Wr = function(e) {
+    var Lr = "save:start",
+        Pr = "save:end",
+        Nr = "save:success",
+        xr = "save:fail",
+        Vr = "save:progress",
+        jr = "save:group:start",
+        Ur = "save:group:end",
+        Fr = "save:group:success",
+        Br = "save:group:fail",
+        Gr = "group:set:errors",
+        Wr = "group:remove:errors",
+        Hr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40022,7 +39830,7 @@
                             this._lockGroup(e),
                                 this._startSave();
                             var i = this._actionManager.getActionsByGroupId(e);
-                            this._saveGroupTask(Rr({}, t, {
+                            this._saveGroupTask(Dr({}, t, {
                                 actions: i,
                                 groupId: e,
                                 clearAllActions: !1
@@ -40073,18 +39881,18 @@
                         this._startSave();
                         var s = t.actionsGroups || this._actionManager.getActionsByGroupsIds(),
                             r = Object.entries(s).map(function(e) {
-                                var n = dn()(e, 2),
+                                var n = hn()(e, 2),
                                     i = n[0],
                                     s = n[1];
-                                return Rr({}, t, {
+                                return Dr({}, t, {
                                     groupId: i,
                                     actions: s,
                                     clearAllActions: !1
                                 })
                             }),
                             o = 0,
-                            a = new Ar({
-                                maxParallel: Cr.MAX_PARALLEL_SAVES
+                            a = new Cr({
+                                maxParallel: Or.MAX_PARALLEL_SAVES
                             }),
                             l = r.filter(function(t) {
                                 return !e._isGroupLocked(t.groupId)
@@ -40096,7 +39904,7 @@
                                             e._releaseGroupLock(n),
                                                 i += t.actions.length,
                                                 o++,
-                                                e.trigger(xr, {
+                                                e.trigger(Vr, {
                                                     finished: o,
                                                     total: r.length,
                                                     percent: o / r.length
@@ -40150,27 +39958,27 @@
                 }, {
                     key: "_triggerSaveGroupStart",
                     value: function(e) {
-                        this.trigger(Vr, e)
+                        this.trigger(jr, e)
                     }
                 }, {
                     key: "_triggerSaveGroupEnd",
                     value: function(e) {
-                        this.trigger(jr, e)
+                        this.trigger(Ur, e)
                     }
                 }, {
                     key: "_triggerSaveGroupSuccess",
                     value: function(e) {
-                        this.trigger(Ur, e)
+                        this.trigger(Fr, e)
                     }
                 }, {
                     key: "_triggerSaveGroupFail",
                     value: function(e) {
-                        this.trigger(Fr, e)
+                        this.trigger(Br, e)
                     }
                 }, {
                     key: "_triggerGroupSetErrors",
                     value: function(e, t) {
-                        this.trigger(Br, {
+                        this.trigger(Gr, {
                             groupId: e,
                             error: t
                         })
@@ -40178,57 +39986,57 @@
                 }, {
                     key: "_triggerGroupRemoveErrors",
                     value: function(e) {
-                        this.trigger(Gr, e)
+                        this.trigger(Wr, e)
                     }
                 }, {
                     key: "_triggerSaveStart",
                     value: function() {
-                        this.trigger(Dr)
+                        this.trigger(Lr)
                     }
                 }, {
                     key: "_triggerSaveEnd",
                     value: function() {
-                        this.trigger(Lr)
+                        this.trigger(Pr)
                     }
                 }, {
                     key: "_triggerSaveSuccess",
                     value: function() {
-                        this.trigger(Pr)
+                        this.trigger(Nr)
                     }
                 }, {
                     key: "_triggerSaveFail",
                     value: function() {
-                        this.trigger(Nr)
+                        this.trigger(xr)
                     }
                 }]),
                 t
         }(c.a.Object),
-        Hr = n(375),
-        zr = n.n(Hr),
-        qr = new OpenLayers.StyleMap({
+        zr = n(376),
+        qr = n.n(zr),
+        Yr = new OpenLayers.StyleMap({
             default: new OpenLayers.Style({
                 pointerEvents: "none",
                 strokeLinecap: "square",
                 strokeWidth: 5
             })
         });
-    qr.addUniqueValueRules("default", "type", {
+    Yr.addUniqueValueRules("default", "type", {
         homePin: {
             pointerEvents: "visiblePainted",
-            externalGraphic: zr.a,
+            externalGraphic: qr.a,
             graphicWidth: 33,
             graphicHeight: 40,
             graphicYOffset: -35
         }
     });
-    var Yr = qr,
-        $r = {
+    var $r = Yr,
+        Kr = {
             fillColor: "black",
             strokeWidth: 0,
             fillOpacity: .65,
             mask: "url(#spotlightMask)"
         },
-        Kr = {
+        Jr = {
             maskID: "spotlightMask",
             filter: "url(#spotlightBlur)",
             pointRadius: 70,
@@ -40244,7 +40052,7 @@
                 begin: "indefinite"
             }
         },
-        Jr = {
+        Zr = {
             id: "homeSpotlightAnimation",
             attributeName: "r",
             dur: "0.7s",
@@ -40256,7 +40064,7 @@
             keyTimes: "0;1",
             keySplines: ".4 0 .4 1.3"
         },
-        Zr = function() {
+        Xr = function() {
             function e(t) {
                 h()(this, e),
                     this.layer = null,
@@ -40274,8 +40082,8 @@
                     value: function() {
                         if (null == this.layer)
                             return this.layer = new OL.Layer.Vector("spotlight", {
-                                    renderers: [Ki],
-                                    styleMap: Yr
+                                    renderers: [Ji],
+                                    styleMap: $r
                                 }),
                                 this.removeTimeout && window.clearTimeout(this.removeTimeout),
                                 this.fadeIn(this.fadeDuration),
@@ -40286,17 +40094,17 @@
                     value: function() {
                         this._ensureLayer();
                         var e = this.map.getExtent().scale(2).toGeometry(),
-                            t = new OL.Feature.Vector(e, null, $r);
+                            t = new OL.Feature.Vector(e, null, Kr);
                         return this.layer.addFeatures(t)
                     }
                 }, {
                     key: "drawAndFocusSpotlightAtPoint",
                     value: function(e, t, n) {
-                        this._isSpotlightInBounds(e) || this.map.setCenter(bt.toLonLat(e)),
+                        this._isSpotlightInBounds(e) || this.map.setCenter(Et.toLonLat(e)),
                             this._destroyLayer(),
                             this._ensureLayer(),
                             this.drawOverlay(),
-                            t || (t = Kr);
+                            t || (t = Jr);
                         var i = new OL.Feature.Vector(e.clone(), null, t);
                         this.layer.addFeatures(i);
                         var s = t.animation,
@@ -40356,11 +40164,11 @@
                         var t = W.map.getResolution(),
                             n = this.homeSpotLightRadius / t,
                             i = 2 * n,
-                            s = l.a.extend({}, Jr, {
+                            s = l.a.extend({}, Zr, {
                                 from: i,
                                 to: n
                             }),
-                            r = bt.fromLonLat(e);
+                            r = Et.fromLonLat(e);
                         this.drawAndFocusSpotlightAtPoint(r, {
                                 maskID: "spotlightMask",
                                 filter: "url(#spotlightBlur)",
@@ -40407,7 +40215,7 @@
                 }]),
                 e
         }(),
-        Xr = function(e) {
+        Qr = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40448,12 +40256,12 @@
                 }]),
                 t
         }(o.a.Model),
-        Qr = Ce.a.extend();
-    Qr.prototype.deafults = l.a.extend({
+        eo = Ce.a.extend();
+    eo.prototype.deafults = l.a.extend({
         collatedCount: null
     }, Ce.a.prototype.defaults);
-    var eo = Qr,
-        to = function(e) {
+    var to = eo,
+        no = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40509,7 +40317,7 @@
                 }, {
                     key: "_getDefaultTitle",
                     value: function() {
-                        var e = eo.prototype.defaults.code,
+                        var e = to.prototype.defaults.code,
                             t = this._getTranslationsByCode(e);
                         if (t)
                             return t.title
@@ -40540,7 +40348,7 @@
                 }]),
                 t
         }(o.a.Model),
-        no = function(e) {
+        so = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40560,14 +40368,14 @@
                     key: "initialize",
                     value: function(e) {
                         this._errorsCollection = new o.a.Collection([], {
-                            model: to
+                            model: no
                         })
                     }
                 }, {
                     key: "setErrors",
                     value: function(e) {
                         var t = e.map(function(e) {
-                            return to.fromErrorModel(e)
+                            return no.fromErrorModel(e)
                         });
                         this._errorsCollection.reset(t),
                             this.set("showErrorsRegion", this._errorsCollection.length > 0),
@@ -40606,7 +40414,7 @@
                 }]),
                 t
         }(o.a.Model),
-        so = function(e) {
+        ro = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40626,10 +40434,10 @@
                     key: "initialize",
                     value: function(e) {
                         this._actionsCollection = new o.a.Collection([], {
-                                model: Xr
+                                model: Qr
                             }),
                             this._errors = e.errors || [],
-                            this._errorsViewModel = new no,
+                            this._errorsViewModel = new so,
                             this._errorsViewModel.setErrors(this._errors),
                             this._actionsCollection.reset(e.actionsData)
                     }
@@ -40689,7 +40497,7 @@
                 }]),
                 t
         }(o.a.Model),
-        ro = function(e) {
+        oo = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40710,7 +40518,7 @@
                     value: function(e) {
                         var t = this;
                         this._groupsCollection = new o.a.Collection([], {
-                                model: so,
+                                model: ro,
                                 comparator: function(e, t) {
                                     return t.getFirstActionTimestamp() - e.getFirstActionTimestamp()
                                 }
@@ -40818,7 +40626,7 @@
                 t
         }(o.a.Model);
 
-    function oo(e, t) {
+    function ao(e, t) {
         var n = function(e) {
                 return e.getActions(!0).sort(function(e, t) {
                     return t.getTimestamp() - e.getTimestamp()
@@ -40840,7 +40648,7 @@
             }),
             s = t.getAllErrorsByGroupsIds();
         return Array.from(Object.entries(i)).map(function(e) {
-            var t = dn()(e, 2),
+            var t = hn()(e, 2),
                 n = t[0];
             return {
                 groupId: n,
@@ -40849,7 +40657,7 @@
             }
         })
     }
-    var ao, lo, uo = function() {
+    var lo, uo, co = function() {
             function e(t) {
                 h()(this, e),
                     this._map = t
@@ -40874,14 +40682,14 @@
                     key: "_getDrawingContext",
                     value: function() {
                         return null == this._drawingContext && (this._drawingContext = this._map.getDrawingContext(),
-                                this._drawingContext.setStyleMap(gi),
+                                this._drawingContext.setStyleMap(fi),
                                 this._drawingContext.moveLayerToTop()),
                             this._drawingContext
                     }
                 }]),
                 e
         }(),
-        co = function(e) {
+        ho = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -40897,11 +40705,11 @@
                             this._saveController = e.saveController,
                             this._changesLogViewModel = (t = this._actionManager,
                                 n = this._saveController,
-                                new ro({
+                                new oo({
                                     actionsCount: t.getActionsNum(),
-                                    groupsCollectionData: oo(t, n)
+                                    groupsCollectionData: ao(t, n)
                                 })),
-                            this._changesLogHighlighter = new uo(this._map),
+                            this._changesLogHighlighter = new co(this._map),
                             this._bindEvents()
                     }
                 }, {
@@ -40913,13 +40721,13 @@
                                 afterundoaction: this._onUndoAction,
                                 afterclearactions: this._onActionsChanged
                             }),
-                            this.listenTo(this._saveController, Br, this._onGroupErrors),
-                            this.listenTo(this._saveController, Gr, this._onRemoveGroupErrors),
-                            this.listenTo(this._saveController, Vr, this._onSaveGroupStart),
-                            this.listenTo(this._saveController, Ur, this._onSaveGroupSuccess),
-                            this.listenTo(this._saveController, Fr, this._onSaveGroupFail),
-                            this.listenTo(this._saveController, Dr, this._onSaveStart),
-                            this.listenTo(this._saveController, Lr, this._onSaveEnd)
+                            this.listenTo(this._saveController, Gr, this._onGroupErrors),
+                            this.listenTo(this._saveController, Wr, this._onRemoveGroupErrors),
+                            this.listenTo(this._saveController, jr, this._onSaveGroupStart),
+                            this.listenTo(this._saveController, Fr, this._onSaveGroupSuccess),
+                            this.listenTo(this._saveController, Br, this._onSaveGroupFail),
+                            this.listenTo(this._saveController, Lr, this._onSaveStart),
+                            this.listenTo(this._saveController, Pr, this._onSaveEnd)
                     }
                 }, {
                     key: "_onDoAction",
@@ -40999,7 +40807,7 @@
                 }, {
                     key: "_rebuildGroupsCollectionData",
                     value: function() {
-                        var e = oo(this._actionManager, this._saveController);
+                        var e = ao(this._actionManager, this._saveController);
                         this._changesLogViewModel.setGroupsCollectionData(e)
                     }
                 }, {
@@ -41016,7 +40824,7 @@
                     key: "createChangesLogView",
                     value: function() {
                         this._rebuildGroupsCollectionData();
-                        var e = new Mr({
+                        var e = new Ar({
                             model: this._changesLogViewModel,
                             actionManager: this._actionManager,
                             map: this._map,
@@ -41161,7 +40969,7 @@
                         var t = this,
                             n = e.get("geometry");
                         this._overlayRenderer && this._overlayRenderer.destroy(),
-                            this._overlayRenderer = new Zr(this._map),
+                            this._overlayRenderer = new Xr(this._map),
                             this._overlayRenderer.drawOverlay(),
                             this._overlayRenderer.drawAndFocusSpotlightAtPoint(n),
                             W.Report.changesLogAction("focus_on_error"),
@@ -41190,7 +40998,7 @@
                 }]),
                 t
         }(c.a.Object),
-        ho = function(e) {
+        po = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -41205,7 +41013,7 @@
                 }]),
                 t
         }(o.a.Model),
-        po = function(e) {
+        go = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -41247,7 +41055,7 @@
                 }]),
                 t
         }(o.a.Model),
-        go = function(e) {
+        fo = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -41262,17 +41070,17 @@
                             return this.trigger("beforeMessageUpdated", n),
                                 n.addLine(e.get("body")),
                                 void this.trigger("messageUpdated", n);
-                        Vt()(_()(t.prototype), "add", this).call(this, e)
+                        jt()(_()(t.prototype), "add", this).call(this, e)
                     }
                 }, {
                     key: "model",
                     get: function() {
-                        return po
+                        return go
                     }
                 }]),
                 t
         }(o.a.Collection),
-        fo = function(e) {
+        mo = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -41283,14 +41091,14 @@
                     value: function(e, t) {
                         this._wazeModel = e,
                             this._marx = t,
-                            this.messages = new go,
+                            this.messages = new fo,
                             this.users = new o.a.Collection([], {
-                                model: ho,
+                                model: po,
                                 comparator: function(e, t) {
                                     return t.get("rank") - e.get("rank")
                                 }
                             }),
-                            this.rooms = new lo,
+                            this.rooms = new uo,
                             this._refreshRooms(),
                             this._marx.on("firstConnect", this._onMarxFirstConnect, this),
                             this._marx.on("reconnect", this._onMarxReconnect, this),
@@ -41371,7 +41179,7 @@
                     key: "_createMyUser",
                     value: function() {
                         var e = this._wazeModel.loginManager.user;
-                        return new ho({
+                        return new po({
                             id: e.id,
                             rank: e.rank,
                             name: e.userName
@@ -41453,7 +41261,7 @@
                         var t = this.rooms.findWhere({
                             name: e
                         });
-                        return null == t && (t = new ao({
+                        return null == t && (t = new lo({
                                     name: e
                                 }),
                                 this.rooms.add(t)),
@@ -41581,7 +41389,7 @@
                 }]),
                 t
         }(o.a.Model);
-    ao = function(e) {
+    lo = function(e) {
         function t() {
             return h()(this, t),
                 m()(this, _()(t).apply(this, arguments))
@@ -41615,7 +41423,7 @@
             }]),
             t
     }(o.a.Model);
-    var mo = {
+    var vo = {
         Belgium: "Benelux",
         Netherlands: "Benelux",
         Luxembourg: "Benelux",
@@ -41623,7 +41431,7 @@
         "West Bank": "Israel",
         "Gaza Strip": "Israel"
     };
-    lo = function(e) {
+    uo = function(e) {
         function t() {
             return h()(this, t),
                 m()(this, _()(t).apply(this, arguments))
@@ -41640,7 +41448,7 @@
                         var s = e[i],
                             r = t._getRoomNameByCountry(s),
                             o = n[r];
-                        null != o ? o.addId(s.id) : (o = new ao({
+                        null != o ? o.addId(s.id) : (o = new lo({
                                 name: r,
                                 ids: [s.id]
                             }),
@@ -41651,7 +41459,7 @@
             }, {
                 key: "_getRoomNameByCountry",
                 value: function(e) {
-                    return mo[e.name] || e.name
+                    return vo[e.name] || e.name
                 }
             }, {
                 key: "findById",
@@ -41666,12 +41474,12 @@
             }, {
                 key: "model",
                 get: function() {
-                    return ao
+                    return lo
                 }
             }]),
             t
     }(o.a.Collection);
-    var vo, _o = function(e) {
+    var _o, yo = function(e) {
         function t() {
             return h()(this, t),
                 m()(this, _()(t).apply(this, arguments))
@@ -41684,7 +41492,7 @@
                         this._marx = t,
                         this._adapter = n,
                         this.users = new o.a.Collection([], {
-                            model: vo
+                            model: _o
                         }),
                         this.throttleUserPanMessage = l.a.throttle(this.sendUserPanMessage, 3e3, {
                             leading: !1
@@ -41832,7 +41640,7 @@
             }]),
             t
     }(o.a.Model);
-    vo = function(e) {
+    _o = function(e) {
         function t() {
             return h()(this, t),
                 m()(this, _()(t).apply(this, arguments))
@@ -41852,8 +41660,8 @@
             }]),
             t
     }(o.a.Model);
-    var yo = _o,
-        bo = function() {
+    var bo = yo,
+        Eo = function() {
             function e(t, n, i) {
                 return h()(this, e),
                     this._wazeModel = t,
@@ -41947,7 +41755,7 @@
                 }]),
                 e
         }(),
-        Eo = OL.Class(OL.Marker, {
+        wo = OL.Class(OL.Marker, {
             initialize: function(e, t, n) {
                 this.model = e,
                     this.map = t,
@@ -41981,7 +41789,7 @@
                 return this.icon.$div.tooltip("destroy")
             }
         }),
-        wo = function() {
+        So = function() {
             function e(t) {
                 h()(this, e),
                     this._map = t.map,
@@ -41994,7 +41802,7 @@
             return g()(e, [{
                     key: "_addUser",
                     value: function(e) {
-                        var t = new Eo(e, this._map, this._layer);
+                        var t = new wo(e, this._map, this._layer);
                         return this._markersByUserId[e.get("id")] = t,
                             this._layer.addMarker(t),
                             t.render()
@@ -42021,7 +41829,7 @@
                 }]),
                 e
         }(),
-        So = function(e) {
+        ko = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -42079,7 +41887,7 @@
                 }]),
                 t
         }(c.a.View),
-        ko = function(e) {
+        To = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -42110,7 +41918,7 @@
                 }]),
                 t
         }(c.a.View),
-        To = function(e) {
+        Io = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -42209,7 +42017,7 @@
                 }, {
                     key: "_addUser",
                     value: function(e) {
-                        var t = new So({
+                        var t = new ko({
                             model: e,
                             map: this._map,
                             marx: this._marx,
@@ -42287,7 +42095,7 @@
                 }, {
                     key: "_addMessage",
                     value: function(e) {
-                        var t = new ko({
+                        var t = new To({
                             model: e
                         });
                         t.render();
@@ -42395,12 +42203,12 @@
                 }]),
                 t
         }(c.a.View),
-        Io = {
+        Mo = {
             init: function(e) {
                 var t = e.map;
                 this.selectionManager = e.selectionManager,
-                    this.markersLayer = t.getLayerByUniqueName(Qs.CITIES_MARKERS_LAYER_NAME),
-                    this.featuresLayer = t.getLayerByUniqueName(Qs.CITIES_FEATURES_LAYER_NAME),
+                    this.markersLayer = t.getLayerByUniqueName(er.CITIES_MARKERS_LAYER_NAME),
+                    this.featuresLayer = t.getLayerByUniqueName(er.CITIES_FEATURES_LAYER_NAME),
                     this.markersLayer.events.register("markerclick", this, this._onMarkerClick),
                     this.selectionManager.events.register("app:selection:featureunselected", this, this._onFeatureUnselected)
             },
@@ -42412,7 +42220,7 @@
                 var t = this;
                 (e.features || [e.feature]).forEach(function(e) {
                     var n = e.model;
-                    if (n && n.type === Rt.a.CITY) {
+                    if (n && n.type === Dt.a.CITY) {
                         var i = e.model.getID(),
                             s = t.markersLayer.getMarker(i);
                         s && s.unhighlight()
@@ -42428,7 +42236,7 @@
                     this.markersLayer.getMarker(t).highlight())
             }
         },
-        Mo = function() {
+        Ao = function() {
             function e() {
                 h()(this, e),
                     this.currentAction = null,
@@ -42469,14 +42277,14 @@
                 }, {
                     key: "render",
                     value: function() {
-                        this.$element.html(Object(ms.getHTML)("templates/keyboard_shortcuts/modal", {
+                        this.$element.html(Object(vs.getHTML)("templates/keyboard_shortcuts/modal", {
                             groups: W.accelerators.Groups
                         }))
                     }
                 }, {
                     key: "renderList",
                     value: function() {
-                        this.$element.find(".modal-body").html(Object(ms.getHTML)("templates/keyboard_shortcuts/list", {
+                        this.$element.find(".modal-body").html(Object(vs.getHTML)("templates/keyboard_shortcuts/list", {
                             groups: W.accelerators.Groups
                         }))
                     }
@@ -42495,7 +42303,7 @@
                             n = e.which;
                         if (this.active && this.currentAction)
                             return e.stopImmediatePropagation(),
-                                (t.match(/^[a-zA-Z0-9]+/) || Object.keys(W.accelerators.SpecialKeys).includes(n.toString())) && (W.accelerators.registerShortcut(new gn.KeyStroke(e).toString(), this.currentAction.get(0).dataset.action, !0),
+                                (t.match(/^[a-zA-Z0-9]+/) || Object.keys(W.accelerators.SpecialKeys).includes(n.toString())) && (W.accelerators.registerShortcut(new fn.KeyStroke(e).toString(), this.currentAction.get(0).dataset.action, !0),
                                     this.currentAction.removeClass("selected"),
                                     W.accelerators.persist(),
                                     this.currentAction = null,
@@ -42534,11 +42342,11 @@
                 }]),
                 e
         }();
-    Object.assign(Mo.prototype, {
+    Object.assign(Ao.prototype, {
         CLASS_NAME: "Waze.View.KeyboardShortcutEditor"
     });
-    var Ao = Mo,
-        Co = c.a.Behavior.extend({
+    var Co = Ao,
+        Oo = c.a.Behavior.extend({
             _eventsRegistered: !1,
             initialize: function() {
                 return this._registerEvents()
@@ -42576,7 +42384,7 @@
                 return this._unregisterEvents()
             }
         }),
-        Oo = function(e) {
+        Ro = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -42718,7 +42526,7 @@
                     get: function() {
                         return {
                             accelerators: {
-                                behaviorClass: Co
+                                behaviorClass: Oo
                             }
                         }
                     }
@@ -42758,7 +42566,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ro = c.a.Object.extend({
+        Do = c.a.Object.extend({
             initialize: function(e) {
                 this.map = e.map,
                     this.actionManager = e.actionManager,
@@ -42774,14 +42582,14 @@
             _readState: function() {
                 this.state.set(this.togglers.getState()),
                     this.treeState.set(this.togglers.getTreeState()),
-                    Object(Y.isFeatureFlagEnabled)(Y.FEATURE_FLAGS.HOUSE_NUMBERS_LAYER) || (this.state.set(nr.ITEM_HOUSE_NUMBERS, !1),
-                        this.treeState.set(nr.ITEM_HOUSE_NUMBERS, !1))
+                    Object(Y.isFeatureFlagEnabled)(Y.FEATURE_FLAGS.HOUSE_NUMBERS_LAYER) || (this.state.set(ir.ITEM_HOUSE_NUMBERS, !1),
+                        this.treeState.set(ir.ITEM_HOUSE_NUMBERS, !1))
             },
             destroy: function() {
                 this._destroyAccelerators()
             },
             createLayerSwitcherLayout: function() {
-                return this._layerSwitcherLayout = new Oo({
+                return this._layerSwitcherLayout = new Ro({
                         state: this.state,
                         treeState: this.treeState
                     }),
@@ -42849,7 +42657,7 @@
                     this._readState()
             }
         }),
-        Do = function() {
+        Lo = function() {
             function e(t) {
                 var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [];
                 h()(this, e),
@@ -42904,7 +42712,7 @@
                 }]),
                 e
         }(),
-        Lo = function(e) {
+        Po = function(e) {
             function t(e, n, i) {
                 var s;
                 return h()(this, t),
@@ -42939,8 +42747,8 @@
                     }
                 }]),
                 t
-        }(Do),
-        Po = function() {
+        }(Lo),
+        No = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this._repoName = t,
@@ -42955,7 +42763,7 @@
                 }]),
                 e
         }(),
-        No = function() {
+        xo = function() {
             function e(t) {
                 h()(this, e),
                     this._layerUniqueName = t
@@ -42973,10 +42781,10 @@
                 }]),
                 e
         }(),
-        xo = n(23),
-        Vo = n.n(xo),
-        jo = n(92),
-        Uo = function() {
+        Vo = n(23),
+        jo = n.n(Vo),
+        Uo = n(93),
+        Fo = function() {
             function e(t, n, i, s, r) {
                 h()(this, e),
                     this._fromSegment = t,
@@ -43051,7 +42859,7 @@
                         var e = this;
                         return this._getVertices().map(function(t) {
                             var n = e._dataModel.segments.getObjectById(t.getSegmentID()),
-                                i = $t.getVertices(ft.cloneGeometry(n.geometry));
+                                i = Kt.getVertices(mt.cloneGeometry(n.geometry));
                             return t.isForward() || i.reverse(),
                                 i
                         })
@@ -43066,7 +42874,7 @@
                             var s = t.getVertexNodeID(n),
                                 r = e._dataModel.nodes.getObjectById(s),
                                 o = e._dataModel.segments.getObjectById(i),
-                                a = Vo.a.for(o, r).getOpposite();
+                                a = jo.a.for(o, r).getOpposite();
                             return n = a,
                                 a
                         }).concat([this._turn.getToVertex()])
@@ -43083,7 +42891,7 @@
                             t = this._turn.getTurnData().getSegmentPath().map(function(t) {
                                 return e._dataModel.segments.getObjectById(t)
                             });
-                        return new jo.SegmentsPermissionsUseCase(this._dataModel, t).isLockedByHigherRank()
+                        return new Uo.SegmentsPermissionsUseCase(this._dataModel, t).isLockedByHigherRank()
                     }
                 }, {
                     key: "getPossibleTurnAtOffset",
@@ -43119,8 +42927,8 @@
                 }]),
                 e
         }(),
-        Fo = n(114),
-        Bo = function() {
+        Bo = n(115),
+        Go = function() {
             function e(t, n, i, s) {
                 h()(this, e),
                     this._fromSegment = t,
@@ -43171,12 +42979,12 @@
                 }, {
                     key: "isLockedByHigherRank",
                     value: function() {
-                        return new jo.SegmentsPermissionsUseCase(this._node.model, this._fromSegment).isLockedByHigherRank()
+                        return new Uo.SegmentsPermissionsUseCase(this._node.model, this._fromSegment).isLockedByHigherRank()
                     }
                 }, {
                     key: "isEditable",
                     value: function() {
-                        var e = new Fo.CanEditTurnsUseCase(this._node.model);
+                        var e = new Bo.CanEditTurnsUseCase(this._node.model);
                         return this._fromSegment.isFromNode(this._node) && e.canEditSegmentFromTurns(this._fromSegment) || this._fromSegment.isToNode(this._node) && e.canEditSegmentToTurns(this._fromSegment)
                     }
                 }, {
@@ -43187,7 +42995,7 @@
                 }]),
                 e
         }(),
-        Go = function() {
+        Wo = function() {
             function e() {
                 h()(this, e)
             }
@@ -43261,17 +43069,17 @@
                 }]),
                 e
         }();
-    Go.MINIMAL_ARROW_ANGLE = 25;
-    var Wo = Go,
-        Ho = n(29),
-        zo = n(376),
-        qo = n(30),
-        Yo = n(153),
-        $o = n.n(Yo),
-        Ko = n(32),
-        Jo = n.n(Ko),
-        Zo = n(73),
-        Xo = function(e) {
+    Wo.MINIMAL_ARROW_ANGLE = 25;
+    var Ho = Wo,
+        zo = n(29),
+        qo = n(377),
+        Yo = n(30),
+        $o = n(154),
+        Ko = n.n($o),
+        Jo = n(32),
+        Zo = n.n(Jo),
+        Xo = n(74),
+        Qo = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43295,7 +43103,7 @@
                 }]),
                 t
         }(c.a.View),
-        Qo = function(e) {
+        ea = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43309,12 +43117,12 @@
                 }, {
                     key: "childView",
                     value: function() {
-                        return Xo
+                        return Qo
                     }
                 }]),
                 t
         }(c.a.CollectionView),
-        ea = function(e) {
+        ta = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43342,7 +43150,7 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.showChildView("collectionRegion", new Qo({
+                        this.showChildView("collectionRegion", new ea({
                             collection: this.collection
                         }))
                     }
@@ -43359,7 +43167,7 @@
                 }]),
                 t
         }(c.a.View),
-        ta = function(e) {
+        na = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43386,7 +43194,7 @@
                 }]),
                 t
         }(o.a.Model),
-        na = function(e) {
+        ia = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43442,9 +43250,9 @@
                 }, {
                     key: "_getLaneTypeOptions",
                     value: function() {
-                        var e = Object.keys(Ko.RESTRICTION_SEGMENT_LANE_TYPE).map(function(e) {
+                        var e = Object.keys(Jo.RESTRICTION_SEGMENT_LANE_TYPE).map(function(e) {
                             return {
-                                value: Ko.RESTRICTION_SEGMENT_LANE_TYPE[e],
+                                value: Jo.RESTRICTION_SEGMENT_LANE_TYPE[e],
                                 label: I18n.t("restrictions.editing.segment.laneType.".concat(e))
                             }
                         });
@@ -43453,9 +43261,9 @@
                 }, {
                     key: "_getDispositionOptions",
                     value: function() {
-                        return Object.keys(Ko.RESTRICTION_SEGMENT_DISPOSITION).map(function(e) {
+                        return Object.keys(Jo.RESTRICTION_SEGMENT_DISPOSITION).map(function(e) {
                             return {
-                                value: Ko.RESTRICTION_SEGMENT_DISPOSITION[e],
+                                value: Jo.RESTRICTION_SEGMENT_DISPOSITION[e],
                                 label: I18n.t("restrictions.editing.segment.disposition.".concat(e))
                             }
                         })
@@ -43475,7 +43283,7 @@
                     value: function(e) {
                         var n = (arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}).restrictionEditable,
                             i = void 0 !== n && n,
-                            s = ta.for(e);
+                            s = na.for(e);
                         return s.set({
                                 restrictionEditable: i
                             }),
@@ -43486,9 +43294,9 @@
                 }]),
                 t
         }(c.a.View),
-        ia = n(49),
-        sa = n.n(ia),
-        ra = function(e) {
+        sa = n(49),
+        ra = n.n(sa),
+        oa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43530,7 +43338,7 @@
                 }]),
                 t
         }(o.a.Model),
-        oa = function(e) {
+        aa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43583,7 +43391,7 @@
                                     name: "disabled",
                                     observe: ["isAllVehicles", "restrictionEditable"],
                                     onGet: function(e) {
-                                        var t = dn()(e, 2),
+                                        var t = hn()(e, 2),
                                             n = t[0],
                                             i = t[1];
                                         return n || !i
@@ -43607,10 +43415,10 @@
                     value: function() {
                         return {
                             getVehicleTypes: function() {
-                                return Object.keys(ia.VEHICLE_TYPES).sort().map(function(e) {
+                                return Object.keys(sa.VEHICLE_TYPES).sort().map(function(e) {
                                     return {
                                         key: e,
-                                        value: ia.VEHICLE_TYPES[e]
+                                        value: sa.VEHICLE_TYPES[e]
                                     }
                                 })
                             }
@@ -43620,11 +43428,11 @@
                     key: "getRestrictionData",
                     value: function() {
                         return this.model.isAllVehicles() ? {
-                            defaultType: qo.RESTRICTION_TYPE.BLOCKED,
+                            defaultType: Yo.RESTRICTION_TYPE.BLOCKED,
                             driveProfiles: {}
                         } : {
-                            defaultType: qo.RESTRICTION_TYPE.FREE,
-                            driveProfiles: V()({}, qo.RESTRICTION_TYPE.BLOCKED, [this.model.getDriveProfileData()])
+                            defaultType: Yo.RESTRICTION_TYPE.FREE,
+                            driveProfiles: V()({}, Yo.RESTRICTION_TYPE.BLOCKED, [this.model.getDriveProfileData()])
                         }
                     }
                 }, {
@@ -43642,15 +43450,15 @@
                     value: function(e) {
                         var n, i = (arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}).restrictionEditable,
                             s = void 0 !== i && i,
-                            r = e.getDriveProfileList(qo.RESTRICTION_TYPE.BLOCKED).getDriveProfiles();
+                            r = e.getDriveProfileList(Yo.RESTRICTION_TYPE.BLOCKED).getDriveProfiles();
                         if (0 === r.length)
-                            n = new sa.a;
+                            n = new ra.a;
                         else {
                             if (1 !== r.length)
                                 throw new TypeError("Expected 1 driveProfile (got ".concat(r.length, ")"));
                             n = r[0]
                         }
-                        var o = ra.for(n);
+                        var o = oa.for(n);
                         return o.set({
                                 restrictionEditable: s
                             }),
@@ -43661,8 +43469,8 @@
                 }]),
                 t
         }(c.a.View),
-        aa = ia.VEHICLE_TYPES.PRIVATE,
-        la = function(e) {
+        la = sa.VEHICLE_TYPES.PRIVATE,
+        ua = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43730,7 +43538,7 @@
                         return 0 === i && (i = null),
                             0 === s.length && (s = [null]),
                             0 === r.length && (r = [null]),
-                            (n = []).concat.apply(n, Nt()(s.map(function(e) {
+                            (n = []).concat.apply(n, xt()(s.map(function(e) {
                                 return r.map(function(t) {
                                     return Object.assign({
                                         vehicleType: e,
@@ -43746,7 +43554,7 @@
                 }]),
                 t
         }(o.a.Model),
-        ua = function(e) {
+        ca = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -43818,9 +43626,9 @@
                     key: "_getLicensePlateNumberName",
                     value: function(e) {
                         switch (e) {
-                            case ia.LICENSE_PLATES.ENDS_WITH_EVEN:
+                            case sa.LICENSE_PLATES.ENDS_WITH_EVEN:
                                 return I18n.t("restrictions.editing.driving.license_plate_ends_with_even");
-                            case ia.LICENSE_PLATES.ENDS_WITH_ODD:
+                            case sa.LICENSE_PLATES.ENDS_WITH_ODD:
                                 return I18n.t("restrictions.editing.driving.license_plate_ends_with_odd");
                             default:
                                 return I18n.t("restrictions.editing.driving.license_plate_ends_with", {
@@ -43832,9 +43640,9 @@
                     key: "_getLicensePlateNumberOptionName",
                     value: function(e) {
                         switch (e) {
-                            case ia.LICENSE_PLATES.ENDS_WITH_EVEN:
+                            case sa.LICENSE_PLATES.ENDS_WITH_EVEN:
                                 return I18n.t("restrictions.editing.driving.license_plate_option_even");
-                            case ia.LICENSE_PLATES.ENDS_WITH_ODD:
+                            case sa.LICENSE_PLATES.ENDS_WITH_ODD:
                                 return I18n.t("restrictions.editing.driving.license_plate_option_odd");
                             default:
                                 return I18n.t("restrictions.editing.driving.license_plate_option", {
@@ -43861,9 +43669,9 @@
                             o = s.numPassengers,
                             a = s.subscription,
                             u = s.licensePlateNumber;
-                        null == r ? e = "" : (t = l.a.invert(ia.VEHICLE_TYPES)[r],
+                        null == r ? e = "" : (t = l.a.invert(sa.VEHICLE_TYPES)[r],
                             e = I18n.t("restrictions.vehicle_types.".concat(t)));
-                        var c = l.a.omit(ia.VEHICLE_TYPES, t);
+                        var c = l.a.omit(sa.VEHICLE_TYPES, t);
                         n = this._subscriptions.hasOwnProperty(a) ? this._subscriptions[a] : a;
                         var d = l.a.reject(this._getSortedSubscriptionsArray(), function(e) {
                                 var t = e.value;
@@ -43872,7 +43680,7 @@
                             }),
                             h = this._getLicensePlateNumberName(u),
                             p = l.a.range(2, o).concat(l.a.range(o + 1, 5)),
-                            g = Object.values(ia.LICENSE_PLATES).map(function(e) {
+                            g = Object.values(sa.LICENSE_PLATES).map(function(e) {
                                 return {
                                     value: e,
                                     name: i._getLicensePlateNumberOptionName(e)
@@ -43912,7 +43720,7 @@
                     key: "_getSortedSubscriptionsArray",
                     value: function() {
                         return Object.entries(this._subscriptions).map(function(e) {
-                            var t = dn()(e, 2);
+                            var t = hn()(e, 2);
                             return {
                                 value: t[0],
                                 name: t[1]
@@ -43929,7 +43737,7 @@
                     key: "_doInitVehicleType",
                     value: function() {
                         this.model.set({
-                            vehicleType: aa
+                            vehicleType: la
                         })
                     }
                 }, {
@@ -43953,7 +43761,7 @@
                     key: "_doInitLicensePlate",
                     value: function() {
                         this._supportsLicensePlateNumber && this.model.set({
-                            licensePlateNumber: ia.LICENSE_PLATES.ENDS_WITH_0
+                            licensePlateNumber: sa.LICENSE_PLATES.ENDS_WITH_0
                         })
                     }
                 }, {
@@ -44024,7 +43832,7 @@
                 }]),
                 t
         }(c.a.View),
-        ca = function(e) {
+        da = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44033,7 +43841,7 @@
                 g()(t, [{
                     key: "childView",
                     value: function() {
-                        return ua
+                        return ca
                     }
                 }, {
                     key: "childViewOptions",
@@ -44048,7 +43856,7 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        da = function(e) {
+        ha = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44071,7 +43879,7 @@
                 }]),
                 t
         }(o.a.Collection),
-        ha = function(e) {
+        pa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44119,15 +43927,15 @@
                             this._supportsSubscriptions = n.supportsSubscriptions,
                             this._supportsNumPassengers = n.supportsNumPassengers,
                             this._supportsLicensePlateNumber = n.supportsLicensePlateNumber;
-                        var i = (e = []).concat.apply(e, Nt()(this._driveProfileList.getDriveProfiles().map(function(e) {
-                            return la.modelsFor(e)
+                        var i = (e = []).concat.apply(e, xt()(this._driveProfileList.getDriveProfiles().map(function(e) {
+                            return ua.modelsFor(e)
                         })));
                         i.forEach(function(e) {
                                 return e.set({
                                     restrictionEditable: t._restrictionEditable
                                 })
                             }),
-                            this.collection = new da(i),
+                            this.collection = new ha(i),
                             0 === this.collection.length && this._doAddBlankItem(),
                             this.model = new o.a.Model({
                                 canAddBlankItem: this._canAddBlankItem()
@@ -44142,7 +43950,7 @@
                     key: "onRender",
                     value: function() {
                         this.stickit(),
-                            this.showChildView("collectionRegion", new ca({
+                            this.showChildView("collectionRegion", new da({
                                 collection: this.collection,
                                 subscriptions: this._subscriptions,
                                 supportsNumPassengers: this._supportsNumPassengers,
@@ -44158,7 +43966,7 @@
                 }, {
                     key: "_doAddBlankItem",
                     value: function() {
-                        this._canAddBlankItem() && this.collection.push(new la({
+                        this._canAddBlankItem() && this.collection.push(new ua({
                             restrictionEditable: this._restrictionEditable
                         }))
                     }
@@ -44166,7 +43974,7 @@
                     key: "getRestrictionData",
                     value: function() {
                         return {
-                            driveProfiles: V()({}, qo.RESTRICTION_TYPE.FREE, this.collection.models.filter(function(e) {
+                            driveProfiles: V()({}, Yo.RESTRICTION_TYPE.FREE, this.collection.models.filter(function(e) {
                                 return !e.isBlank()
                             }).map(function(e) {
                                 return e.getDriveProfileData()
@@ -44176,7 +43984,7 @@
                 }, {
                     key: "getHelpMessage",
                     value: function(e) {
-                        return e === qo.RESTRICTION_MODALITY.DRIVING_ALLOWED ? I18n.t("restrictions.editing.driving.other_vehicles_restricted") : e === qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? I18n.t("restrictions.editing.driving.other_vehicles_pay_toll") : void 0
+                        return e === Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED ? I18n.t("restrictions.editing.driving.other_vehicles_restricted") : e === Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? I18n.t("restrictions.editing.driving.other_vehicles_pay_toll") : void 0
                     }
                 }, {
                     key: "validate",
@@ -44201,7 +44009,7 @@
                             a = n.supportsLicensePlateNumber,
                             l = void 0 !== a && a;
                         return new t({
-                            driveProfileList: e.getDriveProfileList(qo.RESTRICTION_TYPE.FREE),
+                            driveProfileList: e.getDriveProfileList(Yo.RESTRICTION_TYPE.FREE),
                             restrictionEditable: s,
                             subscriptions: o,
                             supportsNumPassengers: e.supportsNumPassengers(),
@@ -44212,7 +44020,7 @@
                 }]),
                 t
         }(c.a.View),
-        pa = function(e) {
+        ga = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44241,10 +44049,10 @@
                 }]),
                 t
         }(c.a.View),
-        ga = n(159),
-        fa = n(68),
-        ma = n(84),
-        va = c.a.Behavior.extend({
+        fa = n(160),
+        ma = n(69),
+        va = n(85),
+        _a = c.a.Behavior.extend({
             defaults: {
                 modelAttribute: "model"
             },
@@ -44343,7 +44151,7 @@
             _createEndDatePicker: function() {
                 this._destroyEndDatePicker();
                 var e = Object.assign({
-                    minDate: Object(ma.moment)(this._getModel().attributes.startDate)
+                    minDate: Object(va.moment)(this._getModel().attributes.startDate)
                 }, this.datepickerOptions);
                 this._createDatePicker(this.ui.endDate, this.ui.endTime, e)
             },
@@ -44409,17 +44217,17 @@
             },
             _padTime: function(e) {
                 var t = e.split(":");
-                return 1 === dn()(t, 1)[0].length && (e = "0".concat(e)),
+                return 1 === hn()(t, 1)[0].length && (e = "0".concat(e)),
                     e
             },
             _isValidDate: function(e) {
                 return null != Date.parse(e)
             }
         }),
-        _a = Object(ma.moment)(),
-        ya = Object(ma.moment)().add(1, "month"),
-        ba = new ga.a,
-        Ea = function(e) {
+        ya = Object(va.moment)(),
+        ba = Object(va.moment)().add(1, "month"),
+        Ea = new fa.a,
+        wa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44428,7 +44236,7 @@
                 g()(t, [{
                     key: "toggleAllWeekdays",
                     value: function(e) {
-                        var t = e ? Object.keys(fa.WEEKDAYS) : [];
+                        var t = e ? Object.keys(ma.WEEKDAYS) : [];
                         this.set({
                             weekdays: t
                         })
@@ -44436,7 +44244,7 @@
                 }, {
                     key: "getWeekdaysValue",
                     value: function() {
-                        var e = fa.RestrictionTimeFrame.getWeekdaysBitValue(this.attributes.weekdays);
+                        var e = ma.RestrictionTimeFrame.getWeekdaysBitValue(this.attributes.weekdays);
                         return 0 === e ? null : e
                     }
                 }, {
@@ -44449,16 +44257,16 @@
                             s = e.endDate,
                             r = e.daysOfMonth;
                         this.attributes.isAllDay && (t = n = null),
-                            this.attributes.isDuringDates ? (i = i.format(fa.DATE_FORMAT),
-                                s = s.format(fa.DATE_FORMAT)) : i = s = null;
+                            this.attributes.isDuringDates ? (i = i.format(ma.DATE_FORMAT),
+                                s = s.format(ma.DATE_FORMAT)) : i = s = null;
                         var o = this.getWeekdaysValue();
                         switch (0 === o && (o = null),
                             r) {
                             case "odd":
-                                r = fa.DAYS_OF_MONTH.ODD_DAYS;
+                                r = ma.DAYS_OF_MONTH.ODD_DAYS;
                                 break;
                             case "even":
-                                r = fa.DAYS_OF_MONTH.EVEN_DAYS;
+                                r = ma.DAYS_OF_MONTH.EVEN_DAYS;
                                 break;
                             default:
                                 r = null
@@ -44479,7 +44287,7 @@
                             t = e.isAllDay,
                             n = e.fromTime,
                             i = e.toTime;
-                        return !t && 1 === ba.compareTimes(n, i)
+                        return !t && 1 === Ea.compareTimes(n, i)
                     }
                 }, {
                     key: "validate",
@@ -44487,19 +44295,19 @@
                         var e = this.attributes,
                             t = [];
                         return 0 === e.weekdays.length && t.push(I18n.t("restrictions.editing.validation.weekdays")),
-                            !1 === e.isAllDay && (ba.isValidTime(e.fromTime) || t.push(I18n.t("restrictions.editing.validation.fromTime")),
-                                ba.isValidTime(e.toTime) || t.push(I18n.t("restrictions.editing.validation.toTime"))),
-                            e.isDuringDates && (_n.default.isBlank(e.startDate) ? t.push(I18n.t("restrictions.editing.validation.startDate")) : e.startDate.isBefore(Object(ma.moment)(), "day") && t.push(I18n.t("restrictions.editing.validation.startDate_in_past")),
-                                _n.default.isBlank(e.endDate) && t.push(I18n.t("restrictions.editing.validation.endDate"))),
+                            !1 === e.isAllDay && (Ea.isValidTime(e.fromTime) || t.push(I18n.t("restrictions.editing.validation.fromTime")),
+                                Ea.isValidTime(e.toTime) || t.push(I18n.t("restrictions.editing.validation.toTime"))),
+                            e.isDuringDates && (yn.default.isBlank(e.startDate) ? t.push(I18n.t("restrictions.editing.validation.startDate")) : e.startDate.isBefore(Object(va.moment)(), "day") && t.push(I18n.t("restrictions.editing.validation.startDate_in_past")),
+                                yn.default.isBlank(e.endDate) && t.push(I18n.t("restrictions.editing.validation.endDate"))),
                             t
                     }
                 }], [{
                     key: "for",
                     value: function(e) {
                         var n, i, s, r;
-                        e.isDuringDates() ? (n = Object(ma.moment)(e.getStartDate(), fa.DATE_FORMAT),
-                                i = Object(ma.moment)(e.getEndDate(), fa.DATE_FORMAT)) : (n = _a,
-                                i = ya),
+                        e.isDuringDates() ? (n = Object(va.moment)(e.getStartDate(), ma.DATE_FORMAT),
+                                i = Object(va.moment)(e.getEndDate(), ma.DATE_FORMAT)) : (n = ya,
+                                i = ba),
                             e.isAllDay() ? (s = "8:00",
                                 r = "17:00") : (s = e.getFromTime(),
                                 r = e.getToTime());
@@ -44520,7 +44328,7 @@
                 }]),
                 t
         }(o.a.Model),
-        wa = function(e) {
+        Sa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44585,7 +44393,7 @@
                                     name: "disabled",
                                     observe: ["isAllDay", "restrictionEditable"],
                                     onGet: function(e) {
-                                        var t = dn()(e, 2),
+                                        var t = hn()(e, 2),
                                             n = t[0],
                                             i = t[1];
                                         return n || !i
@@ -44597,7 +44405,7 @@
                                     name: "disabled",
                                     observe: ["isDuringDates", "restrictionEditable"],
                                     onGet: function(e) {
-                                        var t = dn()(e, 2),
+                                        var t = hn()(e, 2),
                                             n = t[0],
                                             i = t[1];
                                         return !n || !i
@@ -44630,7 +44438,7 @@
                 }, {
                     key: "_renderTimePickers",
                     value: function() {
-                        this.getUI("bootstrapTimepickers").timepicker(va.prototype.timepickerOptions);
+                        this.getUI("bootstrapTimepickers").timepicker(_a.prototype.timepickerOptions);
                         var e = this.model.attributes,
                             t = e.fromTime,
                             n = e.toTime;
@@ -44668,7 +44476,7 @@
                     value: function() {
                         return {
                             getWeekdayFromOrdinal: function(e) {
-                                return fa.WEEKDAY_ORDINALS[e]
+                                return ma.WEEKDAY_ORDINALS[e]
                             }
                         }
                     }
@@ -44702,7 +44510,7 @@
                             s = void 0 !== i && i,
                             r = n.supportsDaysOfMonthParity,
                             o = void 0 !== r && r,
-                            a = Ea.for(e);
+                            a = wa.for(e);
                         return a.set({
                                 restrictionEditable: s,
                                 supportsDaysOfMonthParity: o
@@ -44714,7 +44522,7 @@
                 }]),
                 t
         }(c.a.View),
-        Sa = function(e) {
+        ka = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44732,7 +44540,7 @@
                 }]),
                 t
         }(o.a.Model),
-        ka = function(e) {
+        Ta = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -44787,13 +44595,13 @@
                                     "drive-profile-toll-free": {
                                         observe: "drivingModality",
                                         onGet: function(e) {
-                                            return e === qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
+                                            return e === Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE
                                         }
                                     },
                                     "drive-profile-allowed": {
                                         observe: "drivingModality",
                                         onGet: function(e) {
-                                            return e === qo.RESTRICTION_MODALITY.DRIVING_ALLOWED
+                                            return e === Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED
                                         }
                                     }
                                 }
@@ -44844,7 +44652,7 @@
                             this._supportsLicensePlateNumber = e.supportsLicensePlateNumber,
                             this._supportsDaysOfMonthParity = e.supportsDaysOfMonthParity,
                             this._timeframe = this._restriction.getTimeFrame(),
-                            this.model = new Sa({
+                            this.model = new ka({
                                 restrictionEditable: this._isRestrictionEditable(),
                                 description: this._restriction.getDescription(),
                                 drivingModality: null
@@ -44863,14 +44671,14 @@
                     key: "_getDriveProfileTypeOptions",
                     value: function() {
                         var e = this,
-                            t = [qo.RESTRICTION_MODALITY.DRIVING_ALLOWED];
-                        return this._restriction.supportsTollDriveProfileEntries() && t.push(qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE),
-                            t.push(qo.RESTRICTION_MODALITY.DRIVING_BLOCKED),
+                            t = [Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED];
+                        return this._restriction.supportsTollDriveProfileEntries() && t.push(Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE),
+                            t.push(Yo.RESTRICTION_MODALITY.DRIVING_BLOCKED),
                             t.map(function(t) {
                                 return {
                                     value: t,
                                     label: I18n.t("restrictions.editing.driving.types.".concat(t)),
-                                    disabled: t === qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE && !e._canAddTollRestriction
+                                    disabled: t === Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE && !e._canAddTollRestriction
                                 }
                             })
                     }
@@ -44880,10 +44688,10 @@
                         this.stickit(),
                             this.$(".waze-tooltip").tooltip();
                         var e = this._isRestrictionEditable();
-                        this._isSegmentRestriction() && this.showChildView("segmentEditingRegion", na.for(this._restriction, {
+                        this._isSegmentRestriction() && this.showChildView("segmentEditingRegion", ia.for(this._restriction, {
                                 restrictionEditable: e
                             })),
-                            this.showChildView("timeframeEditingRegion", wa.for(this._timeframe, {
+                            this.showChildView("timeframeEditingRegion", Sa.for(this._timeframe, {
                                 restrictionEditable: e,
                                 supportsDaysOfMonthParity: this._supportsDaysOfMonthParity && this._restriction.supportsDaysOfMonthParity()
                             })),
@@ -44907,17 +44715,17 @@
                 }, {
                     key: "_isSegmentRestriction",
                     value: function() {
-                        return this._restriction instanceof Jo.a
+                        return this._restriction instanceof Zo.a
                     }
                 }, {
                     key: "_getDrivingModality",
                     value: function() {
-                        return this._isNewRestriction ? qo.RESTRICTION_MODALITY.DRIVING_ALLOWED : this._restriction.getDrivingModality()
+                        return this._isNewRestriction ? Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED : this._restriction.getDrivingModality()
                     }
                 }, {
                     key: "_driveProfileSupportsLicensePlateNumber",
                     value: function(e) {
-                        return this._restriction.supportsLicensePlateNumber() && this._supportsLicensePlateNumber && (e === qo.RESTRICTION_MODALITY.DRIVING_ALLOWED || e === qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE)
+                        return this._restriction.supportsLicensePlateNumber() && this._supportsLicensePlateNumber && (e === Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED || e === Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE)
                     }
                 }, {
                     key: "_showDriveProfileEdit",
@@ -44925,13 +44733,13 @@
                         var e, t = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}).drivingModality,
                             n = void 0 === t ? this._getDrivingModality() : t,
                             i = this._isRestrictionEditable();
-                        e = this._restriction.supportsDriveProfiles() ? n === qo.RESTRICTION_MODALITY.DRIVING_BLOCKED ? oa.for(this._restriction, {
+                        e = this._restriction.supportsDriveProfiles() ? n === Yo.RESTRICTION_MODALITY.DRIVING_BLOCKED ? aa.for(this._restriction, {
                                 restrictionEditable: i
-                            }) : ha.for(this._restriction, {
+                            }) : pa.for(this._restriction, {
                                 restrictionEditable: i,
                                 subscriptions: this._subscriptions,
                                 supportsLicensePlateNumber: this._driveProfileSupportsLicensePlateNumber(n)
-                            }) : new pa,
+                            }) : new ga,
                             this.model.set({
                                 drivingModality: n
                             }),
@@ -44947,7 +44755,7 @@
                             i = this.getChildView("timeframeEditingRegion"),
                             s = this.getChildView("driveProfileEditingRegion"),
                             r = this._restriction.getDefaultType();
-                        this._restriction.supportsDriveProfiles() && (n === qo.RESTRICTION_MODALITY.DRIVING_ALLOWED ? r = qo.RESTRICTION_TYPE.BLOCKED : n === qo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? r = qo.RESTRICTION_TYPE.TOLL : n === qo.RESTRICTION_MODALITY.DRIVING_BLOCKED && (r = s.getRestrictionData().defaultType));
+                        this._restriction.supportsDriveProfiles() && (n === Yo.RESTRICTION_MODALITY.DRIVING_ALLOWED ? r = Yo.RESTRICTION_TYPE.BLOCKED : n === Yo.RESTRICTION_MODALITY.DRIVING_TOLL_FREE ? r = Yo.RESTRICTION_TYPE.TOLL : n === Yo.RESTRICTION_MODALITY.DRIVING_BLOCKED && (r = s.getRestrictionData().defaultType));
                         var o = {
                             defaultType: r,
                             description: t
@@ -44964,8 +44772,8 @@
                     key: "_validate",
                     value: function() {
                         var e = [];
-                        return this.model.attributes.description.length > qo.RESTRICTION_DESCRIPTION_CHAR_LIMIT && e.push(I18n.t("restrictions.editing.validation.description_char_limit", {
-                                char_limit: qo.RESTRICTION_DESCRIPTION_CHAR_LIMIT
+                        return this.model.attributes.description.length > Yo.RESTRICTION_DESCRIPTION_CHAR_LIMIT && e.push(I18n.t("restrictions.editing.validation.description_char_limit", {
+                                char_limit: Yo.RESTRICTION_DESCRIPTION_CHAR_LIMIT
                             })),
                             e
                     }
@@ -44973,10 +44781,10 @@
                     key: "_isValid",
                     value: function() {
                         var e, t = this,
-                            n = (e = this._validate()).concat.apply(e, Nt()(["timeframeEditingRegion", "driveProfileEditingRegion"].map(function(e) {
+                            n = (e = this._validate()).concat.apply(e, xt()(["timeframeEditingRegion", "driveProfileEditingRegion"].map(function(e) {
                                 return t.getChildView(e).validate()
                             }))),
-                            i = new ea({
+                            i = new ta({
                                 errorMessages: n
                             });
                         return this.showChildView("validationRegion", i),
@@ -45008,7 +44816,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ta = function(e) {
+        Ia = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -45035,7 +44843,7 @@
                 }]),
                 t
         }(o.a.Model),
-        Ia = function(e) {
+        Ma = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -45083,14 +44891,14 @@
                 }, {
                     key: "_formatWeekdays",
                     value: function() {
-                        return new Zo.b({
+                        return new Xo.b({
                             timeFrame: this.getTimeFrame()
                         }).formatWeekdays()
                     }
                 }, {
                     key: "_formatTime",
                     value: function() {
-                        return new Zo.b({
+                        return new Xo.b({
                             timeFrame: this.getTimeFrame()
                         }).formatHours()
                     }
@@ -45115,9 +44923,9 @@
                     key: "_formatLicensePlate",
                     value: function(e) {
                         switch (e) {
-                            case ia.LICENSE_PLATES.ENDS_WITH_ODD:
+                            case sa.LICENSE_PLATES.ENDS_WITH_ODD:
                                 return I18n.t("restrictions.editing.driving.lp_ends_with_odd");
-                            case ia.LICENSE_PLATES.ENDS_WITH_EVEN:
+                            case sa.LICENSE_PLATES.ENDS_WITH_EVEN:
                                 return I18n.t("restrictions.editing.driving.lp_ends_with_even");
                             default:
                                 return I18n.t("restrictions.editing.driving.lp_ends_with", {
@@ -45135,9 +44943,9 @@
                     value: function() {
                         var e, t = this,
                             n = this.getRestriction();
-                        return n.isDifficult() ? new Zo.b({
+                        return n.isDifficult() ? new Xo.b({
                             timeFrame: this.getTimeFrame()
-                        }).formatDateRange() : (e = n.isBlockedModality() ? n.getDriveProfileList(qo.RESTRICTION_TYPE.BLOCKED) : n.getDriveProfileList(qo.RESTRICTION_TYPE.FREE),
+                        }).formatDateRange() : (e = n.isBlockedModality() ? n.getDriveProfileList(Yo.RESTRICTION_TYPE.BLOCKED) : n.getDriveProfileList(Yo.RESTRICTION_TYPE.FREE),
                             l.a.isEmpty(e) ? I18n.t("restrictions.editing.driving.all_vehicles") : e.getDriveProfiles().map(function(e) {
                                 return t._formatDriveProfile(e)
                             }).join(", "))
@@ -45145,7 +44953,7 @@
                 }, {
                     key: "_formatVehicleTypes",
                     value: function(e) {
-                        var t = l.a.invert(ia.VEHICLE_TYPES);
+                        var t = l.a.invert(sa.VEHICLE_TYPES);
                         return e.map(function(e) {
                             return I18n.t("restrictions.vehicle_types.".concat(t[e]))
                         }).join(", ")
@@ -45154,9 +44962,9 @@
                     key: "_formatLane",
                     value: function() {
                         var e = this.getRestriction();
-                        if (e instanceof Jo.a) {
+                        if (e instanceof Zo.a) {
                             var t = e.getDisposition(),
-                                n = l.a.invert(Ko.RESTRICTION_SEGMENT_DISPOSITION)[t];
+                                n = l.a.invert(Jo.RESTRICTION_SEGMENT_DISPOSITION)[t];
                             return I18n.t("restrictions.summary.disposition.".concat(n))
                         }
                         return ""
@@ -45198,7 +45006,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ma = function(e) {
+        Aa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -45212,7 +45020,7 @@
                 }, {
                     key: "childView",
                     value: function() {
-                        return Ia
+                        return Ma
                     }
                 }, {
                     key: "childViewTriggers",
@@ -45248,13 +45056,13 @@
                             this._subscriptions = e.subscriptions,
                             this._supportsLicensePlateNumber = e.supportsLicensePlateNumber,
                             this.collection = new o.a.Collection(e.restrictions.map(function(e) {
-                                return Ta.for(e)
+                                return Ia.for(e)
                             }))
                     }
                 }]),
                 t
         }(c.a.CollectionView),
-        Aa = function(e) {
+        Ca = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -45339,7 +45147,7 @@
                     key: "onRender",
                     value: function() {
                         this.stickit(),
-                            this.showChildView("listRegion", new Ma({
+                            this.showChildView("listRegion", new Aa({
                                 restrictions: this._restrictions,
                                 canEditRestrictions: this._canEditRestrictions,
                                 subscriptions: this._subscriptions
@@ -45368,7 +45176,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ca = function(e) {
+        Oa = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -45388,7 +45196,7 @@
                 }, {
                     key: "_onEscapeKeydown",
                     value: function(e) {
-                        if (this.getChildView("contentRegion") instanceof ka)
+                        if (this.getChildView("contentRegion") instanceof Ta)
                             return e.preventDefault(),
                                 this._showSummaryView(),
                                 !1
@@ -45400,7 +45208,7 @@
                             this._turn = e.turn,
                             this._canEditRestrictions = e.canEditRestrictions,
                             this._restrictions = this._turn.getTurnData().getRestrictions(),
-                            this._viewHelpers = new Zo.c({
+                            this._viewHelpers = new Xo.c({
                                 turn: this._turn,
                                 dataModel: this._dataModel
                             })
@@ -45408,7 +45216,7 @@
                 }, {
                     key: "_restrictionDisplayFilter",
                     value: function(e) {
-                        return this.options.editingDifficultTurn ? e.getDefaultType() === qo.RESTRICTION_TYPE.DIFFICULT : e.getDefaultType() !== qo.RESTRICTION_TYPE.DIFFICULT
+                        return this.options.editingDifficultTurn ? e.getDefaultType() === Yo.RESTRICTION_TYPE.DIFFICULT : e.getDefaultType() !== Yo.RESTRICTION_TYPE.DIFFICULT
                     }
                 }, {
                     key: "_shouldShowSummaryView",
@@ -45479,7 +45287,7 @@
                     value: function() {
                         var e = this._turn.getTurnData().withRestrictions(this._restrictions.filter(this._restrictionDisplayFilter.bind(this))),
                             t = this._turn.withTurnData(e);
-                        this.showChildView("contentRegion", new Aa({
+                        this.showChildView("contentRegion", new Ca({
                             turn: t,
                             canEditRestrictions: this._canEditRestrictions,
                             subscriptions: {},
@@ -45493,7 +45301,7 @@
                             t = e.restriction,
                             n = e.isNewRestriction,
                             i = void 0 !== n && n;
-                        this.showChildView("contentRegion", new ka({
+                        this.showChildView("contentRegion", new Ta({
                             restriction: t,
                             isNewRestriction: i,
                             canEditRestrictions: this._canEditRestrictions,
@@ -45506,11 +45314,11 @@
                     key: "_showCreateTurnRestrictionView",
                     value: function() {
                         var e, t = this._turn.getTurnData().hasSegmentPath(),
-                            n = this.options.editingDifficultTurn ? qo.RESTRICTION_TYPE.DIFFICULT : qo.RESTRICTION_TYPE.FREE;
-                        e = t ? new Jo.a({
+                            n = this.options.editingDifficultTurn ? Yo.RESTRICTION_TYPE.DIFFICULT : Yo.RESTRICTION_TYPE.FREE;
+                        e = t ? new Zo.a({
                                 direction: null,
                                 defaultType: n
-                            }) : new $o.a({
+                            }) : new Ko.a({
                                 defaultType: n
                             }),
                             this._showEditView({
@@ -45523,7 +45331,7 @@
                     value: function() {
                         var e = this._turn.getTurnData().withRestrictions(this._restrictions),
                             t = this._turn.withTurnData(e);
-                        this._dataModel.actionManager.add(new Ho.default(this._dataModel.getTurnGraph(), t))
+                        this._dataModel.actionManager.add(new zo.default(this._dataModel.getTurnGraph(), t))
                     }
                 }, {
                     key: "template",
@@ -45533,7 +45341,7 @@
                 }]),
                 t
         }(c.a.View),
-        Oa = function(e) {
+        Ra = function(e) {
             function t(e) {
                 var n;
                 h()(this, t),
@@ -45600,7 +45408,7 @@
                                 },
                                 onSet: function(e) {
                                     var t = this._turn.getTurnData().withInstructionOpcode(e),
-                                        n = new Ho.default(this._dataModel.getTurnGraph(), this._turn.withTurnData(t));
+                                        n = new zo.default(this._dataModel.getTurnGraph(), this._turn.withTurnData(t));
                                     this._dataModel.actionManager.add(n)
                                 },
                                 selectOptions: {
@@ -45646,7 +45454,7 @@
                             ".path-progress": {
                                 observe: ["currentPathNum", "pathCount"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return "".concat(n + 1, "/").concat(i)
@@ -45718,7 +45526,7 @@
                     key: "_getOpcodeOptions",
                     value: function() {
                         var e = I18n.t("turn_tooltip.instruction_override.opcodes");
-                        return Object.keys(zo).map(function(t) {
+                        return Object.keys(qo).map(function(t) {
                             return {
                                 value: t,
                                 label: e[t]
@@ -45728,7 +45536,7 @@
                 }, {
                     key: "_editRestrictions",
                     value: function() {
-                        W.app.layout.getRegion("dialogRegion").show(new Ca({
+                        W.app.layout.getRegion("dialogRegion").show(new Oa({
                             turn: this._turn,
                             dataModel: this._dataModel,
                             canEditRestrictions: this._editable
@@ -45739,7 +45547,7 @@
                     value: function(e) {
                         var t = this._turn.getTurnData().withoutDifficultRestrictions().withSimpleDifficulty(e),
                             n = this._turn.withTurnData(t);
-                        this._dataModel.actionManager.add(new Ho.default(this._dataModel.getTurnGraph(), n))
+                        this._dataModel.actionManager.add(new zo.default(this._dataModel.getTurnGraph(), n))
                     }
                 }, {
                     key: "_shouldAllowRestrictionEditing",
@@ -45762,13 +45570,13 @@
                 }, {
                     key: "_selectPrevPath",
                     value: function() {
-                        this._dataModel.actionManager.add(new Ho.default(this._dataModel.getTurnGraph(), this._turnArrow.getPrevPossibleTurn())),
+                        this._dataModel.actionManager.add(new zo.default(this._dataModel.getTurnGraph(), this._turnArrow.getPrevPossibleTurn())),
                             this._updateCounts()
                     }
                 }, {
                     key: "_selectNextPath",
                     value: function() {
-                        this._dataModel.actionManager.add(new Ho.default(this._dataModel.getTurnGraph(), this._turnArrow.getNextPossibleTurn())),
+                        this._dataModel.actionManager.add(new zo.default(this._dataModel.getTurnGraph(), this._turnArrow.getNextPossibleTurn())),
                             this._updateCounts()
                     }
                 }, {
@@ -45778,7 +45586,7 @@
                             var e = null,
                                 t = this._turn.getTurnData().getRestrictions();
                             1 === t.length && t[0].isSimplyDifficult() && (e = t[0]),
-                                W.app.layout.getRegion("dialogRegion").show(new Ca({
+                                W.app.layout.getRegion("dialogRegion").show(new Oa({
                                     turn: this._turn,
                                     dataModel: this._dataModel,
                                     canEditRestrictions: this._editable,
@@ -45795,12 +45603,12 @@
                         var e = this._turn.getTurnData().getRestrictions().filter(function(e) {
                             return e.isDifficult()
                         }).map(function(e) {
-                            var t = new Zo.b({
+                            var t = new Xo.b({
                                 timeFrame: e.getTimeFrame()
                             });
                             return "".concat(t.formatWeekdays(), " ").concat(t.formatHours())
                         });
-                        return Object(ms.getHTML)("templates/turn-arrow-tooltip-timeframes", {
+                        return Object(vs.getHTML)("templates/turn-arrow-tooltip-timeframes", {
                             timeFrames: e
                         })
                     }
@@ -45813,7 +45621,7 @@
                 t
         }(c.a.View);
 
-    function Ra(e, t) {
+    function Da(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -45821,24 +45629,24 @@
             })),
             n
     }
-    var Da = {
+    var La = {
             LEFT: "left",
             RIGHT: "right",
             MIDDLE: "middle"
         },
-        La = {
+        Pa = {
             TOP: "top",
             BOTTOM: "bottom"
         },
-        Pa = function(e) {
+        Na = function(e) {
             function t(e) {
                 return h()(this, t),
                     m()(this, _()(t).call(this, function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? Ra(n, !0).forEach(function(t) {
+                            t % 2 ? Da(n, !0).forEach(function(t) {
                                 V()(e, t, n[t])
-                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ra(n).forEach(function(t) {
+                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Da(n).forEach(function(t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             })
                         }
@@ -45860,8 +45668,8 @@
                                 top: s.top,
                                 left: s.left
                             }),
-                            t.$el.removeClass(Object.values(Da).join(" ")),
                             t.$el.removeClass(Object.values(La).join(" ")),
+                            t.$el.removeClass(Object.values(Pa).join(" ")),
                             t.$el.addClass("big-tooltip"),
                             t.$el.addClass(r.join(" ")),
                             t.$el.on("mouseenter", function() {
@@ -45884,7 +45692,7 @@
                 t
         }(c.a.Region);
 
-    function Na(e, t) {
+    function xa(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -45892,8 +45700,8 @@
             })),
             n
     }
-    var xa = La.TOP,
-        Va = function(e) {
+    var Va = Pa.TOP,
+        ja = function(e) {
             function t(e, n) {
                 var i;
                 return h()(this, t),
@@ -45920,7 +45728,7 @@
                     value: function() {
                         this.view.addRegions({
                             bigTooltipRegion: {
-                                regionClass: Pa
+                                regionClass: Na
                             }
                         });
                         var e = this.view.getRegion("bigTooltipRegion");
@@ -45951,7 +45759,7 @@
                             o = n(),
                             a = this.$(r),
                             l = 230 + this.tooltipView.$el.height() + a.height();
-                        return e.y - l < s.top ? La.BOTTOM : e.y + l > i.h - s.bottom ? La.TOP : o || xa
+                        return e.y - l < s.top ? Pa.BOTTOM : e.y + l > i.h - s.bottom ? Pa.TOP : o || Va
                     }
                 }, {
                     key: "_calcHorizontalPlacement",
@@ -45961,14 +45769,14 @@
                             i = t.size,
                             s = n();
                         if (e.x + 157.5 > i.w)
-                            return Da.LEFT;
+                            return La.LEFT;
                         if (e.x - 157.5 < 0)
-                            return Da.RIGHT;
+                            return La.RIGHT;
                         if (!s)
-                            return Da.MIDDLE;
+                            return La.MIDDLE;
                         var r = e.x + 315 < i.w,
                             o = e.x - 315 > 0;
-                        return s === Da.LEFT && o || s === Da.RIGHT && r ? s : void 0
+                        return s === La.LEFT && o || s === La.RIGHT && r ? s : void 0
                     }
                 }, {
                     key: "_isOutOfBounds",
@@ -45994,9 +45802,9 @@
                                     o = function(e) {
                                         for (var t = 1; t < arguments.length; t++) {
                                             var n = null != arguments[t] ? arguments[t] : {};
-                                            t % 2 ? Na(n, !0).forEach(function(t) {
+                                            t % 2 ? xa(n, !0).forEach(function(t) {
                                                 V()(e, t, n[t])
-                                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Na(n).forEach(function(t) {
+                                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : xa(n).forEach(function(t) {
                                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                             })
                                         }
@@ -46010,7 +45818,7 @@
                                     var a = [],
                                         l = this._calcVerticalPlacement(n),
                                         u = this._calcHorizontalPlacement(n);
-                                    l === La.BOTTOM ? o.screenPosition.top += s.height() / 2 : o.screenPosition.top -= s.height() / 2,
+                                    l === Pa.BOTTOM ? o.screenPosition.top += s.height() / 2 : o.screenPosition.top -= s.height() / 2,
                                         a.push(l),
                                         a.push(u),
                                         o.placements = a,
@@ -46068,10 +45876,10 @@
                 }]),
                 t
         }(c.a.Behavior),
-        ja = n(145),
-        Ua = n.n(ja);
+        Ua = n(146),
+        Fa = n.n(Ua);
 
-    function Fa(e, t) {
+    function Ba(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -46079,7 +45887,7 @@
             })),
             n
     }
-    var Ba = function(e) {
+    var Ga = function(e) {
         function t(e) {
             var n;
             h()(this, t);
@@ -46223,12 +46031,12 @@
                             dataModel: this._dataModel
                         },
                         n = null;
-                    return e.getTurn().getTurnData().isAllowed() ? n = new Oa(t) : e.hasMultiplePaths() && (n = new Oa(function(e) {
+                    return e.getTurn().getTurnData().isAllowed() ? n = new Ra(t) : e.hasMultiplePaths() && (n = new Ra(function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var n = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? Fa(n, !0).forEach(function(t) {
+                                t % 2 ? Ba(n, !0).forEach(function(t) {
                                     V()(e, t, n[t])
-                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Fa(n).forEach(function(t) {
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ba(n).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                 })
                             }
@@ -46254,9 +46062,9 @@
                 key: "_toggleTurn",
                 value: function() {
                     if (this._turnArrow.isEditable()) {
-                        var e = new Ua.a(this._dataModel, this._turnArrow.getTurn());
-                        e.toggleTurnConfirmation() === ja.TOGGLE_CONFIRMATION_REASON.HAS_LANES ? (this.trigger("bigtooltip:hide"),
-                            St.a.showAsync({
+                        var e = new Fa.a(this._dataModel, this._turnArrow.getTurn());
+                        e.toggleTurnConfirmation() === Ua.TOGGLE_CONFIRMATION_REASON.HAS_LANES ? (this.trigger("bigtooltip:hide"),
+                            kt.a.showAsync({
                                 lonlat: this.calculateArrowLonlat(this._turnArrow),
                                 title: I18n.t("lanes.confirm_disable_turn.title"),
                                 content: I18n.t("lanes.confirm_disable_turn.content")
@@ -46269,7 +46077,7 @@
                 key: "_onSegmentPathClicked",
                 value: function(e) {
                     e.stopPropagation(),
-                        this._dataModel.actionManager.add(new Ho.default(this._dataModel.getTurnGraph(), this._turnArrow.getNextPossibleTurn()))
+                        this._dataModel.actionManager.add(new zo.default(this._dataModel.getTurnGraph(), this._turnArrow.getNextPossibleTurn()))
                 }
             }, {
                 key: "template",
@@ -46281,7 +46089,7 @@
                 get: function() {
                     var e = this;
                     return [{
-                        behaviorClass: Va,
+                        behaviorClass: ja,
                         size: {
                             w: W.map.size.w,
                             h: W.map.size.h
@@ -46299,21 +46107,21 @@
                         },
                         getVerticalPlacement: function() {
                             var t = e.options.turnArrow;
-                            if (t instanceof Uo) {
+                            if (t instanceof Fo) {
                                 var n = t.getAngle();
                                 if (n >= -135 && n <= -45)
-                                    return La.BOTTOM
+                                    return Pa.BOTTOM
                             }
                             return null
                         },
                         getHorizontalPlacement: function() {
                             var t = e.options.turnArrow;
-                            if (t instanceof Uo) {
+                            if (t instanceof Fo) {
                                 var n = t.getAngle();
                                 if (n >= -45 && n <= 45)
-                                    return Da.RIGHT;
+                                    return La.RIGHT;
                                 if (n >= 135 || n <= -135)
-                                    return Da.LEFT
+                                    return La.LEFT
                             }
                             return null
                         }
@@ -46322,11 +46130,11 @@
             }]),
             t
     }(c.a.View);
-    Ba.ARROW_HEIGHT_IN_PIXELS = 40,
-        Ba.ARROW_DISTANCE_FROM_NODE_IN_PIXELS = 20,
-        Ba.UTURN_ARROW_OFFSET_IN_PIXELS = 18;
-    var Ga = Ba,
-        Wa = function() {
+    Ga.ARROW_HEIGHT_IN_PIXELS = 40,
+        Ga.ARROW_DISTANCE_FROM_NODE_IN_PIXELS = 20,
+        Ga.UTURN_ARROW_OFFSET_IN_PIXELS = 18;
+    var Wa = Ga,
+        Ha = function() {
             function e(t, n, i) {
                 var s = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
                     r = s.includeJunctionTurns,
@@ -46342,18 +46150,18 @@
                     this._includeJunctionTurns = o,
                     this._includeUturns = l,
                     this._includeOnlyDisallowedTurns = c,
-                    this._offsetCalculator = new Wo
+                    this._offsetCalculator = new Ho
             }
             return g()(e, [{
                     key: "generate",
                     value: function(t) {
-                        return this._drawingContext.getMapZoom() < e.MIN_UTURN_DISPLAY_ZOOM ? [] : [].concat(Nt()(this._createTurnArrowsForVertex(Vo.a.forwardOf(t.getID()))), Nt()(this._createTurnArrowsForVertex(Vo.a.reverseOf(t.getID()))))
+                        return this._drawingContext.getMapZoom() < e.MIN_UTURN_DISPLAY_ZOOM ? [] : [].concat(xt()(this._createTurnArrowsForVertex(jo.a.forwardOf(t.getID()))), xt()(this._createTurnArrowsForVertex(jo.a.reverseOf(t.getID()))))
                     }
                 }, {
                     key: "_createTurnArrowsForVertex",
                     value: function(e) {
                         var t = this,
-                            n = bs.a.directedSegment(this._dataModel, e);
+                            n = Es.a.directedSegment(this._dataModel, e);
                         if (!n.getNode())
                             return [];
                         var i = [];
@@ -46364,7 +46172,7 @@
                         var s = i.filter(function(e) {
                             return t._shouldDrawArrow(e)
                         }).map(function(e) {
-                            return new Ga({
+                            return new Wa({
                                 turnArrow: e,
                                 isLeftHand: t._dataModel.isLeftHand,
                                 drawingContext: t._drawingContext,
@@ -46387,7 +46195,7 @@
                             i = e.getSegment();
                         return this._dataModel.getTurnGraph().getLegalTrivialTurnsFrom(e.getVertex()).map(function(e) {
                             var s = t._dataModel.segments.getObjectById(e.getToVertex().getSegmentID());
-                            return new Bo(i, s, n, e)
+                            return new Go(i, s, n, e)
                         })
                     }
                 }, {
@@ -46398,7 +46206,7 @@
                         return n.getTurnsFrom(e.getVertex()).map(function(i) {
                             var s = t._dataModel.segments.getObjectById(i.getToVertex().getSegmentID()),
                                 r = t._dataModel.nodes.getObjectById(t._dataModel.getRoadGraph().getVertexNodeID(i.getToVertex().getOpposite()));
-                            return new Uo(e.getSegment(), s, r, i, n)
+                            return new Fo(e.getSegment(), s, r, i, n)
                         })
                     }
                 }, {
@@ -46411,7 +46219,7 @@
                     value: function(t) {
                         if (!this._includeUturns || this._isDeadEndUturn(t))
                             return !1;
-                        var n = this._drawingContext.mapUnitsToPixel($t.getLength(t.getFromSegment().geometry));
+                        var n = this._drawingContext.mapUnitsToPixel(Kt.getLength(t.getFromSegment().geometry));
                         return this._drawingContext.getMapZoom() >= e.MIN_UTURN_DISPLAY_ZOOM && n >= e.MIN_SEGMENT_LENGTH_FOR_UTURN
                     }
                 }, {
@@ -46424,32 +46232,32 @@
                     value: function(e) {
                         var t = e.getNode();
                         if (!e.areTurnsLocked()) {
-                            var n = new OpenLayers.Marker(bt.toLonLat(t.geometry), new ce.default("unlocked-badge"));
+                            var n = new OpenLayers.Marker(Et.toLonLat(t.geometry), new ce.default("unlocked-badge"));
                             this._drawingContext.addMarkers([n])
                         }
                     }
                 }]),
                 e
         }();
-    Wa.MIN_UTURN_DISPLAY_ZOOM = 5,
-        Wa.MIN_ARROW_DISPLAY_ZOOM = 4,
-        Wa.MIN_SEGMENT_LENGTH_FOR_UTURN = 75;
-    var Ha, za = Wa,
-        qa = n(77),
-        Ya = function() {
+    Ha.MIN_UTURN_DISPLAY_ZOOM = 5,
+        Ha.MIN_ARROW_DISPLAY_ZOOM = 4,
+        Ha.MIN_SEGMENT_LENGTH_FOR_UTURN = 75;
+    var za, qa = Ha,
+        Ya = n(78),
+        $a = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this._drawingContext = t,
                     this._dataModel = n,
                     this._appPreferences = i,
-                    this._turnArrowViewGenerator = new za(this._drawingContext, this._dataModel, this._appPreferences, {
+                    this._turnArrowViewGenerator = new qa(this._drawingContext, this._dataModel, this._appPreferences, {
                         includeJunctionTurns: !1,
                         includeUturns: !1,
                         includeOnlyDisallowedTurns: !0
                     }),
                     this._drawingContext.on("zoomend", this.draw, this),
                     this._appPreferences.on("change:spreadTurnArrows change:showTransparentTurnArrows", this.draw, this),
-                    this._dataModel.getTurnGraph().on(qa.CHANGE_EVENT, this.draw, this)
+                    this._dataModel.getTurnGraph().on(Ya.CHANGE_EVENT, this.draw, this)
             }
             return g()(e, [{
                     key: "draw",
@@ -46459,7 +46267,7 @@
                         var n = this._getAllVisibleSegment().map(function(e) {
                             return t._turnArrowViewGenerator.generate(e)
                         });
-                        (e = []).concat.apply(e, Nt()(n)).forEach(function(e) {
+                        (e = []).concat.apply(e, xt()(n)).forEach(function(e) {
                             return e.render()
                         })
                     }
@@ -46477,12 +46285,12 @@
                         this._drawingContext.off("zoomend", this.draw, this),
                             this._drawingContext.destroy(),
                             this._appPreferences.off("change:spreadTurnArrows change:showTransparentTurnArrows", this.draw, this),
-                            this._dataModel.getTurnGraph().off(qa.CHANGE_EVENT, this.draw, this)
+                            this._dataModel.getTurnGraph().off(Ya.CHANGE_EVENT, this.draw, this)
                     }
                 }]),
                 e
         }(),
-        $a = function() {
+        Ka = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this._disallowedTurnsEditor = null
@@ -46491,54 +46299,54 @@
                     key: "writeStateToApp",
                     value: function(e, t) {
                         !1 === e ? null !== this._disallowedTurnsEditor && (this._disallowedTurnsEditor.destroy(),
-                            this._disallowedTurnsEditor = null) : null === this._disallowedTurnsEditor && (this._disallowedTurnsEditor = new Ya(t.map.getDrawingContext(), t.dataModel, W.prefs),
+                            this._disallowedTurnsEditor = null) : null === this._disallowedTurnsEditor && (this._disallowedTurnsEditor = new $a(t.map.getDrawingContext(), t.dataModel, W.prefs),
                             this._disallowedTurnsEditor.draw())
                     }
                 }]),
                 e
         }(),
-        Ka = n(377),
-        Ja = (Ha = {},
-            V()(Ha, nr.GROUP_ISSUES, !0),
-            V()(Ha, nr.GROUP_MAP_ISSUES, !1),
-            V()(Ha, nr.ITEM_MAP_PROBLEMS, !0),
-            V()(Ha, nr.ITEM_CLOSED_MAP_PROBLEMS, !1),
-            V()(Ha, nr.ITEM_UPDATE_REQUESTS, !0),
-            V()(Ha, nr.ITEM_CLOSED_UPDATE_REQUESTS, !1),
-            V()(Ha, nr.ITEM_PLACE_UPDATE_REQUESTS, !1),
-            V()(Ha, nr.ITEM_RESIDENTIAL_PLACE_UPDATE_REQUESTS, !1),
-            V()(Ha, nr.GROUP_PARKING_ISSUES, !1),
-            V()(Ha, nr.ITEM_PARKING_MAP_PROBLEMS, !0),
-            V()(Ha, nr.ITEM_PARKING_CLOSED_MAP_PROBLEMS, !1),
-            V()(Ha, nr.ITEM_PARKING_PLACE_UPDATE_REQUESTS, !0),
-            V()(Ha, nr.GROUP_PLACES, !0),
-            V()(Ha, nr.ITEM_VENUES, !0),
-            V()(Ha, nr.ITEM_RESIDENTIAL_PLACES, !1),
-            V()(Ha, nr.ITEM_PARKING_PLACES, !1),
-            V()(Ha, nr.GROUP_ROAD, !0),
-            V()(Ha, nr.ITEM_ROAD, !0),
-            V()(Ha, nr.ITEM_JUNCTION_BOXES, !1),
-            V()(Ha, nr.ITEM_CLOSURES, !1),
-            V()(Ha, nr.ITEM_SPEED_CAMERAS, !1),
-            V()(Ha, nr.ITEM_HOUSE_NUMBERS, !1),
-            V()(Ha, nr.GROUP_DISPLAY, !0),
-            V()(Ha, nr.ITEM_SATELLITE_IMAGERY, !0),
-            V()(Ha, nr.ITEM_AREA_MANAGERS, !1),
-            V()(Ha, nr.ITEM_GPS_POINTS, !1),
-            V()(Ha, nr.ITEM_LIVE_USERS, !1),
-            V()(Ha, nr.ITEM_EDITABLE_AREAS, !1),
-            V()(Ha, nr.ITEM_EDITABLE_AREAS, !1),
-            V()(Ha, nr.GROUP_CITIES, !1),
-            V()(Ha, nr.ITEM_CITY_NAMES, !1),
-            V()(Ha, nr.ITEM_MAP_COMMENTS, !0),
-            Ha),
-        Za = function() {
+        Ja = n(378),
+        Za = (za = {},
+            V()(za, ir.GROUP_ISSUES, !0),
+            V()(za, ir.GROUP_MAP_ISSUES, !1),
+            V()(za, ir.ITEM_MAP_PROBLEMS, !0),
+            V()(za, ir.ITEM_CLOSED_MAP_PROBLEMS, !1),
+            V()(za, ir.ITEM_UPDATE_REQUESTS, !0),
+            V()(za, ir.ITEM_CLOSED_UPDATE_REQUESTS, !1),
+            V()(za, ir.ITEM_PLACE_UPDATE_REQUESTS, !1),
+            V()(za, ir.ITEM_RESIDENTIAL_PLACE_UPDATE_REQUESTS, !1),
+            V()(za, ir.GROUP_PARKING_ISSUES, !1),
+            V()(za, ir.ITEM_PARKING_MAP_PROBLEMS, !0),
+            V()(za, ir.ITEM_PARKING_CLOSED_MAP_PROBLEMS, !1),
+            V()(za, ir.ITEM_PARKING_PLACE_UPDATE_REQUESTS, !0),
+            V()(za, ir.GROUP_PLACES, !0),
+            V()(za, ir.ITEM_VENUES, !0),
+            V()(za, ir.ITEM_RESIDENTIAL_PLACES, !1),
+            V()(za, ir.ITEM_PARKING_PLACES, !1),
+            V()(za, ir.GROUP_ROAD, !0),
+            V()(za, ir.ITEM_ROAD, !0),
+            V()(za, ir.ITEM_JUNCTION_BOXES, !1),
+            V()(za, ir.ITEM_CLOSURES, !1),
+            V()(za, ir.ITEM_SPEED_CAMERAS, !1),
+            V()(za, ir.ITEM_HOUSE_NUMBERS, !1),
+            V()(za, ir.GROUP_DISPLAY, !0),
+            V()(za, ir.ITEM_SATELLITE_IMAGERY, !0),
+            V()(za, ir.ITEM_AREA_MANAGERS, !1),
+            V()(za, ir.ITEM_GPS_POINTS, !1),
+            V()(za, ir.ITEM_LIVE_USERS, !1),
+            V()(za, ir.ITEM_EDITABLE_AREAS, !1),
+            V()(za, ir.ITEM_EDITABLE_AREAS, !1),
+            V()(za, ir.GROUP_CITIES, !1),
+            V()(za, ir.ITEM_CITY_NAMES, !1),
+            V()(za, ir.ITEM_MAP_COMMENTS, !0),
+            za),
+        Xa = function() {
             function e(t) {
                 h()(this, e),
                     this._LOCAL_STORAGE_KEY = "togglersState",
                     this._tree = t,
                     this._togglers = this._getTogglersMap(),
-                    this._bitFieldSerializer = new Ka.TogglerTreeBitfieldSerializer
+                    this._bitFieldSerializer = new Ja.TogglerTreeBitfieldSerializer
             }
             return g()(e, [{
                     key: "_getTogglersMap",
@@ -46634,19 +46442,19 @@
                 }], [{
                     key: "create",
                     value: function() {
-                        var t = Qs,
-                            n = nr,
-                            i = new e(Lo.of("ROOT", [Lo.of(n.GROUP_ISSUES, [Lo.of(n.GROUP_MAP_ISSUES, [Do.of(n.ITEM_MAP_PROBLEMS, new Po("problems", "ALL", "OPEN")), Do.of(n.ITEM_CLOSED_MAP_PROBLEMS, new Po("problems", "ALL", "CLOSED")), Do.of(n.ITEM_UPDATE_REQUESTS, new Po("mapUpdateRequests", "ALL", "OPEN")), Do.of(n.ITEM_CLOSED_UPDATE_REQUESTS, new Po("mapUpdateRequests", "ALL", "CLOSED"))]), Do.of(n.ITEM_PLACE_UPDATE_REQUESTS, [new Po("venues", "ALL", "UPDATE_REQUEST"), new No(t.PLACE_UPDATES)]), Do.of(n.ITEM_RESIDENTIAL_PLACE_UPDATE_REQUESTS, [new Po("venues", "RESIDENTIAL", "UPDATE_REQUEST"), new No("RESIDENTIAL_PLACE_UPDATES")]), Lo.of(n.GROUP_PARKING_ISSUES, [Do.of(n.ITEM_PARKING_MAP_PROBLEMS, new Po("problems", "PARKING", "OPEN")), Do.of(n.ITEM_PARKING_CLOSED_MAP_PROBLEMS, new Po("problems", "PARKING", "CLOSED")), Do.of(n.ITEM_PARKING_PLACE_UPDATE_REQUESTS, [new Po("venues", "PARKING", "UPDATE_REQUEST"), new No("PARKING_PLACE_UPDATES")])])]), Lo.of(n.GROUP_PLACES, [Do.of(n.ITEM_VENUES, new Po("venues", "ALL", "SHOW")), Do.of(n.ITEM_RESIDENTIAL_PLACES, new Po("venues", "RESIDENTIAL", "SHOW")), Do.of(n.ITEM_PARKING_PLACES, new Po("venues", "PARKING", "SHOW"))]), Lo.of(n.GROUP_ROAD, [Do.of(n.ITEM_ROAD, new No(t.ROADS)), Do.of(n.ITEM_JUNCTION_BOXES, new No(t.BIG_JUNCTIONS)), Do.of(n.ITEM_CLOSURES, new No(t.CLOSURES)), Do.of(n.ITEM_SPEED_CAMERAS, new No(t.SPEED_CAMERAS)), Do.of(n.ITEM_HOUSE_NUMBERS, new No(t.HOUSE_NUMBERS))]), Lo.of(n.GROUP_DISPLAY, [Do.of(n.ITEM_SATELLITE_IMAGERY, new No(t.SATELLITE_IMAGERY)), Do.of(n.ITEM_AREA_MANAGERS, new No(t.AREA_MANAGERS)), Do.of(n.ITEM_GPS_POINTS, new No(t.GPS_POINTS)), Do.of(n.ITEM_EDITABLE_AREAS, new No(t.EDITABLE_AREAS)), Do.of(n.ITEM_LIVE_USERS, new No(t.LIVE_USERS)), Do.of(n.ITEM_DISALLOWED_TURNS, new $a), Lo.of(n.GROUP_CITIES, [Do.of(n.ITEM_CITY_NAMES, new No(t.CITIES_MARKERS_LAYER_NAME))], new No(t.CITIES_RASTER_LAYER_NAME)), Do.of(n.ITEM_MAP_COMMENTS, new No(t.MAP_COMMENTS))])])),
-                            s = Object.assign({}, Ja);
+                        var t = er,
+                            n = ir,
+                            i = new e(Po.of("ROOT", [Po.of(n.GROUP_ISSUES, [Po.of(n.GROUP_MAP_ISSUES, [Lo.of(n.ITEM_MAP_PROBLEMS, new No("problems", "ALL", "OPEN")), Lo.of(n.ITEM_CLOSED_MAP_PROBLEMS, new No("problems", "ALL", "CLOSED")), Lo.of(n.ITEM_UPDATE_REQUESTS, new No("mapUpdateRequests", "ALL", "OPEN")), Lo.of(n.ITEM_CLOSED_UPDATE_REQUESTS, new No("mapUpdateRequests", "ALL", "CLOSED"))]), Lo.of(n.ITEM_PLACE_UPDATE_REQUESTS, [new No("venues", "ALL", "UPDATE_REQUEST"), new xo(t.PLACE_UPDATES)]), Lo.of(n.ITEM_RESIDENTIAL_PLACE_UPDATE_REQUESTS, [new No("venues", "RESIDENTIAL", "UPDATE_REQUEST"), new xo("RESIDENTIAL_PLACE_UPDATES")]), Po.of(n.GROUP_PARKING_ISSUES, [Lo.of(n.ITEM_PARKING_MAP_PROBLEMS, new No("problems", "PARKING", "OPEN")), Lo.of(n.ITEM_PARKING_CLOSED_MAP_PROBLEMS, new No("problems", "PARKING", "CLOSED")), Lo.of(n.ITEM_PARKING_PLACE_UPDATE_REQUESTS, [new No("venues", "PARKING", "UPDATE_REQUEST"), new xo("PARKING_PLACE_UPDATES")])])]), Po.of(n.GROUP_PLACES, [Lo.of(n.ITEM_VENUES, new No("venues", "ALL", "SHOW")), Lo.of(n.ITEM_RESIDENTIAL_PLACES, new No("venues", "RESIDENTIAL", "SHOW")), Lo.of(n.ITEM_PARKING_PLACES, new No("venues", "PARKING", "SHOW"))]), Po.of(n.GROUP_ROAD, [Lo.of(n.ITEM_ROAD, new xo(t.ROADS)), Lo.of(n.ITEM_JUNCTION_BOXES, new xo(t.BIG_JUNCTIONS)), Lo.of(n.ITEM_CLOSURES, new xo(t.CLOSURES)), Lo.of(n.ITEM_SPEED_CAMERAS, new xo(t.SPEED_CAMERAS)), Lo.of(n.ITEM_HOUSE_NUMBERS, new xo(t.HOUSE_NUMBERS))]), Po.of(n.GROUP_DISPLAY, [Lo.of(n.ITEM_SATELLITE_IMAGERY, new xo(t.SATELLITE_IMAGERY)), Lo.of(n.ITEM_AREA_MANAGERS, new xo(t.AREA_MANAGERS)), Lo.of(n.ITEM_GPS_POINTS, new xo(t.GPS_POINTS)), Lo.of(n.ITEM_EDITABLE_AREAS, new xo(t.EDITABLE_AREAS)), Lo.of(n.ITEM_LIVE_USERS, new xo(t.LIVE_USERS)), Lo.of(n.ITEM_DISALLOWED_TURNS, new Ka), Po.of(n.GROUP_CITIES, [Lo.of(n.ITEM_CITY_NAMES, new xo(t.CITIES_MARKERS_LAYER_NAME))], new xo(t.CITIES_RASTER_LAYER_NAME)), Lo.of(n.ITEM_MAP_COMMENTS, new xo(t.MAP_COMMENTS))])])),
+                            s = Object.assign({}, Za);
                         return i.setState(s),
                             i
                     }
                 }]),
                 e
         }();
-    Object.assign(Za.prototype, o.a.Events);
-    var Xa = Za,
-        Qa = function() {
+    Object.assign(Xa.prototype, o.a.Events);
+    var Qa = Xa,
+        el = function() {
             function e(t) {
                 h()(this, e);
                 var n = this._getRepository(t);
@@ -46679,13 +46487,13 @@
                 }]),
                 e
         }();
-    Qa.prototype.TYPE_TO_REPO = {
+    el.prototype.TYPE_TO_REPO = {
         mapProblem: "problems",
         mapUpdateRequest: "mapUpdateRequests"
     };
-    var el, tl = Qa,
-        nl = /(https?:\/\/(?:-\.)?(?:[^\s/?.#-]+\.?)+(?:\/[^\s]*)?)/i,
-        il = function(e) {
+    var tl, nl = el,
+        il = /(https?:\/\/(?:-\.)?(?:[^\s/?.#-]+\.?)+(?:\/[^\s]*)?)/i,
+        sl = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -46716,7 +46524,7 @@
                 }]),
                 t
         }(c.a.View),
-        sl = function(e) {
+        rl = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -46732,16 +46540,16 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        var e = this.model.get("text").split(nl).map(function(e) {
+                        var e = this.model.get("text").split(il).map(function(e) {
                                 return new o.a.Model({
                                     text: e,
-                                    isHref: e.match(nl)
+                                    isHref: e.match(il)
                                 })
                             }),
                             t = new o.a.Collection(e);
                         this.showChildView("textItems", new c.a.CollectionView({
                             collection: t,
-                            childView: il
+                            childView: sl
                         }))
                     }
                 }, {
@@ -46749,7 +46557,7 @@
                     value: function() {
                         return {
                             getUserName: function() {
-                                return this.isByReporter() ? I18n.t("conversation.reporter") : _n.default.formatUserName(this.userID)
+                                return this.isByReporter() ? I18n.t("conversation.reporter") : yn.default.formatUserName(this.userID)
                             },
                             isByReporter: function() {
                                 return -1 === this.userID
@@ -46774,9 +46582,9 @@
                 }]),
                 t
         }(c.a.View),
-        rl = n(74),
-        ol = n.n(rl),
-        al = c.a.Behavior.extend({
+        ol = n(75),
+        al = n.n(ol),
+        ll = c.a.Behavior.extend({
             onRender: function() {
                 this._bindModels()
             },
@@ -46806,18 +46614,18 @@
                 })
             }
         }),
-        ll = c.a.CompositeView.extend({
-            childView: sl,
+        ul = c.a.CompositeView.extend({
+            childView: rl,
             className: "conversation-view",
             childViewContainer: ".comment-list",
             template: "Waze/MapEditor/UI/Modules/Conversation/templates/list",
             behaviors: {
                 charCount: {
-                    behaviorClass: al,
+                    behaviorClass: ll,
                     charLimits: [{
                         inputSelector: ".new-comment-text",
                         charCountSelector: ".new-comment-max-length",
-                        maxLength: ol.a.prototype.MAX_BODY_LENGTH,
+                        maxLength: al.a.prototype.MAX_BODY_LENGTH,
                         modelAttribute: "viewModel",
                         observe: "commentText"
                     }]
@@ -46926,7 +46734,7 @@
                 e.scrollTop = e.scrollHeight
             }
         }),
-        ul = c.a.View.extend({
+        cl = c.a.View.extend({
             maxHeight: null,
             template: "Waze/MapEditor/UI/Modules/Problems/templates/edit",
             events: {
@@ -47004,7 +46812,7 @@
                 })
             },
             _getMainTitle: function() {
-                return this.adapter.problem.type === Rt.a.UPDATE_REQUEST ? I18n.t("problems.panel.titles.map_update_request") : I18n.t("problems.panel.titles.map_problem")
+                return this.adapter.problem.type === Dt.a.UPDATE_REQUEST ? I18n.t("problems.panel.titles.map_update_request") : I18n.t("problems.panel.titles.map_problem")
             },
             serializeData: function() {
                 return {
@@ -47025,7 +46833,7 @@
             _renderConversationView: function() {
                 var e = this;
                 return this.adapter.getConversation().then(function(t) {
-                    return e.conversationView = new ll({
+                    return e.conversationView = new ul({
                             commentable: t.getCommentable(),
                             enabled: e.adapter.allowCommenting()
                         }),
@@ -47067,24 +46875,24 @@
                     var e = this.adapter.problem.attributes.resolvedOn,
                         t = I18n.t("problems.panel.closed.not_available");
                     return null != e && (t = I18n.l("date.formats.long", e)),
-                        _n.default.safe_t("problems.panel.closed.date", {
-                            date_title: _n.default.contentTag("strong", I18n.t("problems.panel.closed.date_title")),
+                        yn.default.safe_t("problems.panel.closed.date", {
+                            date_title: yn.default.contentTag("strong", I18n.t("problems.panel.closed.date_title")),
                             date: t
                         })
                 },
                 getClosingUser: function() {
                     var e = this.adapter.problem.attributes.resolvedBy,
                         t = I18n.t("problems.panel.closed.not_available");
-                    return null != e && (t = _n.default.userProfile(e)),
-                        _n.default.safe_t("problems.panel.closed.user", {
-                            user_title: _n.default.contentTag("strong", I18n.t("problems.panel.closed.user_title")),
+                    return null != e && (t = yn.default.userProfile(e)),
+                        yn.default.safe_t("problems.panel.closed.user", {
+                            user_title: yn.default.contentTag("strong", I18n.t("problems.panel.closed.user_title")),
                             username: t
                         })
                 }
             }
         }),
-        cl = n(72),
-        dl = function() {
+        dl = n(73),
+        hl = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this.info = t,
@@ -47116,10 +46924,10 @@
                 }]),
                 e
         }(),
-        hl = cl.a.extend({
+        pl = dl.a.extend({
             MORE_INFO_DEFAULTS: [],
             createMoreInfoRenderer: function(e, t, n) {
-                return new dl(e, t, n)
+                return new hl(e, t, n)
             },
             getMoreInfo: function() {
                 var e = this;
@@ -47128,7 +46936,7 @@
                 })
             }
         }),
-        pl = function() {
+        gl = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this.info = t,
@@ -47162,10 +46970,10 @@
                 }]),
                 e
         }(),
-        gl = cl.a.extend({
+        fl = dl.a.extend({
             MORE_INFO_DEFAULTS: [],
             createMoreInfoRenderer: function(e, t, n) {
-                return new pl(e, t, n)
+                return new gl(e, t, n)
             },
             getMoreInfo: function() {
                 var e = this;
@@ -47175,7 +46983,7 @@
                 })
             }
         }),
-        fl = function() {
+        ml = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this.info = null,
@@ -47201,7 +47009,7 @@
                 }]),
                 e
         }(),
-        ml = cl.a.extend({
+        vl = dl.a.extend({
             MORE_INFO_DEFAULTS: [],
             getTitle: function() {
                 return I18n.t("problems.panel.closure.title")
@@ -47219,7 +47027,7 @@
                 return Promise.resolve([this.problem])
             },
             createMoreInfoRenderer: function(e, t, n) {
-                return new fl(e, t, n)
+                return new ml(e, t, n)
             },
             getSolvedStateString: function() {
                 return I18n.t("problems.panel.closure.states.solved")
@@ -47228,31 +47036,31 @@
                 return I18n.t("problems.panel.closure.states.not_identified")
             }
         }),
-        vl = n(180),
-        _l = n(90),
-        yl = {},
-        bl = (el = {},
-            V()(el, _l.MAP_PROBLEM_TYPE.DISCONNECTION, cl.a),
-            V()(el, _l.MAP_PROBLEM_TYPE.TURN, gl),
-            V()(el, _l.MAP_PROBLEM_TYPE.DATA, hl),
-            V()(el, _l.MAP_PROBLEM_TYPE.ROAD_CLOSURE, ml),
-            el);
-    yl.createAdapter = function(e) {
-        return new(e.type === Rt.a.UPDATE_REQUEST ? vl.a : bl[e.attributes.problemType])(e)
+        _l = n(181),
+        yl = n(91),
+        bl = {},
+        El = (tl = {},
+            V()(tl, yl.MAP_PROBLEM_TYPE.DISCONNECTION, dl.a),
+            V()(tl, yl.MAP_PROBLEM_TYPE.TURN, fl),
+            V()(tl, yl.MAP_PROBLEM_TYPE.DATA, pl),
+            V()(tl, yl.MAP_PROBLEM_TYPE.ROAD_CLOSURE, vl),
+            tl);
+    bl.createAdapter = function(e) {
+        return new(e.type === Dt.a.UPDATE_REQUEST ? _l.a : El[e.attributes.problemType])(e)
     };
-    var El = yl,
-        wl = OL.Class(OL.Layer.Vector, {
+    var wl = bl,
+        Sl = OL.Class(OL.Layer.Vector, {
             rendererOptions: {
                 zIndexing: !0
             },
-            renderers: [Ki],
-            styleMap: os,
+            renderers: [Ji],
+            styleMap: as,
             initialize: function() {
                 OL.Layer.Vector.prototype.initialize.apply(this, arguments),
-                    this.driveRenderer = new ls(this)
+                    this.driveRenderer = new us(this)
             }
         }),
-        Sl = c.a.Object.extend({
+        kl = c.a.Object.extend({
             layer: null,
             info: null,
             viewModel: null,
@@ -47261,7 +47069,7 @@
                     this.map = this.options.map,
                     this.markerLayer = this.options.markerLayer,
                     this.adapter = this.options.adapter,
-                    this.layer = new wl("problemMoreInfo"),
+                    this.layer = new Sl("problemMoreInfo"),
                     this.viewModel.get("loadingMoreInfo") ? this.listenTo(this.viewModel, "change:loadingMoreInfo", this._onMoreInfoLoaded) : this._onMoreInfoLoaded();
                 for (var e = this.adapter.getMoreInfoTypes(), t = 0; t < e.length; t++) {
                     var n = e[t];
@@ -47271,7 +47079,7 @@
             },
             centerProblem: function() {
                 var e = this.adapter.getGeometry(),
-                    t = bt.toLonLat(e);
+                    t = Et.toLonLat(e);
                 return this.map.setCenter(t)
             },
             focusProblem: function() {
@@ -47323,7 +47131,7 @@
                     s()(this.map.div).toggleClass("problem-selected", e)
             }
         }),
-        kl = o.a.Model.extend({
+        Tl = o.a.Model.extend({
             defaults: {
                 loadingMoreInfo: !0,
                 loadingConversation: !0,
@@ -47359,17 +47167,17 @@
                 })
             }
         }),
-        Tl = c.a.Object.extend({
+        Il = c.a.Object.extend({
             initialize: function() {
                 return this.problem = this.options.problem,
                     this.streetViewController = this.options.streetViewController,
-                    this.adapter = El.createAdapter(this.problem),
+                    this.adapter = wl.createAdapter(this.problem),
                     null != this.options.nextButtonString && this.adapter.setNextButtonString(this.options.nextButtonString),
-                    this.viewModel = new kl({
+                    this.viewModel = new Tl({
                         adapter: this.adapter,
                         streetViewController: this.streetViewController
                     }),
-                    this.mapView = new Sl({
+                    this.mapView = new kl({
                         map: W.map,
                         markerLayer: this.adapter.getMarkerLayer(),
                         adapter: this.adapter,
@@ -47377,9 +47185,9 @@
                     }),
                     this.mapView.centerProblem(),
                     this.listenTo(this.viewModel, "change:problemState", this._onProblemStateChanged),
-                    this.listenTo(this.adapter.getRepository(), rt.ATTR_CHANGED, this._repositoryChanged),
-                    this.listenTo(this.adapter.getRepository(), rt.ADDED, this._onProblemsAdded),
-                    this.editView = new ul({
+                    this.listenTo(this.adapter.getRepository(), ot.ATTR_CHANGED, this._repositoryChanged),
+                    this.listenTo(this.adapter.getRepository(), ot.ADDED, this._onProblemsAdded),
+                    this.editView = new cl({
                         model: this.viewModel,
                         adapter: this.adapter,
                         showDebug: this.options.showDebug,
@@ -47419,7 +47227,7 @@
                     this.mapView.destroy()
             }
         }),
-        Il = function() {
+        Ml = function() {
             function e(t) {
                 h()(this, e),
                     this.editController = null,
@@ -47436,7 +47244,7 @@
                         var t = this,
                             n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                         return this.editController && this.editController.destroy(),
-                            this.editController = new Tl({
+                            this.editController = new Il({
                                 problem: e,
                                 showDebug: this.mediator.get("advancedTools"),
                                 showNext: n.showNext,
@@ -47455,7 +47263,7 @@
                         var t = e.problem;
                         this.showProblem(t, e),
                             this._showLayer(t);
-                        var n = new ai;
+                        var n = new li;
                         return e.showNext && this.editController.on("nextClicked", function() {
                                 return n.next()
                             }),
@@ -47494,22 +47302,22 @@
                     value: function(e) {
                         if (this.mediator.get("editingEnabled")) {
                             var t = s()(e.target).data("model"),
-                                n = new tl(t.type).sortByDistance(t);
+                                n = new nl(t.type).sortByDistance(t);
                             return this.showProblemStream(n)
                         }
                     }
                 }]),
                 e
         }(),
-        Ml = o.a.Collection.extend({
-            model: eo,
+        Al = o.a.Collection.extend({
+            model: to,
             isIgnorable: function() {
                 return this.all(function(e) {
                     return e.get("ignorable")
                 })
             }
         }),
-        Al = c.a.View.extend({
+        Cl = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Save/templates/error_item",
             tagName: "li",
             className: "error-item",
@@ -47534,7 +47342,7 @@
                 return I18n.t("save.error_types")[e]
             },
             _getDefaultTitle: function() {
-                var e = eo.prototype.defaults.code,
+                var e = to.prototype.defaults.code,
                     t = this._getTranslationsByCode(e);
                 if (t)
                     return t.title
@@ -47552,8 +47360,8 @@
                 return e && e.solution ? e.solution : I18n.t("save.default_solution")
             }
         }),
-        Cl = c.a.CompositeView.extend({
-            childView: Al,
+        Ol = c.a.CompositeView.extend({
+            childView: Cl,
             childViewContainer: ".list",
             template: "Waze/MapEditor/UI/Modules/Save/templates/error_list",
             events: {
@@ -47586,7 +47394,7 @@
                 }
             }
         }),
-        Ol = c.a.View.extend({
+        Rl = c.a.View.extend({
             CLOSE_TIMEOUT_MILLIS: 2e3,
             template: "Waze/MapEditor/UI/Modules/Save/templates/success",
             serializeData: function() {
@@ -47612,14 +47420,14 @@
                     },
                     getSaveCountTextFor: function(e) {
                         var t = this.model.saveCount[e];
-                        return t < 1 ? "" : _n.default.contentTag("div", I18n.t("save.success.change_count.".concat(e), {
+                        return t < 1 ? "" : yn.default.contentTag("div", I18n.t("save.success.change_count.".concat(e), {
                             count: t
                         }))
                     }
                 }
             }
         }),
-        Rl = c.a.Object.extend({
+        Dl = c.a.Object.extend({
             ignoredErrors: {
                 100: !0
             },
@@ -47628,7 +47436,7 @@
             initialize: function() {
                 this.mediator = this.options.mediator,
                     this._lockEditing(),
-                    this.overlayRenderer = new Zr(this.options.map),
+                    this.overlayRenderer = new Xr(this.options.map),
                     this.overlayRenderer.drawOverlay()
             },
             onDestroy: function() {
@@ -47655,8 +47463,8 @@
                     return 1 === e.length && this._showErrorPoint(e[0]),
                         this._reportErrors(e),
                         e = this._collateErrors(e),
-                        this.errorCollection = new Ml(e),
-                        this.errorListView = new Cl({
+                        this.errorCollection = new Al(e),
+                        this.errorListView = new Ol({
                             collection: this.errorCollection
                         }),
                         this.listenTo(this.errorListView, "click:save", this._onSaveClicked),
@@ -47716,13 +47524,13 @@
                     return this.trigger("resave")
             },
             _showSuccessMessage: function(e) {
-                return this.successView = new Ol({
+                return this.successView = new Rl({
                         model: e
                     }),
                     this.options.popoverRegion.show(this.successView)
             }
         }),
-        Dl = c.a.Region.extend({
+        Ll = c.a.Region.extend({
             constructor: function() {
                 this.el || this._createContainer(),
                     c.a.Region.prototype.constructor.apply(this, arguments)
@@ -47760,14 +47568,14 @@
                 })
             }
         }),
-        Ll = c.a.Object.extend({
+        Pl = c.a.Object.extend({
             initialize: function(e) {
                 this.controller = e.controller,
                     this.mediator = e.mediator,
                     this._setDefaultHandler(),
                     W.commands.setHandler("save:restoreDefaultHandler", this._setDefaultHandler, this),
                     W.commands.setHandler("save:setHandler", this._setHandler, this),
-                    this.savePopoverRegion = new Dl({
+                    this.savePopoverRegion = new Ll({
                         saveButtonSelector: "#toolbar .waze-icon-save"
                     })
             },
@@ -47776,7 +47584,7 @@
                     t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = this.controller.save(t);
                 null != this.flowController && this.flowController.destroy(),
-                    this.flowController = new Rl({
+                    this.flowController = new Dl({
                         map: W.map,
                         mediator: this.mediator,
                         popoverRegion: this.savePopoverRegion
@@ -47801,7 +47609,7 @@
                 W.commands.setHandler("save:start", e, t)
             }
         }),
-        Pl = function() {
+        Nl = function() {
             function e() {
                 h()(this, e)
             }
@@ -47826,8 +47634,8 @@
                         var s = i.segment,
                             r = oe.createPoint(i.x0, i.y0),
                             o = se.getPointEdge(s.geometry, r),
-                            a = $t.getVertex(s.geometry, o),
-                            l = $t.getVertex(s.geometry, o + 1),
+                            a = Kt.getVertex(s.geometry, o),
+                            l = Kt.getVertex(s.geometry, o + 1),
                             u = Math.atan2(a.y - l.y, a.x - l.x);
                         return s.isOneWay() && s.attributes.revDirection && (u += Math.PI),
                             u
@@ -47835,9 +47643,9 @@
                 }, {
                     key: "_getClosestSegmentInfo",
                     value: function(e, t) {
-                        var n = bt.fromLonLat(e),
+                        var n = Et.fromLonLat(e),
                             i = t.map(function(e) {
-                                var t = $t.getDistanceInfo(e.geometry, n);
+                                var t = Kt.getDistanceInfo(e.geometry, n);
                                 return t.segment = e,
                                     t
                             });
@@ -47853,11 +47661,11 @@
                 }]),
                 e
         }();
-    Object.assign(Pl.prototype, {
+    Object.assign(Nl.prototype, {
         DEFAULT_HEADING: 0
     });
-    var Nl = Pl,
-        xl = function() {
+    var xl = Nl,
+        Vl = function() {
             function e() {
                 h()(this, e),
                     this._streetViewProvider = null
@@ -47892,12 +47700,12 @@
                 }]),
                 e
         }();
-    Object.assign(xl.prototype, {
+    Object.assign(Vl.prototype, {
         DEFAULT_SEARCH_RADIUS_METERS: 50,
         SEARCH_RADIUS_PADDING_FACTOR: 2
     });
-    var Vl = xl,
-        jl = function(e) {
+    var jl = Vl,
+        Ul = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -47938,7 +47746,7 @@
                 }]),
                 t
         }(o.a.Model),
-        Ul = function(e) {
+        Fl = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -48089,18 +47897,18 @@
                 }]),
                 t
         }(c.a.View),
-        Fl = function(e) {
+        Bl = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
-                    (n = m()(this, _()(t).call(this, e))).panoramaProvider = new Vl,
+                    (n = m()(this, _()(t).call(this, e))).panoramaProvider = new jl,
                     n.map = e.map,
-                    n.scene = new jl,
-                    n.headingFinder = new Nl,
+                    n.scene = new Ul,
+                    n.headingFinder = new xl,
                     n.model = new o.a.Model({
                         isActive: !1
                     }),
-                    n._streetViewWindowView = new Ul({
+                    n._streetViewWindowView = new Fl({
                         el: "#street-view-container",
                         streetViewController: U()(n),
                         scene: n.scene,
@@ -48177,7 +47985,7 @@
                 }, {
                     key: "_getItemLonLat",
                     value: function(e) {
-                        return bt.toLonLat(se.getUnprojectedGeometry(e.geometry.getCentroid()))
+                        return Et.toLonLat(se.getUnprojectedGeometry(e.geometry.getCentroid()))
                     }
                 }, {
                     key: "getPlacePanaorama",
@@ -48224,7 +48032,7 @@
                 }]),
                 t
         }(c.a.Object),
-        Bl = function() {
+        Gl = function() {
             function e(t) {
                 h()(this, e),
                     this.videos = ["intro", "segments", "attributes", "turns", "house_numbers", "permalinks", "places_points", "places_areas"],
@@ -48264,7 +48072,7 @@
                 }, {
                     key: "render",
                     value: function() {
-                        return this.$element.html(Object(ms.getHTML)("templates/tutorial-lightbox", {
+                        return this.$element.html(Object(vs.getHTML)("templates/tutorial-lightbox", {
                             videos: this.videos
                         }))
                     }
@@ -48338,14 +48146,14 @@
                 }]),
                 e
         }();
-    Object.assign(Bl.prototype, {
+    Object.assign(Gl.prototype, {
         YoutubePlayerStates: {
             End: 0
         },
         CLASS_NAME: "Waze.View.Tutorial"
     });
-    var Gl, Wl = Bl,
-        Hl = function() {
+    var Wl, Hl = Gl,
+        zl = function() {
             function e() {
                 h()(this, e)
             }
@@ -48361,34 +48169,34 @@
                             W.reqres = new o.a.Wreqr.RequestResponse,
                             W.model = new Te.a,
                             W.model.loginManager = i,
-                            W.accelerators = new gn,
+                            W.accelerators = new fn,
                             this._initKeyboard();
                         var r = new $e(W.model);
                         W.editingMediator = r;
-                        var a = new Er({
+                        var a = new wr({
                             app: t
                         });
                         W.map = a,
                             W.map.registerAccelerators(W.accelerators),
-                            W.togglerTree = Xa.create();
+                            W.togglerTree = Qa.create();
                         var l = a.layers.filter(function(e) {
                                 return e.selectable
                             }),
-                            u = new nt(W.map, l, {
+                            u = new it(W.map, l, {
                                 boxSelectionLayers: [a.segmentLayer]
                             });
-                        W.selectionManager = new Qe.default(W.model, l, u),
-                            Io.init({
+                        W.selectionManager = new et.default(W.model, l, u),
+                            Mo.init({
                                 map: W.map,
                                 selectionManager: W.selectionManager
                             }),
-                            W.geometryEditing = new un(W.selectionManager, W.editingMediator, W.map, W.model);
-                        var c = new Fl({
+                            W.geometryEditing = new cn(W.selectionManager, W.editingMediator, W.map, W.model);
+                        var c = new Bl({
                             map: W.map,
                             selectionManager: W.selectionManager
                         });
                         return W.streetViewController = c,
-                            new Il({
+                            new Ml({
                                 mediator: W.editingMediator,
                                 mapLayers: [W.map.problemLayer, W.map.updateRequestLayer],
                                 streetViewController: W.streetViewController
@@ -48398,11 +48206,11 @@
                                 editingMediator: r,
                                 streetViewController: c
                             }),
-                            new Wl(s()("#tutorial-dialog")),
-                            new at(W.model).activate(),
+                            new Hl(s()("#tutorial-dialog")),
+                            new lt(W.model).activate(),
                             this._heftController(n),
                             this._heftMarx(),
-                            W.layerSwitcherController = new Ro({
+                            W.layerSwitcherController = new Do({
                                 map: a,
                                 actionManager: W.model.actionManager,
                                 controller: W.controller,
@@ -48415,13 +48223,13 @@
                     value: function() {
                         return W.accelerators.registerDefaultShortcuts(),
                             W.accelerators.restore(),
-                            new Ao,
+                            new Co,
                             W.accelerators.activate()
                     }
                 }, {
                     key: "_heftController",
                     value: function(e) {
-                        W.snapshotManager = new ut(W.model.actionManager),
+                        W.snapshotManager = new ct(W.model.actionManager),
                             W.map.setSnapshotManager(W.snapshotManager),
                             W.controller = new ze({
                                 app: W.app,
@@ -48434,17 +48242,17 @@
                                 selectionManager: W.selectionManager,
                                 snapshotManager: W.snapshotManager
                             }),
-                            new Ll({
+                            new Pl({
                                 controller: W.controller,
                                 mediator: W.editingMediator
                             }),
-                            W.saveController = new Wr({
+                            W.saveController = new Hr({
                                 actionManager: W.model.actionManager,
                                 controller: W.controller,
                                 editingMediator: W.editingMediator,
                                 regionCode: W.app.getAppRegionCode()
                             }),
-                            W.changesLogController = new co({
+                            W.changesLogController = new ho({
                                 actionManager: W.model.actionManager,
                                 map: W.map,
                                 selectionManager: W.selectionManager,
@@ -48457,18 +48265,18 @@
                 }, {
                     key: "_heftMarx",
                     value: function() {
-                        var e = new Xe({
+                        var e = new Qe({
                                 app: W.app,
                                 authCookieName: W.loginManager.getAuthCookieName()
                             }),
-                            t = new bo(W.model, e, W.map),
-                            n = new yo(W.model, e, t);
-                        new wo({
+                            t = new Eo(W.model, e, W.map),
+                            n = new bo(W.model, e, t);
+                        new So({
                             model: n,
                             map: W.map
                         });
-                        var i = new fo(W.model, e);
-                        new To({
+                        var i = new mo(W.model, e);
+                        new Io({
                                 model: i,
                                 marx: e,
                                 map: W.map
@@ -48486,7 +48294,7 @@
                             r = e.streetViewController,
                             o = void 0 === r ? null : r;
                         n.getPlaceUpdateLayers().forEach(function(e) {
-                            new li({
+                            new ui({
                                 map: n,
                                 mediator: s,
                                 mapLayer: e,
@@ -48497,9 +48305,9 @@
                 }]),
                 e
         }(),
-        zl = n(85),
-        ql = o.a.Collection.extend({
-            model: zl.default,
+        ql = n(86),
+        Yl = o.a.Collection.extend({
+            model: ql.default,
             initialize: function() {
                 this.serializer = new Pe.a
             },
@@ -48513,7 +48321,7 @@
                     })
             }
         }),
-        Yl = ql.extend({
+        $l = Yl.extend({
             parse: function(e) {
                 return this.serializer.read(e),
                     e.notifications.objects.filter(function(e) {
@@ -48521,7 +48329,7 @@
                     })
             }
         }),
-        $l = function(e) {
+        Kl = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -48537,8 +48345,8 @@
                     }
                 }]),
                 t
-        }(ql),
-        Kl = function(e) {
+        }(Yl),
+        Jl = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -48554,11 +48362,11 @@
                     }
                 }]),
                 t
-        }(ql),
-        Jl = n(46),
-        Zl = Jl.a.prototype.TYPE,
-        Xl = o.a.Collection.extend({
-            model: Jl.a,
+        }(Yl),
+        Zl = n(46),
+        Xl = Zl.a.prototype.TYPE,
+        Ql = o.a.Collection.extend({
+            model: Zl.a,
             initialize: function() {
                 this.dataModel = W.model,
                     this.dataModelRefs = {},
@@ -48584,19 +48392,19 @@
                         o = void 0,
                         a = {};
                     switch (i.attributes.type) {
-                        case Zl.MAP_PROBLEM:
+                        case Xl.MAP_PROBLEM:
                             r = null != (s = this._getProblem(i)),
                                 a = {
                                     problem: s
                                 };
                             break;
-                        case Zl.UPDATE_REQUEST:
+                        case Xl.UPDATE_REQUEST:
                             r = null != (s = this._getUpdateRequest(i)),
                                 a = {
                                     updateRequest: s
                                 };
                             break;
-                        case Zl.VENUE_UPDATE_REQUEST:
+                        case Xl.VENUE_UPDATE_REQUEST:
                             s = this._getVenue(i),
                                 o = this._getVenueUpdateRequest(i),
                                 r = null != s && null != o,
@@ -48622,9 +48430,9 @@
             _bindRepositoryEvents: function(e) {
                 var t = this,
                     n = {};
-                n[rt.ATTR_CHANGED] = this._makeTrigger("onModelChanged"),
-                    n[rt.REMOVED] = this._makeTrigger("onModelRemoved"),
-                    n[rt.SYNCED] = this._makeTrigger("onModelSynced"),
+                n[ot.ATTR_CHANGED] = this._makeTrigger("onModelChanged"),
+                    n[ot.REMOVED] = this._makeTrigger("onModelRemoved"),
+                    n[ot.SYNCED] = this._makeTrigger("onModelSynced"),
                     Object.keys(n).forEach(function(i) {
                         var s = n[i];
                         e.on(i, s, t)
@@ -48673,7 +48481,7 @@
                 return this.dataModelRefs[t]
             }
         }),
-        Ql = function() {
+        eu = function() {
             function e(t) {
                 var n = this;
                 h()(this, e),
@@ -48766,7 +48574,7 @@
                 }]),
                 e
         }(),
-        eu = o.a.Model.extend({
+        tu = o.a.Model.extend({
             defaults: {
                 empty: !0,
                 loading: !1,
@@ -48776,21 +48584,21 @@
             },
             initialize: function() {
                 return this.serializer = new Pe.a,
-                    this.notifications = new ql,
+                    this.notifications = new Yl,
                     this.notifications.on("all", this._updateSelf, this),
-                    this.messages = new Yl,
+                    this.messages = new $l,
                     this.messages.on("all", this._updateSelf, this),
-                    this.firstTimeMessages = new $l,
+                    this.firstTimeMessages = new Kl,
                     this.firstTimeMessages.on("all", this._updateSelf, this),
-                    this.mentoringMessages = new Kl,
+                    this.mentoringMessages = new Jl,
                     this.mentoringMessages.on("all", this._updateSelf, this),
-                    this.issues = new Xl,
+                    this.issues = new Ql,
                     this.issues.on("all", this._updateSelf, this)
             },
             startFirstTimePolling: function() {
                 var e = this;
                 this.set("firstTimePolling", !0),
-                    this.notificationsPolling = new Ql({
+                    this.notificationsPolling = new eu({
                         intervalTime: 3e3,
                         maxCount: 4,
                         task: function() {
@@ -48802,7 +48610,7 @@
                             return e.firstTimeMessages.length > 0
                         }
                     }),
-                    this.issuesPolling = new Ql({
+                    this.issuesPolling = new eu({
                         intervalTime: 5e3,
                         maxCount: 4,
                         task: function() {
@@ -48831,7 +48639,7 @@
                             reset: !0
                         });
                     return Promise.all([t, n]).then(function(t) {
-                        var n = dn()(t, 2),
+                        var n = hn()(t, 2),
                             i = n[0],
                             s = n[1];
                         return e._onNotificationsResponse(i),
@@ -48890,7 +48698,7 @@
                 return this.set("empty", e)
             }
         }),
-        tu = c.a.View.extend({
+        nu = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Feed/templates/feed",
             events: {
                 "click .feed-load-more": "_onLoadMoreClick"
@@ -48916,7 +48724,7 @@
                 ".feed-empty": {
                     observe: ["empty", "loading"],
                     visible: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0],
                             i = t[1];
                         return n && !i
@@ -48925,7 +48733,7 @@
                 ".feed-load-more": {
                     observe: ["loading", "loadingMore"],
                     visible: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0],
                             i = t[1];
                         return !n && !i
@@ -48952,7 +48760,7 @@
                     W.Report.feedAction("load_more")
             }
         }),
-        nu = c.a.View.extend({
+        iu = c.a.View.extend({
             tagName: "li",
             className: "feed-item",
             triggers: {
@@ -48991,16 +48799,16 @@
                     e && this.el.scrollIntoViewIfNeeded()
             },
             _formatTimestamp: function() {
-                return _n.default.localizeDateString("date.formats.long_with_time", this.model.get("timestamp"))
+                return yn.default.localizeDateString("date.formats.long_with_time", this.model.get("timestamp"))
             }
         }),
-        iu = nu.extend({
+        su = iu.extend({
             className: function() {
                 return "feed-item feed-notification"
             },
             template: "Waze/MapEditor/UI/Modules/Feed/templates/notification_item",
             serializeData: function() {
-                return l.a.extend(nu.prototype.serializeData.apply(this, arguments), {
+                return l.a.extend(iu.prototype.serializeData.apply(this, arguments), {
                     title: this._getValueOrTemplate("title"),
                     shortMessage: this._getValueOrTemplate("shortMessage")
                 })
@@ -49014,54 +48822,54 @@
                 return t
             }
         }),
-        su = n(378),
-        ru = n.n(su),
-        ou = n(379),
-        au = n.n(ou),
-        lu = n(380),
-        uu = n.n(lu),
-        cu = n(381),
-        du = n.n(cu),
-        hu = n(382),
-        pu = n.n(hu),
-        gu = I18n.t("internal.wiki_best_practices_link"),
-        fu = I18n.t("internal.wiki_area_manager"),
-        mu = I18n.t("internal.wiki_country_manager"),
-        vu = I18n.t("internal.wiki_mentoring"),
-        _u = I18n.t("internal.wiki_rank_link"),
-        yu = I18n.t("internal.editing_local_forum_link"),
-        bu = {
-            FLAGGED_USER: gu,
-            BLOCKED_USER: gu,
-            ACTIVATED_USER: gu,
-            WELCOME_NEW_EDITOR: yu,
-            WELCOME_TO_WME: gu,
-            SOON_TO_BE_UPGRADED: _u,
-            LEVEL_UPGRADE: _u,
-            LEVEL_UPGRADE_3: _u,
-            LEVEL_UPGRADE_4: _u,
-            LEVEL_UPGRADE_5: _u
-        },
+        ru = n(379),
+        ou = n.n(ru),
+        au = n(380),
+        lu = n.n(au),
+        uu = n(381),
+        cu = n.n(uu),
+        du = n(382),
+        hu = n.n(du),
+        pu = n(383),
+        gu = n.n(pu),
+        fu = I18n.t("internal.wiki_best_practices_link"),
+        mu = I18n.t("internal.wiki_area_manager"),
+        vu = I18n.t("internal.wiki_country_manager"),
+        _u = I18n.t("internal.wiki_mentoring"),
+        yu = I18n.t("internal.wiki_rank_link"),
+        bu = I18n.t("internal.editing_local_forum_link"),
         Eu = {
-            MEET_FELLOW_EDITORS: yu,
-            LEVEL_UPGRADE_2: _u,
-            LEVEL_UPGRADE_3: fu,
-            LEVEL_UPGRADE_4: vu,
-            LEVEL_UPGRADE_5: mu,
-            MENTOR_FEEDBACK_REQUEST: I18n.t("internal.mentoring_feedback_url"),
-            USER_FIRST_EDIT: gu
+            FLAGGED_USER: fu,
+            BLOCKED_USER: fu,
+            ACTIVATED_USER: fu,
+            WELCOME_NEW_EDITOR: bu,
+            WELCOME_TO_WME: fu,
+            SOON_TO_BE_UPGRADED: yu,
+            LEVEL_UPGRADE: yu,
+            LEVEL_UPGRADE_3: yu,
+            LEVEL_UPGRADE_4: yu,
+            LEVEL_UPGRADE_5: yu
         },
         wu = {
-            USER_FIRST_EDIT: yu
+            MEET_FELLOW_EDITORS: bu,
+            LEVEL_UPGRADE_2: yu,
+            LEVEL_UPGRADE_3: mu,
+            LEVEL_UPGRADE_4: _u,
+            LEVEL_UPGRADE_5: vu,
+            MENTOR_FEEDBACK_REQUEST: I18n.t("internal.mentoring_feedback_url"),
+            USER_FIRST_EDIT: fu
         },
         Su = {
-            LEVEL_UPGRADE_2: ru.a,
-            LEVEL_UPGRADE_3: au.a,
-            LEVEL_UPGRADE_4: uu.a,
-            LEVEL_UPGRADE_5: du.a,
-            LEVEL_UPGRADE_6: pu.a
+            USER_FIRST_EDIT: bu
         },
-        ku = iu.extend({
+        ku = {
+            LEVEL_UPGRADE_2: ou.a,
+            LEVEL_UPGRADE_3: lu.a,
+            LEVEL_UPGRADE_4: cu.a,
+            LEVEL_UPGRADE_5: hu.a,
+            LEVEL_UPGRADE_6: gu.a
+        },
+        Tu = su.extend({
             tagName: "div",
             template: "Waze/MapEditor/UI/Modules/Feed/templates/notification_detail",
             className: "notification-detail",
@@ -49076,7 +48884,7 @@
                     this.model.trigger("delegate:delete")
             },
             serializeData: function() {
-                return l.a.extend(iu.prototype.serializeData.apply(this, arguments), {
+                return l.a.extend(su.prototype.serializeData.apply(this, arguments), {
                     hasNext: this.options.hasNext,
                     subject: this._getValueOrTemplate("subject"),
                     message: this._getValueOrTemplate("message"),
@@ -49095,56 +48903,56 @@
                 })
             },
             _getLinkURL: function() {
-                return this._getParamByTypeAndMap("linkURL", bu)
+                return this._getParamByTypeAndMap("linkURL", Eu)
             },
             _getButtonURL: function() {
-                return this._getButtonUrlByButtonNameAndMap("buttonURL", Eu)
+                return this._getButtonUrlByButtonNameAndMap("buttonURL", wu)
             },
             _getSecondButtonURL: function() {
-                return this._getButtonUrlByButtonNameAndMap("secondButtonURL", wu)
+                return this._getButtonUrlByButtonNameAndMap("secondButtonURL", Su)
             },
             _getButtonUrlByButtonNameAndMap: function(e, t) {
                 switch (this.model.get("type")) {
-                    case zl.NOTIFICATION_TYPES.MENTEE_CLICKED_LINK:
-                    case zl.NOTIFICATION_TYPES.MENTEE_RETURNED_TO_WME:
+                    case ql.NOTIFICATION_TYPES.MENTEE_CLICKED_LINK:
+                    case ql.NOTIFICATION_TYPES.MENTEE_RETURNED_TO_WME:
                         return this._buildProfileLink();
-                    case zl.NOTIFICATION_TYPES.MENTOR_ENCOURAGMENT:
+                    case ql.NOTIFICATION_TYPES.MENTOR_ENCOURAGMENT:
                         return this._getStartMentoringLink();
                     default:
                         return this._getParamByTypeAndMap(e, t)
                 }
             },
             _buildProfileLink: function() {
-                return _n.default.userProfileLink({
+                return yn.default.userProfileLink({
                     userName: this.model.attributes.parameters.username
                 })
             },
             _getStartMentoringLink: function() {
-                return "".concat(_n.default.userProfileLink({
+                return "".concat(yn.default.userProfileLink({
                     userName: this.options.user.userName
                 }), "#startMentoring")
             },
             _getImageURL: function() {
-                return this._getParamByTypeAndMap("imageURL", Su)
+                return this._getParamByTypeAndMap("imageURL", ku)
             },
             _getParamByTypeAndMap: function(e, t) {
                 var n = this.model.getParameter(e);
                 return n || t[this.model.get("type")]
             }
         }),
-        Tu = ku.extend({
+        Iu = Tu.extend({
             className: "notification-detail notification-detail-pm",
             serializeData: function() {
-                return l.a.extend(ku.prototype.serializeData.apply(this, arguments), {
+                return l.a.extend(Tu.prototype.serializeData.apply(this, arguments), {
                     type: "pm",
                     sender: this.model.getParameter("sender"),
                     senderURL: this.model.getParameter("senderURL")
                 })
             }
         }),
-        Iu = zl.default.prototype.TYPE,
-        Mu = Jl.a.prototype.TYPE,
-        Au = c.a.Object.extend({
+        Mu = ql.default.prototype.TYPE,
+        Au = Zl.a.prototype.TYPE,
+        Cu = c.a.Object.extend({
             initialize: function(e) {
                 return this.currentFeedItem = null,
                     this.collection = e.collection,
@@ -49189,11 +48997,11 @@
                     W.accelerators.events.unregister("prevFeedItem", this, this._prevItemClicked)
             },
             _show: function(e) {
-                return e instanceof zl.default ? this._showNotification(e) : this._showIssue(e),
+                return e instanceof ql.default ? this._showNotification(e) : this._showIssue(e),
                     W.Report.feedAction("show", e.get("type"))
             },
             _showNotification: function(e) {
-                var t = new(e.get("type") === Iu.PRIVATE_FORUM_MESSAGE ? Tu : ku)({
+                var t = new(e.get("type") === Mu.PRIVATE_FORUM_MESSAGE ? Iu : Tu)({
                     model: e,
                     user: this.app.get("user"),
                     hasNext: !this._isDone()
@@ -49207,17 +49015,17 @@
                     nextButtonString: I18n.t("feed.issues.next")
                 };
                 switch (e.get("type")) {
-                    case Mu.MAP_PROBLEM:
+                    case Au.MAP_PROBLEM:
                         t = W.reqres.request("problems:browse", l.a.extend(n, {
                             problem: e.get("problem")
                         }));
                         break;
-                    case Mu.UPDATE_REQUEST:
+                    case Au.UPDATE_REQUEST:
                         t = W.reqres.request("problems:browse", l.a.extend(n, {
                             problem: e.get("updateRequest")
                         }));
                         break;
-                    case Mu.VENUE_UPDATE_REQUEST:
+                    case Au.VENUE_UPDATE_REQUEST:
                         t = W.reqres.request("updaterequests:browse", l.a.extend(n, {
                             updateRequest: e.get("updateRequest")
                         }))
@@ -49246,10 +49054,10 @@
                     this.currentFeedItem = null
             }
         }),
-        Cu = c.a.CompositeView.extend({
+        Ou = c.a.CompositeView.extend({
             className: "feed-group",
             template: "Waze/MapEditor/UI/Modules/Feed/templates/feed_group",
-            childView: iu,
+            childView: su,
             childViewContainer: ".feed-list",
             childViewEventPrefix: "notifications",
             collapseItemsMessage: "feed.notifications.collapsed_message",
@@ -49317,22 +49125,22 @@
                 })
             }
         }),
-        Ou = nu.extend({
+        Ru = iu.extend({
             className: "feed-item feed-notification-pm",
             template: "Waze/MapEditor/UI/Modules/Feed/templates/message_item",
             serializeData: function() {
-                return l.a.extend(nu.prototype.serializeData.apply(this, arguments), {
+                return l.a.extend(iu.prototype.serializeData.apply(this, arguments), {
                     title: this.model.getParameter("subject"),
                     sender: this.model.getParameter("sender")
                 })
             }
         }),
-        Ru = Cu.extend({
-            childView: Ou,
+        Du = Ou.extend({
+            childView: Ru,
             childViewEventPrefix: "messages",
             collapseItemsMessage: "feed.messages.collapsed_message"
         }),
-        Du = function(e) {
+        Lu = function(e) {
             return {
                 observe: "state",
                 onGet: function(t) {
@@ -49340,7 +49148,7 @@
                 }
             }
         },
-        Lu = nu.extend({
+        Pu = iu.extend({
             className: function() {
                 return "feed-item feed-issue feed-issue-".concat(this.model.getFeedIssueState())
             },
@@ -49349,11 +49157,11 @@
                 ":el": {
                     classes: {
                         modified: "modified",
-                        "feed-issue-open": Du("open"),
-                        "feed-issue-rejected": Du("rejected"),
-                        "feed-issue-solved": Du("solved"),
-                        "feed-issue-approved": Du("approved"),
-                        "feed-issue-not-identified": Du("not-identified")
+                        "feed-issue-open": Lu("open"),
+                        "feed-issue-rejected": Lu("rejected"),
+                        "feed-issue-solved": Lu("solved"),
+                        "feed-issue-approved": Lu("approved"),
+                        "feed-issue-not-identified": Lu("not-identified")
                     }
                 }
             },
@@ -49380,12 +49188,12 @@
                 }).join(", ")
             },
             _formatTimestamp: function() {
-                return _n.default.timeDistanceInWords(this.model.get("timestamp"))
+                return yn.default.timeDistanceInWords(this.model.get("timestamp"))
             },
             _getMotivationText: function() {
-                for (var e = new ir.default(this.model.get("motivation")), t = 0, n = Object.keys(Jl.a.prototype.MOTIVATIONS); t < n.length; t++) {
+                for (var e = new sr.default(this.model.get("motivation")), t = 0, n = Object.keys(Zl.a.prototype.MOTIVATIONS); t < n.length; t++) {
                     var i = n[t],
-                        s = Jl.a.prototype.MOTIVATIONS[i];
+                        s = Zl.a.prototype.MOTIVATIONS[i];
                     if (e.isEnabled(i))
                         return I18n.t("feed.issues.motivations.".concat(s))
                 }
@@ -49399,26 +49207,6 @@
                 return this.model.getSeverity() ? "severity-".concat(this.model.getSeverity()) : ""
             }
         }),
-        Pu = function(e) {
-            function t() {
-                return h()(this, t),
-                    m()(this, _()(t).apply(this, arguments))
-            }
-            return b()(t, e),
-                g()(t, [{
-                    key: "className",
-                    value: function() {
-                        return "".concat(Vt()(_()(t.prototype), "className", this).call(this), " feed-issue-mp ").concat(this._getSeverityClass())
-                    }
-                }, {
-                    key: "getType",
-                    value: function() {
-                        var e = this.model.attributes.problem;
-                        return I18n.t("problems.types.".concat(e.attributes.subType, ".title"))
-                    }
-                }]),
-                t
-        }(Lu),
         Nu = function(e) {
             function t() {
                 return h()(this, t),
@@ -49428,16 +49216,17 @@
                 g()(t, [{
                     key: "className",
                     value: function() {
-                        return "".concat(Vt()(_()(t.prototype), "className", this).call(this), " feed-issue-ur ").concat(this._getSeverityClass())
+                        return "".concat(jt()(_()(t.prototype), "className", this).call(this), " feed-issue-mp ").concat(this._getSeverityClass())
                     }
                 }, {
                     key: "getType",
                     value: function() {
-                        return this.model.attributes.updateRequest.getTypeText()
+                        var e = this.model.attributes.problem;
+                        return I18n.t("problems.types.".concat(e.attributes.subType, ".title"))
                     }
                 }]),
                 t
-        }(Lu),
+        }(Pu),
         xu = function(e) {
             function t() {
                 return h()(this, t),
@@ -49447,7 +49236,26 @@
                 g()(t, [{
                     key: "className",
                     value: function() {
-                        return "".concat(Vt()(_()(t.prototype), "className", this).call(this), " feed-issue-pu ").concat(this._getSeverityClass(), " ").concat(this.getTypeClass())
+                        return "".concat(jt()(_()(t.prototype), "className", this).call(this), " feed-issue-ur ").concat(this._getSeverityClass())
+                    }
+                }, {
+                    key: "getType",
+                    value: function() {
+                        return this.model.attributes.updateRequest.getTypeText()
+                    }
+                }]),
+                t
+        }(Pu),
+        Vu = function(e) {
+            function t() {
+                return h()(this, t),
+                    m()(this, _()(t).apply(this, arguments))
+            }
+            return b()(t, e),
+                g()(t, [{
+                    key: "className",
+                    value: function() {
+                        return "".concat(jt()(_()(t.prototype), "className", this).call(this), " feed-issue-pu ").concat(this._getSeverityClass(), " ").concat(this.getTypeClass())
                     }
                 }, {
                     key: "getType",
@@ -49464,17 +49272,17 @@
                     }
                 }]),
                 t
-        }(Lu),
-        Vu = Jl.a.prototype.TYPE,
-        ju = c.a.CollectionView.extend({
-            TYPE_TO_VIEW: (Gl = {},
-                V()(Gl, Vu.MAP_PROBLEM, Pu),
-                V()(Gl, Vu.UPDATE_REQUEST, Nu),
-                V()(Gl, Vu.VENUE_UPDATE_REQUEST, xu),
-                Gl),
+        }(Pu),
+        ju = Zl.a.prototype.TYPE,
+        Uu = c.a.CollectionView.extend({
+            TYPE_TO_VIEW: (Wl = {},
+                V()(Wl, ju.MAP_PROBLEM, Nu),
+                V()(Wl, ju.UPDATE_REQUEST, xu),
+                V()(Wl, ju.VENUE_UPDATE_REQUEST, Vu),
+                Wl),
             tagName: "ul",
             className: "feed-list",
-            childView: Lu,
+            childView: Pu,
             childViewEventPrefix: "issues",
             buildChildView: function(e, t, n) {
                 var i = e.attributes.type;
@@ -49484,9 +49292,9 @@
                 })
             }
         }),
-        Uu = I18n.t("internal.editing_local_forum_link"),
-        Fu = I18n.t("internal.wiki_link"),
-        Bu = function(e) {
+        Fu = I18n.t("internal.editing_local_forum_link"),
+        Bu = I18n.t("internal.wiki_link"),
+        Gu = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -49495,7 +49303,7 @@
                 g()(t, [{
                     key: "className",
                     value: function() {
-                        return "".concat(Vt()(_()(t.prototype), "className", this).call(this), " feed-first-time type-").concat(this.model.attributes.type.toLowerCase())
+                        return "".concat(jt()(_()(t.prototype), "className", this).call(this), " feed-first-time type-").concat(this.model.attributes.type.toLowerCase())
                     }
                 }, {
                     key: "events",
@@ -49513,7 +49321,7 @@
                 }, {
                     key: "serializeData",
                     value: function() {
-                        return l.a.extend(iu.prototype.serializeData.apply(this, arguments), {
+                        return l.a.extend(su.prototype.serializeData.apply(this, arguments), {
                             title: this._getValueOrTemplate("title"),
                             shortMessage: this._getValueOrTemplate("shortMessage"),
                             linkUrl: this._getValueOrTemplate("linkUrl")
@@ -49528,10 +49336,10 @@
                             W.Report.feedAction("click_on_card", t),
                             t) {
                             case e.DISCOVER_COMMUNITY_FORUM:
-                                this._openUrl(Uu);
+                                this._openUrl(Fu);
                                 break;
                             case e.DISCOVER_LOCAL_WIKI:
-                                this._openUrl(Fu);
+                                this._openUrl(Bu);
                                 break;
                             case e.FIRST_TIME_VIDEOS:
                                 this._openVideoTutorial();
@@ -49561,7 +49369,7 @@
                     key: "_animateSpotLight",
                     value: function(e) {
                         this.overlayRenderer && this.overlayRenderer.destroy(),
-                            this.overlayRenderer = new Zr(W.map),
+                            this.overlayRenderer = new Xr(W.map),
                             this.overlayRenderer.drawOverlay(),
                             this.overlayRenderer.animateHome(e)
                     }
@@ -49585,8 +49393,8 @@
                     }
                 }]),
                 t
-        }(iu),
-        Gu = function() {
+        }(su),
+        Wu = function() {
             function e(t) {
                 h()(this, e),
                     this.startDelay = 0,
@@ -49656,13 +49464,13 @@
                 }]),
                 e
         }(),
-        Wu = c.a.CollectionView.extend({
+        Hu = c.a.CollectionView.extend({
             className: "feed-group list-unstyled",
             tagName: "ul",
-            childView: Bu,
+            childView: Gu,
             childViewEventPrefix: "first-time",
             initialize: function() {
-                this.cyclesTimeout = new Gu({
+                this.cyclesTimeout = new Wu({
                     numberOfCycles: 3,
                     cyclesIntervalTime: 3e4,
                     itemIntervalTime: 5e3,
@@ -49687,7 +49495,7 @@
                 this.cyclesTimeout.stop()
             }
         }),
-        Hu = function(e) {
+        zu = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -49696,28 +49504,28 @@
                 g()(t, [{
                     key: "className",
                     value: function() {
-                        return "".concat(Vt()(_()(t.prototype), "className", this).call(this), " feed-mentoring type-").concat(this.model.attributes.type.toLowerCase())
+                        return "".concat(jt()(_()(t.prototype), "className", this).call(this), " feed-mentoring type-").concat(this.model.attributes.type.toLowerCase())
                     }
                 }]),
                 t
-        }(iu),
-        zu = c.a.CollectionView.extend({
+        }(su),
+        qu = c.a.CollectionView.extend({
             className: "feed-group list-unstyled",
             tagName: "ul",
-            childView: Hu,
+            childView: zu,
             childViewEventPrefix: "mentoring",
             initialize: function() {}
         }),
-        qu = c.a.Object.extend({
+        Yu = c.a.Object.extend({
             browser: null,
             initialize: function(e) {
-                this.model = new eu,
+                this.model = new tu,
                     this.container = e.container,
                     this.app = e.app,
                     this.startNotificationId = e.startNotificationId
             },
             render: function(e) {
-                this.layout = new tu({
+                this.layout = new nu({
                         el: e.el,
                         model: this.model
                     }),
@@ -49739,19 +49547,19 @@
             },
             _createViews: function() {
                 this.views = {
-                    notifications: new Cu({
+                    notifications: new Ou({
                         collection: this.model.notifications
                     }),
-                    messages: new Ru({
+                    messages: new Du({
                         collection: this.model.messages
                     }),
-                    issues: new ju({
+                    issues: new Uu({
                         collection: this.model.issues
                     }),
-                    firstTimeMessages: new Wu({
+                    firstTimeMessages: new Hu({
                         collection: this.model.firstTimeMessages
                     }),
-                    mentoringMessages: new zu({
+                    mentoringMessages: new qu({
                         collection: this.model.mentoringMessages
                     })
                 }
@@ -49783,7 +49591,7 @@
                     this.browser.browse(t))
             },
             _browseCollection: function(e) {
-                this.browser = new Au({
+                this.browser = new Cu({
                     collection: e,
                     container: this.container,
                     app: this.app
@@ -49807,11 +49615,11 @@
                     })
             }
         }),
-        Yu = n(174),
-        $u = n.n(Yu),
-        Ku = n(158);
+        $u = n(175),
+        Ku = n.n($u),
+        Ju = n(159);
 
-    function Ju(e, t) {
+    function Zu(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -49820,31 +49628,31 @@
             n
     }
 
-    function Zu(e) {
+    function Xu(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? Ju(n, !0).forEach(function(t) {
+            t % 2 ? Zu(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ju(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Zu(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var Xu = function(e) {
+    var Qu = function(e) {
             function t(e) {
                 var n, i = e.dataModel,
                     s = void 0 === i ? null : i,
                     r = e.selection,
                     a = void 0 === r ? [] : r,
-                    l = $u()(e, ["dataModel", "selection"]);
+                    l = Ku()(e, ["dataModel", "selection"]);
                 return h()(this, t),
-                    (n = m()(this, _()(t).call(this, Zu({}, l))))._dataModel = s,
+                    (n = m()(this, _()(t).call(this, Xu({}, l))))._dataModel = s,
                     n.repository = n._dataModel.getRepository(a[0].type),
                     n.featureID = a[0].getID(),
                     n.viewModel = new o.a.Model,
-                    n.listenTo(n.repository, rt.ATTR_CHANGED, n.onFeaturesChanged),
-                    n.listenTo(n.repository, rt.CHANGED_ID, n._onFeatureChangedIDs),
+                    n.listenTo(n.repository, ot.ATTR_CHANGED, n.onFeaturesChanged),
+                    n.listenTo(n.repository, ot.CHANGED_ID, n._onFeatureChangedIDs),
                     c.a.bindEvents(U()(n), n.viewModel, n.modelEvents),
                     n
             }
@@ -49896,7 +49704,7 @@
                     key: "_makeViewModelAttributes",
                     value: function(e) {
                         var t = this.getFeatureBaseAttributes();
-                        return Zu({
+                        return Xu({
                             id: t.getID(),
                             createdBy: t.getCreatedBy(),
                             createdOn: t.getCreatedOn(),
@@ -49999,12 +49807,12 @@
                 }, {
                     key: "_wrapUpdateAction",
                     value: function(e) {
-                        return 1 === e.length ? e[0] : new Ku.default(e)
+                        return 1 === e.length ? e[0] : new Ju.default(e)
                     }
                 }, {
                     key: "_createObjectUpdateAction",
                     value: function(e, t) {
-                        return new tn.default(e, t)
+                        return new nn.default(e, t)
                     }
                 }, {
                     key: "hasEditedModelChanged",
@@ -50031,7 +49839,7 @@
                 }]),
                 t
         }(c.a.View),
-        Qu = function(e) {
+        ec = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50045,7 +49853,7 @@
                             n = new ce.default("junction-entry-marker fa fa-arrow-right");
                         n.div.style = "transform: rotate(".concat(180 - e.getAngleAtIntersection(t), "deg)");
                         var i = e.getIntersectionPoint(t);
-                        this._marker = new OL.Marker(bt.toLonLat(i), n),
+                        this._marker = new OL.Marker(Et.toLonLat(i), n),
                             this._marker.events.on({
                                 click: this._onMarkerClick,
                                 mouseover: this._onMouseOver,
@@ -50077,7 +49885,7 @@
                 }, {
                     key: "_onMouseOver",
                     value: function() {
-                        this._drawingContext.addFeatures([new OL.Feature.Vector(ft.cloneGeometry(this.getSegment().geometry), {}, {
+                        this._drawingContext.addFeatures([new OL.Feature.Vector(mt.cloneGeometry(this.getSegment().geometry), {}, {
                             strokeColor: "#00ece3",
                             strokeWidth: 6
                         })])
@@ -50112,7 +49920,7 @@
                 }]),
                 t
         }(c.a.View),
-        ec = function(e) {
+        tc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50157,7 +49965,7 @@
                     key: "onRender",
                     value: function() {
                         this.showChildView("list", new c.a.CollectionView({
-                            childView: Qu,
+                            childView: ec,
                             childViewOptions: {
                                 dataModel: this._junction.model,
                                 drawingContext: this._drawingContext
@@ -50184,14 +49992,14 @@
                 }]),
                 t
         }(c.a.View),
-        tc = n(383),
-        nc = n.n(tc),
-        ic = {
+        nc = n(384),
+        ic = n.n(nc),
+        sc = {
             STREET_NAME: 100,
             CITY_NAME: 100,
             HOUSE_NUMBER: 20
         },
-        sc = function(e) {
+        rc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50200,12 +50008,12 @@
                 g()(t, [{
                     key: "model",
                     get: function() {
-                        return nc.a
+                        return ic.a
                     }
                 }]),
                 t
         }(o.a.Collection),
-        rc = function(e) {
+        oc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50228,7 +50036,7 @@
                             fullAddress: "",
                             ttsLocales: [W.Config.tts.default_locale],
                             altStreets: new o.a.Collection,
-                            newAltStreets: new sc
+                            newAltStreets: new rc
                         }
                     }
                 }, {
@@ -50271,7 +50079,7 @@
                                 });
                                 this.set({
                                     altStreets: new o.a.Collection(i),
-                                    newAltStreets: new sc
+                                    newAltStreets: new rc
                                 })
                             }
                             var s = e.getCountry();
@@ -50327,9 +50135,9 @@
                 }]),
                 t
         }(o.a.Model),
-        oc = n(80),
-        ac = n.n(oc),
-        lc = {
+        ac = n(81),
+        lc = n.n(ac),
+        uc = {
             selectionRequiredOption: function(e) {
                 return o.a.$("<option/>").prop("disabled", "disabled").prop("selected", "selected").text(e).val("")
             },
@@ -50386,7 +50194,7 @@
                 return {
                     observe: [e, arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : e],
                     onGet: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0];
                         return t[1] && n
                     },
@@ -50414,11 +50222,11 @@
                     })
             }
         };
-    lc.initBootstrapSupport();
-    var uc = lc,
-        cc = n(143),
-        dc = n(191);
-    var hc = function(e) {
+    uc.initBootstrapSupport();
+    var cc = uc,
+        dc = n(144),
+        hc = n(192);
+    var pc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50449,7 +50257,7 @@
                 }]),
                 t
         }(c.a.View),
-        pc = function(e) {
+        gc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50458,14 +50266,14 @@
                 g()(t, [{
                     key: "childView",
                     value: function(e) {
-                        return e.get("deleted") ? null : hc
+                        return e.get("deleted") ? null : pc
                     }
                 }]),
                 t
         }(c.a.CollectionView),
-        gc = n(175),
-        fc = n.n(gc),
-        mc = function(e) {
+        fc = n(176),
+        mc = n.n(fc),
+        vc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50488,7 +50296,7 @@
                             ".alt-city-name": {
                                 observe: ["cityName", "emptyCity", "citySelectedById"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 3),
+                                    var t = hn()(e, 3),
                                         n = t[0],
                                         i = t[1];
                                     t[2];
@@ -50497,7 +50305,7 @@
                                 onSet: function(e) {
                                     return [e, !1, !1]
                                 },
-                                attributes: uc.requireAndEnableIfNot("emptyCity")
+                                attributes: cc.requireAndEnableIfNot("emptyCity")
                             },
                             ".empty-city": "emptyCity"
                         }
@@ -50529,8 +50337,8 @@
                     }
                 }]),
                 t
-        }(fc.a),
-        vc = function(e) {
+        }(mc.a),
+        _c = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50539,7 +50347,7 @@
                 g()(t, [{
                     key: "childView",
                     value: function() {
-                        return mc
+                        return vc
                     }
                 }, {
                     key: "childViewOptions",
@@ -50551,7 +50359,7 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        _c = function() {
+        yc = function() {
             function e() {
                 h()(this, e)
             }
@@ -50581,16 +50389,16 @@
                 }]),
                 e
         }();
-    _c._cachedAudioElement = null,
-        _c._getCachedAudioElement = function() {
+    yc._cachedAudioElement = null,
+        yc._getCachedAudioElement = function() {
             return null != this._cachedAudioElement ? this._cachedAudioElement : this._cachedAudioElement = s()("<audio />").attr("autoplay", !0)
         };
-    var yc = _c,
-        bc = function(e) {
+    var bc = yc,
+        Ec = function(e) {
             function t() {
                 var e;
                 return h()(this, t),
-                    (e = m()(this, _()(t).apply(this, arguments)))._ttsPlayer = new yc,
+                    (e = m()(this, _()(t).apply(this, arguments)))._ttsPlayer = new bc,
                     e
             }
             return b()(t, e),
@@ -50638,7 +50446,7 @@
                         var e = this.model.getTTSLocales();
                         this.ui.ttsButton.popover({
                             html: !0,
-                            content: Object(ms.getHTML)("templates/segment/tts-playback-popover", {
+                            content: Object(vs.getHTML)("templates/segment/tts-playback-popover", {
                                 locales: e
                             }),
                             placement: "bottom"
@@ -50654,13 +50462,13 @@
                     value: function(e, n) {
                         return new t({
                             model: e,
-                            lonlat: bt.toLonLat(n)
+                            lonlat: Et.toLonLat(n)
                         })
                     }
                 }]),
                 t
         }(c.a.View),
-        Ec = function(e) {
+        wc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50671,7 +50479,7 @@
                     value: function() {
                         var e = (this.subActions[0].feature || this.subActions[0].segment).type,
                             t = this.subActions.filter(function(e) {
-                                return e instanceof cc.default
+                                return e instanceof dc.default
                             }).length;
                         1 === t ? this._description = I18n.t("save.changes_log.actions.UpdateFeatureAddress", {
                             objectType: e
@@ -50682,10 +50490,10 @@
                     }
                 }]),
                 t
-        }(qt.default),
-        wc = n(384),
-        Sc = n.n(wc),
-        kc = function(e) {
+        }(Yt.default),
+        Sc = n(385),
+        kc = n.n(Sc),
+        Tc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -50745,7 +50553,7 @@
                         return {
                             ".city-id": {
                                 observe: "cityID",
-                                attributes: uc.requireAndEnableIfNot("emptyCity"),
+                                attributes: cc.requireAndEnableIfNot("emptyCity"),
                                 selectOptions: {
                                     collection: "this.cityOptions",
                                     defaultOption: {
@@ -50763,19 +50571,19 @@
                             ".street-name": {
                                 observe: ["streetName", "emptyStreet"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     return t[1] ? "" : n
                                 },
                                 onSet: function(e) {
                                     return [e, !1]
                                 },
-                                attributes: uc.requireAndEnableIfNot("emptyStreet")
+                                attributes: cc.requireAndEnableIfNot("emptyStreet")
                             },
                             ".city-name": {
                                 observe: ["cityName", "emptyCity", "citySelectedById"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 3),
+                                    var t = hn()(e, 3),
                                         n = t[0],
                                         i = t[1];
                                     t[2];
@@ -50784,7 +50592,7 @@
                                 onSet: function(e) {
                                     return [e, !1, !1]
                                 },
-                                attributes: uc.requireAndEnableIfNot("emptyCity")
+                                attributes: cc.requireAndEnableIfNot("emptyCity")
                             },
                             ".state-id": {
                                 observe: "stateID",
@@ -50853,14 +50661,14 @@
                         this.options = l.a.defaults(e, this.defaultOptions()),
                             this.addressModel = e.getAddress(),
                             this.dataModel = e.dataModel,
-                            this.model = rc.fromAddress(this.addressModel, this.dataModel),
+                            this.model = oc.fromAddress(this.addressModel, this.dataModel),
                             this.model.set({
                                 editable: e.editable,
                                 fullAddress: this.addressModel.format({
                                     formatStreet: this.options.editStreet
                                 })
                             }),
-                            this._canChangeStreetNameUseCase = new Sc.a(this.dataModel.loginManager.user),
+                            this._canChangeStreetNameUseCase = new kc.a(this.dataModel.loginManager.user),
                             this.showStatesSelection = this.dataModel.hasStates(),
                             this.showCitySelection = this.options.showCitySelection,
                             this._generateOptions(),
@@ -50897,13 +50705,13 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).call(this),
+                        jt()(_()(t.prototype), "onRender", this).call(this),
                             this.stickit(this.model, l.a.extend(this.bindings(), this.cityBindings())),
                             this._initTTSView(),
-                            this.options.editAltStreets && !this.options.isAltAddress && (this.showChildView("altStreetsRegion", new pc({
+                            this.options.editAltStreets && !this.options.isAltAddress && (this.showChildView("altStreetsRegion", new gc({
                                     collection: this.model.attributes.altStreets
                                 })),
-                                this.showChildView("newAltStreetsRegion", new vc({
+                                this.showChildView("newAltStreetsRegion", new _c({
                                     dataModel: this.options.dataModel,
                                     collection: this.model.attributes.newAltStreets
                                 })))
@@ -50913,7 +50721,7 @@
                     value: function() {
                         var e = this;
                         return this._generateCityOptions(),
-                            this.listenTo(this.dataModel.cities, rt.UPDATED, function() {
+                            this.listenTo(this.dataModel.cities, ot.UPDATED, function() {
                                 return e._generateCityOptions(),
                                     e.stickit(e.model, e.cityBindings())
                             })
@@ -50923,8 +50731,8 @@
                     value: function() {
                         if (this.options.enableTTS) {
                             var e = this.options.features[0],
-                                t = $t.getVertex(e.geometry, 0),
-                                n = bc.fromAddress(this.model, t);
+                                t = Kt.getVertex(e.geometry, 0),
+                                n = Ec.fromAddress(this.model, t);
                             this.getRegion("ttsPlaybackRegion").reset(),
                                 this.showChildView("ttsPlaybackRegion", n)
                         }
@@ -50935,8 +50743,8 @@
                         var e = this._canChangeStreetNameUseCase.getMaxAllowedStreetNamesChanges();
                         return {
                             dataModel: this.dataModel,
-                            MAX_LENGTH: ic,
-                            CITY_NAME_PATTERN: oc.CITY_NAME_PATTERN,
+                            MAX_LENGTH: sc,
+                            CITY_NAME_PATTERN: ac.CITY_NAME_PATTERN,
                             showStatesSelection: this.dataModel.hasStates(),
                             showHouseNumberInput: this.options.editHouseNumber,
                             showStreetInput: this.options.editStreet,
@@ -50968,16 +50776,16 @@
                             n = this.model.attributes.altStreets.filter(function(e) {
                                 return !e.get("deleted")
                             });
-                        return t.push.apply(t, Nt()(e.map(function(e) {
-                                return new tn.default(e, {
+                        return t.push.apply(t, xt()(e.map(function(e) {
+                                return new nn.default(e, {
                                     streetIDs: n.map(function(e) {
                                         return e.id
                                     })
                                 })
                             }))),
                             this.model.attributes.newAltStreets.forEach(function(n) {
-                                t.push.apply(t, Nt()(e.map(function(e) {
-                                    return new dc.default(e, n.getStreetAttributes())
+                                t.push.apply(t, xt()(e.map(function(e) {
+                                    return new hc.default(e, n.getStreetAttributes())
                                 })))
                             }),
                             t
@@ -50987,14 +50795,14 @@
                     value: function(e, t) {
                         var n = this,
                             i = this.options.features.map(function(i) {
-                                return new cc.default(i, e, {
+                                return new dc.default(i, e, {
                                     updateStreet: n.options.editStreet,
                                     getCityFromDataModel: t,
                                     updateHouseNumber: n.options.editHouseNumber,
                                     streetIDField: n.options.streetIDField
                                 })
                             });
-                        this.dataModel.actionManager.add(new Ec([].concat(Nt()(i), Nt()(this._getAltStreetActions())))),
+                        this.dataModel.actionManager.add(new wc([].concat(xt()(i), xt()(this._getAltStreetActions())))),
                             this.addressModel = this.options.getAddress(),
                             this.model.set({
                                 fullAddress: this.addressModel.format({
@@ -51009,7 +50817,7 @@
                 }, {
                     key: "_cityExists",
                     value: function(e) {
-                        return bs.a.citiesByAttributes(this.dataModel, {
+                        return Es.a.citiesByAttributes(this.dataModel, {
                             isEmpty: e.isEmpty,
                             name: e.cityName,
                             countryID: e.countryID,
@@ -51023,7 +50831,7 @@
                         (t = e.cityName,
                             n = e.countryID,
                             i = e.stateID,
-                            (new Is.default).getCityExists(t, n, i).then(function(e) {
+                            (new Ms.default).getCityExists(t, n, i).then(function(e) {
                                 var n = !0;
                                 return e.isDistant ? n = window.confirm(I18n.t("edit.segment.city_confirm.distant", {
                                         city_name: t
@@ -51086,9 +50894,9 @@
                     }
                 }]),
                 t
-        }(fc.a);
+        }(mc.a);
 
-    function Tc(e, t) {
+    function Ic(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -51096,7 +50904,7 @@
             })),
             n
     }
-    var Ic = function(e) {
+    var Mc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51113,9 +50921,9 @@
                         return function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var n = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? Tc(n, !0).forEach(function(t) {
+                                t % 2 ? Ic(n, !0).forEach(function(t) {
                                     V()(e, t, n[t])
-                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Tc(n).forEach(function(t) {
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ic(n).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                 })
                             }
@@ -51129,11 +50937,11 @@
                             ".lock-level-displayer label": {
                                 observe: [this.lockRankAttribute, this.rankAttribute, this.lockRankMixedAttribute],
                                 onGet: function(e) {
-                                    var t = dn()(e, 3),
+                                    var t = hn()(e, 3),
                                         n = t[0],
                                         i = t[1];
-                                    return t[2] ? I18n.t("edit.multiple_values") : null != n ? _n.default.formatRank(n) : I18n.t("edit.segment.lock_levels.automatic", {
-                                        rank: _n.default.formatRank(i)
+                                    return t[2] ? I18n.t("edit.multiple_values") : null != n ? yn.default.formatRank(n) : I18n.t("edit.segment.lock_levels.automatic", {
+                                        rank: yn.default.formatRank(i)
                                     })
                                 }
                             },
@@ -51144,7 +50952,7 @@
                             ".lock-level-selector input[name='lockRank']": {
                                 observe: [this.lockRankAttribute, this.lockRankMixedAttribute],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     return t[1] ? "MIXED" : null != n ? n : "AUTO"
                                 },
@@ -51167,7 +50975,7 @@
                                 observe: this.rankAttribute,
                                 onGet: function(e) {
                                     return I18n.t("edit.segment.lock_levels.automatic", {
-                                        rank: _n.default.formatRank(e)
+                                        rank: yn.default.formatRank(e)
                                     })
                                 }
                             }
@@ -51228,9 +51036,9 @@
                 }]),
                 t
         }(c.a.View),
-        Mc = n(121);
+        Ac = n(122);
 
-    function Ac(e, t) {
+    function Cc(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -51239,18 +51047,18 @@
             n
     }
 
-    function Cc(e) {
+    function Oc(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? Ac(n, !0).forEach(function(t) {
+            t % 2 ? Cc(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ac(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Cc(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var Oc = function(e) {
+    var Rc = function(e) {
             function t() {
                 var e;
                 return h()(this, t),
@@ -51261,7 +51069,7 @@
                 g()(t, [{
                     key: "events",
                     value: function() {
-                        return Cc({}, Vt()(_()(t.prototype), "events", this).call(this), {
+                        return Oc({}, jt()(_()(t.prototype), "events", this).call(this), {
                             "click .select-short-segments": "_selectShortSegments"
                         })
                     }
@@ -51277,8 +51085,8 @@
                 }, {
                     key: "templateContext",
                     value: function() {
-                        return Cc({}, Vt()(_()(t.prototype), "templateContext", this).apply(this, arguments), {
-                            MAX_POLYGON_SIZE_DEGREES: Mc.MAX_POLYGON_SIZE_DEGREES
+                        return Oc({}, jt()(_()(t.prototype), "templateContext", this).apply(this, arguments), {
+                            MAX_POLYGON_SIZE_DEGREES: Ac.MAX_POLYGON_SIZE_DEGREES
                         })
                     }
                 }, {
@@ -51308,7 +51116,7 @@
                 }, {
                     key: "bindings",
                     value: function() {
-                        return Cc({}, Vt()(_()(t.prototype), "bindings", this).call(this), {
+                        return Oc({}, jt()(_()(t.prototype), "bindings", this).call(this), {
                             ".size-alert": {
                                 observe: "isSizeLegal",
                                 visible: !0,
@@ -51339,7 +51147,7 @@
                     key: "onRender",
                     value: function() {
                         var e = this.getFeature();
-                        this.showChildView("addressEdit", new kc({
+                        this.showChildView("addressEdit", new Tc({
                                 getAddress: function() {
                                     return e.getAddress()
                                 },
@@ -51348,26 +51156,26 @@
                                 editable: e.arePropertiesEditable(),
                                 editStreet: !1
                             })),
-                            this.showChildView("junctionEntryList", new ec({
+                            this.showChildView("junctionEntryList", new tc({
                                 junction: e,
                                 drawingContext: this.options.map.getDrawingContext(),
                                 selectionManager: this.selectionManager
                             })),
-                            this.showChildView("lockEdit", new Ic({
+                            this.showChildView("lockEdit", new Mc({
                                 model: this.viewModel,
                                 propertiesEditableAttribute: "lockEditable"
                             })),
-                            Vt()(_()(t.prototype), "onRender", this).apply(this, arguments)
+                            jt()(_()(t.prototype), "onRender", this).apply(this, arguments)
                     }
                 }]),
                 t
-        }(Xu),
-        Rc = n(157),
-        Dc = n(115),
-        Lc = n(182),
-        Pc = n(35);
+        }(Qu),
+        Dc = n(158),
+        Lc = n(116),
+        Pc = n(183),
+        Nc = n(35);
 
-    function Nc(e, t) {
+    function xc(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -51375,7 +51183,7 @@
             })),
             n
     }
-    for (var xc, Vc = function(e) {
+    for (var Vc, jc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51394,18 +51202,18 @@
                         return function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var n = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? Nc(n, !0).forEach(function(t) {
+                                t % 2 ? xc(n, !0).forEach(function(t) {
                                     V()(e, t, n[t])
-                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Nc(n).forEach(function(t) {
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : xc(n).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                 })
                             }
                             return e
-                        }({}, Vt()(_()(t.prototype), "bindings", this).call(this), {
+                        }({}, jt()(_()(t.prototype), "bindings", this).call(this), {
                             "[name=type]": {
                                 observe: "type",
                                 selectOptions: {
-                                    collection: Object.values(Rc.CAMERA_TYPES).map(function(e) {
+                                    collection: Object.values(Dc.CAMERA_TYPES).map(function(e) {
                                         return {
                                             name: I18n.t("edit.camera.fields.type.".concat(e)),
                                             type: e
@@ -51437,7 +51245,7 @@
                     value: function() {
                         return {
                             speed: function(e, t) {
-                                t.speed = Pc.default.getOriginalValue(e, Dc.UNITS.speed)
+                                t.speed = Nc.default.getOriginalValue(e, Lc.UNITS.speed)
                             },
                             type: this.simpleAttribute("type"),
                             lockRank: this.simpleAttribute("lockRank")
@@ -51446,9 +51254,9 @@
                 }, {
                     key: "featureToViewModel",
                     value: function(e) {
-                        var t = new Lc.SpeedUseCase;
+                        var t = new Pc.SpeedUseCase;
                         return {
-                            speed: _n.default.getDisplayUnitValue(e.attributes.speed, Dc.UNITS.speed, !0),
+                            speed: yn.default.getDisplayUnitValue(e.attributes.speed, Lc.UNITS.speed, !0),
                             type: e.attributes.type,
                             rank: e.attributes.rank,
                             lockRank: e.attributes.lockRank,
@@ -51461,16 +51269,16 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).apply(this, arguments),
+                        jt()(_()(t.prototype), "onRender", this).apply(this, arguments),
                             this._renderLockEdit()
                     }
                 }, {
                     key: "onSpeedRelatedChanges",
                     value: function(e) {
-                        var t = new Lc.SpeedUseCase,
+                        var t = new Pc.SpeedUseCase,
                             n = t.isSpeedValid(e.attributes.speed, e.attributes.type),
                             i = t.supportsSpeed(e.attributes.type),
-                            s = i ? e.attributes.speed : Lc.DEFAULT_SPEED;
+                            s = i ? e.attributes.speed : Pc.DEFAULT_SPEED;
                         e.set({
                             speedFieldValid: n,
                             speedFieldEnabled: i,
@@ -51480,7 +51288,7 @@
                 }, {
                     key: "_renderLockEdit",
                     value: function() {
-                        var e = new Ic({
+                        var e = new Mc({
                             model: this.viewModel
                         });
                         this.showChildView("lockEditRegion", e)
@@ -51499,7 +51307,7 @@
                     }
                 }]),
                 t
-        }(Xu), jc = function(e) {
+        }(Qu), Uc = function(e) {
             function t() {
                 var e;
                 return h()(this, t),
@@ -51591,7 +51399,7 @@
                     key: "onRender",
                     value: function() {
                         this.stickit(this.formModel, this.formBindings()),
-                            Vt()(_()(t.prototype), "onRender", this).apply(this, arguments)
+                            jt()(_()(t.prototype), "onRender", this).apply(this, arguments)
                     }
                 }, {
                     key: "_toggleEditing",
@@ -51630,7 +51438,7 @@
                             i = n.countryID,
                             s = n.stateID;
                         this._toggleSubmitting(!0);
-                        var r = new Is.default;
+                        var r = new Ms.default;
                         return new Promise(function(n, o) {
                             r.getCityExists(t, i, s).then(function(t) {
                                 var i = t.existingCity;
@@ -51658,7 +51466,7 @@
                     }
                 }]),
                 t
-        }(Xu), Uc = function(e) {
+        }(Qu), Fc = function(e) {
             function t(e, n) {
                 var i, s = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                 return h()(this, t),
@@ -51673,10 +51481,10 @@
                         var e = this._venue;
                         if (this._toResidential && !e.isPoint()) {
                             var t = e.getPointGeometry(),
-                                n = new Qt.default(e, e.model.venues, e.geometry, t);
+                                n = new en.default(e, e.model.venues, e.geometry, t);
                             this.doSubAction(n)
                         }
-                        return this.doSubAction(new tn.default(this._venue, {
+                        return this.doSubAction(new nn.default(this._venue, {
                                 residential: this._toResidential
                             })),
                             !0
@@ -51693,7 +51501,7 @@
                     }
                 }]),
                 t
-        }(Ie.default), Fc = n(385), Bc = n(31), Gc = n(100), Wc = function() {
+        }(Ie.default), Bc = n(386), Gc = n(31), Wc = n(101), Hc = function() {
             function e(t) {
                 h()(this, e),
                     this.dataModel = t
@@ -51701,16 +51509,16 @@
             return g()(e, [{
                     key: "buildChanges",
                     value: function(e, t, n) {
-                        return Object(Gc.a)(this.dataModel, e, t, n)
+                        return Object(Wc.a)(this.dataModel, e, t, n)
                     }
                 }, {
                     key: "userProfile",
                     value: function(e) {
-                        return Object(Bc.userProfile)(e, this.dataModel)
+                        return Object(Gc.userProfile)(e, this.dataModel)
                     }
                 }]),
                 e
-        }(), Hc = n(79), zc = n.n(Hc), qc = function(e) {
+        }(), zc = n(80), qc = n.n(zc), Yc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51771,7 +51579,7 @@
                     key: "_drawGeometry",
                     value: function(e) {
                         var t = se.parse(e);
-                        this._getDrawingContext().addFeatures([new OL.Feature.Vector(ft.cloneGeometry(t))])
+                        this._getDrawingContext().addFeatures([new OL.Feature.Vector(mt.cloneGeometry(t))])
                     }
                 }, {
                     key: "_showOldGeometry",
@@ -51787,7 +51595,7 @@
                     key: "_getDrawingContext",
                     value: function() {
                         return null == this._drawingContext && (this._drawingContext = this._map.getDrawingContext(),
-                                this._drawingContext.setStyleMap(gi),
+                                this._drawingContext.setStyleMap(fi),
                                 this._drawingContext.moveLayerToTop()),
                             this._drawingContext
                     }
@@ -51803,7 +51611,7 @@
                     }
                 }]),
                 t
-        }(c.a.View), Yc = function(e) {
+        }(c.a.View), $c = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51812,7 +51620,7 @@
                 g()(t, [{
                     key: "events",
                     value: function() {
-                        return Object.assign({}, l.a.result(qc.prototype, "events"), {
+                        return Object.assign({}, l.a.result(Yc.prototype, "events"), {
                             "mouseenter .ca-entryExitPoints .ca-value-new": this._showNewEntryExitPoints,
                             "mouseenter .ca-entryExitPoints .ca-value-old": this._showOldExtryExitPoints
                         })
@@ -51841,7 +51649,7 @@
                     }
                 }]),
                 t
-        }(qc), $c = function(e) {
+        }(Yc), Kc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51868,7 +51676,7 @@
                     key: "templateContext",
                     value: function() {
                         return {
-                            displayName: Object(Bc.formatObjectName)(this._objectType),
+                            displayName: Object(Gc.formatObjectName)(this._objectType),
                             displayValue: null,
                             actionText: this._getActionText()
                         }
@@ -51883,7 +51691,7 @@
                     key: "_getByActionType",
                     value: function(e) {
                         var t = null;
-                        return this._actionType === zc.a.ACTIONS.ADD && this.model.attributes.newValue ? t = this.model.attributes.newValue[e] : this._actionType === zc.a.ACTIONS.DELETE && this.model.attributes.oldValue && (t = this.model.attributes.oldValue[e]),
+                        return this._actionType === qc.a.ACTIONS.ADD && this.model.attributes.newValue ? t = this.model.attributes.newValue[e] : this._actionType === qc.a.ACTIONS.DELETE && this.model.attributes.oldValue && (t = this.model.attributes.oldValue[e]),
                             t
                     }
                 }, {
@@ -51893,7 +51701,7 @@
                     }
                 }]),
                 t
-        }(c.a.View), Kc = function(e) {
+        }(c.a.View), Jc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51902,13 +51710,13 @@
                 g()(t, [{
                     key: "templateContext",
                     value: function() {
-                        return Object.assign(Vt()(_()(t.prototype), "templateContext", this).call(this), {
+                        return Object.assign(jt()(_()(t.prototype), "templateContext", this).call(this), {
                             displayValue: this._getByActionType("number")
                         })
                     }
                 }]),
                 t
-        }($c), Jc = function(e) {
+        }(Kc), Zc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51917,7 +51725,7 @@
                 g()(t, [{
                     key: "templateContext",
                     value: function() {
-                        var e = Vt()(_()(t.prototype), "templateContext", this).call(this);
+                        var e = jt()(_()(t.prototype), "templateContext", this).call(this);
                         return null != this.isApproved && (e.actionText = this.isApproved ? I18n.t("element_history.approved") : I18n.t("element_history.rejected")),
                             e
                     }
@@ -51925,12 +51733,12 @@
                     key: "isApproved",
                     get: function() {
                         var e = null;
-                        return this._actionType === zc.a.ACTIONS.DELETE && this.model.attributes.oldValue && (e = this.model.attributes.oldValue.approve),
+                        return this._actionType === qc.a.ACTIONS.DELETE && this.model.attributes.oldValue && (e = this.model.attributes.oldValue.approve),
                             e
                     }
                 }]),
                 t
-        }($c), Zc = function(e) {
+        }(Kc), Xc = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -51951,7 +51759,7 @@
                     key: "_getStreetNameFromDataModel",
                     value: function(e, t) {
                         var n = e.segments.getObjectById(t);
-                        return null != n ? Object(Bc.formatStreetName)(n.attributes.primaryStreetID, e) : null
+                        return null != n ? Object(Gc.formatStreetName)(n.attributes.primaryStreetID, e) : null
                     }
                 }, {
                     key: "_getToSegmentStreetName",
@@ -51965,7 +51773,7 @@
                 }, {
                     key: "templateContext",
                     value: function() {
-                        var e = Vt()(_()(t.prototype), "templateContext", this).call(this),
+                        var e = jt()(_()(t.prototype), "templateContext", this).call(this),
                             n = this._getToSegmentID(),
                             i = this._getToSegmentStreetName(n);
                         return e.displayName = I18n.t("element_history.turn_object", {
@@ -51976,11 +51784,11 @@
                     }
                 }]),
                 t
-        }($c), Xc = (xc = {},
-            V()(xc, Rt.a.HOUSE_NUMBER, Kc),
-            V()(xc, Rt.a.VENUE_UPDATE_REQUEST, Jc),
-            V()(xc, Rt.a.NC, Zc),
-            xc), Qc = function(e) {
+        }(Kc), Qc = (Vc = {},
+            V()(Vc, Dt.a.HOUSE_NUMBER, Jc),
+            V()(Vc, Dt.a.VENUE_UPDATE_REQUEST, Zc),
+            V()(Vc, Dt.a.NC, Xc),
+            Vc), ed = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52000,13 +51808,13 @@
                     key: "childView",
                     value: function(e) {
                         var t = e.attributes.objectType,
-                            n = Xc[t];
-                        return null == n && (n = $c),
+                            n = Qc[t];
+                        return null == n && (n = Kc),
                             n
                     }
                 }]),
                 t
-        }(c.a.CollectionView), ed = function(e) {
+        }(c.a.CollectionView), td = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52042,13 +51850,13 @@
                     value: function() {
                         this._map = this.options.map,
                             this._historyDataModel = this.options.historyDataModel,
-                            this._historyChangesBuilder = new Wc(this._historyDataModel),
+                            this._historyChangesBuilder = new Hc(this._historyDataModel),
                             this._objectType = this.options.objectType,
                             this._objectID = this.options.objectID,
                             this._actionType = this.model.attributes.actionType;
                         var e = this._getMainObject(),
                             t = this._getRelatedObjects(),
-                            n = null != e && this._actionType === zc.a.ACTIONS.UPDATE;
+                            n = null != e && this._actionType === qc.a.ACTIONS.UPDATE;
                         if (this._hasRelated = t.length > 0,
                             this._hasContent = n || this._hasRelated,
                             n) {
@@ -52059,7 +51867,7 @@
                                 historyChangesBuilder: this._historyChangesBuilder
                             })
                         }
-                        t.length && (this._relatedObjectsView = new Qc({
+                        t.length && (this._relatedObjectsView = new ed({
                             historyChangesBuilder: this._historyChangesBuilder,
                             collection: new o.a.Collection(t)
                         }))
@@ -52082,10 +51890,10 @@
                     key: "_getMainObjectViewClass",
                     value: function() {
                         switch (this._objectType) {
-                            case Rt.a.VENUE:
-                                return Yc;
+                            case Dt.a.VENUE:
+                                return $c;
                             default:
-                                return qc
+                                return Yc
                         }
                     }
                 }, {
@@ -52118,12 +51926,12 @@
                     key: "_serializeChangesPreview",
                     value: function() {
                         var e = [];
-                        if (null != this._mainObjectView && e.push.apply(e, Nt()(this._mainObjectView.getChangedAttributesNames())),
+                        if (null != this._mainObjectView && e.push.apply(e, xt()(this._mainObjectView.getChangedAttributesNames())),
                             null != this._relatedObjectsView) {
                             var t = this._relatedObjectsView.collection.map(function(e) {
-                                return Object(Bc.formatObjectName)(e.attributes.objectType)
+                                return Object(Gc.formatObjectName)(e.attributes.objectType)
                             });
-                            e.push.apply(e, Nt()(t))
+                            e.push.apply(e, xt()(t))
                         }
                         if (e.length > 1)
                             return I18n.t("element_history.multiple_changes");
@@ -52139,7 +51947,7 @@
                     key: "_serializeMainObjectAction",
                     value: function() {
                         var e = this._getMainObject();
-                        return null == e ? null : this._objectType === Rt.a.SEGMENT ? this._serializeSegmentAction(e) : this._objectType === Rt.a.VENUE ? this._serializeVenueAction(e) : this._serializeAction()
+                        return null == e ? null : this._objectType === Dt.a.SEGMENT ? this._serializeSegmentAction(e) : this._objectType === Dt.a.VENUE ? this._serializeVenueAction(e) : this._serializeAction()
                     }
                 }, {
                     key: "_serializeSegmentAction",
@@ -52154,8 +51962,8 @@
                 }, {
                     key: "_serializeAction",
                     value: function() {
-                        var e, t = Object(Bc.formatObjectName)(this._objectType);
-                        return this._actionType === zc.a.ACTIONS.ADD ? e = "element_history.object_created" : this._actionType === zc.a.ACTIONS.DELETE && (e = "element_history.object_deleted"),
+                        var e, t = Object(Gc.formatObjectName)(this._objectType);
+                        return this._actionType === qc.a.ACTIONS.ADD ? e = "element_history.object_created" : this._actionType === qc.a.ACTIONS.DELETE && (e = "element_history.object_deleted"),
                             null != e ? I18n.t(e, {
                                 object: t
                             }) : ""
@@ -52167,7 +51975,7 @@
                     }
                 }]),
                 t
-        }(c.a.View), td = function(e) {
+        }(c.a.View), nd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52176,7 +51984,7 @@
                 g()(t, [{
                     key: "childView",
                     value: function() {
-                        return ed
+                        return td
                     }
                 }, {
                     key: "childViewOptions",
@@ -52195,7 +52003,7 @@
                     }
                 }]),
                 t
-        }(c.a.CollectionView), nd = function(e) {
+        }(c.a.CollectionView), id = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52214,7 +52022,7 @@
                     }
                 }]),
                 t
-        }(o.a.Model), id = function(e) {
+        }(o.a.Model), sd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52262,7 +52070,7 @@
                             ".historyEmpty": {
                                 observe: ["isEmpty", "hasError", "loading"],
                                 visible: function(e) {
-                                    var t = dn()(e, 3),
+                                    var t = hn()(e, 3),
                                         n = t[0],
                                         i = t[1],
                                         s = t[2];
@@ -52272,7 +52080,7 @@
                             ".historyError": {
                                 observe: ["hasError", "loading"],
                                 visible: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     return !t[1] && n
                                 }
@@ -52280,7 +52088,7 @@
                             ".loadMoreContainer": {
                                 observe: ["hasMore", "hasError", "loading"],
                                 visible: function(e) {
-                                    var t = dn()(e, 3),
+                                    var t = hn()(e, 3),
                                         n = t[0],
                                         i = t[1];
                                     return !t[2] && n && !i
@@ -52295,12 +52103,12 @@
                         this._map = e.map,
                             this._objectType = t.type,
                             this._objectID = t.getID(),
-                            this._descartes = new Is.default,
+                            this._descartes = new Ms.default,
                             this._historyDataModel = new Te.a,
                             this._nextTransaction = null,
                             this._historyLoaded = !1,
-                            this._viewModel = new nd,
-                            this._transactionsView = new td({
+                            this._viewModel = new id,
+                            this._transactionsView = new nd({
                                 map: this._map,
                                 historyDataModel: this._historyDataModel,
                                 objectType: this._objectType,
@@ -52372,19 +52180,19 @@
                     }
                 }]),
                 t
-        }(c.a.View), sd = n(36), rd = sd.VENUE_MAIN_CATEGORIES_LIST, od = l.a.zipObject(rd, rd), ad = [], ld = 0; ld < rd.length; ld++) {
-        var ud = rd[ld];
-        ad.push({
-            id: ud
+        }(c.a.View), rd = n(36), od = rd.VENUE_MAIN_CATEGORIES_LIST, ad = l.a.zipObject(od, od), ld = [], ud = 0; ud < od.length; ud++) {
+        var cd = od[ud];
+        ld.push({
+            id: cd
         });
-        for (var cd = 0; cd < sd.VENUE_SUBCATEGORIES[ud].length; cd++) {
-            var dd = sd.VENUE_SUBCATEGORIES[ud][cd];
-            ad.push({
-                id: dd
+        for (var dd = 0; dd < rd.VENUE_SUBCATEGORIES[cd].length; dd++) {
+            var hd = rd.VENUE_SUBCATEGORIES[cd][dd];
+            ld.push({
+                id: hd
             })
         }
     }
-    var hd = function(e) {
+    var pd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52450,7 +52258,7 @@
                 }]),
                 t
         }(c.a.View),
-        pd = function(e) {
+        gd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52469,7 +52277,7 @@
                 }, {
                     key: "childView",
                     value: function() {
-                        return hd
+                        return pd
                     }
                 }, {
                     key: "childViewTriggers",
@@ -52481,9 +52289,9 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        gd = n(183),
-        fd = n.n(gd),
-        md = function(e) {
+        fd = n(184),
+        md = n.n(fd),
+        vd = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -52552,7 +52360,7 @@
                     value: function(e) {
                         var t = this.model.attributes.categories,
                             n = e.val;
-                        this._setCategories((new fd.a).setCategories(t, n))
+                        this._setCategories((new md.a).setCategories(t, n))
                     }
                 }, {
                     key: "_resetSuggestedCategories",
@@ -52581,7 +52389,7 @@
                 }, {
                     key: "_isMainCategory",
                     value: function(e) {
-                        return od[e]
+                        return ad[e]
                     }
                 }, {
                     key: "_getCategories",
@@ -52600,7 +52408,7 @@
                         if (!this._isEditable())
                             return [];
                         var e = this._getCategories();
-                        return l.a.isEmpty(e) ? rd : this._hasOnlyMainCategory() ? sd.VENUE_SUBCATEGORIES[e[0]] : []
+                        return l.a.isEmpty(e) ? od : this._hasOnlyMainCategory() ? rd.VENUE_SUBCATEGORIES[e[0]] : []
                     }
                 }, {
                     key: "_getSuggestedCategoriesCollection",
@@ -52625,7 +52433,7 @@
                                 width: "100%",
                                 formatResult: t,
                                 formatSelection: function(t) {
-                                    var n = new hd({
+                                    var n = new pd({
                                         model: new o.a.Model({
                                             category: t.id,
                                             hideClose: !e._isEditable()
@@ -52635,7 +52443,7 @@
                                         n.$el.html()
                                 },
                                 data: {
-                                    results: ad,
+                                    results: ld,
                                     text: t
                                 },
                                 multiple: !0,
@@ -52646,7 +52454,7 @@
                                 }
                             }),
                             this._resetSuggestedCategories(),
-                            this.showChildView("suggestedCategories", new pd({
+                            this.showChildView("suggestedCategories", new gd({
                                 collection: this.model.attributes.suggestedCategories
                             })),
                             this._bindCategoryClickEvent()
@@ -52659,19 +52467,19 @@
                 }, {
                     key: "onChildviewSuggestedCategoryClick",
                     value: function(e) {
-                        this._setCategories((new fd.a).addSuggestedCategory(this.model.attributes.categories, e))
+                        this._setCategories((new md.a).addSuggestedCategory(this.model.attributes.categories, e))
                     }
                 }, {
                     key: "onCategoryClicked",
                     value: function(e) {
                         e.preventDefault();
                         var t = s()(e.currentTarget).data("category");
-                        this._setCategories((new fd.a).setMainCategory(this.model.attributes.categories, t))
+                        this._setCategories((new md.a).setMainCategory(this.model.attributes.categories, t))
                     }
                 }]),
                 t
         }(c.a.View),
-        vd = function(e) {
+        _d = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52694,7 +52502,7 @@
                                     name: "src",
                                     observe: "id",
                                     onGet: function() {
-                                        return this.model.getUrl(Hn.IMAGE_SIZE.WEB)
+                                        return this.model.getUrl(zn.IMAGE_SIZE.WEB)
                                     }
                                 }]
                             }
@@ -52725,7 +52533,7 @@
                 }]),
                 t
         }(c.a.View),
-        _d = function(e) {
+        yd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52734,7 +52542,7 @@
                 g()(t, [{
                     key: "childView",
                     value: function() {
-                        return vd
+                        return _d
                     }
                 }, {
                     key: "emptyView",
@@ -52770,7 +52578,7 @@
                     key: "onChildviewPreview",
                     value: function(e) {
                         var t = this;
-                        this.imageDialogView = new Zn({
+                        this.imageDialogView = new Xn({
                                 images: this.collection.models,
                                 imageId: e,
                                 venueName: this.options.venueName,
@@ -52785,7 +52593,7 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        yd = function(e) {
+        bd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52818,7 +52626,7 @@
                 }]),
                 t
         }(c.a.View),
-        bd = function(e) {
+        Ed = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -52851,9 +52659,9 @@
                 }]),
                 t
         }(c.a.View),
-        Ed = n(117),
-        wd = n.n(Ed),
-        Sd = c.a.View.extend({
+        wd = n(118),
+        Sd = n.n(wd),
+        kd = c.a.View.extend({
             tagName: "li",
             template: "templates/opening_hours/item",
             triggers: {
@@ -52866,14 +52674,14 @@
                     i = e.fromHour,
                     s = e.toHour;
                 return {
-                    openingHourFormatted: _n.default.formatOpeningHour(t, n, i, s),
+                    openingHourFormatted: yn.default.formatOpeningHour(t, n, i, s),
                     isEditable: this.options.editable
                 }
             }
         }),
-        kd = n(176);
+        Td = n(177);
 
-    function Td(e, t) {
+    function Id(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -52881,24 +52689,24 @@
             })),
             n
     }
-    var Id = [0, 1, 2, 3, 4, 5, 6],
-        Md = [],
-        Ad = function(e) {
+    var Md = [0, 1, 2, 3, 4, 5, 6],
+        Ad = [],
+        Cd = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
                     (n = m()(this, _()(t).call(this, function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? Td(n, !0).forEach(function(t) {
+                            t % 2 ? Id(n, !0).forEach(function(t) {
                                 V()(e, t, n[t])
-                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Td(n).forEach(function(t) {
+                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Id(n).forEach(function(t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             })
                         }
                         return e
                     }({}, e, {
-                        model: new kd.OpeningHourViewModel
+                        model: new Td.OpeningHourViewModel
                     })))).errorsModel = new o.a.Model({
                         validationErrors: []
                     }),
@@ -52974,7 +52782,7 @@
                     value: function(e) {
                         e.preventDefault(),
                             this.model.set({
-                                days: Id
+                                days: Md
                             })
                     }
                 }, {
@@ -52982,7 +52790,7 @@
                     value: function(e) {
                         e.preventDefault(),
                             this.model.set({
-                                days: Md
+                                days: Ad
                             })
                     }
                 }, {
@@ -52990,7 +52798,7 @@
                     value: function() {
                         this.stickit(),
                             this.stickit(this.errorsModel, this.errorsBindings()),
-                            this.ui.timeSelectors.timepicker(va.prototype.timepickerOptions)
+                            this.ui.timeSelectors.timepicker(_a.prototype.timepickerOptions)
                     }
                 }, {
                     key: "onBeforeDestroy",
@@ -53014,11 +52822,11 @@
                 }]),
                 t
         }(c.a.View),
-        Cd = n(212),
-        Od = n(110),
-        Rd = c.a.CompositeView.extend({
+        Od = n(213),
+        Rd = n(111),
+        Dd = c.a.CompositeView.extend({
             template: "templates/opening_hours/layout",
-            childView: Sd,
+            childView: kd,
             childViewContainer: ".list",
             events: {
                 "click .add": "onAddClicked"
@@ -53037,17 +52845,17 @@
                     n = W.model.venues.getObjectById(this.options.landmarkId);
                 if (n) {
                     var i = this.collection.indexOf(t);
-                    Object(Cd.deleteOpeningHour)(W.model.actionManager, n, i)
+                    Object(Od.deleteOpeningHour)(W.model.actionManager, n, i)
                 }
             },
             showAddDialog: function() {
                 var e = this,
-                    t = new Ad({
+                    t = new Cd({
                         collection: this.collection
                     });
                 return t.once("addOpeningHours", function(t) {
                         var n = W.model.venues.getObjectById(e.options.landmarkId);
-                        n && Object(Cd.addOpeningHour)(W.model.actionManager, n, t.get("isAllDay") ? Od.OpeningHour.createAllDay(t.get("days")) : new Od.OpeningHour({
+                        n && Object(Od.addOpeningHour)(W.model.actionManager, n, t.get("isAllDay") ? Rd.OpeningHour.createAllDay(t.get("days")) : new Rd.OpeningHour({
                             fromHour: t.get("fromHour"),
                             toHour: t.get("toHour"),
                             days: t.get("days")
@@ -53061,12 +52869,12 @@
                 }
             }
         }),
-        Dd = function(e) {
+        Ld = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
                     (n = m()(this, _()(t).call(this, e)))._changing = !1,
-                    n.options.serviceTypes = e.serviceTypes || wd.a.GENERAL,
+                    n.options.serviceTypes = e.serviceTypes || Sd.a.GENERAL,
                     n
             }
             return b()(t, e),
@@ -53089,12 +52897,12 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.showChildView("services", new yd({
+                        this.showChildView("services", new bd({
                                 model: this.model,
                                 serviceTypes: this.options.serviceTypes,
                                 serviceSet: this.options.serviceSet
                             })),
-                            this.showChildView("contact", new bd({
+                            this.showChildView("contact", new Ed({
                                 model: this.model
                             })),
                             this.options.isResidential || this._initOpeningHoursView()
@@ -53102,7 +52910,7 @@
                 }, {
                     key: "_initOpeningHoursView",
                     value: function() {
-                        this.openingHoursLayout || (this.openingHoursLayout = new Rd({
+                        this.openingHoursLayout || (this.openingHoursLayout = new Dd({
                                 collection: new o.a.Collection(this.model.attributes.openingHours),
                                 editable: this.model.attributes.propertiesEditable,
                                 landmarkId: this.model.attributes.id
@@ -53122,11 +52930,11 @@
                 }]),
                 t
         }(c.a.View),
-        Ld = n(96),
-        Pd = n(111),
-        Nd = n.n(Pd);
+        Pd = n(97),
+        Nd = n(112),
+        xd = n.n(Nd);
 
-    function xd(e, t) {
+    function Vd(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -53135,25 +52943,25 @@
             n
     }
 
-    function Vd(e) {
+    function jd(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? xd(n, !0).forEach(function(t) {
+            t % 2 ? Vd(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : xd(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Vd(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var jd = function(e) {
+    var Ud = function(e) {
             function t(e) {
                 var n;
                 h()(this, t);
-                var i = (n = m()(this, _()(t).call(this, Vd({}, e, {
-                    serviceTypes: wd.a.PARKING_LOT
+                var i = (n = m()(this, _()(t).call(this, jd({}, e, {
+                    serviceTypes: Sd.a.PARKING_LOT
                 }))))._cloneCategoryAttributes(n.model.attributes.categoryAttributes.PARKING_LOT);
-                return n.parkingModel = new Nd.a(i),
+                return n.parkingModel = new xd.a(i),
                     n.listenTo(n.parkingModel, "change", n._onParkingModelChange),
                     n
             }
@@ -53161,7 +52969,7 @@
                 g()(t, [{
                     key: "modelEvents",
                     value: function() {
-                        return Vd({}, Vt()(_()(t.prototype), "modelEvents", this).call(this), {
+                        return jd({}, jt()(_()(t.prototype), "modelEvents", this).call(this), {
                             "change:categoryAttributes": this._onModelCategoryAttributesChanged
                         })
                     }
@@ -53185,7 +52993,7 @@
                             "[name=paymentType]": "paymentType",
                             "[name=estimatedNumberOfSpots]": {
                                 observe: "estimatedNumberOfSpots",
-                                selectOptions: uc.selectOptionsFromList(Ld.SPOTS_ESTIMATE_LIST.map(function(e) {
+                                selectOptions: cc.selectOptionsFromList(Pd.SPOTS_ESTIMATE_LIST.map(function(e) {
                                     return e.value
                                 }), function(e) {
                                     return I18n.t("edit.landmark.parking.types.estimatedNumberOfSpots.".concat(e))
@@ -53194,14 +53002,14 @@
                             "[name=costType]": {
                                 observe: "costType",
                                 selectOptions: {
-                                    collection: Object.values(Ld.COST_TYPE).map(function(e) {
+                                    collection: Object.values(Pd.COST_TYPE).map(function(e) {
                                         return {
                                             value: e,
                                             label: I18n.t("edit.landmark.parking.types.costType.".concat(e))
                                         }
                                     }),
                                     defaultOption: {
-                                        value: Ld.UNKNOWN,
+                                        value: Pd.UNKNOWN,
                                         label: ""
                                     }
                                 }
@@ -53211,7 +53019,7 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).call(this),
+                        jt()(_()(t.prototype), "onRender", this).call(this),
                             this.stickit(this.parkingModel),
                             this.ui.hasTBRTooltip.tooltip(),
                             this.ui.parkingTypeTooltip.tooltip({
@@ -53249,9 +53057,9 @@
                     key: "templateContext",
                     value: function() {
                         return {
-                            parkingTypes: Object.values(Ld.PARKING_TYPE),
-                            paymentTypes: Object.values(Ld.PAYMENT_TYPE),
-                            lotTypes: Object.values(Ld.LOT_TYPE)
+                            parkingTypes: Object.values(Pd.PARKING_TYPE),
+                            paymentTypes: Object.values(Pd.PAYMENT_TYPE),
+                            lotTypes: Object.values(Pd.LOT_TYPE)
                         }
                     }
                 }, {
@@ -53261,8 +53069,8 @@
                     }
                 }]),
                 t
-        }(Dd),
-        Ud = c.a.Behavior.extend({
+        }(Ld),
+        Fd = c.a.Behavior.extend({
             _lastTabId: null,
             events: {
                 "show.bs.tab a[data-toggle=tab]": "_onTabShown"
@@ -53278,12 +53086,12 @@
                 return this._restoreLastTab()
             }
         }),
-        Fd = {
+        Bd = {
             ENTRY: "entry",
             EXIT: "exit",
             BOTH: "both"
         },
-        Bd = function() {
+        Gd = function() {
             function e(t, n, i) {
                 h()(this, e),
                     this._navigationPoint = t,
@@ -53299,7 +53107,7 @@
                 }, {
                     key: "getType",
                     value: function() {
-                        return Fd.ENTRY
+                        return Bd.ENTRY
                     }
                 }, {
                     key: "isLocatedAtCentroid",
@@ -53320,7 +53128,7 @@
                     key: "getArrowIconClass",
                     value: function() {
                         var e = this.getType();
-                        return e === Fd.BOTH ? "waze-icon-full-arrow-two-sided" : e === Fd.ENTRY ? "waze-icon-full-arrow-right" : "waze-icon-full-arrow-left"
+                        return e === Bd.BOTH ? "waze-icon-full-arrow-two-sided" : e === Bd.ENTRY ? "waze-icon-full-arrow-right" : "waze-icon-full-arrow-left"
                     }
                 }, {
                     key: "getLandmarkCentroid",
@@ -53341,7 +53149,7 @@
                 }]),
                 e
         }(),
-        Gd = function(e) {
+        Wd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -53373,8 +53181,8 @@
                                 onSet: function(e) {
                                     var t = !0,
                                         n = !0;
-                                    return e === Fd.EXIT && (t = !1),
-                                        e === Fd.ENTRY && (n = !1),
+                                    return e === Bd.EXIT && (t = !1),
+                                        e === Bd.ENTRY && (n = !1),
                                         [t, n]
                                 }
                             }
@@ -53409,7 +53217,7 @@
                     key: "templateContext",
                     value: function() {
                         return {
-                            NAVIGATION_POINT_TYPE: Fd,
+                            NAVIGATION_POINT_TYPE: Bd,
                             isPrimaryInputId: "navigation-point-is-primary-".concat(this._navigationPointDecorator.getIndex())
                         }
                     }
@@ -53421,7 +53229,7 @@
                 }]),
                 t
         }(c.a.View),
-        Wd = function(e) {
+        Hd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -53523,7 +53331,7 @@
                 }, {
                     key: "_onEditClicked",
                     value: function() {
-                        this.showChildView("editRegion", new Gd({
+                        this.showChildView("editRegion", new Wd({
                             navigationPointDecorator: this._navigationPointDecorator
                         }))
                     }
@@ -53535,7 +53343,7 @@
                 }]),
                 t
         }(c.a.View),
-        Hd = function(e) {
+        zd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -53550,7 +53358,7 @@
                 }, {
                     key: "childView",
                     value: function() {
-                        return Wd
+                        return Hd
                     }
                 }, {
                     key: "childViewOptions",
@@ -53574,7 +53382,7 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        zd = function(e) {
+        qd = function(e) {
             function t(e, n) {
                 var i, s = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
                     r = s.transparent,
@@ -53582,7 +53390,7 @@
                     a = s.highlight,
                     l = void 0 !== a && a;
                 h()(this, t);
-                var u = bt.toLonLat(e.getNavigationPoint().getPoint()),
+                var u = Et.toLonLat(e.getNavigationPoint().getPoint()),
                     c = new ce.default("navigation-point");
                 return (i = m()(this, _()(t).call(this, u, c)))._navigationPointDecorator = e,
                     i._drawingContext = n,
@@ -53632,7 +53440,7 @@
                 }, {
                     key: "_calcDragBounds",
                     value: function(e) {
-                        var t = ft.getBounds(e, !0);
+                        var t = mt.getBounds(e, !0);
                         return t.left -= 500,
                             t.right += 500,
                             t.top += 500,
@@ -53643,7 +53451,7 @@
                     key: "draw",
                     value: function(e) {
                         return this._navigationPointDecorator.isEditable() && this._initDragHandler(),
-                            Vt()(_()(t.prototype), "draw", this).call(this, e)
+                            jt()(_()(t.prototype), "draw", this).call(this, e)
                     }
                 }, {
                     key: "_rotateToCentoid",
@@ -53687,7 +53495,7 @@
                     value: function() {
                         this.icon.$div.removeClass("dragging");
                         var e = this._navigationPointDecorator.getNavigationPoint().with({
-                            point: bt.fromLonLat(this.lonlat)
+                            point: Et.fromLonLat(this.lonlat)
                         });
                         this.trigger("navigationPointDragged", this._navigationPointDecorator, e)
                     }
@@ -53700,22 +53508,22 @@
                 }, {
                     key: "_updateLineToCentroid",
                     value: function() {
-                        $t.setVertex(this._lineToCentroid.geometry, 1, this.lonlat.lon, this.lonlat.lat),
+                        Kt.setVertex(this._lineToCentroid.geometry, 1, this.lonlat.lon, this.lonlat.lat),
                             this._drawingContext.redrawFeature(this._lineToCentroid)
                     }
                 }, {
                     key: "destroy",
                     value: function() {
-                        Vt()(_()(t.prototype), "destroy", this).call(this),
+                        jt()(_()(t.prototype), "destroy", this).call(this),
                             null !== this._dragHandler && this._dragHandler.deactivate()
                     }
                 }]),
                 t
         }(OL.Marker);
-    Object.assign(zd.prototype, o.a.Events);
-    var qd = zd,
-        Yd = n(198),
-        $d = function(e) {
+    Object.assign(qd.prototype, o.a.Events);
+    var Yd = qd,
+        $d = n(199),
+        Kd = function(e) {
             function t(e, n, i) {
                 var s;
                 return h()(this, t),
@@ -53731,7 +53539,7 @@
                         var e = this._landmark.getNavigationPoints().slice();
                         this._navigationPoint.isPrimary() && this._makeAllPointsNonPrimary(e),
                             e[this._navigationPointIndex] = this._navigationPoint,
-                            this.doSubAction(new tn.default(this._landmark, {
+                            this.doSubAction(new nn.default(this._landmark, {
                                 entryExitPoints: e
                             }))
                     }
@@ -53761,7 +53569,7 @@
                                 l.a.isEqual(n[a], i[a]) || (s = n[a],
                                     r = i[a],
                                     o++);
-                            var u = Object(Gc.a)(this.model, "entryExitPoints", s.toJSON(), r.toJSON());
+                            var u = Object(Wc.a)(this.model, "entryExitPoints", s.toJSON(), r.toJSON());
                             if (u.some(function(e) {
                                     return "primary" === e.name
                                 }))
@@ -53787,7 +53595,7 @@
                 }]),
                 t
         }(Ie.default),
-        Kd = function(e) {
+        Jd = function(e) {
             function t(e, n) {
                 var i;
                 return h()(this, t),
@@ -53801,7 +53609,7 @@
                     value: function() {
                         var e = this._landmark.getNavigationPoints().slice();
                         e.push(this._navigationPoint),
-                            this.doSubAction(new tn.default(this._landmark, {
+                            this.doSubAction(new nn.default(this._landmark, {
                                 entryExitPoints: e
                             }))
                     }
@@ -53821,7 +53629,7 @@
                 }]),
                 t
         }(Ie.default),
-        Jd = function(e) {
+        Zd = function(e) {
             function t(e, n) {
                 var i;
                 return h()(this, t),
@@ -53835,7 +53643,7 @@
                     value: function() {
                         var e = this._landmark.getNavigationPoints().slice();
                         e.splice(this._navigationPointIndex, 1),
-                            this.doSubAction(new tn.default(this._landmark, {
+                            this.doSubAction(new nn.default(this._landmark, {
                                 entryExitPoints: e
                             }))
                     }
@@ -53855,7 +53663,7 @@
                 }]),
                 t
         }(Ie.default),
-        Zd = function(e) {
+        Xd = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -53946,7 +53754,7 @@
                     key: "_createNavigationPointDecorators",
                     value: function(e) {
                         return e.getNavigationPoints().map(function(t, n) {
-                            return new Bd(t, e, n)
+                            return new Gd(t, e, n)
                         }).sort(function(e, t) {
                             return t.getNavigationPoint().isPrimary() - e.getNavigationPoint().isPrimary()
                         })
@@ -53960,7 +53768,7 @@
                                 })
                             })),
                             t = this._getMaxNavigationPoints(),
-                            n = new Hd({
+                            n = new zd({
                                 collection: e,
                                 editable: this._landmark.arePropertiesEditable() && t > 1,
                                 deleteable: this._landmark.arePropertiesEditable()
@@ -53993,36 +53801,36 @@
                                     highlight: !1
                                 };
                                 null !== e && (e === n ? s.highlight = !0 : s.transparent = !0),
-                                    new qd(n, t._drawingContext, s).on("navigationPointDragged", t._onNavigationPointChanged, t)
+                                    new Yd(n, t._drawingContext, s).on("navigationPointDragged", t._onNavigationPointChanged, t)
                             })
                     }
                 }, {
                     key: "_focusOnNavigationPoint",
                     value: function(e) {
                         var t = e.getNavigationPoint().getPoint();
-                        this._pannable.panTo(bt.toLonLat(t))
+                        this._pannable.panTo(Et.toLonLat(t))
                     }
                 }, {
                     key: "_onDeleteClicked",
                     value: function(e) {
                         var t = e.model.get("decorator"),
-                            n = new Jd(this._landmark, t.getIndex());
+                            n = new Zd(this._landmark, t.getIndex());
                         this._actionManager.add(n)
                     }
                 }, {
                     key: "_onAddClicked",
                     value: function() {
-                        var e = new Yd.default({
+                        var e = new $d.default({
                                 point: this._landmark.geometry.getCentroid(),
                                 primary: 0 === this._landmark.getNavigationPoints().length
                             }),
-                            t = new Kd(e, this._landmark);
+                            t = new Jd(e, this._landmark);
                         this._actionManager.add(t)
                     }
                 }, {
                     key: "_onNavigationPointChanged",
                     value: function(e, t) {
-                        var n = new $d(t, this._landmark, e.getIndex());
+                        var n = new Kd(t, this._landmark, e.getIndex());
                         this._actionManager.add(n)
                     }
                 }, {
@@ -54038,10 +53846,10 @@
                 }]),
                 t
         }(c.a.View),
-        Xd = n(177),
-        Qd = n(184),
-        eh = n.n(Qd),
-        th = c.a.View.extend({
+        Qd = n(178),
+        eh = n(185),
+        th = n.n(eh),
+        nh = c.a.View.extend({
             template: "templates/venue/alias",
             tagName: "li",
             ui: {
@@ -54056,19 +53864,19 @@
             },
             _onNameChanged: function() {
                 var e = this.ui.name.val();
-                this.isNew() ? new eh.a(W.model, this.options.landmarkId).addAlias(e) : new eh.a(W.model, this.options.landmarkId).changeAlias(this._getIndex(), e)
+                this.isNew() ? new th.a(W.model, this.options.landmarkId).addAlias(e) : new th.a(W.model, this.options.landmarkId).changeAlias(this._getIndex(), e)
             },
             isNew: function() {
                 return this.model.attributes.new
             },
             _onDeleteClicked: function() {
-                this.isNew() ? this.model.collection.remove(this.model) : new eh.a(W.model, this.options.landmarkId).removeAlias(this._getIndex())
+                this.isNew() ? this.model.collection.remove(this.model) : new th.a(W.model, this.options.landmarkId).removeAlias(this._getIndex())
             }
         }),
-        nh = c.a.CompositeView.extend({
+        ih = c.a.CompositeView.extend({
             MAX_ALIASES: 4,
             template: "templates/venue/aliases-layout",
-            childView: th,
+            childView: nh,
             childViewContainer: ".list",
             events: {
                 "click .add": "_onAddClicked"
@@ -54091,7 +53899,7 @@
             },
             _onAddClicked: function(e) {
                 e.preventDefault && e.preventDefault(),
-                    this.collection.add(new Xd.Item({
+                    this.collection.add(new Qd.Item({
                         name: "",
                         new: !0
                     }))
@@ -54103,10 +53911,10 @@
                 return this.ui.addButton.toggleClass("hidden", this._shouldHideAddButton())
             }
         }),
-        ih = n(172),
-        sh = 3,
-        rh = 250,
-        oh = function(e) {
+        sh = n(173),
+        rh = 3,
+        oh = 250,
+        ah = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -54170,7 +53978,7 @@
                                 name: null,
                                 url: null
                             }),
-                            null !== this.model.get("uuid") && (Object(Bn.populateExternalProviderDetails)(this.model, this._placesApiSessionToken),
+                            null !== this.model.get("uuid") && (Object(Gn.populateExternalProviderDetails)(this.model, this._placesApiSessionToken),
                                 this._generatePlacesApiSessionToken())
                     }
                 }, {
@@ -54180,7 +53988,7 @@
                         this._generatePlacesApiSessionToken();
                         var t = se.getUnprojectedGeometry(this.options.venueCentroid);
                         return this.ui.uuid.select2({
-                            minimumInputLength: sh,
+                            minimumInputLength: rh,
                             initSelection: this._getInitialSelection.bind(this),
                             ajax: {
                                 transport: function(n) {
@@ -54192,7 +54000,7 @@
                                             radius: 5,
                                             sessionToken: e._placesApiSessionToken
                                         };
-                                    (new ih.GooglePlacesService).getPredictions(r).then(s).catch(function(e) {
+                                    (new sh.GooglePlacesService).getPredictions(r).then(s).catch(function(e) {
                                         return console.error(e)
                                     })
                                 },
@@ -54202,7 +54010,7 @@
                                     }
                                 },
                                 dataType: "json",
-                                quietMillis: rh,
+                                quietMillis: oh,
                                 results: this._parseAutoCompleteResults
                             }
                         })
@@ -54210,7 +54018,7 @@
                 }, {
                     key: "_generatePlacesApiSessionToken",
                     value: function() {
-                        this._placesApiSessionToken = ih.GooglePlacesService.generateSessionToken()
+                        this._placesApiSessionToken = sh.GooglePlacesService.generateSessionToken()
                     }
                 }, {
                     key: "_parseAutoCompleteResults",
@@ -54228,7 +54036,7 @@
                     key: "_getInitialSelection",
                     value: function(e, t) {
                         var n = this;
-                        return Object(Bn.populateExternalProviderDetails)(this.model).then(function(e) {
+                        return Object(Gn.populateExternalProviderDetails)(this.model).then(function(e) {
                             return t({
                                 id: n.model.get("uuid"),
                                 text: e.name
@@ -54248,7 +54056,7 @@
                 }]),
                 t
         }(c.a.View),
-        ah = o.a.Model.extend({
+        lh = o.a.Model.extend({
             MAX_ITEMS: 4,
             defaults: {
                 showAddButton: !0
@@ -54269,9 +54077,9 @@
                 return this.collection.length < this.MAX_ITEMS
             }
         }),
-        lh = n(141),
-        uh = n.n(lh),
-        ch = function(e) {
+        uh = n(142),
+        ch = n.n(uh),
+        dh = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -54315,7 +54123,7 @@
                             this.collection = new o.a.Collection(this.venue.attributes.externalProviderIDs.map(function(e) {
                                 return e.clone()
                             })),
-                            this.viewModel = new ah(null, {
+                            this.viewModel = new lh(null, {
                                 collection: this.collection
                             })
                     }
@@ -54332,7 +54140,7 @@
                     value: function() {
                         var e = this;
                         this.showChildView("list", new c.a.CollectionView({
-                                childView: oh,
+                                childView: ah,
                                 collection: this.collection,
                                 childViewOptions: {
                                     venueCentroid: this.venue.geometry.getCentroid()
@@ -54347,7 +54155,7 @@
                     key: "_onAddClicked",
                     value: function(e) {
                         return e.preventDefault && e.preventDefault(),
-                            this.collection.add(new uh.a({
+                            this.collection.add(new ch.a({
                                 uuid: ""
                             }))
                     }
@@ -54359,8 +54167,8 @@
                 }]),
                 t
         }(c.a.View),
-        dh = n(205),
-        hh = function(e) {
+        hh = n(206),
+        ph = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -54376,7 +54184,7 @@
                     value: function() {
                         return {
                             restoreLastTab: {
-                                behaviorClass: Ud
+                                behaviorClass: Fd
                             }
                         }
                     }
@@ -54393,7 +54201,7 @@
                 }, {
                     key: "events",
                     value: function() {
-                        return l.a.extend({}, Vt()(_()(t.prototype), "events", this).call(this), {
+                        return l.a.extend({}, jt()(_()(t.prototype), "events", this).call(this), {
                             "click .pending-changes-alert": "_onPendingChangesAlertClicked",
                             "click .toggle-residential": "_onResidentialToggled",
                             "click .focus": "_onLocateButtonClicked",
@@ -54493,7 +54301,7 @@
                             "select[name=brand]": {
                                 observe: ["brand", "brands"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     t[1];
                                     return n
@@ -54597,14 +54405,14 @@
                             showExternalProviderView: this._isExternalProviderEditingAllowed(e),
                             rank: e.attributes.rank,
                             lockRank: e.attributes.lockRank,
-                            categories: Nt()(e.getCategorySet()),
+                            categories: xt()(e.getCategorySet()),
                             lockRankMixed: !1,
                             allowDefaultRank: !1,
                             showDefaultRank: !1,
                             imageCount: t.length,
                             hasImages: t.length > 0,
                             showUnapprovedAlert: !e.attributes.approved,
-                            showPendingMergeNote: Object(dh.hasPendingMerge)(this.dataModel.actionManager, e),
+                            showPendingMergeNote: Object(hh.hasPendingMerge)(this.dataModel.actionManager, e),
                             showPendingChangesAlert: e.hasUpdateRequests(),
                             showRequiresModerationAlert: e.requiresModeration(),
                             showAdLockedAlert: e.attributes.adLocked,
@@ -54619,7 +54427,7 @@
                             canToggleResidential: this._canToggleResidential(e),
                             toggleResidentialTitle: e.isResidential() ? I18n.t("edit.landmark.residential.convert_from") : I18n.t("edit.landmark.residential.convert_to"),
                             externalProviderIDs: e.attributes.externalProviderIDs,
-                            services: Nt()(e.getServiceSet()),
+                            services: xt()(e.getServiceSet()),
                             url: e.attributes.url,
                             phone: e.attributes.phone,
                             categoryAttributes: e.attributes.categoryAttributes,
@@ -54631,7 +54439,7 @@
                     key: "_createOpeningHourViewModels",
                     value: function(e) {
                         return e.attributes.openingHours.map(function(e) {
-                            return new kd.OpeningHourViewModel({
+                            return new Td.OpeningHourViewModel({
                                 fromHour: e.fromHour,
                                 toHour: e.toHour,
                                 days: e.days,
@@ -54674,7 +54482,7 @@
                     key: "_getCategoryClassName",
                     value: function(e) {
                         var t = e.getMainCategory() || "";
-                        return "venue-category-".concat(_n.default.categoryToClassName(t))
+                        return "venue-category-".concat(yn.default.categoryToClassName(t))
                     }
                 }, {
                     key: "_canEditType",
@@ -54717,8 +54525,8 @@
                     key: "_togglePointOrPolygonGeomerty",
                     value: function(e) {
                         var t, n = this.getFeature();
-                        t = e ? n.getPointGeometry() : this.previousGeometry ? ft.cloneGeometry(this.previousGeometry) : n.getPolygonGeometry();
-                        var i = new Qt.default(n, this.dataModel.venues, n.geometry, t);
+                        t = e ? n.getPointGeometry() : this.previousGeometry ? mt.cloneGeometry(this.previousGeometry) : n.getPolygonGeometry();
+                        var i = new en.default(n, this.dataModel.venues, n.geometry, t);
                         this.dataModel.actionManager.add(i)
                     }
                 }, {
@@ -54734,7 +54542,7 @@
                 }, {
                     key: "onFeaturesChanged",
                     value: function(e) {
-                        Vt()(_()(t.prototype), "onFeaturesChanged", this).call(this, e);
+                        jt()(_()(t.prototype), "onFeaturesChanged", this).call(this, e);
                         var n = this.getFeature();
                         this.hasEditedModelChanged(e) && !n.isPoint() && (this.previousGeometry = n.geometry),
                             this._initOrUpdateSubviews(n)
@@ -54745,13 +54553,13 @@
                         e.preventDefault();
                         var t = this.getFeature(),
                             n = t.isResidential();
-                        (this._hasHouseNumber(t) || n) && this.dataModel.actionManager.add(new Uc(t, !n))
+                        (this._hasHouseNumber(t) || n) && this.dataModel.actionManager.add(new Fc(t, !n))
                     }
                 }, {
                     key: "_initAliasesView",
                     value: function(e) {
-                        this.aliasesLayout ? this.aliasesLayout.collection.reset(this._getAliases(e)) : (this.aliasesLayout = new nh({
-                                collection: new Xd.Collection(this.viewModel.attributes.aliases),
+                        this.aliasesLayout ? this.aliasesLayout.collection.reset(this._getAliases(e)) : (this.aliasesLayout = new ih({
+                                collection: new Qd.Collection(this.viewModel.attributes.aliases),
                                 editable: e.arePropertiesEditable(),
                                 landmarkId: this.featureID
                             }),
@@ -54760,7 +54568,7 @@
                 }, {
                     key: "_initExternalProvidersView",
                     value: function(e) {
-                        this.showChildView("externalProvidersRegion", new ch({
+                        this.showChildView("externalProvidersRegion", new dh({
                             venue: e
                         }))
                     }
@@ -54774,7 +54582,7 @@
                 }, {
                     key: "_initLockEditView",
                     value: function() {
-                        var e = new Ic({
+                        var e = new Mc({
                             model: this.viewModel
                         });
                         this.showChildView("lockEditRegion", e)
@@ -54782,7 +54590,7 @@
                 }, {
                     key: "_initCategoriesView",
                     value: function() {
-                        this.suggestedCategoriesView = new md({
+                        this.suggestedCategoriesView = new vd({
                                 model: this.viewModel
                             }),
                             this.showChildView("categoriesRegion", this.suggestedCategoriesView)
@@ -54791,7 +54599,7 @@
                     key: "_initMoreInfoTab",
                     value: function(e) {
                         if (!this.moreInfoView) {
-                            var t = e.isParkingLot() ? jd : Dd;
+                            var t = e.isParkingLot() ? Ud : Ld;
                             this.moreInfoView = new t({
                                     model: this.viewModel,
                                     serviceSet: e.getServiceSet(),
@@ -54803,7 +54611,7 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).call(this);
+                        jt()(_()(t.prototype), "onRender", this).call(this);
                         var e = this.getFeature();
                         e.isPoint() || (this.previousGeometry = e.geometry),
                             this._toggleStreetViewButton(e),
@@ -54825,7 +54633,7 @@
                     key: "_renderCopyGeometryButton",
                     value: function() {
                         var e = this;
-                        this.showChildView("geometryButtonRegion", new Fc.ClipboardElementView({
+                        this.showChildView("geometryButtonRegion", new Bc.ClipboardElementView({
                             messages: {
                                 title: I18n.t("edit.landmark.clipboard.copy_geometry"),
                                 confirmation: I18n.t("edit.landmark.clipboard.copy_confirmation")
@@ -54833,14 +54641,14 @@
                             textGenerator: function() {
                                 var t = e.getFeature(),
                                     n = Object(se.getUnprojectedGeometry)(t.geometry);
-                                return ft.toWktString(n)
+                                return mt.toWktString(n)
                             }
                         }))
                     }
                 }, {
                     key: "_initImagesView",
                     value: function(e) {
-                        this.imagesView ? this.imagesView.collection.reset(this.viewModel.attributes.images) : (this.imagesView = new _d({
+                        this.imagesView ? this.imagesView.collection.reset(this.viewModel.attributes.images) : (this.imagesView = new yd({
                                 collection: new o.a.Collection(this.viewModel.attributes.images),
                                 venueName: e.attributes.name
                             }),
@@ -54854,7 +54662,7 @@
                                 return t.id !== e
                             })
                         };
-                        this.dataModel.actionManager.add(new tn.default(this.getFeature(), t))
+                        this.dataModel.actionManager.add(new nn.default(this.getFeature(), t))
                     }
                 }, {
                     key: "_initBrandAutoComplete",
@@ -54866,7 +54674,7 @@
                 }, {
                     key: "_renderAddressEdit",
                     value: function(e) {
-                        this.showChildView("addressEdit", new kc({
+                        this.showChildView("addressEdit", new Tc({
                             getAddress: function() {
                                 return e.getAddress()
                             },
@@ -54879,7 +54687,7 @@
                 }, {
                     key: "_renderElementHistory",
                     value: function(e) {
-                        this.showChildView("historyRegion", new id({
+                        this.showChildView("historyRegion", new sd({
                             map: this.options.map,
                             model: e
                         }))
@@ -54887,7 +54695,7 @@
                 }, {
                     key: "_renderNavigationPoints",
                     value: function(e) {
-                        var t = new Zd({
+                        var t = new Xd({
                             landmark: e,
                             drawingContext: this.options.map.getDrawingContext(),
                             pannable: this.options.map.getPannable(),
@@ -54905,7 +54713,7 @@
                     value: function() {
                         var e = this.getFeature(),
                             t = W.map.getPannable(),
-                            n = bt.toLonLat(e.geometry.getCentroid().clone());
+                            n = Et.toLonLat(e.geometry.getCentroid().clone());
                         t.panTo(n),
                             W.Report.focusAction("locate", "venue_locate_clicked", e.attributes.categories[0])
                     }
@@ -54923,10 +54731,10 @@
                     }
                 }]),
                 t
-        }(Xu),
-        ph = n(139);
+        }(Qu),
+        gh = n(140);
 
-    function gh(e, t) {
+    function fh(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -54934,16 +54742,16 @@
             })),
             n
     }
-    var fh = function(e) {
+    var mh = function(e) {
             function t(e) {
                 var n, i = e.dataModel,
                     s = void 0 === i ? null : i;
                 e.selection;
                 h()(this, t),
                     (n = m()(this, _()(t).apply(this, arguments))).dataModel = s,
-                    n.listenTo(n.dataModel.segments, rt.ATTR_CHANGED, n.onSegmentsChanged);
+                    n.listenTo(n.dataModel.segments, ot.ATTR_CHANGED, n.onSegmentsChanged);
                 var r = n.dataModel.getTurnGraph();
-                return n.listenTo(r, qa.CHANGE_EVENT, n.onTurnGraphChanged),
+                return n.listenTo(r, Ya.CHANGE_EVENT, n.onTurnGraphChanged),
                     n
             }
             return b()(t, e),
@@ -54952,7 +54760,7 @@
                     value: function() {
                         return {
                             accelerators: {
-                                behaviorClass: Co
+                                behaviorClass: Oo
                             }
                         }
                     }
@@ -54978,14 +54786,14 @@
                         return function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var n = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? gh(n, !0).forEach(function(t) {
+                                t % 2 ? fh(n, !0).forEach(function(t) {
                                     V()(e, t, n[t])
-                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : gh(n).forEach(function(t) {
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : fh(n).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                 })
                             }
                             return e
-                        }({}, Vt()(_()(t.prototype), "bindings", this).call(this), {
+                        }({}, jt()(_()(t.prototype), "bindings", this).call(this), {
                             ".big-junction-error": {
                                 observe: "isInBigJunction",
                                 visible: !0
@@ -54993,7 +54801,7 @@
                             ".connections-edit": {
                                 observe: ["isConnectedToBigJunction", "connectionsExist"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return !n && i
@@ -55003,7 +54811,7 @@
                             ".connectionStatus": {
                                 observe: ["areAllConnectionsEnabled", "areAllConnectionsDisabled"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n ? I18n.t("edit.node.turns.all_allowed") : i ? I18n.t("edit.node.turns.all_disallowed") : void 0
@@ -55039,7 +54847,7 @@
                     key: "featureToViewModel",
                     value: function(e) {
                         return {
-                            areConnectionsEditable: new Fo.CanEditTurnsUseCase(this.dataModel).canEditNodeTurns(e),
+                            areConnectionsEditable: new Bo.CanEditTurnsUseCase(this.dataModel).canEditNodeTurns(e),
                             isConnectedToBigJunction: e.isConnectedToBigJunction(),
                             connectionsExist: e.connectionsExist(),
                             areAllConnectionsEnabled: e.areAllConnectionsEnabled(),
@@ -55072,12 +54880,12 @@
                 }, {
                     key: "_setAllConnections",
                     value: function(e, t) {
-                        new Fo.CanEditTurnsUseCase(this.dataModel).canEditNodeTurns(e) && this.dataModel.actionManager.add(new ph.default(e, t))
+                        new Bo.CanEditTurnsUseCase(this.dataModel).canEditNodeTurns(e) && this.dataModel.actionManager.add(new gh.default(e, t))
                     }
                 }, {
                     key: "hasEditedModelChanged",
                     value: function(e) {
-                        if (Vt()(_()(t.prototype), "hasEditedModelChanged", this).apply(this, arguments))
+                        if (jt()(_()(t.prototype), "hasEditedModelChanged", this).apply(this, arguments))
                             return !0
                     }
                 }, {
@@ -55094,19 +54902,19 @@
                     }
                 }]),
                 t
-        }(Xu),
-        mh = n(42),
-        vh = n(87),
-        _h = n(53),
-        yh = o.a.Collection.extend({
-            model: _h.default,
+        }(Qu),
+        vh = n(42),
+        _h = n(88),
+        yh = n(53),
+        bh = o.a.Collection.extend({
+            model: yh.default,
             findOpposite: function(e) {
                 return this.find(function(t) {
                     return t.isOppositeTo(e)
                 })
             }
         }),
-        bh = {
+        Eh = {
             getSharedClosures: function(e) {
                 var t = this,
                     n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
@@ -55117,12 +54925,12 @@
                 i || (i = this._getClosuresForSegments(s));
                 for (var r = l()(i).groupBy(function(e) {
                         return t._getClosureKey(e, n)
-                    }).value(), o = new yh, a = 0, u = Object.keys(r); a < u.length; a++) {
+                    }).value(), o = new bh, a = 0, u = Object.keys(r); a < u.length; a++) {
                     var c = r[u[a]],
                         d = l()(c).map(function(e) {
                             return s[e.segID]
                         }).uniq().value(),
-                        h = new _h.default({
+                        h = new yh.default({
                             closures: c,
                             segments: d,
                             partial: d.length !== e.length,
@@ -55149,8 +54957,8 @@
                     [e.startDate, e.endDate, e.reason, e.location, n, e.createdBy, e.eventId].join(":")
             }
         },
-        Eh = n(131),
-        wh = c.a.View.extend({
+        wh = n(132),
+        Sh = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Closures/templates/item",
             className: "closure-item",
             tagName: "li",
@@ -55171,7 +54979,7 @@
                     e.canEdit = this.options.canEdit,
                     e.showLocateButton = this.options.showLocateButton,
                     e.eventName = this._getEventName(),
-                    e.DIRECTION = _h.DIRECTION,
+                    e.DIRECTION = yh.DIRECTION,
                     e
             },
             _getEventName: function() {
@@ -55191,12 +54999,12 @@
                 }
             }
         }),
-        Sh = {
+        kh = {
             ERROR: "error",
             SUCCESS: "success",
             LOADING: "loading"
         },
-        kh = {
+        Th = {
             CONTAINER: "closures-status-message",
             ICON: "closures-status-message-icon",
             ICON_BY_TYPE: {
@@ -55205,12 +55013,12 @@
                 loading: "icon-spinner icon-spin fa fa-spinner fa-spin"
             }
         },
-        Th = function() {
+        Ih = function() {
             function e(t, n) {
                 h()(this, e),
                     null == n && (n = {}),
                     this.options = n,
-                    this.$el = s()(t).addClass(kh.CONTAINER),
+                    this.$el = s()(t).addClass(Th.CONTAINER),
                     null == this.options.showIcon && (this.options.showIcon = !0),
                     this.ui = {
                         text: s()("<span>").appendTo(this.$el),
@@ -55220,17 +55028,17 @@
             return g()(e, [{
                     key: "showError",
                     value: function(e) {
-                        this.show(e, Sh.ERROR)
+                        this.show(e, kh.ERROR)
                     }
                 }, {
                     key: "showSuccess",
                     value: function(e) {
-                        this.show(e, Sh.SUCCESS)
+                        this.show(e, kh.SUCCESS)
                     }
                 }, {
                     key: "showLoading",
                     value: function(e) {
-                        this.show(e, Sh.LOADING)
+                        this.show(e, kh.LOADING)
                     }
                 }, {
                     key: "show",
@@ -55249,22 +55057,22 @@
                 }, {
                     key: "_setClass",
                     value: function(e) {
-                        for (var t = 0, n = Object.keys(Sh); t < n.length; t++) {
+                        for (var t = 0, n = Object.keys(kh); t < n.length; t++) {
                             var i = n[t],
-                                s = Sh[i];
+                                s = kh[i];
                             this.$el.toggleClass(s, s === e)
                         }
                     }
                 }, {
                     key: "_setIcon",
                     value: function(e) {
-                        var t = kh.ICON_BY_TYPE[e];
+                        var t = Th.ICON_BY_TYPE[e];
                         null != t ? this._showIcon(t) : null != this.ui.icon && this.ui.icon.hide()
                     }
                 }, {
                     key: "_showIcon",
                     value: function(e) {
-                        var t = "".concat(kh.ICON, " ").concat(e);
+                        var t = "".concat(Th.ICON, " ").concat(e);
                         null != this.ui.icon ? this.ui.icon.attr({
                             class: t
                         }) : this.ui.icon = s()("<span>").addClass(t).prependTo(this.$el)
@@ -55277,10 +55085,10 @@
                 }]),
                 e
         }(),
-        Ih = c.a.CompositeView.extend({
+        Mh = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/Closures/templates/list",
             className: "closures-list",
-            childView: wh,
+            childView: Sh,
             childViewOptions: function() {
                 var e = l.a.pick(this.options, ["dataModel", "canEdit"]);
                 return l.a.extend(e, this.options.extendedChildViewOptions)
@@ -55329,7 +55137,7 @@
                 return -1
             },
             onRender: function() {
-                return this.message = new Th(this.ui.message),
+                return this.message = new Ih(this.ui.message),
                     null != this.options.successMessage ? this.message.showSuccess(this.options.successMessage) : null != this.options.errorMessage ? this.message.showError(this.options.errorMessage) : void 0
             },
             serializeData: function() {
@@ -55343,11 +55151,11 @@
                 }
             }
         }),
-        Mh = c.a.View.extend({
+        Ah = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Closures/templates/edit",
             behaviors: {
                 dateTimePickers: {
-                    behaviorClass: va
+                    behaviorClass: _a
                 }
             },
             bindings: {
@@ -55357,7 +55165,7 @@
                 "[name=closure_direction]": {
                     observe: "direction",
                     selectOptions: {
-                        collection: [_h.DIRECTION.A_TO_B, _h.DIRECTION.B_TO_A, _h.DIRECTION.TWO_WAY].map(function(e) {
+                        collection: [yh.DIRECTION.A_TO_B, yh.DIRECTION.B_TO_A, yh.DIRECTION.TWO_WAY].map(function(e) {
                             return {
                                 value: e,
                                 label: I18n.t("closures.direction.".concat(e))
@@ -55376,7 +55184,7 @@
                     update: function(e, t, n, i) {
                         if (o.a.Stickit.getConfiguration(e).update.apply(this, arguments),
                             this.options.newClosure) {
-                            var s = uc.selectionRequiredOption(I18n.t("closures.choose_event"));
+                            var s = cc.selectionRequiredOption(I18n.t("closures.choose_event"));
                             return e.prepend(s)
                         }
                     },
@@ -55406,7 +55214,7 @@
             onRender: function() {
                 return this.stickit(this.model, this.bindings),
                     this.options.canEditMTE && this._populateMTEOptions(),
-                    this.message = new Th(this.ui.message),
+                    this.message = new Ih(this.ui.message),
                     this.ui.mteTooltip.tooltip(),
                     this.ui.permanentTooltip.tooltip()
             },
@@ -55460,11 +55268,11 @@
                 }
             }
         }),
-        Ah = n(109),
-        Ch = n(178),
-        Oh = n(33);
+        Ch = n(110),
+        Oh = n(179),
+        Rh = n(33);
 
-    function Rh(e, t) {
+    function Dh(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -55473,18 +55281,18 @@
             n
     }
 
-    function Dh(e) {
+    function Lh(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? Rh(n, !0).forEach(function(t) {
+            t % 2 ? Dh(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Rh(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Dh(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var Lh = c.a.Object.extend({
+    var Ph = c.a.Object.extend({
             segmentSelection: null,
             initialize: function(e) {
                 this.region = e.region,
@@ -55500,14 +55308,14 @@
             makeReverseSegments: function() {
                 var e = this;
                 return this.segments.reduce(function(t, n) {
-                    return e.segmentSelection.isReversed(n) ? Dh({}, t, V()({}, n.getID(), !0)) : t
+                    return e.segmentSelection.isReversed(n) ? Lh({}, t, V()({}, n.getID(), !0)) : t
                 }, {})
             },
             showClosures: function() {
                 var e = this,
                     t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-                    n = bh.getSharedClosures(this.segments, this._reverseSegments, this.allClosures),
-                    i = Dh({
+                    n = Eh.getSharedClosures(this.segments, this._reverseSegments, this.allClosures),
+                    i = Lh({
                         dataModel: this.dataModel,
                         collection: n,
                         showActivateRepoMessage: !this.options.repoActive,
@@ -55516,7 +55324,7 @@
                         canEdit: this._areClosuresEditable(),
                         canAdd: this.options.canAdd
                     }, this.listViewConfig, {}, t),
-                    s = new Ih(i);
+                    s = new Mh(i);
                 s.on("add", function() {
                         return e.newClosure()
                     }),
@@ -55531,13 +55339,13 @@
                     }),
                     s.on("locate", function(t) {
                         var n = l.a.head(t.attributes.segments),
-                            i = ft.getBoundsCenterLonLat(n.geometry);
+                            i = mt.getBoundsCenterLonLat(n.geometry);
                         return e.pannable.panTo(i)
                     }),
                     this._show(s)
             },
             _areClosuresEditable: function() {
-                return new Ah.SegmentClosuresUseCase(this.segmentSelection.getSelectedSegments()).canEditClosures() && this.options.repoActive && this.options.canSaveClosures
+                return new Ch.SegmentClosuresUseCase(this.segmentSelection.getSelectedSegments()).canEditClosures() && this.options.repoActive && this.options.canSaveClosures
             },
             _getClosureLockLevel: function() {
                 var e = 0;
@@ -55571,7 +55379,7 @@
                     l.a.extend(n, this.editViewConfig),
                     n.model = e,
                     n.availableEvents = this.dataModel.majorTrafficEvents.getObjectArray();
-                var i = new Mh(n);
+                var i = new Ah(n);
                 return i.on("editCancelled", function() {
                         return t.showClosures()
                     }),
@@ -55579,7 +55387,7 @@
                     i
             },
             applyClosureToAllSegments: function(e) {
-                var t = Eh.default.applyToAllSegments(e, this.segments, this._reverseSegments);
+                var t = wh.default.applyToAllSegments(e, this.segments, this._reverseSegments);
                 return this._runAction(t, {
                     loadingMessage: I18n.t("closures.loading.apply_to_all"),
                     successMessage: I18n.t("closures.success.apply_to_all")
@@ -55595,7 +55403,7 @@
                         info: e.get("reason")
                     }) : I18n.t("closures.delete_confirm_no_reason"),
                     window.confirm(t)) {
-                    var n = Eh.default.delete(e);
+                    var n = wh.default.delete(e);
                     return this._runAction(n, {
                         loadingMessage: I18n.t("closures.loading.delete"),
                         successMessage: I18n.t("closures.success.delete")
@@ -55603,14 +55411,14 @@
                 }
             },
             saveNewClosure: function(e) {
-                var t = Eh.default.add(e);
+                var t = wh.default.add(e);
                 return this._runAction(t, {
                     loadingMessage: I18n.t("closures.loading.add"),
                     successMessage: I18n.t("closures.success.add")
                 })
             },
             saveExistingClosure: function(e) {
-                var t = Eh.default.update(e);
+                var t = wh.default.update(e);
                 return this._runAction(t, {
                     loadingMessage: I18n.t("closures.loading.update"),
                     successMessage: I18n.t("closures.success.update")
@@ -55692,18 +55500,18 @@
             },
             createSharedClosure: function() {
                 var e = this.segments.concat(),
-                    t = new Fs.SegmentStreetsUseCase(W.model, this.segmentSelection.getSelectedSegments()).getAddress(),
+                    t = new Bs.SegmentStreetsUseCase(W.model, this.segmentSelection.getSelectedSegments()).getAddress(),
                     n = {
                         location: null == t || t.isEmpty() ? "" : "".concat(t.getStreetName(), ", ").concat(t.getCityName()),
                         segments: e,
                         reverseSegments: this._reverseSegments
                     },
-                    i = new Ch.SegmentsDirectionUseCase(W.model, this.segmentSelection).getDirection();
-                return i !== Oh.MixedValue && (n.direction = i),
-                    new _h.default(n)
+                    i = new Oh.SegmentsDirectionUseCase(W.model, this.segmentSelection).getDirection();
+                return i !== Rh.MixedValue && (n.direction = i),
+                    new yh.default(n)
             }
         }),
-        Ph = {
+        Nh = {
             SEGMENT: {
                 canEditMTE: !0
             },
@@ -55711,7 +55519,7 @@
                 canEditMTE: !1
             }
         },
-        Nh = {
+        xh = {
             SEGMENT: {
                 showPartialClosuresHeader: !0,
                 extendedChildViewOptions: {
@@ -55735,7 +55543,7 @@
                 }
             }
         },
-        xh = function() {
+        Vh = function() {
             function e(t, n, i, s, r) {
                 h()(this, e),
                     this._segments = t,
@@ -55743,7 +55551,7 @@
                     this._driveRenderer = i,
                     this._dataModel = s,
                     this._appPreferences = r,
-                    this._turnArrowViewGenerator = new za(this._drawingContext, this._dataModel, this._appPreferences, {
+                    this._turnArrowViewGenerator = new qa(this._drawingContext, this._dataModel, this._appPreferences, {
                         includeJunctionTurns: !0
                     }),
                     this._turnArrowViews = [],
@@ -55767,7 +55575,7 @@
                             this._driveRenderer.clear(),
                             !(this._segments.length > 1)) {
                             var e = this._segments[0];
-                            e.type === Rt.a.SEGMENT && e.isDrivable() && (this._destroyTurnArrowViews(),
+                            e.type === Dt.a.SEGMENT && e.isDrivable() && (this._destroyTurnArrowViews(),
                                 this._drawTurnArrowsForSegment(e))
                         }
                     }
@@ -55848,10 +55656,10 @@
                 }]),
                 e
         }();
-    Object.assign(xh.prototype, o.a.Events);
-    var Vh = xh,
-        jh = n(51),
-        Uh = function(e) {
+    Object.assign(Vh.prototype, o.a.Events);
+    var jh = Vh,
+        Uh = n(51),
+        Fh = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -55889,7 +55697,7 @@
                 }]),
                 t
         }(c.a.View),
-        Fh = function(e) {
+        Bh = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -55910,12 +55718,12 @@
                             this._selection = e.segmentSelection,
                             W.editingMediator.get("editingHouseNumbers") || this._createTurnEditor(),
                             this.listenTo(W.editingMediator, "change:editingHouseNumbers", this._onEditingHouseNumbersChanged, this),
-                            this._dataModel.getTurnGraph().on(qa.CHANGE_EVENT, this.render, this)
+                            this._dataModel.getTurnGraph().on(Ya.CHANGE_EVENT, this.render, this)
                     }
                 }, {
                     key: "_createTurnEditor",
                     value: function() {
-                        this._turnEditor = new Vh(this._selection.getSelectedSegments(), this.options.map.getDrawingContext(), new ls(this.options.map.bigJunctionPathLayer), this.options.dataModel, W.prefs)
+                        this._turnEditor = new jh(this._selection.getSelectedSegments(), this.options.map.getDrawingContext(), new us(this.options.map.bigJunctionPathLayer), this.options.dataModel, W.prefs)
                     }
                 }, {
                     key: "_destroyTurnEditor",
@@ -55943,7 +55751,7 @@
                             this._showExitList && this.showChildView("list", new c.a.CollectionView({
                                 collection: this._createTurnCollection(this._createTurnCollection()),
                                 className: "junction-exit-view",
-                                childView: Uh,
+                                childView: Fh,
                                 onChildviewOver: function(t) {
                                     e.highlightArrow(t.model.get("turn"))
                                 },
@@ -55958,7 +55766,7 @@
                 }, {
                     key: "_toggleTurn",
                     value: function(e) {
-                        new Ua.a(this._dataModel, e).toggleTurn()
+                        new Fa.a(this._dataModel, e).toggleTurn()
                     }
                 }, {
                     key: "highlightArrow",
@@ -55974,7 +55782,7 @@
                     key: "_createTurnCollection",
                     value: function() {
                         var e = this,
-                            t = new jh.SegmentsBigJunctionUseCase(this._dataModel, this._selection.getSelectedSegments()).getJunctionTurns().map(function(t) {
+                            t = new Uh.SegmentsBigJunctionUseCase(this._dataModel, this._selection.getSelectedSegments()).getJunctionTurns().map(function(t) {
                                 var n = e._dataModel.segments.getObjectById(t.getToVertex().getSegmentID());
                                 return new o.a.Model({
                                     turn: t,
@@ -55991,10 +55799,10 @@
                 }]),
                 t
         }(c.a.View),
-        Bh = n(48),
-        Gh = n(386),
-        Wh = n.n(Gh),
-        Hh = function(e) {
+        Gh = n(48),
+        Wh = n(387),
+        Hh = n.n(Wh),
+        zh = function(e) {
             function t() {
                 var e, n;
                 return h()(this, t),
@@ -56114,7 +55922,7 @@
                         this.stickit();
                         var e = this.model.attributes.angles;
                         if (e.length > 0) {
-                            var t = Wh()(this.el).size(26, 38);
+                            var t = Hh()(this.el).size(26, 38);
                             this._drawArrows(t, e),
                                 this._alignArrows(t, e)
                         }
@@ -56123,7 +55931,7 @@
                     key: "_getUTurn",
                     value: function(e) {
                         return e.filter(function(e) {
-                            return Object(Bh.isUTurn)(e)
+                            return Object(Gh.isUTurn)(e)
                         })[0]
                     }
                 }, {
@@ -56134,7 +55942,7 @@
                 }, {
                     key: "_shouldDrawLargeUTurn",
                     value: function(e) {
-                        return 1 === e.length && Object(Bh.isUTurn)(e[0])
+                        return 1 === e.length && Object(Gh.isUTurn)(e[0])
                     }
                 }, {
                     key: "_uTurnIsRight",
@@ -56148,7 +55956,7 @@
                     value: function(e, t) {
                         var n = this;
                         this._shouldDrawLargeUTurn(t) || t.forEach(function(i) {
-                            n._isAngleDrawable(i) ? n._drawRegularArrow(e, i, t) : Object(Bh.isUTurn)(i) || console.error("Can't draw angle with value ".concat(i))
+                            n._isAngleDrawable(i) ? n._drawRegularArrow(e, i, t) : Object(Gh.isUTurn)(i) || console.error("Can't draw angle with value ".concat(i))
                         })
                     }
                 }, {
@@ -56199,7 +56007,7 @@
                                 return e <= 0
                             }) && (n = 3)),
                             this.options.smallArrow) {
-                            var s = dn()(t, 1)[0];
+                            var s = hn()(t, 1)[0];
                             if (this.ARROW_POINTS[s])
                                 i -= this.ARROW_POINTS[s](t).finalPoint[1] - 4
                         }
@@ -56264,9 +56072,9 @@
                 }]),
                 t
         }(c.a.View),
-        zh = n(213),
-        qh = n.n(zh),
-        Yh = function(e) {
+        qh = n(214),
+        Yh = n.n(qh),
+        $h = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -56309,10 +56117,10 @@
                 }]),
                 t
         }(c.a.View),
-        $h = n(125),
-        Kh = n.n($h);
+        Kh = n(126),
+        Jh = n.n(Kh);
 
-    function Jh(e, t) {
+    function Zh(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -56321,18 +56129,18 @@
             n
     }
 
-    function Zh(e) {
+    function Xh(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? Jh(n, !0).forEach(function(t) {
+            t % 2 ? Zh(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Jh(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Zh(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var Xh = function(e) {
+    var Qh = function(e) {
             function t(e) {
                 var n;
                 h()(this, t),
@@ -56414,7 +56222,7 @@
                 }, {
                     key: "_getCheckboxModels",
                     value: function(e, t) {
-                        return Nt()(Array(e).keys()).map(function(e) {
+                        return xt()(Array(e).keys()).map(function(e) {
                             return new o.a.Model({
                                 index: e,
                                 checked: t.includes(e),
@@ -56442,7 +56250,7 @@
                         var e = this.model.attributes,
                             t = e.fromVertexID,
                             n = e.toVertexID;
-                        return this._dataModel.getTurnGraph().getTurn(Vo.a.fromID(t), Vo.a.fromID(n))
+                        return this._dataModel.getTurnGraph().getTurn(jo.a.fromID(t), jo.a.fromID(n))
                     }
                 }, {
                     key: "_getExistingTurnLaneData",
@@ -56454,7 +56262,7 @@
                     value: function() {
                         var e = this._getExistingTurnLaneData(),
                             t = this.getTurnLaneData();
-                        return Kh.a.hasChanged(e, t)
+                        return Jh.a.hasChanged(e, t)
                     }
                 }, {
                     key: "getTurnLaneData",
@@ -56466,7 +56274,7 @@
                             s = null;
                         return t.length > 0 ? (i = l.a.min(t),
                             s = l.a.max(t),
-                            new Kh.a(i, s, n)) : null
+                            new Jh.a(i, s, n)) : null
                     }
                 }, {
                     key: "getToVertexID",
@@ -56478,10 +56286,10 @@
                     value: function() {
                         this.stickit(),
                             this.showChildView("checkboxesRegion", new c.a.CollectionView({
-                                childView: Yh,
+                                childView: $h,
                                 collection: this.model.attributes.checkboxes
                             })),
-                            this._hasAngle() && this.showChildView("leftRegion", new Hh({
+                            this._hasAngle() && this.showChildView("leftRegion", new zh({
                                 smallArrow: !0,
                                 model: new o.a.Model({
                                     angles: [this.model.attributes.angle]
@@ -56504,7 +56312,7 @@
                                 toVertexID: n.getToVertex().getID()
                             },
                             a = n.getTurnData().getLaneData();
-                        return r = Zh({}, r, a ? {
+                        return r = Xh({}, r, a ? {
                                 angle: a.getArrowAngle(),
                                 checkedIndexes: a.getLaneIndexes()
                             } : {
@@ -56516,11 +56324,11 @@
                 }]),
                 t
         }(c.a.View),
-        Qh = n(55),
-        ep = n.n(Qh),
-        tp = n(162);
+        ep = n(57),
+        tp = n.n(ep),
+        np = n(163);
 
-    function np(e, t) {
+    function ip(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -56529,18 +56337,18 @@
             n
     }
 
-    function ip(e) {
+    function sp(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? np(n, !0).forEach(function(t) {
+            t % 2 ? ip(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : np(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ip(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var sp = function(e) {
+    var rp = function(e) {
         function t(e) {
             var n;
             h()(this, t);
@@ -56548,7 +56356,7 @@
                 s = e.segmentID,
                 r = e.direction,
                 o = t._createViewModel(i, s, r);
-            return (n = m()(this, _()(t).call(this, ip({}, e, {
+            return (n = m()(this, _()(t).call(this, sp({}, e, {
                     model: o
                 }))))._dataModel = i,
                 n
@@ -56625,7 +56433,7 @@
                 value: function() {
                     this._updateHasChanged();
                     var e = this.getChildView("turnsRegion"),
-                        n = new qh.a;
+                        n = new Yh.a;
                     e.children.forEach(function(e) {
                             n.addTurnIndexes(e.model.attributes.angle, e.model.attributes.checkedIndexes)
                         }),
@@ -56698,7 +56506,7 @@
                 key: "_collectModifiedTurnLaneDatas",
                 value: function() {
                     return this._getChangedLanesTurnEditViews().reduce(function(e, t) {
-                        return ip({}, e, V()({}, t.getToVertexID(), t.getTurnLaneData()))
+                        return sp({}, e, V()({}, t.getToVertexID(), t.getTurnLaneData()))
                     }, {})
                 }
             }, {
@@ -56737,13 +56545,13 @@
                         s = {};
                     this._didLaneCountChange() && (s.laneCount = this.model.attributes.laneCount),
                         this._didTurnsChange() && (s.turnLaneDatas = this._collectModifiedTurnLaneDatas()),
-                        this._dataModel.actionManager.add(new tp.a(i, n, s))
+                        this._dataModel.actionManager.add(new np.a(i, n, s))
                 }
             }, {
                 key: "_showTurnsView",
                 value: function() {
                     this.showChildView("turnsRegion", new c.a.CollectionView({
-                        childView: Xh,
+                        childView: Qh,
                         collection: this.model.attributes.turns,
                         childViewOptions: {
                             dataModel: this._dataModel
@@ -56770,23 +56578,23 @@
                     var s = e.segments.getObjectById(n),
                         r = s.getLaneCount(i);
                     r = r || 0;
-                    var a = Bh.getLaneAngleCalculator(e, s, i);
+                    var a = Gh.getLaneAngleCalculator(e, s, i);
                     a.snapAngles();
-                    var l = Bh.getOutgoingEnabledTurns(e, s, i).map(function(t) {
-                            return Xh.createTurnViewModel(e, r, t, a.getSnappedAngle(t.getToVertex()))
+                    var l = Gh.getOutgoingEnabledTurns(e, s, i).map(function(t) {
+                            return Qh.createTurnViewModel(e, r, t, a.getSnappedAngle(t.getToVertex()))
                         }),
-                        u = new qh.a;
+                        u = new Yh.a;
                     return l.forEach(function(e) {
                             u.addTurnIndexes(e.attributes.angle, e.attributes.checkedIndexes)
                         }),
-                        new o.a.Model(ip({
+                        new o.a.Model(sp({
                             laneCount: r,
                             hasChanged: !1,
-                            fromVertexID: i === Qh.SEGMENT_LANE_DIRECTION.FWD ? Vo.a.forwardOf(n).getID() : Vo.a.reverseOf(n).getID(),
+                            fromVertexID: i === ep.SEGMENT_LANE_DIRECTION.FWD ? jo.a.forwardOf(n).getID() : jo.a.reverseOf(n).getID(),
                             turns: new o.a.Collection(l, {
                                 comparator: function(e) {
                                     var t = e.attributes.angle;
-                                    return Bh.toStandardLaneAngle(t)
+                                    return Gh.toStandardLaneAngle(t)
                                 }
                             })
                         }, t._lanesValidationAttributes(u)))
@@ -56803,7 +56611,7 @@
             t
     }(c.a.View);
 
-    function rp(e, t) {
+    function op(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -56811,7 +56619,7 @@
             })),
             n
     }
-    var op = function(e) {
+    var ap = function(e) {
             function t(e) {
                 var n, i = e.dataModel,
                     s = e.segmentID,
@@ -56826,9 +56634,9 @@
                 n.model = new o.a.Model(function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? rp(n, !0).forEach(function(t) {
+                            t % 2 ? op(n, !0).forEach(function(t) {
                                 V()(e, t, n[t])
-                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : rp(n).forEach(function(t) {
+                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : op(n).forEach(function(t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             })
                         }
@@ -56838,9 +56646,9 @@
                     })),
                     n.listenTo(n.model, "change:showLanesNotEnabledBadge", n._onIsEnabledChange);
                 var u = i.getTurnGraph();
-                return n.listenTo(u, qa.CHANGE_EVENT, n._onTurnGraphChanged),
-                    n.listenTo(i.segments, rt.ATTR_CHANGED, n._onSegmentChanged),
-                    n.listenTo(i.segments, rt.CHANGED_ID, n._onSegmentChangedID),
+                return n.listenTo(u, Ya.CHANGE_EVENT, n._onTurnGraphChanged),
+                    n.listenTo(i.segments, ot.ATTR_CHANGED, n._onSegmentChanged),
+                    n.listenTo(i.segments, ot.CHANGED_ID, n._onSegmentChangedID),
                     n
             }
             return b()(t, e),
@@ -56927,13 +56735,13 @@
                             ".lane-instruction-from .letter-circle": {
                                 observe: "direction",
                                 onGet: function(e) {
-                                    return e === Qh.SEGMENT_LANE_DIRECTION.FWD ? "A" : "B"
+                                    return e === ep.SEGMENT_LANE_DIRECTION.FWD ? "A" : "B"
                                 }
                             },
                             ".lane-instruction-to .letter-circle": {
                                 observe: "direction",
                                 onGet: function(e) {
-                                    return e === Qh.SEGMENT_LANE_DIRECTION.FWD ? "B" : "A"
+                                    return e === ep.SEGMENT_LANE_DIRECTION.FWD ? "B" : "A"
                                 }
                             },
                             ".lanes-not-enabled-badge": {
@@ -56975,7 +56783,7 @@
                             s = e.getNode();
                         return {
                             direction: n,
-                            heading: n === Qh.SEGMENT_LANE_DIRECTION.FWD ? t.getFwdHeading() : t.getRevHeading(),
+                            heading: n === ep.SEGMENT_LANE_DIRECTION.FWD ? t.getFwdHeading() : t.getRevHeading(),
                             streetName: t.getAddress().getStreetName(),
                             laneCount: i,
                             showLanesNotEnabledBadge: !(e.isEnabled() || e.isEmpty()),
@@ -56994,7 +56802,7 @@
                         this.model.set({
                                 editTitle: this._getEditTitle(e, !0)
                             }),
-                            this.showChildView("editRegion", new sp({
+                            this.showChildView("editRegion", new rp({
                                 dataModel: this._dataModel,
                                 segmentID: this.model.attributes.segmentID,
                                 direction: this.model.attributes.direction
@@ -57011,12 +56819,12 @@
                 }, {
                     key: "onChildviewDestroy",
                     value: function(e) {
-                        e instanceof sp && this._closeEditingLaneGuidance()
+                        e instanceof rp && this._closeEditingLaneGuidance()
                     }
                 }, {
                     key: "_getSegmentLanes",
                     value: function(e) {
-                        return ep.a.forSegment(this._dataModel, e, this._direction)
+                        return tp.a.forSegment(this._dataModel, e, this._direction)
                     }
                 }, {
                     key: "_onSegmentChanged",
@@ -57054,7 +56862,7 @@
                 }, {
                     key: "_vertexDirectionMatches",
                     value: function(e) {
-                        return Bh.vertexToLanesDirection(e) === this._direction
+                        return Gh.vertexToLanesDirection(e) === this._direction
                     }
                 }, {
                     key: "_isTurnRelevant",
@@ -57073,7 +56881,7 @@
                     value: function() {
                         this.stickit(),
                             this.showChildView("arrowRegion", new c.a.CollectionView({
-                                childView: Hh,
+                                childView: zh,
                                 collection: this.model.attributes.lanes,
                                 childViewTriggers: {
                                     "arrow:enter": "arrow:enter",
@@ -57121,16 +56929,16 @@
                 }]),
                 t
         }(c.a.View),
-        ap = n(65),
-        lp = n.n(ap),
-        up = function(e) {
+        lp = n(66),
+        up = n.n(lp),
+        cp = function(e) {
             function t(e) {
                 var n, i = e.dataModel,
                     s = e.segmentId;
                 return h()(this, t),
                     (n = m()(this, _()(t).apply(this, arguments)))._segmentId = s,
                     n._dataModel = i,
-                    n.listenTo(n._dataModel.segments, rt.ATTR_CHANGED, n._onSegmentChanged),
+                    n.listenTo(n._dataModel.segments, ot.ATTR_CHANGED, n._onSegmentChanged),
                     n
             }
             return b()(t, e),
@@ -57153,29 +56961,29 @@
                 }, {
                     key: "_shouldShowFwdLanes",
                     value: function(e) {
-                        return new lp.a(this._dataModel, [e]).supportsFwdLanes()
+                        return new up.a(this._dataModel, [e]).supportsFwdLanes()
                     }
                 }, {
                     key: "_shouldShowRevLanes",
                     value: function(e) {
-                        return new lp.a(this._dataModel, [e]).supportsRevLanes()
+                        return new up.a(this._dataModel, [e]).supportsRevLanes()
                     }
                 }, {
                     key: "_showForwardView",
                     value: function() {
                         var e = this._dataModel.segments.getObjectById(this._segmentId);
-                        this._shouldShowFwdLanes(e) && this.showChildView("fwdLanesRegion", this._createDirectionView(e, Qh.SEGMENT_LANE_DIRECTION.FWD))
+                        this._shouldShowFwdLanes(e) && this.showChildView("fwdLanesRegion", this._createDirectionView(e, ep.SEGMENT_LANE_DIRECTION.FWD))
                     }
                 }, {
                     key: "_showReverseView",
                     value: function() {
                         var e = this._dataModel.segments.getObjectById(this._segmentId);
-                        this._shouldShowRevLanes(e) && this.showChildView("revLanesRegion", this._createDirectionView(e, Qh.SEGMENT_LANE_DIRECTION.REV))
+                        this._shouldShowRevLanes(e) && this.showChildView("revLanesRegion", this._createDirectionView(e, ep.SEGMENT_LANE_DIRECTION.REV))
                     }
                 }, {
                     key: "_createDirectionView",
                     value: function(e, t) {
-                        return new op({
+                        return new ap({
                             dataModel: this._dataModel,
                             segmentID: e.getID(),
                             direction: t
@@ -57203,9 +57011,9 @@
                 }]),
                 t
         }(c.a.View),
-        cp = n(101),
-        dp = n(126),
-        hp = function() {
+        dp = n(102),
+        hp = n(127),
+        pp = function() {
             function e() {
                 var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = t.segments,
@@ -57216,7 +57024,7 @@
                     } :
                     s;
                 h()(this, e),
-                    this._segmentSelection = new dp.SegmentSelection(i),
+                    this._segmentSelection = new hp.SegmentSelection(i),
                     this._segmentIDs = i.map(function(e) {
                         return e.getID()
                     }),
@@ -57319,28 +57127,28 @@
                     key: "getForwardRestrictions",
                     value: function() {
                         var e, t = this,
-                            n = (e = []).concat.apply(e, Nt()(this._segmentIDs.map(function(e) {
+                            n = (e = []).concat.apply(e, xt()(this._segmentIDs.map(function(e) {
                                 return t._getForwardRestrictions(e)
                             })));
-                        return cp.dedupRestrictions(n)
+                        return dp.dedupRestrictions(n)
                     }
                 }, {
                     key: "getReverseRestrictions",
                     value: function() {
                         var e, t = this,
-                            n = (e = []).concat.apply(e, Nt()(this._segmentIDs.map(function(e) {
+                            n = (e = []).concat.apply(e, xt()(this._segmentIDs.map(function(e) {
                                 return t._getReverseRestrictions(e)
                             })));
-                        return cp.dedupRestrictions(n)
+                        return dp.dedupRestrictions(n)
                     }
                 }, {
                     key: "getBidiRestrictions",
                     value: function() {
                         var e, t = this,
-                            n = (e = []).concat.apply(e, Nt()(this._segmentIDs.map(function(e) {
+                            n = (e = []).concat.apply(e, xt()(this._segmentIDs.map(function(e) {
                                 return t._getBidiRestrictions(e)
                             })));
-                        return cp.dedupRestrictions(n)
+                        return dp.dedupRestrictions(n)
                     }
                 }, {
                     key: "_getForwardRestrictions",
@@ -57377,7 +57185,7 @@
                 }]),
                 e
         }(),
-        pp = function(e) {
+        gp = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -57463,13 +57271,13 @@
                         var e = this;
                         return {
                             "click .forward-restrictions-summary .do-create": function() {
-                                return e._onCreateRestriction(Ko.RESTRICTION_SEGMENT_DIRECTION.FWD)
+                                return e._onCreateRestriction(Jo.RESTRICTION_SEGMENT_DIRECTION.FWD)
                             },
                             "click .reverse-restrictions-summary .do-create": function() {
-                                return e._onCreateRestriction(Ko.RESTRICTION_SEGMENT_DIRECTION.REV)
+                                return e._onCreateRestriction(Jo.RESTRICTION_SEGMENT_DIRECTION.REV)
                             },
                             "click .bidi-restrictions-summary .do-create": function() {
-                                return e._onCreateRestriction(Ko.RESTRICTION_SEGMENT_DIRECTION.BOTH)
+                                return e._onCreateRestriction(Jo.RESTRICTION_SEGMENT_DIRECTION.BOTH)
                             }
                         }
                     }
@@ -57490,15 +57298,15 @@
                             this._subscriptions = e.subscriptions,
                             this._supportsLicensePlateNumber = e.supportsLicensePlateNumber;
                         var t = l.a.partition(this._restrictionsBuilder.getForwardRestrictions(), this._appliesToAll.bind(this)),
-                            n = dn()(t, 2);
+                            n = hn()(t, 2);
                         this._fwdAll = n[0],
                             this._fwdSome = n[1];
                         var i = l.a.partition(this._restrictionsBuilder.getReverseRestrictions(), this._appliesToAll.bind(this)),
-                            s = dn()(i, 2);
+                            s = hn()(i, 2);
                         this._revAll = s[0],
                             this._revSome = s[1];
                         var r = l.a.partition(this._restrictionsBuilder.getBidiRestrictions(), this._appliesToAll.bind(this)),
-                            a = dn()(r, 2);
+                            a = hn()(r, 2);
                         this._bidiAll = a[0],
                             this._bidiSome = a[1],
                             this.model = new o.a.Model({
@@ -57515,9 +57323,9 @@
                     key: "templateContext",
                     value: function() {
                         return {
-                            forwardTitle: this._viewHelpers.getDrivingRestrictedTitle(Ko.RESTRICTION_SEGMENT_DIRECTION.FWD),
-                            reverseTitle: this._viewHelpers.getDrivingRestrictedTitle(Ko.RESTRICTION_SEGMENT_DIRECTION.REV),
-                            bidiTitle: this._viewHelpers.getDrivingRestrictedTitle(Ko.RESTRICTION_SEGMENT_DIRECTION.BOTH)
+                            forwardTitle: this._viewHelpers.getDrivingRestrictedTitle(Jo.RESTRICTION_SEGMENT_DIRECTION.FWD),
+                            reverseTitle: this._viewHelpers.getDrivingRestrictedTitle(Jo.RESTRICTION_SEGMENT_DIRECTION.REV),
+                            bidiTitle: this._viewHelpers.getDrivingRestrictedTitle(Jo.RESTRICTION_SEGMENT_DIRECTION.BOTH)
                         }
                     }
                 }, {
@@ -57536,7 +57344,7 @@
                     key: "_createListView",
                     value: function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-                        return new Ma({
+                        return new Aa({
                             restrictions: e,
                             canApplyToAll: t,
                             subscriptions: this._subscriptions,
@@ -57579,33 +57387,33 @@
                 }]),
                 t
         }(c.a.View),
-        gp = n(138),
-        fp = n.n(gp),
-        mp = {
+        fp = n(139),
+        mp = n.n(fp),
+        vp = {
             MULTIPLE: 0,
             UNKNOWN: 1,
             ALLOWED: 2,
             NOT_ALLOWED: 3
         };
 
-    function vp(e, t) {
+    function _p(e, t) {
         if (0 === t.length)
-            return mp.UNKNOWN;
+            return vp.UNKNOWN;
         if (t.every(function(t) {
                 return e.appliesToAllSegments(t)
             })) {
             if (t.every(function(e) {
                     return e.isAllowed()
                 }))
-                return mp.ALLOWED;
+                return vp.ALLOWED;
             if (t.every(function(e) {
                     return e.isNotAllowed()
                 }))
-                return mp.NOT_ALLOWED
+                return vp.NOT_ALLOWED
         }
-        return mp.MULTIPLE
+        return vp.MULTIPLE
     }
-    var _p = function(e) {
+    var yp = function(e) {
         function t() {
             return h()(this, t),
                 m()(this, _()(t).apply(this, arguments))
@@ -57620,8 +57428,8 @@
                     };
                     this._restrictionsBuilder = e.restrictionBuilder,
                         this._viewHelpers = e.viewHelpers,
-                        this._forwardPickupConstraints = this._getPickupConstraints(this.model.get("forwardConstraint") !== mp.MULTIPLE),
-                        this._reversePickupConstraints = this._getPickupConstraints(this.model.get("reverseConstraint") !== mp.MULTIPLE)
+                        this._forwardPickupConstraints = this._getPickupConstraints(this.model.get("forwardConstraint") !== vp.MULTIPLE),
+                        this._reversePickupConstraints = this._getPickupConstraints(this.model.get("reverseConstraint") !== vp.MULTIPLE)
                 }
             }, {
                 key: "bindings",
@@ -57645,8 +57453,8 @@
                 key: "templateContext",
                 value: function() {
                     return {
-                        forwardTitle: this._viewHelpers.getPickupTitle(Ko.RESTRICTION_SEGMENT_DIRECTION.FWD),
-                        reverseTitle: this._viewHelpers.getPickupTitle(Ko.RESTRICTION_SEGMENT_DIRECTION.REV)
+                        forwardTitle: this._viewHelpers.getPickupTitle(Jo.RESTRICTION_SEGMENT_DIRECTION.FWD),
+                        reverseTitle: this._viewHelpers.getPickupTitle(Jo.RESTRICTION_SEGMENT_DIRECTION.REV)
                     }
                 }
             }, {
@@ -57660,29 +57468,29 @@
             }, {
                 key: "_pickupRestrictionForConstraint",
                 value: function(e, t) {
-                    return t === mp.UNKNOWN ? null : new fp.a({
+                    return t === vp.UNKNOWN ? null : new mp.a({
                         direction: e,
                         defaultType: {
-                            allowed: t === mp.ALLOWED
+                            allowed: t === vp.ALLOWED
                         }
                     })
                 }
             }, {
                 key: "_onFwdConstraintChange",
                 value: function(e, t) {
-                    this._onConstraintChange("forwardConstraint", Ko.RESTRICTION_SEGMENT_DIRECTION.FWD, e, t)
+                    this._onConstraintChange("forwardConstraint", Jo.RESTRICTION_SEGMENT_DIRECTION.FWD, e, t)
                 }
             }, {
                 key: "_onRevConstraintChange",
                 value: function(e, t) {
-                    this._onConstraintChange("reverseConstraint", Ko.RESTRICTION_SEGMENT_DIRECTION.REV, e, t)
+                    this._onConstraintChange("reverseConstraint", Jo.RESTRICTION_SEGMENT_DIRECTION.REV, e, t)
                 }
             }, {
                 key: "_onConstraintChange",
                 value: function(e, t, n, i) {
-                    t === Ko.RESTRICTION_SEGMENT_DIRECTION.FWD ? this._restrictionsBuilder.deleteRestrictionsIf(function(e) {
+                    t === Jo.RESTRICTION_SEGMENT_DIRECTION.FWD ? this._restrictionsBuilder.deleteRestrictionsIf(function(e) {
                         return e.isForward()
-                    }) : t === Ko.RESTRICTION_SEGMENT_DIRECTION.REV && this._restrictionsBuilder.deleteRestrictionsIf(function(e) {
+                    }) : t === Jo.RESTRICTION_SEGMENT_DIRECTION.REV && this._restrictionsBuilder.deleteRestrictionsIf(function(e) {
                         return e.isReverse()
                     });
                     var s = this._pickupRestrictionForConstraint(t, i);
@@ -57692,17 +57500,17 @@
                 key: "_getPickupConstraints",
                 value: function(e) {
                     var t = [{
-                        value: mp.UNKNOWN,
+                        value: vp.UNKNOWN,
                         label: I18n.t("restrictions.editing.pickup.unknown")
                     }, {
-                        value: mp.ALLOWED,
+                        value: vp.ALLOWED,
                         label: I18n.t("restrictions.editing.pickup.allowed")
                     }, {
-                        value: mp.NOT_ALLOWED,
+                        value: vp.NOT_ALLOWED,
                         label: I18n.t("restrictions.editing.pickup.not_allowed")
                     }];
                     return e || t.push({
-                            value: mp.MULTIPLE,
+                            value: vp.MULTIPLE,
                             label: I18n.t("restrictions.editing.pickup.multiple"),
                             disabled: !0
                         }),
@@ -57721,7 +57529,7 @@
             }]),
             t
     }(c.a.View);
-    var yp = function(e) {
+    var bp = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -57778,13 +57586,13 @@
                         e = l.a.omit(e, "drivingRestrictionsBuilder", "pickupRestrictionsBuilder"),
                             this._canEditRestrictions = e.canEditRestrictions,
                             this._showRestrictionType = e.showRestrictionType,
-                            this._drivingView = new pp(Object.assign({}, e, {
+                            this._drivingView = new gp(Object.assign({}, e, {
                                 restrictionBuilder: n
                             })),
                             this._pickupView = function(e) {
-                                var t = vp(e.restrictionBuilder, e.restrictionBuilder.getForwardRestrictions()),
-                                    n = vp(e.restrictionBuilder, e.restrictionBuilder.getReverseRestrictions());
-                                return new _p(Object.assign({
+                                var t = _p(e.restrictionBuilder, e.restrictionBuilder.getForwardRestrictions()),
+                                    n = _p(e.restrictionBuilder, e.restrictionBuilder.getReverseRestrictions());
+                                return new yp(Object.assign({
                                     model: new o.a.Model({
                                         forwardConstraint: t,
                                         reverseConstraint: n
@@ -57894,7 +57702,7 @@
                             "[name=tollRoad]": {
                                 observe: ["isTollRoad", "isTollRoadMixed"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n && !i
@@ -57915,7 +57723,7 @@
                 }]),
                 t
         }(c.a.View),
-        bp = function(e) {
+        Ep = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -57935,11 +57743,11 @@
                     }
                 }]),
                 t
-        }(qt.default),
-        Ep = n(214),
-        wp = n.n(Ep),
-        Sp = n(129),
-        kp = function(e) {
+        }(Yt.default),
+        wp = n(215),
+        Sp = n.n(wp),
+        kp = n(130),
+        Tp = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -57959,7 +57767,7 @@
                 }, {
                     key: "_onEscapeKeydown",
                     value: function(e) {
-                        if (this.getChildView("contentRegion") instanceof ka)
+                        if (this.getChildView("contentRegion") instanceof Ta)
                             return e.preventDefault(),
                                 this._showSummaryView(),
                                 !1
@@ -57973,17 +57781,17 @@
                         this._dataModel = e.dataModel,
                             this._segments = t.getSelectedSegments(),
                             this._canEditRestrictions = n,
-                            this._viewHelpers = new Zo.a({
+                            this._viewHelpers = new Xo.a({
                                 segment: i,
                                 dataModel: this._dataModel
                             }),
-                            this._drivingRestrictionsBuilder = new hp({
+                            this._drivingRestrictionsBuilder = new pp({
                                 segments: this._segments,
                                 getRestrictions: function(e) {
                                     return e.getDrivingRestrictions()
                                 }
                             }),
-                            this._pickupRestrictionsBuilder = new hp({
+                            this._pickupRestrictionsBuilder = new pp({
                                 segments: this._segments,
                                 getRestrictions: function(e) {
                                     return e.getPickupRestrictions()
@@ -58069,15 +57877,15 @@
                         this._tollRoadModel.set({
                             hasTollRestriction: this._drivingRestrictionsBuilder.hasTollRestriction()
                         });
-                        var e = new wp.a;
-                        this.showChildView("contentRegion", new yp({
+                        var e = new Sp.a;
+                        this.showChildView("contentRegion", new bp({
                             viewHelpers: this._viewHelpers,
                             subscriptions: e.getSubscriptions(this._segments[0]),
                             drivingRestrictionsBuilder: this._drivingRestrictionsBuilder,
                             pickupRestrictionsBuilder: this._pickupRestrictionsBuilder,
                             canEditRestrictions: this._canEditRestrictions,
                             tollRoadModel: this._tollRoadModel,
-                            enablePickupRestrictions: new Sp.SegmentsRestrictionsUseCase(this._dataModel, this.options.segmentSelection).supportsPickupRestrictions(),
+                            enablePickupRestrictions: new kp.SegmentsRestrictionsUseCase(this._dataModel, this.options.segmentSelection).supportsPickupRestrictions(),
                             showRestrictionType: this._showRestrictionType,
                             supportsLicensePlateNumber: e.segmentsSupportLicensePlateRestrictions(this._segments)
                         }))
@@ -58089,8 +57897,8 @@
                             t = e.restriction,
                             n = e.isNewRestriction,
                             i = void 0 !== n && n,
-                            s = new wp.a;
-                        this.showChildView("contentRegion", new ka({
+                            s = new Sp.a;
+                        this.showChildView("contentRegion", new Ta({
                             restriction: t,
                             isNewRestriction: i,
                             canEditRestrictions: this._canEditRestrictions,
@@ -58105,8 +57913,8 @@
                     key: "_showCreateSegmentsRestrictionView",
                     value: function() {
                         var e = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}).direction,
-                            t = void 0 === e ? Ko.RESTRICTION_SEGMENT_DIRECTION.FWD : e,
-                            n = new Jo.a({
+                            t = void 0 === e ? Jo.RESTRICTION_SEGMENT_DIRECTION.FWD : e,
+                            n = new Zo.a({
                                 direction: t
                             });
                         this._showEditView({
@@ -58118,19 +57926,19 @@
                     key: "_applyChanges",
                     value: function() {
                         var e = this,
-                            t = new Sp.SegmentsRestrictionsUseCase(this._dataModel, this.options.segmentSelection),
+                            t = new kp.SegmentsRestrictionsUseCase(this._dataModel, this.options.segmentSelection),
                             n = t.isTollRoad(),
                             i = t.isTollRoadMixed(),
                             s = this._tollRoadModel.attributes.isTollRoad,
                             r = this._tollRoadModel.attributes.isTollRoadMixed,
-                            o = new bp(this._segments.map(function(o) {
+                            o = new Ep(this._segments.map(function(o) {
                                 var a = {
                                     restrictions: e._drivingRestrictionsBuilder.getRestrictions(o.getID())
                                 };
                                 return t.supportsPickupRestrictions() && (a.pickupRestrictions = e._pickupRestrictionsBuilder.getRestrictions(o.getID())),
                                     i === r && n === s || (a.fwdToll = s,
                                         a.revToll = s),
-                                    new tn.default(o, a)
+                                    new nn.default(o, a)
                             }));
                         this._dataModel.actionManager.add(o)
                     }
@@ -58142,19 +57950,19 @@
                 }]),
                 t
         }(c.a.View),
-        Tp = n(81),
-        Ip = n(387),
+        Ip = n(82),
         Mp = n(388),
-        Ap = n(185),
-        Cp = n(76),
-        Op = n(215),
-        Rp = n(389),
+        Ap = n(389),
+        Cp = n(186),
+        Op = n(77),
+        Rp = n(216),
         Dp = n(390),
-        Lp = n(120),
-        Pp = n(391),
-        Np = n(98);
+        Lp = n(391),
+        Pp = n(121),
+        Np = n(392),
+        xp = n(99);
 
-    function xp(e, t) {
+    function Vp(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -58163,25 +57971,25 @@
             n
     }
 
-    function Vp(e) {
+    function jp(e) {
         for (var t = 1; t < arguments.length; t++) {
             var n = null != arguments[t] ? arguments[t] : {};
-            t % 2 ? xp(n, !0).forEach(function(t) {
+            t % 2 ? Vp(n, !0).forEach(function(t) {
                 V()(e, t, n[t])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : xp(n).forEach(function(t) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Vp(n).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
             })
         }
         return e
     }
-    var jp = ["highways", "streets", "other_drivable", "non_drivable"],
-        Up = {
-            highways: mh.HIGHWAY_ROAD_TYPES,
-            streets: [mh.ROAD_TYPE.PRIMARY_STREET, mh.ROAD_TYPE.STREET, mh.ROAD_TYPE.ALLEY],
-            other_drivable: [mh.ROAD_TYPE.OFF_ROAD, mh.ROAD_TYPE.PARKING_LOT_ROAD, mh.ROAD_TYPE.PRIVATE_ROAD, mh.ROAD_TYPE.FERRY],
-            non_drivable: [mh.ROAD_TYPE.RAILROAD, mh.ROAD_TYPE.RUNWAY_TAXIWAY]
+    var Up = ["highways", "streets", "other_drivable", "non_drivable"],
+        Fp = {
+            highways: vh.HIGHWAY_ROAD_TYPES,
+            streets: [vh.ROAD_TYPE.PRIMARY_STREET, vh.ROAD_TYPE.STREET, vh.ROAD_TYPE.ALLEY],
+            other_drivable: [vh.ROAD_TYPE.OFF_ROAD, vh.ROAD_TYPE.PARKING_LOT_ROAD, vh.ROAD_TYPE.PRIVATE_ROAD, vh.ROAD_TYPE.FERRY],
+            non_drivable: [vh.ROAD_TYPE.RAILROAD, vh.ROAD_TYPE.RUNWAY_TAXIWAY]
         },
-        Fp = function(e) {
+        Bp = function(e) {
             function t(e) {
                 e.dataModel;
                 var n, i = e.segmentSelection,
@@ -58201,17 +58009,17 @@
                     value: function() {
                         return {
                             restoreLastTab: {
-                                behaviorClass: Ud
+                                behaviorClass: Fd
                             },
                             accelerators: {
-                                behaviorClass: Co
+                                behaviorClass: Oo
                             }
                         }
                     }
                 }, {
                     key: "events",
                     value: function() {
-                        return Vp({}, Vt()(_()(t.prototype), "events", this).call(this), {
+                        return jp({}, jt()(_()(t.prototype), "events", this).call(this), {
                             "click .segment .select-entire-street": "selectEntireStreetClicked",
                             "click .segment .select-entire-roundabout": "selectEntireRoundaboutClicked",
                             "click .segment .edit-house-numbers": "editHouseNumbersClicked",
@@ -58257,12 +58065,12 @@
                 }, {
                     key: "_getRegularRoadTypeOptions",
                     value: function() {
-                        var e = jp.map(function(e) {
+                        var e = Up.map(function(e) {
                                 return I18n.t("segment.categories.".concat(e))
                             }),
-                            t = jp.reduce(function(e, t) {
+                            t = Up.reduce(function(e, t) {
                                 var n = I18n.t("segment.categories.".concat(t));
-                                return Vp({}, e, V()({}, n, Up[t].map(function(e) {
+                                return jp({}, e, V()({}, n, Fp[t].map(function(e) {
                                     return {
                                         label: I18n.t("segment.road_types.".concat(e)),
                                         value: e
@@ -58281,7 +58089,7 @@
                 }, {
                     key: "_getWalkingRoadTypeOptions",
                     value: function() {
-                        var e = mh.WALKING_ROAD_TYPES.map(function(e) {
+                        var e = vh.WALKING_ROAD_TYPES.map(function(e) {
                             return {
                                 label: I18n.t("segment.road_types.".concat(e)),
                                 value: e
@@ -58296,11 +58104,11 @@
                 }, {
                     key: "_getRoadTypeOptions",
                     value: function() {
-                        var e = mh.NOT_SUPPORTED_ROAD_TYPES.includes(this.viewModel.attributes.roadType),
+                        var e = vh.NOT_SUPPORTED_ROAD_TYPES.includes(this.viewModel.attributes.roadType),
                             t = this.viewModel.attributes.isWalkingRoadType ? this._getWalkingRoadTypeOptions() : this._getRegularRoadTypeOptions();
                         if (e) {
                             var n = I18n.t("segment.categories.not_supported");
-                            t[n] = mh.NOT_SUPPORTED_ROAD_TYPES.map(function(e) {
+                            t[n] = vh.NOT_SUPPORTED_ROAD_TYPES.map(function(e) {
                                     return {
                                         label: I18n.t("segment.road_types.".concat(e)),
                                         value: e,
@@ -58315,7 +58123,7 @@
                     key: "bindings",
                     value: function() {
                         var e = this;
-                        return Vp({}, Vt()(_()(t.prototype), "bindings", this).call(this), {
+                        return jp({}, jt()(_()(t.prototype), "bindings", this).call(this), {
                             ".segment": {
                                 classes: {
                                     roundabout: "isEntireRoundabout"
@@ -58335,7 +58143,7 @@
                                 visible: !0,
                                 observe: ["segmentErrorTitle", "segmentErrorDescription"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return Boolean(n) || Boolean(i)
@@ -58364,7 +58172,7 @@
                                     name: "disabled",
                                     observe: ["consistentDrivability", "propertiesEditable"],
                                     onGet: function(e) {
-                                        var t = dn()(e, 2),
+                                        var t = hn()(e, 2),
                                             n = t[0],
                                             i = t[1];
                                         return !n || !i
@@ -58372,7 +58180,7 @@
                                 }],
                                 observe: "roadType",
                                 onGet: function(e) {
-                                    return e === Oh.MixedValue ? "MIXED" : e
+                                    return e === Rh.MixedValue ? "MIXED" : e
                                 },
                                 selectOptions: {
                                     collection: this._getRoadTypeOptions
@@ -58382,7 +58190,7 @@
                                 observe: ["isInRoundabout", "isEntireRoundabout"],
                                 visible: !0,
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n && !i
@@ -58421,10 +58229,10 @@
                             ".length-attribute .value": {
                                 observe: "length",
                                 onGet: function(e) {
-                                    return null != e && _n.default.lengthString(e)
+                                    return null != e && yn.default.lengthString(e)
                                 }
                             },
-                            ".routing-road-type-message": Vp({}, uc.contentsAndVisiblity("routingRoadTypeMessage", "shouldShowRoutingRoadTypeMessage"), {
+                            ".routing-road-type-message": jp({}, cc.contentsAndVisiblity("routingRoadTypeMessage", "shouldShowRoutingRoadTypeMessage"), {
                                 updateMethod: "html"
                             }),
                             ".hide-walking-trail": {
@@ -58480,7 +58288,7 @@
                             "select[name=routingRoadType]": {
                                 observe: ["routingRoadType", "routingRoadTypes"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     t[1];
                                     return n
@@ -58514,7 +58322,7 @@
                             ".toll-road-message": {
                                 observe: ["isTollRoad", "isTollRoadMixed"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n && !i
@@ -58535,7 +58343,7 @@
                             "button.edit-restrictions": {
                                 observe: ["allowRestrictionEditing", "restrictionCounts"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n ? i.driving + i.pickup > 0 ? I18n.t("edit.segment.actions.restrictions.edit") : I18n.t("edit.segment.actions.restrictions.add") : I18n.t("edit.segment.actions.restrictions.view")
@@ -58564,7 +58372,7 @@
                             "a.restriction-count[data-restriction-type='pickup']": {
                                 observe: ["restrictionCounts", "supportsPickupRestrictions"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     return t[1] && n.pickup > 0
                                 },
@@ -58579,7 +58387,7 @@
                             "input[name='direction']": {
                                 observe: ["direction", "directionMixed"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0];
                                     return t[1] ? -1 : n
                                 },
@@ -58599,7 +58407,7 @@
                             "input[name='direction'][value='0'] + label": {
                                 observe: ["allowNoDirection", "allowNoDirectionMixed"],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n && !i
@@ -58615,7 +58423,7 @@
                                 observe: "level",
                                 selectOptions: {
                                     collection: function() {
-                                        var t = l.a.range(It.MAX_LEVEL, It.MIN_LEVEL, -1).map(function(e) {
+                                        var t = l.a.range(Mt.MAX_LEVEL, Mt.MIN_LEVEL, -1).map(function(e) {
                                             return {
                                                 label: I18n.t("edit.segment.levels")[e] || e,
                                                 value: e
@@ -58635,11 +58443,11 @@
                     key: "_speedBindings",
                     value: function(e) {
                         var t, n, i = "fwd" === e ? "Fwd" : "Rev";
-                        return Vp((t = {},
+                        return jp((t = {},
                             V()(t, ".speed-limit-".concat(e), {
                                 observe: ["".concat(e, "Direction"), "".concat(e, "DirectionMixed")],
                                 onGet: function(e) {
-                                    var t = dn()(e, 2),
+                                    var t = hn()(e, 2),
                                         n = t[0],
                                         i = t[1];
                                     return n || i
@@ -58708,10 +58516,10 @@
                     value: function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                             n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "".concat(e, "Mixed");
-                        return V()({}, "input[name='".concat(e, "']"), Vp({
+                        return V()({}, "input[name='".concat(e, "']"), jp({
                             observe: [e, n],
                             onGet: function(e) {
-                                var t = dn()(e, 2),
+                                var t = hn()(e, 2),
                                     n = t[0],
                                     i = t[1];
                                 return n && !i
@@ -58722,46 +58530,46 @@
                             attributes: [{
                                 name: "mixed",
                                 observe: n
-                            }].concat(Nt()(t.attributes || []))
+                            }].concat(xt()(t.attributes || []))
                         }, l.a.without(t, "attributes")))
                     }
                 }, {
                     key: "_getSegmentError",
                     value: function() {
-                        var e, t = Object(Np.getSegmentError)(this._dataModel, this.segmentSelection);
+                        var e, t = Object(xp.getSegmentError)(this._dataModel, this.segmentSelection);
                         if (null == t)
                             return {};
-                        var n = new jo.SegmentsPermissionsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
+                        var n = new Uo.SegmentsPermissionsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
                             i = (e = {},
-                                V()(e, Np.SEGMENT_ERROR_TYPE.MULTIPLE, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.MULTIPLE, {
                                     title: I18n.t("edit.segment.permissions.multiple.title"),
                                     description: I18n.t("edit.segment.permissions.multiple.description")
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.HAS_CLOSURES, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.HAS_CLOSURES, {
                                     title: I18n.t("edit.segment.permissions.has_closures.title"),
                                     description: I18n.t("edit.segment.permissions.has_closures.description")
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.LOCKED_EXCEPT_CLOSURES, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.LOCKED_EXCEPT_CLOSURES, {
                                     title: I18n.t("edit.segment.permissions.locked_except_closures.title"),
                                     description: I18n.t("edit.segment.permissions.locked_except_closures.description", {
-                                        lockLevel: _n.default.formatRank(n.getEffectiveLockRank())
+                                        lockLevel: yn.default.formatRank(n.getEffectiveLockRank())
                                     })
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.LOCKED, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.LOCKED, {
                                     title: I18n.t("edit.segment.permissions.locked.title"),
                                     description: I18n.t("edit.segment.permissions.locked.description", {
-                                        lockLevel: _n.default.formatRank(n.getEffectiveLockRank())
+                                        lockLevel: yn.default.formatRank(n.getEffectiveLockRank())
                                     })
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.SNAPSHOT_MODE, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.SNAPSHOT_MODE, {
                                     title: I18n.t("edit.segment.permissions.snapshot_mode.title"),
                                     description: I18n.t("edit.segment.permissions.snapshot_mode.description")
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.OUTSIDE_AREA, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.OUTSIDE_AREA, {
                                     title: I18n.t("edit.segment.permissions.area.title"),
                                     description: I18n.t("edit.segment.permissions.area.description")
                                 }),
-                                V()(e, Np.SEGMENT_ERROR_TYPE.IN_BIG_JUNCTION, {
+                                V()(e, xp.SEGMENT_ERROR_TYPE.IN_BIG_JUNCTION, {
                                     title: I18n.t("edit.segment.permissions.big_junction.title"),
                                     description: I18n.t("edit.segment.permissions.big_junction.description")
                                 }),
@@ -58774,56 +58582,56 @@
                 }, {
                     key: "_getSegmentFlags",
                     value: function() {
-                        var e = new Oh.SegmentReducer(this.segmentSelection.getSelectedSegments(), new Lp.SegmentDirectionalReader(this.segmentSelection));
+                        var e = new Rh.SegmentReducer(this.segmentSelection.getSelectedSegments(), new Pp.SegmentDirectionalReader(this.segmentSelection));
                         return {
                             tunnel: e.reduceTunnel(),
-                            tunnelMixed: e.reduceTunnel() === Oh.MixedValue,
+                            tunnelMixed: e.reduceTunnel() === Rh.MixedValue,
                             unpaved: e.reduceUnpaved(),
-                            unpavedMixed: e.reduceUnpaved() === Oh.MixedValue,
+                            unpavedMixed: e.reduceUnpaved() === Rh.MixedValue,
                             headlights: e.reduceHeadlights(),
-                            headlightsMixed: e.reduceHeadlights() === Oh.MixedValue,
+                            headlightsMixed: e.reduceHeadlights() === Rh.MixedValue,
                             beacons: e.reduceBeacons(),
-                            beaconsMixed: e.reduceBeacons() === Oh.MixedValue,
+                            beaconsMixed: e.reduceBeacons() === Rh.MixedValue,
                             nearbyHOV: e.reduceNearbyHOV(),
-                            nearbyHOVMixed: e.reduceNearbyHOV() === Oh.MixedValue,
+                            nearbyHOVMixed: e.reduceNearbyHOV() === Rh.MixedValue,
                             fwdSpeedCamera: e.reduceFwdSpeedCamera(),
-                            fwdSpeedCameraMixed: e.reduceFwdSpeedCamera() === Oh.MixedValue,
+                            fwdSpeedCameraMixed: e.reduceFwdSpeedCamera() === Rh.MixedValue,
                             revSpeedCamera: e.reduceRevSpeedCamera(),
-                            revSpeedCameraMixed: e.reduceRevSpeedCamera() === Oh.MixedValue,
+                            revSpeedCameraMixed: e.reduceRevSpeedCamera() === Rh.MixedValue,
                             fwdLanesEnabled: e.reduceFwdLanesEnabled(),
-                            fwdLanesEnabledMixed: e.reduceFwdLanesEnabled() === Oh.MixedValue,
+                            fwdLanesEnabledMixed: e.reduceFwdLanesEnabled() === Rh.MixedValue,
                             revLanesEnabled: e.reduceRevLanesEnabled(),
-                            revLanesEnabledMixed: e.reduceRevLanesEnabled() === Oh.MixedValue
+                            revLanesEnabledMixed: e.reduceRevLanesEnabled() === Rh.MixedValue
                         }
                     }
                 }, {
                     key: "getFeatureBaseAttributes",
                     value: function() {
-                        return new Tp.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments())
+                        return new Ip.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments())
                     }
                 }, {
                     key: "featureToViewModel",
                     value: function() {
-                        var e = new Cp.SegmentsRoadTypeUseCase(this.segmentSelection.getSelectedSegments()),
-                            t = new Rp.SegmentsRoutingUseCase(this.segmentSelection),
-                            n = new jh.SegmentsBigJunctionUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
-                            i = new Ah.SegmentClosuresUseCase(this.segmentSelection.getSelectedSegments()),
-                            s = new Op.SegmentsRoundaboutUseCase(this._dataModel, this.segmentSelection),
-                            r = new Us.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
-                            o = new Ch.SegmentsDirectionUseCase(this._dataModel, this.segmentSelection),
-                            a = new Dp.SegmentsSpeedUseCase(this._dataModel, this.segmentSelection),
-                            l = new Sp.SegmentsRestrictionsUseCase(this._dataModel, this.segmentSelection),
-                            u = new jo.SegmentsPermissionsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
-                            c = new Ap.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()),
-                            d = new Mp.SegmentsLengthUseCase(this.segmentSelection.getSelectedSegments()),
-                            h = new Tp.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments()),
-                            p = new Ip.SegmentsFlagsUseCase(this._dataModel, this.segmentSelection),
+                        var e = new Op.SegmentsRoadTypeUseCase(this.segmentSelection.getSelectedSegments()),
+                            t = new Dp.SegmentsRoutingUseCase(this.segmentSelection),
+                            n = new Uh.SegmentsBigJunctionUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
+                            i = new Ch.SegmentClosuresUseCase(this.segmentSelection.getSelectedSegments()),
+                            s = new Rp.SegmentsRoundaboutUseCase(this._dataModel, this.segmentSelection),
+                            r = new Fs.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
+                            o = new Oh.SegmentsDirectionUseCase(this._dataModel, this.segmentSelection),
+                            a = new Lp.SegmentsSpeedUseCase(this._dataModel, this.segmentSelection),
+                            l = new kp.SegmentsRestrictionsUseCase(this._dataModel, this.segmentSelection),
+                            u = new Uo.SegmentsPermissionsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
+                            c = new Cp.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()),
+                            d = new Ap.SegmentsLengthUseCase(this.segmentSelection.getSelectedSegments()),
+                            h = new Ip.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments()),
+                            p = new Mp.SegmentsFlagsUseCase(this._dataModel, this.segmentSelection),
                             g = e.getRoadType(),
                             f = t.getRoutingRoadType(),
-                            m = g === Oh.MixedValue,
-                            v = a.getMaxSpeed(vh.DIRECTION.FORWARD),
-                            _ = a.getMaxSpeed(vh.DIRECTION.REVERSE);
-                        return Vp({
+                            m = g === Rh.MixedValue,
+                            v = a.getMaxSpeed(_h.DIRECTION.FORWARD),
+                            _ = a.getMaxSpeed(_h.DIRECTION.REVERSE);
+                        return jp({
                             numSegments: this.segmentSelection.getSegmentCount(),
                             consistentDirection: 0 === this.segmentSelection.getNumberOfReversedSegments() && !this.segmentSelection.hasMultipleConnectedComponents(),
                             consistentDrivability: e.hasConsistentDrivability(),
@@ -58846,8 +58654,8 @@
                             shouldShowBeacons: p.shouldShowBeacons(),
                             canEditBeacons: p.canEditBeacons(),
                             canEditDirection: o.canEditDirection(),
-                            canEditFwdMaxSpeed: a.canEditMaxSpeed(vh.DIRECTION.FORWARD),
-                            canEditRevMaxSpeed: a.canEditMaxSpeed(vh.DIRECTION.REVERSE),
+                            canEditFwdMaxSpeed: a.canEditMaxSpeed(_h.DIRECTION.FORWARD),
+                            canEditRevMaxSpeed: a.canEditMaxSpeed(_h.DIRECTION.REVERSE),
                             houseNumberTitle: this.getHouseNumberTitle(r),
                             length: d.getLength(),
                             mixedUpdatedBy: h.isUpdatedByMixed(),
@@ -58857,7 +58665,7 @@
                             shouldShowRoutingSelect: t.canEditRoutingRoadTypes(),
                             routingRoadTypes: t.getAvailableRoutingRoadTypes(),
                             routingRoadType: f || -1,
-                            routingRoadTypeMixed: f === Oh.MixedValue,
+                            routingRoadTypeMixed: f === Rh.MixedValue,
                             isTollRoad: l.isTollRoad(),
                             isTollRoadMixed: l.isTollRoadMixed(),
                             showRestrictionEditing: l.supportsRestrictions(),
@@ -58866,28 +58674,28 @@
                             supportsPickupRestrictions: l.supportsPickupRestrictions(),
                             showLanesTab: this.shouldShowLanesTab(),
                             direction: o.getDirection(),
-                            directionMixed: o.getDirection() === Oh.MixedValue,
+                            directionMixed: o.getDirection() === Rh.MixedValue,
                             fwdDirection: o.isForward(),
                             revDirection: o.isReverse(),
-                            fwdDirectionMixed: o.isForward() === Oh.MixedValue,
-                            revDirectionMixed: o.isReverse() === Oh.MixedValue,
+                            fwdDirectionMixed: o.isForward() === Rh.MixedValue,
+                            revDirectionMixed: o.isReverse() === Rh.MixedValue,
                             allowNoDirection: o.allowNoDirection(),
-                            allowNoDirectionMixed: o.allowNoDirection() === Oh.MixedValue,
+                            allowNoDirectionMixed: o.allowNoDirection() === Rh.MixedValue,
                             allowSpeedLimit: a.allowSpeedLimit(),
-                            fwdMaxSpeed: v !== Oh.MixedValue ? _n.default.getDisplayUnitValue(v, Pc.UNIT.KILOMETER, !0) : null,
-                            revMaxSpeed: _ !== Oh.MixedValue ? _n.default.getDisplayUnitValue(_, Pc.UNIT.KILOMETER, !0) : null,
-                            fwdMaxSpeedUnverified: a.getMaxSpeedUnverified(vh.DIRECTION.FORWARD),
-                            revMaxSpeedUnverified: a.getMaxSpeedUnverified(vh.DIRECTION.REVERSE),
-                            canChangeFwdMaxSpeedUnverified: a.canChangeMaxSpeedUnverified(vh.DIRECTION.FORWARD),
-                            canChangeRevMaxSpeedUnverified: a.canChangeMaxSpeedUnverified(vh.DIRECTION.REVERSE),
+                            fwdMaxSpeed: v !== Rh.MixedValue ? yn.default.getDisplayUnitValue(v, Nc.UNIT.KILOMETER, !0) : null,
+                            revMaxSpeed: _ !== Rh.MixedValue ? yn.default.getDisplayUnitValue(_, Nc.UNIT.KILOMETER, !0) : null,
+                            fwdMaxSpeedUnverified: a.getMaxSpeedUnverified(_h.DIRECTION.FORWARD),
+                            revMaxSpeedUnverified: a.getMaxSpeedUnverified(_h.DIRECTION.REVERSE),
+                            canChangeFwdMaxSpeedUnverified: a.canChangeMaxSpeedUnverified(_h.DIRECTION.FORWARD),
+                            canChangeRevMaxSpeedUnverified: a.canChangeMaxSpeedUnverified(_h.DIRECTION.REVERSE),
                             shouldShowAverageSpeedCamera: a.supportsAverageSpeedCamera(),
                             canEditAverageSpeedCamera: a.canEditAverageSpeedCamera(),
                             rank: u.getRank(),
                             lockRank: u.getLockRank(),
-                            lockRankMixed: u.getLockRank() === Oh.MixedValue,
+                            lockRankMixed: u.getLockRank() === Rh.MixedValue,
                             allowDefaultRank: u.allowDefaultRank(),
                             level: c.getLevel(),
-                            levelMixed: c.getLevel() === Oh.MixedValue
+                            levelMixed: c.getLevel() === Rh.MixedValue
                         }, this._getSegmentFlags(), {}, this._getSegmentError())
                     }
                 }, {
@@ -58895,7 +58703,7 @@
                     value: function() {
                         return {
                             roadType: function(e, t) {
-                                e !== Oh.MixedValue && (t.roadType = e,
+                                e !== Rh.MixedValue && (t.roadType = e,
                                     t.routingRoadType = null)
                             },
                             routingRoadType: function(e, t) {
@@ -58906,10 +58714,10 @@
                                     t.revDirection = 0 != (2 & e))
                             },
                             fwdMaxSpeed: function(e, t) {
-                                t.fwdMaxSpeed = Pc.default.getOriginalValue(e, Pc.UNIT.KILOMETER)
+                                t.fwdMaxSpeed = Nc.default.getOriginalValue(e, Nc.UNIT.KILOMETER)
                             },
                             revMaxSpeed: function(e, t) {
-                                t.revMaxSpeed = Pc.default.getOriginalValue(e, Pc.UNIT.KILOMETER)
+                                t.revMaxSpeed = Nc.default.getOriginalValue(e, Nc.UNIT.KILOMETER)
                             },
                             fwdMaxSpeedUnverified: this.simpleAttribute("fwdMaxSpeedUnverified"),
                             revMaxSpeedUnverified: this.simpleAttribute("revMaxSpeedUnverified"),
@@ -58932,7 +58740,7 @@
                 }, {
                     key: "_updateObjectsInRepository",
                     value: function(e, t) {
-                        new Pp.UpdateSegmentsUseCase(this._dataModel.actionManager, this.segmentSelection).updateSegments(t)
+                        new Np.UpdateSegmentsUseCase(this._dataModel.actionManager, this.segmentSelection).updateSegments(t)
                     }
                 }, {
                     key: "_getRepositoryObjectsToUpdate",
@@ -58941,7 +58749,7 @@
                             t = l.a.partition(e, function(e) {
                                 return null == e
                             }),
-                            n = dn()(t, 2),
+                            n = hn()(t, 2),
                             i = n[0],
                             s = n[1];
                         return i.length > 0 && console.error("Cannot update a non-existing objects with ids [".concat(this.segmentIDs.join(","), "] and type ").concat(this.repository.objectType)),
@@ -58950,13 +58758,13 @@
                 }, {
                     key: "templateContext",
                     value: function() {
-                        return Vp({}, Vt()(_()(t.prototype), "templateContext", this).call(this), {}, l.a.pick(this.viewModel.attributes, "segmentErrorTitle", "segmentErrorDescription", "numSegments", "length", "mixedUpdatedBy", "mixedCreatedBy"))
+                        return jp({}, jt()(_()(t.prototype), "templateContext", this).call(this), {}, l.a.pick(this.viewModel.attributes, "segmentErrorTitle", "segmentErrorDescription", "numSegments", "length", "mixedUpdatedBy", "mixedCreatedBy"))
                     }
                 }, {
                     key: "_shouldShowBigJunctionExits",
                     value: function() {
                         var e = this.options.segmentSelection;
-                        return !(e.getSegmentCount() > 1) && new jh.SegmentsBigJunctionUseCase(this._dataModel, e.getSelectedSegments()).isJunctionEntry()
+                        return !(e.getSegmentCount() > 1) && new Uh.SegmentsBigJunctionUseCase(this._dataModel, e.getSelectedSegments()).isJunctionEntry()
                     }
                 }, {
                     key: "_toggleEvents",
@@ -58989,7 +58797,7 @@
                 }, {
                     key: "_selectEntireStreet",
                     value: function() {
-                        new Fs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).selectEntireStreet(this.options.selectionManager)
+                        new Bs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).selectEntireStreet(this.options.selectionManager)
                     }
                 }, {
                     key: "selectEntireRoundaboutClicked",
@@ -59000,12 +58808,12 @@
                 }, {
                     key: "_selectEntireRoundabout",
                     value: function() {
-                        new Op.SegmentsRoundaboutUseCase(this._dataModel, this.segmentSelection).selectEntireRoundabout(this.options.selectionManager)
+                        new Rp.SegmentsRoundaboutUseCase(this._dataModel, this.segmentSelection).selectEntireRoundabout(this.options.selectionManager)
                     }
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).apply(this, arguments),
+                        jt()(_()(t.prototype), "onRender", this).apply(this, arguments),
                             this._renderAndShowChildViews(),
                             this.$(".waze-tooltip, .waze-lock-tooltip").tooltip({
                                 container: "body"
@@ -59029,13 +58837,13 @@
                 }, {
                     key: "_reflectRepositoryChanges",
                     value: function() {
-                        Vt()(_()(t.prototype), "_reflectRepositoryChanges", this).call(this),
+                        jt()(_()(t.prototype), "_reflectRepositoryChanges", this).call(this),
                             this._renderAndShowRepositoryBoundChildViews()
                     }
                 }, {
                     key: "_renderTurnView",
                     value: function() {
-                        this._turnView = new Fh({
+                        this._turnView = new Bh({
                                 segmentSelection: this.segmentSelection,
                                 map: this.options.map,
                                 dataModel: this._dataModel,
@@ -59046,7 +58854,7 @@
                 }, {
                     key: "_renderElementHistory",
                     value: function() {
-                        this.showChildView("historyRegion", new id({
+                        this.showChildView("historyRegion", new sd({
                             map: this.options.map,
                             model: this.segmentSelection.getFirstSegment()
                         }))
@@ -59054,7 +58862,7 @@
                 }, {
                     key: "_renderClosuresTab",
                     value: function() {
-                        new Lh({
+                        new Ph({
                             region: this.getRegion("closuresRegion"),
                             pannable: W.map.getPannable(),
                             segmentSelection: this.segmentSelection,
@@ -59062,14 +58870,14 @@
                             canSaveClosures: !this._dataModel.actionManager.canSave(),
                             canAdd: !0,
                             dataModel: this._dataModel,
-                            editViewConfig: Ph.SEGMENT,
-                            listViewConfig: Nh.SEGMENT
+                            editViewConfig: Nh.SEGMENT,
+                            listViewConfig: xh.SEGMENT
                         }).showClosures()
                     }
                 }, {
                     key: "_renderLanesTab",
                     value: function() {
-                        var e = new up({
+                        var e = new cp({
                             dataModel: this._dataModel,
                             segmentId: this.segmentSelection.getFirstSegment().getID()
                         });
@@ -59089,11 +58897,11 @@
                     key: "_renderAddressEdit",
                     value: function() {
                         var e = this,
-                            t = new Tp.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments()),
-                            n = new Fs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
-                            i = new kc({
+                            t = new Ip.SegmentsBaseAttributesUseCase(this.segmentSelection.getSelectedSegments()),
+                            n = new Bs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()),
+                            i = new Tc({
                                 getAddress: function() {
-                                    return new Fs.SegmentStreetsUseCase(e._dataModel, e.segmentSelection.getSelectedSegments()).getAddress()
+                                    return new Bs.SegmentStreetsUseCase(e._dataModel, e.segmentSelection.getSelectedSegments()).getAddress()
                                 },
                                 dataModel: this._dataModel,
                                 features: this.segmentSelection.getSelectedSegments(),
@@ -59111,7 +58919,7 @@
                 }, {
                     key: "_renderLockEdit",
                     value: function() {
-                        var e = new Ic({
+                        var e = new Mc({
                             model: this.viewModel
                         });
                         this.showChildView("lockEditRegion", e)
@@ -59119,7 +58927,7 @@
                 }, {
                     key: "shouldShowSelectEntireStreetButton",
                     value: function() {
-                        var e = new Fs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments());
+                        var e = new Bs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments());
                         return e.hasSingleNonEmptyStreet() && !e.isEntireStreetSelected(this.segmentSelection)
                     }
                 }, {
@@ -59154,15 +58962,15 @@
                 }, {
                     key: "_shouldShowRoutingRoadTypeMessage",
                     value: function(e, t) {
-                        return t !== Oh.MixedValue && (null !== t && e !== t)
+                        return t !== Rh.MixedValue && (null !== t && e !== t)
                     }
                 }, {
                     key: "_getRoutingRoadTypeMessage",
                     value: function(e, t) {
                         if (!this._shouldShowRoutingRoadTypeMessage(e, t))
                             return "";
-                        var n = _n.default.contentTag("strong", I18n.t("segment.road_types.".concat(t)));
-                        return _n.default.safe_t("edit.segment.routing.info", {
+                        var n = yn.default.contentTag("strong", I18n.t("segment.road_types.".concat(t)));
+                        return yn.default.safe_t("edit.segment.routing.info", {
                             roadType: n
                         })
                     }
@@ -59170,7 +58978,7 @@
                     key: "shouldShowLanesTab",
                     value: function() {
                         var e = this.options.segmentSelection,
-                            t = new lp.a(this._dataModel, e.getSelectedSegments());
+                            t = new up.a(this._dataModel, e.getSelectedSegments());
                         return t.supportsFwdLanes() || t.supportsRevLanes()
                     }
                 }, {
@@ -59197,7 +59005,7 @@
                 }, {
                     key: "increaseSegmentLevel",
                     value: function() {
-                        var e = new Ap.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()).increaseSegmentLevel();
+                        var e = new Cp.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()).increaseSegmentLevel();
                         null != e && this.viewModel.set({
                             level: e
                         })
@@ -59205,7 +59013,7 @@
                 }, {
                     key: "decreaseSegmentLevel",
                     value: function() {
-                        var e = new Ap.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()).decreaseSegmentLevel();
+                        var e = new Cp.SegmentsLevelUseCase(this.segmentSelection.getSelectedSegments()).decreaseSegmentLevel();
                         null != e && this.viewModel.set({
                             level: e
                         })
@@ -59229,7 +59037,7 @@
                 }, {
                     key: "editHouseNumbersShortcutClicked",
                     value: function() {
-                        new Us.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).canEnterHouseNumbersMode() && this.editHouseNumbers()
+                        new Fs.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).canEnterHouseNumbersMode() && this.editHouseNumbers()
                     }
                 }, {
                     key: "editHouseNumbersClicked",
@@ -59240,9 +59048,9 @@
                 }, {
                     key: "editHouseNumbers",
                     value: function() {
-                        var e = new Fs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).getEntireStreet(this.segmentSelection.getFirstSegment()),
-                            t = new Us.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).canEditHouseNumbers();
-                        new js({
+                        var e = new Bs.SegmentStreetsUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).getEntireStreet(this.segmentSelection.getFirstSegment()),
+                            t = new Fs.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments()).canEditHouseNumbers();
+                        new Us({
                             model: this._dataModel,
                             map: W.map,
                             editable: t,
@@ -59272,11 +59080,11 @@
                     value: function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "driving",
                             n = this.options.segmentSelection,
-                            i = new Sp.SegmentsRestrictionsUseCase(this._dataModel, n);
+                            i = new kp.SegmentsRestrictionsUseCase(this._dataModel, n);
                         if (i.supportsRestrictions()) {
                             var s = i.isTollRoad(),
                                 r = i.isTollRoadMixed(),
-                                o = new kp({
+                                o = new Tp({
                                     dataModel: this._dataModel,
                                     isTollRoad: s,
                                     isTollRoadMixed: r,
@@ -59295,7 +59103,7 @@
                 }, {
                     key: "onActionsChanged",
                     value: function() {
-                        var e = new Us.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments());
+                        var e = new Fs.SegmentsHouseNumbersUseCase(this._dataModel, this.segmentSelection.getSelectedSegments());
                         this.viewModel.set({
                             canEnterHouseNumbersMode: e.canEnterHouseNumbersMode(),
                             houseNumberTitle: this.getHouseNumberTitle(e)
@@ -59310,8 +59118,8 @@
                     }
                 }]),
                 t
-        }(Xu),
-        Bp = function(e) {
+        }(Qu),
+        Gp = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -59467,14 +59275,14 @@
                             name: e.attributes.name,
                             createdBy: e.attributes.createdBy,
                             createdOn: e.attributes.createdOn,
-                            lockRank: _n.default.formatRank(e.attributes.lockRank),
+                            lockRank: yn.default.formatRank(e.attributes.lockRank),
                             pursCount: e.attributes.venueUpdateRequests.length
                         }
                     }
                 }]),
                 t
         }(c.a.View),
-        Gp = function(e) {
+        Wp = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -59483,7 +59291,7 @@
                 g()(t, [{
                     key: "childView",
                     value: function() {
-                        return Bp
+                        return Gp
                     }
                 }, {
                     key: "onChildviewMergeClick",
@@ -59508,7 +59316,7 @@
                 }]),
                 t
         }(c.a.CollectionView),
-        Wp = function(e) {
+        Hp = function(e) {
             function t(e) {
                 var n;
                 h()(this, t);
@@ -59644,7 +59452,7 @@
                 }]),
                 t
         }(c.a.View),
-        Hp = function(e) {
+        zp = function(e) {
             function t(e) {
                 var n;
                 h()(this, t);
@@ -59703,8 +59511,8 @@
                     }
                 }]),
                 t
-        }(Wp),
-        zp = function(e) {
+        }(Hp),
+        qp = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -59798,8 +59606,8 @@
                     }
                 }]),
                 t
-        }(Hp),
-        qp = function(e) {
+        }(zp),
+        Yp = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -59815,13 +59623,13 @@
                     value: function() {
                         var e;
                         return e = {},
-                            V()(e, "input[value=".concat(this._optionToValue(sd.VENUE_PARKING_LOT), "]"), {
+                            V()(e, "input[value=".concat(this._optionToValue(rd.VENUE_PARKING_LOT), "]"), {
                                 attributes: [{
                                     name: "disabled",
                                     observe: "isMainVenuePoint"
                                 }]
                             }),
-                            V()(e, "input[value=".concat(this._optionToValue(sd.VENUE_PARKING_LOT), "] + label"), {
+                            V()(e, "input[value=".concat(this._optionToValue(rd.VENUE_PARKING_LOT), "] + label"), {
                                 attributes: [{
                                     name: "title",
                                     observe: "parkingCategoryToolTipMessage"
@@ -59838,29 +59646,29 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).call(this),
+                        jt()(_()(t.prototype), "onRender", this).call(this),
                             this.stickit(this._viewModel, this.categoryBindings())
                     }
                 }, {
                     key: "_onModelChange",
                     value: function(e, n) {
-                        var i = e.previous(this.observeAttribute).indexOf(sd.VENUE_PARKING_LOT) > -1,
-                            s = n.indexOf(sd.VENUE_PARKING_LOT) > -1;
-                        i ? s && n.length > 1 && (n = l.a.without(n, sd.VENUE_PARKING_LOT),
-                                this.model.set(this.observeAttribute, n)) : s && n.length > 1 && this.model.set(this.observeAttribute, [sd.VENUE_PARKING_LOT]),
-                            Vt()(_()(t.prototype), "_onModelChange", this).call(this, e, n)
+                        var i = e.previous(this.observeAttribute).indexOf(rd.VENUE_PARKING_LOT) > -1,
+                            s = n.indexOf(rd.VENUE_PARKING_LOT) > -1;
+                        i ? s && n.length > 1 && (n = l.a.without(n, rd.VENUE_PARKING_LOT),
+                                this.model.set(this.observeAttribute, n)) : s && n.length > 1 && this.model.set(this.observeAttribute, [rd.VENUE_PARKING_LOT]),
+                            jt()(_()(t.prototype), "_onModelChange", this).call(this, e, n)
                     }
                 }, {
                     key: "_onMainChange",
                     value: function(e, t) {
                         var n = this.getSelected(); -
-                        1 === n.indexOf(t) && (t === sd.VENUE_PARKING_LOT || n.indexOf(sd.VENUE_PARKING_LOT) > -1 ? n = [t] : n.push(t),
+                        1 === n.indexOf(t) && (t === rd.VENUE_PARKING_LOT || n.indexOf(rd.VENUE_PARKING_LOT) > -1 ? n = [t] : n.push(t),
                             this.setSelection(n))
                     }
                 }]),
                 t
-        }(zp),
-        Yp = function(e) {
+        }(qp),
+        $p = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -59883,14 +59691,14 @@
                 }, {
                     key: "templateContext",
                     value: function() {
-                        return Object.assign(Vt()(_()(t.prototype), "templateContext", this).call(this), {
+                        return Object.assign(jt()(_()(t.prototype), "templateContext", this).call(this), {
                             getUrlById: this._getUrlById.bind(this)
                         })
                     }
                 }]),
                 t
-        }(Hp),
-        $p = {
+        }(zp),
+        Kp = {
             NAME: "name",
             ALIASES: "aliases",
             DESCRIPTION: "description",
@@ -59904,7 +59712,7 @@
             SERVICES: "services",
             IMAGES: "images"
         },
-        Kp = {
+        Jp = {
             PARKING_TYPE: "parkingType",
             HAS_TBR: "hasTBR",
             CAN_EXIT_WHILE_CLOSED: "canExitWhileClosed",
@@ -59913,15 +59721,15 @@
             EXTIMATED_NUMBER_OF_SPOTS: "estimatedNumberOfSpots",
             LOT_TYPE: "lotType"
         },
-        Jp = Object.values($p),
         Zp = Object.values(Kp),
-        Xp = "CUSTOM_DESCRIPTION",
-        Qp = "mainCategory",
-        eg = "address",
-        tg = function() {
+        Xp = Object.values(Jp),
+        Qp = "CUSTOM_DESCRIPTION",
+        eg = "mainCategory",
+        tg = "address",
+        ng = function() {
             function e(t) {
                 h()(this, e);
-                var n = new Nd.a;
+                var n = new xd.a;
                 this._defaultParkingAttributes = n.attributes,
                     this.venues = t.venues,
                     this.mainVenue = t.mainVenue,
@@ -59934,7 +59742,7 @@
                     value: function() {
                         var e = this,
                             t = {};
-                        return [Xp, Qp, eg].concat(Nt()(Jp), Nt()(Zp)).forEach(function(n) {
+                        return [Qp, eg, tg].concat(xt()(Zp), xt()(Xp)).forEach(function(n) {
                                 t[n] = e.getPropertySuggestedValue(n)
                             }),
                             new o.a.Model(t)
@@ -59948,30 +59756,30 @@
                     key: "getPropertySuggestedValue",
                     value: function(e) {
                         switch (e) {
-                            case Xp:
-                                return "";
                             case Qp:
-                                return this._getSuggestedProperties($p.CATEGORIES)[0];
+                                return "";
                             case eg:
+                                return this._getSuggestedProperties(Kp.CATEGORIES)[0];
+                            case tg:
                                 return this._getSuggestedAddress();
-                            case $p.ALIASES:
+                            case Kp.ALIASES:
                                 return this._getSuggestedNames();
-                            case $p.CATEGORIES:
-                            case $p.SERVICES:
+                            case Kp.CATEGORIES:
+                            case Kp.SERVICES:
                                 return this._getSuggestedProperties(e);
-                            case $p.EXTERNAL_PROVIDER_IDS:
+                            case Kp.EXTERNAL_PROVIDER_IDS:
                                 return this._getSuggestedExternalProviderIds();
-                            case $p.OPENING_HOURS:
+                            case Kp.OPENING_HOURS:
                                 return this._getSuggestedOpeningHours();
-                            case $p.IMAGES:
+                            case Kp.IMAGES:
                                 return this._getSuggestedImages();
-                            case Kp.HAS_TBR:
-                            case Kp.CAN_EXIT_WHILE_CLOSED:
-                            case Kp.PARKING_TYPE:
-                            case Kp.COST_TYPE:
-                            case Kp.PAYMENT_TYPE:
-                            case Kp.EXTIMATED_NUMBER_OF_SPOTS:
-                            case Kp.LOT_TYPE:
+                            case Jp.HAS_TBR:
+                            case Jp.CAN_EXIT_WHILE_CLOSED:
+                            case Jp.PARKING_TYPE:
+                            case Jp.COST_TYPE:
+                            case Jp.PAYMENT_TYPE:
+                            case Jp.EXTIMATED_NUMBER_OF_SPOTS:
+                            case Jp.LOT_TYPE:
                                 return this._getSuggestedParkingProperty(e);
                             default:
                                 return this._getSuggestedProperty(e)
@@ -59988,7 +59796,7 @@
                         var e = this.mainVenue,
                             t = e.attributes.name,
                             n = e.attributes.aliases;
-                        return l.a.uniq([t].concat(Nt()(n)))
+                        return l.a.uniq([t].concat(xt()(n)))
                     }
                 }, {
                     key: "_getSuggestedAddress",
@@ -60038,21 +59846,21 @@
                     key: "getPropertyOptions",
                     value: function(e, t) {
                         switch (e) {
-                            case $p.NAME:
+                            case Kp.NAME:
                                 return this._getNameList();
-                            case eg:
+                            case tg:
                                 return this._getAddressList();
-                            case Qp:
-                                return this._createPropertyList($p.CATEGORIES, !1)[0];
-                            case $p.LOCK_RANK:
+                            case eg:
+                                return this._createPropertyList(Kp.CATEGORIES, !1)[0];
+                            case Kp.LOCK_RANK:
                                 return this._getLockRankRange();
-                            case $p.EXTERNAL_PROVIDER_IDS:
+                            case Kp.EXTERNAL_PROVIDER_IDS:
                                 return this._createProviderIdList();
-                            case $p.OPENING_HOURS:
+                            case Kp.OPENING_HOURS:
                                 return this._getOpeningHours();
-                            case $p.IMAGES:
+                            case Kp.IMAGES:
                                 return this._createImagesIdsList();
-                            case $p.SERVICES:
+                            case Kp.SERVICES:
                                 return this._createServicesList();
                             default:
                                 return this._createPropertyList(e, t)
@@ -60079,8 +59887,8 @@
                     key: "_createServicesList",
                     value: function() {
                         var e = this._isParkingLot(),
-                            t = this._createPropertyList($p.SERVICES),
-                            n = e ? wd.a.PARKING_LOT : wd.a.GENERAL;
+                            t = this._createPropertyList(Kp.SERVICES),
+                            n = e ? Sd.a.PARKING_LOT : Sd.a.GENERAL;
                         return l.a.intersection(t, n)
                     }
                 }, {
@@ -60110,7 +59918,7 @@
                 }, {
                     key: "_createImagesIdsList",
                     value: function() {
-                        var e = this.createImagesList($p.IMAGES).filter(function(e) {
+                        var e = this.createImagesList(Kp.IMAGES).filter(function(e) {
                             return e.attributes.approved
                         });
                         return l.a.compact(e.map(function(e) {
@@ -60120,7 +59928,7 @@
                 }, {
                     key: "_formatOpeningHours",
                     value: function(e) {
-                        return _n.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
+                        return yn.default.formatOpeningHour(e.days, e.isAllDay(), e.fromHour, e.toHour)
                     }
                 }, {
                     key: "_getOpeningHours",
@@ -60169,18 +59977,18 @@
                     value: function(e) {
                         var t = this.model;
                         switch (e) {
-                            case $p.CATEGORIES:
-                                return [t.get(Qp)].concat(l.a.without(t.get($p.CATEGORIES), t.get(Qp)));
-                            case $p.ALIASES:
-                                return l.a.without(t.get($p.ALIASES), t.get($p.NAME));
-                            case $p.DESCRIPTION:
-                                return t.get($p.DESCRIPTION) === Xp ? t.get(Xp) : t.get($p.DESCRIPTION);
-                            case $p.EXTERNAL_PROVIDER_IDS:
-                                return this._idsListToObjects($p.EXTERNAL_PROVIDER_IDS, t.get($p.EXTERNAL_PROVIDER_IDS));
-                            case $p.OPENING_HOURS:
-                                return this._openingHoursToObjects(t.get($p.OPENING_HOURS));
-                            case $p.IMAGES:
-                                return this._idsListToObjects($p.IMAGES, t.get($p.IMAGES));
+                            case Kp.CATEGORIES:
+                                return [t.get(eg)].concat(l.a.without(t.get(Kp.CATEGORIES), t.get(eg)));
+                            case Kp.ALIASES:
+                                return l.a.without(t.get(Kp.ALIASES), t.get(Kp.NAME));
+                            case Kp.DESCRIPTION:
+                                return t.get(Kp.DESCRIPTION) === Qp ? t.get(Qp) : t.get(Kp.DESCRIPTION);
+                            case Kp.EXTERNAL_PROVIDER_IDS:
+                                return this._idsListToObjects(Kp.EXTERNAL_PROVIDER_IDS, t.get(Kp.EXTERNAL_PROVIDER_IDS));
+                            case Kp.OPENING_HOURS:
+                                return this._openingHoursToObjects(t.get(Kp.OPENING_HOURS));
+                            case Kp.IMAGES:
+                                return this._idsListToObjects(Kp.IMAGES, t.get(Kp.IMAGES));
                             default:
                                 return t.get(e)
                         }
@@ -60193,7 +60001,7 @@
                 }, {
                     key: "getAttributeValue",
                     value: function(e) {
-                        return Jp.indexOf(e) > -1 ? this._getVenueAttribute(e) : Zp.indexOf(e) > -1 ? this._getParkingAttribute(e) : void 0
+                        return Zp.indexOf(e) > -1 ? this._getVenueAttribute(e) : Xp.indexOf(e) > -1 ? this._getParkingAttribute(e) : void 0
                     }
                 }, {
                     key: "_isAttributeChanged",
@@ -60201,8 +60009,8 @@
                         var t = this.model.get(e),
                             n = this.startModel.get(e);
                         switch (e) {
-                            case $p.CATEGORIES:
-                                return !l.a.isEqual(n, t) || this.model.get(Qp) !== this.startModel.get(Qp);
+                            case Kp.CATEGORIES:
+                                return !l.a.isEqual(n, t) || this.model.get(eg) !== this.startModel.get(eg);
                             default:
                                 return !l.a.isEqual(n, t)
                         }
@@ -60253,17 +60061,17 @@
                     value: function() {
                         var e = this,
                             t = {};
-                        if ((Jp.forEach(function(n) {
+                        if ((Zp.forEach(function(n) {
                                     e._isAttributeChanged(n) && (t[n] = e.getAttributeValue(n))
                                 }),
-                                this._isParkingLot()) && Zp.some(function(t) {
+                                this._isParkingLot()) && Xp.some(function(t) {
                                 return e._isAttributeChanged(t)
                             })) {
                             var n = {};
-                            Zp.forEach(function(t) {
+                            Xp.forEach(function(t) {
                                     n[t] = e.getAttributeValue(t)
                                 }),
-                                t.categoryAttributes = V()({}, sd.VENUE_PARKING_LOT, n)
+                                t.categoryAttributes = V()({}, rd.VENUE_PARKING_LOT, n)
                         }
                         return !t.brand || this._isGasStation() || this._isParkingLot() || delete t.brand,
                             this._handleAddressChange(t),
@@ -60273,12 +60081,12 @@
                 }, {
                     key: "_isParkingLot",
                     value: function() {
-                        return this.getAttributeValue($p.CATEGORIES)[0] === sd.VENUE_PARKING_LOT
+                        return this.getAttributeValue(Kp.CATEGORIES)[0] === rd.VENUE_PARKING_LOT
                     }
                 }, {
                     key: "_isGasStation",
                     value: function() {
-                        return this.getAttributeValue($p.CATEGORIES).includes(sd.VENUE_GAS_STATION)
+                        return this.getAttributeValue(Kp.CATEGORIES).includes(rd.VENUE_GAS_STATION)
                     }
                 }, {
                     key: "_getSupportedBrands",
@@ -60291,15 +60099,15 @@
                 }, {
                     key: "isBrandValid",
                     value: function() {
-                        var e = this.getAttributeValue($p.BRAND),
+                        var e = this.getAttributeValue(Kp.BRAND),
                             t = this._getSupportedBrands();
                         return !e || t.includes(e)
                     }
                 }, {
                     key: "_handleAddressChange",
                     value: function(e) {
-                        var t = this.model.get(eg),
-                            n = this.startModel.get(eg);
+                        var t = this.model.get(tg),
+                            n = this.startModel.get(tg);
                         if (t !== n) {
                             var i = this._getAddressByAddressString(t),
                                 s = this._getAddressByAddressString(n);
@@ -60320,23 +60128,23 @@
                 }]),
                 e
         }(),
-        ng = function(e) {
+        ig = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
-                    (n = m()(this, _()(t).call(this, e))).model.set(Xp, ""),
+                    (n = m()(this, _()(t).call(this, e))).model.set(Qp, ""),
                     n
             }
             return b()(t, e),
                 g()(t, [{
                     key: "bindings",
                     value: function() {
-                        return l.a.extend(Vt()(_()(t.prototype), "bindings", this).call(this), {
-                            textarea: Xp,
+                        return l.a.extend(jt()(_()(t.prototype), "bindings", this).call(this), {
+                            textarea: Qp,
                             ".text-container": {
                                 observe: this.observeAttribute,
                                 visible: function(e) {
-                                    return e === Xp
+                                    return e === Qp
                                 }
                             }
                         })
@@ -60350,24 +60158,24 @@
                 g()(t, [{
                     key: "_optionToValue",
                     value: function(e) {
-                        return e === Xp ? e : this.optionsList.indexOf(e)
+                        return e === Qp ? e : this.optionsList.indexOf(e)
                     }
                 }, {
                     key: "_valueToOption",
                     value: function(e) {
-                        return e === Xp ? e : this.optionsList[e]
+                        return e === Qp ? e : this.optionsList[e]
                     }
                 }, {
                     key: "templateContext",
                     value: function() {
-                        return Object.assign(Vt()(_()(t.prototype), "templateContext", this).call(this), {
-                            CUSTOM_DESCRIPTION: Xp
+                        return Object.assign(jt()(_()(t.prototype), "templateContext", this).call(this), {
+                            CUSTOM_DESCRIPTION: Qp
                         })
                     }
                 }]),
                 t
-        }(Wp),
-        ig = function(e) {
+        }(Hp),
+        sg = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -60406,12 +60214,12 @@
                     value: function() {
                         var e = this;
                         this.externalProviders = this.selectionOptions.optionsList.map(function(e) {
-                            return new uh.a({
+                            return new ch.a({
                                 uuid: e
                             })
                         });
                         var t = this.externalProviders.map(function(e) {
-                            return Object(Bn.populateExternalProviderDetails)(e)
+                            return Object(Gn.populateExternalProviderDetails)(e)
                         });
                         Promise.all(t).finally(function() {
                             e._onExternalProvidersLoaded()
@@ -60429,7 +60237,7 @@
                         this.selectionOptions.labels = this.externalProviders.map(function(e) {
                                 return e.get("name")
                             }),
-                            this.showChildView("externalProviders", new Hp(this.selectionOptions))
+                            this.showChildView("externalProviders", new zp(this.selectionOptions))
                     }
                 }, {
                     key: "onRender",
@@ -60440,7 +60248,7 @@
                 }]),
                 t
         }(c.a.View),
-        sg = function(e) {
+        rg = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -60449,10 +60257,10 @@
             }
             return b()(t, e),
                 t
-        }(zp),
-        rg = n(392);
+        }(qp),
+        og = n(393);
 
-    function og(e, t) {
+    function ag(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -60460,7 +60268,7 @@
             })),
             n
     }
-    var ag = function(e) {
+    var lg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -60492,27 +60300,27 @@
                         var e = this;
                         return {
                             ".parking-attributes": {
-                                observe: $p.CATEGORIES,
+                                observe: Kp.CATEGORIES,
                                 visible: function(e) {
-                                    return e.indexOf(sd.VENUE_PARKING_LOT) > -1
+                                    return e.indexOf(rd.VENUE_PARKING_LOT) > -1
                                 }
                             },
                             ".parking-message": {
-                                observe: $p.CATEGORIES,
+                                observe: Kp.CATEGORIES,
                                 visible: function(t) {
-                                    return e._hasParkingLot() && -1 === t.indexOf(sd.VENUE_PARKING_LOT)
+                                    return e._hasParkingLot() && -1 === t.indexOf(rd.VENUE_PARKING_LOT)
                                 }
                             },
                             ".brand-region": {
-                                observe: $p.CATEGORIES,
+                                observe: Kp.CATEGORIES,
                                 visible: function(e) {
-                                    return e.indexOf(sd.VENUE_GAS_STATION) > -1 || e.indexOf(sd.VENUE_PARKING_LOT) > -1
+                                    return e.indexOf(rd.VENUE_GAS_STATION) > -1 || e.indexOf(rd.VENUE_PARKING_LOT) > -1
                                 }
                             },
                             ".brand-message": {
-                                observe: $p.CATEGORIES,
+                                observe: Kp.CATEGORIES,
                                 visible: function(t) {
-                                    return e._hasGasStation() && -1 === t.indexOf(sd.VENUE_GAS_STATION)
+                                    return e._hasGasStation() && -1 === t.indexOf(rd.VENUE_GAS_STATION)
                                 }
                             },
                             ".brand-invalid-error": {
@@ -60528,7 +60336,7 @@
                                     name: "disabled",
                                     observe: ["doOpeningHoursOverlap", "isBrandInvalid"],
                                     onGet: function(e) {
-                                        var t = dn()(e, 2),
+                                        var t = hn()(e, 2),
                                             n = t[0],
                                             i = t[1];
                                         return n || i
@@ -60542,25 +60350,25 @@
                     value: function() {
                         var e;
                         return e = {},
-                            V()(e, $p.NAME, ".name-region"),
-                            V()(e, $p.DESCRIPTION, ".description-region"),
-                            V()(e, eg, ".address-region"),
-                            V()(e, $p.LOCK_RANK, ".lockRank-region"),
-                            V()(e, $p.BRAND, ".brand-region"),
-                            V()(e, $p.CATEGORIES, ".categories-region"),
-                            V()(e, $p.EXTERNAL_PROVIDER_IDS, ".externalProviderIDs-region"),
-                            V()(e, $p.OPENING_HOURS, ".openingHours-region"),
-                            V()(e, $p.URL, ".url-region"),
-                            V()(e, $p.PHONE, ".phone-region"),
-                            V()(e, $p.SERVICES, ".services-region"),
-                            V()(e, $p.IMAGES, ".images-region"),
-                            V()(e, Kp.PARKING_TYPE, ".parkingType-region"),
-                            V()(e, Kp.HAS_TBR, ".hasTBR-region"),
-                            V()(e, Kp.CAN_EXIT_WHILE_CLOSED, ".canExitWhileClosed-region"),
-                            V()(e, Kp.COST_TYPE, ".costType-region"),
-                            V()(e, Kp.PAYMENT_TYPE, ".paymentType-region"),
-                            V()(e, Kp.EXTIMATED_NUMBER_OF_SPOTS, ".estimatedNumberOfSpots-region"),
-                            V()(e, Kp.LOT_TYPE, ".lotType-region"),
+                            V()(e, Kp.NAME, ".name-region"),
+                            V()(e, Kp.DESCRIPTION, ".description-region"),
+                            V()(e, tg, ".address-region"),
+                            V()(e, Kp.LOCK_RANK, ".lockRank-region"),
+                            V()(e, Kp.BRAND, ".brand-region"),
+                            V()(e, Kp.CATEGORIES, ".categories-region"),
+                            V()(e, Kp.EXTERNAL_PROVIDER_IDS, ".externalProviderIDs-region"),
+                            V()(e, Kp.OPENING_HOURS, ".openingHours-region"),
+                            V()(e, Kp.URL, ".url-region"),
+                            V()(e, Kp.PHONE, ".phone-region"),
+                            V()(e, Kp.SERVICES, ".services-region"),
+                            V()(e, Kp.IMAGES, ".images-region"),
+                            V()(e, Jp.PARKING_TYPE, ".parkingType-region"),
+                            V()(e, Jp.HAS_TBR, ".hasTBR-region"),
+                            V()(e, Jp.CAN_EXIT_WHILE_CLOSED, ".canExitWhileClosed-region"),
+                            V()(e, Jp.COST_TYPE, ".costType-region"),
+                            V()(e, Jp.PAYMENT_TYPE, ".paymentType-region"),
+                            V()(e, Jp.EXTIMATED_NUMBER_OF_SPOTS, ".estimatedNumberOfSpots-region"),
+                            V()(e, Jp.LOT_TYPE, ".lotType-region"),
                             e
                     }
                 }, {
@@ -60575,49 +60383,49 @@
                                         },
                                         optionsList: t.getPropertyOptions.bind(t),
                                         minLength: 2,
-                                        view: Hp,
+                                        view: zp,
                                         observeAttribute: l.a.identity,
                                         model: e,
                                         allowNull: !1,
                                         labels: this._optionsListToLabels
                                     }
                                 },
-                                V()(n, $p.NAME, {
-                                    view: sg,
-                                    observeAttribute: $p.ALIASES,
-                                    mainAttribute: $p.NAME
+                                V()(n, Kp.NAME, {
+                                    view: rg,
+                                    observeAttribute: Kp.ALIASES,
+                                    mainAttribute: Kp.NAME
                                 }),
-                                V()(n, $p.DESCRIPTION, {
-                                    view: ng,
+                                V()(n, Kp.DESCRIPTION, {
+                                    view: ig,
                                     minLength: 0,
                                     allowNull: !0
                                 }),
-                                V()(n, eg, {
-                                    view: Wp,
+                                V()(n, tg, {
+                                    view: Hp,
                                     allowNull: !0,
                                     style: "single-line"
                                 }),
-                                V()(n, $p.LOCK_RANK, {
-                                    view: Wp,
+                                V()(n, Kp.LOCK_RANK, {
+                                    view: Hp,
                                     minLength: 0,
                                     allowNull: !0,
                                     style: "single-line",
                                     labels: function(e, t) {
                                         return t.map(function(e) {
-                                            return _n.default.formatRank(e)
+                                            return yn.default.formatRank(e)
                                         })
                                     }
                                 }),
-                                V()(n, $p.BRAND, {
-                                    view: Wp,
+                                V()(n, Kp.BRAND, {
+                                    view: Hp,
                                     allowNull: !0,
                                     style: "single-line"
                                 }),
-                                V()(n, $p.CATEGORIES, {
-                                    view: qp,
+                                V()(n, Kp.CATEGORIES, {
+                                    view: Yp,
                                     minLength: 2,
                                     minSelectionCount: 1,
-                                    mainAttribute: Qp,
+                                    mainAttribute: eg,
                                     isMainVenuePoint: !t.getTargetVenue().is2D(),
                                     labels: function(e, t) {
                                         return t.map(function(e) {
@@ -60625,25 +60433,25 @@
                                         })
                                     }
                                 }),
-                                V()(n, $p.EXTERNAL_PROVIDER_IDS, {
-                                    view: ig,
+                                V()(n, Kp.EXTERNAL_PROVIDER_IDS, {
+                                    view: sg,
                                     minLength: 1,
                                     labels: this._createProviderIdLabels
                                 }),
-                                V()(n, $p.OPENING_HOURS, {
+                                V()(n, Kp.OPENING_HOURS, {
                                     minLength: 1
                                 }),
-                                V()(n, $p.URL, {
-                                    view: Wp,
+                                V()(n, Kp.URL, {
+                                    view: Hp,
                                     style: "single-line",
                                     allowNull: !0
                                 }),
-                                V()(n, $p.PHONE, {
-                                    view: Wp,
+                                V()(n, Kp.PHONE, {
+                                    view: Hp,
                                     style: "single-line",
                                     allowNull: !0
                                 }),
-                                V()(n, $p.SERVICES, {
+                                V()(n, Kp.SERVICES, {
                                     minLength: 1,
                                     labels: function(e, t) {
                                         return t.map(function(e) {
@@ -60651,14 +60459,14 @@
                                         })
                                     }
                                 }),
-                                V()(n, $p.IMAGES, {
-                                    view: Yp,
+                                V()(n, Kp.IMAGES, {
+                                    view: $p,
                                     imagesUrls: function() {
-                                        var e = t.createImagesList($p.IMAGES).filter(function(e) {
+                                        var e = t.createImagesList(Kp.IMAGES).filter(function(e) {
                                             return e.attributes.approved
                                         });
                                         return l.a.compact(e.map(function(e) {
-                                            return e.getUrl(Hn.IMAGE_SIZE.WEB)
+                                            return e.getUrl(zn.IMAGE_SIZE.WEB)
                                         }))
                                     },
                                     minLength: 1,
@@ -60672,7 +60480,7 @@
                                         },
                                         optionsList: t.getParkingPropertyOptions.bind(t),
                                         minLength: 2,
-                                        view: Wp,
+                                        view: Hp,
                                         observeAttribute: l.a.identity,
                                         model: e,
                                         allowNull: !1,
@@ -60683,11 +60491,11 @@
                                         }
                                     }
                                 },
-                                V()(i, Kp.PARKING_TYPE, {
+                                V()(i, Jp.PARKING_TYPE, {
                                     allowNull: !0,
                                     style: "single-line"
                                 }),
-                                V()(i, Kp.HAS_TBR, {
+                                V()(i, Jp.HAS_TBR, {
                                     allowNull: !0,
                                     style: "single-line",
                                     labels: function(e, t) {
@@ -60696,7 +60504,7 @@
                                         })
                                     }
                                 }),
-                                V()(i, Kp.CAN_EXIT_WHILE_CLOSED, {
+                                V()(i, Jp.CAN_EXIT_WHILE_CLOSED, {
                                     allowNull: !0,
                                     style: "single-line",
                                     labels: function(e, t) {
@@ -60705,15 +60513,15 @@
                                         })
                                     }
                                 }),
-                                V()(i, Kp.COST_TYPE, {
+                                V()(i, Jp.COST_TYPE, {
                                     allowNull: !0,
                                     style: "single-line"
                                 }),
-                                V()(i, Kp.PAYMENT_TYPE, {
-                                    view: Hp,
+                                V()(i, Jp.PAYMENT_TYPE, {
+                                    view: zp,
                                     minLength: 1
                                 }),
-                                V()(i, Kp.EXTIMATED_NUMBER_OF_SPOTS, {
+                                V()(i, Jp.EXTIMATED_NUMBER_OF_SPOTS, {
                                     style: "single-line",
                                     allowNull: !0,
                                     labels: function(e, t) {
@@ -60722,8 +60530,8 @@
                                         })
                                     }
                                 }),
-                                V()(i, Kp.LOT_TYPE, {
-                                    view: Hp,
+                                V()(i, Jp.LOT_TYPE, {
+                                    view: zp,
                                     minLength: 1,
                                     labels: function(e, t) {
                                         return t.map(function(e) {
@@ -60740,7 +60548,7 @@
                         this.venues = e.venues,
                             this.mainVenue = e.mainVenue,
                             this.dataModel = e.dataModel,
-                            this.merger = new tg({
+                            this.merger = new ng({
                                 venues: this.venues,
                                 mainVenue: this.mainVenue,
                                 dataModel: this.dataModel
@@ -60788,7 +60596,7 @@
                     key: "_onSelectionChanged",
                     value: function(e) {
                         var t = e.attribute;
-                        t === $p.CATEGORIES ? this._onCategoryChanged() : t === $p.OPENING_HOURS ? this._onOpeningHoursChanged() : t === $p.BRAND && this._validateBrand()
+                        t === Kp.CATEGORIES ? this._onCategoryChanged() : t === Kp.OPENING_HOURS ? this._onOpeningHoursChanged() : t === Kp.BRAND && this._validateBrand()
                     }
                 }, {
                     key: "_onCategoryChanged",
@@ -60805,8 +60613,8 @@
                 }, {
                     key: "_doOpeningHoursOverlap",
                     value: function() {
-                        var e = this.merger.getAttributeValue($p.OPENING_HOURS);
-                        return Object(rg.containsOverlappingOpeningHours)(e)
+                        var e = this.merger.getAttributeValue(Kp.OPENING_HOURS);
+                        return Object(og.containsOverlappingOpeningHours)(e)
                     }
                 }, {
                     key: "_rebuildServicesView",
@@ -60815,15 +60623,15 @@
                             t = function(e) {
                                 for (var t = 1; t < arguments.length; t++) {
                                     var n = null != arguments[t] ? arguments[t] : {};
-                                    t % 2 ? og(n, !0).forEach(function(t) {
+                                    t % 2 ? ag(n, !0).forEach(function(t) {
                                         V()(e, t, n[t])
-                                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : og(n).forEach(function(t) {
+                                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ag(n).forEach(function(t) {
                                         Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                     })
                                 }
                                 return e
-                            }({}, e.DEFAULT, {}, e[$p.SERVICES]);
-                        this._createSelectionView($p.SERVICES, t)
+                            }({}, e.DEFAULT, {}, e[Kp.SERVICES]);
+                        this._createSelectionView(Kp.SERVICES, t)
                     }
                 }, {
                     key: "_validateBrand",
@@ -60864,7 +60672,7 @@
                 }, {
                     key: "_createProviderIdLabels",
                     value: function() {
-                        return this.merger.getPropertyOptions($p.EXTERNAL_PROVIDER_IDS)
+                        return this.merger.getPropertyOptions(Kp.EXTERNAL_PROVIDER_IDS)
                     }
                 }, {
                     key: "_onApplyClicked",
@@ -60901,9 +60709,9 @@
                 }]),
                 t
         }(c.a.View),
-        lg = n(206);
+        ug = n(207);
 
-    function ug(e, t) {
+    function cg(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -60911,7 +60719,7 @@
             })),
             n
     }
-    var cg = function(e) {
+    var dg = function(e) {
             function t(e) {
                 var n, i = e.dataModel,
                     s = void 0 === i ? null : i,
@@ -60921,14 +60729,14 @@
                     l = void 0 === a ? null : a,
                     u = e.map,
                     c = void 0 === u ? null : u,
-                    d = $u()(e, ["dataModel", "selection", "selectionManager", "map"]);
+                    d = Ku()(e, ["dataModel", "selection", "selectionManager", "map"]);
                 return h()(this, t),
                     (n = m()(this, _()(t).call(this, function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? ug(n, !0).forEach(function(t) {
+                            t % 2 ? cg(n, !0).forEach(function(t) {
                                 V()(e, t, n[t])
-                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ug(n).forEach(function(t) {
+                            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : cg(n).forEach(function(t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             })
                         }
@@ -61006,7 +60814,7 @@
                 g()(t, [{
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).call(this),
+                        jt()(_()(t.prototype), "onRender", this).call(this),
                             this._showLandmarksCollectionView()
                     }
                 }, {
@@ -61048,7 +60856,7 @@
                     key: "_showLandmarksCollectionView",
                     value: function() {
                         this.landmarksCollection = this._creteLandmarksCollection(),
-                            this.showChildView("landmarksCollection", new Gp({
+                            this.showChildView("landmarksCollection", new Wp({
                                 collection: this.landmarksCollection
                             }))
                     }
@@ -61139,13 +60947,13 @@
                     key: "onChildviewMergeClick",
                     value: function(e) {
                         var t = this,
-                            n = new ag({
+                            n = new lg({
                                 venues: this.getLandmarks(),
                                 dataModel: this._dataModel,
                                 mainVenue: e
                             });
                         n.on("doMerge", function(e) {
-                                var n = new lg.default(e.sourceVenues, e.targetVenues, e.attributes);
+                                var n = new ug.default(e.sourceVenues, e.targetVenues, e.attributes);
                                 t._dataModel.actionManager.add(n)
                             }),
                             W.app.layout.getRegion("dialogRegion").show(n)
@@ -61184,14 +60992,14 @@
                     key: "_getDrawingContext",
                     value: function() {
                         return null == this._drawingContext && (this._drawingContext = this.map.getDrawingContext(),
-                                this._drawingContext.setStyleMap(jn),
+                                this._drawingContext.setStyleMap(Un),
                                 this._drawingContext.moveLayerToTop()),
                             this._drawingContext
                     }
                 }, {
                     key: "_drawGeometry",
                     value: function(e) {
-                        this._getDrawingContext().addFeatures([new OL.Feature.Vector(ft.cloneGeometry(e))])
+                        this._getDrawingContext().addFeatures([new OL.Feature.Vector(mt.cloneGeometry(e))])
                     }
                 }, {
                     key: "_destroyDrawingContext",
@@ -61223,8 +61031,8 @@
                     }
                 }]),
                 t
-        }(Xu),
-        dg = function(e) {
+        }(Qu),
+        hg = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -61294,17 +61102,17 @@
                     value: function() {
                         return {
                             charCount: {
-                                behaviorClass: al,
+                                behaviorClass: ll,
                                 charLimits: [{
                                     inputSelector: ".subject-input",
                                     charCountSelector: ".subject-max-length",
-                                    maxLength: ol.a.prototype.MAX_SUBJECT_LENGTH,
+                                    maxLength: al.a.prototype.MAX_SUBJECT_LENGTH,
                                     modelAttribute: "formModel",
                                     observe: "subject"
                                 }, {
                                     inputSelector: ".body-textarea",
                                     charCountSelector: ".body-max-length",
-                                    maxLength: ol.a.prototype.MAX_BODY_LENGTH,
+                                    maxLength: al.a.prototype.MAX_BODY_LENGTH,
                                     modelAttribute: "formModel",
                                     observe: "body"
                                 }]
@@ -61345,7 +61153,7 @@
                 t
         }(c.a.View);
 
-    function hg(e, t) {
+    function pg(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -61353,7 +61161,7 @@
             })),
             n
     }
-    var pg = function(e) {
+    var gg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -61386,21 +61194,21 @@
                     value: function() {
                         return {
                             dateTimePickers: {
-                                behaviorClass: va,
+                                behaviorClass: _a,
                                 modelAttribute: "viewModel"
                             },
                             charCount: {
-                                behaviorClass: al,
+                                behaviorClass: ll,
                                 charLimits: [{
                                     inputSelector: ".new-subject-input",
                                     charCountSelector: ".new-subject-max-length",
-                                    maxLength: ol.a.prototype.MAX_SUBJECT_LENGTH,
+                                    maxLength: al.a.prototype.MAX_SUBJECT_LENGTH,
                                     modelAttribute: "newFormModel",
                                     observe: "subject"
                                 }, {
                                     inputSelector: ".new-body-input",
                                     charCountSelector: ".new-body-max-length",
-                                    maxLength: ol.a.prototype.MAX_BODY_LENGTH,
+                                    maxLength: al.a.prototype.MAX_BODY_LENGTH,
                                     modelAttribute: "newFormModel",
                                     observe: "body"
                                 }]
@@ -61413,14 +61221,14 @@
                         return function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var n = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? hg(n, !0).forEach(function(t) {
+                                t % 2 ? pg(n, !0).forEach(function(t) {
                                     V()(e, t, n[t])
-                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : hg(n).forEach(function(t) {
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : pg(n).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                                 })
                             }
                             return e
-                        }({}, Vt()(_()(t.prototype), "bindings", this).call(this), {
+                        }({}, jt()(_()(t.prototype), "bindings", this).call(this), {
                             ".new-comment-form": {
                                 observe: "isNew",
                                 visible: !0
@@ -61486,7 +61294,7 @@
                 }, {
                     key: "onFeaturesChanged",
                     value: function(e) {
-                        Vt()(_()(t.prototype), "onFeaturesChanged", this).apply(this, arguments),
+                        jt()(_()(t.prototype), "onFeaturesChanged", this).apply(this, arguments),
                             e[0].isNew() && this.newFormModel.set({
                                 subject: this.viewModel.attributes.subject,
                                 body: this.viewModel.attributes.body
@@ -61500,7 +61308,7 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        Vt()(_()(t.prototype), "onRender", this).apply(this, arguments);
+                        jt()(_()(t.prototype), "onRender", this).apply(this, arguments);
                         var e = this.getFeature();
                         e.isNew() ? this.newFormModel = new o.a.Model({
                                 subject: this.viewModel.attributes.subject,
@@ -61513,7 +61321,7 @@
                 }, {
                     key: "_renderLockEdit",
                     value: function() {
-                        var e = new Ic({
+                        var e = new Mc({
                             model: this.viewModel
                         });
                         this.showChildView("lockEditRegion", e)
@@ -61521,7 +61329,7 @@
                 }, {
                     key: "_renderNameEditor",
                     value: function(e) {
-                        var t = new dg({
+                        var t = new hg({
                             model: this.viewModel
                         });
                         return this.showChildView("nameEditorRegion", t)
@@ -61529,7 +61337,7 @@
                 }, {
                     key: "_renderConversationRegion",
                     value: function(e) {
-                        var t = new ll({
+                        var t = new ul({
                             commentable: e
                         });
                         return this.showChildView("conversationRegion", t)
@@ -61540,7 +61348,7 @@
                         if (n.stickitChange) {
                             var i, s = this.getFeature();
                             i = "true" === t ? s.getPointGeometry() : s.getPolygonGeometry();
-                            var r = new Qt.default(s, W.model.mapComments, s.geometry, i);
+                            var r = new en.default(s, W.model.mapComments, s.geometry, i);
                             W.model.actionManager.add(r)
                         }
                     }
@@ -61565,8 +61373,8 @@
                     }
                 }]),
                 t
-        }(Xu),
-        gg = function() {
+        }(Qu),
+        fg = function() {
             function e(t) {
                 h()(this, e),
                     this.options = t,
@@ -61579,27 +61387,27 @@
                         var e, t;
                         return {
                             TYPE_TO_EDITOR_CLASS: (e = {},
-                                V()(e, Rt.a.SEGMENT, Fp),
-                                V()(e, Rt.a.VENUE, hh),
-                                V()(e, Rt.a.NODE, fh),
-                                V()(e, Rt.a.SPEED_CAMERA, Vc),
-                                V()(e, Rt.a.BIG_JUNCTION, Oc),
-                                V()(e, Rt.a.CITY, jc),
-                                V()(e, Rt.a.MAP_COMMENT, pg),
+                                V()(e, Dt.a.SEGMENT, Bp),
+                                V()(e, Dt.a.VENUE, ph),
+                                V()(e, Dt.a.NODE, mh),
+                                V()(e, Dt.a.SPEED_CAMERA, jc),
+                                V()(e, Dt.a.BIG_JUNCTION, Rc),
+                                V()(e, Dt.a.CITY, Uc),
+                                V()(e, Dt.a.MAP_COMMENT, gg),
                                 e),
                             TYPE_TO_OPTIONS: (t = {},
-                                V()(t, Rt.a.SEGMENT, function() {
+                                V()(t, Dt.a.SEGMENT, function() {
                                     return {
                                         selectionManager: this.options.selectionManager,
                                         segmentSelection: this.options.selectionManager.getSegmentSelection()
                                     }
                                 }),
-                                V()(t, Rt.a.VENUE, function() {
+                                V()(t, Dt.a.VENUE, function() {
                                     return {
                                         streetViewController: this.options.streetViewController
                                     }
                                 }),
-                                V()(t, Rt.a.BIG_JUNCTION, function() {
+                                V()(t, Dt.a.BIG_JUNCTION, function() {
                                     return {
                                         selectionManager: this.options.selectionManager
                                     }
@@ -61611,8 +61419,8 @@
                     key: "MULTI_SELECTION",
                     get: function() {
                         return {
-                            TYPE_TO_EDITOR_CLASS: V()({}, Rt.a.VENUE, cg),
-                            TYPE_TO_OPTIONS: V()({}, Rt.a.VENUE, function() {
+                            TYPE_TO_EDITOR_CLASS: V()({}, Dt.a.VENUE, dg),
+                            TYPE_TO_OPTIONS: V()({}, Dt.a.VENUE, function() {
                                 return {
                                     selectionManager: this.options.selectionManager
                                 }
@@ -61641,7 +61449,7 @@
                 }]),
                 e
         }(),
-        fg = function() {
+        mg = function() {
             function e(t) {
                 h()(this, e),
                     this.events = new OpenLayers.Events(this),
@@ -61694,7 +61502,7 @@
                     key: "setSessionsPage",
                     value: function(e, t, n) {
                         var i = this;
-                        this.$element.find(".result-list-container").html(Object(ms.getHTML)("templates/archive-sessions", {
+                        this.$element.find(".result-list-container").html(Object(vs.getHTML)("templates/archive-sessions", {
                                 sessions: e,
                                 username: t,
                                 isStaff: n
@@ -61744,12 +61552,12 @@
                 }]),
                 e
         }();
-    Object.assign(fg.prototype, {
+    Object.assign(mg.prototype, {
         ResultsPerPage: 15,
         CLASS_NAME: "Waze.View.Archive"
     });
-    var mg = fg,
-        vg = c.a.View.extend({
+    var vg = mg,
+        _g = c.a.View.extend({
             template: "templates/archive-panel",
             serializeData: function() {
                 return {
@@ -61764,8 +61572,8 @@
                 }
             }
         }),
-        _g = n(201),
-        yg = function() {
+        yg = n(202),
+        bg = function() {
             function e(t, n) {
                 h()(this, e),
                     this.events = new OpenLayers.Events(this),
@@ -61813,13 +61621,13 @@
                 }, {
                     key: "setEditableAreasPage",
                     value: function(e) {
-                        this.$element.find(".result-list-container").html(Object(ms.getHTML)("templates/editable-areas", {
+                        this.$element.find(".result-list-container").html(Object(vs.getHTML)("templates/editable-areas", {
                                 areas: e,
-                                EDITABLE_AREA_TYPES: _g.EDITABLE_AREA_TYPES
+                                EDITABLE_AREA_TYPES: yg.EDITABLE_AREA_TYPES
                             })),
                             this.$element.find("#permissions-info").tooltip({
                                 placement: "bottom",
-                                title: Object(ms.getHTML)("templates/sidebar/user-permissions-tooltip", {
+                                title: Object(vs.getHTML)("templates/sidebar/user-permissions-tooltip", {
                                     editableMiles: this.user.editableMiles,
                                     isCountryManager: this.user.isCountryManager(),
                                     isAreaManager: this.user.isAreaManager
@@ -61846,12 +61654,12 @@
                 }]),
                 e
         }();
-    Object.assign(yg.prototype, {
+    Object.assign(bg.prototype, {
         ResultsPerPage: 15,
         CLASS_NAME: "Waze.View.EditableAreas"
     });
-    var bg = yg,
-        Eg = OpenLayers.Class(OpenLayers.Control, ct.a, {
+    var Eg = bg,
+        wg = OpenLayers.Class(OpenLayers.Control, dt.a, {
             sidePanelView: null,
             editableAreasListView: null,
             layerView: null,
@@ -61866,13 +61674,13 @@
             initialize: function(e) {
                 var t = e.user;
                 OpenLayers.Control.prototype.initialize.apply(this, arguments),
-                    this.sidePanelView = new mg(s()("#sidepanel-drives")),
-                    this.editableAreasListView = new bg(s()("#sidepanel-areas"), t),
+                    this.sidePanelView = new vg(s()("#sidepanel-drives")),
+                    this.editableAreasListView = new Eg(s()("#sidepanel-areas"), t),
                     this.layerView = W.map.archiveLayer,
                     this.editableAreasLayer = W.map.userLayer,
                     this.layerView.pm = this,
                     this.model = W.model,
-                    this._descartesClient = new Is.default,
+                    this._descartesClient = new Ms.default,
                     this._createEditableAreas()
             },
             _createEditableAreas: function() {
@@ -61969,8 +61777,8 @@
                     this.ZoomToEditableArea(t)
             },
             ZoomToEditableArea: function(e) {
-                var t = ft.getBounds(e.geometry),
-                    n = ft.getBoundsCenterLonLat(e.geometry),
+                var t = mt.getBounds(e.geometry),
+                    n = mt.getBoundsCenterLonLat(e.geometry),
                     i = this.map.getZoomForExtent(t);
                 this.map.setCenter(n, i)
             },
@@ -61981,14 +61789,14 @@
                 var t = this,
                     n = this;
                 this._getFullArchiveDataById(e.id).then(function(e) {
-                    var n = dn()(e, 2),
+                    var n = hn()(e, 2),
                         i = n[0],
                         s = n[1];
                     return t.model.mergeResponse(i),
                         t.model.mergeResponse(s),
                         [i.archives.objects[0], s.archiveSessions.objects[0]]
                 }).then(function(t) {
-                    var i = dn()(t, 2),
+                    var i = hn()(t, 2),
                         r = i[0],
                         o = i[1];
                     n.currentSession = r,
@@ -61997,7 +61805,7 @@
                         n.currentSessionData = o,
                         null !== n.panelView && (n.panelView.off(),
                             n.panelView.destroy()),
-                        n.panelView = new vg({
+                        n.panelView = new _g({
                             model: o
                         }),
                         n.panelView.on("destroy", n.onPanelClosed, n),
@@ -62023,12 +61831,12 @@
                     this.layerView.clearDrive()
             },
             disable: function() {
-                ct.a.prototype.disable.apply(this, arguments),
+                dt.a.prototype.disable.apply(this, arguments),
                     this.onPanelClosed()
             },
             CLASS_NAME: "Waze.Control.Archive"
         }),
-        wg = function(e) {
+        Sg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62059,7 +61867,7 @@
                         this.model = new o.a.Model({
                                 regionCode: e.regionCode
                             }),
-                            this.regionOptions = Cr.REGION_CODES.map(function(e) {
+                            this.regionOptions = Or.REGION_CODES.map(function(e) {
                                 return {
                                     label: I18n.t("envs.".concat(e)),
                                     value: e
@@ -62085,14 +61893,14 @@
                 }]),
                 t
         }(c.a.View),
-        Sg = o.a.Marionette.View.extend({
+        kg = o.a.Marionette.View.extend({
             template: "templates/prefs-panel",
             regions: {
                 envSelectRegion: "#env-select"
             },
             behaviors: {
                 accelerators: {
-                    behaviorClass: Co
+                    behaviorClass: Oo
                 }
             },
             events: {
@@ -62111,7 +61919,7 @@
                 "input[name=showTransparentTurnArrows]": "showTransparentTurnArrows"
             },
             onRender: function() {
-                this.showChildView("envSelectRegion", new wg({
+                this.showChildView("envSelectRegion", new Sg({
                         regionCode: W.app.getAppRegionCode()
                     })),
                     this.stickit()
@@ -62131,7 +61939,7 @@
                 })
             }
         }),
-        kg = c.a.View.extend({
+        Tg = c.a.View.extend({
             template: "templates/sidebar/user-info",
             className: "flex-parent",
             ui: {
@@ -62147,7 +61955,7 @@
             },
             onRender: function() {
                 var e = this;
-                return this.showChildView("preferencesRegion", new Sg({
+                return this.showChildView("preferencesRegion", new kg({
                         model: W.prefs
                     })),
                     this.feedControl.render({
@@ -62158,7 +61966,7 @@
                     })
             },
             onAttach: function() {
-                this.archiveControl = new Eg({
+                this.archiveControl = new wg({
                         user: this.model.attributes.user
                     }),
                     W.map.addControl(this.archiveControl),
@@ -62176,10 +61984,10 @@
                 }
             }
         }),
-        Tg = c.a.View.extend({
+        Ig = c.a.View.extend({
             template: "templates/sidebar/user-sandbox"
         }),
-        Ig = c.a.View.extend({
+        Mg = c.a.View.extend({
             template: "templates/sidebar/sidebar",
             className: "sidebar-layout",
             regions: {
@@ -62219,7 +62027,7 @@
                     this.selectionManager = e.selectionManager,
                     this.editingMediator = e.editingMediator,
                     this.streetViewController = e.streetViewController,
-                    this.featureEditorFactory = new gg({
+                    this.featureEditorFactory = new fg({
                         selectionManager: this.selectionManager,
                         dataModel: this.dataModel,
                         streetViewController: this.streetViewController
@@ -62257,7 +62065,7 @@
                 this._toggleHouseNumbers()
             },
             _renderUserInfo: function() {
-                return this.options.sandbox ? this.showChildView("userRegion", new Tg) : this.options.loggedIn ? this.showChildView("userRegion", new kg({
+                return this.options.sandbox ? this.showChildView("userRegion", new Ig) : this.options.loggedIn ? this.showChildView("userRegion", new Tg({
                     model: this.model,
                     feedControl: this.options.feedControl
                 })) : this.getRegion("userRegion").empty()
@@ -62269,7 +62077,7 @@
                 return this.$el.scrollTop(this.scrollTop)
             }
         }),
-        Mg = c.a.View.extend({
+        Ag = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar",
             className: "toolbar",
             regions: {
@@ -62278,7 +62086,7 @@
                 userBoxOrLoginButton: "#user-box-or-login-button-region"
             }
         }),
-        Ag = function(e) {
+        Cg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62311,7 +62119,7 @@
                 }]),
                 t
         }(c.a.View),
-        Cg = function(e) {
+        Og = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62399,13 +62207,13 @@
                 }]),
                 t
         }(c.a.View),
-        Og = new RegExp(/^\s?(-?\d+(?:\.\d+)?)\s*[,\s]{1}\s*(-?\d+(?:\.\d+)?)\s*$/),
-        Rg = [{
+        Rg = new RegExp(/^\s?(-?\d+(?:\.\d+)?)\s*[,\s]{1}\s*(-?\d+(?:\.\d+)?)\s*$/),
+        Dg = [{
             test: function(e) {
-                return null !== Og.exec(e)
+                return null !== Rg.exec(e)
             },
             search: function(e) {
-                var t = Og.exec(e);
+                var t = Rg.exec(e);
                 this._goToResult(new o.a.Model({
                         venue: {
                             location: {
@@ -62417,7 +62225,7 @@
                     W.Report.searchAction("search", "custom_lonlat")
             }
         }],
-        Dg = function(e) {
+        Lg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62538,8 +62346,8 @@
                         var e = this;
                         this.showChildView("results", new c.a.CollectionView({
                                 collection: this.collection,
-                                childView: Cg,
-                                emptyView: Ag,
+                                childView: Og,
+                                emptyView: Cg,
                                 emptyViewOptions: function() {
                                     return {
                                         model: e.model
@@ -62573,7 +62381,7 @@
                 }, {
                     key: "_getSearchLayer",
                     value: function() {
-                        return this.map.getLayerByUniqueName(Qs.SEARCH)
+                        return this.map.getLayerByUniqueName(er.SEARCH)
                     }
                 }, {
                     key: "_doSearch",
@@ -62583,7 +62391,7 @@
                 }, {
                     key: "_parseCustomSearch",
                     value: function(e) {
-                        for (var t = Rg, n = 0; n < t.length; n++) {
+                        for (var t = Dg, n = 0; n < t.length; n++) {
                             var i = t[n];
                             if (i.test.call(this, e))
                                 return i.search.call(this, e),
@@ -62643,8 +62451,8 @@
                     key: "_goToResult",
                     value: function(e) {
                         var t = e.get("venue"),
-                            n = se.project(bt.toLonLat(t.location)),
-                            i = bt.fromLonLat(n),
+                            n = se.project(Et.toLonLat(t.location)),
+                            i = Et.fromLonLat(n),
                             s = new OL.Feature.Vector(i),
                             r = this._getSearchLayer();
                         r.removeAllFeatures(),
@@ -62655,7 +62463,7 @@
                 }, {
                     key: "onRender",
                     value: function() {
-                        this.map.setLayerVisibility(Qs.SEARCH, !0),
+                        this.map.setLayerVisibility(er.SEARCH, !0),
                             this.stickit()
                     }
                 }, {
@@ -62677,7 +62485,7 @@
                     key: "onDestroy",
                     value: function() {
                         this._unRegisterEvents(),
-                            this.map.setLayerVisibility(Qs.SEARCH, !1)
+                            this.map.setLayerVisibility(er.SEARCH, !1)
                     }
                 }, {
                     key: "template",
@@ -62687,8 +62495,8 @@
                 }]),
                 t
         }(c.a.View),
-        Lg = n(170),
-        Pg = function(e) {
+        Pg = n(171),
+        Ng = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62726,7 +62534,7 @@
                     key: "onRender",
                     value: function() {
                         this.stickit(this.viewModel),
-                            this.tippy = Lg.a.one(this.ui.userBoxAvatar[0], {
+                            this.tippy = Pg.a.one(this.ui.userBoxAvatar[0], {
                                 content: this.ui.userBoxContainer[0],
                                 arrow: !0,
                                 trigger: "click",
@@ -62747,7 +62555,7 @@
                 }, {
                     key: "templateContext",
                     value: function() {
-                        var e = this.model.getAttributes();
+                        var e = this.model;
                         return {
                             normalizedLevel: e.normalizedLevel,
                             userName: e.userName,
@@ -62778,7 +62586,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ng = function(e) {
+        xg = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -62912,7 +62720,7 @@
                             this.ui.container.tooltip({
                                 placement: "bottom",
                                 html: !0,
-                                title: Object(ms.getHTML)("Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip", {
+                                title: Object(vs.getHTML)("Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-tooltip", {
                                     text: e,
                                     icon: "lock-light"
                                 })
@@ -63016,12 +62824,12 @@
                 }]),
                 t
         }(c.a.View),
-        xg = {
+        Vg = {
             "map-comments": "w-icon-chat",
             venues: "w-icon-location",
             drawing: "w-icon-road"
         },
-        Vg = c.a.CompositeView.extend({
+        jg = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/Toolbar/templates/toolbar-item-group",
             enabled: !0,
             className: function() {
@@ -63036,7 +62844,7 @@
             childViewEvents: {
                 controlTriggered: "_hideMenu"
             },
-            childView: Ng,
+            childView: xg,
             childViewContainer: "menu",
             collectionEvents: {
                 "change:active": function(e, t) {
@@ -63051,7 +62859,7 @@
             },
             templateContext: function() {
                 return {
-                    iconClass: xg[this._getGroupItemName()]
+                    iconClass: Vg[this._getGroupItemName()]
                 }
             },
             setClassName: function() {
@@ -63103,7 +62911,7 @@
                 return new(e.get("childView") ? e.get("childView") : t)(i)
             }
         }),
-        jg = function(e) {
+        Ug = function(e) {
             function t(e) {
                 var n;
                 return h()(this, t),
@@ -63184,9 +62992,9 @@
                 g()(t, [{
                     key: "_bindEvents",
                     value: function() {
-                        this._saveController && (this.listenTo(this._saveController, Dr, this._onSaveStarted),
-                                this.listenTo(this._saveController, Nr, this._onSaveFailed),
-                                this.listenTo(this._saveController, Pr, this._onSaveSuccess)),
+                        this._saveController && (this.listenTo(this._saveController, Lr, this._onSaveStarted),
+                                this.listenTo(this._saveController, xr, this._onSaveFailed),
+                                this.listenTo(this._saveController, Nr, this._onSaveSuccess)),
                             this.actionManager.events.on({
                                 scope: this,
                                 afteraction: this._onActionChange,
@@ -63253,7 +63061,7 @@
                     key: "_save",
                     value: function() {
                         this.model.get("enabled") && (this._control.trigger(),
-                            Cr.ENABLE_SAVE_IN_GROUPS || this._destroyChangesLog())
+                            Or.ENABLE_SAVE_IN_GROUPS || this._destroyChangesLog())
                     }
                 }, {
                     key: "_onActionChange",
@@ -63320,7 +63128,7 @@
                 t
         }(c.a.View);
 
-    function Ug(e, t) {
+    function Fg(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -63328,9 +63136,9 @@
             })),
             n
     }
-    var Fg = c.a.CollectionView.extend({
-        childView: Ng,
-        itemGroupView: Vg,
+    var Bg = c.a.CollectionView.extend({
+        childView: xg,
+        itemGroupView: jg,
         initialize: function(e) {
             this.map = e.map
         },
@@ -63340,12 +63148,12 @@
                     map: this.map
                 },
                 n = null != e.children;
-            return e.get("isSaveButton") ? new jg(function(e) {
+            return e.get("isSaveButton") ? new Ug(function(e) {
                 for (var t = 1; t < arguments.length; t++) {
                     var n = null != arguments[t] ? arguments[t] : {};
-                    t % 2 ? Ug(n, !0).forEach(function(t) {
+                    t % 2 ? Fg(n, !0).forEach(function(t) {
                         V()(e, t, n[t])
-                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Ug(n).forEach(function(t) {
+                    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Fg(n).forEach(function(t) {
                         Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                     })
                 }
@@ -63362,7 +63170,7 @@
         }
     });
 
-    function Bg(e, t) {
+    function Gg(e, t) {
         var n = Object.keys(e);
         return Object.getOwnPropertySymbols && n.push.apply(n, Object.getOwnPropertySymbols(e)),
             t && (n = n.filter(function(t) {
@@ -63370,8 +63178,8 @@
             })),
             n
     }
-    var Gg, Wg = c.a.CollectionView.extend({
-            childView: Ng,
+    var Wg, Hg = c.a.CollectionView.extend({
+            childView: xg,
             initialize: function(e) {
                 this.map = e.map,
                     this.mediator = e.mediator,
@@ -63383,12 +63191,12 @@
                     model: e,
                     map: this.map
                 };
-                return e.get("isSaveButton") ? new jg(function(e) {
+                return e.get("isSaveButton") ? new Ug(function(e) {
                     for (var t = 1; t < arguments.length; t++) {
                         var n = null != arguments[t] ? arguments[t] : {};
-                        t % 2 ? Bg(n, !0).forEach(function(t) {
+                        t % 2 ? Gg(n, !0).forEach(function(t) {
                             V()(e, t, n[t])
-                        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Bg(n).forEach(function(t) {
+                        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Gg(n).forEach(function(t) {
                             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                         })
                     }
@@ -63410,10 +63218,10 @@
                 return this.children.invoke("disable")
             }
         }),
-        Hg = n(193),
-        zg = n(89),
-        qg = n(130),
-        Yg = function(e) {
+        zg = n(194),
+        qg = n(90),
+        Yg = n(131),
+        $g = function(e) {
             function t(e, n) {
                 var i;
                 return h()(this, t),
@@ -63426,20 +63234,20 @@
                     key: "doAction",
                     value: function() {
                         var e, t = this;
-                        this.initialGeometry = ft.cloneGeometry(this.bigJunction.geometry),
+                        this.initialGeometry = mt.cloneGeometry(this.bigJunction.geometry),
                             this.bigJunction.getID() || (e = this.model.bigJunctions.generateUniqueID()),
                             this.bigJunction.setID(e),
                             this.bigJunction.state = OpenLayers.State.INSERT,
                             this.model.bigJunctions.put(this.bigJunction);
                         var n = this._findShortSegments();
                         n.forEach(function(n) {
-                            t.doSubAction(new tn.default(n, {
+                            t.doSubAction(new nn.default(n, {
                                 crossroadID: e
                             }, {
                                 dontSerialize: !0
                             }))
                         });
-                        var i = new qg.a(e, n, qg.a.ADD_JUNCTION_TO_SEGMENT);
+                        var i = new Yg.a(e, n, Yg.a.ADD_JUNCTION_TO_SEGMENT);
                         this.doSubAction(i);
                         var s = i.connectedSegments,
                             r = this._findMaxRankInSegmentArray(n.concat(s)),
@@ -63454,14 +63262,14 @@
                         var a = null;
                         if (this.model.getTopCityId() && (a = this.model.cities.getObjectById(this.model.getTopCityId())),
                             null === a && null != this.model.getTopCountry()) {
-                            var u = new zg.default(this.model.getTopState(), this.model.getTopCountry(), "", !0);
+                            var u = new qg.default(this.model.getTopState(), this.model.getTopCountry(), "", !0);
                             this.doSubAction(u),
                                 a = u.city
                         }
                         return null !== a && (this.attributes.cityID = a.getID(),
                                 this.bigJunction.attributes.cityID = a.getID()),
                             this.bigJunction.getShortestTurns().forEach(function(e) {
-                                return t.doSubAction(new Ho.default(t.model.getTurnGraph(), e))
+                                return t.doSubAction(new zo.default(t.model.getTurnGraph(), e))
                             }),
                             !0
                     }
@@ -63470,10 +63278,10 @@
                     value: function() {
                         var e = this;
                         return this.model.segments.getObjectArray(function(t) {
-                            var n = $t.getVertices(t.geometry),
+                            var n = Kt.getVertices(t.geometry),
                                 i = l.a.head(n),
                                 s = l.a.last(n);
-                            return !t.isDeleted() && t.isDrivable() && ft.containsPoint(e.initialGeometry, i) && ft.containsPoint(e.initialGeometry, s)
+                            return !t.isDeleted() && t.isDrivable() && mt.containsPoint(e.initialGeometry, i) && mt.containsPoint(e.initialGeometry, s)
                         })
                     }
                 }, {
@@ -63488,14 +63296,14 @@
                 }, {
                     key: "undoAction",
                     value: function() {
-                        return Vt()(_()(t.prototype), "undoAction", this).call(this),
+                        return jt()(_()(t.prototype), "undoAction", this).call(this),
                             this.model.bigJunctions.remove(this.bigJunction)
                     }
                 }, {
                     key: "redoAction",
                     value: function() {
                         this.model.bigJunctions.put(this.bigJunction),
-                            Vt()(_()(t.prototype), "redoAction", this).call(this)
+                            jt()(_()(t.prototype), "redoAction", this).call(this)
                     }
                 }, {
                     key: "serialize",
@@ -63503,8 +63311,8 @@
                         var e = this.attributes;
                         return e.id = this.bigJunction.getID(),
                             e.geometry = this.initialGeometry, {
-                                _objectType: Rt.a.BIG_JUNCTION,
-                                action: Ht.a.TYPE.ADD,
+                                _objectType: Dt.a.BIG_JUNCTION,
+                                action: zt.a.TYPE.ADD,
                                 attributes: e
                             }
                     }
@@ -63521,12 +63329,12 @@
                 }, {
                     key: "getAffectedUniqueIds",
                     value: function() {
-                        return [this.bigJunction.getUniqueID()].concat(Nt()(Vt()(_()(t.prototype), "getAffectedUniqueIds", this).call(this)))
+                        return [this.bigJunction.getUniqueID()].concat(xt()(jt()(_()(t.prototype), "getAffectedUniqueIds", this).call(this)))
                     }
                 }]),
                 t
         }(Ie.default),
-        $g = OpenLayers.Class(OpenLayers.Control.DrawFeature, ct.a, {
+        Kg = OpenLayers.Class(OpenLayers.Control.DrawFeature, dt.a, {
             keyHandler: null,
             snapControl: null,
             snappedFrom: null,
@@ -63549,7 +63357,7 @@
                     this.featureCancelled(e)
             },
             createFeature: function(e) {
-                return new Mt.a({
+                return new At.a({
                     geometry: e
                 })
             },
@@ -63557,7 +63365,7 @@
                 var t = this.createFeature(e);
                 !1 !== this.layer.events.triggerEvent("sketchcomplete", {
                         feature: t
-                    }) && ("OpenLayers.Geometry.LineString" === t.geometry.CLASS_NAME && (t.geometry = ft.simplify(t.geometry, this.drawingAccuracy * this.map.getResolution())),
+                    }) && ("OpenLayers.Geometry.LineString" === t.geometry.CLASS_NAME && (t.geometry = mt.simplify(t.geometry, this.drawingAccuracy * this.map.getResolution())),
                         t.state = OpenLayers.State.INSERT,
                         this.enableSnapping ? (this.snappedFrom && (this.snappedFrom.feature = this.snappedFrom.feature.model,
                                 this.snappedFrom.feature && this.snappedFrom.feature.setSnapped(!1)),
@@ -63569,7 +63377,7 @@
                     this.deactivate()
             },
             initialize: function(e, t, n, i) {
-                ct.a.prototype.initialize.apply(this, [i]),
+                dt.a.prototype.initialize.apply(this, [i]),
                     this.callbacks = Object.assign({
                         cancel: this.onDrawCancel
                     }, this.callbacks),
@@ -63586,7 +63394,7 @@
                     this.enableSnapping && this._createSnappingControl()
             },
             _createSnappingControl: function() {
-                this.snapControl = new ht({
+                this.snapControl = new pt({
                         layer: this.map.sketchLayer,
                         targets: [{
                             layer: this.map.nodeLayer,
@@ -63599,7 +63407,7 @@
                             layer: this.map.segmentLayer,
                             filter: {
                                 evaluate: function(e) {
-                                    return new Tt.CanEditGeometryUseCase(e.model.model).canEditSegmentGeometry(e.model)
+                                    return new It.CanEditGeometryUseCase(e.model.model).canEditSegmentGeometry(e.model)
                                 }
                             }
                         }]
@@ -63614,7 +63422,7 @@
                     })
             },
             setEnabled: function(e, t) {
-                ct.a.prototype.setEnabled.apply(this, arguments),
+                dt.a.prototype.setEnabled.apply(this, arguments),
                     e ? this.keyHandler.activate() : this.keyHandler.deactivate()
             },
             activate: function() {
@@ -63640,8 +63448,8 @@
             },
             CLASS_NAME: "Waze.Control.DrawFeature"
         }),
-        Kg = n(147),
-        Jg = OpenLayers.Class(OpenLayers.Handler, {
+        Jg = n(148),
+        Zg = OpenLayers.Class(OpenLayers.Handler, {
             drawing: !1,
             dragging: !1,
             layer: null,
@@ -63672,7 +63480,7 @@
                         }
                     }, this.layerOptions),
                     t = OpenLayers.Layer.Vector.prototype.renderers;
-                return OpenLayers.Layer.Vector.prototype.renderers = [Ki],
+                return OpenLayers.Layer.Vector.prototype.renderers = [Ji],
                     this.layer = new OpenLayers.Layer.Vector(this.CLASS_NAME, e),
                     OpenLayers.Layer.Vector.prototype.renderers = t,
                     this.map.addLayer(this.layer),
@@ -63721,12 +63529,12 @@
                 var t, n = this.map.getLonLatFromPixel(e),
                     i = oe.createLineString();
                 t = this.style ? Object.assign({}, this.style) : Object.assign({}, this.layerOptions.styleMap.styles.default.defaultStyle);
-                var s = he.metersToPixels(this.map, Kg.MIN_ROUNDABOUT_RADIUS_IN_METERS);
+                var s = he.metersToPixels(this.map, Jg.MIN_ROUNDABOUT_RADIUS_IN_METERS);
                 t.rx = s,
                     t.ry = s,
                     this.point = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(n.lon, n.lat), {}, t),
-                    $t.addPoint(i, ft.cloneGeometry(this.point.geometry)),
-                    $t.addPoint(i, ft.cloneGeometry(this.point.geometry)),
+                    Kt.addPoint(i, mt.cloneGeometry(this.point.geometry)),
+                    Kt.addPoint(i, mt.cloneGeometry(this.point.geometry)),
                     this.distanceLine = new OpenLayers.Feature.Vector(i),
                     this.callback("create", [this.point.geometry, this.point]),
                     this.point.geometry.clearBounds(),
@@ -63742,7 +63550,7 @@
                     this.dragging = !1,
                     this.regular = !1,
                     this.destroyFeature(),
-                    Math.min(this.rx, this.ry) >= he.metersToPixels(this.map, Kg.MIN_ROUNDABOUT_RADIUS_IN_METERS) && this.callback(n, [{
+                    Math.min(this.rx, this.ry) >= he.metersToPixels(this.map, Jg.MIN_ROUNDABOUT_RADIUS_IN_METERS) && this.callback(n, [{
                         x: t.lon,
                         y: t.lat,
                         rx: this.rx,
@@ -63761,7 +63569,7 @@
                 this.finalize(!0)
             },
             modifyFeature: function(e, t) {
-                var n, i, s, r = $t.getLastVertex(this.distanceLine.geometry),
+                var n, i, s, r = Kt.getLastVertex(this.distanceLine.geometry),
                     o = new OpenLayers.LonLat(this.point.geometry.x, this.point.geometry.y);
                 this.lastMove = e;
                 var a = this.map.getPixelFromLonLat(o),
@@ -63770,10 +63578,10 @@
                 Math.atan2(l, u),
                     this.rx = Math.abs(u),
                     this.ry = Math.abs(l);
-                var c = he.metersToPixels(this.map, Kg.MIN_ROUNDABOUT_RADIUS_IN_METERS);
+                var c = he.metersToPixels(this.map, Jg.MIN_ROUNDABOUT_RADIUS_IN_METERS);
                 this.rx < c && (this.rx = c),
                     this.ry < c && (this.ry = c);
-                var d = he.metersToPixels(this.map, Kg.MAX_ROUNDABOUT_RADIUS_IN_METERS);
+                var d = he.metersToPixels(this.map, Jg.MAX_ROUNDABOUT_RADIUS_IN_METERS);
                 this.rx > d && (this.rx = d),
                     this.ry > d && (this.ry = d);
                 var h = Math.max(this.rx, this.ry),
@@ -63796,8 +63604,8 @@
                     this.drawCircle()
             },
             _getRadiusLabel: function(e) {
-                var t = Pc.default.localizeUnit(Pc.UNIT.METER),
-                    n = Pc.default.getLocalizedValue(e, Pc.UNIT.METER),
+                var t = Nc.default.localizeUnit(Nc.UNIT.METER),
+                    n = Nc.default.getLocalizedValue(e, Nc.UNIT.METER),
                     i = Math.floor(n);
                 return I18n.t("measurements.length.".concat(t), {
                     count: i
@@ -63819,7 +63627,7 @@
             },
             CLASS_NAME: "Waze.Handler.Ellipse"
         }),
-        Zg = OpenLayers.Class(OpenLayers.Control, ct.a, {
+        Xg = OpenLayers.Class(OpenLayers.Control, dt.a, {
             keyHandler: null,
             handler: null,
             type: OL.Control.TYPE_TOGGLE,
@@ -63837,7 +63645,7 @@
             },
             initialize: function(e) {
                 OpenLayers.Control.prototype.initialize.apply(this, [e]),
-                    ct.a.prototype.initialize.apply(this, [e]),
+                    dt.a.prototype.initialize.apply(this, [e]),
                     this.callbacks = Object.assign({
                         cancel: this.onDrawCancel
                     }, this.callbacks),
@@ -63845,7 +63653,7 @@
                         keyup: this.keyUp
                     }),
                     W.accelerators.events.register("drawRoundabout", this, this.handleShortcut),
-                    this.handler = new Jg(this, {
+                    this.handler = new Zg(this, {
                         done: this.onEllipseDrawn,
                         cancel: this.onCancel
                     }),
@@ -63882,7 +63690,7 @@
             },
             onRoundaboutAdded: function() {},
             setEnabled: function(e, t) {
-                ct.a.prototype.setEnabled.apply(this, arguments),
+                dt.a.prototype.setEnabled.apply(this, arguments),
                     e ? this.keyHandler.activate() : this.keyHandler.deactivate()
             },
             activate: function() {
@@ -63897,13 +63705,13 @@
             },
             CLASS_NAME: "Waze.Control.DrawRoundabout"
         }),
-        Xg = n(194),
-        Qg = n(54),
-        ef = function(e) {
+        Qg = n(195),
+        ef = n(55),
+        tf = function(e) {
             function t(e, n) {
                 var i;
                 h()(this, t);
-                var s = new Dc.SpeedCamera({
+                var s = new Lc.SpeedCamera({
                     geometry: e,
                     rank: t.getNewCameraAutoRank(n.loginManager.getUserRank(), n.getTopCountry().allowCamerasRank)
                 });
@@ -63923,11 +63731,11 @@
                     }
                 }]),
                 t
-        }(Qg.default),
-        tf = n(119),
-        nf = n.n(tf),
-        sf = n(83),
-        rf = o.a.Model.extend({
+        }(ef.default),
+        nf = n(120),
+        sf = n.n(nf),
+        rf = n(84),
+        of = o.a.Model.extend({
             defaults: {
                 name: null,
                 displayClass: null,
@@ -63940,15 +63748,15 @@
             initialize: function() {
                 var e = this.get("children");
                 if (null != e)
-                    return this.children = new of (e),
+                    return this.children = new af(e),
                         this.unset("children")
             }
         }),
-        of = o.a.Collection.extend({
-            model: rf
+        af = o.a.Collection.extend({
+            model: of
         }),
-        af = n(88),
-        lf = function() {
+        lf = n(89),
+        uf = function() {
             function e(t) {
                 var n = this;
                 h()(this, e),
@@ -63968,13 +63776,13 @@
             return g()(e, [{
                     key: "getToolbarButtons",
                     value: function() {
-                        var e = [].concat(this._generateCommentsMenu(), this._generateVenueMenu(), this._generateDrawingControls(), this._generateEditingControls().reverse());
-                        return new of (e)
+                        var e = [].concat(this._generateCommentsMenu(), this._generateVenueMenu(), this._generateDrawingControls(), this._generateEditingControls());
+                        return new af(e)
                     }
                 }, {
                     key: "getHouseNumbersToolbarButtons",
                     value: function(e) {
-                        return new of (this._generateEditingHouseNumbersControls().reverse())
+                        return new af(this._generateEditingHouseNumbersControls())
                     }
                 }, {
                     key: "_enableControlsByRank",
@@ -63990,14 +63798,14 @@
                             i = this.map,
                             s = this.editingMediator,
                             r = this.saveController;
-                        return [Object(af.createDeleteButtonModel)({
+                        return [Object(lf.createDeleteButtonModel)({
                             dataModel: t,
                             selectionManager: n
-                        }), Object(af.createUndoButtonModel)({
+                        }), Object(lf.createUndoButtonModel)({
                             actionManager: e
-                        }), Object(af.createRedoButtonModel)({
+                        }), Object(lf.createRedoButtonModel)({
                             actionManager: e
-                        }), Object(af.createSaveButtonModel)({
+                        }), Object(lf.createSaveButtonModel)({
                             actionManager: e,
                             map: i,
                             editingMediator: s,
@@ -64010,13 +63818,13 @@
                         var e = this.actionManager,
                             t = this.map,
                             n = this.editingMediator;
-                        return [Object(af.createHouseNumberButtonModel)({
+                        return [Object(lf.createHouseNumberButtonModel)({
                             map: t
-                        }), Object(af.createExitHouseNumberButtonModel)(), Object(af.createUndoButtonModel)({
+                        }), Object(lf.createExitHouseNumberButtonModel)(), Object(lf.createUndoButtonModel)({
                             actionManager: e
-                        }), Object(af.createRedoButtonModel)({
+                        }), Object(lf.createRedoButtonModel)({
                             actionManager: e
-                        }), Object(af.createSaveHouseNumberButtonModel)({
+                        }), Object(lf.createSaveHouseNumberButtonModel)({
                             actionManager: e,
                             editingMediator: n
                         })]
@@ -64028,11 +63836,11 @@
                             t = [{
                                 title: I18n.t("drawing.road"),
                                 toolbarMenuItemClass: "road",
-                                control: new $g(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
+                                control: new Kg(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
                                     accelerator: "drawSegment",
                                     enableSnapping: !0,
                                     featureAdded: function(t, n, i) {
-                                        e.actionManager.add(new sf.default(t, {
+                                        e.actionManager.add(new rf.default(t, {
                                                 createNodes: !0,
                                                 openAllTurns: W.prefs.get("enableTurnsByDefault"),
                                                 createTwoWay: W.prefs.get("twoWaySegmentsByDefault"),
@@ -64046,12 +63854,12 @@
                             }, {
                                 title: I18n.t("drawing.walking_trail"),
                                 toolbarMenuItemClass: "walking-trail",
-                                control: new $g(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
+                                control: new Kg(this.map.sketchLayer, this.map.segmentLayer, OL.Handler.Path, {
                                     accelerator: "drawSegment",
                                     enableSnapping: !0,
                                     featureAdded: function(t, n, i) {
-                                        t.attributes.roadType = mh.ROAD_TYPE.WALKING_TRAIL,
-                                            e.actionManager.add(new sf.default(t, {
+                                        t.attributes.roadType = vh.ROAD_TYPE.WALKING_TRAIL,
+                                            e.actionManager.add(new rf.default(t, {
                                                 createNodes: !0,
                                                 openAllTurns: !1,
                                                 createTwoWay: !0,
@@ -64065,9 +63873,9 @@
                             }, {
                                 title: I18n.t("drawing.roundabout"),
                                 toolbarMenuItemClass: "roundabout",
-                                control: new Zg({
+                                control: new Xg({
                                     onRoundaboutAdded: function(t) {
-                                        var n = new Xg.default(t);
+                                        var n = new Qg.default(t);
                                         e.actionManager.add(n),
                                             l.a.defer(function() {
                                                 var t = n.getRoundaboutSegments();
@@ -64078,10 +63886,10 @@
                             }, {
                                 title: I18n.t("drawing.camera"),
                                 toolbarMenuItemClass: "camera",
-                                control: new $g(this.map.sketchLayer, this.map.camerasLayer, OL.Handler.Point, {
+                                control: new Kg(this.map.sketchLayer, this.map.camerasLayer, OL.Handler.Point, {
                                     enableSnapping: !0,
                                     featureAdded: function(t) {
-                                        var n = new ef(t.geometry, e.dataModel);
+                                        var n = new tf(t.geometry, e.dataModel);
                                         e.actionManager.add(n),
                                             l.a.defer(function() {
                                                 var t = n.getCamera();
@@ -64093,13 +63901,13 @@
                         return W.Config.big_junctions.enable && (this.drawBigJunction = {
                                     title: I18n.t("drawing.big_junction"),
                                     toolbarMenuItemClass: "junction-box",
-                                    control: new $g(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
+                                    control: new Kg(this.map.sketchLayer, this.map.bigJunctionLayer, OL.Handler.Polygon, {
                                         accelerator: "drawBigJunction",
                                         featureAdded: function(t) {
-                                            var n = new Mc.BigJunction({
+                                            var n = new Ac.BigJunction({
                                                 geometry: t.geometry
                                             });
-                                            e.actionManager.add(new Yg(n)),
+                                            e.actionManager.add(new $g(n)),
                                                 l.a.defer(function() {
                                                     e.selectionManager.setSelectedModels([n])
                                                 })
@@ -64122,12 +63930,12 @@
                                 featureName: I18n.t("drawing.map_comment"),
                                 primaryShape: "point",
                                 secondaryShape: "",
-                                layerUniqueName: Qs.MAP_COMMENTS,
+                                layerUniqueName: er.MAP_COMMENTS,
                                 createFeature: function(e, t) {
-                                    var n = new ol.a({
+                                    var n = new al.a({
                                             geometry: e
                                         }),
-                                        i = new Qg.default(n, t.mapComments);
+                                        i = new ef.default(n, t.mapComments);
                                     return t.actionManager.add(i),
                                         i.object
                                 }
@@ -64136,12 +63944,12 @@
                                 featureName: I18n.t("drawing.map_comment"),
                                 primaryShape: "polygon",
                                 secondaryShape: "",
-                                layerUniqueName: Qs.MAP_COMMENTS,
+                                layerUniqueName: er.MAP_COMMENTS,
                                 createFeature: function(e, t) {
-                                    var n = new ol.a({
+                                    var n = new al.a({
                                             geometry: e
                                         }),
-                                        i = new Qg.default(n, t.mapComments);
+                                        i = new ef.default(n, t.mapComments);
                                     return t.actionManager.add(i),
                                         i.object
                                 }
@@ -64151,7 +63959,7 @@
                 }, {
                     key: "_generateVenueMenu",
                     value: function() {
-                        var e = sd.VENUE_MAIN_CATEGORIES_LIST.map(this._generateVenueMenuItem.bind(this));
+                        var e = rd.VENUE_MAIN_CATEGORIES_LIST.map(this._generateVenueMenuItem.bind(this));
                         return this.createMenu({
                             name: "venues",
                             items: e
@@ -64165,18 +63973,18 @@
                             secondaryShape: "polygon",
                             title: I18n.t("venues.categories.".concat(e)),
                             featureName: I18n.t("drawing.venue"),
-                            toolbarMenuItemClass: _n.default.categoryToClassName(e),
-                            layerUniqueName: Qs.LANDMARKS,
+                            toolbarMenuItemClass: yn.default.categoryToClassName(e),
+                            layerUniqueName: er.LANDMARKS,
                             createFeature: function(t, n) {
-                                var i = new nf.a({
+                                var i = new sf.a({
                                     geometry: t,
                                     categories: [e]
                                 });
-                                return n.actionManager.add(new Hg.default(i)),
+                                return n.actionManager.add(new zg.default(i)),
                                     i
                             }
                         };
-                        return e === sd.VENUE_PARKING_LOT && (t.primaryShape = "polygon",
+                        return e === rd.VENUE_PARKING_LOT && (t.primaryShape = "polygon",
                                 t.secondaryShape = null),
                             t
                     }
@@ -64221,7 +64029,7 @@
                     value: function(e, t, n, i) {
                         var s;
                         return s = "point" === e ? OL.Handler.Point : OL.Handler.Polygon,
-                            new $g(this.map.sketchLayer, t, s, {
+                            new Kg(this.map.sketchLayer, t, s, {
                                 enableSnapping: i,
                                 featureAdded: n,
                                 drawingType: e
@@ -64230,7 +64038,7 @@
                 }]),
                 e
         }(),
-        uf = function(e) {
+        cf = function(e) {
             function t() {
                 return h()(this, t),
                     m()(this, _()(t).apply(this, arguments))
@@ -64259,7 +64067,7 @@
                 }]),
                 t
         }(c.a.View),
-        cf = c.a.Object.extend({
+        df = c.a.Object.extend({
             initialize: function(e) {
                 this.map = e.map,
                     this.controller = e.controller,
@@ -64270,11 +64078,11 @@
                     this.app = e.app,
                     this.loginManager = e.loginManager,
                     this.saveController = e.saveController,
-                    this.toolbarLayout = new Mg({
+                    this.toolbarLayout = new Ag({
                         model: this.app
                     }),
                     this.listenTo(this.toolbarLayout, "render", this._onRender),
-                    this.toolbarCollectionBuilder = new lf({
+                    this.toolbarCollectionBuilder = new uf({
                         actionManager: this.actionManager,
                         controller: this.controller,
                         map: this.map,
@@ -64286,7 +64094,7 @@
                         saveController: this.saveController
                     }),
                     this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this),
-                    this.searchView = new Dg({
+                    this.searchView = new Lg({
                         map: this.map
                     })
             },
@@ -64304,15 +64112,15 @@
             },
             _showUserBoxOrLoginButton: function() {
                 var e, t = this.app.get("user");
-                e = t ? new Pg({
+                e = t ? new Ng({
                         model: t
-                    }) : new uf({
+                    }) : new cf({
                         loginManager: this.loginManager
                     }),
                     this.toolbarLayout.showChildView("userBoxOrLoginButton", e)
             },
             _showEditingToolbar: function() {
-                this.toolbarCollectionView = new Fg({
+                this.toolbarCollectionView = new Bg({
                         collection: this.toolbarCollectionBuilder.getToolbarButtons(),
                         map: this.map
                     }),
@@ -64320,7 +64128,7 @@
             },
             _showHouseNumbersToolbar: function() {
                 var e = this.toolbarCollectionBuilder.getHouseNumbersToolbarButtons();
-                this.toolbarCollectionView = new Wg({
+                this.toolbarCollectionView = new Hg({
                         collection: e,
                         map: this.map,
                         mediator: this.editingMediator
@@ -64340,7 +64148,7 @@
                 this._showToolbar()
             }
         }),
-        df = c.a.View.extend({
+        hf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/loading-indicator",
             className: "loading-indicator",
             initialize: function() {
@@ -64376,7 +64184,7 @@
                 }
             }
         }),
-        hf = c.a.View.extend({
+        pf = c.a.View.extend({
             className: "location-info",
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/location-info",
             bindings: {
@@ -64402,7 +64210,7 @@
                 })
             },
             _getAddressFromTopCity: function() {
-                return this._shouldShowTopCity() ? ac.a.fromCityID(this._dataModel.getTopCityId(), this._dataModel).format({
+                return this._shouldShowTopCity() ? lc.a.fromCityID(this._dataModel.getTopCityId(), this._dataModel).format({
                     formatStreet: !1
                 }) : null
             },
@@ -64417,7 +64225,7 @@
                 this.stickit()
             }
         }),
-        pf = c.a.View.extend({
+        gf = c.a.View.extend({
             HOVER_DELAY_MS: 200,
             tagName: "li",
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/item",
@@ -64459,8 +64267,8 @@
                     this._clearHoverTimeout()
             }
         }),
-        gf = c.a.CompositeView.extend({
-            childView: pf,
+        ff = c.a.CompositeView.extend({
+            childView: gf,
             childViewContainer: "ul",
             ui: {
                 title: ".title"
@@ -64486,8 +64294,8 @@
                 return this._toggleTitle()
             }
         }),
-        ff = c.a.CompositeView.extend({
-            childView: pf,
+        mf = c.a.CompositeView.extend({
+            childView: gf,
             className: "rest-list",
             childViewContainer: "ul",
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/rest-list",
@@ -64510,22 +64318,22 @@
                 }
             }
         }),
-        mf = c.a.Object.extend({
+        vf = c.a.Object.extend({
             _highlightedArea: null,
             initialize: function() {
                 return this.pannable = this.options.pannable,
                     this.managedAreasLayer = this.options.managedAreasLayer,
                     this.drawingContext = this.options.drawingContext,
-                    this.drawingContext.setStyleMap(Hi)
+                    this.drawingContext.setStyleMap(zi)
             },
             centerArea: function(e) {
-                var t = ft.getBoundsCenterLonLat(e.geometry);
+                var t = mt.getBoundsCenterLonLat(e.geometry);
                 return this.pannable.panTo(t)
             },
             highlightArea: function(e) {
                 var t;
                 return this.managedAreasLayer.getVisibility() ? (this._highlightedArea = e,
-                    null != (t = this.managedAreasLayer.getVector(e)) ? this.managedAreasLayer.drawFeature(t, "highlight") : void 0) : ((t = new OL.Feature.Vector(ft.cloneGeometry(e.geometry))).model = e,
+                    null != (t = this.managedAreasLayer.getVector(e)) ? this.managedAreasLayer.drawFeature(t, "highlight") : void 0) : ((t = new OL.Feature.Vector(mt.cloneGeometry(e.geometry))).model = e,
                     this.drawingContext.addFeatures(t))
             },
             hideArea: function() {
@@ -64537,7 +64345,7 @@
                 }
             }
         }),
-        vf = c.a.View.extend({
+        _f = c.a.View.extend({
             MAIN_LIST_NUM_ITEMS: 3,
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/area-managers/layout",
             className: "area-managers",
@@ -64551,13 +64359,13 @@
                     this.managedAreasRepository.model.events.register("mergeend", this, this._updateCollections),
                     this.mainCollection = new o.a.Collection,
                     this.restCollection = new o.a.Collection,
-                    this.mainListView = new gf({
+                    this.mainListView = new ff({
                         collection: this.mainCollection
                     }),
-                    this.restListView = new ff({
+                    this.restListView = new mf({
                         collection: this.restCollection
                     }),
-                    this.mapView = new mf({
+                    this.mapView = new vf({
                         pannable: this.options.pannable,
                         managedAreasLayer: this.options.managedAreasLayer,
                         drawingContext: this.options.drawingContext
@@ -64593,7 +64401,7 @@
                     this.restCollection.reset(t)
             }
         }),
-        _f = c.a.View.extend({
+        yf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/Topbar/templates/layout",
             regions: {
                 loadingIndicator: ".loading-indicator-region",
@@ -64607,23 +64415,23 @@
                     return this.showChildView("areaManagers", this.options.areaManagersLayout)
             }
         }),
-        yf = c.a.Object.extend({
+        bf = c.a.Object.extend({
             initialize: function() {
-                var e = new df({
+                var e = new hf({
                         globalVent: this.options.globalVent
                     }),
-                    t = new hf({
+                    t = new pf({
                         dataModel: this.options.dataModel,
                         map: this.options.map
                     }),
                     n = null;
-                W.Config.area_manager_widget.enable && (n = new vf({
+                Ke.buildConfig.area_manager_widget.enable && (n = new _f({
                         managedAreasRepository: this.options.managedAreasRepository,
                         managedAreasLayer: this.options.map.managedAreasLayer,
                         pannable: this.options.map.getPannable(),
                         drawingContext: this.options.map.getDrawingContext()
                     })),
-                    this.layout = new _f({
+                    this.layout = new yf({
                         loadingIndicatorView: e,
                         locationInfoView: t,
                         areaManagersLayout: n
@@ -64631,12 +64439,12 @@
             },
             destroy: function() {}
         }),
-        bf = c.a.Object.extend({
+        Ef = c.a.Object.extend({
             sidebarLayout: null,
             feedControl: null,
             initialize: function() {
                 this.feedControl = this._createFeed(),
-                    this.sidebarLayout = new Ig({
+                    this.sidebarLayout = new Mg({
                         model: W.app,
                         selectionManager: W.selectionManager,
                         editingMediator: W.editingMediator,
@@ -64646,7 +64454,7 @@
                         feedControl: this.feedControl,
                         streetViewController: W.streetViewController
                     }),
-                    this.toolbarController = new cf({
+                    this.toolbarController = new df({
                         actionManager: W.model.actionManager,
                         togglerTree: W.togglerTree,
                         app: W.app,
@@ -64659,7 +64467,7 @@
                         saveController: W.saveController,
                         layerSwitcherController: W.layerSwitcherController
                     }),
-                    this.topbarController = new yf({
+                    this.topbarController = new bf({
                         dataModel: W.model,
                         globalVent: W.vent,
                         managedAreasRepository: W.model.managedAreas,
@@ -64697,7 +64505,7 @@
                 return I18n.t("modes.exit.save_changes")
             },
             _createFeed: function() {
-                return this.feedControl = new qu({
+                return this.feedControl = new Yu({
                         container: W.map.panelRegion,
                         startNotificationId: W.app._urlParams.notification,
                         app: W.app
@@ -64705,7 +64513,7 @@
                     this.feedControl
             }
         }),
-        Ef = c.a.View.extend({
+        wf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/toolbar_buttons",
             triggers: {
                 "click .save-button": "saveClicked",
@@ -64714,12 +64522,12 @@
             },
             bindings: {
                 ".save-button": {
-                    attributes: (Gg = "pendingChanges",
+                    attributes: (Wg = "pendingChanges",
                         [{
                             name: "disabled",
-                            observe: ["saving", Gg],
+                            observe: ["saving", Wg],
                             onGet: function(e) {
-                                var t = dn()(e, 2),
+                                var t = hn()(e, 2),
                                     n = t[0],
                                     i = t[1];
                                 return n || !i
@@ -64732,7 +64540,7 @@
                             name: "disabled",
                             observe: ["saving", e],
                             onGet: function(e) {
-                                var t = dn()(e, 2),
+                                var t = hn()(e, 2),
                                     n = t[0],
                                     i = t[1];
                                 return n || i
@@ -64745,7 +64553,7 @@
                         name: "disabled",
                         observe: ["editedModel", "showingList", "saving"],
                         onGet: function(e) {
-                            var t = dn()(e, 3),
+                            var t = hn()(e, 3),
                                 n = t[0],
                                 i = t[1];
                             return t[2] || i || n && n.isNew()
@@ -64760,24 +64568,24 @@
                 return this.stickit(this.mteModeState)
             }
         }),
-        wf = c.a.Object.extend({
+        Sf = c.a.Object.extend({
             initialize: function(e) {
                 return this.app = e.app,
                     this.map = e.map,
                     this.editingMediator = e.editingMediator,
                     this.actionManager = e.actionManager,
                     this.mteModeState = e.mteModeState,
-                    this.searchView = new Dg({
+                    this.searchView = new Lg({
                         map: this.map
                     }),
-                    this.toolbarButtons = new Ef({
+                    this.toolbarButtons = new wf({
                         mteModeState: this.mteModeState
                     }),
                     this.toolbarButtons.on("saveClicked", this._onSaveClicked, this),
                     this.toolbarButtons.on("addClicked", this._onAddClicked, this),
                     this.toolbarButtons.on("deleteClicked", this._onDeleteClicked, this),
                     this.editingMediator.on("change:editingEnabled", this._onEditingEnabledChanged, this),
-                    this.toolbarLayout = new Mg({
+                    this.toolbarLayout = new Ag({
                         editingMediator: this.editingMediator,
                         model: this.app,
                         className: "toolbar toolbar-mte"
@@ -64803,7 +64611,7 @@
             },
             _onEditingEnabledChanged: function() {}
         }),
-        Sf = c.a.View.extend({
+        kf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/sidebar",
             className: "sidebar-layout",
             regions: {
@@ -64827,23 +64635,23 @@
                 return this.stickit(this.app)
             }
         }),
-        kf = c.a.View.extend({
+        Tf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/topbar",
             regions: {
                 loadingIndicator: ".loading-indicator-region",
                 locationInfo: ".location-info-region"
             },
             onRender: function() {
-                this.showChildView("loadingIndicator", new df({
+                this.showChildView("loadingIndicator", new hf({
                         globalVent: this.options.globalVent
                     })),
-                    this.showChildView("locationInfo", new hf({
+                    this.showChildView("locationInfo", new pf({
                         dataModel: this.options.dataModel,
                         map: this.options.map
                     }))
             }
         }),
-        Tf = c.a.View.extend({
+        If = c.a.View.extend({
             tagName: "li",
             className: "mte-item",
             template: "Waze/MapEditor/UI/Modules/MTE/templates/mte_item_view",
@@ -64860,10 +64668,10 @@
             _shortDate: function() {
                 var e = Date.parse(this.model.get("startDate")),
                     t = Date.parse(this.model.get("endDate"));
-                return _n.default.formatMonthRange(e, t)
+                return yn.default.formatMonthRange(e, t)
             }
         }),
-        If = {
+        Mf = {
             THIS_WEEK: {
                 name: I18n.t("mte.search.this_week"),
                 endDate: 7..day().fromNow()
@@ -64881,18 +64689,18 @@
                 endDate: 1..year().fromNow()
             }
         },
-        Mf = c.a.View.extend({
+        Af = c.a.View.extend({
             className: "empty-message",
             template: function() {
                 return I18n.t("mte.search.empty")
             }
         }),
-        Af = c.a.CompositeView.extend({
+        Cf = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/mte_list",
             className: "flex-parent",
-            childView: Tf,
+            childView: If,
             childViewContainer: "ul.mte-list",
-            emptyView: Mf,
+            emptyView: Af,
             ui: {
                 search: ".search-input",
                 list: "ul.mte-list"
@@ -64924,7 +64732,7 @@
                         disabled: {
                             observe: ["typing", "query"],
                             onGet: function(e) {
-                                var t = dn()(e, 2),
+                                var t = hn()(e, 2),
                                     n = t[0],
                                     i = t[1];
                                 return n && !i
@@ -64939,7 +64747,7 @@
                     this.model = new o.a.Model({
                         query: "",
                         typing: !1,
-                        dateFilter: If.THIS_MONTH
+                        dateFilter: Mf.THIS_MONTH
                     }),
                     this.listenTo(this.model, "change:query change:dateFilter", function() {
                         return t._renderChildren()
@@ -64959,7 +64767,7 @@
             },
             serializeData: function() {
                 return {
-                    dateFilters: If
+                    dateFilters: Mf
                 }
             },
             _onFocusChange: function(e) {
@@ -64973,22 +64781,22 @@
             },
             _onDateFilterClicked: function(e) {
                 var t = s()(e.target);
-                return this.model.set("dateFilter", If[t.data().filter])
+                return this.model.set("dateFilter", Mf[t.data().filter])
             }
         }),
-        Cf = n(99),
-        Of = o.a.Model.extend({
+        Of = n(100),
+        Rf = o.a.Model.extend({
             defaults: {
                 name: null
             }
         }),
-        Rf = o.a.Collection.extend({
-            model: Of,
+        Df = o.a.Collection.extend({
+            model: Rf,
             comparator: function(e) {
                 return (e.getEnglishName() || "").toLowerCase()
             }
         }),
-        Df = o.a.Model.extend({
+        Lf = o.a.Model.extend({
             defaults: {
                 segments: null,
                 closures: null,
@@ -64997,7 +64805,7 @@
                 availablePartners: null
             }
         }),
-        Lf = c.a.Object.extend({
+        Pf = c.a.Object.extend({
             initialize: function(e) {
                 this.dataModel = e.dataModel
             },
@@ -65015,7 +64823,7 @@
                         segments: i.segments.objects,
                         closures: i.roadClosures.objects
                     });
-                    return new Df(s)
+                    return new Lf(s)
                 })
             },
             submit: function(e) {
@@ -65035,9 +64843,9 @@
                 })
             }
         }),
-        Pf = n(75),
-        Nf = new RegExp("^[".concat("a-zA-Z0-9", "]{1,1}[\\s").concat("a-zA-Z0-9").concat("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~", "]{0,").concat(26, "}$"), "i"),
-        xf = o.a.Model.extend({
+        Nf = n(76),
+        xf = new RegExp("^[".concat("a-zA-Z0-9", "]{1,1}[\\s").concat("a-zA-Z0-9").concat("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~", "]{0,").concat(26, "}$"), "i"),
+        Vf = o.a.Model.extend({
             isValid: function() {
                 return l.a.isEmpty(this.attributes)
             },
@@ -65045,21 +64853,21 @@
                 return this.unset(e)
             }
         });
-    xf.validate = function(e) {
+    Vf.validate = function(e) {
             var t = {},
                 n = e.get("startDate"),
                 i = e.get("endDate"),
                 s = e.getEnglishName();
             return e.getAddress().get("isEmpty") && (t.cityID = I18n.t("mte.edit.validation_errors.location")),
-                null === s ? t.names = I18n.t("mte.edit.validation_errors.names") : s.length > 27 ? t.names = I18n.t("mte.edit.validation_errors.english_name_length") : Nf.test(s) || (t.names = I18n.t("mte.edit.validation_errors.english_name")),
+                null === s ? t.names = I18n.t("mte.edit.validation_errors.names") : s.length > 27 ? t.names = I18n.t("mte.edit.validation_errors.english_name_length") : xf.test(s) || (t.names = I18n.t("mte.edit.validation_errors.english_name")),
                 null === n && (t.startDate = I18n.t("mte.edit.validation_errors.start_date")),
                 null === i && (t.endDate = I18n.t("mte.edit.validation_errors.end_date")),
                 null !== n && null !== i && Date.parse(n) > Date.parse(i) && (t.endDate = I18n.t("mte.edit.validation_errors.end_before_start")),
-                new xf(t)
+                new Vf(t)
         },
-        xf.ENGLISH_NAME_PATTERN = Nf;
-    var Vf = xf,
-        jf = o.a.Model.extend({
+        Vf.ENGLISH_NAME_PATTERN = xf;
+    var jf = Vf,
+        Uf = o.a.Model.extend({
             defaults: {
                 englishName: "",
                 localName: "",
@@ -65070,7 +64878,7 @@
                 editable: !0
             }
         }),
-        Uf = c.a.CompositeView.extend({
+        Ff = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names",
             className: "mte-names-edit-view",
             events: {
@@ -65159,7 +64967,7 @@
             },
             initialize: function(e) {
                 var t = this.model.getLocale();
-                this.viewModel = new jf({
+                this.viewModel = new Uf({
                         englishName: this.model.getEnglishName(),
                         localName: this.model.getLocalName(),
                         locale: t,
@@ -65169,7 +64977,7 @@
                         showLocalName: !0,
                         showAddButton: !1
                     });
-                var n = l.a.without(["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"], Pf.ENGLISH_LOCALE).map(function(e) {
+                var n = l.a.without(["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"], Nf.ENGLISH_LOCALE).map(function(e) {
                         return {
                             label: {
                                 en: "English",
@@ -65217,9 +65025,9 @@
                             value: e
                         }
                     }),
-                    i = Object.keys(Pf.MTE_LOCALES).map(function(e) {
+                    i = Object.keys(Nf.MTE_LOCALES).map(function(e) {
                         return {
-                            label: Pf.MTE_LOCALES[e],
+                            label: Nf.MTE_LOCALES[e],
                             value: e
                         }
                     });
@@ -65230,7 +65038,7 @@
             },
             serializeData: function() {
                 return {
-                    ENGLISH_LOCALE: Pf.ENGLISH_LOCALE
+                    ENGLISH_LOCALE: Nf.ENGLISH_LOCALE
                 }
             },
             toggleEditable: function(e) {
@@ -65264,7 +65072,7 @@
                         showPreview: !0
                     });
                 var t = [{
-                    locale: Pf.ENGLISH_LOCALE,
+                    locale: Nf.ENGLISH_LOCALE,
                     value: this.viewModel.get("englishName")
                 }];
                 return this.viewModel.get("showLocalName") && t.push({
@@ -65274,7 +65082,7 @@
                     this.trigger("namesChanged", t)
             }
         }),
-        Ff = o.a.Model.extend({
+        Bf = o.a.Model.extend({
             defaults: {
                 loading: !1,
                 error: !1,
@@ -65282,7 +65090,7 @@
                 errorMessage: ""
             }
         }),
-        Bf = c.a.View.extend({
+        Gf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading",
             bindings: {
                 ".loading": {
@@ -65295,13 +65103,13 @@
                 }
             },
             initialize: function(e) {
-                this.model = new Ff(e)
+                this.model = new Bf(e)
             },
             onRender: function() {
                 return this.stickit()
             }
         }),
-        Gf = c.a.View.extend({
+        Wf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/contributors/item",
             className: "mte-contributors-item",
             triggers: {
@@ -65314,10 +65122,10 @@
                 })
             }
         }),
-        Wf = c.a.CompositeView.extend({
+        Hf = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/contributors/list",
             className: "mte-contributors-list",
-            childView: Gf,
+            childView: Wf,
             childViewContainer: ".list",
             childViewOptions: function() {
                 return {
@@ -65341,7 +65149,7 @@
                     observe: ["showAddPartnerForm", "editable"],
                     visible: !0,
                     onGet: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0];
                         return t[1] && !n
                     }
@@ -65387,7 +65195,7 @@
                     t = l.a.difference(this.options.detailsModel.get("availablePartners"), e);
                 this._partnerOptions = t.map(function(e) {
                     return {
-                        label: _n.default.formatUserName(e),
+                        label: yn.default.formatUserName(e),
                         value: e
                     }
                 }).sort(function(e, t) {
@@ -65438,8 +65246,8 @@
                     this._updateModel()
             }
         }),
-        Hf = new OL.StyleMap;
-    Hf.addUniqueValueRules("default", "type", {
+        zf = new OL.StyleMap;
+    zf.addUniqueValueRules("default", "type", {
         outline: {
             strokeColor: "black",
             strokeWidth: 14
@@ -65456,13 +65264,13 @@
             strokeWidth: 10
         }
     });
-    var zf, qf = Hf,
-        Yf = c.a.View.extend({
+    var qf, Yf = zf,
+        $f = c.a.View.extend({
             template: function() {
                 return I18n.t("mte.edit.closures.empty")
             }
         }),
-        $f = c.a.View.extend({
+        Kf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures",
             regions: {
                 closuresRegion: ".closures"
@@ -65475,10 +65283,10 @@
                     this.mteModeState = e.mteModeState,
                     this.drawingContext = e.drawingContext,
                     this.closuresMarkerLayer = e.closuresMarkerLayer,
-                    this._showClosures() && (this.segmentSelection = new dp.SegmentSelection(this.segments))
+                    this._showClosures() && (this.segmentSelection = new hp.SegmentSelection(this.segments))
             },
             onRender: function() {
-                this._showClosures() ? (new Lh({
+                this._showClosures() ? (new Ph({
                         region: this.getRegion("closuresRegion"),
                         pannable: this.map.getPannable(),
                         dataModel: this.dataModel,
@@ -65486,11 +65294,11 @@
                         allClosures: this.closures,
                         repoActive: this.dataModel.roadClosures.active,
                         canSaveClosures: this._canSaveClosures(),
-                        listViewConfig: Nh.MTE,
-                        editViewConfig: Ph.MTE
+                        listViewConfig: xh.MTE,
+                        editViewConfig: Nh.MTE
                     }).showClosures(),
                     this._drawClosures(),
-                    this._toggleNonMteMarkers(!1)) : this.showChildView("closuresRegion", new Yf)
+                    this._toggleNonMteMarkers(!1)) : this.showChildView("closuresRegion", new $f)
             },
             _showClosures: function() {
                 return Boolean(this.segments.length)
@@ -65500,10 +65308,10 @@
             },
             _drawClosures: function() {
                 var e, t = this;
-                return this.drawingContext.setStyleMap(qf),
+                return this.drawingContext.setStyleMap(Yf),
                     ["outline", "fill", "dash"].map(function(n) {
                         return e = t.segments.map(function(e) {
-                                return new OL.Feature.Vector(ft.cloneGeometry(e.geometry), {
+                                return new OL.Feature.Vector(mt.cloneGeometry(e.geometry), {
                                     type: n
                                 })
                             }),
@@ -65521,12 +65329,12 @@
                     this._toggleNonMteMarkers(!0)
             }
         }),
-        Kf = c.a.View.extend({
+        Jf = c.a.View.extend({
             className: "mte-edit-view",
             template: "Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view",
             behaviors: {
                 dateTimePickers: {
-                    behaviorClass: va
+                    behaviorClass: _a
                 }
             },
             regions: {
@@ -65561,7 +65369,7 @@
                         name: "href",
                         observe: "uniqueName",
                         onGet: function(e) {
-                            return e ? "".concat(W.Config.mte.root_url, "/").concat(e) : null
+                            return e ? "".concat(Ke.buildConfig.mte.root_url, "/").concat(e) : null
                         }
                     }]
                 },
@@ -65612,7 +65420,7 @@
                     observe: ["published", "canPublish"],
                     visible: !0,
                     onGet: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0],
                             i = t[1];
                         return !n && i
@@ -65626,7 +65434,7 @@
                     observe: ["published", "canPublish"],
                     visible: !0,
                     onGet: function(e) {
-                        var t = dn()(e, 2),
+                        var t = hn()(e, 2),
                             n = t[0],
                             i = t[1];
                         return n && i
@@ -65657,13 +65465,13 @@
                 var t = this;
                 this.dataModel = e.dataModel,
                     this.mteModeState = e.mteModeState,
-                    this.api = new Lf({
+                    this.api = new Pf({
                         dataModel: this.dataModel
                     });
                 var n = [this.model.clone(), this.model];
                 return this.model = n[0],
                     this.originalModel = n[1],
-                    this.api = new Lf({
+                    this.api = new Pf({
                         dataModel: this.dataModel
                     }),
                     this.submitViewModel = new o.a.Model({
@@ -65675,7 +65483,7 @@
                         canPublish: this.model.canPublish(),
                         published: this.originalModel.get("published")
                     }),
-                    this.categoryOptions = Object.keys(Pf.CATEGORIES).map(function(e) {
+                    this.categoryOptions = Object.keys(Nf.CATEGORIES).map(function(e) {
                         return {
                             label: I18n.t("mte.edit.categories.".concat(e)),
                             value: e
@@ -65701,12 +65509,12 @@
                         this.validator.clearErrorFor(i)
                     }
                 var s = Object.keys(e.changed);
-                if (l.a.intersection(s, Pf.WRITABLE_ATTRIBUTES).length > 0)
+                if (l.a.intersection(s, Nf.WRITABLE_ATTRIBUTES).length > 0)
                     return this.trigger("modelChanged")
             },
             onRender: function() {
                 var e = this;
-                this.namesView = new Uf({
+                this.namesView = new Ff({
                         model: this.model,
                         editable: this.model.arePropertiesEditable()
                     }),
@@ -65716,7 +65524,7 @@
                         })
                     }),
                     this.showChildView("namesRegion", this.namesView),
-                    this.addressView = new kc({
+                    this.addressView = new Tc({
                         getAddress: function() {
                             return e.model.getAddress()
                         },
@@ -65771,7 +65579,7 @@
             _isMTEValid: function() {
                 var e = this.ui.attributesForm.get(0).checkValidity();
                 return null != this.validator && this.unstickit(this.validator, this.validationErrorsBindings),
-                    this.validator = Vf.validate(this.model),
+                    this.validator = jf.validate(this.model),
                     this.stickit(this.validator, this.validationErrorsBindings),
                     this.validator.isValid() && e
             },
@@ -65780,7 +65588,7 @@
             },
             getAction: function() {
                 var e;
-                return (e = this.model.isNew() ? new Qg.default(this.model, this.dataModel.majorTrafficEvents) : new tn.default(this.originalModel, this.model.attributes)).setModel(this.dataModel),
+                return (e = this.model.isNew() ? new ef.default(this.model, this.dataModel.majorTrafficEvents) : new nn.default(this.originalModel, this.model.attributes)).setModel(this.dataModel),
                     e
             },
             _onBackButtonClicked: function() {
@@ -65790,14 +65598,14 @@
                     return this.trigger("backButtonClicked")
             },
             _loadMTEDetails: function(e, t) {
-                return e.show(new Bf({
+                return e.show(new Gf({
                         loading: !0,
                         loadingMessage: t
                     })),
                     this.api.getMTEDetails(this.model.get("id"))
             },
             _showMTEDetailsError: function(e, t) {
-                e.show(new Bf({
+                e.show(new Gf({
                     error: !0,
                     errorMessage: t
                 }))
@@ -65806,7 +65614,7 @@
                 var e = this,
                     t = this.getRegion("closuresRegion");
                 return this._loadMTEDetails(t, I18n.t("mte.edit.closures.loading")).then(function(t) {
-                    return e.showChildView("closuresRegion", new $f({
+                    return e.showChildView("closuresRegion", new Kf({
                         map: e.options.map,
                         model: e.model,
                         mteModeState: e.mteModeState,
@@ -65824,7 +65632,7 @@
                 var e = this,
                     t = this.getRegion("contributorsRegion");
                 return this._loadMTEDetails(t, I18n.t("mte.edit.contributors.loading")).then(function(t) {
-                    return e.showChildView("contributorsRegion", new Wf({
+                    return e.showChildView("contributorsRegion", new Hf({
                         detailsModel: t,
                         mteModel: e.model,
                         editable: e.model.canEditPartners()
@@ -65847,7 +65655,7 @@
                             var t = e.response.errorList,
                                 n = t ? t[0].code : void 0;
                             console.error(e),
-                                window.alert(_n.default.getSaveErrorTitle(n, "mte.edit.submit_failed"))
+                                window.alert(yn.default.getSaveErrorTitle(n, "mte.edit.submit_failed"))
                         }).finally(function() {
                             e.submitViewModel.set({
                                 submitting: !1
@@ -65869,14 +65677,14 @@
                             throw e;
                         var t = e.response.errorList,
                             n = t ? t[0].code : void 0;
-                        window.alert(_n.default.getSaveErrorTitle(n, "mte.edit.publish_failed"))
+                        window.alert(yn.default.getSaveErrorTitle(n, "mte.edit.publish_failed"))
                     })
             },
             _onFormSubmitted: function(e) {
                 return e.preventDefault()
             }
         }),
-        Jf = c.a.Object.extend({
+        Zf = c.a.Object.extend({
             initialize: function(e) {
                 var t = this;
                 return this.toolbarController = e.toolbarController,
@@ -65887,17 +65695,17 @@
                     this.controller = e.controller,
                     this.editingMediator = e.editingMediator,
                     this.map = e.map,
-                    this.mteCollection = new Rf,
-                    this.mteListView = new Af({
+                    this.mteCollection = new Df,
+                    this.mteListView = new Cf({
                         collection: this.mteCollection,
                         dataModel: this.dataModel
                     }),
-                    this.listenTo(this.repository, rt.UPDATED, this._updateCollection),
+                    this.listenTo(this.repository, ot.UPDATED, this._updateCollection),
                     this.listenTo(this.toolbarController, "saveClicked", this._onSaveClicked),
                     this.listenTo(this.toolbarController, "addClicked", this._onAddClicked),
                     this.listenTo(this.toolbarController, "deleteClicked", this._onDeleteClicked),
                     this.listenTo(this.mteListView, "mteItemClicked", this._onMteItemClicked),
-                    this.savePopoverRegion = new Dl({
+                    this.savePopoverRegion = new Ll({
                         saveButtonSelector: ".toolbar-mte .save-button"
                     }),
                     this.listenTo(this.sidebarLayout, "render", function() {
@@ -65917,7 +65725,7 @@
                     this.mteModeState.set({
                         saving: !0
                     });
-                var n = new Rl({
+                var n = new Dl({
                     map: this.map,
                     mediator: this.editingMediator,
                     popoverRegion: this.savePopoverRegion
@@ -65949,7 +65757,7 @@
                         pendingChanges: !1,
                         editedModel: e
                     }),
-                    this.editView = new Kf({
+                    this.editView = new Jf({
                         model: e,
                         dataModel: this.dataModel,
                         map: this.map,
@@ -65962,7 +65770,7 @@
                     this.editView.on("modelChanged", this._onModelChanged, this)
             },
             _onAddClicked: function() {
-                var e = new Pf.default;
+                var e = new Nf.default;
                 return e.model = this.dataModel,
                     this.showEditView(e),
                     this.mteModeState.set({
@@ -65971,7 +65779,7 @@
             },
             _onDeleteClicked: function() {
                 if (!this.mteModeState.get("pendingChanges") || window.confirm(I18n.t("mte.edit.pending_changes_delete"))) {
-                    var e = new Cf.default(this.mteModeState.get("editedModel"));
+                    var e = new Of.default(this.mteModeState.get("editedModel"));
                     return e.setModel(this.dataModel),
                         this._save(e).then(this._showListView.bind(this))
                 }
@@ -65997,7 +65805,7 @@
                 return this.savePopoverRegion.destroy()
             }
         }),
-        Zf = o.a.Model.extend({
+        Xf = o.a.Model.extend({
             defaults: {
                 pendingChanges: !1,
                 showingList: !0,
@@ -66005,7 +65813,7 @@
                 editedModel: null
             }
         }),
-        Xf = c.a.Object.extend({
+        Qf = c.a.Object.extend({
             _editingLock: null,
             initialize: function() {
                 this.app = W.app,
@@ -66013,10 +65821,10 @@
                     this.dataModel = W.model,
                     this.controller = W.controller,
                     this.repo = this.dataModel.majorTrafficEvents,
-                    this.mteModeState = new Zf,
+                    this.mteModeState = new Xf,
                     this.listenTo(this.mteModeState, "change", this.trigger.bind(this, "STATE_CHANGED")),
                     this._layerSwitcherController = W.layerSwitcherController,
-                    this.toolbarController = new wf({
+                    this.toolbarController = new Sf({
                         app: W.app,
                         map: this.map,
                         editingMediator: W.editingMediator,
@@ -66026,15 +65834,15 @@
                         togglerTree: W.togglerTree,
                         layerSwitcherController: this._layerSwitcherController
                     }),
-                    this.topbarLayout = new kf({
+                    this.topbarLayout = new Tf({
                         map: this.map,
                         dataModel: this.dataModel,
                         globalVent: W.vent
                     }),
-                    this.sidebarLayout = new Sf({
+                    this.sidebarLayout = new kf({
                         app: W.app
                     }),
-                    this.mteController = new Jf({
+                    this.mteController = new Zf({
                         toolbarController: this.toolbarController,
                         sidebarLayout: this.sidebarLayout,
                         mteModeState: this.mteModeState,
@@ -66056,13 +65864,13 @@
                     this._restoreClosureLayerState()
             },
             _activateClosureLayer: function() {
-                this._initialClosureState = this._layerSwitcherController.getTogglerState(nr.ITEM_CLOSURES),
-                    this._layerSwitcherController.setTogglerState(nr.ITEM_CLOSURES, !0),
-                    this._layerSwitcherController.disableToggler(nr.ITEM_CLOSURES)
+                this._initialClosureState = this._layerSwitcherController.getTogglerState(ir.ITEM_CLOSURES),
+                    this._layerSwitcherController.setTogglerState(ir.ITEM_CLOSURES, !0),
+                    this._layerSwitcherController.disableToggler(ir.ITEM_CLOSURES)
             },
             _restoreClosureLayerState: function() {
-                this._layerSwitcherController.setTogglerState(nr.ITEM_CLOSURES, this._initialClosureState),
-                    this._layerSwitcherController.enableToggler(nr.ITEM_CLOSURES)
+                this._layerSwitcherController.setTogglerState(ir.ITEM_CLOSURES, this._initialClosureState),
+                    this._layerSwitcherController.enableToggler(ir.ITEM_CLOSURES)
             },
             blockingExit: function() {
                 return this.mteModeState.get("pendingChanges")
@@ -66094,15 +65902,15 @@
                         return null != n && e.mteController.showEditView(n),
                             null != n
                     };
-                    return n() ? void 0 : this.listenToOnce(this.repo, rt.ADDED, n)
+                    return n() ? void 0 : this.listenToOnce(this.repo, ot.ADDED, n)
                 }
             }
         }),
-        Qf = c.a.Object.extend({
-            MODE_TO_CLASS: (zf = {},
-                V()(zf, Se.DEFAULT, bf),
-                V()(zf, Se.MTE, Xf),
-                zf),
+        em = c.a.Object.extend({
+            MODE_TO_CLASS: (qf = {},
+                V()(qf, Se.DEFAULT, Ef),
+                V()(qf, Se.MTE, Qf),
+                qf),
             initialize: function(e) {
                 this.model = e.model,
                     this.sidebarRegion = e.layout.getRegion("sidebarRegion"),
@@ -66146,9 +65954,9 @@
                 return this.trigger("STATE_CHANGED")
             }
         }),
-        em = n(124),
-        tm = n(394),
-        nm = o.a.Model.extend({
+        tm = n(125),
+        nm = n(395),
+        im = o.a.Model.extend({
             defaults: {
                 loading: !0,
                 loadingFeatures: !1,
@@ -66174,12 +65982,12 @@
                         model: this,
                         loginManager: n
                     }),
-                    this.modeController = new Qf({
+                    this.modeController = new em({
                         model: this,
                         layout: this.layout
                     }),
                     this.listenTo(this.modeController, "STATE_CHANGED", this.trigger.bind(this, "STATE_CHANGED")),
-                    (new Hl).heft({
+                    (new zl).heft({
                         app: this,
                         descartesClient: t,
                         loginManager: n
@@ -66192,7 +66000,7 @@
                 Object(T.setRegionCodeAndReload)(e)
             },
             getAppRegionCode: function() {
-                return Object(em.getRegionCode)()
+                return Object(tm.getRegionCode)()
             },
             _setupLoginManager: function(e) {
                 var t = this;
@@ -66272,7 +66080,7 @@
             },
             _moveToFamiliarLocation: function(e) {
                 var t = W.map,
-                    n = Object(tm.findFamiliarLocation)(e);
+                    n = Object(nm.findFamiliarLocation)(e);
                 if (null != n) {
                     var i = n.lonLat;
                     if (null != n.bounds) {
@@ -66328,7 +66136,7 @@
                 W.controller.bindToMap(W.map)
             }
         }),
-        im = o.a.Model.extend({
+        sm = o.a.Model.extend({
             defaults: {
                 id: 1,
                 isImperial: null,
@@ -66347,29 +66155,29 @@
             }
         });
 
-    function sm(e) {
+    function rm(e) {
         ! function(e) {
-            var t = W.Config.regions[e],
+            var t = Ke.buildConfig.regions[e],
                 n = W.Config.raster_layers.regions[e];
-            s.a.extend(!0, W.Config, t),
+            s.a.extend(!0, Ke.buildConfig, t),
                 s.a.extend(!0, W.Config.raster_layers, n)
         }(e),
         Object.keys(W.Config.paths).forEach(function(e) {
                 var t = W.Config.paths[e];
-                W.Config.paths[e] = "".concat(W.Config.api_base, "/").concat(t)
+                W.Config.paths[e] = "".concat(Ke.buildConfig.api_base, "/").concat(t)
             }),
             Object.freeze(W.Config)
     }
-    var rm = "US",
-        om = "CA",
-        am = "IL",
-        lm = {
+    var om = "US",
+        am = "CA",
+        lm = "IL",
+        um = {
             iw: "he",
             ji: "yi",
             in: "id",
             "en-UK": "en-GB"
         },
-        um = function() {
+        cm = function() {
             function e() {
                 h()(this, e)
             }
@@ -66390,44 +66198,44 @@
                 }]),
                 e
         }();
-    var cm = n(395),
-        dm = n.n(cm);
+    var dm = n(396),
+        hm = n.n(dm);
 
-    function hm() {
-        var e = em.getRegionAndLocaleCodes();
+    function pm() {
+        var e = tm.getRegionAndLocaleCodes();
         return {
             regionCode: e.code,
             localeCode: e.locale
         }
     }
 
-    function pm() {
-        return (new dm.a).getRegionCode()
-    }
-
-    function gm(e) {
-        return Cr.REGION_CODES.includes(e)
+    function gm() {
+        return (new hm.a).getRegionCode()
     }
 
     function fm(e) {
+        return Or.REGION_CODES.includes(e)
+    }
+
+    function mm(e) {
         return ["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"].includes(e)
     }
 
-    function mm(e, t) {
-        var n = hm(),
-            i = pm(),
-            s = [e, n.regionCode, i, Cr.DEFAULT_REGION_CODE].filter(gm)[0],
+    function vm(e, t) {
+        var n = pm(),
+            i = gm(),
+            s = [e, n.regionCode, i, Or.DEFAULT_REGION_CODE].filter(fm)[0],
             r = function(e) {
-                return e === Cr.REGION_CODE_USA ? Cr.DEFAULT_LOCALE_CODE_USA : Cr.DEFAULT_LOCALE_CODE
+                return e === Or.REGION_CODE_USA ? Or.DEFAULT_LOCALE_CODE_USA : Or.DEFAULT_LOCALE_CODE
             }(s);
         return {
             regionCode: s,
-            localeCode: [n.localeCode, t, r].filter(fm)[0]
+            localeCode: [n.localeCode, t, r].filter(mm)[0]
         }
     }
 
-    function vm() {
-        return (new um).getCountryByIP().then(function(e) {
+    function _m() {
+        return (new cm).getCountryByIP().then(function(e) {
             return {
                 abbr: e.abbr,
                 locale: e.locale
@@ -66435,22 +66243,22 @@
         }).catch(function() {
             return {
                 abbr: null,
-                locale: Cr.DEFAULT_LOCALE_CODE
+                locale: Or.DEFAULT_LOCALE_CODE
             }
         }).then(function(e) {
             var t, n, i;
-            return mm((t = e.abbr,
-                n = t === am,
-                t === rm || t === om ? Cr.REGION_CODE_USA : n ? Cr.REGION_CODE_IL : Cr.DEFAULT_REGION_CODE), (i = e.locale,
-                Object.keys(lm).includes(i) ? lm[i] : i))
+            return vm((t = e.abbr,
+                n = t === lm,
+                t === om || t === am ? Or.REGION_CODE_USA : n ? Or.REGION_CODE_IL : Or.DEFAULT_REGION_CODE), (i = e.locale,
+                Object.keys(um).includes(i) ? um[i] : i))
         })
     }
 
-    function _m() {
+    function ym() {
         return function() {
-            var e = hm(),
-                t = pm(),
-                n = gm(t),
+            var e = pm(),
+                t = gm(),
+                n = fm(t),
                 i = e.regionCode;
             n && (i = t);
             var s = e.localeCode;
@@ -66461,12 +66269,12 @@
             }(i, s) ? Promise.resolve({
                 regionCode: i,
                 localeCode: s
-            }) : vm()
+            }) : _m()
         }().then(function(e) {
             var t = e.regionCode,
                 n = e.localeCode;
             return function(e, t) {
-                em.setRegionAndLocaleCodes(e, t)
+                tm.setRegionAndLocaleCodes(e, t)
             }(t, n), {
                 regionCode: t,
                 localeCode: n
@@ -66474,24 +66282,24 @@
         })
     }
 
-    function ym(e) {
+    function bm(e) {
         var t = e.descartesClient;
-        W.prefs = new im,
+        W.prefs = new sm,
             W.prefs.fetch();
         var n = new ee;
-        W.app = new nm,
+        W.app = new im,
             W.app.start({
                 descartesClient: t,
                 loginManager: n
             })
     }
 
-    function bm(e) {
-        sm(e)
+    function Em(e) {
+        rm(e)
     }
 
-    function Em() {
-        var e = new Is.default;
+    function wm() {
+        var e = new Ms.default;
         return Object(Y.init)(e).then(function() {
             return {
                 descartesClient: e
@@ -66499,19 +66307,19 @@
         })
     }
     s()(document).ready(function() {
-        _m().then(function(e) {
+        ym().then(function(e) {
             var t = e.regionCode;
             return function(e) {
-                    var t = fm(e);
+                    var t = mm(e);
                     !Object(T.documentLocaleMatches)(e) && t && Object(T.redirectToLocalePage)(e)
                 }(e.localeCode),
                 t
-        }).then(bm).catch(function(e) {
-            console.error("Error loading local configuration", e)
         }).then(Em).catch(function(e) {
+            console.error("Error loading local configuration", e)
+        }).then(wm).catch(function(e) {
             console.error("Error loading server configuration", e),
                 Object(T.redirectToErrorPage)()
-        }).then(ym)
+        }).then(bm)
     })
 }, function(e, t, n) {
     "use strict";
@@ -66521,7 +66329,7 @@
         r = n(46),
         o = n(1),
         a = n.n(o),
-        l = n(72),
+        l = n(73),
         u = r.a.extend({
             _isModified: function() {
                 return this.attributes.problem.isUpdated()
@@ -66563,7 +66371,7 @@
         initialApproved: null
     }, r.a.prototype.defaults);
     var h = d,
-        p = n(180),
+        p = n(181),
         g = r.a.extend({
             initialized: function() {
                 this.set("state", this.getState())
@@ -66598,6 +66406,247 @@
             }
         };
     t.default = _
+}, function(e, t, n) {
+    "use strict";
+    n.r(t);
+    var i, s = {
+        paths: {
+            features: "Features",
+            issues: "Feed/Issues",
+            notifications: "Feed/Notifications",
+            auth: "Session",
+            problemDetails: "MapProblems/Details",
+            updateRequestSessions: "MapProblems/UpdateRequests",
+            updateRequestComments: "MapProblems/UpdateRequests/Comment",
+            updateRequestFollow: "MapProblems/UpdateRequests/Notification",
+            mapCommentConversation: "MapComments/Comment",
+            mapCommentFollow: "MapComments/Notification",
+            archive: "Archive/List",
+            archiveSessions: "Archive/SessionGPS",
+            houseNumbers: "HouseNumbers",
+            cityExists: "CityExistence",
+            mteDetails: "MajorTrafficEvents/Details",
+            mtePublish: "MajorTrafficEvents/Publish",
+            mteReady: "MajorTrafficEvents/Ready",
+            logger: "ErrorReport",
+            elementHistory: "ElementHistory",
+            configurationInfo: "info/config",
+            version: "info/version"
+        },
+        units: {
+            lonLatPrecision: 5
+        },
+        login: {
+            paths: {
+                get: "/login/get",
+                create: "/login/create",
+                email_verification: "/UsersProfile/email/verify"
+            }
+        },
+        search: {
+            server: "/SearchServer/mozi",
+            resultZoom: 6,
+            options: {
+                origin: "editor"
+            }
+        },
+        map: {
+            initialPosition: {
+                il: {
+                    lon: 34.789,
+                    lat: 32.086,
+                    initialZoom: 1
+                },
+                usa: {
+                    lon: -73.99078,
+                    lat: 40.73565,
+                    initialZoom: 0
+                },
+                row: {
+                    lon: -.119,
+                    lat: 51.524,
+                    initialZoom: 0
+                }
+            },
+            projection: {
+                remote: "EPSG:4326",
+                local: "EPSG:900913"
+            }
+        },
+        tts: {
+            url: "https://ttsgw.world.waze.com/TTSGateway/Text2SpeechServlet",
+            default_locale: {
+                tts: "en-US",
+                locale: "en"
+            },
+            options: {
+                version: 6,
+                protocol: 2,
+                sessionid: 12345654321,
+                content_type: "audio/mpeg",
+                type: "street",
+                validate_data: "positive",
+                skipCache: !0,
+                lon: 0,
+                lat: 0
+            }
+        },
+        segments: {
+            minDisplayZoom: 2
+        },
+        speed_limit: {
+            enable: !0
+        },
+        place_updates: {
+            focusZoom: 6
+        },
+        problems: {
+            maxDetailsZoom: 7,
+            minDetailsZoom: 5
+        },
+        houseNumbers: {
+            allowEditing: !0,
+            minEditZoom: 6,
+            minDisplayZoom: 7,
+            shownByDefault: !1
+        },
+        restrictions: {
+            allowEditing: !0
+        },
+        closures: {
+            minDisplayZoom: 0
+        },
+        cameras: {
+            minDisplayZoom: 3,
+            minDragZoom: 3
+        },
+        editable_areas: {
+            minDisplayZoom: 0
+        },
+        user_drive: {
+            gutterMinDisplayZoom: 6,
+            arrowsMinDisplayZoom: 5,
+            instructionsMinDisplayZoom: 5,
+            weightMinDisplayZoom: 5,
+            initialZoom: 7
+        },
+        user_editing_enabled: !0,
+        big_junctions: {
+            minRank: 4,
+            enable: !0
+        },
+        venues: {
+            image_bucket_url: "https://venue-image.waze.com/"
+        },
+        openlayers: {
+            img_path: "images/"
+        },
+        livemap: {
+            zoom_offset: 12,
+            max_zoom: 17,
+            url: "/livemap"
+        },
+        advanced_tools: {
+            minRank: 3
+        }
+    };
+    n(703),
+        n(705),
+        (i = window).W = {
+            Config: s,
+            version: "v2.38-244-gd425f2fcc-3-g3496fc53\n",
+            apiKeys: {
+                googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
+            }
+        },
+        i.W.Config.raster_layers = {
+            regions: {
+                usa: {
+                    wms: {
+                        servers: ["http://etiles5.waze.com/wms", "http://etiles6.waze.com/wms", "http://etiles7.waze.com/wms", "http://etiles8.waze.com/wms"]
+                    },
+                    mapnik: {
+                        servers: ["https://editor-tiles1.waze.com", "https://editor-tiles2.waze.com", "https://editor-tiles3.waze.com", "https://editor-tiles4.waze.com"]
+                    }
+                },
+                row: {
+                    wms: {
+                        servers: ["http://etiles1.waze.com/wms", "http://etiles2.waze.com/wms", "http://etiles3.waze.com/wms", "http://etiles4.waze.com/wms"],
+                        file_name: "wme_beta"
+                    },
+                    mapnik: {
+                        servers: ["https://world-editor-tiles1.waze.com", "https://world-editor-tiles2.waze.com", "https://world-editor-tiles3.waze.com", "https://world-editor-tiles4.waze.com"]
+                    }
+                },
+                il: {
+                    wms: {
+                        servers: ["http://etiles1.maps.waze.co.il/wms", "http://etiles2.maps.waze.co.il/wms", "http://etiles3.maps.waze.co.il/wms", "http://etiles4.maps.waze.co.il/wms"]
+                    },
+                    mapnik: {
+                        servers: ["https://il-editor-tiles1.waze.com", "https://il-editor-tiles2.waze.com", "https://il-editor-tiles3.waze.com", "https://il-editor-tiles4.waze.com"]
+                    }
+                }
+            },
+            options: {
+                alpha: !0,
+                buffer: 1,
+                tileWidth: 512,
+                tileHeight: 512,
+                gutter: 15,
+                transitionEffect: "resize",
+                displayInLayerSwitcher: !0,
+                draggable: !1
+            },
+            wms: {
+                servers: ["/wms"],
+                file_name: "wme",
+                params: {
+                    projection: "EPSG:900913",
+                    format: "image/png",
+                    transparent: !0
+                }
+            },
+            mapnik: {
+                servers: [],
+                file_name: "tiles/${z}/${x}/${y}.png"
+            },
+            roads: {
+                uniqueName: "roads",
+                visible: !0,
+                type: "mapnik",
+                options: {
+                    isBaseLayer: !1,
+                    zoomOffset: 12,
+                    draggable: !0,
+                    gutter: 0
+                }
+            },
+            gps_points: {
+                uniqueName: "gps_points",
+                visible: !1,
+                type: "mapnik",
+                options: {
+                    isBaseLayer: !1,
+                    zoomOffset: 12,
+                    opacity: 1,
+                    draggable: !0,
+                    gutter: 0
+                },
+                params: {
+                    clientLayer: "gps_points"
+                }
+            }
+        },
+        n(398),
+        n(47),
+        n(611),
+        n(648),
+        n(649),
+        n(650),
+        n(651),
+        n(16),
+        n(652),
+        n(1091)
 }, function(e, t, n) {
     "use strict";
     n.r(t);

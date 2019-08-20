@@ -2933,7 +2933,15 @@
     clip: auto;
 }
 
-@charset "UTF-8"; /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@charset "UTF-8"; /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -7817,6 +7825,14 @@ button.close {
     position: fixed;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .btn {
     font-size: 12px;
     font-weight: bold;
@@ -8793,6 +8809,14 @@ select.form-control:focus {
     flex-grow: 1;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 h2, h3, h4 {
     margin: 0;
 }
@@ -8816,6 +8840,14 @@ h4 {
     line-height: 20px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .alert {
     border-radius: 5px;
     padding: 10px 15px;
@@ -8909,7 +8941,15 @@ h4 {
     text-decoration: none;
 }
 
-@charset "UTF-8"; .waze-tooltip {
+@charset "UTF-8"; /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+.waze-tooltip {
     display: inline-block;
     cursor: default;
     color: #8c8c8c;
@@ -8957,6 +8997,14 @@ body > .tooltip[role="tooltip"] {
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .app-loading {
     position: absolute;
     top: 0;
@@ -9938,6 +9986,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .app[data-development][data-deployment="beta"] #debug .deployment, .app[data-development][data-deployment="production"] #debug .deployment {
     color: red !important;
 }
@@ -9950,6 +10006,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     background: linear-gradient(to right, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0) 330px, rgba(255, 255, 0, 0.43) 430px, rgba(255, 255, 0, 0.43) 100%);
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #tutorial-dialog .header {
     font-size: 16px;
     letter-spacing: 0;
@@ -10120,6 +10184,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     padding-bottom: 24px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .mode-switcher-view {
     position: relative;
 }
@@ -10171,6 +10243,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     background-color: #eff4f4;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .changes-log-region {
     position: absolute;
     top: 32px;
@@ -10651,6 +10731,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     text-align: center;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #search {
     padding-top: 8px;
     position: relative;
@@ -10804,6 +10892,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     opacity: 0.5;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .lightbox {
     z-index: 99999;
     background: white;
@@ -10893,6 +10989,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     cursor: pointer;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .modal-dialog-login {
     position: absolute;
     top: 0;
@@ -11222,6 +11326,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     width: 100%;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .zoom-bar-container {
     width: 40px;
 }
@@ -11244,6 +11356,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     border-top: none;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #map-lightbox .content .success-message, #map-lightbox .content .error-message, #map-lightbox .content .force-message, #map-lightbox .content .save-error-message {
     position: absolute;
     background-color: #ededed;
@@ -11318,6 +11438,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     width: 50%;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .opening-hours .list {
     list-style-type: none;
     padding-left: 0;
@@ -11407,6 +11535,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     clear: both;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .closures-status-message.success {
     color: #3c763d;
 }
@@ -11619,6 +11755,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     font-size: 11px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .direction-lanes {
     background-color: #fff;
     border-radius: 4px;
@@ -11877,7 +12021,15 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     padding-left: 20px !important;
 }
 
-@charset "UTF-8"; .live-user-marker {
+@charset "UTF-8"; /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+.live-user-marker {
     width: 50px;
     height: 42px;
     width: 50px;
@@ -12469,6 +12621,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: #666;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .street-view-layer .pin {
     position: relative;
     width: 0;
@@ -12610,6 +12770,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .layer-switcher .menu {
     width: 230px;
     font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
@@ -12766,6 +12934,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     line-height: 40px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .marker-layer.disabled {
     pointer-events: none;
 }
@@ -13807,6 +13983,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     opacity: 0;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #WazeMap .map-message {
     position: absolute;
     background: #354148;
@@ -13853,6 +14037,14 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     color: #8c8c8c;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .WazeMapFooter {
     position: absolute;
     bottom: 0;
@@ -14131,6 +14323,14 @@ body[dir="rtl"] .olControlScaleLine {
     cursor: pointer;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .panel {
     position: absolute;
     overflow: hidden;
@@ -14264,6 +14464,14 @@ body[dir="rtl"] .olControlScaleLine {
     text-decoration: none;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #big-tooltip-region {
     position: absolute;
 }
@@ -14338,6 +14546,14 @@ body[dir="rtl"] .olControlScaleLine {
     opacity: 0.5;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .tippy-tooltip.light-border-theme {
     background-color: #ededed;
     box-shadow: 0 0 107px 0 rgba(0, 0, 0, 0.6), 0 0 85px 0 rgba(0, 0, 0, 0.8);
@@ -14375,6 +14591,14 @@ body[dir="rtl"] .olControlScaleLine {
     align-self: flex-end;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .toolbar {
     display: flex;
     font-size: 14px;
@@ -14394,13 +14618,11 @@ body[dir="rtl"] .olControlScaleLine {
 .toolbar .toolbar-group {
     margin-right: 32px;
     position: relative;
-    float: left;
 }
 
 .toolbar .toolbar-button {
     position: relative;
     color: #354148;
-    float: right;
     height: 40px;
     line-height: 40px;
     margin: 8px 0;
@@ -14427,6 +14649,7 @@ body[dir="rtl"] .olControlScaleLine {
 
 .toolbar .toolbar-button.toolbar-button-with-label .menu-title {
     display: inline;
+    white-space: nowrap;
 }
 
 .toolbar .toolbar-button .menu-title {
@@ -14457,8 +14680,9 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .toolbar .toolbar-button.add-house-number {
-    float: left;
     margin-left: 8px;
+    /* push items to the right */
+    margin-right: auto;
 }
 
 .toolbar .toolbar-button.toolbar-login-button {
@@ -14642,9 +14866,9 @@ body[dir="rtl"] .olControlScaleLine {
 }
 
 .toolbar.toolbar-mte .add-button {
-    float: left;
     display: inline-flex;
     margin-left: 8px;
+    margin-right: auto;
 }
 
 #edit-buttons {
@@ -14657,11 +14881,18 @@ body[dir="rtl"] .olControlScaleLine {
 
 #edit-buttons > div {
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #edit-buttons .toolbar-group.ItemDisabled {
     opacity: 0.4;
     cursor: default;
+}
+
+#edit-buttons .toolbar-submenu.toolbar-group-drawing {
+    /* push items to the right */
+    margin-right: auto;
 }
 
 #edit-buttons .toolbar-group .toolbar-group-item:hover {
@@ -15166,6 +15397,14 @@ body[dir="rtl"] .olControlScaleLine {
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #user-box-or-login-button-region {
     margin-right: 14px;
     height: 100%;
@@ -15224,6 +15463,14 @@ body[dir="rtl"] .olControlScaleLine {
     border: 2px solid #eeeeee;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .tippy-popper .tippy-tooltip.user-box-theme {
     background: transparent;
     padding: 0;
@@ -15384,8 +15631,40 @@ body[dir="rtl"] .olControlScaleLine {
     border-bottom: 1px solid #d3dae0;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #sidebar {
     float: left;
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 }
 
 #sidebar .overlay {
@@ -16042,6 +16321,14 @@ body[dir="rtl"] .olControlScaleLine {
     padding: 0px 15px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #sidepanel-areas .result:hover {
     cursor: pointer;
 }
@@ -16148,6 +16435,14 @@ body[dir="rtl"] .olControlScaleLine {
     background: #fff;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .sandbox {
     padding-left: 15px;
     padding-right: 15px;
@@ -16268,6 +16563,14 @@ body[dir="rtl"] .olControlScaleLine {
     font-weight: normal;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #sidebar .tab-content {
     overflow: auto;
     padding: 15px;
@@ -16289,9 +16592,89 @@ body[dir="rtl"] .olControlScaleLine {
     position: relative;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #edit-panel, .edit-panel {
     height: 100%;
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
     /** Parking **/
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+    /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 }
 
 #edit-panel .selection-icon:before, .edit-panel .selection-icon:before {
@@ -18094,7 +18477,23 @@ body[dir="rtl"] .olControlScaleLine {
     margin: 0;
 }
 
-@charset "UTF-8"; .panel.place-update-edit .place-update {
+@charset "UTF-8"; /**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+.panel.place-update-edit .place-update {
     margin-bottom: -15px;
 }
 
@@ -18512,6 +18911,14 @@ body[dir="rtl"] .olControlScaleLine {
     fill-opacity: 1;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .editing-disabled #WazeMap .place-update:hover {
     cursor: default;
 }
@@ -18903,6 +19310,14 @@ body[dir="rtl"] .olControlScaleLine {
     font-weight: 700;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .save-popover .error-list .arrow::after {
     border-bottom-color: #fce4e0;
 }
@@ -18982,6 +19397,14 @@ body[dir="rtl"] .olControlScaleLine {
     float: right;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .conversation-view .comment-list {
     overflow-x: hidden;
     border-bottom: 2px solid #ededed;
@@ -19077,6 +19500,14 @@ body[dir="rtl"] .olControlScaleLine {
     float: right;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .problem-edit .header .reported {
     font-size: 11px;
 }
@@ -19378,6 +19809,14 @@ body[dir="rtl"] .olControlScaleLine {
     padding: 15px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .junction-entry-view .list {
     margin-top: 5px;
 }
@@ -19401,6 +19840,14 @@ body[dir="rtl"] .olControlScaleLine {
     margin-right: 5px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .topbar .area-managers {
     padding: 0 10px;
     color: white;
@@ -19478,6 +19925,14 @@ body[dir="rtl"] .olControlScaleLine {
     font-weight: 400;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .topbar {
     background-color: #3d3d3d;
     width: 100%;
@@ -19588,6 +20043,14 @@ body[dir="rtl"] .olControlScaleLine {
     max-height: 0px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-empty-message {
     text-transform: uppercase;
     font-size: 10px;
@@ -19824,6 +20287,14 @@ body[dir="rtl"] .olControlScaleLine {
     transform: rotate(180deg);
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-issue::before, [class*="feed-issue-"]::before {
     background-color: #ffffff;
     border-color: #e9e9e9;
@@ -20287,6 +20758,14 @@ body[dir="rtl"] .olControlScaleLine {
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-notification .image, [class*="feed-notification-"] .image {
     background-image: url(//editor-assets.waze.com/beta/img/feede2db59822b7946fd1efa94102f64c23d.png);
     background-position: -155px 0px;
@@ -20318,6 +20797,14 @@ body[dir="rtl"] .olControlScaleLine {
     font-size: 11px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .notification-detail.panel {
     display: flex;
     flex-direction: column;
@@ -20394,6 +20881,14 @@ body[dir="rtl"] .olControlScaleLine {
     white-space: pre-line;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-first-time.type-check_your_neighborhood .image {
     background-image: url(//editor-assets.waze.com/beta/img/feede2db59822b7946fd1efa94102f64c23d.png);
     background-position: -186px -130px;
@@ -20551,6 +21046,14 @@ body[dir="rtl"] .olControlScaleLine {
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-mentoring .image {
     background-image: url(//editor-assets.waze.com/beta/img/feede2db59822b7946fd1efa94102f64c23d.png);
     background-position: -186px -68px;
@@ -20565,6 +21068,14 @@ body[dir="rtl"] .olControlScaleLine {
     }
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .feed-notification-pm .image {
     background-image: url(//editor-assets.waze.com/beta/img/feede2db59822b7946fd1efa94102f64c23d.png);
     background-position: -155px -34px;
@@ -20596,6 +21107,14 @@ body[dir="rtl"] .olControlScaleLine {
     color: #aea382;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .mte-contributors-list .add-partner-section {
     margin-bottom: 10px;
 }
@@ -20645,6 +21164,14 @@ body[dir="rtl"] .olControlScaleLine {
     border-color: #bedce5;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .mte-names-edit-view .language-select {
     width: 27%;
     float: right;
@@ -20807,6 +21334,14 @@ body[dir="rtl"] .olControlScaleLine {
     text-transform: none;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .mte-search {
     padding: 15px;
     background-color: #dfecf0;
@@ -20941,6 +21476,14 @@ body[dir="rtl"] .olControlScaleLine {
     height: inherit;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .map-comment-feature-editor .tab-content {
     padding-top: 0px;
 }
@@ -21266,6 +21809,14 @@ body[dir="rtl"] .olControlScaleLine {
     margin-bottom: 5px;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .restrictions-modal [class^="do-"]:not(:disabled), .restrictions-modal [class*=" do-"]:not(:disabled) {
     cursor: pointer;
 }
@@ -21929,6 +22480,14 @@ body[dir="rtl"] .olControlScaleLine {
     visibility: visible;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .merge-landmark-modal .modal-content {
     background: #fcfcfc;
 }
@@ -22093,6 +22652,14 @@ body[dir="rtl"] .olControlScaleLine {
     z-index: 2;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .turn-arrow-tooltip {
     position: relative;
 }
@@ -22270,6 +22837,14 @@ body[dir="rtl"] .olControlScaleLine {
     cursor: default;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .daterangepicker td.available:hover, .daterangepicker th.available:hover {
     background-color: #f3f3f3;
 }
@@ -22294,6 +22869,14 @@ body[dir="rtl"] .olControlScaleLine {
     cursor: pointer;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 #overlay-buttons-region {
     z-index: 1;
 }
@@ -22357,6 +22940,14 @@ body[dir="rtl"] .olControlScaleLine {
     color: #00a3eb;
 }
 
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
+/**
+  To add a new color, use "Name That Color":
+  http://chir.ag/projects/name-that-color
+ */
 .input-group-addon {
     display: none;
 }
