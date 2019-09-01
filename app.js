@@ -219,7 +219,7 @@
         u = n(35),
         c = n(44),
         d = n(160),
-        h = n(56),
+        h = n(53),
         p = new d.a,
         g = {},
         f = 0;
@@ -2843,7 +2843,7 @@
         c = n(70),
         d = n(42),
         h = o(n(81)),
-        p = o(n(54)),
+        p = o(n(55)),
         g = o(n(39)),
         f = a(n(57)),
         m = o(n(139)),
@@ -4471,6 +4471,62 @@
 }, function(e, t, n) {
     "use strict";
     n.r(t),
+        n.d(t, "buildConfig", function() {
+            return i
+        });
+    var i = {
+        api_base: "/Descartes/app",
+        show_version_number: !0,
+        asset_bucket_host: "editor-assets.waze.com",
+        asset_bucket_name: "wme-frontend-assets",
+        gcp_project: "waze-prod",
+        api_keys: {
+            google_maps: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
+        },
+        area_manager_widget: {
+            enable: !0
+        },
+        log: {
+            enable: !0
+        },
+        marx: {
+            server: "https://marx-beta.waze.com:443"
+        },
+        mte: {
+            root_url: "/mte",
+            eventsUrl: "beta.waze.com/events"
+        },
+        regions: {
+            il: {
+                api_base: "/il-Descartes/app",
+                search: {
+                    server: "/il-SearchServer/mozi"
+                }
+            },
+            usa: {
+                api_base: "/Descartes/app",
+                search: {
+                    server: "/SearchServer/mozi"
+                }
+            },
+            row: {
+                api_base: "/row-Descartes/app",
+                search: {
+                    server: "/row-SearchServer/mozi"
+                }
+            }
+        },
+        reporting: {
+            enable: !0
+        },
+        user_profile: {
+            enable: !0,
+            url: "https://beta.waze.com/user/editor/"
+        }
+    }
+}, function(e, t, n) {
+    "use strict";
+    n.r(t),
         n.d(t, "DIRECTION", function() {
             return l
         });
@@ -4859,62 +4915,6 @@
                 t
         }(m.a);
     t.default = y
-}, function(e, t, n) {
-    "use strict";
-    n.r(t),
-        n.d(t, "buildConfig", function() {
-            return i
-        });
-    var i = {
-        api_base: "/Descartes/app",
-        show_version_number: !0,
-        asset_bucket_host: "editor-assets.waze.com",
-        asset_bucket_name: "wme-frontend-assets",
-        gcp_project: "waze-prod",
-        api_keys: {
-            google_maps: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
-        },
-        area_manager_widget: {
-            enable: !0
-        },
-        log: {
-            enable: !0
-        },
-        marx: {
-            server: "https://marx-beta.waze.com:443"
-        },
-        mte: {
-            root_url: "/mte",
-            eventsUrl: "beta.waze.com/events"
-        },
-        regions: {
-            il: {
-                api_base: "/il-Descartes/app",
-                search: {
-                    server: "/il-SearchServer/mozi"
-                }
-            },
-            usa: {
-                api_base: "/Descartes/app",
-                search: {
-                    server: "/SearchServer/mozi"
-                }
-            },
-            row: {
-                api_base: "/row-Descartes/app",
-                search: {
-                    server: "/row-SearchServer/mozi"
-                }
-            }
-        },
-        reporting: {
-            enable: !0
-        },
-        user_profile: {
-            enable: !0,
-            url: "https://beta.waze.com/user/editor/"
-        }
-    }
 }, function(e, t, n) {
     "use strict";
     var i = this && this.__read || function(e, t) {
@@ -7102,7 +7102,7 @@
     });
     var a = r(n(7)),
         l = n(70),
-        u = r(n(54)),
+        u = r(n(55)),
         c = r(n(39)),
         d = o(n(10)),
         h = n(28),
@@ -7218,7 +7218,7 @@
         I = n.n(T),
         M = n(13),
         A = n.n(M),
-        C = n(54),
+        C = n(55),
         O = n.n(C),
         R = n(81),
         D = n.n(R),
@@ -8425,7 +8425,7 @@
         d = n(5),
         h = n.n(d),
         p = n(19),
-        g = n(55),
+        g = n(56),
         f = n(193),
         m = n.n(f),
         v = n(50),
@@ -8515,7 +8515,7 @@
         value: !0
     });
     var o = n(70),
-        a = r(n(54)),
+        a = r(n(55)),
         l = {
             HIGH: "high",
             MEDIUM: "medium",
@@ -9623,7 +9623,7 @@
     });
     var u = a(n(1)),
         c = n(70),
-        d = a(n(54)),
+        d = a(n(55)),
         h = l(n(18)),
         p = n(51),
         g = n(115),
@@ -9978,7 +9978,7 @@
         d = n(5),
         h = n.n(d),
         p = n(19),
-        g = n(55),
+        g = n(56),
         f = n(50),
         m = n.n(f),
         v = function(e) {
@@ -10241,7 +10241,7 @@
     });
     var o = n(158),
         a = n(70),
-        l = r(n(54)),
+        l = r(n(55)),
         u = r(n(39)),
         c = {
             speed: n(35).UNIT.KILOMETER
@@ -10481,7 +10481,7 @@
         h = n(36);
     t.CategoryAttributes = h.CategoryAttributes;
     var p = a(n(81)),
-        g = a(n(54)),
+        g = a(n(55)),
         f = a(n(39)),
         m = a(n(142)),
         v = a(n(624)),
@@ -10787,7 +10787,7 @@
         u = n(70),
         c = n(83),
         d = o(n(81)),
-        h = o(n(54)),
+        h = o(n(55)),
         p = o(n(39)),
         g = a(n(17)),
         f = a(n(10)),
@@ -11756,7 +11756,7 @@
                 }]),
                 t
         }(E.a),
-        A = n(53),
+        A = n(54),
         C = n(10),
         O = {
             nextClosureID: -101,
@@ -12830,7 +12830,7 @@
         g = n(24),
         f = n.n(g),
         m = n(19),
-        v = n(55),
+        v = n(56),
         _ = function(e) {
             function t(e, n) {
                 var i;
@@ -12983,7 +12983,7 @@
                 return this.attributes.segIDs.concat()
             },
             t
-    }(r(n(54)).default);
+    }(r(n(55)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -13082,7 +13082,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(54)),
+    var a = r(n(55)),
         l = o(n(10)),
         u = function(e) {
             function t() {
@@ -15880,7 +15880,7 @@
     });
     var o = r(n(1)),
         a = n(70),
-        l = r(n(54)),
+        l = r(n(55)),
         u = r(n(39)),
         c = function(e) {
             function t(n, i) {
@@ -16062,7 +16062,7 @@
         b = n(29),
         E = n(43),
         w = n(67),
-        S = n(55),
+        S = n(56),
         k = n(25),
         T = n(34),
         I = n.n(T),
@@ -18550,7 +18550,7 @@
                     return this.isAllowed(o.UpdateRequestsPermissions.EDIT)
                 },
                 t
-        }(r(n(54)).default);
+        }(r(n(55)).default);
     Object.assign(c.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
@@ -18591,7 +18591,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = r(n(54));
+    var o = r(n(55));
     t.TYPE = {
         INVALID_ENV: "INVALID_ENV",
         GENERAL: "GENERAL",
@@ -25156,7 +25156,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(56),
+    var s = n(53),
         r = i(n(192)),
         o = i(n(153)),
         a = i(n(341)),
@@ -25166,7 +25166,7 @@
         d = i(n(113)),
         h = i(n(84)),
         p = i(n(43)),
-        g = i(n(55)),
+        g = i(n(56)),
         f = i(n(195)),
         m = i(n(156)),
         v = i(n(100)),
@@ -25194,7 +25194,7 @@
         U = i(n(83)),
         F = i(n(78)),
         B = i(n(23)),
-        G = i(n(54)),
+        G = i(n(55)),
         H = i(n(155)),
         z = i(n(120)),
         q = i(n(108)),
@@ -25207,7 +25207,7 @@
         Q = i(n(37)),
         ee = i(n(92)),
         te = i(n(132)),
-        ne = i(n(53)),
+        ne = i(n(54)),
         ie = n(51),
         se = n(93),
         re = n(115);
@@ -27594,7 +27594,7 @@
 }, function(e, t, n) {
     "use strict";
     n.r(t);
-    var i = n(56),
+    var i = n(53),
         s = "dimension1",
         r = function(e, t, n, s) {
             e = "".concat("wme", "_").concat(e),
@@ -31223,7 +31223,7 @@
                 }]),
                 t
         }(o.a.Model),
-        Ke = n(56),
+        Ke = n(53),
         Je = 0,
         Ze = 1,
         Xe = 2,
@@ -54905,7 +54905,7 @@
         }(Qu),
         vh = n(42),
         _h = n(88),
-        yh = n(53),
+        yh = n(54),
         bh = o.a.Collection.extend({
             model: yh.default,
             findOpposite: function(e) {
@@ -63706,7 +63706,7 @@
             CLASS_NAME: "Waze.Control.DrawRoundabout"
         }),
         Qg = n(195),
-        ef = n(55),
+        ef = n(56),
         tf = function(e) {
             function t(e, n) {
                 var i;
@@ -65644,7 +65644,7 @@
             _onSubmitClicked: function() {
                 var e = this;
                 if (window.confirm(I18n.t("mte.edit.submit_confirm", {
-                        eventsUrl: W.Config.mte.eventsUrl
+                        eventsUrl: Ke.buildConfig.mte.eventsUrl
                     })))
                     return this.submitViewModel.set({
                             submitting: !0
@@ -66554,7 +66554,7 @@
         n(705),
         (i = window).W = {
             Config: s,
-            version: "v2.38-244-gd425f2fcc-3-g3496fc53\n",
+            version: "v2.38-244-gd425f2fcc-4-gdb850819\n",
             apiKeys: {
                 googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
             }
