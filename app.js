@@ -219,7 +219,7 @@
         u = n(35),
         c = n(44),
         d = n(160),
-        h = n(53),
+        h = n(51),
         p = new d.a,
         g = {},
         f = 0;
@@ -1828,7 +1828,7 @@
         E = n.n(b),
         w = n(66),
         S = n.n(w),
-        k = n(51),
+        k = n(52),
         T = function(e) {
             function t(e, n, i) {
                 var r;
@@ -4279,6 +4279,62 @@
     t.default = o
 }, function(e, t, n) {
     "use strict";
+    n.r(t),
+        n.d(t, "buildConfig", function() {
+            return i
+        });
+    var i = {
+        api_base: "/Descartes/app",
+        show_version_number: !0,
+        asset_bucket_host: "editor-assets.waze.com",
+        asset_bucket_name: "wme-frontend-assets",
+        gcp_project: "waze-prod",
+        api_keys: {
+            google_maps: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
+        },
+        area_manager_widget: {
+            enable: !0
+        },
+        log: {
+            enable: !0
+        },
+        marx: {
+            server: "https://marx-beta.waze.com:443"
+        },
+        mte: {
+            root_url: "/mte",
+            eventsUrl: "beta.waze.com/events"
+        },
+        regions: {
+            il: {
+                api_base: "/il-Descartes/app",
+                search: {
+                    server: "/il-SearchServer/mozi"
+                }
+            },
+            usa: {
+                api_base: "/Descartes/app",
+                search: {
+                    server: "/SearchServer/mozi"
+                }
+            },
+            row: {
+                api_base: "/row-Descartes/app",
+                search: {
+                    server: "/row-SearchServer/mozi"
+                }
+            }
+        },
+        reporting: {
+            enable: !0
+        },
+        user_profile: {
+            enable: !0,
+            url: "https://beta.waze.com/user/editor/"
+        }
+    }
+}, function(e, t, n) {
+    "use strict";
     var i = this && this.__read || function(e, t) {
             var n = "function" == typeof Symbol && e[Symbol.iterator];
             if (!n)
@@ -4468,62 +4524,6 @@
                 e
         }();
     t.SegmentStreetsUseCase = u
-}, function(e, t, n) {
-    "use strict";
-    n.r(t),
-        n.d(t, "buildConfig", function() {
-            return i
-        });
-    var i = {
-        api_base: "/Descartes/app",
-        show_version_number: !0,
-        asset_bucket_host: "editor-assets.waze.com",
-        asset_bucket_name: "wme-frontend-assets",
-        gcp_project: "waze-prod",
-        api_keys: {
-            google_maps: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
-        },
-        area_manager_widget: {
-            enable: !0
-        },
-        log: {
-            enable: !0
-        },
-        marx: {
-            server: "https://marx-beta.waze.com:443"
-        },
-        mte: {
-            root_url: "/mte",
-            eventsUrl: "beta.waze.com/events"
-        },
-        regions: {
-            il: {
-                api_base: "/il-Descartes/app",
-                search: {
-                    server: "/il-SearchServer/mozi"
-                }
-            },
-            usa: {
-                api_base: "/Descartes/app",
-                search: {
-                    server: "/SearchServer/mozi"
-                }
-            },
-            row: {
-                api_base: "/row-Descartes/app",
-                search: {
-                    server: "/row-SearchServer/mozi"
-                }
-            }
-        },
-        reporting: {
-            enable: !0
-        },
-        user_profile: {
-            enable: !0,
-            url: "https://beta.waze.com/user/editor/"
-        }
-    }
 }, function(e, t, n) {
     "use strict";
     n.r(t),
@@ -6082,7 +6082,7 @@
         r = n(57),
         o = n(40),
         a = n(82),
-        l = n(51),
+        l = n(52),
         u = function() {
             function e(e, t) {
                 this.segments = t,
@@ -8862,7 +8862,7 @@
     });
     var s = i(n(34)),
         r = n(116),
-        o = n(51),
+        o = n(52),
         a = n(110),
         l = function() {
             function e(e) {
@@ -9103,7 +9103,7 @@
         value: !0
     });
     var i = n(82),
-        s = n(51),
+        s = n(52),
         r = n(110),
         o = n(93),
         a = {
@@ -9625,7 +9625,7 @@
         c = n(70),
         d = a(n(55)),
         h = l(n(18)),
-        p = n(51),
+        p = n(52),
         g = n(115),
         f = l(n(20)),
         m = function(e) {
@@ -10181,7 +10181,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(51),
+    var i = n(52),
         s = function() {
             function e(e) {
                 this.dataModel = e
@@ -10365,7 +10365,7 @@
     });
     var s = n(42),
         r = i(n(34)),
-        o = n(52),
+        o = n(53),
         a = function() {
             function e(e, t) {
                 t instanceof r.default ? this.segments = [t] : this.segments = t,
@@ -11436,7 +11436,7 @@
         value: !0
     });
     var i = n(82),
-        s = n(51),
+        s = n(52),
         r = n(77),
         o = n(121),
         a = n(33),
@@ -12770,7 +12770,7 @@
         f = n(5),
         m = n.n(f),
         v = n(25),
-        _ = n(52),
+        _ = n(53),
         y = function(e) {
             function t() {
                 return o()(this, t),
@@ -14685,7 +14685,7 @@
         value: !0
     });
     var i = n(82),
-        s = n(51),
+        s = n(52),
         r = n(77),
         o = n(121),
         a = n(33),
@@ -15482,7 +15482,7 @@
         f = n(19),
         m = n(153),
         v = n(156),
-        _ = n(52),
+        _ = n(53),
         y = function(e) {
             function t(e, n, i) {
                 var s;
@@ -17425,7 +17425,7 @@
         c = n(701),
         d = i(n(349)),
         h = n(206),
-        p = n(51),
+        p = n(52),
         g = function() {
             function e(e, t) {
                 this._dataModel = e,
@@ -19994,7 +19994,7 @@
     });
     var i = n(82),
         s = n(77),
-        r = n(52),
+        r = n(53),
         o = function() {
             function e(e, t) {
                 this.selection = t,
@@ -20108,7 +20108,7 @@
     });
     var i = n(82),
         s = n(77),
-        r = n(52),
+        r = n(53),
         o = n(121),
         a = n(33),
         l = function() {
@@ -25156,7 +25156,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = n(53),
+    var s = n(51),
         r = i(n(192)),
         o = i(n(153)),
         a = i(n(341)),
@@ -25208,7 +25208,7 @@
         ee = i(n(92)),
         te = i(n(132)),
         ne = i(n(54)),
-        ie = n(51),
+        ie = n(52),
         se = n(93),
         re = n(115);
     window.Waze = new Proxy(W, {
@@ -26361,7 +26361,7 @@
     var s = i(n(1)),
         r = i(n(23)),
         o = i(n(629)),
-        a = n(51),
+        a = n(52),
         l = function() {
             function e(e) {
                 this.bigJunction = e,
@@ -27594,7 +27594,7 @@
 }, function(e, t, n) {
     "use strict";
     n.r(t);
-    var i = n(53),
+    var i = n(51),
         s = "dimension1",
         r = function(e, t, n, s) {
             e = "".concat("wme", "_").concat(e),
@@ -31223,7 +31223,7 @@
                 }]),
                 t
         }(o.a.Model),
-        Ke = n(53),
+        Ke = n(51),
         Je = 0,
         Ze = 1,
         Xe = 2,
@@ -37275,7 +37275,7 @@
                 t
         }(c.a.Object),
         Fs = n(119),
-        Bs = n(52),
+        Bs = n(53),
         Gs = function(e) {
             function t(e) {
                 var n;
@@ -55658,7 +55658,7 @@
         }();
     Object.assign(Vh.prototype, o.a.Events);
     var jh = Vh,
-        Uh = n(51),
+        Uh = n(52),
         Fh = function(e) {
             function t() {
                 return h()(this, t),
@@ -66159,8 +66159,9 @@
         ! function(e) {
             var t = Ke.buildConfig.regions[e],
                 n = W.Config.raster_layers.regions[e];
-            s.a.extend(!0, Ke.buildConfig, t),
-                s.a.extend(!0, W.Config.raster_layers, n)
+            l.a.merge(Ke.buildConfig, t),
+                l.a.merge(W.Config, Ke.buildConfig),
+                l.a.merge(W.Config.raster_layers, n)
         }(e),
         Object.keys(W.Config.paths).forEach(function(e) {
                 var t = W.Config.paths[e];
@@ -66554,7 +66555,7 @@
         n(705),
         (i = window).W = {
             Config: s,
-            version: "v2.38-244-gd425f2fcc-4-gdb850819\n",
+            version: "v2.38-244-gd425f2fcc-5-g03af56c5\n",
             apiKeys: {
                 googleMapsApiKey: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0"
             }
