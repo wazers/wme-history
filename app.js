@@ -214,7 +214,7 @@
         s = n.n(i),
         r = n(1),
         o = n.n(r),
-        a = n(66),
+        a = n(65),
         l = n.n(a),
         u = n(36),
         c = n(46),
@@ -426,7 +426,7 @@
         g.speedString = function(e) {
             var t = u.default.localizeUnit(u.UNIT.KILOMETER),
                 n = "";
-            return o.a.isUndefined(e) || (n = (n = u.default.getLocalizedValue(e, u.UNIT.KILOMETER)).toFixed(2)),
+            return void 0 !== e && (n = (n = u.default.getLocalizedValue(e, u.UNIT.KILOMETER)).toFixed(2)),
                 I18n.t("measurements.speed.".concat(t), {
                     speed: n
                 })
@@ -1885,7 +1885,7 @@
         y = n(102),
         b = n(128),
         E = n.n(b),
-        w = n(67),
+        w = n(66),
         S = n.n(w),
         k = n(53),
         T = function(e) {
@@ -2101,7 +2101,7 @@
         value: !0
     });
     var o = n(626),
-        a = n(70);
+        a = n(69);
     t.RESTRICTION_DESCRIPTION_CHAR_LIMIT = 1e3;
     var l = {
         FREE: "FREE",
@@ -2305,11 +2305,11 @@
         u = n.n(l),
         c = n(141),
         d = n.n(c),
-        h = n(75),
+        h = n(74),
         p = n(13),
         g = n.n(p),
         f = n(35),
-        m = n(111),
+        m = n(110),
         v = "venueCategoryAttributes";
 
     function _(e, t) {
@@ -2899,7 +2899,7 @@
     });
     var l = o(n(1)),
         u = o(n(26)),
-        c = n(71),
+        c = n(70),
         d = n(44),
         h = o(n(82)),
         p = o(n(56)),
@@ -2912,7 +2912,7 @@
         b = a(n(18)),
         E = a(n(10)),
         w = a(n(19)),
-        S = o(n(109)),
+        S = o(n(108)),
         k = a(n(21)),
         T = a(n(29));
     t.MIN_LEVEL = -9;
@@ -3548,7 +3548,7 @@
                 },
                 e.prototype.isNew = function() {
                     var e = this.getID();
-                    return null === e || e < 0 || r.default.isUndefined(e)
+                    return null === e || e < 0 || void 0 === e
                 },
                 e.prototype.isDeleted = function() {
                     return Boolean(this.state && this.state === OpenLayers.State.DELETE)
@@ -3688,7 +3688,7 @@
             stackdriver: {
                 key: "AIzaSyBWB3jiUm1dkFwvJWy4w4ZmO7KPyF4oUa0",
                 projectId: "waze-prod",
-                service: "waze-map-editor"
+                service: "map-editor-beta"
             },
             area_manager_widget: {
                 enable: !0
@@ -3942,7 +3942,7 @@
         f = n(20),
         m = n(26),
         v = n(147),
-        _ = n(114),
+        _ = n(113),
         y = n(21),
         b = n(32),
         E = n(10),
@@ -5111,7 +5111,7 @@
     });
     var a = r(n(630)),
         l = o(n(50)),
-        u = r(n(67)),
+        u = r(n(66)),
         c = {
             FWD: 0,
             REV: 1
@@ -5313,7 +5313,7 @@
         l = n.n(a),
         u = n(9),
         c = n.n(u),
-        d = n(73),
+        d = n(72),
         h = n.n(d),
         p = n(28),
         g = n(21),
@@ -5563,7 +5563,7 @@
         _ = n(85),
         y = n(20),
         b = n(45),
-        E = n(68),
+        E = n(67),
         w = n(30),
         S = n(362),
         k = n.n(S),
@@ -6119,7 +6119,7 @@
         NOT_IDENTIFIED: "not-identified",
         CLOSED_AUTOMATICALLY: "closed-automatically"
     }
-}, , function(e, t, n) {
+}, function(e, t, n) {
     "use strict";
     var i, s = this && this.__extends || (i = function(e, t) {
                 return (i = Object.setPrototypeOf || {
@@ -6427,7 +6427,7 @@
         value: !0
     });
     var r = n(86),
-        o = s(n(109));
+        o = s(n(108));
     t.DATE_FORMAT = "YYYY-MM-DD";
     var a = {
         SUNDAY: "SUNDAY",
@@ -6872,7 +6872,7 @@
                 visible: !0
             }
         }),
-        f = n(66),
+        f = n(65),
         m = n.n(f),
         v = n(4),
         _ = n.n(v),
@@ -7064,7 +7064,7 @@
         s = n.n(i),
         r = n(0),
         o = n.n(r),
-        a = n(70),
+        a = n(69),
         l = n(33),
         u = n(16),
         c = function() {
@@ -7247,7 +7247,7 @@
         value: !0
     });
     var a = r(n(7)),
-        l = n(71),
+        l = n(70),
         u = r(n(56)),
         c = r(n(40)),
         d = o(n(10)),
@@ -7432,8 +7432,9 @@
                 }, {
                     key: "clone",
                     value: function() {
-                        var e = m()(g()(t.prototype), "clone", this).apply(this, arguments),
-                            n = b.a.extend(!0, [], this.get("names"));
+                        var e = m()(g()(t.prototype), "clone", this).apply(this, arguments);
+                        e.attributes = Object.assign({}, this.attributes);
+                        var n = b.a.extend(!0, [], this.get("names"));
                         return e.set({
                                 names: n
                             }),
@@ -7512,7 +7513,7 @@
             ENGLISH_LOCALE: P
         }),
         t.default = j
-}, function(e, t, n) {
+}, , function(e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", {
         value: !0
@@ -8050,7 +8051,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(110),
+    var i = n(109),
         s = n(106),
         r = n(34),
         o = function() {
@@ -8266,7 +8267,7 @@
         S = n(13),
         k = n.n(S),
         T = n(10),
-        I = n(67),
+        I = n(66),
         M = n.n(I),
         A = n(44),
         C = function(e) {
@@ -8660,7 +8661,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(71),
+    var o = n(70),
         a = r(n(56)),
         l = {
             HIGH: "high",
@@ -9007,9 +9008,9 @@
         value: !0
     });
     var s = i(n(35)),
-        r = n(116),
+        r = n(115),
         o = n(53),
-        a = n(110),
+        a = n(109),
         l = function() {
             function e(e) {
                 this.dataModel = e
@@ -9060,7 +9061,7 @@
         w = n(20),
         S = n(13),
         k = n.n(S),
-        T = n(108),
+        T = n(107),
         I = n.n(T),
         M = {
             permissions: 2147483647
@@ -9223,7 +9224,7 @@
     });
     var i = n(83),
         s = n(53),
-        r = n(110),
+        r = n(109),
         o = n(94),
         a = {
             MULTIPLE: "MULTIPLE",
@@ -9347,7 +9348,7 @@
         d = n(32),
         h = n(13),
         p = n.n(h),
-        g = n(112),
+        g = n(111),
         f = n.n(g),
         m = n(35),
         v = n.n(m),
@@ -9669,7 +9670,7 @@
             e
     }();
     t.SegmentReader = i
-}, , function(e, t, n) {
+}, function(e, t, n) {
     "use strict";
     var i, s = this && this.__extends || (i = function(e, t) {
                 return (i = Object.setPrototypeOf || {
@@ -9741,11 +9742,11 @@
         value: !0
     });
     var u = a(n(1)),
-        c = n(71),
+        c = n(70),
         d = a(n(56)),
         h = l(n(19)),
         p = n(53),
-        g = n(115),
+        g = n(114),
         f = l(n(21)),
         m = function(e) {
             function t(n, i) {
@@ -10163,7 +10164,7 @@
         _ = n.n(v),
         y = n(25),
         b = n.n(y),
-        E = n(68),
+        E = n(67),
         w = n(164),
         S = n(182),
         k = n(13),
@@ -10359,7 +10360,7 @@
         value: !0
     });
     var o = n(160),
-        a = n(71),
+        a = n(70),
         l = r(n(56)),
         u = r(n(40)),
         c = {
@@ -10411,7 +10412,7 @@
             return void 0 === t && (t = void 0),
                 s.has(e) ? Promise.resolve(s.get(e)) : (new i.GooglePlacesService).getPlaceDetails(e, ["geometry", "name", "url", "formatted_address"], t).then(function(t) {
                     var n = {
-                        location: t.geometry.location,
+                        location: t.geometry && t.geometry.location,
                         name: t.name + ", " + t.formatted_address,
                         url: t.url
                     };
@@ -10523,7 +10524,7 @@
                 e
         }();
     t.SegmentsHouseNumbersUseCase = a
-}, , , function(e, t, n) {
+}, , , , function(e, t, n) {
     "use strict";
     var i, s = this && this.__extends || (i = function(e, t) {
                 return (i = Object.setPrototypeOf || {
@@ -10596,7 +10597,7 @@
     });
     var u = a(n(1)),
         c = n(98),
-        d = n(71),
+        d = n(70),
         h = n(37);
     t.CategoryAttributes = h.CategoryAttributes;
     var p = a(n(82)),
@@ -10604,8 +10605,8 @@
         f = a(n(40)),
         m = a(n(144)),
         v = a(n(634)),
-        _ = a(n(112)),
-        y = n(111),
+        _ = a(n(111)),
+        y = n(110),
         b = a(n(635)),
         E = l(n(10)),
         w = a(n(202)),
@@ -10903,7 +10904,7 @@
         value: !0
     });
     var l = o(n(1)),
-        u = n(71),
+        u = n(70),
         c = n(84),
         d = o(n(82)),
         h = o(n(56)),
@@ -12006,7 +12007,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s = i(n(108)),
+    var s = i(n(107)),
         r = i(n(35)),
         o = {
             MULTIPLE_SEGMENTS: 1,
@@ -12454,7 +12455,7 @@
         y = n(20),
         b = n(26),
         E = n(91),
-        w = n(113),
+        w = n(112),
         S = n(8),
         k = n.n(S),
         T = n(25);
@@ -13774,7 +13775,7 @@
         value: !0
     });
     var r = i(n(50)),
-        o = s(n(67)),
+        o = s(n(66)),
         a = function() {
             function e(e, t) {
                 this.dataModel = e,
@@ -14306,7 +14307,7 @@
         value: !0
     });
     var o = r(n(1)),
-        a = r(n(109));
+        a = r(n(108));
     t.IN_USE_REASONS_FLAGS = {
         SELECT: 1,
         HOUSE_NUMBERS: 2
@@ -14947,7 +14948,7 @@
                 }]),
                 t
         }(p.default),
-        b = n(67),
+        b = n(66),
         E = n.n(b),
         w = function(e) {
             function t(e) {
@@ -15033,7 +15034,7 @@
                 }]),
                 e
         }(),
-        c = n(74),
+        c = n(73),
         d = n(41),
         h = n(17),
         p = c.a.extend({
@@ -15391,7 +15392,7 @@
         _ = n.n(v),
         y = n(20),
         b = n(45),
-        E = n(68),
+        E = n(67),
         w = n(85),
         S = n(35),
         k = n.n(S),
@@ -15956,7 +15957,7 @@
         p = n(20),
         g = n(26),
         f = n(91),
-        m = n(113),
+        m = n(112),
         v = function(e) {
             function t(e, n, i) {
                 var r;
@@ -16026,7 +16027,7 @@
         value: !0
     });
     var o = r(n(1)),
-        a = n(71),
+        a = n(70),
         l = r(n(56)),
         u = r(n(40)),
         c = function(e) {
@@ -16098,7 +16099,7 @@
         y = n(25),
         b = n.n(y),
         E = n(91),
-        w = n(113),
+        w = n(112),
         S = n(20),
         k = n(13),
         T = n.n(k),
@@ -16202,13 +16203,13 @@
         p = n(1),
         g = n.n(p),
         f = n(20),
-        m = n(114),
+        m = n(113),
         v = n(62),
         _ = n(97),
         y = n(85),
         b = n(30),
         E = n(45),
-        w = n(68),
+        w = n(67),
         S = n(57),
         k = n(26),
         T = n(35),
@@ -16443,7 +16444,7 @@
         v = n.n(m),
         _ = n(45),
         y = n(62),
-        b = n(72),
+        b = n(71),
         E = n(10),
         w = n(166),
         S = n.n(w),
@@ -17536,7 +17537,7 @@
     var s = i(n(1)),
         r = i(n(105)),
         o = i(n(122)),
-        a = i(n(108)),
+        a = i(n(107)),
         l = i(n(35)),
         u = n(41),
         c = n(710),
@@ -17658,7 +17659,7 @@
         a = n(204),
         l = r(n(40)),
         u = r(n(662)),
-        c = r(n(66));
+        c = r(n(65));
     var d = 1,
         h = function(e) {
             function t(t, n) {
@@ -18623,7 +18624,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var o = n(71),
+    var o = n(70),
         a = "high",
         l = "medium",
         u = "low",
@@ -20504,10 +20505,10 @@
     });
     var s = i(n(708)),
         r = i(n(100)),
-        o = i(n(68)),
+        o = i(n(67)),
         a = i(n(709)),
         l = n(124),
-        u = i(n(108)),
+        u = i(n(107)),
         c = i(n(35)),
         d = i(n(211)),
         h = i(n(711)),
@@ -20630,7 +20631,12 @@
         r = n(42),
         o = new s.default;
     t.startReportingUnhanldedErrors = function() {
-            o.start(r.buildConfig.stackdriver)
+            o.start(r.buildConfig.stackdriver);
+            var e = window.onerror;
+            window.onerror = function(t, n, i, s, r) {
+                return null != e && e(t, n, i, s, r),
+                    !1
+            }
         },
         t.reportError = function(e) {
             o.report(e)
@@ -25389,14 +25395,14 @@
         l = i(n(197)),
         u = i(n(97)),
         c = i(n(91)),
-        d = i(n(113)),
+        d = i(n(112)),
         h = i(n(85)),
         p = i(n(45)),
         g = i(n(57)),
         f = i(n(198)),
         m = i(n(158)),
         v = i(n(100)),
-        _ = i(n(68)),
+        _ = i(n(67)),
         y = i(n(59)),
         b = i(n(190)),
         E = i(n(142)),
@@ -25408,11 +25414,11 @@
         M = i(n(30)),
         A = i(n(62)),
         C = i(n(146)),
-        O = i(n(72)),
+        O = i(n(71)),
         D = i(n(154)),
         R = i(n(26)),
         L = i(n(200)),
-        P = i(n(114)),
+        P = i(n(113)),
         N = i(n(13)),
         x = n(80),
         V = n(44),
@@ -25423,8 +25429,8 @@
         G = i(n(56)),
         H = i(n(157)),
         z = i(n(122)),
-        q = i(n(108)),
-        Y = n(111),
+        q = i(n(107)),
+        Y = n(110),
         $ = i(n(35)),
         K = i(n(348)),
         J = i(n(193)),
@@ -25436,7 +25442,7 @@
         ne = i(n(55)),
         ie = n(53),
         se = n(94),
-        re = n(115);
+        re = n(114);
     window.Waze = new Proxy(W, {
         get: function(e, t) {
             var n = t;
@@ -26355,7 +26361,7 @@
         value: !0
     });
     var o = r(n(7)),
-        a = n(69),
+        a = n(68),
         l = function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -26530,20 +26536,20 @@
         g = s(n(157)),
         f = s(n(122)),
         m = s(n(653)),
-        v = s(n(108)),
+        v = s(n(107)),
         _ = s(n(350)),
         y = s(n(145)),
         b = s(n(35)),
-        E = n(116),
+        E = n(115),
         w = s(n(654)),
         S = s(n(81)),
         k = s(n(348)),
         T = s(n(656)),
-        I = s(n(66)),
+        I = s(n(65)),
         M = s(n(657)),
         A = s(n(87)),
-        C = s(n(77)),
-        O = s(n(76));
+        C = s(n(76)),
+        O = s(n(75));
     t.TYPE_TO_FACTORY = {
             issues: l.default,
             problems: o,
@@ -28627,7 +28633,7 @@
         a = n(1),
         l = n.n(a),
         u = n(43),
-        c = n(66),
+        c = n(65),
         d = n.n(c),
         h = n(105),
         p = n.n(h),
@@ -29757,7 +29763,7 @@
         G = n.n(B),
         H = n(212),
         z = n.n(H),
-        q = n(66),
+        q = n(65),
         Y = n.n(q),
         $ = n(41);
 
@@ -30841,7 +30847,7 @@
         Me = n(20),
         Ae = n(80),
         Ce = n(205),
-        Oe = n(73),
+        Oe = n(72),
         De = n.n(Oe),
         Re = n(149),
         Le = n(206),
@@ -32615,17 +32621,17 @@
             onModificationComplete: function(e) {},
             CLASS_NAME: "Waze.Control.ModifyFeature"
         }),
-        At = n(71),
+        At = n(70),
         Ct = n(13),
         Ot = n.n(Ct),
-        Dt = n(114),
+        Dt = n(113),
         Rt = n(199),
         Lt = n(15),
         Pt = n.n(Lt),
         Nt = n(11),
         xt = n.n(Nt),
         Vt = n(163),
-        jt = n(68),
+        jt = n(67),
         Ut = n(59),
         Ft = n(45),
         Bt = n(147),
@@ -33000,7 +33006,7 @@
                 })
             })
         },
-        Xt = n(72),
+        Xt = n(71),
         Qt = OL.Class(OL.Control.ModifyFeature, {
             standalone: !0,
             initialize: function(e, t) {
@@ -34181,7 +34187,7 @@
                 this._destroyLayers()
             }
         }),
-        Fn = n(117),
+        Fn = n(116),
         Bn = c.a.View.extend({
             template: "templates/place_updates/external_provider/item",
             tagName: "li",
@@ -34238,7 +34244,7 @@
                 this.collection = new o.a.Collection(e)
             }
         }),
-        Wn = n(69),
+        Wn = n(68),
         Hn = c.a.View.extend({
             tagName: "li",
             template: "templates/place_updates/changed_field",
@@ -37393,7 +37399,7 @@
                 }]),
                 t
         }(c.a.Object),
-        js = n(119),
+        js = n(118),
         Us = n(54),
         Fs = function(e) {
             function t(e) {
@@ -38015,7 +38021,7 @@
             }
         }),
         tr = n(22),
-        nr = n(109),
+        nr = n(108),
         ir = Xs,
         sr = (Os = {},
             j()(Os, Xs.SATELLITE_IMAGERY, 0),
@@ -43012,7 +43018,7 @@
                 }]),
                 e
         }(),
-        Fo = n(115),
+        Fo = n(114),
         Bo = function() {
             function e(t, n, i, s) {
                 h()(this, e),
@@ -43163,7 +43169,7 @@
         $o = n.n(Yo),
         Ko = n(33),
         Jo = n.n(Ko),
-        Zo = n(75),
+        Zo = n(74),
         Xo = function(e) {
             function t() {
                 return h()(this, t),
@@ -44135,7 +44141,7 @@
                 t
         }(c.a.View),
         ga = n(162),
-        fa = n(70),
+        fa = n(69),
         ma = n(86),
         va = c.a.Behavior.extend({
             defaults: {
@@ -46667,7 +46673,7 @@
                 }]),
                 t
         }(c.a.View),
-        rl = n(76),
+        rl = n(75),
         ol = n.n(rl),
         al = c.a.Behavior.extend({
             onRender: function() {
@@ -46976,7 +46982,7 @@
                 }
             }
         }),
-        cl = n(74),
+        cl = n(73),
         dl = function() {
             function e(t, n, i) {
                 h()(this, e),
@@ -51255,7 +51261,7 @@
                 t
         }(Xu),
         Dc = n(160),
-        Rc = n(116),
+        Rc = n(115),
         Lc = n(185),
         Pc = n(36);
 
@@ -52743,7 +52749,7 @@
                 }]),
                 t
         }(c.a.View),
-        Ed = n(118),
+        Ed = n(117),
         wd = n.n(Ed),
         Sd = c.a.View.extend({
             tagName: "li",
@@ -52907,7 +52913,7 @@
                 t
         }(c.a.View),
         Cd = n(215),
-        Od = n(111),
+        Od = n(110),
         Dd = c.a.CompositeView.extend({
             template: "templates/opening_hours/layout",
             childView: Sd,
@@ -53015,7 +53021,7 @@
                 t
         }(c.a.View),
         Ld = n(98),
-        Pd = n(112),
+        Pd = n(111),
         Nd = n.n(Pd);
 
     function xd(e, t) {
@@ -55352,7 +55358,7 @@
                 }
             }
         }),
-        Ah = n(110),
+        Ah = n(109),
         Ch = n(181),
         Oh = n(34);
 
@@ -57013,7 +57019,7 @@
                 }]),
                 t
         }(c.a.View),
-        ap = n(67),
+        ap = n(66),
         lp = n.n(ap),
         up = function(e) {
             function t(e) {
@@ -64872,17 +64878,6 @@
         Cf = n(100),
         Of = o.a.Model.extend({
             defaults: {
-                name: null
-            }
-        }),
-        Df = o.a.Collection.extend({
-            model: Of,
-            comparator: function(e) {
-                return (e.getEnglishName() || "").toLowerCase()
-            }
-        }),
-        Rf = o.a.Model.extend({
-            defaults: {
                 segments: null,
                 closures: null,
                 contributors: null,
@@ -64890,7 +64885,7 @@
                 availablePartners: null
             }
         }),
-        Lf = c.a.Object.extend({
+        Df = c.a.Object.extend({
             initialize: function(e) {
                 this.dataModel = e.dataModel
             },
@@ -64908,7 +64903,7 @@
                         segments: i.segments.objects,
                         closures: i.roadClosures.objects
                     });
-                    return new Rf(s)
+                    return new Of(s)
                 })
             },
             submit: function(e) {
@@ -64928,9 +64923,9 @@
                 })
             }
         }),
-        Pf = n(77),
-        Nf = new RegExp("^[".concat("a-zA-Z0-9", "]{1,1}[\\s").concat("a-zA-Z0-9").concat("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~", "]{0,").concat(26, "}$"), "i"),
-        xf = o.a.Model.extend({
+        Rf = n(76),
+        Lf = new RegExp("^[".concat("a-zA-Z0-9", "]{1,1}[\\s").concat("a-zA-Z0-9").concat("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~", "]{0,").concat(26, "}$"), "i"),
+        Pf = o.a.Model.extend({
             isValid: function() {
                 return l.a.isEmpty(this.attributes)
             },
@@ -64938,21 +64933,21 @@
                 return this.unset(e)
             }
         });
-    xf.validate = function(e) {
+    Pf.validate = function(e) {
             var t = {},
                 n = e.get("startDate"),
                 i = e.get("endDate"),
                 s = e.getEnglishName();
             return e.getAddress().get("isEmpty") && (t.cityID = I18n.t("mte.edit.validation_errors.location")),
-                null === s ? t.names = I18n.t("mte.edit.validation_errors.names") : s.length > 27 ? t.names = I18n.t("mte.edit.validation_errors.english_name_length") : Nf.test(s) || (t.names = I18n.t("mte.edit.validation_errors.english_name")),
+                null === s ? t.names = I18n.t("mte.edit.validation_errors.names") : s.length > 27 ? t.names = I18n.t("mte.edit.validation_errors.english_name_length") : Lf.test(s) || (t.names = I18n.t("mte.edit.validation_errors.english_name")),
                 null === n && (t.startDate = I18n.t("mte.edit.validation_errors.start_date")),
                 null === i && (t.endDate = I18n.t("mte.edit.validation_errors.end_date")),
                 null !== n && null !== i && Date.parse(n) > Date.parse(i) && (t.endDate = I18n.t("mte.edit.validation_errors.end_before_start")),
-                new xf(t)
+                new Pf(t)
         },
-        xf.ENGLISH_NAME_PATTERN = Nf;
-    var Vf = xf,
-        jf = o.a.Model.extend({
+        Pf.ENGLISH_NAME_PATTERN = Lf;
+    var Nf = Pf,
+        xf = o.a.Model.extend({
             defaults: {
                 englishName: "",
                 localName: "",
@@ -64963,7 +64958,7 @@
                 editable: !0
             }
         }),
-        Uf = c.a.CompositeView.extend({
+        Vf = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/names",
             className: "mte-names-edit-view",
             events: {
@@ -65052,7 +65047,7 @@
             },
             initialize: function(e) {
                 var t = this.model.getLocale();
-                this.viewModel = new jf({
+                this.viewModel = new xf({
                         englishName: this.model.getEnglishName(),
                         localName: this.model.getLocalName(),
                         locale: t,
@@ -65062,7 +65057,7 @@
                         showLocalName: !0,
                         showAddButton: !1
                     });
-                var n = l.a.without(["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"], Pf.ENGLISH_LOCALE).map(function(e) {
+                var n = l.a.without(["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"], Rf.ENGLISH_LOCALE).map(function(e) {
                         return {
                             label: {
                                 en: "English",
@@ -65110,9 +65105,9 @@
                             value: e
                         }
                     }),
-                    i = Object.keys(Pf.MTE_LOCALES).map(function(e) {
+                    i = Object.keys(Rf.MTE_LOCALES).map(function(e) {
                         return {
-                            label: Pf.MTE_LOCALES[e],
+                            label: Rf.MTE_LOCALES[e],
                             value: e
                         }
                     });
@@ -65123,7 +65118,7 @@
             },
             serializeData: function() {
                 return {
-                    ENGLISH_LOCALE: Pf.ENGLISH_LOCALE
+                    ENGLISH_LOCALE: Rf.ENGLISH_LOCALE
                 }
             },
             toggleEditable: function(e) {
@@ -65157,7 +65152,7 @@
                         showPreview: !0
                     });
                 var t = [{
-                    locale: Pf.ENGLISH_LOCALE,
+                    locale: Rf.ENGLISH_LOCALE,
                     value: this.viewModel.get("englishName")
                 }];
                 return this.viewModel.get("showLocalName") && t.push({
@@ -65167,7 +65162,7 @@
                     this.trigger("namesChanged", t)
             }
         }),
-        Ff = o.a.Model.extend({
+        jf = o.a.Model.extend({
             defaults: {
                 loading: !1,
                 error: !1,
@@ -65175,7 +65170,7 @@
                 errorMessage: ""
             }
         }),
-        Bf = c.a.View.extend({
+        Uf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/loading",
             bindings: {
                 ".loading": {
@@ -65188,13 +65183,13 @@
                 }
             },
             initialize: function(e) {
-                this.model = new Ff(e)
+                this.model = new jf(e)
             },
             onRender: function() {
                 return this.stickit()
             }
         }),
-        Gf = c.a.View.extend({
+        Ff = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/contributors/item",
             className: "mte-contributors-item",
             triggers: {
@@ -65207,10 +65202,10 @@
                 })
             }
         }),
-        Wf = c.a.CompositeView.extend({
+        Bf = c.a.CompositeView.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/contributors/list",
             className: "mte-contributors-list",
-            childView: Gf,
+            childView: Ff,
             childViewContainer: ".list",
             childViewOptions: function() {
                 return {
@@ -65331,8 +65326,8 @@
                     this._updateModel()
             }
         }),
-        Hf = new OL.StyleMap;
-    Hf.addUniqueValueRules("default", "type", {
+        Gf = new OL.StyleMap;
+    Gf.addUniqueValueRules("default", "type", {
         outline: {
             strokeColor: "black",
             strokeWidth: 14
@@ -65349,13 +65344,13 @@
             strokeWidth: 10
         }
     });
-    var zf, qf = Hf,
-        Yf = c.a.View.extend({
+    var Wf, Hf = Gf,
+        zf = c.a.View.extend({
             template: function() {
                 return I18n.t("mte.edit.closures.empty")
             }
         }),
-        $f = c.a.View.extend({
+        qf = c.a.View.extend({
             template: "Waze/MapEditor/UI/Modules/MTE/templates/item_edit/closures",
             regions: {
                 closuresRegion: ".closures"
@@ -65383,7 +65378,7 @@
                         editViewConfig: Ph.MTE
                     }).showClosures(),
                     this._drawClosures(),
-                    this._toggleNonMteMarkers(!1)) : this.showChildView("closuresRegion", new Yf)
+                    this._toggleNonMteMarkers(!1)) : this.showChildView("closuresRegion", new zf)
             },
             _showClosures: function() {
                 return Boolean(this.segments.length)
@@ -65393,7 +65388,7 @@
             },
             _drawClosures: function() {
                 var e, t = this;
-                return this.drawingContext.setStyleMap(qf),
+                return this.drawingContext.setStyleMap(Hf),
                     ["outline", "fill", "dash"].map(function(n) {
                         return e = t.segments.map(function(e) {
                                 return new OL.Feature.Vector(gt.cloneGeometry(e.geometry), {
@@ -65414,7 +65409,7 @@
                     this._toggleNonMteMarkers(!0)
             }
         }),
-        Kf = c.a.View.extend({
+        Yf = c.a.View.extend({
             className: "mte-edit-view",
             template: "Waze/MapEditor/UI/Modules/MTE/templates/mte_edit_view",
             behaviors: {
@@ -65548,15 +65543,13 @@
             },
             initialize: function(e) {
                 var t = this;
-                this.dataModel = e.dataModel,
+                return this.dataModel = e.dataModel,
                     this.mteModeState = e.mteModeState,
-                    this.api = new Lf({
+                    this.api = new Df({
                         dataModel: this.dataModel
-                    });
-                var n = [this.model.clone(), this.model];
-                return this.model = n[0],
-                    this.originalModel = n[1],
-                    this.api = new Lf({
+                    }),
+                    this.originalModel = e.originalModel,
+                    this.api = new Df({
                         dataModel: this.dataModel
                     }),
                     this.submitViewModel = new o.a.Model({
@@ -65568,7 +65561,7 @@
                         canPublish: this.model.canPublish(),
                         published: this.originalModel.get("published")
                     }),
-                    this.categoryOptions = Object.keys(Pf.CATEGORIES).map(function(e) {
+                    this.categoryOptions = Object.keys(Rf.CATEGORIES).map(function(e) {
                         return {
                             label: I18n.t("mte.edit.categories.".concat(e)),
                             value: e
@@ -65594,12 +65587,12 @@
                         this.validator.clearErrorFor(i)
                     }
                 var s = Object.keys(e.changed);
-                if (l.a.intersection(s, Pf.WRITABLE_ATTRIBUTES).length > 0)
+                if (l.a.intersection(s, Rf.WRITABLE_ATTRIBUTES).length > 0)
                     return this.trigger("modelChanged")
             },
             onRender: function() {
                 var e = this;
-                this.namesView = new Uf({
+                this.namesView = new Vf({
                         model: this.model,
                         editable: this.model.arePropertiesEditable()
                     }),
@@ -65664,7 +65657,7 @@
             _isMTEValid: function() {
                 var e = this.ui.attributesForm.get(0).checkValidity();
                 return null != this.validator && this.unstickit(this.validator, this.validationErrorsBindings),
-                    this.validator = Vf.validate(this.model),
+                    this.validator = Nf.validate(this.model),
                     this.stickit(this.validator, this.validationErrorsBindings),
                     this.validator.isValid() && e
             },
@@ -65683,14 +65676,14 @@
                     return this.trigger("backButtonClicked")
             },
             _loadMTEDetails: function(e, t) {
-                return e.show(new Bf({
+                return e.show(new Uf({
                         loading: !0,
                         loadingMessage: t
                     })),
                     this.api.getMTEDetails(this.model.get("id"))
             },
             _showMTEDetailsError: function(e, t) {
-                e.show(new Bf({
+                e.show(new Uf({
                     error: !0,
                     errorMessage: t
                 }))
@@ -65699,7 +65692,7 @@
                 var e = this,
                     t = this.getRegion("closuresRegion");
                 return this._loadMTEDetails(t, I18n.t("mte.edit.closures.loading")).then(function(t) {
-                    return e.showChildView("closuresRegion", new $f({
+                    return e.showChildView("closuresRegion", new qf({
                         map: e.options.map,
                         model: e.model,
                         mteModeState: e.mteModeState,
@@ -65717,7 +65710,7 @@
                 var e = this,
                     t = this.getRegion("contributorsRegion");
                 return this._loadMTEDetails(t, I18n.t("mte.edit.contributors.loading")).then(function(t) {
-                    return e.showChildView("contributorsRegion", new Wf({
+                    return e.showChildView("contributorsRegion", new Bf({
                         detailsModel: t,
                         mteModel: e.model,
                         editable: e.model.canEditPartners()
@@ -65769,7 +65762,12 @@
                 return e.preventDefault()
             }
         }),
-        Jf = c.a.Object.extend({
+        $f = o.a.Collection.extend({
+            comparator: function(e) {
+                return (e.getEnglishName() || "").toLowerCase()
+            }
+        }),
+        Kf = c.a.Object.extend({
             initialize: function(e) {
                 var t = this;
                 return this.toolbarController = e.toolbarController,
@@ -65780,7 +65778,7 @@
                     this.controller = e.controller,
                     this.editingMediator = e.editingMediator,
                     this.map = e.map,
-                    this.mteCollection = new Df,
+                    this.mteCollection = new $f,
                     this.mteListView = new Af({
                         collection: this.mteCollection,
                         dataModel: this.dataModel
@@ -65842,8 +65840,9 @@
                         pendingChanges: !1,
                         editedModel: e
                     }),
-                    this.editView = new Kf({
-                        model: e,
+                    this.editView = new Yf({
+                        model: e.clone(),
+                        originalModel: e,
                         dataModel: this.dataModel,
                         map: this.map,
                         mteModeState: this.mteModeState
@@ -65855,7 +65854,7 @@
                     this.editView.on("modelChanged", this._onModelChanged, this)
             },
             _onAddClicked: function() {
-                var e = new Pf.default;
+                var e = new Rf.default;
                 return e.model = this.dataModel,
                     this.showEditView(e),
                     this.mteModeState.set({
@@ -65890,7 +65889,7 @@
                 return this.savePopoverRegion.destroy()
             }
         }),
-        Zf = o.a.Model.extend({
+        Jf = o.a.Model.extend({
             defaults: {
                 pendingChanges: !1,
                 showingList: !0,
@@ -65898,7 +65897,7 @@
                 editedModel: null
             }
         }),
-        Xf = c.a.Object.extend({
+        Zf = c.a.Object.extend({
             _editingLock: null,
             initialize: function() {
                 this.app = W.app,
@@ -65906,7 +65905,7 @@
                     this.dataModel = W.model,
                     this.controller = W.controller,
                     this.repo = this.dataModel.majorTrafficEvents,
-                    this.mteModeState = new Zf,
+                    this.mteModeState = new Jf,
                     this.listenTo(this.mteModeState, "change", this.trigger.bind(this, "STATE_CHANGED")),
                     this._layerSwitcherController = W.layerSwitcherController,
                     this.toolbarController = new wf({
@@ -65927,7 +65926,7 @@
                     this.sidebarLayout = new Sf({
                         app: W.app
                     }),
-                    this.mteController = new Jf({
+                    this.mteController = new Kf({
                         toolbarController: this.toolbarController,
                         sidebarLayout: this.sidebarLayout,
                         mteModeState: this.mteModeState,
@@ -65991,11 +65990,11 @@
                 }
             }
         }),
-        Qf = c.a.Object.extend({
-            MODE_TO_CLASS: (zf = {},
-                j()(zf, ke.DEFAULT, bf),
-                j()(zf, ke.MTE, Xf),
-                zf),
+        Xf = c.a.Object.extend({
+            MODE_TO_CLASS: (Wf = {},
+                j()(Wf, ke.DEFAULT, bf),
+                j()(Wf, ke.MTE, Zf),
+                Wf),
             initialize: function(e) {
                 this.model = e.model,
                     this.sidebarRegion = e.layout.getRegion("sidebarRegion"),
@@ -66039,9 +66038,9 @@
                 return this.trigger("STATE_CHANGED")
             }
         }),
-        em = n(127),
-        tm = n(403),
-        nm = o.a.Model.extend({
+        Qf = n(127),
+        em = n(403),
+        tm = o.a.Model.extend({
             defaults: {
                 loading: !0,
                 loadingFeatures: !1,
@@ -66067,7 +66066,7 @@
                         model: this,
                         loginManager: n
                     }),
-                    this.modeController = new Qf({
+                    this.modeController = new Xf({
                         model: this,
                         layout: this.layout
                     }),
@@ -66085,7 +66084,7 @@
                 Object(T.setRegionCodeAndReload)(e)
             },
             getAppRegionCode: function() {
-                return Object(em.getRegionCode)()
+                return Object(Qf.getRegionCode)()
             },
             _setupLoginManager: function(e) {
                 var t = this;
@@ -66165,7 +66164,7 @@
             },
             _moveToFamiliarLocation: function(e) {
                 var t = W.map,
-                    n = Object(tm.findFamiliarLocation)(e);
+                    n = Object(em.findFamiliarLocation)(e);
                 if (null != n) {
                     var i = n.lonLat;
                     if (null != n.bounds) {
@@ -66221,7 +66220,7 @@
                 W.controller.bindToMap(W.map)
             }
         }),
-        im = o.a.Model.extend({
+        nm = o.a.Model.extend({
             defaults: {
                 id: 1,
                 isImperial: null,
@@ -66240,7 +66239,7 @@
             }
         });
 
-    function sm(e) {
+    function im(e) {
         ! function(e) {
             var t = Ye.buildConfig.regions[e],
                 n = Ye.rasterConfig.regions[e];
@@ -66254,16 +66253,16 @@
             }),
             Object.freeze(W.Config)
     }
-    var rm = "US",
-        om = "CA",
-        am = "IL",
-        lm = {
+    var sm = "US",
+        rm = "CA",
+        om = "IL",
+        am = {
             iw: "he",
             ji: "yi",
             in: "id",
             "en-UK": "en-GB"
         },
-        um = function() {
+        lm = function() {
             function e() {
                 h()(this, e)
             }
@@ -66284,44 +66283,44 @@
                 }]),
                 e
         }();
-    var cm = n(404),
-        dm = n.n(cm);
+    var um = n(404),
+        cm = n.n(um);
 
-    function hm() {
-        var e = em.getRegionAndLocaleCodes();
+    function dm() {
+        var e = Qf.getRegionAndLocaleCodes();
         return {
             regionCode: e.code,
             localeCode: e.locale
         }
     }
 
-    function pm() {
-        return (new dm.a).getRegionCode()
+    function hm() {
+        return (new cm.a).getRegionCode()
     }
 
-    function gm(e) {
+    function pm(e) {
         return Cr.REGION_CODES.includes(e)
     }
 
-    function fm(e) {
+    function gm(e) {
         return ["en", "en-US", "en-GB", "es", "es-419", "fa-IR", "fr", "it", "ru", "ja", "he", "de", "ro", "tr", "af", "cs", "ko", "ms", "pl", "pt-BR", "pt-PT", "hu", "nl", "sv", "no", "sk", "da", "gl", "lt", "zh", "zh-TW", "bg", "fi", "hr", "ca", "et", "lv", "sr", "ar", "uk", "th"].includes(e)
     }
 
-    function mm(e, t) {
-        var n = hm(),
-            i = pm(),
-            s = [e, n.regionCode, i, Cr.DEFAULT_REGION_CODE].filter(gm)[0],
+    function fm(e, t) {
+        var n = dm(),
+            i = hm(),
+            s = [e, n.regionCode, i, Cr.DEFAULT_REGION_CODE].filter(pm)[0],
             r = function(e) {
                 return e === Cr.REGION_CODE_USA ? Cr.DEFAULT_LOCALE_CODE_USA : Cr.DEFAULT_LOCALE_CODE
             }(s);
         return {
             regionCode: s,
-            localeCode: [n.localeCode, t, r].filter(fm)[0]
+            localeCode: [n.localeCode, t, r].filter(gm)[0]
         }
     }
 
-    function vm() {
-        return (new um).getCountryByIP().then(function(e) {
+    function mm() {
+        return (new lm).getCountryByIP().then(function(e) {
             return {
                 abbr: e.abbr,
                 locale: e.locale
@@ -66333,18 +66332,18 @@
             }
         }).then(function(e) {
             var t, n, i;
-            return mm((t = e.abbr,
-                n = t === am,
-                t === rm || t === om ? Cr.REGION_CODE_USA : n ? Cr.REGION_CODE_IL : Cr.DEFAULT_REGION_CODE), (i = e.locale,
-                Object.keys(lm).includes(i) ? lm[i] : i))
+            return fm((t = e.abbr,
+                n = t === om,
+                t === sm || t === rm ? Cr.REGION_CODE_USA : n ? Cr.REGION_CODE_IL : Cr.DEFAULT_REGION_CODE), (i = e.locale,
+                Object.keys(am).includes(i) ? am[i] : i))
         })
     }
 
-    function _m() {
+    function vm() {
         return function() {
-            var e = hm(),
-                t = pm(),
-                n = gm(t),
+            var e = dm(),
+                t = hm(),
+                n = pm(t),
                 i = e.regionCode;
             n && (i = t);
             var s = e.localeCode;
@@ -66355,37 +66354,37 @@
             }(i, s) ? Promise.resolve({
                 regionCode: i,
                 localeCode: s
-            }) : vm()
+            }) : mm()
         }().then(function(e) {
             var t = e.regionCode,
                 n = e.localeCode;
             return function(e, t) {
-                em.setRegionAndLocaleCodes(e, t)
+                Qf.setRegionAndLocaleCodes(e, t)
             }(t, n), {
                 regionCode: t,
                 localeCode: n
             }
         })
     }
-    var ym = n(405);
+    var _m = n(405);
 
-    function bm(e) {
+    function ym(e) {
         var t = e.descartesClient;
-        W.prefs = new im,
+        W.prefs = new nm,
             W.prefs.fetch();
         var n = new te;
-        W.app = new nm,
+        W.app = new tm,
             W.app.start({
                 descartesClient: t,
                 loginManager: n
             })
     }
 
-    function Em(e) {
-        sm(e)
+    function bm(e) {
+        im(e)
     }
 
-    function wm() {
+    function Em() {
         var e = new Ts.default;
         return Object($.init)(e).then(function() {
             return {
@@ -66394,20 +66393,20 @@
         })
     }
     s()(document).ready(function() {
-        Object(ym.startReportingUnhanldedErrors)(),
-            _m().then(function(e) {
+        Object(_m.startReportingUnhanldedErrors)(),
+            vm().then(function(e) {
                 var t = e.regionCode;
                 return function(e) {
-                        var t = fm(e);
+                        var t = gm(e);
                         !Object(T.documentLocaleMatches)(e) && t && Object(T.redirectToLocalePage)(e)
                     }(e.localeCode),
                     t
-            }).then(Em).catch(function(e) {
+            }).then(bm).catch(function(e) {
                 console.error("Error loading local configuration", e)
-            }).then(wm).catch(function(e) {
+            }).then(Em).catch(function(e) {
                 console.error("Error loading server configuration", e),
                     Object(T.redirectToErrorPage)()
-            }).then(bm)
+            }).then(ym)
     })
 }, function(e, t, n) {
     "use strict";
@@ -66417,7 +66416,7 @@
         r = n(48),
         o = n(1),
         a = n.n(o),
-        l = n(74),
+        l = n(73),
         u = r.a.extend({
             _isModified: function() {
                 return this.attributes.problem.isUpdated()
@@ -66642,7 +66641,7 @@
         n(726),
         window.W = {
             Config: i,
-            version: "v2.38-244-gd425f2fcc-30-gc71dd496a-9-g43562aa1\n"
+            version: "v2.38-244-gd425f2fcc-30-gc71dd496a-24-gbf37ba890\n"
         },
         n(407),
         n(49),
