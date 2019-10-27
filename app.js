@@ -216,7 +216,7 @@
         o = n.n(r),
         a = n(65),
         l = n.n(a),
-        u = n(36),
+        u = n(37),
         c = n(46),
         d = n(162),
         h = n(42),
@@ -1642,7 +1642,7 @@
         o = n.n(r),
         a = n(3),
         l = n.n(a),
-        u = n(39),
+        u = n(40),
         c = n.n(u),
         d = n(5),
         h = n.n(d),
@@ -2907,7 +2907,7 @@
         d = n(44),
         h = o(n(82)),
         p = o(n(56)),
-        g = o(n(40)),
+        g = o(n(41)),
         f = a(n(58)),
         m = o(n(141)),
         v = a(n(102)),
@@ -3319,6 +3319,36 @@
         t.default = A
 }, function(e, t, n) {
     "use strict";
+    Object.defineProperty(t, "__esModule", {
+        value: !0
+    });
+    t.FEATURE_FLAGS = {
+        LANES: "Lanes",
+        MERGE_PLACES: "MergeVenues",
+        HOUSE_NUMBERS_LAYER: "HouseNumbersLayer",
+        LICENSE_PLATES_RESTRICTIONS: "LicensePlatesRestrictions",
+        NEW_SPLIT_MERGE: "NewSplitMerge",
+        CHAT_AND_LIVE_USERS: "ChatAndLiveUsers"
+    };
+    var i = null;
+
+    function s() {
+        if (null == i)
+            throw new Error("call init() before reading server config");
+        return i
+    }
+    t.init = function(e) {
+            return e.getConfigurationInfo().then(function(e) {
+                i = e
+            })
+        },
+        t.getServerConfig = s,
+        t.isFeatureFlagEnabled = function(e) {
+            var t = s().featureFlags;
+            return null != t && Boolean(t[e])
+        }
+}, function(e, t, n) {
+    "use strict";
     n.r(t),
         n.d(t, "UNIT", function() {
             return o
@@ -3642,35 +3672,6 @@
         }),
         r.default.extend(l.prototype, o.default),
         t.default = l
-}, function(e, t, n) {
-    "use strict";
-    Object.defineProperty(t, "__esModule", {
-        value: !0
-    });
-    t.FEATURE_FLAGS = {
-        LANES: "Lanes",
-        MERGE_PLACES: "MergeVenues",
-        HOUSE_NUMBERS_LAYER: "HouseNumbersLayer",
-        LICENSE_PLATES_RESTRICTIONS: "LicensePlatesRestrictions",
-        NEW_SPLIT_MERGE: "NewSplitMerge"
-    };
-    var i = null;
-
-    function s() {
-        if (null == i)
-            throw new Error("call init() before reading server config");
-        return i
-    }
-    t.init = function(e) {
-            return e.getConfigurationInfo().then(function(e) {
-                i = e
-            })
-        },
-        t.getServerConfig = s,
-        t.isFeatureFlagEnabled = function(e) {
-            var t = s().featureFlags;
-            return null != t && Boolean(t[e])
-        }
 }, function(e, t, n) {
     "use strict";
     n.r(t),
@@ -4898,7 +4899,7 @@
         value: !0
     });
     var a = r(n(1)),
-        l = r(n(40)),
+        l = r(n(41)),
         u = o(n(10)),
         c = function(e) {
             function t(t, n, i, s) {
@@ -4998,7 +4999,7 @@
         g = n.n(p),
         f = n(25),
         m = n.n(f),
-        v = n(40),
+        v = n(41),
         _ = n.n(v),
         y = function(e) {
             function t(e, n, i, r) {
@@ -5627,7 +5628,7 @@
         L = n(18),
         P = n(10),
         N = n(19),
-        x = n(41),
+        x = n(36),
         V = n(32),
         j = n(21),
         U = n(29),
@@ -6196,7 +6197,7 @@
             t.MaxRank = 5,
             t.StaffRank = 6,
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     t.default = a
 }, function(e, t, n) {
     "use strict";
@@ -6229,7 +6230,7 @@
     });
     var s = n(44),
         r = n(58),
-        o = n(41),
+        o = n(36),
         a = n(83),
         l = n(53),
         u = function() {
@@ -6761,7 +6762,7 @@
         value: !0
     });
     var r = i(n(1)),
-        o = i(n(40)),
+        o = i(n(41)),
         a = s(n(638)),
         l = function() {
             function e() {
@@ -7253,7 +7254,7 @@
     var a = r(n(7)),
         l = n(70),
         u = r(n(56)),
-        c = r(n(40)),
+        c = r(n(41)),
         d = o(n(10)),
         h = n(28),
         p = o(n(21)),
@@ -7350,7 +7351,7 @@
         l = n.n(a),
         u = n(4),
         c = n.n(u),
-        d = n(39),
+        d = n(40),
         h = n.n(d),
         p = n(3),
         g = n.n(p),
@@ -7364,7 +7365,7 @@
         w = n.n(E),
         S = n(1),
         k = n.n(S),
-        T = n(40),
+        T = n(41),
         I = n.n(T),
         M = n(13),
         A = n.n(M),
@@ -10366,9 +10367,9 @@
     var o = n(160),
         a = n(70),
         l = r(n(56)),
-        u = r(n(40)),
+        u = r(n(41)),
         c = {
-            speed: n(36).UNIT.KILOMETER
+            speed: n(37).UNIT.KILOMETER
         };
     t.UNITS = c;
     var d = function(e) {
@@ -10602,11 +10603,11 @@
     var u = a(n(1)),
         c = n(98),
         d = n(70),
-        h = n(37);
+        h = n(38);
     t.CategoryAttributes = h.CategoryAttributes;
     var p = a(n(82)),
         g = a(n(56)),
-        f = a(n(40)),
+        f = a(n(41)),
         m = a(n(144)),
         v = a(n(635)),
         _ = a(n(111)),
@@ -10912,7 +10913,7 @@
         c = n(84),
         d = o(n(82)),
         h = o(n(56)),
-        p = o(n(40)),
+        p = o(n(41)),
         g = a(n(18)),
         f = a(n(10)),
         m = o(n(639)),
@@ -12075,7 +12076,7 @@
         value: !0
     });
     var s = n(18),
-        r = i(n(38)),
+        r = i(n(39)),
         o = function() {
             function e(e) {
                 this.marker = this.createMarker(e)
@@ -12430,7 +12431,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry
@@ -13835,7 +13836,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(41),
+    var i = n(36),
         s = function() {
             function e(e) {
                 this.loginManager = e;
@@ -13883,7 +13884,7 @@
     var r = i(n(1)),
         o = i(n(13)),
         a = n(80),
-        l = n(37),
+        l = n(38),
         u = i(n(665)),
         c = i(n(79)),
         d = s(n(194)),
@@ -15055,7 +15056,7 @@
                 e
         }(),
         c = n(73),
-        d = n(41),
+        d = n(36),
         h = n(17),
         p = c.a.extend({
             MORE_INFO_DEFAULTS: [{
@@ -15174,7 +15175,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(38)),
+    var a = r(n(39)),
         l = o(n(10)),
         u = n(63),
         c = function(e) {
@@ -15248,7 +15249,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(37),
+    var i = n(38),
         s = function() {
             function e() {}
             return e.prototype.addSuggestedCategory = function(e, t) {
@@ -15425,7 +15426,7 @@
         D = n(18),
         R = n(364),
         L = n.n(R),
-        P = n(41),
+        P = n(36),
         N = function(e) {
             function t(e, n, i) {
                 var s, r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
@@ -16049,7 +16050,7 @@
     var o = r(n(1)),
         a = n(70),
         l = r(n(56)),
-        u = r(n(40)),
+        u = r(n(41)),
         c = function(e) {
             function t(n, i) {
                 return void 0 === i && (i = {
@@ -16863,7 +16864,7 @@
         d = n(13),
         h = n.n(d),
         p = n(167),
-        g = n(41),
+        g = n(36),
         f = n(129),
         m = function() {
             function e(t, n, i) {
@@ -17341,7 +17342,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(38)),
+    var a = r(n(39)),
         l = r(n(88)),
         u = o(n(18)),
         c = n(63),
@@ -17559,7 +17560,7 @@
         o = i(n(122)),
         a = i(n(107)),
         l = i(n(35)),
-        u = n(41),
+        u = n(36),
         c = n(711),
         d = i(n(353)),
         h = n(209),
@@ -17677,7 +17678,7 @@
     });
     var o = r(n(1)),
         a = n(205),
-        l = r(n(40)),
+        l = r(n(41)),
         u = r(n(663)),
         c = r(n(65));
     var d = 1,
@@ -18015,7 +18016,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = n(41),
+    var i = n(36),
         s = function() {
             function e() {}
             return e.prototype._getCountry = function(e) {
@@ -19411,7 +19412,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = i(n(38)),
+    var r = i(n(39)),
         o = n(95),
         a = s(n(667)),
         l = function() {
@@ -19733,7 +19734,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(38)),
+    var a = r(n(39)),
         l = o(n(21)),
         u = o(n(18)),
         c = o(n(19)),
@@ -19820,7 +19821,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(38)),
+    var a = r(n(39)),
         l = o(n(27)),
         u = function(e) {
             function t() {
@@ -19886,7 +19887,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = r(n(38)),
+    var a = r(n(39)),
         l = o(n(27)),
         u = function(e) {
             function t() {
@@ -21791,6 +21792,7 @@
                             n.push("" + t(e(this.t("layer_switcher.title")))),
                             n.push("</span>\n<i class='js-close-layer-switcher w-icon-x'></i>\n</div>\n<div class='scrollable'>"),
                             n.push("" + e(this.renderPartial("Waze/MapEditor/UI/Modules/LayerSwitcher/templates/togglers-tree", {
+                                isLiveUsersLayerEnabled: this.isLiveUsersLayerEnabled,
                                 isHouseNumbersLayerFeatureEnabled: this.isHouseNumbersLayerFeatureEnabled
                             }))),
                             n.push("</div>\n</div>"),
@@ -21954,11 +21956,13 @@
                             t.push("" + e(this.renderPartial(n, {
                                 id: "ITEM_EDITABLE_AREAS"
                             }))),
-                            t.push("</li>\n<li>"),
-                            t.push("" + e(this.renderPartial(n, {
-                                id: "ITEM_LIVE_USERS"
-                            }))),
-                            t.push("</li>\n<li>"),
+                            t.push("</li>"),
+                            this.isLiveUsersLayerEnabled && (t.push("<li>"),
+                                t.push("" + e(this.renderPartial(n, {
+                                    id: "ITEM_LIVE_USERS"
+                                }))),
+                                t.push("</li>")),
+                            t.push("<li>"),
                             t.push("" + e(this.renderPartial(n, {
                                 id: "ITEM_DISALLOWED_TURNS"
                             }))),
@@ -24927,7 +24931,7 @@
                         return t = this.__htmlEscape,
                             e = this.__cleanValue,
                             i = [],
-                            s = n(36).UNIT,
+                            s = n(37).UNIT,
                             W.Config.user_editing_enabled ? (i.push("" + t(e(this.t("user.info.edit_area.title", {
                                     distance: this.h.lengthString(this.editableMiles, {
                                         units: s.MILE,
@@ -25442,7 +25446,7 @@
         N = i(n(13)),
         x = n(80),
         V = n(44),
-        j = n(37),
+        j = n(38),
         U = i(n(84)),
         F = i(n(79)),
         B = i(n(24)),
@@ -25456,7 +25460,7 @@
         J = i(n(194)),
         Z = i(n(60)),
         X = i(n(204)),
-        Q = i(n(38)),
+        Q = i(n(39)),
         ee = i(n(93)),
         te = i(n(135)),
         ne = i(n(55)),
@@ -27044,7 +27048,7 @@
             }
             return s(t, e),
                 t
-        }(r(n(40)).default);
+        }(r(n(41)).default);
     Object.assign(a.prototype, {
             nested: {
                 sessions: o.default,
@@ -27090,7 +27094,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry,
@@ -27138,7 +27142,7 @@
             }
             return s(t, e),
                 t
-        }(r(n(40)).default);
+        }(r(n(41)).default);
     Object.assign(a.prototype, {
             nested: {
                 routeNextSeg: OpenLayers.Geometry,
@@ -27185,7 +27189,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 averageGeom: OpenLayers.Geometry
@@ -27230,7 +27234,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 segmentGeom: OpenLayers.Geometry,
@@ -27280,7 +27284,7 @@
                 return this.totalRoadMeters / (this.endTime - this.startTime) * 3600
             },
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -27331,7 +27335,7 @@
                         this.bounds)
                 },
                 t
-        }(r(n(40)).default);
+        }(r(n(41)).default);
     Object.assign(a.prototype, {
             CLASS_NAME: "Waze.Feature.Vector.ArchiveSession",
             nested: {
@@ -27381,7 +27385,7 @@
                     return this.matchType === o
                 },
                 t
-        }(r(n(40)).default);
+        }(r(n(41)).default);
     Object.assign(a.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry
@@ -27426,7 +27430,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -27474,7 +27478,7 @@
                 return e ? e.userName : ""
             },
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry
@@ -27519,7 +27523,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     t.default = o
 }, function(e, t, n) {
     "use strict";
@@ -27660,7 +27664,7 @@
         value: !0
     });
     var a = r(n(7)),
-        l = r(n(40)),
+        l = r(n(41)),
         u = o(n(19)),
         c = n(28),
         d = function(e) {
@@ -27796,7 +27800,7 @@
         }
         return s(t, e),
             t
-    }(r(n(40)).default);
+    }(r(n(41)).default);
     Object.assign(o.prototype, {
             nested: {
                 geometry: OpenLayers.Geometry
@@ -28658,7 +28662,7 @@
         h = n(105),
         p = n.n(h),
         g = n(171),
-        f = n(41),
+        f = n(36),
         m = n(403),
         v = n.n(m),
         _ = n(212),
@@ -29777,7 +29781,7 @@
         }(c.a.View),
         V = n(8),
         j = n.n(V),
-        U = n(39),
+        U = n(40),
         F = n.n(U),
         B = n(126),
         G = n.n(B),
@@ -29785,7 +29789,7 @@
         z = n.n(H),
         q = n(65),
         Y = n.n(q),
-        $ = n(41);
+        $ = n(36);
 
     function K(e, t) {
         var n = Object.keys(e);
@@ -30251,7 +30255,7 @@
                 this._map.zoomOut()
             }
         }),
-        de = n(38),
+        de = n(39),
         he = n(93),
         pe = n(104),
         ge = OL.Class(OL.Marker, {
@@ -42649,6 +42653,7 @@
                     key: "templateContext",
                     value: function() {
                         return {
+                            isLiveUsersLayerEnabled: Object($.isFeatureFlagEnabled)($.FEATURE_FLAGS.CHAT_AND_LIVE_USERS),
                             isHouseNumbersLayerFeatureEnabled: Object($.isFeatureFlagEnabled)($.FEATURE_FLAGS.HOUSE_NUMBERS_LAYER)
                         }
                     }
@@ -48365,7 +48370,7 @@
                             new Hl(s()("#tutorial-dialog")),
                             new ot(W.model).activate(),
                             this._heftController(n),
-                            this._heftMarx(),
+                            Object($.isFeatureFlagEnabled)($.FEATURE_FLAGS.CHAT_AND_LIVE_USERS) && this._heftMarx(),
                             W.layerSwitcherController = new Ro({
                                 map: a,
                                 actionManager: W.model.actionManager,
@@ -51328,7 +51333,7 @@
         Rc = n(160),
         Lc = n(115),
         Pc = n(186),
-        Nc = n(36);
+        Nc = n(37);
 
     function xc(e, t) {
         var n = Object.keys(e);
@@ -52335,7 +52340,7 @@
                     }
                 }]),
                 t
-        }(c.a.View), rd = n(37), od = rd.VENUE_MAIN_CATEGORIES_LIST, ad = l.a.zipObject(od, od), ld = [], ud = 0; ud < od.length; ud++) {
+        }(c.a.View), rd = n(38), od = rd.VENUE_MAIN_CATEGORIES_LIST, ad = l.a.zipObject(od, od), ld = [], ud = 0; ud < od.length; ud++) {
         var cd = od[ud];
         ld.push({
             id: cd
@@ -66720,7 +66725,7 @@
         n(727),
         window.W = {
             Config: i,
-            version: "v2.39-21-g9a5ecd17b\n"
+            version: "v2.39-22-gc7861631a\n"
         },
         n(408),
         n(49),
