@@ -17753,6 +17753,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-right: 0px;
 }
 
+.lane-arrow.is-uturn.small-arrow {
+    cursor: default;
+}
+
 .lane-arrow.small-arrow {
     -webkit-transform: scale(0.75);
     -ms-transform: scale(0.75);
