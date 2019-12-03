@@ -17080,6 +17080,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     margin-right: 5px;
 }
 
+.full-closures {
+    margin-bottom: 16px;
+}
+
 .closures-list .add-closure-button {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -17133,18 +17137,39 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     align-items: center;
 }
 
-.closures-list .closure-item .section {
-    padding: 12px 0;
+.closures-list .closure-item .section, .closures-list .closure-item .closure-title {
+    padding: 12px;
+}
+
+.closures-list .closure-item .apply-to-all {
+    height: 24px;
+    vertical-align: text-top;
 }
 
 .closures-list .closure-item .closure-title {
     font-weight: bold;
-    padding: 12px;
 }
 
 .closures-list .closure-item .dates {
-    padding: 3px 10px;
+    padding: 3px 0;
+    margin-left: 24px;
     color: #3d3d3d;
+    font-size: 12px;
+}
+
+.closures-list .closure-item .dates .start-date, .closures-list .closure-item .dates .end-date {
+    display: inline-block;
+    width: 68px;
+    height: 32px;
+}
+
+.closures-list .closure-item .dates .date-separator {
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+    height: 32px;
+    vertical-align: top;
+    padding: 7px 0;
 }
 
 .closures-list .closure-item .dates .date-label {
@@ -17186,11 +17211,16 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .closures-list .direction {
-    margin-bottom: 5px;
     display: inline-block;
-    width: 80px;
     text-align: center;
-    color: #ff5f5f;
+    background-color: #ed503b;
+    border: 1px solid #ed503b;
+    color: white;
+    border-radius: 30px;
+    line-height: 26px;
+    width: 64px;
+    min-width: 64px;
+    height: 32px;
 }
 
 .closures-list .direction .dir-icon, .closures-list .direction .dir-label {
@@ -17200,32 +17230,22 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    background-color: #ff5f5f;
 }
 
 .closures-list .direction .dir-sep {
     display: inline-block;
+    color: white;
+    font-weight: bold;
 }
 
 .closures-list .direction .dir-sep:after {
-    content: ">";
-    font-size: 9px;
+    content: "\2192";
+    font-size: 12px;
     font-weight: bold;
 }
 
 .closures-list .direction .dir-icon {
-    color: white;
-    width: 22px;
-    height: 22px;
-    line-height: 18px;
     text-align: center;
-    border-radius: 50%;
-    border: 2px solid #ff5f5f;
-}
-
-.closures-list .direction .dir-icon.dir-icon-a {
-    background: white;
-    color: #ff5f5f;
 }
 
 .closures-list .direction .dir-label {
@@ -17266,6 +17286,22 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .edit-closure .form {
     padding: 30px;
+}
+
+.edit-closure .closure-nodes .closure-node-control {
+    padding: 12px;
+    border-bottom: 1px solid #d3dae0;
+    position: relative;
+    background: #f2f4f7;
+}
+
+.edit-closure .closure-nodes .closure-node-control label {
+    cursor: pointer;
+}
+
+.edit-closure .closure-nodes .closure-node-control .wz-toggle-switch {
+    position: absolute;
+    right: 12px;
 }
 
 .edit-closure .input-group-addon {
@@ -17647,6 +17683,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     top: 5px;
 }
 
+.direction-lanes .lane-instruction .override-notification {
+    color: #fa903e;
+}
+
 .direction-lanes .lane-instruction .instruction {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -17735,9 +17775,20 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     fill: #000;
 }
 
-.lane-arrow.small-arrow .uturn {
-    -webkit-filter: brightness(0);
-    filter: brightness(0);
+.lane-arrow.small-arrow .uturn g {
+    fill: #000;
+}
+
+.lane-arrow.small-arrow.override-arrow .arrow-line {
+    stroke: #fa903e;
+}
+
+.lane-arrow.small-arrow.override-arrow .arrow-tip {
+    fill: #fa903e;
+}
+
+.lane-arrow.small-arrow.override-arrow .uturn g {
+    fill: #fa903e;
 }
 
 .lane-arrow.grey-arrow {
@@ -17779,10 +17830,8 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .lane-arrow .uturn {
-    background: url(//editor-assets.waze.com/beta/font/de496e4aa1dd9d6f3ae9f506638f960c.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
     position: absolute;
+    padding-top: 9px;
     width: 26px;
     height: 38px;
 }
@@ -17794,7 +17843,6 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .lane-arrow .small-uturn {
-    background: url(//editor-assets.waze.com/beta/font/bf459347a255e6ab4c69157a27271581.svg);
     width: 10px;
     height: 10px;
     position: absolute;
@@ -21020,7 +21068,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .road-closure {
     pointer-events: none;
-    background-image: url(//editor-assets.waze.com/beta/img/closures82b2ff7d4987911546132469c3cd515f.png);
+    background-image: url(//editor-assets.waze.com/beta/img/closures28d13a20d2adb7ec118fd828aa410e8a.png);
     background-position: 0px -46px;
     width: 46px;
     height: 46px;
@@ -21033,7 +21081,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .road-closure.inactive {
-    background-image: url(//editor-assets.waze.com/beta/img/closures82b2ff7d4987911546132469c3cd515f.png);
+    background-image: url(//editor-assets.waze.com/beta/img/closures28d13a20d2adb7ec118fd828aa410e8a.png);
     background-position: -46px 0px;
     width: 46px;
     height: 46px;
@@ -21046,7 +21094,7 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 }
 
 .road-closure .arrow {
-    background-image: url(//editor-assets.waze.com/beta/img/closures82b2ff7d4987911546132469c3cd515f.png);
+    background-image: url(//editor-assets.waze.com/beta/img/closures28d13a20d2adb7ec118fd828aa410e8a.png);
     background-position: 0px 0px;
     width: 46px;
     height: 46px;
@@ -21056,6 +21104,18 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     /*rtl:ignore*/
     margin-left: -23px;
     margin: auto;
+}
+
+.closure-node {
+    background-image: url(//editor-assets.waze.com/beta/img/closures28d13a20d2adb7ec118fd828aa410e8a.png);
+    background-position: -46px -46px;
+    width: 22px;
+    height: 22px;
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    /*rtl:ignore*/
+    margin-left: -11px;
 }
 
 .show-sidebar #map {
