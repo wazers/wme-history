@@ -17854,6 +17854,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     left: 4px;
 }
 
+.lane-arrow svg:focus {
+    outline: none;
+}
+
 .direction-lanes-edit {
     background: #ededed;
     border-radius: 8px;
@@ -17910,6 +17914,10 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
     height: 26px;
 }
 
+.direction-lanes-edit .turn-lane-edit .left-turn-lanes-part:focus {
+    outline: none;
+}
+
 .direction-lanes-edit .turn-lane-edit .right-turn-lanes-part {
     display: inline-block;
     -webkit-box-flex: 1;
@@ -17920,6 +17928,11 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 
 .direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .street-name {
     font-weight: normal;
+    cursor: pointer;
+}
+
+.direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .street-name:hover {
+    text-decoration: underline;
 }
 
 .direction-lanes-edit .turn-lane-edit .right-turn-lanes-part .turn-lane-checkbox {
@@ -17962,23 +17975,302 @@ a.waze-link:disabled, a.waze-link .disabled, .btn-link:disabled, .btn-link .disa
 .lanes-turn-override-popup .lanes-turn-override-option .selected_v_sign {
     color: #00b7ff;
     font-size: 16px;
+    line-height: 40px;
+    padding-right: 11px;
+    opacity: 0;
 }
 
-.lanes-turn-override-popup .lanes-turn-override-option .turn-region {
-    display: inline-block;
-    padding-left: 4px;
+.lanes-turn-override-popup .lanes-turn-override-option .selected_v_sign.visible {
+    opacity: 1;
 }
 
 .lanes-turn-override-popup .lanes-turn-override-option .angle-label, .lanes-turn-override-popup .lanes-turn-override-option .waze-selected-label {
-    margin-left: 10px;
     color: #354148;
     font-size: 13px;
     font-weight: normal;
     line-height: 40px;
 }
 
+.lanes-turn-override-popup .lanes-turn-override-option .angle-label {
+    margin-left: 10px;
+}
+
 .lanes-turn-override-popup .lanes-turn-override-option .waze-selected-label {
-    margin-right: 15px;
+    opacity: 0;
+}
+
+.lanes-turn-override-popup .lanes-turn-override-option .waze-selected-label.visible {
+    opacity: 1;
+}
+
+.lanes-turn-override-popup .lanes-turn-override-option .waze-selected-label {
+    margin-right: 8px;
+    margin-left: 4px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.turn-lane-edit .turn-angle-icon {
+    cursor: pointer;
+}
+
+.turn-angle-icon {
+    position: relative;
+    top: 8px;
+    outline: none;
+}
+
+.turn-angle-icon.angle--180 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -72px -72px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--180 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--180.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -48px -72px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--180.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--135 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -48px -24px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--135 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--135.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -48px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--135.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--90 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -24px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--90 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--90.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: 0px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--90.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--45 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -72px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--45 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle--45.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -48px -48px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle--45.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-0 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -24px -72px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-0 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-0.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: 0px -72px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-0.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-45 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -72px -48px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-45 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-45.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -72px -24px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-45.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-90 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -24px -24px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-90 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-90.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: 0px -24px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-90.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-135 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -24px -48px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-135 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-135.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: 0px -48px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-135.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-180 {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -96px -24px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-180 {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
+}
+
+.turn-angle-icon.angle-180.override {
+    background-image: url(//editor-assets.waze.com/beta/img/lanes-arrowsc8141249ab5a4768722d6bb5cd37cffb.png);
+    background-position: -96px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .turn-angle-icon.angle-180.override {
+        background-image: url(//editor-assets.waze.com/beta/img/lanes-arrows@2x1ad7094520add9d1cfb3214ca16c4057.png);
+        background-size: 120px 96px;
+    }
 }
 
 /**
@@ -23601,16 +23893,17 @@ body[dir="rtl"] .olControlScaleLine {
     outline: #3b99fc auto 5px;
 }
 
-.tippy-tooltip.wme-tippy-menu-theme {
+.tippy-popper .tippy-tooltip.wme-tippy-menu-theme {
     padding-left: 0px;
     padding-right: 0px;
     background-color: white;
     text-align: left;
-    -webkit-box-shadow: 0 3px 13px #1f0000;
-    box-shadow: 0 3px 13px #1f0000;
+    -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, 0.31);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.31);
+    border-radius: 6px;
 }
 
-.tippy-tooltip.wme-tippy-menu-theme .tippy-arrow {
+.tippy-popper .tippy-tooltip.wme-tippy-menu-theme .tippy-arrow {
     border-right: 8px solid #fff;
 }
 
